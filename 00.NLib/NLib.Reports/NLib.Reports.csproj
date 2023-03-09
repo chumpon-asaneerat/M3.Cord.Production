@@ -112,7 +112,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>REM xcopy "$(SolutionDir)References\SqlServerTypes\*.*" "$(TargetDir)\SqlServerTypes\*.*" /Y/D/E
-xcopy "$(SolutionDir)References\SqlServerTypes\*.*" "$(TargetDir)\..\M3.Cord\SqlServerTypes\*.*" /Y/D/E
+xcopy "$(SolutionDir)References\SqlServerTypes\*.*" "$(TargetDir)\..\M3.Cord\Production\SqlServerTypes\*.*" /Y/D/E
+xcopy "$(SolutionDir)References\SqlServerTypes\*.*" "$(TargetDir)\..\M3.Cord\QA\SqlServerTypes\*.*" /Y/D/E
 
 </PostBuildEvent>
   </PropertyGroup>

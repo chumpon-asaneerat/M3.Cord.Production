@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{29F96A5F-D9D4-4EE7-82EE-E423749372B3}</ProjectGuid>
+    <ProjectGuid>{3A0AD7ED-1823-45E7-8BE3-6E69FAEA7C32}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>M3.Cord</RootNamespace>
-    <AssemblyName>M3.Cord.Production.App</AssemblyName>
+    <AssemblyName>M3.Cord.QA.App</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Executables\Production\M3.Cord\Production\</OutputPath>
+    <OutputPath>..\..\Executables\Production\M3.Cord\QA\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

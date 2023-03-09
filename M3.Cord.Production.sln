@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3.Cord.Models", "02.Models
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3.Cord.Production.App", "09.App\M3.Cord.Production.App\M3.Cord.Production.App.csproj", "{29F96A5F-D9D4-4EE7-82EE-E423749372B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3.Cord.QA.App", "09.App\M3.Cord.QA.App\M3.Cord.QA.App.csproj", "{3A0AD7ED-1823-45E7-8BE3-6E69FAEA7C32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{29F96A5F-D9D4-4EE7-82EE-E423749372B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29F96A5F-D9D4-4EE7-82EE-E423749372B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29F96A5F-D9D4-4EE7-82EE-E423749372B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0AD7ED-1823-45E7-8BE3-6E69FAEA7C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0AD7ED-1823-45E7-8BE3-6E69FAEA7C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0AD7ED-1823-45E7-8BE3-6E69FAEA7C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0AD7ED-1823-45E7-8BE3-6E69FAEA7C32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{11CA5B2D-AE32-4514-AFB4-9F24B851C9E0} = {95631D99-8D15-405D-ACBF-93362B3B019C}
 		{79B5DFDA-FC06-4DC2-A260-07DE878E5FA7} = {A3393158-5B07-4CD3-B03E-62CBC1A331DB}
 		{29F96A5F-D9D4-4EE7-82EE-E423749372B3} = {B80910F2-BC08-4C75-9E6D-170ECC150E61}
+		{3A0AD7ED-1823-45E7-8BE3-6E69FAEA7C32} = {B80910F2-BC08-4C75-9E6D-170ECC150E61}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}

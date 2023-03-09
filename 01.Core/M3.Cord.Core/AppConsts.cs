@@ -11,7 +11,7 @@ namespace M3.Cord
         // common properties
         public static string Version = "1";
         public static string Minor = "0";
-        public static string CompanyName = "VSEG";
+        public static string CompanyName = "VS Enterprise Group Co., Ltd.";
 
         public static class Application
         {

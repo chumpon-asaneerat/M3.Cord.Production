@@ -7,8 +7,9 @@ M3 Cord Production System #9
 M3 Cord Production System #8
 - 
 
+[commited]
 M3 Cord Production System #7
-- 
+- Add M3.Cord.QA.App project
 
 [commited]
 M3 Cord Production System #6
