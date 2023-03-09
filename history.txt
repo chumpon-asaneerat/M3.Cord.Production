@@ -19,8 +19,9 @@ M3 Cord Production System #5
 M3 Cord Production System #4
 - 
 
+[commited]
 M3 Cord Production System #3
-- 
+- Add M3.Cord.Core project
 
 [commited]
 M3 Cord Production System #2
