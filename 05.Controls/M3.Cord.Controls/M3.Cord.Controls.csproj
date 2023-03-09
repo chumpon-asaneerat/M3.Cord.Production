@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{97207FA7-D028-4F2F-812E-F2A3E2A85C81}</ProjectGuid>
+    <ProjectGuid>{11CA5B2D-AE32-4514-AFB4-9F24B851C9E0}</ProjectGuid>
     <OutputType>library</OutputType>
     <RootNamespace>M3.Cord</RootNamespace>
-    <AssemblyName>M3.Cord.Core</AssemblyName>
+    <AssemblyName>M3.Cord.Controls</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -22,8 +22,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -76,6 +76,10 @@
     <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
       <Project>{41a9d6c0-c833-403f-9bc1-eecdc246a428}</Project>
       <Name>NLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\01.Core\M3.Cord.Core\M3.Cord.Core.csproj">
+      <Project>{97207fa7-d028-4f2f-812e-f2a3e2a85c81}</Project>
+      <Name>M3.Cord.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
