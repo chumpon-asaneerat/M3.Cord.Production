@@ -9,5 +9,10 @@
         Width="800"
         Loaded="Window_Loaded"
         Unloaded="Window_Unloaded">
-    <Grid />
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBox Text="xxx" Style="{StaticResource CommonTextBox}" />
+            <TextBox Text="yyy" Style="{StaticResource CommonTextBox}" />
+        </StackPanel>
+    </Grid>
 </Window>

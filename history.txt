@@ -16,8 +16,10 @@ M3 Cord Production System #16
 M3 Cord Production System #15
 - 
 
+[commited]
 M3 Cord Production System #14
-- 
+- M3.Cord.QA.App project
+  - MainWindow Add Test Style.
 
 [commited]
 M3 Cord Production System #13
