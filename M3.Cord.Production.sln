@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Models", "02.Models", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3.Cord.Models", "02.Models\M3.Cord.Models\M3.Cord.Models.csproj", "{79B5DFDA-FC06-4DC2-A260-07DE878E5FA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3.Cord.Production.App", "09.App\M3.Cord.Production.App\M3.Cord.Production.App.csproj", "{29F96A5F-D9D4-4EE7-82EE-E423749372B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{79B5DFDA-FC06-4DC2-A260-07DE878E5FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79B5DFDA-FC06-4DC2-A260-07DE878E5FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79B5DFDA-FC06-4DC2-A260-07DE878E5FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F96A5F-D9D4-4EE7-82EE-E423749372B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F96A5F-D9D4-4EE7-82EE-E423749372B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F96A5F-D9D4-4EE7-82EE-E423749372B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F96A5F-D9D4-4EE7-82EE-E423749372B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{97207FA7-D028-4F2F-812E-F2A3E2A85C81} = {32311EC4-202E-4CF0-92C8-AD2A1617A18A}
 		{11CA5B2D-AE32-4514-AFB4-9F24B851C9E0} = {95631D99-8D15-405D-ACBF-93362B3B019C}
 		{79B5DFDA-FC06-4DC2-A260-07DE878E5FA7} = {A3393158-5B07-4CD3-B03E-62CBC1A331DB}
+		{29F96A5F-D9D4-4EE7-82EE-E423749372B3} = {B80910F2-BC08-4C75-9E6D-170ECC150E61}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
