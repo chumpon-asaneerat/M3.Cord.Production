@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -50,7 +54,14 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppConsts.cs" />
+    <Compile Include="Common\NInpc.cs" />
+    <Compile Include="Common\NSingelton.cs" />
+    <Compile Include="Consts\AppConsts.cs" />
+    <Compile Include="ExtensionMethods\DateTime.cs" />
+    <Compile Include="ExtensionMethods\NJson.cs" />
+    <Compile Include="ExtensionMethods\ObjectPropertiesToString.cs" />
+    <Compile Include="ExtensionMethods\RangeParser.cs" />
+    <Compile Include="ExtensionMethods\WpfVisualHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -79,5 +90,6 @@
       <Name>NLib</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

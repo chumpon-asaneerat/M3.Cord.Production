@@ -4,8 +4,11 @@ M3 Cord Production System #10
 M3 Cord Production System #9
 - 
 
+[commited]
 M3 Cord Production System #8
-- 
+- M3.Cord.Core project.
+  - Implements basic ExtensionMethods -> Json, DateTime, RangeParser, etc.
+  - Implements basic model class -> NInpc. NSingelton
 
 [commited]
 M3 Cord Production System #7
