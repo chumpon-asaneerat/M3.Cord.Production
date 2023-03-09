@@ -22,8 +22,11 @@ M3 Cord Production System #4
 M3 Cord Production System #3
 - 
 
+[commited]
 M3 Cord Production System #2
-- 
+- Add NLib project
+- Add NLib.Reports project
+- Add required references.
 
 [commited]
 M3 Cord Production System #1
