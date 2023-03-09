@@ -28,8 +28,11 @@ M3 Cord Production System #12
 M3 Cord Production System #11
 - 
 
+[commited]
 M3 Cord Production System #10
-- 
+- M3.Cord.Controls project.
+  - Add CommonStyle.xaml
+  - Add Generic.xaml
 
 [commited]
 M3 Cord Production System #9
