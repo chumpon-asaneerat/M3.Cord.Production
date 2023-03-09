@@ -22,8 +22,11 @@ M3 Cord Production System #14
 M3 Cord Production System #13
 - 
 
+[commited]
 M3 Cord Production System #12
-- 
+- M3.Cord.QA.App project
+  - Update App.xaml
+    - Include resource dictionary - CommonStyle.xaml
 
 [commited]
 M3 Cord Production System #11
