@@ -8,6 +8,17 @@
     <Thickness x:Key="CommonMargin">5</Thickness>
     <GridLength x:Key="PageMargin">5</GridLength>
 
+    <!--  CONST TEXTBLOCK FONT SIZE  -->
+    <sys:Double x:Key="TextBlockFontSize18" PresentationOptions:Freeze="True">18</sys:Double>
+    <sys:Double x:Key="TextBlockFontSize20" PresentationOptions:Freeze="True">20</sys:Double>
+
+    <!--  LABEL TEXTBLOCK STYLE  -->
+    <Style x:Key="LabelText" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize18}" />
+    </Style>
+
     <!--  COMMON INPUT FONT SIZE  -->
     <sys:Double x:Key="InputFontSize18" PresentationOptions:Freeze="True">18</sys:Double>
     <!--  RADIO BUTTON RELATED SIZE  -->
