@@ -140,11 +140,11 @@ namespace SendMail
 
                     SmtpClient smtp = new SmtpClient();
                     //smtp.Host = "smtp.gmail.com"; //for gmail host
-                    smtp.Host = "smtp-mail.outlook.com";  //for outlook host
-                    //smtp.Host = "smtp.yahoo.com"; //for yahoo host
+                    //smtp.Host = "smtp-mail.outlook.com";  //for outlook host
+                    smtp.Host = "smtp.yahoo.com"; //for yahoo host
                     //smtp.Port = 587;
                     smtp.Port = 25;
-                    smtp.EnableSsl = true;
+                    smtp.EnableSsl = false;
 
                     if (hasCredential)
                     {
