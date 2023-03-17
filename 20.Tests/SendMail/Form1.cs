@@ -59,19 +59,54 @@ namespace SendMail
 
         public void SendMailTo()
         {
+            string sender = txtSender.Text;
+            string recipients = txtRecipients.Text;
+            string body = txtBody.Text;
+            string user = (chkEnableCredential.Checked) ? txtUserName.Text : null;
+            string pwd = (chkEnableCredential.Checked) ? txtPassword.Text : null;
 
+            EMailSender.MailTo.Send(sender, recipients, body, user, pwd);
         }
 
         public void SendSMTP()
         {
+            string sender = txtSender.Text;
+            string recipients = txtRecipients.Text;
+            string body = txtBody.Text;
+            string user = (chkEnableCredential.Checked) ? txtUserName.Text : null;
+            string pwd = (chkEnableCredential.Checked) ? txtPassword.Text : null;
 
+            EMailSender.SMTP.Send(sender, recipients, body, user, pwd);
         }
 
         #endregion
     }
+}
+
+namespace SendMail
+{
+    using System.Net;
+    using System.Net.Mail;
 
     public class EMailSender
     {
+        public class SMTP
+        {
+            public static void Send(string sender, string recipients, string body, 
+                string user = null, string password = null)
+            {
 
+            }
+        }
+
+        public class MailTo
+        {
+            public static void Send(string sender, string recipients, string body,
+                string user = null, string password = null)
+            {
+
+            }
+        }
     }
 }
+

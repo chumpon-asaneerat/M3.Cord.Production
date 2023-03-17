@@ -4,8 +4,9 @@ M3 Cord Production System #20
 M3 Cord Production System #19
 - 
 
+[commited]
 M3 Cord Production System #18
-- 
+- Implements send mail #2
 
 [commited]
 M3 Cord Production System #17
