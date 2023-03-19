@@ -55,7 +55,7 @@ namespace SendMail
         private void cmdOutlook_Click(object sender, EventArgs e)
         {
             txtServerName.Text = "smtp-mail.outlook.com";
-            txtPortNo.Text = "587";
+            txtPortNo.Text = "25";
         }
 
         private void cmdToray_Click(object sender, EventArgs e)
@@ -244,9 +244,9 @@ namespace SendMail
             if (null == cfg)
                 return;
 
-            // Set protocol.
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | 
-                SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+            // Set protocol.            
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.SystemDefault;
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
 
             try
             {
@@ -282,6 +282,9 @@ namespace SendMail
                 }
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
+
+                smtp.Dispose();
+                smtp = null;
             }
             catch (Exception ex)
             {

@@ -231,29 +231,31 @@
             // 
             // cmdYahoo
             // 
-            this.cmdYahoo.Location = new System.Drawing.Point(270, 28);
+            this.cmdYahoo.Location = new System.Drawing.Point(432, 30);
             this.cmdYahoo.Name = "cmdYahoo";
             this.cmdYahoo.Size = new System.Drawing.Size(75, 23);
             this.cmdYahoo.TabIndex = 20;
             this.cmdYahoo.TabStop = false;
             this.cmdYahoo.Text = "Yahoo";
             this.cmdYahoo.UseVisualStyleBackColor = true;
+            this.cmdYahoo.Visible = false;
             this.cmdYahoo.Click += new System.EventHandler(this.cmdYahoo_Click);
             // 
             // cmdGmail
             // 
-            this.cmdGmail.Location = new System.Drawing.Point(351, 28);
+            this.cmdGmail.Location = new System.Drawing.Point(513, 30);
             this.cmdGmail.Name = "cmdGmail";
             this.cmdGmail.Size = new System.Drawing.Size(75, 23);
             this.cmdGmail.TabIndex = 21;
             this.cmdGmail.TabStop = false;
             this.cmdGmail.Text = "Gmail";
             this.cmdGmail.UseVisualStyleBackColor = true;
+            this.cmdGmail.Visible = false;
             this.cmdGmail.Click += new System.EventHandler(this.cmdGmail_Click);
             // 
             // cmdOutlook
             // 
-            this.cmdOutlook.Location = new System.Drawing.Point(432, 28);
+            this.cmdOutlook.Location = new System.Drawing.Point(351, 30);
             this.cmdOutlook.Name = "cmdOutlook";
             this.cmdOutlook.Size = new System.Drawing.Size(75, 23);
             this.cmdOutlook.TabIndex = 22;
@@ -264,7 +266,7 @@
             // 
             // cmdToray
             // 
-            this.cmdToray.Location = new System.Drawing.Point(513, 28);
+            this.cmdToray.Location = new System.Drawing.Point(270, 30);
             this.cmdToray.Name = "cmdToray";
             this.cmdToray.Size = new System.Drawing.Size(75, 23);
             this.cmdToray.TabIndex = 23;
