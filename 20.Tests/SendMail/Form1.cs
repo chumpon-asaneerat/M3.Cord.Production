@@ -40,43 +40,49 @@ namespace SendMail
 
         #region Button Handlers
 
+        private void cmdYahoo_Click(object sender, EventArgs e)
+        {
+            txtServerName.Text = "smtp.yahoo.com";
+            txtPortNo.Text = "587";
+        }
+
+        private void cmdGmail_Click(object sender, EventArgs e)
+        {
+            txtServerName.Text = "smtp.gmail.com";
+            txtPortNo.Text = "587";
+        }
+
+        private void cmdOutlook_Click(object sender, EventArgs e)
+        {
+            txtServerName.Text = "smtp-mail.gmail.com";
+            txtPortNo.Text = "587";
+        }
+
+        private void cmdToray_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void cmdSend_Click(object sender, EventArgs e)
         {
-            bool isSMTP = rbSMTP.Checked;
-            if (!isSMTP) 
-            { 
-                SendMailTo(); 
-            }
-            else
-            {
-                SendSMTP();
-            }
+            SendSMTP();
         }
 
         #endregion
 
         #region Private Methods
 
-        public void SendMailTo()
-        {
-            string sender = txtSender.Text;
-            string recipients = txtRecipients.Text;
-            string body = txtBody.Text;
-            string user = (chkEnableCredential.Checked) ? txtUserName.Text : null;
-            string pwd = (chkEnableCredential.Checked) ? txtPassword.Text : null;
-
-            EMailSender.MailTo.Send(sender, recipients, body, user, pwd);
-        }
-
         public void SendSMTP()
         {
-            string sender = txtSender.Text;
+            string hostName = txtServerName.Text;
+
+            string sender = txtSender.Text.Trim();
             string recipients = txtRecipients.Text;
             string body = txtBody.Text;
             string user = (chkEnableCredential.Checked) ? txtUserName.Text : null;
             string pwd = (chkEnableCredential.Checked) ? txtPassword.Text : null;
 
-            EMailSender.SMTP.Send(sender, recipients, body, user, pwd);
+            SMTPMailSender.Send(sender, recipients, body, user, pwd);
         }
 
         #endregion
@@ -85,19 +91,135 @@ namespace SendMail
 
 namespace SendMail
 {
-    using System.Diagnostics;
     using System.Net;
     using System.Net.Mail;
-    using static SendMail.EMailSender;
 
-    public class EMailSender
+    #region Configs
+
+    #region SendMailConfig
+
+    /// <summary>
+    /// The SMTPServerConfig class.
+    /// </summary>
+    public class SMTPServerConfig
     {
-        public class MailTo
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public SMTPServerConfig() : base() 
+        { 
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets SMTP Host Name or IP.
+        /// </summary>
+        public string HostName { get; set; }
+        /// <summary>
+        /// Gets or sets SMTP Port No.
+        /// </summary>
+        public int PortNo { get; set; }
+
+        /// <summary>
+        /// Gets or set enable credential;
+        /// </summary>
+        public bool EnableCredential { get; set; }
+        /// <summary>
+        /// Gets or sets SMTP user name (i.e. email address).
+        /// </summary>
+        public string UserName { get; set; }
+        /// <summary>
+        /// Gets or set SMTP password.
+        /// </summary>
+        public string Password { get; set; }
+        /// <summary>
+        /// Gets or sets Use SSL.
+        /// </summary>
+        public bool UseSSL { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
+    #region MailAddressConfig
+
+    /// <summary>
+    /// The MailAddressConfig class.
+    /// </summary>
+    public class MailAddressConfig
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public MailAddressConfig() : base()
         {
-            public static void Send(string sender, string recipients, string body,
-                string user = null, string password = null)
+            Recipients = new List<string>();
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets mail sender;
+        /// </summary>
+        public string Sender { get; set; }
+        /// <summary>
+        /// Gets or sets list of recipient.
+        /// </summary>
+        public List<string> Recipients { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
+    #region SendMailConfig
+
+    /// <summary>
+    /// The SendMailConfig class.
+    /// </summary>
+    public class SendMailConfig
+    {
+        #region Constructor
+
+        public SendMailConfig() : base() 
+        {
+            Server = new SMTPServerConfig();
+            Address = new MailAddressConfig();
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        public SMTPServerConfig Server { get; set; }
+        public MailAddressConfig Address { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
+    #endregion
+
+    public class SMTPMailSender
+    {
+        public static void Send(string sender, string recipients, string body,
+            string user = null, string password = null)
+        {
+            bool hasCredential = (!string.IsNullOrWhiteSpace(user) && !string.IsNullOrWhiteSpace(password));
+            string[] targets = recipients.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            try
             {
-                string[] targets = recipients.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                 MailMessage message = new MailMessage();
                 message.From = new MailAddress(sender);
                 foreach (string target in targets)
@@ -107,91 +229,32 @@ namespace SendMail
                 message.Subject = "Test";
                 message.IsBodyHtml = true; // to make message body as html
                 message.Body = body;
-                string url = message.ToUrl();
-                try
-                {
-                    Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
-            }
-        }
 
-        public class SMTP
-        {
-            public static void Send(string sender, string recipients, string body, 
-                string user = null, string password = null)
+                SmtpClient smtp = new SmtpClient();
+                //smtp.Host = "smtp.gmail.com"; //for gmail host
+                //smtp.Host = "smtp-mail.outlook.com";  //for outlook host
+                smtp.Host = "smtp.yahoo.com"; //for yahoo host
+                                              //smtp.Port = 587;
+                smtp.Port = 25;
+                smtp.EnableSsl = false;
+
+                if (hasCredential)
+                {
+                    smtp.UseDefaultCredentials = true;
+                    smtp.Credentials = new NetworkCredential(user, password);
+                }
+                else
+                {
+                    smtp.UseDefaultCredentials = false;
+                }
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
+            }
+            catch (Exception ex)
             {
-                bool hasCredential = (!string.IsNullOrWhiteSpace(user) && !string.IsNullOrWhiteSpace(password));
-                string[] targets = recipients.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                try
-                {
-                    MailMessage message = new MailMessage();
-                    message.From = new MailAddress(sender);
-                    foreach (string target in targets)
-                    {
-                        message.To.Add(new MailAddress(target));
-                    }
-                    message.Subject = "Test";
-                    message.IsBodyHtml = true; // to make message body as html
-                    message.Body = body;
-
-                    SmtpClient smtp = new SmtpClient();
-                    //smtp.Host = "smtp.gmail.com"; //for gmail host
-                    //smtp.Host = "smtp-mail.outlook.com";  //for outlook host
-                    smtp.Host = "smtp.yahoo.com"; //for yahoo host
-                    //smtp.Port = 587;
-                    smtp.Port = 25;
-                    smtp.EnableSsl = false;
-
-                    if (hasCredential)
-                    {
-                        smtp.UseDefaultCredentials = true;
-                        smtp.Credentials = new NetworkCredential(user, password);
-                    }
-                    else
-                    {
-                        smtp.UseDefaultCredentials = false;
-                    }
-                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    smtp.Send(message);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
+                Console.WriteLine(ex.ToString());
             }
         }
-    }
-
-    public static class Mailto
-    {
-        public static string ToUrl(this MailMessage message) =>
-            "mailto:?" + string.Join("&", Parameters(message));
-
-        static IEnumerable<string> Parameters(MailMessage message)
-        {
-            if (message.To.Any())
-                yield return "to=" + Recipients(message.To);
-
-            if (message.CC.Any())
-                yield return "cc=" + Recipients(message.CC);
-
-            if (message.Bcc.Any())
-                yield return "bcc=" + Recipients(message.Bcc);
-
-            if (!string.IsNullOrWhiteSpace(message.Subject))
-                yield return "subject=" + Uri.EscapeDataString(message.Subject);
-
-            if (!string.IsNullOrWhiteSpace(message.Body))
-                yield return "body=" + Uri.EscapeDataString(message.Body);
-        }
-
-        static string Recipients(MailAddressCollection addresses) =>
-            string.Join(",", from r in addresses
-                             select Uri.EscapeDataString(r.Address));
     }
 }
 
