@@ -42,7 +42,7 @@ namespace SendMail
 
         private void cmdYahoo_Click(object sender, EventArgs e)
         {
-            txtServerName.Text = "smtp.yahoo.com";
+            txtServerName.Text = "smtp.mail.yahoo.com";
             txtPortNo.Text = "587";
         }
 
@@ -54,13 +54,14 @@ namespace SendMail
 
         private void cmdOutlook_Click(object sender, EventArgs e)
         {
-            txtServerName.Text = "smtp-mail.gmail.com";
+            txtServerName.Text = "smtp-mail.outlook.com";
             txtPortNo.Text = "587";
         }
 
         private void cmdToray_Click(object sender, EventArgs e)
         {
-
+            txtServerName.Text = "10.251.208.31";
+            txtPortNo.Text = "25";
         }
 
         private void cmdSend_Click(object sender, EventArgs e)
@@ -74,15 +75,40 @@ namespace SendMail
 
         public void SendSMTP()
         {
-            string hostName = txtServerName.Text;
+            SendMailConfig cfg = new SendMailConfig();
+            // SMTP Server
+            try
+            {
+                cfg.Server.HostName = txtServerName.Text.Trim();
+                cfg.Server.PortNo = int.Parse(txtPortNo.Text.Trim());
+                cfg.Server.EnableCredential = chkEnableCredential.Checked;
+                cfg.Server.UserName = txtUserName.Text.Trim();
+                cfg.Server.Password = txtPassword.Text.Trim();
+                cfg.Server.UseSSL = chkSSL.Checked;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
-            string sender = txtSender.Text.Trim();
-            string recipients = txtRecipients.Text;
+            // Mail Adddress
+            try
+            {
+                cfg.Address.Sender = txtSender.Text.Trim();
+                string[] targets = txtRecipients.Text.Split(new char[] { ',' },
+                    StringSplitOptions.RemoveEmptyEntries);
+                cfg.Address.Recipients.AddRange(targets);
+                string recipients = txtRecipients.Text;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            // Mail Message
+            string title = txtTitle.Text;
             string body = txtBody.Text;
-            string user = (chkEnableCredential.Checked) ? txtUserName.Text : null;
-            string pwd = (chkEnableCredential.Checked) ? txtPassword.Text : null;
-
-            SMTPMailSender.Send(sender, recipients, body, user, pwd);
+            SMTPMailSender.Send(cfg, title, body);
         }
 
         #endregion
@@ -213,39 +239,46 @@ namespace SendMail
 
     public class SMTPMailSender
     {
-        public static void Send(string sender, string recipients, string body,
-            string user = null, string password = null)
+        public static void Send(SendMailConfig cfg, string title, string body)
         {
-            bool hasCredential = (!string.IsNullOrWhiteSpace(user) && !string.IsNullOrWhiteSpace(password));
-            string[] targets = recipients.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            if (null == cfg)
+                return;
+
+            // Set protocol.
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | 
+                SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+
             try
             {
                 MailMessage message = new MailMessage();
-                message.From = new MailAddress(sender);
-                foreach (string target in targets)
+                message.From = new MailAddress(cfg.Address.Sender);
+                foreach (string target in cfg.Address.Recipients)
                 {
                     message.To.Add(new MailAddress(target));
                 }
-                message.Subject = "Test";
+
                 message.IsBodyHtml = true; // to make message body as html
+
+                message.SubjectEncoding = Encoding.UTF8;
+                message.Subject = title;
+
+                message.BodyEncoding = Encoding.UTF8;
                 message.Body = body;
 
                 SmtpClient smtp = new SmtpClient();
-                //smtp.Host = "smtp.gmail.com"; //for gmail host
-                //smtp.Host = "smtp-mail.outlook.com";  //for outlook host
-                smtp.Host = "smtp.yahoo.com"; //for yahoo host
-                                              //smtp.Port = 587;
-                smtp.Port = 25;
-                smtp.EnableSsl = false;
+                smtp.Host = cfg.Server.HostName;
 
-                if (hasCredential)
+                smtp.Port = cfg.Server.PortNo;
+                smtp.EnableSsl = cfg.Server.UseSSL;
+
+                if (cfg.Server.EnableCredential)
                 {
-                    smtp.UseDefaultCredentials = true;
-                    smtp.Credentials = new NetworkCredential(user, password);
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new NetworkCredential(cfg.Server.UserName, cfg.Server.Password);
                 }
                 else
                 {
-                    smtp.UseDefaultCredentials = false;
+                    smtp.UseDefaultCredentials = true;
                 }
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);

@@ -109,7 +109,7 @@
             this.txtBody.Name = "txtBody";
             this.txtBody.Size = new System.Drawing.Size(771, 163);
             this.txtBody.TabIndex = 9;
-            this.txtBody.Text = "Hello World";
+            this.txtBody.Text = "Hello World <p style=\"color:blue\">This is demo content.</p>";
             // 
             // cmdSend
             // 
