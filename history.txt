@@ -31,8 +31,11 @@ M3 Cord Production System #31
 M3 Cord Production System #30
 - 
 
+[commited]
 M3 Cord Production System #29
-- 
+- M3.Cord.Controls project.
+  - Update Generic.xaml
+    - Add Styles in Resource Dictionary.
 
 [commited]
 M3 Cord Production System #28
