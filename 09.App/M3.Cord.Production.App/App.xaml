@@ -5,15 +5,15 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/CommonStyle.xaml" />
-                <!--
-                <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/XceedToolKitStyle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/GroupMenuStyle.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/ImageButtonStyle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/TextBlockStyle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/InlineButtonStyle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/ListBoxStyle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/ListViewStyle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/TreeViewStyle.xaml" />
+                <!--
+                <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/XceedToolKitStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/ImageButtonStyle.xaml" />
                 -->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
