@@ -1,0 +1,214 @@
+
+  CREATE TABLE "AIRBAG2014"."G3_YARN" 
+   (	"ENTRYDATE" DATE, 
+	"ITM_YARN" VARCHAR2(30 BYTE), 
+	"PALLETNO" VARCHAR2(20 BYTE), 
+	"YARNTYPE" VARCHAR2(10 BYTE), 
+	"WEIGHTQTY" NUMBER(10,2), 
+	"CONECH" NUMBER(10,2), 
+	"VERIFY" VARCHAR2(2 BYTE), 
+	"REMAINQTY" NUMBER(10,2), 
+	"RECEIVEBY" VARCHAR2(10 BYTE), 
+	"RECEIVEDATE" TIMESTAMP (6), 
+	"FINISHFLAG" CHAR(1 BYTE), 
+	"UPDATEDATE" TIMESTAMP (6), 
+	"PALLETTYPE" VARCHAR2(10 BYTE), 
+	"ITM400" VARCHAR2(10 BYTE), 
+	"UM" VARCHAR2(10 BYTE), 
+	"PACKAING" CHAR(1 BYTE), 
+	"CLEAN" CHAR(1 BYTE), 
+	"TEARING" CHAR(1 BYTE), 
+	"FALLDOWN" CHAR(1 BYTE), 
+	"CERTIFICATION" CHAR(1 BYTE), 
+	"INVOICE" CHAR(1 BYTE), 
+	"IDENTIFYAREA" CHAR(1 BYTE), 
+	"AMOUNTPALLET" CHAR(1 BYTE), 
+	"OTHER" VARCHAR2(500 BYTE), 
+	"ACTION" VARCHAR2(500 BYTE), 
+	"MOVEMENTDATE" TIMESTAMP (6), 
+	"LOTNO" VARCHAR2(20 BYTE), 
+	"TRACENO" VARCHAR2(20 BYTE), 
+	"KGPERCH" NUMBER(5,2), 
+	"DELFAG" VARCHAR2(1 BYTE)
+   ) ;
+
+
+
+   CREATE TABLE "AIRBAG2014"."G3_ISSUEYARN" 
+   (	"ISSUEDATE" TIMESTAMP (6), 
+	"PALLETNO" VARCHAR2(20 BYTE), 
+	"TRACENO" VARCHAR2(20 BYTE), 
+	"WEIGHT" NUMBER(10,2), 
+	"CH" NUMBER(3,0), 
+	"ISSUEBY" VARCHAR2(10 BYTE), 
+	"ISSUETO" VARCHAR2(15 BYTE), 
+	"REQUESTNO" VARCHAR2(10 BYTE), 
+	"PALLETTYPE" VARCHAR2(2 BYTE), 
+	"DELETEFLAG" CHAR(1 BYTE), 
+	"EDITDATE" DATE, 
+	"EDITBY" VARCHAR2(10 BYTE), 
+	"REMARK" VARCHAR2(50 BYTE)
+   );
+
+   CREATE TABLE "AIRBAG2014"."ITMCODEAS400" 
+   (	"ITMCODE400" VARCHAR2(15 BYTE), 
+	"ITM_YARN" VARCHAR2(30 BYTE), 
+	"TYPE" VARCHAR2(5 BYTE), 
+	"ITMOLD" VARCHAR2(15 BYTE), 
+	"ITMCODED635" VARCHAR2(20 BYTE), 
+	"LOTGR" VARCHAR2(3 BYTE)
+   );
+
+
+   create or replace PROCEDURE            g3_getdataAs400
+( DTTRA  date,
+  DTINP date,
+  CDCON  varchar2,
+  BLELE number,
+  CDUM0 varchar2,
+  CDKE1 varchar2,
+  CDLOT varchar2,
+  CDQUA char,
+  TECU1 number,
+  TECU2 number,
+  TECU3 number,
+  TECU4 number,
+  TECU5 number,
+  TECU6 varchar2,
+  r_result out varchar2
+ 
+ )AS
+v_itmyarn varchar2(30) := null;
+v_type varchar2(10) := null;
+v_cnt number(2,0) :=0;
+
+begin
+
+select ITM_YARN , TYPE 
+ into v_itmyarn, v_type
+from ITMCODEAS400
+where ITMCODE400 = CDKE1;
+
+select count(*) into v_cnt
+from AIRBAG2014.G3_YARN
+where PALLETNO = CDCON; 
+
+if v_cnt = 0 then 
+begin
+INSERT INTO AIRBAG2014.G3_YARN (
+   ENTRYDATE, ITM_YARN, PALLETNO, YARNTYPE, WEIGHTQTY, CONECH, 
+   ITM400, UM, MOVEMENTDATE, LOTNO, TRACENO, kgperch) 
+VALUES ( DTINP, v_itmyarn, CDCON, v_type, BLELE, TECU3,
+    CDKE1, CDUM0, DTTRA, CDLOT, TECU6,BLELE/TECU3);
+
+commit;
+end;
+else
+begin
+update AIRBAG2014.G3_YARN
+set  ENTRYDATE = COALESCE( DTINP ,ENTRYDATE),
+     ITM_YARN = COALESCE( v_itmyarn ,ITM_YARN),
+     YARNTYPE = COALESCE( v_type ,YARNTYPE),
+     WEIGHTQTY = COALESCE( BLELE ,WEIGHTQTY),
+     CONECH = COALESCE( TECU3 ,CONECH),
+     ITM400 = COALESCE( CDKE1 ,ITM400),
+     UM = COALESCE( CDUM0 ,UM),
+     MOVEMENTDATE = COALESCE( DTTRA ,MOVEMENTDATE),
+     LOTNO = COALESCE( CDLOT ,LOTNO),
+     TRACENO = COALESCE( TECU6 ,TRACENO)
+where PALLETNO = CDCON; 
+
+commit;
+
+
+
+end;
+end if; 
+r_result := null;    
+    
+END g3_getdataAs400;
+
+create or replace PROCEDURE            G3_searchbyPalletno
+( p_palletno  varchar2,
+    p_return_cur IN OUT SYS_REFCURSOR
+  
+) AS
+
+
+BEGIN
+OPEN p_return_cur FOR
+   select * 
+   from G3_YARN
+   where TRACENO = COALESCE( p_palletno , TRACENO)
+   and finishflag is null;
+ 
+END G3_searchbyPalletno;
+
+create or replace PROCEDURE            G3_receiveyarn
+( p_traceno varchar2,
+  p_lotno varchar2,
+  p_verify varchar2,
+  p_remainqty number, 
+  p_flag char,
+  p_operatorid varchar2,
+  p_receivedate date,
+  p_updatedate date,
+  p_type varchar2,
+  p_packaging char,
+  p_clean char,
+  p_tearing char,
+  p_falldown char,
+  p_certification char,
+  p_invoice char,
+  p_identifyarea char,
+  p_amountpallet char,
+  p_other varchar2,
+  p_action varchar2
+ 
+) AS
+
+BEGIN
+
+
+UPDATE AIRBAG2014.G3_YARN
+SET    VERIFY          = COALESCE( p_verify , VERIFY),
+       REMAINQTY       = COALESCE( p_remainqty , REMAINQTY),
+       RECEIVEBY       = COALESCE( p_operatorid , RECEIVEBY),
+       RECEIVEDATE     = COALESCE( p_receivedate , RECEIVEDATE),
+       FINISHFLAG      = COALESCE( p_flag , FINISHFLAG),
+       UPDATEDATE      = COALESCE( p_updatedate , UPDATEDATE),
+       PALLETTYPE      = COALESCE( p_type , PALLETTYPE),
+       PACKAING        = COALESCE( p_packaging , PACKAING),
+       CLEAN        = COALESCE( p_clean , CLEAN),
+       TEARING        = COALESCE( p_tearing , TEARING),
+       FALLDOWN        = COALESCE( p_falldown , FALLDOWN),
+       CERTIFICATION        = COALESCE( p_certification , CERTIFICATION),
+       INVOICE        = COALESCE( p_invoice , INVOICE),
+       IDENTIFYAREA        = COALESCE( p_identifyarea , IDENTIFYAREA),
+       AMOUNTPALLET        = COALESCE( p_amountpallet , AMOUNTPALLET),
+       OTHER        = COALESCE( p_other , OTHER),
+       ACTION        = COALESCE( p_action , ACTION)
+
+WHERE  TRACENO   = p_traceno
+AND    LOTNO = p_lotno;
+
+commit;
+ 
+END G3_receiveyarn;
+
+
+create or replace PROCEDURE            G3_golabel
+( p_palletno  varchar2,
+    p_return_cur IN OUT SYS_REFCURSOR
+  
+) AS
+
+
+BEGIN
+OPEN p_return_cur FOR
+   select * 
+   from G3_YARN
+   where PALLETNO = COALESCE( p_palletno , PALLETNO);
+ 
+END G3_golabel;
+
