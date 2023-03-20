@@ -10,8 +10,11 @@ M3 Cord Production System #28
 M3 Cord Production System #27
 - 
 
+[commited]
 M3 Cord Production System #26
-- 
+- M3.Cord.Controls project.
+  - Add AttachProperties class.
+  - Add StringToNumber Convertor class.
 
 [commited]
 M3 Cord Production System #25
