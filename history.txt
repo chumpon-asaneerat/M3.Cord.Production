@@ -34,8 +34,15 @@ M3 Cord Production System #30
 M3 Cord Production System #29
 - 
 
+[commited]
 M3 Cord Production System #28
-- 
+- M3.Cord.Controls project.
+  - Add GroupMenuStyle.xaml
+  - Add InlineButton.xaml
+  - Add ListBoxStyle.xaml
+  - Add ListViewStyle.xaml
+  - Add TextBoxStyle.xaml
+  - Add TreeViewStyle.xaml
 
 [commited]
 M3 Cord Production System #27
