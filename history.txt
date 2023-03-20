@@ -22,8 +22,10 @@ M3 Cord Production System #34
 M3 Cord Production System #33
 - 
 
+[commited]
 M3 Cord Production System #32
-- 
+- M3.Cord.Controls project.
+  - Add IsLastItemConverter class -> for ItemsControl.
 
 [commited]
 M3 Cord Production System #31

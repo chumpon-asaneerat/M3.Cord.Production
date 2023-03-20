@@ -50,8 +50,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Utils\AttachProperties.cs" />
-    <Compile Include="Controls\Utils\StringToNumberConverter.cs" />
+    <Compile Include="Utils\IsLastItemConverter.cs" />
+    <Compile Include="Utils\KeyboardOptionsAttachProperties.cs" />
+    <Compile Include="Utils\StringToNumberConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -122,6 +123,8 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
