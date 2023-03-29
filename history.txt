@@ -25,8 +25,10 @@ M3 Cord Production System #53
 M3 Cord Production System #52
 - 
 
+[commited]
 M3 Cord Production System #51
-- 
+- M3.Cord.Controls project.
+  Implements Common Style #13.
 
 [commited]
 M3 Cord Production System #50
