@@ -22,8 +22,10 @@ M3 Cord Production System #44
 M3 Cord Production System #43
 - 
 
+[commited]
 M3 Cord Production System #42
-- 
+- M3 Apps project.
+  Update App.xaml
 
 [commited]
 M3 Cord Production System #41
