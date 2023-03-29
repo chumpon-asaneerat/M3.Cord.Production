@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <!--  Force Merge related resource dictionary  -->
-        <ResourceDictionary Source="pack://application:,,,/PPRP.Controls;component/Themes/CommonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/CommonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--  COMMON CONTROLS STYLES: UserControl  -->

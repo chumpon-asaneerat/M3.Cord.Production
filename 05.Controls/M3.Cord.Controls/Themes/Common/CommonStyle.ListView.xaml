@@ -6,8 +6,8 @@
                     mc:Ignorable="PresentationOptions">
     <ResourceDictionary.MergedDictionaries>
         <!--  Force Merge related resource dictionary  -->
-        <ResourceDictionary Source="pack://application:,,,/PPRP.Controls;component/Themes/CommonStyle.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/PPRP.Controls;component/Themes/Common/CommonStyle.CheckedBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/CommonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.CheckedBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--  CONST LISTVIEW COLUMN WIDTH  -->

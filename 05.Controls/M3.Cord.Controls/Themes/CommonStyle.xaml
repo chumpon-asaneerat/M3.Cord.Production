@@ -5,8 +5,16 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     mc:Ignorable="PresentationOptions">
 
+    <!--  COMMON MARGINS  -->
     <Thickness x:Key="CommonMargin">5</Thickness>
     <GridLength x:Key="PageMargin">5</GridLength>
+
+    <!--  COMMON FONT FAMILY (NOTE actual font name required to right click on font to preview from explorer)  -->
+    <FontFamily x:Key="THSarabun">pack://application:,,,/M3.Cord.Controls;Component/Fonts/#TH Sarabun</FontFamily>
+    <FontFamily x:Key="THSarabunNew">pack://application:,,,/M3.Cord.Controls;Component/Fonts/#TH Sarabun New</FontFamily>
+    <FontFamily x:Key="Puanpian">pack://application:,,,/M3.Cord.Controls;Component/Fonts/#iamsudyod2006-2puanpian</FontFamily>
+    <!--  FONTAWESOME FONT FAMILY  -->
+    <FontFamily x:Key="FontAwesome">pack://application:,,,/M3.Cord.Controls;Component/Fonts/FontAwesome.otf#Font Awesome 6 Free Solid</FontFamily>
 
     <!--  CONST TEXTBLOCK FONT SIZE  -->
     <sys:Double x:Key="TextBlockFontSize18" PresentationOptions:Freeze="True">18</sys:Double>
