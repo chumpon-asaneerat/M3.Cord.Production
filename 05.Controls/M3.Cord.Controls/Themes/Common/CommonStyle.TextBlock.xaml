@@ -13,16 +13,24 @@
     <sys:Double x:Key="TextBlockFontSize" PresentationOptions:Freeze="True">18</sys:Double>
     <sys:Double x:Key="TextBlockFontSize2" PresentationOptions:Freeze="True">20</sys:Double>
 
+    <!--  TEXT COLORS  -->
+    <SolidColorBrush x:Key="LabelTextColor"
+                     PresentationOptions:Freeze="True"
+                     Color="WhiteSmoke" />
+    <SolidColorBrush x:Key="ErrorTextColor"
+                     PresentationOptions:Freeze="True"
+                     Color="Red" />
+
     <!--  LABEL TEXTBLOCK STYLE  -->
     <Style x:Key="LabelText" TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Foreground" Value="{DynamicResource LabelTextColor}" />
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize}" />
     </Style>
     <!--  ERROR MESSAGE STYLE  -->
     <Style x:Key="ErrorText" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="Red" />
+        <Setter Property="Foreground" Value="{DynamicResource ErrorTextColor}" />
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize2}" />
         <Setter Property="FontWeight" Value="ExtraBold" />
