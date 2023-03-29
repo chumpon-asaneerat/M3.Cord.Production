@@ -59,6 +59,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spec", "Spec", "{58E12BCF-8
 	ProjectSection(SolutionItems) = preProject
 		Documents\Cord\Spec\Cord Logic(1).docx = Documents\Cord\Spec\Cord Logic(1).docx
 		Documents\Cord\Spec\Cord N test each physical properties.pdf = Documents\Cord\Spec\Cord N test each physical properties.pdf
+		Documents\Cord\Spec\Cord Step.txt = Documents\Cord\Spec\Cord Step.txt
 		Documents\Cord\Spec\Cord Test report_4 Customer sensor.pdf = Documents\Cord\Spec\Cord Test report_4 Customer sensor.pdf
 		Documents\Cord\Spec\Oracle Script G3.txt = Documents\Cord\Spec\Oracle Script G3.txt
 		Documents\Cord\Spec\Traceability_CordProduction_Detail_Phase1_V1.xlsx = Documents\Cord\Spec\Traceability_CordProduction_Detail_Phase1_V1.xlsx

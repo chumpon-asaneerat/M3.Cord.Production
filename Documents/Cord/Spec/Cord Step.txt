@@ -1,0 +1,7 @@
+- Item Code
+- Yarn Type
+- Customer -> Code, Name
+- Quantity (Kg)
+  - Pallet No.
+  - Lot No.
+  - Yarn Sheet (Yarn Ch)
