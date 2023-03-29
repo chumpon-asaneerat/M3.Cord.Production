@@ -6,7 +6,6 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/CommonStyle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/GroupMenuStyle.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/InlineButtonStyle.xaml" />
 
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/TreeViewStyle.xaml" />
 
@@ -28,7 +27,7 @@
 
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.ListBox.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.ListView.xaml" />
-
+                <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.TreeView.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.Expander.xaml" />
                 <!--
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/XceedToolKitStyle.xaml" />
