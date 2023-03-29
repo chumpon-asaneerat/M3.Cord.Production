@@ -30,4 +30,50 @@
     <!--  DEFAULT FONT FAMILY/FONT SIZE  -->
     <FontFamily x:Key="DefaultFontFamily">pack://application:,,,/PPRP.Controls;Component/Fonts/#TH Sarabun</FontFamily>
     <sys:Double x:Key="DefaultFontSize" PresentationOptions:Freeze="True">18</sys:Double>
+
+    <!--  CUSTOM COLORS  -->
+    <Color x:Key="BlueLightColor" PresentationOptions:Freeze="True">#9DC3E6</Color>
+    <Color x:Key="BlueLightColor2" PresentationOptions:Freeze="True">#79ADDD</Color>
+    <Color x:Key="BlueLightColor3" PresentationOptions:Freeze="True">#7DB0DF</Color>
+    <Color x:Key="BlueMediumColor" PresentationOptions:Freeze="True">#599AD5</Color>
+    <Color x:Key="BlueHeavyColor" PresentationOptions:Freeze="True">#2E75B6</Color>
+    <Color x:Key="BlueHeavyColor2" PresentationOptions:Freeze="True">#1F4E79</Color>
+
+    <Color x:Key="BlackColor" PresentationOptions:Freeze="True">#000000</Color>
+    <Color x:Key="WhiteColor" PresentationOptions:Freeze="True">#EFEFEF</Color>
+    <Color x:Key="GrayColor" PresentationOptions:Freeze="True">#7F7F7F</Color>
+    <Color x:Key="TransparentColor" PresentationOptions:Freeze="True">Transparent</Color>
+
+    <!--  CUSTOM BRUSHS  -->
+    <SolidColorBrush x:Key="BlueLightBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlueLightColor}" />
+    <SolidColorBrush x:Key="BlueLightBrush2"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlueLightColor2}" />
+    <SolidColorBrush x:Key="BlueLightBrush3"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlueLightColor3}" />
+    <SolidColorBrush x:Key="BlueMediumBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlueMediumColor}" />
+    <SolidColorBrush x:Key="BlueHeavyBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlueHeavyColor}" />
+    <SolidColorBrush x:Key="BlueHeavyBrush2"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlueHeavyColor2}" />
+
+    <SolidColorBrush x:Key="BlackBlush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlackColor}" />
+    <SolidColorBrush x:Key="WhiteBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource WhiteColor}" />
+    <SolidColorBrush x:Key="GrayBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource GrayColor}" />
+    <SolidColorBrush x:Key="TransparentBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource TransparentColor}" />
 </ResourceDictionary>
