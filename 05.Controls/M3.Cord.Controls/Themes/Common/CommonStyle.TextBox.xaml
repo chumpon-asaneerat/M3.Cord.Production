@@ -9,6 +9,20 @@
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/CommonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <!--  TEXT BOX COLORS  -->
+    <SolidColorBrush x:Key="TextBoxMouseOverBorderBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="#7F2222FF" />
+    <SolidColorBrush x:Key="TextBoxFocusedBorderBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="CornflowerBlue" />
+    <SolidColorBrush x:Key="TextBoxDisableForeground"
+                     PresentationOptions:Freeze="True"
+                     Color="Black" />
+    <SolidColorBrush x:Key="TextBoxDisableBackground"
+                     PresentationOptions:Freeze="True"
+                     Color="#7FFFFFFF" />
+
     <!--  TEXT BOX STYLE  -->
     <Style x:Key="CommonTextBox" TargetType="TextBox">
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />

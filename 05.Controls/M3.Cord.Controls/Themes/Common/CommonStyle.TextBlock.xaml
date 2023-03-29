@@ -9,19 +9,22 @@
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/CommonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <!--  CONST TEXTBLOCK FONT SIZE  -->
+    <sys:Double x:Key="TextBlockFontSize" PresentationOptions:Freeze="True">18</sys:Double>
+    <sys:Double x:Key="TextBlockFontSize2" PresentationOptions:Freeze="True">20</sys:Double>
+
     <!--  LABEL TEXTBLOCK STYLE  -->
     <Style x:Key="LabelText" TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Foreground" Value="Black" />
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize18}" />
+        <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize}" />
     </Style>
-
     <!--  ERROR MESSAGE STYLE  -->
     <Style x:Key="ErrorText" TargetType="TextBlock">
         <Setter Property="Foreground" Value="Red" />
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize20}" />
+        <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize2}" />
         <Setter Property="FontWeight" Value="ExtraBold" />
         <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="TextWrapping" Value="WrapWithOverflow" />

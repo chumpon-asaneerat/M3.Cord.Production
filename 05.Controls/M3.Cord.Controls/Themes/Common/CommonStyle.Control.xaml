@@ -14,18 +14,4 @@
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
     </Style>
-
-    <!--  TEXT BOX COLORS  -->
-    <SolidColorBrush x:Key="TextBoxMouseOverBorderBrush"
-                     PresentationOptions:Freeze="True"
-                     Color="#7F2222FF" />
-    <SolidColorBrush x:Key="TextBoxFocusedBorderBrush"
-                     PresentationOptions:Freeze="True"
-                     Color="CornflowerBlue" />
-    <SolidColorBrush x:Key="TextBoxDisableForeground"
-                     PresentationOptions:Freeze="True"
-                     Color="Black" />
-    <SolidColorBrush x:Key="TextBoxDisableBackground"
-                     PresentationOptions:Freeze="True"
-                     Color="#7FFFFFFF" />
 </ResourceDictionary>
