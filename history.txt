@@ -16,8 +16,10 @@ M3 Cord Production System #36
 M3 Cord Production System #35
 - 
 
+[commited]
 M3 Cord Production System #34
-- 
+- M3.Cord.Controls project.
+  - Add Fonts.
 
 [commited]
 M3 Cord Production System #33
