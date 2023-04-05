@@ -10,8 +10,10 @@ M3 Cord Production System #58
 M3 Cord Production System #57
 - 
 
+[commited]
 M3 Cord Production System #56
-- 
+- M3.Cord.Models project
+  - Implements Operator class #1.
 
 [commited]
 M3 Cord Production System #55
