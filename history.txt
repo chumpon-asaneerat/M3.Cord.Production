@@ -19,8 +19,10 @@ M3 Cord Production System #65
 M3 Cord Production System #64
 - 
 
+[commited]
 M3 Cord Production System #63
-- 
+- M3.Cord.Models project
+  - Implements G4Yarn class #1.
 
 [commited]
 M3 Cord Production System #62
