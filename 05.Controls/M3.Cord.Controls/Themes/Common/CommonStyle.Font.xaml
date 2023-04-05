@@ -8,7 +8,7 @@
         <!--  Force Merge related resource dictionary  -->
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/CommonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <!--  FONTAWESOME TextBlock Styles  -->
     <Style x:Key="fa-base" TargetType="TextBlock">
         <Setter Property="Margin" Value="3,0" />

@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using NLib.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,16 +39,33 @@ namespace M3.Cord
 
         #region Loaded/Unloaded
 
-        #endregion
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            // Initial Page Content Manager
+            PageContentManager.Instance.ContentChanged += new EventHandler(Instance_ContentChanged);
+            PageContentManager.Instance.Start();
+            // Init Main Menu
+            var page = M3CordApp.Pages.MainMenu;
+            //page.Setup(TAApp.Permissions.CTC);
+            PageContentManager.Instance.Current = page;
         }
 
         private void Window_Unloaded(object sender, RoutedEventArgs e)
         {
-
+            // Release Page Content Manager
+            PageContentManager.Instance.Shutdown();
+            PageContentManager.Instance.ContentChanged -= new EventHandler(Instance_ContentChanged);
         }
+
+        #endregion
+
+        #region Page Content Manager Handlers
+
+        void Instance_ContentChanged(object sender, EventArgs e)
+        {
+            this.container.Content = PageContentManager.Instance.Current;
+        }
+
+        #endregion
     }
 }
