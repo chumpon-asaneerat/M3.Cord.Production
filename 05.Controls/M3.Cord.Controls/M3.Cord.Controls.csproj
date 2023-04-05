@@ -50,6 +50,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\FirstTwistPage.xaml.cs">
+      <DependentUpon>FirstTwistPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\G4Page.xaml.cs">
+      <DependentUpon>G4Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utils\IsLastItemConverter.cs" />
     <Compile Include="Utils\KeyboardOptionsAttachProperties.cs" />
     <Compile Include="Utils\StringToNumberConverter.cs" />
@@ -94,6 +100,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Pages\FirstTwistPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\G4Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\CommonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -177,7 +191,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
-    <Folder Include="Pages\" />
     <Folder Include="Windows\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

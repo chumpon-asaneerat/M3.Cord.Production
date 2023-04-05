@@ -7,8 +7,12 @@ M3 Cord Production System #59
 M3 Cord Production System #58
 - 
 
+[commited]
 M3 Cord Production System #57
-- 
+- M3.Cord.Production.App project
+  - Implements UI #2.
+- M3.Cord.Controls project
+  - Move Pages from M3.Cord.Production.App.
 
 [commited]
 M3 Cord Production System #56
