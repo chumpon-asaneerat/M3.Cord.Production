@@ -50,16 +50,21 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\StatusBar\Elements\AppVersionElement.xaml.cs">
+      <DependentUpon>AppVersionElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
+      <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FirstTwistPage.xaml.cs">
       <DependentUpon>FirstTwistPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\G4Page.xaml.cs">
       <DependentUpon>G4Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Services\SendKeys.cs" />
-    <Compile Include="Utils\IsLastItemConverter.cs" />
-    <Compile Include="Utils\KeyboardOptionsAttachProperties.cs" />
-    <Compile Include="Utils\StringToNumberConverter.cs" />
+    <Compile Include="Utils\Converter\IsLastItemConverter.cs" />
+    <Compile Include="Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
+    <Compile Include="Utils\Converter\StringToNumberConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -101,6 +106,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\StatusBar\Elements\AppVersionElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\FirstTwistPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -191,7 +204,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\" />
+    <Folder Include="Services\" />
     <Folder Include="Windows\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
