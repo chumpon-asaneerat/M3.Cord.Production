@@ -13,8 +13,10 @@ M3 Cord Production System #57
 M3 Cord Production System #56
 - 
 
+[commited]
 M3 Cord Production System #55
-- 
+- M3.Cord.Models project
+  - Add MsSqlDbServer class.
 
 [commited]
 M3 Cord Production System #54
