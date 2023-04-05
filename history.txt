@@ -4,8 +4,10 @@ M3 Cord Production System #60
 M3 Cord Production System #59
 - 
 
+[commited]
 M3 Cord Production System #58
-- 
+- M3.Cord.Controls project
+  - Update Utils folder structure
 
 [commited]
 M3 Cord Production System #57
