@@ -40,22 +40,26 @@ namespace M3.Cord.Pages
 
         private void cmdReceiveRawMaterial_Click(object sender, RoutedEventArgs e)
         {
-
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
         }
 
         private void cmdIssueRawMaterial_Click(object sender, RoutedEventArgs e)
         {
-
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
         }
 
         private void cmdCheckStock_Click(object sender, RoutedEventArgs e)
         {
-
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
         }
 
         private void cmdReceiveReturnMaterial_Click(object sender, RoutedEventArgs e)
         {
-
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
         }
 
         #endregion

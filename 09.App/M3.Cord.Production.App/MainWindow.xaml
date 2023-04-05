@@ -7,6 +7,8 @@
         Title="M3 Cord Production System"
         Height="450"
         Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
         Loaded="Window_Loaded"
         Unloaded="Window_Unloaded">
     <Grid Background="DimGray">

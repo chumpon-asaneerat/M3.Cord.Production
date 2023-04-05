@@ -42,5 +42,26 @@ namespace M3.Cord
 
             #endregion
         }
+
+        /// <summary>
+        /// Windows Static class.
+        /// </summary>
+        public static class Windows
+        {
+            #region SignIn
+
+            /// <summary>Gets SignIn Window.</summary>
+            public static M3.Cord.Windows.SignInWindow SignIn
+            {
+                get
+                {
+                    var ret = new M3.Cord.Windows.SignInWindow();
+                    ret.Owner = Application.Current.MainWindow;
+                    return ret;
+                }
+            }
+
+            #endregion
+        }
     }
 }

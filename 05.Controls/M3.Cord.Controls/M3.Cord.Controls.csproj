@@ -56,10 +56,10 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwistPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\FirstTwistPage.xaml.cs">
       <DependentUpon>FirstTwistPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\G4Page.xaml.cs">
+    <Compile Include="Pages\G4\G4Page.xaml.cs">
       <DependentUpon>G4Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\Converter\IsLastItemConverter.cs" />
@@ -77,6 +77,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Windows\SignIn\SignInWindow.xaml.cs">
+      <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,11 +117,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FirstTwistPage.xaml">
+    <Page Include="Pages\FirstTwist\FirstTwistPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\G4Page.xaml">
+    <Page Include="Pages\G4\G4Page.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -202,10 +205,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Windows\SignIn\SignInWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
-    <Folder Include="Windows\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
