@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using NLib.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,16 +21,16 @@ using System.Windows.Shapes;
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for MainMenuPage.xaml
+    /// Interaction logic for CordMainMenu.xaml
     /// </summary>
-    public partial class MainMenuPage : UserControl
+    public partial class CordMainMenuPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public MainMenuPage()
+        public CordMainMenuPage()
         {
             InitializeComponent();
         }
@@ -40,26 +41,40 @@ namespace M3.Cord.Pages
 
         private void cmdReceiveRawMaterial_Click(object sender, RoutedEventArgs e)
         {
+            // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
+            // G4 - Receive Raw Material
+            var page = M3CordApp.Pages.G4ReceiveRawMaterial;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdIssueRawMaterial_Click(object sender, RoutedEventArgs e)
         {
+            // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
+            // G4 - Issue Raw Material
+            var page = M3CordApp.Pages.G4IssueRawMaterial;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdCheckStock_Click(object sender, RoutedEventArgs e)
         {
+            // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
+            // G4 - Check Stock
         }
 
         private void cmdReceiveReturnMaterial_Click(object sender, RoutedEventArgs e)
         {
+            // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
+            // G4 - Receive Return Material
         }
 
         #endregion

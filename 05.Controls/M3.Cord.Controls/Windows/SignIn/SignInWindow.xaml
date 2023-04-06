@@ -12,6 +12,7 @@
         WindowStartupLocation="CenterOwner"
         Height="300"
         Width="400"
+        Loaded="Window_Loaded"
         mc:Ignorable="d">
     <Grid HorizontalAlignment="Stretch"
           VerticalAlignment="Stretch"
@@ -104,13 +105,13 @@
                             <TextBlock DockPanel.Dock="Top" Height="20" />
                             <!--  SIGNIN BUTTON  -->
                             <Border DockPanel.Dock="Top">
-                                <Button x:Name="txtSignIn"
+                                <Button x:Name="cmdSignIn"
                                         Height="30"
                                         Width="200"
                                         HorizontalAlignment="Center"
                                         Cursor="Hand"
                                         Style="{DynamicResource InlineButton}"
-                                        Click="txtSignIn_Click">
+                                        Click="cmdSignIn_Click">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Style="{StaticResource fa-login}" />
                                         <TextBlock Margin="3,0"

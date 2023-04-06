@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using NLib.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,26 @@ namespace M3.Cord.Pages
         #region Button Handlers
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
+        {
+            GotoMainMenu();
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void GotoMainMenu()
+        {
+            // Init Main Menu
+            var page = M3CordApp.Pages.CordMainMenu;
+            PageContentManager.Instance.Current = page;
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public void Setup()
         {
 
         }

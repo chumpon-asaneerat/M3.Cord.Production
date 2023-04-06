@@ -56,6 +56,9 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Menu\CordMainMenuPage.xaml.cs">
+      <DependentUpon>CordMainMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Samples\FirstTwistPage.xaml.cs">
       <DependentUpon>FirstTwistPage.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,7 @@
     <Compile Include="Pages\Samples\SamplePage.xaml.cs">
       <DependentUpon>SamplePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\M3CordApp.cs" />
     <Compile Include="Utils\Converter\IsLastItemConverter.cs" />
     <Compile Include="Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
     <Compile Include="Utils\Converter\StringToNumberConverter.cs" />
@@ -123,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Menu\CordMainMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -233,7 +241,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\FirstTwist\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

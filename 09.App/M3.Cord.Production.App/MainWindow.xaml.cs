@@ -45,8 +45,7 @@ namespace M3.Cord
             PageContentManager.Instance.ContentChanged += new EventHandler(Instance_ContentChanged);
             PageContentManager.Instance.Start();
             // Init Main Menu
-            var page = M3CordApp.Pages.MainMenu;
-            //page.Setup(TAApp.Permissions.CTC);
+            var page = M3CordApp.Pages.CordMainMenu;
             PageContentManager.Instance.Current = page;
         }
 
