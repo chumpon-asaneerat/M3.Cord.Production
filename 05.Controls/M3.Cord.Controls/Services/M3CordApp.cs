@@ -93,6 +93,32 @@ namespace M3.Cord
             #endregion
 
             #endregion
+
+            #region First Twist
+
+            #region First Twist MC
+
+            private static M3.Cord.Pages.FirstTwistMCPage _FirstTwistMC;
+
+            /// <summary>Gets First Twist MC Page.</summary>
+            public static M3.Cord.Pages.FirstTwistMCPage FirstTwistMC
+            {
+                get
+                {
+                    if (null == _FirstTwistMC)
+                    {
+                        lock (typeof(M3CordApp))
+                        {
+                            _FirstTwistMC = new M3.Cord.Pages.FirstTwistMCPage();
+                        }
+                    }
+                    return _FirstTwistMC;
+                }
+            }
+
+            #endregion
+
+            #endregion
         }
 
         /// <summary>

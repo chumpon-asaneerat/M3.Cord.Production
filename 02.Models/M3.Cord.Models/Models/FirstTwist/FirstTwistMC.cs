@@ -20,6 +20,26 @@ namespace M3.Cord.Models
 {
     public class FirstTwistMC : NInpc
     {
+        #region Public Properties
 
+        public string MCName { get; set; }
+        public int BBCount { get; set; } = 102;
+        public int SheetPerBB { get; set; } = 1;
+
+        #endregion
+
+        #region Static Methods
+
+        public static List<FirstTwistMC> Gets()
+        {
+            List<FirstTwistMC> rets = new List<FirstTwistMC>();
+
+            rets.Add(new FirstTwistMC() { MCName = "S-1", SheetPerBB = 2 });
+            rets.Add(new FirstTwistMC() { MCName = "S-4" });
+
+            return rets;
+        }
+
+        #endregion
     }
 }

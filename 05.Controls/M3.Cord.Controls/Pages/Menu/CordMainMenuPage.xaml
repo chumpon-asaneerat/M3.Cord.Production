@@ -240,14 +240,14 @@
                            Text="1st Twisting" />
 
                 <!--  SETUP MACHINE  -->
-                <Button x:Name="cmdPrepareMachine"
+                <Button x:Name="cmdFirstTwistOperation"
                         Grid.Row="1"
                         Grid.Column="0"
                         Width="{StaticResource ButtonWidth}"
+                        Click="cmdFirstTwistOperation_Click"
                         Style="{StaticResource FirstTwistButtonStyle}">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Prepare" />
-                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Machine" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Operation" />
                     </StackPanel>
                 </Button>
                 <TextBlock Grid.Row="1"

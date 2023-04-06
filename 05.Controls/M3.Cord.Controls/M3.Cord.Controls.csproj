@@ -56,6 +56,9 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
+      <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Menu\CordMainMenuPage.xaml.cs">
       <DependentUpon>CordMainMenuPage.xaml</DependentUpon>
     </Compile>
@@ -127,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FirstTwist\FirstTwistMCPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -239,8 +246,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Pages\FirstTwist\" />
+    <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

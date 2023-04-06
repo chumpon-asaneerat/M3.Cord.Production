@@ -77,6 +77,17 @@ namespace M3.Cord.Pages
             // G4 - Receive Return Material
         }
 
+        private void cmdFirstTwistOperation_Click(object sender, RoutedEventArgs e)
+        {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // First Twist - Prepare MC
+            var page = M3CordApp.Pages.FirstTwistMC;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
+
         #endregion
     }
 }

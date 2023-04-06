@@ -16,8 +16,10 @@ M3 Cord Production System #86
 M3 Cord Production System #85
 - 
 
+[commited]
 M3 Cord Production System #84
-- 
+- M3.Cord.Controls project
+  - Implements UI #22.
 
 [commited]
 M3 Cord Production System #83
