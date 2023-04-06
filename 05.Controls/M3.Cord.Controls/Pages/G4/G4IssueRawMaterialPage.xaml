@@ -187,8 +187,8 @@
                                          Margin="0,5"
                                          Style="{StaticResource CommonTextBox}"
                                          Text=""
-                                         Width="150" 
-                                         PreviewKeyDown="txtRequestNo_PreviewKeyDown"/>
+                                         Width="150"
+                                         PreviewKeyDown="txtRequestNo_PreviewKeyDown" />
                                 <!--  ISSUE DATE  -->
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
@@ -198,8 +198,8 @@
                                 <DatePicker x:Name="dtIssueDate"
                                             FontSize="{StaticResource FontSize14}"
                                             Margin="0,5"
-                                            Width="150" 
-                                            SelectedDateChanged="dtIssueDate_SelectedDateChanged"/>
+                                            Width="150"
+                                            SelectedDateChanged="dtIssueDate_SelectedDateChanged" />
                                 <!--  ISSUE TO  -->
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
@@ -209,8 +209,8 @@
                                 <ComboBox x:Name="cbIssueTo"
                                           Margin="0,5"
                                           Style="{StaticResource CommonComboBox}"
-                                          Width="150" 
-                                          SelectionChanged="cbIssueTo_SelectionChanged"/>
+                                          Width="150"
+                                          SelectionChanged="cbIssueTo_SelectionChanged" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <!--  ITEM YARN  -->
@@ -222,8 +222,8 @@
                                 <ComboBox x:Name="cbItemYarn"
                                           Margin="0,5"
                                           Style="{StaticResource CommonComboBox}"
-                                          Width="200" 
-                                          SelectionChanged="cbItemYarn_SelectionChanged"/>
+                                          Width="200"
+                                          SelectionChanged="cbItemYarn_SelectionChanged" />
                                 <!--  YARN TYPE  -->
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
@@ -233,8 +233,8 @@
                                 <ComboBox x:Name="cbYarnType"
                                           Margin="0,5"
                                           Style="{StaticResource CommonComboBox}"
-                                          Width="150" 
-                                          SelectionChanged="cbYarnType_SelectionChanged"/>
+                                          Width="150"
+                                          SelectionChanged="cbYarnType_SelectionChanged" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <!--  PALLET NO  -->
@@ -243,9 +243,11 @@
                                            Width="100"
                                            TextAlignment="Right"
                                            Text="Pallet No: " />
-                                <TextBox Margin="0,5"
+                                <TextBox x:Name="txtPalletNo" 
+                                         Margin="0,5"                                         
                                          Style="{StaticResource CommonTextBox}"
-                                         Width="150" />
+                                         Width="150" 
+                                         PreviewKeyDown="txtPalletNo_PreviewKeyDown"/>
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
@@ -296,6 +298,7 @@
                                             <DataTemplate>
                                                 <TextBlock Width="150"
                                                            Text="{Binding PalletNo}"
+                                                           Foreground="{Binding TextColor}"
                                                            TextAlignment="Center" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
@@ -306,6 +309,7 @@
                                             <DataTemplate>
                                                 <TextBlock Width="150"
                                                            Text="{Binding TraceNo}"
+                                                           Foreground="{Binding TextColor}"
                                                            TextAlignment="Center" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
@@ -316,6 +320,7 @@
                                             <DataTemplate>
                                                 <TextBlock Width="150"
                                                            Text="{Binding LotNo}"
+                                                           Foreground="{Binding TextColor}"
                                                            TextAlignment="Center" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
@@ -325,7 +330,8 @@
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Width="200"
-                                                           Text="{Binding ItemType}"
+                                                           Text="{Binding ItemYarn}"
+                                                           Foreground="{Binding TextColor}"
                                                            TextAlignment="Center" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
@@ -334,8 +340,9 @@
                                     <GridViewColumn Header="Yarn Type">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Width="200"
+                                                <TextBlock Width="100"
                                                            Text="{Binding YarnType}"
+                                                           Foreground="{Binding TextColor}"
                                                            TextAlignment="Center" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
@@ -344,8 +351,9 @@
                                     <GridViewColumn Header="Weight">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Width="200"
+                                                <TextBlock Width="80"
                                                            Text="{Binding WeightQty}"
+                                                           Foreground="{Binding TextColor}"
                                                            TextAlignment="Right" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
@@ -354,8 +362,9 @@
                                     <GridViewColumn Header="CH">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Width="200"
+                                                <TextBlock Width="80"
                                                            Text="{Binding CH}"
+                                                           Foreground="{Binding TextColor}"
                                                            TextAlignment="Right" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
@@ -364,8 +373,9 @@
                                     <GridViewColumn Header="Pallet Type">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Width="200"
+                                                <TextBlock Width="80"
                                                            Text="{Binding PalletType}"
+                                                           Foreground="{Binding TextColor}"
                                                            TextAlignment="Right" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>

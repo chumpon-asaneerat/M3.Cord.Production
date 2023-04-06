@@ -1,5 +1,7 @@
 ﻿#region Using
 
+using M3.Cord.Models;
+using M3.Cord.Properties;
 using NLib.Services;
 using System;
 using System.Collections.Generic;
@@ -39,6 +41,9 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private List<G4IssueYarn> sources = G4IssueYarn.GetG4IssueYarns();
+        private List<G4IssueYarn> items = null;
+
         #endregion
 
         #region Button Handlers
@@ -58,6 +63,16 @@ namespace M3.Cord.Pages
                 e.Key == System.Windows.Input.Key.Return)
             {
                 RefreshGrid();
+                e.Handled = true;
+            }
+        }
+
+        private void txtPalletNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter ||
+                e.Key == System.Windows.Input.Key.Return)
+            {
+                MarkIssue();
                 e.Handled = true;
             }
         }
@@ -133,9 +148,69 @@ namespace M3.Cord.Pages
             cbIssueTo.SelectedIndex = 0;
         }
 
+        private void MarkIssue()
+        {
+            string palletNo = txtPalletNo.Text;
+            txtPalletNo.Text = string.Empty;
+
+            if (string.IsNullOrEmpty(palletNo))
+                return;
+
+            var issue = sources.First((item) => 
+            {
+                return (item.PalletNo == palletNo);
+            });
+
+            if (null == issue) return;
+
+            string requestId = txtRequestNo.Text;
+            string issueBy = "1"; // current user
+            string issueTo = cbIssueTo.SelectedItem as string;
+            DateTime? dt = dtIssueDate.SelectedDate;
+            issue.MarkIssue(requestId, issueBy, issueTo, dt);
+
+            RefreshGrid();
+        }
+
         private void RefreshGrid()
         {
             grid.ItemsSource = null;
+
+            string itemYarn = cbItemYarn.SelectedItem as string;
+            string yarnType = cbYarnType.SelectedItem as string;
+
+            items = sources.FindAll((item) =>
+            {
+                if (string.IsNullOrEmpty(yarnType) || yarnType == "All")
+                {
+                    return (itemYarn != null && item.ItemYarn == itemYarn);
+                }
+                else
+                {
+                    return ((itemYarn != null && item.ItemYarn == itemYarn) && (item.YarnType == yarnType));
+                }
+                
+            });
+
+            // Calc totals
+            int totalPallet = 0;
+            decimal totalWeight = decimal.Zero;
+            decimal totalCH = decimal.Zero;
+            items.ForEach(item => 
+            {
+                if (item.IsMark)
+                {
+                    ++totalPallet;
+                    totalWeight += (item.WeightQty.HasValue) ? item.WeightQty.Value : decimal.Zero;
+                    totalCH += (item.CH.HasValue) ? item.CH.Value : decimal.Zero;
+                }
+            });
+
+            txtTotalPallet.Text = totalPallet.ToString("n0");
+            txtTotalWeight.Text = totalWeight.ToString("n1");
+            txtTotalCH.Text = totalCH.ToString("n0");
+
+            grid.ItemsSource = items;
         }
 
         #endregion

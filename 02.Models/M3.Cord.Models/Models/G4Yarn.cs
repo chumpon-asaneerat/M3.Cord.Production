@@ -117,6 +117,7 @@ namespace M3.Cord.Models
         public string LotNo { get; set; }
         public string TraceNo { get; set; }
 
+        public string PalletType { get; set; } = "F";
         public string Unit { get; set; } = "KG";
 
         public decimal? WeightQty { get; set; } = 520;

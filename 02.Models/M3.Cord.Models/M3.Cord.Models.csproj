@@ -57,6 +57,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\G4IssueYarn.cs" />
     <Compile Include="Models\G4Yarn.cs" />
     <Compile Include="Models\Operator.cs" />
     <Compile Include="Models\Sample.cs" />
