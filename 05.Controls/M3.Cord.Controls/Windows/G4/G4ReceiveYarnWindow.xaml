@@ -98,7 +98,81 @@
                         <Grid />
                     </DockPanel>
                     <!--  ITEMS  -->
-                    <DockPanel LastChildFill="True" Margin="10,1">
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+                            <StackPanel Orientation="Horizontal">
+                                <!--  PALLET NO  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="150"
+                                           TextAlignment="Right"
+                                           Text="Pallet No: " />
+                                <TextBox Margin="0,5"
+                                         Style="{StaticResource CommonTextBox}"
+                                         Text="{Binding PalletNo}"
+                                         IsReadOnly="True"
+                                         Width="150" />
+                                <!--  LOT NO  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="150"
+                                           TextAlignment="Right"
+                                           Text="Lot No: " />
+                                <TextBox Margin="0,5"
+                                         Style="{StaticResource CommonTextBox}"
+                                         Text="{Binding LotNo}"
+                                         IsReadOnly="True"
+                                         Width="150" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <!--  ITEM YARN  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="150"
+                                           TextAlignment="Right"
+                                           Text="Item Yarn: " />
+                                <TextBox Margin="0,5"
+                                         Style="{StaticResource CommonTextBox}"
+                                         Text="{Binding ItemYarn}"
+                                         IsReadOnly="True"
+                                         Width="150" />
+                                <!--  YARN TYPE  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="150"
+                                           TextAlignment="Right"
+                                           Text="Type: " />
+                                <TextBox Margin="0,5"
+                                         Style="{StaticResource CommonTextBox}"
+                                         Text="{Binding YarnType}"
+                                         IsReadOnly="True"
+                                         Width="150" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <!--  WEIGHT  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="150"
+                                           TextAlignment="Right"
+                                           Text="Weight: " />
+                                <TextBox Margin="0,5"
+                                         Style="{StaticResource CommonTextBox}"
+                                         Text="{Binding WeightQty}"
+                                         IsReadOnly="True"
+                                         Width="150" />
+                                <!--  TRACE NO  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="150"
+                                           TextAlignment="Right"
+                                           Text="Trace No: " />
+                                <TextBox Margin="0,5"
+                                         Style="{StaticResource CommonTextBox}"
+                                         Text="{Binding TraceNo}"
+                                         IsReadOnly="True"
+                                         Width="150" />
+                            </StackPanel>
+                        </StackPanel>
                         <Grid />
                     </DockPanel>
                 </DockPanel>
