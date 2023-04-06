@@ -59,8 +59,17 @@
     <Compile Include="Pages\FirstTwist\FirstTwistPage.xaml.cs">
       <DependentUpon>FirstTwistPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\G4IssueRawMaterialPage.xaml.cs">
+      <DependentUpon>G4IssueRawMaterialPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\G4ReceiveRawMaterialPage.xaml.cs">
+      <DependentUpon>G4ReceiveRawMaterialPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\G4\G4Page.xaml.cs">
       <DependentUpon>G4Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SamplePage.xaml.cs">
+      <DependentUpon>SamplePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\Converter\IsLastItemConverter.cs" />
     <Compile Include="Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
@@ -121,9 +130,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\G4IssueRawMaterialPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\G4ReceiveRawMaterialPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\G4\G4Page.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SamplePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\CommonStyle.xaml">
       <SubType>Designer</SubType>

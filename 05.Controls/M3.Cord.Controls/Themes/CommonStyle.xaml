@@ -76,4 +76,24 @@
     <SolidColorBrush x:Key="TransparentBrush"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource TransparentColor}" />
+
+    <!--  COMMON PAGE COLORS  -->
+    <SolidColorBrush x:Key="PageBG"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource GrayColor}" />
+
+    <!--  COMMON CAPTION COLORS/SIZE  -->
+    <SolidColorBrush x:Key="CaptionBackground"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlueHeavyColor}" />
+    <SolidColorBrush x:Key="CaptionBorderColor"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlueHeavyColor}" />
+    <SolidColorBrush x:Key="CaptionForeground"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource WhiteColor}" />
+
+    <Thickness x:Key="CaptionBorderThickness">1</Thickness>
+    <CornerRadius x:Key="CaptionBorderCornerRadius" PresentationOptions:Freeze="True">3</CornerRadius>
+    <GridLength x:Key="CaptionHeight" PresentationOptions:Freeze="True">40</GridLength>
 </ResourceDictionary>
