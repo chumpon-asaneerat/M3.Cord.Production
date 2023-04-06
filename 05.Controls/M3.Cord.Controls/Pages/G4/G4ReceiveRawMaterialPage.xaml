@@ -172,8 +172,28 @@
                         <Grid />
                     </DockPanel>
                     <!--  ITEMS  -->
-                    <DockPanel LastChildFill="True" Margin="10,1">
-                        <Grid />
+                    <DockPanel LastChildFill="True">
+                        <DockPanel LastChildFill="True" DockPanel.Dock="Top">
+                            <StackPanel Margin="0,5" Orientation="Horizontal" 
+                                        VerticalAlignment="Center" 
+                                        HorizontalAlignment="Left">
+                                <TextBlock Style="{StaticResource LabelText}" 
+                                           Margin="5,0"
+                                           Text="Lot No: " />
+                                <TextBox x:Name="txtTraceNo" 
+                                         Margin="5,0"
+                                         Style="{StaticResource CommonTextBox}" 
+                                         Width="150"
+                                         PreviewKeyDown="txtTraceNo_PreviewKeyDown"/>
+                            </StackPanel>
+                        </DockPanel>
+                        <ListView x:Name="grid"
+                              FontSize="{StaticResource FontSize18}"
+                              ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                              ItemsSource="{Binding}"
+                              Style="{StaticResource SingleSelectListView}">
+                            
+                        </ListView>
                     </DockPanel>
                 </DockPanel>
             </DockPanel>

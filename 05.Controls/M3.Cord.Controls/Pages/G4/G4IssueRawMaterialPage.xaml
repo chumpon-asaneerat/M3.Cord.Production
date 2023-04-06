@@ -172,7 +172,7 @@
                         <Grid />
                     </DockPanel>
                     <!--  ITEMS  -->
-                    <DockPanel LastChildFill="True" Margin="10,1">
+                    <DockPanel LastChildFill="True">
                         <Grid />
                     </DockPanel>
                 </DockPanel>

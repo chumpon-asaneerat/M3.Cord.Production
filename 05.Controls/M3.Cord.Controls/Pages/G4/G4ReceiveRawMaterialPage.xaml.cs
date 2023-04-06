@@ -46,6 +46,25 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region TextBox Handlers
+
+        private void txtTraceNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter ||
+                e.Key == System.Windows.Input.Key.Return)
+            {
+                ReceivedTraceNo();
+                e.Handled = true;
+            }
+            else if (e.Key == System.Windows.Input.Key.Escape)
+            {
+                ClearTraceNo();
+                e.Handled = true;
+            }
+        }
+
+        #endregion
+
         #region Private Methods
 
         private void GotoMainMenu()
@@ -53,6 +72,18 @@ namespace M3.Cord.Pages
             // Init Main Menu
             var page = M3CordApp.Pages.CordMainMenu;
             PageContentManager.Instance.Current = page;
+        }
+
+        private void ReceivedTraceNo()
+        {
+            string traceNo = txtTraceNo.Text;
+
+            txtTraceNo.Text = string.Empty;
+        }
+
+        private void ClearTraceNo()
+        {
+            txtTraceNo.Text = string.Empty;
         }
 
         #endregion

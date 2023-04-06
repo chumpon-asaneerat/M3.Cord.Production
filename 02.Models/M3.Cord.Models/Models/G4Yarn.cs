@@ -99,5 +99,9 @@ namespace M3.Cord.Models
         }
 
         #endregion
+
+        #region Static Methods
+
+        #endregion
     }
 }
