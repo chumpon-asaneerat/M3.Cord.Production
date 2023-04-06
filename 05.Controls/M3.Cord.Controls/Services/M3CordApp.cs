@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Threading;
 
 //using NLib.Services;
-using M3.Models;
+//using M3.Cord.Models;
 //using M3.Services;
 
 #endregion

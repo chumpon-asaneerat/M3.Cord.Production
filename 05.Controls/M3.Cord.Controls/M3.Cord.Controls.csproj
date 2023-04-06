@@ -59,17 +59,11 @@
     <Compile Include="Pages\Menu\CordMainMenuPage.xaml.cs">
       <DependentUpon>CordMainMenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Samples\FirstTwistPage.xaml.cs">
-      <DependentUpon>FirstTwistPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\G4\G4IssueRawMaterialPage.xaml.cs">
       <DependentUpon>G4IssueRawMaterialPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\G4\G4ReceiveRawMaterialPage.xaml.cs">
       <DependentUpon>G4ReceiveRawMaterialPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Samples\G4Page.xaml.cs">
-      <DependentUpon>G4Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Samples\SamplePage.xaml.cs">
       <DependentUpon>SamplePage.xaml</DependentUpon>
@@ -140,10 +134,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Samples\FirstTwistPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\G4\G4IssueRawMaterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -151,10 +141,6 @@
     <Page Include="Pages\G4\G4ReceiveRawMaterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Samples\G4Page.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Samples\SamplePage.xaml">
       <SubType>Designer</SubType>
