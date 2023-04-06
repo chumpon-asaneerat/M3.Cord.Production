@@ -37,6 +37,10 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Internal Variables
+
+        #endregion
+
         #region Button Handlers
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
@@ -55,13 +59,45 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void LoadComboBoxes()
+        {
+            var yarnTypes = new string[]
+            {
+                "All",
+                "Weft",
+                "Warp"
+            };
+            cbYarnType.ItemsSource = yarnTypes;
+            cbYarnType.SelectedIndex = 0;
+
+            var itemYarns = new string[]
+            {
+                "700-108-178E-TTS",
+                "470-72-1781-JJ",
+                "470-136-178E-APM",
+                "470-136-178E-TTS"
+            };
+            cbItemYarn.ItemsSource = itemYarns;
+            cbItemYarn.SelectedIndex = 0;
+
+            var issUeTo = new string[]
+            {
+                "Wrap AB",
+                "Weft AB",
+                "Wrap AD",
+                "Weft AD"
+            };
+            cbIssueTo.ItemsSource = issUeTo;
+            cbIssueTo.SelectedIndex = 0;
+        }
+
         #endregion
 
         #region Public Methods
 
         public void Setup()
         {
-
+            LoadComboBoxes();
         }
 
         #endregion

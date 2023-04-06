@@ -10,7 +10,7 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="450"
+        Height="380"
         Width="900">
     <Window.Resources>
         <!--  PAGE TITLE  -->
@@ -102,7 +102,8 @@
                     </DockPanel>
                     <!--  ITEMS  -->
                     <DockPanel LastChildFill="True">
-                        <StackPanel Orientation="Vertical" DockPanel.Dock="Top"
+                        <StackPanel Orientation="Vertical"
+                                    DockPanel.Dock="Top"
                                     HorizontalAlignment="Center">
                             <StackPanel Orientation="Horizontal">
                                 <!--  PALLET NO  -->
@@ -207,8 +208,9 @@
                                 </RadioButton>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <!-- PACKING -->
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                                <!--  PACKING  -->
+                                <StackPanel Orientation="Vertical"
+                                            HorizontalAlignment="Center"
                                             Margin="1">
                                     <Border Background="Orange">
                                         <TextBlock TextAlignment="Center"
@@ -225,8 +227,9 @@
                                               HorizontalAlignment="Center"
                                               IsChecked="{Binding Packing}" />
                                 </StackPanel>
-                                <!-- CLEAN -->
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                                <!--  CLEAN  -->
+                                <StackPanel Orientation="Vertical"
+                                            HorizontalAlignment="Center"
                                             Margin="1">
                                     <Border Background="Orange">
                                         <TextBlock TextAlignment="Center"
@@ -243,8 +246,9 @@
                                               HorizontalAlignment="Center"
                                               IsChecked="{Binding Clean}" />
                                 </StackPanel>
-                                <!-- TEARING -->
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                                <!--  TEARING  -->
+                                <StackPanel Orientation="Vertical"
+                                            HorizontalAlignment="Center"
                                             Margin="1">
                                     <Border Background="Orange">
                                         <TextBlock TextAlignment="Center"
@@ -261,8 +265,9 @@
                                               HorizontalAlignment="Center"
                                               IsChecked="{Binding Tearing}" />
                                 </StackPanel>
-                                <!-- FALL DOWN -->
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                                <!--  FALL DOWN  -->
+                                <StackPanel Orientation="Vertical"
+                                            HorizontalAlignment="Center"
                                             Margin="1">
                                     <Border Background="Orange">
                                         <TextBlock TextAlignment="Center"
@@ -279,8 +284,9 @@
                                               HorizontalAlignment="Center"
                                               IsChecked="{Binding FallDown}" />
                                 </StackPanel>
-                                <!-- CERTIFICATION -->
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                                <!--  CERTIFICATION  -->
+                                <StackPanel Orientation="Vertical"
+                                            HorizontalAlignment="Center"
                                             Margin="1">
                                     <Border Background="Orange">
                                         <TextBlock TextAlignment="Center"
@@ -297,8 +303,9 @@
                                               HorizontalAlignment="Center"
                                               IsChecked="{Binding Certification}" />
                                 </StackPanel>
-                                <!-- INVOICE -->
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                                <!--  INVOICE  -->
+                                <StackPanel Orientation="Vertical"
+                                            HorizontalAlignment="Center"
                                             Margin="1">
                                     <Border Background="Orange">
                                         <TextBlock TextAlignment="Center"
@@ -315,8 +322,9 @@
                                               HorizontalAlignment="Center"
                                               IsChecked="{Binding Invoice}" />
                                 </StackPanel>
-                                <!-- IDENTIFY AREA -->
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                                <!--  IDENTIFY AREA  -->
+                                <StackPanel Orientation="Vertical"
+                                            HorizontalAlignment="Center"
                                             Margin="1">
                                     <Border Background="Orange">
                                         <TextBlock TextAlignment="Center"
@@ -333,8 +341,9 @@
                                               HorizontalAlignment="Center"
                                               IsChecked="{Binding IdentifyArea}" />
                                 </StackPanel>
-                                <!-- AMOUNT PALLET -->
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                                <!--  AMOUNT PALLET  -->
+                                <StackPanel Orientation="Vertical"
+                                            HorizontalAlignment="Center"
                                             Margin="1">
                                     <Border Background="Orange">
                                         <TextBlock TextAlignment="Center"

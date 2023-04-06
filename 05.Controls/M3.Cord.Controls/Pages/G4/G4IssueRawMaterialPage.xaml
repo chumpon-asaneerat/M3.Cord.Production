@@ -1,8 +1,8 @@
 ﻿<UserControl x:Class="M3.Cord.Pages.G4IssueRawMaterialPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:util="clr-namespace:M3.Cord.Controls.Utils"
              mc:Ignorable="d"
@@ -173,7 +173,201 @@
                     </DockPanel>
                     <!--  ITEMS  -->
                     <DockPanel LastChildFill="True">
-                        <Grid />
+                        <StackPanel Orientation="Vertical"
+                                    DockPanel.Dock="Top"
+                                    HorizontalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <!--  REQUEST NO  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="100"
+                                           TextAlignment="Right"
+                                           Text="Request No: " />
+                                <TextBox x:Name="txtRequestNo"
+                                         Margin="0,5"
+                                         Style="{StaticResource CommonTextBox}"
+                                         Text=""
+                                         Width="150" />
+                                <!--  ISSUE DATE  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="100"
+                                           TextAlignment="Right"
+                                           Text="Issue Date: " />
+                                <DatePicker x:Name="dtIssueDate"
+                                            FontSize="{StaticResource FontSize14}"
+                                            Margin="0,5"
+                                            Width="150" />
+                                <!--  ISSUE TO  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="100"
+                                           TextAlignment="Right"
+                                           Text="Issue To: " />
+                                <ComboBox x:Name="cbIssueTo"
+                                          Margin="0,5"
+                                          Style="{StaticResource CommonComboBox}"
+                                          Width="150" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <!--  ITEM YARN  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="100"
+                                           TextAlignment="Right"
+                                           Text="Item Yarn: " />
+                                <ComboBox x:Name="cbItemYarn"
+                                          Margin="0,5"
+                                          Style="{StaticResource CommonComboBox}"
+                                          Width="200" />
+                                <!--  YARN TYPE  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="100"
+                                           TextAlignment="Right"
+                                           Text="Yarn Type: " />
+                                <ComboBox x:Name="cbYarnType"
+                                          Margin="0,5"
+                                          Style="{StaticResource CommonComboBox}"
+                                          Width="150" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <!--  PALLET NO  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="100"
+                                           TextAlignment="Right"
+                                           Text="Pallet No: " />
+                                <TextBox Margin="0,5"
+                                         Style="{StaticResource CommonTextBox}"
+                                         Width="150" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    DockPanel.Dock="Bottom">
+                            <!--  TOTAL PALLET  -->
+                            <TextBlock Margin="5"
+                                       Style="{StaticResource LabelText}"
+                                       Text="TOTAL PALLET: " />
+                            <TextBox x:Name="txtTotalPallet"
+                                     Margin="5"
+                                     Style="{StaticResource CommonTextBox}"
+                                     IsReadOnly="True"
+                                     Text="0"
+                                     Width="100" />
+                            <!--  TOTAL WEIGHT  -->
+                            <TextBlock Margin="5,0"
+                                       Style="{StaticResource LabelText}"
+                                       Text="TOTAL WEIGHT: " />
+                            <TextBox x:Name="txtTotalWeight"
+                                     Margin="5"
+                                     Style="{StaticResource CommonTextBox}"
+                                     IsReadOnly="True"
+                                     Text="0"
+                                     Width="100" />
+                            <!--  TOTAL CH  -->
+                            <TextBlock Margin="5"
+                                       Style="{StaticResource LabelText}"
+                                       Text="TOTAL CH: " />
+                            <TextBox x:Name="txtTotalCH"
+                                     Margin="5"
+                                     Style="{StaticResource CommonTextBox}"
+                                     IsReadOnly="True"
+                                     Text="0"
+                                     Width="100" />
+                        </StackPanel>
+                        <ListView x:Name="grid"
+                                  FontSize="{StaticResource FontSize18}"
+                                  ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                                  ItemsSource="{Binding}"
+                                  Style="{StaticResource SingleSelectListView}">
+                            <ListView.View>
+                                <GridView>
+                                    <!--  PALLET NO  -->
+                                    <GridViewColumn Header="Pallet No">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="150"
+                                                           Text="{Binding PalletNo}"
+                                                           TextAlignment="Center" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  TRACE NO  -->
+                                    <GridViewColumn Header="Trace No">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="150"
+                                                           Text="{Binding TraceNo}"
+                                                           TextAlignment="Center" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  LOT NO  -->
+                                    <GridViewColumn Header="Lot No">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="150"
+                                                           Text="{Binding LotNo}"
+                                                           TextAlignment="Center" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  ITEM TYPE  -->
+                                    <GridViewColumn Header="Item Type">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="200"
+                                                           Text="{Binding ItemType}"
+                                                           TextAlignment="Center" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  YARN TYPE  -->
+                                    <GridViewColumn Header="Yarn Type">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="200"
+                                                           Text="{Binding YarnType}"
+                                                           TextAlignment="Center" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  WEIGHT  -->
+                                    <GridViewColumn Header="Weight">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="200"
+                                                           Text="{Binding WeightQty}"
+                                                           TextAlignment="Right" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  CH  -->
+                                    <GridViewColumn Header="CH">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="200"
+                                                           Text="{Binding CH}"
+                                                           TextAlignment="Right" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  PALLET TYPE  -->
+                                    <GridViewColumn Header="Pallet Type">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="200"
+                                                           Text="{Binding PalletType}"
+                                                           TextAlignment="Right" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
                     </DockPanel>
                 </DockPanel>
             </DockPanel>

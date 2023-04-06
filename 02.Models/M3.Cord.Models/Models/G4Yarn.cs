@@ -207,7 +207,7 @@ namespace M3.Cord.Models
             };
         }
 
-        public static List<G4Yarn> GetG4Yarns()
+        public static List<G4Yarn> GetG4Yarns(DateTime? receiveDate = new DateTime?())
         {
             var rets = new List<G4Yarn>();
 
@@ -387,7 +387,12 @@ namespace M3.Cord.Models
 
             for (int i = 0; i < itemYarns.Length; ++i)
             {
-                rets.Add(Create(1, itemYarns[i], palletNos[i], yarnTypes[i], item400Codes[i], lotNos[i], traceNos[i]));
+                var item = Create(1, itemYarns[i], palletNos[i], yarnTypes[i], item400Codes[i], lotNos[i], traceNos[i]);
+                if (receiveDate.HasValue)
+                {
+                    item.ReceivedDate = receiveDate.Value;
+                }
+                rets.Add(item);
             }
 
             return rets;
