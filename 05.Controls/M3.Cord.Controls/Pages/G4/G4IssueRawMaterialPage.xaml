@@ -187,7 +187,8 @@
                                          Margin="0,5"
                                          Style="{StaticResource CommonTextBox}"
                                          Text=""
-                                         Width="150" />
+                                         Width="150" 
+                                         PreviewKeyDown="txtRequestNo_PreviewKeyDown"/>
                                 <!--  ISSUE DATE  -->
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
@@ -197,7 +198,8 @@
                                 <DatePicker x:Name="dtIssueDate"
                                             FontSize="{StaticResource FontSize14}"
                                             Margin="0,5"
-                                            Width="150" />
+                                            Width="150" 
+                                            SelectedDateChanged="dtIssueDate_SelectedDateChanged"/>
                                 <!--  ISSUE TO  -->
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
@@ -207,7 +209,8 @@
                                 <ComboBox x:Name="cbIssueTo"
                                           Margin="0,5"
                                           Style="{StaticResource CommonComboBox}"
-                                          Width="150" />
+                                          Width="150" 
+                                          SelectionChanged="cbIssueTo_SelectionChanged"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <!--  ITEM YARN  -->
@@ -219,7 +222,8 @@
                                 <ComboBox x:Name="cbItemYarn"
                                           Margin="0,5"
                                           Style="{StaticResource CommonComboBox}"
-                                          Width="200" />
+                                          Width="200" 
+                                          SelectionChanged="cbItemYarn_SelectionChanged"/>
                                 <!--  YARN TYPE  -->
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
@@ -229,7 +233,8 @@
                                 <ComboBox x:Name="cbYarnType"
                                           Margin="0,5"
                                           Style="{StaticResource CommonComboBox}"
-                                          Width="150" />
+                                          Width="150" 
+                                          SelectionChanged="cbYarnType_SelectionChanged"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <!--  PALLET NO  -->

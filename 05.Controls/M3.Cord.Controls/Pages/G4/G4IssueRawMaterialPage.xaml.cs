@@ -50,6 +50,48 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Textbox Handlers
+
+        private void txtRequestNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter ||
+                e.Key == System.Windows.Input.Key.Return)
+            {
+                RefreshGrid();
+                e.Handled = true;
+            }
+        }
+
+        #endregion
+
+        #region DatePicker Handlers
+
+        private void dtIssueDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        #endregion
+
+        #region Combobox Handlers
+
+        private void cbIssueTo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        private void cbItemYarn_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        private void cbYarnType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        #endregion
+
         #region Private Methods
 
         private void GotoMainMenu()
@@ -89,6 +131,11 @@ namespace M3.Cord.Pages
             };
             cbIssueTo.ItemsSource = issUeTo;
             cbIssueTo.SelectedIndex = 0;
+        }
+
+        private void RefreshGrid()
+        {
+            grid.ItemsSource = null;
         }
 
         #endregion
