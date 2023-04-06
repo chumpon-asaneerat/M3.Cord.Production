@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+#endregion
+
 namespace M3.Cord.Pages
 {
     /// <summary>
@@ -20,9 +24,25 @@ namespace M3.Cord.Pages
     /// </summary>
     public partial class G4IssueRawMaterialPage : UserControl
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public G4IssueRawMaterialPage()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Button Handlers
+
+        private void cmdHome_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        #endregion
     }
 }

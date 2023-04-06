@@ -3,9 +3,180 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:util="clr-namespace:M3.Cord.Controls.Utils"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    <UserControl.Resources>
+        <!--  PAGE TITLE  -->
+        <sys:String x:Key="PageTitle">G4 Receive Raw Material</sys:String>
+        <!--  INLINE BUTTON TEXT FONT SIZE  -->
+        <sys:Double x:Key="IBFSize">18</sys:Double>
+        <!--  FILTER BAR VISIBLE STATES  -->
+        <Visibility x:Key="FilterBarVisible">Visible</Visibility>
+        <Visibility x:Key="RefreshButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="SearchButtonVisible">Collapsed</Visibility>
+        <!--  BOTTONS BAR VISIBLE STATES  -->
+        <Visibility x:Key="HomeButtonVisible">Visible</Visibility>
+        <Visibility x:Key="ImportButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="ExportButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="PrintButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="AddNewButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="DeleteAllButtonVisible">Collapsed</Visibility>
+    </UserControl.Resources>
+    <Grid Background="{StaticResource PageBG}">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource PageMargin}" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{StaticResource PageMargin}" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource PageMargin}" />
+                <RowDefinition Height="{StaticResource CaptionHeight}" />
+                <RowDefinition Height="{StaticResource PageMargin}" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="{StaticResource PageMargin}" />
+            </Grid.RowDefinitions>
+            <!--  CAPTION AREA  -->
+            <Border Grid.Column="1"
+                    Grid.ColumnSpan="1"
+                    Grid.Row="1"
+                    Grid.RowSpan="1"
+                    Background="{StaticResource CaptionBackground}"
+                    BorderBrush="{StaticResource CaptionBorderColor}"
+                    BorderThickness="{StaticResource CaptionBorderThickness}"
+                    CornerRadius="{StaticResource CaptionBorderCornerRadius}">
+                <TextBlock Foreground="{StaticResource CaptionForeground}"
+                           FontSize="{StaticResource FontSize24}"
+                           Margin="0,2"
+                           TextAlignment="Center"
+                           Text="{StaticResource PageTitle}" />
+            </Border>
+            <!--  CLIENT AREA  -->
+            <DockPanel Grid.Column="1"
+                       Grid.ColumnSpan="1"
+                       Grid.Row="3"
+                       Grid.RowSpan="1"
+                       LastChildFill="True">
+                <!--  WORK AREA  -->
+                <DockPanel LastChildFill="True">
+                    <!--  BUTTONS BAR  -->
+                    <DockPanel LastChildFill="True"
+                               DockPanel.Dock="Bottom"
+                               Height="40">
+                        <!--  Add New  -->
+                        <Button x:Name="cmdAddNew"
+                                Visibility="{StaticResource AddNewButtonVisible}"
+                                DockPanel.Dock="Left"
+                                Style="{StaticResource InlineButton}"
+                                Margin="5,0"
+                                Width="150"
+                                Height="30">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource fa-addnew}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Margin="3,0"
+                                           FontFamily="{StaticResource THSarabun}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           Text="เพิ่มข้อมูล"
+                                           VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                        <!--  IMPORT  -->
+                        <Button x:Name="cmdImport"
+                                Visibility="{StaticResource ImportButtonVisible}"
+                                DockPanel.Dock="Left"
+                                Style="{StaticResource InlineButton}"
+                                Margin="5,0"
+                                Width="150"
+                                Height="30">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource fa-import}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Margin="3,0"
+                                           FontFamily="{StaticResource THSarabun}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           Text="นำเข้าข้อมูล"
+                                           VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                        <!--  EXPORT  -->
+                        <Button x:Name="cmdExport"
+                                Visibility="{StaticResource ExportButtonVisible}"
+                                DockPanel.Dock="Left"
+                                Style="{StaticResource InlineButton}"
+                                Margin="5,0"
+                                Width="150"
+                                Height="30">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource fa-export}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Margin="3,0"
+                                           FontFamily="{StaticResource THSarabun}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           Text="ส่งออกข้อมูล"
+                                           VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                        <!--  PRINT  -->
+                        <Button x:Name="cmdPrint"
+                                Visibility="{StaticResource PrintButtonVisible}"
+                                DockPanel.Dock="Left"
+                                Style="{StaticResource InlineButton}"
+                                Margin="5,0"
+                                Width="150"
+                                Height="30">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource fa-print}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Margin="3,0"
+                                           FontFamily="{StaticResource THSarabun}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           Text="พิมพ์"
+                                           VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                        <!--  DELETE ALL  -->
+                        <Button x:Name="cmdDeleteAll"
+                                Visibility="{StaticResource DeleteAllButtonVisible}"
+                                DockPanel.Dock="Left"
+                                Style="{StaticResource InlineButton}"
+                                Margin="5,0"
+                                Width="150"
+                                Height="30">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Margin="3,0"
+                                           FontFamily="{StaticResource THSarabun}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           Text="ลบข้อมูลทั้งหมด"
+                                           VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                        <!--  BACK  -->
+                        <Button x:Name="cmdHome"
+                                Visibility="{StaticResource HomeButtonVisible}"
+                                DockPanel.Dock="Right"
+                                Style="{StaticResource InlineButton}"
+                                Margin="5,0"
+                                Width="150"
+                                Height="30"
+                                Click="cmdHome_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource fa-home}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Margin="3,0"
+                                           FontFamily="{StaticResource THSarabun}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           Text="Main Menu"
+                                           VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                        <Grid />
+                    </DockPanel>
+                    <!--  ITEMS  -->
+                    <DockPanel LastChildFill="True" Margin="10,1">
+                        <Grid />
+                    </DockPanel>
+                </DockPanel>
+            </DockPanel>
+        </Grid>
     </Grid>
 </UserControl>
