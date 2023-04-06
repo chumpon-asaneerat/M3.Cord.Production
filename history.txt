@@ -1,8 +1,39 @@
+M3 Cord Production System #80
+- 
+
+M3 Cord Production System #79
+- 
+
+M3 Cord Production System #78
+- 
+
+M3 Cord Production System #77
+- 
+
+M3 Cord Production System #76
+- 
+
+M3 Cord Production System #75
+- 
+
+M3 Cord Production System #74
+- 
+
+M3 Cord Production System #73
+- 
+
+M3 Cord Production System #72
+- 
+
+M3 Cord Production System #71
+- 
+
 M3 Cord Production System #70
 - 
 
+[commited]
 M3 Cord Production System #69
-- 
+- Prepare history.txt
 
 [commited]
 M3 Cord Production System #68
