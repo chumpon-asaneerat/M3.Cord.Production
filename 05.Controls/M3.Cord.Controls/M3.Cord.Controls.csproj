@@ -56,19 +56,19 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwist\FirstTwistPage.xaml.cs">
+    <Compile Include="Pages\Samples\FirstTwistPage.xaml.cs">
       <DependentUpon>FirstTwistPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\G4IssueRawMaterialPage.xaml.cs">
+    <Compile Include="Pages\G4\G4IssueRawMaterialPage.xaml.cs">
       <DependentUpon>G4IssueRawMaterialPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\G4ReceiveRawMaterialPage.xaml.cs">
+    <Compile Include="Pages\G4\G4ReceiveRawMaterialPage.xaml.cs">
       <DependentUpon>G4ReceiveRawMaterialPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\G4\G4Page.xaml.cs">
+    <Compile Include="Pages\Samples\G4Page.xaml.cs">
       <DependentUpon>G4Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SamplePage.xaml.cs">
+    <Compile Include="Pages\Samples\SamplePage.xaml.cs">
       <DependentUpon>SamplePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\Converter\IsLastItemConverter.cs" />
@@ -126,23 +126,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FirstTwist\FirstTwistPage.xaml">
+    <Page Include="Pages\Samples\FirstTwistPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\G4IssueRawMaterialPage.xaml">
+    <Page Include="Pages\G4\G4IssueRawMaterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\G4ReceiveRawMaterialPage.xaml">
+    <Page Include="Pages\G4\G4ReceiveRawMaterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\G4\G4Page.xaml">
+    <Page Include="Pages\Samples\G4Page.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\SamplePage.xaml">
+    <Page Include="Pages\Samples\SamplePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,6 +232,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Pages\FirstTwist\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
