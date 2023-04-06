@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using M3.Cord.Models;
 using NLib.Services;
 using System;
 using System.Collections.Generic;
@@ -37,11 +38,23 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Internal Variables
+
+        private List<G4Yarn> sources = G4Yarn.GetG4Yarns();
+        private List<G4Yarn> receives = new List<G4Yarn>();
+
+        #endregion
+
         #region Button Handlers
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
             GotoMainMenu();
+        }
+
+        private void cmdReceive_Click(object sender, RoutedEventArgs e)
+        {
+            ReceivedTraceNo();
         }
 
         #endregion
@@ -78,6 +91,12 @@ namespace M3.Cord.Pages
         {
             string traceNo = txtTraceNo.Text;
 
+            var item = SerachByTranceNo(traceNo);
+            if (null != item)
+            {
+                receives.Add(item);
+                RefreshGrid();
+            }
             txtTraceNo.Text = string.Empty;
         }
 
@@ -86,13 +105,25 @@ namespace M3.Cord.Pages
             txtTraceNo.Text = string.Empty;
         }
 
+        private void RefreshGrid()
+        {
+            grid.ItemsSource = null;
+            grid.ItemsSource = receives;
+        }
+
+        private G4Yarn SerachByTranceNo(string tranceNo)
+        {
+            var ret = sources.First((item) => { return item.TraceNo == tranceNo; });
+            return ret;
+        }
+
         #endregion
 
         #region Public Methods
 
         public void Setup()
         {
-
+            RefreshGrid();
         }
 
         #endregion
