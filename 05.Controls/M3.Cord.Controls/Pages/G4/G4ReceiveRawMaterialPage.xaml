@@ -279,7 +279,8 @@
                                                             Style="{StaticResource InlineButton}"
                                                             Margin="5,0"
                                                             Width="150"
-                                                            Height="30">
+                                                            Height="30"
+                                                            Click="cmdEdit_Click">
                                                         <StackPanel Orientation="Horizontal">
                                                             <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
                                                             <TextBlock Margin="3,0"
@@ -295,7 +296,8 @@
                                                             Style="{StaticResource InlineButton}"
                                                             Margin="5,0"
                                                             Width="150"
-                                                            Height="30">
+                                                            Height="30"
+                                                            Click="cmdDelete_Click">
                                                         <StackPanel Orientation="Horizontal">
                                                             <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
                                                             <TextBlock Margin="3,0"

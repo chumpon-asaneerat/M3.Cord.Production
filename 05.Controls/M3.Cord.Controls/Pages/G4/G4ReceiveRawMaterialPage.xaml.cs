@@ -76,6 +76,22 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void cmdEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            if (null == btn) return;
+            var item = btn.DataContext as G4Yarn;
+            EditItem(item);
+        }
+
+        private void cmdDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            if (null == btn) return;
+            var item = btn.DataContext as G4Yarn;
+            DeleteItem(item);
+        }
+
         #endregion
 
         #region Private Methods
@@ -120,6 +136,26 @@ namespace M3.Cord.Pages
         {
             var ret = sources.First((item) => { return item.TraceNo == tranceNo; });
             return ret;
+        }
+
+        private void EditItem(G4Yarn item)
+        {
+            if (null == item) return;
+            var win = M3CordApp.Windows.G4ReceiveYarn;
+            win.Setup(item);
+            if (win.ShowDialog() == true)
+            {
+                RefreshGrid();
+            }
+        }
+
+        private void DeleteItem(G4Yarn item)
+        {
+            if (null == item) return;
+            int idx = receives.IndexOf(item);
+            if (idx == -1) return;
+            receives.RemoveAt(idx);
+            RefreshGrid();
         }
 
         #endregion
