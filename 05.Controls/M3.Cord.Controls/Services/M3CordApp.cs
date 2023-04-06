@@ -114,6 +114,25 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region G4
+
+            #region G4 Receive Yarn
+
+            /// <summary>Gets SignIn Window.</summary>
+            public static M3.Cord.Windows.G4ReceiveYarnWindow G4ReceiveYarn
+            {
+                get
+                {
+                    var ret = new M3.Cord.Windows.G4ReceiveYarnWindow();
+                    ret.Owner = Application.Current.MainWindow;
+                    return ret;
+                }
+            }
+
+            #endregion
+
+            #endregion
         }
     }
 }

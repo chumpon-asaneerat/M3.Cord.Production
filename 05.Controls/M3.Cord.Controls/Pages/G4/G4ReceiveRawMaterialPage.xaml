@@ -253,7 +253,7 @@
                                                 <CheckBox Style="{StaticResource CommonCheckBox}"
                                                           IsChecked="{Binding IsOK}"
                                                           HorizontalAlignment="Center"
-                                                          Width="Auto" />
+                                                          Width="50" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
@@ -263,7 +263,7 @@
                                                 <CheckBox Style="{StaticResource CommonCheckBox}"
                                                           IsChecked="{Binding IsNG}"
                                                           HorizontalAlignment="Center"
-                                                          Width="Auto" />
+                                                          Width="50" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>

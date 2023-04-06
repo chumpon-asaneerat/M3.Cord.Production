@@ -129,6 +129,34 @@ namespace M3.Cord.Models
         public string FinishFlag { get; set; }
 
         public string Verify { get; set; }
+
+        public bool OK
+        {
+            get { return (Verify == "OK"); }
+            set
+            {
+                if (value)
+                {
+                    Verify = "OK";
+                }
+                Raise(() => OK);
+                Raise(() => NG);
+            }
+        }
+        public bool NG
+        {
+            get { return (Verify == "NG"); }
+            set
+            {
+                if (value)
+                {
+                    Verify = "NG";
+                }
+                Raise(() => OK);
+                Raise(() => NG);
+            }
+        }
+
         public bool IsOK
         {
             get { return (Verify == "OK"); }

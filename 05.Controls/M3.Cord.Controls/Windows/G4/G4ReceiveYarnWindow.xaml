@@ -7,6 +7,9 @@
         xmlns:util="clr-namespace:M3.Cord.Controls.Utils"
         mc:Ignorable="d"
         Title="G4 Receive Raw Material"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
         Height="450"
         Width="800">
     <Window.Resources>
@@ -171,6 +174,36 @@
                                          Text="{Binding TraceNo}"
                                          IsReadOnly="True"
                                          Width="150" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <!--  VERIFY  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="150"
+                                           TextAlignment="Right"
+                                           Text="Verify: " />
+                                <!--  OK  -->
+                                <RadioButton Margin="2,5"
+                                             GroupName="GrpVerify"
+                                             Style="{StaticResource CommonRadioButton}"
+                                             VerticalAlignment="Center"
+                                             VerticalContentAlignment="Center"
+                                             Foreground="{StaticResource WhiteBrush}"
+                                             IsChecked="{Binding OK}"
+                                             Width="70">
+                                    <TextBlock Style="{StaticResource LabelText}" Text="OK" />
+                                </RadioButton>
+                                <!--  NG  -->
+                                <RadioButton Margin="2,5"
+                                             GroupName="GrpVerify"
+                                             Style="{StaticResource CommonRadioButton}"
+                                             VerticalAlignment="Center"
+                                             VerticalContentAlignment="Center"
+                                             Foreground="{StaticResource WhiteBrush}"
+                                             IsChecked="{Binding NG}"
+                                             Width="70">
+                                    <TextBlock Style="{StaticResource LabelText}" Text="NG" />
+                                </RadioButton>
                             </StackPanel>
                         </StackPanel>
                         <Grid />

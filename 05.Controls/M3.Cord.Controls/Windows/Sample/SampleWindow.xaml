@@ -7,6 +7,9 @@
         xmlns:util="clr-namespace:M3.Cord.Controls.Utils"
         mc:Ignorable="d"
         Title="Sample Window"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
         Height="450"
         Width="800">
     <Window.Resources>

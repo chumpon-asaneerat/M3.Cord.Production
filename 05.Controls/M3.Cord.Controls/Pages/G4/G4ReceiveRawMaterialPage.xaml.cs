@@ -94,8 +94,13 @@ namespace M3.Cord.Pages
             var item = SerachByTranceNo(traceNo);
             if (null != item)
             {
-                receives.Add(item);
-                RefreshGrid();
+                var win = M3CordApp.Windows.G4ReceiveYarn;
+                win.Setup(item);
+                if (win.ShowDialog() == true)
+                {
+                    receives.Add(item);
+                    RefreshGrid();
+                }
             }
             txtTraceNo.Text = string.Empty;
         }

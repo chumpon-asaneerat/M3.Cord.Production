@@ -61,6 +61,7 @@ namespace M3.Cord.Windows
         public void Setup(G4Yarn item)
         {
             _item = item;
+            this.DataContext = _item;
         }
 
         #endregion
