@@ -253,15 +253,43 @@
                 <TextBlock Grid.Row="1"
                            Grid.Column="1"
                            Width="{StaticResource ButtonSpace}" />
-                <!--  TWISTING RECORD SHEET???  -->
-                <Button x:Name="cmdTwistingRecordSheet"
+                <!--  BLANK1  -->
+                <Button x:Name="cmdBLANK1"
                         Grid.Row="1"
                         Grid.Column="2"
                         Width="{StaticResource ButtonWidth}"
                         Style="{StaticResource FirstTwistButtonStyle}">
                     <StackPanel Orientation="Vertical">
+                        <!--
                         <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Yarn Twisting" />
                         <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Record Sheet" />
+                        -->
+                    </StackPanel>
+                </Button>
+                <!--  BLANK2  -->
+                <Button x:Name="cmdBLANK2"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Width="{StaticResource ButtonWidth}"
+                        Style="{StaticResource FirstTwistButtonStyle}">
+                    <StackPanel Orientation="Vertical">
+                        <!--
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Yarn Twisting" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Record Sheet" />
+                        -->
+                    </StackPanel>
+                </Button>
+                <!--  BLANK3  -->
+                <Button x:Name="cmdBLANK3"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Width="{StaticResource ButtonWidth}"
+                        Style="{StaticResource FirstTwistButtonStyle}">
+                    <StackPanel Orientation="Vertical">
+                        <!--
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Yarn Twisting" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Record Sheet" />
+                        -->
                     </StackPanel>
                 </Button>
             </Grid>
