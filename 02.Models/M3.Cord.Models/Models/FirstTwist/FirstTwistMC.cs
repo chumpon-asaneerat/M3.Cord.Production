@@ -26,6 +26,8 @@ namespace M3.Cord.Models
         public int BBCount { get; set; } = 102;
         public int SheetPerBB { get; set; } = 1;
 
+        public string LotNo { get; set; } = "-";
+
         #endregion
 
         #region Static Methods
@@ -34,7 +36,7 @@ namespace M3.Cord.Models
         {
             List<FirstTwistMC> rets = new List<FirstTwistMC>();
 
-            rets.Add(new FirstTwistMC() { MCName = "S-1", SheetPerBB = 2 });
+            rets.Add(new FirstTwistMC() { MCName = "S-1", SheetPerBB = 2, LotNo = "21091" });
             rets.Add(new FirstTwistMC() { MCName = "S-4" });
 
             return rets;

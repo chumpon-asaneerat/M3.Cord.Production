@@ -231,18 +231,75 @@
                                             </StackPanel>
                                             <!--  OPERATIONS  -->
                                             <StackPanel Orientation="Vertical">
-                                                <!--  PROCESSING CONTROL CARD  -->
+                                                <!--  RAW MATERIAL  -->
+                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                    <TextBlock Text="Lot No:"
+                                                               Margin="5,0"
+                                                               TextAlignment="Right"
+                                                               Width="150"
+                                                               Foreground="Navy"
+                                                               Style="{StaticResource LabelText}" />
+                                                    <Button x:Name="cmdLotNo"
+                                                            Style="{StaticResource InlineButton}"
+                                                            Margin="5,0">
+                                                        <TextBlock Text="{Binding LotNo}"
+                                                                   FontFamily="{StaticResource THSarabun}"
+                                                                   FontSize="{StaticResource FontSize18}"
+                                                                   Width="250"
+                                                                   TextAlignment="Center"
+                                                                   VerticalAlignment="Center" />
+                                                    </Button>
+                                                </StackPanel>
+                                                <!--  MC CONDITION  -->
+                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                    <TextBlock Text="MC Condition:"
+                                                               Margin="5,0"
+                                                               TextAlignment="Right"
+                                                               Width="150"
+                                                               Foreground="Navy"
+                                                               Style="{StaticResource LabelText}" />
+                                                    <Button x:Name="cmdMCCondition"
+                                                            Style="{StaticResource InlineButton}"
+                                                            Margin="5,0">
+                                                        <TextBlock Text="Manage"
+                                                                   FontFamily="{StaticResource THSarabun}"
+                                                                   FontSize="{StaticResource FontSize18}"
+                                                                   Width="250"
+                                                                   TextAlignment="Center"
+                                                                   VerticalAlignment="Center" />
+                                                    </Button>
+                                                </StackPanel>
+                                                <!--  PRODUCT CONDITION  -->
+                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                    <TextBlock Text="Product Condition:"
+                                                               Margin="5,0"
+                                                               TextAlignment="Right"
+                                                               Width="150"
+                                                               Foreground="Navy"
+                                                               Style="{StaticResource LabelText}" />
+                                                    <Button x:Name="cmdProductCondition"
+                                                            Style="{StaticResource InlineButton}"
+                                                            Margin="5,0">
+                                                        <TextBlock Text="Manage"
+                                                                   FontFamily="{StaticResource THSarabun}"
+                                                                   FontSize="{StaticResource FontSize18}"
+                                                                   Width="250"
+                                                                   TextAlignment="Center"
+                                                                   VerticalAlignment="Center" />
+                                                    </Button>
+                                                </StackPanel>
+                                                <!--  PROCESSING CONTROOL CARD  -->
                                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                                     <TextBlock Text="PC Card:"
                                                                Margin="5,0"
                                                                TextAlignment="Right"
-                                                               Width="100"
+                                                               Width="150"
                                                                Foreground="Navy"
                                                                Style="{StaticResource LabelText}" />
                                                     <Button x:Name="cmdPCCard"
                                                             Style="{StaticResource InlineButton}"
                                                             Margin="5,0">
-                                                        <TextBlock Text="-"
+                                                        <TextBlock Text="Manage"
                                                                    FontFamily="{StaticResource THSarabun}"
                                                                    FontSize="{StaticResource FontSize18}"
                                                                    Width="250"
