@@ -91,10 +91,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Windows\G4ReceiveYarnWindow.xaml.cs">
+    <Compile Include="Windows\G4\G4ReceiveYarnWindow.xaml.cs">
       <DependentUpon>G4ReceiveYarnWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\SampleWindow.xaml.cs">
+    <Compile Include="Windows\Sample\SampleWindow.xaml.cs">
       <DependentUpon>SampleWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SignIn\SignInWindow.xaml.cs">
@@ -240,11 +240,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Windows\G4ReceiveYarnWindow.xaml">
+    <Page Include="Windows\G4\G4ReceiveYarnWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\SampleWindow.xaml">
+    <Page Include="Windows\Sample\SampleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -255,7 +255,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\FirstTwist\" />
-    <Folder Include="Windows\G4\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
