@@ -4,18 +4,6 @@
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     mc:Ignorable="PresentationOptions">
-
-    <!--  COMMON MARGINS  -->
-    <Thickness x:Key="CommonMargin">5</Thickness>
-    <GridLength x:Key="PageMargin">5</GridLength>
-
-    <!--  COMMON FONT FAMILY (NOTE actual font name required to right click on font to preview from explorer)  -->
-    <FontFamily x:Key="THSarabun">pack://application:,,,/M3.Cord.Controls;Component/Fonts/#TH Sarabun</FontFamily>
-    <FontFamily x:Key="THSarabunNew">pack://application:,,,/M3.Cord.Controls;Component/Fonts/#TH Sarabun New</FontFamily>
-    <FontFamily x:Key="Puanpian">pack://application:,,,/M3.Cord.Controls;Component/Fonts/#iamsudyod2006-2puanpian</FontFamily>
-    <!--  FONTAWESOME FONT FAMILY  -->
-    <FontFamily x:Key="FontAwesome">pack://application:,,,/M3.Cord.Controls;Component/Fonts/FontAwesome.otf#Font Awesome 6 Free Solid</FontFamily>
-
     <!--  COMMON FONT SIZE  -->
     <sys:Double x:Key="FontSize14" PresentationOptions:Freeze="True">14</sys:Double>
     <sys:Double x:Key="FontSize16" PresentationOptions:Freeze="True">16</sys:Double>
@@ -26,6 +14,13 @@
     <sys:Double x:Key="FontSize36" PresentationOptions:Freeze="True">36</sys:Double>
     <sys:Double x:Key="FontSize48" PresentationOptions:Freeze="True">48</sys:Double>
     <sys:Double x:Key="FontSize64" PresentationOptions:Freeze="True">64</sys:Double>
+
+    <!--  COMMON FONT FAMILY (NOTE actual font name required to right click on font to preview from explorer)  -->
+    <FontFamily x:Key="THSarabun">pack://application:,,,/M3.Cord.Controls;Component/Fonts/#TH Sarabun</FontFamily>
+    <FontFamily x:Key="THSarabunNew">pack://application:,,,/M3.Cord.Controls;Component/Fonts/#TH Sarabun New</FontFamily>
+    <FontFamily x:Key="Puanpian">pack://application:,,,/M3.Cord.Controls;Component/Fonts/#iamsudyod2006-2puanpian</FontFamily>
+    <!--  FONTAWESOME FONT FAMILY  -->
+    <FontFamily x:Key="FontAwesome">pack://application:,,,/M3.Cord.Controls;Component/Fonts/FontAwesome.otf#Font Awesome 6 Free Solid</FontFamily>
 
     <!--  DEFAULT FONT FAMILY/FONT SIZE  -->
     <FontFamily x:Key="DefaultFontFamily">pack://application:,,,/M3.Cord.Controls;Component/Fonts/#TH Sarabun</FontFamily>
@@ -76,6 +71,10 @@
     <SolidColorBrush x:Key="TransparentBrush"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource TransparentColor}" />
+
+    <!--  COMMON MARGINS  -->
+    <Thickness x:Key="CommonMargin">5</Thickness>
+    <GridLength x:Key="PageMargin">5</GridLength>
 
     <!--  COMMON PAGE COLORS  -->
     <SolidColorBrush x:Key="PageBG"
