@@ -28,7 +28,7 @@
     <sys:Double x:Key="FontSize64" PresentationOptions:Freeze="True">64</sys:Double>
 
     <!--  DEFAULT FONT FAMILY/FONT SIZE  -->
-    <FontFamily x:Key="DefaultFontFamily">pack://application:,,,/PPRP.Controls;Component/Fonts/#TH Sarabun</FontFamily>
+    <FontFamily x:Key="DefaultFontFamily">pack://application:,,,/M3.Cord.Controls;Component/Fonts/#TH Sarabun</FontFamily>
     <sys:Double x:Key="DefaultFontSize" PresentationOptions:Freeze="True">18</sys:Double>
 
     <!--  CUSTOM COLORS  -->
