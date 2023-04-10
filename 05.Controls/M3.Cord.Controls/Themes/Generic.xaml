@@ -3,7 +3,7 @@
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/CommonStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/GroupMenuStyle.xaml" />
 
-        <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.Font.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.FontStyle.xaml" />
 
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.Control.xaml" />
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.Window.xaml" />

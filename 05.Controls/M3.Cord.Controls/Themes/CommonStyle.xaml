@@ -27,47 +27,61 @@
     <sys:Double x:Key="DefaultFontSize" PresentationOptions:Freeze="True">18</sys:Double>
 
     <!--  CUSTOM COLORS  -->
-    <Color x:Key="BlueLightColor" PresentationOptions:Freeze="True">#9DC3E6</Color>
-    <Color x:Key="BlueLightColor2" PresentationOptions:Freeze="True">#79ADDD</Color>
-    <Color x:Key="BlueLightColor3" PresentationOptions:Freeze="True">#7DB0DF</Color>
-    <Color x:Key="BlueMediumColor" PresentationOptions:Freeze="True">#599AD5</Color>
-    <Color x:Key="BlueHeavyColor" PresentationOptions:Freeze="True">#2E75B6</Color>
-    <Color x:Key="BlueHeavyColor2" PresentationOptions:Freeze="True">#1F4E79</Color>
-
     <Color x:Key="BlackColor" PresentationOptions:Freeze="True">#000000</Color>
     <Color x:Key="WhiteColor" PresentationOptions:Freeze="True">#EFEFEF</Color>
-    <Color x:Key="GrayColor" PresentationOptions:Freeze="True">#7F7F7F</Color>
+    <Color x:Key="DimGrayColor" PresentationOptions:Freeze="True">Dimgray</Color>
+    <Color x:Key="SilverColor" PresentationOptions:Freeze="True">Silver</Color>
+    <Color x:Key="OrangeColor" PresentationOptions:Freeze="True">Orange</Color>
+    <Color x:Key="NavyColor" PresentationOptions:Freeze="True">Navy</Color>
+    <Color x:Key="CornflowerBlueColor" PresentationOptions:Freeze="True">CornflowerBlue</Color>
+    <Color x:Key="RoyalBlueColor" PresentationOptions:Freeze="True">RoyalBlue</Color>
+    <Color x:Key="ForestGreenColor" PresentationOptions:Freeze="True">ForestGreen</Color>
+    <Color x:Key="PurpleColor" PresentationOptions:Freeze="True">Purple</Color>
+    <Color x:Key="YellowColor" PresentationOptions:Freeze="True">Yellow</Color>
+    <Color x:Key="DarkRedColor" PresentationOptions:Freeze="True">DarkRed</Color>
+    <Color x:Key="RedColor" PresentationOptions:Freeze="True">Red</Color>
     <Color x:Key="TransparentColor" PresentationOptions:Freeze="True">Transparent</Color>
 
     <!--  CUSTOM BRUSHS  -->
-    <SolidColorBrush x:Key="BlueLightBrush"
-                     PresentationOptions:Freeze="True"
-                     Color="{StaticResource BlueLightColor}" />
-    <SolidColorBrush x:Key="BlueLightBrush2"
-                     PresentationOptions:Freeze="True"
-                     Color="{StaticResource BlueLightColor2}" />
-    <SolidColorBrush x:Key="BlueLightBrush3"
-                     PresentationOptions:Freeze="True"
-                     Color="{StaticResource BlueLightColor3}" />
-    <SolidColorBrush x:Key="BlueMediumBrush"
-                     PresentationOptions:Freeze="True"
-                     Color="{StaticResource BlueMediumColor}" />
-    <SolidColorBrush x:Key="BlueHeavyBrush"
-                     PresentationOptions:Freeze="True"
-                     Color="{StaticResource BlueHeavyColor}" />
-    <SolidColorBrush x:Key="BlueHeavyBrush2"
-                     PresentationOptions:Freeze="True"
-                     Color="{StaticResource BlueHeavyColor2}" />
-
     <SolidColorBrush x:Key="BlackBlush"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource BlackColor}" />
     <SolidColorBrush x:Key="WhiteBrush"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource WhiteColor}" />
-    <SolidColorBrush x:Key="GrayBrush"
+    <SolidColorBrush x:Key="DimGrayBrush"
                      PresentationOptions:Freeze="True"
-                     Color="{StaticResource GrayColor}" />
+                     Color="{StaticResource DimGrayColor}" />
+    <SolidColorBrush x:Key="SilverBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource SilverColor}" />
+    <SolidColorBrush x:Key="OrangeBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource OrangeColor}" />
+    <SolidColorBrush x:Key="NavyBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource NavyColor}" />
+    <SolidColorBrush x:Key="CornflowerBlueBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource CornflowerBlueColor}" />
+    <SolidColorBrush x:Key="RoyalBlueBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource RoyalBlueColor}" />
+    <SolidColorBrush x:Key="ForestGreenBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource ForestGreenColor}" />
+    <SolidColorBrush x:Key="PurpleBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource PurpleColor}" />
+    <SolidColorBrush x:Key="YellowBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource YellowColor}" />
+    <SolidColorBrush x:Key="DarkRedBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource DarkRedColor}" />
+    <SolidColorBrush x:Key="RedBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource RedColor}" />
     <SolidColorBrush x:Key="TransparentBrush"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource TransparentColor}" />
@@ -82,12 +96,17 @@
                      Color="{StaticResource GrayColor}" />
 
     <!--  COMMON CAPTION COLORS/SIZE  -->
+    <SolidColorBrush x:Key="PageBG"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource DimGrayColor}" />
+
+    <!--  COMMON CAPTION COLORS/SIZE  -->
     <SolidColorBrush x:Key="CaptionBackground"
                      PresentationOptions:Freeze="True"
-                     Color="{StaticResource BlueHeavyColor}" />
+                     Color="{StaticResource CornflowerBlueColor}" />
     <SolidColorBrush x:Key="CaptionBorderColor"
                      PresentationOptions:Freeze="True"
-                     Color="{StaticResource BlueHeavyColor}" />
+                     Color="{StaticResource RoyalBlueColor}" />
     <SolidColorBrush x:Key="CaptionForeground"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource WhiteColor}" />
