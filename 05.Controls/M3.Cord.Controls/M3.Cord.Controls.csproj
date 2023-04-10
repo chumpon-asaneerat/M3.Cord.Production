@@ -56,6 +56,12 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CordWarehouse\CordPlanningPage.xaml.cs">
+      <DependentUpon>CordPlanningPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CordWarehouse\CordReceiveYarnPage.xaml.cs">
+      <DependentUpon>CordReceiveYarnPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
     </Compile>
@@ -134,6 +140,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CordWarehouse\CordPlanningPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CordWarehouse\CordReceiveYarnPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
