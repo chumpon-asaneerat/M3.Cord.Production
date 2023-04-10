@@ -25,8 +25,9 @@ M3 Cord Production System #93
 M3 Cord Production System #92
 - 
 
+[commited]
 M3 Cord Production System #91
-- 
+- Update Attach properties classes #1.
 
 [commited]
 M3 Cord Production System #90

@@ -72,6 +72,7 @@
       <DependentUpon>SamplePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\M3CordApp.cs" />
+    <Compile Include="Utils\AttachProperties\FontAwesomeIconAttachProperties.cs" />
     <Compile Include="Utils\Converter\IsLastItemConverter.cs" />
     <Compile Include="Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
     <Compile Include="Utils\Converter\StringToNumberConverter.cs" />
