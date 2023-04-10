@@ -26,7 +26,7 @@
     <!--  TEXT BOX STYLE  -->
     <Style x:Key="CommonTextBox" TargetType="TextBox">
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
         <Setter Property="TextAlignment" Value="Center" />
         <!--  FOR ROUND CONNER AND BORDER COLOR  -->
         <Setter Property="Margin" Value="0" />
@@ -53,24 +53,24 @@
                     <ControlTemplate.Triggers>
 
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="bg" Property="BorderBrush" Value="{StaticResource TextBoxMouseOverBorderBrush}" />
+                            <Setter TargetName="bg" Property="BorderBrush" Value="{DynamicResource TextBoxMouseOverBorderBrush}" />
                         </Trigger>
 
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter TargetName="bg" Property="BorderBrush" Value="{StaticResource TextBoxFocusedBorderBrush}" />
+                            <Setter TargetName="bg" Property="BorderBrush" Value="{DynamicResource TextBoxFocusedBorderBrush}" />
                         </Trigger>
 
                         <Trigger Property="IsReadOnly" Value="True">
                             <Setter TargetName="bg" Property="Opacity" Value=".5" />
-                            <Setter TargetName="bg" Property="Background" Value="{StaticResource TextBoxDisableBackground}" />
-                            <Setter Property="Foreground" Value="{StaticResource TextBoxDisableForeground}" />
+                            <Setter TargetName="bg" Property="Background" Value="{DynamicResource TextBoxDisableBackground}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextBoxDisableForeground}" />
                             <Setter Property="Opacity" Value="1" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="bg" Property="Opacity" Value=".5" />
-                            <Setter TargetName="bg" Property="Background" Value="{StaticResource TextBoxDisableBackground}" />
-                            <Setter Property="Foreground" Value="{StaticResource TextBoxDisableForeground}" />
+                            <Setter TargetName="bg" Property="Background" Value="{DynamicResource TextBoxDisableBackground}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextBoxDisableForeground}" />
                             <Setter Property="Opacity" Value="1" />
                         </Trigger>
                     </ControlTemplate.Triggers>

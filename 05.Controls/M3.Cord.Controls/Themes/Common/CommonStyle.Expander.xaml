@@ -289,7 +289,7 @@
                                           MinWidth="0"
                                           MinHeight="0"
                                           Padding="{TemplateBinding Padding}"
-                                          Style="{StaticResource ExpanderDownHeaderStyle}"
+                                          Style="{DynamicResource ExpanderDownHeaderStyle}"
                                           VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
                             <ContentPresenter x:Name="ExpandSite"
                                               DockPanel.Dock="Bottom"
@@ -307,17 +307,17 @@
                         <Trigger Property="ExpandDirection" Value="Right">
                             <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Right" />
                             <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Left" />
-                            <Setter Property="Style" TargetName="HeaderSite" Value="{StaticResource ExpanderRightHeaderStyle}" />
+                            <Setter Property="Style" TargetName="HeaderSite" Value="{DynamicResource ExpanderRightHeaderStyle}" />
                         </Trigger>
                         <Trigger Property="ExpandDirection" Value="Up">
                             <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Top" />
                             <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Bottom" />
-                            <Setter Property="Style" TargetName="HeaderSite" Value="{StaticResource ExpanderUpHeaderStyle}" />
+                            <Setter Property="Style" TargetName="HeaderSite" Value="{DynamicResource ExpanderUpHeaderStyle}" />
                         </Trigger>
                         <Trigger Property="ExpandDirection" Value="Left">
                             <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Left" />
                             <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Right" />
-                            <Setter Property="Style" TargetName="HeaderSite" Value="{StaticResource ExpanderLeftHeaderStyle}" />
+                            <Setter Property="Style" TargetName="HeaderSite" Value="{DynamicResource ExpanderLeftHeaderStyle}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />

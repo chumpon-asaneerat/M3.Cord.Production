@@ -26,13 +26,13 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Foreground" Value="{DynamicResource LabelTextColor}" />
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize}" />
+        <Setter Property="FontSize" Value="{DynamicResource TextBlockFontSize}" />
     </Style>
     <!--  ERROR MESSAGE STYLE  -->
     <Style x:Key="ErrorText" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource ErrorTextColor}" />
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize2}" />
+        <Setter Property="FontSize" Value="{DynamicResource TextBlockFontSize2}" />
         <Setter Property="FontWeight" Value="ExtraBold" />
         <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="TextWrapping" Value="WrapWithOverflow" />

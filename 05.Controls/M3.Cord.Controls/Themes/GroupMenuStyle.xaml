@@ -19,8 +19,8 @@
     <Style x:Key="MenuGroupHeaderTextStyle" TargetType="TextBlock">
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Background" Value="{StaticResource MenuGroupBG}" />
-        <Setter Property="Foreground" Value="{StaticResource MenuGroupFG}" />
+        <Setter Property="Background" Value="{DynamicResource MenuGroupBG}" />
+        <Setter Property="Foreground" Value="{DynamicResource MenuGroupFG}" />
         <Setter Property="FontSize" Value="48" />
         <Setter Property="TextAlignment" Value="Center" />
     </Style>

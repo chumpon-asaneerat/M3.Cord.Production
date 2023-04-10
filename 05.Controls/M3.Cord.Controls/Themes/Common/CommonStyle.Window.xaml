@@ -12,6 +12,6 @@
     <!--  COMMON CONTROLS STYLES: Window  -->
     <Style TargetType="{x:Type Window}">
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
     </Style>
 </ResourceDictionary>

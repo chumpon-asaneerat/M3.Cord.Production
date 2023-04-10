@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 #endregion
 
-namespace M3.Cord.Controls.Utils
+namespace M3.Cord.Controls
 {
     #region FontAwesome Enum
 
@@ -38,7 +38,10 @@ namespace M3.Cord.Controls.Utils
     }
 
     #endregion
+}
 
+namespace M3.Cord.Controls.Utils
+{
     #region FontAwesomeOptions
 
     /// <summary>

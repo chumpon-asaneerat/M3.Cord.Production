@@ -91,18 +91,18 @@
         </Style.Setters>
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                <Setter Property="Background" Value="{StaticResource ListViewItemBackground1}" />
+                <Setter Property="Background" Value="{DynamicResource ListViewItemBackground1}" />
             </Trigger>
             <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                <Setter Property="Background" Value="{StaticResource ListViewItemBackground2}" />
+                <Setter Property="Background" Value="{DynamicResource ListViewItemBackground2}" />
             </Trigger>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Foreground" Value="{StaticResource ListViewItemSelectedForground}" />
-                <Setter Property="Background" Value="{StaticResource ListViewItemSelectedBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource ListViewItemSelectedForground}" />
+                <Setter Property="Background" Value="{DynamicResource ListViewItemSelectedBackground}" />
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{StaticResource ListViewItemMouseOverForground}" />
-                <Setter Property="Background" Value="{StaticResource ListViewItemMouseOverBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource ListViewItemMouseOverForground}" />
+                <Setter Property="Background" Value="{DynamicResource ListViewItemMouseOverBackground}" />
             </Trigger>
 
             <!--  Not foucs but item is selected so show disable color.  -->
@@ -111,8 +111,8 @@
                     <Condition Property="IsFocused" Value="False" />
                     <Condition Property="IsSelected" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter Property="Foreground" Value="{StaticResource ListViewItemDisableForground}" />
-                <Setter Property="Background" Value="{StaticResource ListViewItemDisableBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource ListViewItemDisableForground}" />
+                <Setter Property="Background" Value="{DynamicResource ListViewItemDisableBackground}" />
             </MultiTrigger>
         </Style.Triggers>
     </Style>
@@ -172,14 +172,14 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="IsEnabled" Value="True" />
         <Setter Property="IsHitTestVisible" Value="True" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize18}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize18}" />
     </Style>
     <!--  BASE COLUMN HEADER (FREEZE) STYLES  -->
     <Style x:Key="BASEHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="IsEnabled" Value="True" />
         <Setter Property="IsHitTestVisible" Value="False" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize18}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize18}" />
     </Style>
 
     <!--  CELL DATA TEMPLATES  -->

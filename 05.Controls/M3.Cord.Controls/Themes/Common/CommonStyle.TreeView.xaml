@@ -34,6 +34,6 @@
     <Style x:Key="InfrastructureTreeView"
            BasedOn="{StaticResource DMTTreeView}"
            TargetType="TreeView">
-        <Setter Property="ItemContainerStyle" Value="{StaticResource TreeViewExpandedItemContainer}" />
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource TreeViewExpandedItemContainer}" />
     </Style>
 </ResourceDictionary>

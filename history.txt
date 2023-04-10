@@ -16,8 +16,11 @@ M3 Cord Production System #96
 M3 Cord Production System #95
 - 
 
+[commited]
 M3 Cord Production System #94
-- 
+- Update all xaml styles
+  - change StaticResource to DynamicResource
+- Update Attach properties classes #3.
 
 [commited]
 M3 Cord Production System #93
