@@ -80,15 +80,47 @@ namespace M3.Cord.Pages
             // G4 - Receive Return Material
         }
 
-        private void cmdFirstTwistOperation_Click(object sender, RoutedEventArgs e)
+        private void cmdReceiveYarn_Click(object sender, RoutedEventArgs e)
         {
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
-            // First Twist - Prepare MC
+            // Receive Yarn
+        }
+
+        private void cmdPlaning_Click(object sender, RoutedEventArgs e)
+        {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Planning
+        }
+
+        private void cmdFirstTwist_Click(object sender, RoutedEventArgs e)
+        {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // First Twist
             var page = M3CordApp.Pages.FirstTwistMC;
             page.Setup();
             PageContentManager.Instance.Current = page;
+        }
+
+        private void cmdAging_Click(object sender, RoutedEventArgs e)
+        {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Ageing
+        }
+
+        private void cmdDipping_Click(object sender, RoutedEventArgs e)
+        {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Dipping
         }
 
         #endregion

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
-             d:DesignHeight="450"
+             d:DesignHeight="650"
              d:DesignWidth="1300">
     <UserControl.Resources>
         <!--  CONSTS  -->
@@ -18,9 +18,13 @@
         <SolidColorBrush x:Key="G4BG" Color="DarkOrange" />
         <SolidColorBrush x:Key="G4BGHover" Color="DarkRed" />
         <SolidColorBrush x:Key="G4FG" Color="WhiteSmoke" />
-        <SolidColorBrush x:Key="FirstTwistBG" Color="Orchid" />
-        <SolidColorBrush x:Key="FirstTwistBGHover" Color="Purple" />
-        <SolidColorBrush x:Key="FirstTwistFG" Color="WhiteSmoke" />
+
+        <SolidColorBrush x:Key="CordWarehouseBG" Color="ForestGreen" />
+        <SolidColorBrush x:Key="CordWarehouseBGHover" Color="Green" />
+        <SolidColorBrush x:Key="CordWarehouseFG" Color="WhiteSmoke" />
+        <SolidColorBrush x:Key="CordProductionBG" Color="Orchid" />
+        <SolidColorBrush x:Key="CordProductionBGHover" Color="Purple" />
+        <SolidColorBrush x:Key="CordProductionFG" Color="WhiteSmoke" />
         <SolidColorBrush x:Key="ConfigAndExitBG" Color="Indigo" />
         <SolidColorBrush x:Key="ConfigAndExitBGHover" Color="Blue" />
         <SolidColorBrush x:Key="ConfigAndExitFG" Color="WhiteSmoke" />
@@ -31,11 +35,17 @@
             <Setter Property="Background" Value="{StaticResource G4BG}" />
             <Setter Property="Foreground" Value="{StaticResource G4FG}" />
         </Style>
-        <Style x:Key="FirstTwistHeaderTextStyle"
+        <Style x:Key="CordWarehouseHeaderTextStyle"
                BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
                TargetType="TextBlock">
-            <Setter Property="Background" Value="{StaticResource FirstTwistBG}" />
-            <Setter Property="Foreground" Value="{StaticResource FirstTwistFG}" />
+            <Setter Property="Background" Value="{StaticResource CordWarehouseBG}" />
+            <Setter Property="Foreground" Value="{StaticResource CordWarehouseFG}" />
+        </Style>
+        <Style x:Key="CordProductionHeaderTextStyle"
+               BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Background" Value="{StaticResource CordProductionBG}" />
+            <Setter Property="Foreground" Value="{StaticResource CordProductionFG}" />
         </Style>
         <!--  BUTTON STYLES  -->
         <Style x:Key="G4ButtonStyle"
@@ -63,11 +73,11 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="FirstTwistButtonStyle"
+        <Style x:Key="CordWarehouseButtonStyle"
                BasedOn="{StaticResource MenuButtonStyle}"
                TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource FirstTwistBG}" />
-            <Setter Property="Foreground" Value="{StaticResource FirstTwistFG}" />
+            <Setter Property="Background" Value="{StaticResource CordWarehouseBG}" />
+            <Setter Property="Foreground" Value="{StaticResource CordWarehouseFG}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -76,12 +86,37 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{StaticResource FirstTwistBGHover}" />
-                                <Setter Property="Foreground" Value="{StaticResource FirstTwistFG}" />
+                                <Setter Property="Background" Value="{StaticResource CordWarehouseBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource CordWarehouseFG}" />
                             </Trigger>
                             <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="Background" Value="{StaticResource FirstTwistBGHover}" />
-                                <Setter Property="Foreground" Value="{StaticResource FirstTwistFG}" />
+                                <Setter Property="Background" Value="{StaticResource CordWarehouseBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource CordWarehouseFG}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CordProductionButtonStyle"
+               BasedOn="{StaticResource MenuButtonStyle}"
+               TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource CordProductionBG}" />
+            <Setter Property="Foreground" Value="{StaticResource CordProductionFG}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource CordProductionBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource CordProductionFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource CordProductionBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource CordProductionFG}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -126,6 +161,10 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20" />
@@ -133,7 +172,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
-            <!--  G4 GROUP  -->
+            <!--  G4 WAREHOUSE GROUP  -->
             <Grid Grid.Row="1"
                   Grid.RowSpan="4"
                   Grid.Column="1"
@@ -214,7 +253,58 @@
                     </StackPanel>
                 </Button>
             </Grid>
-            <!--  1st TWIST GROUP  -->
+            <!--  CORD WAREHOUSE GROUP  -->
+            <Grid Grid.Row="5"
+                  Grid.RowSpan="2"
+                  Grid.Column="1"
+                  Margin="5,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="{StaticResource TextHeight}" />
+                    <RowDefinition Height="{StaticResource ButtonHeight}" />
+                    <RowDefinition Height="{StaticResource RowSpace}" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <!--  CORD WAREHOUSE HEADER  -->
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                           Padding="15. 0"
+                           Style="{StaticResource CordWarehouseHeaderTextStyle}"
+                           Text="CORD (Warehouse)" />
+
+                <!--  RECEIVE RAW MATERIAL  -->
+                <Button x:Name="cmdReceiveYarn"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Width="{StaticResource ButtonWidth}"
+                        Style="{StaticResource CordWarehouseButtonStyle}"
+                        Click="cmdReceiveYarn_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Receive" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Yarn" />
+                    </StackPanel>
+                </Button>
+                <TextBlock Grid.Row="1"
+                           Grid.Column="1"
+                           Width="{StaticResource ButtonSpace}" />
+                <!--  PLANNING  -->
+                <Button x:Name="cmdPlaning"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Width="{StaticResource ButtonWidth}"
+                        Style="{StaticResource CordWarehouseButtonStyle}"
+                        Click="cmdPlaning_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Product" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Planning" />
+                    </StackPanel>
+                </Button>
+            </Grid>
+            <!--  CORD PRODUCTION GROUP  -->
             <Grid Grid.Row="1"
                   Grid.RowSpan="4"
                   Grid.Column="2"
@@ -236,58 +326,55 @@
                            Grid.Column="0"
                            Grid.ColumnSpan="3"
                            Padding="15. 0"
-                           Style="{StaticResource FirstTwistHeaderTextStyle}"
-                           Text="1st Twisting" />
+                           Style="{StaticResource CordProductionHeaderTextStyle}"
+                           Text="CORD Process" />
 
                 <!--  SETUP MACHINE  -->
-                <Button x:Name="cmdFirstTwistOperation"
+                <Button x:Name="cmdFirstTwist"
                         Grid.Row="1"
                         Grid.Column="0"
                         Width="{StaticResource ButtonWidth}"
-                        Click="cmdFirstTwistOperation_Click"
-                        Style="{StaticResource FirstTwistButtonStyle}">
+                        Click="cmdFirstTwist_Click"
+                        Style="{StaticResource CordProductionButtonStyle}">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Operation" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="1st Twisting" />
                     </StackPanel>
                 </Button>
                 <TextBlock Grid.Row="1"
                            Grid.Column="1"
                            Width="{StaticResource ButtonSpace}" />
-                <!--  BLANK1  -->
-                <Button x:Name="cmdBLANK1"
+                <!--  Ageing  -->
+                <Button x:Name="cmdAging"
                         Grid.Row="1"
                         Grid.Column="2"
                         Width="{StaticResource ButtonWidth}"
-                        Style="{StaticResource FirstTwistButtonStyle}">
+                        Style="{StaticResource CordProductionButtonStyle}"
+                        Click="cmdAging_Click">
                     <StackPanel Orientation="Vertical">
-                        <!--
-                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Yarn Twisting" />
-                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Record Sheet" />
-                        -->
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Ageing" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="(for DIP Coord)" />
                     </StackPanel>
                 </Button>
-                <!--  BLANK2  -->
-                <Button x:Name="cmdBLANK2"
+                <!--  Dipping  -->
+                <Button x:Name="cmdDipping"
                         Grid.Row="3"
                         Grid.Column="0"
                         Width="{StaticResource ButtonWidth}"
-                        Style="{StaticResource FirstTwistButtonStyle}">
+                        Style="{StaticResource CordProductionButtonStyle}"
+                        Click="cmdDipping_Click">
                     <StackPanel Orientation="Vertical">
-                        <!--
-                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Yarn Twisting" />
-                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Record Sheet" />
-                        -->
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Dipping" />
                     </StackPanel>
                 </Button>
-                <!--  BLANK3  -->
-                <Button x:Name="cmdBLANK3"
+                <!--  BLANK1  -->
+                <Button x:Name="cmdBLANK1"
                         Grid.Row="3"
                         Grid.Column="2"
                         Width="{StaticResource ButtonWidth}"
-                        Style="{StaticResource FirstTwistButtonStyle}">
+                        Style="{StaticResource CordProductionButtonStyle}">
                     <StackPanel Orientation="Vertical">
                         <!--
-                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Yarn Twisting" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Dipping" />
                         <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Record Sheet" />
                         -->
                     </StackPanel>
