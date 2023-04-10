@@ -85,7 +85,10 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
-            // Receive Yarn
+            // Cord Receive Yarn
+            var page = M3CordApp.Pages.CordReceiveYarn;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdPlaning_Click(object sender, RoutedEventArgs e)
@@ -93,7 +96,10 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
-            // Planning
+            // Cord Planning
+            var page = M3CordApp.Pages.CordPlanning;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdFirstTwist_Click(object sender, RoutedEventArgs e)

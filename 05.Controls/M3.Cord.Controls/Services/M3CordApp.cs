@@ -116,6 +116,54 @@ namespace M3.Cord
 
             #endregion
 
+            #region Cord Warehouse
+
+            #region Cord Receive Yarn
+
+            private static M3.Cord.Pages.CordReceiveYarnPage _CordReceiveYarn;
+
+            /// <summary>Gets Cord Receive Yarn.</summary>
+            public static M3.Cord.Pages.CordReceiveYarnPage CordReceiveYarn
+            {
+                get
+                {
+                    if (null == _CordReceiveYarn)
+                    {
+                        lock (typeof(M3CordApp))
+                        {
+                            _CordReceiveYarn = new M3.Cord.Pages.CordReceiveYarnPage();
+                        }
+                    }
+                    return _CordReceiveYarn;
+                }
+            }
+
+            #endregion
+
+            #region Cord Planning
+
+            private static M3.Cord.Pages.CordPlanningPage _CordPlanning;
+
+            /// <summary>Gets Cord Planning Page.</summary>
+            public static M3.Cord.Pages.CordPlanningPage CordPlanning
+            {
+                get
+                {
+                    if (null == _CordPlanning)
+                    {
+                        lock (typeof(M3CordApp))
+                        {
+                            _CordPlanning = new M3.Cord.Pages.CordPlanningPage();
+                        }
+                    }
+                    return _CordPlanning;
+                }
+            }
+
+            #endregion
+
+            #endregion
+
             #region First Twist
 
             #region First Twist MC
