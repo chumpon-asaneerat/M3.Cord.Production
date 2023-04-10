@@ -38,6 +38,13 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Internal Variables
+
+        private List<CordYarn> sources = CordYarn.GetCordYarns();
+        private List<CordYarn> items = null;
+
+        #endregion
+
         #region Button Handlers
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
@@ -45,8 +52,20 @@ namespace M3.Cord.Pages
             GotoMainMenu();
         }
 
-        private void cmdSearch_Click(object sender, RoutedEventArgs e)
+        private void cmdPalletSearch_Click(object sender, RoutedEventArgs e)
         {
+            // generate sample data
+            items = new List<CordYarn>(sources.ToArray());
+            RefreshGrid();
+        }
+
+        private void cmdYarnCHSearch_Click(object sender, RoutedEventArgs e)
+        {
+            // generate sample data
+            items.ForEach(item =>
+            {
+                item.MarkReceive(DateTime.Today);
+            });
             RefreshGrid();
         }
 
@@ -63,7 +82,9 @@ namespace M3.Cord.Pages
 
         private void RefreshGrid()
         {
+            grid.ItemsSource = null;
 
+            grid.ItemsSource = items;
         }
 
         #endregion

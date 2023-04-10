@@ -57,6 +57,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CordWarehouse\CordYarn.cs" />
     <Compile Include="Models\G4\G4IssueYarn.cs" />
     <Compile Include="Models\G4\G4StockYarn.cs" />
     <Compile Include="Models\G4\G4Yarn.cs" />

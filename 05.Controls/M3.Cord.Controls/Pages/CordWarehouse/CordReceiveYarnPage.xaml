@@ -20,7 +20,7 @@
         <!--  BOTTONS BAR VISIBLE STATES  -->
         <Visibility x:Key="HomeButtonVisible">Visible</Visibility>
         <Visibility x:Key="SaveButtonVisible">Visible</Visibility>
-        <Visibility x:Key="PrintButtonVisible">Visible</Visibility>
+        <Visibility x:Key="PrintButtonVisible">Collapsed</Visibility>
         <Visibility x:Key="AddNewButtonVisible">Collapsed</Visibility>
         <Visibility x:Key="DeleteAllButtonVisible">Visible</Visibility>
     </UserControl.Resources>
@@ -160,38 +160,61 @@
                                     DockPanel.Dock="Top"
                                     HorizontalAlignment="Center">
                             <StackPanel Orientation="Horizontal">
-                                <!--  RECEIVE DATE  -->
+                                <!--  PALLET NO  -->
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
                                            Width="100"
                                            TextAlignment="Right"
-                                           Text="Receive Date: " />
-                                <DatePicker x:Name="dtIssueDate"
-                                            FontSize="{StaticResource FontSize14}"
-                                            Margin="0,5"
-                                            Width="150" />
-                                <!--  ITEM YARN  -->
-                                <TextBlock Margin="0,5"
-                                           Style="{StaticResource LabelText}"
-                                           Width="100"
-                                           TextAlignment="Right"
-                                           Text="Item Yarn: " />
-                                <ComboBox x:Name="cbItemYarn"
-                                          Margin="0,5"
-                                          Style="{StaticResource CommonComboBox}"
-                                          Width="200" />
+                                           Text="Pallet No: " />
+                                <TextBox x:Name="txtPalletNo"
+                                         FontSize="{StaticResource FontSize14}"
+                                         Margin="0,5"
+                                         Width="150" />
                                 <!--  SEARCH  -->
-                                <Button x:Name="cmdSearch"
+                                <Button x:Name="cmdPalletSearch"
                                         Style="{StaticResource InlineButton}"
                                         Margin="5,0"
                                         Width="150"
-                                        Height="30">
+                                        Height="30"
+                                        Click="cmdPalletSearch_Click">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Style="{StaticResource fa-search}" FontSize="{StaticResource IBFSize}" />
                                         <TextBlock Margin="3,0"
                                                    FontFamily="{StaticResource THSarabun}"
                                                    FontSize="{StaticResource IBFSize}"
-                                                   Text="Search"
+                                                   Text="Scan"
+                                                   VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical"
+                                    DockPanel.Dock="Top"
+                                    HorizontalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <!--  YARN CH  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="100"
+                                           TextAlignment="Right"
+                                           Text="Yarn CH: " />
+                                <TextBox x:Name="txtYarnCH"
+                                         FontSize="{StaticResource FontSize14}"
+                                         Margin="0,5"
+                                         Width="150" />
+                                <!--  SEARCH  -->
+                                <Button x:Name="cmdYarnCHSearch"
+                                        Style="{StaticResource InlineButton}"
+                                        Margin="5,0"
+                                        Width="150"
+                                        Height="30"
+                                        Click="cmdYarnCHSearch_Click">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource fa-search}" FontSize="{StaticResource IBFSize}" />
+                                        <TextBlock Margin="3,0"
+                                                   FontFamily="{StaticResource THSarabun}"
+                                                   FontSize="{StaticResource IBFSize}"
+                                                   Text="Scan"
                                                    VerticalAlignment="Center" />
                                     </StackPanel>
                                 </Button>
@@ -239,17 +262,6 @@
                                   Style="{StaticResource SingleSelectListView}">
                             <ListView.View>
                                 <GridView>
-                                    <!--  IS SELECTED  -->
-                                    <GridViewColumn Header="">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <CheckBox Width="40"
-                                                          Style="{StaticResource CommonCheckBox}"
-                                                          IsChecked="{Binding IsSelected}"
-                                                          Foreground="{Binding TextColor}" />
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
                                     <!--  RECEIVE DATE  -->
                                     <GridViewColumn Header="Receive Date">
                                         <GridViewColumn.CellTemplate>
@@ -335,6 +347,32 @@
                                                            Text="{Binding PalletType}"
                                                            Foreground="{Binding TextColor}"
                                                            TextAlignment="Right" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center">
+                                                    <!--  DELETE  -->
+                                                    <Button x:Name="cmdDelete"
+                                                            DockPanel.Dock="Left"
+                                                            Style="{StaticResource InlineButton}"
+                                                            Margin="5,0"
+                                                            Width="100"
+                                                            Height="30">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
+                                                            <TextBlock Margin="3,0"
+                                                                       FontFamily="{StaticResource THSarabun}"
+                                                                       FontSize="{StaticResource IBFSize}"
+                                                                       Text="Cancel"
+                                                                       VerticalAlignment="Center" />
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
