@@ -142,6 +142,7 @@
                                          IsReadOnly="True"
                                          Width="150" />
                                 <!--  YARN TYPE  -->
+                                <!--
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
                                            Width="150"
@@ -152,6 +153,7 @@
                                          Text="{Binding YarnType}"
                                          IsReadOnly="True"
                                          Width="150" />
+                                -->
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <!--  WEIGHT  -->

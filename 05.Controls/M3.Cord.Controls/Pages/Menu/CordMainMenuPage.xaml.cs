@@ -67,6 +67,9 @@ namespace M3.Cord.Pages
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
             // G4 - Check Stock
+            var page = M3CordApp.Pages.G4Stock;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdReceiveReturnMaterial_Click(object sender, RoutedEventArgs e)

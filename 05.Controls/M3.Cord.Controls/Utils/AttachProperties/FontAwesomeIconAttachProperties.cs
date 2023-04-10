@@ -143,7 +143,6 @@ namespace M3.Cord.Controls.Utils
                     case FontAwesomeIcon.Copy:
                         style = (Style)Application.Current.Resources["fa-copy"];
                         break;
-                        break;
 
                     case FontAwesomeIcon.Print:
                         style = (Style)Application.Current.Resources["fa-print"];

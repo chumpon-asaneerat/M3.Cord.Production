@@ -118,6 +118,7 @@ namespace M3.Cord.Pages
 
         private void LoadComboBoxes()
         {
+            /*
             var yarnTypes = new string[]
             {
                 "All",
@@ -126,6 +127,7 @@ namespace M3.Cord.Pages
             };
             cbYarnType.ItemsSource = yarnTypes;
             cbYarnType.SelectedIndex = 0;
+            */
 
             var itemYarns = new string[]
             {
@@ -137,6 +139,7 @@ namespace M3.Cord.Pages
             cbItemYarn.ItemsSource = itemYarns;
             cbItemYarn.SelectedIndex = 0;
 
+            /*
             var issUeTo = new string[]
             {
                 "Wrap AB",
@@ -146,6 +149,7 @@ namespace M3.Cord.Pages
             };
             cbIssueTo.ItemsSource = issUeTo;
             cbIssueTo.SelectedIndex = 0;
+            */
         }
 
         private void MarkIssue()
@@ -165,9 +169,9 @@ namespace M3.Cord.Pages
 
             string requestId = txtRequestNo.Text;
             string issueBy = "1"; // current user
-            string issueTo = cbIssueTo.SelectedItem as string;
+            //string issueTo = cbIssueTo.SelectedItem as string;
             DateTime? dt = dtIssueDate.SelectedDate;
-            issue.MarkIssue(requestId, issueBy, issueTo, dt);
+            issue.MarkIssue(requestId, issueBy, null, dt);
 
             RefreshGrid();
         }
@@ -177,19 +181,11 @@ namespace M3.Cord.Pages
             grid.ItemsSource = null;
 
             string itemYarn = cbItemYarn.SelectedItem as string;
-            string yarnType = cbYarnType.SelectedItem as string;
+            //string yarnType = cbYarnType.SelectedItem as string;
 
             items = sources.FindAll((item) =>
             {
-                if (string.IsNullOrEmpty(yarnType) || yarnType == "All")
-                {
-                    return (itemYarn != null && item.ItemYarn == itemYarn);
-                }
-                else
-                {
-                    return ((itemYarn != null && item.ItemYarn == itemYarn) && (item.YarnType == yarnType));
-                }
-                
+                return (itemYarn != null && item.ItemYarn == itemYarn);
             });
 
             // Calc totals

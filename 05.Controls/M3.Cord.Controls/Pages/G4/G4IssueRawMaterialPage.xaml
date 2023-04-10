@@ -19,11 +19,10 @@
         <Visibility x:Key="SearchButtonVisible">Collapsed</Visibility>
         <!--  BOTTONS BAR VISIBLE STATES  -->
         <Visibility x:Key="HomeButtonVisible">Visible</Visibility>
-        <Visibility x:Key="ImportButtonVisible">Collapsed</Visibility>
-        <Visibility x:Key="ExportButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="SaveButtonVisible">Visible</Visibility>
         <Visibility x:Key="PrintButtonVisible">Collapsed</Visibility>
         <Visibility x:Key="AddNewButtonVisible">Collapsed</Visibility>
-        <Visibility x:Key="DeleteAllButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="DeleteAllButtonVisible">Visible</Visibility>
     </UserControl.Resources>
     <Grid Background="{StaticResource PageBG}">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -83,37 +82,37 @@
                                            VerticalAlignment="Center" />
                             </StackPanel>
                         </Button>
-                        <!--  IMPORT  -->
-                        <Button x:Name="cmdImport"
-                                Visibility="{StaticResource ImportButtonVisible}"
+                        <!--  SAVE  -->
+                        <Button x:Name="cmdSave"
+                                Visibility="{StaticResource SaveButtonVisible}"
                                 DockPanel.Dock="Left"
                                 Style="{StaticResource InlineButton}"
                                 Margin="5,0"
                                 Width="150"
                                 Height="30">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-import}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Style="{StaticResource fa-save}" FontSize="{StaticResource IBFSize}" />
                                 <TextBlock Margin="3,0"
                                            FontFamily="{StaticResource THSarabun}"
                                            FontSize="{StaticResource IBFSize}"
-                                           Text="นำเข้าข้อมูล"
+                                           Text="Save"
                                            VerticalAlignment="Center" />
                             </StackPanel>
                         </Button>
-                        <!--  EXPORT  -->
-                        <Button x:Name="cmdExport"
-                                Visibility="{StaticResource ExportButtonVisible}"
+                        <!--  DELETE ALL  -->
+                        <Button x:Name="cmdDeleteAll"
+                                Visibility="{StaticResource DeleteAllButtonVisible}"
                                 DockPanel.Dock="Left"
                                 Style="{StaticResource InlineButton}"
                                 Margin="5,0"
                                 Width="150"
                                 Height="30">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-export}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
                                 <TextBlock Margin="3,0"
                                            FontFamily="{StaticResource THSarabun}"
                                            FontSize="{StaticResource IBFSize}"
-                                           Text="ส่งออกข้อมูล"
+                                           Text="Clear"
                                            VerticalAlignment="Center" />
                             </StackPanel>
                         </Button>
@@ -131,23 +130,6 @@
                                            FontFamily="{StaticResource THSarabun}"
                                            FontSize="{StaticResource IBFSize}"
                                            Text="พิมพ์"
-                                           VerticalAlignment="Center" />
-                            </StackPanel>
-                        </Button>
-                        <!--  DELETE ALL  -->
-                        <Button x:Name="cmdDeleteAll"
-                                Visibility="{StaticResource DeleteAllButtonVisible}"
-                                DockPanel.Dock="Left"
-                                Style="{StaticResource InlineButton}"
-                                Margin="5,0"
-                                Width="150"
-                                Height="30">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
-                                <TextBlock Margin="3,0"
-                                           FontFamily="{StaticResource THSarabun}"
-                                           FontSize="{StaticResource IBFSize}"
-                                           Text="ลบข้อมูลทั้งหมด"
                                            VerticalAlignment="Center" />
                             </StackPanel>
                         </Button>
@@ -201,6 +183,7 @@
                                             Width="150"
                                             SelectedDateChanged="dtIssueDate_SelectedDateChanged" />
                                 <!--  ISSUE TO  -->
+                                <!--
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
                                            Width="100"
@@ -211,6 +194,7 @@
                                           Style="{StaticResource CommonComboBox}"
                                           Width="150"
                                           SelectionChanged="cbIssueTo_SelectionChanged" />
+                                -->
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <!--  ITEM YARN  -->
@@ -225,6 +209,7 @@
                                           Width="200"
                                           SelectionChanged="cbItemYarn_SelectionChanged" />
                                 <!--  YARN TYPE  -->
+                                <!--
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
                                            Width="100"
@@ -235,6 +220,7 @@
                                           Style="{StaticResource CommonComboBox}"
                                           Width="150"
                                           SelectionChanged="cbYarnType_SelectionChanged" />
+                                -->
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <!--  PALLET NO  -->
@@ -243,11 +229,11 @@
                                            Width="100"
                                            TextAlignment="Right"
                                            Text="Pallet No: " />
-                                <TextBox x:Name="txtPalletNo" 
-                                         Margin="0,5"                                         
+                                <TextBox x:Name="txtPalletNo"
+                                         Margin="0,5"
                                          Style="{StaticResource CommonTextBox}"
-                                         Width="150" 
-                                         PreviewKeyDown="txtPalletNo_PreviewKeyDown"/>
+                                         Width="150"
+                                         PreviewKeyDown="txtPalletNo_PreviewKeyDown" />
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
@@ -337,6 +323,7 @@
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
                                     <!--  YARN TYPE  -->
+                                    <!--
                                     <GridViewColumn Header="Yarn Type">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
@@ -347,6 +334,7 @@
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
+                                    -->
                                     <!--  WEIGHT  -->
                                     <GridViewColumn Header="Weight">
                                         <GridViewColumn.CellTemplate>

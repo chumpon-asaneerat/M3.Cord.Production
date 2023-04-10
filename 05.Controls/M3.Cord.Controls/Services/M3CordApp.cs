@@ -92,6 +92,28 @@ namespace M3.Cord
 
             #endregion
 
+            #region Stock
+
+            private static M3.Cord.Pages.G4StockPage _G4Stock;
+
+            /// <summary>Gets G4 Stock Page.</summary>
+            public static M3.Cord.Pages.G4StockPage G4Stock
+            {
+                get
+                {
+                    if (null == _G4Stock)
+                    {
+                        lock (typeof(M3CordApp))
+                        {
+                            _G4Stock = new M3.Cord.Pages.G4StockPage();
+                        }
+                    }
+                    return _G4Stock;
+                }
+            }
+
+            #endregion
+
             #endregion
 
             #region First Twist

@@ -388,7 +388,7 @@ namespace M3.Cord.Models
 
             for (int i = 0; i < itemYarns.Length; ++i)
             {
-                var item = Create(1, itemYarns[i], palletNos[i], yarnTypes[i], item400Codes[i], lotNos[i], traceNos[i]);
+                var item = Create(i, itemYarns[i], palletNos[i], yarnTypes[i], item400Codes[i], lotNos[i], traceNos[i]);
                 if (receiveDate.HasValue)
                 {
                     item.ReceivedDate = receiveDate.Value;
