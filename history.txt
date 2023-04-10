@@ -13,8 +13,9 @@ M3 Cord Production System #97
 M3 Cord Production System #96
 - 
 
+[commited]
 M3 Cord Production System #95
-- 
+- Update app.xaml styles
 
 [commited]
 M3 Cord Production System #94

@@ -4,6 +4,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Generic.xaml" />
+                <!--
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/CommonStyle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/GroupMenuStyle.xaml" />
 
@@ -28,7 +30,6 @@
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.TreeView.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.Expander.xaml" />
 
-                <!--
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/XceedToolKitStyle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/ImageButtonStyle.xaml" />
                 -->
