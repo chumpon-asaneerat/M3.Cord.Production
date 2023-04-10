@@ -350,6 +350,7 @@
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
+                                    <!--  BUTTONS  -->
                                     <GridViewColumn Header="">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>

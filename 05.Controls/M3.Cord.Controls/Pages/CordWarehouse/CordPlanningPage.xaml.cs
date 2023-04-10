@@ -38,6 +38,12 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Internal Variables
+
+        private List<CordProduct> items = CordProduct.GetCordProducts();
+
+        #endregion
+
         #region Button Handlers
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
@@ -48,6 +54,16 @@ namespace M3.Cord.Pages
         private void cmdSearch_Click(object sender, RoutedEventArgs e)
         {
             RefreshGrid();
+        }
+
+        private void cmdAddNew_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdEdit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         #endregion
@@ -61,9 +77,24 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void LoadComboBoxes()
+        {
+            var itemYarns = new string[]
+            {
+                "700-108-178E-TTS",
+                "470-72-1781-JJ",
+                "470-136-178E-APM",
+                "470-136-178E-TTS"
+            };
+            cbItemYarn.ItemsSource = itemYarns;
+            cbItemYarn.SelectedIndex = 0;
+        }
+
         private void RefreshGrid()
         {
+            grid.ItemsSource = null;
 
+            grid.ItemsSource = items;
         }
 
         #endregion
@@ -72,7 +103,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            //LoadComboBoxes();
+            LoadComboBoxes();
             RefreshGrid();
         }
 
