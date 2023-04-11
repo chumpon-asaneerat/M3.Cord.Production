@@ -5,6 +5,7 @@ using M3.Cord.Properties;
 using NLib.Services;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -39,11 +41,29 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Internal Variables
+
+        private List<FirstTwistMC> mcList = FirstTwistMC.Gets();
+
+        #endregion
+
         #region Button Handlers
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
             GotoMainMenu();
+        }
+
+        #endregion
+
+        #region ListBox Handlers
+
+        private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (grid.SelectedIndex == -1)
+                return;
+            var FirstTwistMC = mcList[grid.SelectedIndex];
+            UpdateMCStatus(FirstTwistMC);
         }
 
         #endregion
@@ -57,10 +77,25 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
-        private void RefreshGrid()
+        private void RefreshMC()
         {
             grid.ItemsSource = null;
-            grid.ItemsSource = FirstTwistMC.Gets();
+            grid.ItemsSource = mcList;
+        }
+
+        private void UpdateMCStatus(FirstTwistMC mc)
+        {
+            paMC.DataContext = null;
+            paMC.DataContext = mc.Product;
+            RefreshGrid(mc);
+        }
+
+        private void RefreshGrid(FirstTwistMC mc)
+        {
+            doffGrid.ItemsSource = null;
+            if (null == mc)
+                return;
+            doffGrid.ItemsSource = mc.RawMaterialSheets;
         }
 
         #endregion
@@ -69,7 +104,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            RefreshGrid();
+            RefreshMC();
         }
 
         #endregion

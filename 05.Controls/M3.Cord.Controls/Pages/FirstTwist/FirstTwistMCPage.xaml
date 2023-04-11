@@ -10,7 +10,7 @@
              d:DesignWidth="800">
     <UserControl.Resources>
         <!--  PAGE TITLE  -->
-        <sys:String x:Key="PageTitle">1st Twisting MC</sys:String>
+        <sys:String x:Key="PageTitle">1st Twisting</sys:String>
         <!--  INLINE BUTTON TEXT FONT SIZE  -->
         <sys:Double x:Key="IBFSize">18</sys:Double>
         <!--  FILTER BAR VISIBLE STATES  -->
@@ -22,7 +22,7 @@
         <Visibility x:Key="ImportButtonVisible">Collapsed</Visibility>
         <Visibility x:Key="ExportButtonVisible">Collapsed</Visibility>
         <Visibility x:Key="PrintButtonVisible">Collapsed</Visibility>
-        <Visibility x:Key="AddNewButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="AddNewButtonVisible">Visible</Visibility>
         <Visibility x:Key="DeleteAllButtonVisible">Collapsed</Visibility>
     </UserControl.Resources>
     <Grid Background="{StaticResource PageBG}">
@@ -79,7 +79,7 @@
                                 <TextBlock Margin="3,0"
                                            FontFamily="{StaticResource THSarabun}"
                                            FontSize="{StaticResource IBFSize}"
-                                           Text="เพิ่มข้อมูล"
+                                           Text="New"
                                            VerticalAlignment="Center" />
                             </StackPanel>
                         </Button>
@@ -173,17 +173,18 @@
                     </DockPanel>
                     <!--  ITEMS  -->
                     <ListBox x:Name="grid"
+                             DockPanel.Dock="Left"
+                             Width="200"
                              Background="White"
                              ItemContainerStyle="{StaticResource BASEListBoxItemContainer}"
-                             Style="{StaticResource SingleSelectWrapListBox}">
+                             Style="{StaticResource SingleSelectWrapListBox}"
+                             SelectionChanged="grid_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Border BorderBrush="Silver"
                                         BorderThickness="1"
                                         CornerRadius="3"
                                         Margin="2"
-                                        Height="500"
-                                        Width="600"
                                         ClipToBounds="True">
                                     <DockPanel LastChildFill="True" Margin="2">
                                         <!--  MC NAME  -->
@@ -192,6 +193,7 @@
                                                 Background="CornflowerBlue"
                                                 Margin="2"
                                                 DockPanel.Dock="Top"
+                                                HorizontalAlignment="Stretch"
                                                 CornerRadius="3">
                                             <TextBlock Text="{Binding MCName}"
                                                        Margin="2"
@@ -203,117 +205,175 @@
                                         <!--  MC IMAGE  -->
                                         <Image RenderOptions.BitmapScalingMode="LowQuality"
                                                RenderOptions.EdgeMode="Aliased"
-                                               DockPanel.Dock="Top"
                                                Source="/M3.Cord.Controls;component/Images/FirstTwist/TwistingMC.jpg"
                                                Width="Auto"
                                                Height="Auto" />
-                                        <!--  MC INFO AND OPERATION  -->
-                                        <DockPanel LastChildFill="True">
-                                            <!--  MC INFO  -->
-                                            <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
-                                                <!--  TOTAL BB CORE  -->
-                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                                    <TextBlock Text="Total BB:"
-                                                               Margin="5,0"
-                                                               TextAlignment="Right"
-                                                               Width="100"
-                                                               Foreground="Navy"
-                                                               Style="{StaticResource LabelText}" />
-                                                    <TextBlock TextAlignment="Left"
-                                                               Margin="5,0"
-                                                               Foreground="Black"
-                                                               Style="{StaticResource LabelText}">
-                                                        <Run Text="{Binding BBCount}" />
-                                                        <Run Text="/" />
-                                                        <Run Text="{Binding SheetPerBB}" />
-                                                    </TextBlock>
-                                                </StackPanel>
-                                            </StackPanel>
-                                            <!--  OPERATIONS  -->
-                                            <StackPanel Orientation="Vertical">
-                                                <!--  RAW MATERIAL  -->
-                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                                    <TextBlock Text="Lot No:"
-                                                               Margin="5,0"
-                                                               TextAlignment="Right"
-                                                               Width="150"
-                                                               Foreground="Navy"
-                                                               Style="{StaticResource LabelText}" />
-                                                    <Button x:Name="cmdLotNo"
-                                                            Style="{StaticResource InlineButton}"
-                                                            Margin="5,0">
-                                                        <TextBlock Text="{Binding LotNo}"
-                                                                   FontFamily="{StaticResource THSarabun}"
-                                                                   FontSize="{StaticResource FontSize18}"
-                                                                   Width="250"
-                                                                   TextAlignment="Center"
-                                                                   VerticalAlignment="Center" />
-                                                    </Button>
-                                                </StackPanel>
-                                                <!--  MC CONDITION  -->
-                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                                    <TextBlock Text="MC Condition:"
-                                                               Margin="5,0"
-                                                               TextAlignment="Right"
-                                                               Width="150"
-                                                               Foreground="Navy"
-                                                               Style="{StaticResource LabelText}" />
-                                                    <Button x:Name="cmdMCCondition"
-                                                            Style="{StaticResource InlineButton}"
-                                                            Margin="5,0">
-                                                        <TextBlock Text="Manage"
-                                                                   FontFamily="{StaticResource THSarabun}"
-                                                                   FontSize="{StaticResource FontSize18}"
-                                                                   Width="250"
-                                                                   TextAlignment="Center"
-                                                                   VerticalAlignment="Center" />
-                                                    </Button>
-                                                </StackPanel>
-                                                <!--  PRODUCT CONDITION  -->
-                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                                    <TextBlock Text="Product Condition:"
-                                                               Margin="5,0"
-                                                               TextAlignment="Right"
-                                                               Width="150"
-                                                               Foreground="Navy"
-                                                               Style="{StaticResource LabelText}" />
-                                                    <Button x:Name="cmdProductCondition"
-                                                            Style="{StaticResource InlineButton}"
-                                                            Margin="5,0">
-                                                        <TextBlock Text="Manage"
-                                                                   FontFamily="{StaticResource THSarabun}"
-                                                                   FontSize="{StaticResource FontSize18}"
-                                                                   Width="250"
-                                                                   TextAlignment="Center"
-                                                                   VerticalAlignment="Center" />
-                                                    </Button>
-                                                </StackPanel>
-                                                <!--  PROCESSING CONTROOL CARD  -->
-                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                                    <TextBlock Text="PC Card:"
-                                                               Margin="5,0"
-                                                               TextAlignment="Right"
-                                                               Width="150"
-                                                               Foreground="Navy"
-                                                               Style="{StaticResource LabelText}" />
-                                                    <Button x:Name="cmdPCCard"
-                                                            Style="{StaticResource InlineButton}"
-                                                            Margin="5,0">
-                                                        <TextBlock Text="Manage"
-                                                                   FontFamily="{StaticResource THSarabun}"
-                                                                   FontSize="{StaticResource FontSize18}"
-                                                                   Width="250"
-                                                                   TextAlignment="Center"
-                                                                   VerticalAlignment="Center" />
-                                                    </Button>
-                                                </StackPanel>
-                                            </StackPanel>
-                                        </DockPanel>
                                     </DockPanel>
                                 </Border>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
+                    <DockPanel x:Name="paMC"
+                               LastChildFill="True"
+                               Margin="1"
+                               Background="WhiteSmoke">
+                        <StackPanel Orientation="Vertical">
+                            <!--  CUSTOMER  -->
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="Customer: "
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Black" />
+                                <TextBlock Text="{Binding CustomerName}"
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Navy"
+                                           FontSize="{StaticResource FontSize20}" />
+                            </StackPanel>
+                            <!--  LOT NO  -->
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="Lot No: "
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Black" />
+                                <TextBlock Text="{Binding LotNo}"
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Navy"
+                                           FontSize="{StaticResource FontSize20}" />
+                            </StackPanel>
+                            <!--  Item Code  -->
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="Item Code: "
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Black" />
+                                <TextBlock Text="{Binding ItemCode}"
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Navy"
+                                           FontSize="{StaticResource FontSize20}" />
+                            </StackPanel>
+                            <!--  Yarn Type  -->
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="Yarn Type: "
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Black" />
+                                <TextBlock Text="{Binding ItemYarn}"
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Navy"
+                                           FontSize="{StaticResource FontSize20}" />
+                            </StackPanel>
+                            <!--  Weight  -->
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="Weight: "
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Black" />
+                                <TextBlock Text="{Binding TargetQty}"
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Navy" />
+                            </StackPanel>
+                            <!--  Flow  -->
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="Flow: "
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Black" />
+                                <TextBlock Text="{Binding Flow}"
+                                           Style="{StaticResource LabelText}"
+                                           Foreground="Navy" />
+                            </StackPanel>
+                            <TextBlock Height="5" />
+                            <!--  DOFF LIST  -->
+                            <ListView x:Name="doffGrid" FontSize="{StaticResource FontSize18}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridView.Columns>
+                                            <!--  PRODUCTION DATE  -->
+                                            <GridViewColumn Header="Production Date">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Width="150"
+                                                                   Text="{Binding ProductionDate}"
+                                                                   TextAlignment="Center" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <!--  YARN TYPE  -->
+                                            <GridViewColumn Header="Yarn Type">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Width="150"
+                                                                   Text="{Binding YarnType}"
+                                                                   TextAlignment="Center" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <!--  TRACE NO  -->
+                                            <GridViewColumn Header="Trace No">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Width="150"
+                                                                   Text="{Binding TraceNo}"
+                                                                   TextAlignment="Center" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <!--  INPUT CH  -->
+                                            <GridViewColumn Header="Input (CH)">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Width="150"
+                                                                   Text="{Binding InputCh}"
+                                                                   TextAlignment="Center" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <!--  DOFF  -->
+                                            <GridViewColumn Header="Doff">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Width="150"
+                                                                   Text="{Binding DoffName}"
+                                                                   TextAlignment="Center" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <!--  SP NO  -->
+                                            <GridViewColumn Header="SP No.">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Width="150"
+                                                                   Text="{Binding SPNo}"
+                                                                   TextAlignment="Center" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                        </GridView.Columns>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <TextBlock Height="5" />
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="5,0"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+                                <Button x:Name="cmdDoff"
+                                        Margin="2,0"
+                                        Style="{StaticResource InlineButton}"
+                                        Width="150"
+                                        Content="Doff" />
+                                <Button x:Name="cmdCoreCheck"
+                                        Margin="2,0"
+                                        Style="{StaticResource InlineButton}"
+                                        Width="150"
+                                        Content="MC Check" />
+                                <Button x:Name="cmdCondition"
+                                        Margin="2,0"
+                                        Style="{StaticResource InlineButton}"
+                                        Width="150"
+                                        Content="Condition" />
+                                <Button x:Name="cmdPCC"
+                                        Margin="2,0"
+                                        Style="{StaticResource InlineButton}"
+                                        Width="150"
+                                        Content="Control Card" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DockPanel>
                 </DockPanel>
             </DockPanel>
         </Grid>
