@@ -3,10 +3,53 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfOracleConnect"
-        mc:Ignorable="d"
         Title="MainWindow"
         Height="450"
-        Width="800">
-    <Grid />
+        Width="800"
+        Loaded="Window_Loaded"
+        Unloaded="Window_Unloaded"
+        mc:Ignorable="d">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="0,3"
+                        VerticalAlignment="Stretch">
+                <!--  SERVER NAME  -->
+                <StackPanel Orientation="Vertical" Margin="3,0">
+                    <TextBox Text="Server Name:" />
+                    <TextBox x:Name="txtServerName"
+                             Text="VMORACLE"
+                             Width="150" />
+                </StackPanel>
+                <!--  DATABASE NAME  -->
+                <StackPanel Orientation="Vertical" Margin="3,0">
+                    <TextBlock Text="Service Name:" />
+                    <TextBox x:Name="txtServiceName"
+                             Text="orcl"
+                             Width="150" />
+                </StackPanel>
+                <!--  User NAME  -->
+                <StackPanel Orientation="Vertical" Margin="3,0">
+                    <TextBlock Text="User Name:" />
+                    <TextBox x:Name="txtUserName"
+                             Text="AIRBAG2014"
+                             Width="150" />
+                </StackPanel>
+                <!--  Password  -->
+                <StackPanel Orientation="Vertical" Margin="3,0">
+                    <TextBlock Text="Password:" />
+                    <TextBox x:Name="txtPassword"
+                             Text="airbag"
+                             Width="150" />
+                </StackPanel>
+                <Button x:Name="cmdConnect"
+                        Content="Connect"
+                        Margin="3,0"
+                        Width="100" 
+                        Click="cmdConnect_Click"/>
+            </StackPanel>
+            <Grid />
+        </DockPanel>
+    </Grid>
 </Window>
