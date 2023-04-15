@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="MainWindow"
         Height="450"
-        Width="800"
+        Width="850"
         Loaded="Window_Loaded"
         Unloaded="Window_Unloaded"
         mc:Ignorable="d">
     <Grid>
         <DockPanel LastChildFill="True">
+            <!--  CONNECTION INFO  -->
             <StackPanel Orientation="Horizontal"
                         DockPanel.Dock="Top"
                         Margin="0,3"
@@ -49,6 +50,12 @@
                         Margin="3,0"
                         Width="100"
                         Click="cmdConnect_Click" />
+                <!--  CONNECT  -->
+                <Button x:Name="cmdDisconnect"
+                        Content="Disconnect"
+                        Margin="3,0"
+                        Width="100"
+                        Click="cmdDisconnect_Click" />
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         DockPanel.Dock="Top"
@@ -73,7 +80,28 @@
                                Width="100" />
                 </StackPanel>
             </StackPanel>
-            <Grid />
+            <!--  QUERY  -->
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="0,3"
+                        VerticalAlignment="Center">
+                <!--  COMMAND TEXT  -->
+                <StackPanel Orientation="Vertical" Margin="3,0">
+                    <TextBlock Text="Command Text:" />
+                    <TextBox x:Name="txtCommandText"
+                             Text=""
+                             Width="600"
+                             Height="50"
+                             TextWrapping="Wrap" />
+                </StackPanel>
+                <!--  EXECUTE  -->
+                <Button x:Name="cmdExecute"
+                        Content="Execute"
+                        Margin="3,0"
+                        Width="100"
+                        Click="cmdExecute_Click" />
+            </StackPanel>
+            <DataGrid x:Name="dbgrid" AutoGenerateColumns="True" />
         </DockPanel>
     </Grid>
 </Window>

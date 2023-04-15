@@ -39,11 +39,17 @@ namespace WpfOracleConnect
 
         #endregion
 
+        #region Internal Variables
+
+        OracleConnection con = null;
+
+        #endregion
+
         #region Loaded/Unloaded
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            InitControls();
         }
 
         private void Window_Unloaded(object sender, RoutedEventArgs e)
@@ -60,14 +66,32 @@ namespace WpfOracleConnect
             Connect();
         }
 
+        private void cmdDisconnect_Click(object sender, RoutedEventArgs e)
+        {
+            Disconnect();
+        }
+
+        private void cmdExecute_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         #endregion
 
         #region Private Methods
 
+        private void InitControls()
+        {
+            txtCommandText.Text = "SELECT * FROM G3_YARN WHERE rownum <= 100";
+        }
+
         private void Connect()
         {
+            if (null != con)
+                return; // already connect.
+
             // create connection
-            OracleConnection con = new OracleConnection();
+            con = new OracleConnection();
             // create connection string using builder
             OracleConnectionStringBuilder ocsb = new OracleConnectionStringBuilder();
             ocsb.DataSource = string.Format("(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST={0})(PORT={1}))(CONNECT_DATA=(SERVICE_NAME={2})))",
@@ -75,17 +99,30 @@ namespace WpfOracleConnect
             ocsb.UserID = txtUserName.Text;
             ocsb.Password = txtPassword.Text;
             txtConnectionString.Text = ocsb.ConnectionString;
-            /*
             // connect
             con.ConnectionString = ocsb.ConnectionString;
             con.Open();
-            Console.WriteLine("Connection established (" + con.ServerVersion + ")");
-            */
+
+            UpdateStatus();
         }
 
         private void Disconnect()
         {
+            if (null == con)
+                return; // already disconnect.
+            con.Close();
+            con.Dispose();
+            con = null;
 
+            txtConnectionString.Text = string.Empty;
+
+            UpdateStatus();
+        }
+
+        public void UpdateStatus()
+        {
+            txtStatus.Text = (null != con && con.State == System.Data.ConnectionState.Open) ?
+                "Connected" : "Disconncted";
         }
 
         #endregion
