@@ -17,6 +17,9 @@ using System.Windows.Shapes;
 
 #endregion
 
+using Oracle.ManagedDataAccess;
+using Oracle.ManagedDataAccess.Client;
+
 namespace WpfOracleConnect
 {
     /// <summary>
@@ -63,20 +66,20 @@ namespace WpfOracleConnect
 
         private void Connect()
         {
+            // create connection
+            OracleConnection con = new OracleConnection();
+            // create connection string using builder
+            OracleConnectionStringBuilder ocsb = new OracleConnectionStringBuilder();
+            ocsb.DataSource = string.Format("(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST={0})(PORT={1}))(CONNECT_DATA=(SERVICE_NAME={2})))",
+                txtServerName.Text, 1521, txtServiceName.Text);
+            ocsb.UserID = txtUserName.Text;
+            ocsb.Password = txtPassword.Text;
+            txtConnectionString.Text = ocsb.ConnectionString;
             /*
-// create connection
-OracleConnection con = new OracleConnection();
-
-// create connection string using builder
-OracleConnectionStringBuilder ocsb = new OracleConnectionStringBuilder();
-ocsb.Password = "autumn117";
-ocsb.UserID = "john";
-ocsb.DataSource = "database.url:port/databasename";
-
-// connect
-con.ConnectionString = ocsb.ConnectionString;
-con.Open();
-Console.WriteLine("Connection established (" + con.ServerVersion + ")");
+            // connect
+            con.ConnectionString = ocsb.ConnectionString;
+            con.Open();
+            Console.WriteLine("Connection established (" + con.ServerVersion + ")");
             */
         }
 

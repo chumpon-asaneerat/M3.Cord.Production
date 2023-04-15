@@ -4,8 +4,10 @@ M3 Cord Production System #110
 M3 Cord Production System #109
 - 
 
+[commited]
 M3 Cord Production System #108
-- 
+- Update WpfOracleConnect project #3.
+  - Implements test code #3.
 
 [commited]
 M3 Cord Production System #107

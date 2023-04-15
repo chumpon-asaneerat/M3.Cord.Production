@@ -14,7 +14,7 @@
             <StackPanel Orientation="Horizontal"
                         DockPanel.Dock="Top"
                         Margin="0,3"
-                        VerticalAlignment="Stretch">
+                        VerticalAlignment="Center">
                 <!--  SERVER NAME  -->
                 <StackPanel Orientation="Vertical" Margin="3,0">
                     <TextBox Text="Server Name:" />
@@ -29,25 +29,49 @@
                              Text="orcl"
                              Width="150" />
                 </StackPanel>
-                <!--  User NAME  -->
+                <!--  USER NAME  -->
                 <StackPanel Orientation="Vertical" Margin="3,0">
                     <TextBlock Text="User Name:" />
                     <TextBox x:Name="txtUserName"
                              Text="AIRBAG2014"
                              Width="150" />
                 </StackPanel>
-                <!--  Password  -->
+                <!--  PASSWORD  -->
                 <StackPanel Orientation="Vertical" Margin="3,0">
                     <TextBlock Text="Password:" />
                     <TextBox x:Name="txtPassword"
                              Text="airbag"
                              Width="150" />
                 </StackPanel>
+                <!--  CONNECT  -->
                 <Button x:Name="cmdConnect"
                         Content="Connect"
                         Margin="3,0"
-                        Width="100" 
-                        Click="cmdConnect_Click"/>
+                        Width="100"
+                        Click="cmdConnect_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="0,3"
+                        VerticalAlignment="Center">
+                <!--  CONNECTION STRING  -->
+                <StackPanel Orientation="Vertical" Margin="3,0">
+                    <TextBlock Text="Connect String:" />
+                    <TextBox x:Name="txtConnectionString"
+                             IsReadOnly="True"
+                             Text=""
+                             Width="600"
+                             Height="50"
+                             TextWrapping="Wrap" />
+                </StackPanel>
+                <!--  STATUS  -->
+                <StackPanel Orientation="Vertical" Margin="3,0">
+                    <TextBlock Text="Status:" />
+                    <TextBlock x:Name="txtStatus"
+                               Text="Disconnected"
+                               FontWeight="Bold"
+                               Width="100" />
+                </StackPanel>
             </StackPanel>
             <Grid />
         </DockPanel>
