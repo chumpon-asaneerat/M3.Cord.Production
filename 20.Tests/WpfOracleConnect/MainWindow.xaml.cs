@@ -2,6 +2,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,7 +75,7 @@ namespace WpfOracleConnect
 
         private void cmdExecute_Click(object sender, RoutedEventArgs e)
         {
-
+            Execute();
         }
 
         #endregion
@@ -119,10 +121,56 @@ namespace WpfOracleConnect
             UpdateStatus();
         }
 
-        public void UpdateStatus()
+        private void UpdateStatus()
         {
             txtStatus.Text = (null != con && con.State == System.Data.ConnectionState.Open) ?
                 "Connected" : "Disconncted";
+        }
+
+        private void Execute()
+        {
+            if (null == con || con.State != System.Data.ConnectionState.Open)
+                return; // not connect.
+
+            string commandText = txtCommandText.Text;
+
+            DataSet dataSet = null;
+            using (var cmd =  new OracleCommand(commandText, con))
+            {
+                cmd.BindByName = true; // required for call a stored procedure with named parameters
+                cmd.CommandText = commandText;
+                cmd.CommandType = System.Data.CommandType.Text;
+                
+                OracleDataAdapter adapter = new OracleDataAdapter();
+                using (DbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        dataSet = new DataSet();
+                        adapter.SelectCommand = cmd;
+                        adapter.Fill(dataSet);
+                    }
+
+                    reader.Close();
+                }
+            }
+
+            if (null != dbgrid.ItemsSource && dbgrid.ItemsSource is DataTable)
+            {
+                var tbl = dbgrid.ItemsSource as DataTable;
+                tbl.Dispose();
+            }
+
+            dbgrid.ItemsSource = null;
+
+            if (null != dataSet && null != dataSet.Tables && dataSet.Tables.Count > 0)
+            {
+                var tbl = dataSet.Tables[0];
+                if (null != tbl)
+                {
+                    dbgrid.ItemsSource = tbl.DefaultView;
+                }
+            }
         }
 
         #endregion
