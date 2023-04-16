@@ -100,6 +100,12 @@
                         Margin="3,0"
                         Width="100"
                         Click="cmdExecute_Click" />
+                <!--  EXECUTE  -->
+                <Button x:Name="cmdExport"
+                        Content="Export"
+                        Margin="3,0"
+                        Width="100"
+                        Click="cmdExport_Click" />
             </StackPanel>
             <DataGrid x:Name="dbgrid" AutoGenerateColumns="True" />
         </DockPanel>

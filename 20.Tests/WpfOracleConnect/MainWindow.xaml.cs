@@ -43,7 +43,7 @@ namespace WpfOracleConnect
 
         #region Internal Variables
 
-        OracleConnection con = null;
+        private OracleConnection con = null;
 
         #endregion
 
@@ -76,6 +76,11 @@ namespace WpfOracleConnect
         private void cmdExecute_Click(object sender, RoutedEventArgs e)
         {
             Execute();
+        }
+
+        private void cmdExport_Click(object sender, RoutedEventArgs e)
+        {
+            Export();
         }
 
         #endregion
@@ -169,6 +174,40 @@ namespace WpfOracleConnect
                 if (null != tbl)
                 {
                     dbgrid.ItemsSource = tbl.DefaultView;
+                }
+            }
+        }
+
+        private void Export()
+        {
+            if (null == con || con.State != System.Data.ConnectionState.Open)
+                return; // not connect.
+
+            string commandText = txtCommandText.Text;
+            using (var cmd = new OracleCommand(commandText, con))
+            {
+                cmd.BindByName = true; // required for call a stored procedure with named parameters
+                cmd.CommandText = commandText;
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                using (DbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            int fldCount = reader.FieldCount;
+                            string[] columnNames = new string[fldCount];
+                            for (int i = 0; i < fldCount; i++)
+                            {
+                                if (i == 0) 
+                                    columnNames[i] = reader.GetName(i); // cache name at start of loop
+
+                            }
+                        }
+                    }
+
+                    reader.Close();
                 }
             }
         }
