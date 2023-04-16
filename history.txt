@@ -16,8 +16,11 @@ M3 Cord Production System #126
 M3 Cord Production System #125
 - 
 
+[commited]
 M3 Cord Production System #124
-- 
+- Setup assemblies
+  - NLib.Utils project
+  - NLib.Wpf.Controls project
 
 [commited]
 M3 Cord Production System #123

@@ -82,5 +82,15 @@
   <ItemGroup>
     <Folder Include="Themes\Common\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NLib.Utils\NLib.Utils.csproj">
+      <Project>{93acb478-4570-4f67-9442-2839d1a46ec9}</Project>
+      <Name>NLib.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NLib\NLib.csproj">
+      <Project>{41a9d6c0-c833-403f-9bc1-eecdc246a428}</Project>
+      <Name>NLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
