@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,8 +20,9 @@ using System.Windows.Shapes;
 
 #endregion
 
-using Oracle.ManagedDataAccess;
 using Oracle.ManagedDataAccess.Client;
+using Newtonsoft;
+using Newtonsoft.Json.Linq;
 
 namespace WpfOracleConnect
 {
@@ -194,16 +196,27 @@ namespace WpfOracleConnect
                 {
                     if (reader.HasRows)
                     {
+                        JObject root = new JObject();
+                        JsonArray items = new JsonArray("Items");
+                        root.Add(items);
                         while (reader.Read())
                         {
+                            JObject obj = new JObject();
+
                             int fldCount = reader.FieldCount;
                             string[] columnNames = new string[fldCount];
+
                             for (int i = 0; i < fldCount; i++)
                             {
                                 if (i == 0) 
                                     columnNames[i] = reader.GetName(i); // cache name at start of loop
-
+                                
+                                string columnName = columnNames[i];
+                                Type type = reader.GetFieldType(i);
+                                obj[columnName] = JToken.FromObject(reader.GetValue(i));
                             }
+                            // append to item array.
+                            items.Add(obj);
                         }
                     }
 
@@ -214,6 +227,26 @@ namespace WpfOracleConnect
 
         #endregion
     }
+
+    public static class TypeExtensionMethods
+    {
+        public static Type GetNullableType(this Type type)
+        {
+            if (null == type) 
+                return type;
+
+            // Use Nullable.GetUnderlyingType() to remove the Nullable<T> wrapper if type is already nullable.
+            type = Nullable.GetUnderlyingType(type) ?? type; // avoid type becoming null
+            if (type.IsValueType)
+                return typeof(Nullable<>).MakeGenericType(type);
+            else
+                return type;
+        }
+
+        public static Nullable
+    }
+
+    #region Dialogs class
 
     public class Dialogs
     {
@@ -273,4 +306,6 @@ namespace WpfOracleConnect
 
         #endregion
     }
+
+    #endregion
 }
