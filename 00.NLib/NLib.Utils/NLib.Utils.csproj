@@ -84,4 +84,16 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(SolutionDir)References\Newtonsoft*.*" "$(TargetDir)\..\Tests\Newtonsoft*.*" /Y/D/E
+
+REM REMOVE DIR (IN CASE NOT USER NLIB REPORTS)
+
+REM RD /s /q "$(TargetDir)\..\Tests\runtimes"
+REM IF EXIST "$(TargetDir)\..\Tests\runtimes" RD /s /q "$(TargetDir)\..\Tests\runtimes"
+
+REM RD /s /q "$(TargetDir)\..\Tests\SqlServerTypes"
+REM IF EXIST "$(TargetDir)\..\Tests\SqlServerTypes"RD /s /q "$(TargetDir)\..\Tests\SqlServerTypes"
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

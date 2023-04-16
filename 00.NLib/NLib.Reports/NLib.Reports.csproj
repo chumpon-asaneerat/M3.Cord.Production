@@ -114,7 +114,6 @@
     <PostBuildEvent>REM xcopy "$(SolutionDir)References\SqlServerTypes\*.*" "$(TargetDir)\SqlServerTypes\*.*" /Y/D/E
 xcopy "$(SolutionDir)References\SqlServerTypes\*.*" "$(TargetDir)\..\M3.Cord\Production\SqlServerTypes\*.*" /Y/D/E
 xcopy "$(SolutionDir)References\SqlServerTypes\*.*" "$(TargetDir)\..\M3.Cord\QA\SqlServerTypes\*.*" /Y/D/E
-
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

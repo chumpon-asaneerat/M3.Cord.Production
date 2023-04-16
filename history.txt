@@ -7,8 +7,10 @@ M3 Cord Production System #129
 M3 Cord Production System #128
 - 
 
+[commited]
 M3 Cord Production System #127
-- 
+- Set post build action
+  - NLib.Wpf.Test.App project
 
 [commited]
 M3 Cord Production System #126
