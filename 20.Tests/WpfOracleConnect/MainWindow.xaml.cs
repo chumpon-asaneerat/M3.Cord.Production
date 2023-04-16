@@ -23,6 +23,8 @@ using System.Windows.Shapes;
 using Oracle.ManagedDataAccess.Client;
 using Newtonsoft;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace WpfOracleConnect
 {
@@ -185,6 +187,15 @@ namespace WpfOracleConnect
             if (null == con || con.State != System.Data.ConnectionState.Open)
                 return; // not connect.
 
+            string fileName = Dialogs.SaveDialog();
+            if (string.IsNullOrEmpty(fileName))
+                return;
+
+            // prepare output object.
+            JObject root = new JObject();
+            JsonArray items = new JsonArray("Items");
+            root.Add(items);
+
             string commandText = txtCommandText.Text;
             using (var cmd = new OracleCommand(commandText, con))
             {
@@ -196,9 +207,6 @@ namespace WpfOracleConnect
                 {
                     if (reader.HasRows)
                     {
-                        JObject root = new JObject();
-                        JsonArray items = new JsonArray("Items");
-                        root.Add(items);
                         while (reader.Read())
                         {
                             JObject obj = new JObject();
@@ -222,6 +230,13 @@ namespace WpfOracleConnect
 
                     reader.Close();
                 }
+            }
+
+            // save to json file.
+            using (StreamWriter file = File.CreateText(fileName))
+            using (JsonTextWriter writer = new JsonTextWriter(file))
+            {
+                root.WriteTo(writer);
             }
         }
 
