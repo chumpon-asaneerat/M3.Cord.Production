@@ -209,23 +209,47 @@ namespace WpfOracleConnect
                     cmd.CommandText = commandText;
                     cmd.CommandType = System.Data.CommandType.Text;
 
-                    using (DbDataReader reader = cmd.ExecuteReader())
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        if (reader.HasRows)
+                        int fldCount = reader.FieldCount;
+                        string[] columnNames = new string[fldCount];
+
+                        using (var schemaTable = reader.GetSchemaTable())
                         {
-                            int fldCount = reader.FieldCount;
-                            string[] columnNames = new string[fldCount];
-                            for (int i = 0; i < fldCount; i++)
+                            int i = 0;
+                            foreach (DataRow row in schemaTable.Rows)
                             {
-                                columnNames[i] = reader.GetName(i); // cache name
+                                columnNames[i] = row.Field<string>("ColumnName");
+                                string dataTypeName = row["DataType"].ToString();
+                                //string providerType = ((OracleDbType)row["ProviderType"]).ToString();
+                                short? precision = row.Field<short?>("NumericPrecision");
+                                short? scale = row.Field<short?>("NumericScale");
+                                int? columnSize = row.Field<int?>("ColumnSize");
+
                                 // update output json structure
                                 JObject jcol = new JObject();
                                 jcol.Add(new JProperty("ordinal", i));
                                 jcol.Add(new JProperty("name", columnNames[i]));
-                                jcol.Add(new JProperty("type", reader.GetFieldType(i).ToString()));
+                                jcol.Add(new JProperty("type", dataTypeName));
+                                //jcol.Add(new JProperty("dbtype", providerType));
+                                jcol.Add(new JProperty("precision", precision));
+                                jcol.Add(new JProperty("scale", scale));
+                                jcol.Add(new JProperty("size", columnSize));
                                 columns.Add(jcol); // add to array.
-                            }
 
+                                ++i;
+                            }
+                        }
+
+
+                        if (reader.HasRows)
+                        {
+                            /*
+                            for (int i = 0; i < fldCount; i++)
+                            {
+                                columnNames[i] = reader.GetName(i); // cache name
+                            }
+                            */
                             while (reader.Read())
                             {
                                 // create new object.
