@@ -70,6 +70,36 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSendKeys", "20.Tests\Wpf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOracleConnect", "20.Tests\WpfOracleConnect\WpfOracleConnect.csproj", "{E66D23A9-1AEF-44D4-8255-A971B9B9065F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Images", "Cord Images", "{8550DF40-EF48-4A89-A7E5-AA39F4113E62}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\Cord Images\22I02A(1).pdf = Documents\Cord\Cord Images\22I02A(1).pdf
+		Documents\Cord\Cord Images\24112022100025(1).pdf = Documents\Cord\Cord Images\24112022100025(1).pdf
+		Documents\Cord\Cord Images\9H0663L  S-1-1  22111 (1).pdf = Documents\Cord\Cord Images\9H0663L  S-1-1  22111 (1).pdf
+		Documents\Cord\Cord Images\cord_06.jpg = Documents\Cord\Cord Images\cord_06.jpg
+		Documents\Cord\Cord Images\cord_25.jpg = Documents\Cord\Cord Images\cord_25.jpg
+		Documents\Cord\Cord Images\cord_26.jpg = Documents\Cord\Cord Images\cord_26.jpg
+		Documents\Cord\Cord Images\cord_35.jpg = Documents\Cord\Cord Images\cord_35.jpg
+		Documents\Cord\Cord Images\cord_36.jpg = Documents\Cord\Cord Images\cord_36.jpg
+		Documents\Cord\Cord Images\cord_37.jpg = Documents\Cord\Cord Images\cord_37.jpg
+		Documents\Cord\Cord Images\cord_38.jpg = Documents\Cord\Cord Images\cord_38.jpg
+		Documents\Cord\Cord Images\cord_41.jpg = Documents\Cord\Cord Images\cord_41.jpg
+		Documents\Cord\Cord Images\cord_42.jpg = Documents\Cord\Cord Images\cord_42.jpg
+		Documents\Cord\Cord Images\cord_50.jpg = Documents\Cord\Cord Images\cord_50.jpg
+		Documents\Cord\Cord Images\cord_52.jpg = Documents\Cord\Cord Images\cord_52.jpg
+		Documents\Cord\Cord Images\cord_53.jpg = Documents\Cord\Cord Images\cord_53.jpg
+		Documents\Cord\Cord Images\cord_54.jpg = Documents\Cord\Cord Images\cord_54.jpg
+		Documents\Cord\Cord Images\cord_55.jpg = Documents\Cord\Cord Images\cord_55.jpg
+		Documents\Cord\Cord Images\cord_56.jpg = Documents\Cord\Cord Images\cord_56.jpg
+		Documents\Cord\Cord Images\cord_57.jpg = Documents\Cord\Cord Images\cord_57.jpg
+		Documents\Cord\Cord Images\cord_58.jpg = Documents\Cord\Cord Images\cord_58.jpg
+		Documents\Cord\Cord Images\cord_62.jpg = Documents\Cord\Cord Images\cord_62.jpg
+		Documents\Cord\Cord Images\cord_63.jpg = Documents\Cord\Cord Images\cord_63.jpg
+		Documents\Cord\Cord Images\cord_64.jpg = Documents\Cord\Cord Images\cord_64.jpg
+		Documents\Cord\Cord Images\cord_71.jpg = Documents\Cord\Cord Images\cord_71.jpg
+		Documents\Cord\Cord Images\FM-TW-08-04  ใบบันทึกสภาวะการตีเกลียวครั้งที-1.xls = Documents\Cord\Cord Images\FM-TW-08-04  ใบบันทึกสภาวะการตีเกลียวครั้งที-1.xls
+		Documents\Cord\Cord Images\P1671TT S-4-1  22I22T (1).pdf = Documents\Cord\Cord Images\P1671TT S-4-1  22I22T (1).pdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -136,6 +166,7 @@ Global
 		{58E12BCF-850D-4E8A-8388-F8E56E58147A} = {B2818B90-A408-452A-B236-02309FC6455F}
 		{FD2DBC77-8DFE-415C-A4A4-283CFD16C549} = {159B3C70-A36A-4E53-91A1-B346894525DF}
 		{E66D23A9-1AEF-44D4-8255-A971B9B9065F} = {159B3C70-A36A-4E53-91A1-B346894525DF}
+		{8550DF40-EF48-4A89-A7E5-AA39F4113E62} = {B2818B90-A408-452A-B236-02309FC6455F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
