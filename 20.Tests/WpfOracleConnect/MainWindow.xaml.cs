@@ -191,58 +191,83 @@ namespace WpfOracleConnect
             if (string.IsNullOrEmpty(fileName))
                 return;
 
-            // prepare output object.
-            JObject root = new JObject();
-            JsonArray items = new JsonArray("Items");
-            root.Add(items);
-
             string commandText = txtCommandText.Text;
-            using (var cmd = new OracleCommand(commandText, con))
+
+            try
             {
-                cmd.BindByName = true; // required for call a stored procedure with named parameters
-                cmd.CommandText = commandText;
-                cmd.CommandType = System.Data.CommandType.Text;
+                // prepare output object.
+                JObject root = new JObject();
+                root.Add(new JProperty("text", commandText)); // set new property.
+                JArray columns = new JArray();
+                root.Add(new JProperty("columns", columns)); // set new property.
+                JArray items = new JArray();
+                root.Add(new JProperty("items", items)); // set new property.
 
-                using (DbDataReader reader = cmd.ExecuteReader())
+                using (var cmd = new OracleCommand(commandText, con))
                 {
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            JObject obj = new JObject();
+                    cmd.BindByName = true; // required for call a stored procedure with named parameters
+                    cmd.CommandText = commandText;
+                    cmd.CommandType = System.Data.CommandType.Text;
 
+                    using (DbDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
                             int fldCount = reader.FieldCount;
                             string[] columnNames = new string[fldCount];
-
                             for (int i = 0; i < fldCount; i++)
                             {
-                                if (i == 0) 
-                                    columnNames[i] = reader.GetName(i); // cache name at start of loop
-                                
-                                string columnName = columnNames[i];
-                                Type type = reader.GetFieldType(i);
-                                obj[columnName] = JToken.FromObject(reader.GetValue(i));
+                                columnNames[i] = reader.GetName(i); // cache name
+                                // update output json structure
+                                JObject jcol = new JObject();
+                                jcol.Add(new JProperty("ordinal", i));
+                                jcol.Add(new JProperty("name", columnNames[i]));
+                                jcol.Add(new JProperty("type", reader.GetFieldType(i).ToString()));
+                                columns.Add(jcol); // add to array.
                             }
-                            // append to item array.
-                            items.Add(obj);
+
+                            while (reader.Read())
+                            {
+                                // create new object.
+                                JObject obj = new JObject();
+                                // read each columns
+                                for (int i = 0; i < fldCount; i++)
+                                {
+                                    string columnName = columnNames[i];
+                                    Type type = reader.GetFieldType(i);
+                                    object val = reader.GetValue(i);
+                                    JProperty property = new JProperty(columnName, val);
+                                    obj.Add(property);
+                                }
+                                // append to item array.
+                                items.Add(obj);
+                            }
                         }
+
+                        reader.Close();
                     }
-
-                    reader.Close();
                 }
-            }
 
-            // save to json file.
-            using (StreamWriter file = File.CreateText(fileName))
-            using (JsonTextWriter writer = new JsonTextWriter(file))
+                // save to json file.
+                using (StreamWriter file = File.CreateText(fileName))
+                using (JsonTextWriter writer = new JsonTextWriter(file))
+                {
+                    root.WriteTo(writer);
+                }
+
+                MessageBox.Show("Success generate file.", "Information");
+            }
+            catch (Exception ex) 
             {
-                root.WriteTo(writer);
+                MessageBox.Show(ex.ToString(), "Error");
             }
         }
 
         #endregion
     }
 
+    #region TypeExtensionMethods class (comment out)
+    /*
     public static class TypeExtensionMethods
     {
         public static Type GetNullableType(this Type type)
@@ -257,9 +282,9 @@ namespace WpfOracleConnect
             else
                 return type;
         }
-
-        public static Nullable
     }
+    */
+    #endregion
 
     #region Dialogs class
 
