@@ -13,8 +13,9 @@ M3 Cord Production System #127
 M3 Cord Production System #126
 - 
 
+[commited]
 M3 Cord Production System #125
-- 
+- Add NLib.Wpf.Test.App project
 
 [commited]
 M3 Cord Production System #124
