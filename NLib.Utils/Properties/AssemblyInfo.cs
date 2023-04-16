@@ -7,13 +7,13 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NLib Wpf Controls .NET 4.7 library for windows")]
-[assembly: AssemblyDescription("The NLib common controls for .NET 4.7 platform")]
+[assembly: AssemblyTitle("NLib Common Utils .NET 4.7 library for windows")]
+[assembly: AssemblyDescription("The NLib common utils for .NET 4.7 platform")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Softbase Co., Ltd.")]
-[assembly: AssemblyProduct("NLib Wpf Controls .NET 4.7 library for windows")]
+[assembly: AssemblyProduct("NLib Common Utils .NET 4.7 library for windows")]
 [assembly: AssemblyCopyright("Copyright ©Softbase Co., Ltd. 2023")]
-[assembly: AssemblyTrademark("NLib Wpf Controls .NET 4.7 library for windows")]
+[assembly: AssemblyTrademark("NLib Common Utils .NET 4.7 library for windows")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -22,7 +22,7 @@ using System.Windows;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("63c240fe-b089-49c7-8bab-befca80c6e4e")]
+[assembly: Guid("f4592ab0-03df-45b8-8f25-69714abf68b6")]
 
 //In order to begin building localizable applications, set
 //<UICulture>CultureYouAreCodingWith</UICulture> in your .csproj file
