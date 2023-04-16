@@ -22,8 +22,9 @@ M3 Cord Production System #114
 M3 Cord Production System #113
 - 
 
+[commited]
 M3 Cord Production System #112
-- 
+- Update WpfOracleConnect project #6.
 
 [commited]
 M3 Cord Production System #111

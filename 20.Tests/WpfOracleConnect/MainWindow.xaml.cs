@@ -175,4 +175,63 @@ namespace WpfOracleConnect
 
         #endregion
     }
+
+    public class Dialogs
+    {
+        #region Show Save Excel Dialog
+
+        /// <summary>
+        /// Show Save Excel File Dialog.
+        /// </summary>
+        /// <param name="defaultFileName">The Default File Name.</param>
+        /// <returns>Returns FileName if user choose file otherwise return null.</returns>
+        public static string SaveDialog(string defaultFileName)
+        {
+            return SaveDialog(null, null, "กรุณาระบุขื่อ json file ที่ต้องการนำส่งออกข้อมูล", defaultFileName);
+        }
+        /// <summary>
+        /// Show Save Excel File Dialog.
+        /// </summary>
+        /// <param name="title">The Dialog Title.</param>
+        /// <param name="initDir">The initial directory path.</param>
+        /// <returns>Returns FileName if user choose file otherwise return null.</returns>
+        public static string SaveDialog(string title = "กรุณาระบุขื่อ json file ที่ต้องการนำส่งออกข้อมูล",
+            string initDir = null)
+        {
+            return SaveDialog(null, title, initDir);
+        }
+        /// <summary>
+        /// Show Save Excel File Dialog.
+        /// </summary>
+        /// <param name="owner">The owner window.</param>
+        /// <param name="title">The Dialog Title.</param>
+        /// <param name="initDir">The initial directory path.</param>
+        /// <param name="defaultFileName">The Default File Name.</param>
+        /// <returns>Returns FileName if user choose file otherwise return null.</returns>
+        public static string SaveDialog(Window owner,
+            string title = "กรุณาเลือก json file ที่ต้องการนำเข้าข้อมูล",
+            string initDir = null,
+            string defaultFileName = "")
+        {
+            string fileName = null;
+
+            // setup dialog options
+            var sd = new Microsoft.Win32.SaveFileDialog();
+            sd.InitialDirectory = initDir;
+            sd.Title = string.IsNullOrEmpty(title) ? "กรุณาระบุขื่อ json file ที่ต้องการนำส่งออกข้อมูล" : title;
+            sd.Filter = "Json Files(*.json)|*.json";
+            sd.FileName = defaultFileName;
+            var ret = sd.ShowDialog(owner) == true;
+            if (ret)
+            {
+                // assigned to FileName
+                fileName = sd.FileName;
+            }
+            sd = null;
+
+            return fileName;
+        }
+
+        #endregion
+    }
 }
