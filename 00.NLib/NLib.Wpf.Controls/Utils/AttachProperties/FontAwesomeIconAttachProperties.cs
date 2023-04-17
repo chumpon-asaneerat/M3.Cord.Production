@@ -9,37 +9,6 @@ using System.Windows.Media;
 
 #endregion
 
-namespace NLib.Wpf.Controls
-{
-    #region FontAwesome Enum
-
-    /// <summary>
-    /// The FontAwesomeIcon Enum.
-    /// </summary>
-    public enum FontAwesomeIcon
-    {
-        None,
-        Home,
-        Close,
-        Add,
-        Edit,
-        Save,
-        Delete,
-        Search,
-        Scan,
-        Refresh,
-        Import,
-        Export,
-        Copy,
-        Print,
-        Preview,
-        Ok,
-        Cancel
-    }
-
-    #endregion
-}
-
 namespace NLib.Wpf.Controls.Utils
 {
     #region FontAwesomeOptions

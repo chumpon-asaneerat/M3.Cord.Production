@@ -50,11 +50,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\InlineButton.xaml">
+    <Page Include="Controls\InlineButton\InlineButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\NavigatorBar.xaml">
+    <Page Include="Controls\NavigatorBar\NavigatorBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,10 +132,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\InlineButton.xaml.cs">
+    <Compile Include="Controls\Enums\FontAwesomeEnumFlags.cs" />
+    <Compile Include="Controls\InlineButton\InlineButton.xaml.cs">
       <DependentUpon>InlineButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\NavigatorBar.xaml.cs">
+    <Compile Include="Controls\NavigatorBar\NavigatorBar.xaml.cs">
       <DependentUpon>NavigatorBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -155,6 +156,7 @@
     <Compile Include="Utils\AttachProperties\FontAwesomeIconAttachProperties.cs" />
     <Compile Include="Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
     <Compile Include="Utils\Converters\IsLastItemConverter.cs" />
+    <Compile Include="Utils\Converters\ShowButtonsConverter.cs" />
     <Compile Include="Utils\Converters\StringToNumberConverter.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
