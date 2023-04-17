@@ -3,6 +3,7 @@
                     xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:NLib.Wpf.Controls"
                     mc:Ignorable="PresentationOptions">
     <ResourceDictionary.MergedDictionaries>
         <!--  Force Merge related resource dictionary  -->
@@ -159,14 +160,28 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <!--  INLINE BUTTON TEXT FONT SIZE  -->
+    <sys:Double x:Key="IBFSize">18</sys:Double>
+    <sys:Double x:Key="IBWidth">160</sys:Double>
+    <sys:Double x:Key="IBHeight">40</sys:Double>
+
     <!--  CONST INLINE BUTTON STYLE  -->
     <Style x:Key="InlineButton" TargetType="Button">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Margin" Value="2,0" />
         <Setter Property="Foreground" Value="{DynamicResource InlineButtonForground}" />
         <Setter Property="FontFamily" Value="{DynamicResource THSarabun}" />
-        <Setter Property="FontSize" Value="{DynamicResource FontSize18}" />
+        <Setter Property="FontSize" Value="{DynamicResource IBFSize}" />
         <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Width" Value="{DynamicResource IBWidth}" />
+        <Setter Property="Height" Value="{DynamicResource IBHeight}" />
         <Setter Property="Template" Value="{DynamicResource InlineButtonTemplate}" />
     </Style>
 
+    <!--  CONST INLINE BUTTON CONTROL STYLE  -->
+    <Style TargetType="{x:Type local:InlineButton}">
+        <Setter Property="Width" Value="{DynamicResource IBWidth}" />
+        <Setter Property="Height" Value="{DynamicResource IBHeight}" />
+        <Setter Property="FontSize" Value="{DynamicResource IBFSize}" />
+    </Style>
 </ResourceDictionary>

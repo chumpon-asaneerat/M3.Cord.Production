@@ -94,6 +94,8 @@ namespace NLib.Wpf.Controls
 
         #region Public Properties
 
+        #region ShowButtons
+
         /// <summary>
         /// The ShowButtonsProperty Dependency Property.
         /// </summary>
@@ -117,6 +119,8 @@ namespace NLib.Wpf.Controls
             }
             else (sender as NavigatorBar).Visibility = Visibility.Visible;
         }
+
+        #endregion
 
         #endregion
 
