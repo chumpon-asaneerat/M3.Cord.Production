@@ -19,10 +19,10 @@
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ListBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ListView.xaml" />
 
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.InlineButton.xaml" />
         <!--
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/GroupMenuStyle.xaml" />
 
-        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.InlineButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ImageButton.xaml" />
 
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.TreeView.xaml" />
