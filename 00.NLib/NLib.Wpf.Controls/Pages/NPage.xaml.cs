@@ -40,6 +40,15 @@ namespace NLib.Wpf.Pages
 
         #endregion
 
+        #region NavigateButtons Event Handlers
+
+        private void nav_NavigatorButtonClick(object sender, NavigatorButtonEventArgs e)
+        {
+            RaiseNavigatorButtonClickEvent(e.Icon);
+        }
+
+        #endregion
+
         #region Public Properties
 
         #region PageTitle

@@ -22,8 +22,10 @@ M3 Cord Production System #164
 M3 Cord Production System #163
 - 
 
+[commited]
 M3 Cord Production System #162
-- 
+- NLib.Wpf.Controls project Implements #28.
+  - NPage control implements #4.
 
 [commited]
 M3 Cord Production System #161
