@@ -33,7 +33,9 @@
             <StackPanel Orientation="Vertical"
                         Visibility="Visible"
                         DockPanel.Dock="Top">
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal"
+                            Height="40"
+                            VerticalAlignment="Center">
                     <ComboBox Text="This is Text"
                               Style="{StaticResource CommonComboBox}"
                               Width="150">
@@ -43,13 +45,17 @@
                     </ComboBox>
                     <Button Content="Button1"
                             Style="{StaticResource InlineButton}"
+                            Height="35"
                             Width="120" />
-                    <Button Content="Button2"
-                            Style="{StaticResource InlineButton}"
-                            Width="120" />
+                    <nctrl:InlineButton IconType="Home"
+                                        FontSize="18"
+                                        Text="Button2"
+                                        Height="35"
+                                        Width="120" />
                     <Button Content="Button3"
                             Style="{StaticResource InlineButton}"
-                            Width="120" />
+                            Height="35"
+                            Width="150" />
                 </StackPanel>
             </StackPanel>
             <ListBox x:Name="lst"
