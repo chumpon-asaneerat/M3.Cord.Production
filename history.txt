@@ -28,8 +28,9 @@ M3 Cord Production System #132
 M3 Cord Production System #131
 - 
 
+[commited]
 M3 Cord Production System #130
-- 
+- NLib.Utils project Implements #1.
 
 [commited]
 M3 Cord Production System #129
