@@ -106,6 +106,32 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLib.Wpf.Controls", "00.NLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLib.Wpf.Test.App", "20.Tests\NLib.Wpf.Test.App\NLib.Wpf.Test.App.csproj", "{D630DDB9-753C-4E24-B2E7-01D96BDB21E8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{748F0C41-F28A-4609-A45C-C46D218F0470}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Data\data.txt = Documents\Data\data.txt
+		Documents\Data\First Twist.txt = Documents\Data\First Twist.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oracle", "Oracle", "{5C54D9E2-5613-452D-AB27-C131D613F94B}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Data\Oracle\G3_ISSUEYARN_100.xls = Documents\Data\Oracle\G3_ISSUEYARN_100.xls
+		Documents\Data\Oracle\G3_YARN_100.xls = Documents\Data\Oracle\G3_YARN_100.xls
+		Documents\Data\Oracle\ORACLE_G3_ISSUEYARN.json = Documents\Data\Oracle\ORACLE_G3_ISSUEYARN.json
+		Documents\Data\Oracle\ORACLE_G3_YARN.json = Documents\Data\Oracle\ORACLE_G3_YARN.json
+		Documents\Data\Oracle\ORACLE_ITEMCODE.json = Documents\Data\Oracle\ORACLE_ITEMCODE.json
+		Documents\Data\Oracle\table_export.xls = Documents\Data\Oracle\table_export.xls
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Server", "SQL Server", "{C421F315-83E3-4CFB-A664-8E4D19F3DCE1}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Data\Oracle\G3_ISSUEYARN_100.xls = Documents\Data\Oracle\G3_ISSUEYARN_100.xls
+		Documents\Data\Oracle\G3_YARN_100.xls = Documents\Data\Oracle\G3_YARN_100.xls
+		Documents\Data\Oracle\ORACLE_G3_ISSUEYARN.json = Documents\Data\Oracle\ORACLE_G3_ISSUEYARN.json
+		Documents\Data\Oracle\ORACLE_G3_YARN.json = Documents\Data\Oracle\ORACLE_G3_YARN.json
+		Documents\Data\Oracle\ORACLE_ITEMCODE.json = Documents\Data\Oracle\ORACLE_ITEMCODE.json
+		Documents\Data\Oracle\table_export.xls = Documents\Data\Oracle\table_export.xls
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -188,6 +214,9 @@ Global
 		{93ACB478-4570-4F67-9442-2839D1A46EC9} = {55BDE894-1CA8-442F-8E7C-B827CD14A94F}
 		{238FC7FF-5234-4FEB-8265-22B8E8F01B0C} = {55BDE894-1CA8-442F-8E7C-B827CD14A94F}
 		{D630DDB9-753C-4E24-B2E7-01D96BDB21E8} = {159B3C70-A36A-4E53-91A1-B346894525DF}
+		{748F0C41-F28A-4609-A45C-C46D218F0470} = {1DE223BB-AD1B-492D-A448-C89373B2D54D}
+		{5C54D9E2-5613-452D-AB27-C131D613F94B} = {748F0C41-F28A-4609-A45C-C46D218F0470}
+		{C421F315-83E3-4CFB-A664-8E4D19F3DCE1} = {748F0C41-F28A-4609-A45C-C46D218F0470}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}

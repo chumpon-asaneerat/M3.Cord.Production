@@ -1,0 +1,7 @@
+[ ] Put YarnCh (Yarn sheet) into core
+    [ ] Keep YarnCh Barcode + Core
+	[ ] Enter PalletNo (TraceNo) on Raw Material Check Sheet
+	
+	
+1. INIT PC with Pallet No -> จะมีข้อมูล YarnCh มาหลายอัน
+2. Scan YarnCh one by one -> จะมีข้อมูล YarnType, TraceNo, SpNo (เบอร์แกน 0-50ม 51-100 etc.)
