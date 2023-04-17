@@ -9,14 +9,41 @@
         Width="800"
         mc:Ignorable="d">
     <Grid Background="{StaticResource PageBG}">
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="This is Text" Style="{StaticResource LabelText}" />
-            <TextBox Text="This is Text" Style="{StaticResource CommonTextBox}" />
-            <TextBox Text="This is Text"
-                     Style="{StaticResource CommonTextBox}"
-                     IsEnabled="False" />
-            <PasswordBox Style="{StaticResource CommonPwdBox}" />
-            <PasswordBox Style="{StaticResource CommonPwdBox}" IsEnabled="False" />
-        </StackPanel>
+        <DockPanel LastChildFill="True">
+            <StackPanel Orientation="Vertical" Visibility="Visible" DockPanel.Dock="Top">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="This is Text"
+                               Style="{StaticResource LabelText}"
+                               Width="100" />
+                    <TextBox Text="This is Text"
+                             Style="{StaticResource CommonTextBox}"
+                             Width="100" />
+                    <TextBox Text="This is Text"
+                             Style="{StaticResource CommonTextBox}"
+                             Width="100"
+                             IsEnabled="False" />
+                    <PasswordBox Style="{StaticResource CommonPwdBox}" Width="100" />
+                    <PasswordBox Style="{StaticResource CommonPwdBox}"
+                                 Width="100"
+                                 IsEnabled="False" />
+                </StackPanel>
+            </StackPanel>
+            <ListBox x:Name="lst" DockPanel.Dock="Left" Width="100"
+                     Style="{StaticResource SingleSelectHorizontalWrapListBox}">
+                <ListBoxItem>Item 1</ListBoxItem>
+                <ListBoxItem>Item 2</ListBoxItem>
+                <ListBoxItem>Item 3</ListBoxItem>
+                <ListBoxItem>Item 4</ListBoxItem>
+            </ListBox>
+            <ListView Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Sample" Width="100" />
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
     </Grid>
 </Window>

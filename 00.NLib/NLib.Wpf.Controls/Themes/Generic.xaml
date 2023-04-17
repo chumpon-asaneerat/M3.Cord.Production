@@ -15,15 +15,16 @@
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.RadioButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.CheckedBox.xaml" />
 
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ComboBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ListBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ListView.xaml" />
+
         <!--
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/GroupMenuStyle.xaml" />
 
-        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ComboBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.InlineButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ImageButton.xaml" />
 
-        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ListBox.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ListView.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.TreeView.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.Expander.xaml" />
         -->

@@ -6,7 +6,7 @@
                     mc:Ignorable="PresentationOptions">
     <ResourceDictionary.MergedDictionaries>
         <!--  Force Merge related resource dictionary  -->
-        <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/CommonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/CommonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--  CONST LISTBOX ITEM SIZE  -->
@@ -30,7 +30,7 @@
     <!--  BASE LISTBOX STYLES  -->
     <Style x:Key="BASEListBox" TargetType="{x:Type ListBox}">
         <!--  Common  -->
-        <Setter Property="FontSize" Value="{StaticResource FontSize18}" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="Margin" Value="0" />
         <!--
