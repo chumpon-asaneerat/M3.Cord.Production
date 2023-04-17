@@ -75,6 +75,9 @@ namespace NLib.Wpf.Controls.Utils
                     case FontAwesomeIcon.Home:
                         style = (Style)Application.Current.Resources["fa-home"];
                         break;
+                    case FontAwesomeIcon.Back:
+                        style = (Style)Application.Current.Resources["fa-goback"];
+                        break;
                     case FontAwesomeIcon.Close:
                         style = (Style)Application.Current.Resources["fa-close"];
                         break;

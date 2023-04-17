@@ -20,7 +20,7 @@
         <Setter Property="FontSize" Value="{StaticResource FontSize16}" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{StaticResource GrayBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource SilverBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -34,6 +34,12 @@
 
     <!--  HOME  -->
     <Style x:Key="fa-home"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource fa-base}">
+        <Setter Property="Text" Value="&#xf015;" />
+    </Style>
+    <!--  BACK  -->
+    <Style x:Key="fa-goback"
            TargetType="TextBlock"
            BasedOn="{StaticResource fa-base}">
         <Setter Property="Text" Value="&#xf015;" />
