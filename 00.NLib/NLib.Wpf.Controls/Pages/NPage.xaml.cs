@@ -1,7 +1,9 @@
 ﻿#region Using
 
+using NLib.Wpf.Controls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -22,6 +25,7 @@ namespace NLib.Wpf.Pages
     /// <summary>
     /// Interaction logic for NPage.xaml
     /// </summary>
+    [ContentProperty("WorkArea")]
     public partial class NPage : UserControl
     {
         #region Constructor
@@ -41,7 +45,7 @@ namespace NLib.Wpf.Pages
         #region PageTitle
 
         /// <summary>
-        /// The PageTitleProperty dependency property.
+        /// The PageTitleProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty PageTitleProperty =
             DependencyProperty.Register("PageTitle", typeof(string), typeof(NPage));
@@ -59,7 +63,7 @@ namespace NLib.Wpf.Pages
         #region WorkArea
 
         /// <summary>
-        /// The WorkAreaProperty dependency property.
+        /// The WorkAreaProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty WorkAreaProperty =
             DependencyProperty.Register("WorkArea", typeof(object), typeof(NPage));
@@ -74,9 +78,56 @@ namespace NLib.Wpf.Pages
 
         #endregion
 
+        #region ShowButtons
+
+        /// <summary>
+        /// The ShowButtonsProperty Dependency Property.
+        /// </summary>
+        public static readonly DependencyProperty ShowButtonsProperty =
+            DependencyProperty.Register("ShowButtons", typeof(FontAwesomeButtons), typeof(NPage));
+        /// <summary>
+        /// Gets or sets Inline Button Icon.
+        /// </summary>
+        [TypeConverter(typeof(EnumConverter))]
+        public FontAwesomeButtons ShowButtons
+        {
+            get { return (FontAwesomeButtons)GetValue(ShowButtonsProperty); }
+            set { SetValue(ShowButtonsProperty, value); }
+        }
+
+        #endregion
+
         #endregion
 
         #region Public Events
+
+        #region NavigatorButtonClick
+
+        /// <summary>
+        /// Raise NavigatorButtonClick Event.
+        /// </summary>
+        /// <param name="icon"></param>
+        protected virtual void RaiseNavigatorButtonClickEvent(FontAwesomeIcon icon)
+        {
+            NavigatorButtonEventArgs args = new NavigatorButtonEventArgs(NavigatorButtonClickEvent, icon);
+            RaiseEvent(args);
+        }
+        /// <summary>
+        /// The NavigatorButtonClickEvent RouteEvent.
+        /// </summary>
+        public static readonly RoutedEvent NavigatorButtonClickEvent =
+                EventManager.RegisterRoutedEvent(
+                    "NavigatorButtonClick", RoutingStrategy.Bubble, typeof(NavigatorButtonEventHandler), typeof(NPage));
+        /// <summary>
+        /// Add or Remove NavigatorButtonClick event.
+        /// </summary>
+        public event NavigatorButtonEventHandler NavigatorButtonClick
+        {
+            add { AddHandler(NavigatorButtonClickEvent, value); }
+            remove { RemoveHandler(NavigatorButtonClickEvent, value); }
+        }
+
+        #endregion
 
         #endregion
     }
