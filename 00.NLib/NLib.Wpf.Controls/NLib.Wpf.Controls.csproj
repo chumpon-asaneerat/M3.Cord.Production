@@ -70,6 +70,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ExtensionMethods\WpfWindowExtensionMethods.cs" />
+    <Compile Include="Utils\AttachProperties\FontAwesomeIconAttachProperties.cs" />
+    <Compile Include="Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
+    <Compile Include="Utils\Converters\IsLastItemConverter.cs" />
+    <Compile Include="Utils\Converters\StringToNumberConverter.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -81,6 +85,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Fonts\" />
     <Folder Include="Themes\Common\" />
   </ItemGroup>
   <ItemGroup>
