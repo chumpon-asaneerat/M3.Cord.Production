@@ -17,6 +17,8 @@ using System.Windows.Shapes;
 
 #endregion
 
+using NLib.Wpf.Controls;
+
 namespace NLib.Wpf.Test.App
 {
     /// <summary>
@@ -35,5 +37,18 @@ namespace NLib.Wpf.Test.App
         }
 
         #endregion
+
+        private void NavigatorBar_NavigatorButtonClick(object sender, Controls.NavigatorButtonEventArgs e)
+        {
+            switch (e.Icon)
+            {
+                case FontAwesomeIcon.Home:
+                    MessageBox.Show("Home click.");
+                    break;
+                default:
+                    MessageBox.Show("Unhandle click.");
+                    break;
+            }
+        }
     }
 }

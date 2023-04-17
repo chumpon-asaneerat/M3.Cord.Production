@@ -62,7 +62,7 @@
                                 ShowButtons="Add,Save,Delete,Home"
                                 Height="45" 
                                 FontSize="18"
-                                />
+                                NavigatorButtonClick="NavigatorBar_NavigatorButtonClick"/>
             <ListBox x:Name="lst"
                      DockPanel.Dock="Left"
                      Width="100"
