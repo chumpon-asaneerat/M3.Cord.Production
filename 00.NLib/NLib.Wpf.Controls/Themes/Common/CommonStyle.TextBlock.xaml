@@ -16,10 +16,10 @@
     <!--  TEXT COLORS  -->
     <SolidColorBrush x:Key="LabelTextColor"
                      PresentationOptions:Freeze="True"
-                     Color="WhiteSmoke" />
+                     Color="{StaticResource BlackColor}" />
     <SolidColorBrush x:Key="ErrorTextColor"
                      PresentationOptions:Freeze="True"
-                     Color="Red" />
+                     Color="{StaticResource RedColor}" />
 
     <!--  LABEL TEXTBLOCK STYLE  -->
     <Style x:Key="LabelText" TargetType="TextBlock">

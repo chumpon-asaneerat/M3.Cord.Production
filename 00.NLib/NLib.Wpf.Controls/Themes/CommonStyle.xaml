@@ -93,7 +93,7 @@
     <!--  COMMON PAGE COLORS  -->
     <SolidColorBrush x:Key="PageBG"
                      PresentationOptions:Freeze="True"
-                     Color="{StaticResource DimGrayColor}" />
+                     Color="{StaticResource WhiteColor}" />
 
     <!--  COMMON CAPTION COLORS/SIZE  -->
     <SolidColorBrush x:Key="CaptionBackground"
