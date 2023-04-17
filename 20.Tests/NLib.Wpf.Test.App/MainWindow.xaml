@@ -35,15 +35,21 @@
                         DockPanel.Dock="Top">
                 <StackPanel Orientation="Horizontal">
                     <ComboBox Text="This is Text"
-                               Style="{StaticResource CommonComboBox}"
-                               Width="150">
+                              Style="{StaticResource CommonComboBox}"
+                              Width="150">
                         <ComboBoxItem>Item 1</ComboBoxItem>
                         <ComboBoxItem>Item 2</ComboBoxItem>
                         <ComboBoxItem>Item 3</ComboBoxItem>
                     </ComboBox>
-                    <Button Content="Button1" Style="{StaticResource InlineButton}" Width="120"/>
-                    <Button Content="Button2" Style="{StaticResource InlineButton}" Width="120"/>
-                    <Button Content="Button3" Style="{StaticResource InlineButton}" Width="120"/>
+                    <Button Content="Button1"
+                            Style="{StaticResource InlineButton}"
+                            Width="120" />
+                    <Button Content="Button2"
+                            Style="{StaticResource InlineButton}"
+                            Width="120" />
+                    <Button Content="Button3"
+                            Style="{StaticResource InlineButton}"
+                            Width="120" />
                 </StackPanel>
             </StackPanel>
             <ListBox x:Name="lst"
