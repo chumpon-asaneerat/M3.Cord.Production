@@ -58,6 +58,7 @@
                             Width="150" />
                 </StackPanel>
             </StackPanel>
+            <nctrl:NavigatorBar DockPanel.Dock="Bottom" Height="45"/>
             <ListBox x:Name="lst"
                      DockPanel.Dock="Left"
                      Width="100"
