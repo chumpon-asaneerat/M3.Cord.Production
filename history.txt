@@ -13,8 +13,9 @@ M3 Cord Production System #147
 M3 Cord Production System #146
 - 
 
+[commited]
 M3 Cord Production System #145
-- 
+- Add LiteDb assembly in References folder.
 
 [commited]
 M3 Cord Production System #144
