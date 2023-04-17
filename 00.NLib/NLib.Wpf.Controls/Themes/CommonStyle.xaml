@@ -27,14 +27,17 @@
     <sys:Double x:Key="DefaultFontSize" PresentationOptions:Freeze="True">18</sys:Double>
 
     <!--  CUSTOM COLORS  -->
-    <Color x:Key="BlackColor" PresentationOptions:Freeze="True">#000000</Color>
-    <Color x:Key="WhiteColor" PresentationOptions:Freeze="True">#EFEFEF</Color>
+    <Color x:Key="BlackColor" PresentationOptions:Freeze="True">Black</Color>
+    <Color x:Key="WhiteColor" PresentationOptions:Freeze="True">White</Color>
+    <Color x:Key="WhiteSmokeColor" PresentationOptions:Freeze="True">WhiteSmoke</Color>
     <Color x:Key="DimGrayColor" PresentationOptions:Freeze="True">Dimgray</Color>
     <Color x:Key="SilverColor" PresentationOptions:Freeze="True">Silver</Color>
     <Color x:Key="OrangeColor" PresentationOptions:Freeze="True">Orange</Color>
+    <Color x:Key="DarkOrangeColor" PresentationOptions:Freeze="True">DarkOrange</Color>
     <Color x:Key="NavyColor" PresentationOptions:Freeze="True">Navy</Color>
     <Color x:Key="CornflowerBlueColor" PresentationOptions:Freeze="True">CornflowerBlue</Color>
     <Color x:Key="RoyalBlueColor" PresentationOptions:Freeze="True">RoyalBlue</Color>
+    <Color x:Key="DarkBlueColor" PresentationOptions:Freeze="True">DarkBlue</Color>
     <Color x:Key="ForestGreenColor" PresentationOptions:Freeze="True">ForestGreen</Color>
     <Color x:Key="PurpleColor" PresentationOptions:Freeze="True">Purple</Color>
     <Color x:Key="YellowColor" PresentationOptions:Freeze="True">Yellow</Color>
@@ -49,6 +52,9 @@
     <SolidColorBrush x:Key="WhiteBrush"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource WhiteColor}" />
+    <SolidColorBrush x:Key="WhiteSmokeBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource WhiteSmokeColor}" />
     <SolidColorBrush x:Key="DimGrayBrush"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource DimGrayColor}" />
@@ -58,6 +64,9 @@
     <SolidColorBrush x:Key="OrangeBrush"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource OrangeColor}" />
+    <SolidColorBrush x:Key="DarkOrangeBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource DarkOrangeColor}" />
     <SolidColorBrush x:Key="NavyBrush"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource NavyColor}" />
@@ -67,6 +76,9 @@
     <SolidColorBrush x:Key="RoyalBlueBrush"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource RoyalBlueColor}" />
+    <SolidColorBrush x:Key="DarkBlueBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource DarkBlueColor}" />
     <SolidColorBrush x:Key="ForestGreenBrush"
                      PresentationOptions:Freeze="True"
                      Color="{StaticResource ForestGreenColor}" />
