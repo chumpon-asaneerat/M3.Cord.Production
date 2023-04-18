@@ -114,7 +114,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{748F0C41-F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oracle", "Oracle", "{5C54D9E2-5613-452D-AB27-C131D613F94B}"
 	ProjectSection(SolutionItems) = preProject
+		Documents\Data\Oracle\G3_ISSUEYARN.cs = Documents\Data\Oracle\G3_ISSUEYARN.cs
 		Documents\Data\Oracle\G3_ISSUEYARN_100.xls = Documents\Data\Oracle\G3_ISSUEYARN_100.xls
+		Documents\Data\Oracle\G3_YARN.cs = Documents\Data\Oracle\G3_YARN.cs
 		Documents\Data\Oracle\G3_YARN_100.xls = Documents\Data\Oracle\G3_YARN_100.xls
 		Documents\Data\Oracle\ORACLE_G3_ISSUEYARN.json = Documents\Data\Oracle\ORACLE_G3_ISSUEYARN.json
 		Documents\Data\Oracle\ORACLE_G3_YARN.json = Documents\Data\Oracle\ORACLE_G3_YARN.json
