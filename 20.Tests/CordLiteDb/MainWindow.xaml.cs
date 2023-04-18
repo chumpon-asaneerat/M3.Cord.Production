@@ -17,6 +17,9 @@ using System.Windows.Shapes;
 
 #endregion
 
+using NLib.Services;
+using CordLiteDb.Models;
+
 namespace CordLiteDb
 {
     /// <summary>
@@ -36,16 +39,46 @@ namespace CordLiteDb
 
         #endregion
 
-        #region Loaded/Unloaded
+        #region Loaded/Closing
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            LiteDbSerivce.Instance.Start();
 
+            var db = LiteDbSerivce.Instance.Db;
+            var items = db.GetCollection<Item>("Items");
+            // Create an index over the Field name (if it doesn't exist)
+            items.EnsureIndex(x => x.ItemCode);
+
+            // Insert
+            items.Insert(new Item { ItemCode = "N001", ItemName = "Item No 1" });
+            items.Insert(new Item { ItemCode = "N002", ItemName = "Item No 2" });
+
+            // Use LINQ to query documents (filter, sort, transform)
+            var results = items.Query()
+                    .Where(x => x.ItemCode.StartsWith("N"))
+                    .OrderBy(x => x.ItemName)
+                    .Select(x => new { x.ItemName, NameUpper = x.ItemName.ToUpper() })
+                    .Limit(10)
+                    .ToList();
+            foreach (var row in results)
+                Console.WriteLine("{0}", row.NameUpper);
+
+            // Find one
+            var r = items.FindOne(x => x.ItemCode == "N002");
+            Console.WriteLine("{0}", r.ItemName);
+
+            // Delete all
+            items.DeleteAll();
+
+            // Check No of Rows
+            int iCnt = items.Count();
+            Console.WriteLine("Item Count: {0}", iCnt);
         }
 
-        private void Window_Unloaded(object sender, RoutedEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            LiteDbSerivce.Instance.Shutdown();
         }
 
         #endregion

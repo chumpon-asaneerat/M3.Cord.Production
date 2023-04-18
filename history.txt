@@ -7,8 +7,10 @@ M3 Cord Production System #169
 M3 Cord Production System #168
 - 
 
+[commited]
 M3 Cord Production System #167
-- 
+- CordLiteDb project 
+  Implements LiteDb service #2.
 
 [commited]
 M3 Cord Production System #166
