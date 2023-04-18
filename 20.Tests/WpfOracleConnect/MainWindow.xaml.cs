@@ -51,14 +51,14 @@ namespace WpfOracleConnect
 
         #endregion
 
-        #region Loaded/Unloaded
+        #region Loaded/Closing
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             InitControls();
         }
 
-        private void Window_Unloaded(object sender, RoutedEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Disconnect();
         }
@@ -84,7 +84,8 @@ namespace WpfOracleConnect
 
         private void cmdExport_Click(object sender, RoutedEventArgs e)
         {
-            Export();
+            bool genCol = (chkGenColumnInfo.IsChecked.HasValue) ? chkGenColumnInfo.IsChecked.Value : false;
+            Export(genCol);
         }
 
         #endregion
@@ -182,7 +183,7 @@ namespace WpfOracleConnect
             }
         }
 
-        private void Export()
+        private void Export(bool generateColumnInfo = false)
         {
             if (null == con || con.State != System.Data.ConnectionState.Open)
                 return; // not connect.
@@ -197,9 +198,13 @@ namespace WpfOracleConnect
             {
                 // prepare output object.
                 JObject root = new JObject();
-                root.Add(new JProperty("text", commandText)); // set new property.
-                JArray columns = new JArray();
-                root.Add(new JProperty("columns", columns)); // set new property.
+                JArray columns = null;
+                if (generateColumnInfo)
+                {
+                    root.Add(new JProperty("text", commandText)); // set new property.
+                    columns = new JArray();
+                    root.Add(new JProperty("columns", columns)); // set new property.
+                }
                 JArray items = new JArray();
                 root.Add(new JProperty("items", items)); // set new property.
 
@@ -220,23 +225,27 @@ namespace WpfOracleConnect
                             foreach (DataRow row in schemaTable.Rows)
                             {
                                 columnNames[i] = row.Field<string>("ColumnName");
-                                string dataTypeName = row["DataType"].ToString();
-                                //string providerType = ((OracleDbType)row["ProviderType"]).ToString();
-                                short? precision = row.Field<short?>("NumericPrecision");
-                                short? scale = row.Field<short?>("NumericScale");
-                                int? columnSize = row.Field<int?>("ColumnSize");
+                                if (generateColumnInfo)
+                                {
+                                    string dataTypeName = row["DataType"].ToString();
+                                    //string providerType = ((OracleDbType)row["ProviderType"]).ToString();
+                                    short? precision = row.Field<short?>("NumericPrecision");
+                                    short? scale = row.Field<short?>("NumericScale");
+                                    int? columnSize = row.Field<int?>("ColumnSize");
 
-                                // update output json structure
-                                JObject jcol = new JObject();
-                                jcol.Add(new JProperty("ordinal", i));
-                                jcol.Add(new JProperty("name", columnNames[i]));
-                                jcol.Add(new JProperty("type", dataTypeName));
-                                //jcol.Add(new JProperty("dbtype", providerType));
-                                jcol.Add(new JProperty("precision", precision));
-                                jcol.Add(new JProperty("scale", scale));
-                                jcol.Add(new JProperty("size", columnSize));
-                                columns.Add(jcol); // add to array.
+                                    // update output json structure
+                                    JObject jcol = new JObject();
+                                    jcol.Add(new JProperty("ordinal", i));
+                                    jcol.Add(new JProperty("name", columnNames[i]));
+                                    jcol.Add(new JProperty("type", dataTypeName));
+                                    //jcol.Add(new JProperty("dbtype", providerType));
+                                    jcol.Add(new JProperty("precision", precision));
+                                    jcol.Add(new JProperty("scale", scale));
+                                    jcol.Add(new JProperty("size", columnSize));
 
+                                    if (null != columns) 
+                                        columns.Add(jcol); // add to array.
+                                }
                                 ++i;
                             }
                         }
