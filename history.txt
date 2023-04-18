@@ -13,8 +13,10 @@ M3 Cord Production System #167
 M3 Cord Production System #166
 - 
 
+[commited]
 M3 Cord Production System #165
-- 
+- CordLiteDb project 
+  - update project properties.
 
 [commited]
 M3 Cord Production System #164

@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CordLiteDb.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="LiteDB">
       <HintPath>..\..\References\LiteDB.dll</HintPath>
