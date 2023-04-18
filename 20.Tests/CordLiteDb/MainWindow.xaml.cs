@@ -52,7 +52,7 @@ namespace CordLiteDb
 
             // Insert
             items.Insert(new Item { ItemCode = "N001", ItemName = "Item No 1" });
-            items.Insert(new Item { ItemCode = "N002", ItemName = "Item No 2" });
+            items.Insert(new Item { ItemCode = "N002", ItemName = "Item No 2", Active = true });
 
             // Use LINQ to query documents (filter, sort, transform)
             var results = items.Query()
@@ -66,7 +66,7 @@ namespace CordLiteDb
 
             // Find one
             var r = items.FindOne(x => x.ItemCode == "N002");
-            Console.WriteLine("{0}", r.ItemName);
+            Console.WriteLine("{0}, Active: {1}", r.ItemName, r.Active);
 
             // Delete all
             items.DeleteAll();
