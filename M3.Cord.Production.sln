@@ -132,7 +132,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Server", "SQL Server", 
 		Documents\Data\Oracle\table_export.xls = Documents\Data\Oracle\table_export.xls
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CordLiteDb", "CordLiteDb\CordLiteDb.csproj", "{E0D610B7-6D04-40B8-93FD-F32AE06DDD32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CordLiteDb", "20.Tests\CordLiteDb\CordLiteDb.csproj", "{E0D610B7-6D04-40B8-93FD-F32AE06DDD32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -223,6 +223,7 @@ Global
 		{748F0C41-F28A-4609-A45C-C46D218F0470} = {1DE223BB-AD1B-492D-A448-C89373B2D54D}
 		{5C54D9E2-5613-452D-AB27-C131D613F94B} = {748F0C41-F28A-4609-A45C-C46D218F0470}
 		{C421F315-83E3-4CFB-A664-8E4D19F3DCE1} = {748F0C41-F28A-4609-A45C-C46D218F0470}
+		{E0D610B7-6D04-40B8-93FD-F32AE06DDD32} = {159B3C70-A36A-4E53-91A1-B346894525DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
