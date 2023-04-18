@@ -22,8 +22,10 @@ M3 Cord Production System #174
 M3 Cord Production System #173
 - 
 
+[commited]
 M3 Cord Production System #172
-- 
+- WpfOracleConnect project update #2.
+  - generate json in indented format.
 
 [commited]
 M3 Cord Production System #171

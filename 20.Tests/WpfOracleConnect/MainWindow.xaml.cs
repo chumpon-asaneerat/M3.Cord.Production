@@ -25,6 +25,8 @@ using Newtonsoft;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.IO;
+using System.Reflection;
+using System.Windows.Documents.Serialization;
 
 namespace WpfOracleConnect
 {
@@ -281,11 +283,16 @@ namespace WpfOracleConnect
                     }
                 }
 
-                // save to json file.
                 using (StreamWriter file = File.CreateText(fileName))
-                using (JsonTextWriter writer = new JsonTextWriter(file))
                 {
-                    root.WriteTo(writer);
+                    using (JsonTextWriter writer = new JsonTextWriter(file))
+                    {
+                        writer.Formatting = Formatting.Indented;
+                        writer.DateFormatHandling = DateFormatHandling.IsoDateFormat;
+                        writer.DateTimeZoneHandling = DateTimeZoneHandling.Local;
+                        writer.DateFormatString = "yyyy'-'MM'-'dd'T'HH':'mm':'ss.fffK";
+                        root.WriteTo(writer);
+                    }
                 }
 
                 MessageBox.Show("Success generate file.", "Information");
