@@ -13,8 +13,11 @@ M3 Cord Production System #177
 M3 Cord Production System #176
 - 
 
+[commited]
 M3 Cord Production System #175
-- 
+- Add Assemblies in references folder
+  - WpfMath.dll
+  - XamlMath.Shared.dll
 
 [commited]
 M3 Cord Production System #174
