@@ -10,8 +10,10 @@ M3 Cord Production System #178
 M3 Cord Production System #177
 - 
 
+[commited]
 M3 Cord Production System #176
-- 
+- NLib.Wpf.Controls project Implements #29.
+  - Rework NavigatorBar controls implements #1.
 
 [commited]
 M3 Cord Production System #175

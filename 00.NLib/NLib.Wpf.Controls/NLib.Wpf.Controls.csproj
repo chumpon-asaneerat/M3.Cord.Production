@@ -136,7 +136,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Enums\EnumBooleanConverter.cs" />
+    <Compile Include="Controls\Converters\EnumBooleanConverter.cs" />
     <Compile Include="Controls\Enums\FontAwesomeEnumFlags.cs" />
     <Compile Include="Controls\InlineButton\InlineButton.xaml.cs">
       <DependentUpon>InlineButton.xaml</DependentUpon>
@@ -162,11 +162,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ExtensionMethods\WpfWindowExtensionMethods.cs" />
-    <Compile Include="Utils\AttachProperties\FontAwesomeIconAttachProperties.cs" />
-    <Compile Include="Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
-    <Compile Include="Utils\Converters\IsLastItemConverter.cs" />
-    <Compile Include="Utils\Converters\ShowButtonsConverter.cs" />
-    <Compile Include="Utils\Converters\StringToNumberConverter.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\FontAwesomeIconAttachProperties.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
+    <Compile Include="Controls\Converters\IsLastItemConverter.cs" />
+    <Compile Include="Controls\Converters\ShowButtonsConverter.cs" />
+    <Compile Include="Controls\Converters\StringToNumberConverter.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
