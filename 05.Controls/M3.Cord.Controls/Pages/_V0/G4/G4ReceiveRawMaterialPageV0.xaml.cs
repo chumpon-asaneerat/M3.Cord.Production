@@ -19,7 +19,7 @@ using System.Windows.Shapes;
 
 #endregion
 
-namespace M3.Cord.Pages
+namespace M3.Cord.Pages.V0
 {
     /// <summary>
     /// Interaction logic for G4ReceiveRawMaterialPage.xaml

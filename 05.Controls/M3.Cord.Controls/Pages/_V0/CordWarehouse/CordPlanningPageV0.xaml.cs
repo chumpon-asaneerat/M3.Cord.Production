@@ -19,19 +19,19 @@ using System.Windows.Shapes;
 
 #endregion
 
-namespace M3.Cord.Pages
+namespace M3.Cord.Pages.V0
 {
     /// <summary>
-    /// Interaction logic for CordReceiveYarnPage.xaml
+    /// Interaction logic for CordPlanningPage.xaml
     /// </summary>
-    public partial class CordReceiveYarnPage : UserControl
+    public partial class CordPlanningPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public CordReceiveYarnPage()
+        public CordPlanningPage()
         {
             InitializeComponent();
         }
@@ -40,8 +40,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private List<CordYarn> sources = CordYarn.GetCordYarns();
-        private List<CordYarn> items = null;
+        private List<CordProduct> items = CordProduct.GetCordProducts();
 
         #endregion
 
@@ -52,21 +51,19 @@ namespace M3.Cord.Pages
             GotoMainMenu();
         }
 
-        private void cmdPalletSearch_Click(object sender, RoutedEventArgs e)
+        private void cmdSearch_Click(object sender, RoutedEventArgs e)
         {
-            // generate sample data
-            items = new List<CordYarn>(sources.ToArray());
             RefreshGrid();
         }
 
-        private void cmdYarnCHSearch_Click(object sender, RoutedEventArgs e)
+        private void cmdAddNew_Click(object sender, RoutedEventArgs e)
         {
-            // generate sample data
-            items.ForEach(item =>
-            {
-                item.MarkReceive(DateTime.Today);
-            });
-            RefreshGrid();
+
+        }
+
+        private void cmdEdit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         #endregion
@@ -78,6 +75,19 @@ namespace M3.Cord.Pages
             // Init Main Menu
             var page = M3CordApp.Pages.CordMainMenu;
             PageContentManager.Instance.Current = page;
+        }
+
+        private void LoadComboBoxes()
+        {
+            var itemYarns = new string[]
+            {
+                "700-108-178E-TTS",
+                "470-72-1781-JJ",
+                "470-136-178E-APM",
+                "470-136-178E-TTS"
+            };
+            cbItemYarn.ItemsSource = itemYarns;
+            cbItemYarn.SelectedIndex = 0;
         }
 
         private void RefreshGrid()
@@ -93,7 +103,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            //LoadComboBoxes();
+            LoadComboBoxes();
             RefreshGrid();
         }
 

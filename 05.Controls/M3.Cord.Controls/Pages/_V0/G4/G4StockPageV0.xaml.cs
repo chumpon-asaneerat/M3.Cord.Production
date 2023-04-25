@@ -1,11 +1,9 @@
 ﻿#region Using
 
 using M3.Cord.Models;
-using M3.Cord.Properties;
 using NLib.Services;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,26 +13,25 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 #endregion
 
-namespace M3.Cord.Pages
+namespace M3.Cord.Pages.V0
 {
     /// <summary>
-    /// Interaction logic for FirstTwistMCPage.xaml
+    /// Interaction logic for G4StockPage.xaml
     /// </summary>
-    public partial class FirstTwistMCPage : UserControl
+    public partial class G4StockPage : UserControl
     {
         #region Constructor
 
         /// <summary>
-        /// Constructor
+        /// Constructor.
         /// </summary>
-        public FirstTwistMCPage()
+        public G4StockPage()
         {
             InitializeComponent();
         }
@@ -43,7 +40,8 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private List<FirstTwistMC> mcList = FirstTwistMC.Gets();
+        private List<G4StockYarn> sources = G4StockYarn.GetG4StockYarns();
+        private List<G4StockYarn> items = null;
 
         #endregion
 
@@ -54,16 +52,9 @@ namespace M3.Cord.Pages
             GotoMainMenu();
         }
 
-        #endregion
-
-        #region ListBox Handlers
-
-        private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cmdSearch_Click(object sender, RoutedEventArgs e)
         {
-            if (grid.SelectedIndex == -1)
-                return;
-            var FirstTwistMC = mcList[grid.SelectedIndex];
-            UpdateMCStatus(FirstTwistMC);
+            RefreshGrid();
         }
 
         #endregion
@@ -77,25 +68,30 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
-        private void RefreshMC()
+        private void LoadComboBoxes()
+        {
+            var itemYarns = new string[]
+            {
+                "700-108-178E-TTS",
+                "470-72-1781-JJ",
+                "470-136-178E-APM",
+                "470-136-178E-TTS"
+            };
+            cbItemYarn.ItemsSource = itemYarns;
+            cbItemYarn.SelectedIndex = 0;
+        }
+
+        private void RefreshGrid()
         {
             grid.ItemsSource = null;
-            grid.ItemsSource = mcList;
-        }
 
-        private void UpdateMCStatus(FirstTwistMC mc)
-        {
-            paMC.DataContext = null;
-            paMC.DataContext = mc.Product;
-            RefreshGrid(mc);
-        }
+            string itemYarn = cbItemYarn.SelectedItem as string;
+            items = sources.FindAll((item) =>
+            {
+                return (itemYarn != null && item.ItemYarn == itemYarn);
+            });
 
-        private void RefreshGrid(FirstTwistMC mc)
-        {
-            doffGrid.ItemsSource = null;
-            if (null == mc)
-                return;
-            doffGrid.ItemsSource = mc.RawMaterialSheets;
+            grid.ItemsSource = items;
         }
 
         #endregion
@@ -104,7 +100,8 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            RefreshMC();
+            LoadComboBoxes();
+            RefreshGrid();
         }
 
         #endregion

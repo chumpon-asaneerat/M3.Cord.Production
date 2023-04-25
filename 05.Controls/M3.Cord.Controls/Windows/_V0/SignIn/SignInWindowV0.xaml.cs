@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 
 #endregion
 
-namespace M3.Cord.Windows
+namespace M3.Cord.Windows.V0
 {
     /// <summary>
     /// Interaction logic for SignInWindow.xaml

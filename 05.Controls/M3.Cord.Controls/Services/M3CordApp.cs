@@ -1,6 +1,7 @@
 ﻿#region Using
 
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
@@ -20,10 +21,41 @@ namespace M3.Cord
         /// </summary>
         public static class Pages
         {
+            #region Static Methods
+
+            private static Dictionary<Type, UserControl> _pages = new Dictionary<Type, UserControl>();
+
+            private static T GetPage<T>()
+                where T : UserControl, new()
+            {
+                Type type = typeof(T);
+                if (!_pages.ContainsKey(type)) 
+                {
+                    lock (typeof(M3CordApp))
+                    {
+                        T inst = new T();
+                        _pages.Add(type, inst);
+                    }
+                }
+
+                T ret = _pages[type] as T;
+
+                return ret;
+            }
+
+            #endregion
+
             #region Main Menu
 
             #region Cord Main Menu
 
+            /// <summary>Gets Cord MainMenu Page.</summary>
+            public static Cord.Pages.CordMainMenuPage CordMainMenu
+            {
+                get { return GetPage<Cord.Pages.CordMainMenuPage>(); }
+            }
+
+            /*
             private static M3.Cord.Pages.CordMainMenuPage _CordMainMenu;
 
             /// <summary>Gets Cord MainMenu Page.</summary>
@@ -41,7 +73,7 @@ namespace M3.Cord
                     return _CordMainMenu;
                 }
             }
-
+            */
             #endregion
 
             #endregion
@@ -49,7 +81,7 @@ namespace M3.Cord
             #region G4
 
             #region Receive Raw Material
-
+            /*
             private static M3.Cord.Pages.G4ReceiveRawMaterialPage _G4ReceiveRawMaterial;
 
             /// <summary>Gets G4 Receive Raw Material Page.</summary>
@@ -67,11 +99,11 @@ namespace M3.Cord
                     return _G4ReceiveRawMaterial;
                 }
             }
-
+            */
             #endregion
 
             #region Receive Raw Material
-
+            /*
             private static M3.Cord.Pages.G4IssueRawMaterialPage _G4IssueRawMaterial;
 
             /// <summary>Gets G4 Issue Raw Material Page.</summary>
@@ -89,11 +121,11 @@ namespace M3.Cord
                     return _G4IssueRawMaterial;
                 }
             }
-
+            */
             #endregion
 
             #region Stock
-
+            /*
             private static M3.Cord.Pages.G4StockPage _G4Stock;
 
             /// <summary>Gets G4 Stock Page.</summary>
@@ -111,7 +143,7 @@ namespace M3.Cord
                     return _G4Stock;
                 }
             }
-
+            */
             #endregion
 
             #endregion
@@ -119,7 +151,7 @@ namespace M3.Cord
             #region Cord Warehouse
 
             #region Cord Receive Yarn
-
+            /*
             private static M3.Cord.Pages.CordReceiveYarnPage _CordReceiveYarn;
 
             /// <summary>Gets Cord Receive Yarn.</summary>
@@ -137,11 +169,11 @@ namespace M3.Cord
                     return _CordReceiveYarn;
                 }
             }
-
+            */
             #endregion
 
             #region Cord Planning
-
+            /*
             private static M3.Cord.Pages.CordPlanningPage _CordPlanning;
 
             /// <summary>Gets Cord Planning Page.</summary>
@@ -159,7 +191,7 @@ namespace M3.Cord
                     return _CordPlanning;
                 }
             }
-
+            */
             #endregion
 
             #endregion
@@ -167,7 +199,7 @@ namespace M3.Cord
             #region First Twist
 
             #region First Twist MC
-
+            /*
             private static M3.Cord.Pages.FirstTwistMCPage _FirstTwistMC;
 
             /// <summary>Gets First Twist MC Page.</summary>
@@ -185,7 +217,7 @@ namespace M3.Cord
                     return _FirstTwistMC;
                 }
             }
-
+            */
             #endregion
 
             #endregion
@@ -197,7 +229,7 @@ namespace M3.Cord
         public static class Windows
         {
             #region SignIn
-
+            /*
             /// <summary>Gets SignIn Window.</summary>
             public static M3.Cord.Windows.SignInWindow SignIn
             {
@@ -208,13 +240,13 @@ namespace M3.Cord
                     return ret;
                 }
             }
-
+            */
             #endregion
 
             #region G4
 
             #region G4 Receive Yarn
-
+            /*
             /// <summary>Gets SignIn Window.</summary>
             public static M3.Cord.Windows.G4ReceiveYarnWindow G4ReceiveYarn
             {
@@ -225,7 +257,7 @@ namespace M3.Cord
                     return ret;
                 }
             }
-
+            */
             #endregion
 
             #endregion

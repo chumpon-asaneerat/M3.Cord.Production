@@ -19,19 +19,19 @@ using System.Windows.Shapes;
 
 #endregion
 
-namespace M3.Cord.Pages
+namespace M3.Cord.Pages.V0
 {
     /// <summary>
-    /// Interaction logic for G4StockPage.xaml
+    /// Interaction logic for CordReceiveYarnPage.xaml
     /// </summary>
-    public partial class G4StockPage : UserControl
+    public partial class CordReceiveYarnPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public G4StockPage()
+        public CordReceiveYarnPage()
         {
             InitializeComponent();
         }
@@ -40,8 +40,8 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private List<G4StockYarn> sources = G4StockYarn.GetG4StockYarns();
-        private List<G4StockYarn> items = null;
+        private List<CordYarn> sources = CordYarn.GetCordYarns();
+        private List<CordYarn> items = null;
 
         #endregion
 
@@ -52,8 +52,20 @@ namespace M3.Cord.Pages
             GotoMainMenu();
         }
 
-        private void cmdSearch_Click(object sender, RoutedEventArgs e)
+        private void cmdPalletSearch_Click(object sender, RoutedEventArgs e)
         {
+            // generate sample data
+            items = new List<CordYarn>(sources.ToArray());
+            RefreshGrid();
+        }
+
+        private void cmdYarnCHSearch_Click(object sender, RoutedEventArgs e)
+        {
+            // generate sample data
+            items.ForEach(item =>
+            {
+                item.MarkReceive(DateTime.Today);
+            });
             RefreshGrid();
         }
 
@@ -68,28 +80,9 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
-        private void LoadComboBoxes()
-        {
-            var itemYarns = new string[]
-            {
-                "700-108-178E-TTS",
-                "470-72-1781-JJ",
-                "470-136-178E-APM",
-                "470-136-178E-TTS"
-            };
-            cbItemYarn.ItemsSource = itemYarns;
-            cbItemYarn.SelectedIndex = 0;
-        }
-
         private void RefreshGrid()
         {
             grid.ItemsSource = null;
-
-            string itemYarn = cbItemYarn.SelectedItem as string;
-            items = sources.FindAll((item) =>
-            {
-                return (itemYarn != null && item.ItemYarn == itemYarn);
-            });
 
             grid.ItemsSource = items;
         }
@@ -100,7 +93,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            LoadComboBoxes();
+            //LoadComboBoxes();
             RefreshGrid();
         }
 

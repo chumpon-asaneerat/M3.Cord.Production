@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="M3.Cord.Pages.G4ReceiveRawMaterialPage"
+﻿<UserControl x:Class="M3.Cord.Pages.V0.G4StockPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -10,7 +10,7 @@
              d:DesignWidth="800">
     <UserControl.Resources>
         <!--  PAGE TITLE  -->
-        <sys:String x:Key="PageTitle">G4 Receive Raw Material</sys:String>
+        <sys:String x:Key="PageTitle">G4 Issue Raw Material</sys:String>
         <!--  INLINE BUTTON TEXT FONT SIZE  -->
         <sys:Double x:Key="IBFSize">18</sys:Double>
         <!--  FILTER BAR VISIBLE STATES  -->
@@ -20,7 +20,7 @@
         <!--  BOTTONS BAR VISIBLE STATES  -->
         <Visibility x:Key="HomeButtonVisible">Visible</Visibility>
         <Visibility x:Key="SaveButtonVisible">Visible</Visibility>
-        <Visibility x:Key="PrintButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="PrintButtonVisible">Visible</Visibility>
         <Visibility x:Key="AddNewButtonVisible">Collapsed</Visibility>
         <Visibility x:Key="DeleteAllButtonVisible">Visible</Visibility>
     </UserControl.Resources>
@@ -129,8 +129,9 @@
                                 <TextBlock Margin="3,0"
                                            FontFamily="{StaticResource THSarabun}"
                                            FontSize="{StaticResource IBFSize}"
-                                           Text="พิมพ์"
-                                           VerticalAlignment="Center" />
+                                           VerticalAlignment="Center">
+                                    <Run Text="Print" />
+                                </TextBlock>
                             </StackPanel>
                         </Button>
                         <!--  BACK  -->
@@ -155,37 +156,83 @@
                     </DockPanel>
                     <!--  ITEMS  -->
                     <DockPanel LastChildFill="True">
-                        <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-                            <StackPanel Margin="0,5"
-                                        Orientation="Horizontal"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Left">
-                                <TextBlock Style="{StaticResource LabelText}"
-                                           Margin="5,0"
-                                           Text="Lot No: " />
-                                <TextBox x:Name="txtTraceNo"
-                                         Margin="5,0"
-                                         Style="{StaticResource CommonTextBox}"
-                                         Width="150"
-                                         PreviewKeyDown="txtTraceNo_PreviewKeyDown" />
-                                <Button x:Name="cmdReceive"
-                                        DockPanel.Dock="Left"
+                        <StackPanel Orientation="Vertical"
+                                    DockPanel.Dock="Top"
+                                    HorizontalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <!--  RECEIVE DATE  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="100"
+                                           TextAlignment="Right"
+                                           Text="Receive Date: " />
+                                <DatePicker x:Name="dtIssueDate"
+                                            FontSize="{StaticResource FontSize14}"
+                                            Margin="0,5"
+                                            Width="150" />
+                                <!--  ITEM YARN  -->
+                                <TextBlock Margin="0,5"
+                                           Style="{StaticResource LabelText}"
+                                           Width="100"
+                                           TextAlignment="Right"
+                                           Text="Item Yarn: " />
+                                <ComboBox x:Name="cbItemYarn"
+                                          Margin="0,5"
+                                          Style="{StaticResource CommonComboBox}"
+                                          Width="200" />
+                                <!--  SEARCH  -->
+                                <Button x:Name="cmdSearch"
                                         Style="{StaticResource InlineButton}"
                                         Margin="5,0"
                                         Width="150"
                                         Height="30"
-                                        Click="cmdReceive_Click">
+                                        Click="cmdSearch_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock FontSize="{StaticResource IBFSize}" />
+                                        <TextBlock Style="{StaticResource fa-search}" FontSize="{StaticResource IBFSize}" />
                                         <TextBlock Margin="3,0"
                                                    FontFamily="{StaticResource THSarabun}"
                                                    FontSize="{StaticResource IBFSize}"
-                                                   Text="Receive"
+                                                   Text="Search"
                                                    VerticalAlignment="Center" />
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
-                        </DockPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    DockPanel.Dock="Bottom">
+                            <!--  TOTAL PALLET  -->
+                            <TextBlock Margin="5"
+                                       Style="{StaticResource LabelText}"
+                                       Text="TOTAL PALLET: " />
+                            <TextBox x:Name="txtTotalPallet"
+                                     Margin="5"
+                                     Style="{StaticResource CommonTextBox}"
+                                     IsReadOnly="True"
+                                     Text="0"
+                                     Width="100" />
+                            <!--  TOTAL WEIGHT  -->
+                            <TextBlock Margin="5,0"
+                                       Style="{StaticResource LabelText}"
+                                       Text="TOTAL WEIGHT: " />
+                            <TextBox x:Name="txtTotalWeight"
+                                     Margin="5"
+                                     Style="{StaticResource CommonTextBox}"
+                                     IsReadOnly="True"
+                                     Text="0"
+                                     Width="100" />
+                            <!--  TOTAL CH  -->
+                            <TextBlock Margin="5"
+                                       Style="{StaticResource LabelText}"
+                                       Text="TOTAL CH: " />
+                            <TextBox x:Name="txtTotalCH"
+                                     Margin="5"
+                                     Style="{StaticResource CommonTextBox}"
+                                     IsReadOnly="True"
+                                     Text="0"
+                                     Width="100" />
+                        </StackPanel>
                         <ListView x:Name="grid"
                                   FontSize="{StaticResource FontSize18}"
                                   ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
@@ -193,103 +240,102 @@
                                   Style="{StaticResource SingleSelectListView}">
                             <ListView.View>
                                 <GridView>
+                                    <!--  IS SELECTED  -->
+                                    <GridViewColumn Header="">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <CheckBox Width="40"
+                                                          Style="{StaticResource CommonCheckBox}"
+                                                          IsChecked="{Binding IsSelected}"
+                                                          Foreground="{Binding TextColor}" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  RECEIVE DATE  -->
+                                    <GridViewColumn Header="Receive Date">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="150"
+                                                           Text="{Binding ReceiveDate, StringFormat={}{0:d}}"
+                                                           Foreground="{Binding TextColor}"
+                                                           TextAlignment="Center" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  TRACE NO  -->
+                                    <GridViewColumn Header="Trace No">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="150"
+                                                           Text="{Binding TraceNo}"
+                                                           Foreground="{Binding TextColor}"
+                                                           TextAlignment="Center" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  PALLET NO  -->
                                     <GridViewColumn Header="Pallet No">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Width="150"
                                                            Text="{Binding PalletNo}"
-                                                           TextAlignment="Left" />
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
-                                    <GridViewColumn Header="Lot">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Width="150"
-                                                           Text="{Binding LotNo}"
-                                                           TextAlignment="Left" />
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
-                                    <GridViewColumn Header="Yarn Type">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Width="150"
-                                                           Text="{Binding YarnType}"
+                                                           Foreground="{Binding TextColor}"
                                                            TextAlignment="Center" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
-                                    <GridViewColumn Header="Weight">
+                                    <!--  LOT NO  -->
+                                    <GridViewColumn Header="Lot No">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Width="150"
+                                                           Text="{Binding LotNo}"
+                                                           Foreground="{Binding TextColor}"
+                                                           TextAlignment="Center" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  ITEM YARN  -->
+                                    <GridViewColumn Header="Yarn Type">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="200"
+                                                           Text="{Binding ItemYarn}"
+                                                           Foreground="{Binding TextColor}"
+                                                           TextAlignment="Center" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  WEIGHT  -->
+                                    <GridViewColumn Header="Weight">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="80"
                                                            Text="{Binding WeightQty}"
+                                                           Foreground="{Binding TextColor}"
                                                            TextAlignment="Right" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
-                                    <GridViewColumn Header="OK">
+                                    <!--  CH  -->
+                                    <GridViewColumn Header="CH">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <CheckBox Style="{StaticResource CommonCheckBox}"
-                                                          IsChecked="{Binding IsOK}"
-                                                          HorizontalAlignment="Center"
-                                                          Width="50" />
+                                                <TextBlock Width="80"
+                                                           Text="{Binding CH}"
+                                                           Foreground="{Binding TextColor}"
+                                                           TextAlignment="Right" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
-                                    <GridViewColumn Header="NG">
+                                    <!--  PALLET TYPE  -->
+                                    <GridViewColumn Header="Pallet Type">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <CheckBox Style="{StaticResource CommonCheckBox}"
-                                                          IsChecked="{Binding IsNG}"
-                                                          HorizontalAlignment="Center"
-                                                          Width="50" />
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
-                                    <GridViewColumn Header="">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
-                                                    <!--  EDIT  -->
-                                                    <Button x:Name="cmdEdit"
-                                                            DockPanel.Dock="Left"
-                                                            Style="{StaticResource InlineButton}"
-                                                            Margin="5,0"
-                                                            Width="150"
-                                                            Height="30"
-                                                            Click="cmdEdit_Click">
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
-                                                            <TextBlock Margin="3,0"
-                                                                       FontFamily="{StaticResource THSarabun}"
-                                                                       FontSize="{StaticResource IBFSize}"
-                                                                       Text="Edit"
-                                                                       VerticalAlignment="Center" />
-                                                        </StackPanel>
-                                                    </Button>
-                                                    <!--  DELETE  -->
-                                                    <Button x:Name="cmdDelete"
-                                                            DockPanel.Dock="Left"
-                                                            Style="{StaticResource InlineButton}"
-                                                            Margin="5,0"
-                                                            Width="150"
-                                                            Height="30"
-                                                            Click="cmdDelete_Click">
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
-                                                            <TextBlock Margin="3,0"
-                                                                       FontFamily="{StaticResource THSarabun}"
-                                                                       FontSize="{StaticResource IBFSize}"
-                                                                       Text="Delete"
-                                                                       VerticalAlignment="Center" />
-                                                        </StackPanel>
-                                                    </Button>
-                                                </StackPanel>
+                                                <TextBlock Width="80"
+                                                           Text="{Binding PalletType}"
+                                                           Foreground="{Binding TextColor}"
+                                                           TextAlignment="Right" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
