@@ -90,15 +90,16 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Command Text:" />
                         <TextBlock Width="20" />
-                        <CheckBox x:Name="chkGenColumnInfo" 
-                                  Content="Generate Column Info:" 
-                                  IsChecked="False"/>
+                        <CheckBox x:Name="chkGenColumnInfo"
+                                  Content="Generate Column Info:"
+                                  IsChecked="False" />
                     </StackPanel>
                     <TextBox x:Name="txtCommandText"
                              Text=""
                              Width="600"
                              Height="50"
-                             TextWrapping="Wrap" />
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True" />
                 </StackPanel>
                 <!--  EXECUTE  -->
                 <Button x:Name="cmdExecute"
@@ -112,6 +113,16 @@
                         Margin="3,0"
                         Width="100"
                         Click="cmdExport_Click" />
+            </StackPanel>
+            <!--  Query Results  -->
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="2,3"
+                        VerticalAlignment="Center">
+                <TextBlock Margin="0,3" Text="Total Rows:" />
+                <TextBlock x:Name="txtTotalRows"
+                           Margin="3"
+                           Text="0" />
             </StackPanel>
             <DataGrid x:Name="dbgrid" AutoGenerateColumns="True" />
         </DockPanel>

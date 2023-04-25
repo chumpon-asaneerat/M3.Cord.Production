@@ -4,8 +4,10 @@ M3 Cord Production System #180
 M3 Cord Production System #179
 - 
 
+[commited]
 M3 Cord Production System #178
-- 
+- WpfOracleConnect update
+  - Query supports multiline text
 
 [commited]
 M3 Cord Production System #177

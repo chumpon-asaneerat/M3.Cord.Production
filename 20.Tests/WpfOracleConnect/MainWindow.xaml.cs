@@ -154,16 +154,23 @@ namespace WpfOracleConnect
                 cmd.CommandType = System.Data.CommandType.Text;
                 
                 OracleDataAdapter adapter = new OracleDataAdapter();
-                using (DbDataReader reader = cmd.ExecuteReader())
+                try
                 {
-                    if (reader.HasRows)
+                    using (DbDataReader reader = cmd.ExecuteReader())
                     {
-                        dataSet = new DataSet();
-                        adapter.SelectCommand = cmd;
-                        adapter.Fill(dataSet);
-                    }
+                        if (reader.HasRows)
+                        {
+                            dataSet = new DataSet();
+                            adapter.SelectCommand = cmd;
+                            adapter.Fill(dataSet);
+                        }
 
-                    reader.Close();
+                        reader.Close();
+                    }
+                }
+                catch (Exception ex) 
+                {
+                    Console.WriteLine(ex.ToString());
                 }
             }
 
@@ -174,6 +181,7 @@ namespace WpfOracleConnect
             }
 
             dbgrid.ItemsSource = null;
+            txtTotalRows.Text = "-";
 
             if (null != dataSet && null != dataSet.Tables && dataSet.Tables.Count > 0)
             {
@@ -181,6 +189,11 @@ namespace WpfOracleConnect
                 if (null != tbl)
                 {
                     dbgrid.ItemsSource = tbl.DefaultView;
+                    txtTotalRows.Text = tbl.Rows.Count.ToString("n0");
+                }
+                else
+                {
+                    txtTotalRows.Text = "0";
                 }
             }
         }
