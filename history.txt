@@ -31,8 +31,10 @@ M3 Cord Production System #191
 M3 Cord Production System #190
 - 
 
+[commited]
 M3 Cord Production System #189
-- 
+- Update M3.Cord.Developer.Tools.App project #6.
+- Update all projects set CPU to x86
 
 [commited]
 M3 Cord Production System #188
