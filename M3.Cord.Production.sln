@@ -113,16 +113,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{748F0C41-F
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oracle", "Oracle", "{5C54D9E2-5613-452D-AB27-C131D613F94B}"
-	ProjectSection(SolutionItems) = preProject
-		Documents\Data\Oracle\G3_ISSUEYARN.cs = Documents\Data\Oracle\G3_ISSUEYARN.cs
-		Documents\Data\Oracle\G3_ISSUEYARN_100.xls = Documents\Data\Oracle\G3_ISSUEYARN_100.xls
-		Documents\Data\Oracle\G3_YARN.cs = Documents\Data\Oracle\G3_YARN.cs
-		Documents\Data\Oracle\G3_YARN_100.xls = Documents\Data\Oracle\G3_YARN_100.xls
-		Documents\Data\Oracle\ORACLE_G3_ISSUEYARN.json = Documents\Data\Oracle\ORACLE_G3_ISSUEYARN.json
-		Documents\Data\Oracle\ORACLE_G3_YARN.json = Documents\Data\Oracle\ORACLE_G3_YARN.json
-		Documents\Data\Oracle\ORACLE_ITEMCODE.json = Documents\Data\Oracle\ORACLE_ITEMCODE.json
-		Documents\Data\Oracle\table_export.xls = Documents\Data\Oracle\table_export.xls
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Server", "SQL Server", "{C421F315-83E3-4CFB-A664-8E4D19F3DCE1}"
 	ProjectSection(SolutionItems) = preProject
@@ -135,6 +125,58 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Server", "SQL Server", 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CordLiteDb", "20.Tests\CordLiteDb\CordLiteDb.csproj", "{E0D610B7-6D04-40B8-93FD-F32AE06DDD32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PPT", "PPT", "{62778368-8AB8-4597-A82A-920E2975A982}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v0", "v0", "{3487607A-154F-41EE-A04D-C71F2D382CC4}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\PPT\v0\Cord_2023-04-06v2.pptx = Documents\Cord\PPT\v0\Cord_2023-04-06v2.pptx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v0", "v0", "{466F64A8-B4FA-49C8-A061-A0DACE3C77C6}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Data\Oracle\v0\G3_ISSUEYARN.cs = Documents\Data\Oracle\v0\G3_ISSUEYARN.cs
+		Documents\Data\Oracle\v0\G3_ISSUEYARN_100.xls = Documents\Data\Oracle\v0\G3_ISSUEYARN_100.xls
+		Documents\Data\Oracle\v0\G3_YARN.cs = Documents\Data\Oracle\v0\G3_YARN.cs
+		Documents\Data\Oracle\v0\G3_YARN_100.xls = Documents\Data\Oracle\v0\G3_YARN_100.xls
+		Documents\Data\Oracle\v0\ORACLE_G3_ISSUEYARN.json = Documents\Data\Oracle\v0\ORACLE_G3_ISSUEYARN.json
+		Documents\Data\Oracle\v0\ORACLE_G3_YARN.json = Documents\Data\Oracle\v0\ORACLE_G3_YARN.json
+		Documents\Data\Oracle\v0\ORACLE_ITEMCODE.json = Documents\Data\Oracle\v0\ORACLE_ITEMCODE.json
+		Documents\Data\Oracle\v0\table_export.xls = Documents\Data\Oracle\v0\table_export.xls
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v1", "v1", "{943E6355-3881-4D47-837E-524D70D3FD14}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Data\Oracle\v1\G3IssueYarn.json = Documents\Data\Oracle\v1\G3IssueYarn.json
+		Documents\Data\Oracle\v1\G3Yarn.json = Documents\Data\Oracle\v1\G3Yarn.json
+		Documents\Data\Oracle\v1\ItemCode.json = Documents\Data\Oracle\v1\ItemCode.json
+		Documents\Data\Oracle\v1\Oracle Db Query.sql = Documents\Data\Oracle\v1\Oracle Db Query.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord_v0 Image", "Cord_v0 Image", "{52DA3F0D-91F5-45F1-A955-9CB3DF6D9ABD}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\PPT\v0\Cord_v0 Image\00.Cord.MainMenu.png = Documents\Cord\PPT\v0\Cord_v0 Image\00.Cord.MainMenu.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.01.png = Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.01.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.02.png = Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.02.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.03.png = Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.03.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.04.png = Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.04.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.05.png = Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.05.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.06.png = Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.06.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.07.png = Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.07.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.08.png = Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.08.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.09.png = Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.09.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.10.png = Documents\Cord\PPT\v0\Cord_v0 Image\01.G4.Receive.Raw.Material.Step.10.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.01.png = Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.01.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.02.png = Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.02.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.03.png = Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.03.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.04.png = Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.04.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.05.png = Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.05.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.06.png = Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.06.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.07.png = Documents\Cord\PPT\v0\Cord_v0 Image\02.G4.Issue.Raw.Material.Step.07.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\03.1stTwist.Operation.Step.01.png = Documents\Cord\PPT\v0\Cord_v0 Image\03.1stTwist.Operation.Step.01.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\03.1stTwist.Operation.Step.02.png = Documents\Cord\PPT\v0\Cord_v0 Image\03.1stTwist.Operation.Step.02.png
+		Documents\Cord\PPT\v0\Cord_v0 Image\03.1stTwist.Operation.Step.03.png = Documents\Cord\PPT\v0\Cord_v0 Image\03.1stTwist.Operation.Step.03.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -226,6 +268,11 @@ Global
 		{5C54D9E2-5613-452D-AB27-C131D613F94B} = {748F0C41-F28A-4609-A45C-C46D218F0470}
 		{C421F315-83E3-4CFB-A664-8E4D19F3DCE1} = {748F0C41-F28A-4609-A45C-C46D218F0470}
 		{E0D610B7-6D04-40B8-93FD-F32AE06DDD32} = {159B3C70-A36A-4E53-91A1-B346894525DF}
+		{62778368-8AB8-4597-A82A-920E2975A982} = {B2818B90-A408-452A-B236-02309FC6455F}
+		{3487607A-154F-41EE-A04D-C71F2D382CC4} = {62778368-8AB8-4597-A82A-920E2975A982}
+		{466F64A8-B4FA-49C8-A061-A0DACE3C77C6} = {5C54D9E2-5613-452D-AB27-C131D613F94B}
+		{943E6355-3881-4D47-837E-524D70D3FD14} = {5C54D9E2-5613-452D-AB27-C131D613F94B}
+		{52DA3F0D-91F5-45F1-A955-9CB3DF6D9ABD} = {3487607A-154F-41EE-A04D-C71F2D382CC4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
