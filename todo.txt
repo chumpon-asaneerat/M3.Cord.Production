@@ -2,8 +2,8 @@
 [ ] Dev Tools: LaTex Image Generator
 [ ] Dev Tools: SendKeys
 [ ] Controls: Add Field Controls - PalletNo, TraceNo, LotNo, etc. 
-[ ] 
-[ ] 
+[ ] integrated BarcodeLib
+[ ] integrated QRCoder
 [ ] 
 [ ] 
 [ ] 
