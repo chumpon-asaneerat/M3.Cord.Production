@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7D29DC0E-90EC-4D9D-8AFB-B4422E2D2FB8}"
 	ProjectSection(SolutionItems) = preProject
 		history.txt = history.txt
+		todo.txt = todo.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.NLib", "00.NLib", "{55BDE894-1CA8-442F-8E7C-B827CD14A94F}"
