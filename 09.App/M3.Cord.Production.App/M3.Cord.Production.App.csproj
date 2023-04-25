@@ -103,6 +103,14 @@
       <Project>{5879d92a-f850-4a70-8d88-99d29f6a46f3}</Project>
       <Name>NLib.Reports</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\00.NLib\NLib.Utils\NLib.Utils.csproj">
+      <Project>{93acb478-4570-4f67-9442-2839d1a46ec9}</Project>
+      <Name>NLib.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\00.NLib\NLib.Wpf.Controls\NLib.Wpf.Controls.csproj">
+      <Project>{238fc7ff-5234-4feb-8265-22b8e8f01b0c}</Project>
+      <Name>NLib.Wpf.Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
       <Project>{41a9d6c0-c833-403f-9bc1-eecdc246a428}</Project>
       <Name>NLib</Name>

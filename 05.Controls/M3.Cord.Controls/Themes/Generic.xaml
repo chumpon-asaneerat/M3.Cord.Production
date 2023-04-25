@@ -1,5 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Generic.xaml" />
+        <!--
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/CommonStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/GroupMenuStyle.xaml" />
 
@@ -22,7 +24,6 @@
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.ListView.xaml" />
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.TreeView.xaml" />
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.Expander.xaml" />
-        <!--
         <ResourceDictionary Source="pack://application:,,,/M3.Cord.Controls;component/Themes/Common/CommonStyle.xxx.xaml" />
         -->
 

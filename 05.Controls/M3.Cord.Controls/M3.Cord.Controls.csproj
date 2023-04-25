@@ -121,6 +121,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\00.NLib\NLib.Utils\NLib.Utils.csproj">
+      <Project>{93acb478-4570-4f67-9442-2839d1a46ec9}</Project>
+      <Name>NLib.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\00.NLib\NLib.Wpf.Controls\NLib.Wpf.Controls.csproj">
+      <Project>{238fc7ff-5234-4feb-8265-22b8e8f01b0c}</Project>
+      <Name>NLib.Wpf.Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
       <Project>{41a9d6c0-c833-403f-9bc1-eecdc246a428}</Project>
       <Name>NLib</Name>
@@ -175,82 +183,82 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\CommonStyle.xaml">
+    <None Include="Themes\_V0\CommonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.CheckedBox.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.CheckedBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.ComboBox.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.ComboBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.Control.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.Control.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.Expander.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.Expander.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.FontStyle.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.FontStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.ImageButton.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.ImageButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.InlineButton.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.InlineButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.ListBox.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.ListBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.ListView.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.ListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.PasswordBox.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.PasswordBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.RadioButton.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.RadioButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.TextBlock.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.TextBlock.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.TextBox.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.TextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.TreeView.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.TreeView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.UserControl.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.UserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Common\CommonStyle.Window.xaml">
+    </None>
+    <None Include="Themes\_V0\Common\CommonStyle.Window.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
+    </None>
     <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\GroupMenuStyle.xaml">
+    <None Include="Themes\_V0\GroupMenuStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
+    </None>
     <None Include="Windows\_V0\G4\G4ReceiveYarnWindowV0.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
