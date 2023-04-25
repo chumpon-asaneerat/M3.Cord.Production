@@ -15,7 +15,7 @@
     </UserControl.Resources>
     <DockPanel LastChildFill="True" Height="Auto">
         <!--  NEW  -->
-        <ctrl:InlineButton x:Name="cmdNew"
+        <ctrl:InlineButton x:Name="__cmdNew"
                            DockPanel.Dock="Left"
                            IconType="Add"
                            Text="New"
@@ -23,7 +23,7 @@
                            FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}"
                            Click="cmdNew_Click" />
         <!--  SAVE  -->
-        <ctrl:InlineButton x:Name="cmdSave"
+        <ctrl:InlineButton x:Name="__cmdSave"
                            DockPanel.Dock="Left"
                            IconType="Save"
                            Text="Save"
@@ -31,7 +31,7 @@
                            FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}"
                            Click="cmdSave_Click" />
         <!--  DELETE  -->
-        <ctrl:InlineButton x:Name="cmdDelete"
+        <ctrl:InlineButton x:Name="__cmdDelete"
                            DockPanel.Dock="Left"
                            IconType="Delete"
                            Text="Delete"
@@ -39,7 +39,7 @@
                            FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}"
                            Click="cmdDelete_Click" />
         <!--  PRINT  -->
-        <ctrl:InlineButton x:Name="cmdPrint"
+        <ctrl:InlineButton x:Name="__cmdPrint"
                            DockPanel.Dock="Left"
                            IconType="Print"
                            Text="Print"
@@ -47,7 +47,7 @@
                            FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}"
                            Click="cmdPrint_Click" />
         <!--  EXPORT  -->
-        <ctrl:InlineButton x:Name="cmdExport"
+        <ctrl:InlineButton x:Name="__cmdExport"
                            DockPanel.Dock="Left"
                            IconType="Export"
                            Text="Export"
@@ -55,7 +55,7 @@
                            FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}"
                            Click="cmdExport_Click" />
         <!--  Main Menu  -->
-        <ctrl:InlineButton x:Name="cmdHome"
+        <ctrl:InlineButton x:Name="__cmdHome"
                            DockPanel.Dock="Right"
                            IconType="Home"
                            Text="Main Menu"
@@ -63,7 +63,7 @@
                            FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}"
                            Click="cmdHome_Click" />
         <!--  BACK  -->
-        <ctrl:InlineButton x:Name="cmdBack"
+        <ctrl:InlineButton x:Name="__cmdBack"
                            DockPanel.Dock="Right"
                            IconType="Back"
                            Text="Back"

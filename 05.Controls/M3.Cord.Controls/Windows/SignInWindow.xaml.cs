@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+#endregion
+
 namespace M3.Cord.Windows
 {
     /// <summary>
@@ -19,9 +23,34 @@ namespace M3.Cord.Windows
     /// </summary>
     public partial class SignInWindow : Window
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public SignInWindow()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Loaded
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            txtUserName.Focus();
+        }
+
+        #endregion
+
+        #region Button Handlers
+
+        private void cmdOk_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+
+        #endregion
     }
 }
