@@ -99,4 +99,10 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(SolutionDir)References\Dapper.*" "$(TargetDir)\..\M3.Cord\Developer\Dapper.*" /Y/D/E
+xcopy "$(SolutionDir)References\Dapper.*" "$(TargetDir)\..\M3.Cord\Production\Dapper.*" /Y/D/E
+xcopy "$(SolutionDir)References\Dapper.*" "$(TargetDir)\..\M3.Cord\QA\Dapper.*" /Y/D/E
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

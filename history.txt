@@ -7,8 +7,9 @@ M3 Cord Production System #189
 M3 Cord Production System #188
 - 
 
+[commited]
 M3 Cord Production System #187
-- 
+- Update M3.Cord.Developer.Tools.App project #5.
 
 [commited]
 M3 Cord Production System #186
