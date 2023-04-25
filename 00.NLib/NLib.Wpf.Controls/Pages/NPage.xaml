@@ -51,6 +51,7 @@
                 <DockPanel LastChildFill="True">
                     <!--  BUTTONS BAR  -->
                     <ctrl:NavigatorBar x:Name="nav"
+                                       Background="Silver"
                                        FontSize="{StaticResource NavFontSize}"
                                        DockPanel.Dock="Bottom"
                                        ShowButtons="{Binding ElementName=_ThisCtrl, Path=ShowButtons, Mode=TwoWay}"

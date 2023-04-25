@@ -228,7 +228,25 @@ namespace M3.Cord
         /// </summary>
         public static class Windows
         {
+            #region Static Methods
+
+            private static T GetWindow<T>()
+                where T : Window, new()
+            {
+                T inst = new T();
+                inst.Owner = Application.Current.MainWindow;
+                return inst;
+            }
+
+            #endregion
+
             #region SignIn
+
+            /// <summary>Gets SignIn Window.</summary>
+            public static Cord.Windows.SignInWindow SignIn
+            {
+                get { return GetWindow<Cord.Windows.SignInWindow>(); }
+            }
             /*
             /// <summary>Gets SignIn Window.</summary>
             public static M3.Cord.Windows.SignInWindow SignIn
