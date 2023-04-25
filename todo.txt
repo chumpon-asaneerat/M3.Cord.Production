@@ -1,7 +1,7 @@
-[ ] Import Oracle data (json) into SQL Server
-[ ] 
-[ ] 
-[ ] 
+[ ] Dev Tools: Import Oracle data (json) into SQL Server
+[ ] Dev Tools: LaTex Image Generator
+[ ] Dev Tools: SendKeys
+[ ] Controls: Add Field Controls - PalletNo, TraceNo, LotNo, etc. 
 [ ] 
 [ ] 
 [ ] 
