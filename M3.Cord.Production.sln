@@ -178,6 +178,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord_v0 Image", "Cord_v0 Im
 		Documents\Cord\PPT\v0\Cord_v0 Image\03.1stTwist.Operation.Step.03.png = Documents\Cord\PPT\v0\Cord_v0 Image\03.1stTwist.Operation.Step.03.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3.Cord.Developer.Tools.App", "M3.Cord.Developer.Tools.App\M3.Cord.Developer.Tools.App.csproj", "{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -240,6 +242,10 @@ Global
 		{E0D610B7-6D04-40B8-93FD-F32AE06DDD32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0D610B7-6D04-40B8-93FD-F32AE06DDD32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0D610B7-6D04-40B8-93FD-F32AE06DDD32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
