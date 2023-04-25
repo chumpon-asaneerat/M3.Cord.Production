@@ -16,14 +16,15 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\Executables\Production\M3.Cord\Production\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>M3.Cord.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -93,6 +97,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\00.NLib\NLib.Utils\NLib.Utils.csproj">
+      <Project>{93acb478-4570-4f67-9442-2839d1a46ec9}</Project>
+      <Name>NLib.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\00.NLib\NLib.Wpf.Controls\NLib.Wpf.Controls.csproj">
+      <Project>{238fc7ff-5234-4feb-8265-22b8e8f01b0c}</Project>
+      <Name>NLib.Wpf.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
+      <Project>{41a9d6c0-c833-403f-9bc1-eecdc246a428}</Project>
+      <Name>NLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\01.Core\M3.Cord.Core\M3.Cord.Core.csproj">
+      <Project>{97207fa7-d028-4f2f-812e-f2a3e2a85c81}</Project>
+      <Name>M3.Cord.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\02.Models\M3.Cord.Models\M3.Cord.Models.csproj">
+      <Project>{79b5dfda-fc06-4dc2-a260-07de878e5fa7}</Project>
+      <Name>M3.Cord.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

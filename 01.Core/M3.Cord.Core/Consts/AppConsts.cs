@@ -24,7 +24,7 @@ namespace M3.Cord
                     public static string Version = AppConsts.Version;
                     public static string Minor = AppConsts.Minor;
                     public static string Build = "1";
-                    public static DateTime LastUpdate = new DateTime(2023, 3, 9, 23, 20, 00);
+                    public static DateTime LastUpdate = new DateTime(2023, 4, 25, 23, 20, 00);
                 }
 
                 public static class QA
@@ -34,8 +34,19 @@ namespace M3.Cord
                     public static string Version = AppConsts.Version;
                     public static string Minor = AppConsts.Minor;
                     public static string Build = "1";
-                    public static DateTime LastUpdate = new DateTime(2023, 3, 9, 23, 20, 00);
+                    public static DateTime LastUpdate = new DateTime(2023, 4, 25, 23, 20, 00);
                 }
+
+                public static class Developer
+                {
+                    public static string ApplicationName = @"M3 Cord Developer Tools Application";
+                    // common
+                    public static string Version = AppConsts.Version;
+                    public static string Minor = AppConsts.Minor;
+                    public static string Build = "1";
+                    public static DateTime LastUpdate = new DateTime(2023, 4, 25, 23, 20, 00);
+                }
+
             }
         }
     }

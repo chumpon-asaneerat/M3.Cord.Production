@@ -22,8 +22,10 @@ M3 Cord Production System #184
 M3 Cord Production System #183
 - 
 
+[commited]
 M3 Cord Production System #182
-- 
+- Update M3.Cord.Developer.Tools.App project #1.
+  - Setup references assemblies.
 
 [commited]
 M3 Cord Production System #181
