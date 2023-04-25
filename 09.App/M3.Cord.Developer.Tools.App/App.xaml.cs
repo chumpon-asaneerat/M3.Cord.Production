@@ -48,12 +48,12 @@ namespace M3.Cord
                     /*  This property is required */
                     CompanyName = AppConsts.CompanyName,
                     /*  This property is required */
-                    ProductName = AppConsts.Application.Cord.Production.ApplicationName,
+                    ProductName = AppConsts.Application.Cord.Developer.ApplicationName,
                     /* For Application Version */
-                    Version = AppConsts.Application.Cord.Production.Version,
-                    Minor = AppConsts.Application.Cord.Production.Minor,
-                    Build = AppConsts.Application.Cord.Production.Build,
-                    LastUpdate = AppConsts.Application.Cord.Production.LastUpdate
+                    Version = AppConsts.Application.Cord.Developer.Version,
+                    Minor = AppConsts.Application.Cord.Developer.Minor,
+                    Build = AppConsts.Application.Cord.Developer.Build,
+                    LastUpdate = AppConsts.Application.Cord.Developer.LastUpdate
                 },
                 /* Setup Storage */
                 Storage = new NAppStorage()
