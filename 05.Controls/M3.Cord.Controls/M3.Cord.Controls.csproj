@@ -65,6 +65,12 @@
     <Compile Include="Pages\G4\G4ReceiveRawMaterialPage.xaml.cs">
       <DependentUpon>G4ReceiveRawMaterialPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\WarehousePlanningPage.xaml.cs">
+      <DependentUpon>WarehousePlanningPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WareHouseReceiveYarnPage.xaml.cs">
+      <DependentUpon>WareHouseReceiveYarnPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\SignIn\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
@@ -89,7 +95,7 @@
     <None Include="Pages\_V0\G4\G4ReceiveRawMaterialPageV0.xaml.cs">
       <DependentUpon>G4ReceiveRawMaterialPageV0.xaml</DependentUpon>
     </None>
-    <Compile Include="Pages\Samples\SamplePage.xaml.cs">
+    <Compile Include="Pages\_V0\Samples\SamplePage.xaml.cs">
       <DependentUpon>SamplePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\M3CordApp.cs" />
@@ -203,7 +209,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <Page Include="Pages\Samples\SamplePage.xaml">
+    <Page Include="Pages\WarehousePlanningPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WareHouseReceiveYarnPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\_V0\Samples\SamplePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -301,6 +315,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Pages\Warehouse\" />
     <Folder Include="Windows\G4\" />
   </ItemGroup>
   <ItemGroup>

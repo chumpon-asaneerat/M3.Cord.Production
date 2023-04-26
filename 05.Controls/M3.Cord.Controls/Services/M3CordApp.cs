@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using NLib.Services;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -45,9 +46,20 @@ namespace M3.Cord
 
             #endregion
 
-            #region Main Menu
+            #region Common Method(s)
 
-            #region Cord Main Menu
+            /// <summary>
+            /// Goto Cord Main Menu.
+            /// </summary>
+            public static void GotoCordMainMenu()
+            {
+                var page = Pages.CordMainMenu;
+                PageContentManager.Instance.Current = page;
+            }
+
+            #endregion
+
+            #region Main Menu (Cord)
 
             /// <summary>Gets Cord MainMenu Page.</summary>
             public static Cord.Pages.CordMainMenuPage CordMainMenu
@@ -55,144 +67,40 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.CordMainMenuPage>(); }
             }
 
-            /*
-            private static M3.Cord.Pages.CordMainMenuPage _CordMainMenu;
-
-            /// <summary>Gets Cord MainMenu Page.</summary>
-            public static M3.Cord.Pages.CordMainMenuPage CordMainMenu
-            {
-                get
-                {
-                    if (null == _CordMainMenu)
-                    {
-                        lock (typeof(M3CordApp))
-                        {
-                            _CordMainMenu = new M3.Cord.Pages.CordMainMenuPage();
-                        }
-                    }
-                    return _CordMainMenu;
-                }
-            }
-            */
-            #endregion
-
             #endregion
 
             #region G4
 
-            #region Receive Raw Material
-            /*
-            private static M3.Cord.Pages.G4ReceiveRawMaterialPage _G4ReceiveRawMaterial;
-
             /// <summary>Gets G4 Receive Raw Material Page.</summary>
-            public static M3.Cord.Pages.G4ReceiveRawMaterialPage G4ReceiveRawMaterial
+            public static Cord.Pages.G4ReceiveRawMaterialPage G4ReceiveRawMaterial
             {
-                get
-                {
-                    if (null == _G4ReceiveRawMaterial)
-                    {
-                        lock (typeof(M3CordApp))
-                        {
-                            _G4ReceiveRawMaterial = new M3.Cord.Pages.G4ReceiveRawMaterialPage();
-                        }
-                    }
-                    return _G4ReceiveRawMaterial;
-                }
+                get { return GetPage<Cord.Pages.G4ReceiveRawMaterialPage>(); }
             }
-            */
-            #endregion
-
-            #region Receive Raw Material
-            /*
-            private static M3.Cord.Pages.G4IssueRawMaterialPage _G4IssueRawMaterial;
-
             /// <summary>Gets G4 Issue Raw Material Page.</summary>
-            public static M3.Cord.Pages.G4IssueRawMaterialPage G4IssueRawMaterial
+            public static Cord.Pages.G4IssueRawMaterialPage G4IssueRawMaterial
             {
-                get
-                {
-                    if (null == _G4IssueRawMaterial)
-                    {
-                        lock (typeof(M3CordApp))
-                        {
-                            _G4IssueRawMaterial = new M3.Cord.Pages.G4IssueRawMaterialPage();
-                        }
-                    }
-                    return _G4IssueRawMaterial;
-                }
+                get { return GetPage<Cord.Pages.G4IssueRawMaterialPage>(); }
             }
-            */
-            #endregion
-
-            #region Stock
-            /*
-            private static M3.Cord.Pages.G4StockPage _G4Stock;
-
             /// <summary>Gets G4 Stock Page.</summary>
-            public static M3.Cord.Pages.G4StockPage G4Stock
+            public static Cord.Pages.G4StockPage G4Stock
             {
-                get
-                {
-                    if (null == _G4Stock)
-                    {
-                        lock (typeof(M3CordApp))
-                        {
-                            _G4Stock = new M3.Cord.Pages.G4StockPage();
-                        }
-                    }
-                    return _G4Stock;
-                }
+                get { return GetPage<Cord.Pages.G4StockPage>(); }
             }
-            */
-            #endregion
 
             #endregion
 
-            #region Cord Warehouse
+            #region Warehouse
 
-            #region Cord Receive Yarn
-            /*
-            private static M3.Cord.Pages.CordReceiveYarnPage _CordReceiveYarn;
-
-            /// <summary>Gets Cord Receive Yarn.</summary>
-            public static M3.Cord.Pages.CordReceiveYarnPage CordReceiveYarn
+            /// <summary>Gets WareHouse Receive Yarn Page.</summary>
+            public static Cord.Pages.WareHouseReceiveYarnPage WareHouseReceiveYarn
             {
-                get
-                {
-                    if (null == _CordReceiveYarn)
-                    {
-                        lock (typeof(M3CordApp))
-                        {
-                            _CordReceiveYarn = new M3.Cord.Pages.CordReceiveYarnPage();
-                        }
-                    }
-                    return _CordReceiveYarn;
-                }
+                get { return GetPage<Cord.Pages.WareHouseReceiveYarnPage>(); }
             }
-            */
-            #endregion
-
-            #region Cord Planning
-            /*
-            private static M3.Cord.Pages.CordPlanningPage _CordPlanning;
-
-            /// <summary>Gets Cord Planning Page.</summary>
-            public static M3.Cord.Pages.CordPlanningPage CordPlanning
+            /// <summary>Gets WareHouse Planning Page.</summary>
+            public static Cord.Pages.WarehousePlanningPage CordPlanning
             {
-                get
-                {
-                    if (null == _CordPlanning)
-                    {
-                        lock (typeof(M3CordApp))
-                        {
-                            _CordPlanning = new M3.Cord.Pages.CordPlanningPage();
-                        }
-                    }
-                    return _CordPlanning;
-                }
+                get { return GetPage<Cord.Pages.WarehousePlanningPage>(); }
             }
-            */
-            #endregion
 
             #endregion
 

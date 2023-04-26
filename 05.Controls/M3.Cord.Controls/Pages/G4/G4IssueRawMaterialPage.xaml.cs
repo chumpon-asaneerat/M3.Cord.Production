@@ -38,5 +38,14 @@ namespace M3.Cord.Pages
         }
 
         #endregion
+
+        #region Button Handlers
+
+        private void cmdHome_Click(object sender, RoutedEventArgs e)
+        {
+            M3CordApp.Pages.GotoCordMainMenu();
+        }
+
+        #endregion
     }
 }

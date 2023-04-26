@@ -23,16 +23,16 @@ using M3.Cord.Models;
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for G4ReceiveRawMaterialPage.xaml
+    /// Interaction logic for WarehousePlanningPage.xaml
     /// </summary>
-    public partial class G4ReceiveRawMaterialPage : UserControl
+    public partial class WarehousePlanningPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public G4ReceiveRawMaterialPage()
+        public WarehousePlanningPage()
         {
             InitializeComponent();
         }

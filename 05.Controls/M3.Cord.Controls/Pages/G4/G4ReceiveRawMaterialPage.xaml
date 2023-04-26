@@ -45,7 +45,8 @@
                                    IconType="Home"
                                    Text="Main Menu"
                                    Margin="2,0"
-                                   Height="35" />
+                                   Height="35" 
+                                   Click="cmdHome_Click"/>
             </StackPanel>
             <Grid />
         </DockPanel>
