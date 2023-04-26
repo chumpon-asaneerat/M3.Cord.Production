@@ -17,6 +17,10 @@ using System.Windows.Shapes;
 
 #endregion
 
+using System.IO;
+using System.Reflection;
+using M3.Cord.Models;
+
 namespace M3.Cord
 {
     /// <summary>
@@ -49,5 +53,26 @@ namespace M3.Cord
         }
 
         #endregion
+
+        private void cmdImportItemCode_Click(object sender, RoutedEventArgs e)
+        {
+            var assem = Assembly.GetExecutingAssembly();
+            string rootPath = System.IO.Path.GetDirectoryName(assem.Location);
+            string importPath = System.IO.Path.Combine(rootPath, "Imports");
+            string fileName = System.IO.Path.Combine(importPath, "itemcode.json");
+            var model = NJson.LoadFromFile<JsonModel<CordItemCode>>(fileName);
+            if (null != model)
+            {
+                DbServer.Instance.Start();
+                model.Items.ForEach(item => { CordItemCode.Save(item); });
+                DbServer.Instance.Shutdown();
+            }
+        }
+    }
+
+    public class JsonModel<T> 
+        where T : new()
+    {
+        public List<T> Items { get; set; } = new List<T>();
     }
 }

@@ -62,6 +62,7 @@
     <Compile Include="Models\G4\G4IssueYarn.cs" />
     <Compile Include="Models\G4\G4StockYarn.cs" />
     <Compile Include="Models\G4\G4Yarn.cs" />
+    <Compile Include="Models\ItemCode\ItemCode.cs" />
     <Compile Include="Models\Operator\Operator.cs" />
     <Compile Include="Models\Samples\Sample.cs" />
     <Compile Include="Models\FirstTwist\FirstTwistMC.cs" />
@@ -89,6 +90,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\00.NLib\NLib.Utils\NLib.Utils.csproj">
+      <Project>{93acb478-4570-4f67-9442-2839d1a46ec9}</Project>
+      <Name>NLib.Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
       <Project>{41a9d6c0-c833-403f-9bc1-eecdc246a428}</Project>
       <Name>NLib</Name>

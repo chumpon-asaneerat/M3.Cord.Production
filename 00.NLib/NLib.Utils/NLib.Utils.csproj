@@ -55,6 +55,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\NDbResult.cs" />
     <Compile Include="Common\NInpc.cs" />
     <Compile Include="Common\NSingelton.cs" />
     <Compile Include="ExtensionMethods\DateTime.cs" />
