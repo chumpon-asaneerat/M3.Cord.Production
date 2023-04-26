@@ -97,7 +97,7 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.WareHouseReceiveYarnPage>(); }
             }
             /// <summary>Gets WareHouse Planning Page.</summary>
-            public static Cord.Pages.WarehousePlanningPage CordPlanning
+            public static Cord.Pages.WarehousePlanningPage WarehousePlanning
             {
                 get { return GetPage<Cord.Pages.WarehousePlanningPage>(); }
             }

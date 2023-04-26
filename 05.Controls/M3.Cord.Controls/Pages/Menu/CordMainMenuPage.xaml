@@ -352,7 +352,7 @@
                         Click="cmdAging_Click">
                     <StackPanel Orientation="Vertical">
                         <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="Ageing" />
-                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="(for DIP Coord)" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="(for DIP Cord)" />
                     </StackPanel>
                 </Button>
                 <!--  Dipping  -->

@@ -47,5 +47,17 @@ namespace M3.Cord.Pages
         }
 
         #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Setup.
+        /// </summary>
+        public void Setup()
+        {
+
+        }
+
+        #endregion
     }
 }
