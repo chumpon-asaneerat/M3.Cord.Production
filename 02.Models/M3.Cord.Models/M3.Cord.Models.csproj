@@ -63,7 +63,9 @@
     <Compile Include="Models\G4\G4StockYarn.cs" />
     <Compile Include="Models\G4\G4Yarn.cs" />
     <Compile Include="Models\ItemCode\ItemCode.cs" />
-    <Compile Include="Models\Operator\Operator.cs" />
+    <Compile Include="Models\Users\Operator.cs" />
+    <Compile Include="Models\Users\UserInfo.cs" />
+    <Compile Include="Models\Users\UserRole.cs" />
     <Compile Include="Models\Samples\Sample.cs" />
     <Compile Include="Models\FirstTwist\FirstTwistMC.cs" />
     <Compile Include="MsSqlDbServer.cs" />
