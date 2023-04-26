@@ -57,6 +57,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\G4\G4Yarn.cs" />
     <Compile Include="Models\__V0\CordProduct.cs" />
     <Compile Include="Models\__V0\CordYarn.cs" />
     <Compile Include="Models\__V0\G4IssueYarn.cs" />
@@ -108,7 +109,6 @@
   <ItemGroup>
     <Folder Include="Models\CordWarehouse\" />
     <Folder Include="Models\FirstTwist\" />
-    <Folder Include="Models\G4\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

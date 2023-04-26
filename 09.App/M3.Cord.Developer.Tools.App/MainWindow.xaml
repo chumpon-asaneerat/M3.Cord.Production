@@ -12,6 +12,7 @@
     <DockPanel Margin="5">
         <StackPanel Orientation="Vertical" DockPanel.Dock="Left" Width="200" Margin="2">
             <Button x:Name="cmdImportItemCode" Content="Import Item Code" Click="cmdImportItemCode_Click" />
+            <Button x:Name="cmdImportG4Yarn" Content="Import G4 Yarn" Click="cmdImportG4Yarn_Click" />
         </StackPanel>
         <Grid />
     </DockPanel>

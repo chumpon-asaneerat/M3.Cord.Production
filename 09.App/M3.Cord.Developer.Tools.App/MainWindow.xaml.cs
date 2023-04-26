@@ -68,6 +68,21 @@ namespace M3.Cord
                 DbServer.Instance.Shutdown();
             }
         }
+
+        private void cmdImportG4Yarn_Click(object sender, RoutedEventArgs e)
+        {
+            var assem = Assembly.GetExecutingAssembly();
+            string rootPath = System.IO.Path.GetDirectoryName(assem.Location);
+            string importPath = System.IO.Path.Combine(rootPath, "Imports");
+            string fileName = System.IO.Path.Combine(importPath, "G3Yarn.json");
+            var model = NJson.LoadFromFile<JsonModel<G4Yarn>>(fileName);
+            if (null != model)
+            {
+                DbServer.Instance.Start();
+                model.Items.ForEach(item => { G4Yarn.Save(item); });
+                DbServer.Instance.Shutdown();
+            }
+        }
     }
 
     public class JsonModel<T> 

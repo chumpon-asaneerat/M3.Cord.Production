@@ -85,7 +85,9 @@ namespace M3.Cord.Models
             try
             {
                 cnn.Execute("SaveItemCode", p, commandType: CommandType.StoredProcedure);
-                ret.Success();
+                ret.Success(value);
+                // Set PK
+                value.PkId = p.Get<int>("@PkId");
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");
@@ -123,8 +125,6 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
-            p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 
             try
             {
@@ -132,10 +132,6 @@ namespace M3.Cord.Models
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);
-
-                // Set error number/message
-                rets.ErrNum = p.Get<int>("@errNum");
-                rets.ErrMsg = p.Get<string>("@errMsg");
             }
             catch (Exception ex)
             {
@@ -190,8 +186,6 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
-            p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 
             try
             {
@@ -199,10 +193,6 @@ namespace M3.Cord.Models
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);
-
-                // Set error number/message
-                rets.ErrNum = p.Get<int>("@errNum");
-                rets.ErrMsg = p.Get<string>("@errMsg");
             }
             catch (Exception ex)
             {
