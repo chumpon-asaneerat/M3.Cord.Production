@@ -16,7 +16,7 @@ using Newtonsoft.Json;
 
 #endregion
 
-namespace M3.Cord.Models
+namespace M3.Cord.Models.V0
 {
     /// <summary>
     /// The G4Yarn class.
@@ -26,6 +26,7 @@ namespace M3.Cord.Models
         #region Internal Variables
 
         private int _PKId = 0;
+        /*
         private DateTime? _EntryDate = new DateTime?();
         private string _ItemYarn = null;
         private string _PalletNo = null;
@@ -64,7 +65,7 @@ namespace M3.Cord.Models
         private decimal _KGPERCH = decimal.Zero;
 
         private string _DeleteFlag = null;
-
+        */
         #endregion
 
         #region Constructor and Destructor
