@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 
 namespace M3.Cord.Models
 {
-    public class CordItemCode
+    public class CordItemCode : NInpc
     {
         #region Public Proeprties
 

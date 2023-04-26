@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 
 namespace M3.Cord.Models
 {
-    public class G4Yarn
+    public class G4Yarn : NInpc
     {
         #region Public Properties
 
@@ -57,6 +57,45 @@ namespace M3.Cord.Models
 
         public bool? FinishFlag { get; set; }
         public bool? DeleteFlag { get; set; }
+
+
+        public bool OK
+        {
+            get { return (Verify.HasValue && Verify.Value); }
+            set
+            {
+                if (value)
+                {
+                    Verify = true;
+                }
+                Raise(() => OK);
+                Raise(() => NG);
+            }
+        }
+        public bool NG
+        {
+            get { return (Verify.HasValue && !Verify.Value); }
+            set
+            {
+                if (value)
+                {
+                    Verify = false;
+                }
+                Raise(() => OK);
+                Raise(() => NG);
+            }
+        }
+
+        public bool IsOK
+        {
+            get { return (Verify.HasValue && Verify.Value); }
+            set { }
+        }
+        public bool IsNG
+        {
+            get { return (Verify.HasValue && !Verify.Value); }
+            set { }
+        }
 
         #endregion
 
@@ -179,6 +218,48 @@ namespace M3.Cord.Models
             {
                 // create empty list.
                 rets.data = new List<G4Yarn>();
+            }
+
+            return rets;
+        }
+        /// <summary>
+        /// Get by Trace No.
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<G4Yarn> Get(string traceNo)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<G4Yarn> rets = new NDbResult<G4Yarn>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@TraceNo", traceNo);
+
+            try
+            {
+                var items = cnn.Query<G4Yarn>("GetG4Yarns", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.FirstOrDefault() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
             }
 
             return rets;

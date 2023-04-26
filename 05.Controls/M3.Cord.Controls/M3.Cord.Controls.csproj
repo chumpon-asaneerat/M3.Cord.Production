@@ -65,24 +65,24 @@
     <Compile Include="Pages\G4\G4ReceiveRawMaterialPage.xaml.cs">
       <DependentUpon>G4ReceiveRawMaterialPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\WarehousePlanningPage.xaml.cs">
+    <Compile Include="Pages\Warehouse\WarehousePlanningPage.xaml.cs">
       <DependentUpon>WarehousePlanningPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\WareHouseReceiveYarnPage.xaml.cs">
+    <Compile Include="Pages\Warehouse\WareHouseReceiveYarnPage.xaml.cs">
       <DependentUpon>WareHouseReceiveYarnPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SignIn\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
-    <None Include="Pages\_V0\CordWarehouse\CordPlanningPageV0.xaml.cs">
-      <DependentUpon>CordPlanningPageV0.xaml</DependentUpon>
-    </None>
-    <None Include="Pages\_V0\CordWarehouse\CordReceiveYarnPageV0.xaml.cs">
-      <DependentUpon>CordReceiveYarnPageV0.xaml</DependentUpon>
-    </None>
-    <None Include="Pages\_V0\FirstTwist\FirstTwistMCPageV0.xaml.cs">
-      <DependentUpon>FirstTwistMCPageV0.xaml</DependentUpon>
-    </None>
+    <Compile Include="Pages\CordWarehouse\CordPlanningPage.xaml.cs">
+      <DependentUpon>CordPlanningPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CordWarehouse\CordReceiveYarnPage.xaml.cs">
+      <DependentUpon>CordReceiveYarnPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
+      <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
+    </Compile>
     <None Include="Pages\_V0\G4\G4StockPageV0.xaml.cs">
       <DependentUpon>G4StockPageV0.xaml</DependentUpon>
     </None>
@@ -116,9 +116,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Windows\_V0\G4\G4ReceiveYarnWindowV0.xaml.cs">
+    <Compile Include="Windows\G4\G4ReceiveYarnWindowV0.xaml.cs">
       <DependentUpon>G4ReceiveYarnWindowV0.xaml</DependentUpon>
-    </None>
+    </Compile>
     <Compile Include="Windows\Sample\SampleWindow.xaml.cs">
       <DependentUpon>SampleWindow.xaml</DependentUpon>
     </Compile>
@@ -169,18 +169,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="Pages\_V0\CordWarehouse\CordPlanningPageV0.xaml">
+    <Page Include="Pages\CordWarehouse\CordPlanningPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Pages\_V0\CordWarehouse\CordReceiveYarnPageV0.xaml">
+    </Page>
+    <Page Include="Pages\CordWarehouse\CordReceiveYarnPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Pages\_V0\FirstTwist\FirstTwistMCPageV0.xaml">
+    </Page>
+    <Page Include="Pages\FirstTwist\FirstTwistMCPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </None>
+    </Page>
     <None Include="Pages\_V0\G4\G4StockPageV0.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -209,11 +209,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <Page Include="Pages\WarehousePlanningPage.xaml">
+    <Page Include="Pages\Warehouse\WarehousePlanningPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\WareHouseReceiveYarnPage.xaml">
+    <Page Include="Pages\Warehouse\WareHouseReceiveYarnPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -297,10 +297,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Windows\_V0\G4\G4ReceiveYarnWindowV0.xaml">
+    <Page Include="Windows\G4\G4ReceiveYarnWindowV0.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </None>
+    </Page>
     <Page Include="Windows\Sample\SampleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -315,8 +315,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\Warehouse\" />
-    <Folder Include="Windows\G4\" />
+    <Folder Include="Windows\_V0\G4\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />

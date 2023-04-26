@@ -92,14 +92,14 @@ namespace M3.Cord
             #region Warehouse
 
             /// <summary>Gets WareHouse Receive Yarn Page.</summary>
-            public static Cord.Pages.WareHouseReceiveYarnPage WareHouseReceiveYarn
+            public static Cord.Pages.CordReceiveYarnPage WareHouseReceiveYarn
             {
-                get { return GetPage<Cord.Pages.WareHouseReceiveYarnPage>(); }
+                get { return GetPage<Cord.Pages.CordReceiveYarnPage>(); }
             }
             /// <summary>Gets WareHouse Planning Page.</summary>
-            public static Cord.Pages.WarehousePlanningPage WarehousePlanning
+            public static Cord.Pages.CordPlanningPage WarehousePlanning
             {
-                get { return GetPage<Cord.Pages.WarehousePlanningPage>(); }
+                get { return GetPage<Cord.Pages.CordPlanningPage>(); }
             }
 
             #endregion
@@ -107,11 +107,11 @@ namespace M3.Cord
             #region First Twist
 
             #region First Twist MC
-            /*
-            private static M3.Cord.Pages.FirstTwistMCPage _FirstTwistMC;
+
+            private static Cord.Pages.FirstTwistMCPage _FirstTwistMC;
 
             /// <summary>Gets First Twist MC Page.</summary>
-            public static M3.Cord.Pages.FirstTwistMCPage FirstTwistMC
+            public static Cord.Pages.FirstTwistMCPage FirstTwistMC
             {
                 get
                 {
@@ -125,7 +125,7 @@ namespace M3.Cord
                     return _FirstTwistMC;
                 }
             }
-            */
+
             #endregion
 
             #endregion
@@ -155,36 +155,16 @@ namespace M3.Cord
             {
                 get { return GetWindow<Cord.Windows.SignInWindow>(); }
             }
-            /*
-            /// <summary>Gets SignIn Window.</summary>
-            public static M3.Cord.Windows.SignInWindow SignIn
-            {
-                get
-                {
-                    var ret = new M3.Cord.Windows.SignInWindow();
-                    ret.Owner = Application.Current.MainWindow;
-                    return ret;
-                }
-            }
-            */
+
             #endregion
 
             #region G4
 
-            #region G4 Receive Yarn
-            /*
             /// <summary>Gets SignIn Window.</summary>
-            public static M3.Cord.Windows.G4ReceiveYarnWindow G4ReceiveYarn
+            public static Cord.Windows.G4ReceiveYarnWindow G4ReceiveYarn
             {
-                get
-                {
-                    var ret = new M3.Cord.Windows.G4ReceiveYarnWindow();
-                    ret.Owner = Application.Current.MainWindow;
-                    return ret;
-                }
+                get { return GetWindow<Cord.Windows.G4ReceiveYarnWindow>(); }
             }
-            */
-            #endregion
 
             #endregion
         }

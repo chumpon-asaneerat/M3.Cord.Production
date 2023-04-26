@@ -109,12 +109,10 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
-            /*
             // First Twist
             var page = M3CordApp.Pages.FirstTwistMC;
             page.Setup();
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdAging_Click(object sender, RoutedEventArgs e)

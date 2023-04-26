@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 
 #endregion
 
-namespace M3.Cord.Windows.V0
+namespace M3.Cord.Windows
 {
     /// <summary>
     /// Interaction logic for G4ReceiveYarnWindow.xaml

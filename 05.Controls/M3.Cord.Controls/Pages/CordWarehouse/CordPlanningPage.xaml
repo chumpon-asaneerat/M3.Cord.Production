@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="M3.Cord.Pages.V0.CordPlanningPage"
+﻿<UserControl x:Class="M3.Cord.Pages.CordPlanningPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -277,11 +277,11 @@
                                                             Height="30"
                                                             Click="cmdEdit_Click">
                                                         <StackPanel Orientation="Horizontal">
-                                                            <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
+                                                            <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
                                                             <TextBlock Margin="3,0"
                                                                        FontFamily="{StaticResource THSarabun}"
                                                                        FontSize="{StaticResource IBFSize}"
-                                                                       Text="Cancel"
+                                                                       Text="Edit"
                                                                        VerticalAlignment="Center" />
                                                         </StackPanel>
                                                     </Button>

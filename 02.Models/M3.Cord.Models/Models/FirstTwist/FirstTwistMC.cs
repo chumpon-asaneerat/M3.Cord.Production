@@ -17,7 +17,7 @@ using System.Net;
 
 #endregion
 
-namespace M3.Cord.Models.V0
+namespace M3.Cord.Models
 {
     public class FirstTwistMC : NInpc
     {

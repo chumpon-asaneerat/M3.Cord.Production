@@ -16,9 +16,9 @@ using Newtonsoft.Json;
 
 #endregion
 
-namespace M3.Cord.Models.V0
+namespace M3.Cord.Models
 {
-    public class G4IssueYarn : NInpc
+    public class CordYarn : NInpc
     {
         #region Const
 
@@ -31,38 +31,33 @@ namespace M3.Cord.Models.V0
 
         public int PKId { get; set; }
 
-        public string RequestId { get; set; }
-        public string IssueBy { get; set; }
-        public string IssueTo { get; set; }
-        public DateTime? IssueDate { get; set; } = new DateTime?();
+        public DateTime? ReceiveDate { get; set; } = new DateTime?();
 
         public string PalletNo { get; set; }
         public string TraceNo { get; set; }
         public string LotNo { get; set; }
 
         public string ItemYarn { get; set; }
-        public string YarnType { get; set; }
 
         public decimal? WeightQty { get; set; } = 520;
         public decimal? CH { get; set; } = 48;
 
         public string PalletType { get; set; } = "F";
 
-        public DateTime? ReceivedDate { get; set; } = new DateTime?();
         public string DeleteFlag { get; set; }
 
         public SolidColorBrush TextColor
         {
             get 
             {
-                return (string.IsNullOrEmpty(RequestId)) ? BlackColor : RedColor;
+                return (!ReceiveDate.HasValue) ? BlackColor : RedColor;
             }
             set { }
         }
 
         public bool IsMark
         {
-            get { return !string.IsNullOrEmpty(RequestId); }
+            get { return ReceiveDate.HasValue; }
             set { }
         }
 
@@ -70,44 +65,37 @@ namespace M3.Cord.Models.V0
 
         #region Public Methods
 
-        public void MarkIssue(string requestId, string issueBy, string issueTo, DateTime? issueDate)
+        public void MarkReceive(DateTime? receiveDate)
         {
-            RequestId = requestId;
-            IssueBy = issueBy;
-            IssueTo = issueTo;
-            IssueDate = issueDate;
+            ReceiveDate = receiveDate;
         }
 
-        public void UnmarkIssue()
+        public void UnmarkReceive()
         {
-            RequestId = null;
-            IssueBy = null;
-            IssueTo = null;
-            IssueDate = new DateTime?();
+            ReceiveDate = new DateTime?();
         }
 
         #endregion
 
         #region Static Methods
 
-        public static G4IssueYarn Create(int pkId,
-            string itemYarm, string palletNo, string yarnType,
+        public static CordYarn Create(int pkId,
+            string itemYarm, string palletNo, 
             string lotNo, string traceNo)
         {
-            return new G4IssueYarn()
+            return new CordYarn()
             {
                 PKId = pkId,
                 ItemYarn = itemYarm,
                 PalletNo = palletNo,
-                YarnType = yarnType,
                 LotNo = lotNo,
                 TraceNo = traceNo
             };
         }
 
-        public static List<G4IssueYarn> GetG4IssueYarns(DateTime? receiveDate = new DateTime?())
+        public static List<CordYarn> GetCordYarns()
         {
-            var rets = new List<G4IssueYarn>();
+            var rets = new List<CordYarn>();
 
             var itemYarns = new string[]
             {
@@ -165,35 +153,6 @@ namespace M3.Cord.Models.V0
                 "S7G280029",
                 "S7G280030",
                 "S7G280031"
-            };
-
-            var yarnTypes = new string[]
-            {
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp",
-                "Warp"
             };
 
             var lotNos = new string[]
@@ -256,11 +215,7 @@ namespace M3.Cord.Models.V0
 
             for (int i = 0; i < itemYarns.Length; ++i)
             {
-                var item = Create(i, itemYarns[i], palletNos[i], yarnTypes[i], lotNos[i], traceNos[i]);
-                if (receiveDate.HasValue)
-                {
-                    item.ReceivedDate = receiveDate.Value;
-                }
+                var item = Create(i, itemYarns[i], palletNos[i], lotNos[i], traceNos[i]);
                 rets.Add(item);
             }
 

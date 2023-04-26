@@ -47,10 +47,14 @@ namespace M3.Cord
             // Init Main Menu
             var page = M3CordApp.Pages.CordMainMenu;
             PageContentManager.Instance.Current = page;
+
+            DbServer.Instance.Start();
         }
 
         private void Window_Unloaded(object sender, RoutedEventArgs e)
         {
+            DbServer.Instance.Shutdown();
+
             // Release Page Content Manager
             PageContentManager.Instance.Shutdown();
             PageContentManager.Instance.ContentChanged -= new EventHandler(Instance_ContentChanged);

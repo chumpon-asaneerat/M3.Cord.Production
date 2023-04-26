@@ -16,7 +16,7 @@ using Newtonsoft.Json;
 
 #endregion
 
-namespace M3.Cord.Models.V0
+namespace M3.Cord.Models
 {
     public class CordProduct : NInpc
     {
