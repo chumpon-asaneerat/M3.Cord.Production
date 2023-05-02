@@ -4,7 +4,7 @@
 [ ] Controls: Add Field Controls - PalletNo, TraceNo, LotNo, etc. 
 [ ] integrated BarcodeLib
 [ ] integrated QRCoder
-[ ] 
+[ ] Recheck db structure
 [ ] 
 [ ] 
 [ ] 
