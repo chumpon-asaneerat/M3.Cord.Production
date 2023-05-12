@@ -16,8 +16,9 @@ M3 Cord Production System #206
 M3 Cord Production System #205
 - 
 
+[commited]
 M3 Cord Production System #204
-- 
+- Update NInpc class (NLib.Utils) #1.
 
 [commited]
 M3 Cord Production System #203
