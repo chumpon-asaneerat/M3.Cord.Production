@@ -40,7 +40,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private List<CordProduct> items = CordProduct.GetCordProducts();
+        private List<CordProduct> items = LobaclDb.Products;
 
         #endregion
 
@@ -79,14 +79,7 @@ namespace M3.Cord.Pages
 
         private void LoadComboBoxes()
         {
-            var itemYarns = new string[]
-            {
-                "700-108-178E-TTS",
-                "470-72-1781-JJ",
-                "470-136-178E-APM",
-                "470-136-178E-TTS"
-            };
-            cbItemYarn.ItemsSource = itemYarns;
+            cbItemYarn.ItemsSource = LobaclDb.ItemYarns;
             cbItemYarn.SelectedIndex = 0;
         }
 
