@@ -23,42 +23,147 @@ namespace M3.Cord.Models
     {
         #region Public Properties
 
+        /// <summary>
+        /// Gets or sets Primary Key.
+        /// </summary>
         public int? PkId { get; set; }
+        /// <summary>
+        /// Gets or sets Entry Date.
+        /// </summary>
         public DateTime? EntryDate { get; set; }
-        public string ItemYarn { get; set; }
-        public string PalletNo { get; set; }
-        public string YarnType { get; set; }
-        public decimal? WeightQty { get; set; }
-        public string LotNo { get; set; }
+
+        /// <summary>
+        /// Gets or sets TraceNo (รหัสจาก supplier).
+        /// </summary>
         public string TraceNo { get; set; }
-        public decimal? KgPerCH { get; set; }
-        public decimal? ConeCH { get; set; }
+        /// <summary>
+        /// Gets or sets PalletNo (รหัสแท่นวาง).
+        /// </summary>
+        public string PalletNo { get; set; }
+        /// <summary>
+        /// Gets or sets LotNo (รหัส Lot สำหรับอ้างอิงในกระบวนการผลิต).
+        /// </summary>
+        public string LotNo { get; set; }
+        /// <summary>
+        /// Gets or sets ItemYarn (รหัสเส้นด้าย).
+        /// </summary>
+        public string ItemYarn { get; set; }
+        /// <summary>
+        /// Gets or sets Yarn Type (ประเภทการนำไปทอเป็นผ้า Warp, Warp).
+        /// </summary>
+        public string YarnType { get; set; }
+        /// <summary>
+        /// Gets or sets Pallet Type (ประเภท Pallet 'F' อาจจะย่อมาจาก Flat).
+        /// </summary>
         public string PalletType { get; set; }
+        /// <summary>
+        /// Gets or sets Item Code (จากระบบ AS400 or D326).
+        /// </summary>
         public string Item400 { get; set; }
+
+        /// <summary>
+        /// Gets or sets Cone CH (จำนวนลูกต่อ Pallet)
+        /// </summary>
+        public decimal? ConeCH { get; set; }
+        /// <summary>
+        /// Gets or sets Kg Per CH (น้ำหน้ก Kg ต่อลูก)
+        /// </summary>
+        public decimal? KgPerCH { get; set; }
+        /// <summary>
+        /// Gets or sets Weight Unit (ปรกติเป็น KG)
+        /// </summary>
         public string Unit { get; set; }
+        /// <summary>
+        /// Gets or sets Weight Qty (น้ำหนักรวม).
+        /// </summary>
+        public decimal? WeightQty { get; set; }
+        /// <summary>
+        /// Gets or sets Remain Qty (น้ำหนักที่เหลือ).
+        /// </summary>
         public decimal? RemainQty { get; set; }
+
+        /// <summary>
+        /// Gets or sets Received Date.
+        /// </summary>
         public DateTime? ReceiveDate { get; set; }
-        public string ReceiveBy { get; set; }
+        /// <summary>
+        /// Gets or sets Received By.
+        /// </summary>
+        public int? ReceiveBy { get; set; }
+        /// <summary>
+        /// Gets or sets Full Name.
+        /// </summary>
+        public string ReceiveByFullName { get; set; }
+        /// <summary>
+        /// Gets or sets User Name.
+        /// </summary>
+        public string ReceiveByUserName { get; set; }
+        /// <summary>
+        /// Gets or sets Update Date (not used).
+        /// </summary>
         public DateTime? UpdateDate { get; set; }
+        /// <summary>
+        /// Gets or sets Movement Date (not used).
+        /// </summary>
         public DateTime? MovementDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets is Verify.
+        /// </summary>
         public bool? Verify { get; set; }
-
-        public bool? Packing { get; set; } = new bool?();
-        public bool? Clean { get; set; } = new bool?();
-        public bool? Tearing { get; set; } = new bool?();
-        public bool? Falldown { get; set; } = new bool?();
-        public bool? Certification { get; set; } = new bool?();
-        public bool? Invoice { get; set; } = new bool?();
-        public bool? IdentifyArea { get; set; } = new bool?();
-        public bool? AmountPallet { get; set; } = new bool?();
-
+        /// <summary>
+        /// Gets or sets has Packing problem.
+        /// </summary>
+        public bool? Packing { get; set; }
+        /// <summary>
+        /// Gets or sets has Clean problem.
+        /// </summary>
+        public bool? Clean { get; set; }
+        /// <summary>
+        /// Gets or sets has Tearing problem.
+        /// </summary>
+        public bool? Tearing { get; set; }
+        /// <summary>
+        /// Gets or sets has Falldown problem.
+        /// </summary>
+        public bool? Falldown { get; set; }
+        /// <summary>
+        /// Gets or sets has Certification problem.
+        /// </summary>
+        public bool? Certification { get; set; }
+        /// <summary>
+        /// Gets or sets has Invoice problem.
+        /// </summary>
+        public bool? Invoice { get; set; }
+        /// <summary>
+        /// Gets or sets has Identify Area problem.
+        /// </summary>
+        public bool? IdentifyArea { get; set; }
+        /// <summary>
+        /// Gets or sets has Amount Pallet problem.
+        /// </summary>
+        public bool? AmountPallet { get; set; }
+        /// <summary>
+        /// Gets or sets Other (defect).
+        /// </summary>
         public string Other { get; set; }
+        /// <summary>
+        /// Gets or sets Action (defect).
+        /// </summary>
         public string Action { get; set; }
 
+        /// <summary>
+        /// Gets or sets Finish Flag.
+        /// </summary>
         public bool? FinishFlag { get; set; }
+        /// <summary>
+        /// Gets or sets Delete Flag.
+        /// </summary>
         public bool? DeleteFlag { get; set; }
 
-
+        /// <summary>
+        /// Gets or sets OK flag.
+        /// </summary>
         public bool OK
         {
             get { return (Verify.HasValue && Verify.Value); }
@@ -72,6 +177,9 @@ namespace M3.Cord.Models
                 Raise(() => NG);
             }
         }
+        /// <summary>
+        /// Gets or sets NG flag.
+        /// </summary>
         public bool NG
         {
             get { return (Verify.HasValue && !Verify.Value); }
@@ -86,11 +194,17 @@ namespace M3.Cord.Models
             }
         }
 
+        /// <summary>
+        /// Gets Is OK.
+        /// </summary>
         public bool IsOK
         {
             get { return (Verify.HasValue && Verify.Value); }
             set { }
         }
+        /// <summary>
+        /// Gets Is NG.
+        /// </summary>
         public bool IsNG
         {
             get { return (Verify.HasValue && !Verify.Value); }
@@ -121,22 +235,26 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@EntryDate", value.EntryDate);
-            p.Add("@ItemYarn", value.ItemYarn);
-            p.Add("@PalletNo", value.PalletNo);
-            p.Add("@YarnType", value.YarnType);
-            p.Add("@WeightQty", value.WeightQty);
-            p.Add("@LotNo", value.LotNo);
             p.Add("@TraceNo", value.TraceNo);
-            p.Add("@KgPerCH", value.KgPerCH);
-            p.Add("@ConeCH", value.ConeCH);
+            p.Add("@PalletNo", value.PalletNo);
+            p.Add("@LotNo", value.LotNo);
+
+            p.Add("@ItemYarn", value.ItemYarn);
+            p.Add("@YarnType", value.YarnType);
             p.Add("@PalletType", value.PalletType);
             p.Add("@Item400", value.Item400);
+
+            p.Add("@ConeCH", value.ConeCH);
+            p.Add("@KgPerCH", value.KgPerCH);
             p.Add("@Unit", value.Unit);
+            p.Add("@WeightQty", value.WeightQty);
             p.Add("@RemainQty", value.RemainQty);
+
             p.Add("@ReceiveDate", value.ReceiveDate);
             p.Add("@ReceiveBy", value.ReceiveBy);
             p.Add("@UpdateDate", value.UpdateDate);
             p.Add("@MovementDate", value.MovementDate);
+
             p.Add("@Verify", value.Verify);
             p.Add("@Packing", value.Packing);
             p.Add("@Clean", value.Clean);
