@@ -50,6 +50,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Fields\DatePickerField.xaml.cs">
+      <DependentUpon>DatePickerField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Fields\TextBoxField.xaml.cs">
+      <DependentUpon>TextBoxField.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StatusBar\Elements\AppVersionElement.xaml.cs">
       <DependentUpon>AppVersionElement.xaml</DependentUpon>
     </Compile>
@@ -161,6 +167,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\Fields\DatePickerField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Fields\TextBoxField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\StatusBar\Elements\AppVersionElement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

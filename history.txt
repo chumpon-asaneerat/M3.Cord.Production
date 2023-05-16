@@ -13,8 +13,10 @@ M3 Cord Production System #207
 M3 Cord Production System #206
 - 
 
+[commited]
 M3 Cord Production System #205
-- 
+- M3.Cord.Production.App re-implements #13.
+  - Implements Input Field controls #1.
 
 [commited]
 M3 Cord Production System #204
