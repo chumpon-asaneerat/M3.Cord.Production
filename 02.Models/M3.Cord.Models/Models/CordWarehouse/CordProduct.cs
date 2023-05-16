@@ -31,14 +31,14 @@ namespace M3.Cord.Models
 
         public int PKId { get; set; }
 
-        public string CustomerName { get; set; }
+        public string CustomerName { get; set; } = "BANDO";
         public string ItemYarn { get; set; }
-        public string ItemCode { get; set; }
-        public string Color { get; set; }
+        public string ItemCode { get; set; } = "9H 0663L";
+        public string Color { get; set; } = "ลายดาว";
         public string LotNo { get; set; }
-        public decimal TargetQty { get; set; } = decimal.Zero;
+        public decimal TargetQty { get; set; } = 540;
         public decimal CurrentQty { get; set; } = decimal.Zero;
-        public string Flow { get; set; }
+        public string Flow { get; set; } = "S-1-1";
         public SolidColorBrush TextColor
         {
             get

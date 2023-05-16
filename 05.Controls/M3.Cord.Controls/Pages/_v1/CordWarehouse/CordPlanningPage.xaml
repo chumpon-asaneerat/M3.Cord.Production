@@ -170,13 +170,15 @@
                                 <ComboBox x:Name="cbItemYarn"
                                           Margin="0,5"
                                           Style="{StaticResource CommonComboBox}"
-                                          Width="200" />
+                                          Width="200" 
+                                          SelectionChanged="cbItemYarn_SelectionChanged"/>
                                 <!--  SEARCH  -->
                                 <Button x:Name="cmdSearch"
                                         Style="{StaticResource InlineButton}"
                                         Margin="5,0"
                                         Width="150"
-                                        Height="30">
+                                        Height="30"
+                                        Click="cmdSearch_Click">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Style="{StaticResource fa-search}" FontSize="{StaticResource IBFSize}" />
                                         <TextBlock Margin="3,0"
@@ -234,6 +236,17 @@
                                             <DataTemplate>
                                                 <TextBlock Width="150"
                                                            Text="{Binding Flow}"
+                                                           Foreground="{Binding TextColor}"
+                                                           TextAlignment="Center" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <!--  Color  -->
+                                    <GridViewColumn Header="Color">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Width="150"
+                                                           Text="{Binding Color}"
                                                            Foreground="{Binding TextColor}"
                                                            TextAlignment="Center" />
                                             </DataTemplate>

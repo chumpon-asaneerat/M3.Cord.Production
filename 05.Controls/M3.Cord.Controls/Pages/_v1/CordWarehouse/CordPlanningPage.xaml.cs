@@ -40,7 +40,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private List<CordProduct> items = LobaclDb.Products;
+        private List<CordProduct> allItems;
 
         #endregion
 
@@ -58,12 +58,41 @@ namespace M3.Cord.Pages
 
         private void cmdAddNew_Click(object sender, RoutedEventArgs e)
         {
+            var item = new CordProduct();
 
+            var win = M3CordApp.Windows.CordProductPlanning;
+            win.Setup(item);
+            if (win.ShowDialog() == false) return;
+
+            Cord.LobaclDb.Products.Add(item); // append to local db.
+            Cord.LobaclDb.SaveCordProducts();
+
+            RefreshGrid();
         }
 
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
         {
+            var btn = sender as Button;
+            if (null == btn) return;
+            var item = btn.DataContext as CordProduct;
+            if (null == item) return;
 
+            var win = M3CordApp.Windows.CordProductPlanning;
+            win.Setup(item);
+            if (win.ShowDialog() == false) return;
+
+            Cord.LobaclDb.SaveCordProducts();
+
+            RefreshGrid();
+        }
+
+        #endregion
+
+        #region ComboBox Handlers
+
+        private void cbItemYarn_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
         }
 
         #endregion
@@ -85,7 +114,20 @@ namespace M3.Cord.Pages
 
         private void RefreshGrid()
         {
+            // Reload all items
+            allItems = LobaclDb.Products;
+
             grid.ItemsSource = null;
+
+            List<CordProduct> items;
+
+            if (cbItemYarn.SelectedIndex != -1)
+            {
+                string itemYarn = LobaclDb.ItemYarns[cbItemYarn.SelectedIndex];
+
+                items = allItems.FindAll((item) => item.ItemYarn == itemYarn);
+            }
+            else items = allItems;
 
             grid.ItemsSource = items;
         }
@@ -96,6 +138,8 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
+            Cord.LobaclDb.LoadCordProducts();
+
             LoadComboBoxes();
             RefreshGrid();
         }

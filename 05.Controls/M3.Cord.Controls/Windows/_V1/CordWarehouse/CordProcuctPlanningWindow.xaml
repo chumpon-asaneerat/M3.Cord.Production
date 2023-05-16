@@ -115,7 +115,7 @@
                                 <TextBox Margin="0,5"
                                          Style="{StaticResource CommonTextBox}"
                                          Text="{Binding CustomerName}"
-                                         Width="150" />
+                                         Width="170" />
                                 <!--  LOT NO  -->
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
@@ -125,7 +125,7 @@
                                 <TextBox Margin="0,5"
                                          Style="{StaticResource CommonTextBox}"
                                          Text="{Binding LotNo}"
-                                         Width="150" />
+                                         Width="170" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <!--  ITEM YARN  -->
@@ -138,7 +138,7 @@
                                           Margin="0,5"
                                           Style="{StaticResource CommonComboBox}"
                                           SelectedValue="{Binding ItemYarn}"
-                                          Width="150" />
+                                          Width="170" />
                                 <!--  ITEM CODE  -->
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
@@ -148,7 +148,7 @@
                                 <TextBox Margin="0,5"
                                          Style="{StaticResource CommonTextBox}"
                                          Text="{Binding ItemCode}"
-                                         Width="150" />
+                                         Width="170" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <!--  COLOR  -->
@@ -160,7 +160,7 @@
                                 <TextBox Margin="0,5"
                                          Style="{StaticResource CommonTextBox}"
                                          Text="{Binding Color}"
-                                         Width="150" />
+                                         Width="170" />
                                 <!--  FLOW  -->
                                 <TextBlock Margin="0,5"
                                            Style="{StaticResource LabelText}"
@@ -170,7 +170,7 @@
                                 <TextBox Margin="0,5"
                                          Style="{StaticResource CommonTextBox}"
                                          Text="{Binding Flow}"
-                                         Width="150" />
+                                         Width="170" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <!--  TARGET QTY  -->
@@ -182,7 +182,7 @@
                                 <TextBox Margin="0,5"
                                          Style="{StaticResource CommonTextBox}"
                                          Text="{Binding TargetQty}"
-                                         Width="150" />
+                                         Width="170" />
                             </StackPanel>
                         </StackPanel>
                         <Grid />

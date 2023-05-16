@@ -60,8 +60,15 @@ namespace M3.Cord.Windows
 
         private void LoadComboBoxs()
         {
-            cbItemYarns.ItemsSource = Cord.LobaclDb.ItemYarns;
-            cbItemYarns.DataContext = _item;
+            var yarns = Cord.LobaclDb.ItemYarns;
+            //cbItemYarns.DataContext = this.DataContext;
+            cbItemYarns.ItemsSource = yarns;
+
+            cbItemYarns.SelectedIndex = -1;
+            if (null != yarns && yarns.Length > 0)
+            {
+                cbItemYarns.SelectedIndex = 0;
+            }
         }
 
         #endregion

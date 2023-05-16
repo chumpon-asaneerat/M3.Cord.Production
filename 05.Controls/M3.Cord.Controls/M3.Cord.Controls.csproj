@@ -78,7 +78,7 @@
       <DependentUpon>WareHouseReceiveYarnPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\SignInService.cs" />
-    <Compile Include="Windows\CordProcuctPlanningWindow.xaml.cs">
+    <Compile Include="Windows\_V1\CordWarehouse\CordProcuctPlanningWindow.xaml.cs">
       <DependentUpon>CordProcuctPlanningWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MessageBox\MessageBoxOKCancelWindow.xaml.cs">
@@ -321,7 +321,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </None>
-    <Page Include="Windows\CordProcuctPlanningWindow.xaml">
+    <Page Include="Windows\_V1\CordWarehouse\CordProcuctPlanningWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -352,7 +352,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Windows\_V0\G4\" />
-    <Folder Include="Windows\_V1\CordWarehouse\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />

@@ -172,6 +172,16 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region CordWarehouse
+
+            /// <summary>Gets SignIn Window.</summary>
+            public static CordProcuctPlanningWindow CordProductPlanning
+            {
+                get { return GetWindow<CordProcuctPlanningWindow>(); }
+            }
+
+            #endregion
         }
     }
 }
