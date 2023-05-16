@@ -39,17 +39,21 @@
                                                 Margin="10,0"
                                                 IconType="Ok"
                                                 Text="Ok"
-                                                Width="150"
-                                                Height="30" 
-                                                Click="cmdOk_Click"/>
+                                                FontSize="{StaticResource FontSize18}"
+                                                FontWeight="Bold"
+                                                Width="160"
+                                                Height="35"
+                                                Click="cmdOk_Click" />
                     <ctrl:DialogOperationButton x:Name="cmdCancel"
                                                 Margin="10,0"
                                                 DockPanel.Dock="Left"
                                                 IconType="Cancel"
                                                 Text="Cancel"
-                                                Width="150"
-                                                Height="30" 
-                                                Click="cmdCancel_Click"/>
+                                                FontSize="{StaticResource FontSize18}"
+                                                FontWeight="Bold"
+                                                Width="160"
+                                                Height="35"
+                                                Click="cmdCancel_Click" />
                 </DockPanel>
                 <!--  WORK AREA  -->
                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -57,7 +61,7 @@
                                Grid.Row="1"
                                Grid.Column="1"
                                Margin="10"
-                               Foreground="{StaticResource CaptionForeground}"
+                               Foreground="{StaticResource InfoMessageForeground}"
                                FontSize="{StaticResource FontSize30}"
                                TextAlignment="Center"
                                TextWrapping="Wrap"

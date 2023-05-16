@@ -71,6 +71,8 @@ namespace M3.Cord
         /// <returns>Returns SignIn Status.</returns>
         public SignInStatus SignIn(string userName, string password)
         {
+            // No SP.
+            /*
             UserInfo oUser = default;
             var Users = UserInfo.Gets(userName: userName).Value();
             if (null != Users && Users.Count > 0)
@@ -83,7 +85,7 @@ namespace M3.Cord
                 // user not exists.
                 return SignInStatus.UserNotFound;
             }
-
+            */
             User = UserInfo.Get(userName, password).Value();
 
             if (null != User)

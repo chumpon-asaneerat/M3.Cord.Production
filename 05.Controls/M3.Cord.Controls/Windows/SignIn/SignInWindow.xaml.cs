@@ -35,6 +35,13 @@ namespace M3.Cord.Windows
 
         #endregion
 
+        #region Internal Variables
+
+        private string sUserName = string.Empty;
+        private string sPassword = string.Empty;
+
+        #endregion
+
         #region Loaded
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -48,7 +55,90 @@ namespace M3.Cord.Windows
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            SignIn();
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void FocusControl(TextBox ctrl)
+        {
+            if (null == ctrl)
+                return;
+            // Set focus to text box this invoked when the application has rendered
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                ctrl.SelectAll();
+                ctrl.Focus();
+            }), System.Windows.Threading.DispatcherPriority.Render);
+        }
+        private void FocusControl(PasswordBox ctrl)
+        {
+            if (null == ctrl)
+                return;
+            // Set focus to text box this invoked when the application has rendered
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                ctrl.SelectAll();
+                ctrl.Focus();
+            }), System.Windows.Threading.DispatcherPriority.Render);
+        }
+
+        private void SignIn()
+        {
+            string userName = txtUserName.Text;
+            if (string.IsNullOrWhiteSpace(userName))
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("กรุณาป้อน ชื่อบัญชีผู้ใช้", "M3 Cord");
+                win.ShowDialog();
+
+                FocusControl(txtUserName);
+                return;
+            }
+
+            string password = txtPassword.Password;
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("กรุณาป้อน รหัสผ่าน", "M3 Cord");
+                win.ShowDialog();
+
+                FocusControl(txtPassword);
+                return;
+            }
+
+            SignInStatus status = SignInManager.Instance.SignIn(userName, password);
+
+            bool success = false;
+            string msg = string.Empty;
+            switch (status)
+            {
+                case SignInStatus.UserNotFound:
+                    msg = "ไม่พบข้อมูล ชื่อผู้ใช้งาน กรุณาตรวจสอบ";
+                    break;
+                case SignInStatus.InvalidPassword:
+                    msg = "รหัสผ่านไม่ถูกต้อง กรุณาตรวจสอบ";
+                    break;
+                case SignInStatus.Success:
+                    success = true;
+                    break;
+            }
+
+            if (!success)
+            {
+                // login failed show message.
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup(msg, "M3 Cord");
+                win.ShowDialog();
+
+                if (status == SignInStatus.InvalidPassword)
+                    FocusControl(txtPassword);
+                else FocusControl(txtUserName);
+            }
+
+            DialogResult = success;
         }
 
         #endregion
