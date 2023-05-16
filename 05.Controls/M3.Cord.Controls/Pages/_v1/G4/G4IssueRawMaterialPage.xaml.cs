@@ -190,24 +190,34 @@ namespace M3.Cord.Pages
             });
 
             // Calc totals
+            CalcTotals();
+
+            grid.ItemsSource = items;
+        }
+
+        private void CalcTotals()
+        {
+            // Calc totals
             int totalPallet = 0;
             decimal totalWeight = decimal.Zero;
             decimal totalCH = decimal.Zero;
-            items.ForEach(item =>
+
+            if (null != items)
             {
-                if (item.IsMark)
+                items.ForEach(item =>
                 {
-                    ++totalPallet;
-                    totalWeight += (item.WeightQty.HasValue) ? item.WeightQty.Value : decimal.Zero;
-                    totalCH += (item.CH.HasValue) ? item.CH.Value : decimal.Zero;
-                }
-            });
+                    if (item.IsMark)
+                    {
+                        ++totalPallet;
+                        totalWeight += (item.WeightQty.HasValue) ? item.WeightQty.Value : decimal.Zero;
+                        totalCH += (item.CH.HasValue) ? item.CH.Value : decimal.Zero;
+                    }
+                });
+            }
 
             txtTotalPallet.Text = totalPallet.ToString("n0");
             txtTotalWeight.Text = totalWeight.ToString("n1");
             txtTotalCH.Text = totalCH.ToString("n0");
-
-            grid.ItemsSource = items;
         }
 
         #endregion

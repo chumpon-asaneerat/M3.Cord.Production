@@ -54,6 +54,22 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
+        private void cmdEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            if (null == btn) return;
+            var item = btn.DataContext as G4Yarn;
+            EditItem(item);
+        }
+
+        private void cmdDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            if (null == btn) return;
+            var item = btn.DataContext as G4Yarn;
+            DeleteItem(item);
+        }
+
         #endregion
 
         #region TextBox Handlers
@@ -71,22 +87,6 @@ namespace M3.Cord.Pages
                 ClearTraceNo();
                 e.Handled = true;
             }
-        }
-
-        private void cmdEdit_Click(object sender, RoutedEventArgs e)
-        {
-            var btn = sender as Button;
-            if (null == btn) return;
-            var item = btn.DataContext as G4Yarn;
-            EditItem(item);
-        }
-
-        private void cmdDelete_Click(object sender, RoutedEventArgs e)
-        {
-            var btn = sender as Button;
-            if (null == btn) return;
-            var item = btn.DataContext as G4Yarn;
-            DeleteItem(item);
         }
 
         #endregion

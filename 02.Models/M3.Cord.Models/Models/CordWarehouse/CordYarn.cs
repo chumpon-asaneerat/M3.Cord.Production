@@ -68,11 +68,17 @@ namespace M3.Cord.Models
         public void MarkReceive(DateTime? receiveDate)
         {
             ReceiveDate = receiveDate;
+            Raise(() => ReceiveDate);
+            Raise(() => TextColor);
+            Raise(() => IsMark);
         }
 
         public void UnmarkReceive()
         {
             ReceiveDate = new DateTime?();
+            Raise(() => ReceiveDate);
+            Raise(() => TextColor);
+            Raise(() => IsMark);
         }
 
         #endregion

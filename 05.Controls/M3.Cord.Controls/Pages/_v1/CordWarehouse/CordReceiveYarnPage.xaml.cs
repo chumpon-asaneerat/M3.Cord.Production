@@ -66,7 +66,32 @@ namespace M3.Cord.Pages
             {
                 item.MarkReceive(DateTime.Today);
             });
+            CalcTotals();
             RefreshGrid();
+        }
+
+        private void cmdReceive_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            if (null == btn) return;
+            var item = btn.DataContext as CordYarn;
+            if (null != item)
+            {
+                item.MarkReceive(DateTime.Today);
+                CalcTotals();
+            }
+        }
+
+        private void cmdDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            if (null == btn) return;
+            var item = btn.DataContext as CordYarn;
+            if (null != item)
+            {
+                item.UnmarkReceive();
+                CalcTotals();
+            }
         }
 
         #endregion
@@ -85,6 +110,32 @@ namespace M3.Cord.Pages
             grid.ItemsSource = null;
 
             grid.ItemsSource = items;
+
+            CalcTotals();
+        }
+
+        private void CalcTotals()
+        {
+            int totalPallet = 0;
+            decimal totalWeight = decimal.Zero;
+            decimal totalCH = decimal.Zero;
+
+            if (null != items)
+            {
+                items.ForEach(item =>
+                {
+                    if (item.IsMark)
+                    {
+                        ++totalPallet;
+                        totalWeight += (item.WeightQty.HasValue) ? item.WeightQty.Value : decimal.Zero;
+                        totalCH += (item.CH.HasValue) ? item.CH.Value : decimal.Zero;
+                    }
+                });
+            }
+
+            txtTotalPallet.Text = totalPallet.ToString("n0");
+            txtTotalWeight.Text = totalWeight.ToString("n1");
+            txtTotalCH.Text = totalCH.ToString("n0");
         }
 
         #endregion

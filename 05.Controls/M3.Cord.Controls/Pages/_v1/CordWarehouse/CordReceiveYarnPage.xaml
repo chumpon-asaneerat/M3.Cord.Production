@@ -357,13 +357,31 @@
                                                 <StackPanel Orientation="Horizontal"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center">
+                                                    <!--  RECEIVE  -->
+                                                    <Button x:Name="cmdReceive"
+                                                            DockPanel.Dock="Left"
+                                                            Style="{StaticResource InlineButton}"
+                                                            Margin="5,0"
+                                                            Width="100"
+                                                            Height="30"
+                                                            Click="cmdReceive_Click">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Style="{StaticResource fa-scan}" FontSize="{StaticResource IBFSize}" />
+                                                            <TextBlock Margin="3,0"
+                                                                       FontFamily="{StaticResource THSarabun}"
+                                                                       FontSize="{StaticResource IBFSize}"
+                                                                       Text="Receive"
+                                                                       VerticalAlignment="Center" />
+                                                        </StackPanel>
+                                                    </Button>
                                                     <!--  DELETE  -->
                                                     <Button x:Name="cmdDelete"
                                                             DockPanel.Dock="Left"
                                                             Style="{StaticResource InlineButton}"
                                                             Margin="5,0"
                                                             Width="100"
-                                                            Height="30">
+                                                            Height="30"
+                                                            Click="cmdDelete_Click">
                                                         <StackPanel Orientation="Horizontal">
                                                             <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
                                                             <TextBlock Margin="3,0"
