@@ -70,7 +70,7 @@ namespace M3.Cord
             #endregion
 
             #region G4
-
+            /*
             /// <summary>Gets G4 Receive Raw Material Page.</summary>
             public static Cord.Pages.G4ReceiveRawMaterialPage G4ReceiveRawMaterial
             {
@@ -86,11 +86,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.G4StockPage>(); }
             }
-
+            */
             #endregion
 
             #region Warehouse
-
+            /*
             /// <summary>Gets WareHouse Receive Yarn Page.</summary>
             public static Cord.Pages.CordReceiveYarnPage WareHouseReceiveYarn
             {
@@ -101,13 +101,12 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.CordPlanningPage>(); }
             }
-
+            */
             #endregion
 
             #region First Twist
 
-            #region First Twist MC
-
+            /*
             private static Cord.Pages.FirstTwistMCPage _FirstTwistMC;
 
             /// <summary>Gets First Twist MC Page.</summary>
@@ -125,8 +124,7 @@ namespace M3.Cord
                     return _FirstTwistMC;
                 }
             }
-
-            #endregion
+            */
 
             #endregion
         }
@@ -159,13 +157,13 @@ namespace M3.Cord
             #endregion
 
             #region G4
-
+            /*
             /// <summary>Gets SignIn Window.</summary>
             public static Cord.Windows.G4ReceiveYarnWindow G4ReceiveYarn
             {
                 get { return GetWindow<Cord.Windows.G4ReceiveYarnWindow>(); }
             }
-
+            */
             #endregion
         }
     }
