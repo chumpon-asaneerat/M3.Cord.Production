@@ -7,7 +7,7 @@
              xmlns:util="clr-namespace:M3.Cord.Controls.Utils"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="800">
+             d:DesignWidth="1000">
     <UserControl.Resources>
         <!--  PAGE TITLE  -->
         <sys:String x:Key="PageTitle">1st Twisting</sys:String>
@@ -141,162 +141,183 @@
                                LastChildFill="True"
                                Margin="1"
                                Background="WhiteSmoke">
-                        <StackPanel Orientation="Vertical">
-                            <!--  CUSTOMER  -->
+                        <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <TextBlock Text="Customer: "
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Black" />
-                                <TextBlock Text="{Binding CustomerName}"
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Navy"
-                                           FontSize="{StaticResource FontSize20}" />
-                            </StackPanel>
-                            <!--  LOT NO  -->
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <TextBlock Text="Lot No: "
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Black" />
-                                <TextBlock Text="{Binding LotNo}"
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Navy"
-                                           FontSize="{StaticResource FontSize20}" />
-                            </StackPanel>
-                            <!--  Item Code  -->
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <TextBlock Text="Item Code: "
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Black" />
-                                <TextBlock Text="{Binding ItemCode}"
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Navy"
-                                           FontSize="{StaticResource FontSize20}" />
-                            </StackPanel>
-                            <!--  Yarn Type  -->
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <TextBlock Text="Yarn Type: "
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Black" />
-                                <TextBlock Text="{Binding ItemYarn}"
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Navy"
-                                           FontSize="{StaticResource FontSize20}" />
-                            </StackPanel>
-                            <!--  Weight  -->
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <TextBlock Text="Weight: "
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Black" />
-                                <TextBlock Text="{Binding TargetQty}"
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Navy" />
-                            </StackPanel>
-                            <!--  Flow  -->
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <TextBlock Text="Flow: "
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Black" />
-                                <TextBlock Text="{Binding Flow}"
-                                           Style="{StaticResource LabelText}"
-                                           Foreground="Navy" />
+                                <!--  CUSTOMER  -->
+                                <StackPanel Orientation="Vertical"
+                                            VerticalAlignment="Center"
+                                            Width="200">
+                                    <TextBlock Text="Customer: "
+                                               Style="{StaticResource LabelText}"
+                                               Foreground="Black" />
+                                    <TextBlock Text="{Binding CustomerName}"
+                                               Style="{StaticResource LabelText}"
+                                               Foreground="Navy"
+                                               FontWeight="Bold"
+                                               FontSize="{StaticResource FontSize20}" />
+                                </StackPanel>
+                                <!--  LOT NO  -->
+                                <StackPanel Orientation="Vertical"
+                                            VerticalAlignment="Center"
+                                            Width="200">
+                                    <TextBlock Text="Lot No: "
+                                               Style="{StaticResource LabelText}"
+                                               Foreground="Black" />
+                                    <TextBlock Text="{Binding LotNo}"
+                                               Style="{StaticResource LabelText}"
+                                               Foreground="Navy"
+                                               FontWeight="Bold"
+                                               FontSize="{StaticResource FontSize20}" />
+                                </StackPanel>
+                                <!--  ITEM CODE  -->
+                                <StackPanel Orientation="Vertical"
+                                            VerticalAlignment="Center"
+                                            Width="200">
+                                    <TextBlock Text="Item Code: "
+                                               Style="{StaticResource LabelText}"
+                                               Foreground="Black" />
+                                    <TextBlock Text="{Binding ItemCode}"
+                                               Style="{StaticResource LabelText}"
+                                               Foreground="Navy"
+                                               FontWeight="Bold"
+                                               FontSize="{StaticResource FontSize20}" />
+                                </StackPanel>
+                                <!--  YARN TYPE  -->
+                                <StackPanel Orientation="Vertical"
+                                            VerticalAlignment="Center"
+                                            Width="200">
+                                    <TextBlock Text="Yarn Type: "
+                                               Style="{StaticResource LabelText}"
+                                               Foreground="Black" />
+                                    <TextBlock Text="{Binding ItemYarn}"
+                                               Style="{StaticResource LabelText}"
+                                               Foreground="Navy"
+                                               FontWeight="Bold"
+                                               FontSize="{StaticResource FontSize20}" />
+                                </StackPanel>
+                                <!--  WEIGHT  -->
+                                <StackPanel Orientation="Vertical"
+                                            VerticalAlignment="Center"
+                                            Width="200">
+                                    <TextBlock Text="Weight: "
+                                               Style="{StaticResource LabelText}"
+                                               Foreground="Black" />
+                                    <TextBlock Text="{Binding TargetQty}"
+                                               Style="{StaticResource LabelText}"
+                                               FontWeight="Bold"
+                                               Foreground="Navy" />
+                                </StackPanel>
+                                <!--  FLOW  -->
+                                <StackPanel Orientation="Vertical"
+                                            VerticalAlignment="Center"
+                                            Width="200">
+                                    <TextBlock Text="Flow: "
+                                               Style="{StaticResource LabelText}"
+                                               Foreground="Black" />
+                                    <TextBlock Text="{Binding Flow}"
+                                               Style="{StaticResource LabelText}"
+                                               FontWeight="Bold"
+                                               Foreground="Navy" />
+                                </StackPanel>
                             </StackPanel>
                             <TextBlock Height="5" />
-                            <!--  DOFF LIST  -->
-                            <ListView x:Name="doffGrid" FontSize="{StaticResource FontSize18}">
-                                <ListView.View>
-                                    <GridView>
-                                        <GridView.Columns>
-                                            <!--  PRODUCTION DATE  -->
-                                            <GridViewColumn Header="Production Date">
-                                                <GridViewColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Width="150"
-                                                                   Text="{Binding ProductionDate}"
-                                                                   TextAlignment="Center" />
-                                                    </DataTemplate>
-                                                </GridViewColumn.CellTemplate>
-                                            </GridViewColumn>
-                                            <!--  YARN TYPE  -->
-                                            <GridViewColumn Header="Yarn Type">
-                                                <GridViewColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Width="150"
-                                                                   Text="{Binding YarnType}"
-                                                                   TextAlignment="Center" />
-                                                    </DataTemplate>
-                                                </GridViewColumn.CellTemplate>
-                                            </GridViewColumn>
-                                            <!--  TRACE NO  -->
-                                            <GridViewColumn Header="Trace No">
-                                                <GridViewColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Width="150"
-                                                                   Text="{Binding TraceNo}"
-                                                                   TextAlignment="Center" />
-                                                    </DataTemplate>
-                                                </GridViewColumn.CellTemplate>
-                                            </GridViewColumn>
-                                            <!--  INPUT CH  -->
-                                            <GridViewColumn Header="Input (CH)">
-                                                <GridViewColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Width="150"
-                                                                   Text="{Binding InputCh}"
-                                                                   TextAlignment="Center" />
-                                                    </DataTemplate>
-                                                </GridViewColumn.CellTemplate>
-                                            </GridViewColumn>
-                                            <!--  DOFF  -->
-                                            <GridViewColumn Header="Doff">
-                                                <GridViewColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Width="150"
-                                                                   Text="{Binding DoffName}"
-                                                                   TextAlignment="Center" />
-                                                    </DataTemplate>
-                                                </GridViewColumn.CellTemplate>
-                                            </GridViewColumn>
-                                            <!--  SP NO  -->
-                                            <GridViewColumn Header="SP No.">
-                                                <GridViewColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Width="150"
-                                                                   Text="{Binding SPNo}"
-                                                                   TextAlignment="Center" />
-                                                    </DataTemplate>
-                                                </GridViewColumn.CellTemplate>
-                                            </GridViewColumn>
-                                        </GridView.Columns>
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
-                            <TextBlock Height="5" />
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="5,0"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Center">
-                                <Button x:Name="cmdDoff"
-                                        Margin="2,0"
-                                        Style="{StaticResource InlineButton}"
-                                        Width="150"
-                                        Content="Doff" />
-                                <Button x:Name="cmdCoreCheck"
-                                        Margin="2,0"
-                                        Style="{StaticResource InlineButton}"
-                                        Width="150"
-                                        Content="MC Check" />
-                                <Button x:Name="cmdCondition"
-                                        Margin="2,0"
-                                        Style="{StaticResource InlineButton}"
-                                        Width="150"
-                                        Content="Condition" />
-                                <Button x:Name="cmdPCC"
-                                        Margin="2,0"
-                                        Style="{StaticResource InlineButton}"
-                                        Width="150"
-                                        Content="Control Card" />
-                            </StackPanel>
                         </StackPanel>
+                        <!--  BUTTONS  -->
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Bottom"
+                                    Margin="5,0"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center">
+                            <Button x:Name="cmdDoff"
+                                    Margin="2,0"
+                                    Style="{StaticResource InlineButton}"
+                                    Width="150"
+                                    Content="Doff" />
+                            <Button x:Name="cmdCoreCheck"
+                                    Margin="2,0"
+                                    Style="{StaticResource InlineButton}"
+                                    Width="150"
+                                    Content="MC Check" />
+                            <Button x:Name="cmdCondition"
+                                    Margin="2,0"
+                                    Style="{StaticResource InlineButton}"
+                                    Width="150"
+                                    Content="Condition" />
+                            <Button x:Name="cmdPCC"
+                                    Margin="2,0"
+                                    Style="{StaticResource InlineButton}"
+                                    Width="150"
+                                    Content="Control Card" />
+                        </StackPanel>
+                        <!--  DOFF LIST  -->
+                        <ListView x:Name="doffGrid" FontSize="{StaticResource FontSize18}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridView.Columns>
+                                        <!--  PRODUCTION DATE  -->
+                                        <GridViewColumn Header="Production Date">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Width="150"
+                                                               Text="{Binding ProductionDate}"
+                                                               TextAlignment="Center" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <!--  YARN TYPE  -->
+                                        <GridViewColumn Header="Yarn Type">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Width="150"
+                                                               Text="{Binding YarnType}"
+                                                               TextAlignment="Center" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <!--  TRACE NO  -->
+                                        <GridViewColumn Header="Trace No">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Width="150"
+                                                               Text="{Binding TraceNo}"
+                                                               TextAlignment="Center" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <!--  INPUT CH  -->
+                                        <GridViewColumn Header="Input (CH)">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Width="150"
+                                                               Text="{Binding InputCh}"
+                                                               TextAlignment="Center" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <!--  DOFF  -->
+                                        <GridViewColumn Header="Doff">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Width="150"
+                                                               Text="{Binding DoffName}"
+                                                               TextAlignment="Center" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <!--  SP NO  -->
+                                        <GridViewColumn Header="SP No.">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Width="150"
+                                                               Text="{Binding SPNo}"
+                                                               TextAlignment="Center" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView.Columns>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
                     </DockPanel>
                 </DockPanel>
             </DockPanel>
