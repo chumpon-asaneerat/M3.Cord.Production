@@ -50,15 +50,15 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\ClipboardOperationButton.xaml">
+    <Page Include="Controls\InlineButton\ClipboardOperationButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\DialogOperationButton.xaml">
+    <Page Include="Controls\InlineButton\DialogOperationButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\ExcelOperationButton.xaml">
+    <Page Include="Controls\InlineButton\ExcelOperationButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -70,19 +70,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\PageNavigationButton.xaml">
+    <Page Include="Controls\InlineButton\PageNavigationButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\PrintOperationButton.xaml">
+    <Page Include="Controls\InlineButton\PrintOperationButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\RecordOperationButton.xaml">
+    <Page Include="Controls\InlineButton\RecordOperationButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SearchOperationButton.xaml">
+    <Page Include="Controls\InlineButton\SearchOperationButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,15 +168,15 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\ClipboardOperationButton.xaml.cs">
+    <Compile Include="Controls\InlineButton\ClipboardOperationButton.xaml.cs">
       <DependentUpon>ClipboardOperationButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Converters\EnumBooleanConverter.cs" />
-    <Compile Include="Controls\DialogOperationButton.xaml.cs">
+    <Compile Include="Controls\InlineButton\DialogOperationButton.xaml.cs">
       <DependentUpon>DialogOperationButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Enums\InlineButtonEnumFlags.cs" />
-    <Compile Include="Controls\ExcelOperationButton.xaml.cs">
+    <Compile Include="Controls\InlineButton\ExcelOperationButton.xaml.cs">
       <DependentUpon>ExcelOperationButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\InlineButton\InlineButton.xaml.cs">
@@ -186,16 +186,16 @@
       <DependentUpon>NavigatorBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\NavigatorBar\NavigatorButtonEvents.cs" />
-    <Compile Include="Controls\PageNavigationButton.xaml.cs">
+    <Compile Include="Controls\InlineButton\PageNavigationButton.xaml.cs">
       <DependentUpon>PageNavigationButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\PrintOperationButton.xaml.cs">
+    <Compile Include="Controls\InlineButton\PrintOperationButton.xaml.cs">
       <DependentUpon>PrintOperationButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\RecordOperationButton.xaml.cs">
+    <Compile Include="Controls\InlineButton\RecordOperationButton.xaml.cs">
       <DependentUpon>RecordOperationButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SearchOperationButton.xaml.cs">
+    <Compile Include="Controls\InlineButton\SearchOperationButton.xaml.cs">
       <DependentUpon>SearchOperationButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Utils\AttachProperties\InlineButtons\ClipboardOperationOptions.cs" />
