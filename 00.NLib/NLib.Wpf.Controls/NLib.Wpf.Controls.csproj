@@ -175,7 +175,7 @@
     <Compile Include="Controls\DialogOperationButton.xaml.cs">
       <DependentUpon>DialogOperationButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Enums\FontAwesomeEnumFlags.cs" />
+    <Compile Include="Controls\Enums\InlineButtonEnumFlags.cs" />
     <Compile Include="Controls\ExcelOperationButton.xaml.cs">
       <DependentUpon>ExcelOperationButton.xaml</DependentUpon>
     </Compile>
@@ -198,6 +198,13 @@
     <Compile Include="Controls\SearchOperationButton.xaml.cs">
       <DependentUpon>SearchOperationButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\ClipboardOperationOptions.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\DialogOperationOptions.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\ExcelOperationOptions.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\PageNavigationOptions.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\PrintOperationOptions.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\RecordOperationOptions.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\SearchOperationOptions.cs" />
     <Compile Include="Pages\NPage.xaml.cs">
       <DependentUpon>NPage.xaml</DependentUpon>
     </Compile>
@@ -218,7 +225,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ExtensionMethods\WpfWindowExtensionMethods.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\FontAwesomeIconAttachProperties.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\FontAwesomeOptions.cs" />
     <Compile Include="Controls\Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
     <Compile Include="Controls\Converters\IsLastItemConverter.cs" />
     <Compile Include="Controls\Converters\ShowButtonsConverter.cs" />

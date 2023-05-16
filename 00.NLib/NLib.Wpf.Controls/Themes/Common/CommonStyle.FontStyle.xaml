@@ -65,6 +65,21 @@
         <Setter Property="Text" Value="&#xf00d;" />
         <Setter Property="Foreground" Value="DarkRed" />
     </Style>
+    <!--  YES  -->
+    <Style x:Key="fa-yes"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource fa-base}">
+        <Setter Property="Text" Value="&#xf00c;" />
+        <Setter Property="Foreground" Value="Green" />
+    </Style>
+    <!--  NO  -->
+    <Style x:Key="fa-no"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource fa-base}">
+        <Setter Property="Text" Value="&#xf00d;" />
+        <Setter Property="Foreground" Value="DarkRed" />
+    </Style>
+
     <!--  PRINT  -->
     <Style x:Key="fa-print"
            TargetType="TextBlock"
@@ -134,8 +149,23 @@
            BasedOn="{StaticResource fa-base}">
         <Setter Property="Text" Value="&#xf0ae;" />
     </Style>
+
+    <!--  CUT  -->
+    <Style x:Key="fa-cut"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource fa-base}">
+        <Setter Property="Text" Value="&#xf0c4;" />
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
     <!--  COPY  -->
     <Style x:Key="fa-copy"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource fa-base}">
+        <Setter Property="Text" Value="&#xf0c5;" />
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+    <!--  PASTE  -->
+    <Style x:Key="fa-paste"
            TargetType="TextBlock"
            BasedOn="{StaticResource fa-base}">
         <Setter Property="Text" Value="&#xf0ea;" />
