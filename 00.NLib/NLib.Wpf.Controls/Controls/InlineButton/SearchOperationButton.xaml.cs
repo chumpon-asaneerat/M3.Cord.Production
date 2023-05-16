@@ -9,7 +9,7 @@ using System.Windows.Controls;
 
 #endregion
 
-namespace NLib.Controls
+namespace NLib.Wpf.Controls
 {
     /// <summary>
     /// Interaction logic for SearchOperationButton.xaml

@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+#endregion
+
 namespace M3.Cord.Windows
 {
     /// <summary>
@@ -19,9 +23,40 @@ namespace M3.Cord.Windows
     /// </summary>
     public partial class MessageBoxWindow : Window
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public MessageBoxWindow()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Button Handlers
+
+        private void cmdOk_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Setup.
+        /// </summary>
+        /// <param name="msg">The message.</param>
+        /// <param name="title">The title.</param>
+        public void Setup(string msg, string title)
+        {
+            this.Title = title;
+            txtMsg.Text = msg;
+        }
+
+        #endregion
     }
 }
