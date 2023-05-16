@@ -7,7 +7,7 @@
              d:DesignWidth="150"
              mc:Ignorable="d">
     <StackPanel Orientation="Vertical" DataContext="{Binding ElementName=_ThisCtrl}">
-        <TextBlock x:Name="lbHeader" Text="{Binding Caption}" />
-        <TextBox x:Name="txtField" Text="{Binding Value}" />
+        <TextBlock x:Name="lbHeader" Text="{Binding Caption}" Style="{StaticResource LabelText}"/>
+        <TextBox x:Name="txtField" Text="{Binding Value}" Style="{StaticResource CommonTextBox}"/>
     </StackPanel>
 </UserControl>
