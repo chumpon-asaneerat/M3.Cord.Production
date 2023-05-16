@@ -78,10 +78,10 @@
       <DependentUpon>WareHouseReceiveYarnPage.xaml</DependentUpon>
     </None>
     <Compile Include="Services\SignInService.cs" />
-    <Compile Include="Windows\MessageBoxOKCancelWindow.xaml.cs">
+    <Compile Include="Windows\MessageBox\MessageBoxOKCancelWindow.xaml.cs">
       <DependentUpon>MessageBoxOKCancelWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\MessageBoxWindow.xaml.cs">
+    <Compile Include="Windows\MessageBox\MessageBoxWindow.xaml.cs">
       <DependentUpon>MessageBoxWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SignIn\SignInWindow.xaml.cs">
@@ -330,11 +330,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <Page Include="Windows\MessageBoxOKCancelWindow.xaml">
+    <Page Include="Windows\MessageBox\MessageBoxOKCancelWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\MessageBoxWindow.xaml">
+    <Page Include="Windows\MessageBox\MessageBoxWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -344,7 +344,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Windows\MessageBox\" />
     <Folder Include="Windows\_V0\G4\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using M3.Cord.Windows;
 using NLib.Services;
 using System;
 using System.Collections.Generic;
@@ -146,12 +147,32 @@ namespace M3.Cord
 
             #endregion
 
+            #region MessageBox
+
+            /// <summary>Gets MessageBox Window.</summary>
+            public static MessageBoxWindow MessageBox
+            {
+                get { return GetWindow<Cord.Windows.MessageBoxWindow>(); }
+            }
+
+            #endregion
+
+            #region MessageBoxOKCancel
+
+            /// <summary>Gets MessageBoxOkCancel Window.</summary>
+            public static MessageBoxOKCancelWindow MessageBoxOKCancel
+            {
+                get { return GetWindow<Cord.Windows.MessageBoxOKCancelWindow>(); }
+            }
+
+            #endregion
+
             #region SignIn
 
             /// <summary>Gets SignIn Window.</summary>
-            public static Cord.Windows.SignInWindow SignIn
+            public static SignInWindow SignIn
             {
-                get { return GetWindow<Cord.Windows.SignInWindow>(); }
+                get { return GetWindow<SignInWindow>(); }
             }
 
             #endregion
@@ -159,9 +180,9 @@ namespace M3.Cord
             #region G4
             /*
             /// <summary>Gets SignIn Window.</summary>
-            public static Cord.Windows.G4ReceiveYarnWindow G4ReceiveYarn
+            public static G4ReceiveYarnWindow G4ReceiveYarn
             {
-                get { return GetWindow<Cord.Windows.G4ReceiveYarnWindow>(); }
+                get { return GetWindow<G4ReceiveYarnWindow>(); }
             }
             */
             #endregion
