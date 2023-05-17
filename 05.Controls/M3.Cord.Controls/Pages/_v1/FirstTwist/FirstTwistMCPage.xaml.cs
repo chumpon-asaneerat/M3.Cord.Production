@@ -81,6 +81,11 @@ namespace M3.Cord.Pages
             win.Setup();
             if (win.ShowDialog() == false) return;
 
+            if (null != mc)
+            {
+                mc.RawMaterialSheets = RawMaterialSheetItem.GetRawMaterialSheets("S-1");
+                RefreshGrid(mc);
+            }
         }
 
         #endregion

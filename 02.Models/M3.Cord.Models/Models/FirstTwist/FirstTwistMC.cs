@@ -127,8 +127,8 @@ namespace M3.Cord.Models
             List<RawMaterialSheetItem> rets = new List<RawMaterialSheetItem>();
             if (mcName == "S-1") 
             {
-                rets.Add(Create(DateTime.Today,"100-360-704", "17003010", "100", "1-4", "1-50"));
-                rets.Add(Create(DateTime.Today, "100-360-704", "17003002", "99", "1-4", "51-100"));
+                rets.Add(Create(DateTime.Today, "470-72-1781-JJ", "17003010", "100", "1", "1-50"));
+                //rets.Add(Create(DateTime.Today, "100-360-704", "17003002", "99", "1-4", "51-100"));
             }
             return rets;
         }

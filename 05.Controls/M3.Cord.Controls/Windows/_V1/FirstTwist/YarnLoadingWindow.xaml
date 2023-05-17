@@ -167,7 +167,6 @@
                                         <DataTemplate>
                                             <TextBlock Width="150"
                                                        Text="{Binding ItemYarn}"
-                                                       Foreground="{Binding TextColor}"
                                                        TextAlignment="Center" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

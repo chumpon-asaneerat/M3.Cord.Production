@@ -78,7 +78,7 @@
       <DependentUpon>WareHouseReceiveYarnPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\SignInService.cs" />
-    <Compile Include="Windows\YarnLoadingWindow.xaml.cs">
+    <Compile Include="Windows\_V1\FirstTwist\YarnLoadingWindow.xaml.cs">
       <DependentUpon>YarnLoadingWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\_V1\FirstTwist\ChooseCordProductWindow.xaml.cs">
@@ -327,7 +327,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </None>
-    <Page Include="Windows\YarnLoadingWindow.xaml">
+    <Page Include="Windows\_V1\FirstTwist\YarnLoadingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
