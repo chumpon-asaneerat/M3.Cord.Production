@@ -135,4 +135,9 @@ namespace M3.Cord.Models
 
         #endregion
     }
+
+    public class YarnTwistConditionRecordItem : NInpc
+    {
+        public int BBNo { get; set; }
+    }
 }
