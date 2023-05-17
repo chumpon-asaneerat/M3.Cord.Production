@@ -48,6 +48,8 @@ namespace M3.Cord.Models
             set { }
         }
 
+        public bool IsUsed { get; set; }
+
         #endregion
 
         #region Static Methods

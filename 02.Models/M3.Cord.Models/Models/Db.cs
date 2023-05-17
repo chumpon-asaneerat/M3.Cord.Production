@@ -57,6 +57,32 @@ namespace M3.Cord
 
         #endregion
 
+        #region FirstTwistMC
+
+        public static List<FirstTwistMC> Machines = new List<FirstTwistMC>()
+        {
+            new FirstTwistMC() { MCName = "S-1", SheetPerBB = 2 },
+            new FirstTwistMC() { MCName = "S-4" }
+        };
+
+        public static void LoadMachines()
+        {
+            string fileName = Path.Combine(DbPath, "Machines.json");
+            var models = NJson.LoadFromFile<List<FirstTwistMC>>(fileName);
+            if (null != models)
+            {
+                Machines = models;
+            }
+        }
+
+        public static void SaveMachines()
+        {
+            string fileName = Path.Combine(DbPath, "Machines.json");
+            Machines.SaveToFile(fileName);
+        }
+
+        #endregion
+
         #region Path
 
         private static string DbPath
@@ -79,11 +105,13 @@ namespace M3.Cord
         public static void Load()
         {
             LoadCordProducts();
+            LoadMachines();
         }
 
         public static void Save()
         {
             SaveCordProducts();
+            SaveMachines();
         }
 
         #endregion

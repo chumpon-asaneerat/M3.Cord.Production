@@ -38,6 +38,7 @@ namespace M3.Cord.Models
         {
             List<FirstTwistMC> rets = new List<FirstTwistMC>();
 
+            /*
             rets.Add(new FirstTwistMC()
             {
                 MCName = "S-1",
@@ -45,6 +46,8 @@ namespace M3.Cord.Models
                 Product = CordProduct.Create(1, "BANDO", "100-364-704M", "9H 0663L", "ลายดาว", "21091", 5400, "S-1-1"),
                 RawMaterialSheets = RawMaterialSheetItem.GetRawMaterialSheets("S-1")
             });
+            */
+            rets.Add(new FirstTwistMC() { MCName = "S-1", SheetPerBB = 2 });
             rets.Add(new FirstTwistMC() { MCName = "S-4" });
 
             return rets;

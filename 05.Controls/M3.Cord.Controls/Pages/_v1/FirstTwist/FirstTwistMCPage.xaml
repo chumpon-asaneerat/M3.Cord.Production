@@ -65,7 +65,8 @@
                                 Style="{StaticResource InlineButton}"
                                 Margin="5,0"
                                 Width="150"
-                                Height="30">
+                                Height="30"
+                                Click="cmdAddNew_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Style="{StaticResource fa-addnew}" FontSize="{StaticResource IBFSize}" />
                                 <TextBlock Margin="3,0"
@@ -102,6 +103,7 @@
                              Background="White"
                              ItemContainerStyle="{StaticResource BASEListBoxItemContainer}"
                              Style="{StaticResource SingleSelectWrapListBox}"
+                             IsSynchronizedWithCurrentItem="True"
                              SelectionChanged="grid_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -142,6 +144,7 @@
                                Margin="1"
                                Background="WhiteSmoke">
                         <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+                            <TextBlock Height="10" />
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                 <!--  CUSTOMER  -->
                                 <StackPanel Orientation="Vertical"
@@ -220,7 +223,7 @@
                                                Foreground="Navy" />
                                 </StackPanel>
                             </StackPanel>
-                            <TextBlock Height="5" />
+                            <TextBlock Height="10" />
                         </StackPanel>
                         <!--  BUTTONS  -->
                         <StackPanel Orientation="Horizontal"
@@ -249,7 +252,12 @@
                                     Width="150"
                                     Content="Control Card" />
                         </StackPanel>
-                        <!--  DOFF LIST  -->
+                        <!--  RAW MAT CHECK SHEETS  -->
+                        <TextBlock DockPanel.Dock="Top"
+                                   Margin="5,0"
+                                   Text="Raw Material Check Sheet"
+                                   FontSize="{StaticResource FontSize20}"
+                                   FontWeight="Bold" />
                         <ListView x:Name="doffGrid" FontSize="{StaticResource FontSize18}">
                             <ListView.View>
                                 <GridView>

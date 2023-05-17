@@ -4,6 +4,7 @@ using M3.Cord.Models;
 using M3.Cord.Properties;
 using NLib.Services;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -43,7 +44,8 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private List<FirstTwistMC> mcList = FirstTwistMC.Gets();
+        private List<FirstTwistMC> mcList;
+        private FirstTwistMC selectedMC;
 
         #endregion
 
@@ -54,16 +56,35 @@ namespace M3.Cord.Pages
             GotoMainMenu();
         }
 
+        private void cmdAddNew_Click(object sender, RoutedEventArgs e)
+        {
+            if (null == selectedMC)
+                return;
+            var mc = selectedMC;
+
+            Dispatcher.Invoke(() => 
+            {
+                var win = M3CordApp.Windows.ChooseCordProduct;
+                win.Setup();
+                if (win.ShowDialog() == false) return;
+                if (null != win.SelectedProduct)
+                {
+                    AddNew(mc, win.SelectedProduct);
+                }
+            });
+        }
+
         #endregion
 
         #region ListBox Handlers
 
         private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (grid.SelectedIndex == -1)
-                return;
-            var FirstTwistMC = mcList[grid.SelectedIndex];
-            UpdateMCStatus(FirstTwistMC);
+            if (null != grid.SelectedItem)
+            {
+                selectedMC = grid.SelectedItem as FirstTwistMC;
+                UpdateMCStatus(selectedMC);
+            }
         }
 
         #endregion
@@ -77,16 +98,37 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void AddNew(FirstTwistMC mc, CordProduct product)
+        {
+            if (null != product)
+            {
+                product.IsUsed = true; // mark is used.
+                Cord.LobaclDb.SaveCordProducts();
+            }
+
+            mc.Product = product;
+            UpdateMCStatus(mc);
+            Cord.LobaclDb.SaveMachines();
+            
+        }
+
         private void RefreshMC()
         {
+            selectedMC = null;
             grid.ItemsSource = null;
             grid.ItemsSource = mcList;
         }
 
         private void UpdateMCStatus(FirstTwistMC mc)
         {
+            cmdAddNew.IsEnabled = false;
+
             paMC.DataContext = null;
-            paMC.DataContext = mc.Product;
+            if (null != mc)
+            {
+                paMC.DataContext = mc.Product;
+                cmdAddNew.IsEnabled = (null == mc.Product);
+            }
             RefreshGrid(mc);
         }
 
@@ -104,6 +146,9 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
+            Cord.LobaclDb.LoadMachines();
+            mcList = Cord.LobaclDb.Machines;
+
             RefreshMC();
         }
 

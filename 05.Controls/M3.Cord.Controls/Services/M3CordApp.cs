@@ -165,7 +165,7 @@ namespace M3.Cord
 
             #region G4
 
-            /// <summary>Gets SignIn Window.</summary>
+            /// <summary>Gets G4 Receive Yarn Window.</summary>
             public static G4ReceiveYarnWindow G4ReceiveYarn
             {
                 get { return GetWindow<G4ReceiveYarnWindow>(); }
@@ -175,10 +175,20 @@ namespace M3.Cord
 
             #region CordWarehouse
 
-            /// <summary>Gets SignIn Window.</summary>
+            /// <summary>Gets Cord Procuct Planning Window.</summary>
             public static CordProcuctPlanningWindow CordProductPlanning
             {
                 get { return GetWindow<CordProcuctPlanningWindow>(); }
+            }
+
+            #endregion
+
+            #region First Twist
+
+            /// <summary>Gets Choose Cord Product Window.</summary>
+            public static ChooseCordProductWindow ChooseCordProduct
+            {
+                get { return GetWindow<ChooseCordProductWindow>(); }
             }
 
             #endregion
