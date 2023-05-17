@@ -203,6 +203,12 @@ namespace M3.Cord
                 get { return GetWindow<YarnTwistRecordSheetWindow>(); }
             }
 
+            /// <summary>Gets Production Condition Sheet Window.</summary>
+            public static ProductionConditionSheetWindow ProductionConditionSheet
+            {
+                get { return GetWindow<ProductionConditionSheetWindow>(); }
+            }
+
             #endregion
         }
     }

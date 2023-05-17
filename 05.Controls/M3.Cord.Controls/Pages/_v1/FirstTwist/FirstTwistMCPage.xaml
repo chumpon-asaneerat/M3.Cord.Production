@@ -247,7 +247,8 @@
                                     Margin="2,0"
                                     Style="{StaticResource InlineButton}"
                                     Width="150"
-                                    Content="Condition" />
+                                    Content="Condition" 
+                                    Click="cmdCondition_Click"/>
                             <Button x:Name="cmdPCC"
                                     Margin="2,0"
                                     Style="{StaticResource InlineButton}"

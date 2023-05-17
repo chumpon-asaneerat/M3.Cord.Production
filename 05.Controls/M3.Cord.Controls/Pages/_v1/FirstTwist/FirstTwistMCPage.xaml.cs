@@ -99,6 +99,17 @@ namespace M3.Cord.Pages
             if (win.ShowDialog() == false) return;
         }
 
+        private void cmdCondition_Click(object sender, RoutedEventArgs e)
+        {
+            if (null == selectedMC)
+                return;
+            var mc = selectedMC;
+
+            var win = M3CordApp.Windows.ProductionConditionSheet;
+            win.Setup(mc);
+            if (win.ShowDialog() == false) return;
+        }
+
         #endregion
 
         #region ListBox Handlers
