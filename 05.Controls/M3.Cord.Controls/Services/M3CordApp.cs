@@ -191,6 +191,12 @@ namespace M3.Cord
                 get { return GetWindow<ChooseCordProductWindow>(); }
             }
 
+            /// <summary>Gets Yarn Loading Window.</summary>
+            public static YarnLoadingWindow YarnLoading
+            {
+                get { return GetWindow<YarnLoadingWindow>(); }
+            }
+
             #endregion
         }
     }

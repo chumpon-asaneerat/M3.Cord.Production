@@ -62,16 +62,25 @@ namespace M3.Cord.Pages
                 return;
             var mc = selectedMC;
 
-            Dispatcher.Invoke(() => 
+            var win = M3CordApp.Windows.ChooseCordProduct;
+            win.Setup();
+            if (win.ShowDialog() == false) return;
+            if (null != win.SelectedProduct)
             {
-                var win = M3CordApp.Windows.ChooseCordProduct;
-                win.Setup();
-                if (win.ShowDialog() == false) return;
-                if (null != win.SelectedProduct)
-                {
-                    AddNew(mc, win.SelectedProduct);
-                }
-            });
+                AddNew(mc, win.SelectedProduct);
+            }
+        }
+
+        private void cmdPrepare_Click(object sender, RoutedEventArgs e)
+        {
+            if (null == selectedMC)
+                return;
+            var mc = selectedMC;
+
+            var win = M3CordApp.Windows.YarnLoading;
+            win.Setup();
+            if (win.ShowDialog() == false) return;
+
         }
 
         #endregion
