@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using M3.Cord.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,8 @@ namespace M3.Cord.Windows
 
         #endregion
 
+        private List<YarnLoadingItem> yarnLoadingItems = new List<YarnLoadingItem>();
+
         #region Button Handlers
 
         private void cmdOK_Click(object sender, RoutedEventArgs e)
@@ -49,16 +52,24 @@ namespace M3.Cord.Windows
 
         private void cmdScan_Click(object sender, RoutedEventArgs e)
         {
-
+            yarnLoadingItems = YarnLoadingItem.Gets();
+            RefreshGrid();
         }
 
         #endregion
+
+        private void RefreshGrid()
+        {
+            grid.ItemsSource = null;
+
+            grid.ItemsSource = yarnLoadingItems;
+        }
 
         #region Public Methods
 
         public void Setup()
         {
-
+            RefreshGrid();
         }
 
         #endregion

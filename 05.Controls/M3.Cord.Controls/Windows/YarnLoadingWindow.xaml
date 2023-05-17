@@ -105,6 +105,15 @@
                                DockPanel.Dock="Top"
                                Margin="5">
                         <StackPanel Orientation="Horizontal">
+                            <!--  DOFF NO  -->
+                            <StackPanel Orientation="Vertical" Margin="5,0">
+                                <TextBlock Text="DOFF No:" Style="{StaticResource LabelText}" />
+                                <TextBox x:Name="txtDoffNo"
+                                         Style="{StaticResource CommonTextBox}"
+                                         Text="1"
+                                         TextAlignment="Center"
+                                         Width="200" />
+                            </StackPanel>
                             <!--  YARN BARCODE  -->
                             <StackPanel Orientation="Vertical" Margin="5,0">
                                 <TextBlock Text="Yarn Barcode:" Style="{StaticResource LabelText}" />
@@ -169,7 +178,6 @@
                                         <DataTemplate>
                                             <TextBlock Width="150"
                                                        Text="{Binding LotNo}"
-                                                       Foreground="{Binding TextColor}"
                                                        TextAlignment="Center" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -180,7 +188,6 @@
                                         <DataTemplate>
                                             <TextBlock Width="150"
                                                        Text="{Binding SPNo}"
-                                                       Foreground="{Binding TextColor}"
                                                        TextAlignment="Center" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -191,7 +198,6 @@
                                         <DataTemplate>
                                             <TextBlock Width="200"
                                                        Text="{Binding DeckNo}"
-                                                       Foreground="{Binding TextColor}"
                                                        TextAlignment="Center" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

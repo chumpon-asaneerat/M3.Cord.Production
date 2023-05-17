@@ -56,6 +56,41 @@ namespace M3.Cord.Models
         #endregion
     }
 
+    public class YarnLoadingItem : NInpc
+    {
+        public string DoffNo { get; set; }
+        public string ItemYarn { get; set; }
+        public string LotNo { get; set; }
+        public int SPNo { get; set; }
+        public int DeckNo { get; set; }
+
+        public static List<YarnLoadingItem> Gets()
+        {
+            List<YarnLoadingItem> rets = new List<YarnLoadingItem>();
+
+            int DoffNo = 1;
+            string itemYarn = "470-72-1781-JJ";
+            string lotNo = "21101";
+            for (int i = 0; i < 10; ++i)
+            {
+                int SPNo = i + 1;
+
+                for (int j = 0; j < 2; ++j)
+                {
+                    var inst = new YarnLoadingItem();
+                    inst.DoffNo = DoffNo.ToString();
+                    inst.ItemYarn = itemYarn;
+                    inst.LotNo = lotNo;
+                    inst.SPNo = SPNo;
+                    inst.DeckNo = j + 1;
+                    rets.Add(inst);
+                }
+            }
+
+            return rets;
+        }
+    }
+
     public class RawMaterialSheetItem : NInpc
     {
         #region Public Properties
