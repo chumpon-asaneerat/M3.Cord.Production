@@ -78,6 +78,9 @@
       <DependentUpon>WareHouseReceiveYarnPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\SignInService.cs" />
+    <Compile Include="Windows\YarnTwistRecordSheetWindow.xaml.cs">
+      <DependentUpon>YarnTwistRecordSheetWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\_V1\FirstTwist\YarnLoadingWindow.xaml.cs">
       <DependentUpon>YarnLoadingWindow.xaml</DependentUpon>
     </Compile>
@@ -327,6 +330,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </None>
+    <Page Include="Windows\YarnTwistRecordSheetWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\_V1\FirstTwist\YarnLoadingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
