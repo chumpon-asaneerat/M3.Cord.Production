@@ -197,6 +197,12 @@ namespace M3.Cord
                 get { return GetWindow<YarnLoadingWindow>(); }
             }
 
+            /// <summary>Gets Yarn Twist Record Sheet Window.</summary>
+            public static YarnTwistRecordSheetWindow YarnTwistRecordSheet
+            {
+                get { return GetWindow<YarnTwistRecordSheetWindow>(); }
+            }
+
             #endregion
         }
     }

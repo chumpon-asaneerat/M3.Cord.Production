@@ -88,6 +88,17 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void cmdCoreCheck_Click(object sender, RoutedEventArgs e)
+        {
+            if (null == selectedMC)
+                return;
+            var mc = selectedMC;
+
+            var win = M3CordApp.Windows.YarnTwistRecordSheet;
+            win.Setup(mc);
+            if (win.ShowDialog() == false) return;
+        }
+
         #endregion
 
         #region ListBox Handlers

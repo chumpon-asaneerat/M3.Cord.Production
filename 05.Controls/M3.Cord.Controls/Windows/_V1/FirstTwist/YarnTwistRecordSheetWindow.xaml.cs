@@ -36,9 +36,23 @@ namespace M3.Cord.Windows
 
         #endregion
 
+        #region Internal Variables
+
         private FirstTwistMC _mc;
 
+        #endregion
+
         #region Button Handlers
+
+        private void cmdOK_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+
+        private void cmdCancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
 
         #endregion
 

@@ -36,7 +36,11 @@ namespace M3.Cord.Windows
 
         #endregion
 
+        #region Internal Variables
+
         private List<YarnLoadingItem> yarnLoadingItems = new List<YarnLoadingItem>();
+
+        #endregion
 
         #region Button Handlers
 

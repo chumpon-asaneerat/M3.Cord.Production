@@ -11,7 +11,7 @@
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
         Height="500"
-        Width="1000">
+        Width="1200">
     <Window.Resources>
         <!--  PAGE TITLE  -->
         <sys:String x:Key="PageTitle">Actual Yarn Twist Record Sheet (ใบบันทึกสภาวะการตีเกลียว)</sys:String>
@@ -147,11 +147,138 @@
                                         Margin="1"
                                         ClipToBounds="True">
                                     <DockPanel LastChildFill="True">
-                                        <StackPanel Orientation="Vertical" DockPanel.Dock="Left">
-                                            <TextBlock Text="BB No." />
+                                        <!--  BB No  -->
+                                        <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    Width="100">
+                                            <TextBlock Text="BB No."
+                                                       Foreground="{StaticResource NavyBrush}"
+                                                       FontSize="{StaticResource FontSize14}"
+                                                       TextAlignment="Center" />
                                             <TextBlock Text="{Binding BBNo}"
                                                        Style="{StaticResource LabelText}"
-                                                       FontSize="{StaticResource FontSize20}" />
+                                                       TextAlignment="Center"
+                                                       FontSize="{StaticResource FontSize36}" />
+                                        </StackPanel>
+                                        <!--  RAW METERIAL  -->
+                                        <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    Width="150">
+                                            <TextBlock Text="Raw Material"
+                                                       Foreground="{StaticResource NavyBrush}"
+                                                       FontSize="{StaticResource FontSize14}"
+                                                       TextAlignment="Center" />
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center"
+                                                        Margin="2">
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="ก่อน" />
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="หลัง" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <!--  CROSS YARN  -->
+                                        <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    Width="150">
+                                            <TextBlock Text="Cross Yarn"
+                                                       Foreground="{StaticResource NavyBrush}"
+                                                       FontSize="{StaticResource FontSize14}"
+                                                       TextAlignment="Center" />
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center"
+                                                        Margin="2">
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="ก่อน" />
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="หลัง" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <!--  FORM  -->
+                                        <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    Width="150">
+                                            <TextBlock Text="Form"
+                                                       Foreground="{StaticResource NavyBrush}"
+                                                       FontSize="{StaticResource FontSize14}"
+                                                       TextAlignment="Center" />
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center"
+                                                        Margin="2">
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="ก่อน" />
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="หลัง" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <!--  Keba  -->
+                                        <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    Width="150">
+                                            <TextBlock Text="Keba"
+                                                       Foreground="{StaticResource NavyBrush}"
+                                                       FontSize="{StaticResource FontSize14}"
+                                                       TextAlignment="Center" />
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center"
+                                                        Margin="2">
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="ก่อน" />
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="หลัง" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <!--  Stain  -->
+                                        <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    Width="150">
+                                            <TextBlock Text="Stain"
+                                                       Foreground="{StaticResource NavyBrush}"
+                                                       FontSize="{StaticResource FontSize14}"
+                                                       TextAlignment="Center" />
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center"
+                                                        Margin="2">
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="ก่อน" />
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="หลัง" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <!--  Paper Tube  -->
+                                        <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    Width="150">
+                                            <TextBlock Text="Paper Tube"
+                                                       Foreground="{StaticResource NavyBrush}"
+                                                       FontSize="{StaticResource FontSize14}"
+                                                       TextAlignment="Center" />
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center"
+                                                        Margin="2">
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="ก่อน" />
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="หลัง" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <!--  Yarn No  -->
+                                        <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    Width="150">
+                                            <TextBlock Text="Yarn No."
+                                                       Foreground="{StaticResource NavyBrush}"
+                                                       FontSize="{StaticResource FontSize14}"
+                                                       TextAlignment="Center" />
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center"
+                                                        Margin="2">
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="ก่อน" />
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="หลัง" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <!--  BB Mark  -->
+                                        <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    Width="150">
+                                            <TextBlock Text="BB Mark"
+                                                       Foreground="{StaticResource NavyBrush}"
+                                                       FontSize="{StaticResource FontSize14}"
+                                                       TextAlignment="Center" />
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center"
+                                                        Margin="2">
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="ก่อน" />
+                                                <CheckBox Style="{StaticResource CommonCheckBox}" Content="หลัง" />
+                                            </StackPanel>
                                         </StackPanel>
                                         <Grid />
                                     </DockPanel>
