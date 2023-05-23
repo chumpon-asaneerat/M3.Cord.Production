@@ -54,10 +54,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\NPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\NPageHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -126,6 +122,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\Controls\NPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,9 +142,7 @@
     </Compile>
     <Compile Include="Controls\Utils\AttachProperties\FocusOptions.cs" />
     <Compile Include="Controls\Utils\AttachProperties\FontAwesomeOptions.cs" />
-    <Compile Include="Pages\NPage.xaml.cs">
-      <DependentUpon>NPage.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Pages\NPage.cs" />
     <Compile Include="Pages\NPageHeader.xaml.cs">
       <DependentUpon>NPageHeader.xaml</DependentUpon>
     </Compile>

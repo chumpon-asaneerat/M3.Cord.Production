@@ -3,11 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:ctrl="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <ctrl:NPage PageTitle="Test">
-        <Button Content="Click Me" />
-    </ctrl:NPage>
+    <page:NPage PageTitle="Test">
+        <DockPanel LastChildFill="True">
+            <DockPanel DockPanel.Dock="Bottom" Height="40">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <ctrl:FontAwesomeButton x:Name="cmdAdd"
+                                            IconType="Add"
+                                            Text="Add" 
+                                            Click="cmdAdd_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                    <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                            IconType="Back"
+                                            Text="Back" 
+                                            Click="cmdBack_Click"/>
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <Grid />
+        </DockPanel>
+    </page:NPage>
 </UserControl>
