@@ -53,13 +53,7 @@
                     <DockPanel LastChildFill="True"
                                DockPanel.Dock="Bottom"
                                Height="30">
-                        <ctrl:ClipboardOperationButton IconType="None"
-                                                       Text="Cut"
-                                                       DockPanel.Dock="Left"
-                                                       Width="150" />
-                        <ctrl:ExcelOperationButton IconType="Export"
-                                                   DockPanel.Dock="Left"
-                                                   Width="150" />
+                        <ctrl:FontAwesomeButton />
                         <Grid />
                     </DockPanel>
                     <!--

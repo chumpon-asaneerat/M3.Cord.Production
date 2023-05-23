@@ -34,7 +34,7 @@
                            HorizontalAlignment="Stretch"
                            VerticalAlignment="Stretch"
                            DockPanel.Dock="Bottom">
-                    <ctrl:DialogOperationButton x:Name="cmdOk"
+                    <ctrl:FontAwesomeButton x:Name="cmdOk"
                                                 DockPanel.Dock="Right"
                                                 Margin="10,0"
                                                 IconType="Ok"
@@ -44,7 +44,7 @@
                                                 Width="160"
                                                 Height="35"
                                                 Click="cmdOk_Click" />
-                    <ctrl:DialogOperationButton x:Name="cmdCancel"
+                    <ctrl:FontAwesomeButton x:Name="cmdCancel"
                                                 Margin="10,0"
                                                 DockPanel.Dock="Left"
                                                 IconType="Cancel"

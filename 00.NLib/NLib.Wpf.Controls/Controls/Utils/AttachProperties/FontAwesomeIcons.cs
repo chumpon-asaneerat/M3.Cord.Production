@@ -1,7 +1,6 @@
 ﻿#region Using
 
 using System;
-using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -9,38 +8,7 @@ using System.Windows.Media;
 
 #endregion
 
-namespace M3.Cord.Controls
-{
-    #region FontAwesome Enum
-
-    /// <summary>
-    /// The FontAwesomeIcon Enum.
-    /// </summary>
-    public enum FontAwesomeIcon
-    {
-        None,
-        Home,
-        Close,
-        Add,
-        Edit,
-        Save,
-        Delete,
-        Search,
-        Scan,
-        Refresh,
-        Import,
-        Export,
-        Copy,
-        Print,
-        Preview,
-        Ok,
-        Cancel
-    }
-
-    #endregion
-}
-
-namespace M3.Cord.Controls.Utils
+namespace NLib.Wpf.Controls.Utils
 {
     #region FontAwesomeOptions
 
@@ -63,8 +31,8 @@ namespace M3.Cord.Controls.Utils
         /// </summary>
         /// <param name="obj">The target object.</param>
         /// <returns>Returns current proeprty value.</returns>
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(TextBlock))]
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         public static FontAwesomeIcon GetIconType(DependencyObject obj)
         {
             return (FontAwesomeIcon)obj.GetValue(IconTypeProperty);
@@ -88,6 +56,8 @@ namespace M3.Cord.Controls.Utils
             if (null != obj && obj is TextBlock)
             {
                 TextBlock ctrl = obj as TextBlock;
+                if (null == ctrl) return;
+
                 string sVal = (null != e.NewValue) ? e.NewValue.ToString() : null;
                 FontAwesomeIcon val;
                 try
@@ -103,13 +73,15 @@ namespace M3.Cord.Controls.Utils
                 Style style = null;
                 switch (val)
                 {
-                    case FontAwesomeIcon.Home:
-                        style = (Style)Application.Current.Resources["fa-home"];
+                    case FontAwesomeIcon.Cut:
+                        style = (Style)Application.Current.Resources["fa-cut"];
                         break;
-                    case FontAwesomeIcon.Close:
-                        style = (Style)Application.Current.Resources["fa-close"];
+                    case FontAwesomeIcon.Copy:
+                        style = (Style)Application.Current.Resources["fa-copy"];
                         break;
-
+                    case FontAwesomeIcon.Paste:
+                        style = (Style)Application.Current.Resources["fa-paste"];
+                        break;
                     case FontAwesomeIcon.Add:
                         style = (Style)Application.Current.Resources["fa-addnew"];
                         break;
@@ -122,44 +94,49 @@ namespace M3.Cord.Controls.Utils
                     case FontAwesomeIcon.Delete:
                         style = (Style)Application.Current.Resources["fa-remove"];
                         break;
-
-                    case FontAwesomeIcon.Import:
-                        style = (Style)Application.Current.Resources["fa-import"];
-                        break;
-                    case FontAwesomeIcon.Export:
-                        style = (Style)Application.Current.Resources["fa-export"];
-                        break;
-
                     case FontAwesomeIcon.Search:
                         style = (Style)Application.Current.Resources["fa-search"];
-                        break;
-                    case FontAwesomeIcon.Scan:
-                        style = (Style)Application.Current.Resources["fa-scan"];
                         break;
                     case FontAwesomeIcon.Refresh:
                         style = (Style)Application.Current.Resources["fa-refresh"];
                         break;
-
-                    case FontAwesomeIcon.Copy:
-                        style = (Style)Application.Current.Resources["fa-copy"];
-                        break;
-
                     case FontAwesomeIcon.Print:
                         style = (Style)Application.Current.Resources["fa-print"];
                         break;
                     case FontAwesomeIcon.Preview:
                         style = (Style)Application.Current.Resources["fa-home"];
                         break;
-
+                    case FontAwesomeIcon.Home:
+                        style = (Style)Application.Current.Resources["fa-home"];
+                        break;
+                    case FontAwesomeIcon.Back:
+                        style = (Style)Application.Current.Resources["fa-goback"];
+                        break;
+                    case FontAwesomeIcon.Close:
+                        style = (Style)Application.Current.Resources["fa-close"];
+                        break;
+                    case FontAwesomeIcon.Import:
+                        style = (Style)Application.Current.Resources["fa-import"];
+                        break;
+                    case FontAwesomeIcon.Export:
+                        style = (Style)Application.Current.Resources["fa-export"];
+                        break;
                     case FontAwesomeIcon.Ok:
                         style = (Style)Application.Current.Resources["fa-ok"];
                         break;
                     case FontAwesomeIcon.Cancel:
                         style = (Style)Application.Current.Resources["fa-cancel"];
                         break;
+                    case FontAwesomeIcon.Yes:
+                        style = (Style)Application.Current.Resources["fa-yes"];
+                        break;
+                    case FontAwesomeIcon.No:
+                        style = (Style)Application.Current.Resources["fa-no"];
+                        break;
                     default:
                         {
-                            // FontAwesomeIcon.None
+                            // None
+                            ctrl.Visibility = Visibility.Collapsed;
                         }
                         break;
                 }
@@ -167,6 +144,7 @@ namespace M3.Cord.Controls.Utils
                 if (null != style)
                 {
                     ctrl.Style = style;
+                    ctrl.Visibility = Visibility.Visible;
                 }
             }
         }

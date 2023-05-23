@@ -62,37 +62,37 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\_v1\G4\G4IssueRawMaterialPage.xaml.cs">
+    <None Include="Pages\_v1\G4\G4IssueRawMaterialPage.xaml.cs">
       <DependentUpon>G4IssueRawMaterialPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\_v1\G4\G4StockPage.xaml.cs">
+    </None>
+    <None Include="Pages\_v1\G4\G4StockPage.xaml.cs">
       <DependentUpon>G4StockPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\_v1\G4\G4ReceiveRawMaterialPage.xaml.cs">
+    </None>
+    <None Include="Pages\_v1\G4\G4ReceiveRawMaterialPage.xaml.cs">
       <DependentUpon>G4ReceiveRawMaterialPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\_v1\Warehouse\WarehousePlanningPage.xaml.cs">
+    </None>
+    <None Include="Pages\_v1\Warehouse\WarehousePlanningPage.xaml.cs">
       <DependentUpon>WarehousePlanningPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\_v1\Warehouse\WareHouseReceiveYarnPage.xaml.cs">
+    </None>
+    <None Include="Pages\_v1\Warehouse\WareHouseReceiveYarnPage.xaml.cs">
       <DependentUpon>WareHouseReceiveYarnPage.xaml</DependentUpon>
-    </Compile>
+    </None>
     <Compile Include="Services\SignInService.cs" />
-    <Compile Include="Windows\_V1\FirstTwist\ProductionConditionSheetWindow.xaml.cs">
+    <None Include="Windows\_V1\FirstTwist\ProductionConditionSheetWindow.xaml.cs">
       <DependentUpon>ProductionConditionSheetWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\_V1\FirstTwist\YarnTwistRecordSheetWindow.xaml.cs">
+    </None>
+    <None Include="Windows\_V1\FirstTwist\YarnTwistRecordSheetWindow.xaml.cs">
       <DependentUpon>YarnTwistRecordSheetWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\_V1\FirstTwist\YarnLoadingWindow.xaml.cs">
+    </None>
+    <None Include="Windows\_V1\FirstTwist\YarnLoadingWindow.xaml.cs">
       <DependentUpon>YarnLoadingWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\_V1\FirstTwist\ChooseCordProductWindow.xaml.cs">
+    </None>
+    <None Include="Windows\_V1\FirstTwist\ChooseCordProductWindow.xaml.cs">
       <DependentUpon>ChooseCordProductWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\_V1\CordWarehouse\CordProcuctPlanningWindow.xaml.cs">
+    </None>
+    <None Include="Windows\_V1\CordWarehouse\CordProcuctPlanningWindow.xaml.cs">
       <DependentUpon>CordProcuctPlanningWindow.xaml</DependentUpon>
-    </Compile>
+    </None>
     <Compile Include="Windows\MessageBox\MessageBoxOKCancelWindow.xaml.cs">
       <DependentUpon>MessageBoxOKCancelWindow.xaml</DependentUpon>
     </Compile>
@@ -102,35 +102,19 @@
     <Compile Include="Windows\SignIn\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\_v1\CordWarehouse\CordPlanningPage.xaml.cs">
+    <None Include="Pages\_v1\CordWarehouse\CordPlanningPage.xaml.cs">
       <DependentUpon>CordPlanningPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\_v1\CordWarehouse\CordReceiveYarnPage.xaml.cs">
+    </None>
+    <None Include="Pages\_v1\CordWarehouse\CordReceiveYarnPage.xaml.cs">
       <DependentUpon>CordReceiveYarnPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\_v1\FirstTwist\FirstTwistMCPage.xaml.cs">
+    </None>
+    <None Include="Pages\_v1\FirstTwist\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
-    </Compile>
-    <None Include="Pages\_V0\G4\G4StockPageV0.xaml.cs">
-      <DependentUpon>G4StockPageV0.xaml</DependentUpon>
     </None>
-    <Compile Include="Pages\Menu\CordMainMenuPage.xaml.cs">
+    <None Include="Pages\Menu\CordMainMenuPage.xaml.cs">
       <DependentUpon>CordMainMenuPage.xaml</DependentUpon>
-    </Compile>
-    <None Include="Pages\_V0\G4\G4IssueRawMaterialPageV0.xaml.cs">
-      <DependentUpon>G4IssueRawMaterialPageV0.xaml</DependentUpon>
     </None>
-    <None Include="Pages\_V0\G4\G4ReceiveRawMaterialPageV0.xaml.cs">
-      <DependentUpon>G4ReceiveRawMaterialPageV0.xaml</DependentUpon>
-    </None>
-    <Compile Include="Pages\_V0\Samples\SamplePage.xaml.cs">
-      <DependentUpon>SamplePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Services\M3CordApp.cs" />
-    <Compile Include="Utils\AttachProperties\FontAwesomeIconAttachProperties.cs" />
-    <Compile Include="Utils\Converter\IsLastItemConverter.cs" />
-    <Compile Include="Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
-    <Compile Include="Utils\Converter\StringToNumberConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -144,23 +128,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Windows\_V1\G4\G4ReceiveYarnWindowV0.xaml.cs">
+    <None Include="Windows\_V1\G4\G4ReceiveYarnWindowV0.xaml.cs">
       <DependentUpon>G4ReceiveYarnWindowV0.xaml</DependentUpon>
-    </Compile>
+    </None>
     <None Include="Windows\_V1\Sample\SampleWindow.xaml.cs">
       <DependentUpon>SampleWindow.xaml</DependentUpon>
-    </None>
-    <None Include="Windows\_V0\SignIn\SignInWindowV0.xaml.cs">
-      <DependentUpon>SignInWindowV0.xaml</DependentUpon>
     </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Fonts\FontAwesome.otf" />
-    <Resource Include="Fonts\puanpian.ttf" />
-    <Resource Include="Fonts\THSarabun.ttf" />
-    <Resource Include="Fonts\THSarabunNew.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -205,163 +182,71 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\_v1\CordWarehouse\CordPlanningPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\_v1\CordWarehouse\CordReceiveYarnPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\_v1\FirstTwist\FirstTwistMCPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <None Include="Pages\_V0\G4\G4StockPageV0.xaml">
+    <None Include="Pages\_v1\CordWarehouse\CordPlanningPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <Page Include="Pages\_v1\G4\G4IssueRawMaterialPage.xaml">
+    <None Include="Pages\_v1\CordWarehouse\CordReceiveYarnPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\_v1\G4\G4StockPage.xaml">
+    </None>
+    <None Include="Pages\_v1\FirstTwist\FirstTwistMCPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\_v1\G4\G4ReceiveRawMaterialPage.xaml">
+    </None>
+    <None Include="Pages\_v1\G4\G4IssueRawMaterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
+    </None>
+    <None Include="Pages\_v1\G4\G4StockPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Include="Pages\_v1\G4\G4ReceiveRawMaterialPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <Page Include="Pages\Menu\CordMainMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="Pages\_V0\G4\G4IssueRawMaterialPageV0.xaml">
+    <None Include="Pages\_v1\Warehouse\WarehousePlanningPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Include="Pages\_V0\G4\G4ReceiveRawMaterialPageV0.xaml">
+    <None Include="Pages\_v1\Warehouse\WareHouseReceiveYarnPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </None>
-    <Page Include="Pages\_v1\Warehouse\WarehousePlanningPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\_v1\Warehouse\WareHouseReceiveYarnPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\_V0\Samples\SamplePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <None Include="Themes\_V0\CommonStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.CheckedBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.ComboBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.Control.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.Expander.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.FontStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.ImageButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.InlineButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.ListBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.ListView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.PasswordBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.RadioButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.TextBlock.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.TextBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.TreeView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.UserControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Themes\_V0\Common\CommonStyle.Window.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </None>
     <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="Themes\_V0\GroupMenuStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <None Include="Windows\_V1\FirstTwist\ProductionConditionSheetWindow.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </None>
-    <Page Include="Windows\_V1\FirstTwist\ProductionConditionSheetWindow.xaml">
+    <None Include="Windows\_V1\FirstTwist\YarnTwistRecordSheetWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\_V1\FirstTwist\YarnTwistRecordSheetWindow.xaml">
+    </None>
+    <None Include="Windows\_V1\FirstTwist\YarnLoadingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\_V1\FirstTwist\YarnLoadingWindow.xaml">
+    </None>
+    <None Include="Windows\_V1\FirstTwist\ChooseCordProductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\_V1\FirstTwist\ChooseCordProductWindow.xaml">
+    </None>
+    <None Include="Windows\_V1\CordWarehouse\CordProcuctPlanningWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\_V1\CordWarehouse\CordProcuctPlanningWindow.xaml">
+    </None>
+    <None Include="Windows\_V1\G4\G4ReceiveYarnWindowV0.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\_V1\G4\G4ReceiveYarnWindowV0.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    </None>
     <None Include="Windows\_V1\Sample\SampleWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Windows\_V0\SignIn\SignInWindowV0.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
@@ -378,9 +263,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Windows\_V0\G4\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
