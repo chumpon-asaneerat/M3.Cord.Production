@@ -25,14 +25,17 @@ namespace NLib.Wpf.Pages
     /// <summary>
     /// The NPage Control
     /// </summary>
+    [TemplatePart(Name = "PART_CaptionBorder", Type = typeof(Border))]
+    [TemplatePart(Name = "PART_CaptionText", Type = typeof(TextBlock))]
+    [TemplatePart(Name = "PART_WorkAreaContent", Type = typeof(ContentPresenter))]
     [ContentProperty(nameof(WorkArea))]
     public class NPage : Control
     {
         #region Internal Variables
 
-        private Border captionBorder;
-        private TextBlock captionTextBlock;
-        private ContentPresenter contentPresenter;
+        protected Border CaptionBorder { get; private set; }
+        protected TextBlock CaptionTextBlock { get; private set; }
+        protected ContentPresenter WorkAreaContentPresenter { get; private set; }
 
         #endregion
 
@@ -59,9 +62,9 @@ namespace NLib.Wpf.Pages
 
         public override void OnApplyTemplate()
         {
-            captionBorder = Template.FindName("PART_CaptionBorder", this) as Border;
-            captionTextBlock = Template.FindName("PART_CaptionText", this) as TextBlock;
-            contentPresenter = Template.FindName("PART_WorkAreaContent", this) as ContentPresenter;
+            CaptionBorder = Template.FindName("PART_CaptionBorder", this) as Border;
+            CaptionTextBlock = Template.FindName("PART_CaptionText", this) as TextBlock;
+            WorkAreaContentPresenter = Template.FindName("PART_WorkAreaContent", this) as ContentPresenter;
 
             base.OnApplyTemplate();
         }

@@ -35,25 +35,25 @@
                            VerticalAlignment="Stretch"
                            DockPanel.Dock="Bottom">
                     <ctrl:FontAwesomeButton x:Name="cmdOk"
-                                                DockPanel.Dock="Right"
-                                                Margin="10,0"
-                                                IconType="Ok"
-                                                Text="Ok"
-                                                FontSize="{StaticResource FontSize18}"
-                                                FontWeight="Bold"
-                                                Width="160"
-                                                Height="35"
-                                                Click="cmdOk_Click" />
+                                            DockPanel.Dock="Right"
+                                            Margin="10,0"
+                                            IconType="Ok"
+                                            Text="Ok"
+                                            FontSize="{StaticResource FontSize18}"
+                                            FontWeight="Bold"
+                                            Width="160"
+                                            Height="35"
+                                            Click="cmdOk_Click" />
                     <ctrl:FontAwesomeButton x:Name="cmdCancel"
-                                                Margin="10,0"
-                                                DockPanel.Dock="Left"
-                                                IconType="Cancel"
-                                                Text="Cancel"
-                                                FontSize="{StaticResource FontSize18}"
-                                                FontWeight="Bold"
-                                                Width="160"
-                                                Height="35"
-                                                Click="cmdCancel_Click" />
+                                            Margin="10,0"
+                                            DockPanel.Dock="Left"
+                                            IconType="Cancel"
+                                            Text="Cancel"
+                                            FontSize="{StaticResource FontSize18}"
+                                            FontWeight="Bold"
+                                            Width="160"
+                                            Height="35"
+                                            Click="cmdCancel_Click" />
                 </DockPanel>
                 <!--  WORK AREA  -->
                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
