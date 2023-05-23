@@ -35,14 +35,14 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Stretch"
                            DockPanel.Dock="Bottom">
-                    <ctrl:DialogOperationButton x:Name="cmdOk"
-                                                IconType="Ok"
-                                                Text="Ok"
-                                                FontSize="{StaticResource FontSize18}"
-                                                FontWeight="Bold"
-                                                Width="160"
-                                                Height="35"
-                                                Click="cmdOk_Click" />
+                    <ctrl:FontAwesomeButton x:Name="cmdOk"
+                                            IconType="Ok"
+                                            Text="Ok"
+                                            FontSize="{StaticResource FontSize18}"
+                                            FontWeight="Bold"
+                                            Width="160"
+                                            Height="35"
+                                            Click="cmdOk_Click" />
                 </DockPanel>
                 <!--  WORK AREA  -->
                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center">

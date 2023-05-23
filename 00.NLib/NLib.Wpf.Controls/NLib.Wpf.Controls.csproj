@@ -140,9 +140,8 @@
     <Compile Include="Controls\InlineButtons\FontAwesomeButton.xaml.cs">
       <DependentUpon>FontAwesomeButton.xaml</DependentUpon>
     </Compile>
-    <None Include="Controls\Converters\EnumBooleanConverter.cs" />
     <Compile Include="Controls\Utils\AttachProperties\FocusOptions.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\FontAwesomeIcons.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\FontAwesomeOptions.cs" />
     <Compile Include="Pages\NPage.xaml.cs">
       <DependentUpon>NPage.xaml</DependentUpon>
     </Compile>

@@ -7,7 +7,7 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <ctrl:NPage PageTitle="Test" ShowButtons="Home">
+    <ctrl:NPage PageTitle="Test">
         <Button Content="Click Me" />
     </ctrl:NPage>
 </UserControl>

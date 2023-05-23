@@ -31,8 +31,8 @@ namespace NLib.Wpf.Controls.Utils
         /// </summary>
         /// <param name="obj">The target object.</param>
         /// <returns>Returns current proeprty value.</returns>
-        [AttachedPropertyBrowsableForType(typeof(TextBlock))]
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(TextBlock))]
         public static FontAwesomeIcon GetIconType(DependencyObject obj)
         {
             return (FontAwesomeIcon)obj.GetValue(IconTypeProperty);

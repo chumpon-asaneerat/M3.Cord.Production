@@ -111,9 +111,9 @@
     <None Include="Pages\_v1\FirstTwist\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
     </None>
-    <None Include="Pages\Menu\CordMainMenuPage.xaml.cs">
+    <Compile Include="Pages\Menu\CordMainMenuPage.xaml.cs">
       <DependentUpon>CordMainMenuPage.xaml</DependentUpon>
-    </None>
+    </Compile>
     <Compile Include="Services\M3CordApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

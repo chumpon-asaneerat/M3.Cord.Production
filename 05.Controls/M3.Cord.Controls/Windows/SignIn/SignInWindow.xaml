@@ -27,11 +27,11 @@
                     Margin="0,5"
                     Height="40"
                     HorizontalAlignment="Center">
-            <ctrl:InlineButton IconType="Ok"
-                               Text="Ok"
-                               Height="35"
-                               FontWeight="Bold"
-                               Click="cmdOk_Click" />
+            <ctrl:FontAwesomeButton IconType="Ok"
+                                    Text="Ok"
+                                    Height="35"
+                                    FontWeight="Bold"
+                                    Click="cmdOk_Click" />
         </StackPanel>
         <!--  WORK AREA  -->
         <DockPanel LastChildFill="True" Margin="20">

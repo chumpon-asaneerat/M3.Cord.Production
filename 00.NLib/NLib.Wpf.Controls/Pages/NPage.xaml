@@ -53,7 +53,13 @@
                     <DockPanel LastChildFill="True"
                                DockPanel.Dock="Bottom"
                                Height="30">
-                        <ctrl:FontAwesomeButton />
+                        <Button Style="{StaticResource InlineButton}" DockPanel.Dock="Left">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource fa-close}" />
+                                <TextBlock Text="Sample" />
+                            </StackPanel>
+                        </Button>
+                        <ctrl:FontAwesomeButton DockPanel.Dock="Left" IconType="Add" Text="Sample"/>
                         <Grid />
                     </DockPanel>
                     <!--

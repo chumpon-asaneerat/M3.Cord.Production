@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:util="clr-namespace:NLib.Wpf.Controls.Utils"
              x:Name="_ThisCtrl"
              d:DesignHeight="40"
              d:DesignWidth="160"
@@ -18,17 +19,17 @@
     </UserControl.Resources>
     <Button x:Name="cmd"
             Style="{StaticResource InlineButton}"
-            Width="{Binding Path=ActualWidth, ElementName=_ThisCtrl}"
-            Height="{Binding Path=ActualHeight, ElementName=_ThisCtrl}"
+            Width="{Binding ElementName=_ThisCtrl, Path=ActualWidth}"
+            Height="{Binding ElementName=_ThisCtrl, Path=ActualHeight}"
             Click="cmd_Click">
         <StackPanel Orientation="Horizontal"
                     VerticalAlignment="Center"
                     Margin="1,0">
-            <TextBlock FontSize="{Binding Path=FontSize, ElementName=_ThisCtrl}" />
+            <TextBlock util:FontAwesomeOptions.IconType="{Binding ElementName=_ThisCtrl, Path=IconType}" FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
             <TextBlock Margin="2,0"
-                       FontFamily="{Binding Path=FontFamily, ElementName=_ThisCtrl}"
-                       FontSize="{Binding Path=FontSize, ElementName=_ThisCtrl}"
-                       Text="{Binding Path=Text, ElementName=_ThisCtrl}" />
+                       FontFamily="{Binding ElementName=_ThisCtrl, Path=FontFamily}"
+                       FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}"
+                       Text="{Binding ElementName=_ThisCtrl, Path=Text}" />
         </StackPanel>
     </Button>
 </UserControl>

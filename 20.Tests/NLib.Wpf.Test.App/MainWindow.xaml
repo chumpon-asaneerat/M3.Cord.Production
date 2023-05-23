@@ -47,22 +47,17 @@
                             Style="{StaticResource InlineButton}"
                             Height="35"
                             Width="120" />
-                    <nctrl:InlineButton IconType="Home"
-                                        FontSize="18"
-                                        Text="Button2"
-                                        Height="35"
-                                        Width="120" />
+                    <nctrl:FontAwesomeButton IconType="Home"
+                                             FontSize="18"
+                                             Text="Button2"
+                                             Height="35"
+                                             Width="120" />
                     <Button Content="Button3"
                             Style="{StaticResource InlineButton}"
                             Height="35"
                             Width="150" />
                 </StackPanel>
             </StackPanel>
-            <nctrl:NavigatorBar DockPanel.Dock="Bottom" 
-                                ShowButtons="Add,Save,Delete,Home"
-                                Height="45" 
-                                FontSize="18"
-                                NavigatorButtonClick="NavigatorBar_NavigatorButtonClick"/>
             <ListBox x:Name="lst"
                      DockPanel.Dock="Left"
                      Width="100"
