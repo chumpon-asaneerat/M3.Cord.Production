@@ -6,54 +6,6 @@ using System;
 
 namespace NLib.Wpf.Controls
 {
-    #region ExcelOperationEnum and Flags
-
-    /// <summary>
-    /// The Excel Operation Enum.
-    /// </summary>
-    public enum ExcelOperationEnum : uint
-    {
-        None = 0x00000000,
-        Import = 0x00000001,
-        Export = 0x00000002
-    }
-    /// <summary>
-    /// The Excel Operation Flags.
-    /// </summary>
-    [Flags]
-    public enum ExcelOperationFlags : uint
-    {
-        None = 0x00000000,
-        Import = 0x00000001,
-        Export = 0x00000002
-    }
-
-    #endregion
-
-    #region PrintOperationEnum and Flags
-
-    /// <summary>
-    /// The Print Operation Enum.
-    /// </summary>
-    public enum PrintOperationEnum : uint
-    {
-        None = 0x00000000,
-        Print = 0x00000001,
-        Preview = 0x00000002
-    }
-    /// <summary>
-    /// The Print Operation Flags.
-    /// </summary>
-    [Flags]
-    public enum PrintOperationFlags : uint
-    {
-        None = 0x00000000,
-        Print = 0x00000001,
-        Preview = 0x00000002
-    }
-
-    #endregion
-
     #region DialogOptionEnum and Flags
 
     /// <summary>
@@ -78,30 +30,6 @@ namespace NLib.Wpf.Controls
         No = 0x00000002,
         Ok = 0x00000004,
         Cancel = 0x00000008
-    }
-
-    #endregion
-
-    #region SearchOperationEnum and Flags
-
-    /// <summary>
-    /// The Search Operation Enum.
-    /// </summary>
-    public enum SearchOperationEnum : uint
-    {
-        None = 0x00000000,
-        Search = 0x00000001,
-        Refresh = 0x00000002
-    }
-    /// <summary>
-    /// The Search Operation Flags.
-    /// </summary>
-    [Flags]
-    public enum SearchOperationFlags : uint
-    {
-        None = 0x00000000,
-        Search = 0x00000001,
-        Refresh = 0x00000002
     }
 
     #endregion

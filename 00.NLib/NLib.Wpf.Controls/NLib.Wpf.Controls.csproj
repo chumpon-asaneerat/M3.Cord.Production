@@ -168,8 +168,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Enums\InlineButtons\ExcelOperations.cs" />
     <Compile Include="Controls\Enums\InlineButtons\PageNavigations.cs" />
-    <Compile Include="Controls\Enums\InlineButtons\RecordOps.cs" />
+    <Compile Include="Controls\Enums\InlineButtons\PrintOperations.cs" />
+    <Compile Include="Controls\Enums\InlineButtons\RecordOperations.cs" />
+    <Compile Include="Controls\Enums\InlineButtons\SearchOperations.cs" />
     <Compile Include="Controls\InlineButton\ClipboardOperationButton.xaml.cs">
       <DependentUpon>ClipboardOperationButton.xaml</DependentUpon>
     </Compile>

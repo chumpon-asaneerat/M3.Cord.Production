@@ -7,12 +7,12 @@ using System;
 namespace NLib.Wpf.Controls
 {
     /// <summary>
-    /// The Excel Option Enum.
+    /// The Search Operation Enum.
     /// </summary>
-    public enum ExcelOptions : uint
+    public enum SearchOperations : uint
     {
         None = 0x00000000,
-        Import = 0x00000001,
-        Export = 0x00000002
+        Search = 0x00000001,
+        Refresh = 0x00000002
     }
 }
