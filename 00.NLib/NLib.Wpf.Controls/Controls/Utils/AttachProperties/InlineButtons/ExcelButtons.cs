@@ -11,21 +11,21 @@ using System.Windows.Media;
 
 namespace NLib.Wpf.Controls.Utils
 {
-    #region DialogOptionOptions
+    #region ExcelOperationOptions
 
     /// <summary>
-    /// The DialogOperationOptions class.
+    /// The ExcelOperationOptions class.
     /// </summary>
-    public class DialogOperationOptions
+    public class ExcelButtons
     {
         #region IconType
 
         /// <summary>The IconType variable</summary>
         public static readonly DependencyProperty IconTypeProperty = DependencyProperty.RegisterAttached(
             "IconType",
-            typeof(DialogOptionEnum),
-            typeof(DialogOperationOptions),
-            new PropertyMetadata(DialogOptionEnum.None, IconTypePropertyChanged));
+            typeof(ExcelOperations),
+            typeof(ExcelButtons),
+            new PropertyMetadata(ExcelOperations.None, IconTypePropertyChanged));
 
         /// <summary>
         /// Gets IconType Value.
@@ -34,16 +34,16 @@ namespace NLib.Wpf.Controls.Utils
         /// <returns>Returns current proeprty value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(TextBlock))]
-        public static DialogOptionEnum GetIconType(DependencyObject obj)
+        public static ExcelOperations GetIconType(DependencyObject obj)
         {
-            return (DialogOptionEnum)obj.GetValue(IconTypeProperty);
+            return (ExcelOperations)obj.GetValue(IconTypeProperty);
         }
         /// <summary>
         /// Sets IconType Value.
         /// </summary>
         /// <param name="obj">The target object.</param>
         /// <param name="value">The new value.</param>
-        public static void SetIconType(DependencyObject obj, FontAwesomeIcon value)
+        public static void SetIconType(DependencyObject obj, ExcelOperations value)
         {
             obj.SetValue(IconTypeProperty, value);
         }
@@ -58,31 +58,25 @@ namespace NLib.Wpf.Controls.Utils
             {
                 TextBlock ctrl = obj as TextBlock;
                 string sVal = (null != e.NewValue) ? e.NewValue.ToString() : null;
-                DialogOptionEnum val;
+                ExcelOperations val;
                 try
                 {
-                    val = (string.IsNullOrEmpty(sVal)) ? DialogOptionEnum.None :
-                        (DialogOptionEnum)Enum.Parse(typeof(DialogOptionEnum), sVal);
+                    val = (string.IsNullOrEmpty(sVal)) ? ExcelOperations.None :
+                        (ExcelOperations)Enum.Parse(typeof(ExcelOperations), sVal);
                 }
                 catch (Exception)
                 {
-                    val = DialogOptionEnum.None;
+                    val = ExcelOperations.None;
                 }
 
                 Style style = null;
                 switch (val)
                 {
-                    case DialogOptionEnum.Ok:
-                        style = (Style)Application.Current.Resources["fa-ok"];
+                    case ExcelOperations.Import:
+                        style = (Style)Application.Current.Resources["fa-import"];
                         break;
-                    case DialogOptionEnum.Cancel:
-                        style = (Style)Application.Current.Resources["fa-cancel"];
-                        break;
-                    case DialogOptionEnum.Yes:
-                        style = (Style)Application.Current.Resources["fa-yes"];
-                        break;
-                    case DialogOptionEnum.No:
-                        style = (Style)Application.Current.Resources["fa-no"];
+                    case ExcelOperations.Export:
+                        style = (Style)Application.Current.Resources["fa-export"];
                         break;
                     default:
                         {

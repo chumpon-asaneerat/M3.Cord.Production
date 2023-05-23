@@ -11,21 +11,21 @@ using System.Windows.Media;
 
 namespace NLib.Wpf.Controls.Utils
 {
-    #region ClipboardOperationOptions
+    #region ClipboardButtons
 
     /// <summary>
-    /// The ClipboardOperationOptions class.
+    /// The ClipboardButtons class.
     /// </summary>
-    public class ClipboardOperationOptions
+    public class ClipboardButtons
     {
         #region IconType
 
         /// <summary>The IconType variable</summary>
         public static readonly DependencyProperty IconTypeProperty = DependencyProperty.RegisterAttached(
             "IconType",
-            typeof(ClipboardOperationEnum),
-            typeof(ClipboardOperationOptions),
-            new PropertyMetadata(ClipboardOperationEnum.None, IconTypePropertyChanged));
+            typeof(ClipboardOperations),
+            typeof(ClipboardButtons),
+            new PropertyMetadata(ClipboardOperations.None, IconTypePropertyChanged));
 
         /// <summary>
         /// Gets IconType Value.
@@ -34,16 +34,16 @@ namespace NLib.Wpf.Controls.Utils
         /// <returns>Returns current proeprty value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(TextBlock))]
-        public static ClipboardOperationEnum GetIconType(DependencyObject obj)
+        public static ClipboardOperations GetIconType(DependencyObject obj)
         {
-            return (ClipboardOperationEnum)obj.GetValue(IconTypeProperty);
+            return (ClipboardOperations)obj.GetValue(IconTypeProperty);
         }
         /// <summary>
         /// Sets IconType Value.
         /// </summary>
         /// <param name="obj">The target object.</param>
         /// <param name="value">The new value.</param>
-        public static void SetIconType(DependencyObject obj, ClipboardOperationEnum value)
+        public static void SetIconType(DependencyObject obj, ClipboardOperations value)
         {
             obj.SetValue(IconTypeProperty, value);
         }
@@ -58,27 +58,27 @@ namespace NLib.Wpf.Controls.Utils
             {
                 TextBlock ctrl = obj as TextBlock;
                 string sVal = (null != e.NewValue) ? e.NewValue.ToString() : null;
-                ClipboardOperationEnum val;
+                ClipboardOperations val;
                 try
                 {
-                    val = (string.IsNullOrEmpty(sVal)) ? ClipboardOperationEnum.None :
-                        (ClipboardOperationEnum)Enum.Parse(typeof(ClipboardOperationEnum), sVal);
+                    val = (string.IsNullOrEmpty(sVal)) ? ClipboardOperations.None :
+                        (ClipboardOperations)Enum.Parse(typeof(ClipboardOperations), sVal);
                 }
                 catch (Exception)
                 {
-                    val = ClipboardOperationEnum.None;
+                    val = ClipboardOperations.None;
                 }
 
                 Style style = null;
                 switch (val)
                 {
-                    case ClipboardOperationEnum.Cut:
+                    case ClipboardOperations.Cut:
                         style = (Style)Application.Current.Resources["fa-cut"];
                         break;
-                    case ClipboardOperationEnum.Copy:
+                    case ClipboardOperations.Copy:
                         style = (Style)Application.Current.Resources["fa-copy"];
                         break;
-                    case ClipboardOperationEnum.Paste:
+                    case ClipboardOperations.Paste:
                         style = (Style)Application.Current.Resources["fa-paste"];
                         break;
                     default:

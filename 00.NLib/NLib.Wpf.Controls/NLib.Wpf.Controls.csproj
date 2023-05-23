@@ -66,10 +66,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\NavigatorBar\NavigatorBar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Controls\InlineButton\PageNavigationButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -168,6 +164,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Enums\InlineButtons\ClipboardOperations.cs" />
+    <Compile Include="Controls\Enums\InlineButtons\DialogNavigations.cs" />
     <Compile Include="Controls\Enums\InlineButtons\ExcelOperations.cs" />
     <Compile Include="Controls\Enums\InlineButtons\PageNavigations.cs" />
     <Compile Include="Controls\Enums\InlineButtons\PrintOperations.cs" />
@@ -180,17 +178,12 @@
     <Compile Include="Controls\InlineButton\DialogOperationButton.xaml.cs">
       <DependentUpon>DialogOperationButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Enums\InlineButtonEnumFlags.cs" />
     <Compile Include="Controls\InlineButton\ExcelOperationButton.xaml.cs">
       <DependentUpon>ExcelOperationButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\InlineButton\InlineButton.xaml.cs">
       <DependentUpon>InlineButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\NavigatorBar\NavigatorBar.xaml.cs">
-      <DependentUpon>NavigatorBar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\NavigatorBar\NavigatorButtonEvents.cs" />
     <Compile Include="Controls\InlineButton\PageNavigationButton.xaml.cs">
       <DependentUpon>PageNavigationButton.xaml</DependentUpon>
     </Compile>
@@ -203,9 +196,9 @@
     <Compile Include="Controls\InlineButton\SearchOperationButton.xaml.cs">
       <DependentUpon>SearchOperationButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\ClipboardOperationOptions.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\DialogOperationOptions.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\ExcelOperationOptions.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\ClipboardButtons.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\DialogButtons.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\ExcelButtons.cs" />
     <Compile Include="Controls\Utils\AttachProperties\InlineButtons\PageNavigationOptions.cs" />
     <Compile Include="Controls\Utils\AttachProperties\InlineButtons\PrintOperationOptions.cs" />
     <Compile Include="Controls\Utils\AttachProperties\InlineButtons\RecordOperationOptions.cs" />
@@ -230,7 +223,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ExtensionMethods\WpfWindowExtensionMethods.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\FontAwesomeOptions.cs" />
     <Compile Include="Controls\Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
     <Compile Include="Controls\Converters\IsLastItemConverter.cs" />
     <Compile Include="Controls\Converters\ShowButtonsConverter.cs" />
