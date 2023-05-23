@@ -11,10 +11,10 @@ using System.Windows.Media;
 
 namespace NLib.Wpf.Controls.Utils
 {
-    #region ExcelOperationOptions
+    #region ExcelButtons
 
     /// <summary>
-    /// The ExcelOperationOptions class.
+    /// The ExcelButtons class.
     /// </summary>
     public class ExcelButtons
     {

@@ -11,21 +11,21 @@ using System.Windows.Media;
 
 namespace NLib.Wpf.Controls.Utils
 {
-    #region PrintOperationOptions
+    #region PrintButtons
 
     /// <summary>
-    /// The PrintOperationOptions class.
+    /// The PrintButtons class.
     /// </summary>
-    public class PrintOperationOptions
+    public class PrintButtons
     {
         #region IconType
 
         /// <summary>The IconType variable</summary>
         public static readonly DependencyProperty IconTypeProperty = DependencyProperty.RegisterAttached(
             "IconType",
-            typeof(PrintOperationEnum),
-            typeof(PrintOperationOptions),
-            new PropertyMetadata(PrintOperationEnum.None, IconTypePropertyChanged));
+            typeof(PrintOperations),
+            typeof(PrintButtons),
+            new PropertyMetadata(PrintOperations.None, IconTypePropertyChanged));
 
         /// <summary>
         /// Gets IconType Value.
@@ -34,16 +34,16 @@ namespace NLib.Wpf.Controls.Utils
         /// <returns>Returns current proeprty value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(TextBlock))]
-        public static PrintOperationEnum GetIconType(DependencyObject obj)
+        public static PrintOperations GetIconType(DependencyObject obj)
         {
-            return (PrintOperationEnum)obj.GetValue(IconTypeProperty);
+            return (PrintOperations)obj.GetValue(IconTypeProperty);
         }
         /// <summary>
         /// Sets IconType Value.
         /// </summary>
         /// <param name="obj">The target object.</param>
         /// <param name="value">The new value.</param>
-        public static void SetIconType(DependencyObject obj, PrintOperationEnum value)
+        public static void SetIconType(DependencyObject obj, PrintOperations value)
         {
             obj.SetValue(IconTypeProperty, value);
         }
@@ -58,24 +58,24 @@ namespace NLib.Wpf.Controls.Utils
             {
                 TextBlock ctrl = obj as TextBlock;
                 string sVal = (null != e.NewValue) ? e.NewValue.ToString() : null;
-                PrintOperationEnum val;
+                PrintOperations val;
                 try
                 {
-                    val = (string.IsNullOrEmpty(sVal)) ? PrintOperationEnum.None :
-                        (PrintOperationEnum)Enum.Parse(typeof(PrintOperationEnum), sVal);
+                    val = (string.IsNullOrEmpty(sVal)) ? PrintOperations.None :
+                        (PrintOperations)Enum.Parse(typeof(PrintOperations), sVal);
                 }
                 catch (Exception)
                 {
-                    val = PrintOperationEnum.None;
+                    val = PrintOperations.None;
                 }
 
                 Style style = null;
                 switch (val)
                 {
-                    case PrintOperationEnum.Print:
+                    case PrintOperations.Print:
                         style = (Style)Application.Current.Resources["fa-print"];
                         break;
-                    case PrintOperationEnum.Preview:
+                    case PrintOperations.Preview:
                         style = (Style)Application.Current.Resources["fa-home"];
                         break;
                     default:

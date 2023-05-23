@@ -199,9 +199,9 @@
     <Compile Include="Controls\Utils\AttachProperties\InlineButtons\ClipboardButtons.cs" />
     <Compile Include="Controls\Utils\AttachProperties\InlineButtons\DialogButtons.cs" />
     <Compile Include="Controls\Utils\AttachProperties\InlineButtons\ExcelButtons.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\PageNavigationOptions.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\PrintOperationOptions.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\RecordOperationOptions.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\PageNaviButtons.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\PrintButtons.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\RecordButtons.cs" />
     <Compile Include="Controls\Utils\AttachProperties\InlineButtons\SearchOperationOptions.cs" />
     <Compile Include="Pages\NPage.xaml.cs">
       <DependentUpon>NPage.xaml</DependentUpon>

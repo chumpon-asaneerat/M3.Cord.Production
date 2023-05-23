@@ -11,21 +11,21 @@ using System.Windows.Media;
 
 namespace NLib.Wpf.Controls.Utils
 {
-    #region PageNavigationOptions
+    #region PageNaviButtons
 
     /// <summary>
-    /// The PageNavigationOptions class.
+    /// The PageNaviButtons class.
     /// </summary>
-    public class PageNavigationOptions
+    public class PageNaviButtons
     {
         #region IconType
 
         /// <summary>The IconType variable</summary>
         public static readonly DependencyProperty IconTypeProperty = DependencyProperty.RegisterAttached(
             "IconType",
-            typeof(PageNavigationEnum),
-            typeof(PageNavigationOptions),
-            new PropertyMetadata(PageNavigationEnum.None, IconTypePropertyChanged));
+            typeof(PageNavigations),
+            typeof(PageNaviButtons),
+            new PropertyMetadata(PageNavigations.None, IconTypePropertyChanged));
 
         /// <summary>
         /// Gets IconType Value.
@@ -34,16 +34,16 @@ namespace NLib.Wpf.Controls.Utils
         /// <returns>Returns current proeprty value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(TextBlock))]
-        public static PageNavigationEnum GetIconType(DependencyObject obj)
+        public static PageNavigations GetIconType(DependencyObject obj)
         {
-            return (PageNavigationEnum)obj.GetValue(IconTypeProperty);
+            return (PageNavigations)obj.GetValue(IconTypeProperty);
         }
         /// <summary>
         /// Sets IconType Value.
         /// </summary>
         /// <param name="obj">The target object.</param>
         /// <param name="value">The new value.</param>
-        public static void SetIconType(DependencyObject obj, PageNavigationEnum value)
+        public static void SetIconType(DependencyObject obj, PageNavigations value)
         {
             obj.SetValue(IconTypeProperty, value);
         }
@@ -58,27 +58,27 @@ namespace NLib.Wpf.Controls.Utils
             {
                 TextBlock ctrl = obj as TextBlock;
                 string sVal = (null != e.NewValue) ? e.NewValue.ToString() : null;
-                PageNavigationEnum val;
+                PageNavigations val;
                 try
                 {
-                    val = (string.IsNullOrEmpty(sVal)) ? PageNavigationEnum.None :
-                        (PageNavigationEnum)Enum.Parse(typeof(PageNavigationEnum), sVal);
+                    val = (string.IsNullOrEmpty(sVal)) ? PageNavigations.None :
+                        (PageNavigations)Enum.Parse(typeof(PageNavigations), sVal);
                 }
                 catch (Exception)
                 {
-                    val = PageNavigationEnum.None;
+                    val = PageNavigations.None;
                 }
 
                 Style style = null;
                 switch (val)
                 {
-                    case PageNavigationEnum.Home:
+                    case PageNavigations.Home:
                         style = (Style)Application.Current.Resources["fa-home"];
                         break;
-                    case PageNavigationEnum.Back:
+                    case PageNavigations.Back:
                         style = (Style)Application.Current.Resources["fa-goback"];
                         break;
-                    case PageNavigationEnum.Close:
+                    case PageNavigations.Close:
                         style = (Style)Application.Current.Resources["fa-close"];
                         break;
                     default:

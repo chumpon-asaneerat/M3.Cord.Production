@@ -11,21 +11,21 @@ using System.Windows.Media;
 
 namespace NLib.Wpf.Controls.Utils
 {
-    #region RecordOperationOptions
+    #region RecordButtons
 
     /// <summary>
     /// The RecordOperationOptions class.
     /// </summary>
-    public class RecordOperationOptions
+    public class RecordButtons
     {
         #region IconType
 
         /// <summary>The IconType variable</summary>
         public static readonly DependencyProperty IconTypeProperty = DependencyProperty.RegisterAttached(
             "IconType",
-            typeof(RecordOperationEnum),
-            typeof(RecordOperationOptions),
-            new PropertyMetadata(RecordOperationEnum.None, IconTypePropertyChanged));
+            typeof(RecordOperations),
+            typeof(RecordButtons),
+            new PropertyMetadata(RecordOperations.None, IconTypePropertyChanged));
 
         /// <summary>
         /// Gets IconType Value.
@@ -34,16 +34,16 @@ namespace NLib.Wpf.Controls.Utils
         /// <returns>Returns current proeprty value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(TextBlock))]
-        public static RecordOperationEnum GetIconType(DependencyObject obj)
+        public static RecordOperations GetIconType(DependencyObject obj)
         {
-            return (RecordOperationEnum)obj.GetValue(IconTypeProperty);
+            return (RecordOperations)obj.GetValue(IconTypeProperty);
         }
         /// <summary>
         /// Sets IconType Value.
         /// </summary>
         /// <param name="obj">The target object.</param>
         /// <param name="value">The new value.</param>
-        public static void SetIconType(DependencyObject obj, RecordOperationEnum value)
+        public static void SetIconType(DependencyObject obj, RecordOperations value)
         {
             obj.SetValue(IconTypeProperty, value);
         }
@@ -58,30 +58,30 @@ namespace NLib.Wpf.Controls.Utils
             {
                 TextBlock ctrl = obj as TextBlock;
                 string sVal = (null != e.NewValue) ? e.NewValue.ToString() : null;
-                RecordOperationEnum val;
+                RecordOperations val;
                 try
                 {
-                    val = (string.IsNullOrEmpty(sVal)) ? RecordOperationEnum.None :
-                        (RecordOperationEnum)Enum.Parse(typeof(RecordOperationEnum), sVal);
+                    val = (string.IsNullOrEmpty(sVal)) ? RecordOperations.None :
+                        (RecordOperations)Enum.Parse(typeof(RecordOperations), sVal);
                 }
                 catch (Exception)
                 {
-                    val = RecordOperationEnum.None;
+                    val = RecordOperations.None;
                 }
 
                 Style style = null;
                 switch (val)
                 {
-                    case RecordOperationEnum.Add:
+                    case RecordOperations.Add:
                         style = (Style)Application.Current.Resources["fa-addnew"];
                         break;
-                    case RecordOperationEnum.Edit:
+                    case RecordOperations.Edit:
                         style = (Style)Application.Current.Resources["fa-edit"];
                         break;
-                    case RecordOperationEnum.Save:
+                    case RecordOperations.Save:
                         style = (Style)Application.Current.Resources["fa-save"];
                         break;
-                    case RecordOperationEnum.Delete:
+                    case RecordOperations.Delete:
                         style = (Style)Application.Current.Resources["fa-remove"];
                         break;
                     default:

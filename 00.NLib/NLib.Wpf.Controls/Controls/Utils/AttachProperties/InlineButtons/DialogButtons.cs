@@ -11,10 +11,10 @@ using System.Windows.Media;
 
 namespace NLib.Wpf.Controls.Utils
 {
-    #region DialogOptionOptions
+    #region DialogButtons
 
     /// <summary>
-    /// The DialogOperationOptions class.
+    /// The DialogButtons class.
     /// </summary>
     public class DialogButtons
     {
