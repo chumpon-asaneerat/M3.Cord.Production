@@ -76,7 +76,7 @@ namespace NLib.Wpf.Controls
         /// <summary>
         /// The IconTypeProperty Dependency Property.
         /// </summary>
-        public static readonly DependencyProperty IconTypeProperty =
+        public static readonly DependencyProperty IconTypeProperty = 
             DependencyProperty.Register("IconType", typeof(ClipboardOperations), typeof(ClipboardOperationButton));
         /// <summary>
         /// Gets or sets Inline Button Icon.

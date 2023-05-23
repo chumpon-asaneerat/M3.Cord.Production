@@ -50,9 +50,16 @@
                 <!--  WORK AREA  -->
                 <DockPanel LastChildFill="True">
                     <!--  BUTTONS BAR  -->
-                    <DockPanel LastChildFill="True" DockPanel.Dock="Bottom" Height="30">
-                        <ctrl:ClipboardOperationButton IconType="Cut" Text="Cut" DockPanel.Dock="Left" 
-                                                       Width="150"/>
+                    <DockPanel LastChildFill="True"
+                               DockPanel.Dock="Bottom"
+                               Height="30">
+                        <ctrl:ClipboardOperationButton IconType="None"
+                                                       Text="Cut"
+                                                       DockPanel.Dock="Left"
+                                                       Width="150" />
+                        <ctrl:ExcelOperationButton IconType="Export"
+                                                   DockPanel.Dock="Left"
+                                                   Width="150" />
                         <Grid />
                     </DockPanel>
                     <!--

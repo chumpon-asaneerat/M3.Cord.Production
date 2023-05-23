@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="NLib.Wpf.Controls.RecordOperationButton"
+﻿<UserControl x:Class="NLib.Wpf.Controls.DialogNavigationButton"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -25,9 +25,7 @@
         <StackPanel Orientation="Horizontal"
                     VerticalAlignment="Center"
                     Margin="1,0">
-            <!--
-            <TextBlock util:RecordOperationOptions.IconType="{Binding ElementName=_ThisCtrl, Path=IconType}" FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
-            -->
+            <TextBlock util:DialogButtons.IconType="{Binding ElementName=_ThisCtrl, Path=IconType}" FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
             <TextBlock Margin="2,0"
                        FontFamily="{Binding ElementName=_ThisCtrl, Path=FontFamily}"
                        FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}"
