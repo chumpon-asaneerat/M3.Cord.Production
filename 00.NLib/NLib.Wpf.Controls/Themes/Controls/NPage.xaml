@@ -43,8 +43,7 @@
                                        LastChildFill="True">
                                 <!--  WORK AREA  -->
                                 <DockPanel LastChildFill="True">
-                                    <ContentPresenter x:Name="PART_WorkAreaContent" 
-                                                      Content="{TemplateBinding WorkArea}"/>
+                                    <ContentPresenter x:Name="PART_WorkAreaContent" Content="{TemplateBinding WorkArea}" />
                                 </DockPanel>
                             </DockPanel>
                         </Grid>

@@ -14,14 +14,14 @@
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
                     <ctrl:FontAwesomeButton x:Name="cmdAdd"
                                             IconType="Add"
-                                            Text="Add" 
-                                            Click="cmdAdd_Click"/>
+                                            Text="Add"
+                                            Click="cmdAdd_Click" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
                     <ctrl:FontAwesomeButton x:Name="cmdBack"
                                             IconType="Back"
-                                            Text="Back" 
-                                            Click="cmdBack_Click"/>
+                                            Text="Back"
+                                            Click="cmdBack_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
