@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using NLib.Wpf.Controls;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,16 +12,16 @@ using System.Windows.Controls;
 namespace NLib.Wpf.Controls
 {
     /// <summary>
-    /// Interaction logic for InlineButton.xaml
+    /// Interaction logic for DialogNavigationButton.xaml
     /// </summary>
-    public partial class InlineButton : UserControl
+    public partial class DialogNavigationButton : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public InlineButton()
+        public DialogNavigationButton()
         {
             InitializeComponent();
         }
@@ -76,13 +77,13 @@ namespace NLib.Wpf.Controls
         /// The IconTypeProperty Dependency Property.
         /// </summary>
         public static readonly DependencyProperty IconTypeProperty =
-            DependencyProperty.Register("IconType", typeof(FontAwesomeIcon), typeof(InlineButton));
+            DependencyProperty.Register("IconType", typeof(DialogNavigations), typeof(DialogNavigationButton));
         /// <summary>
         /// Gets or sets Inline Button Icon.
         /// </summary>
-        public FontAwesomeIcon IconType
+        public DialogNavigations IconType
         {
-            get { return (FontAwesomeIcon)GetValue(IconTypeProperty); }
+            get { return (DialogNavigations)GetValue(IconTypeProperty); }
             set { SetValue(IconTypeProperty, value); }
         }
 
@@ -94,7 +95,7 @@ namespace NLib.Wpf.Controls
         /// The TextProperty Dependency Property.
         /// </summary>
         public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register("Text", typeof(string), typeof(InlineButton));
+            DependencyProperty.Register("Text", typeof(string), typeof(DialogNavigationButton));
         /// <summary>
         /// Gets or sets Inline Button Text.
         /// </summary>

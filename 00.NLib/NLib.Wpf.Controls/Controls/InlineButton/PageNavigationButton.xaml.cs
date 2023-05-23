@@ -77,13 +77,13 @@ namespace NLib.Wpf.Controls
         /// The IconTypeProperty Dependency Property.
         /// </summary>
         public static readonly DependencyProperty IconTypeProperty =
-            DependencyProperty.Register("IconType", typeof(PageNavigationEnum), typeof(PageNavigationButton));
+            DependencyProperty.Register("IconType", typeof(PageNavigations), typeof(PageNavigationButton));
         /// <summary>
         /// Gets or sets Inline Button Icon.
         /// </summary>
-        public PageNavigationEnum IconType
+        public PageNavigations IconType
         {
-            get { return (PageNavigationEnum)GetValue(IconTypeProperty); }
+            get { return (PageNavigations)GetValue(IconTypeProperty); }
             set { SetValue(IconTypeProperty, value); }
         }
 

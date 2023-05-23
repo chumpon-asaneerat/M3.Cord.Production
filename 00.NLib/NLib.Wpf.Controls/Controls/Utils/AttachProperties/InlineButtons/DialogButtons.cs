@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 #endregion
 
-namespace NLib.Wpf.Controls.Utils
+namespace NLib.Wpf.Controls.Utils.InlineButtons
 {
     #region DialogButtons
 
@@ -23,9 +23,9 @@ namespace NLib.Wpf.Controls.Utils
         /// <summary>The IconType variable</summary>
         public static readonly DependencyProperty IconTypeProperty = DependencyProperty.RegisterAttached(
             "IconType",
-            typeof(DialogOptionEnum),
+            typeof(DialogNavigations),
             typeof(DialogButtons),
-            new PropertyMetadata(DialogOptionEnum.None, IconTypePropertyChanged));
+            new PropertyMetadata(DialogNavigations.None, IconTypePropertyChanged));
 
         /// <summary>
         /// Gets IconType Value.
@@ -34,16 +34,16 @@ namespace NLib.Wpf.Controls.Utils
         /// <returns>Returns current proeprty value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(TextBlock))]
-        public static DialogOptionEnum GetIconType(DependencyObject obj)
+        public static DialogNavigations GetIconType(DependencyObject obj)
         {
-            return (DialogOptionEnum)obj.GetValue(IconTypeProperty);
+            return (DialogNavigations)obj.GetValue(IconTypeProperty);
         }
         /// <summary>
         /// Sets IconType Value.
         /// </summary>
         /// <param name="obj">The target object.</param>
         /// <param name="value">The new value.</param>
-        public static void SetIconType(DependencyObject obj, FontAwesomeIcon value)
+        public static void SetIconType(DependencyObject obj, DialogNavigations value)
         {
             obj.SetValue(IconTypeProperty, value);
         }
@@ -58,30 +58,30 @@ namespace NLib.Wpf.Controls.Utils
             {
                 TextBlock ctrl = obj as TextBlock;
                 string sVal = (null != e.NewValue) ? e.NewValue.ToString() : null;
-                DialogOptionEnum val;
+                DialogNavigations val;
                 try
                 {
-                    val = (string.IsNullOrEmpty(sVal)) ? DialogOptionEnum.None :
-                        (DialogOptionEnum)Enum.Parse(typeof(DialogOptionEnum), sVal);
+                    val = (string.IsNullOrEmpty(sVal)) ? DialogNavigations.None :
+                        (DialogNavigations)Enum.Parse(typeof(DialogNavigations), sVal);
                 }
                 catch (Exception)
                 {
-                    val = DialogOptionEnum.None;
+                    val = DialogNavigations.None;
                 }
 
                 Style style = null;
                 switch (val)
                 {
-                    case DialogOptionEnum.Ok:
+                    case DialogNavigations.Ok:
                         style = (Style)Application.Current.Resources["fa-ok"];
                         break;
-                    case DialogOptionEnum.Cancel:
+                    case DialogNavigations.Cancel:
                         style = (Style)Application.Current.Resources["fa-cancel"];
                         break;
-                    case DialogOptionEnum.Yes:
+                    case DialogNavigations.Yes:
                         style = (Style)Application.Current.Resources["fa-yes"];
                         break;
-                    case DialogOptionEnum.No:
+                    case DialogNavigations.No:
                         style = (Style)Application.Current.Resources["fa-no"];
                         break;
                     default:

@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 #endregion
 
-namespace NLib.Wpf.Controls.Utils
+namespace NLib.Wpf.Controls.Utils.InlineButtons
 {
     #region SearchButtons
 

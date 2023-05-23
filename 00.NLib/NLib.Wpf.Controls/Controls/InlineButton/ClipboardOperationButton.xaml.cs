@@ -77,13 +77,13 @@ namespace NLib.Wpf.Controls
         /// The IconTypeProperty Dependency Property.
         /// </summary>
         public static readonly DependencyProperty IconTypeProperty =
-            DependencyProperty.Register("IconType", typeof(ClipboardOperationEnum), typeof(ClipboardOperationButton));
+            DependencyProperty.Register("IconType", typeof(ClipboardOperations), typeof(ClipboardOperationButton));
         /// <summary>
         /// Gets or sets Inline Button Icon.
         /// </summary>
-        public ClipboardOperationEnum IconType
+        public ClipboardOperations IconType
         {
-            get { return (ClipboardOperationEnum)GetValue(IconTypeProperty); }
+            get { return (ClipboardOperations)GetValue(IconTypeProperty); }
             set { SetValue(IconTypeProperty, value); }
         }
 

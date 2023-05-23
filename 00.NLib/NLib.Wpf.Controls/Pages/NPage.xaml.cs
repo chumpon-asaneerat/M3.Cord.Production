@@ -41,12 +41,12 @@ namespace NLib.Wpf.Pages
         #endregion
 
         #region NavigateButtons Event Handlers
-
+        /*
         private void nav_NavigatorButtonClick(object sender, NavigatorButtonEventArgs e)
         {
             RaiseNavigatorButtonClickEvent(e.Icon);
         }
-
+        */
         #endregion
 
         #region Public Properties
@@ -88,7 +88,7 @@ namespace NLib.Wpf.Pages
         #endregion
 
         #region ShowButtons
-
+        /*
         /// <summary>
         /// The ShowButtonsProperty Dependency Property.
         /// </summary>
@@ -103,7 +103,7 @@ namespace NLib.Wpf.Pages
             get { return (FontAwesomeButtons)GetValue(ShowButtonsProperty); }
             set { SetValue(ShowButtonsProperty, value); }
         }
-
+        */
         #endregion
 
         #endregion
@@ -111,7 +111,7 @@ namespace NLib.Wpf.Pages
         #region Public Events
 
         #region NavigatorButtonClick
-
+        /*
         /// <summary>
         /// Raise NavigatorButtonClick Event.
         /// </summary>
@@ -135,7 +135,7 @@ namespace NLib.Wpf.Pages
             add { AddHandler(NavigatorButtonClickEvent, value); }
             remove { RemoveHandler(NavigatorButtonClickEvent, value); }
         }
-
+        */
         #endregion
 
         #endregion

@@ -50,6 +50,12 @@
                 <!--  WORK AREA  -->
                 <DockPanel LastChildFill="True">
                     <!--  BUTTONS BAR  -->
+                    <DockPanel LastChildFill="True" DockPanel.Dock="Bottom" Height="30">
+                        <ctrl:ClipboardOperationButton IconType="Cut" Text="Cut" DockPanel.Dock="Left" 
+                                                       Width="150"/>
+                        <Grid />
+                    </DockPanel>
+                    <!--
                     <ctrl:NavigatorBar x:Name="nav"
                                        Background="Silver"
                                        FontSize="{StaticResource NavFontSize}"
@@ -57,6 +63,7 @@
                                        ShowButtons="{Binding ElementName=_ThisCtrl, Path=ShowButtons, Mode=TwoWay}"
                                        Height="60"
                                        NavigatorButtonClick="nav_NavigatorButtonClick" />
+                    -->
                     <!--  ITEMS  -->
                     <DockPanel LastChildFill="True">
                         <ContentPresenter Content="{Binding WorkArea, ElementName=_ThisCtrl}" />

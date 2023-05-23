@@ -77,13 +77,13 @@ namespace NLib.Wpf.Controls
         /// The IconTypeProperty Dependency Property.
         /// </summary>
         public static readonly DependencyProperty IconTypeProperty =
-            DependencyProperty.Register("IconType", typeof(RecordOperationEnum), typeof(RecordOperationButton));
+            DependencyProperty.Register("IconType", typeof(RecordOperations), typeof(RecordOperationButton));
         /// <summary>
         /// Gets or sets Inline Button Icon.
         /// </summary>
-        public RecordOperationEnum IconType
+        public RecordOperations IconType
         {
-            get { return (RecordOperationEnum)GetValue(IconTypeProperty); }
+            get { return (RecordOperations)GetValue(IconTypeProperty); }
             set { SetValue(IconTypeProperty, value); }
         }
 

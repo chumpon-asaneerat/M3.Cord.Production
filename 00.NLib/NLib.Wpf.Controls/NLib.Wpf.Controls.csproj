@@ -54,15 +54,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\InlineButton\DialogOperationButton.xaml">
+    <Page Include="Controls\InlineButton\DialogNavigationButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\InlineButton\ExcelOperationButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\InlineButton\InlineButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,14 +171,11 @@
       <DependentUpon>ClipboardOperationButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Converters\EnumBooleanConverter.cs" />
-    <Compile Include="Controls\InlineButton\DialogOperationButton.xaml.cs">
-      <DependentUpon>DialogOperationButton.xaml</DependentUpon>
+    <Compile Include="Controls\InlineButton\DialogNavigationButton.xaml.cs">
+      <DependentUpon>DialogNavigationButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\InlineButton\ExcelOperationButton.xaml.cs">
       <DependentUpon>ExcelOperationButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\InlineButton\InlineButton.xaml.cs">
-      <DependentUpon>InlineButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\InlineButton\PageNavigationButton.xaml.cs">
       <DependentUpon>PageNavigationButton.xaml</DependentUpon>
@@ -196,13 +189,13 @@
     <Compile Include="Controls\InlineButton\SearchOperationButton.xaml.cs">
       <DependentUpon>SearchOperationButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\ClipboardButtons.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\DialogButtons.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\ExcelButtons.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\PageNaviButtons.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\PrintButtons.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\RecordButtons.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\InlineButtons\SearchButtons.cs" />
+    <None Include="Controls\Utils\AttachProperties\InlineButtons\ClipboardButtons.cs" />
+    <None Include="Controls\Utils\AttachProperties\InlineButtons\DialogButtons.cs" />
+    <None Include="Controls\Utils\AttachProperties\InlineButtons\ExcelButtons.cs" />
+    <None Include="Controls\Utils\AttachProperties\InlineButtons\PageNaviButtons.cs" />
+    <None Include="Controls\Utils\AttachProperties\InlineButtons\PrintButtons.cs" />
+    <None Include="Controls\Utils\AttachProperties\InlineButtons\RecordButtons.cs" />
+    <None Include="Controls\Utils\AttachProperties\InlineButtons\SearchButtons.cs" />
     <Compile Include="Pages\NPage.xaml.cs">
       <DependentUpon>NPage.xaml</DependentUpon>
     </Compile>

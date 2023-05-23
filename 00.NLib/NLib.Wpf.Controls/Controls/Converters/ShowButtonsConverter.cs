@@ -9,7 +9,7 @@ using System.Windows.Data;
 namespace NLib.Wpf.Controls.Converters
 {
     #region ShowButtonsConverter
-
+    /*
     /// <summary>
     /// The ShowButtonsConverter class.
     /// </summary>
@@ -53,6 +53,6 @@ namespace NLib.Wpf.Controls.Converters
 
         #endregion
     }
-
+    */
     #endregion
 }

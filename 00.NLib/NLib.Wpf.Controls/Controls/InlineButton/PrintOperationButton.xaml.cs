@@ -1,6 +1,7 @@
 ﻿#region Using
 
 using NLib.Wpf.Controls;
+using NLib.Wpf.Controls.Utils;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -77,13 +78,13 @@ namespace NLib.Wpf.Controls
         /// The IconTypeProperty Dependency Property.
         /// </summary>
         public static readonly DependencyProperty IconTypeProperty =
-            DependencyProperty.Register("IconType", typeof(PrintOperationEnum), typeof(PrintOperationButton));
+            DependencyProperty.Register("IconType", typeof(PrintOperations), typeof(PrintOperationButton));
         /// <summary>
         /// Gets or sets Inline Button Icon.
         /// </summary>
-        public PrintOperationEnum IconType
+        public PrintOperations IconType
         {
-            get { return (PrintOperationEnum)GetValue(IconTypeProperty); }
+            get { return (PrintOperations)GetValue(IconTypeProperty); }
             set { SetValue(IconTypeProperty, value); }
         }
 

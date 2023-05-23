@@ -178,9 +178,11 @@
     </Style>
 
     <!--  CONST INLINE BUTTON CONTROL STYLE  -->
+    <!--
     <Style TargetType="{x:Type local:InlineButton}">
         <Setter Property="Width" Value="{DynamicResource IBWidth}" />
         <Setter Property="Height" Value="{DynamicResource IBHeight}" />
         <Setter Property="FontSize" Value="{DynamicResource IBFSize}" />
     </Style>
+    -->
 </ResourceDictionary>
