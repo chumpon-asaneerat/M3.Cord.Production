@@ -11,21 +11,21 @@ using System.Windows.Media;
 
 namespace NLib.Wpf.Controls.Utils
 {
-    #region SearchOperationOptions
+    #region SearchButtons
 
     /// <summary>
-    /// The SearchOperationOptions class.
+    /// The SearchButtons class.
     /// </summary>
-    public class SearchOperationOptions
+    public class SearchButtons
     {
         #region IconType
 
         /// <summary>The IconType variable</summary>
         public static readonly DependencyProperty IconTypeProperty = DependencyProperty.RegisterAttached(
             "IconType",
-            typeof(SearchOperationEnum),
-            typeof(SearchOperationOptions),
-            new PropertyMetadata(SearchOperationEnum.None, IconTypePropertyChanged));
+            typeof(SearchOperations),
+            typeof(SearchButtons),
+            new PropertyMetadata(SearchOperations.None, IconTypePropertyChanged));
 
         /// <summary>
         /// Gets IconType Value.
@@ -34,16 +34,16 @@ namespace NLib.Wpf.Controls.Utils
         /// <returns>Returns current proeprty value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(TextBlock))]
-        public static SearchOperationEnum GetIconType(DependencyObject obj)
+        public static SearchOperations GetIconType(DependencyObject obj)
         {
-            return (SearchOperationEnum)obj.GetValue(IconTypeProperty);
+            return (SearchOperations)obj.GetValue(IconTypeProperty);
         }
         /// <summary>
         /// Sets IconType Value.
         /// </summary>
         /// <param name="obj">The target object.</param>
         /// <param name="value">The new value.</param>
-        public static void SetIconType(DependencyObject obj, SearchOperationEnum value)
+        public static void SetIconType(DependencyObject obj, SearchOperations value)
         {
             obj.SetValue(IconTypeProperty, value);
         }
@@ -58,24 +58,24 @@ namespace NLib.Wpf.Controls.Utils
             {
                 TextBlock ctrl = obj as TextBlock;
                 string sVal = (null != e.NewValue) ? e.NewValue.ToString() : null;
-                SearchOperationEnum val;
+                SearchOperations val;
                 try
                 {
-                    val = (string.IsNullOrEmpty(sVal)) ? SearchOperationEnum.None :
-                        (SearchOperationEnum)Enum.Parse(typeof(SearchOperationEnum), sVal);
+                    val = (string.IsNullOrEmpty(sVal)) ? SearchOperations.None :
+                        (SearchOperations)Enum.Parse(typeof(SearchOperations), sVal);
                 }
                 catch (Exception)
                 {
-                    val = SearchOperationEnum.None;
+                    val = SearchOperations.None;
                 }
 
                 Style style = null;
                 switch (val)
                 {
-                    case SearchOperationEnum.Search:
+                    case SearchOperations.Search:
                         style = (Style)Application.Current.Resources["fa-search"];
                         break;
-                    case SearchOperationEnum.Refresh:
+                    case SearchOperations.Refresh:
                         style = (Style)Application.Current.Resources["fa-refresh"];
                         break;
                     default:
