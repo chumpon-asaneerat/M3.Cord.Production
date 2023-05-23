@@ -6,60 +6,6 @@ using System;
 
 namespace NLib.Wpf.Controls
 {
-    #region PageNavigationEnum and Flags
-
-    /// <summary>
-    /// The Page Navigation Enum.
-    /// </summary>
-    public enum PageNavigationEnum : uint
-    {
-        None = 0x00000000,
-        Home = 0x00000001,
-        Back = 0x00000002,
-        Close = 0x00000004
-    }
-    /// <summary>
-    /// The Page Navigation Flags.
-    /// </summary>
-    [Flags]
-    public enum PageNavigationFlags : uint
-    {
-        None = 0x00000000,
-        Home = 0x00000001,
-        Back = 0x00000002,
-        Close = 0x00000004
-    }
-
-    #endregion
-
-    #region RecordOperationEnum and Flags
-
-    /// <summary>
-    /// The Record Operation Enum.
-    /// </summary>
-    public enum RecordOperationEnum : uint
-    {
-        None = 0x00000000,
-        Add = 0x00000001,
-        Edit = 0x00000002,
-        Delete = 0x00000004,
-        Save = 0x00000008
-    }
-    /// <summary>
-    /// The Record Operation Flags.
-    /// </summary>
-    [Flags]
-    public enum RecordOperationFlags : uint
-    {
-        None = 0x00000000,
-        Add = 0x00000001,
-        Edit = 0x00000002,
-        Delete = 0x00000004,
-        Save = 0x00000008
-    }
-
-    #endregion
-
     #region ExcelOperationEnum and Flags
 
     /// <summary>
