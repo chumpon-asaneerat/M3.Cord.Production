@@ -20,13 +20,32 @@ using System.Windows.Shapes;
 namespace M3.Cord.Controls.Fields
 {
     /// <summary>
-    /// Interaction logic for ProductionConditionL11.xaml
+    /// Interaction logic for ProductionConditionL10.xaml
     /// </summary>
-    public partial class ProductionConditionL11 : UserControl
+    public partial class ProductionConditionL10 : UserControl
     {
-        public ProductionConditionL11()
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public ProductionConditionL10()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Setup/
+        /// </summary>
+        public void Setup()
+        {
+
+        }
+
+        #endregion
     }
 }
