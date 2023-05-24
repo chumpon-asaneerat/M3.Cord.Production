@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +15,37 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace M3.Cord.Controls.Fields.ProductionConditions
+#endregion
+
+namespace M3.Cord.Controls.Fields
 {
     /// <summary>
     /// Interaction logic for ProductionConditionControl.xaml
     /// </summary>
     public partial class ProductionConditionControl : UserControl
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public ProductionConditionControl()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Setup.
+        /// </summary>
+        public void Setup()
+        {
+
+        }
+
+        #endregion
     }
 }

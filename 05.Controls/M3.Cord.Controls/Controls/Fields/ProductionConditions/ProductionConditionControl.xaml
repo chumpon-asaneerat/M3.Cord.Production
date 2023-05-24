@@ -3,8 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:el="clr-namespace:M3.Cord.Controls.Fields"
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <Grid />
+    <DockPanel LastChildFill="True">
+        <el:ProductionConditionL01 DockPanel.Dock="Top" Margin="5,2" />
+        <el:ProductionConditionL02 DockPanel.Dock="Top" Margin="5,2" />
+        <el:ProductionConditionL03 DockPanel.Dock="Top" Margin="5,2" />
+        <el:ProductionConditionL04 DockPanel.Dock="Top" Margin="5,2" />
+        <el:ProductionConditionL05 DockPanel.Dock="Top" Margin="5,2" />
+        <el:ProductionConditionL06 DockPanel.Dock="Top" Margin="5,2" />
+        <el:ProductionConditionL07 DockPanel.Dock="Top" Margin="5,2" />
+        <el:ProductionConditionL08 DockPanel.Dock="Top" Margin="5,2" />
+        <el:ProductionConditionL09 DockPanel.Dock="Top" Margin="5,2" />
+        <el:ProductionConditionL10 DockPanel.Dock="Top" Margin="5,2" />
+        <el:ProductionConditionL11 DockPanel.Dock="Top" Margin="5,2" />
+        <el:ProductionConditionL12 DockPanel.Dock="Top" Margin="5,2" />
+        <Grid />
+    </DockPanel>
 </UserControl>
