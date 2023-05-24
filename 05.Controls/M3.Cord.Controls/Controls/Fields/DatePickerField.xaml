@@ -7,7 +7,9 @@
              d:DesignWidth="150"
              mc:Ignorable="d">
     <StackPanel Orientation="Vertical" DataContext="{Binding ElementName=_ThisCtrl}">
-        <TextBlock x:Name="lbHeader" Text="{Binding Caption}" Style="{StaticResource LabelText}"/>
+        <TextBlock x:Name="lbHeader"
+                   Text="{Binding Caption}"
+                   Style="{StaticResource LabelText}" />
         <DatePicker x:Name="dtDate" SelectedDate="{Binding Value}" />
     </StackPanel>
 </UserControl>
