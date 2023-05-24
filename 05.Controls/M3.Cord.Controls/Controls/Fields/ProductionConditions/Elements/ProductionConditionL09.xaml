@@ -8,7 +8,7 @@
     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
         <!--  DESCRIPTION  -->
         <TextBlock Style="{StaticResource LabelText}" FontSize="{StaticResource FontSize24}">
-            <Run Text="" />
+            <Run Text="Calculated twisting number ( t/m)" />
             <LineBreak />
             <Run Text="" />
         </TextBlock>
