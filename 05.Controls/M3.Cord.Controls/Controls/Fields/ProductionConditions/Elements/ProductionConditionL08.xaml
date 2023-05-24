@@ -7,7 +7,11 @@
              mc:Ignorable="d">
     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
         <!--  DESCRIPTION  -->
-        <TextBlock Text="" />
+        <TextBlock Style="{StaticResource LabelText}" FontSize="{StaticResource FontSize24}">
+            <Run Text="" />
+            <LineBreak />
+            <Run Text="" />
+        </TextBlock>
         <!--  INPUT(S)  -->
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
             <Grid />
