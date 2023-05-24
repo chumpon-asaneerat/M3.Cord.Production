@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:el="clr-namespace:M3.Cord.Controls.Fields"
-             d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
     <DockPanel LastChildFill="True">
