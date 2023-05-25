@@ -1,6 +1,7 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:NLib.Wpf.Pages">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:NLib.Wpf.Pages">
     <Style TargetType="{x:Type local:NPage}">
         <Setter Property="Template">
             <Setter.Value>
@@ -20,27 +21,30 @@
                                 <RowDefinition Height="{DynamicResource PageMargin}" />
                             </Grid.RowDefinitions>
                             <!--  CAPTION AREA  -->
-                            <Border x:Name="PART_CaptionBorder"
-                                    Grid.Column="1"
-                                    Grid.ColumnSpan="1"
-                                    Grid.Row="1"
-                                    Grid.RowSpan="1"
-                                    Background="{DynamicResource CaptionBackground}"
-                                    BorderBrush="{DynamicResource CaptionBorderColor}"
-                                    BorderThickness="{DynamicResource CaptionBorderThickness}"
-                                    CornerRadius="{DynamicResource CaptionBorderCornerRadius}">
-                                <TextBlock x:Name="PART_CaptionText"
-                                           Foreground="{DynamicResource CaptionForeground}"
-                                           FontSize="{DynamicResource FontSize24}"
-                                           Margin="0,2"
-                                           TextAlignment="Center"
-                                           Text="{TemplateBinding PageTitle}" />
+                            <Border
+                                x:Name="PART_CaptionBorder"
+                                Grid.Row="1"
+                                Grid.RowSpan="1"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="1"
+                                Background="{DynamicResource CaptionBackground}"
+                                BorderBrush="{DynamicResource CaptionBorderColor}"
+                                BorderThickness="{DynamicResource CaptionBorderThickness}"
+                                CornerRadius="{DynamicResource CaptionBorderCornerRadius}">
+                                <TextBlock
+                                    x:Name="PART_CaptionText"
+                                    Margin="0,2"
+                                    FontSize="{DynamicResource FontSize24}"
+                                    Foreground="{DynamicResource CaptionForeground}"
+                                    Text="{TemplateBinding PageTitle}"
+                                    TextAlignment="Center" />
                             </Border>
-                            <DockPanel Grid.Column="1"
-                                       Grid.ColumnSpan="1"
-                                       Grid.Row="3"
-                                       Grid.RowSpan="1"
-                                       LastChildFill="True">
+                            <DockPanel
+                                Grid.Row="3"
+                                Grid.RowSpan="1"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="1"
+                                LastChildFill="True">
                                 <!--  WORK AREA  -->
                                 <DockPanel LastChildFill="True">
                                     <ContentPresenter x:Name="PART_WorkAreaContent" Content="{TemplateBinding WorkArea}" />

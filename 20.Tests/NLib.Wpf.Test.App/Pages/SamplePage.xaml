@@ -1,27 +1,27 @@
 ﻿<UserControl x:Class="NLib.Wpf.Test.App.Pages.SamplePage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
              xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
     <page:NPage PageTitle="Test">
         <DockPanel LastChildFill="True">
-            <DockPanel DockPanel.Dock="Bottom" Height="40">
-                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+            <DockPanel Height="40" DockPanel.Dock="Bottom">
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
                     <ctrl:FontAwesomeButton x:Name="cmdAdd"
+                                            Click="cmdAdd_Click"
                                             IconType="Add"
-                                            Text="Add"
-                                            Click="cmdAdd_Click" />
+                                            Text="Add" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
                     <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                            Click="cmdBack_Click"
                                             IconType="Back"
-                                            Text="Back"
-                                            Click="cmdBack_Click" />
+                                            Text="Back" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
