@@ -10,19 +10,161 @@
              d:DesignWidth="800"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
+    <UserControl.Resources>
+        <!--  COLORS  -->
+        <SolidColorBrush x:Key="G4BG" Color="DarkOrange" />
+        <SolidColorBrush x:Key="G4BGHover" Color="DarkRed" />
+        <SolidColorBrush x:Key="G4FG" Color="WhiteSmoke" />
+
+        <SolidColorBrush x:Key="CordWarehouseBG" Color="ForestGreen" />
+        <SolidColorBrush x:Key="CordWarehouseBGHover" Color="Green" />
+        <SolidColorBrush x:Key="CordWarehouseFG" Color="WhiteSmoke" />
+        <SolidColorBrush x:Key="CordProductionBG" Color="Orchid" />
+        <SolidColorBrush x:Key="CordProductionBGHover" Color="Purple" />
+        <SolidColorBrush x:Key="CordProductionFG" Color="WhiteSmoke" />
+        <!--  BUTTON STYLES  -->
+        <Style x:Key="G4ButtonStyle"
+               BasedOn="{StaticResource MenuButtonStyle}"
+               TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource G4BG}" />
+            <Setter Property="Foreground" Value="{StaticResource G4FG}" />
+            <Setter Property="Margin" Value="0,5" />
+            <Setter Property="Height" Value="90" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource G4BGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource G4FG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource G4BGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource G4FG}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CordWarehouseButtonStyle"
+               BasedOn="{StaticResource MenuButtonStyle}"
+               TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource CordWarehouseBG}" />
+            <Setter Property="Foreground" Value="{StaticResource CordWarehouseFG}" />
+            <Setter Property="Margin" Value="0,5" />
+            <Setter Property="Height" Value="90" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource CordWarehouseBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource CordWarehouseFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource CordWarehouseBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource CordWarehouseFG}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CordProductionButtonStyle"
+               BasedOn="{StaticResource MenuButtonStyle}"
+               TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource CordProductionBG}" />
+            <Setter Property="Foreground" Value="{StaticResource CordProductionFG}" />
+            <Setter Property="Margin" Value="0,5" />
+            <Setter Property="Height" Value="90" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource CordProductionBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource CordProductionFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource CordProductionBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource CordProductionFG}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <page:NPage HeaderText="MAIN MENU">
         <ctrl:NGroupMenu>
-            <ctrl:NGroupMenuItem HeaderText="G4">
-                <Button Margin="0,5" Height="75" />
-                <Button Margin="0,5" Height="75" />
-                <Button Margin="0,5" Height="75" />
-                <Button Margin="0,5" Height="75" />
+            <!-- G4 MENU -->
+            <ctrl:NGroupMenuItem HeaderText="G4" HeaderBackground="{StaticResource G4BG}">
+                <!--  RECEIVE RAW MATERIAL  -->
+                <Button x:Name="cmdReceiveRawMaterial"
+                        Style="{StaticResource G4ButtonStyle}">
+                    <TextBlock TextAlignment="Center">
+                        <Run Text="Receive" />
+                        <LineBreak />
+                        <Run Text="Raw Material" />
+                    </TextBlock>
+                </Button>
+                <!--  ISSUE RAW MATERIAL  -->
+                <Button x:Name="cmdIssueRawMaterial"
+                        Style="{StaticResource G4ButtonStyle}">
+                    <TextBlock TextAlignment="Center">
+                        <Run Text="Issue" />
+                        <LineBreak />
+                        <Run Text="Raw Material" />
+                    </TextBlock>
+                </Button>
+                <!--  CHECK STOCK  -->
+                <Button x:Name="cmdCheckStock"
+                        Style="{StaticResource G4ButtonStyle}">
+                    <TextBlock TextAlignment="Center">
+                        <Run Text="Check Stock" />
+                    </TextBlock>
+                </Button>
+                <!--  RECEIVE RETURN MATERIAL  -->
+                <Button x:Name="cmdReceiveReturnMaterial"
+                        Style="{StaticResource G4ButtonStyle}">
+                    <TextBlock TextAlignment="Center">
+                        <Run Text="Receive" />
+                        <LineBreak />
+                        <Run Text="Return Material" />
+                    </TextBlock>
+                </Button>
             </ctrl:NGroupMenuItem>
-            <ctrl:NGroupMenuItem HeaderText="Warehouse">
-                <Button Margin="0,5" Height="75" />
+            <ctrl:NGroupMenuItem HeaderText="Warehouse" HeaderBackground="{StaticResource CordWarehouseBG}">
+                <Button x:Name="cmdReceiveYarn"
+                        Style="{StaticResource CordWarehouseButtonStyle}">
+                    <TextBlock TextAlignment="Center">
+                        <Run Text="Receive" />
+                        <LineBreak />
+                        <Run Text="Yarn" />
+                    </TextBlock>
+                </Button>
             </ctrl:NGroupMenuItem>
-            <ctrl:NGroupMenuItem HeaderText="1st Twist">
-                <Button Margin="0,5" Height="75" />
+            <ctrl:NGroupMenuItem HeaderText="1st Twist" HeaderBackground="{StaticResource CordProductionBG}">
+                <!--  SETUP MACHINE  -->
+                <Button x:Name="cmdFirstTwist"
+                        Style="{StaticResource CordProductionButtonStyle}">
+                    <TextBlock TextAlignment="Center">
+                        <Run Text="1st Twisting" />
+                    </TextBlock>
+                </Button>
             </ctrl:NGroupMenuItem>
             <ctrl:NGroupMenuItem HeaderText="Aging">
                 <Button Margin="0,5" Height="75" />
