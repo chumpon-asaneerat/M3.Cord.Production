@@ -12,7 +12,7 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="280"
+        Height="300"
         Width="400"
         Loaded="Window_Loaded"
         mc:Ignorable="d">
