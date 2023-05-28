@@ -116,6 +116,9 @@
     <None Include="Pages\_v1\Warehouse\WareHouseReceiveYarnPage.xaml.cs">
       <DependentUpon>WareHouseReceiveYarnPage.xaml</DependentUpon>
     </None>
+    <Compile Include="Pages\G4\G4ReceiveReturnMeterialPage.xaml.cs">
+      <DependentUpon>G4ReceiveReturnMeterialPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\G4\G4StockPage.xaml.cs">
       <DependentUpon>G4StockPage.xaml</DependentUpon>
     </Compile>
@@ -306,6 +309,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Pages\G4\G4ReceiveReturnMeterialPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\G4\G4StockPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -77,9 +77,10 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
-            /*
             // G4 - Receive Return Material
-            */
+            var page = M3CordApp.Pages.G4ReceiveReturnMeterial;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdReceiveYarn_Click(object sender, RoutedEventArgs e)
