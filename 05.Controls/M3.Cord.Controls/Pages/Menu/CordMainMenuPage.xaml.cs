@@ -45,11 +45,9 @@ namespace M3.Cord.Pages
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
             // G4 - Receive Raw Material
-            /*
             var page = M3CordApp.Pages.G4ReceiveRawMaterial;
             page.Setup();
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdIssueRawMaterial_Click(object sender, RoutedEventArgs e)
@@ -58,11 +56,9 @@ namespace M3.Cord.Pages
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
             // G4 - Issue Raw Material
-            /*
             var page = M3CordApp.Pages.G4IssueRawMaterial;
             page.Setup();
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdCheckStock_Click(object sender, RoutedEventArgs e)
@@ -71,11 +67,9 @@ namespace M3.Cord.Pages
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
             // G4 - Check Stock
-            /*
             var page = M3CordApp.Pages.G4Stock;
             page.Setup();
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdReceiveReturnMaterial_Click(object sender, RoutedEventArgs e)

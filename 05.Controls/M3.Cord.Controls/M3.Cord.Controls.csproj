@@ -116,10 +116,13 @@
     <None Include="Pages\_v1\Warehouse\WareHouseReceiveYarnPage.xaml.cs">
       <DependentUpon>WareHouseReceiveYarnPage.xaml</DependentUpon>
     </None>
-    <Compile Include="Pages\G4IssueRawMaterialPage.xaml.cs">
+    <Compile Include="Pages\G4\G4StockPage.xaml.cs">
+      <DependentUpon>G4StockPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\G4\G4IssueRawMaterialPage.xaml.cs">
       <DependentUpon>G4IssueRawMaterialPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\G4ReceiveRawMaterialPage.xaml.cs">
+    <Compile Include="Pages\G4\G4ReceiveRawMaterialPage.xaml.cs">
       <DependentUpon>G4ReceiveRawMaterialPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\SignInService.cs" />
@@ -303,11 +306,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <Page Include="Pages\G4IssueRawMaterialPage.xaml">
+    <Page Include="Pages\G4\G4StockPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\G4ReceiveRawMaterialPage.xaml">
+    <Page Include="Pages\G4\G4IssueRawMaterialPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\G4\G4ReceiveRawMaterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -368,9 +375,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\G4\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>

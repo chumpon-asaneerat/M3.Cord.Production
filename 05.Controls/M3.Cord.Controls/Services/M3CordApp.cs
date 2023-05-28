@@ -71,7 +71,7 @@ namespace M3.Cord
             #endregion
 
             #region G4
-            /*
+
             /// <summary>Gets G4 Receive Raw Material Page.</summary>
             public static Cord.Pages.G4ReceiveRawMaterialPage G4ReceiveRawMaterial
             {
@@ -87,7 +87,7 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.G4StockPage>(); }
             }
-            */
+
             #endregion
 
             #region Warehouse

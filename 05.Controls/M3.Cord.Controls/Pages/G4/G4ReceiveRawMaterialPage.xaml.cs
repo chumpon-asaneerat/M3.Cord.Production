@@ -23,19 +23,23 @@ using M3.Cord.Models;
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for G4IssueRawMaterialPage.xaml
+    /// Interaction logic for G4ReceiveRawMaterialPage.xaml
     /// </summary>
-    public partial class G4IssueRawMaterialPage : UserControl
+    public partial class G4ReceiveRawMaterialPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public G4IssueRawMaterialPage()
+        public G4ReceiveRawMaterialPage()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Internal Variables
 
         #endregion
 
@@ -54,6 +58,21 @@ namespace M3.Cord.Pages
         #endregion
 
         #region Button Handlers
+
+        private void cmdHome_Click(object sender, RoutedEventArgs e)
+        {
+            M3CordApp.Pages.GotoCordMainMenu();
+        }
+
+        private void cmdClear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         #endregion
 
