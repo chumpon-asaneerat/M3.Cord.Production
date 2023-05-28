@@ -28,6 +28,8 @@
         <!--
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ImageButton.xaml" />
         -->
-        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPage.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPage/NPage.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NGroupMenu/NGroupMenu.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NGroupMenu/NGroupMenuItem.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
