@@ -157,6 +157,10 @@ namespace M3.Cord.Models
         /// </summary>
         public bool? FinishFlag { get; set; }
         /// <summary>
+        /// Gets or sets Update Flag.
+        /// </summary>
+        public bool? UpdateFlag { get; set; }
+        /// <summary>
         /// Gets or sets Delete Flag.
         /// </summary>
         public bool? DeleteFlag { get; set; }
@@ -267,6 +271,7 @@ namespace M3.Cord.Models
             p.Add("@Other", value.Other);
             p.Add("@Action", value.Action);
             p.Add("@FinishFlag", value.FinishFlag);
+            p.Add("@UpdateFlag", value.UpdateFlag);
             p.Add("@DeleteFlag", value.DeleteFlag);
             p.Add("@PkId", value.PkId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
 
