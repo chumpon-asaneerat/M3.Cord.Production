@@ -54,7 +54,7 @@ namespace M3.Cord
             /// </summary>
             public static void GotoCordMainMenu()
             {
-                var page = Pages.CordMainMenu;
+                var page = Pages.M3CordMainMenu;
                 PageContentManager.Instance.Current = page;
             }
 
@@ -62,10 +62,10 @@ namespace M3.Cord
 
             #region Main Menu (Cord)
 
-            /// <summary>Gets Cord MainMenu Page.</summary>
-            public static Cord.Pages.CordMainMenuPage CordMainMenu
+            /// <summary>Gets M3 Cord MainMenu Page.</summary>
+            public static Cord.Pages.M3CordMainMenuPage M3CordMainMenu
             {
-                get { return GetPage<Cord.Pages.CordMainMenuPage>(); }
+                get { return GetPage<Cord.Pages.M3CordMainMenuPage>(); }
             }
 
             #endregion

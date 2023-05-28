@@ -45,7 +45,7 @@ namespace M3.Cord
             PageContentManager.Instance.ContentChanged += new EventHandler(Instance_ContentChanged);
             PageContentManager.Instance.Start();
             // Init Main Menu
-            var page = M3CordApp.Pages.CordMainMenu;
+            var page = M3CordApp.Pages.M3CordMainMenu;
             PageContentManager.Instance.Current = page;
 
             DbServer.Instance.Start();

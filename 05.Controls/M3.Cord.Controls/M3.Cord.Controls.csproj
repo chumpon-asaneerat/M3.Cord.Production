@@ -128,6 +128,9 @@
     <Compile Include="Pages\G4\G4ReceiveRawMaterialPage.xaml.cs">
       <DependentUpon>G4ReceiveRawMaterialPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Menu\M3CordMainMenuPage.xaml.cs">
+      <DependentUpon>M3CordMainMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\SignInService.cs" />
     <None Include="Windows\_V1\FirstTwist\ProductionConditionSheetWindow.xaml.cs">
       <DependentUpon>ProductionConditionSheetWindow.xaml</DependentUpon>
@@ -162,7 +165,7 @@
     <None Include="Pages\_v1\FirstTwist\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
     </None>
-    <Compile Include="Pages\Menu\CordMainMenuPage.xaml.cs">
+    <Compile Include="Pages\_v1\Menu\CordMainMenuPage.xaml.cs">
       <DependentUpon>CordMainMenuPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\M3CordApp.cs" />
@@ -325,7 +328,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Menu\CordMainMenuPage.xaml">
+    <Page Include="Pages\Menu\M3CordMainMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\_v1\Menu\CordMainMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
