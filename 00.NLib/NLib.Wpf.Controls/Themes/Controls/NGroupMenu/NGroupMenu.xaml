@@ -5,22 +5,28 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:NGroupMenu}">
-                    <Grid Margin="15"
+                    <Grid Margin="10"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Center">
-                        <ItemsControl ItemsSource="{Binding Items, RelativeSource={RelativeSource TemplatedParent}}">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal"
-                                                VerticalAlignment="Center"
-                                                ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                                                IsItemsHost="True" />
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                        </ItemsControl>
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                            <ItemsControl ItemsSource="{Binding Items, RelativeSource={RelativeSource TemplatedParent}}"
+                                          VirtualizingPanel.IsVirtualizing="True"
+                                          VirtualizingPanel.VirtualizationMode="Recycling">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Margin="5,3"
+                                                    Orientation="Horizontal"
+                                                    VerticalAlignment="Stretch"
+                                                    IsItemsHost="True" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </ScrollViewer>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <!--  DEFAULT COLORS  -->
+        <Setter Property="Background" Value="{DynamicResource PageBG}" />
     </Style>
 </ResourceDictionary>

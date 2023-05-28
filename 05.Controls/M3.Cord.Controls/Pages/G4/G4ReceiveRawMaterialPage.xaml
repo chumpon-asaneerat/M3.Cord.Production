@@ -10,7 +10,7 @@
              d:DesignWidth="800"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
-    <page:NPage PageTitle="G4 Receive Raw Meterial">
+    <page:NPage HeaderText="G4 Receive Raw Meterial">
         <DockPanel LastChildFill="True">
             <!--  BUTTONS  -->
             <DockPanel LastChildFill="True"

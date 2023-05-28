@@ -26,6 +26,7 @@ namespace NLib.Wpf.Pages
     /// <summary>
     /// The NGroupMenu Control
     /// </summary>
+    [ContentProperty(nameof(Items))]
     public class NGroupMenu : Control
     {
         #region Constructor
@@ -73,7 +74,6 @@ namespace NLib.Wpf.Pages
         }
 
         #endregion
-
 
         #endregion
     }

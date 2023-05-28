@@ -10,16 +10,44 @@
                                Width="250"
                                VerticalAlignment="Stretch">
                         <Border DockPanel.Dock="Top"
-                                CornerRadius="3"
+                                Background="{TemplateBinding HeaderBackground}"
+                                BorderBrush="{TemplateBinding HeaderBorderBrush}"
+                                BorderThickness="{DynamicResource CaptionBorderThickness}"
+                                CornerRadius="{DynamicResource CaptionBorderCornerRadius}"
                                 Padding="2">
-                            <TextBlock Text="Group"
-                                       FontSize="24"
-                                       FontWeight="Bold" />
+                            <TextBlock Text="{TemplateBinding HeaderText}"
+                                       TextAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="CharacterEllipsis"
+                                       Foreground="{TemplateBinding HeaderForeground}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       FontWeight="{TemplateBinding FontWeight}" />
                         </Border>
-                        <Grid />
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                            <ItemsControl ItemsSource="{Binding Items, RelativeSource={RelativeSource TemplatedParent}}"
+                                          VirtualizingPanel.IsVirtualizing="True"
+                                          VirtualizingPanel.VirtualizationMode="Recycling">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Vertical"
+                                                    VerticalAlignment="Top"
+                                                    IsItemsHost="True" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </ScrollViewer>
                     </DockPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <!--  DEFAULT COLORS  -->
+        <Setter Property="HeaderForeground" Value="{DynamicResource CaptionForeground}" />
+        <Setter Property="HeaderBackground" Value="{DynamicResource CaptionBackground}" />
+        <Setter Property="HeaderBorderBrush" Value="{DynamicResource CaptionBorderColor}" />
+        <!--  DEFAULT FONTS  -->
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
+        <Setter Property="FontWeight" Value="Bold" />
     </Style>
 </ResourceDictionary>

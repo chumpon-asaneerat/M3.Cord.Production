@@ -8,10 +8,67 @@
              d:DesignHeight="450"
              d:DesignWidth="800">
     <page:NGroupMenu>
-        <page:NGroupMenu.Items>
-            <page:NGroupMenuItem />
-            <page:NGroupMenuItem />
-            <page:NGroupMenuItem />
-        </page:NGroupMenu.Items>
+        <page:NGroupMenuItem HeaderText="G4">
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+        </page:NGroupMenuItem>
+        <page:NGroupMenuItem HeaderText="Warehouse">
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+        </page:NGroupMenuItem>
+        <page:NGroupMenuItem HeaderText="1st Twisting">
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+        </page:NGroupMenuItem>
+        <page:NGroupMenuItem HeaderText="DIP">
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+            <Button Margin="2,5"
+                    Content="Receive Raw Material"
+                    Height="75" />
+        </page:NGroupMenuItem>
     </page:NGroupMenu>
 </UserControl>

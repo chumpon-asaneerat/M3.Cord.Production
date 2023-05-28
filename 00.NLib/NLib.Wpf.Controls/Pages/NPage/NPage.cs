@@ -73,20 +73,74 @@ namespace NLib.Wpf.Pages
 
         #region Public Properties
 
-        #region PageTitle
+        #region HeaderText
 
         /// <summary>
-        /// The PageTitleProperty Dependency property.
+        /// The HeaderTextProperty Dependency property.
         /// </summary>
-        public static readonly DependencyProperty PageTitleProperty =
-            DependencyProperty.Register("PageTitle", typeof(string), typeof(NPage));
+        public static readonly DependencyProperty HeaderTextProperty =
+            DependencyProperty.Register("HeaderText", typeof(string), typeof(NPage));
         /// <summary>
-        /// Gets or sets Page Title.
+        /// Gets or sets Header Text.
         /// </summary>
-        public string PageTitle
+        public string HeaderText
         {
-            get { return (string)GetValue(PageTitleProperty); }
-            set { SetValue(PageTitleProperty, value); }
+            get { return (string)GetValue(HeaderTextProperty); }
+            set { SetValue(HeaderTextProperty, value); }
+        }
+
+        #endregion
+
+        #region HeaderBorderBrush
+
+        /// <summary>
+        /// The HeaderBorderBrushProperty Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty HeaderBorderBrushProperty =
+            DependencyProperty.Register("HeaderBorderBrush", typeof(Brush), typeof(NPage));
+        /// <summary>
+        /// Gets or sets Header Border Brush.
+        /// </summary>
+        public Brush HeaderBorderBrush
+        {
+            get { return (Brush)GetValue(HeaderBorderBrushProperty); }
+            set { SetValue(HeaderBorderBrushProperty, value); }
+        }
+
+        #endregion
+
+        #region HeaderBackground
+
+        /// <summary>
+        /// The HeaderBackgroundProperty Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty HeaderBackgroundProperty =
+            DependencyProperty.Register("HeaderBackground", typeof(Brush), typeof(NPage));
+        /// <summary>
+        /// Gets or sets Header Background.
+        /// </summary>
+        public Brush HeaderBackground
+        {
+            get { return (Brush)GetValue(HeaderBackgroundProperty); }
+            set { SetValue(HeaderBackgroundProperty, value); }
+        }
+
+        #endregion
+
+        #region HeaderForeground
+
+        /// <summary>
+        /// The HeaderForegroundProperty Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty HeaderForegroundProperty =
+            DependencyProperty.Register("HeaderForeground", typeof(Brush), typeof(NPage));
+        /// <summary>
+        /// Gets or sets Header Foreground.
+        /// </summary>
+        public Brush HeaderForeground
+        {
+            get { return (Brush)GetValue(HeaderForegroundProperty); }
+            set { SetValue(HeaderForegroundProperty, value); }
         }
 
         #endregion

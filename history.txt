@@ -10,8 +10,9 @@ M3 Cord Production System #278
 M3 Cord Production System #277
 - 
 
+[commited]
 M3 Cord Production System #276
-- 
+- M3.Cord.Production.App re-implements #77.
 
 [commited]
 M3 Cord Production System #275

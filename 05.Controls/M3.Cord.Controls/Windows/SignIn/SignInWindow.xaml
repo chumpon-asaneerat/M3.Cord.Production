@@ -16,7 +16,7 @@
         Width="400"
         Loaded="Window_Loaded"
         mc:Ignorable="d">
-    <page:NPage PageTitle="Sign In">
+    <page:NPage HeaderText="Sign In">
         <DockPanel LastChildFill="True">
             <!--  NAV BUTTON  -->
             <StackPanel Orientation="Horizontal"

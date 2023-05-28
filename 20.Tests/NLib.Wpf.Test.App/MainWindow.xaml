@@ -9,6 +9,6 @@
         Width="800"
         mc:Ignorable="d">
     <Grid>
-        <npage:GroupMenuPage />
+        <npage:SampleGroupMenuPage />
     </Grid>
 </Window>
