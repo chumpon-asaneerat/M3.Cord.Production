@@ -19,9 +19,14 @@
         <SolidColorBrush x:Key="CordWarehouseBG" Color="ForestGreen" />
         <SolidColorBrush x:Key="CordWarehouseBGHover" Color="Green" />
         <SolidColorBrush x:Key="CordWarehouseFG" Color="WhiteSmoke" />
+        
         <SolidColorBrush x:Key="CordProductionBG" Color="Orchid" />
         <SolidColorBrush x:Key="CordProductionBGHover" Color="Purple" />
         <SolidColorBrush x:Key="CordProductionFG" Color="WhiteSmoke" />
+
+        <SolidColorBrush x:Key="OtherBG" Color="Navy" />
+        <SolidColorBrush x:Key="OtherBGHover" Color="RoyalBlue" />
+        <SolidColorBrush x:Key="OtherFG" Color="WhiteSmoke" />
         <!--  BUTTON STYLES  -->
         <Style x:Key="G4ButtonStyle"
                BasedOn="{StaticResource MenuButtonStyle}"
@@ -109,69 +114,98 @@
         </Style>
     </UserControl.Resources>
     <page:NPage HeaderText="MAIN MENU">
-        <ctrl:NGroupMenu>
-            <!-- G4 MENU -->
-            <ctrl:NGroupMenuItem HeaderText="G4" HeaderBackground="{StaticResource G4BG}">
-                <!--  RECEIVE RAW MATERIAL  -->
-                <Button x:Name="cmdReceiveRawMaterial"
+        <DockPanel LastChildFill="True">
+            <TextBlock DockPanel.Dock="Top" Height="20" />
+            <ctrl:NGroupMenu>
+                <!-- G4 MENU -->
+                <ctrl:NGroupMenuItem HeaderText="G4" HeaderBackground="{StaticResource G4BG}">
+                    <!--  RECEIVE RAW MATERIAL  -->
+                    <Button x:Name="cmdReceiveRawMaterial"
                         Style="{StaticResource G4ButtonStyle}">
-                    <TextBlock TextAlignment="Center">
+                        <TextBlock TextAlignment="Center">
                         <Run Text="Receive" />
                         <LineBreak />
                         <Run Text="Raw Material" />
-                    </TextBlock>
-                </Button>
-                <!--  ISSUE RAW MATERIAL  -->
-                <Button x:Name="cmdIssueRawMaterial"
+                        </TextBlock>
+                    </Button>
+                    <!--  ISSUE RAW MATERIAL  -->
+                    <Button x:Name="cmdIssueRawMaterial"
                         Style="{StaticResource G4ButtonStyle}">
-                    <TextBlock TextAlignment="Center">
+                        <TextBlock TextAlignment="Center">
                         <Run Text="Issue" />
                         <LineBreak />
                         <Run Text="Raw Material" />
-                    </TextBlock>
-                </Button>
-                <!--  CHECK STOCK  -->
-                <Button x:Name="cmdCheckStock"
+                        </TextBlock>
+                    </Button>
+                    <!--  CHECK STOCK  -->
+                    <Button x:Name="cmdCheckStock"
                         Style="{StaticResource G4ButtonStyle}">
-                    <TextBlock TextAlignment="Center">
+                        <TextBlock TextAlignment="Center">
                         <Run Text="Check Stock" />
-                    </TextBlock>
-                </Button>
-                <!--  RECEIVE RETURN MATERIAL  -->
-                <Button x:Name="cmdReceiveReturnMaterial"
+                        </TextBlock>
+                    </Button>
+                    <!--  RECEIVE RETURN MATERIAL  -->
+                    <Button x:Name="cmdReceiveReturnMaterial"
                         Style="{StaticResource G4ButtonStyle}">
-                    <TextBlock TextAlignment="Center">
+                        <TextBlock TextAlignment="Center">
                         <Run Text="Receive" />
                         <LineBreak />
                         <Run Text="Return Material" />
-                    </TextBlock>
-                </Button>
-            </ctrl:NGroupMenuItem>
-            <ctrl:NGroupMenuItem HeaderText="Warehouse" HeaderBackground="{StaticResource CordWarehouseBG}">
-                <Button x:Name="cmdReceiveYarn"
+                        </TextBlock>
+                    </Button>
+                </ctrl:NGroupMenuItem>
+                <!-- WAREHOUSE MENU -->
+                <ctrl:NGroupMenuItem HeaderText="Warehouse" HeaderBackground="{StaticResource CordWarehouseBG}">
+                    <!--  RECEIVE YARN  -->
+                    <Button x:Name="cmdReceiveYarn"
                         Style="{StaticResource CordWarehouseButtonStyle}">
-                    <TextBlock TextAlignment="Center">
+                        <TextBlock TextAlignment="Center">
                         <Run Text="Receive" />
                         <LineBreak />
                         <Run Text="Yarn" />
-                    </TextBlock>
-                </Button>
-            </ctrl:NGroupMenuItem>
-            <ctrl:NGroupMenuItem HeaderText="1st Twist" HeaderBackground="{StaticResource CordProductionBG}">
-                <!--  SETUP MACHINE  -->
-                <Button x:Name="cmdFirstTwist"
+                        </TextBlock>
+                    </Button>
+                    <!--  PLANNING  -->
+                    <Button x:Name="cmdPlaning"
+                        Style="{StaticResource CordWarehouseButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                        <Run Text="Product" />
+                        <LineBreak />
+                        <Run Text="Planning" />
+                        </TextBlock>
+                    </Button>
+                </ctrl:NGroupMenuItem>
+                <!-- PRODUCTION MENU -->
+                <ctrl:NGroupMenuItem HeaderText="Production" HeaderBackground="{StaticResource CordProductionBG}">
+                    <!--  FIRST TWISTS  -->
+                    <Button x:Name="cmdFirstTwist"
                         Style="{StaticResource CordProductionButtonStyle}">
-                    <TextBlock TextAlignment="Center">
+                        <TextBlock TextAlignment="Center">
                         <Run Text="1st Twisting" />
-                    </TextBlock>
-                </Button>
-            </ctrl:NGroupMenuItem>
-            <ctrl:NGroupMenuItem HeaderText="Aging">
-                <Button Margin="0,5" Height="75" />
-            </ctrl:NGroupMenuItem>
-            <ctrl:NGroupMenuItem HeaderText="DIP">
-                <Button Margin="0,5" Height="75" />
-            </ctrl:NGroupMenuItem>
-        </ctrl:NGroupMenu>
+                        </TextBlock>
+                    </Button>
+                    <!--  Ageing  -->
+                    <Button x:Name="cmdAging"
+                        Style="{StaticResource CordProductionButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                        <Run Text="Ageing" />
+                        <LineBreak />
+                        <Run Text="(for DIP Cord)" />
+                        </TextBlock>
+                    </Button>
+                    <!--  Dipping  -->
+                    <Button x:Name="cmdDipping"
+                        Style="{StaticResource CordProductionButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                        <Run Text="Dipping" />
+                        </TextBlock>
+                    </Button>
+                </ctrl:NGroupMenuItem>
+                <!-- OTHER MENU -->
+                <ctrl:NGroupMenuItem HeaderText="Other" HeaderBackground="{StaticResource OtherBG}">
+
+                </ctrl:NGroupMenuItem>
+            </ctrl:NGroupMenu>
+        </DockPanel>
     </page:NPage>
 </UserControl>
