@@ -165,9 +165,6 @@
     <None Include="Pages\_v1\FirstTwist\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
     </None>
-    <Compile Include="Pages\_v1\Menu\CordMainMenuPage.xaml.cs">
-      <DependentUpon>CordMainMenuPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Services\M3CordApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -329,10 +326,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Menu\M3CordMainMenuPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\_v1\Menu\CordMainMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
