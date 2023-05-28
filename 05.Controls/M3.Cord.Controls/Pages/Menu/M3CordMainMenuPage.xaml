@@ -19,7 +19,7 @@
         <SolidColorBrush x:Key="CordWarehouseBG" Color="ForestGreen" />
         <SolidColorBrush x:Key="CordWarehouseBGHover" Color="Green" />
         <SolidColorBrush x:Key="CordWarehouseFG" Color="WhiteSmoke" />
-        
+
         <SolidColorBrush x:Key="CordProductionBG" Color="Orchid" />
         <SolidColorBrush x:Key="CordProductionBGHover" Color="Purple" />
         <SolidColorBrush x:Key="CordProductionFG" Color="WhiteSmoke" />
@@ -117,94 +117,101 @@
         <DockPanel LastChildFill="True">
             <TextBlock DockPanel.Dock="Top" Height="20" />
             <ctrl:NGroupMenu>
-                <!-- G4 MENU -->
+                <!--  G4 MENU  -->
                 <ctrl:NGroupMenuItem HeaderText="G4" HeaderBackground="{StaticResource G4BG}">
                     <!--  RECEIVE RAW MATERIAL  -->
                     <Button x:Name="cmdReceiveRawMaterial"
-                        Style="{StaticResource G4ButtonStyle}">
+                            Click="cmdReceiveRawMaterial_Click"
+                            Style="{StaticResource G4ButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                        <Run Text="Receive" />
-                        <LineBreak />
-                        <Run Text="Raw Material" />
+                            <Run Text="Receive" />
+                            <LineBreak />
+                            <Run Text="Raw Material" />
                         </TextBlock>
                     </Button>
                     <!--  ISSUE RAW MATERIAL  -->
                     <Button x:Name="cmdIssueRawMaterial"
-                        Style="{StaticResource G4ButtonStyle}">
+                            Click="cmdIssueRawMaterial_Click"
+                            Style="{StaticResource G4ButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                        <Run Text="Issue" />
-                        <LineBreak />
-                        <Run Text="Raw Material" />
+                            <Run Text="Issue" />
+                            <LineBreak />
+                            <Run Text="Raw Material" />
                         </TextBlock>
                     </Button>
                     <!--  CHECK STOCK  -->
                     <Button x:Name="cmdCheckStock"
-                        Style="{StaticResource G4ButtonStyle}">
+                            Click="cmdCheckStock_Click"
+                            Style="{StaticResource G4ButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                        <Run Text="Check Stock" />
+                            <Run Text="Check Stock" />
                         </TextBlock>
                     </Button>
                     <!--  RECEIVE RETURN MATERIAL  -->
                     <Button x:Name="cmdReceiveReturnMaterial"
-                        Style="{StaticResource G4ButtonStyle}">
+                            Click="cmdReceiveReturnMaterial_Click"
+                            Style="{StaticResource G4ButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                        <Run Text="Receive" />
-                        <LineBreak />
-                        <Run Text="Return Material" />
+                            <Run Text="Receive" />
+                            <LineBreak />
+                            <Run Text="Return Material" />
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>
-                <!-- WAREHOUSE MENU -->
+                <!--  WAREHOUSE MENU  -->
                 <ctrl:NGroupMenuItem HeaderText="Warehouse" HeaderBackground="{StaticResource CordWarehouseBG}">
                     <!--  RECEIVE YARN  -->
                     <Button x:Name="cmdReceiveYarn"
-                        Style="{StaticResource CordWarehouseButtonStyle}">
+                            Click="cmdReceiveYarn_Click"
+                            Style="{StaticResource CordWarehouseButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                        <Run Text="Receive" />
-                        <LineBreak />
-                        <Run Text="Yarn" />
+                            <Run Text="Receive" />
+                            <LineBreak />
+                            <Run Text="Yarn" />
                         </TextBlock>
                     </Button>
                     <!--  PLANNING  -->
                     <Button x:Name="cmdPlaning"
-                        Style="{StaticResource CordWarehouseButtonStyle}">
+                            Click="cmdPlaning_Click"
+                            Style="{StaticResource CordWarehouseButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                        <Run Text="Product" />
-                        <LineBreak />
-                        <Run Text="Planning" />
+                            <Run Text="Product" />
+                            <LineBreak />
+                            <Run Text="Planning" />
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>
-                <!-- PRODUCTION MENU -->
+                <!--  PRODUCTION MENU  -->
                 <ctrl:NGroupMenuItem HeaderText="Production" HeaderBackground="{StaticResource CordProductionBG}">
                     <!--  FIRST TWISTS  -->
                     <Button x:Name="cmdFirstTwist"
-                        Style="{StaticResource CordProductionButtonStyle}">
+                            Click="cmdFirstTwist_Click"
+                            Style="{StaticResource CordProductionButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                        <Run Text="1st Twisting" />
+                            <Run Text="1st Twisting" />
                         </TextBlock>
                     </Button>
                     <!--  Ageing  -->
                     <Button x:Name="cmdAging"
-                        Style="{StaticResource CordProductionButtonStyle}">
+                            Click="cmdAging_Click"
+                            Style="{StaticResource CordProductionButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                        <Run Text="Ageing" />
-                        <LineBreak />
-                        <Run Text="(for DIP Cord)" />
+                            <Run Text="Ageing" />
+                            <LineBreak />
+                            <Run Text="(for DIP Cord)" />
                         </TextBlock>
                     </Button>
                     <!--  Dipping  -->
                     <Button x:Name="cmdDipping"
-                        Style="{StaticResource CordProductionButtonStyle}">
+                            Click="cmdDipping_Click"
+                            Style="{StaticResource CordProductionButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                        <Run Text="Dipping" />
+                            <Run Text="Dipping" />
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>
-                <!-- OTHER MENU -->
-                <ctrl:NGroupMenuItem HeaderText="Other" HeaderBackground="{StaticResource OtherBG}">
-
-                </ctrl:NGroupMenuItem>
+                <!--  OTHER MENU  -->
+                <ctrl:NGroupMenuItem HeaderText="Other" HeaderBackground="{StaticResource OtherBG}" />
             </ctrl:NGroupMenu>
         </DockPanel>
     </page:NPage>
