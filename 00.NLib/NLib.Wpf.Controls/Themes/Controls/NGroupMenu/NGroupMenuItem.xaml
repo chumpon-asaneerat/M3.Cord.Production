@@ -7,7 +7,7 @@
                 <ControlTemplate TargetType="{x:Type local:NGroupMenuItem}">
                     <DockPanel LastChildFill="True"
                                Margin="2"
-                               Width="250"
+                               Width="{TemplateBinding GroupWidth}"
                                VerticalAlignment="Stretch">
                         <Border DockPanel.Dock="Top"
                                 Background="{TemplateBinding HeaderBackground}"
@@ -49,5 +49,7 @@
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
         <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
         <Setter Property="FontWeight" Value="Bold" />
+        <!--  DEFAULT WIDTH  -->
+        <Setter Property="GroupWidth" Value="250" />
     </Style>
 </ResourceDictionary>

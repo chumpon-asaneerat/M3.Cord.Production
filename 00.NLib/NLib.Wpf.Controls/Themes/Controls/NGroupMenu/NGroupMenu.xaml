@@ -5,7 +5,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:NGroupMenu}">
-                    <Grid Margin="10"
+                    <Grid Margin="{DynamicResource CommonMargin}"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Center">
                         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">

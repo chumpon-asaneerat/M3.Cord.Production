@@ -146,6 +146,25 @@ namespace NLib.Wpf.Pages
 
         #endregion
 
+        #region GroupWidth
+
+        /// <summary>
+        /// The GroupWidthProperty Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty GroupWidthProperty =
+            DependencyProperty.Register("GroupWidth", typeof(double), typeof(NGroupMenuItem));
+        /// <summary>
+        /// Gets or sets Group Width.
+        /// </summary>
+        public double GroupWidth
+        {
+            get { return (double)GetValue(GroupWidthProperty); }
+            set { SetValue(GroupWidthProperty, value); }
+        }
+
+
+        #endregion
+
         #endregion
     }
 }
