@@ -5,11 +5,15 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:NGroupMenu}">
-                    <Grid Margin="{DynamicResource CommonMargin}"
+                    <Grid Margin="0"
                           HorizontalAlignment="Center"
-                          VerticalAlignment="Center">
-                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                          VerticalAlignment="Stretch">
+                        <ScrollViewer VerticalContentAlignment="Stretch"
+                                      HorizontalContentAlignment="Center"
+                                      HorizontalScrollBarVisibility="Auto"
+                                      VerticalScrollBarVisibility="Disabled">
                             <ItemsControl ItemsSource="{Binding Items, RelativeSource={RelativeSource TemplatedParent}}"
+                                          VerticalAlignment="Stretch"
                                           VirtualizingPanel.IsVirtualizing="True"
                                           VirtualizingPanel.VirtualizationMode="Recycling">
                                 <ItemsControl.ItemsPanel>

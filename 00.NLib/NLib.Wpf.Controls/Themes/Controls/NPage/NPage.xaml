@@ -33,6 +33,7 @@
                                            Margin="0,2"
                                            FontSize="{TemplateBinding FontSize}"
                                            Foreground="{TemplateBinding HeaderForeground}"
+                                           VerticalAlignment="Center"
                                            Text="{TemplateBinding HeaderText}"
                                            TextAlignment="Center" />
                             </Border>
@@ -58,7 +59,7 @@
         <Setter Property="HeaderBorderBrush" Value="{DynamicResource CaptionBorderColor}" />
         <!--  DEFAULT FONTS  -->
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
-        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize30}" />
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
 </ResourceDictionary>
