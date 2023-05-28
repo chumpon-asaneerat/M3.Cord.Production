@@ -21,7 +21,7 @@ using System.Windows.Shapes;
 
 #endregion
 
-namespace NLib.Wpf.Pages
+namespace NLib.Wpf.Controls
 {
     /// <summary>
     /// The NGroupMenuItem Control

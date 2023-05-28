@@ -146,8 +146,8 @@
     </Compile>
     <Compile Include="Controls\Utils\AttachProperties\FocusOptions.cs" />
     <Compile Include="Controls\Utils\AttachProperties\FontAwesomeOptions.cs" />
-    <Compile Include="Pages\NGroupMenu\NGroupMenu.cs" />
-    <Compile Include="Pages\NGroupMenu\NGroupMenuItem.cs" />
+    <Compile Include="Controls\NGroupMenu\NGroupMenu.cs" />
+    <Compile Include="Controls\NGroupMenu\NGroupMenuItem.cs" />
     <Compile Include="Pages\NPage\NPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

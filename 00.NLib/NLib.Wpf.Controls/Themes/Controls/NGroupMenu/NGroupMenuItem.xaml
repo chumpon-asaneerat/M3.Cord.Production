@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:NLib.Wpf.Pages">
+                    xmlns:local="clr-namespace:NLib.Wpf.Controls">
     <Style TargetType="{x:Type local:NGroupMenuItem}">
         <Setter Property="Template">
             <Setter.Value>
