@@ -17,7 +17,7 @@
         <SolidColorBrush x:Key="G4FG" Color="WhiteSmoke" />
 
         <SolidColorBrush x:Key="CordWarehouseBG" Color="ForestGreen" />
-        <SolidColorBrush x:Key="CordWarehouseBGHover" Color="Green" />
+        <SolidColorBrush x:Key="CordWarehouseBGHover" Color="DarkGreen" />
         <SolidColorBrush x:Key="CordWarehouseFG" Color="WhiteSmoke" />
 
         <SolidColorBrush x:Key="CordProductionBG" Color="Orchid" />
@@ -27,15 +27,27 @@
         <SolidColorBrush x:Key="OtherBG" Color="Navy" />
         <SolidColorBrush x:Key="OtherBGHover" Color="RoyalBlue" />
         <SolidColorBrush x:Key="OtherFG" Color="WhiteSmoke" />
+        <!--  GROUP ITEM STYLES  -->
+        <Style x:Key="CommonGroupItemStyle" TargetType="ctrl:NGroupMenuItem">
+            <Setter Property="HeaderBorderBrush" Value="Transparent" />
+            <Setter Property="GroupWidth" Value="300" />
+            <Setter Property="FontWeight" Value="Regular" />
+            <Setter Property="FontSize" Value="32" />
+        </Style>
+
         <!--  BUTTON STYLES  -->
-        <Style x:Key="G4ButtonStyle"
+        <Style x:Key="CommonButtonStyle"
                BasedOn="{StaticResource MenuButtonStyle}"
+               TargetType="Button">
+            <Setter Property="Margin" Value="0,5" />
+            <Setter Property="Height" Value="120" />
+            <Setter Property="FontSize" Value="30" />
+        </Style>
+        <Style x:Key="G4ButtonStyle"
+               BasedOn="{StaticResource CommonButtonStyle}"
                TargetType="Button">
             <Setter Property="Background" Value="{StaticResource G4BG}" />
             <Setter Property="Foreground" Value="{StaticResource G4FG}" />
-            <Setter Property="Margin" Value="0,5" />
-            <Setter Property="Height" Value="90" />
-            <Setter Property="FontSize" Value="24" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -57,13 +69,10 @@
             </Setter>
         </Style>
         <Style x:Key="CordWarehouseButtonStyle"
-               BasedOn="{StaticResource MenuButtonStyle}"
+               BasedOn="{StaticResource CommonButtonStyle}"
                TargetType="Button">
             <Setter Property="Background" Value="{StaticResource CordWarehouseBG}" />
             <Setter Property="Foreground" Value="{StaticResource CordWarehouseFG}" />
-            <Setter Property="Margin" Value="0,5" />
-            <Setter Property="Height" Value="90" />
-            <Setter Property="FontSize" Value="24" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -85,13 +94,10 @@
             </Setter>
         </Style>
         <Style x:Key="CordProductionButtonStyle"
-               BasedOn="{StaticResource MenuButtonStyle}"
+               BasedOn="{StaticResource CommonButtonStyle}"
                TargetType="Button">
             <Setter Property="Background" Value="{StaticResource CordProductionBG}" />
             <Setter Property="Foreground" Value="{StaticResource CordProductionFG}" />
-            <Setter Property="Margin" Value="0,5" />
-            <Setter Property="Height" Value="90" />
-            <Setter Property="FontSize" Value="24" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -118,7 +124,9 @@
             <TextBlock DockPanel.Dock="Top" Height="20" />
             <ctrl:NGroupMenu>
                 <!--  G4 MENU  -->
-                <ctrl:NGroupMenuItem HeaderText="G4" HeaderBackground="{StaticResource G4BG}">
+                <ctrl:NGroupMenuItem HeaderText="G4"
+                                     HeaderBackground="{StaticResource G4BG}"
+                                     Style="{StaticResource CommonGroupItemStyle}">
                     <!--  RECEIVE RAW MATERIAL  -->
                     <Button x:Name="cmdReceiveRawMaterial"
                             Click="cmdReceiveRawMaterial_Click"
@@ -159,7 +167,9 @@
                     </Button>
                 </ctrl:NGroupMenuItem>
                 <!--  WAREHOUSE MENU  -->
-                <ctrl:NGroupMenuItem HeaderText="Warehouse" HeaderBackground="{StaticResource CordWarehouseBG}">
+                <ctrl:NGroupMenuItem HeaderText="Warehouse"
+                                     HeaderBackground="{StaticResource CordWarehouseBG}"
+                                     Style="{StaticResource CommonGroupItemStyle}">
                     <!--  RECEIVE YARN  -->
                     <Button x:Name="cmdReceiveYarn"
                             Click="cmdReceiveYarn_Click"
@@ -182,7 +192,9 @@
                     </Button>
                 </ctrl:NGroupMenuItem>
                 <!--  PRODUCTION MENU  -->
-                <ctrl:NGroupMenuItem HeaderText="Production" HeaderBackground="{StaticResource CordProductionBG}">
+                <ctrl:NGroupMenuItem HeaderText="Production"
+                                     HeaderBackground="{StaticResource CordProductionBG}"
+                                     Style="{StaticResource CommonGroupItemStyle}">
                     <!--  FIRST TWISTS  -->
                     <Button x:Name="cmdFirstTwist"
                             Click="cmdFirstTwist_Click"
@@ -211,7 +223,9 @@
                     </Button>
                 </ctrl:NGroupMenuItem>
                 <!--  OTHER MENU  -->
-                <ctrl:NGroupMenuItem HeaderText="Other" HeaderBackground="{StaticResource OtherBG}" />
+                <ctrl:NGroupMenuItem HeaderText="Other"
+                                     HeaderBackground="{StaticResource OtherBG}"
+                                     Style="{StaticResource CommonGroupItemStyle}" />
             </ctrl:NGroupMenu>
         </DockPanel>
     </page:NPage>
