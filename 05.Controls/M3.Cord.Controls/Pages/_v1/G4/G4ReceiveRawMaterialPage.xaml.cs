@@ -22,7 +22,7 @@ using NLib.Models;
 
 #endregion
 
-namespace M3.Cord.Pages
+namespace M3.Cord.Pages.V1
 {
     /// <summary>
     /// Interaction logic for G4ReceiveRawMaterialPage.xaml

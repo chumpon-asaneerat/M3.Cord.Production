@@ -77,6 +77,8 @@
                     <LineBreak />
                     <Run Text="{Binding CarId}" />
                 </TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <TextBlock Margin="5">
                     <Run Text="Msg:" />
                     <LineBreak />

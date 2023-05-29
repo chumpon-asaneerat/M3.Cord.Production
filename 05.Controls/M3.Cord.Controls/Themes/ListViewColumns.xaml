@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Generic.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  CELL TEMPLATES  -->
+    <DataTemplate x:Key="TraceNo">
+        <TextBlock Text="{Binding Path=TraceNo, Mode=OneWay}"
+                   TextAlignment="Left"
+                   Width="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="PalletNo">
+        <TextBlock Text="{Binding Path=PalletNo, Mode=OneWay}"
+                   TextAlignment="Left"
+                   Width="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="LotNo">
+        <TextBlock Text="{Binding Path=LotNo, Mode=OneWay}"
+                   TextAlignment="Left"
+                   Width="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="YarnType">
+        <TextBlock Text="{Binding Path=YarnType, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="WeightQty">
+        <TextBlock Text="{Binding Path=WeightQty, Mode=OneWay, StringFormat='{}{0:n1}'}"
+                   TextAlignment="Right"
+                   Width="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="IsOK">
+        <CheckBox Style="{StaticResource CommonCheckBox}"
+                  IsChecked="{Binding IsOK}"
+                  HorizontalAlignment="Center"
+                  Width="50" />
+    </DataTemplate>
+    <DataTemplate x:Key="IsNG">
+        <CheckBox Style="{StaticResource CommonCheckBox}"
+                  IsChecked="{Binding IsNG}"
+                  HorizontalAlignment="Center"
+                  Width="50" />
+    </DataTemplate>
+</ResourceDictionary>
