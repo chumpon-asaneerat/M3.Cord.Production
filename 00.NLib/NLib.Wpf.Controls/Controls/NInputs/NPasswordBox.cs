@@ -24,22 +24,21 @@ using System.Windows.Shapes;
 namespace NLib.Wpf.Controls
 {
     /// <summary>
-    /// The NInputGroup Control
+    /// The NPasswordBox Control
     /// </summary>
-    [ContentProperty(nameof(Content))]
-    public class NInputGroup : NInputControlBase
+    public class NPasswordBox : NInputControlBase
     {
         #region Constructor
 
-        static NInputGroup()
+        static NPasswordBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(NInputGroup), 
-                new FrameworkPropertyMetadata(typeof(NInputGroup)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(NPasswordBox),
+                new FrameworkPropertyMetadata(typeof(NPasswordBox)));
         }
         /// <summary>
         /// Constructor.
         /// </summary>
-        public NInputGroup() : base()
+        public NPasswordBox() : base()
         {
 
         }
@@ -52,28 +51,6 @@ namespace NLib.Wpf.Controls
         {
             base.OnApplyTemplate();
         }
-
-        #endregion
-
-        #region Public Properties
-
-        #region Content
-
-        /// <summary>
-        /// The ContentProperty Dependency property.
-        /// </summary>
-        public static readonly DependencyProperty ContentProperty =
-            DependencyProperty.Register("Content", typeof(object), typeof(NInputGroup));
-        /// <summary>
-        /// Gets or sets Items.
-        /// </summary>
-        public object Content
-        {
-            get { return (object)GetValue(ContentProperty); }
-            set { SetValue(ContentProperty, value); }
-        }
-
-        #endregion
 
         #endregion
     }

@@ -144,11 +144,16 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\NInputs\NComboBox.cs" />
+    <Compile Include="Controls\NInputs\NDatePicker.cs" />
+    <Compile Include="Controls\NInputs\NInputControlBase.cs" />
     <Compile Include="Controls\NInputs\NInputGroup.cs" />
     <Compile Include="Controls\Enums\FontAwesomeIcon.cs" />
     <Compile Include="Controls\InlineButtons\FontAwesomeButton.xaml.cs">
       <DependentUpon>FontAwesomeButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\NInputs\NPasswordBox.cs" />
+    <Compile Include="Controls\NInputs\NTextBox.cs" />
     <Compile Include="Controls\Utils\AttachProperties\FocusOptions.cs" />
     <Compile Include="Controls\Utils\AttachProperties\FontAwesomeOptions.cs" />
     <Compile Include="Controls\NGroupMenu\NGroupMenu.cs" />

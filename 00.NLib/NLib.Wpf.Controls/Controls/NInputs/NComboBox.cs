@@ -24,22 +24,21 @@ using System.Windows.Shapes;
 namespace NLib.Wpf.Controls
 {
     /// <summary>
-    /// The NInputGroup Control
+    /// The NComboBox Control
     /// </summary>
-    [ContentProperty(nameof(Content))]
-    public class NInputGroup : NInputControlBase
+    public class NComboBox : NInputControlBase
     {
         #region Constructor
 
-        static NInputGroup()
+        static NComboBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(NInputGroup), 
-                new FrameworkPropertyMetadata(typeof(NInputGroup)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(NComboBox), 
+                new FrameworkPropertyMetadata(typeof(NComboBox)));
         }
         /// <summary>
         /// Constructor.
         /// </summary>
-        public NInputGroup() : base()
+        public NComboBox() : base()
         {
 
         }
@@ -52,28 +51,6 @@ namespace NLib.Wpf.Controls
         {
             base.OnApplyTemplate();
         }
-
-        #endregion
-
-        #region Public Properties
-
-        #region Content
-
-        /// <summary>
-        /// The ContentProperty Dependency property.
-        /// </summary>
-        public static readonly DependencyProperty ContentProperty =
-            DependencyProperty.Register("Content", typeof(object), typeof(NInputGroup));
-        /// <summary>
-        /// Gets or sets Items.
-        /// </summary>
-        public object Content
-        {
-            get { return (object)GetValue(ContentProperty); }
-            set { SetValue(ContentProperty, value); }
-        }
-
-        #endregion
 
         #endregion
     }
