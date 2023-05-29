@@ -31,6 +31,6 @@
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPage/NPage.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NGroupMenu/NGroupMenu.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NGroupMenu/NGroupMenuItem.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NInputs/NInput.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NInputs/NInputGroup.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

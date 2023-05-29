@@ -126,7 +126,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Controls\NInputs\NInput.xaml">
+    <Page Include="Themes\Controls\NInputs\NInputGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,7 +144,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\NInputs\NInput.cs" />
+    <Compile Include="Controls\NInputs\NInputGroup.cs" />
     <Compile Include="Controls\Enums\FontAwesomeIcon.cs" />
     <Compile Include="Controls\InlineButtons\FontAwesomeButton.xaml.cs">
       <DependentUpon>FontAwesomeButton.xaml</DependentUpon>

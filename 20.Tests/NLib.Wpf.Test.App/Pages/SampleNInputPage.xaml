@@ -12,17 +12,17 @@
     <page:NPage HeaderText="Sample NInput">
         <DockPanel LastChildFill="True">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <ctrl:NInput CaptionText="TextBox:">
+                <ctrl:NInputGroup CaptionText="TextBox:">
                     <TextBox x:Name="txtName" Style="{StaticResource CommonTextBox}" />
-                </ctrl:NInput>
-                <ctrl:NInput CaptionText="DateTime:">
+                </ctrl:NInputGroup>
+                <ctrl:NInputGroup CaptionText="DateTime:">
                     <DatePicker x:Name="dtDate" />
-                </ctrl:NInput>
-                <ctrl:NInput CaptionText="Combobox:">
+                </ctrl:NInputGroup>
+                <ctrl:NInputGroup CaptionText="Combobox:">
                     <ComboBox x:Name="cbLookup"
                               Style="{StaticResource CommonComboBox}"
                               HorizontalAlignment="Stretch" />
-                </ctrl:NInput>
+                </ctrl:NInputGroup>
             </StackPanel>
             <Grid />
         </DockPanel>

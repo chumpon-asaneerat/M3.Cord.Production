@@ -24,21 +24,21 @@ using System.Windows.Shapes;
 namespace NLib.Wpf.Controls
 {
     /// <summary>
-    /// The NInput Control
+    /// The NInputGroup Control
     /// </summary>
     [ContentProperty(nameof(Content))]
-    public class NInput : Control
+    public class NInputGroup : Control
     {
         #region Constructor
 
-        static NInput()
+        static NInputGroup()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(NInput), new FrameworkPropertyMetadata(typeof(NInput)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(NInputGroup), new FrameworkPropertyMetadata(typeof(NInputGroup)));
         }
         /// <summary>
         /// Constructor.
         /// </summary>
-        public NInput()
+        public NInputGroup()
         {
 
         }
@@ -62,7 +62,7 @@ namespace NLib.Wpf.Controls
         /// The CaptionTextProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty CaptionTextProperty =
-            DependencyProperty.Register("CaptionText", typeof(string), typeof(NInput));
+            DependencyProperty.Register("CaptionText", typeof(string), typeof(NInputGroup));
         /// <summary>
         /// Gets or sets Caption Text.
         /// </summary>
@@ -80,7 +80,7 @@ namespace NLib.Wpf.Controls
         /// The CaptionForegroundProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty CaptionForegroundProperty =
-            DependencyProperty.Register("CaptionForeground", typeof(Brush), typeof(NInput));
+            DependencyProperty.Register("CaptionForeground", typeof(Brush), typeof(NInputGroup));
         /// <summary>
         /// Gets or sets Caption Foreground.
         /// </summary>
@@ -98,7 +98,7 @@ namespace NLib.Wpf.Controls
         /// The ContentProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty ContentProperty =
-            DependencyProperty.Register("Content", typeof(object), typeof(NInput));
+            DependencyProperty.Register("Content", typeof(object), typeof(NInputGroup));
         /// <summary>
         /// Gets or sets Items.
         /// </summary>

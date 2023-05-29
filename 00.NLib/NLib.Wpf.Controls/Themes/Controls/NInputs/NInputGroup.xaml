@@ -5,10 +5,10 @@
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/CommonStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.TextBlock.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    <Style TargetType="{x:Type local:NInput}">
+    <Style TargetType="{x:Type local:NInputGroup}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:NInput}">
+                <ControlTemplate TargetType="{x:Type local:NInputGroup}">
                     <StackPanel Orientation="Vertical">
                         <TextBlock x:Name="lbHeader"
                                    Margin="0,2,5,2"
