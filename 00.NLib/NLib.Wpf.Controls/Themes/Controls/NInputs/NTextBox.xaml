@@ -20,11 +20,15 @@
                                    TextAlignment="Left"
                                    HorizontalAlignment="Stretch"
                                    Style="{StaticResource LabelText}" />
-                        <!--
-                        <ContentPresenter Content="{TemplateBinding Content}"
-                                          Margin="0,2,5,2"
-                                          HorizontalAlignment="Stretch" />
-                        -->
+                        <TextBox x:Name="ctrl"
+                                 Margin="0,2,5,2"
+                                 HorizontalAlignment="Stretch"
+                                 Style="{StaticResource CommonTextBox}"
+                                 Text="{TemplateBinding Text}"
+                                 TextAlignment="{TemplateBinding TextAlignment}"
+                                 TextWrapping="{TemplateBinding TextWrapping}"
+                                 AcceptsReturn="{TemplateBinding AcceptsReturn}"
+                                 AcceptsTab="{TemplateBinding AcceptsTab}" />
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>
