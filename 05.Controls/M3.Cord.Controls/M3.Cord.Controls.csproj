@@ -107,9 +107,6 @@
     <None Include="Pages\_v1\G4\G4StockPage.xaml.cs">
       <DependentUpon>G4StockPage.xaml</DependentUpon>
     </None>
-    <None Include="Pages\_v1\G4\G4ReceiveRawMaterialPage.xaml.cs">
-      <DependentUpon>G4ReceiveRawMaterialPage.xaml</DependentUpon>
-    </None>
     <None Include="Pages\_v1\Warehouse\WarehousePlanningPage.xaml.cs">
       <DependentUpon>WarehousePlanningPage.xaml</DependentUpon>
     </None>
@@ -305,10 +302,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Include="Pages\_v1\G4\G4ReceiveRawMaterialPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <Page Include="Pages\G4\G4ReceiveReturnMeterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -386,7 +379,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Windows\G4\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
