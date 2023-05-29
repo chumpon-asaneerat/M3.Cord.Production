@@ -56,6 +56,50 @@ namespace NLib.Wpf.Controls
 
         #region Public Properties
 
+        #region InputForeground
+
+        /// <summary>
+        /// The InputForegroundProperty Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty InputForegroundProperty =
+            DependencyProperty.Register(
+                nameof(InputForeground),
+                typeof(Brush),
+                typeof(NDatePicker),
+                new FrameworkPropertyMetadata(Brushes.Black, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        /// <summary>
+        /// Gets or sets InputForeground.
+        /// </summary>
+        public Brush InputForeground
+        {
+            get { return (Brush)GetValue(InputForegroundProperty); }
+            set { SetValue(InputForegroundProperty, value); }
+        }
+
+        #endregion
+
+        #region SelectedDate
+
+        /// <summary>
+        /// The SelectedDateProperty Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty SelectedDateProperty =
+            DependencyProperty.Register(
+                nameof(SelectedDate),
+                typeof(DateTime?),
+                typeof(NDatePicker),
+                new FrameworkPropertyMetadata(new DateTime?(), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        /// <summary>
+        /// Gets or sets Selected Date.
+        /// </summary>
+        public DateTime? SelectedDate
+        {
+            get { return (DateTime?)GetValue(SelectedDateProperty); }
+            set { SetValue(SelectedDateProperty, value); }
+        }
+
+        #endregion
+
         #endregion
     }
 }

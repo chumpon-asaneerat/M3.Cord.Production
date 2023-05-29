@@ -21,21 +21,23 @@
                 <ctrl:NTextBox CaptionText="Name:"
                                x:Name="txtName"
                                InputForeground="{Binding ValueColor}"
-                               Text="{Binding Name, TargetNullValue=''}" 
-                               PreviewKeyDown="txtName_PreviewKeyDown"/>
+                               Text="{Binding Name, TargetNullValue=''}"
+                               PreviewKeyDown="txtName_PreviewKeyDown" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <ctrl:NPasswordBox CaptionText="Password:" 
-                                   x:Name="txtPwd" 
-                                   TextAlignment="Center"/>
-                <Button x:Name="cmdCheck" 
-                        Content="Check" 
+                <ctrl:NPasswordBox CaptionText="Password:"
+                                   x:Name="txtPwd"
+                                   TextAlignment="Center" />
+                <Button x:Name="cmdCheck"
+                        Content="Check"
                         FontSize="14"
-                        Width="120" Margin="5" Click="cmdCheck_Click" />
+                        Width="120"
+                        Margin="5"
+                        Click="cmdCheck_Click" />
+                <ctrl:NDatePicker CaptionText="Update Date:"
+                                  x:Name="dtDate"
+                                  SelectedDate="{Binding UpdateDate, TargetNullValue=''}" />
                 <!--
-                <ctrl:NInputGroup CaptionText="DateTime:">
-                    <DatePicker x:Name="dtDate" SelectedDate="{Binding UpdateDate, TargetNullValue=''}" />
-                </ctrl:NInputGroup>
                 <ctrl:NInputGroup CaptionText="Combobox:">
                     <ComboBox x:Name="cbLookup"
                               Style="{StaticResource CommonComboBox}"

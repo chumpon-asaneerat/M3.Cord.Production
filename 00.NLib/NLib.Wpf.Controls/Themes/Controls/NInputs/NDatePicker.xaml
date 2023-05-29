@@ -4,6 +4,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/CommonStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.TextBlock.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.DatePicker.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type local:NDatePicker}">
         <Setter Property="Template">
@@ -20,11 +21,12 @@
                                    TextAlignment="Left"
                                    HorizontalAlignment="Stretch"
                                    Style="{StaticResource LabelText}" />
-                        <!--
-                        <ContentPresenter Content="{TemplateBinding Content}"
-                                          Margin="0,2,5,2"
-                                          HorizontalAlignment="Stretch" />
-                        -->
+                        <DatePicker x:Name="ctrl"
+                                    Margin="0,2,5,2"
+                                    HorizontalAlignment="Stretch"
+                                    Style="{StaticResource CommonDatePicker}"
+                                    SelectedDate="{Binding SelectedDate, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NDatePicker}, UpdateSourceTrigger=PropertyChanged}"
+                                    Foreground="{TemplateBinding InputForeground}" />
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>
