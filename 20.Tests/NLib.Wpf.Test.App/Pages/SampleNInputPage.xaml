@@ -15,22 +15,22 @@
                 <ctrl:NInputGroup CaptionText="Id:">
                     <TextBox x:Name="txtId"
                              Style="{StaticResource CommonTextBox}"
-                             Text="{Binding Id}" />
+                             Text="{Binding Id, TargetNullValue=''}" />
                 </ctrl:NInputGroup>
                 <ctrl:NInputGroup CaptionText="Value:">
                     <TextBox x:Name="txtValue"
                              Style="{StaticResource CommonTextBox}"
-                             Text="{Binding Value}" />
+                             Text="{Binding Value, TargetNullValue=''}" />
                 </ctrl:NInputGroup>
                 <ctrl:NInputGroup CaptionText="Name:">
                     <TextBox x:Name="txtName"
                              Style="{StaticResource CommonTextBox}"
-                             Text="{Binding Name}" />
+                             Text="{Binding Name, TargetNullValue=''}" />
                 </ctrl:NInputGroup>
             </StackPanel>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <ctrl:NInputGroup CaptionText="DateTime:">
-                    <DatePicker x:Name="dtDate" SelectedDate="{Binding UpdateDate}" />
+                    <DatePicker x:Name="dtDate" SelectedDate="{Binding UpdateDate, TargetNullValue=''}" />
                 </ctrl:NInputGroup>
                 <ctrl:NInputGroup CaptionText="Combobox:">
                     <ComboBox x:Name="cbLookup"
