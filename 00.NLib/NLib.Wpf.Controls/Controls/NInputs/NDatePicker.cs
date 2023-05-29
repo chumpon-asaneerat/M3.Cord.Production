@@ -53,5 +53,9 @@ namespace NLib.Wpf.Controls
         }
 
         #endregion
+
+        #region Public Properties
+
+        #endregion
     }
 }

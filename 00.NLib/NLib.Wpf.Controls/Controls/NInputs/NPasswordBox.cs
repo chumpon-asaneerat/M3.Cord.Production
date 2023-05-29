@@ -45,12 +45,92 @@ namespace NLib.Wpf.Controls
 
         #endregion
 
+        #region Internal Variables
+
+        PasswordBox ctrl;
+
+        #endregion
+
         #region Override Methods
 
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
+
+            ctrl = null;
+            var obj = GetTemplateChild("ctrl");
+            if (null != obj && obj is PasswordBox)
+            {
+                ctrl = (PasswordBox)obj;
+            }
         }
+
+        #endregion
+
+        #region Public Properties
+
+        #region InputForeground
+
+        /// <summary>
+        /// The InputForegroundProperty Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty InputForegroundProperty =
+            DependencyProperty.Register(
+                nameof(InputForeground),
+                typeof(Brush),
+                typeof(NPasswordBox),
+                new FrameworkPropertyMetadata(Brushes.Black, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        /// <summary>
+        /// Gets or sets InputForeground.
+        /// </summary>
+        public Brush InputForeground
+        {
+            get { return (Brush)GetValue(InputForegroundProperty); }
+            set { SetValue(InputForegroundProperty, value); }
+        }
+
+        #endregion
+
+        #region Password
+
+        /// <summary>
+        /// Gets or sets Password.
+        /// </summary>
+        public string Password 
+        {
+            get { return (null != ctrl) ? ctrl.Password : null; }
+            set 
+            { 
+                if (null != ctrl)
+                {
+                    ctrl.Password = value;
+                }
+            } 
+        }
+
+        #endregion
+
+        #region TextAlignment
+
+        /// <summary>
+        /// The TextAlignmentProperty Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TextAlignmentProperty =
+            DependencyProperty.Register(
+                nameof(TextAlignment),
+                typeof(TextAlignment),
+                typeof(NPasswordBox),
+                new FrameworkPropertyMetadata(TextAlignment.Left, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        /// <summary>
+        /// Gets or sets TextAlignment.
+        /// </summary>
+        public TextAlignment TextAlignment
+        {
+            get { return (TextAlignment)GetValue(TextAlignmentProperty); }
+            set { SetValue(TextAlignmentProperty, value); }
+        }
+
+        #endregion
 
         #endregion
     }

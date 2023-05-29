@@ -46,42 +46,12 @@ namespace NLib.Wpf.Controls
 
         #endregion
 
-        #region Internal Variables
-
-        private TextBox ctrl;
-
-        #endregion
-
         #region Override Methods
 
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            /*
-            if (null != ctrl)
-            {
-                ctrl.PreviewKeyDown -= Ctrl_PreviewKeyDown;
-            }
-            var obj = this.GetTemplateChild("ctrl");
-            if (null != obj && obj is TextBox)
-            {
-                ctrl = (TextBox)obj;
-            }
-            if (null != ctrl)
-            {
-                ctrl.PreviewKeyDown += Ctrl_PreviewKeyDown;
-            }
-            */
         }
-
-        private void Ctrl_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        #endregion
-
-        #region TextBox Handlers
 
         #endregion
 
@@ -103,8 +73,8 @@ namespace NLib.Wpf.Controls
         /// </summary>
         public Brush InputForeground
         {
-            get { return (Brush)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            get { return (Brush)GetValue(InputForegroundProperty); }
+            set { SetValue(InputForegroundProperty, value); }
         }
 
         #endregion

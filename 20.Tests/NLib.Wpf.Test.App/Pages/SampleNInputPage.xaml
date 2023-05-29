@@ -25,6 +25,13 @@
                                PreviewKeyDown="txtName_PreviewKeyDown"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <ctrl:NPasswordBox CaptionText="Password:" 
+                                   x:Name="txtPwd" 
+                                   TextAlignment="Center"/>
+                <Button x:Name="cmdCheck" 
+                        Content="Check" 
+                        FontSize="14"
+                        Width="120" Margin="5" Click="cmdCheck_Click" />
                 <!--
                 <ctrl:NInputGroup CaptionText="DateTime:">
                     <DatePicker x:Name="dtDate" SelectedDate="{Binding UpdateDate, TargetNullValue=''}" />

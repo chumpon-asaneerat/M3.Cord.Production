@@ -64,6 +64,12 @@ namespace NLib.Wpf.Test.App.Pages
                 txtCnt.Text = string.Format("Name chars: {0}", iCnt);
             }
         }
+
+        private void cmdCheck_Click(object sender, RoutedEventArgs e)
+        {
+            var pwd = txtPwd.Password;
+            txtCnt.Text = string.Format("Password: {0}", pwd);
+        }
     }
 
     public class Sample : NLib.NInpc
