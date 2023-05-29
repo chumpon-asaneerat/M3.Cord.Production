@@ -55,6 +55,15 @@ namespace NLib.Wpf.Test.App.Pages
         }
 
         #endregion
+
+        private void txtName_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                var iCnt = txtName.Text.Length;
+                txtCnt.Text = string.Format("Name chars: {0}", iCnt);
+            }
+        }
     }
 
     public class Sample : NLib.NInpc

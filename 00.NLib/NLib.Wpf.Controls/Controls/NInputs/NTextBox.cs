@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using NLib;
 
 #endregion
 
@@ -45,12 +46,42 @@ namespace NLib.Wpf.Controls
 
         #endregion
 
+        #region Internal Variables
+
+        private TextBox ctrl;
+
+        #endregion
+
         #region Override Methods
 
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
+            /*
+            if (null != ctrl)
+            {
+                ctrl.PreviewKeyDown -= Ctrl_PreviewKeyDown;
+            }
+            var obj = this.GetTemplateChild("ctrl");
+            if (null != obj && obj is TextBox)
+            {
+                ctrl = (TextBox)obj;
+            }
+            if (null != ctrl)
+            {
+                ctrl.PreviewKeyDown += Ctrl_PreviewKeyDown;
+            }
+            */
         }
+
+        private void Ctrl_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        #endregion
+
+        #region TextBox Handlers
 
         #endregion
 

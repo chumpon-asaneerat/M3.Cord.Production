@@ -21,7 +21,8 @@
                 <ctrl:NTextBox CaptionText="Name:"
                                x:Name="txtName"
                                InputForeground="{Binding ValueColor}"
-                               Text="{Binding Name, TargetNullValue=''}" />
+                               Text="{Binding Name, TargetNullValue=''}" 
+                               PreviewKeyDown="txtName_PreviewKeyDown"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <!--
@@ -55,6 +56,11 @@
                     <Run Text="UpdateDate:" />
                     <LineBreak />
                     <Run Text="{Binding UpdateDate}" />
+                </TextBlock>
+                <TextBlock Margin="5">
+                    <Run Text="UpdateDate:" />
+                    <LineBreak />
+                    <Run x:Name="txtCnt" Text="0" />
                 </TextBlock>
             </StackPanel>
             <Grid />
