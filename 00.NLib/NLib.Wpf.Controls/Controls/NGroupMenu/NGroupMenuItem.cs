@@ -131,7 +131,7 @@ namespace NLib.Wpf.Controls
         #region Items
 
         /// <summary>
-        /// The WorkAreaProperty Dependency property.
+        /// The Items Dependency property.
         /// </summary>
         public static readonly DependencyProperty ItemsProperty =
             DependencyProperty.Register("Items", typeof(ObservableCollection<object>), typeof(NGroupMenuItem));

@@ -20,18 +20,36 @@ using System.Windows.Shapes;
 namespace NLib.Wpf.Test.App.Pages
 {
     /// <summary>
-    /// Interaction logic for SampleGroupMenuPage.xaml
+    /// Interaction logic for SampleNInputPage.xaml
     /// </summary>
-    public partial class SampleGroupMenuPage : UserControl
+    public partial class SampleNInputPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public SampleGroupMenuPage()
+        public SampleNInputPage()
         {
             InitializeComponent();
+        }
+
+        #endregion
+
+        #region Loaded
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Init();
+        }
+
+        #endregion
+
+        #region Private Method
+
+        private void Init()
+        {
+
         }
 
         #endregion

@@ -71,11 +71,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\GroupMenuPage.xaml">
+    <Page Include="Pages\SampleGroupMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\SampleGroupMenuPage.xaml">
+    <Page Include="Pages\SampleNInputPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -85,11 +85,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\GroupMenuPage.xaml.cs">
-      <DependentUpon>GroupMenuPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\SampleGroupMenuPage.xaml.cs">
       <DependentUpon>SampleGroupMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SampleNInputPage.xaml.cs">
+      <DependentUpon>SampleNInputPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SamplePage.xaml.cs">
       <DependentUpon>SamplePage.xaml</DependentUpon>

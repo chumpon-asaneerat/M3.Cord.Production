@@ -126,6 +126,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Controls\NInputs\NInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Controls\NPage\NPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,6 +144,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\NInputs\NInput.cs" />
     <Compile Include="Controls\Enums\FontAwesomeIcon.cs" />
     <Compile Include="Controls\InlineButtons\FontAwesomeButton.xaml.cs">
       <DependentUpon>FontAwesomeButton.xaml</DependentUpon>
