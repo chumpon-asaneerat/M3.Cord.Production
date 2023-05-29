@@ -47,7 +47,7 @@ namespace NLib.Wpf.Controls
 
         #region Internal Variables
 
-        PasswordBox ctrl;
+        private PasswordBox ctrl;
 
         #endregion
 

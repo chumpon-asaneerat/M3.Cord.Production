@@ -4,6 +4,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/CommonStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.TextBlock.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ComboBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type local:NComboBox}">
         <Setter Property="Template">
@@ -20,11 +21,17 @@
                                    TextAlignment="Left"
                                    HorizontalAlignment="Stretch"
                                    Style="{StaticResource LabelText}" />
-                        <!--
-                        <ContentPresenter Content="{TemplateBinding Content}"
-                                          Margin="0,2,5,2"
-                                          HorizontalAlignment="Stretch" />
-                        -->
+                        <ComboBox x:Name="ctrl"
+                                  Margin="0,2,5,2"
+                                  HorizontalAlignment="Stretch"
+                                  IsSynchronizedWithCurrentItem="True"
+                                  Style="{StaticResource CommonComboBox}"
+                                  ItemsSource="{Binding ItemsSource, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
+                                  DisplayMemberPath="{Binding DisplayMemberPath, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
+                                  SelectedValuePath="{Binding SelectedValuePath, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
+                                  SelectedValue="{Binding SelectedValue, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
+                                  SelectedItem="{Binding SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
+                                  Foreground="{TemplateBinding InputForeground}" />
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>

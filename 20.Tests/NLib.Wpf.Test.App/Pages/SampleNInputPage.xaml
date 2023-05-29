@@ -37,6 +37,12 @@
                 <ctrl:NDatePicker CaptionText="Update Date:"
                                   x:Name="dtDate"
                                   SelectedDate="{Binding UpdateDate, TargetNullValue=''}" />
+                <ctrl:NComboBox CaptionText="Combobox:"
+                                x:Name="cbLookup"
+                                DisplayMemberPath="Brand"
+                                SelectedValuePath="CarId"
+                                SelectedValue="{Binding CarId, TargetNullValue='', Mode=OneWayToSource}"
+                                SelectionChanged="cbLookup_SelectionChanged" />
                 <!--
                 <ctrl:NInputGroup CaptionText="Combobox:">
                     <ComboBox x:Name="cbLookup"
@@ -67,9 +73,19 @@
                     <Run Text="{Binding UpdateDate}" />
                 </TextBlock>
                 <TextBlock Margin="5">
-                    <Run Text="UpdateDate:" />
+                    <Run Text="CarId:" />
+                    <LineBreak />
+                    <Run Text="{Binding CarId}" />
+                </TextBlock>
+                <TextBlock Margin="5">
+                    <Run Text="Msg:" />
                     <LineBreak />
                     <Run x:Name="txtCnt" Text="0" />
+                </TextBlock>
+                <TextBlock Margin="5">
+                    <Run Text="Msg2:" />
+                    <LineBreak />
+                    <Run x:Name="txtMsg2" Text="0" />
                 </TextBlock>
             </StackPanel>
             <Grid />

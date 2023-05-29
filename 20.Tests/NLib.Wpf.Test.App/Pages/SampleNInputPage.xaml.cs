@@ -52,6 +52,9 @@ namespace NLib.Wpf.Test.App.Pages
         private void Init()
         {
             this.DataContext = inst;
+            cbLookup.ItemsSource = Lookup.Gets();
+            //inst.CarId = "C02";
+            cbLookup.SelectedIndex = 1;
         }
 
         #endregion
@@ -69,6 +72,14 @@ namespace NLib.Wpf.Test.App.Pages
         {
             var pwd = txtPwd.Password;
             txtCnt.Text = string.Format("Password: {0}", pwd);
+        }
+
+        private void cbLookup_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //cbLookup.SelectedItem;
+            string msg = "Select Brand: ";
+            msg += (null != cbLookup.SelectedItem && cbLookup.SelectedItem is Lookup) ? ((Lookup)cbLookup.SelectedItem).Brand : string.Empty;
+            txtMsg2.Text = msg;
         }
     }
 
@@ -90,6 +101,12 @@ namespace NLib.Wpf.Test.App.Pages
             set { Set(value); }
         }
 
+        public string CarId
+        {
+            get { return Get<string>(); }
+            set { Set(value); }
+        }
+
         public Brush ValueColor
         {
             get { return (Value.HasValue && Value.Value > 10) ? Brushes.Red : Brushes.Black; }
@@ -100,6 +117,24 @@ namespace NLib.Wpf.Test.App.Pages
         {
             get { return Get<DateTime?>(); }
             set { Set(value); }
+        }
+    }
+
+    public class Lookup
+    {
+        public string CarId { get; set; }
+        public string Brand { get; set; }
+
+        public static List<Lookup> Gets()
+        {
+            return new List<Lookup>() 
+            { 
+                new Lookup() { CarId = "C01", Brand = "Toyota" },
+                new Lookup() { CarId = "C02", Brand = "Honda" },
+                new Lookup() { CarId = "C03", Brand = "Yamaha" },
+                new Lookup() { CarId = "C04", Brand = "Nisson" },
+                new Lookup() { CarId = "C05", Brand = "Suzuki" }
+            };
         }
     }
 }
