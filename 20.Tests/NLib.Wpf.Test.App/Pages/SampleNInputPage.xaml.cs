@@ -45,13 +45,39 @@ namespace NLib.Wpf.Test.App.Pages
 
         #endregion
 
+        private Sample inst = new Sample();
+
         #region Private Method
 
         private void Init()
         {
-
+            this.DataContext = inst;
         }
 
         #endregion
+    }
+
+    public class Sample : NLib.NInpc
+    {
+        public int? Id
+        {
+            get { return Get<int?>(); }
+            set { Set(value); }
+        }
+        public decimal? Value
+        {
+            get { return Get<decimal?>(); }
+            set { Set(value); }
+        }
+        public string Name
+        {
+            get { return Get<string>(); }
+            set { Set(value); }
+        }
+        public DateTime? UpdateDate
+        {
+            get { return Get<DateTime?>(); }
+            set { Set(value); }
+        }
     }
 }
