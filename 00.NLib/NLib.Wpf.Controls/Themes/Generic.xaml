@@ -27,7 +27,7 @@
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/GroupMenuStyle.xaml" />
         <!--
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ImageButton.xaml" />
-        -->        
+        -->
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPage/NPage.xaml" />
 
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NGroupMenu/NGroupMenu.xaml" />

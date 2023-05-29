@@ -56,13 +56,39 @@ namespace NLib.Wpf.Controls
 
         #region Public Properties
 
+        #region InputForeground
+
+        /// <summary>
+        /// The InputForegroundProperty Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty InputForegroundProperty =
+            DependencyProperty.Register(
+                nameof(InputForeground), 
+                typeof(Brush), 
+                typeof(NTextBox),
+                new FrameworkPropertyMetadata(Brushes.Black, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        /// <summary>
+        /// Gets or sets InputForeground.
+        /// </summary>
+        public Brush InputForeground
+        {
+            get { return (Brush)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
+
+        #endregion
+
         #region Text
 
         /// <summary>
         /// The TextProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register("Text", typeof(string), typeof(NTextBox));
+            DependencyProperty.Register(
+                nameof(Text), 
+                typeof(string), 
+                typeof(NTextBox),
+                new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets Text.
         /// </summary>
@@ -80,7 +106,11 @@ namespace NLib.Wpf.Controls
         /// The TextAlignmentProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty TextAlignmentProperty =
-            DependencyProperty.Register("TextAlignment", typeof(TextAlignment), typeof(NTextBox));
+            DependencyProperty.Register(
+                nameof(TextAlignment), 
+                typeof(TextAlignment), 
+                typeof(NTextBox),
+                new FrameworkPropertyMetadata(TextAlignment.Left, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets TextAlignment.
         /// </summary>
@@ -92,13 +122,16 @@ namespace NLib.Wpf.Controls
 
         #endregion
 
-        #region TextAlignment
+        #region TextWrapping
 
         /// <summary>
-        /// The TextAlignmentProperty Dependency property.
+        /// The TextWrappingProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty TextWrappingProperty =
-            DependencyProperty.Register("TextWrapping", typeof(TextWrapping), typeof(NTextBox));
+            DependencyProperty.Register(nameof(TextWrapping), 
+                typeof(TextWrapping), 
+                typeof(NTextBox),
+                new FrameworkPropertyMetadata(TextWrapping.NoWrap, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets TextWrapping.
         /// </summary>
@@ -116,7 +149,11 @@ namespace NLib.Wpf.Controls
         /// The AcceptsReturnProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty AcceptsReturnProperty =
-            DependencyProperty.Register("AcceptsReturn", typeof(bool), typeof(NTextBox));
+            DependencyProperty.Register(
+                nameof(AcceptsReturn), 
+                typeof(bool), 
+                typeof(NTextBox),
+                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets AcceptsReturn.
         /// </summary>
@@ -134,7 +171,11 @@ namespace NLib.Wpf.Controls
         /// The AcceptsTabProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty AcceptsTabProperty =
-            DependencyProperty.Register("AcceptsTab", typeof(bool), typeof(NTextBox));
+            DependencyProperty.Register(
+                nameof(AcceptsTab), 
+                typeof(bool), 
+                typeof(NTextBox),
+                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets AcceptsTab.
         /// </summary>

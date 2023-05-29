@@ -12,23 +12,19 @@
     <page:NPage HeaderText="Sample NInput">
         <DockPanel LastChildFill="True">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <ctrl:NInputGroup CaptionText="Id:">
-                    <TextBox x:Name="txtId"
-                             Style="{StaticResource CommonTextBox}"
-                             Text="{Binding Id, TargetNullValue=''}" />
-                </ctrl:NInputGroup>
-                <ctrl:NInputGroup CaptionText="Value:">
-                    <TextBox x:Name="txtValue"
-                             Style="{StaticResource CommonTextBox}"
-                             Text="{Binding Value, TargetNullValue=''}" />
-                </ctrl:NInputGroup>
-                <ctrl:NInputGroup CaptionText="Name:">
-                    <TextBox x:Name="txtName"
-                             Style="{StaticResource CommonTextBox}"
-                             Text="{Binding Name, TargetNullValue=''}" />
-                </ctrl:NInputGroup>
+                <ctrl:NTextBox CaptionText="Id:"
+                               x:Name="txtId"
+                               Text="{Binding Id, TargetNullValue=''}" />
+                <ctrl:NTextBox CaptionText="Value:"
+                               x:Name="txtValue"
+                               Text="{Binding Value, TargetNullValue=''}" />
+                <ctrl:NTextBox CaptionText="Name:"
+                               x:Name="txtName"
+                               InputForeground="{Binding ValueColor}"
+                               Text="{Binding Name, TargetNullValue=''}" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <!--
                 <ctrl:NInputGroup CaptionText="DateTime:">
                     <DatePicker x:Name="dtDate" SelectedDate="{Binding UpdateDate, TargetNullValue=''}" />
                 </ctrl:NInputGroup>
@@ -37,6 +33,7 @@
                               Style="{StaticResource CommonComboBox}"
                               HorizontalAlignment="Stretch" />
                 </ctrl:NInputGroup>
+                -->
             </StackPanel>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <TextBlock Margin="5">

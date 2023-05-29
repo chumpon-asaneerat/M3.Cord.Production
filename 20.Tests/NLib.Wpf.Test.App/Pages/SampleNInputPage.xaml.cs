@@ -67,13 +67,20 @@ namespace NLib.Wpf.Test.App.Pages
         public decimal? Value
         {
             get { return Get<decimal?>(); }
-            set { Set(value); }
+            set { Set(value, () => { Raise(() => ValueColor); }); }
         }
         public string Name
         {
             get { return Get<string>(); }
             set { Set(value); }
         }
+
+        public Brush ValueColor
+        {
+            get { return (Value.HasValue && Value.Value > 10) ? Brushes.Red : Brushes.Black; }
+            set { }
+        }
+
         public DateTime? UpdateDate
         {
             get { return Get<DateTime?>(); }

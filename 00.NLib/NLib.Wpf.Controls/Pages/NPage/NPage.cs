@@ -79,7 +79,11 @@ namespace NLib.Wpf.Pages
         /// The HeaderTextProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty HeaderTextProperty =
-            DependencyProperty.Register("HeaderText", typeof(string), typeof(NPage));
+            DependencyProperty.Register(
+                nameof(HeaderText), 
+                typeof(string), 
+                typeof(NPage),
+                new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets Header Text.
         /// </summary>
@@ -97,7 +101,11 @@ namespace NLib.Wpf.Pages
         /// The HeaderBorderBrushProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty HeaderBorderBrushProperty =
-            DependencyProperty.Register("HeaderBorderBrush", typeof(Brush), typeof(NPage));
+            DependencyProperty.Register(
+                nameof(HeaderBorderBrush),
+                typeof(Brush), 
+                typeof(NPage),
+                new FrameworkPropertyMetadata(Brushes.CornflowerBlue, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets Header Border Brush.
         /// </summary>
@@ -115,7 +123,11 @@ namespace NLib.Wpf.Pages
         /// The HeaderBackgroundProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty HeaderBackgroundProperty =
-            DependencyProperty.Register("HeaderBackground", typeof(Brush), typeof(NPage));
+            DependencyProperty.Register(
+                nameof(HeaderBackground),
+                typeof(Brush), 
+                typeof(NPage),
+                new FrameworkPropertyMetadata(Brushes.CornflowerBlue, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets Header Background.
         /// </summary>
@@ -133,7 +145,11 @@ namespace NLib.Wpf.Pages
         /// The HeaderForegroundProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty HeaderForegroundProperty =
-            DependencyProperty.Register("HeaderForeground", typeof(Brush), typeof(NPage));
+            DependencyProperty.Register(
+                nameof(HeaderForeground),
+                typeof(Brush), 
+                typeof(NPage),
+                new FrameworkPropertyMetadata(Brushes.WhiteSmoke, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets Header Foreground.
         /// </summary>
@@ -151,7 +167,10 @@ namespace NLib.Wpf.Pages
         /// The WorkAreaProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty WorkAreaProperty =
-            DependencyProperty.Register("WorkArea", typeof(object), typeof(NPage));
+            DependencyProperty.Register(
+                nameof(WorkArea), 
+                typeof(object), 
+                typeof(NPage));
         /// <summary>
         /// Gets or sets WorkArea Content.
         /// </summary>

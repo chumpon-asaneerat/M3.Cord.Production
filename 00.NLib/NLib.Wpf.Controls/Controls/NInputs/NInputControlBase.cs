@@ -30,11 +30,6 @@ namespace NLib.Wpf.Controls
     {
         #region Constructor
 
-        static NInputControlBase()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(NInputGroup), 
-                new FrameworkPropertyMetadata(typeof(NInputGroup)));
-        }
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -62,7 +57,11 @@ namespace NLib.Wpf.Controls
         /// The CaptionTextProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty CaptionTextProperty =
-            DependencyProperty.Register("CaptionText", typeof(string), typeof(NInputControlBase));
+            DependencyProperty.Register(
+                nameof(CaptionText), 
+                typeof(string), 
+                typeof(NInputControlBase),
+                new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets Caption Text.
         /// </summary>
@@ -80,7 +79,11 @@ namespace NLib.Wpf.Controls
         /// The CaptionForegroundProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty CaptionForegroundProperty =
-            DependencyProperty.Register("CaptionForeground", typeof(Brush), typeof(NInputControlBase));
+            DependencyProperty.Register(
+                nameof(CaptionForeground),
+                typeof(Brush), 
+                typeof(NInputControlBase),
+                new FrameworkPropertyMetadata(Brushes.WhiteSmoke, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets Caption Foreground.
         /// </summary>
@@ -98,7 +101,11 @@ namespace NLib.Wpf.Controls
         /// The CaptionFontSizeProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty CaptionFontSizeProperty =
-            DependencyProperty.Register("CaptionFontSize", typeof(double), typeof(NInputControlBase));
+            DependencyProperty.Register(
+                nameof(CaptionFontSize),
+                typeof(double), 
+                typeof(NInputControlBase),
+                new FrameworkPropertyMetadata((double)18, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets Caption Font Size.
         /// </summary>
@@ -116,12 +123,16 @@ namespace NLib.Wpf.Controls
         /// The CaptionFontWeightProperty Dependency property.
         /// </summary>
         public static readonly DependencyProperty CaptionFontWeightProperty =
-            DependencyProperty.Register("CaptionFontWeight", typeof(FontWeight), typeof(NInputControlBase));
+            DependencyProperty.Register(
+                nameof(CaptionFontWeight),
+                typeof(FontWeight), 
+                typeof(NInputControlBase),
+                new FrameworkPropertyMetadata(FontWeights.Normal, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets Caption Font Weight.
         /// </summary>
         public FontWeight CaptionFontWeight
-        {
+        {            
             get { return (FontWeight)GetValue(CaptionFontWeightProperty); }
             set { SetValue(CaptionFontWeightProperty, value); }
         }
