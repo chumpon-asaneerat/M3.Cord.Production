@@ -120,7 +120,7 @@ namespace NLib.Wpf.Controls
                 nameof(TextAlignment),
                 typeof(TextAlignment),
                 typeof(NPasswordBox),
-                new FrameworkPropertyMetadata(TextAlignment.Left, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+                new FrameworkPropertyMetadata(TextAlignment.Center, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets TextAlignment.
         /// </summary>

@@ -111,7 +111,7 @@ namespace NLib.Wpf.Controls
                 nameof(TextAlignment), 
                 typeof(TextAlignment), 
                 typeof(NTextBox),
-                new FrameworkPropertyMetadata(TextAlignment.Left, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+                new FrameworkPropertyMetadata(TextAlignment.Center, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         /// <summary>
         /// Gets or sets TextAlignment.
         /// </summary>
@@ -184,6 +184,28 @@ namespace NLib.Wpf.Controls
         {
             get { return (bool)GetValue(AcceptsTabProperty); }
             set { SetValue(AcceptsTabProperty, value); }
+        }
+
+        #endregion
+
+        #region IsReadOnly
+
+        /// <summary>
+        /// The IsReadOnlyProperty Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsReadOnlyProperty =
+            DependencyProperty.Register(
+                nameof(IsReadOnly),
+                typeof(bool),
+                typeof(NTextBox),
+                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        /// <summary>
+        /// Gets or sets AcceptsTab.
+        /// </summary>
+        public bool IsReadOnly
+        {
+            get { return (bool)GetValue(IsReadOnlyProperty); }
+            set { SetValue(IsReadOnlyProperty, value); }
         }
 
         #endregion

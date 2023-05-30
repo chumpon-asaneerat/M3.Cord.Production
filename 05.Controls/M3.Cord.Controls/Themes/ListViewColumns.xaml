@@ -31,15 +31,19 @@
     </DataTemplate>
 
     <DataTemplate x:Key="IsOK">
-        <CheckBox Style="{StaticResource CommonCheckBox}"
-                  IsChecked="{Binding IsOK}"
-                  HorizontalAlignment="Center"
-                  Width="50" />
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding IsOK}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="IsNG">
-        <CheckBox Style="{StaticResource CommonCheckBox}"
-                  IsChecked="{Binding IsNG}"
-                  HorizontalAlignment="Center"
-                  Width="50" />
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding IsNG}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
     </DataTemplate>
 </ResourceDictionary>

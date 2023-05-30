@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
         xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
-        xmlns:util="clr-namespace:NLib.Wpf.Controls.Utils;assembly=NLib.Wpf.Controls"
         mc:Ignorable="d"
         Title="G4 Receive Raw Material"
         HorizontalAlignment="Center"
@@ -16,7 +15,7 @@
         Height="380"
         Width="900">
     <page:NPage HeaderText="G4 Receive Raw Material">
-        <DockPanel LastChildFill="True">
+        <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
             <DockPanel LastChildFill="True"
                        DockPanel.Dock="Bottom"
@@ -41,18 +40,23 @@
                     <StackPanel Orientation="Horizontal">
                         <ctrl:NTextBox CaptionText="Pallet No:"
                                        Text="{Binding PalletNo}"
+                                       IsReadOnly="True"
                                        Width="150" />
                         <ctrl:NTextBox CaptionText="Lot No:"
                                        Text="{Binding LotNo}"
+                                       IsReadOnly="True"
                                        Width="150" />
                         <ctrl:NTextBox CaptionText="Item Yarn:"
                                        Text="{Binding ItemYarn}"
+                                       IsReadOnly="True"
                                        Width="200" />
                         <ctrl:NTextBox CaptionText="Weight:"
-                                       Text="{Binding WeightQty}"
+                                       Text="{Binding WeightQty, StringFormat=n1}"
+                                       IsReadOnly="True"
                                        Width="120" />
                         <ctrl:NTextBox CaptionText="Trace No:"
                                        Text="{Binding TraceNo}"
+                                       IsReadOnly="True"
                                        Width="120" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -66,7 +70,9 @@
                                              VerticalContentAlignment="Center"
                                              IsChecked="{Binding OK}"
                                              Width="70">
-                                    <TextBlock Style="{StaticResource LabelText}" Text="OK" />
+                                    <TextBlock Style="{StaticResource LabelText}"
+                                               FontSize="{StaticResource FontSize18}"
+                                               Text="OK" />
                                 </RadioButton>
                                 <!--  NG  -->
                                 <RadioButton Margin="2,5"
@@ -76,10 +82,166 @@
                                              VerticalContentAlignment="Center"
                                              IsChecked="{Binding NG}"
                                              Width="70">
-                                    <TextBlock Style="{StaticResource LabelText}" Text="NG" />
+                                    <TextBlock Style="{StaticResource LabelText}"
+                                               FontSize="{StaticResource FontSize18}"
+                                               Text="NG" />
                                 </RadioButton>
                             </StackPanel>
                         </ctrl:NInputGroup>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <!--  PACKING  -->
+                        <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Center"
+                                    Margin="1">
+                            <Border Background="Orange">
+                                <TextBlock TextAlignment="Center"
+                                           FontWeight="Normal"
+                                           Margin="5"
+                                           Style="{StaticResource LabelText}">
+                                    <Run Text="สภาพวัสดุห่อ" />
+                                    <LineBreak />
+                                    <Run Text="Packaging" />
+                                </TextBlock>
+                            </Border>
+                            <CheckBox Margin="5"
+                                      Style="{StaticResource CommonCheckBox}"
+                                      HorizontalAlignment="Center"
+                                      IsChecked="{Binding Packing}" />
+                        </StackPanel>
+                        <!--  CLEAN  -->
+                        <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Center"
+                                    Margin="1">
+                            <Border Background="Orange">
+                                <TextBlock TextAlignment="Center"
+                                           FontWeight="Normal"
+                                           Margin="5"
+                                           Style="{StaticResource LabelText}">
+                                    <Run Text="ความสะอาด" />
+                                    <LineBreak />
+                                    <Run Text="Clean/Clear" />
+                                </TextBlock>
+                            </Border>
+                            <CheckBox Margin="5"
+                                      Style="{StaticResource CommonCheckBox}"
+                                      HorizontalAlignment="Center"
+                                      IsChecked="{Binding Clean}" />
+                        </StackPanel>
+                        <!--  TEARING  -->
+                        <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Center"
+                                    Margin="1">
+                            <Border Background="Orange">
+                                <TextBlock TextAlignment="Center"
+                                           FontWeight="Normal"
+                                           Margin="5"
+                                           Style="{StaticResource LabelText}">
+                                    <Run Text="สินค้าฉีกขาด" />
+                                    <LineBreak />
+                                    <Run Text="Tearing" />
+                                </TextBlock>
+                            </Border>
+                            <CheckBox Margin="5"
+                                      Style="{StaticResource CommonCheckBox}"
+                                      HorizontalAlignment="Center"
+                                      IsChecked="{Binding Tearing}" />
+                        </StackPanel>
+                        <!--  FALL DOWN  -->
+                        <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Center"
+                                    Margin="1">
+                            <Border Background="Orange">
+                                <TextBlock TextAlignment="Center"
+                                           FontWeight="Normal"
+                                           Margin="5"
+                                           Style="{StaticResource LabelText}">
+                                    <Run Text="สินค้าร่วงล้ม" />
+                                    <LineBreak />
+                                    <Run Text="Fall Down" />
+                                </TextBlock>
+                            </Border>
+                            <CheckBox Margin="5"
+                                      Style="{StaticResource CommonCheckBox}"
+                                      HorizontalAlignment="Center"
+                                      IsChecked="{Binding Falldown}" />
+                        </StackPanel>
+                        <!--  CERTIFICATION  -->
+                        <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Center"
+                                    Margin="1">
+                            <Border Background="Orange">
+                                <TextBlock TextAlignment="Center"
+                                           FontWeight="Normal"
+                                           Margin="5"
+                                           Style="{StaticResource LabelText}">
+                                    <Run Text="ใบรับรอง" />
+                                    <LineBreak />
+                                    <Run Text="Certification" />
+                                </TextBlock>
+                            </Border>
+                            <CheckBox Margin="5"
+                                      Style="{StaticResource CommonCheckBox}"
+                                      HorizontalAlignment="Center"
+                                      IsChecked="{Binding Certification}" />
+                        </StackPanel>
+                        <!--  INVOICE  -->
+                        <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Center"
+                                    Margin="1">
+                            <Border Background="Orange">
+                                <TextBlock TextAlignment="Center"
+                                           FontWeight="Normal"
+                                           Margin="5"
+                                           Style="{StaticResource LabelText}">
+                                    <Run Text="ใบส่งสินค้า" />
+                                    <LineBreak />
+                                    <Run Text="Invoice" />
+                                </TextBlock>
+                            </Border>
+                            <CheckBox Margin="5"
+                                      Style="{StaticResource CommonCheckBox}"
+                                      HorizontalAlignment="Center"
+                                      IsChecked="{Binding Invoice}" />
+                        </StackPanel>
+                        <!--  IDENTIFY AREA  -->
+                        <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Center"
+                                    Margin="1">
+                            <Border Background="Orange">
+                                <TextBlock TextAlignment="Center"
+                                           FontWeight="Normal"
+                                           Margin="5"
+                                           Style="{StaticResource LabelText}">
+                                    <Run Text="ข้อมูลชี้บ่ง" />
+                                    <LineBreak />
+                                    <Run Text="Identify Area" />
+                                </TextBlock>
+                            </Border>
+                            <CheckBox Margin="5"
+                                      Style="{StaticResource CommonCheckBox}"
+                                      HorizontalAlignment="Center"
+                                      IsChecked="{Binding IdentifyArea}" />
+                        </StackPanel>
+                        <!--  AMOUNT PALLET  -->
+                        <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Center"
+                                    Margin="1">
+                            <Border Background="Orange">
+                                <TextBlock TextAlignment="Center"
+                                           FontWeight="Normal"
+                                           Margin="5"
+                                           Style="{StaticResource LabelText}">
+                                    <Run Text="จำนวนพาเลท" />
+                                    <LineBreak />
+                                    <Run Text="Amount of Pallet" />
+                                </TextBlock>
+                            </Border>
+                            <CheckBox Margin="5"
+                                      Style="{StaticResource CommonCheckBox}"
+                                      HorizontalAlignment="Center"
+                                      IsChecked="{Binding AmountPallet}" />
+                        </StackPanel>
                     </StackPanel>
                 </StackPanel>
                 <Grid />

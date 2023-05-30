@@ -12,8 +12,8 @@
                     <StackPanel Orientation="Vertical">
                         <TextBlock x:Name="lbHeader"
                                    Margin="0,2,5,2"
-                                   FontSize="{TemplateBinding FontSize}"
-                                   FontWeight="{TemplateBinding FontWeight}"
+                                   FontSize="{TemplateBinding CaptionFontSize}"
+                                   FontWeight="{TemplateBinding CaptionFontWeight}"
                                    Foreground="{TemplateBinding CaptionForeground}"
                                    Background="{TemplateBinding Background}"
                                    Text="{TemplateBinding CaptionText}"
