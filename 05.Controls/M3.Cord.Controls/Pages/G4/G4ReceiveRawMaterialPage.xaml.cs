@@ -19,6 +19,7 @@ using NLib.Models;
 using NLib.Services;
 using M3.Cord.Models;
 using System.Windows.Interop;
+using NLib.Wpf.Controls;
 
 #endregion
 
@@ -81,7 +82,7 @@ namespace M3.Cord.Pages
 
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
         {
-            var btn = sender as Button;
+            var btn = sender as FontAwesomeButton;
             if (null == btn) return;
             var item = btn.DataContext as G4Yarn;
             EditItem(item);
@@ -89,7 +90,7 @@ namespace M3.Cord.Pages
 
         private void cmdDelete_Click(object sender, RoutedEventArgs e)
         {
-            var btn = sender as Button;
+            var btn = sender as FontAwesomeButton;
             if (null == btn) return;
             var item = btn.DataContext as G4Yarn;
             DeleteItem(item);

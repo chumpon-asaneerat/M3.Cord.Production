@@ -49,7 +49,7 @@
                                        Text="{Binding ItemYarn}"
                                        Width="200" />
                         <ctrl:NTextBox CaptionText="Weight:"
-                                       Text="{Binding WeightQry}"
+                                       Text="{Binding WeightQty}"
                                        Width="120" />
                         <ctrl:NTextBox CaptionText="Trace No:"
                                        Text="{Binding TraceNo}"
