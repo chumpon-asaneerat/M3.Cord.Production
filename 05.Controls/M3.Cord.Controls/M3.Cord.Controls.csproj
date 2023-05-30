@@ -179,9 +179,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Windows\_V1\G4\G4ReceiveYarnWindowV0.xaml.cs">
-      <DependentUpon>G4ReceiveYarnWindowV0.xaml</DependentUpon>
-    </None>
     <None Include="Windows\_V1\Sample\SampleWindow.xaml.cs">
       <DependentUpon>SampleWindow.xaml</DependentUpon>
     </None>
@@ -354,10 +351,6 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Include="Windows\_V1\CordWarehouse\CordProcuctPlanningWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Windows\_V1\G4\G4ReceiveYarnWindowV0.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
