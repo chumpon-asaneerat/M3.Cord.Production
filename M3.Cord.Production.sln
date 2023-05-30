@@ -181,6 +181,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord_v0 Image", "Cord_v0 Im
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3.Cord.Developer.Tools.App", "09.App\M3.Cord.Developer.Tools.App\M3.Cord.Developer.Tools.App.csproj", "{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{4ACCB01C-9DA9-4B86-81F7-CE9B18257A9C}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Data\Oracle\Scripts\G3_getrequestnodetail.txt = Documents\Data\Oracle\Scripts\G3_getrequestnodetail.txt
+		Documents\Data\Oracle\Scripts\G3_insertupdateissueyarn.txt = Documents\Data\Oracle\Scripts\G3_insertupdateissueyarn.txt
+		Documents\Data\Oracle\Scripts\G3_SearchYarnStock.txt = Documents\Data\Oracle\Scripts\G3_SearchYarnStock.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -281,6 +288,7 @@ Global
 		{943E6355-3881-4D47-837E-524D70D3FD14} = {5C54D9E2-5613-452D-AB27-C131D613F94B}
 		{52DA3F0D-91F5-45F1-A955-9CB3DF6D9ABD} = {3487607A-154F-41EE-A04D-C71F2D382CC4}
 		{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA} = {B80910F2-BC08-4C75-9E6D-170ECC150E61}
+		{4ACCB01C-9DA9-4B86-81F7-CE9B18257A9C} = {5C54D9E2-5613-452D-AB27-C131D613F94B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}

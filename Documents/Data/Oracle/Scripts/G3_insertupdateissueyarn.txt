@@ -1,0 +1,150 @@
+create or replace PROCEDURE            G3_insertupdateissueyarn
+(  p_requestno varchar2,
+   p_pattetno varchar2,
+   p_traceno varchar2,
+   p_ch number,
+   p_weight number,
+   p_issuedate date,
+   p_operator varchar2,
+   p_pallettype varchar2,
+   p_issueto varchar2--, 
+  -- p_oldRequestNo VARCHAR2
+ 
+) AS
+v_cnt number(2,0) :=0;
+v_cnt1 number(2,0) :=0;
+v_remain number(8,2) :=0;
+v_remainOld number(8,2) :=0;
+v_weight number(8,2) :=0;
+v_finish varchar2(2) :=null;
+v_pallettype varchar2(2) :=null;
+BEGIN
+/*
+if p_oldRequestNo is not null then
+begin
+select count(*) into v_cnt1
+from AIRBAG2014.G3_ISSUEYARN
+where REQUESTNO = p_oldRequestNo
+and PALLETNO = p_pattetno; 
+
+if v_cnt > 0 then 
+
+UPDATE AIRBAG2014.G3_ISSUEYARN
+SET    deleteflag  = '0',
+       editdate    = sysdate,
+       editby     = p_operator,
+       remark      = 'Change Request to'||p_requestno
+where REQUESTNO = p_oldRequestNo
+and PALLETNO = p_pattetno; 
+
+end if;
+
+end;
+
+end if;
+*/
+
+select count(*) into v_cnt
+from AIRBAG2014.G3_ISSUEYARN
+where REQUESTNO = p_requestno
+and PALLETNO = p_pattetno
+and deleteflag = '1'; 
+
+if v_cnt = 0 then 
+begin
+
+INSERT INTO AIRBAG2014.G3_ISSUEYARN (
+   ISSUEDATE, PALLETNO, TRACENO, WEIGHT, CH, ISSUEBY, ISSUETO, REQUESTNO, PALLETTYPE, deleteflag) 
+VALUES ( p_issuedate, p_pattetno, p_traceno, p_weight, p_ch, p_operator, p_issueto, p_requestno, p_pallettype,'1');
+
+select WEIGHTQTY into v_weight
+from AIRBAG2014.G3_YARN
+where PALLETNO = p_pattetno;
+
+if v_weight = p_weight 
+then 
+begin
+v_finish := 'Y' ;
+v_remain := 0;
+end;
+else 
+begin
+v_remain := v_weight - p_weight ;
+v_pallettype := 'H';
+end;
+
+end if;
+
+UPDATE AIRBAG2014.G3_YARN
+SET    REMAINQTY       = v_remain,
+       FINISHFLAG      = COALESCE( v_finish , FINISHFLAG),
+       UPDATEDATE      = COALESCE( p_issuedate , UPDATEDATE),
+       PALLETTYPE      = COALESCE( v_pallettype , PALLETTYPE)      
+WHERE  PALLETNO = p_pattetno;
+
+
+end;
+else 
+begin
+-- Cancel Yarn from request no
+UPDATE AIRBAG2014.G3_ISSUEYARN
+SET    DELETEFLAG = '0',
+       EDITBY = COALESCE( p_operator , EDITBY),
+       EDITDATE = sysdate,
+       REMARK = 'Cancel Pallet'
+where REQUESTNO = p_requestno
+and PALLETNO = p_pattetno; 
+
+select WEIGHTQTY , REMAINQTY into v_weight, v_remainOld
+from AIRBAG2014.G3_YARN
+where PALLETNO = p_pattetno;
+
+
+v_remain := v_remainOld+p_weight;
+
+if (v_weight = v_remain ) then
+   v_pallettype := 'F';
+else v_pallettype := 'H'; 
+end if;
+
+
+UPDATE AIRBAG2014.G3_YARN
+SET    REMAINQTY       = v_remain,
+       FINISHFLAG      = 'N',
+       UPDATEDATE      = sysdate,
+       PALLETTYPE      = COALESCE( v_pallettype , PALLETTYPE)      
+WHERE  PALLETNO = p_pattetno;
+end;
+end if;
+/*
+select WEIGHTQTY into v_weight
+from AIRBAG2014.G3_YARN
+where PALLETNO = p_pattetno;
+
+if v_weight = p_weight 
+then 
+begin
+v_finish := 'Y' ;
+v_remain := 0;
+end;
+else 
+begin
+v_remain := v_weight - p_weight ;
+v_pallettype := 'H';
+end;
+
+end if;
+
+UPDATE AIRBAG2014.G3_YARN
+SET    REMAINQTY       = v_remain,
+       FINISHFLAG      = COALESCE( v_finish , FINISHFLAG),
+       UPDATEDATE      = COALESCE( p_issuedate , UPDATEDATE),
+       PALLETTYPE      = COALESCE( v_pallettype , PALLETTYPE)      
+WHERE  PALLETNO = p_pattetno;
+*/
+   
+commit;
+
+
+ 
+END G3_insertupdateissueyarn;

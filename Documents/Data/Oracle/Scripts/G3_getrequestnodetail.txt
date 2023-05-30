@@ -1,0 +1,17 @@
+create or replace PROCEDURE            G3_getrequestnodetail
+( p_requestno  varchar2,
+    p_return_cur IN OUT SYS_REFCURSOR
+  
+) AS
+
+
+BEGIN
+OPEN p_return_cur FOR
+   select I.*, Y.ITM_YARN , Y.LOTNO , Y.YARNTYPE , Y.ITM400 , Y.ENTRYDATE, Y.PACKAING, Y.CLEAN, Y.FALLDOWN ,Y.TEARING
+   from G3_ISSUEYARN I, G3_YARN Y
+   where I.REQUESTNO = COALESCE( p_requestno , I.REQUESTNO)
+    and I.PALLETNO = Y.PALLETNO
+    and I.deleteflag = '1'
+    order by I.ISSUEDATE , I.PALLETNO;
+    
+END G3_getrequestnodetail;

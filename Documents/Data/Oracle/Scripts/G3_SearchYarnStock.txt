@@ -1,0 +1,19 @@
+create or replace PROCEDURE            G3_SearchYarnStock
+( p_itmyarn varchar2 ,
+  p_recdate varchar2 ,
+  p_yarntype VARCHAR2,
+  p_return_cur IN OUT SYS_REFCURSOR
+) AS
+
+BEGIN
+OPEN p_return_cur FOR
+   select * 
+   from AIRBAG2014.G3_YARN 
+   where ITM_YARN = COALESCE( p_itmyarn , ITM_YARN)
+   and trunc(entrydate) = COALESCE( to_date(p_recdate,'dd/mm/yyyy') ,trunc(entrydate))
+   and yarntype = COALESCE( p_yarntype , yarntype)
+   and FINISHFLAG = 'N' AND DELFAG is null
+   order by entrydate asc;
+   
+
+END G3_SearchYarnStock;
