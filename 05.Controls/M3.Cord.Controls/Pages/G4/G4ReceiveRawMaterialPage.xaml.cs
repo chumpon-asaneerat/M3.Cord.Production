@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using NLib.Models;
 using NLib.Services;
 using M3.Cord.Models;
+using System.Windows.Interop;
 
 #endregion
 
@@ -75,7 +76,7 @@ namespace M3.Cord.Pages
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
-
+            ReceiveAll();
         }
 
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
@@ -182,6 +183,39 @@ namespace M3.Cord.Pages
             int idx = receives.IndexOf(item);
             if (idx == -1) return;
             receives.RemoveAt(idx);
+            RefreshGrid();
+        }
+
+        private void ReceiveAll()
+        {
+            if (null != receives)
+            {
+                // update receive date + receive by
+                receives.ForEach(yarn => 
+                { 
+                    yarn.ReceiveDate = DateTime.Now;
+                    yarn.ReceiveBy = 1; // need userid here.
+                    yarn.FinishFlag = true; // mark as finished.
+                });
+
+                var ret = G4Yarn.Save(receives);
+
+                // Show MessageBox
+                string msg = string.Empty;
+                var win = M3CordApp.Windows.MessageBox;
+                if (null != ret && ret.Ok)
+                {
+                    msg = "Save Success";
+                }
+                else
+                {
+                    msg = "Save Failed. " + Environment.NewLine;
+                    msg += ret.ErrMsg;
+                }
+                win.Setup(msg, "M3 Cord");
+                win.ShowDialog();
+            }
+            ClearAll();
             RefreshGrid();
         }
 

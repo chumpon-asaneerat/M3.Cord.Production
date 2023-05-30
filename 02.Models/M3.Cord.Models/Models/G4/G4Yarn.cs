@@ -14,6 +14,8 @@ using NLib.Models;
 
 using Dapper;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 
 #endregion
 
@@ -225,6 +227,12 @@ namespace M3.Cord.Models
 
             NDbResult<G4Yarn> ret = new NDbResult<G4Yarn>();
 
+            if (null == value)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
             IDbConnection cnn = DbServer.Instance.Db;
             if (null == cnn || !DbServer.Instance.Connected)
             {
@@ -386,6 +394,58 @@ namespace M3.Cord.Models
             }
 
             return rets;
+        }
+
+        public static NDbResult Save(List<G4Yarn> values)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            if (null == values)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            try
+            {
+                int iErrCnt = 0;
+                foreach (var yarn in values)
+                {
+                    var oRet = Save(yarn);
+                    if (null == oRet || oRet.HasError) // something error.
+                    {
+                        ++iErrCnt;
+                    }
+                }
+
+                if (iErrCnt == 0) 
+                {
+                    ret.Success();
+                }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
         }
 
         #endregion
