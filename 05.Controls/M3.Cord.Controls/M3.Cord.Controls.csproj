@@ -144,6 +144,9 @@
     <None Include="Windows\_V1\CordWarehouse\CordProcuctPlanningWindow.xaml.cs">
       <DependentUpon>CordProcuctPlanningWindow.xaml</DependentUpon>
     </None>
+    <Compile Include="Windows\G4\G4ReceiveYarnWindow.xaml.cs">
+      <DependentUpon>G4ReceiveYarnWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MessageBox\MessageBoxOKCancelWindow.xaml.cs">
       <DependentUpon>MessageBoxOKCancelWindow.xaml</DependentUpon>
     </Compile>
@@ -366,6 +369,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\G4\G4ReceiveYarnWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\MessageBox\MessageBoxOKCancelWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -379,9 +386,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Windows\G4\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>

@@ -132,9 +132,6 @@ namespace M3.Cord.Pages
             var item = SerachByTranceNo(traceNo);
             if (null != item)
             {
-                receives.Add(item); // TEST
-                RefreshGrid();
-                /*
                 var win = M3CordApp.Windows.G4ReceiveYarn;
                 win.Setup(item);
                 if (win.ShowDialog() == true)
@@ -142,7 +139,13 @@ namespace M3.Cord.Pages
                     receives.Add(item);
                     RefreshGrid();
                 }
-                */
+            }
+            else
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                string msg = string.Format("Trace No: {0} not found.", traceNo);
+                win.Setup(msg);
+                win.ShowDialog();
             }
 
             txtTraceNo.Text = string.Empty;
@@ -167,14 +170,13 @@ namespace M3.Cord.Pages
         private void EditItem(G4Yarn item)
         {
             if (null == item) return;
-            /*
+
             var win = M3CordApp.Windows.G4ReceiveYarn;
             win.Setup(item);
             if (win.ShowDialog() == true)
             {
                 RefreshGrid();
             }
-            */
         }
 
         private void DeleteItem(G4Yarn item)
@@ -212,7 +214,7 @@ namespace M3.Cord.Pages
                     msg = "Save Failed. " + Environment.NewLine;
                     msg += ret.ErrMsg;
                 }
-                win.Setup(msg, "M3 Cord");
+                win.Setup(msg);
                 win.ShowDialog();
             }
             ClearAll();

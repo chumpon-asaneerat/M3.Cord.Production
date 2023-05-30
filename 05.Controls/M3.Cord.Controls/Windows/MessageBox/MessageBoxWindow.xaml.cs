@@ -51,7 +51,7 @@ namespace M3.Cord.Windows
         /// </summary>
         /// <param name="msg">The message.</param>
         /// <param name="title">The title.</param>
-        public void Setup(string msg, string title)
+        public void Setup(string msg, string title = "M3 Cord")
         {
             this.Title = title;
             txtMsg.Text = msg;

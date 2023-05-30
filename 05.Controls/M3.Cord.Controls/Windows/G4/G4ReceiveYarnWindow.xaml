@@ -1,0 +1,89 @@
+﻿<Window x:Class="M3.Cord.Windows.G4ReceiveYarnWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        xmlns:util="clr-namespace:NLib.Wpf.Controls.Utils;assembly=NLib.Wpf.Controls"
+        mc:Ignorable="d"
+        Title="G4 Receive Raw Material"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="380"
+        Width="900">
+    <page:NPage HeaderText="G4 Receive Raw Material">
+        <DockPanel LastChildFill="True">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdOk"
+                                        DockPanel.Dock="Right"
+                                        IconType="Ok"
+                                        Text="Ok"
+                                        Click="cmdOk_Click" />
+                <Grid />
+            </DockPanel>
+            <!--  WORK AREA  -->
+            <DockPanel LastChildFill="True">
+                <StackPanel Orientation="Vertical"
+                            DockPanel.Dock="Top"
+                            HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <ctrl:NTextBox CaptionText="Pallet No:"
+                                       Text="{Binding PalletNo}"
+                                       Width="150" />
+                        <ctrl:NTextBox CaptionText="Lot No:"
+                                       Text="{Binding LotNo}"
+                                       Width="150" />
+                        <ctrl:NTextBox CaptionText="Item Yarn:"
+                                       Text="{Binding ItemYarn}"
+                                       Width="200" />
+                        <ctrl:NTextBox CaptionText="Weight:"
+                                       Text="{Binding WeightQry}"
+                                       Width="120" />
+                        <ctrl:NTextBox CaptionText="Trace No:"
+                                       Text="{Binding TraceNo}"
+                                       Width="120" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <ctrl:NInputGroup CaptionText="Verify">
+                            <StackPanel Orientation="Horizontal">
+                                <!--  OK  -->
+                                <RadioButton Margin="2,5"
+                                             GroupName="GrpVerify"
+                                             Style="{StaticResource CommonRadioButton}"
+                                             VerticalAlignment="Center"
+                                             VerticalContentAlignment="Center"
+                                             IsChecked="{Binding OK}"
+                                             Width="70">
+                                    <TextBlock Style="{StaticResource LabelText}" Text="OK" />
+                                </RadioButton>
+                                <!--  NG  -->
+                                <RadioButton Margin="2,5"
+                                             GroupName="GrpVerify"
+                                             Style="{StaticResource CommonRadioButton}"
+                                             VerticalAlignment="Center"
+                                             VerticalContentAlignment="Center"
+                                             IsChecked="{Binding NG}"
+                                             Width="70">
+                                    <TextBlock Style="{StaticResource LabelText}" Text="NG" />
+                                </RadioButton>
+                            </StackPanel>
+                        </ctrl:NInputGroup>
+                    </StackPanel>
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>

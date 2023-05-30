@@ -91,7 +91,7 @@ namespace M3.Cord.Windows
             if (string.IsNullOrWhiteSpace(userName))
             {
                 var win = M3CordApp.Windows.MessageBox;
-                win.Setup("กรุณาป้อน ชื่อบัญชีผู้ใช้", "M3 Cord");
+                win.Setup("กรุณาป้อน ชื่อบัญชีผู้ใช้");
                 win.ShowDialog();
 
                 FocusControl(txtUserName);
@@ -102,7 +102,7 @@ namespace M3.Cord.Windows
             if (string.IsNullOrWhiteSpace(password))
             {
                 var win = M3CordApp.Windows.MessageBox;
-                win.Setup("กรุณาป้อน รหัสผ่าน", "M3 Cord");
+                win.Setup("กรุณาป้อน รหัสผ่าน");
                 win.ShowDialog();
 
                 FocusControl(txtPassword);
@@ -130,7 +130,7 @@ namespace M3.Cord.Windows
             {
                 // login failed show message.
                 var win = M3CordApp.Windows.MessageBox;
-                win.Setup(msg, "M3 Cord");
+                win.Setup(msg);
                 win.ShowDialog();
 
                 if (status == SignInStatus.InvalidPassword)

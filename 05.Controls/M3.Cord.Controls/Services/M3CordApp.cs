@@ -169,13 +169,13 @@ namespace M3.Cord
             #endregion
 
             #region G4
-            /*
+
             /// <summary>Gets G4 Receive Yarn Window.</summary>
             public static G4ReceiveYarnWindow G4ReceiveYarn
             {
                 get { return GetWindow<G4ReceiveYarnWindow>(); }
             }
-            */
+
             #endregion
 
             #region CordWarehouse

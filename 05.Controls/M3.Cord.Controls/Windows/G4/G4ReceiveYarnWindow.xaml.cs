@@ -14,52 +14,56 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using NLib.Models;
+using M3.Cord.Models;
+
 #endregion
 
 namespace M3.Cord.Windows
 {
     /// <summary>
-    /// Interaction logic for MessageBoxOKCancelWindow.xaml
+    /// Interaction logic for G4ReceiveYarnWindow.xaml
     /// </summary>
-    public partial class MessageBoxOKCancelWindow : Window
+    public partial class G4ReceiveYarnWindow : Window
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public MessageBoxOKCancelWindow()
+        public G4ReceiveYarnWindow()
         {
             InitializeComponent();
         }
 
         #endregion
 
-        #region Button Handlers
+        #region Internal Variables
 
-        private void cmdOk_Click(object sender, RoutedEventArgs e)
-        {
-            DialogResult = true;
-        }
+        private G4Yarn _item = null;
+
+        #endregion
+
+        #region Button Handlers
 
         private void cmdCancel_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
         }
 
+        private void cmdOk_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+
         #endregion
 
         #region Public Methods
 
-        /// <summary>
-        /// Setup.
-        /// </summary>
-        /// <param name="msg">The message.</param>
-        /// <param name="title">The title.</param>
-        public void Setup(string msg, string title = "M3 Cord")
+        public void Setup(G4Yarn item)
         {
-            this.Title = title;
-            txtMsg.Text = msg;
+            _item = item;
+            this.DataContext = _item;
         }
 
         #endregion
