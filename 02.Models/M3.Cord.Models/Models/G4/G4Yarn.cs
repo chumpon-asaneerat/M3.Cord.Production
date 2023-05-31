@@ -221,6 +221,11 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
+        /// <summary>
+        /// Save
+        /// </summary>
+        /// <param name="value">The G4Yarn item to save.</param>
+        /// <returns></returns>
         public static NDbResult<G4Yarn> Save(G4Yarn value)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
@@ -395,7 +400,11 @@ namespace M3.Cord.Models
 
             return rets;
         }
-
+        /// <summary>
+        /// Save
+        /// </summary>
+        /// <param name="values">The list of G4Yarn item to save.</param>
+        /// <returns></returns>
         public static NDbResult Save(List<G4Yarn> values)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
