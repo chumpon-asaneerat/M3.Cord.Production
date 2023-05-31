@@ -21,6 +21,7 @@
                             VerticalAlignment="Center">
                     <!--  HOME  -->
                     <ctrl:FontAwesomeButton x:Name="cmdHome"
+                                            Margin="5,0,0,0"
                                             IconType="Home"
                                             Text="Home"
                                             Click="cmdHome_Click" />

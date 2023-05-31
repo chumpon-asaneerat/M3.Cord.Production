@@ -21,11 +21,13 @@
                             VerticalAlignment="Center">
                     <!--  SAVE  -->
                     <ctrl:FontAwesomeButton x:Name="cmdSave"
+                                            Margin="0,0,5,0"
                                             IconType="Save"
                                             Text="Save"
                                             Click="cmdSave_Click" />
                     <!--  CLEAR  -->
                     <ctrl:FontAwesomeButton x:Name="cmdClear"
+                                            Margin="0,0,5,0"
                                             IconType="Delete"
                                             Text="Clear"
                                             Click="cmdClear_Click" />
@@ -35,6 +37,7 @@
                             VerticalAlignment="Center">
                     <!--  HOME  -->
                     <ctrl:FontAwesomeButton x:Name="cmdHome"
+                                            Margin="5,0,0,0"
                                             IconType="Home"
                                             Text="Home"
                                             Click="cmdHome_Click" />

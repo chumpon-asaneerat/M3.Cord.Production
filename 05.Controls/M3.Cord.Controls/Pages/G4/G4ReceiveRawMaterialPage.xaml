@@ -21,11 +21,13 @@
                             VerticalAlignment="Center">
                     <!--  SAVE  -->
                     <ctrl:FontAwesomeButton x:Name="cmdSave"
+                                            Margin="0,0,5,0"
                                             IconType="Save"
                                             Text="Save"
                                             Click="cmdSave_Click" />
                     <!--  CLEAR  -->
                     <ctrl:FontAwesomeButton x:Name="cmdClear"
+                                            Margin="0,0,5,0"
                                             IconType="Delete"
                                             Text="Clear"
                                             Click="cmdClear_Click" />
@@ -35,14 +37,16 @@
                             VerticalAlignment="Center">
                     <!--  HOME  -->
                     <ctrl:FontAwesomeButton x:Name="cmdHome"
+                                            Margin="5,0,0,0"
                                             IconType="Home"
                                             Text="Home"
                                             Click="cmdHome_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
+            <!--  LOT NO  -->
             <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-                <StackPanel Margin="0,5"
+                <StackPanel Margin="0,0,0,5"
                             Orientation="Horizontal"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Left">
@@ -52,8 +56,83 @@
                                    PreviewKeyDown="txtTraceNo_PreviewKeyDown" />
                 </StackPanel>
             </DockPanel>
+            <!--  TOTAL PANELS  -->
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="0,0,0,5">
+                <!--  TOTAL PALLET  -->
+                <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="CornflowerBlue"
+                        CornerRadius="5">
+                    <StackPanel Orientation="Vertical" Width="250">
+                        <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total Pallet" />
+                        <TextBlock Margin="0,2"
+                                   FontSize="48"
+                                   Foreground="White"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Center"
+                                   Text="{Binding TotalPallet}" />
+                    </StackPanel>
+                </Border>
+                <!--  TOTAL TOTAL WEIGHT  -->
+                <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="DarkOrange"
+                        CornerRadius="5">
+                    <StackPanel Orientation="Vertical" Width="250">
+                        <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total Weight" />
+                        <DockPanel LastChildFill="True">
+                            <TextBlock Margin="15,10"
+                                       DockPanel.Dock="Right"
+                                       FontSize="16"
+                                       Foreground="White"
+                                       FontWeight="DemiBold"
+                                       VerticalAlignment="Bottom"
+                                       Text="kg." />
+                            <TextBlock Margin="0,2"
+                                       FontSize="48"
+                                       Foreground="White"
+                                       FontWeight="DemiBold"
+                                       TextAlignment="Center"
+                                       Text="{Binding TotalWeight, StringFormat='{}{0:n1}'}" />
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <!--  TOTAL CH  -->
+                <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="ForestGreen"
+                        CornerRadius="5">
+                    <StackPanel Orientation="Vertical" Width="250">
+                        <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total CH" />
+                        <TextBlock Margin="0,2"
+                                   FontSize="48"
+                                   Foreground="White"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Center"
+                                   Text="{Binding TotalCH, StringFormat='{}{0:n0}'}" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
             <!--  LISTVIEW  -->
             <ListView x:Name="grid"
+                      Margin="0,0,0,5"
                       FontSize="{StaticResource FontSize18}"
                       ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
                       ItemsSource="{Binding}"

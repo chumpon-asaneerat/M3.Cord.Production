@@ -52,20 +52,22 @@ namespace M3.Cord
             _totalPallet = 0;
             _totalWeight = decimal.Zero;
             _totalCH = 0;
-            if (null == _receives || _receives.Count <= 0) return;
 
             lock (this)
             {
-                _totalPallet = _receives.Count;
-                _receives.ForEach(receive =>
+                if (null != _receives && _receives.Count > 0)
                 {
-                    // add weight
-                    var weight = (receive.WeightQty.HasValue) ? receive.WeightQty.Value : decimal.Zero;
-                    _totalWeight += weight;
-                    // add cheese count.
-                    var cheeseCnt = (receive.ConeCH.HasValue) ? receive.ConeCH.Value : decimal.Zero;
-                    _totalCH += cheeseCnt;
-                });
+                    _totalPallet = _receives.Count;
+                    _receives.ForEach(receive =>
+                    {
+                        // add weight
+                        var weight = (receive.WeightQty.HasValue) ? receive.WeightQty.Value : decimal.Zero;
+                        _totalWeight += weight;
+                        // add cheese count.
+                        var cheeseCnt = (receive.ConeCH.HasValue) ? receive.ConeCH.Value : decimal.Zero;
+                        _totalCH += cheeseCnt;
+                    });
+                }
             }
             // Raise Events
             Raise(() => this.TotalPallet);
