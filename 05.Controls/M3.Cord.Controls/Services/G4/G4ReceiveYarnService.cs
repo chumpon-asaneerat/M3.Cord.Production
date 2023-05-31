@@ -144,6 +144,33 @@ namespace M3.Cord
             var ret = G4Yarn.Get(tranceNo).Value();
             return ret;
         }
+        /// <summary>
+        /// Save all receive current items to database.
+        /// </summary>
+        public bool SaveReceiveItems()
+        {
+            bool bSuccess = false;
+            if (null != _receives)
+            {
+                lock (this)
+                {
+                    // update receive date + receive by
+                    _receives.ForEach(yarn =>
+                    {
+                        yarn.ReceiveDate = DateTime.Now;
+                        yarn.ReceiveBy = 1; // need userid here.
+                        yarn.FinishFlag = true; // mark as finished.
+                    });
+
+                    var ret = G4Yarn.Save(_receives);
+
+                    bSuccess = (null != ret && ret.Ok);
+                }
+            }
+            Clear(); // clear list.
+
+            return bSuccess;
+        }
 
         #endregion
 

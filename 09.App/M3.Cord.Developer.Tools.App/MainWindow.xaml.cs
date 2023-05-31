@@ -2,24 +2,14 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-#endregion
-
 using System.IO;
 using System.Reflection;
+
+using NLib;
 using M3.Cord.Models;
+
+#endregion
 
 namespace M3.Cord
 {
@@ -57,9 +47,9 @@ namespace M3.Cord
         private void cmdImportItemCode_Click(object sender, RoutedEventArgs e)
         {
             var assem = Assembly.GetExecutingAssembly();
-            string rootPath = System.IO.Path.GetDirectoryName(assem.Location);
-            string importPath = System.IO.Path.Combine(rootPath, "Imports");
-            string fileName = System.IO.Path.Combine(importPath, "itemcode.json");
+            string rootPath = Path.GetDirectoryName(assem.Location);
+            string importPath = Path.Combine(rootPath, "Imports");
+            string fileName = Path.Combine(importPath, "itemcode.json");
             var model = NJson.LoadFromFile<JsonModel<CordItemCode>>(fileName);
             if (null != model)
             {
@@ -72,9 +62,9 @@ namespace M3.Cord
         private void cmdImportG4Yarn_Click(object sender, RoutedEventArgs e)
         {
             var assem = Assembly.GetExecutingAssembly();
-            string rootPath = System.IO.Path.GetDirectoryName(assem.Location);
-            string importPath = System.IO.Path.Combine(rootPath, "Imports");
-            string fileName = System.IO.Path.Combine(importPath, "G3Yarn.json");
+            string rootPath = Path.GetDirectoryName(assem.Location);
+            string importPath = Path.Combine(rootPath, "Imports");
+            string fileName = Path.Combine(importPath, "G3Yarn.json");
             var model = NJson.LoadFromFile<JsonModel<G4Yarn>>(fileName);
             if (null != model)
             {

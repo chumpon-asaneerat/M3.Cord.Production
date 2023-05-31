@@ -120,7 +120,7 @@
         </Style>
     </UserControl.Resources>
     <page:NPage HeaderText="MAIN MENU">
-        <DockPanel LastChildFill="True">
+        <DockPanel LastChildFill="True" Margin="5">
             <TextBlock DockPanel.Dock="Top" Height="20" />
             <ctrl:NGroupMenu>
                 <!--  G4 MENU  -->

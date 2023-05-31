@@ -42,12 +42,6 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region Internal Variables
-
-        private List<G4Yarn> receives = null;
-
-        #endregion
-
         #region Loaded/Unloaded
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -71,13 +65,13 @@ namespace M3.Cord.Pages
 
         private void cmdClear_Click(object sender, RoutedEventArgs e)
         {
-            ClearAll();
+            G4ReceiveYarnService.Instance.Clear();
             RefreshGrid();
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
-            ReceiveAll();
+            SaveItems();
         }
 
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
@@ -109,7 +103,8 @@ namespace M3.Cord.Pages
             }
             else if (e.Key == Key.Escape)
             {
-                ClearTraceNo();
+                // clear trace no.
+                txtTraceNo.Text = string.Empty;
                 e.Handled = true;
             }
         }
@@ -122,22 +117,21 @@ namespace M3.Cord.Pages
         {
             string traceNo = txtTraceNo.Text.Trim();
 
-            int idx = receives.FindIndex(oitem => { return oitem.TraceNo.Trim() == traceNo; });
-            if (idx != -1)
+            if (G4ReceiveYarnService.Instance.IsExist(traceNo))
             {
                 // duplicate.
                 txtTraceNo.Text = string.Empty;
                 return;
             }
 
-            var item = SerachByTranceNo(traceNo);
+            var item = G4ReceiveYarnService.Instance.SerachByTranceNo(traceNo);
             if (null != item)
             {
                 var win = M3CordApp.Windows.G4ReceiveYarn;
                 win.Setup(item);
                 if (win.ShowDialog() == true)
                 {
-                    receives.Add(item);
+                    G4ReceiveYarnService.Instance.Add(item);
                     RefreshGrid();
                 }
             }
@@ -148,24 +142,8 @@ namespace M3.Cord.Pages
                 win.Setup(msg);
                 win.ShowDialog();
             }
-
+            // clear trace no.
             txtTraceNo.Text = string.Empty;
-        }
-
-        private void ClearTraceNo()
-        {
-            txtTraceNo.Text = string.Empty;
-        }
-
-        private void ClearAll()
-        {
-            receives = new List<G4Yarn>();
-        }
-
-        private G4Yarn SerachByTranceNo(string tranceNo)
-        {
-            var ret = G4Yarn.Get(tranceNo).Value();
-            return ret;
         }
 
         private void EditItem(G4Yarn item)
@@ -183,49 +161,27 @@ namespace M3.Cord.Pages
         private void DeleteItem(G4Yarn item)
         {
             if (null == item) return;
-            int idx = receives.IndexOf(item);
-            if (idx == -1) return;
-            receives.RemoveAt(idx);
+            G4ReceiveYarnService.Instance.Remove(item);
             RefreshGrid();
         }
 
-        private void ReceiveAll()
+        private void SaveItems()
         {
-            if (null != receives)
-            {
-                // update receive date + receive by
-                receives.ForEach(yarn => 
-                { 
-                    yarn.ReceiveDate = DateTime.Now;
-                    yarn.ReceiveBy = 1; // need userid here.
-                    yarn.FinishFlag = true; // mark as finished.
-                });
+            var success = G4ReceiveYarnService.Instance.SaveReceiveItems();
 
-                var ret = G4Yarn.Save(receives);
+            // Show MessageBox
+            string msg = (success) ? "Save Success" : "Save Failed";
+            var win = M3CordApp.Windows.MessageBox;
+            win.Setup(msg);
+            win.ShowDialog();
 
-                // Show MessageBox
-                string msg = string.Empty;
-                var win = M3CordApp.Windows.MessageBox;
-                if (null != ret && ret.Ok)
-                {
-                    msg = "Save Success";
-                }
-                else
-                {
-                    msg = "Save Failed. " + Environment.NewLine;
-                    msg += ret.ErrMsg;
-                }
-                win.Setup(msg);
-                win.ShowDialog();
-            }
-            ClearAll();
             RefreshGrid();
         }
 
         public void RefreshGrid()
         {
             grid.ItemsSource = null;
-            grid.ItemsSource = receives;
+            grid.ItemsSource = G4ReceiveYarnService.Instance.Receives;
         }
 
         #endregion
@@ -237,7 +193,9 @@ namespace M3.Cord.Pages
         /// </summary>
         public void Setup()
         {
-            ClearAll();
+            // Set data context for show total(s).
+            this.DataContext = G4ReceiveYarnService.Instance;
+            G4ReceiveYarnService.Instance.Clear();
             RefreshGrid();
         }
 

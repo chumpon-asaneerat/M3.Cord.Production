@@ -56,11 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Consts\AppConsts.cs" />
-    <Compile Include="ExtensionMethods\DateTime.cs" />
-    <Compile Include="ExtensionMethods\NJson.cs" />
-    <Compile Include="ExtensionMethods\ObjectPropertiesToString.cs" />
-    <Compile Include="ExtensionMethods\RangeParser.cs" />
-    <Compile Include="ExtensionMethods\WpfVisualHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
