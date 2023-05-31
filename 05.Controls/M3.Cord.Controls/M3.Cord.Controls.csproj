@@ -128,6 +128,7 @@
     <Compile Include="Pages\Menu\M3CordMainMenuPage.xaml.cs">
       <DependentUpon>M3CordMainMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\G4\G4ReceiveYarnService.cs" />
     <Compile Include="Services\SignInService.cs" />
     <None Include="Windows\_V1\FirstTwist\ProductionConditionSheetWindow.xaml.cs">
       <DependentUpon>ProductionConditionSheetWindow.xaml</DependentUpon>
