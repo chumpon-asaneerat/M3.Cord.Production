@@ -29,7 +29,7 @@ namespace M3.Cord.Models
 
         #region Public Properties
 
-        public int PKId { get; set; }
+        public int G4IssueYarnPKId { get; set; }
 
         public string RequestId { get; set; }
         public string IssueBy { get; set; }
@@ -90,13 +90,13 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
-        public static G4IssueYarn Create(int pkId,
+        public static G4IssueYarn Create(int G4IssueYarnPKId,
             string itemYarm, string palletNo, string yarnType,
             string lotNo, string traceNo)
         {
             return new G4IssueYarn()
             {
-                PKId = pkId,
+                G4IssueYarnPKId = G4IssueYarnPKId,
                 ItemYarn = itemYarm,
                 PalletNo = palletNo,
                 YarnType = yarnType,

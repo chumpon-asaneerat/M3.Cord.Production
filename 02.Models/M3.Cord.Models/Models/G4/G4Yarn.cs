@@ -28,7 +28,7 @@ namespace M3.Cord.Models
         /// <summary>
         /// Gets or sets Primary Key.
         /// </summary>
-        public int? PkId { get; set; }
+        public int? G4YarnPkId { get; set; }
         /// <summary>
         /// Gets or sets Entry Date.
         /// </summary>
@@ -281,7 +281,7 @@ namespace M3.Cord.Models
             p.Add("@FinishFlag", value.FinishFlag);
             p.Add("@UpdateFlag", value.UpdateFlag);
             p.Add("@DeleteFlag", value.DeleteFlag);
-            p.Add("@PkId", value.PkId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
+            p.Add("@G4YarnPkId", value.G4YarnPkId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
@@ -291,7 +291,7 @@ namespace M3.Cord.Models
                 cnn.Execute("SaveG4Yarn", p, commandType: CommandType.StoredProcedure);
                 ret.Success(value);
                 // Set PK
-                value.PkId = p.Get<int>("@PkId");
+                value.G4YarnPkId = p.Get<int>("@G4YarnPkId");
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");

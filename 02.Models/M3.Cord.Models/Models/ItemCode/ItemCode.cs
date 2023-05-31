@@ -23,7 +23,7 @@ namespace M3.Cord.Models
     {
         #region Public Proeprties
 
-        public int? PkId { get; set; }
+        public int? ItemPkId { get; set; }
         public string ItemCode { get; set; }
         public string ItemWeaving { get; set; }
         public string ItemYarn { get; set; }
@@ -77,7 +77,7 @@ namespace M3.Cord.Models
             p.Add("@FullWeight", value.FullWeight);
             p.Add("@WidthWeaving", value.WidthWeaving);
             p.Add("@WeaveType", value.WeaveType);
-            p.Add("@PkId", value.PkId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
+            p.Add("@ItemPkId", value.ItemPkId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
@@ -87,7 +87,7 @@ namespace M3.Cord.Models
                 cnn.Execute("SaveItemCode", p, commandType: CommandType.StoredProcedure);
                 ret.Success(value);
                 // Set PK
-                value.PkId = p.Get<int>("@PkId");
+                value.ItemPkId = p.Get<int>("@ItemPkId");
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");
