@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:NLib.Wpf.Controls">
     <Style TargetType="{x:Type local:NGroupMenuItem}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:NGroupMenuItem}">
@@ -24,8 +26,13 @@
                                        FontWeight="{TemplateBinding FontWeight}" />
                         </Border>
                         <TextBlock Height="5" DockPanel.Dock="Top" />
-                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                      HorizontalScrollBarVisibility="Disabled"
+                                      Focusable="False"
+                                      IsTabStop="False">
                             <ItemsControl ItemsSource="{Binding Items, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Focusable="False"
+                                          IsTabStop="False"
                                           VirtualizingPanel.IsVirtualizing="True"
                                           VirtualizingPanel.VirtualizationMode="Recycling">
                                 <ItemsControl.ItemsPanel>
