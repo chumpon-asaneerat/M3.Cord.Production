@@ -6,6 +6,8 @@
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.TextBlock.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type local:NInputGroup}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:NInputGroup}">
