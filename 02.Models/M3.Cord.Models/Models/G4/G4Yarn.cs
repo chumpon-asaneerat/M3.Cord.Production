@@ -116,35 +116,35 @@ namespace M3.Cord.Models
         /// <summary>
         /// Gets or sets has Packing problem.
         /// </summary>
-        public bool? Packing { get; set; }
+        public bool Packing { get; set; }
         /// <summary>
         /// Gets or sets has Clean problem.
         /// </summary>
-        public bool? Clean { get; set; }
+        public bool Clean { get; set; }
         /// <summary>
         /// Gets or sets has Tearing problem.
         /// </summary>
-        public bool? Tearing { get; set; }
+        public bool Tearing { get; set; }
         /// <summary>
         /// Gets or sets has Falldown problem.
         /// </summary>
-        public bool? Falldown { get; set; }
+        public bool Falldown { get; set; }
         /// <summary>
         /// Gets or sets has Certification problem.
         /// </summary>
-        public bool? Certification { get; set; }
+        public bool Certification { get; set; }
         /// <summary>
         /// Gets or sets has Invoice problem.
         /// </summary>
-        public bool? Invoice { get; set; }
+        public bool Invoice { get; set; }
         /// <summary>
         /// Gets or sets has Identify Area problem.
         /// </summary>
-        public bool? IdentifyArea { get; set; }
+        public bool IdentifyArea { get; set; }
         /// <summary>
         /// Gets or sets has Amount Pallet problem.
         /// </summary>
-        public bool? AmountPallet { get; set; }
+        public bool AmountPallet { get; set; }
         /// <summary>
         /// Gets or sets Other (defect).
         /// </summary>

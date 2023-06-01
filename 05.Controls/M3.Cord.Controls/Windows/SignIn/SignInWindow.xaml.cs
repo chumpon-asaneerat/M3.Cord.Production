@@ -1,18 +1,10 @@
 ﻿#region Using
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
+using NLib;
 
 #endregion
 
@@ -32,13 +24,6 @@ namespace M3.Cord.Windows
         {
             InitializeComponent();
         }
-
-        #endregion
-
-        #region Internal Variables
-
-        private string sUserName = string.Empty;
-        private string sPassword = string.Empty;
 
         #endregion
 
@@ -62,29 +47,6 @@ namespace M3.Cord.Windows
 
         #region Private Methods
 
-        private void FocusControl(TextBox ctrl)
-        {
-            if (null == ctrl)
-                return;
-            // Set focus to text box this invoked when the application has rendered
-            Dispatcher.BeginInvoke(new Action(() =>
-            {
-                ctrl.SelectAll();
-                ctrl.Focus();
-            }), System.Windows.Threading.DispatcherPriority.Render);
-        }
-        private void FocusControl(PasswordBox ctrl)
-        {
-            if (null == ctrl)
-                return;
-            // Set focus to text box this invoked when the application has rendered
-            Dispatcher.BeginInvoke(new Action(() =>
-            {
-                ctrl.SelectAll();
-                ctrl.Focus();
-            }), System.Windows.Threading.DispatcherPriority.Render);
-        }
-
         private void SignIn()
         {
             string userName = txtUserName.Text;
@@ -94,7 +56,7 @@ namespace M3.Cord.Windows
                 win.Setup("กรุณาป้อน ชื่อบัญชีผู้ใช้");
                 win.ShowDialog();
 
-                FocusControl(txtUserName);
+                txtUserName.FocusControl();
                 return;
             }
 
@@ -105,7 +67,7 @@ namespace M3.Cord.Windows
                 win.Setup("กรุณาป้อน รหัสผ่าน");
                 win.ShowDialog();
 
-                FocusControl(txtPassword);
+                txtPassword.FocusControl();
                 return;
             }
 
@@ -134,8 +96,8 @@ namespace M3.Cord.Windows
                 win.ShowDialog();
 
                 if (status == SignInStatus.InvalidPassword)
-                    FocusControl(txtPassword);
-                else FocusControl(txtUserName);
+                    txtPassword.FocusControl();
+                else txtUserName.FocusControl();
             }
 
             DialogResult = success;

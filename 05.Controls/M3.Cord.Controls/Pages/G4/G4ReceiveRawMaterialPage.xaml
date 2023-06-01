@@ -56,8 +56,9 @@
                                    WatermarkImageWidth="30"
                                    WatermarkImageHeight="25"
                                    WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
-                                   WatermarkText="Scan Trace No."
-                                   PreviewKeyDown="txtTraceNo_PreviewKeyDown"  />
+                                   WatermarkText="Scan Trace No Here."
+                                   Width="300"
+                                   PreviewKeyDown="txtTraceNo_PreviewKeyDown" />
                 </StackPanel>
             </DockPanel>
             <!--  TOTAL PANELS  -->

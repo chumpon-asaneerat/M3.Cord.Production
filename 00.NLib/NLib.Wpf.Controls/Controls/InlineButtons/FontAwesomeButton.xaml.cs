@@ -1,10 +1,10 @@
 ﻿#region Using
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+
+using NLib;
 
 #endregion
 
@@ -29,38 +29,17 @@ namespace NLib.Wpf.Controls
 
         #region Private Methods
 
-        #region Dispatcher helper method (invoke event)
-
-        private void InvokeAction(Action action)
-        {
-            try
-            {
-                if (null == action) return;
-                if (null != Application.Current.Dispatcher)
-                {
-                    Application.Current.Dispatcher.BeginInvoke(action);
-                }
-                else
-                {
-                    action();
-                }
-            }
-            catch { }
-        }
-
-        #endregion
-
         #region Button Handlers
 
         private void cmd_Click(object sender, RoutedEventArgs e)
         {
             if (null != Click)
             {
-                InvokeAction(new Action(() =>
+                this.InvokeAction(() =>
                 {
                     e.Source = this; // Change source.
                     Click(this, e);
-                }));
+                });
             }
         }
 
