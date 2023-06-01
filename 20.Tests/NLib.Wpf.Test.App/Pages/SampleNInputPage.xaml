@@ -14,12 +14,18 @@
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <ctrl:NTextBox CaptionText="Id:"
                                x:Name="txtId"
+                               WatermarkForeground="DimGray"
+                               WatermarkImageSource="/Common/barcode-scanner.png"
+                               WatermarkText="Enter Id."
                                Text="{Binding Id, TargetNullValue=''}" />
                 <ctrl:NTextBox CaptionText="Value:"
                                x:Name="txtValue"
+                               WatermarkText="Enter Value."
                                Text="{Binding Value, TargetNullValue=''}" />
                 <ctrl:NTextBox CaptionText="Name:"
                                x:Name="txtName"
+                               WatermarkImageSource="/Common/barcode-scanner.png"
+                               WatermarkImageAlignment="Right"
                                InputForeground="{Binding ValueColor}"
                                Text="{Binding Name, TargetNullValue=''}"
                                PreviewKeyDown="txtName_PreviewKeyDown" />

@@ -380,7 +380,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Common\barcode-scanner.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>

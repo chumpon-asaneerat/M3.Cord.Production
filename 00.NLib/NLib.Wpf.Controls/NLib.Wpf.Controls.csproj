@@ -164,6 +164,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Converters\WatermarkAlignmentToDockConverter.cs" />
     <Compile Include="Controls\NInputs\NComboBox.cs" />
     <Compile Include="Controls\NInputs\NDatePicker.cs" />
     <Compile Include="Controls\NInputs\NInputControlBase.cs" />

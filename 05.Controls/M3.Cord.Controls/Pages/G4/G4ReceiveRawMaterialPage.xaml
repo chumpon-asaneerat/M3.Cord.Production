@@ -53,7 +53,11 @@
                     <ctrl:NTextBox x:Name="txtTraceNo"
                                    CaptionText="Lot No:"
                                    TextAlignment="Center"
-                                   PreviewKeyDown="txtTraceNo_PreviewKeyDown" />
+                                   WatermarkImageWidth="30"
+                                   WatermarkImageHeight="25"
+                                   WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
+                                   WatermarkText="Scan Trace No."
+                                   PreviewKeyDown="txtTraceNo_PreviewKeyDown"  />
                 </StackPanel>
             </DockPanel>
             <!--  TOTAL PANELS  -->
