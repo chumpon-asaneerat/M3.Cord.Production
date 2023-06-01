@@ -12,7 +12,7 @@
                 <ControlTemplate TargetType="{x:Type local:NComboBox}">
                     <StackPanel Orientation="Vertical">
                         <TextBlock x:Name="lbHeader"
-                                   Margin="0,2,5,2"
+                                   Margin="0,2"
                                    FontSize="{TemplateBinding CaptionFontSize}"
                                    FontWeight="{TemplateBinding CaptionFontWeight}"
                                    Foreground="{TemplateBinding CaptionForeground}"
@@ -22,7 +22,7 @@
                                    HorizontalAlignment="Stretch"
                                    Style="{StaticResource LabelText}" />
                         <ComboBox x:Name="ctrl"
-                                  Margin="0,2,5,2"
+                                  Margin="0,2"
                                   HorizontalAlignment="Stretch"
                                   IsSynchronizedWithCurrentItem="True"
                                   Style="{StaticResource CommonComboBox}"
@@ -31,6 +31,8 @@
                                   SelectedValuePath="{Binding SelectedValuePath, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedValue="{Binding SelectedValue, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
+                                  FontSize="{TemplateBinding FontSize}"
+                                  FontWeight="{TemplateBinding FontWeight}"
                                   Foreground="{TemplateBinding InputForeground}" />
                     </StackPanel>
                 </ControlTemplate>

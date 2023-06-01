@@ -12,7 +12,7 @@
                 <ControlTemplate TargetType="{x:Type local:NDatePicker}">
                     <StackPanel Orientation="Vertical">
                         <TextBlock x:Name="lbHeader"
-                                   Margin="0,2,5,2"
+                                   Margin="0,2"
                                    FontSize="{TemplateBinding CaptionFontSize}"
                                    FontWeight="{TemplateBinding CaptionFontWeight}"
                                    Foreground="{TemplateBinding CaptionForeground}"
@@ -22,10 +22,12 @@
                                    HorizontalAlignment="Stretch"
                                    Style="{StaticResource LabelText}" />
                         <DatePicker x:Name="ctrl"
-                                    Margin="0,2,5,2"
+                                    Margin="0,2"
                                     HorizontalAlignment="Stretch"
                                     Style="{StaticResource CommonDatePicker}"
                                     SelectedDate="{Binding SelectedDate, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NDatePicker}, UpdateSourceTrigger=PropertyChanged}"
+                                    FontSize="{TemplateBinding FontSize}"
+                                    FontWeight="{TemplateBinding FontWeight}"
                                     Foreground="{TemplateBinding InputForeground}" />
                     </StackPanel>
                 </ControlTemplate>

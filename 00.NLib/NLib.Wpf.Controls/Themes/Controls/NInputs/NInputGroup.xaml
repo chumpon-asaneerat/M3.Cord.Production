@@ -11,7 +11,7 @@
                 <ControlTemplate TargetType="{x:Type local:NInputGroup}">
                     <StackPanel Orientation="Vertical">
                         <TextBlock x:Name="lbHeader"
-                                   Margin="0,2,5,2"
+                                   Margin="0,2"
                                    FontSize="{TemplateBinding CaptionFontSize}"
                                    FontWeight="{TemplateBinding CaptionFontWeight}"
                                    Foreground="{TemplateBinding CaptionForeground}"
@@ -21,7 +21,7 @@
                                    HorizontalAlignment="Stretch"
                                    Style="{StaticResource LabelText}" />
                         <ContentPresenter Content="{TemplateBinding Content}"
-                                          Margin="0,2,5,2"
+                                          Margin="0,2"
                                           HorizontalAlignment="Stretch" />
                     </StackPanel>
                 </ControlTemplate>
