@@ -44,22 +44,25 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <!--  LOT NO  -->
+            <!--  TOP ENTRY  -->
             <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-                <StackPanel Margin="0,0,0,5"
-                            Orientation="Horizontal"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Left">
+                <DockPanel Margin="0,0,0,5"
+                           DockPanel.Dock="Top"
+                           LastChildFill="True"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left">
+                    <!--  LOT NO  -->
                     <ctrl:NTextBox x:Name="txtTraceNo"
                                    CaptionText="Lot No:"
                                    TextAlignment="Center"
                                    WatermarkImageWidth="30"
                                    WatermarkImageHeight="25"
                                    WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
-                                   WatermarkText="Scan Trace No Here."
+                                   WatermarkText="Scan Trace No"
                                    Width="300"
                                    PreviewKeyDown="txtTraceNo_PreviewKeyDown" />
-                </StackPanel>
+                    <Grid />
+                </DockPanel>
             </DockPanel>
             <!--  TOTAL PANELS  -->
             <StackPanel Orientation="Horizontal"

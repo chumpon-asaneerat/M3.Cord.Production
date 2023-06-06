@@ -44,6 +44,52 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
+            <!--  TOP ENTRY  -->
+            <DockPanel LastChildFill="True" DockPanel.Dock="Top">
+                <!--  TOP ENTRY  -->
+                <DockPanel LastChildFill="True" DockPanel.Dock="Top">
+                    <DockPanel Margin="0,0,0,5"
+                           DockPanel.Dock="Top"
+                           LastChildFill="True"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left">
+                        <!--  REQUEST NO  -->
+                        <ctrl:NTextBox x:Name="txtRequset"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Request No:"
+                                   TextAlignment="Center"
+                                   Width="200" />
+                        <!--  ISSUE DATE  -->
+                        <ctrl:NDatePicker x:Name="dtIssueDate"
+                                      DockPanel.Dock="Left"
+                                      CaptionText="Issue Date:"
+                                      Width="200" />
+                        <!--  ITEM YARN  -->
+                        <ctrl:NComboBox x:Name="cbItemYanrs"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="IItem Yarn:"
+                                    Width="250" />
+                        <Grid />
+                    </DockPanel>
+                    <DockPanel Margin="0,0,0,5"
+                           DockPanel.Dock="Top"
+                           LastChildFill="True"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left">
+                        <!--  PALLET NO  -->
+                        <ctrl:NTextBox x:Name="txtPalletNo"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Pallet No:"
+                                   TextAlignment="Center"
+                                   WatermarkImageWidth="30"
+                                   WatermarkImageHeight="25"
+                                   WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
+                                   WatermarkText="Scan Pallet No."
+                                   Width="220" />
+                        <Grid />
+                    </DockPanel>
+                </DockPanel>
+            </DockPanel>
             <Grid />
         </DockPanel>
     </page:NPage>
