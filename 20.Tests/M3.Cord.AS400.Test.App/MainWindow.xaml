@@ -6,7 +6,9 @@
         mc:Ignorable="d"
         Title="M3 Cord AS400 Connection Test App"
         Height="450"
-        Width="800">
+        Width="800"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
     <DockPanel LastChildFill="True">
         <DockPanel LastChildFill="True"
                    DockPanel.Dock="Top"
@@ -15,19 +17,24 @@
                 <Button x:Name="cmdDisconnect"
                         Margin="5,0"
                         DockPanel.Dock="Right"
-                        Width="100"
-                        Content="Disconnect" />
+                        Width="120"
+                        Style="{StaticResource InlineButton}"
+                        Content="Disconnect"
+                        Click="cmdDisconnect_Click" />
                 <Button x:Name="cmdConnect"
                         Margin="5,0"
                         DockPanel.Dock="Right"
-                        Width="100"
-                        Content="Connect" />
+                        Width="120"
+                        Style="{StaticResource InlineButton}"
+                        Content="Connect"
+                        Click="cmdConnect_Click" />
                 <!--  CONNECTION STRING  -->
                 <StackPanel Orientation="Vertical"
                             Margin="5,0"
                             HorizontalAlignment="Stretch">
-                    <TextBlock Text="Connection String:" />
+                    <TextBlock Text="Connection String:" Style="{StaticResource LabelText}" />
                     <TextBox x:Name="txtConnectionString"
+                             Style="{StaticResource CommonTextBox}"
                              Text=""
                              Width="400" />
                 </StackPanel>
@@ -37,6 +44,30 @@
         <TabControl Margin="5">
             <TabItem Header="Get Data">
                 <DockPanel LastChildFill="True">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <StackPanel Orientation="Vertical" Margin="5">
+                            <TextBlock Text="Query" Style="{StaticResource LabelText}" />
+                            <TextBox x:Name="txtQuery"
+                                     Style="{StaticResource CommonTextBox}"
+                                     Width="600"
+                                     Height="50"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True" />
+                        </StackPanel>
+                        <Button x:Name="cmdExecuteQuery"
+                                Content="Query"
+                                Width="150"
+                                Margin="5"
+                                Height="50"
+                                VerticalAlignment="Bottom"
+                                Click="cmdExecuteQuery_Click" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <TextBlock Margin="0,5" Text="Total Rows:" />
+                        <TextBlock x:Name="txtTotalRows"
+                                   Margin="5"
+                                   Text="0" />
+                    </StackPanel>
                     <DataGrid x:Name="dbGrid" AutoGenerateColumns="True" />
                 </DockPanel>
             </TabItem>
