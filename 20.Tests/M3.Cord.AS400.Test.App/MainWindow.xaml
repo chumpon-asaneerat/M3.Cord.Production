@@ -9,7 +9,7 @@
         Width="800"
         Loaded="Window_Loaded"
         Closing="Window_Closing">
-    <DockPanel LastChildFill="True">
+    <DockPanel LastChildFill="True" Margin="5">
         <DockPanel LastChildFill="True"
                    DockPanel.Dock="Top"
                    Margin="5">
@@ -18,6 +18,8 @@
                         Margin="5,0"
                         DockPanel.Dock="Right"
                         Width="120"
+                        VerticalContentAlignment="Bottom"
+                        Height="40"
                         Style="{StaticResource InlineButton}"
                         Content="Disconnect"
                         Click="cmdDisconnect_Click" />
@@ -25,18 +27,18 @@
                         Margin="5,0"
                         DockPanel.Dock="Right"
                         Width="120"
+                        VerticalContentAlignment="Bottom"
+                        Height="40"
                         Style="{StaticResource InlineButton}"
                         Content="Connect"
                         Click="cmdConnect_Click" />
                 <!--  CONNECTION STRING  -->
-                <StackPanel Orientation="Vertical"
-                            Margin="5,0"
-                            HorizontalAlignment="Stretch">
+                <StackPanel Orientation="Vertical" Margin="5,0">
                     <TextBlock Text="Connection String:" Style="{StaticResource LabelText}" />
                     <TextBox x:Name="txtConnectionString"
                              Style="{StaticResource CommonTextBox}"
                              Text=""
-                             Width="400" />
+                             Width="500" />
                 </StackPanel>
             </DockPanel>
             <Grid />
@@ -51,6 +53,7 @@
                                      Style="{StaticResource CommonTextBox}"
                                      Width="600"
                                      Height="50"
+                                     TextAlignment="Left"
                                      TextWrapping="Wrap"
                                      AcceptsReturn="True" />
                         </StackPanel>
