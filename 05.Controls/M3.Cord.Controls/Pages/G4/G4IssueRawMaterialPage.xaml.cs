@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
+using NLib;
 
 #endregion
 
@@ -127,7 +128,10 @@ namespace M3.Cord.Pages
             var itemYarns = CordItemYarn.Gets().Value();
             cbItemYanrs.ItemsSource = itemYarns;
 
-            if (null != itemYarns && itemYarns.Count > 0) cbItemYanrs.SelectedIndex = 0;
+            this.InvokeAction(() =>
+            {
+                if (null != itemYarns && itemYarns.Count > 0) cbItemYanrs.SelectedIndex = 0;
+            });
         }
 
         private void RefreshGrid()
