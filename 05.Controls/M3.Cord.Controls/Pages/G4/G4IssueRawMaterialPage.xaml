@@ -46,38 +46,37 @@
             </DockPanel>
             <!--  TOP ENTRY  -->
             <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-                <!--  TOP ENTRY  -->
-                <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-                    <DockPanel Margin="0,0,0,5"
+                <DockPanel Margin="0,0,0,5"
                            DockPanel.Dock="Top"
                            LastChildFill="True"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
-                        <!--  REQUEST NO  -->
-                        <ctrl:NTextBox x:Name="txtRequset"
-                                   DockPanel.Dock="Left"
-                                   CaptionText="Request No:"
-                                   TextAlignment="Center"
-                                   Width="200" />
-                        <!--  ISSUE DATE  -->
-                        <ctrl:NDatePicker x:Name="dtIssueDate"
-                                      DockPanel.Dock="Left"
-                                      CaptionText="Issue Date:"
-                                      Width="200" />
-                        <!--  ITEM YARN  -->
-                        <ctrl:NComboBox x:Name="cbItemYanrs"
+                    <!--  ITEM YARN  -->
+                    <ctrl:NComboBox x:Name="cbItemYanrs"
                                     DockPanel.Dock="Left"
                                     CaptionText="IItem Yarn:"
                                     Width="250" />
-                        <Grid />
-                    </DockPanel>
-                    <DockPanel Margin="0,0,0,5"
+                    <!--  REQUEST NO  -->
+                    <ctrl:NTextBox x:Name="txtRequsetNo"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Request No:"
+                                   TextAlignment="Center"
+                                   Width="200" 
+                                   PreviewKeyDown="txtRequsetNo_PreviewKeyDown"/>
+                    <!--  ISSUE DATE  -->
+                    <ctrl:NDatePicker x:Name="dtIssueDate"
+                                      DockPanel.Dock="Left"
+                                      CaptionText="Issue Date:"
+                                      Width="200" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel Margin="0,0,0,5"
                            DockPanel.Dock="Top"
                            LastChildFill="True"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
-                        <!--  PALLET NO  -->
-                        <ctrl:NTextBox x:Name="txtPalletNo"
+                    <!--  PALLET NO  -->
+                    <ctrl:NTextBox x:Name="txtPalletNo"
                                    DockPanel.Dock="Left"
                                    CaptionText="Pallet No:"
                                    TextAlignment="Center"
@@ -85,12 +84,129 @@
                                    WatermarkImageHeight="25"
                                    WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
                                    WatermarkText="Scan Pallet No."
-                                   Width="220" />
-                        <Grid />
-                    </DockPanel>
+                                   Width="220" 
+                                   PreviewKeyDown="txtPalletNo_PreviewKeyDown"/>
+                    <Grid />
                 </DockPanel>
+                <!--  TOTAL PANELS  -->
+                <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="0,0,0,5">
+                    <!--  TOTAL PALLET  -->
+                    <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="CornflowerBlue"
+                        CornerRadius="5">
+                        <StackPanel Orientation="Vertical" Width="250">
+                            <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total Pallet" />
+                            <TextBlock Margin="0,2"
+                                   FontSize="48"
+                                   Foreground="White"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Center"
+                                   Text="{Binding TotalPallet}" />
+                        </StackPanel>
+                    </Border>
+                    <!--  TOTAL TOTAL WEIGHT  -->
+                    <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="DarkOrange"
+                        CornerRadius="5">
+                        <StackPanel Orientation="Vertical" Width="250">
+                            <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total Weight" />
+                            <DockPanel LastChildFill="True">
+                                <TextBlock Margin="15,10"
+                                       DockPanel.Dock="Right"
+                                       FontSize="16"
+                                       Foreground="White"
+                                       FontWeight="DemiBold"
+                                       VerticalAlignment="Bottom"
+                                       Text="kg." />
+                                <TextBlock Margin="0,2"
+                                       FontSize="48"
+                                       Foreground="White"
+                                       FontWeight="DemiBold"
+                                       TextAlignment="Center"
+                                       Text="{Binding TotalWeight, StringFormat='{}{0:n1}'}" />
+                            </DockPanel>
+                        </StackPanel>
+                    </Border>
+                    <!--  TOTAL CH  -->
+                    <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="ForestGreen"
+                        CornerRadius="5">
+                        <StackPanel Orientation="Vertical" Width="250">
+                            <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total CH" />
+                            <TextBlock Margin="0,2"
+                                   FontSize="48"
+                                   Foreground="White"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Center"
+                                   Text="{Binding TotalCH, StringFormat='{}{0:n0}'}" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <!--  LISTVIEW  -->
+                <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource TraceNo}" />
+                            <GridViewColumn Header="Lot" CellTemplate="{StaticResource LotNo}" />
+                            <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource YarnType}" />
+                            <GridViewColumn Header="Weight" CellTemplate="{StaticResource WeightQty}" />
+                            <GridViewColumn Header="OK" CellTemplate="{StaticResource IsOK}" />
+                            <GridViewColumn Header="NG" CellTemplate="{StaticResource IsNG}" />
+                            <GridViewColumn Header="">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                            <!--  EDIT  -->
+                                            <ctrl:FontAwesomeButton x:Name="cmdEdit"
+                                                                IconType="Edit"
+                                                                Text="Edit"
+                                                                Margin="5,0"
+                                                                Width="150"
+                                                                Height="30"
+                                                                Click="cmdEdit_Click" />
+                                            <!--  DELETE  -->
+                                            <ctrl:FontAwesomeButton x:Name="cmdDelete"
+                                                                IconType="Delete"
+                                                                Text="Delete"
+                                                                Margin="5,0"
+                                                                Width="150"
+                                                                Height="30"
+                                                                Click="cmdDelete_Click" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </DockPanel>
-            <Grid />
         </DockPanel>
     </page:NPage>
 </UserControl>

@@ -47,7 +47,7 @@ namespace M3.Cord.Pages
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-
+            ResetControls();
         }
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
@@ -76,7 +76,48 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region TextBox Hqndlers
+
+        private void txtRequsetNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter ||
+                e.Key == Key.Return)
+            {
+                //RefreshGrid();
+                e.Handled = true;
+            }
+        }
+
+        private void txtPalletNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter ||
+                e.Key == Key.Return)
+            {
+                //MarkIssue();
+                e.Handled = true;
+            }
+        }
+
+        #endregion
+
         #region Private Methods
+
+        private void ResetControls()
+        {
+            dtIssueDate.SelectedDate = DateTime.Now;
+            txtRequsetNo.Text = string.Empty;
+            txtPalletNo.Text = string.Empty;
+        }
+
+        private void LoadComboBoxes()
+        {
+
+        }
+
+        private void RefreshGrid()
+        {
+
+        }
 
         #endregion
 
@@ -87,7 +128,9 @@ namespace M3.Cord.Pages
         /// </summary>
         public void Setup()
         {
-
+            ResetControls();
+            LoadComboBoxes();
+            RefreshGrid();
         }
 
         #endregion
