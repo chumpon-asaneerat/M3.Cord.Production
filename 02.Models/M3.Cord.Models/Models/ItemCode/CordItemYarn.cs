@@ -19,6 +19,7 @@ using Newtonsoft.Json;
 
 namespace M3.Cord.Models
 {
+    /*
     public class CordItemCode : NInpc
     {
         #region Public Proeprties
@@ -152,7 +153,7 @@ namespace M3.Cord.Models
 
         #endregion
     }
-
+    */
     public class CordItemYarn
     {
         #region Public Proeprties

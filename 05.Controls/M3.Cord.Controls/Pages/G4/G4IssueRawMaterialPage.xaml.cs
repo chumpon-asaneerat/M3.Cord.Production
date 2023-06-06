@@ -41,10 +41,6 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region Internal Variables
-
-        #endregion
-
         #region Loaded/Unloaded
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -111,7 +107,6 @@ namespace M3.Cord.Pages
 
         #endregion
 
-
         #region Private Methods
 
         private void ResetControls()
@@ -143,7 +138,11 @@ namespace M3.Cord.Pages
 
             if (null != itemYarn)
             {
-                grid.ItemsSource = null;
+                if (null != itemYarn)
+                {
+                    G4IssueYarnService.Instance.LoadYanStocks(itemYarn.ItemYarn);
+                }
+                grid.ItemsSource = G4IssueYarnService.Instance.IssueItems;
             }
         }
 
@@ -156,6 +155,8 @@ namespace M3.Cord.Pages
         /// </summary>
         public void Setup()
         {
+            this.DataContext = G4IssueYarnService.Instance;
+
             ResetControls();
             LoadComboBoxes();
             RefreshGrid();

@@ -24,8 +24,8 @@
                    TextAlignment="Center"
                    Width="150" />
     </DataTemplate>
-    <DataTemplate x:Key="ItemType">
-        <TextBlock Text="{Binding Path=ItemType, Mode=OneWay}"
+    <DataTemplate x:Key="ItemYarn">
+        <TextBlock Text="{Binding Path=ItemYarn, Mode=OneWay}"
                    TextAlignment="Center"
                    Width="150" />
     </DataTemplate>

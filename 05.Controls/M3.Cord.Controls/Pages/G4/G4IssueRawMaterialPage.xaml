@@ -176,7 +176,7 @@
                             <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletNo}" />
                             <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
                             <GridViewColumn Header="Lot No" CellTemplate="{StaticResource LotNo}" />
-                            <GridViewColumn Header="Item Type" CellTemplate="{StaticResource ItemType}" />
+                            <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
                             <GridViewColumn Header="Weight" CellTemplate="{StaticResource WeightQty}" />
                             <GridViewColumn Header="CH" CellTemplate="{StaticResource ConeCH}" />
                             <GridViewColumn Header="">

@@ -456,6 +456,55 @@ namespace M3.Cord.Models
 
             return ret;
         }
+        /// <summary>
+        /// Get yarn in stocks.
+        /// </summary>
+        /// <param name="ItemYarn"></param>
+        /// <param name="EntryDate"></param>
+        /// <param name="YarnType"></param>
+        /// <returns></returns>
+        public static NDbResult<List<G4Yarn>> SearchYarnStocks(string ItemYarn, 
+            DateTime? EntryDate = new DateTime?(),
+            string YarnType = null)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<G4Yarn>> rets = new NDbResult<List<G4Yarn>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@ItemYarn", ItemYarn);
+            p.Add("@EntryDate", EntryDate);
+            p.Add("@YarnType", YarnType);
+
+            try
+            {
+                var items = cnn.Query<G4Yarn>("SearchG4YarnStock", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            return rets;
+        }
 
         #endregion
     }
