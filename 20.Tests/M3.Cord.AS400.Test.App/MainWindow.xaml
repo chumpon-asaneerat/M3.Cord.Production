@@ -1,0 +1,45 @@
+﻿<Window x:Class="M3.Cord.AS400.Test.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="M3 Cord AS400 Connection Test App"
+        Height="450"
+        Width="800">
+    <DockPanel LastChildFill="True">
+        <DockPanel LastChildFill="True"
+                   DockPanel.Dock="Top"
+                   Margin="5">
+            <DockPanel LastChildFill="True">
+                <Button x:Name="cmdDisconnect"
+                        Margin="5,0"
+                        DockPanel.Dock="Right"
+                        Width="100"
+                        Content="Disconnect" />
+                <Button x:Name="cmdConnect"
+                        Margin="5,0"
+                        DockPanel.Dock="Right"
+                        Width="100"
+                        Content="Connect" />
+                <!--  CONNECTION STRING  -->
+                <StackPanel Orientation="Vertical"
+                            Margin="5,0"
+                            HorizontalAlignment="Stretch">
+                    <TextBlock Text="Connection String:" />
+                    <TextBox x:Name="txtConnectionString"
+                             Text=""
+                             Width="400" />
+                </StackPanel>
+            </DockPanel>
+            <Grid />
+        </DockPanel>
+        <TabControl Margin="5">
+            <TabItem Header="Get Data">
+                <DockPanel LastChildFill="True">
+                    <DataGrid x:Name="dbGrid" AutoGenerateColumns="True" />
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

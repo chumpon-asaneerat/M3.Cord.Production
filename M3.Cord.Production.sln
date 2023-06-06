@@ -188,6 +188,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{4ACC
 		Documents\Data\Oracle\Scripts\G3_SearchYarnStock.txt = Documents\Data\Oracle\Scripts\G3_SearchYarnStock.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3.Cord.AS400.Test.App", "20.Tests\M3.Cord.AS400.Test.App\M3.Cord.AS400.Test.App.csproj", "{2E161B42-CD75-435F-8FBE-589E63F96240}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -254,6 +256,10 @@ Global
 		{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E161B42-CD75-435F-8FBE-589E63F96240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E161B42-CD75-435F-8FBE-589E63F96240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E161B42-CD75-435F-8FBE-589E63F96240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E161B42-CD75-435F-8FBE-589E63F96240}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -289,6 +295,7 @@ Global
 		{52DA3F0D-91F5-45F1-A955-9CB3DF6D9ABD} = {3487607A-154F-41EE-A04D-C71F2D382CC4}
 		{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA} = {B80910F2-BC08-4C75-9E6D-170ECC150E61}
 		{4ACCB01C-9DA9-4B86-81F7-CE9B18257A9C} = {5C54D9E2-5613-452D-AB27-C131D613F94B}
+		{2E161B42-CD75-435F-8FBE-589E63F96240} = {159B3C70-A36A-4E53-91A1-B346894525DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
