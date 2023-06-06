@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 
 using NLib.Services;
 using M3.Cord.Models;
+using NLib.Models;
 
 #endregion
 
@@ -100,6 +101,16 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Combobox Handlers
+
+        private void cbItemYanrs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        #endregion
+
+
         #region Private Methods
 
         private void ResetControls()
@@ -111,12 +122,25 @@ namespace M3.Cord.Pages
 
         private void LoadComboBoxes()
         {
+            cbItemYanrs.ItemsSource = null;
 
+            var itemYarns = CordItemYarn.Gets().Value();
+            cbItemYanrs.ItemsSource = itemYarns;
+
+            if (null != itemYarns && itemYarns.Count > 0) cbItemYanrs.SelectedIndex = 0;
         }
 
         private void RefreshGrid()
         {
+            var itemYarn = (null != cbItemYanrs.SelectedItem) ? 
+                cbItemYanrs.SelectedItem as CordItemYarn : null;
 
+            grid.ItemsSource = null;
+
+            if (null != itemYarn)
+            {
+                grid.ItemsSource = null;
+            }
         }
 
         #endregion

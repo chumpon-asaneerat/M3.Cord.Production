@@ -55,7 +55,9 @@
                     <ctrl:NComboBox x:Name="cbItemYanrs"
                                     DockPanel.Dock="Left"
                                     CaptionText="IItem Yarn:"
-                                    Width="250" />
+                                    DisplayMemberPath="ItemYarn"
+                                    Width="250" 
+                                    SelectionChanged="cbItemYanrs_SelectionChanged"/>
                     <!--  REQUEST NO  -->
                     <ctrl:NTextBox x:Name="txtRequsetNo"
                                    DockPanel.Dock="Left"
