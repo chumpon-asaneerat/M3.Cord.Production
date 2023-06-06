@@ -140,7 +140,7 @@ namespace M3.Cord.AS400.Test.App
 
         private void UpdateConnectStatus()
         {
-            bool connected = (null != _conn && _conn.State != ConnectionState.Open);
+            bool connected = (null != _conn && _conn.State == ConnectionState.Open);
             cmdConnect.IsEnabled = !connected;
             cmdDisconnect.IsEnabled = connected;
         }
@@ -160,6 +160,7 @@ namespace M3.Cord.AS400.Test.App
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                _conn = null;
             }
 
             UpdateConnectStatus();
@@ -184,7 +185,10 @@ namespace M3.Cord.AS400.Test.App
         private void ExecuteQuery(string query)
         {
             if (null == _conn)
+            {
+                MessageBox.Show("No connection");
                 return;
+            }
             // reset.
             dbGrid.ItemsSource = null;
 
