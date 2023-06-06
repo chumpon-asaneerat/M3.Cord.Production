@@ -24,8 +24,23 @@
                    TextAlignment="Center"
                    Width="150" />
     </DataTemplate>
+    <DataTemplate x:Key="ItemType">
+        <TextBlock Text="{Binding Path=ItemType, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="PalletType">
+        <TextBlock Text="{Binding Path=PalletType, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="150" />
+    </DataTemplate>
     <DataTemplate x:Key="WeightQty">
         <TextBlock Text="{Binding Path=WeightQty, Mode=OneWay, StringFormat='{}{0:n1}'}"
+                   TextAlignment="Right"
+                   Width="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="ConeCH">
+        <TextBlock Text="{Binding Path=ConeCH, Mode=OneWay, StringFormat='{}{0:n0}'}"
                    TextAlignment="Right"
                    Width="150" />
     </DataTemplate>
