@@ -192,33 +192,18 @@ namespace M3.Cord.AS400.Test.App
             // reset.
             dbGrid.ItemsSource = null;
 
-            DataSet dataSet = null;
+            DataSet dataSet = new DataSet();
             try
             {
-                using (var cmd = _conn.CreateCommand())
+                OleDbDataAdapter adapter;
+                try
                 {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = query;
-
-                    OleDbDataAdapter adapter = new OleDbDataAdapter();
-                    try
-                    {
-                        using (DbDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.HasRows)
-                            {
-                                dataSet = new DataSet();
-                                adapter.SelectCommand = cmd;
-                                adapter.Fill(dataSet);
-                            }
-
-                            reader.Close();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.ToString());
-                    }
+                    adapter = new OleDbDataAdapter(query, _conn);
+                    adapter.Fill(dataSet, "BCSPRFTP");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
                 }
             }
             catch (Exception ex) 
@@ -235,6 +220,15 @@ namespace M3.Cord.AS400.Test.App
 
             dbGrid.ItemsSource = null;
             txtTotalRows.Text = "-";
+
+            if (null != dataSet && null != dataSet.Tables)
+            {
+                MessageBox.Show(string.Format("Table Count: {0}", dataSet.Tables.Count));
+            }
+            else
+            {
+                MessageBox.Show("No data set.");
+            }
 
             if (null != dataSet && null != dataSet.Tables && dataSet.Tables.Count > 0)
             {
