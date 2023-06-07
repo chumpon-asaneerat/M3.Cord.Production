@@ -142,7 +142,7 @@ namespace M3.Cord
         {
             PPRPDbConfig cfg;
 
-            string fileName = Path.Combine(ConfigFolder, "PPRPDbServer.json");
+            string fileName = Path.Combine(ConfigFolder, "M3CordDbServer.json");
             if (!ConfigExists(fileName))
             {
                 // create new one and save.

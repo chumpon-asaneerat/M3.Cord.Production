@@ -39,6 +39,7 @@ namespace M3.Cord.Models
         public int? EditBy { get; set; } = new int?();
         public bool DeleteFlag { get; set; }
         public bool FinishFlag { get; set; }
+        public bool WHReceiveFlag { get; set; }
 
         // FROM G4YARN
         public int G4YarnPkId { get; set; }

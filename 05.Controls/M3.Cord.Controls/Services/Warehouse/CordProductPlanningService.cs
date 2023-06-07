@@ -52,6 +52,22 @@ namespace M3.Cord
 
         #endregion
 
+        #region Public Methods
+
+        /// <summary>
+        /// Clear receive list.
+        /// </summary>
+        public void Clear()
+        {
+            lock (this)
+            {
+
+            }
+            CalcTotals();
+        }
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>Gets Total Pallet.</summary>

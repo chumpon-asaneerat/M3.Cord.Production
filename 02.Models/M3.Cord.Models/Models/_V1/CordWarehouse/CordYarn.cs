@@ -42,6 +42,12 @@ namespace M3.Cord.Models
         public decimal? WeightQty { get; set; } = 520;
         public decimal? CH { get; set; } = 48;
 
+        public decimal? ConeCH 
+        {
+            get { return CH; }
+            set { CH = value; }
+        }
+
         public string PalletType { get; set; } = "F";
 
         public string DeleteFlag { get; set; }
