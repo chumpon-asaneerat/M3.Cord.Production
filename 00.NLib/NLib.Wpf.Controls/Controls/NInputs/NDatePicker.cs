@@ -38,10 +38,13 @@ namespace NLib.Wpf.Controls
         /// <summary>
         /// Constructor.
         /// </summary>
-        public NDatePicker() : base()
-        {
+        public NDatePicker() : base() { }
 
-        }
+        #endregion
+
+        #region Internal Variables
+
+        private DatePicker ctrl;
 
         #endregion
 
@@ -50,6 +53,20 @@ namespace NLib.Wpf.Controls
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
+
+            ctrl = null;
+            var obj = GetTemplateChild("ctrl");
+            if (null != obj && obj is DatePicker)
+            {
+                ctrl = (DatePicker)obj;
+            }
+        }
+        /// <summary>
+        /// Focus internal control.
+        /// </summary>
+        public override void FocusControl()
+        {
+            if (null != ctrl) ctrl.Focus();
         }
 
         #endregion

@@ -38,10 +38,7 @@ namespace NLib.Wpf.Controls
         /// <summary>
         /// Constructor.
         /// </summary>
-        public NComboBox() : base()
-        {
-
-        }
+        public NComboBox() : base() { }
 
         #endregion
 
@@ -72,6 +69,13 @@ namespace NLib.Wpf.Controls
             {
                 ctrl.SelectionChanged += Ctrl_SelectionChanged;
             }
+        }
+        /// <summary>
+        /// Focus internal control.
+        /// </summary>
+        public override void FocusControl()
+        {
+            if (null != ctrl) ctrl.Focus();
         }
 
         private void Ctrl_SelectionChanged(object sender, SelectionChangedEventArgs e)

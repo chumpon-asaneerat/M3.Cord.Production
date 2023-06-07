@@ -38,10 +38,7 @@ namespace NLib.Wpf.Controls
         /// <summary>
         /// Constructor.
         /// </summary>
-        public NPasswordBox() : base()
-        {
-
-        }
+        public NPasswordBox() : base() { }
 
         #endregion
 
@@ -63,6 +60,13 @@ namespace NLib.Wpf.Controls
             {
                 ctrl = (PasswordBox)obj;
             }
+        }
+        /// <summary>
+        /// Focus internal control.
+        /// </summary>
+        public override void FocusControl()
+        {
+            if (null != ctrl) ctrl.Focus();
         }
 
         #endregion

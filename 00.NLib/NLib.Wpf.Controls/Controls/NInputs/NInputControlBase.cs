@@ -49,6 +49,15 @@ namespace NLib.Wpf.Controls
 
         #endregion
 
+        #region Virtual Methods
+
+        /// <summary>
+        /// Focus internal control.
+        /// </summary>
+        public virtual void FocusControl() { }
+
+        #endregion
+
         #region Public Properties
 
         #region CaptionText

@@ -51,13 +51,6 @@
                            LastChildFill="True"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
-                    <!--  ITEM YARN  -->
-                    <ctrl:NComboBox x:Name="cbItemYanrs"
-                                    DockPanel.Dock="Left"
-                                    CaptionText="IItem Yarn:"
-                                    DisplayMemberPath="ItemYarn"
-                                    Width="250" 
-                                    SelectionChanged="cbItemYanrs_SelectionChanged"/>
                     <!--  REQUEST NO  -->
                     <ctrl:NTextBox x:Name="txtRequsetNo"
                                    DockPanel.Dock="Left"
@@ -65,6 +58,13 @@
                                    TextAlignment="Center"
                                    Width="200"
                                    PreviewKeyDown="txtRequsetNo_PreviewKeyDown" />
+                    <!--  ITEM YARN  -->
+                    <ctrl:NComboBox x:Name="cbItemYanrs"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Item Yarn:"
+                                    DisplayMemberPath="ItemYarn"
+                                    Width="250"
+                                    SelectionChanged="cbItemYanrs_SelectionChanged" />
                     <!--  ISSUE DATE  -->
                     <ctrl:NDatePicker x:Name="dtIssueDate"
                                       DockPanel.Dock="Left"

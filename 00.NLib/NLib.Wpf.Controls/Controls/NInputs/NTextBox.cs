@@ -44,10 +44,13 @@ namespace NLib.Wpf.Controls
         /// <summary>
         /// Constructor.
         /// </summary>
-        public NTextBox() : base()
-        {
+        public NTextBox() : base() { }
 
-        }
+        #endregion
+
+        #region Internal Variables
+
+        private TextBox ctrl;
 
         #endregion
 
@@ -56,6 +59,20 @@ namespace NLib.Wpf.Controls
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
+
+            ctrl = null;
+            var obj = GetTemplateChild("ctrl");
+            if (null != obj && obj is TextBox)
+            {
+                ctrl = (TextBox)obj;
+            }
+        }
+        /// <summary>
+        /// Focus internal control.
+        /// </summary>
+        public override void FocusControl() 
+        {
+            if (null != ctrl) ctrl.Focus();
         }
 
         #endregion

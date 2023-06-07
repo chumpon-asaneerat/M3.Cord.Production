@@ -81,12 +81,14 @@ namespace M3.Cord.Pages
             if (e.Key == Key.Enter ||
                 e.Key == Key.Return)
             {
+                CheckEnable();
+
                 G4IssueYarnService.Instance.IssueDate = dtIssueDate.SelectedDate;
 
                 this.InvokeAction(() =>
                 {
                     RefreshGrid();
-                    txtPalletNo.Focus();
+                    txtPalletNo.FocusControl();
                 });
                 e.Handled = true;
             }
@@ -133,6 +135,17 @@ namespace M3.Cord.Pages
             dtIssueDate.SelectedDate = DateTime.Now;
             txtRequsetNo.Text = string.Empty;
             txtPalletNo.Text = string.Empty;
+
+            CheckEnable();
+        }
+
+        private void CheckEnable()
+        {
+            bool hasRequestId = (!string.IsNullOrEmpty(txtRequsetNo.Text));
+
+            txtPalletNo.IsEnabled = hasRequestId;
+            dtIssueDate.IsEnabled = hasRequestId;
+            cbItemYanrs.IsEnabled = hasRequestId;
         }
 
         private void LoadComboBoxes()
@@ -181,6 +194,11 @@ namespace M3.Cord.Pages
             ResetControls();
             LoadComboBoxes();
             RefreshGrid();
+
+            this.InvokeAction(() =>
+            {
+                txtRequsetNo.FocusControl();
+            });
         }
 
         #endregion
