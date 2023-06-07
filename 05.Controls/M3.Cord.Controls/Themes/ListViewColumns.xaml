@@ -4,6 +4,12 @@
     </ResourceDictionary.MergedDictionaries>
 
     <!--  CELL TEMPLATES  -->
+    <DataTemplate x:Key="ReceiveDate">
+        <TextBlock Text="{Binding Path=ReceiveDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Left"
+                   Width="150" />
+    </DataTemplate>
     <DataTemplate x:Key="TraceNo">
         <TextBlock Text="{Binding Path=TraceNo, Mode=OneWay}"
                    Foreground="{Binding TextColor}"

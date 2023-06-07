@@ -127,6 +127,7 @@
     </Compile>
     <Compile Include="Services\G4\G4IssueYarnService.cs" />
     <Compile Include="Services\G4\G4ReceiveYarnService.cs" />
+    <Compile Include="Services\G4\G4StockService.cs" />
     <Compile Include="Services\SignInService.cs" />
     <None Include="Windows\_V1\FirstTwist\ProductionConditionSheetWindow.xaml.cs">
       <DependentUpon>ProductionConditionSheetWindow.xaml</DependentUpon>

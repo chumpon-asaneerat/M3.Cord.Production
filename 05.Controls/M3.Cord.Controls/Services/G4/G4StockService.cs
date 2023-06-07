@@ -82,6 +82,8 @@ namespace M3.Cord
         public void Search(string itemYarn, DateTime? ReceiveDate = new DateTime?())
         {
             _stocks = G4Yarn.GetReceiveYarnStocks(itemYarn, ReceiveDate).Value();
+
+            CalcTotals();
         }
 
         #endregion

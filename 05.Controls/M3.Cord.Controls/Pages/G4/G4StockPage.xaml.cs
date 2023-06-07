@@ -66,6 +66,20 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
+        private void cmdSearch_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        #endregion
+
+        #region Combobox Handlers
+
+        private void cbItemYanrs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
         #endregion
 
         #region Private Methods
@@ -90,7 +104,15 @@ namespace M3.Cord.Pages
 
         private void RefreshGrid()
         {
+            grid.ItemsSource = null;
 
+            var itemYarn = (null != cbItemYanrs.SelectedItem) ?
+                cbItemYanrs.SelectedItem as CordItemYarn : null;
+
+            string sItemYarn = (null != itemYarn) ? itemYarn.ItemYarn : null;
+            G4StockService.Instance.Search(sItemYarn, dtReceiveDate.SelectedDate);
+
+            grid.ItemsSource = G4StockService.Instance.Stocks;
         }
 
         #endregion
@@ -102,6 +124,8 @@ namespace M3.Cord.Pages
         /// </summary>
         public void Setup()
         {
+            this.DataContext = G4StockService.Instance;
+
             ResetControls();
             LoadComboBoxes();
 
