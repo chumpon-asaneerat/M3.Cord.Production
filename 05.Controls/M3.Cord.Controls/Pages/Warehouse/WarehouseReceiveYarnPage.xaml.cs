@@ -86,6 +86,8 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
+            this.DataContext = WarehouseReceiveYarnService.Instance;
+
             ResetControls();
             RefreshGrid();
         }
