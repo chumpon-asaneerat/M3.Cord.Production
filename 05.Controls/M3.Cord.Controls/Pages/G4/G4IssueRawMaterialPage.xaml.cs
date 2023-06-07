@@ -101,10 +101,10 @@ namespace M3.Cord.Pages
             {
                 string palletNo = txtPalletNo.Text.Trim();
                 txtPalletNo.Text = string.Empty; // clear input
-                string requestId = txtRequsetNo.Text.Trim();
+                string requestNo = txtRequsetNo.Text.Trim();
 
                 G4IssueYarnService.Instance.IssueDate = dtIssueDate.SelectedDate;
-                G4IssueYarnService.Instance.MarkIssue(requestId, palletNo);
+                G4IssueYarnService.Instance.MarkIssue(requestNo, palletNo);
 
                 this.InvokeAction(() =>
                 {

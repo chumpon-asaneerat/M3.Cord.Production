@@ -145,6 +145,12 @@ namespace M3.Cord
             CalcTotals();
         }
 
+        public void LoadRequest(string requestNo)
+        {
+            Clear();
+            _issueItems = G4IssueYarn.GetG4IssueYarns(requestNo).Value();
+        }
+
         public void LoadYanStocks(string itemYarn)
         {
             ClearUnmark();
@@ -195,16 +201,16 @@ namespace M3.Cord
             return idx;
         }
 
-        public void MarkIssue(string requestId, string palletNo)
+        public void MarkIssue(string requestNo, string palletNo)
         {
-            if (string.IsNullOrEmpty(requestId))
+            if (string.IsNullOrEmpty(requestNo))
                 return;
             if (null == _issueItems)
                 return;
             int idx = FindPalletIndex(palletNo);
             if (idx != -1)
             {
-                _issueItems[idx].MarkIssue(requestId, null, IssueDate);
+                _issueItems[idx].MarkIssue(requestNo, null, IssueDate);
             }
 
             CalcTotals();
