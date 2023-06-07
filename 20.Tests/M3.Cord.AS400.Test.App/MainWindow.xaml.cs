@@ -109,35 +109,65 @@ namespace M3.Cord.AS400.Test.App
 
         public class BCSPRFTP
         {
+            /// <summary>Flags</summary>
             public string ANNUL { get; set; }
+            /// <summary>Flags</summary>
             public string FLAGS { get; set; }
+            /// <summary>Type</summary>
             public string RECTY { get; set; }
+            /// <summary>Warehouse</summary>
             public string CDSTO { get; set; }
+            /// <summary>User Name</summary>
             public string USRNM { get; set; }
+            /// <summary>Movement Date</summary>
             public string DTTRA { get; set; }
+            /// <summary>Entry Date</summary>
             public string DTINP { get; set; }
+            /// <summary>Roll No</summary>
             public string CDEL0 { get; set; }
+            /// <summary>Pallet No</summary>
             public string CDCON { get; set; }
+            /// <summary>Quantity</summary>
             public string BLELE { get; set; }
+            /// <summary>Unit</summary>
             public string CDUM0 { get; set; }
+            /// <summary>Item Code</summary>
             public string CDKE1 { get; set; }
+            /// <summary>Production Type</summary>
             public string CDKE2 { get; set; }
+            /// <summary>N/A</summary>
             public string CDKE3 { get; set; }
+            /// <summary>N/A</summary>
             public string CDKE4 { get; set; }
+            /// <summary>N/A</summary>
             public string CDKE5 { get; set; }
+            /// <summary>Lot No</summary>
             public string CDLOT { get; set; }
+            /// <summary>Transaction Code</summary>
             public string CDTRA { get; set; }
+            /// <summary>Document No</summary>
             public string REFER { get; set; }
+            /// <summary>Location</summary>
             public string LOCAT { get; set; }
+            /// <summary>Grade</summary>
             public string CDQUA { get; set; }
+            /// <summary>Defect Group</summary>
             public string QUACA { get; set; }
+            /// <summary>Technical Data 1</summary>
             public string TECU1 { get; set; }
+            /// <summary>Technical Data 2</summary>
             public string TECU2 { get; set; }
+            /// <summary>Technical Data 3</summary>
             public string TECU3 { get; set; }
+            /// <summary>Technical Data 4</summary>
             public string TECU4 { get; set; }
+            /// <summary>Technical Data 5</summary>
             public string TECU5 { get; set; }
+            /// <summary>Technical Data 6</summary>
             public string TECU6 { get; set; }
+            /// <summary>Comment</summary>
             public string COMM0 { get; set; }
+            /// <summary>Last Update Time</summary>
             public string DTORA { get; set; }
         }
 
@@ -176,6 +206,7 @@ namespace M3.Cord.AS400.Test.App
             query += "     , #COMM0 AS COMM0 " + Environment.NewLine;
             query += "     , #DTORA AS DTORA " + Environment.NewLine;
             query += "  FROM BCSPRFTP " + Environment.NewLine;
+            query += " WHERE #CDSTO = '3G' " + Environment.NewLine;
 
             txtQuery.Text = query;
         }
@@ -265,7 +296,7 @@ namespace M3.Cord.AS400.Test.App
 
             if (null != dataSet && null != dataSet.Tables)
             {
-                MessageBox.Show(string.Format("Table Count: {0}", dataSet.Tables.Count));
+                Console.WriteLine(string.Format("Table Count: {0}", dataSet.Tables.Count));
             }
             else
             {
