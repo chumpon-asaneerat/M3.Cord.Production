@@ -101,12 +101,6 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
-    <None Include="Pages\_v1\Warehouse\WarehousePlanningPage.xaml.cs">
-      <DependentUpon>WarehousePlanningPage.xaml</DependentUpon>
-    </None>
-    <None Include="Pages\_v1\Warehouse\WareHouseReceiveYarnPage.xaml.cs">
-      <DependentUpon>WareHouseReceiveYarnPage.xaml</DependentUpon>
-    </None>
     <Compile Include="Pages\G4\G4ReceiveReturnMeterialPage.xaml.cs">
       <DependentUpon>G4ReceiveReturnMeterialPage.xaml</DependentUpon>
     </Compile>
@@ -319,14 +313,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="Pages\_v1\Warehouse\WarehousePlanningPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Pages\_v1\Warehouse\WareHouseReceiveYarnPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <Page Include="Pages\Warehouse\CordProductPlanningPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

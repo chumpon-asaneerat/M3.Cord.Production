@@ -38,6 +38,7 @@ namespace M3.Cord.Models
         public DateTime? EditDate { get; set; }
         public int? EditBy { get; set; } = new int?();
         public bool DeleteFlag { get; set; }
+        public bool FinishFlag { get; set; }
 
         // FROM G4YARN
         public int G4YarnPkId { get; set; }
@@ -258,6 +259,56 @@ namespace M3.Cord.Models
             }
 
             return ret;
+        }
+
+        public static NDbResult<List<G4IssueYarn>> SearchG4IssueYarns(
+            DateTime? IssueDate = new DateTime?(), 
+            string ItemYarn = null, 
+            string Item400 = null)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<G4IssueYarn>> rets = new NDbResult<List<G4IssueYarn>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@IssueDate", IssueDate);
+            p.Add("@ItemYarn", ItemYarn);
+            p.Add("@Item400", Item400);
+
+            try
+            {
+                var items = cnn.Query<G4IssueYarn>("SearchG4IssueYarns", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<G4IssueYarn>();
+            }
+
+            return rets;
         }
 
         #endregion

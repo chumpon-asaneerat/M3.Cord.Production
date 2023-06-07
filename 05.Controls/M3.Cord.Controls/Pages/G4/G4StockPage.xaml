@@ -26,6 +26,15 @@
                                             Text="Home"
                                             Click="cmdHome_Click" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <!--  PRINT GO LABEL  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdPrint"
+                                            Margin="5,0,0,0"
+                                            IconType="Print"
+                                            Text="GO Label" />
+                </StackPanel>
                 <Grid />
             </DockPanel>
             <!--  TOP ENTRY  -->
@@ -141,12 +150,12 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
+                        <GridViewColumn Header="" CellTemplate="{StaticResource Selected}" />
                         <GridViewColumn Header="Receive Date" CellTemplate="{StaticResource ReceiveDate}" />
                         <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
                         <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletNo}" />
                         <GridViewColumn Header="Lot" CellTemplate="{StaticResource LotNo}" />
                         <GridViewColumn Header="CH" CellTemplate="{StaticResource ConeCH}" />
-                        <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource YarnType}" />
                         <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
                         <GridViewColumn Header="Weight" CellTemplate="{StaticResource WeightQty}" />
                         <GridViewColumn Header="Pallet Type" CellTemplate="{StaticResource PalletType}" />

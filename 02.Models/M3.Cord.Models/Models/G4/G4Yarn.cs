@@ -222,6 +222,10 @@ namespace M3.Cord.Models
             get { return ModelConsts.BlackColor; }
             set { }
         }
+        /// <summary>
+        /// Gets or sets is item selected (for GO Label print).
+        /// </summary>
+        public bool Selected { get; set; }
 
         #endregion
 

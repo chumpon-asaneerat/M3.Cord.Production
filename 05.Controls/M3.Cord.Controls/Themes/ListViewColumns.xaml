@@ -4,6 +4,22 @@
     </ResourceDictionary.MergedDictionaries>
 
     <!--  CELL TEMPLATES  -->
+    <DataTemplate x:Key="Selected">
+        <Grid HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch"
+              Margin="1"
+              Width="30"
+              Height="30">
+            <CheckBox IsChecked="{Binding Selected}"
+                      Style="{StaticResource CommonCheckBox}"
+                      HorizontalAlignment="Center"
+                      HorizontalContentAlignment="Center"
+                      VerticalAlignment="Center"
+                      VerticalContentAlignment="Center"
+                      Foreground="{Binding TextColor}" />
+        </Grid>
+    </DataTemplate>
+
     <DataTemplate x:Key="ReceiveDate">
         <TextBlock Text="{Binding Path=ReceiveDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
                    Foreground="{Binding TextColor}"
