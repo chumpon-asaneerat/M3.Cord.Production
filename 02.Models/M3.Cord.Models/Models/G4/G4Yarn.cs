@@ -511,6 +511,53 @@ namespace M3.Cord.Models
 
             return rets;
         }
+        /// <summary>
+        /// Get receive yarn in stocks.
+        /// </summary>
+        /// <param name="ItemYarn"></param>
+        /// <param name="ReceiveDate"></param>
+        /// <returns></returns>
+        public static NDbResult<List<G4Yarn>> GetReceiveYarnStocks(string ItemYarn,
+            DateTime? ReceiveDate = new DateTime?(),
+            string YarnType = null)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<G4Yarn>> rets = new NDbResult<List<G4Yarn>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@ItemYarn", ItemYarn);
+            p.Add("@ReceiveDate", ReceiveDate);
+
+            try
+            {
+                var items = cnn.Query<G4Yarn>("GetG4ReceiveYarnInStock", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            return rets;
+        }
 
         #endregion
     }

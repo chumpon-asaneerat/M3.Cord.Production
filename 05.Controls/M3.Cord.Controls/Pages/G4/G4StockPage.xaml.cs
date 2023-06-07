@@ -17,6 +17,8 @@ using System.Windows.Shapes;
 
 using NLib.Services;
 using M3.Cord.Models;
+using NLib.Models;
+using NLib;
 
 #endregion
 
@@ -68,6 +70,29 @@ namespace M3.Cord.Pages
 
         #region Private Methods
 
+        private void ResetControls()
+        {
+            dtReceiveDate.SelectedDate = DateTime.Now;
+        }
+
+        private void LoadComboBoxes()
+        {
+            cbItemYanrs.ItemsSource = null;
+
+            var itemYarns = CordItemYarn.Gets().Value();
+            cbItemYanrs.ItemsSource = itemYarns;
+
+            this.InvokeAction(() =>
+            {
+                if (null != itemYarns && itemYarns.Count > 0) cbItemYanrs.SelectedIndex = 0;
+            });
+        }
+
+        private void RefreshGrid()
+        {
+
+        }
+
         #endregion
 
         #region Public Methods
@@ -77,7 +102,10 @@ namespace M3.Cord.Pages
         /// </summary>
         public void Setup()
         {
+            ResetControls();
+            LoadComboBoxes();
 
+            RefreshGrid();
         }
 
         #endregion
