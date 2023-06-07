@@ -16,10 +16,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using NLib;
+using NLib.Models;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.Common;
 using System.Windows.Controls.Primitives;
+using System.CodeDom;
 
 #endregion
 
@@ -82,6 +85,11 @@ namespace M3.Cord.AS400.Test.App
             ExecuteQuery(query);
         }
 
+        private void cmdExport_Click(object sender, RoutedEventArgs e)
+        {
+            Export();
+        }
+
         #endregion
 
         #region Private Methods
@@ -97,6 +105,40 @@ namespace M3.Cord.AS400.Test.App
                 "Provider=IBMDA400;Data Source={0};User Id={1};Password={2};Default Collection={3};", 
                 dataSource, userId, pwd, defaultColl);
             txtConnectionString.Text = conn;
+        }
+
+        public class BCSPRFTP
+        {
+            public string ANNUL { get; set; }
+            public string FLAGS { get; set; }
+            public string RECTY { get; set; }
+            public string CDSTO { get; set; }
+            public string USRNM { get; set; }
+            public string DTTRA { get; set; }
+            public string DTINP { get; set; }
+            public string CDEL0 { get; set; }
+            public string CDCON { get; set; }
+            public string BLELE { get; set; }
+            public string CDUM0 { get; set; }
+            public string CDKE1 { get; set; }
+            public string CDKE2 { get; set; }
+            public string CDKE3 { get; set; }
+            public string CDKE4 { get; set; }
+            public string CDKE5 { get; set; }
+            public string CDLOT { get; set; }
+            public string CDTRA { get; set; }
+            public string REFER { get; set; }
+            public string LOCAT { get; set; }
+            public string CDQUA { get; set; }
+            public string QUACA { get; set; }
+            public string TECU1 { get; set; }
+            public string TECU2 { get; set; }
+            public string TECU3 { get; set; }
+            public string TECU4 { get; set; }
+            public string TECU5 { get; set; }
+            public string TECU6 { get; set; }
+            public string COMM0 { get; set; }
+            public string DTORA { get; set; }
         }
 
         private void InitQueries()
@@ -235,8 +277,9 @@ namespace M3.Cord.AS400.Test.App
                 var tbl = dataSet.Tables[0];
                 if (null != tbl)
                 {
-                    dbGrid.ItemsSource = tbl.DefaultView;
-                    txtTotalRows.Text = tbl.Rows.Count.ToString("n0");
+                    var list = CreateList(tbl);
+                    dbGrid.ItemsSource = list;
+                    txtTotalRows.Text = list.Count.ToString("n0");
                 }
                 else
                 {
@@ -245,6 +288,139 @@ namespace M3.Cord.AS400.Test.App
             }
         }
 
+        private string GetRow(DataRow row, string columnName)
+        {
+            return (null != row && null != row[columnName]) ? row[columnName].ToString() : null;
+        }
+
+        private List<BCSPRFTP> CreateList(DataTable tbl)
+        {
+            var items = new List<BCSPRFTP>();
+            if (null != tbl && null != tbl.Rows)
+            {
+                int cnt = tbl.Rows.Count;
+                for (int i = 0; i < cnt; i++)
+                {
+                    var row = tbl.Rows[i];
+                    var inst = new BCSPRFTP();
+
+                    inst.ANNUL = GetRow(row, "ANNUL");
+                    inst.FLAGS = GetRow(row, "FLAGS");
+                    inst.RECTY = GetRow(row, "RECTY");
+                    inst.CDSTO = GetRow(row, "CDSTO");
+                    inst.USRNM = GetRow(row, "USRNM");
+                    inst.DTTRA = GetRow(row, "DTTRA");
+                    inst.DTINP = GetRow(row, "DTINP");
+                    inst.CDEL0 = GetRow(row, "CDEL0");
+                    inst.CDCON = GetRow(row, "CDCON");
+                    inst.BLELE = GetRow(row, "BLELE");
+                    inst.CDUM0 = GetRow(row, "CDUM0");
+                    inst.CDKE1 = GetRow(row, "CDKE1");
+                    inst.CDKE2 = GetRow(row, "CDKE2");
+                    inst.CDKE3 = GetRow(row, "CDKE3");
+                    inst.CDKE4 = GetRow(row, "CDKE4");
+                    inst.CDKE5 = GetRow(row, "CDKE5");
+                    inst.CDLOT = GetRow(row, "CDLOT");
+                    inst.CDTRA = GetRow(row, "CDTRA");
+                    inst.REFER = GetRow(row, "REFER");
+                    inst.LOCAT = GetRow(row, "LOCAT");
+                    inst.CDQUA = GetRow(row, "CDQUA");
+                    inst.QUACA = GetRow(row, "QUACA");
+                    inst.TECU1 = GetRow(row, "TECU1");
+                    inst.TECU2 = GetRow(row, "TECU2");
+                    inst.TECU3 = GetRow(row, "TECU3");
+                    inst.TECU4 = GetRow(row, "TECU4");
+                    inst.TECU5 = GetRow(row, "TECU5");
+                    inst.TECU6 = GetRow(row, "TECU6");
+                    inst.COMM0 = GetRow(row, "COMM0");
+                    inst.DTORA = GetRow(row, "DTORA");
+
+                    items.Add(inst);
+                }
+            }
+
+            return items;
+        }
+
+        private void Export()
+        {
+            if (null != dbGrid.ItemsSource && dbGrid.ItemsSource is List<BCSPRFTP>)
+            {
+                var list = dbGrid.ItemsSource as List<BCSPRFTP>;
+                if (null != list)
+                {
+                    string fileName = Dialogs.SaveDialog();
+                    if (string.IsNullOrEmpty(fileName))
+                        return;
+
+                    list.SaveToFile(fileName, false);
+                }
+            }
+        }
+
         #endregion
     }
+
+    #region Dialogs class
+
+    public class Dialogs
+    {
+        #region Show Save Excel Dialog
+
+        /// <summary>
+        /// Show Save Excel File Dialog.
+        /// </summary>
+        /// <param name="defaultFileName">The Default File Name.</param>
+        /// <returns>Returns FileName if user choose file otherwise return null.</returns>
+        public static string SaveDialog(string defaultFileName)
+        {
+            return SaveDialog(null, null, "กรุณาระบุขื่อ json file ที่ต้องการนำส่งออกข้อมูล", defaultFileName);
+        }
+        /// <summary>
+        /// Show Save Excel File Dialog.
+        /// </summary>
+        /// <param name="title">The Dialog Title.</param>
+        /// <param name="initDir">The initial directory path.</param>
+        /// <returns>Returns FileName if user choose file otherwise return null.</returns>
+        public static string SaveDialog(string title = "กรุณาระบุขื่อ json file ที่ต้องการนำส่งออกข้อมูล",
+            string initDir = null)
+        {
+            return SaveDialog(null, title, initDir);
+        }
+        /// <summary>
+        /// Show Save Excel File Dialog.
+        /// </summary>
+        /// <param name="owner">The owner window.</param>
+        /// <param name="title">The Dialog Title.</param>
+        /// <param name="initDir">The initial directory path.</param>
+        /// <param name="defaultFileName">The Default File Name.</param>
+        /// <returns>Returns FileName if user choose file otherwise return null.</returns>
+        public static string SaveDialog(Window owner,
+            string title = "กรุณาเลือก json file ที่ต้องการนำเข้าข้อมูล",
+            string initDir = null,
+            string defaultFileName = "")
+        {
+            string fileName = null;
+
+            // setup dialog options
+            var sd = new Microsoft.Win32.SaveFileDialog();
+            sd.InitialDirectory = initDir;
+            sd.Title = string.IsNullOrEmpty(title) ? "กรุณาระบุขื่อ json file ที่ต้องการนำส่งออกข้อมูล" : title;
+            sd.Filter = "Json Files(*.json)|*.json";
+            sd.FileName = defaultFileName;
+            var ret = sd.ShowDialog(owner) == true;
+            if (ret)
+            {
+                // assigned to FileName
+                fileName = sd.FileName;
+            }
+            sd = null;
+
+            return fileName;
+        }
+
+        #endregion
+    }
+
+    #endregion
 }

@@ -65,11 +65,25 @@
                                 VerticalAlignment="Bottom"
                                 Click="cmdExecuteQuery_Click" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                        <TextBlock Margin="0,5" Text="Total Rows:" />
+                    <StackPanel Orientation="Horizontal"
+                                DockPanel.Dock="Top"
+                                VerticalAlignment="Center">
+                        <TextBlock Margin="0,5"
+                                   Text="Total Rows:"
+                                   VerticalAlignment="Center" />
                         <TextBlock x:Name="txtTotalRows"
+                                   VerticalAlignment="Center"
                                    Margin="5"
                                    Text="0" />
+                        <Button x:Name="cmdExport"
+                                Content="Export"
+                                Margin="12,2,2,2"
+                                VerticalAlignment="Center"
+                                Style="{StaticResource InlineButton}"
+                                FontSize="16"
+                                Height="25"
+                                Width="85" 
+                                Click="cmdExport_Click"/>
                     </StackPanel>
                     <DataGrid x:Name="dbGrid" AutoGenerateColumns="True" />
                 </DockPanel>
