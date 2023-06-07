@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 
 namespace M3.Cord.Models
 {
-    /*
+    // For Import from ORACLE need to check is safe to remvoe.
     public class CordItemCode : NInpc
     {
         #region Public Proeprties
@@ -153,7 +153,7 @@ namespace M3.Cord.Models
 
         #endregion
     }
-    */
+
     public class CordItemYarn
     {
         #region Public Proeprties
