@@ -81,7 +81,13 @@ namespace M3.Cord.Pages
             if (e.Key == Key.Enter ||
                 e.Key == Key.Return)
             {
-                //RefreshGrid();
+                G4IssueYarnService.Instance.IssueDate = dtIssueDate.SelectedDate;
+
+                this.InvokeAction(() =>
+                {
+                    RefreshGrid();
+                    txtPalletNo.Focus();
+                });
                 e.Handled = true;
             }
         }
@@ -91,7 +97,17 @@ namespace M3.Cord.Pages
             if (e.Key == Key.Enter ||
                 e.Key == Key.Return)
             {
-                //MarkIssue();
+                string palletNo = txtPalletNo.Text.Trim();
+                txtPalletNo.Text = string.Empty; // clear input
+                string requestId = txtRequsetNo.Text.Trim();
+
+                G4IssueYarnService.Instance.IssueDate = dtIssueDate.SelectedDate;
+                G4IssueYarnService.Instance.MarkIssue(requestId, palletNo);
+
+                this.InvokeAction(() =>
+                {
+                    RefreshGrid();
+                });
                 e.Handled = true;
             }
         }
@@ -102,7 +118,10 @@ namespace M3.Cord.Pages
 
         private void cbItemYanrs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RefreshGrid();
+            this.InvokeAction(() =>
+            {
+                RefreshGrid();
+            });
         }
 
         #endregion
@@ -133,6 +152,8 @@ namespace M3.Cord.Pages
         {
             var itemYarn = (null != cbItemYanrs.SelectedItem) ? 
                 cbItemYanrs.SelectedItem as CordItemYarn : null;
+
+            G4IssueYarnService.Instance.IssueDate = dtIssueDate.SelectedDate;
 
             grid.ItemsSource = null;
 

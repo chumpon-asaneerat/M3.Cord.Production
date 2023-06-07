@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using NLib;
 using NLib.Models;
 using M3.Cord.Models;
+using System.Windows.Documents;
 
 #endregion
 
@@ -151,8 +152,11 @@ namespace M3.Cord
             var yarnStocks = G4Yarn.SearchYarnStocks(itemYarn).Value();
             if (null != yarnStocks && yarnStocks.Count > 0)
             {
-                yarnStocks.ForEach(yarnStock => 
+                yarnStocks.ForEach(yarnStock =>
                 {
+                    var idx = FindPalletIndex(yarnStock.PalletNo);
+                    if (idx != -1) return; // already exists.
+
                     G4IssueYarn inst = new G4IssueYarn();
                     // clone data.
                     inst.ConeCH = yarnStock.ConeCH;
@@ -177,6 +181,35 @@ namespace M3.Cord
             }
         }
 
+        private int FindPalletIndex(string palletNo)
+        {
+            if (string.IsNullOrEmpty(palletNo))
+                return -1;
+            if (null == _issueItems)
+                return -1;
+            int idx = _issueItems.FindIndex(item =>
+            {
+                bool match = (string.CompareOrdinal(item.PalletNo, palletNo) == 0);
+                return match;
+            });
+            return idx;
+        }
+
+        public void MarkIssue(string requestId, string palletNo)
+        {
+            if (string.IsNullOrEmpty(requestId))
+                return;
+            if (null == _issueItems)
+                return;
+            int idx = FindPalletIndex(palletNo);
+            if (idx != -1)
+            {
+                _issueItems[idx].MarkIssue(requestId, null, IssueDate);
+            }
+
+            CalcTotals();
+        }
+
         #endregion
 
         #region Public Properties
@@ -189,6 +222,10 @@ namespace M3.Cord
             get { return _issueItems; }
             set { }
         }
+        /// <summary>
+        /// Gets or sets Issue Date.
+        /// </summary>
+        public DateTime? IssueDate { get; set; }
         /// <summary>Gets Total Pallet.</summary>
         public int TotalPallet { get { return _totalPallet; } set { } }
         /// <summary>Gets Total Weight.</summary>

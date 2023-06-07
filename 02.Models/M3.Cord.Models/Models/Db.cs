@@ -16,6 +16,7 @@ using NLib.Data;
 using NLib.IO;
 
 using M3.Cord.Models;
+using System.Windows.Media;
 
 #endregion
 

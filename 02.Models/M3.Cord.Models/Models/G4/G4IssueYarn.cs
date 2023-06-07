@@ -20,13 +20,6 @@ namespace M3.Cord.Models
 {
     public class G4IssueYarn : NInpc
     {
-        #region Const
-
-        public static readonly SolidColorBrush RedColor = new SolidColorBrush(Colors.Red);
-        public static readonly SolidColorBrush BlackColor = new SolidColorBrush(Colors.Black);
-
-        #endregion
-
         #region Public Properties
 
         public int G4IssueYarnPkId { get; set; }
@@ -58,7 +51,7 @@ namespace M3.Cord.Models
         {
             get 
             {
-                return (string.IsNullOrEmpty(RequestId)) ? BlackColor : RedColor;
+                return (string.IsNullOrEmpty(RequestId)) ? ModelConsts.BlackColor : ModelConsts.RedColor;
             }
             set { }
         }
@@ -81,6 +74,9 @@ namespace M3.Cord.Models
             IssueBy = issueBy;
             //IssueTo = issueTo;
             IssueDate = issueDate;
+
+            Raise(() => this.IsMark);
+            Raise(() => this.TextColor);
         }
 
         public void UnmarkIssue()
@@ -89,6 +85,9 @@ namespace M3.Cord.Models
             IssueBy = null;
             //IssueTo = null;
             IssueDate = new DateTime?();
+
+            Raise(() => this.IsMark);
+            Raise(() => this.TextColor);
         }
 
         #endregion

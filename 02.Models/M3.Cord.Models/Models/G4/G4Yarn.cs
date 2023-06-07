@@ -217,6 +217,12 @@ namespace M3.Cord.Models
             set { }
         }
 
+        public SolidColorBrush TextColor
+        {
+            get { return ModelConsts.BlackColor; }
+            set { }
+        }
+
         #endregion
 
         #region Static Methods
