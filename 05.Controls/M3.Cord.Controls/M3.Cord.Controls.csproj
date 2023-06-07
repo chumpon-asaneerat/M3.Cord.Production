@@ -122,6 +122,12 @@
     <Compile Include="Pages\Menu\M3CordMainMenuPage.xaml.cs">
       <DependentUpon>M3CordMainMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Warehouse\CordProductPlanningPage.xaml.cs">
+      <DependentUpon>CordProductPlanningPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Warehouse\WarehouseReceiveYanrPage.xaml.cs">
+      <DependentUpon>WarehouseReceiveYanrPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\G4\G4IssueYarnService.cs" />
     <Compile Include="Services\G4\G4ReceiveYarnService.cs" />
     <Compile Include="Services\G4\G4StockService.cs" />
@@ -319,6 +325,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Pages\Warehouse\CordProductPlanningPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Warehouse\WarehouseReceiveYanrPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
