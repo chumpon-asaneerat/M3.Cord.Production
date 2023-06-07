@@ -102,12 +102,10 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
-            // Cord Receive Yarn
-            /*
-            var page = M3CordApp.Pages.WareHouseReceiveYarn;
+            // Warehouse Receive Yarn
+            var page = M3CordApp.Pages.WarehouseReceiveYarn;
             page.Setup();
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdPlaning_Click(object sender, RoutedEventArgs e)
@@ -115,12 +113,10 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
-            // Cord Planning
-            /*
-            var page = M3CordApp.Pages.WarehousePlanning;
+            // Cord Product Planning
+            var page = M3CordApp.Pages.CordProductPlanning;
             page.Setup();
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdFirstTwist_Click(object sender, RoutedEventArgs e)
