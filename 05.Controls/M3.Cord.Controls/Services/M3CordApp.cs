@@ -96,18 +96,18 @@ namespace M3.Cord
             #endregion
 
             #region Warehouse
-            /*
+
             /// <summary>Gets WareHouse Receive Yarn Page.</summary>
-            public static Cord.Pages.CordReceiveYarnPage WareHouseReceiveYarn
+            public static Cord.Pages.WarehouseReceiveYarnPage WarehouseReceiveYarn
             {
-                get { return GetPage<Cord.Pages.CordReceiveYarnPage>(); }
+                get { return GetPage<Cord.Pages.WarehouseReceiveYarnPage>(); }
             }
-            /// <summary>Gets WareHouse Planning Page.</summary>
-            public static Cord.Pages.CordPlanningPage WarehousePlanning
+            /// <summary>Gets Cord Product Planning Page.</summary>
+            public static Cord.Pages.CordProductPlanningPage CordProductPlanning
             {
-                get { return GetPage<Cord.Pages.CordPlanningPage>(); }
+                get { return GetPage<Cord.Pages.CordProductPlanningPage>(); }
             }
-            */
+
             #endregion
 
             #region First Twist

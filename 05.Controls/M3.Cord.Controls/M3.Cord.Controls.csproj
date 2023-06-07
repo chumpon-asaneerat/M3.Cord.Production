@@ -125,8 +125,8 @@
     <Compile Include="Pages\Warehouse\CordProductPlanningPage.xaml.cs">
       <DependentUpon>CordProductPlanningPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Warehouse\WarehouseReceiveYanrPage.xaml.cs">
-      <DependentUpon>WarehouseReceiveYanrPage.xaml</DependentUpon>
+    <Compile Include="Pages\Warehouse\WarehouseReceiveYarnPage.xaml.cs">
+      <DependentUpon>WarehouseReceiveYarnPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\G4\G4IssueYarnService.cs" />
     <Compile Include="Services\G4\G4ReceiveYarnService.cs" />
@@ -329,7 +329,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Warehouse\WarehouseReceiveYanrPage.xaml">
+    <Page Include="Pages\Warehouse\WarehouseReceiveYarnPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -387,6 +387,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Warehouse\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

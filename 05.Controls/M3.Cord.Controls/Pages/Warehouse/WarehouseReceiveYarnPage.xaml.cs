@@ -25,16 +25,16 @@ using NLib;
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for WarehouseReceiveYanrPage.xaml
+    /// Interaction logic for WarehouseReceiveYarnPage.xaml
     /// </summary>
-    public partial class WarehouseReceiveYanrPage : UserControl
+    public partial class WarehouseReceiveYarnPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public WarehouseReceiveYanrPage()
+        public WarehouseReceiveYarnPage()
         {
             InitializeComponent();
         }
