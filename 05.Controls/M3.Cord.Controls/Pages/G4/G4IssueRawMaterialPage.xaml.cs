@@ -64,12 +64,31 @@ namespace M3.Cord.Pages
 
         private void cmdClear_Click(object sender, RoutedEventArgs e)
         {
-
+            G4IssueYarnService.Instance.Clear();
+            this.InvokeAction(() =>
+            {
+                RefreshGrid();
+            });
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
+            bool success = G4IssueYarnService.Instance.SaveIssueYarns();
+            // Show MessageBox
+            string msg = (success) ? "Save Success" : "Save Failed";
+            var win = M3CordApp.Windows.MessageBox;
+            win.Setup(msg);
+            win.ShowDialog();
 
+            if (success)
+            {
+                this.InvokeAction(() =>
+                {
+                    ResetControls();
+                    RefreshGrid();
+                    txtRequsetNo.FocusControl();
+                });
+            }
         }
 
         #endregion
@@ -166,6 +185,8 @@ namespace M3.Cord.Pages
             var itemYarn = (null != cbItemYanrs.SelectedItem) ? 
                 cbItemYanrs.SelectedItem as CordItemYarn : null;
 
+            string requestNo = txtRequsetNo.Text.Trim();
+            G4IssueYarnService.Instance.RequestNo = requestNo;
             G4IssueYarnService.Instance.IssueDate = dtIssueDate.SelectedDate;
 
             grid.ItemsSource = null;
@@ -176,8 +197,9 @@ namespace M3.Cord.Pages
                 {
                     G4IssueYarnService.Instance.LoadYanStocks(itemYarn.ItemYarn);
                 }
-                grid.ItemsSource = G4IssueYarnService.Instance.IssueItems;
             }
+
+            grid.ItemsSource = G4IssueYarnService.Instance.IssueItems;
         }
 
         #endregion

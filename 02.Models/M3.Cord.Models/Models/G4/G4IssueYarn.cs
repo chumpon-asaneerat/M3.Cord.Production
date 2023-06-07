@@ -54,14 +54,20 @@ namespace M3.Cord.Models
         {
             get 
             {
-                return (string.IsNullOrEmpty(RequestId)) ? ModelConsts.BlackColor : ModelConsts.RedColor;
+                return (string.IsNullOrEmpty(RequestNo)) ? ModelConsts.BlackColor : ModelConsts.RedColor;
             }
             set { }
         }
 
         public bool IsMark
         {
-            get { return !string.IsNullOrEmpty(RequestId); }
+            get { return !string.IsNullOrEmpty(RequestNo); }
+            set { }
+        }
+
+        public bool CanRemove
+        {
+            get { return G4IssueYarnPkId == 0; }
             set { }
         }
 
@@ -73,7 +79,7 @@ namespace M3.Cord.Models
             //string issueTo, 
             DateTime? issueDate)
         {
-            RequestId = requestId;
+            RequestNo = requestId;
             IssueBy = issueBy;
             //IssueTo = issueTo;
             IssueDate = issueDate;
@@ -84,7 +90,7 @@ namespace M3.Cord.Models
 
         public void UnmarkIssue()
         {
-            RequestId = null;
+            RequestNo = null;
             IssueBy = null;
             //IssueTo = null;
             IssueDate = new DateTime?();

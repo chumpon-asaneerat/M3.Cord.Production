@@ -38,6 +38,8 @@ namespace M3.Cord
 
         #region Internal Variables
 
+        private string _requestNo = string.Empty;
+
         private int _totalPallet = 0;
         private decimal _totalWeight = decimal.Zero;
         private decimal _totalCH = decimal.Zero;
@@ -113,39 +115,8 @@ namespace M3.Cord
             }
             CalcTotals();
         }
-        /// <summary>
-        /// Add item to current issue list.
-        /// </summary>
-        /// <param name="item">The item.</param>
-        public void Add(G4IssueYarn item)
-        {
-            if (null == item) return;
-            if (null == _issueItems) return;
-            lock (this)
-            {
-                _issueItems.Add(item);
-            }
-            CalcTotals();
-        }
-        /// <summary>
-        /// Remove item from current issue list.
-        /// </summary>
-        /// <param name="item">The item.</param>
-        public void Remove(G4IssueYarn item)
-        {
-            if (null == item) return;
-            if (null == _issueItems) return;
 
-            lock (this)
-            {
-                int idx = _issueItems.IndexOf(item);
-                if (idx == -1) return;
-                _issueItems.RemoveAt(idx);
-            }
-            CalcTotals();
-        }
-
-        public void LoadRequest(string requestNo)
+        private void LoadRequest(string requestNo)
         {
             Clear();
             _issueItems = G4IssueYarn.GetG4IssueYarns(requestNo).Value();
@@ -216,10 +187,49 @@ namespace M3.Cord
             CalcTotals();
         }
 
+        public bool SaveIssueYarns()
+        {
+            bool bSuccess = false;
+            if (null != _issueItems)
+            {
+                lock (this)
+                {
+                    // save only mark items
+                    var markItems = new List<G4IssueYarn>();
+
+                    _issueItems.ForEach(yarn =>
+                    {
+                        if (yarn.IsMark && yarn.G4IssueYarnPkId == 0) 
+                        { 
+                            markItems.Add(yarn); 
+                        }
+                    });
+                    var ret = G4IssueYarn.Save(markItems);
+
+                    bSuccess = (null != ret && ret.Ok);
+                }
+            }
+            Clear(); // clear list.
+
+            return bSuccess;
+        }
+
         #endregion
 
         #region Public Properties
 
+        public string RequestNo
+        {
+            get { return _requestNo; }
+            set
+            {
+                if (_requestNo != value)
+                {
+                    _requestNo = value;
+                    LoadRequest(_requestNo);
+                }
+            }
+        }
         /// <summary>
         /// Gets Issue Yarn Items (Raw Meterial) List.
         /// </summary>
