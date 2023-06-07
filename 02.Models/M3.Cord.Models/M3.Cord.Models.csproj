@@ -63,13 +63,9 @@
     <Compile Include="Models\G4\G4Yarn.cs" />
     <Compile Include="Models\_V1\CordWarehouse\CordProduct.cs" />
     <Compile Include="Models\_V1\CordWarehouse\CordYarn.cs" />
-    <Compile Include="Models\_V1\G4\G4StockYarn.cs" />
-    <Compile Include="Models\__V0\G4Yarn.cs" />
     <Compile Include="Models\ItemCode\CordItemYarn.cs" />
-    <Compile Include="Models\__V0\Operator.cs" />
     <Compile Include="Models\Users\UserInfo.cs" />
     <Compile Include="Models\Users\UserRole.cs" />
-    <Compile Include="Models\__V0\Samples\Sample.cs" />
     <Compile Include="Models\_V1\FirstTwist\FirstTwistMC.cs" />
     <Compile Include="MsSqlDbServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
