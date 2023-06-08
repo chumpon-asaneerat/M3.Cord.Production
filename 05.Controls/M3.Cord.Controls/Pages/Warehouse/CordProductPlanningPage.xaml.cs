@@ -82,6 +82,35 @@ namespace M3.Cord.Pages
             RefreshGrid();
         }
 
+        private void cmdEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            if (null == btn) return;
+            var item = btn.DataContext as CordProduct;
+            if (null == item) return;
+
+            var win = M3CordApp.Windows.CordProductPlanning;
+            win.Setup(item);
+            if (win.ShowDialog() == false) return;
+
+            Cord.LobaclDb.SaveCordProducts();
+
+            RefreshGrid();
+        }
+
+        private void cmdDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            if (null == btn) return;
+            var item = btn.DataContext as CordProduct;
+            if (null == item) return;
+
+            LobaclDb.Products.Remove(item);
+            Cord.LobaclDb.SaveCordProducts();
+
+            RefreshGrid();
+        }
+
         #endregion
 
         #region TextBox Handlers

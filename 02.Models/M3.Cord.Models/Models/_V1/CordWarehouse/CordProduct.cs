@@ -62,7 +62,7 @@ namespace M3.Cord.Models
         private decimal _totalWeight = decimal.Zero;
         private decimal _totalCH = decimal.Zero;
 
-        private void CalcTotals()
+        public void CalcTotals()
         {
             _totalPallet = 0;
             _totalWeight = decimal.Zero;

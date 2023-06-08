@@ -124,10 +124,29 @@ namespace M3.Cord.Windows
         {
             LoadComboBoxes();
 
-            _item = item;
-            tracecnt = (null != _item) ? _item.Pallets.Count : 1;
+            var itemYarns = cbItemYanrs.ItemsSource as List<CordItemYarn>;
 
+            _item = item;
             this.DataContext = _item;
+
+            tracecnt = 1;
+            if (null != _item)
+            {
+                _item.CalcTotals();
+
+                tracecnt = _item.Pallets.Count + 1;
+                int idx = -1;
+                if (null != itemYarns)
+                {
+                    idx = itemYarns.FindIndex(yarn => { return yarn.ItemYarn == item.ItemYarn; });
+                }
+                this.InvokeAction(() => 
+                {
+                    cbItemYanrs.SelectedIndex = idx;
+                });
+            }
+
+            RefreshGrid();
         }
 
         #endregion

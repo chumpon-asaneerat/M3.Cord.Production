@@ -50,15 +50,15 @@
                                    DockPanel.Dock="Left"
                                    CaptionText="Customer:"
                                    TextAlignment="Center"
-                                   Width="200" 
-                                   PreviewKeyDown="txtCustomer_PreviewKeyDown"/>
+                                   Width="200"
+                                   PreviewKeyDown="txtCustomer_PreviewKeyDown" />
                     <!--  Lot No (Product).  -->
                     <ctrl:NTextBox x:Name="txtLotNo"
                                    DockPanel.Dock="Left"
                                    CaptionText="Lot No (Product):"
                                    TextAlignment="Center"
-                                   Width="250" 
-                                   PreviewKeyDown="txtLotNo_PreviewKeyDown"/>
+                                   Width="250"
+                                   PreviewKeyDown="txtLotNo_PreviewKeyDown" />
                     <!--  ITEM YARN  -->
                     <ctrl:NComboBox x:Name="cbItemYanrs"
                                     DockPanel.Dock="Left"
@@ -82,6 +82,51 @@
                         <GridViewColumn Header="Lot No" CellTemplate="{StaticResource LotNo}" />
                         <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
                         <GridViewColumn Header="Qty (Target)" CellTemplate="{StaticResource TargetQty}" />
+                        <!--  BUTTONS  -->
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  EDIT  -->
+                                        <Button x:Name="cmdEdit"
+                                                DockPanel.Dock="Left"
+                                                Style="{StaticResource InlineButton}"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdEdit_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Edit"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                        <!--  DELETE  -->
+                                        <Button x:Name="cmdDelete"
+                                                DockPanel.Dock="Left"
+                                                Style="{StaticResource InlineButton}"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdDelete_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Cancel"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
