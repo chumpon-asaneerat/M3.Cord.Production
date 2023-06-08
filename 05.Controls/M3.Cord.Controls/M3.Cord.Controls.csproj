@@ -101,6 +101,9 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
+      <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\G4\G4ReceiveReturnMeterialPage.xaml.cs">
       <DependentUpon>G4ReceiveReturnMeterialPage.xaml</DependentUpon>
     </Compile>
@@ -296,6 +299,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Pages\FirstTwist\FirstTwistMCPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\G4\G4ReceiveReturnMeterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
