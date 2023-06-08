@@ -57,6 +57,10 @@ namespace M3.Cord
         public static void LoadMachines()
         {
             string fileName = Path.Combine(DbPath, "Machines.json");
+            
+            if (!File.Exists(fileName))
+                SaveMachines();
+
             var models = NJson.LoadFromFile<List<FirstTwistMC>>(fileName);
             if (null != models)
             {

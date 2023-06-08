@@ -43,6 +43,9 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private List<FirstTwistMC> machines;
+        private FirstTwistMC selectedMC;
+
         #endregion
 
         #region Loaded/Unloaded
@@ -68,6 +71,19 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region ListBox Handlers
+
+        private void mcList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (null != mcList.SelectedItem)
+            {
+                selectedMC = mcList.SelectedItem as FirstTwistMC;
+                UpdateMCStatus(selectedMC);
+            }
+        }
+
+        #endregion
+
         #region Private Methods
 
         private void ResetControls()
@@ -75,9 +91,34 @@ namespace M3.Cord.Pages
 
         }
 
-        private void RefreshGrid()
+        private void RefreshMC()
         {
+            selectedMC = null;
+            mcList.ItemsSource = null;
+            mcList.ItemsSource = machines;
+        }
 
+        private void UpdateMCStatus(FirstTwistMC mc)
+        {
+            //cmdAddNew.IsEnabled = false;
+
+            //paMC.DataContext = null;
+            if (null != mc)
+            {
+                //paMC.DataContext = mc.Product;
+                //cmdAddNew.IsEnabled = (null == mc.Product);
+            }
+            RefreshGrid(mc);
+        }
+
+        private void RefreshGrid(FirstTwistMC mc)
+        {
+            /*
+            doffGrid.ItemsSource = null;
+            if (null == mc)
+                return;
+            doffGrid.ItemsSource = mc.RawMaterialSheets;
+            */
         }
 
         #endregion
@@ -86,8 +127,11 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
+            Cord.LobaclDb.LoadMachines();
+            machines = Cord.LobaclDb.Machines;
+
             ResetControls();
-            RefreshGrid();
+            RefreshMC();
         }
 
         #endregion
