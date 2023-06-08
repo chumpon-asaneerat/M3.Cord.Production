@@ -26,6 +26,16 @@
                                             Text="Home"
                                             Click="cmdHome_Click" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <!--  Add  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdAdd"
+                                            Margin="5,0,0,0"
+                                            IconType="Add"
+                                            Text="New"
+                                            Click="cmdAdd_Click" />
+                </StackPanel>
                 <Grid />
             </DockPanel>
             <!--  ITEMS  -->
@@ -72,6 +82,81 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+            <DockPanel x:Name="paMC"
+                       DockPanel.Dock="Top"
+                       LastChildFill="True"
+                       Margin="1"
+                       Background="WhiteSmoke">
+                <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+                    <TextBlock Height="10" />
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <!--  CUSTOMER  -->
+                        <StackPanel Orientation="Vertical"
+                                    VerticalAlignment="Center"
+                                    Width="200">
+                            <TextBlock Text="Customer: "
+                                       Style="{StaticResource LabelText}"
+                                       Foreground="Black" />
+                            <TextBlock Text="{Binding CustomerName}"
+                                       Style="{StaticResource LabelText}"
+                                       Foreground="Navy"
+                                       FontWeight="Bold"
+                                       FontSize="{StaticResource FontSize20}" />
+                        </StackPanel>
+                        <!--  LOT NO  -->
+                        <StackPanel Orientation="Vertical"
+                                    VerticalAlignment="Center"
+                                    Width="200">
+                            <TextBlock Text="Lot No: "
+                                       Style="{StaticResource LabelText}"
+                                       Foreground="Black" />
+                            <TextBlock Text="{Binding LotNo}"
+                                       Style="{StaticResource LabelText}"
+                                       Foreground="Navy"
+                                       FontWeight="Bold"
+                                       FontSize="{StaticResource FontSize20}" />
+                        </StackPanel>
+                        <!--  ITEM CODE  -->
+                        <StackPanel Orientation="Vertical"
+                                    VerticalAlignment="Center"
+                                    Width="200">
+                            <TextBlock Text="Item Code: "
+                                       Style="{StaticResource LabelText}"
+                                       Foreground="Black" />
+                            <TextBlock Text="{Binding ItemCode}"
+                                       Style="{StaticResource LabelText}"
+                                       Foreground="Navy"
+                                       FontWeight="Bold"
+                                       FontSize="{StaticResource FontSize20}" />
+                        </StackPanel>
+                        <!--  WEIGHT  -->
+                        <StackPanel Orientation="Vertical"
+                                    VerticalAlignment="Center"
+                                    Width="200">
+                            <TextBlock Text="Weight: "
+                                       Style="{StaticResource LabelText}"
+                                       Foreground="Black" />
+                            <TextBlock Text="{Binding TargetQty}"
+                                       Style="{StaticResource LabelText}"
+                                       FontWeight="Bold"
+                                       Foreground="Navy" />
+                        </StackPanel>
+                        <!--  FLOW  -->
+                        <StackPanel Orientation="Vertical"
+                                    VerticalAlignment="Center"
+                                    Width="200">
+                            <TextBlock Text="Flow: "
+                                       Style="{StaticResource LabelText}"
+                                       Foreground="Black" />
+                            <TextBlock Text="{Binding Flow}"
+                                       Style="{StaticResource LabelText}"
+                                       FontWeight="Bold"
+                                       Foreground="Navy" />
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Height="10" />
+                </StackPanel>
+            </DockPanel>
             <!--  LISTVIEW  -->
             <ListView x:Name="grid"
                       Margin="0,0,0,5"

@@ -69,6 +69,23 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
+        private void cmdAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if (null == selectedMC)
+                return;
+            var mc = selectedMC;
+
+            /*
+            var win = M3CordApp.Windows.ChooseCordProduct;
+            win.Setup();
+            if (win.ShowDialog() == false) return;
+            if (null != win.SelectedProduct)
+            {
+                AddNew(mc, win.SelectedProduct);
+            }
+            */
+        }
+
         #endregion
 
         #region ListBox Handlers
@@ -85,6 +102,20 @@ namespace M3.Cord.Pages
         #endregion
 
         #region Private Methods
+
+        private void AddNew(FirstTwistMC mc, CordProduct product)
+        {
+            if (null != product)
+            {
+                product.IsUsed = true; // mark is used.
+                Cord.LobaclDb.SaveCordProducts();
+            }
+
+            mc.Product = product;
+            UpdateMCStatus(mc);
+            Cord.LobaclDb.SaveMachines();
+
+        }
 
         private void ResetControls()
         {
