@@ -111,13 +111,13 @@ namespace M3.Cord
             #endregion
 
             #region First Twist
-            /*
+
             /// <summary>Gets First Twist MC Page.</summary>
             public static Cord.Pages.FirstTwistMCPage FirstTwistMC
             {
                 get { return GetPage<Cord.Pages.FirstTwistMCPage>(); }
             }
-            */
+
             #endregion
         }
 
