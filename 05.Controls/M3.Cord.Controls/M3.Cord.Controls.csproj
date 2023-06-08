@@ -126,6 +126,9 @@
     <Compile Include="Services\G4\G4ReceiveYarnService.cs" />
     <Compile Include="Services\G4\G4StockService.cs" />
     <Compile Include="Services\SignInService.cs" />
+    <Compile Include="Windows\Warehouse\CordProcuctPlanningWindow.xaml.cs">
+      <DependentUpon>CordProcuctPlanningWindow.xaml</DependentUpon>
+    </Compile>
     <None Include="Windows\_V1\FirstTwist\ProductionConditionSheetWindow.xaml.cs">
       <DependentUpon>ProductionConditionSheetWindow.xaml</DependentUpon>
     </None>
@@ -366,6 +369,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\SignIn\SignInWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Warehouse\CordProcuctPlanningWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

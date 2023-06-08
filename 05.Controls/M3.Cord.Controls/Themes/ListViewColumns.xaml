@@ -33,6 +33,13 @@
                    TextAlignment="Left"
                    Width="150" />
     </DataTemplate>
+    
+    <DataTemplate x:Key="CustomerName">
+        <TextBlock Text="{Binding Path=CustomerName, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Left"
+                   MinWidth="150" />
+    </DataTemplate>
 
     <DataTemplate x:Key="TraceNo">
         <TextBlock Text="{Binding Path=TraceNo, Mode=OneWay}"
@@ -71,6 +78,12 @@
     </DataTemplate>
     <DataTemplate x:Key="WeightQty">
         <TextBlock Text="{Binding Path=WeightQty, Mode=OneWay, StringFormat='{}{0:n1}'}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Right"
+                   Width="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="TargetQty">
+        <TextBlock Text="{Binding Path=TargetQty, Mode=OneWay, StringFormat='{}{0:n1}'}"
                    Foreground="{Binding TextColor}"
                    TextAlignment="Right"
                    Width="150" />

@@ -46,18 +46,6 @@ namespace M3.Cord
 
         #endregion
 
-        #region ItemYarns
-
-        public static string[] ItemYarns = new string[] 
-        {
-                "700-108-178E-TTS",
-                "470-72-1781-JJ",
-                "470-136-178E-APM",
-                "470-136-178E-TTS"
-        };
-
-        #endregion
-
         #region FirstTwistMC
 
         public static List<FirstTwistMC> Machines = new List<FirstTwistMC>()

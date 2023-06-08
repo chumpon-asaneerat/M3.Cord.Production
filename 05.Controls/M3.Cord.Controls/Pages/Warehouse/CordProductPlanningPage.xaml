@@ -26,6 +26,16 @@
                                             Text="Home"
                                             Click="cmdHome_Click" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <!--  HOME  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdNew"
+                                            Margin="5,0,0,0"
+                                            IconType="Add"
+                                            Text="New"
+                                            Click="cmdNew_Click" />
+                </StackPanel>
                 <Grid />
             </DockPanel>
             <!--  TOP ENTRY  -->
@@ -35,83 +45,30 @@
                            LastChildFill="True"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
+                    <!--  CUSTOMER  -->
+                    <ctrl:NTextBox x:Name="txtCustomer"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Customer:"
+                                   TextAlignment="Center"
+                                   Width="200" 
+                                   PreviewKeyDown="txtCustomer_PreviewKeyDown"/>
+                    <!--  Lot No (Product).  -->
+                    <ctrl:NTextBox x:Name="txtLotNo"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Lot No (Product):"
+                                   TextAlignment="Center"
+                                   Width="250" 
+                                   PreviewKeyDown="txtLotNo_PreviewKeyDown"/>
+                    <!--  ITEM YARN  -->
+                    <ctrl:NComboBox x:Name="cbItemYanrs"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Item Yarn:"
+                                    DisplayMemberPath="ItemYarn"
+                                    Width="250"
+                                    SelectionChanged="cbItemYanrs_SelectionChanged" />
                     <Grid />
                 </DockPanel>
             </DockPanel>
-            <!--  TOTAL PANELS  -->
-            <StackPanel Orientation="Horizontal"
-                        DockPanel.Dock="Top"
-                        Margin="0,0,0,5">
-                <!--  TOTAL PALLET  -->
-                <Border Margin="0,0,5,0"
-                        BorderThickness="1"
-                        Background="CornflowerBlue"
-                        CornerRadius="5">
-                    <StackPanel Orientation="Vertical" Width="250">
-                        <TextBlock Margin="10,5"
-                                   Foreground="White"
-                                   FontSize="16"
-                                   FontWeight="DemiBold"
-                                   TextAlignment="Left"
-                                   Text="Total Pallet" />
-                        <TextBlock Margin="0,2"
-                                   FontSize="48"
-                                   Foreground="White"
-                                   FontWeight="DemiBold"
-                                   TextAlignment="Center"
-                                   Text="{Binding TotalPallet}" />
-                    </StackPanel>
-                </Border>
-                <!--  TOTAL TOTAL WEIGHT  -->
-                <Border Margin="0,0,5,0"
-                        BorderThickness="1"
-                        Background="DarkOrange"
-                        CornerRadius="5">
-                    <StackPanel Orientation="Vertical" Width="250">
-                        <TextBlock Margin="10,5"
-                                   Foreground="White"
-                                   FontSize="16"
-                                   FontWeight="DemiBold"
-                                   TextAlignment="Left"
-                                   Text="Total Weight" />
-                        <DockPanel LastChildFill="True">
-                            <TextBlock Margin="15,10"
-                                       DockPanel.Dock="Right"
-                                       FontSize="16"
-                                       Foreground="White"
-                                       FontWeight="DemiBold"
-                                       VerticalAlignment="Bottom"
-                                       Text="kg." />
-                            <TextBlock Margin="0,2"
-                                       FontSize="48"
-                                       Foreground="White"
-                                       FontWeight="DemiBold"
-                                       TextAlignment="Center"
-                                       Text="{Binding TotalWeight, StringFormat='{}{0:n1}'}" />
-                        </DockPanel>
-                    </StackPanel>
-                </Border>
-                <!--  TOTAL CH  -->
-                <Border Margin="0,0,5,0"
-                        BorderThickness="1"
-                        Background="ForestGreen"
-                        CornerRadius="5">
-                    <StackPanel Orientation="Vertical" Width="250">
-                        <TextBlock Margin="10,5"
-                                   Foreground="White"
-                                   FontSize="16"
-                                   FontWeight="DemiBold"
-                                   TextAlignment="Left"
-                                   Text="Total CH" />
-                        <TextBlock Margin="0,2"
-                                   FontSize="48"
-                                   Foreground="White"
-                                   FontWeight="DemiBold"
-                                   TextAlignment="Center"
-                                   Text="{Binding TotalCH, StringFormat='{}{0:n0}'}" />
-                    </StackPanel>
-                </Border>
-            </StackPanel>
             <!--  LISTVIEW  -->
             <ListView x:Name="grid"
                       Margin="0,0,0,5"
@@ -121,6 +78,10 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
+                        <GridViewColumn Header="CustomerName" CellTemplate="{StaticResource CustomerName}" />
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource LotNo}" />
+                        <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
+                        <GridViewColumn Header="Qty (Target)" CellTemplate="{StaticResource TargetQty}" />
                     </GridView>
                 </ListView.View>
             </ListView>

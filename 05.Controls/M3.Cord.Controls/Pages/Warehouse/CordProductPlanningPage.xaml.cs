@@ -43,6 +43,8 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private List<CordProduct> allItems;
+
         #endregion
 
         #region Loaded/Unloaded
@@ -66,6 +68,63 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
+        private void cmdNew_Click(object sender, RoutedEventArgs e)
+        {
+            var item = new CordProduct();
+
+            var win = M3CordApp.Windows.CordProductPlanning;
+            win.Setup(item);
+            if (win.ShowDialog() == false) return;
+
+            Cord.LobaclDb.Products.Add(item); // append to local db.
+            Cord.LobaclDb.SaveCordProducts();
+
+            RefreshGrid();
+        }
+
+        #endregion
+
+        #region TextBox Handlers
+
+        private void txtCustomer_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter || e.Key == Key.Return)
+            {
+                RefreshGrid();
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Escape)
+            {
+                // clear trace no.
+                txtCustomer.Text = string.Empty;
+                e.Handled = true;
+            }
+        }
+
+        private void txtLotNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter || e.Key == Key.Return)
+            {
+                RefreshGrid();
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Escape)
+            {
+                // clear trace no.
+                txtLotNo.Text = string.Empty;
+                e.Handled = true;
+            }
+        }
+
+        #endregion
+
+        #region Combobox Handlers
+
+        private void cbItemYanrs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
         #endregion
 
         #region Private Methods
@@ -75,9 +134,50 @@ namespace M3.Cord.Pages
 
         }
 
+        private void LoadComboBoxes()
+        {
+            cbItemYanrs.ItemsSource = null;
+
+            var itemYarns = CordItemYarn.Gets().Value();
+            cbItemYanrs.ItemsSource = itemYarns;
+
+            this.InvokeAction(() =>
+            {
+                if (null != itemYarns && itemYarns.Count > 0) cbItemYanrs.SelectedIndex = 0;
+            });
+        }
+
         private void RefreshGrid()
         {
+            // Reload all items
+            allItems = LobaclDb.Products;
 
+            grid.ItemsSource = null;
+
+            List<CordProduct> items;
+
+            if (cbItemYanrs.SelectedIndex != -1)
+            {
+                var itemYarn = (null != cbItemYanrs.SelectedItem) ?
+                    cbItemYanrs.SelectedItem as CordItemYarn : null;
+
+                string customer = txtCustomer.Text.Trim();
+                string lotNo = txtLotNo.Text.Trim();
+                string sItemYarn = (null != itemYarn) ? itemYarn.ItemYarn : null;
+
+                items = allItems.FindAll((item) =>
+                {
+                    bool matchYarn = (string.IsNullOrEmpty(sItemYarn)) ? true : item.ItemYarn == sItemYarn;
+                    bool matchCustomer = (string.IsNullOrEmpty(customer)) ? true : item.CustomerName.ToLower().Contains(customer.ToLower());
+                    bool matchLot = (string.IsNullOrEmpty(lotNo)) ? true : item.LotNo.ToLower().Contains(lotNo.ToLower());
+
+                    bool ret = (matchYarn && matchCustomer && matchLot);
+                    return ret;
+                });
+            }
+            else items = allItems;
+
+            grid.ItemsSource = items;
         }
 
         #endregion
@@ -86,9 +186,10 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            this.DataContext = CordProductPlanningService.Instance;
+            Cord.LobaclDb.LoadCordProducts();
 
             ResetControls();
+            LoadComboBoxes();
             RefreshGrid();
         }
 

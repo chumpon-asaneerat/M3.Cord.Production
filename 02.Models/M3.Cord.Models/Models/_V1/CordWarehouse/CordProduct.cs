@@ -27,6 +27,11 @@ namespace M3.Cord.Models
 
         #endregion
 
+        public CordProduct()
+        {
+            Pallets = new List<CordProductPallet>();
+        }
+
         #region Public Properties
 
         public int PKId { get; set; }
@@ -39,6 +44,9 @@ namespace M3.Cord.Models
         public decimal TargetQty { get; set; } = 540;
         public decimal CurrentQty { get; set; } = decimal.Zero;
         public string Flow { get; set; } = "S-1-1";
+
+        public List<CordProductPallet> Pallets { get; set; }
+
         public SolidColorBrush TextColor
         {
             get
@@ -49,6 +57,61 @@ namespace M3.Cord.Models
         }
 
         public bool IsUsed { get; set; }
+
+        private int _totalPallet = 0;
+        private decimal _totalWeight = decimal.Zero;
+        private decimal _totalCH = decimal.Zero;
+
+        private void CalcTotals()
+        {
+            _totalPallet = 0;
+            _totalWeight = decimal.Zero;
+            _totalCH = 0;
+
+            lock (this)
+            {
+                if (null != Pallets && Pallets.Count > 0)
+                {
+                    _totalPallet = Pallets.Count;
+                    Pallets.ForEach(pallet =>
+                    {
+                        // add weight
+                        var weight = (pallet.WeightQty.HasValue) ? pallet.WeightQty.Value : decimal.Zero;
+                        _totalWeight += weight;
+                        // add cheese count.
+                        var cheeseCnt = (pallet.ConeCH.HasValue) ? pallet.ConeCH.Value : decimal.Zero;
+                        _totalCH += cheeseCnt;
+                    });
+                }
+            }
+            // Raise Events
+            Raise(() => this.TotalPallet);
+            Raise(() => this.TotalWeight);
+            Raise(() => this.TotalCH);
+        }
+
+        /// <summary>Gets Total Pallet.</summary>
+        [JsonIgnore]
+        public int TotalPallet { get { return _totalPallet; } set { } }
+        /// <summary>Gets Total Weight.</summary>
+        [JsonIgnore]
+        public decimal TotalWeight { get { return _totalWeight; } set { } }
+        /// <summary>Gets Total CH (Cheese).</summary>
+        [JsonIgnore]
+        public decimal TotalCH { get { return _totalCH; } set { } }
+
+        public void AddPallet(string palletNo, string traceNo, decimal coneCH, decimal qty)
+        {
+            if (null == Pallets) Pallets = new List<CordProductPallet>();
+            Pallets.Add(new CordProductPallet() 
+            { 
+                PalletNo = palletNo,
+                TraceNo = traceNo, 
+                ConeCH = coneCH,
+                WeightQty = qty
+            });
+            CalcTotals();
+        }
 
         #endregion
 
@@ -83,5 +146,22 @@ namespace M3.Cord.Models
         }
 
         #endregion
+    }
+
+    public class CordProductPallet
+    {
+        public string PalletNo { get; set; }
+        public string TraceNo { get; set; }
+        public decimal? ConeCH { get; set; }
+        public decimal? WeightQty { get; set; }
+
+        public SolidColorBrush TextColor
+        {
+            get
+            {
+                return ModelConsts.BlackColor;
+            }
+            set { }
+        }
     }
 }

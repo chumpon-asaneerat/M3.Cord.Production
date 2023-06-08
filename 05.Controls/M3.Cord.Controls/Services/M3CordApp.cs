@@ -178,14 +178,14 @@ namespace M3.Cord
 
             #endregion
 
-            #region CordWarehouse
-            /*
+            #region Warehouse (Cord Planning)
+
             /// <summary>Gets Cord Procuct Planning Window.</summary>
             public static CordProcuctPlanningWindow CordProductPlanning
             {
                 get { return GetWindow<CordProcuctPlanningWindow>(); }
             }
-            */
+
             #endregion
 
             #region First Twist

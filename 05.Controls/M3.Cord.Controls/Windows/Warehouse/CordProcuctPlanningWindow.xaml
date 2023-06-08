@@ -1,0 +1,174 @@
+﻿<Window x:Class="M3.Cord.Windows.CordProcuctPlanningWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        mc:Ignorable="d"
+        Title="G4 Receive Raw Material"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="600"
+        Width="1000">
+    <page:NPage HeaderText="Product Planning">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdOk"
+                                        DockPanel.Dock="Right"
+                                        IconType="Ok"
+                                        Text="Ok"
+                                        Click="cmdOk_Click" />
+                <Grid />
+            </DockPanel>
+            <!--  WORK AREA  -->
+            <DockPanel LastChildFill="True">
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  ITEM YARN  -->
+                    <ctrl:NComboBox x:Name="cbItemYanrs"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Item Yarn:"
+                                    DisplayMemberPath="ItemYarn"
+                                    Width="250" />
+                    <!--  CUSTOMER -->
+                    <ctrl:NTextBox CaptionText="Customer:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding CustomerName}"
+                                   Width="200" />
+                    <!--  LOT NO  -->
+                    <ctrl:NTextBox CaptionText="Lot No:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding LotNo}"
+                                   Width="150" />
+                    <!--  Color  -->
+                    <ctrl:NTextBox CaptionText="Color:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding Color}"
+                                   Width="150" />
+                    <!--  Target Weight  -->
+                    <ctrl:NTextBox CaptionText="Weight:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding TargetQty, StringFormat=n1}"
+                                   Width="200" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  PALLET NO  -->
+                    <ctrl:NTextBox x:Name="txtPalletNo"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Pallet No:"
+                                   TextAlignment="Center"
+                                   WatermarkImageWidth="30"
+                                   WatermarkImageHeight="25"
+                                   WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
+                                   WatermarkText="Scan Pallet No."
+                                   Width="220"
+                                   PreviewKeyDown="txtPalletNo_PreviewKeyDown" />
+                    <Grid />
+                </DockPanel>
+                <!--  TOTAL PANELS  -->
+                <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="0,0,0,5">
+                    <!--  TOTAL PALLET  -->
+                    <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="CornflowerBlue"
+                        CornerRadius="5">
+                        <StackPanel Orientation="Vertical" Width="250">
+                            <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total Pallet" />
+                            <TextBlock Margin="0,2"
+                                   FontSize="48"
+                                   Foreground="White"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Center"
+                                   Text="{Binding TotalPallet}" />
+                        </StackPanel>
+                    </Border>
+                    <!--  TOTAL TOTAL WEIGHT  -->
+                    <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="DarkOrange"
+                        CornerRadius="5">
+                        <StackPanel Orientation="Vertical" Width="250">
+                            <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total Weight" />
+                            <DockPanel LastChildFill="True">
+                                <TextBlock Margin="15,10"
+                                       DockPanel.Dock="Right"
+                                       FontSize="16"
+                                       Foreground="White"
+                                       FontWeight="DemiBold"
+                                       VerticalAlignment="Bottom"
+                                       Text="kg." />
+                                <TextBlock Margin="0,2"
+                                       FontSize="48"
+                                       Foreground="White"
+                                       FontWeight="DemiBold"
+                                       TextAlignment="Center"
+                                       Text="{Binding TotalWeight, StringFormat='{}{0:n1}'}" />
+                            </DockPanel>
+                        </StackPanel>
+                    </Border>
+                    <!--  TOTAL CH  -->
+                    <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="ForestGreen"
+                        CornerRadius="5">
+                        <StackPanel Orientation="Vertical" Width="250">
+                            <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total CH" />
+                            <TextBlock Margin="0,2"
+                                   FontSize="48"
+                                   Foreground="White"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Center"
+                                   Text="{Binding TotalCH, StringFormat='{}{0:n0}'}" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <!--  LISTVIEW  -->
+                <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletNo}" />
+                            <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
+                            <GridViewColumn Header="CH" CellTemplate="{StaticResource ConeCH}" />
+                            <GridViewColumn Header="Weight" CellTemplate="{StaticResource WeightQty}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>
+
