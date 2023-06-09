@@ -1,5 +1,37 @@
-M3 Cord Production System #360
+M3 Cord Production System #370
 - 
+
+M3 Cord Production System #369
+- 
+
+M3 Cord Production System #368
+- 
+
+M3 Cord Production System #367
+- 
+
+M3 Cord Production System #366
+- 
+
+M3 Cord Production System #365
+- 
+
+M3 Cord Production System #364
+- 
+
+M3 Cord Production System #363
+- 
+
+M3 Cord Production System #362
+- 
+
+M3 Cord Production System #361
+- 
+
+[commited]
+M3 Cord Production System #360
+- M3.Cord.Production.App re-implements #160.
+  - Prepare history.txt
 
 [commited]
 M3 Cord Production System #359
