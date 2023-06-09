@@ -8,7 +8,8 @@
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800"
-             Loaded="UserControl_Loaded">
+             Loaded="UserControl_Loaded"
+             Unloaded="UserControl_Unloaded">
     <page:NPage HeaderText="Sample NInput">
         <DockPanel LastChildFill="True">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
@@ -95,6 +96,11 @@
                     <Run Text="Msg2:" />
                     <LineBreak />
                     <Run x:Name="txtMsg2" Text="0" />
+                </TextBlock>
+                <TextBlock Margin="5">
+                    <Run Text="Msg3:" />
+                    <LineBreak />
+                    <Run x:Name="txtMsg3" Text="0" />
                 </TextBlock>
             </StackPanel>
             <Grid />

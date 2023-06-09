@@ -18,7 +18,7 @@ namespace NLib.Services
     /// </summary>
     public class AppIdleService : NSingelton<AppIdleService>
     {
-        #region Win32 classes
+        #region Win32 classes and apis
 
         /// <summary>
         /// WindowsHookHelper.
@@ -232,6 +232,22 @@ namespace NLib.Services
             }
         }
 
+        /// <summary>
+        /// GetCursorPos
+        /// </summary>
+        /// <param name="lpPoint"></param>
+        /// <returns></returns>
+        [DllImport("user32.dll", EntryPoint = "GetCursorPos")]
+        private extern static bool GetCursorPos(out System.Drawing.Point lpPoint);
+        /// <summary>
+        /// SetCursorPos
+        /// </summary>
+        /// <param name="X"></param>
+        /// <param name="Y"></param>
+        /// <returns></returns>
+        [DllImport("user32.dll")]
+        private static extern bool SetCursorPos(int X, int Y);
+
         #endregion
 
         #region Constructor and Destructor
@@ -252,7 +268,6 @@ namespace NLib.Services
             */
             lastInput = new AllInputSources();
             timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timer.Tick += timer_Tick;
             timer.Start();
@@ -308,6 +323,8 @@ namespace NLib.Services
 
         #endregion
 
+        #region Private Methods
+
         #region Event Handlers
 
         void Current_Deactivated(object sender, EventArgs e)
@@ -339,11 +356,13 @@ namespace NLib.Services
         void timer_Tick(object sender, EventArgs e)
         {
             TimeSpan ts = DateTime.Now - _lastFreeMemory;
-            if (ts.TotalSeconds > 5)
+
+            if (ts.TotalMinutes > 5)
             {
-                // Try to free memory every 5 second
-                GC.Collect(GC.MaxGeneration, GCCollectionMode.Default);
+                // Try to free memory every 5 minutes
+                GC.Collect(GC.MaxGeneration, GCCollectionMode.Optimized);
                 GC.WaitForPendingFinalizers();
+
                 // update last free memory time.
                 _lastFreeMemory = DateTime.Now;
             }
@@ -351,18 +370,13 @@ namespace NLib.Services
             if (_isActivated)
             {
                 DateTime sysInputTime = lastInput.GetLastInputTime();
-                bool updateTime = false;
-                if (_lastSystemInputTime < sysInputTime)
+                bool updateTime = (_lastSystemInputTime < sysInputTime);
+                if (updateTime)
                 {
                     // keyboard or mouse action detected
                     _lastSystemInputTime = sysInputTime; // update system time
-                    updateTime = true;
                 }
-                else
-                {
-                    // No keyboard or mouse action
-                    updateTime = false;
-                }
+
                 if (updateTime)
                 {
                     if (_lastInputTime < _lastSystemInputTime)
@@ -377,6 +391,102 @@ namespace NLib.Services
             {
                 Tick.Call(this, EventArgs.Empty);
             }
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// IsTimeOut.
+        /// </summary>
+        /// <param name="timeoutInSecond">
+        /// The timeout value in second.
+        /// </param>
+        /// <param name="resetTime">
+        /// True for reset last input time to current time that timeout method called.
+        /// </param>
+        /// <param name="debug"></param>
+        /// <returns>Returns true if timeout.</returns>
+        public bool IsTimeOut(int timeoutInSecond, bool resetTime, bool debug = false)
+        {
+            bool result = true;
+
+            DateTime now = DateTime.Now;
+            if (debug)
+            {
+                Console.WriteLine("Last Time : {0:HH:mm:ss.ffff}", _lastInputTime);
+                Console.WriteLine("  Current : {0:HH:mm:ss.ffff}", now);
+            }
+            //TimeSpan kbdTs = now - _lastKbdTime;
+            //TimeSpan mouseTs = now - _lastMouseTime;
+            TimeSpan sysTs = now - _lastInputTime;
+            if (/*kbdTs.TotalSeconds > timeoutInSecond &&
+                mouseTs.TotalSeconds > timeoutInSecond &&*/
+                sysTs.TotalSeconds > timeoutInSecond)
+            {
+                if (resetTime)
+                {
+                    ResetLastInputTime();
+                }
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+
+            return result;
+        }
+        /// <summary>
+        /// Reset Last Input Time to current time.
+        /// </summary>
+        public void ResetLastInputTime(bool debug = false)
+        {
+            lock (this)
+            {
+                _lastInputTime = DateTime.Now;
+            }
+            if (debug)
+            {
+                Console.WriteLine("Reset Time : {0:HH:mm:ss.ffff}", _lastInputTime);
+            }
+        }
+        /// <summary>
+        /// Reset Cursor. Force move cursor a little to make system input update it's time
+        /// used when new page load.
+        /// </summary>
+        public void ResetCursor()
+        {
+            // shake cursor by one pixel
+            this.Move(1, 0);
+            this.Move(-1, 0);
+        }
+        /// <summary>
+        /// Move the cursor by specificed amount of pixel
+        /// </summary>
+        /// <param name="dx">The pixel to move from the current position X</param>
+        /// <param name="dy">The pixel to move from the current position Y</param>
+        internal void Move(int dx, int dy)
+        {
+            System.Drawing.Point pt = System.Drawing.Point.Empty;
+            if (GetCursorPos(out pt))
+            {
+                if (pt.IsEmpty)
+                    return;
+                SetCursorPos(pt.X + dx, pt.Y + dy);
+            }
+        }
+        /// <summary>
+        /// Move to specificed point (in screen coordinate)
+        /// </summary>
+        /// <param name="x">The position X to move to</param>
+        /// <param name="y">The position Y to move to</param>
+        internal void MoveTo(int x, int y)
+        {
+            SetCursorPos(x, y);
         }
 
         #endregion

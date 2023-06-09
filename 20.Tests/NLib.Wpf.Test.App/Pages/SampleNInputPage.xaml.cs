@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using NLib.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,13 @@ namespace NLib.Wpf.Test.App.Pages
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             Init();
+            AppIdleService.Instance.Tick += Instance_Tick;
+            AppIdleService.Instance.ResetLastInputTime(); // Reset time
+        }
+
+        private void UserControl_Unloaded(object sender, RoutedEventArgs e)
+        {
+            AppIdleService.Instance.Tick -= Instance_Tick;
         }
 
         #endregion
@@ -58,6 +66,30 @@ namespace NLib.Wpf.Test.App.Pages
         }
 
         #endregion
+
+        private void UpdateMessage(string format, params object[] args)
+        {
+            this.InvokeAction(() => 
+            {
+                txtMsg3.Text = string.Format(format, args);
+            });
+        }
+
+        private int timeout = 5;
+
+        private void Instance_Tick(object sender, EventArgs e)
+        {
+            // Idle Tick
+            TimeSpan idleTs = DateTime.Now - AppIdleService.Instance.LastSystemInputTime;
+            UpdateMessage("Idle: {0:n0} s", idleTs.TotalSeconds);
+
+            if (AppIdleService.Instance.IsTimeOut(timeout, false))
+            {
+                UpdateMessage("Timeout. Reset!!");
+
+                AppIdleService.Instance.ResetLastInputTime();
+            }
+        }
 
         private void txtName_PreviewKeyDown(object sender, KeyEventArgs e)
         {
