@@ -190,6 +190,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{4ACC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3.Cord.AS400.Test.App", "20.Tests\M3.Cord.AS400.Test.App\M3.Cord.AS400.Test.App.csproj", "{2E161B42-CD75-435F-8FBE-589E63F96240}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Documents", "Cord Documents", "{1AB1F0A9-1A19-4C59-BF0B-0D070A356997}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\Cord Documents\4001 condition S-1.xlsx = Documents\Cord\Cord Documents\4001 condition S-1.xlsx
+		Documents\Cord\Cord Documents\4002 Condition S-4.xlsx = Documents\Cord\Cord Documents\4002 Condition S-4.xlsx
+		Documents\Cord\Cord Documents\4003 FM-TW-03-03 ใบส่งตัวอย่างตรวจสอบจำนวนเกลียว.xls = Documents\Cord\Cord Documents\4003 FM-TW-03-03 ใบส่งตัวอย่างตรวจสอบจำนวนเกลียว.xls
+		Documents\Cord\Cord Documents\4004 Raw material check sheet.xlsx = Documents\Cord\Cord Documents\4004 Raw material check sheet.xlsx
+		Documents\Cord\Cord Documents\4005 FM-TW-02-02 PC Card.xlsx = Documents\Cord\Cord Documents\4005 FM-TW-02-02 PC Card.xlsx
+		Documents\Cord\Cord Documents\4006 FM-TW-08-04  ใบบันทึกสภาวะการตีเกลียวครั้งที-1.xls = Documents\Cord\Cord Documents\4006 FM-TW-08-04  ใบบันทึกสภาวะการตีเกลียวครั้งที-1.xls
+		Documents\Cord\Cord Documents\4007 of RF-TW-14-04  Ageing Condition (S-5).xlsx = Documents\Cord\Cord Documents\4007 of RF-TW-14-04  Ageing Condition (S-5).xlsx
+		Documents\Cord\Cord Documents\4008 FM-TW-02-02 ใบสภาวะการผลิต PC Card - Copy.xls = Documents\Cord\Cord Documents\4008 FM-TW-02-02 ใบสภาวะการผลิต PC Card - Copy.xls
+		Documents\Cord\Cord Documents\4009 Actual recordd sheet for wet pick-up.xlsx = Documents\Cord\Cord Documents\4009 Actual recordd sheet for wet pick-up.xlsx
+		Documents\Cord\Cord Documents\4010 ใบบันทึกสภาวะการผลิต.xlsx = Documents\Cord\Cord Documents\4010 ใบบันทึกสภาวะการผลิต.xlsx
+		Documents\Cord\Cord Documents\4011 appearance check sheet S-9.xlsx = Documents\Cord\Cord Documents\4011 appearance check sheet S-9.xlsx
+		Documents\Cord\Cord Documents\4011 Yarn settingS-7.xlsx = Documents\Cord\Cord Documents\4011 Yarn settingS-7.xlsx
+		Documents\Cord\Cord Documents\4012 Confirmaion condition .xlsx = Documents\Cord\Cord Documents\4012 Confirmaion condition .xlsx
+		Documents\Cord\Cord Documents\LB001 Label- A-4 New (2).xls = Documents\Cord\Cord Documents\LB001 Label- A-4 New (2).xls
+		Documents\Cord\Cord Documents\LB002 Label A7 New 3 ใช้.xls = Documents\Cord\Cord Documents\LB002 Label A7 New 3 ใช้.xls
+		Documents\Cord\Cord Documents\SLP001 ,SLP002 Doffing Report Slip.xlsx = Documents\Cord\Cord Documents\SLP001 ,SLP002 Doffing Report Slip.xlsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -296,6 +316,7 @@ Global
 		{9EF1AB38-4DEF-4B56-A5EF-65BB87DE45BA} = {B80910F2-BC08-4C75-9E6D-170ECC150E61}
 		{4ACCB01C-9DA9-4B86-81F7-CE9B18257A9C} = {5C54D9E2-5613-452D-AB27-C131D613F94B}
 		{2E161B42-CD75-435F-8FBE-589E63F96240} = {159B3C70-A36A-4E53-91A1-B346894525DF}
+		{1AB1F0A9-1A19-4C59-BF0B-0D070A356997} = {B2818B90-A408-452A-B236-02309FC6455F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
