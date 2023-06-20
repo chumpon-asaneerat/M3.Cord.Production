@@ -2,27 +2,12 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 using NLib;
-using NLib.Models;
 using System.Data;
 using System.Data.OleDb;
-using System.Data.Common;
-using System.Windows.Controls.Primitives;
-using System.CodeDom;
+using M3.Cord.Models;
 
 #endregion
 
@@ -105,70 +90,6 @@ namespace M3.Cord.AS400.Test.App
                 "Provider=IBMDA400;Data Source={0};User Id={1};Password={2};Default Collection={3};", 
                 dataSource, userId, pwd, defaultColl);
             txtConnectionString.Text = conn;
-        }
-
-        public class BCSPRFTP
-        {
-            /// <summary>Flags</summary>
-            public string ANNUL { get; set; }
-            /// <summary>Flags</summary>
-            public string FLAGS { get; set; }
-            /// <summary>Type</summary>
-            public string RECTY { get; set; }
-            /// <summary>Warehouse</summary>
-            public string CDSTO { get; set; }
-            /// <summary>User Name</summary>
-            public string USRNM { get; set; }
-            /// <summary>Movement Date</summary>
-            public string DTTRA { get; set; }
-            /// <summary>Entry Date</summary>
-            public string DTINP { get; set; }
-            /// <summary>Roll No</summary>
-            public string CDEL0 { get; set; }
-            /// <summary>Pallet No</summary>
-            public string CDCON { get; set; }
-            /// <summary>Quantity</summary>
-            public string BLELE { get; set; }
-            /// <summary>Unit</summary>
-            public string CDUM0 { get; set; }
-            /// <summary>Item Code</summary>
-            public string CDKE1 { get; set; }
-            /// <summary>Production Type</summary>
-            public string CDKE2 { get; set; }
-            /// <summary>N/A</summary>
-            public string CDKE3 { get; set; }
-            /// <summary>N/A</summary>
-            public string CDKE4 { get; set; }
-            /// <summary>N/A</summary>
-            public string CDKE5 { get; set; }
-            /// <summary>Lot No</summary>
-            public string CDLOT { get; set; }
-            /// <summary>Transaction Code</summary>
-            public string CDTRA { get; set; }
-            /// <summary>Document No</summary>
-            public string REFER { get; set; }
-            /// <summary>Location</summary>
-            public string LOCAT { get; set; }
-            /// <summary>Grade</summary>
-            public string CDQUA { get; set; }
-            /// <summary>Defect Group</summary>
-            public string QUACA { get; set; }
-            /// <summary>Technical Data 1</summary>
-            public string TECU1 { get; set; }
-            /// <summary>Technical Data 2</summary>
-            public string TECU2 { get; set; }
-            /// <summary>Technical Data 3</summary>
-            public string TECU3 { get; set; }
-            /// <summary>Technical Data 4</summary>
-            public string TECU4 { get; set; }
-            /// <summary>Technical Data 5</summary>
-            public string TECU5 { get; set; }
-            /// <summary>Technical Data 6</summary>
-            public string TECU6 { get; set; }
-            /// <summary>Comment</summary>
-            public string COMM0 { get; set; }
-            /// <summary>Last Update Time</summary>
-            public string DTORA { get; set; }
         }
 
         private void InitQueries()

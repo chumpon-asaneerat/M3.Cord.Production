@@ -57,8 +57,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AS400DbServer.cs" />
     <Compile Include="Models\Common\ModelCommon.cs" />
     <Compile Include="Models\Db.cs" />
+    <Compile Include="Models\G4\BCSPRFTP.cs" />
     <Compile Include="Models\G4\G4IssueYarn.cs" />
     <Compile Include="Models\G4\G4Yarn.cs" />
     <Compile Include="Models\Warehouse\WarehouseCordYarn.cs" />
