@@ -152,10 +152,58 @@ namespace M3.Cord.Models
         public class AS400
         {
             /// <summary>
-            /// Gets from AS400
+            /// Gets Default Query
             /// </summary>
             /// <returns></returns>
-            public static List<BCSPRFTP> Gets()
+            public static string GetQuery()
+            {
+                #region Query
+
+                string query = string.Empty;
+
+                query += "SELECT #ANNUL AS ANNUL " + Environment.NewLine;
+                query += "     , #FLAGS AS FLAGS " + Environment.NewLine;
+                query += "     , #RECTY AS RECTY " + Environment.NewLine;
+                query += "     , #CDSTO AS CDSTO " + Environment.NewLine;
+                query += "     , #USRNM AS USRNM " + Environment.NewLine;
+                query += "     , #DTTRA AS DTTRA " + Environment.NewLine;
+                query += "     , #DTINP AS DTINP " + Environment.NewLine;
+                query += "     , #CDEL0 AS CDEL0 " + Environment.NewLine;
+                query += "     , #CDCON AS CDCON " + Environment.NewLine;
+                query += "     , #BLELE AS BLELE " + Environment.NewLine;
+                query += "     , #CDUM0 AS CDUM0 " + Environment.NewLine;
+                query += "     , #CDKE1 AS CDKE1 " + Environment.NewLine;
+                query += "     , #CDKE2 AS CDKE2 " + Environment.NewLine;
+                query += "     , #CDKE3 AS CDKE3 " + Environment.NewLine;
+                query += "     , #CDKE4 AS CDKE4 " + Environment.NewLine;
+                query += "     , #CDKE5 AS CDKE5 " + Environment.NewLine;
+                query += "     , #CDLOT AS CDLOT " + Environment.NewLine;
+                query += "     , #CDTRA AS CDTRA " + Environment.NewLine;
+                query += "     , #REFER AS REFER " + Environment.NewLine;
+                query += "     , #LOCAT AS LOCAT " + Environment.NewLine;
+                query += "     , #CDQUA AS CDQUA " + Environment.NewLine;
+                query += "     , #QUACA AS QUACA " + Environment.NewLine;
+                query += "     , #TECU1 AS TECU1 " + Environment.NewLine;
+                query += "     , #TECU2 AS TECU2 " + Environment.NewLine;
+                query += "     , #TECU3 AS TECU3 " + Environment.NewLine;
+                query += "     , #TECU4 AS TECU4 " + Environment.NewLine;
+                query += "     , #TECU5 AS TECU5 " + Environment.NewLine;
+                query += "     , #TECU6 AS TECU6 " + Environment.NewLine;
+                query += "     , #COMM0 AS COMM0 " + Environment.NewLine;
+                query += "     , #DTORA AS DTORA " + Environment.NewLine;
+                query += "  FROM BCSPRFTP " + Environment.NewLine;
+                query += " WHERE #CDSTO = '3G' " + Environment.NewLine;
+
+                #endregion
+
+                return query;
+            }
+            /// <summary>
+            /// Gets from AS400
+            /// </summary>
+            /// <param name="query"></param>
+            /// <returns></returns>
+            public static List<BCSPRFTP> Gets(string query)
             {
                 MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -170,45 +218,6 @@ namespace M3.Cord.Models
 
                 try
                 {
-                    #region Query
-
-                    string query = string.Empty;
-
-                    query += "SELECT #ANNUL AS ANNUL " + Environment.NewLine;
-                    query += "     , #FLAGS AS FLAGS " + Environment.NewLine;
-                    query += "     , #RECTY AS RECTY " + Environment.NewLine;
-                    query += "     , #CDSTO AS CDSTO " + Environment.NewLine;
-                    query += "     , #USRNM AS USRNM " + Environment.NewLine;
-                    query += "     , #DTTRA AS DTTRA " + Environment.NewLine;
-                    query += "     , #DTINP AS DTINP " + Environment.NewLine;
-                    query += "     , #CDEL0 AS CDEL0 " + Environment.NewLine;
-                    query += "     , #CDCON AS CDCON " + Environment.NewLine;
-                    query += "     , #BLELE AS BLELE " + Environment.NewLine;
-                    query += "     , #CDUM0 AS CDUM0 " + Environment.NewLine;
-                    query += "     , #CDKE1 AS CDKE1 " + Environment.NewLine;
-                    query += "     , #CDKE2 AS CDKE2 " + Environment.NewLine;
-                    query += "     , #CDKE3 AS CDKE3 " + Environment.NewLine;
-                    query += "     , #CDKE4 AS CDKE4 " + Environment.NewLine;
-                    query += "     , #CDKE5 AS CDKE5 " + Environment.NewLine;
-                    query += "     , #CDLOT AS CDLOT " + Environment.NewLine;
-                    query += "     , #CDTRA AS CDTRA " + Environment.NewLine;
-                    query += "     , #REFER AS REFER " + Environment.NewLine;
-                    query += "     , #LOCAT AS LOCAT " + Environment.NewLine;
-                    query += "     , #CDQUA AS CDQUA " + Environment.NewLine;
-                    query += "     , #QUACA AS QUACA " + Environment.NewLine;
-                    query += "     , #TECU1 AS TECU1 " + Environment.NewLine;
-                    query += "     , #TECU2 AS TECU2 " + Environment.NewLine;
-                    query += "     , #TECU3 AS TECU3 " + Environment.NewLine;
-                    query += "     , #TECU4 AS TECU4 " + Environment.NewLine;
-                    query += "     , #TECU5 AS TECU5 " + Environment.NewLine;
-                    query += "     , #TECU6 AS TECU6 " + Environment.NewLine;
-                    query += "     , #COMM0 AS COMM0 " + Environment.NewLine;
-                    query += "     , #DTORA AS DTORA " + Environment.NewLine;
-                    query += "  FROM BCSPRFTP " + Environment.NewLine;
-                    query += " WHERE #CDSTO = '3G' " + Environment.NewLine;
-
-                    #endregion
-
                     var table = AS400DbServer.Instance.ExecuteQuery(query, "BCSPRFTP");
                     if (null != table)
                     {

@@ -32,14 +32,6 @@
                         Style="{StaticResource InlineButton}"
                         Content="Connect"
                         Click="cmdConnect_Click" />
-                <!--  CONNECTION STRING  -->
-                <StackPanel Orientation="Vertical" Margin="5,0">
-                    <TextBlock Text="Connection String:" Style="{StaticResource LabelText}" />
-                    <TextBox x:Name="txtConnectionString"
-                             Style="{StaticResource CommonTextBox}"
-                             Text=""
-                             Width="500" />
-                </StackPanel>
             </DockPanel>
             <Grid />
         </DockPanel>

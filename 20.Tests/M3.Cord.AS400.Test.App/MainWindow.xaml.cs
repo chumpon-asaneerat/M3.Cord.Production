@@ -30,17 +30,10 @@ namespace M3.Cord.AS400.Test.App
 
         #endregion
 
-        #region Internal Variables
-
-        private OleDbConnection _conn = null;
-
-        #endregion
-
         #region Load/Closing
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            InitConnectionString();
             InitQueries();
             UpdateConnectStatus();
         }
@@ -79,82 +72,31 @@ namespace M3.Cord.AS400.Test.App
 
         #region Private Methods
 
-        private void InitConnectionString()
-        {
-            string dataSource = "172.20.7.16";
-            string userId = "PLM";
-            string pwd = "LUCKY";
-            string defaultColl = "TESLUCDAT";
-
-            string conn = string.Format(
-                "Provider=IBMDA400;Data Source={0};User Id={1};Password={2};Default Collection={3};", 
-                dataSource, userId, pwd, defaultColl);
-            txtConnectionString.Text = conn;
-        }
-
         private void InitQueries()
         {
-            string query = string.Empty;
-
-            query += "SELECT #ANNUL AS ANNUL " + Environment.NewLine;
-            query += "     , #FLAGS AS FLAGS " + Environment.NewLine;
-            query += "     , #RECTY AS RECTY " + Environment.NewLine;
-            query += "     , #CDSTO AS CDSTO " + Environment.NewLine;
-            query += "     , #USRNM AS USRNM " + Environment.NewLine;
-            query += "     , #DTTRA AS DTTRA " + Environment.NewLine;
-            query += "     , #DTINP AS DTINP " + Environment.NewLine;
-            query += "     , #CDEL0 AS CDEL0 " + Environment.NewLine;
-            query += "     , #CDCON AS CDCON " + Environment.NewLine;
-            query += "     , #BLELE AS BLELE " + Environment.NewLine;
-            query += "     , #CDUM0 AS CDUM0 " + Environment.NewLine;
-            query += "     , #CDKE1 AS CDKE1 " + Environment.NewLine;
-            query += "     , #CDKE2 AS CDKE2 " + Environment.NewLine;
-            query += "     , #CDKE3 AS CDKE3 " + Environment.NewLine;
-            query += "     , #CDKE4 AS CDKE4 " + Environment.NewLine;
-            query += "     , #CDKE5 AS CDKE5 " + Environment.NewLine;
-            query += "     , #CDLOT AS CDLOT " + Environment.NewLine;
-            query += "     , #CDTRA AS CDTRA " + Environment.NewLine;
-            query += "     , #REFER AS REFER " + Environment.NewLine;
-            query += "     , #LOCAT AS LOCAT " + Environment.NewLine;
-            query += "     , #CDQUA AS CDQUA " + Environment.NewLine;
-            query += "     , #QUACA AS QUACA " + Environment.NewLine;
-            query += "     , #TECU1 AS TECU1 " + Environment.NewLine;
-            query += "     , #TECU2 AS TECU2 " + Environment.NewLine;
-            query += "     , #TECU3 AS TECU3 " + Environment.NewLine;
-            query += "     , #TECU4 AS TECU4 " + Environment.NewLine;
-            query += "     , #TECU5 AS TECU5 " + Environment.NewLine;
-            query += "     , #TECU6 AS TECU6 " + Environment.NewLine;
-            query += "     , #COMM0 AS COMM0 " + Environment.NewLine;
-            query += "     , #DTORA AS DTORA " + Environment.NewLine;
-            query += "  FROM BCSPRFTP " + Environment.NewLine;
-            query += " WHERE #CDSTO = '3G' " + Environment.NewLine;
-
-            txtQuery.Text = query;
+            txtQuery.Text = BCSPRFTP.AS400.GetQuery();
         }
 
         private void UpdateConnectStatus()
         {
-            bool connected = (null != _conn && _conn.State == ConnectionState.Open);
+            bool connected = AS400DbServer.Instance.Connected;
             cmdConnect.IsEnabled = !connected;
             cmdDisconnect.IsEnabled = connected;
         }
 
         private void Connect()
         {
-            if (null != _conn)
+            if (AS400DbServer.Instance.Connected)
             {
                 MessageBox.Show("Already Connected.");
             }
-            _conn = new OleDbConnection();
-            _conn.ConnectionString = txtConnectionString.Text;
             try
             {
-                _conn.Open();
+                AS400DbServer.Instance.Start();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                _conn = null;
             }
 
             UpdateConnectStatus();
@@ -162,48 +104,19 @@ namespace M3.Cord.AS400.Test.App
 
         private void Disconnect()
         {
-            if (null != _conn) 
-            {
-                try
-                {
-                    _conn.Close();
-                    _conn.Dispose();
-                }
-                catch (Exception) { }
-            }
-            _conn = null;
-
+            AS400DbServer.Instance.Shutdown();
             UpdateConnectStatus();
         }
 
         private void ExecuteQuery(string query)
         {
-            if (null == _conn)
+            if (!AS400DbServer.Instance.Connected)
             {
                 MessageBox.Show("No connection");
                 return;
             }
             // reset.
             dbGrid.ItemsSource = null;
-
-            DataSet dataSet = new DataSet();
-            try
-            {
-                OleDbDataAdapter adapter;
-                try
-                {
-                    adapter = new OleDbDataAdapter(query, _conn);
-                    adapter.Fill(dataSet, "BCSPRFTP");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
-            }
-            catch (Exception ex) 
-            { 
-                MessageBox.Show(ex.ToString());
-            }
 
             // Bind to DataGrid
             if (null != dbGrid.ItemsSource && dbGrid.ItemsSource is DataTable)
@@ -215,83 +128,9 @@ namespace M3.Cord.AS400.Test.App
             dbGrid.ItemsSource = null;
             txtTotalRows.Text = "-";
 
-            if (null != dataSet && null != dataSet.Tables)
-            {
-                Console.WriteLine(string.Format("Table Count: {0}", dataSet.Tables.Count));
-            }
-            else
-            {
-                MessageBox.Show("No data set.");
-            }
-
-            if (null != dataSet && null != dataSet.Tables && dataSet.Tables.Count > 0)
-            {
-                var tbl = dataSet.Tables[0];
-                if (null != tbl)
-                {
-                    var list = CreateList(tbl);
-                    dbGrid.ItemsSource = list;
-                    txtTotalRows.Text = list.Count.ToString("n0");
-                }
-                else
-                {
-                    txtTotalRows.Text = "0";
-                }
-            }
-        }
-
-        private string GetRow(DataRow row, string columnName)
-        {
-            return (null != row && null != row[columnName]) ? row[columnName].ToString() : null;
-        }
-
-        private List<BCSPRFTP> CreateList(DataTable tbl)
-        {
-            var items = new List<BCSPRFTP>();
-            if (null != tbl && null != tbl.Rows)
-            {
-                int cnt = tbl.Rows.Count;
-                for (int i = 0; i < cnt; i++)
-                {
-                    var row = tbl.Rows[i];
-                    var inst = new BCSPRFTP();
-
-                    inst.ANNUL = GetRow(row, "ANNUL");
-                    inst.FLAGS = GetRow(row, "FLAGS");
-                    inst.RECTY = GetRow(row, "RECTY");
-                    inst.CDSTO = GetRow(row, "CDSTO");
-                    inst.USRNM = GetRow(row, "USRNM");
-                    inst.DTTRA = GetRow(row, "DTTRA");
-                    inst.DTINP = GetRow(row, "DTINP");
-                    inst.CDEL0 = GetRow(row, "CDEL0");
-                    inst.CDCON = GetRow(row, "CDCON");
-                    inst.BLELE = GetRow(row, "BLELE");
-                    inst.CDUM0 = GetRow(row, "CDUM0");
-                    inst.CDKE1 = GetRow(row, "CDKE1");
-                    inst.CDKE2 = GetRow(row, "CDKE2");
-                    inst.CDKE3 = GetRow(row, "CDKE3");
-                    inst.CDKE4 = GetRow(row, "CDKE4");
-                    inst.CDKE5 = GetRow(row, "CDKE5");
-                    inst.CDLOT = GetRow(row, "CDLOT");
-                    inst.CDTRA = GetRow(row, "CDTRA");
-                    inst.REFER = GetRow(row, "REFER");
-                    inst.LOCAT = GetRow(row, "LOCAT");
-                    inst.CDQUA = GetRow(row, "CDQUA");
-                    inst.QUACA = GetRow(row, "QUACA");
-                    inst.TECU1 = GetRow(row, "TECU1");
-                    inst.TECU2 = GetRow(row, "TECU2");
-                    inst.TECU3 = GetRow(row, "TECU3");
-                    inst.TECU4 = GetRow(row, "TECU4");
-                    inst.TECU5 = GetRow(row, "TECU5");
-                    inst.TECU6 = GetRow(row, "TECU6");
-                    inst.COMM0 = GetRow(row, "COMM0");
-                    inst.DTORA = GetRow(row, "DTORA");
-
-                    items.Add(inst);
-                }
-            }
-
-            return items;
+            var list = BCSPRFTP.AS400.Gets(query);
+            dbGrid.ItemsSource = list;
+            txtTotalRows.Text = list.Count.ToString("n0");
         }
 
         private void Export()
