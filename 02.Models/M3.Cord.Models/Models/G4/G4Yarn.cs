@@ -51,10 +51,6 @@ namespace M3.Cord.Models
         /// </summary>
         public string ItemYarn { get; set; }
         /// <summary>
-        /// Gets or sets Yarn Type (ประเภทการนำไปทอเป็นผ้า Warp, Warp).
-        /// </summary>
-        public string YarnType { get; set; }
-        /// <summary>
         /// Gets or sets Pallet Type (ประเภท Pallet 'F' อาจจะย่อมาจาก Flat).
         /// </summary>
         public string PalletType { get; set; }
@@ -267,7 +263,6 @@ namespace M3.Cord.Models
             p.Add("@LotNo", value.LotNo);
 
             p.Add("@ItemYarn", value.ItemYarn);
-            p.Add("@YarnType", value.YarnType);
             p.Add("@PalletType", value.PalletType);
             p.Add("@Item400", value.Item400);
 

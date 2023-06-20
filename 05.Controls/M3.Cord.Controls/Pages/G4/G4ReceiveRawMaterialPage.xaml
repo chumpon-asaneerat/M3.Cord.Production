@@ -149,7 +149,7 @@
                     <GridView>
                         <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource TraceNo}" />
                         <GridViewColumn Header="Lot" CellTemplate="{StaticResource LotNo}" />
-                        <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource YarnType}" />
+                        <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
                         <GridViewColumn Header="Weight" CellTemplate="{StaticResource WeightQty}" />
                         <GridViewColumn Header="OK" CellTemplate="{StaticResource IsOK}" />
                         <GridViewColumn Header="NG" CellTemplate="{StaticResource IsNG}" />

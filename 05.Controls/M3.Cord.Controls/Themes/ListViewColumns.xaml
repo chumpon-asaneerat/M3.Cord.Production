@@ -33,7 +33,7 @@
                    TextAlignment="Left"
                    Width="150" />
     </DataTemplate>
-    
+
     <DataTemplate x:Key="CustomerName">
         <TextBlock Text="{Binding Path=CustomerName, Mode=OneWay}"
                    Foreground="{Binding TextColor}"
