@@ -59,12 +59,7 @@
                    TextAlignment="Left"
                    MinWidth="150" />
     </DataTemplate>
-    <DataTemplate x:Key="YarnType">
-        <TextBlock Text="{Binding Path=YarnType, Mode=OneWay}"
-                   Foreground="{Binding TextColor}"
-                   TextAlignment="Center"
-                   MinWidth="150" />
-    </DataTemplate>
+
     <DataTemplate x:Key="ItemYarn">
         <TextBlock Text="{Binding Path=ItemYarn, Mode=OneWay}"
                    Foreground="{Binding TextColor}"
