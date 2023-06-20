@@ -1,0 +1,67 @@
+create or replace PROCEDURE            g3_getdataAs400
+( DTTRA  date,
+  DTINP date,
+  CDCON  varchar2,
+  BLELE number,
+  CDUM0 varchar2,
+  CDKE1 varchar2,
+  CDLOT varchar2,
+  CDQUA char,
+  TECU1 number,
+  TECU2 number,
+  TECU3 number,
+  TECU4 number,
+  TECU5 number,
+  TECU6 varchar2,
+  r_result out varchar2
+ 
+ )AS
+v_itmyarn varchar2(20) := null;
+v_type varchar2(10) := null;
+v_cnt number(2,0) :=0;
+
+begin
+
+select ITM_YARN , TYPE 
+ into v_itmyarn, v_type
+from ITMCODEAS400
+where ITMCODE400 = CDKE1;
+
+select count(*) into v_cnt
+from AIRBAG2014.G3_YARN
+where PALLETNO = CDCON; 
+
+if v_cnt = 0 then 
+begin
+INSERT INTO AIRBAG2014.G3_YARN (
+   ENTRYDATE, ITM_YARN, PALLETNO, YARNTYPE, WEIGHTQTY, CONECH, 
+   ITM400, UM, MOVEMENTDATE, LOTNO, TRACENO, kgperch) 
+VALUES ( DTINP, v_itmyarn, CDCON, v_type, BLELE, TECU3,
+    CDKE1, CDUM0, DTTRA, CDLOT, TECU6,BLELE/TECU3);
+
+commit;
+end;
+else
+begin
+update AIRBAG2014.G3_YARN
+set  ENTRYDATE = COALESCE( DTINP ,ENTRYDATE),
+     ITM_YARN = COALESCE( v_itmyarn ,ITM_YARN),
+     YARNTYPE = COALESCE( v_type ,YARNTYPE),
+     WEIGHTQTY = COALESCE( BLELE ,WEIGHTQTY),
+     CONECH = COALESCE( TECU3 ,CONECH),
+     ITM400 = COALESCE( CDKE1 ,ITM400),
+     UM = COALESCE( CDUM0 ,UM),
+     MOVEMENTDATE = COALESCE( DTTRA ,MOVEMENTDATE),
+     LOTNO = COALESCE( CDLOT ,LOTNO),
+     TRACENO = COALESCE( TECU6 ,TRACENO)
+where PALLETNO = CDCON; 
+
+commit;
+
+
+
+end;
+end if; 
+r_result := null;    
+    
+END g3_getdataAs400;
