@@ -212,7 +212,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\NLib.Utils\NLib.Utils.csproj">
       <Project>{93acb478-4570-4f67-9442-2839d1a46ec9}</Project>
