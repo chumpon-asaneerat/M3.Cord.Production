@@ -210,6 +210,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Documents", "Cord Docu
 		Documents\Cord\Cord Documents\SLP001 ,SLP002 Doffing Report Slip.xlsx = Documents\Cord\Cord Documents\SLP001 ,SLP002 Doffing Report Slip.xlsx
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Master Data", "Cord Master Data", "{CE252662-AFB5-416E-B2AA-6C7A308F0656}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\Cord Master Data\CORD_ITEM CODE.xls = Documents\Cord\Cord Master Data\CORD_ITEM CODE.xls
+		Documents\Cord\Cord Master Data\out1.json = Documents\Cord\Cord Master Data\out1.json
+		Documents\Cord\Cord Master Data\out2.json = Documents\Cord\Cord Master Data\out2.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -317,6 +324,7 @@ Global
 		{4ACCB01C-9DA9-4B86-81F7-CE9B18257A9C} = {5C54D9E2-5613-452D-AB27-C131D613F94B}
 		{2E161B42-CD75-435F-8FBE-589E63F96240} = {159B3C70-A36A-4E53-91A1-B346894525DF}
 		{1AB1F0A9-1A19-4C59-BF0B-0D070A356997} = {B2818B90-A408-452A-B236-02309FC6455F}
+		{CE252662-AFB5-416E-B2AA-6C7A308F0656} = {B2818B90-A408-452A-B236-02309FC6455F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
