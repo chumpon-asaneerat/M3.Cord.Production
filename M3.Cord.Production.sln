@@ -183,6 +183,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3.Cord.Developer.Tools.App
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{4ACCB01C-9DA9-4B86-81F7-CE9B18257A9C}"
 	ProjectSection(SolutionItems) = preProject
+		Documents\Data\Oracle\Scripts\G3_GetDataAS400.txt = Documents\Data\Oracle\Scripts\G3_GetDataAS400.txt
 		Documents\Data\Oracle\Scripts\G3_getrequestnodetail.txt = Documents\Data\Oracle\Scripts\G3_getrequestnodetail.txt
 		Documents\Data\Oracle\Scripts\G3_insertupdateissueyarn.txt = Documents\Data\Oracle\Scripts\G3_insertupdateissueyarn.txt
 		Documents\Data\Oracle\Scripts\G3_SearchYarnStock.txt = Documents\Data\Oracle\Scripts\G3_SearchYarnStock.txt
