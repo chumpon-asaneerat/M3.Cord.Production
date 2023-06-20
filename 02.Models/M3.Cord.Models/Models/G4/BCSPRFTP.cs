@@ -235,7 +235,142 @@ namespace M3.Cord.Models
 
         public class M3Cord
         {
+            private static DateTime? ToDateTime(string value)
+            {
+                DateTime? ret;
+                try
+                {
+                    int yr = int.Parse(value.Substring(0, 4));
+                    int mn = int.Parse(value.Substring(4, 2));
+                    int dd = int.Parse(value.Substring(6, 2));
 
+                    ret = new DateTime(yr, mn, dd);
+                }
+                catch
+                {
+                    ret = new DateTime?();
+                }
+                return ret;
+            }
+
+            private static decimal? ToDecimal(string value)
+            {
+                decimal? ret;
+                decimal val;
+                if (!decimal.TryParse(value, out val))
+                {
+                    ret = new decimal?();
+                }
+                else ret = val;
+
+                return ret;
+            }
+
+            /// <summary>
+            /// Save
+            /// </summary>
+            /// <param name="value">The G4Yarn item to save.</param>
+            /// <returns></returns>
+            private static NDbResult Save(BCSPRFTP value)
+            {
+                MethodBase med = MethodBase.GetCurrentMethod();
+
+                NDbResult ret = new NDbResult();
+
+                if (null == value)
+                {
+                    ret.ParameterIsNull();
+                    return ret;
+                }
+
+                IDbConnection cnn = DbServer.Instance.Db;
+                if (null == cnn || !DbServer.Instance.Connected)
+                {
+                    string msg = "Connection is null or cannot connect to database server.";
+                    med.Err(msg);
+                    // Set error number/message
+                    ret.ErrNum = 8000;
+                    ret.ErrMsg = msg;
+
+                    return ret;
+                }
+
+                var p = new DynamicParameters();
+                p.Add("@DTTRA", ToDateTime(value.DTTRA)); // MovementDate
+                p.Add("@DTINP", ToDateTime(value.DTINP)); // EntryDate
+                p.Add("@CDCON", value.CDCON); // Pallet No
+                p.Add("@BLELE", ToDecimal(value.BLELE)); // WeightQty
+
+                p.Add("@CDUM0", value.CDUM0); // Unit
+                p.Add("@CDKE1", value.CDKE1); // Item400
+                p.Add("@CDLOT", value.CDLOT); // Lot No
+                p.Add("@CDQUA", value.CDQUA); // N/A
+
+                p.Add("@TECU1", ToDecimal(value.TECU1));
+                p.Add("@TECU2", ToDecimal(value.TECU2));
+                p.Add("@TECU3", ToDecimal(value.TECU3)); // Cone CH
+                p.Add("@TECU4", ToDecimal(value.TECU4));
+                p.Add("@TECU5", ToDecimal(value.TECU5));
+
+                p.Add("@TECU6", value.TECU6); // Trace No
+
+                p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
+
+                try
+                {
+                    cnn.Execute("SaveBCSPRFTP", p, commandType: CommandType.StoredProcedure);
+                    ret.Success();
+                    // Set error number/message
+                    ret.ErrNum = p.Get<int>("@errNum");
+                    ret.ErrMsg = p.Get<string>("@errMsg");
+                }
+                catch (Exception ex)
+                {
+                    med.Err(ex);
+                    // Set error number/message
+                    ret.ErrNum = 9999;
+                    ret.ErrMsg = ex.Message;
+                }
+
+                return ret;
+            }
+
+            public static NDbResult Save(List<BCSPRFTP> values)
+            {
+                MethodBase med = MethodBase.GetCurrentMethod();
+
+                NDbResult ret = new NDbResult();
+
+                if (null == values)
+                {
+                    ret.ParameterIsNull();
+                    return ret;
+                }
+
+                IDbConnection cnn = DbServer.Instance.Db;
+                if (null == cnn || !DbServer.Instance.Connected)
+                {
+                    string msg = "Connection is null or cannot connect to database server.";
+                    med.Err(msg);
+                    // Set error number/message
+                    ret.ErrNum = 8000;
+                    ret.ErrMsg = msg;
+
+                    return ret;
+                }
+
+                try
+                {
+                    foreach (var item in values) { Save(item); }
+                }
+                catch (Exception ex)
+                {
+                    med.Err(ex);
+                }
+
+                return ret;
+            }
         }
 
         #endregion

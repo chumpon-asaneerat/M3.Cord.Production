@@ -76,6 +76,15 @@
                                 Height="25"
                                 Width="85" 
                                 Click="cmdExport_Click"/>
+                        <Button x:Name="cmdImport"
+                                Content="Import"
+                                Margin="12,2,2,2"
+                                VerticalAlignment="Center"
+                                Style="{StaticResource InlineButton}"
+                                FontSize="16"
+                                Height="25"
+                                Width="85" 
+                                Click="cmdImport_Click"/>
                     </StackPanel>
                     <DataGrid x:Name="dbGrid" AutoGenerateColumns="True" />
                 </DockPanel>

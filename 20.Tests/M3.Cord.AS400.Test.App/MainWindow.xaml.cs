@@ -8,6 +8,7 @@ using NLib;
 using System.Data;
 using System.Data.OleDb;
 using M3.Cord.Models;
+using System.Windows.Controls;
 
 #endregion
 
@@ -66,6 +67,11 @@ namespace M3.Cord.AS400.Test.App
         private void cmdExport_Click(object sender, RoutedEventArgs e)
         {
             Export();
+        }
+
+        private void cmdImport_Click(object sender, RoutedEventArgs e)
+        {
+            Import();
         }
 
         #endregion
@@ -149,6 +155,20 @@ namespace M3.Cord.AS400.Test.App
             }
         }
 
+        private void Import()
+        {
+            string fileName = Dialogs.OpenDialog();
+            if (string.IsNullOrEmpty(fileName))
+                return;
+            dbGrid.ItemsSource = null;
+            var list = NJson.LoadFromFile<List<BCSPRFTP>>(fileName);
+            dbGrid.ItemsSource = list;
+
+            DbServer.Instance.Start();
+            BCSPRFTP.M3Cord.Save(list);
+            DbServer.Instance.Shutdown();
+        }
+
         #endregion
     }
 
@@ -156,10 +176,10 @@ namespace M3.Cord.AS400.Test.App
 
     public class Dialogs
     {
-        #region Show Save Excel Dialog
+        #region Show Save Json Dialog
 
         /// <summary>
-        /// Show Save Excel File Dialog.
+        /// Show Save Json File Dialog.
         /// </summary>
         /// <param name="defaultFileName">The Default File Name.</param>
         /// <returns>Returns FileName if user choose file otherwise return null.</returns>
@@ -168,7 +188,7 @@ namespace M3.Cord.AS400.Test.App
             return SaveDialog(null, null, "กรุณาระบุขื่อ json file ที่ต้องการนำส่งออกข้อมูล", defaultFileName);
         }
         /// <summary>
-        /// Show Save Excel File Dialog.
+        /// Show Save Json File Dialog.
         /// </summary>
         /// <param name="title">The Dialog Title.</param>
         /// <param name="initDir">The initial directory path.</param>
@@ -179,7 +199,7 @@ namespace M3.Cord.AS400.Test.App
             return SaveDialog(null, title, initDir);
         }
         /// <summary>
-        /// Show Save Excel File Dialog.
+        /// Show Save Json File Dialog.
         /// </summary>
         /// <param name="owner">The owner window.</param>
         /// <param name="title">The Dialog Title.</param>
@@ -187,7 +207,7 @@ namespace M3.Cord.AS400.Test.App
         /// <param name="defaultFileName">The Default File Name.</param>
         /// <returns>Returns FileName if user choose file otherwise return null.</returns>
         public static string SaveDialog(Window owner,
-            string title = "กรุณาเลือก json file ที่ต้องการนำเข้าข้อมูล",
+            string title = "กรุณาเลือก json file ที่ต้องการนำส่งออกข้อมูล",
             string initDir = null,
             string defaultFileName = "")
         {
@@ -206,6 +226,63 @@ namespace M3.Cord.AS400.Test.App
                 fileName = sd.FileName;
             }
             sd = null;
+
+            return fileName;
+        }
+
+        #endregion
+
+        #region OpenDialog
+
+        /// <summary>
+        /// Show Open Json File Dialog.
+        /// </summary>
+        /// <param name="defaultFileName">The Default File Name.</param>
+        /// <returns>Returns FileName if user choose file otherwise return null.</returns>
+        public static string OpenDialog(string defaultFileName)
+        {
+            return OpenDialog(null, null, "กรุณาระบุขื่อ json file ที่ต้องการนำเข้าข้อมูล", defaultFileName);
+        }
+        /// <summary>
+        /// Show Open Json File Dialog.
+        /// </summary>
+        /// <param name="title">The Dialog Title.</param>
+        /// <param name="initDir">The initial directory path.</param>
+        /// <returns>Returns FileName if user choose file otherwise return null.</returns>
+        public static string OpenDialog(string title = "กรุณาเลือก json file ที่ต้องการนำเข้าข้อมูล",
+            string initDir = null)
+        {
+            return OpenDialog(null, title, initDir);
+        }
+        /// <summary>
+        /// Show Open Json File Dialog.
+        /// </summary>
+        /// <param name="owner">The owner window.</param>
+        /// <param name="title">The Dialog Title.</param>
+        /// <param name="initDir">The initial directory path.</param>
+        /// <param name="defaultFileName">The Default File Name.</param>
+        /// <returns>Returns FileName if user choose file otherwise return null.</returns>
+        public static string OpenDialog(Window owner,
+            string title = "กรุณาเลือก json file ที่ต้องการนำเข้าข้อมูล",
+            string initDir = null,
+            string defaultFileName = "")
+        {
+            string fileName = null;
+
+            // setup dialog options
+            var od = new Microsoft.Win32.OpenFileDialog();
+            od.InitialDirectory = initDir;
+            od.Multiselect = false;
+            od.Title = string.IsNullOrEmpty(title) ? "กรุณาระบุขื่อ json file ที่ต้องการนำเข้าข้อมูล" : title;
+            od.Filter = "Json Files(*.json)|*.json";
+            od.FileName = defaultFileName;
+            var ret = od.ShowDialog(owner) == true;
+            if (ret)
+            {
+                // assigned to FileName
+                fileName = od.FileName;
+            }
+            od = null;
 
             return fileName;
         }
