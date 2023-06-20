@@ -19,24 +19,13 @@ using Newtonsoft.Json;
 
 namespace M3.Cord.Models
 {
-    // For Import from ORACLE need to check is safe to remvoe.
     public class CordItemCode : NInpc
     {
         #region Public Proeprties
 
-        public int? ItemPkId { get; set; }
-        public string ItemCode { get; set; }
-        public string ItemWeaving { get; set; }
+        public string Item400 { get; set; }
         public string ItemYarn { get; set; }
         public string ItemGroup { get; set; }
-        public string ItemPrepare { get; set; }
-        public string YarnCode { get; set; }
-        public string WidthCode { get; set; }
-        public decimal? ItemWidth { get; set; }
-        public decimal? CoreWeight { get; set; }
-        public decimal? FullWeight { get; set; }
-        public decimal? WidthWeaving { get; set; }
-        public string WeaveType { get; set; }
 
         #endregion
 
@@ -66,19 +55,9 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@ItemCode", value.ItemCode);
-            p.Add("@ItemWeaving", value.ItemWeaving);
+            p.Add("@ItemCode", value.Item400);
             p.Add("@ItemYarn", value.ItemYarn);
             p.Add("@ItemGroup", value.ItemGroup);
-            p.Add("@ItemPrepare", value.ItemPrepare);
-            p.Add("@YarnCode", value.YarnCode);
-            p.Add("@WidthCode", value.WidthCode);
-            p.Add("@ItemWidth", value.ItemWidth);
-            p.Add("@CoreWeight", value.CoreWeight);
-            p.Add("@FullWeight", value.FullWeight);
-            p.Add("@WidthWeaving", value.WidthWeaving);
-            p.Add("@WeaveType", value.WeaveType);
-            p.Add("@ItemPkId", value.ItemPkId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
@@ -87,8 +66,6 @@ namespace M3.Cord.Models
             {
                 cnn.Execute("SaveItemCode", p, commandType: CommandType.StoredProcedure);
                 ret.Success(value);
-                // Set PK
-                value.ItemPkId = p.Get<int>("@ItemPkId");
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");
