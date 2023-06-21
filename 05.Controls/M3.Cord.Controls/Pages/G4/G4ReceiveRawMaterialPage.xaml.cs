@@ -20,6 +20,9 @@ using NLib.Services;
 using M3.Cord.Models;
 using System.Windows.Interop;
 using NLib.Wpf.Controls;
+using System.Diagnostics;
+using System.Reflection;
+using NLib;
 
 #endregion
 
@@ -88,6 +91,30 @@ namespace M3.Cord.Pages
             if (null == btn) return;
             var item = btn.DataContext as G4Yarn;
             DeleteItem(item);
+        }
+
+        private void cmdAS400_Click(object sender, RoutedEventArgs e)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            string msg = string.Empty;
+            int iCnt = G4ReceiveYarnService.Instance.LoadFromAS400();
+            if (iCnt != -1)
+            {
+                msg += "Successfully load data from AS400." + Environment.NewLine;
+                msg += string.Format("Receive {0:n0} record(s).", iCnt);
+                med.Info(msg);
+            }
+            else
+            {
+                msg = "Load data from AS400 failed.";
+                med.Err(msg);
+            }
+
+            var win = M3CordApp.Windows.MessageBox;
+            win.Setup(msg);
+            win.ShowDialog();
+            RefreshGrid();
         }
 
         #endregion

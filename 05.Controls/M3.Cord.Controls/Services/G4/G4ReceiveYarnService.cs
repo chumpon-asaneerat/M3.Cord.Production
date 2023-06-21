@@ -173,6 +173,31 @@ namespace M3.Cord
 
             return bSuccess;
         }
+        /// <summary>
+        /// Load data from AS400.
+        /// </summary>
+        /// <param name="importMode"></param>
+        /// <returns></returns>
+        public int LoadFromAS400(bool importMode = false)
+        {
+            int ret = -1;
+
+            List<BCSPRFTP> list;
+            if (importMode)
+                list = BCSPRFTP.AS400.LoadFromFile();
+            else
+                list = BCSPRFTP.AS400.Gets();
+
+            if (null == list)
+                return ret;
+
+            var res = BCSPRFTP.M3Cord.Save(list);
+            if (null == res || res.HasError)
+                ret = -1;
+            else ret = list.Count;
+
+            return ret;
+        }
 
         #endregion
 

@@ -91,6 +91,19 @@ namespace M3.Cord.Models
 
         #region Private Static Methods
 
+        private static string DbPath
+        {
+            get
+            {
+                var assem = Assembly.GetExecutingAssembly();
+                string rootPath = Path.GetDirectoryName(assem.Location);
+                var dbPath = Path.Combine(rootPath, "db");
+                if (!Directory.Exists(dbPath))
+                    Directory.CreateDirectory(dbPath);
+                return dbPath;
+            }
+        }
+
         private static string GetRow(DataRow row, string columnName)
         {
             return (null != row && null != row[columnName]) ? row[columnName].ToString() : null;
@@ -98,10 +111,11 @@ namespace M3.Cord.Models
 
         private static List<BCSPRFTP> CreateList(DataTable tbl)
         {
-            var items = new List<BCSPRFTP>();
+            List<BCSPRFTP> items = null;
             if (null != tbl && null != tbl.Rows)
             {
                 int cnt = tbl.Rows.Count;
+                items = new List<BCSPRFTP>();
                 for (int i = 0; i < cnt; i++)
                 {
                     var row = tbl.Rows[i];
@@ -198,6 +212,13 @@ namespace M3.Cord.Models
 
                 return query;
             }
+
+            public static List<BCSPRFTP> Gets()
+            {
+                string query = GetQuery();
+                return Gets(query);
+            }
+
             /// <summary>
             /// Gets from AS400
             /// </summary>
@@ -207,7 +228,7 @@ namespace M3.Cord.Models
             {
                 MethodBase med = MethodBase.GetCurrentMethod();
 
-                List<BCSPRFTP> rets = new List<BCSPRFTP>();
+                List<BCSPRFTP> rets = null;
 
                 if (!AS400DbServer.Instance.Connected)
                 {
@@ -227,8 +248,30 @@ namespace M3.Cord.Models
                 catch (Exception ex)
                 {
                     med.Err(ex);
+                    rets = null;
                 }
 
+                return rets;
+            }
+
+            public static List<BCSPRFTP> LoadFromFile()
+            {
+                MethodBase med = MethodBase.GetCurrentMethod();
+
+                List<BCSPRFTP> rets = null;
+                try
+                {
+                    string fileName = Path.Combine(DbPath, "BCSPRFTP.json");
+                    if (File.Exists(fileName))
+                    {
+                        rets = NJson.LoadFromFile<List<BCSPRFTP>>(fileName);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    med.Err(ex);
+                    rets = null;
+                }
                 return rets;
             }
         }
@@ -362,7 +405,11 @@ namespace M3.Cord.Models
 
                 try
                 {
-                    foreach (var item in values) { Save(item); }
+                    foreach (var item in values) 
+                    { 
+                        Save(item); 
+                    }
+                    ret.Success(); // mark as success
                 }
                 catch (Exception ex)
                 {
