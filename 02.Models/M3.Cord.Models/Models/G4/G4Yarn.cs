@@ -466,11 +466,9 @@ namespace M3.Cord.Models
         /// </summary>
         /// <param name="ItemYarn"></param>
         /// <param name="EntryDate"></param>
-        /// <param name="YarnType"></param>
         /// <returns></returns>
         public static NDbResult<List<G4Yarn>> SearchYarnStocks(string ItemYarn, 
-            DateTime? EntryDate = new DateTime?(),
-            string YarnType = null)
+            DateTime? EntryDate = new DateTime?())
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -491,7 +489,6 @@ namespace M3.Cord.Models
             var p = new DynamicParameters();
             p.Add("@ItemYarn", ItemYarn);
             p.Add("@EntryDate", EntryDate);
-            p.Add("@YarnType", YarnType);
 
             try
             {

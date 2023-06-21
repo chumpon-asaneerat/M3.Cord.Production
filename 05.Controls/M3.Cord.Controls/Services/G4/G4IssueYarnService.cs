@@ -165,7 +165,7 @@ namespace M3.Cord
                 return -1;
             int idx = _issueItems.FindIndex(item =>
             {
-                bool match = (string.CompareOrdinal(item.PalletNo, palletNo) == 0);
+                bool match = (string.CompareOrdinal(item.PalletNo.ToUpper(), palletNo.ToUpper()) == 0);
                 return match;
             });
             return idx;

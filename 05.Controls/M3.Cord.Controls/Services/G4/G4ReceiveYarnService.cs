@@ -161,7 +161,7 @@ namespace M3.Cord
                     {
                         yarn.ReceiveDate = DateTime.Now;
                         yarn.ReceiveBy = 1; // need userid here.
-                        yarn.FinishFlag = true; // mark as finished.
+                        yarn.FinishFlag = false; // this value is true when issue only.
                     });
 
                     var ret = G4Yarn.Save(_receives);
@@ -178,7 +178,7 @@ namespace M3.Cord
         /// </summary>
         /// <param name="importMode"></param>
         /// <returns></returns>
-        public int LoadFromAS400(bool importMode = false)
+        public int LoadFromAS400(bool importMode = true)
         {
             int ret = -1;
 
