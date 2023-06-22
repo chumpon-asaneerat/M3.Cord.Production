@@ -4,11 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:npage="clr-namespace:NLib.Wpf.Test.App.Pages"
+        xmlns:local="clr-namespace:NLib.Wpf.Test.App.Controls"
         Title="NLib Wpf Test App"
         Height="450"
         Width="800"
         mc:Ignorable="d">
     <Grid>
+        <!--
         <npage:SampleNInputPage />
+        -->
+        <local:TestFormControl />
     </Grid>
 </Window>
