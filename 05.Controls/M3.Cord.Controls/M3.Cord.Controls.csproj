@@ -95,6 +95,18 @@
     <None Include="Controls\_V1\Fields\TextBoxField.xaml.cs">
       <DependentUpon>TextBoxField.xaml</DependentUpon>
     </None>
+    <Compile Include="Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml.cs">
+      <DependentUpon>HeaderPart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\FirstTwist\S1\S1ProductConditionControl.xaml.cs">
+      <DependentUpon>S1ProductConditionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\FirstTwist\S4x1\S4x1UpTwisterConditionControl.xaml.cs">
+      <DependentUpon>S4x1UpTwisterConditionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml.cs">
+      <DependentUpon>S4x2UpTwisterConditionControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StatusBar\Elements\AppVersionElement.xaml.cs">
       <DependentUpon>AppVersionElement.xaml</DependentUpon>
     </Compile>
@@ -285,6 +297,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\FirstTwist\S1\S1ProductConditionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\FirstTwist\S4x1\S4x1UpTwisterConditionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\StatusBar\Elements\AppVersionElement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -406,7 +434,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\Documents\Ageing\Elements\" />
-    <Folder Include="Controls\Documents\FirstTwist\Elements\" />
+    <Folder Include="Controls\Documents\FirstTwist\S4x1\Elements\" />
+    <Folder Include="Controls\Documents\FirstTwist\S4x2\Elements\" />
     <Folder Include="Controls\Documents\SamplingDetails\Elements\" />
     <Folder Include="Pages\Documents\" />
   </ItemGroup>
