@@ -16,6 +16,10 @@
         <SolidColorBrush x:Key="FirstTwistBGHover" Color="DarkRed" />
         <SolidColorBrush x:Key="FirstTwistFG" Color="WhiteSmoke" />
 
+        <SolidColorBrush x:Key="SamplingBG" Color="Goldenrod" />
+        <SolidColorBrush x:Key="SamplingBGHover" Color="DarkGoldenrod" />
+        <SolidColorBrush x:Key="SamplingFG" Color="WhiteSmoke" />
+
         <SolidColorBrush x:Key="AgeingBG" Color="ForestGreen" />
         <SolidColorBrush x:Key="AgeingBGHover" Color="DarkGreen" />
         <SolidColorBrush x:Key="AgeingFG" Color="WhiteSmoke" />
@@ -62,6 +66,31 @@
                             <Trigger Property="IsFocused" Value="True">
                                 <Setter Property="Background" Value="{StaticResource FirstTwistBGHover}" />
                                 <Setter Property="Foreground" Value="{StaticResource FirstTwistFG}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="SamplingButtonStyle"
+               BasedOn="{StaticResource CommonButtonStyle}"
+               TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource SamplingBG}" />
+            <Setter Property="Foreground" Value="{StaticResource SamplingFG}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource SamplingBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource SamplingFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource SamplingBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource SamplingFG}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -152,38 +181,85 @@
                 <ctrl:NGroupMenuItem HeaderText="First Twist"
                                      HeaderBackground="{StaticResource FirstTwistBG}"
                                      Style="{StaticResource CommonGroupItemStyle}">
-                    <!--  RECEIVE RAW MATERIAL  -->
-                    <Button x:Name="cmdReceiveRawMaterial"
-                            Style="{StaticResource FirstTwistButtonStyle}">
+                    <!--  CONDITION S-1 (RF-TW-10-06)  -->
+                    <Button x:Name="cmdS1ProductCondition" Style="{StaticResource FirstTwistButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="Receive" />
+                            <Run Text="S-1 Condition Sheet" />
                             <LineBreak />
-                            <Run Text="Raw Material" />
+                            <Run Text="Production Condition sheet" FontSize="18" />
+                            <LineBreak />
+                            <Run Text="S-1" FontSize="18" />
+                            <LineBreak />
+                            <Run Text="(RF-TW-10-06)" FontSize="18" />
                         </TextBlock>
                     </Button>
-                    <!--  ISSUE RAW MATERIAL  -->
-                    <Button x:Name="cmdIssueRawMaterial"
-                            Style="{StaticResource FirstTwistButtonStyle}">
+                    <!--  CONDITION S-4-1 (RF- TW-13 -05)  -->
+                    <Button x:Name="cmdS4x1ProductCondition" Style="{StaticResource FirstTwistButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="Issue" />
+                            <Run Text="S - 4 UP Twister" />
                             <LineBreak />
-                            <Run Text="Raw Material" />
+                            <Run Text="Twist product condition" FontSize="18" />
+                            <LineBreak />
+                            <Run Text="S-4-1" FontSize="18" />
+                            <LineBreak />
+                            <Run Text="(RF- TW-13 -05)" FontSize="18" />
                         </TextBlock>
                     </Button>
-                    <!--  CHECK STOCK  -->
-                    <Button x:Name="cmdCheckStock"
-                            Style="{StaticResource FirstTwistButtonStyle}">
+                    <!--  CONDITION S-4-2 (RF- TW-13 -05)  -->
+                    <Button x:Name="cmdS4x2ProductCondition" Style="{StaticResource FirstTwistButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="Check Stock" />
+                            <Run Text="S - 4 UP Twister" />
+                            <LineBreak />
+                            <Run Text="Twist product condition" FontSize="18" />
+                            <LineBreak />
+                            <Run Text="S-4-2" FontSize="18" />
+                            <LineBreak />
+                            <Run Text="(RF- TW-13 -05)" FontSize="18" />
                         </TextBlock>
                     </Button>
-                    <!--  RECEIVE RETURN MATERIAL  -->
-                    <Button x:Name="cmdReceiveReturnMaterial"
-                            Style="{StaticResource FirstTwistButtonStyle}">
+                </ctrl:NGroupMenuItem>
+                <!--  SAMPLING DETAILS MENU  -->
+                <ctrl:NGroupMenuItem HeaderText="Sampling Details"
+                                     HeaderBackground="{StaticResource SamplingBG}"
+                                     Style="{StaticResource CommonGroupItemStyle}">
+                    <!--  CORD SAMPLING DETAILS (FM-PD-03-00)  -->
+                    <Button x:Name="cmdCordSamplingDetails03x00" Style="{StaticResource SamplingButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="Receive" />
+                            <Run Text="Cord" />
                             <LineBreak />
-                            <Run Text="Return Material" />
+                            <Run Text="Sampling Details" />
+                            <LineBreak />
+                            <Run Text="(FM-PD-03-00)" FontSize="18" />
+                        </TextBlock>
+                    </Button>
+                    <!--  CORD SAMPLING DETAILS (FM-PD-03-01)  -->
+                    <Button x:Name="cmdCordSamplingDetails03x01" Style="{StaticResource SamplingButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Cord" />
+                            <LineBreak />
+                            <Run Text="Sampling Details" />
+                            <LineBreak />
+                            <Run Text="(FM-PD-03-01)" FontSize="18" />
+                        </TextBlock>
+                    </Button>
+                    <!--  CORD SAMPLING DETAILS (FM-PD-03-02)  -->
+                    <Button x:Name="cmdCordSamplingDetails03x02" Style="{StaticResource SamplingButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Cord" />
+                            <LineBreak />
+                            <Run Text="Sampling Details" />
+                            <LineBreak />
+                            <Run Text="(FM-PD-03-02)" FontSize="18" />
+                        </TextBlock>
+                    </Button>
+                    <!--  CORD SAMPLING DETAILS (FM-PD-03-03)  -->
+                    <Button x:Name="cmdCordSamplingDetails03x03" Style="{StaticResource SamplingButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Cord" />
+                            <LineBreak />
+                            <Run Text="Sampling Details" />
+                            <LineBreak />
+                            <Run Text="(FM-PD-03-03)" FontSize="18" />
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>
@@ -192,51 +268,28 @@
                                      HeaderBackground="{StaticResource AgeingBG}"
                                      Style="{StaticResource CommonGroupItemStyle}">
                     <!--  RECEIVE YARN  -->
-                    <Button x:Name="cmdReceiveYarn"
-                            Style="{StaticResource AgeingButtonStyle}">
+                    <!--
+                    <Button x:Name="cmdReceiveYarn" Style="{StaticResource AgeingButtonStyle}">
                         <TextBlock TextAlignment="Center">
                             <Run Text="Receive" />
                             <LineBreak />
                             <Run Text="Yarn" />
                         </TextBlock>
                     </Button>
-                    <!--  PLANNING  -->
-                    <Button x:Name="cmdPlaning"
-                            Style="{StaticResource AgeingButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="Product" />
-                            <LineBreak />
-                            <Run Text="Planning" />
-                        </TextBlock>
-                    </Button>
+                    -->
                 </ctrl:NGroupMenuItem>
-                <!--  DIP MENU -->
+                <!--  DIP MENU  -->
                 <ctrl:NGroupMenuItem HeaderText="DIP"
                                      HeaderBackground="{StaticResource DipBG}"
                                      Style="{StaticResource CommonGroupItemStyle}">
                     <!--  FIRST TWISTS  -->
-                    <Button x:Name="cmdFirstTwist"
-                            Style="{StaticResource DipButtonStyle}">
+                    <!--
+                    <Button x:Name="cmdFirstTwist" Style="{StaticResource DipButtonStyle}">
                         <TextBlock TextAlignment="Center">
                             <Run Text="1st Twisting" />
                         </TextBlock>
                     </Button>
-                    <!--  Ageing  -->
-                    <Button x:Name="cmdAging"
-                            Style="{StaticResource DipButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="Ageing" />
-                            <LineBreak />
-                            <Run Text="(for DIP Cord)" />
-                        </TextBlock>
-                    </Button>
-                    <!--  Dipping  -->
-                    <Button x:Name="cmdDipping"
-                            Style="{StaticResource DipButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="Dipping" />
-                        </TextBlock>
-                    </Button>
+                    -->
                 </ctrl:NGroupMenuItem>
                 <!--  OTHER MENU  -->
                 <ctrl:NGroupMenuItem HeaderText="Other"
