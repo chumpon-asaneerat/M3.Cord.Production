@@ -258,7 +258,7 @@
                         <TextBlock TextAlignment="Center">
                             <Run Text="Cord Documents" />
                             <LineBreak />
-                            <Run Text="(Confirmation)" />
+                            <Run Text="(Confirmation)" FontSize="18" />
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>

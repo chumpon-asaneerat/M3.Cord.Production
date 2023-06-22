@@ -173,7 +173,7 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <page:NPage HeaderText="MAIN MENU">
+    <page:NPage HeaderText="DOCUMENTS MENU">
         <DockPanel LastChildFill="True" Margin="5">
             <TextBlock DockPanel.Dock="Top" Height="20" />
             <ctrl:NGroupMenu>
