@@ -6,144 +6,97 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="1200">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <!--  HEADER TABLE 1  -->
-        <Grid Grid.Row="0">
-            <!--#region GRID LAYOUT DEFINITIONS-->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <!--#endregion GRID LAYOUT DEFINITIONS-->
-
-            <!--  DOCUMENT TITLE  -->
-            <TextBlock Grid.Row="0"
-                       Grid.Column="0"
-                       Grid.ColumnSpan="4"
-                       Margin="5"
-                       TextAlignment="Center"
-                       VerticalAlignment="Center">
-                <Run Text="Production condition sheet (ใบสภาวะการผลิต)"
-                     FontSize="{StaticResource FontSize24}"
-                     FontWeight="DemiBold" />
-            </TextBlock>
+             d:DesignWidth="1000">
+    <DockPanel LastChildFill="True" Margin="5">
+        <!--  HEADER: Production condition sheet (ใบสภาวะการผลิต)  -->
+        <DockPanel DockPanel.Dock="Top"
+                   LastChildFill="True"
+                   Margin="5">
             <!--  LOT  -->
             <ctrl:NTextBox x:Name="txtLotNo"
-                           Grid.Row="1"
-                           Grid.Column="0"
+                           DockPanel.Dock="Left"
                            CaptionText="Lot"
                            Width="200" />
             <!--  DATE  -->
             <ctrl:NDatePicker x:Name="dtDocDate"
-                              Grid.Row="1"
-                              Grid.Column="1"
+                              DockPanel.Dock="Left"
                               CaptionText="Date"
                               Width="200" />
             <!--  ISSUE BY  -->
             <ctrl:NTextBox x:Name="txtIssueBy"
-                           Grid.Row="1"
-                           Grid.Column="2"
+                           DockPanel.Dock="Left"
                            CaptionText="Issue By"
                            Width="220" />
             <!--  APPROVE BY  -->
             <ctrl:NTextBox x:Name="txtApproveBy"
-                           Grid.Row="1"
-                           Grid.Column="3"
+                           DockPanel.Dock="Left"
                            CaptionText="Approve By"
                            Width="220" />
-        </Grid>
-        <!--  HEADER TABLE 2  -->
-        <Grid Grid.Row="1">
-            <!--#region GRID LAYOUT DEFINITIONS-->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <!--#endregion GRID LAYOUT DEFINITIONS-->
-
-            <!--  Manufacturing Conditions No  -->
-            <TextBlock Grid.Row="0"
-                       Grid.Column="0"
-                       Grid.ColumnSpan="2"
-                       Margin="5"
-                       FontSize="{StaticResource FontSize24}"
-                       FontWeight="DemiBold"
-                       TextAlignment="Center"
-                       VerticalAlignment="Center">
-                <Run Text="Manufacturing Conditions No." />
-                <LineBreak />
-                <Run Text="(เบอร์สภาวะการผลิต)" />
-            </TextBlock>
-            <!--  Destination (Customer)  -->
-            <TextBlock Grid.Row="1"
-                       Grid.Column="0"
-                       Margin="5"
-                       TextAlignment="Center"
-                       VerticalAlignment="Center">
-                <Run Text="Destination (ลูกค้า)"
-                     FontSize="{StaticResource FontSize24}"
-                     FontWeight="DemiBold" />
-            </TextBlock>
-            <TextBox x:Name="txtCustomerName" 
-                     Grid.Row="1"
-                     Grid.Column="1"
-                     Margin="2"
-                     Style="{StaticResource CommonTextBox}" 
-                     Width="250"/>
-            <!--  Use (Product)  -->
-            <TextBlock Grid.Row="2"
-                       Grid.Column="0"
-                       Margin="5"
-                       TextAlignment="Center"
-                       VerticalAlignment="Center">
-                <Run Text="Use (ผลิตภัณฑ์)"
-                     FontSize="{StaticResource FontSize24}"
-                     FontWeight="DemiBold" />
-            </TextBlock>
-            <TextBox x:Name="txtProductName" 
-                     Grid.Row="2"
-                     Grid.Column="1"
-                     Margin="2"
-                     Style="{StaticResource CommonTextBox}" 
-                     Width="250"/>
-
-            <!--  Yarn, (SC)  -->
-            <TextBlock Grid.Row="0"
-                       Grid.Column="2"
-                       Margin="5"
-                       FontSize="{StaticResource FontSize24}"
-                       FontWeight="DemiBold"
-                       TextAlignment="Center"
-                       VerticalAlignment="Center">
-                <Run Text="Yarn (ด้าย), (SC)" />
-            </TextBlock>
-            <TextBox x:Name="txtItemYarn" 
-                     Grid.Row="0"
-                     Grid.Column="3"
-                     Margin="2"
-                     Style="{StaticResource CommonTextBox}" 
-                     Width="250"/>
-        </Grid>
-    </Grid>
+            <Grid />
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top"
+                   LastChildFill="True"
+                   Margin="5">
+            <!--  Manufacturing conditions no. (เบอร์สภาวะการผลิต)  -->
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <DockPanel LastChildFill="True">
+                    <!--  Destination (Customer)  -->
+                    <ctrl:NTextBox x:Name="txtCustomerName"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Destination&#x0a;(ลูกค้า)"
+                                   Width="250" />
+                    <!--  Use (Product)  -->
+                    <ctrl:NTextBox x:Name="txtProductName"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Use&#x0a;(ผลิตภัณฑ์)"
+                                   Width="250" />
+                    <Grid />
+                </DockPanel>
+            </DockPanel>
+            <!--  โครงสร้างเชือก  -->
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <DockPanel LastChildFill="True">
+                    <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                        <!--  Yarn, (SC)  -->
+                        <ctrl:NTextBox x:Name="txtItemYarn"
+                                       DockPanel.Dock="Left"
+                                       CaptionText="&#x0a;Yarn (ด้าย), (SC)"
+                                       Width="250" />
+                        <!--  Cord structure  -->
+                        <ctrl:NTextBox x:Name="txtCordStructure"
+                                       DockPanel.Dock="Left"
+                                       CaptionText="Cord structure&#x0a;(โครงสร้างเชือก)"
+                                       Width="250" />
+                        <!--  Standard twisting number  -->
+                        <ctrl:NTextBox x:Name="txtStdTwist"
+                                       DockPanel.Dock="Left"
+                                       CaptionText="Standard Twisting Number&#x0a;(จำนวนเกลียวมาตรฐาน), (SC)"
+                                       Width="350" />
+                        <Grid />
+                    </DockPanel>
+                </DockPanel>
+            </DockPanel>
+            <!--  Processing route (ลำดับของกระบวนการ)  -->
+            <DockPanel DockPanel.Dock="Top"
+                       LastChildFill="True"
+                       Margin="5,2">
+                <TextBlock DockPanel.Dock="Left"
+                           FontSize="{StaticResource FontSize24}"
+                           FontWeight="DemiBold"
+                           VerticalAlignment="Center"
+                           Style="{StaticResource LabelText}">
+                    <Run Text="Processing route (ลำดับของกระบวนการ) : " />
+                    <Run Text="S-1" />
+                    <Run Text="&#x2794;" />
+                    <Run Text="S-13" />
+                    <Run Text="&#x2794;" />
+                    <Run Text="S-8" />
+                    <Run Text="&#x2794;" />
+                    <Run Text="S-24" />
+                </TextBlock>
+                <Grid />
+            </DockPanel>
+            <Grid />
+        </DockPanel>
+    </DockPanel>
 </UserControl>
