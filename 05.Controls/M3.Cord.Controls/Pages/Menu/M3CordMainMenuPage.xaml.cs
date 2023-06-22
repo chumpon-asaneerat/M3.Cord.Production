@@ -146,6 +146,13 @@ namespace M3.Cord.Pages
             // Dipping
         }
 
+        private void cmdCordDocumentMenu_Click(object sender, RoutedEventArgs e)
+        {
+            // M3 Cord Document Menu
+            var page = M3CordApp.Pages.M3CordDocumentMenu;
+            PageContentManager.Instance.Current = page;
+        }
+
         #endregion
     }
 }

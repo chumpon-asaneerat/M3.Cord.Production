@@ -118,6 +118,31 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="OtherButtonStyle"
+               BasedOn="{StaticResource CommonButtonStyle}"
+               TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource OtherBG}" />
+            <Setter Property="Foreground" Value="{StaticResource OtherFG}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource OtherBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource OtherFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource OtherBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource OtherFG}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
     <page:NPage HeaderText="MAIN MENU">
         <DockPanel LastChildFill="True" Margin="5">
@@ -225,7 +250,18 @@
                 <!--  OTHER MENU  -->
                 <ctrl:NGroupMenuItem HeaderText="Other"
                                      HeaderBackground="{StaticResource OtherBG}"
-                                     Style="{StaticResource CommonGroupItemStyle}" />
+                                     Style="{StaticResource CommonGroupItemStyle}">
+                    <!--  CORD DOCUMENT MENU  -->
+                    <Button x:Name="cmdCordDocumentMenu"
+                            Click="cmdCordDocumentMenu_Click"
+                            Style="{StaticResource OtherButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Cord Documents" />
+                            <LineBreak />
+                            <Run Text="(Confirmation)" />
+                        </TextBlock>
+                    </Button>
+                </ctrl:NGroupMenuItem>
             </ctrl:NGroupMenu>
         </DockPanel>
     </page:NPage>

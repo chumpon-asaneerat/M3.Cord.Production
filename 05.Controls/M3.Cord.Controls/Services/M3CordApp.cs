@@ -70,6 +70,16 @@ namespace M3.Cord
 
             #endregion
 
+            #region Document Menu (Cord) - Temporary
+
+            /// <summary>Gets M3 Cord Document Menu Page.</summary>
+            public static Cord.Pages.M3DocumentMenuPage M3CordDocumentMenu
+            {
+                get { return GetPage<Cord.Pages.M3DocumentMenuPage>(); }
+            }
+
+            #endregion
+
             #region G4
 
             /// <summary>Gets G4 Receive Raw Material Page.</summary>

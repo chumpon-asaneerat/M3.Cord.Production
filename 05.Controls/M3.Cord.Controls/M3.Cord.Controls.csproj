@@ -116,7 +116,7 @@
     <Compile Include="Pages\G4\G4ReceiveRawMaterialPage.xaml.cs">
       <DependentUpon>G4ReceiveRawMaterialPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\M3DocumentMenuPage.xaml.cs">
+    <Compile Include="Pages\Menu\M3DocumentMenuPage.xaml.cs">
       <DependentUpon>M3DocumentMenuPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Menu\M3CordMainMenuPage.xaml.cs">
@@ -325,7 +325,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\M3DocumentMenuPage.xaml">
+    <Page Include="Pages\Menu\M3DocumentMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
