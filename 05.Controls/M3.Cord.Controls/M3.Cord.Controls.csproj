@@ -407,5 +407,8 @@
   <ItemGroup>
     <Folder Include="Pages\Documents\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Common\toray.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
