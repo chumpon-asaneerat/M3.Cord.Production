@@ -50,51 +50,51 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Fields\DatePickerField.xaml.cs">
+    <None Include="Controls\Fields\DatePickerField.xaml.cs">
       <DependentUpon>DatePickerField.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL01.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL01.xaml.cs">
       <DependentUpon>ProductionConditionL01.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL02.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL02.xaml.cs">
       <DependentUpon>ProductionConditionL02.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL03.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL03.xaml.cs">
       <DependentUpon>ProductionConditionL03.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL04.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL04.xaml.cs">
       <DependentUpon>ProductionConditionL04.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL05.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL05.xaml.cs">
       <DependentUpon>ProductionConditionL05.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL06.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL06.xaml.cs">
       <DependentUpon>ProductionConditionL06.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL07.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL07.xaml.cs">
       <DependentUpon>ProductionConditionL07.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL08.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL08.xaml.cs">
       <DependentUpon>ProductionConditionL08.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL09.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL09.xaml.cs">
       <DependentUpon>ProductionConditionL09.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL10.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL10.xaml.cs">
       <DependentUpon>ProductionConditionL10.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL11.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL11.xaml.cs">
       <DependentUpon>ProductionConditionL11.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL12.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL12.xaml.cs">
       <DependentUpon>ProductionConditionL12.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\ProductionConditions\ProductionConditionControl.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\ProductionConditionControl.xaml.cs">
       <DependentUpon>ProductionConditionControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Fields\TextBoxField.xaml.cs">
+    </None>
+    <None Include="Controls\Fields\TextBoxField.xaml.cs">
       <DependentUpon>TextBoxField.xaml</DependentUpon>
-    </Compile>
+    </None>
     <Compile Include="Controls\StatusBar\Elements\AppVersionElement.xaml.cs">
       <DependentUpon>AppVersionElement.xaml</DependentUpon>
     </Compile>
@@ -225,66 +225,66 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\Fields\DatePickerField.xaml">
+    <None Include="Controls\Fields\DatePickerField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL01.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL01.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL02.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL02.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL03.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL03.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL04.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL04.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL05.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL05.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL06.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL06.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL07.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL07.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL08.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL08.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL09.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL09.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL10.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL10.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL11.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL11.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL12.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\Elements\ProductionConditionL12.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\ProductionConditions\ProductionConditionControl.xaml">
+    </None>
+    <None Include="Controls\Fields\ProductionConditions\ProductionConditionControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Fields\TextBoxField.xaml">
+    </None>
+    <None Include="Controls\Fields\TextBoxField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
+    </None>
     <Page Include="Controls\StatusBar\Elements\AppVersionElement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -405,6 +405,9 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controls\Ageing\Elements\" />
+    <Folder Include="Controls\FirstTwist\Elements\" />
+    <Folder Include="Controls\SamplingDetails\Elements\" />
     <Folder Include="Pages\Documents\" />
   </ItemGroup>
   <ItemGroup>
