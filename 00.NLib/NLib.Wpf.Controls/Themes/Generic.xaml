@@ -30,15 +30,19 @@
         <!--
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Common/CommonStyle.ImageButton.xaml" />
         -->
+        <!--  NPage  -->
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPage/NPage.xaml" />
-
+        <!--  NGroupMenu, NGroupMenuItem  -->
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NGroupMenu/NGroupMenu.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NGroupMenu/NGroupMenuItem.xaml" />
-
+        <!--  NInputGroup, NTextBox, NPasswordBox, NComboBox, NDatePicker  -->
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NInputs/NInputGroup.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NInputs/NTextBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NInputs/NPasswordBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NInputs/NComboBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NInputs/NDatePicker.xaml" />
+        <!--  NPreForm  -->
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPreForms/NPreForm.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPreForms/NPreFormTable.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

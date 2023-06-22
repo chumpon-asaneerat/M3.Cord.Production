@@ -23,7 +23,39 @@ using System.Windows.Shapes;
 
 namespace NLib.Wpf.Controls
 {
-    public class NPreForm
+    /// <summary>
+    /// The NPreForm Control.
+    /// </summary>
+    public class NPreForm : Control
     {
+        #region Constructor
+
+        static NPreForm()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(NPreForm), new FrameworkPropertyMetadata(typeof(NPreForm)));
+        }
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public NPreForm()
+        {
+            // init
+            //Items = new ObservableCollection<NGroupMenuItem>();
+        }
+
+        #endregion
+
+        #region Override Methods
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        #endregion
     }
 }

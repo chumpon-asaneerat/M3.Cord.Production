@@ -23,7 +23,10 @@ using System.Windows.Shapes;
 
 namespace NLib.Wpf.Controls
 {
-    public class NPreFormItem
+    /// <summary>
+    /// The NPreFormItem control.
+    /// </summary>
+    public class NPreFormItem : Control
     {
     }
 }
