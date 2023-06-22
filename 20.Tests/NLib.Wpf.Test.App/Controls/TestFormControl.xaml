@@ -8,5 +8,25 @@
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800">
-    <Grid />
+    <ctrl:NPreForm>
+        <ctrl:NPreForm.Header>
+            <DockPanel LastChildFill="True">
+                <ctrl:NTextBox CaptionText="Lot No:" DockPanel.Dock="Left" />
+                <ctrl:NTextBox CaptionText="Customer:" DockPanel.Dock="Left" />
+                <ctrl:NTextBox CaptionText="Product:" DockPanel.Dock="Left" />
+                <Grid/>
+            </DockPanel>
+        </ctrl:NPreForm.Header>
+        <ctrl:NPreForm.Table>
+            <ctrl:NPreFormTable />
+        </ctrl:NPreForm.Table>
+        <ctrl:NPreForm.Footer>
+            <DockPanel LastChildFill="True">
+                <ctrl:NTextBox CaptionText="Total:" DockPanel.Dock="Left" />
+                <ctrl:NTextBox CaptionText="VAT:" DockPanel.Dock="Left" />
+                <ctrl:NTextBox CaptionText="Grand Total:" DockPanel.Dock="Left" />
+                <Grid/>
+            </DockPanel>
+        </ctrl:NPreForm.Footer>
+    </ctrl:NPreForm>
 </UserControl>

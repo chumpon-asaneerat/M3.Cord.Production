@@ -7,9 +7,15 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:NPreForm}">
-                    <Grid Margin="0"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Stretch" />
+                    <DockPanel LastChildFill="True">
+                        <ContentPresenter x:Name="PART_Header"
+                                          DockPanel.Dock="Top"
+                                          Content="{TemplateBinding Header}" />
+                        <ContentPresenter x:Name="PART_Footer"
+                                          DockPanel.Dock="Bottom"
+                                          Content="{TemplateBinding Footer}" />
+                        <ContentPresenter x:Name="PART_Table" Content="{TemplateBinding Table}" />
+                    </DockPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
