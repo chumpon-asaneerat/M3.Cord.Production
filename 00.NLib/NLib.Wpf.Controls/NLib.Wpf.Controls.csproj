@@ -165,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\Converters\WatermarkAlignmentToDockConverter.cs" />
+    <Compile Include="Controls\NPreForms\NPreForm.cs" />
+    <Compile Include="Controls\NPreForms\NPreFormTable.cs" />
+    <Compile Include="Controls\NPreForms\NPreFormItem.cs" />
     <Compile Include="Controls\NInputs\NComboBox.cs" />
     <Compile Include="Controls\NInputs\NDatePicker.cs" />
     <Compile Include="Controls\NInputs\NInputControlBase.cs" />

@@ -34,8 +34,8 @@
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <ctrl:NPasswordBox CaptionText="Password:"
                                    x:Name="txtPwd"
-                                   TextAlignment="Center" 
-                                   WatermarkText="Enter Password."/>
+                                   TextAlignment="Center"
+                                   WatermarkText="Enter Password." />
                 <Button x:Name="cmdCheck"
                         Content="Check"
                         FontSize="14"
