@@ -196,7 +196,7 @@
                     <!--  CONDITION S-4-1 (RF- TW-13 -05)  -->
                     <Button x:Name="cmdS4x1ProductCondition" Style="{StaticResource FirstTwistButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="S - 4 UP Twister" />
+                            <Run Text="S-4 UP Twister" />
                             <LineBreak />
                             <Run Text="Twist product condition" FontSize="18" />
                             <LineBreak />
@@ -208,7 +208,7 @@
                     <!--  CONDITION S-4-2 (RF- TW-13 -05)  -->
                     <Button x:Name="cmdS4x2ProductCondition" Style="{StaticResource FirstTwistButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="S - 4 UP Twister" />
+                            <Run Text="S-4 UP Twister" />
                             <LineBreak />
                             <Run Text="Twist product condition" FontSize="18" />
                             <LineBreak />
@@ -267,16 +267,18 @@
                 <ctrl:NGroupMenuItem HeaderText="Ageing"
                                      HeaderBackground="{StaticResource AgeingBG}"
                                      Style="{StaticResource CommonGroupItemStyle}">
-                    <!--  RECEIVE YARN  -->
-                    <!--
-                    <Button x:Name="cmdReceiveYarn" Style="{StaticResource AgeingButtonStyle}">
+                    <!--  AGEING CONDITION S5 (RF- TW-14-04)  -->
+                    <Button x:Name="cmdAgeingCondition" Style="{StaticResource AgeingButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="Receive" />
+                            <Run Text="S-5 Ageing Condition" />
                             <LineBreak />
-                            <Run Text="Yarn" />
+                            <Run Text="Confirmation Condition Check sheet" FontSize="18" />
+                            <LineBreak />
+                            <Run Text="S-5" FontSize="18" />
+                            <LineBreak />
+                            <Run Text="(RF- TW-14-04)" FontSize="18" />
                         </TextBlock>
                     </Button>
-                    -->
                 </ctrl:NGroupMenuItem>
                 <!--  DIP MENU  -->
                 <ctrl:NGroupMenuItem HeaderText="DIP"
