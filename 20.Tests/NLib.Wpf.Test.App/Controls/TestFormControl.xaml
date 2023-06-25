@@ -18,11 +18,9 @@
             </DockPanel>
         </ctrl:NPreForm.Header>
         <ctrl:NPreForm.Body>
-            <ctrl:NPreFormTable Background="Beige">
+            <ctrl:NPreFormTable>
                 <ctrl:NPreFormColumn HeaderText="No" />
                 <ctrl:NPreFormColumn HeaderText="Description" />
-                <ctrl:NPreFormColumn HeaderText="Unit Price" />
-                <ctrl:NPreFormColumn HeaderText="Total" />
             </ctrl:NPreFormTable>
         </ctrl:NPreForm.Body>
         <ctrl:NPreForm.Footer>

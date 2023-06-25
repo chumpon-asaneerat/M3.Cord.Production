@@ -10,7 +10,6 @@
                     <ItemsControl ItemsSource="{Binding Columns, RelativeSource={RelativeSource TemplatedParent}}"
                                   Focusable="False"
                                   IsTabStop="False"
-                                  Background="Aqua"
                                   VirtualizingPanel.IsVirtualizing="True"
                                   VirtualizingPanel.VirtualizationMode="Recycling">
                         <ItemsControl.ItemsPanel>
