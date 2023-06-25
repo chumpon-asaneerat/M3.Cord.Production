@@ -158,6 +158,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Controls\NPreForms\NPreFormColumn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Controls\NPreForms\NPreFormTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -174,6 +178,7 @@
   <ItemGroup>
     <Compile Include="Controls\Converters\WatermarkAlignmentToDockConverter.cs" />
     <Compile Include="Controls\NPreForms\NPreForm.cs" />
+    <Compile Include="Controls\NPreForms\NPreFormColumn.cs" />
     <Compile Include="Controls\NPreForms\NPreFormTable.cs" />
     <Compile Include="Controls\NPreForms\NPreFormItem.cs" />
     <Compile Include="Controls\NInputs\NComboBox.cs" />
