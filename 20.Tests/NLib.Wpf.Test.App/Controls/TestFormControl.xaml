@@ -17,9 +17,9 @@
                 <Grid/>
             </DockPanel>
         </ctrl:NPreForm.Header>
-        <ctrl:NPreForm.Table>
+        <ctrl:NPreForm.Body>
             <ctrl:NPreFormTable />
-        </ctrl:NPreForm.Table>
+        </ctrl:NPreForm.Body>
         <ctrl:NPreForm.Footer>
             <DockPanel LastChildFill="True">
                 <ctrl:NTextBox CaptionText="Total:" DockPanel.Dock="Left" />

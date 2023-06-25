@@ -14,7 +14,7 @@
                         <ContentPresenter x:Name="PART_Footer"
                                           DockPanel.Dock="Bottom"
                                           Content="{TemplateBinding Footer}" />
-                        <ContentPresenter x:Name="PART_Table" Content="{TemplateBinding Table}" />
+                        <ContentPresenter x:Name="PART_Body" Content="{TemplateBinding Body}" />
                     </DockPanel>
                 </ControlTemplate>
             </Setter.Value>

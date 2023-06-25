@@ -28,6 +28,10 @@ namespace NLib.Wpf.Controls
     /// <summary>
     /// The NPreForm Control.
     /// </summary>
+    [TemplatePart(Name = "PART_Header", Type = typeof(ContentPresenter))]
+    [TemplatePart(Name = "PART_Body", Type = typeof(ContentPresenter))]
+    [TemplatePart(Name = "PART_Footer", Type = typeof(ContentPresenter))]
+    [ContentProperty(nameof(Body))]
     public class NPreForm : Control
     {
         #region Constructor
@@ -79,23 +83,23 @@ namespace NLib.Wpf.Controls
 
         #endregion
 
-        #region Table
+        #region Body
 
         /// <summary>
-        /// The TableProperty Dependency property.
+        /// The BodyProperty Dependency property.
         /// </summary>
-        public static readonly DependencyProperty TableProperty =
+        public static readonly DependencyProperty BodyProperty =
             DependencyProperty.Register(
-                nameof(Table),
-                typeof(NPreFormTable),
+                nameof(Body),
+                typeof(object),
                 typeof(NPreForm));
         /// <summary>
-        /// Gets or sets Table Content.
+        /// Gets or sets Body Content.
         /// </summary>
-        public NPreFormTable Table
+        public object Body
         {
-            get { return (NPreFormTable)GetValue(TableProperty); }
-            set { SetValue(TableProperty, value); }
+            get { return (object)GetValue(BodyProperty); }
+            set { SetValue(BodyProperty, value); }
         }
 
         #endregion
