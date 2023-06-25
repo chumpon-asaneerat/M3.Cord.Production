@@ -11,14 +11,25 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:NPreFormColumn}">
-                    <Grid Margin="0">
-                        <Border Background="{TemplateBinding HeaderBackground}">
-                            <TextBlock Style="{StaticResource LabelText}"
-                                       Foreground="{TemplateBinding HeaderForeground}"
-                                       Text="{TemplateBinding HeaderText}"
-                                       TextAlignment="{TemplateBinding HeaderTextAlignment}" />
-                        </Border>
-                    </Grid>
+                    <DockPanel Margin="0" LastChildFill="True">
+                        <ContentPresenter x:Name="PART_Header"
+                                          DockPanel.Dock="Top"
+                                          Content="{TemplateBinding Header}" />
+                        <ItemsControl x:Name="PART_Items"
+                                      ItemsSource="{Binding Items, RelativeSource={RelativeSource TemplatedParent}}"
+                                      Focusable="False"
+                                      IsTabStop="False"
+                                      VirtualizingPanel.IsVirtualizing="True"
+                                      VirtualizingPanel.VirtualizationMode="Recycling">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Stretch"
+                                                IsItemsHost="True" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </DockPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

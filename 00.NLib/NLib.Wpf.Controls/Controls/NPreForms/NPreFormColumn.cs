@@ -26,6 +26,7 @@ namespace NLib.Wpf.Controls
     /// <summary>
     /// The NPreFormColumn Control.
     /// </summary>
+    [ContentProperty(nameof(Items))]
     public class NPreFormColumn : Control
     {
         #region Constructor
@@ -39,8 +40,7 @@ namespace NLib.Wpf.Controls
         /// </summary>
         public NPreFormColumn()
         {
-            // init
-            //Items = new ObservableCollection<NGroupMenuItem>();
+            Items = new ObservableCollection<NPreFormItem>();
         }
 
         #endregion
@@ -56,90 +56,44 @@ namespace NLib.Wpf.Controls
 
         #region Public Properties
 
-        #region HeaderForeground
+        #region Header
 
         /// <summary>
-        /// The HeaderForegroundProperty Dependency property.
+        /// The HeaderProperty Dependency property.
         /// </summary>
-        public static readonly DependencyProperty HeaderForegroundProperty =
+        public static readonly DependencyProperty HeaderProperty =
             DependencyProperty.Register(
-                nameof(HeaderForeground),
-                typeof(Brush),
-                typeof(NPreFormColumn),
-                new FrameworkPropertyMetadata(Brushes.Black, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+                nameof(Header),
+                typeof(object),
+                typeof(NPreFormColumn));
         /// <summary>
-        /// Gets or sets HeaderForeground.
+        /// Gets or sets Header Content.
         /// </summary>
-        public Brush HeaderForeground
+        public object Header
         {
-            get { return (Brush)GetValue(HeaderForegroundProperty); }
-            set { SetValue(HeaderForegroundProperty, value); }
+            get { return (object)GetValue(HeaderProperty); }
+            set { SetValue(HeaderProperty, value); }
         }
 
         #endregion
 
-        #region HeaderBackground
+        #region Items
 
         /// <summary>
-        /// The HeaderBackgroundProperty Dependency property.
+        /// The Items Dependency property.
         /// </summary>
-        public static readonly DependencyProperty HeaderBackgroundProperty =
+        public static readonly DependencyProperty ItemsProperty =
             DependencyProperty.Register(
-                nameof(HeaderBackground),
-                typeof(Brush),
-                typeof(NPreFormColumn),
-                new FrameworkPropertyMetadata(Brushes.Silver, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+                nameof(Items), 
+                typeof(ObservableCollection<NPreFormItem>), 
+                typeof(NPreFormColumn));
         /// <summary>
-        /// Gets or sets HeaderBackground.
+        /// Gets or sets Items.
         /// </summary>
-        public Brush HeaderBackground
+        public ObservableCollection<NPreFormItem> Items
         {
-            get { return (Brush)GetValue(HeaderBackgroundProperty); }
-            set { SetValue(HeaderBackgroundProperty, value); }
-        }
-
-        #endregion
-
-        #region HeaderText
-
-        /// <summary>
-        /// The HeaderTextProperty Dependency property.
-        /// </summary>
-        public static readonly DependencyProperty HeaderTextProperty =
-            DependencyProperty.Register(
-                nameof(HeaderText),
-                typeof(string),
-                typeof(NPreFormColumn),
-                new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
-        /// <summary>
-        /// Gets or sets Header Text.
-        /// </summary>
-        public string HeaderText
-        {
-            get { return (string)GetValue(HeaderTextProperty); }
-            set { SetValue(HeaderTextProperty, value); }
-        }
-
-        #endregion
-
-        #region HeaderTextAlignment
-
-        /// <summary>
-        /// The HeaderTextAlignmentProperty Dependency property.
-        /// </summary>
-        public static readonly DependencyProperty HeaderTextAlignmentProperty =
-            DependencyProperty.Register(
-                nameof(HeaderTextAlignment),
-                typeof(TextAlignment),
-                typeof(NPreFormColumn),
-                new FrameworkPropertyMetadata(TextAlignment.Center, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
-        /// <summary>
-        /// Gets or sets HeaderTextAlignment.
-        /// </summary>
-        public TextAlignment HeaderTextAlignment
-        {
-            get { return (TextAlignment)GetValue(HeaderTextAlignmentProperty); }
-            set { SetValue(HeaderTextAlignmentProperty, value); }
+            get { return (ObservableCollection<NPreFormItem>)GetValue(ItemsProperty); }
+            set { SetValue(ItemsProperty, value); }
         }
 
         #endregion

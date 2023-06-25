@@ -19,8 +19,15 @@
         </ctrl:NPreForm.Header>
         <ctrl:NPreForm.Body>
             <ctrl:NPreFormTable>
-                <ctrl:NPreFormColumn HeaderText="No" />
-                <ctrl:NPreFormColumn HeaderText="Description" />
+                <ctrl:NPreFormColumn>
+                    <ctrl:NPreFormColumn.Header>
+                        <TextBlock Text="No" />
+                    </ctrl:NPreFormColumn.Header>
+                    <ctrl:NPreFormColumn.Items>
+                        <ctrl:NPreFormItem />
+                        <ctrl:NPreFormItem />
+                    </ctrl:NPreFormColumn.Items>
+                </ctrl:NPreFormColumn>
             </ctrl:NPreFormTable>
         </ctrl:NPreForm.Body>
         <ctrl:NPreForm.Footer>

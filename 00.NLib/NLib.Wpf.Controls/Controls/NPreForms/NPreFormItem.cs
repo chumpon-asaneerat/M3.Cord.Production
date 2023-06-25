@@ -28,5 +28,30 @@ namespace NLib.Wpf.Controls
     /// </summary>
     public class NPreFormItem : Control
     {
+        #region Constructor
+
+        static NPreFormItem()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(NPreFormItem), new FrameworkPropertyMetadata(typeof(NPreFormItem)));
+        }
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public NPreFormItem()
+        {
+            // init
+            //Items = new ObservableCollection<NGroupMenuItem>();
+        }
+
+        #endregion
+
+        #region Override Methods
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+        }
+
+        #endregion
     }
 }
