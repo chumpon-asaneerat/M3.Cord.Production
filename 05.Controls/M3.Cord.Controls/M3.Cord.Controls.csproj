@@ -98,6 +98,9 @@
     <Compile Include="Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml.cs">
       <DependentUpon>HeaderPart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Documents\FirstTwist\S1\Elements\ItemsPart.xaml.cs">
+      <DependentUpon>ItemsPart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\FirstTwist\S1\S1ProductConditionControl.xaml.cs">
       <DependentUpon>S1ProductConditionControl.xaml</DependentUpon>
     </Compile>
@@ -298,6 +301,10 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <Page Include="Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\FirstTwist\S1\Elements\ItemsPart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
