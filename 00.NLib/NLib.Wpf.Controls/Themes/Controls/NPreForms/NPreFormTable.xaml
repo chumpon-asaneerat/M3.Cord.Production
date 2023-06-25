@@ -7,9 +7,20 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:NPreFormTable}">
-                    <Grid Margin="0"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Stretch" />
+                    <ItemsControl ItemsSource="{Binding Columns, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Focusable="False"
+                                  IsTabStop="False"
+                                  Background="Aqua"
+                                  VirtualizingPanel.IsVirtualizing="True"
+                                  VirtualizingPanel.VirtualizationMode="Recycling">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"
+                                            VerticalAlignment="Top"
+                                            IsItemsHost="True" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

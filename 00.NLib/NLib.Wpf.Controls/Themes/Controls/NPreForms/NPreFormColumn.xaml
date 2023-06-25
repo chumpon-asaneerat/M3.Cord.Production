@@ -7,13 +7,20 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:NPreFormColumn}">
-                    <Grid Margin="0"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Stretch" />
+                    <Grid Margin="0">
+                        <Border Background="AntiqueWhite" BorderBrush="Black" 
+                                Width="150" Height="30"/>
+                        <!--
+                        <Border Background="{Binding HeaderBackground}">
+                            <TextBlock Style="{StaticResource LabelText}"
+                                       Foreground="{Binding HeaderForeground}"
+                                       Text="{Binding HeaderText}"
+                                       TextAlignment="{Binding HeaderTextAlignment}" />
+                        </Border>
+                        -->
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <!--  DEFAULT COLORS  -->
-        <Setter Property="Background" Value="{DynamicResource PageBG}" />
     </Style>
 </ResourceDictionary>
