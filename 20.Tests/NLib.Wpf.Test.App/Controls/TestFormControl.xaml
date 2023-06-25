@@ -18,7 +18,12 @@
             </DockPanel>
         </ctrl:NPreForm.Header>
         <ctrl:NPreForm.Body>
-            <ctrl:NPreFormTable />
+            <ctrl:NPreFormTable>
+                <ctrl:NPreFormColumn />
+                <ctrl:NPreFormColumn />
+                <ctrl:NPreFormColumn />
+                <ctrl:NPreFormColumn />
+            </ctrl:NPreFormTable>
         </ctrl:NPreForm.Body>
         <ctrl:NPreForm.Footer>
             <DockPanel LastChildFill="True">
