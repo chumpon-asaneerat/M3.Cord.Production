@@ -44,5 +44,6 @@
         <!--  NPreForm  -->
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPreForms/NPreForm.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPreForms/NPreFormTable.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPreForms/NPreFormColumn.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

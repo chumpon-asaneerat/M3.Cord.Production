@@ -26,6 +26,7 @@ namespace NLib.Wpf.Controls
     /// <summary>
     /// The NPreFormTable Control.
     /// </summary>
+    [ContentProperty(nameof(Columns))]
     public class NPreFormTable : Control
     {
         #region Constructor
@@ -40,7 +41,7 @@ namespace NLib.Wpf.Controls
         public NPreFormTable()
         {
             // init
-            //Items = new ObservableCollection<NGroupMenuItem>();
+            Columns = new ObservableCollection<NPreFormColumn>();
         }
 
         #endregion
@@ -55,6 +56,24 @@ namespace NLib.Wpf.Controls
         #endregion
 
         #region Public Properties
+
+        #region Columns
+
+        /// <summary>
+        /// The Columns Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ColumnsProperty =
+            DependencyProperty.Register(nameof(Columns), typeof(ObservableCollection<NPreFormColumn>), typeof(NPreFormTable));
+        /// <summary>
+        /// Gets or sets Columns.
+        /// </summary>
+        public ObservableCollection<NPreFormColumn> Columns
+        {
+            get { return (ObservableCollection<NPreFormColumn>)GetValue(ColumnsProperty); }
+            set { SetValue(ColumnsProperty, value); }
+        }
+
+        #endregion
 
         #endregion
     }

@@ -63,7 +63,7 @@ namespace NLib.Wpf.Controls
         /// The Items Dependency property.
         /// </summary>
         public static readonly DependencyProperty ItemsProperty =
-            DependencyProperty.Register("Items", typeof(ObservableCollection<NGroupMenuItem>), typeof(NGroupMenu));
+            DependencyProperty.Register(nameof(Items), typeof(ObservableCollection<NGroupMenuItem>), typeof(NGroupMenu));
         /// <summary>
         /// Gets or sets Items.
         /// </summary>
