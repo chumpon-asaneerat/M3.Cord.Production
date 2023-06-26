@@ -58,6 +58,24 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
+        private void cmdS1ProductCondition_Click(object sender, RoutedEventArgs e)
+        {
+            var page = M3CordApp.Pages.S1ProductCondition;
+            PageContentManager.Instance.Current = page;
+        }
+
+        private void cmdS4x1ProductCondition_Click(object sender, RoutedEventArgs e)
+        {
+            var page = M3CordApp.Pages.S4x1UpTwisterCondition;
+            PageContentManager.Instance.Current = page;
+        }
+
+        private void cmdS4x2ProductCondition_Click(object sender, RoutedEventArgs e)
+        {
+            var page = M3CordApp.Pages.S4x2UpTwisterCondition;
+            PageContentManager.Instance.Current = page;
+        }
+
         #endregion
     }
 }

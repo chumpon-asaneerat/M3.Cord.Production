@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using NLib.Services;
+
 #endregion
 
 namespace M3.Cord.Pages
@@ -44,6 +46,22 @@ namespace M3.Cord.Pages
         }
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region Button Handlers
+
+        private void cmdHome_Click(object sender, RoutedEventArgs e)
+        {
+            // M3 Cord Document Menu
+            var page = M3CordApp.Pages.M3CordDocumentMenu;
+            PageContentManager.Instance.Current = page;
+        }
+
+        private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
 
         }

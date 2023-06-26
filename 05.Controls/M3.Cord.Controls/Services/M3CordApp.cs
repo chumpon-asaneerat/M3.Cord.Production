@@ -128,6 +128,22 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.FirstTwistMCPage>(); }
             }
 
+            /// <summary>Gets S1ProductCondition Page.</summary>
+            public static Cord.Pages.S1ProductConditionPage S1ProductCondition
+            {
+                get { return GetPage<Cord.Pages.S1ProductConditionPage>(); }
+            }
+            /// <summary>Gets S4x1UpTwisterConditionPage Page.</summary>
+            public static Cord.Pages.S4x1UpTwisterConditionPage S4x1UpTwisterCondition
+            {
+                get { return GetPage<Cord.Pages.S4x1UpTwisterConditionPage>(); }
+            }
+            /// <summary>Gets S4x2UpTwisterCondition Page.</summary>
+            public static Cord.Pages.S4x2UpTwisterConditionPage S4x2UpTwisterCondition
+            {
+                get { return GetPage<Cord.Pages.S4x2UpTwisterConditionPage>(); }
+            }
+
             #endregion
         }
 
