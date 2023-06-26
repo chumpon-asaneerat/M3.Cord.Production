@@ -116,6 +116,9 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Documents\S4x2UpTwisterConditionPage.xaml.cs">
+      <DependentUpon>S4x2UpTwisterConditionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
     </Compile>
@@ -136,6 +139,12 @@
     </Compile>
     <Compile Include="Pages\Menu\M3CordMainMenuPage.xaml.cs">
       <DependentUpon>M3CordMainMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S1ProductConditionPage.xaml.cs">
+      <DependentUpon>S1ProductConditionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S4x1UpTwisterConditionPage.xaml.cs">
+      <DependentUpon>S4x1UpTwisterConditionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Warehouse\CordProductPlanningPage.xaml.cs">
       <DependentUpon>CordProductPlanningPage.xaml</DependentUpon>
@@ -340,6 +349,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Pages\Documents\S4x2UpTwisterConditionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\FirstTwist\FirstTwistMCPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -365,6 +378,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Menu\M3CordMainMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\S1ProductConditionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\S4x1UpTwisterConditionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -444,7 +465,6 @@
     <Folder Include="Controls\Documents\FirstTwist\S4x1\Elements\" />
     <Folder Include="Controls\Documents\FirstTwist\S4x2\Elements\" />
     <Folder Include="Controls\Documents\SamplingDetails\Elements\" />
-    <Folder Include="Pages\Documents\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\toray.png" />
