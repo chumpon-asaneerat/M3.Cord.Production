@@ -20,16 +20,16 @@ using System.Windows.Shapes;
 namespace M3.Cord.Controls.Documents.FirstTwist.S1.Elements
 {
     /// <summary>
-    /// Interaction logic for HeaderPart.xaml
+    /// Interaction logic for FooterPart.xaml
     /// </summary>
-    public partial class HeaderPart : UserControl
+    public partial class FooterPart : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public HeaderPart()
+        public FooterPart()
         {
             InitializeComponent();
         }

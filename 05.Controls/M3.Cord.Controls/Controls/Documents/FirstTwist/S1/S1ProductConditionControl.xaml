@@ -9,8 +9,16 @@
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800">
-    <DockPanel LastChildFill="True" Margin="5">
-        <elem:HeaderPart DockPanel.Dock="Top" />
-        <elem:ItemsPart />
-    </DockPanel>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Stretch"
+                  VirtualizingPanel.IsVirtualizing="True"
+                  VirtualizingPanel.VirtualizationMode="Recycling">
+        <DockPanel LastChildFill="True" Margin="5">
+            <elem:HeaderPart DockPanel.Dock="Top" />
+            <elem:FooterPart DockPanel.Dock="Bottom" />
+            <elem:ItemsPart />
+        </DockPanel>
+    </ScrollViewer>
 </UserControl>

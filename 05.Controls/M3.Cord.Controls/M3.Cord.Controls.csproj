@@ -95,6 +95,9 @@
     <None Include="Controls\_V1\Fields\TextBoxField.xaml.cs">
       <DependentUpon>TextBoxField.xaml</DependentUpon>
     </None>
+    <Compile Include="Controls\Documents\FirstTwist\S1\Elements\FooterPart.xaml.cs">
+      <DependentUpon>FooterPart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml.cs">
       <DependentUpon>HeaderPart.xaml</DependentUpon>
     </Compile>
@@ -309,6 +312,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Controls\Documents\FirstTwist\S1\Elements\FooterPart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

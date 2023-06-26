@@ -8,7 +8,14 @@
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800">
-    <DockPanel LastChildFill="True" Margin="5">
-        <Grid />
-    </DockPanel>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Stretch"
+                  VirtualizingPanel.IsVirtualizing="True"
+                  VirtualizingPanel.VirtualizationMode="Recycling">
+        <DockPanel LastChildFill="True" Margin="5">
+            <Grid />
+        </DockPanel>
+    </ScrollViewer>
 </UserControl>

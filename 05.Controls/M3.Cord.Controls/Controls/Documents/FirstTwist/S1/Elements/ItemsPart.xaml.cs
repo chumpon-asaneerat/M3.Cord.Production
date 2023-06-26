@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+#endregion
+
 namespace M3.Cord.Controls.Documents.FirstTwist.S1.Elements
 {
     /// <summary>
@@ -20,9 +24,16 @@ namespace M3.Cord.Controls.Documents.FirstTwist.S1.Elements
     /// </summary>
     public partial class ItemsPart : UserControl
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public ItemsPart()
         {
             InitializeComponent();
         }
+
+        #endregion
     }
 }
