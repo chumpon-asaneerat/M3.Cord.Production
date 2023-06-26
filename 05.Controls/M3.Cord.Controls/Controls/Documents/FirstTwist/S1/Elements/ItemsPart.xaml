@@ -2,10 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             d:DesignHeight="450"
-             d:DesignWidth="1100">
+             d:DesignHeight="1050"
+             d:DesignWidth="1200">
     <Grid>
         <!--#region DEFINITIONS-->
 
@@ -18,6 +19,7 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -170,7 +172,6 @@
                        Style="{StaticResource LabelText}">
                 <Run Text=" S - 1 - 3" />
                 <LineBreak />
-                <LineBreak />
                 <Run Text="81/2&quot;R18&quot;L" />
             </TextBlock>
         </Border>
@@ -178,8 +179,7 @@
                 Grid.Column="4"
                 BorderBrush="DimGray"
                 BorderThickness="1">
-            <TextBox x:Name="txtRingDiameterLength"
-                     Style="{StaticResource CommonTextBox}"
+            <TextBox Style="{StaticResource CommonTextBox}"
                      Width="180"
                      Height="30"
                      AcceptsReturn="False" />
@@ -232,7 +232,6 @@
                        Style="{StaticResource LabelText}">
                 <Run Text="( I ) x ( J ) x ( K )" />
                 <LineBreak />
-                <LineBreak />
                 <Run Text="43 x 56 x 72" FontWeight="DemiBold" />
             </TextBlock>
         </Border>
@@ -240,8 +239,7 @@
                 Grid.Column="4"
                 BorderBrush="DimGray"
                 BorderThickness="1">
-            <TextBox x:Name="txtTwistChangeGear"
-                     Style="{StaticResource CommonTextBox}"
+            <TextBox Style="{StaticResource CommonTextBox}"
                      Width="180"
                      Height="30"
                      AcceptsReturn="False" />
@@ -293,7 +291,6 @@
                        Style="{StaticResource LabelText}">
                 <Run Text="( A ) x ( B )" />
                 <LineBreak />
-                <LineBreak />
                 <Run Text="48 x 56" FontWeight="DemiBold" />
             </TextBlock>
         </Border>
@@ -301,9 +298,654 @@
                 Grid.Column="4"
                 BorderBrush="DimGray"
                 BorderThickness="1">
-            <TextBox x:Name="txtLifterChangeGear"
-                     Style="{StaticResource CommonTextBox}"
+            <TextBox Style="{StaticResource CommonTextBox}"
                      Width="180"
+                     Height="30"
+                     AcceptsReturn="False" />
+        </Border>
+
+        <!--#endregion-->
+
+        <!--#region  NO.4-->
+
+        <Border Grid.Row="5"
+                Grid.Column="0"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="4"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="5"
+                Grid.Column="1"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="Outer diameter fo motor pulley (mm)" />
+                <LineBreak />
+                <Run Text="เส้นผ่าศูนย์กลางภายนอกของมอเตอร์พูลลี่ (มม.)" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="5"
+                Grid.Column="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="5"
+                Grid.Column="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="217" FontWeight="DemiBold" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="5"
+                Grid.Column="4"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBox Style="{StaticResource CommonTextBox}"
+                     Width="180"
+                     Height="30"
+                     AcceptsReturn="False" />
+        </Border>
+
+        <!--#endregion-->
+
+        <!--#region  NO.5-->
+
+        <Border Grid.Row="6"
+                Grid.Column="0"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="6"
+                Grid.Column="1"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="Traveller no." />
+                <LineBreak />
+                <Run Text="เบอร์ทราเวลเลอร์" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="6"
+                Grid.Column="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="6"
+                Grid.Column="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="RK - 500 J x 1 Pcs." FontWeight="DemiBold" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="6"
+                Grid.Column="4"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBox Style="{StaticResource CommonTextBox}"
+                     Width="180"
+                     Height="30"
+                     AcceptsReturn="False" />
+        </Border>
+
+        <!--#endregion-->
+
+        <!--#region  NO.6-->
+
+        <Border Grid.Row="7"
+                Grid.Column="0"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="6"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="7"
+                Grid.Column="1"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="Couter (unit weight)" />
+                <LineBreak />
+                <Run Text="ความยาว (น้ำหนัก / หน่วย)" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="7"
+                Grid.Column="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="7"
+                Grid.Column="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="21,700 &#x00B1; 50 M. ( 5.0 &#x00B1; 0.2 kg )" FontWeight="DemiBold" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="7"
+                Grid.Column="4"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBox Style="{StaticResource CommonTextBox}"
+                     Width="180"
+                     Height="30"
+                     AcceptsReturn="False" />
+        </Border>
+
+        <!--#endregion-->
+
+        <!--#region  NO.7-->
+
+        <Border Grid.Row="8"
+                Grid.Column="0"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="7"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="8"
+                Grid.Column="1"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="Counter system" />
+                <LineBreak />
+                <Run Text="ระบบการทำงานของ Counter" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="8"
+                Grid.Column="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="8"
+                Grid.Column="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="เมื่อด้ายเต็ม Counter ที่ตั้งไว้ " />
+                <LineBreak />
+                <Run Text="เครื่องต้องหยุดและมีสัญญาณไฟเตือน" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="8"
+                Grid.Column="4"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <CheckBox Style="{StaticResource CommonCheckBox}"
+                          Content="Yes"
+                          Width="80"
+                          Height="30"
+                          FontSize="24"
+                          FontWeight="DemiBold"
+                          VerticalAlignment="Center" />
+                <TextBlock Width="10" />
+                <CheckBox Style="{StaticResource CommonCheckBox}"
+                          Content="No"
+                          Width="80"
+                          Height="30"
+                          FontSize="24"
+                          FontWeight="DemiBold"
+                          VerticalAlignment="Center" />
+            </StackPanel>
+        </Border>
+
+        <!--#endregion-->
+
+        <!--#region  NO.8-->
+
+        <Border Grid.Row="9"
+                Grid.Column="0"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="8"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="9"
+                Grid.Column="1"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="SENSER YARN BREAK" />
+                <LineBreak />
+                <Run Text="เซ็นเซอร์เตือนเมื่อด้ายขาด" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="9"
+                Grid.Column="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="9"
+                Grid.Column="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="เมื่อด้ายขาด เครื่องหยุด" />
+                <LineBreak />
+                <Run Text="และมีสัญญาณเตือน" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="9"
+                Grid.Column="4"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <CheckBox Style="{StaticResource CommonCheckBox}"
+                          Content="Yes"
+                          Width="80"
+                          Height="30"
+                          FontSize="24"
+                          FontWeight="DemiBold"
+                          VerticalAlignment="Center" />
+                <TextBlock Width="10" />
+                <CheckBox Style="{StaticResource CommonCheckBox}"
+                          Content="No"
+                          Width="80"
+                          Height="30"
+                          FontSize="24"
+                          FontWeight="DemiBold"
+                          VerticalAlignment="Center" />
+            </StackPanel>
+        </Border>
+
+        <!--#endregion-->
+
+        <!--#region  Sub Header-->
+
+        <Border Grid.Row="10"
+                Grid.Column="0"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="10"
+                Grid.Column="1"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="Actual Value  ( ค่าที่ตรวจสอบได้จริง )" FontWeight="DemiBold" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="10"
+                Grid.Column="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="10"
+                Grid.Column="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="Standard ( ค่ามาตรฐาน )" FontWeight="DemiBold" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="10"
+                Grid.Column="4"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="ACTUAL ( ค่าที่ได้จริง )" FontWeight="DemiBold" />
+            </TextBlock>
+        </Border>
+
+        <!--#endregion-->
+
+        <!--#region  NO.9-->
+
+        <Border Grid.Row="11"
+                Grid.Column="0"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="9"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="11"
+                Grid.Column="1"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="Calculated twisting number (t/m)" />
+                <LineBreak />
+                <Run Text="จำนวนการตีเกลียวที่คำนวณ (เกลียว/เมตร)" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="11"
+                Grid.Column="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="SC"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="11"
+                Grid.Column="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="120.0 (S) &#x00B1; 15" FontWeight="DemiBold" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="11"
+                Grid.Column="4"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBox Style="{StaticResource CommonTextBox}"
+                     Width="180"
+                     Height="30"
+                     AcceptsReturn="False" />
+        </Border>
+
+        <!--#endregion-->
+
+        <!--#region  NO.10-->
+
+        <Border Grid.Row="12"
+                Grid.Column="0"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="10"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="12"
+                Grid.Column="1"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="Number of spindle rotation (rpm)" />
+                <LineBreak />
+                <Run Text="จำนวนรอบหมุนของสปินเดิล (รอบ / นาที)" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="12"
+                Grid.Column="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="12"
+                Grid.Column="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="3,800 &#x00B1; 30" FontWeight="DemiBold" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="12"
+                Grid.Column="4"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBox Style="{StaticResource CommonTextBox}"
+                     Width="180"
+                     Height="30"
+                     AcceptsReturn="False" />
+        </Border>
+
+        <!--#endregion-->
+
+        <!--#region  NO.11-->
+
+        <Border Grid.Row="13"
+                Grid.Column="0"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="11"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="13"
+                Grid.Column="1"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="Yarn speed ( m / min )" />
+                <LineBreak />
+                <Run Text="ความเร็วของด้าย (เมตร / นาที)" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="13"
+                Grid.Column="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="13"
+                Grid.Column="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="32.20 &#x00B1; 4.27" FontWeight="DemiBold" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="13"
+                Grid.Column="4"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Margin="0,3"
+                           FontSize="12"
+                           FontWeight="DemiBold"
+                           Text="คำนวนโดย ข้อ 10 ตั้ง หารด้วย ข้อ 9"
+                           TextAlignment="Center" />
+                <TextBox Style="{StaticResource CommonTextBox}"
+                         Width="180"
+                         Height="30"
+                         AcceptsReturn="False" />
+            </StackPanel>
+        </Border>
+
+        <!--#endregion-->
+
+        <!--#region  NO.12-->
+
+        <Border Grid.Row="14"
+                Grid.Column="0"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="12"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="14"
+                Grid.Column="1"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="Special mention" />
+                <LineBreak />
+                <Run Text="หมายเหตุ" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="14"
+                Grid.Column="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Left"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="14"
+                Grid.Column="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}">
+                <Run Text="มีรอยต่อ ได้ 2 รอยต่อ" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="14"
+                Grid.Column="4"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <CheckBox Style="{StaticResource CommonCheckBox}"
+                          Content="Yes"
+                          Width="80"
+                          Height="30"
+                          FontSize="24"
+                          FontWeight="DemiBold"
+                          VerticalAlignment="Center" />
+                <TextBlock Width="10" />
+                <CheckBox Style="{StaticResource CommonCheckBox}"
+                          Content="No"
+                          Width="80"
+                          Height="30"
+                          FontSize="24"
+                          FontWeight="DemiBold"
+                          VerticalAlignment="Center" />
+            </StackPanel>
+        </Border>
+
+        <!--#endregion-->
+
+        <!--#region  Reason-->
+
+        <Border Grid.Row="15"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text=" Reason of condition change (เหตุผลที่เปลี่ยนสภาวะ)"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="15"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBox Margin="5,0"
+                     Style="{StaticResource CommonTextBox}"
                      Height="30"
                      AcceptsReturn="False" />
         </Border>
