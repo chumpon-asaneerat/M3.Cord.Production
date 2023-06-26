@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:S4x1="clr-namespace:M3.Cord.Controls.Documents.FirstTwist.S4x1"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
@@ -38,7 +39,7 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <Grid />
+            <S4x1:S4x1UpTwisterConditionControl />
         </DockPanel>
     </page:NPage>
 </UserControl>

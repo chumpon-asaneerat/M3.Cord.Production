@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+#endregion
+
 namespace M3.Cord.Controls.Documents.FirstTwist.S4x1
 {
     /// <summary>
@@ -20,9 +24,16 @@ namespace M3.Cord.Controls.Documents.FirstTwist.S4x1
     /// </summary>
     public partial class S4x1UpTwisterConditionControl : UserControl
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public S4x1UpTwisterConditionControl()
         {
             InitializeComponent();
         }
+
+        #endregion
     }
 }
