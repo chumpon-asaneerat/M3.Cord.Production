@@ -15,7 +15,7 @@
                   VerticalContentAlignment="Stretch"
                   VirtualizingPanel.IsVirtualizing="True"
                   VirtualizingPanel.VirtualizationMode="Recycling">
-        <DockPanel LastChildFill="True" Margin="5">
+        <DockPanel LastChildFill="True" Margin="10">
             <elem:HeaderPart DockPanel.Dock="Top" />
             <elem:FooterPart DockPanel.Dock="Bottom" />
             <elem:ItemsPart />

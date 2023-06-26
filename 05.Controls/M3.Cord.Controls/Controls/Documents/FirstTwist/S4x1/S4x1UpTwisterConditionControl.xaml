@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:elem="clr-namespace:M3.Cord.Controls.Documents.FirstTwist.S4x1.Elements"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="450"
@@ -14,8 +15,10 @@
                   VerticalContentAlignment="Stretch"
                   VirtualizingPanel.IsVirtualizing="True"
                   VirtualizingPanel.VirtualizationMode="Recycling">
-        <DockPanel LastChildFill="True" Margin="5">
-            <Grid />
+        <DockPanel LastChildFill="True" Margin="10">
+            <elem:HeaderPart DockPanel.Dock="Top" />
+            <elem:FooterPart DockPanel.Dock="Bottom" />
+            <elem:ItemsPart />
         </DockPanel>
     </ScrollViewer>
 </UserControl>
