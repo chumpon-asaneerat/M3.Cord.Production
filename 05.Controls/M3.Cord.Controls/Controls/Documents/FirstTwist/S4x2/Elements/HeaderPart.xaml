@@ -5,7 +5,92 @@
              xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             d:DesignHeight="450"
-             d:DesignWidth="800">
-    <Grid />
+             d:DesignHeight="300"
+             d:DesignWidth="1300">
+    <DockPanel LastChildFill="True" Margin="5">
+        <!--  HEADER: Production condition sheet (ใบสภาวะการผลิต)  -->
+        <DockPanel DockPanel.Dock="Top"
+                   LastChildFill="True"
+                   Margin="5">
+            <!--  LOT  -->
+            <ctrl:NTextBox x:Name="txtLotNo"
+                           DockPanel.Dock="Left"
+                           CaptionText="Lot"
+                           Width="200" />
+            <!--  DATE  -->
+            <ctrl:NDatePicker x:Name="dtDocDate"
+                              DockPanel.Dock="Left"
+                              CaptionText="Date"
+                              Width="200" />
+            <!--  Destination (Customer)  -->
+            <ctrl:NTextBox x:Name="txtCustomerName"
+                           DockPanel.Dock="Left"
+                           CaptionText="Destination (ลูกค้า)"
+                           Width="250" />
+            <!--  Use (Product)  -->
+            <ctrl:NTextBox x:Name="txtProductName"
+                           DockPanel.Dock="Left"
+                           CaptionText="Use (ผลิตภัณฑ์)"
+                           Width="250" />
+            <!--  Yarn, (SC)  -->
+            <ctrl:NTextBox x:Name="txtItemYarn"
+                           DockPanel.Dock="Left"
+                           CaptionText="Yarn (ด้าย), (SC)"
+                           Width="250" />
+            <Grid />
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top"
+                   LastChildFill="True"
+                   Margin="5">
+            <!--  โครงสร้างเชือก  -->
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <DockPanel LastChildFill="True">
+                    <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                        <!--  Cord structure  -->
+                        <ctrl:NTextBox x:Name="txtCordStructure"
+                                       DockPanel.Dock="Left"
+                                       CaptionText="Cord structure&#x0a;(โครงสร้างเชือก)"
+                                       Width="250" />
+                        <!--  Standard twisting number  -->
+                        <ctrl:NTextBox x:Name="txtStdTwist"
+                                       DockPanel.Dock="Left"
+                                       CaptionText="Twist spec (SC)&#x0a;( จำนวนเกลียวที่กำหนด )"
+                                       Width="350" />
+                        <!--  ISSUE BY  -->
+                        <ctrl:NTextBox x:Name="txtIssueBy"
+                                       DockPanel.Dock="Left"
+                                       CaptionText="&#x0a;Issue By"
+                                       Width="220" />
+                        <!--  APPROVE BY  -->
+                        <ctrl:NTextBox x:Name="txtApproveBy"
+                                       DockPanel.Dock="Left"
+                                       CaptionText="&#x0a;Approve By"
+                                       Width="220" />
+                        <Grid />
+                    </DockPanel>
+                </DockPanel>
+            </DockPanel>
+            <!--  Processing route (ลำดับของกระบวนการ)  -->
+            <DockPanel DockPanel.Dock="Top"
+                       LastChildFill="True"
+                       Margin="5,2">
+                <TextBlock DockPanel.Dock="Left"
+                           FontSize="{StaticResource FontSize24}"
+                           FontWeight="DemiBold"
+                           VerticalAlignment="Center"
+                           Style="{StaticResource LabelText}">
+                    <Run Text="Processing route (ลำดับของกระบวนการ) : " />
+                    <Run Text="S-4" />
+                    <Run Text="&#x2794;" />
+                    <Run Text="S-5" />
+                    <Run Text="&#x2794;" />
+                    <Run Text="S-8" />
+                    <Run Text="&#x2794;" />
+                    <Run Text="S-24" />
+                </TextBlock>
+                <Grid />
+            </DockPanel>
+            <Grid />
+        </DockPanel>
+    </DockPanel>
 </UserControl>
