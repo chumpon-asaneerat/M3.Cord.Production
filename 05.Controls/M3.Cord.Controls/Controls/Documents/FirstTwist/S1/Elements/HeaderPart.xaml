@@ -5,8 +5,8 @@
              xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             d:DesignHeight="350"
-             d:DesignWidth="1000">
+             d:DesignHeight="300"
+             d:DesignWidth="1300">
     <DockPanel LastChildFill="True" Margin="5">
         <!--  HEADER: Production condition sheet (ใบสภาวะการผลิต)  -->
         <DockPanel DockPanel.Dock="Top"
@@ -22,46 +22,30 @@
                               DockPanel.Dock="Left"
                               CaptionText="Date"
                               Width="200" />
-            <!--  ISSUE BY  -->
-            <ctrl:NTextBox x:Name="txtIssueBy"
+            <!--  Destination (Customer)  -->
+            <ctrl:NTextBox x:Name="txtCustomerName"
                            DockPanel.Dock="Left"
-                           CaptionText="Issue By"
-                           Width="220" />
-            <!--  APPROVE BY  -->
-            <ctrl:NTextBox x:Name="txtApproveBy"
+                           CaptionText="Destination (ลูกค้า)"
+                           Width="250" />
+            <!--  Use (Product)  -->
+            <ctrl:NTextBox x:Name="txtProductName"
                            DockPanel.Dock="Left"
-                           CaptionText="Approve By"
-                           Width="220" />
+                           CaptionText="Use (ผลิตภัณฑ์)"
+                           Width="250" />
+            <!--  Yarn, (SC)  -->
+            <ctrl:NTextBox x:Name="txtItemYarn"
+                           DockPanel.Dock="Left"
+                           CaptionText="Yarn (ด้าย), (SC)"
+                           Width="250" />
             <Grid />
         </DockPanel>
         <DockPanel DockPanel.Dock="Top"
                    LastChildFill="True"
                    Margin="5">
-            <!--  Manufacturing conditions no. (เบอร์สภาวะการผลิต)  -->
-            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
-                <DockPanel LastChildFill="True">
-                    <!--  Destination (Customer)  -->
-                    <ctrl:NTextBox x:Name="txtCustomerName"
-                                   DockPanel.Dock="Left"
-                                   CaptionText="Destination&#x0a;(ลูกค้า)"
-                                   Width="250" />
-                    <!--  Use (Product)  -->
-                    <ctrl:NTextBox x:Name="txtProductName"
-                                   DockPanel.Dock="Left"
-                                   CaptionText="Use&#x0a;(ผลิตภัณฑ์)"
-                                   Width="250" />
-                    <Grid />
-                </DockPanel>
-            </DockPanel>
             <!--  โครงสร้างเชือก  -->
             <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                 <DockPanel LastChildFill="True">
                     <DockPanel DockPanel.Dock="Top" LastChildFill="True">
-                        <!--  Yarn, (SC)  -->
-                        <ctrl:NTextBox x:Name="txtItemYarn"
-                                       DockPanel.Dock="Left"
-                                       CaptionText="&#x0a;Yarn (ด้าย), (SC)"
-                                       Width="250" />
                         <!--  Cord structure  -->
                         <ctrl:NTextBox x:Name="txtCordStructure"
                                        DockPanel.Dock="Left"
@@ -72,6 +56,16 @@
                                        DockPanel.Dock="Left"
                                        CaptionText="Standard Twisting Number&#x0a;(จำนวนเกลียวมาตรฐาน), (SC)"
                                        Width="350" />
+                        <!--  ISSUE BY  -->
+                        <ctrl:NTextBox x:Name="txtIssueBy"
+                                       DockPanel.Dock="Left"
+                                       CaptionText="&#x0a;Issue By"
+                                       Width="220" />
+                        <!--  APPROVE BY  -->
+                        <ctrl:NTextBox x:Name="txtApproveBy"
+                                       DockPanel.Dock="Left"
+                                       CaptionText="&#x0a;Approve By"
+                                       Width="220" />
                         <Grid />
                     </DockPanel>
                 </DockPanel>

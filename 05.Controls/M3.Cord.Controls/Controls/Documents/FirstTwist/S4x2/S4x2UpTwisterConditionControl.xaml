@@ -17,7 +17,6 @@
                   VirtualizingPanel.VirtualizationMode="Recycling">
         <DockPanel LastChildFill="True" Margin="10">
             <elem:HeaderPart DockPanel.Dock="Top" />
-            <elem:FooterPart DockPanel.Dock="Bottom" />
             <elem:ItemsPart />
         </DockPanel>
     </ScrollViewer>
