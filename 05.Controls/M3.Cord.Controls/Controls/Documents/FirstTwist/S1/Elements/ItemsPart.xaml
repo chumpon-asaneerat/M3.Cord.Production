@@ -50,6 +50,7 @@
                 BorderThickness="1">
             <TextBlock Margin="10,5"
                        Text="Checking Item (รายการที่ตรวจสอบ)"
+                       TextAlignment="Center"
                        FontSize="{StaticResource FontSize24}"
                        Style="{StaticResource LabelText}" />
         </Border>
@@ -99,6 +100,7 @@
                 BorderThickness="1">
             <TextBlock Margin="10,5"
                        Text="First twisting ( การตีเกลียวครั้งที่ 1 )"
+                       TextAlignment="Center"
                        FontSize="{StaticResource FontSize24}"
                        Style="{StaticResource LabelText}" />
         </Border>

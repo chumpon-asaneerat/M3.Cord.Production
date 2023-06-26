@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="800">
+             d:DesignWidth="1300">
     <Grid>
         <!--#region DEFINITIONS-->
 
@@ -38,6 +38,94 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+
+        <!--#endregion-->
+
+        <!--#region  HEADERS-->
+
+        <Border Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Background="Silver"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="Checking Item (รายการที่ตรวจสอบ)"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                Background="Silver"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="No."
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Background="Silver"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="S - 4 - 1"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="0"
+                Grid.Column="3"
+                Grid.RowSpan="2"
+                Background="Silver"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="5"
+                       Text="Class"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}"
+                       RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90" />
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="0"
+                Grid.Column="4"
+                Grid.ColumnSpan="2"
+                Background="Silver"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="Condition (สภาวะที่ใช้)"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="1"
+                Grid.Column="4"
+                Background="Silver"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="Standard ( ค่ามาตรฐาน )"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
+        <Border Grid.Row="1"
+                Grid.Column="5"
+                Background="Silver"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="10,5"
+                       Text="ACTUAL ( ค่าที่ได้จริง )"
+                       FontSize="{StaticResource FontSize24}"
+                       Style="{StaticResource LabelText}" />
+        </Border>
 
         <!--#endregion-->
 
