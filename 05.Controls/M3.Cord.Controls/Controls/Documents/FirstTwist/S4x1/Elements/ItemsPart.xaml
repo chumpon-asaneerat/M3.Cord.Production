@@ -7,5 +7,196 @@
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800">
-    <Grid />
+    <Grid>
+        <!--#region DEFINITIONS-->
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--#endregion-->
+
+        <!--#region Footer-->
+
+        <Border Grid.Column="0"
+                Grid.Row="16"
+                Grid.ColumnSpan="4"
+                Grid.RowSpan="3"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <TextBlock Margin="5"
+                       Style="{StaticResource LabelText}"
+                       VerticalAlignment="Top">
+                <Run Text="หมายเหตุ" FontWeight="DemiBold" />
+                <LineBreak />
+                <Run Text="  1) No. 1,2,3,4,5,11  Maintenance is responsible for checking" />
+                <LineBreak />
+                <Run Text="    (หัวข้อที่ 1,2,3,4,5,11 Maintenance เป็นผู้รับผิดชอบในการตรวจสอบ)" />
+                <LineBreak />
+                <Run Text=" 2) No. 11,12,13,14,15,17,18 Production site is responsible for checking" />
+                <LineBreak />
+                <Run Text="    (หัวข้อที่ 11,12,13,14,15,17,18ฝ่ายผลิตเป็นผู้รับผิดชอบในการตรวจสอบ)" />
+                <LineBreak />
+                <Run Text=" 3.)ผู้ที่สามารถเปิดเครื่องได้คือผู้ที่ทวนสอบสภาวะการผลิต(เรียงตามลำดับ)" />
+                <LineBreak />
+                <Run Text="    (หัวหน้ากะ, รองหัวหน้ากะ,พนักงานประจำเครื่อง)" />
+            </TextBlock>
+        </Border>
+
+        <Border Grid.Row="16"
+                Grid.Column="4"
+                Grid.RowSpan="4"
+                Grid.ColumnSpan="2"
+                BorderBrush="DimGray"
+                BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <!--  ROW 0  -->
+                <Border Grid.Row="0"
+                        Grid.Column="0"
+                        BorderBrush="DimGray"
+                        BorderThickness="1">
+                    <TextBlock Margin="10,5"
+                               Text="PIC"
+                               TextAlignment="Center"
+                               FontSize="{StaticResource FontSize20}"
+                               Style="{StaticResource LabelText}" />
+                </Border>
+                <Border Grid.Row="0"
+                        Grid.Column="1"
+                        BorderBrush="DimGray"
+                        BorderThickness="1">
+                    <TextBlock Margin="10,5"
+                               Text="Checked"
+                               TextAlignment="Center"
+                               FontSize="{StaticResource FontSize20}"
+                               Style="{StaticResource LabelText}" />
+                </Border>
+                <Border Grid.Row="0"
+                        Grid.Column="2"
+                        BorderBrush="DimGray"
+                        BorderThickness="1">
+                    <TextBlock Margin="10,5"
+                               Text="Approved"
+                               TextAlignment="Center"
+                               FontSize="{StaticResource FontSize20}"
+                               Style="{StaticResource LabelText}" />
+                </Border>
+                <!--  ROW 1  -->
+                <Border Grid.Row="1"
+                        Grid.Column="0"
+                        BorderBrush="DimGray"
+                        BorderThickness="1">
+                    <TextBlock Margin="10,5"
+                               Text="Maintenance"
+                               TextAlignment="Center"
+                               FontSize="{StaticResource FontSize20}"
+                               Style="{StaticResource LabelText}" />
+                </Border>
+                <Border Grid.Row="1"
+                        Grid.Column="1"
+                        BorderBrush="DimGray"
+                        BorderThickness="1">
+                    <DockPanel LastChildFill="True" Height="100">
+                        <TextBlock Margin="10,5"
+                                   DockPanel.Dock="Bottom"
+                                   Text="Maintenance"
+                                   TextAlignment="Center"
+                                   FontSize="{StaticResource FontSize20}"
+                                   Style="{StaticResource LabelText}" />
+                        <Grid />
+                    </DockPanel>
+                </Border>
+                <Border Grid.Row="1"
+                        Grid.Column="2"
+                        BorderBrush="DimGray"
+                        BorderThickness="1">
+                    <DockPanel LastChildFill="True" Height="100">
+                        <TextBlock Margin="10,5"
+                                   DockPanel.Dock="Bottom"
+                                   Text="Maintenance Leader"
+                                   TextAlignment="Center"
+                                   FontSize="{StaticResource FontSize20}"
+                                   Style="{StaticResource LabelText}" />
+                        <Grid />
+                    </DockPanel>
+                </Border>
+                <!--  ROW 2  -->
+                <Border Grid.Row="2"
+                        Grid.Column="0"
+                        BorderBrush="DimGray"
+                        BorderThickness="1">
+                    <TextBlock Margin="10,5"
+                               Text="Production"
+                               TextAlignment="Center"
+                               FontSize="{StaticResource FontSize20}"
+                               Style="{StaticResource LabelText}" />
+                </Border>
+                <Border Grid.Row="2"
+                        Grid.Column="1"
+                        BorderBrush="DimGray"
+                        BorderThickness="1">
+                    <DockPanel LastChildFill="True" Height="100">
+                        <TextBlock Margin="10,5"
+                                   DockPanel.Dock="Bottom"
+                                   Text="Shift Leader"
+                                   TextAlignment="Center"
+                                   FontSize="{StaticResource FontSize20}"
+                                   Style="{StaticResource LabelText}" />
+                        <Grid />
+                    </DockPanel>
+                </Border>
+                <Border Grid.Row="2"
+                        Grid.Column="2"
+                        BorderBrush="DimGray"
+                        BorderThickness="1">
+                    <DockPanel LastChildFill="True" Height="100">
+                        <TextBlock Margin="10,5"
+                                   DockPanel.Dock="Bottom"
+                                   Text="Production Sect. Mgr."
+                                   TextAlignment="Center"
+                                   FontSize="{StaticResource FontSize20}"
+                                   Style="{StaticResource LabelText}" />
+                        <Grid />
+                    </DockPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!--#endregion-->
+    </Grid>
 </UserControl>
