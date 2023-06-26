@@ -107,8 +107,26 @@
     <Compile Include="Controls\Documents\FirstTwist\S1\S1ProductConditionControl.xaml.cs">
       <DependentUpon>S1ProductConditionControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Documents\FirstTwist\S4x1\Elements\FooterPart.xaml.cs">
+      <DependentUpon>FooterPart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\FirstTwist\S4x1\Elements\HeaderPart.xaml.cs">
+      <DependentUpon>HeaderPart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\FirstTwist\S4x1\Elements\ItemsPart.xaml.cs">
+      <DependentUpon>ItemsPart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\FirstTwist\S4x1\S4x1UpTwisterConditionControl.xaml.cs">
       <DependentUpon>S4x1UpTwisterConditionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\FirstTwist\S4x2\Elements\FooterPart.xaml.cs">
+      <DependentUpon>FooterPart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\FirstTwist\S4x2\Elements\HeaderPart.xaml.cs">
+      <DependentUpon>HeaderPart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\FirstTwist\S4x2\Elements\ItemsPart.xaml.cs">
+      <DependentUpon>ItemsPart.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml.cs">
       <DependentUpon>S4x2UpTwisterConditionControl.xaml</DependentUpon>
@@ -328,7 +346,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Documents\FirstTwist\S4x1\Elements\FooterPart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\FirstTwist\S4x1\Elements\HeaderPart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\FirstTwist\S4x1\Elements\ItemsPart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Documents\FirstTwist\S4x1\S4x1UpTwisterConditionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\FirstTwist\S4x2\Elements\FooterPart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\FirstTwist\S4x2\Elements\HeaderPart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\FirstTwist\S4x2\Elements\ItemsPart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -469,8 +511,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\Documents\Ageing\Elements\" />
-    <Folder Include="Controls\Documents\FirstTwist\S4x1\Elements\" />
-    <Folder Include="Controls\Documents\FirstTwist\S4x2\Elements\" />
     <Folder Include="Controls\Documents\SamplingDetails\Elements\" />
     <Folder Include="Pages\Documents\" />
   </ItemGroup>
