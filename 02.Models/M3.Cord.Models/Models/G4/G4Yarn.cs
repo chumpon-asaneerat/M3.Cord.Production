@@ -521,8 +521,7 @@ namespace M3.Cord.Models
         /// <param name="ReceiveDate"></param>
         /// <returns></returns>
         public static NDbResult<List<G4Yarn>> GetReceiveYarnStocks(string ItemYarn,
-            DateTime? ReceiveDate = new DateTime?(),
-            string YarnType = null)
+            DateTime? ReceiveDate = new DateTime?())
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 

@@ -22,8 +22,10 @@ M3 Cord Production System #414
 M3 Cord Production System #413
 - 
 
+[commited]
 M3 Cord Production System #412
-- 
+- M3.Cord.Production.App re-implements #212.
+  - G4IssueYarn add ExpiredDate property
 
 [commited]
 M3 Cord Production System #411

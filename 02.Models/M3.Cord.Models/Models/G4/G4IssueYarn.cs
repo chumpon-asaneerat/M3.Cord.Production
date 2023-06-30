@@ -50,6 +50,12 @@ namespace M3.Cord.Models
         public string Item400 { get; set; }
         public DateTime? ReceiveDate { get; set; }
         public int? ReceiveBy { get; set; }
+
+        /// <summary>
+        /// Gets or sets Expired Date.
+        /// </summary>
+        public DateTime? ExpiredDate { get; set; }
+
         public bool Verify { get; set; }
 
         public SolidColorBrush TextColor
