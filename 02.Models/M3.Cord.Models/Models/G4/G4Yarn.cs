@@ -106,6 +106,11 @@ namespace M3.Cord.Models
         public DateTime? MovementDate { get; set; }
 
         /// <summary>
+        /// Gets or sets Expired Date.
+        /// </summary>
+        public DateTime? ExpiredDate { get; set; }
+
+        /// <summary>
         /// Gets or sets is Verify.
         /// </summary>
         public bool? Verify { get; set; }
@@ -276,6 +281,8 @@ namespace M3.Cord.Models
             p.Add("@ReceiveBy", value.ReceiveBy);
             p.Add("@UpdateDate", value.UpdateDate);
             p.Add("@MovementDate", value.MovementDate);
+
+            p.Add("@ExpiredDate", value.ExpiredDate);
 
             p.Add("@Verify", value.Verify);
             p.Add("@Packing", value.Packing);
