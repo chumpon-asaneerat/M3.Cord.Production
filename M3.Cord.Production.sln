@@ -218,6 +218,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Master Data", "Cord Ma
 		Documents\Cord\Cord Master Data\out2.json = Documents\Cord\Cord Master Data\out2.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Documents 2", "Cord Documents 2", "{6EBCABE5-CEFD-480F-99CF-341C107EBA63}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\Cord Documents 2\22I02A.pdf = Documents\Cord\Cord Documents 2\22I02A.pdf
+		Documents\Cord\Cord Documents 2\24112022100025.pdf = Documents\Cord\Cord Documents 2\24112022100025.pdf
+		Documents\Cord\Cord Documents 2\9H0663L  S-1-1  22111 .pdf = Documents\Cord\Cord Documents 2\9H0663L  S-1-1  22111 .pdf
+		Documents\Cord\Cord Documents 2\P1671TT S-4-1  22I22T .pdf = Documents\Cord\Cord Documents 2\P1671TT S-4-1  22I22T .pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Flows", "Cord Flows", "{A463D8D3-81AB-4242-BEEF-EE9DF506194F}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\Cord Flows\Cord Flow Chart - Phase1 V1.pptx = Documents\Cord\Cord Flows\Cord Flow Chart - Phase1 V1.pptx
+		Documents\Cord\Cord Flows\cord_detail.xls = Documents\Cord\Cord Flows\cord_detail.xls
+		Documents\Cord\Cord Flows\Traceability_Cord_Phase1_2023.pdf = Documents\Cord\Cord Flows\Traceability_Cord_Phase1_2023.pdf
+		Documents\Cord\Cord Flows\การะบวนการ Cord Phase1(1).docx = Documents\Cord\Cord Flows\การะบวนการ Cord Phase1(1).docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Chemicals", "Cord Chemicals", "{40B588C6-09B5-4446-9E61-2A6F3B9890DD}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\Cord Chemicals\Label of chemical.jpg = Documents\Cord\Cord Chemicals\Label of chemical.jpg
+		Documents\Cord\Cord Chemicals\Supplier list for Cord Chemical (190523).xlsx = Documents\Cord\Cord Chemicals\Supplier list for Cord Chemical (190523).xlsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -326,6 +348,9 @@ Global
 		{2E161B42-CD75-435F-8FBE-589E63F96240} = {159B3C70-A36A-4E53-91A1-B346894525DF}
 		{1AB1F0A9-1A19-4C59-BF0B-0D070A356997} = {B2818B90-A408-452A-B236-02309FC6455F}
 		{CE252662-AFB5-416E-B2AA-6C7A308F0656} = {B2818B90-A408-452A-B236-02309FC6455F}
+		{6EBCABE5-CEFD-480F-99CF-341C107EBA63} = {B2818B90-A408-452A-B236-02309FC6455F}
+		{A463D8D3-81AB-4242-BEEF-EE9DF506194F} = {B2818B90-A408-452A-B236-02309FC6455F}
+		{40B588C6-09B5-4446-9E61-2A6F3B9890DD} = {B2818B90-A408-452A-B236-02309FC6455F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
