@@ -226,7 +226,19 @@ namespace M3.Cord.Models
         /// <summary>
         /// Gets or sets is item selected (for GO Label print).
         /// </summary>
-        public bool Selected { get; set; }
+        public bool Selected 
+        { 
+            get { return this.Get<bool>(); }
+            set
+            {
+                this.Set(value, () => 
+                {
+                    if (null != OnSelectedChanged) OnSelectedChanged(value);
+                });
+            }
+        }
+
+        public Action<bool> OnSelectedChanged { get; set; }
 
         #endregion
 

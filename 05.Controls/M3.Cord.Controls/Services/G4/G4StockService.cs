@@ -57,15 +57,19 @@ namespace M3.Cord
             {
                 if (null != _stocks && _stocks.Count > 0)
                 {
-                    _totalPallet = _stocks.Count;
-                    _stocks.ForEach(receive =>
+                    _stocks.ForEach(item =>
                     {
-                        // add weight
-                        var weight = (receive.WeightQty.HasValue) ? receive.WeightQty.Value : decimal.Zero;
-                        _totalWeight += weight;
-                        // add cheese count.
-                        var cheeseCnt = (receive.ConeCH.HasValue) ? receive.ConeCH.Value : decimal.Zero;
-                        _totalCH += cheeseCnt;
+                        if (null != item && item.Selected)
+                        {
+                            // add total pallet
+                            _totalPallet++;
+                            // add weight
+                            var weight = (item.WeightQty.HasValue) ? item.WeightQty.Value : decimal.Zero;
+                            _totalWeight += weight;
+                            // add cheese count.
+                            var cheeseCnt = (item.ConeCH.HasValue) ? item.ConeCH.Value : decimal.Zero;
+                            _totalCH += cheeseCnt;
+                        }
                     });
                 }
             }
@@ -75,6 +79,11 @@ namespace M3.Cord
             Raise(() => this.TotalCH);
         }
 
+        private void OnItemSelectedChange(bool value)
+        {
+            CalcTotals();
+        }
+
         #endregion
 
         #region Public Methods
@@ -82,8 +91,14 @@ namespace M3.Cord
         public void Search(string itemYarn, DateTime? ReceiveDate = new DateTime?())
         {
             _stocks = G4Yarn.GetReceiveYarnStocks(itemYarn, ReceiveDate).Value();
-
-            CalcTotals();
+            if (null != _stocks && _stocks.Count > 0)
+            {
+                _stocks.ForEach(stock => 
+                {
+                    // set on selection change handler.
+                    stock.OnSelectedChanged = OnItemSelectedChange;
+                });
+            }
         }
 
         #endregion
