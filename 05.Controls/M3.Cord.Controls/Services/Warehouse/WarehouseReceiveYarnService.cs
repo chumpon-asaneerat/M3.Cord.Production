@@ -46,7 +46,7 @@ namespace M3.Cord
 
         #endregion
 
-        #region Privet Methods
+        #region Private Methods
 
         private void CalcTotals()
         {
@@ -127,6 +127,26 @@ namespace M3.Cord
                 });
                 CalcTotals();
             }
+        }
+
+        /// <summary>
+        /// Save all receive current items to database.
+        /// </summary>
+        public bool SaveReceiveItems()
+        {
+            bool bSuccess = false;
+            if (null != items)
+            {
+                lock (this)
+                {
+                    // update WH receive flag.
+                    var ret = WarehouseCordYarn.G4IssueYarnReceive(items);
+                    bSuccess = (null != ret && ret.Ok);
+                }
+            }
+            Clear(); // clear list.
+
+            return bSuccess;
         }
 
         #endregion

@@ -33,7 +33,8 @@
                     <ctrl:FontAwesomeButton x:Name="cmdSave"
                                             Margin="5,0,0,0"
                                             IconType="Save"
-                                            Text="Save" />
+                                            Text="Save" 
+                                            Click="cmdSave_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
@@ -81,14 +82,14 @@
                                    WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
                                    WatermarkText="Scan Pallet No."
                                    Width="220" />
-                    <Button x:Name="cmdScan"
-                            Content="Scan"
+                    <Button x:Name="cmdReceiveAll"
+                            Content="Receive All"
                             DockPanel.Dock="Left"
                             Width="150"
                             VerticalAlignment="Bottom"
                             Margin="5,2"
                             Style="{StaticResource InlineButton}"
-                            Click="cmdScan_Click" />
+                            Click="cmdReceiveAll_Click" />
                     <Grid />
                 </DockPanel>
             </DockPanel>

@@ -23,7 +23,7 @@ namespace M3.Cord.Models
     {
         #region Public Properties
 
-        public int CordYarnPkId { get; set; }
+        public int G4IssueYarnPkId { get; set; }
 
         public DateTime? ReceiveDate { get; set; } = new DateTime?();
         public int? ReceiveBy { get; set; } = new int?();
@@ -132,6 +132,105 @@ namespace M3.Cord.Models
             }
 
             return rets;
+        }
+
+        public static NDbResult G4IssueYarnReceive(WarehouseCordYarn value)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@G4IssueYarnPkId", value.G4IssueYarnPkId);
+            p.Add("@Receive", value.WHReceiveFlag);
+
+            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
+
+            try
+            {
+                cnn.Execute("G4IssueYarnReceive", p,
+                    commandType: CommandType.StoredProcedure);
+                ret.Success();
+
+                // Set error number/message
+                ret.ErrNum = p.Get<int>("@errNum");
+                ret.ErrMsg = p.Get<string>("@errMsg");
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+
+        public static NDbResult G4IssueYarnReceive(List<WarehouseCordYarn> values)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            if (null == values)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            try
+            {
+                int iErrCnt = 0;
+                foreach (var yarn in values)
+                {
+                    var oRet = G4IssueYarnReceive(yarn);
+                    if (null == oRet || oRet.HasError) // something error.
+                    {
+                        ++iErrCnt;
+                    }
+                }
+
+                if (iErrCnt == 0)
+                {
+                    ret.Success();
+                }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
         }
 
         #endregion

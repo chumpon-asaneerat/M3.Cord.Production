@@ -67,13 +67,9 @@ namespace M3.Cord.Pages
             RefreshGrid();
         }
 
-        private void cmdScan_Click(object sender, RoutedEventArgs e)
+        private void cmdReceiveAll_Click(object sender, RoutedEventArgs e)
         {
             WarehouseReceiveYarnService.Instance.ReceiveAll();
-            this.InvokeAction(() =>
-            {
-                //RefreshGrid();
-            });
         }
 
         private void cmdReceive_Click(object sender, RoutedEventArgs e)
@@ -82,10 +78,6 @@ namespace M3.Cord.Pages
             if (null == btn) return;
             var item = btn.DataContext as WarehouseCordYarn;
             WarehouseReceiveYarnService.Instance.MarkReceive(item);
-            this.InvokeAction(() =>
-            {
-                //RefreshGrid();
-            });
         }
 
         private void cmdDelete_Click(object sender, RoutedEventArgs e)
@@ -94,9 +86,14 @@ namespace M3.Cord.Pages
             if (null == btn) return;
             var item = btn.DataContext as WarehouseCordYarn;
             WarehouseReceiveYarnService.Instance.UnmarkReceive(item);
+        }
+
+        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        {
+            WarehouseReceiveYarnService.Instance.SaveReceiveItems();
             this.InvokeAction(() =>
             {
-                //RefreshGrid();
+                RefreshGrid();
             });
         }
 
