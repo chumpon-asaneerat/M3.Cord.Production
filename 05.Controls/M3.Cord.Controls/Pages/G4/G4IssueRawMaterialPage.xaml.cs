@@ -162,9 +162,14 @@ namespace M3.Cord.Pages
         {
             bool hasRequestId = (!string.IsNullOrEmpty(txtRequsetNo.Text));
 
+            txtPalletNo.IsEnabled = true;
+            dtIssueDate.IsEnabled = true;
+            cbItemYanrs.IsEnabled = true;
+            /*
             txtPalletNo.IsEnabled = hasRequestId;
             dtIssueDate.IsEnabled = hasRequestId;
             cbItemYanrs.IsEnabled = hasRequestId;
+            */
         }
 
         private void LoadComboBoxes()

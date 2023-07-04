@@ -152,9 +152,9 @@ namespace M3.Cord
                     // add to list.
                     _issueItems.Add(inst);
                 });
-
-                CalcTotals();
             }
+            // always calc totals
+            CalcTotals();
         }
 
         private int FindPalletIndex(string palletNo)

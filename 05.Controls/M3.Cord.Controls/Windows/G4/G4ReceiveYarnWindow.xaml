@@ -12,7 +12,7 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="380"
+        Height="480"
         Width="900">
     <page:NPage HeaderText="G4 Receive Raw Material">
         <DockPanel LastChildFill="True" Margin="5">
@@ -45,19 +45,24 @@
                         <ctrl:NTextBox CaptionText="Lot No:"
                                        Text="{Binding LotNo}"
                                        IsReadOnly="True"
-                                       Width="150" />
+                                       Width="180" />
                         <ctrl:NTextBox CaptionText="Item Yarn:"
                                        Text="{Binding ItemYarn}"
                                        IsReadOnly="True"
-                                       Width="200" />
+                                       Width="250" />
+                        <ctrl:NTextBox CaptionText="Trace No:"
+                                       Text="{Binding TraceNo}"
+                                       IsReadOnly="True"
+                                       Width="180" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
                         <ctrl:NTextBox CaptionText="Weight:"
                                        Text="{Binding WeightQty, StringFormat=n1}"
                                        IsReadOnly="True"
                                        Width="120" />
-                        <ctrl:NTextBox CaptionText="Trace No:"
-                                       Text="{Binding TraceNo}"
-                                       IsReadOnly="True"
-                                       Width="120" />
+                        <ctrl:NDatePicker CaptionText="Expired Date"
+                                          SelectedDate="{Binding ExpiredDate}"
+                                          Width="180" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <ctrl:NInputGroup CaptionText="Verify">

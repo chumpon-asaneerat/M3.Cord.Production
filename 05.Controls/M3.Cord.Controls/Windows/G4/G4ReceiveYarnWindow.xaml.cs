@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 
 using NLib.Models;
 using M3.Cord.Models;
+using System.Windows.Interop;
 
 #endregion
 
@@ -53,6 +54,18 @@ namespace M3.Cord.Windows
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
+            if (null != _item)
+            {
+                if (!_item.ExpiredDate.HasValue)
+                {
+                    string msg = "Please Enter Expire date.";
+                    var win = M3CordApp.Windows.MessageBox;
+                    win.Owner = this; // change owner.
+                    win.Setup(msg);
+                    win.ShowDialog();
+                    return;
+                }
+            }
             DialogResult = true;
         }
 
