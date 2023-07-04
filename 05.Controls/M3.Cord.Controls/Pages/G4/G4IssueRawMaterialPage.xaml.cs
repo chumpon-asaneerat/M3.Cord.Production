@@ -119,8 +119,26 @@ namespace M3.Cord.Pages
                 e.Key == Key.Return)
             {
                 string palletNo = txtPalletNo.Text.Trim();
+
                 txtPalletNo.Text = string.Empty; // clear input
                 string requestNo = txtRequsetNo.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(requestNo))
+                {
+                    // No request no specificed.
+                    string msg = "Please specific Request No.";
+                    var win = M3CordApp.Windows.MessageBox;
+                    win.Setup(msg);
+                    win.ShowDialog();
+
+                    this.InvokeAction(() =>
+                    {
+                        txtRequsetNo.FocusControl();
+                    });
+
+                    e.Handled = true;
+                    return;
+                }
 
                 G4IssueYarnService.Instance.IssueDate = dtIssueDate.SelectedDate;
                 G4IssueYarnService.Instance.MarkIssue(requestNo, palletNo);
