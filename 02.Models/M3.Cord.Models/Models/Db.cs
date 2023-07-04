@@ -25,7 +25,7 @@ namespace M3.Cord
     public class LobaclDb
     {
         #region CordProduct
-
+        /*
         public static List<CordProduct> Products = new List<CordProduct>();
 
         public static void LoadCordProducts()
@@ -43,7 +43,7 @@ namespace M3.Cord
             string fileName = Path.Combine(DbPath, "CordProduct.json");
             Products.SaveToFile(fileName);
         }
-
+        */
         #endregion
 
         #region FirstTwistMC
@@ -97,13 +97,13 @@ namespace M3.Cord
 
         public static void Load()
         {
-            LoadCordProducts();
+            //LoadCordProducts();
             LoadMachines();
         }
 
         public static void Save()
         {
-            SaveCordProducts();
+            //SaveCordProducts();
             SaveMachines();
         }
 

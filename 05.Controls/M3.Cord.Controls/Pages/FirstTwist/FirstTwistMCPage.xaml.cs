@@ -105,6 +105,7 @@ namespace M3.Cord.Pages
 
         private void AddNew(FirstTwistMC mc, CordProduct product)
         {
+            /*
             if (null != product)
             {
                 product.IsUsed = true; // mark is used.
@@ -114,7 +115,7 @@ namespace M3.Cord.Pages
             mc.Product = product;
             UpdateMCStatus(mc);
             Cord.LobaclDb.SaveMachines();
-
+            */
         }
 
         private void ResetControls()
@@ -124,9 +125,11 @@ namespace M3.Cord.Pages
 
         private void RefreshMC()
         {
+            /*
             selectedMC = null;
             mcList.ItemsSource = null;
             mcList.ItemsSource = machines;
+            */
         }
 
         private void UpdateMCStatus(FirstTwistMC mc)

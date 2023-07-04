@@ -37,45 +37,26 @@ namespace M3.Cord
 
         #region Internal Variables
 
-        private int _totalPallet = 0;
-        private decimal _totalWeight = decimal.Zero;
-        private decimal _totalCH = decimal.Zero;
-
-        #endregion
-
-        #region Privet Methods
-
-        private void CalcTotals()
-        {
-
-        }
+        private List<CordProduct> items = new List<CordProduct>();
 
         #endregion
 
         #region Public Methods
 
-        /// <summary>
-        /// Clear receive list.
-        /// </summary>
-        public void Clear()
+        public void Search(string productLotNo, string customerName, string itemYarn)
         {
-            lock (this)
-            {
-
-            }
-            CalcTotals();
+            items = CordProduct.Gets(productLotNo, customerName, itemYarn).Value();
         }
 
         #endregion
 
         #region Public Properties
 
-        /// <summary>Gets Total Pallet.</summary>
-        public int TotalPallet { get { return _totalPallet; } set { } }
-        /// <summary>Gets Total Weight.</summary>
-        public decimal TotalWeight { get { return _totalWeight; } set { } }
-        /// <summary>Gets Total CH (Cheese).</summary>
-        public decimal TotalCH { get { return _totalCH; } set { } }
+        public List<CordProduct> Products 
+        { 
+            get { return items; } 
+            set { } 
+        }
 
         #endregion
     }

@@ -180,7 +180,6 @@ namespace M3.Cord.Models
             return ret;
         }
 
-
         public static NDbResult G4IssueYarnReceive(List<WarehouseCordYarn> values)
         {
             MethodBase med = MethodBase.GetCurrentMethod();

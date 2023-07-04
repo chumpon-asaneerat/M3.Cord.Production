@@ -68,35 +68,6 @@ namespace M3.Cord.Windows
 
         #endregion
 
-        #region TextBox Handlers
-
-        private int tracecnt = 1;
-
-        private void txtPalletNo_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                if (null != _item && !string.IsNullOrEmpty(txtPalletNo.Text.Trim()))
-                {
-                    _item.AddPallet(txtPalletNo.Text,
-                        string.Format("SG1J0{0:D3}", tracecnt), 520, 5200);
-                    tracecnt++;
-                }
-
-                txtPalletNo.Text = string.Empty;
-                RefreshGrid();
-
-                e.Handled = true;
-            }
-            else if (e.Key == Key.Escape)
-            {
-                txtPalletNo.Text = string.Empty;
-                e.Handled = true;
-            }
-        }
-
-        #endregion
-
         #region Privete Methods
 
         private void LoadComboBoxes()
@@ -105,15 +76,6 @@ namespace M3.Cord.Windows
 
             var itemYarns = CordItemYarn.Gets().Value();
             cbItemYanrs.ItemsSource = itemYarns;
-        }
-
-        private void RefreshGrid()
-        {
-            grid.ItemsSource = null;
-            if (null != _item)
-            {
-                grid.ItemsSource = _item.Pallets;
-            }
         }
 
         #endregion
@@ -129,12 +91,10 @@ namespace M3.Cord.Windows
             _item = item;
             this.DataContext = _item;
 
-            tracecnt = 1;
             if (null != _item)
             {
                 _item.CalcTotals();
 
-                tracecnt = _item.Pallets.Count + 1;
                 int idx = -1;
                 if (null != itemYarns)
                 {
@@ -145,8 +105,6 @@ namespace M3.Cord.Windows
                     cbItemYanrs.SelectedIndex = idx;
                 });
             }
-
-            RefreshGrid();
         }
 
         #endregion

@@ -59,6 +59,26 @@
                    TextAlignment="Left"
                    MinWidth="150" />
     </DataTemplate>
+    <DataTemplate x:Key="ProductLotNo">
+        <TextBlock Text="{Binding Path=ProductLotNo, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Left"
+                   MinWidth="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="ItemCode">
+        <TextBlock Text="{Binding Path=ItemCode, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Center"
+                   MinWidth="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="Item400">
+        <TextBlock Text="{Binding Path=Item400, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Center"
+                   MinWidth="150" />
+    </DataTemplate>
 
     <DataTemplate x:Key="ItemYarn">
         <TextBlock Text="{Binding Path=ItemYarn, Mode=OneWay}"

@@ -63,6 +63,7 @@ namespace M3.Cord.Windows
 
         private void RefreshGrid()
         {
+            /*
             // Reload all items
             allItems = LobaclDb.Products;
 
@@ -72,6 +73,7 @@ namespace M3.Cord.Windows
             items = allItems.FindAll((item) => !item.IsUsed);
 
             grid.ItemsSource = items;
+            */
         }
 
         #endregion
@@ -83,11 +85,12 @@ namespace M3.Cord.Windows
         /// </summary>
         public void Setup()
         {
+            /*
             if (null == LobaclDb.Products || LobaclDb.Products.Count <= 0)
             {
                 LobaclDb.LoadCordProducts();
             }
-
+            */
             SelectedProduct = null;
             RefreshGrid();
         }

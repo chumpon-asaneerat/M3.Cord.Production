@@ -12,8 +12,8 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="600"
-        Width="1000">
+        Height="300"
+        Width="850">
     <page:NPage HeaderText="Product Planning">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
@@ -45,17 +45,25 @@
                     <ctrl:NTextBox CaptionText="Customer:"
                                    DockPanel.Dock="Left"
                                    Text="{Binding CustomerName}"
+                                   Width="250" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  Item Code  -->
+                    <ctrl:NTextBox CaptionText="Item Code:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding ItemCode}"
                                    Width="200" />
                     <!--  LOT NO  -->
                     <ctrl:NTextBox CaptionText="Lot No:"
                                    DockPanel.Dock="Left"
-                                   Text="{Binding LotNo}"
-                                   Width="150" />
+                                   Text="{Binding ProductLotNo}"
+                                   Width="200" />
                     <!--  Color  -->
                     <ctrl:NTextBox CaptionText="Color:"
                                    DockPanel.Dock="Left"
                                    Text="{Binding Color}"
-                                   Width="150" />
+                                   Width="200" />
                     <!--  Target Weight  -->
                     <ctrl:NTextBox CaptionText="Weight:"
                                    DockPanel.Dock="Left"
@@ -63,110 +71,7 @@
                                    Width="200" />
                     <Grid />
                 </DockPanel>
-                <DockPanel DockPanel.Dock="Top">
-                    <!--  PALLET NO  -->
-                    <ctrl:NTextBox x:Name="txtPalletNo"
-                                   DockPanel.Dock="Left"
-                                   CaptionText="Pallet No:"
-                                   TextAlignment="Center"
-                                   WatermarkImageWidth="30"
-                                   WatermarkImageHeight="25"
-                                   WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
-                                   WatermarkText="Scan Pallet No."
-                                   Width="220"
-                                   PreviewKeyDown="txtPalletNo_PreviewKeyDown" />
-                    <Grid />
-                </DockPanel>
-                <!--  TOTAL PANELS  -->
-                <StackPanel Orientation="Horizontal"
-                        DockPanel.Dock="Top"
-                        Margin="0,0,0,5">
-                    <!--  TOTAL PALLET  -->
-                    <Border Margin="0,0,5,0"
-                        BorderThickness="1"
-                        Background="CornflowerBlue"
-                        CornerRadius="5">
-                        <StackPanel Orientation="Vertical" Width="250">
-                            <TextBlock Margin="10,5"
-                                   Foreground="White"
-                                   FontSize="16"
-                                   FontWeight="DemiBold"
-                                   TextAlignment="Left"
-                                   Text="Total Pallet" />
-                            <TextBlock Margin="0,2"
-                                   FontSize="48"
-                                   Foreground="White"
-                                   FontWeight="DemiBold"
-                                   TextAlignment="Center"
-                                   Text="{Binding TotalPallet}" />
-                        </StackPanel>
-                    </Border>
-                    <!--  TOTAL TOTAL WEIGHT  -->
-                    <Border Margin="0,0,5,0"
-                        BorderThickness="1"
-                        Background="DarkOrange"
-                        CornerRadius="5">
-                        <StackPanel Orientation="Vertical" Width="250">
-                            <TextBlock Margin="10,5"
-                                   Foreground="White"
-                                   FontSize="16"
-                                   FontWeight="DemiBold"
-                                   TextAlignment="Left"
-                                   Text="Total Weight" />
-                            <DockPanel LastChildFill="True">
-                                <TextBlock Margin="15,10"
-                                       DockPanel.Dock="Right"
-                                       FontSize="16"
-                                       Foreground="White"
-                                       FontWeight="DemiBold"
-                                       VerticalAlignment="Bottom"
-                                       Text="kg." />
-                                <TextBlock Margin="0,2"
-                                       FontSize="48"
-                                       Foreground="White"
-                                       FontWeight="DemiBold"
-                                       TextAlignment="Center"
-                                       Text="{Binding TotalWeight, StringFormat='{}{0:n1}'}" />
-                            </DockPanel>
-                        </StackPanel>
-                    </Border>
-                    <!--  TOTAL CH  -->
-                    <Border Margin="0,0,5,0"
-                        BorderThickness="1"
-                        Background="ForestGreen"
-                        CornerRadius="5">
-                        <StackPanel Orientation="Vertical" Width="250">
-                            <TextBlock Margin="10,5"
-                                   Foreground="White"
-                                   FontSize="16"
-                                   FontWeight="DemiBold"
-                                   TextAlignment="Left"
-                                   Text="Total CH" />
-                            <TextBlock Margin="0,2"
-                                   FontSize="48"
-                                   Foreground="White"
-                                   FontWeight="DemiBold"
-                                   TextAlignment="Center"
-                                   Text="{Binding TotalCH, StringFormat='{}{0:n0}'}" />
-                        </StackPanel>
-                    </Border>
-                </StackPanel>
-                <!--  LISTVIEW  -->
-                <ListView x:Name="grid"
-                      Margin="0,0,0,5"
-                      FontSize="{StaticResource FontSize18}"
-                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
-                      ItemsSource="{Binding}"
-                      Style="{StaticResource SingleSelectListView}">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletNo}" />
-                            <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
-                            <GridViewColumn Header="CH" CellTemplate="{StaticResource ConeCH}" />
-                            <GridViewColumn Header="Weight" CellTemplate="{StaticResource WeightQty}" />
-                        </GridView>
-                    </ListView.View>
-                </ListView>
+                <Grid/>
             </DockPanel>
         </DockPanel>
     </page:NPage>

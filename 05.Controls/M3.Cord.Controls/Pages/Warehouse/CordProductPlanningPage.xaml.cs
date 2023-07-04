@@ -76,10 +76,13 @@ namespace M3.Cord.Pages
             win.Setup(item);
             if (win.ShowDialog() == false) return;
 
-            Cord.LobaclDb.Products.Add(item); // append to local db.
-            Cord.LobaclDb.SaveCordProducts();
+            // Save change.
+            CordProduct.Save(item);
 
-            RefreshGrid();
+            this.InvokeAction(() =>
+            {
+                RefreshGrid();
+            });
         }
 
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
@@ -93,9 +96,13 @@ namespace M3.Cord.Pages
             win.Setup(item);
             if (win.ShowDialog() == false) return;
 
-            Cord.LobaclDb.SaveCordProducts();
+            // Save change.
+            CordProduct.Save(item);
 
-            RefreshGrid();
+            this.InvokeAction(() =>
+            {
+                RefreshGrid();
+            });
         }
 
         private void cmdDelete_Click(object sender, RoutedEventArgs e)
@@ -104,10 +111,10 @@ namespace M3.Cord.Pages
             if (null == btn) return;
             var item = btn.DataContext as CordProduct;
             if (null == item) return;
-
+            /*
             LobaclDb.Products.Remove(item);
             Cord.LobaclDb.SaveCordProducts();
-
+            */
             RefreshGrid();
         }
 
@@ -178,35 +185,18 @@ namespace M3.Cord.Pages
 
         private void RefreshGrid()
         {
-            // Reload all items
-            allItems = LobaclDb.Products;
-
             grid.ItemsSource = null;
 
-            List<CordProduct> items;
+            var itemYarn = (null != cbItemYanrs.SelectedItem) ?
+                cbItemYanrs.SelectedItem as CordItemYarn : null;
 
-            if (cbItemYanrs.SelectedIndex != -1)
-            {
-                var itemYarn = (null != cbItemYanrs.SelectedItem) ?
-                    cbItemYanrs.SelectedItem as CordItemYarn : null;
+            string lotNo = txtLotNo.Text.Trim();
+            string customer = txtCustomer.Text.Trim();
+            string sItemYarn = (null != itemYarn) ? itemYarn.ItemYarn : null;
+            
+            CordProductPlanningService.Instance.Search(lotNo, customer, sItemYarn);
 
-                string customer = txtCustomer.Text.Trim();
-                string lotNo = txtLotNo.Text.Trim();
-                string sItemYarn = (null != itemYarn) ? itemYarn.ItemYarn : null;
-
-                items = allItems.FindAll((item) =>
-                {
-                    bool matchYarn = (string.IsNullOrEmpty(sItemYarn)) ? true : item.ItemYarn == sItemYarn;
-                    bool matchCustomer = (string.IsNullOrEmpty(customer)) ? true : item.CustomerName.ToLower().Contains(customer.ToLower());
-                    bool matchLot = (string.IsNullOrEmpty(lotNo)) ? true : item.LotNo.ToLower().Contains(lotNo.ToLower());
-
-                    bool ret = (matchYarn && matchCustomer && matchLot);
-                    return ret;
-                });
-            }
-            else items = allItems;
-
-            grid.ItemsSource = items;
+            grid.ItemsSource = CordProductPlanningService.Instance.Products;
         }
 
         #endregion
@@ -215,7 +205,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            Cord.LobaclDb.LoadCordProducts();
+            //Cord.LobaclDb.LoadCordProducts();
 
             ResetControls();
             LoadComboBoxes();
