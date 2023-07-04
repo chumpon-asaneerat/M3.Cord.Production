@@ -44,18 +44,21 @@ namespace M3.Cord.Models
         public string DeleteFlag { get; set; }
         public string FinishFlag { get; set; }
 
+        public bool WHReceiveFlag { get; set; }
+        public DateTime? WHReceiveDate { get; set; }
+
         public SolidColorBrush TextColor
         {
             get 
             {
-                return (!ReceiveDate.HasValue) ? ModelConsts.BlackColor : ModelConsts.RedColor;
+                return (!WHReceiveFlag) ? ModelConsts.BlackColor : ModelConsts.RedColor;
             }
             set { }
         }
 
         public bool IsMark
         {
-            get { return ReceiveDate.HasValue; }
+            get { return WHReceiveFlag; }
             set { }
         }
 
@@ -63,9 +66,9 @@ namespace M3.Cord.Models
 
         #region Public Methods
 
-        public void MarkReceive(DateTime? receiveDate)
+        public void MarkReceive()
         {
-            ReceiveDate = receiveDate;
+            WHReceiveFlag = true;
             Raise(() => ReceiveDate);
             Raise(() => TextColor);
             Raise(() => IsMark);
@@ -73,7 +76,7 @@ namespace M3.Cord.Models
 
         public void UnmarkReceive()
         {
-            ReceiveDate = new DateTime?();
+            WHReceiveFlag = false;
             Raise(() => ReceiveDate);
             Raise(() => TextColor);
             Raise(() => IsMark);
@@ -82,8 +85,9 @@ namespace M3.Cord.Models
         #endregion
 
         #region Static Methods
-        /*
-        public static NDbResult<List<WarehouseCordYarn>> GetCordYarns()
+
+        public static NDbResult<List<WarehouseCordYarn>> GetCordYarns(
+            DateTime? issueDate, string itemYarn)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -102,9 +106,9 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@IssueDate", IssueDate);
-            p.Add("@ItemYarn", ItemYarn);
-            p.Add("@Item400", Item400);
+            p.Add("@IssueDate", issueDate);
+            p.Add("@ItemYarn", itemYarn);
+            //p.Add("@Item400", Item400);
 
             try
             {
@@ -129,7 +133,7 @@ namespace M3.Cord.Models
 
             return rets;
         }
-        */
+
         #endregion
     }
 }

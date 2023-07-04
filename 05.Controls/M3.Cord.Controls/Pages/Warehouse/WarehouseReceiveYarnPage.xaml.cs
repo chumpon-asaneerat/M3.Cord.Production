@@ -41,9 +41,6 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region Internal Variables
-        #endregion
-
         #region Loaded/Unloaded
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -83,7 +80,7 @@ namespace M3.Cord.Pages
         {
             var btn = sender as Button;
             if (null == btn) return;
-            var item = btn.DataContext as CordYarn;
+            var item = btn.DataContext as WarehouseCordYarn;
             WarehouseReceiveYarnService.Instance.MarkReceive(item);
             this.InvokeAction(() =>
             {
@@ -95,7 +92,7 @@ namespace M3.Cord.Pages
         {
             var btn = sender as Button;
             if (null == btn) return;
-            var item = btn.DataContext as CordYarn;
+            var item = btn.DataContext as WarehouseCordYarn;
             WarehouseReceiveYarnService.Instance.UnmarkReceive(item);
             this.InvokeAction(() =>
             {

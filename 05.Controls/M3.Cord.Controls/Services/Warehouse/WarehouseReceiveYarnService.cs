@@ -41,8 +41,8 @@ namespace M3.Cord
         private decimal _totalWeight = decimal.Zero;
         private decimal _totalCH = decimal.Zero;
 
-        private List<CordYarn> sources = CordYarn.GetCordYarns();
-        private List<CordYarn> items = null;
+        private List<WarehouseCordYarn> sources = null;
+        private List<WarehouseCordYarn> items = null;
 
         #endregion
 
@@ -64,7 +64,7 @@ namespace M3.Cord
                         {
                             ++_totalPallet;
                             _totalWeight += (item.WeightQty.HasValue) ? item.WeightQty.Value : decimal.Zero;
-                            _totalCH += (item.CH.HasValue) ? item.CH.Value : decimal.Zero;
+                            _totalCH += (item.ConeCH.HasValue) ? item.ConeCH.Value : decimal.Zero;
                         }
                     });
                 }
@@ -86,7 +86,7 @@ namespace M3.Cord
         {
             lock (this)
             {
-                items = new List<CordYarn>();
+                items = new List<WarehouseCordYarn>();
             }
             CalcTotals();
         }
@@ -95,21 +95,19 @@ namespace M3.Cord
         {
             Clear();
 
-            //_issueItems = G4IssueYarn.SearchG4IssueYarns(issueDate, itemYarn).Value();
-            // generate sample data
-            items = new List<CordYarn>(sources.ToArray());
+            items = WarehouseCordYarn.GetCordYarns(issueDate, itemYarn).Value();
         }
 
-        public void MarkReceive(CordYarn item)
+        public void MarkReceive(WarehouseCordYarn item)
         {
             if (null != item)
             {
-                item.MarkReceive(DateTime.Now);
+                item.MarkReceive();
                 CalcTotals();
             }
         }
 
-        public void UnmarkReceive(CordYarn item)
+        public void UnmarkReceive(WarehouseCordYarn item)
         {
             if (null != item)
             {
@@ -125,7 +123,7 @@ namespace M3.Cord
             {
                 items.ForEach(item =>
                 {
-                    item.MarkReceive(DateTime.Today);
+                    item.MarkReceive();
                 });
                 CalcTotals();
             }
@@ -144,7 +142,7 @@ namespace M3.Cord
         /// <summary>
         /// Gets Warehouse Cord Yarn Items (Raw Meterial) List.
         /// </summary>
-        public List<CordYarn> IssueItems
+        public List<WarehouseCordYarn> IssueItems
         {
             get { return items; }
             set { }
