@@ -65,7 +65,6 @@
     <Compile Include="Models\G4\G4Yarn.cs" />
     <Compile Include="Models\Warehouse\CordProduct.cs" />
     <Compile Include="Models\Warehouse\WarehouseCordYarn.cs" />
-    <None Include="Models\_V1\CordWarehouse\CordProduct.cs" />
     <Compile Include="Models\ItemCode\CordItemYarn.cs" />
     <Compile Include="Models\Users\UserInfo.cs" />
     <Compile Include="Models\Users\UserRole.cs" />
