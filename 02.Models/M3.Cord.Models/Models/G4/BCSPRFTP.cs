@@ -17,6 +17,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.Windows;
+using System.Text;
 
 #endregion
 
@@ -219,6 +220,28 @@ namespace M3.Cord.Models
                 return Gets(query);
             }
 
+            public static bool Delete(BCSPRFTP item)
+            {
+                bool ret = false;
+                if (null == item) 
+                    return ret;
+
+                StringBuilder q = new StringBuilder();
+
+                q.Append("DELETE FROM BCSPRFTP ");
+                q.Append(" WHERE #CDEL0 = '");
+                q.Append(item.CDEL0);
+                q.Append("'  AND #CDCON = '");
+                q.Append(item.CDCON);
+                q.Append("'  AND #CDKE1 = '");
+                q.Append(item.CDKE1);
+                q.Append("'  AND #FLAGS = 'S' And #RECTY = 'S' And #CDSTO = '3G' ");
+
+                AS400DbServer.Instance.ExecuteNonQuery(q.ToString());
+
+                return ret;
+            }
+
             /// <summary>
             /// Gets from AS400
             /// </summary>
@@ -314,7 +337,7 @@ namespace M3.Cord.Models
             /// </summary>
             /// <param name="value">The G4Yarn item to save.</param>
             /// <returns></returns>
-            private static NDbResult Save(BCSPRFTP value)
+            public static NDbResult Save(BCSPRFTP value)
             {
                 MethodBase med = MethodBase.GetCurrentMethod();
 

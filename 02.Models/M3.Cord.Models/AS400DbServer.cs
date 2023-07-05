@@ -251,6 +251,25 @@ namespace M3.Cord
                 dataSet.Tables[0] : null;
         }
 
+        public bool ExecuteNonQuery(string query)
+        {
+            bool success = true;
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            try
+            {
+                var cmd = new OleDbCommand(query, _connection);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                success = false;
+            }
+            return success;
+        }
+
         #endregion
 
         #region Public Properties

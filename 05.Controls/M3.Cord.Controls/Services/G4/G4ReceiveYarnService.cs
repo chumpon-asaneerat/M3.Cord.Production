@@ -178,7 +178,7 @@ namespace M3.Cord
         /// </summary>
         /// <param name="importMode"></param>
         /// <returns></returns>
-        public int LoadFromAS400(bool importMode = true)
+        public int LoadFromAS400(bool importMode = false)
         {
             int ret = -1;
 
@@ -191,10 +191,21 @@ namespace M3.Cord
             if (null == list)
                 return ret;
 
-            var res = BCSPRFTP.M3Cord.Save(list);
-            if (null == res || res.HasError)
-                ret = -1;
-            else ret = list.Count;
+            int iErr = 0;
+            list.ForEach(item =>
+            {
+                var dbRet = BCSPRFTP.M3Cord.Save(item);
+                if (null != dbRet && !dbRet.HasError)
+                {
+                    BCSPRFTP.AS400.Delete(item);
+                }
+                else
+                {
+                    iErr++;
+                }
+            });
+
+            ret = (iErr > 0) ? -1 : list.Count;
 
             return ret;
         }
