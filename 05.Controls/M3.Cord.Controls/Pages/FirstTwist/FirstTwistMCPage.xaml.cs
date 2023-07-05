@@ -174,6 +174,8 @@ namespace M3.Cord.Pages
                 paMC.DataContext = rawMatSheet;
                 cmdAdd.IsEnabled = (null == rawMatSheet);
             }
+            // update tabs data context for dynamic template switching
+            tabs.DataContext = paMC.DataContext;
 
             this.InvokeAction(() => 
             {
