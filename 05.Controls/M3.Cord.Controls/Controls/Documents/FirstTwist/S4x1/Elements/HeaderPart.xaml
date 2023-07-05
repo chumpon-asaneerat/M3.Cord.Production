@@ -13,30 +13,40 @@
                    LastChildFill="True"
                    Margin="5">
             <!--  LOT  -->
+            <!--
             <ctrl:NTextBox x:Name="txtLotNo"
                            DockPanel.Dock="Left"
                            CaptionText="Lot"
                            Width="200" />
+            -->
             <!--  DATE  -->
+            <!--
             <ctrl:NDatePicker x:Name="dtDocDate"
                               DockPanel.Dock="Left"
                               CaptionText="Date"
                               Width="200" />
+            -->
             <!--  Destination (Customer)  -->
+            <!--
             <ctrl:NTextBox x:Name="txtCustomerName"
                            DockPanel.Dock="Left"
                            CaptionText="Destination (ลูกค้า)"
                            Width="250" />
+            -->
             <!--  Use (Product)  -->
+            <!--
             <ctrl:NTextBox x:Name="txtProductName"
                            DockPanel.Dock="Left"
                            CaptionText="Use (ผลิตภัณฑ์)"
                            Width="250" />
+            -->
             <!--  Yarn, (SC)  -->
+            <!--
             <ctrl:NTextBox x:Name="txtItemYarn"
                            DockPanel.Dock="Left"
                            CaptionText="Yarn (ด้าย), (SC)"
                            Width="250" />
+            -->
             <Grid />
         </DockPanel>
         <DockPanel DockPanel.Dock="Top"
@@ -57,15 +67,19 @@
                                        CaptionText="Twist spec (SC)&#x0a;( จำนวนเกลียวที่กำหนด )"
                                        Width="350" />
                         <!--  ISSUE BY  -->
+                        <!--
                         <ctrl:NTextBox x:Name="txtIssueBy"
                                        DockPanel.Dock="Left"
                                        CaptionText="&#x0a;Issue By"
                                        Width="220" />
+                        -->
                         <!--  APPROVE BY  -->
+                        <!--
                         <ctrl:NTextBox x:Name="txtApproveBy"
                                        DockPanel.Dock="Left"
                                        CaptionText="&#x0a;Approve By"
                                        Width="220" />
+                        -->
                         <Grid />
                     </DockPanel>
                 </DockPanel>

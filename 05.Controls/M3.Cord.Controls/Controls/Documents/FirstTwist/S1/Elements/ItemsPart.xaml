@@ -958,7 +958,7 @@
         <!--#endregion-->
 
         <!--#region Footer-->
-
+        <!--
         <Border Grid.Column="0"
                 Grid.Row="16"
                 Grid.ColumnSpan="3"
@@ -1001,7 +1001,6 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <!--  ROW 0  -->
                 <Border Grid.Row="0"
                         Grid.Column="0"
                         BorderBrush="DimGray"
@@ -1032,7 +1031,7 @@
                                FontSize="{StaticResource FontSize20}"
                                Style="{StaticResource LabelText}" />
                 </Border>
-                <!--  ROW 1  -->
+
                 <Border Grid.Row="1"
                         Grid.Column="0"
                         BorderBrush="DimGray"
@@ -1071,7 +1070,7 @@
                         <Grid />
                     </DockPanel>
                 </Border>
-                <!--  ROW 2  -->
+
                 <Border Grid.Row="2"
                         Grid.Column="0"
                         BorderBrush="DimGray"
@@ -1112,7 +1111,7 @@
                 </Border>
             </Grid>
         </Border>
-
+        -->
         <!--#endregion-->
     </Grid>
 </UserControl>
