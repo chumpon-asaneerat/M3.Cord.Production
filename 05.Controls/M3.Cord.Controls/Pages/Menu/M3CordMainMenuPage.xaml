@@ -7,7 +7,7 @@
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="800"
+             d:DesignWidth="1300"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
     <UserControl.Resources>
@@ -252,6 +252,7 @@
                                      HeaderBackground="{StaticResource OtherBG}"
                                      Style="{StaticResource CommonGroupItemStyle}">
                     <!--  CORD DOCUMENT MENU  -->
+                    <!--
                     <Button x:Name="cmdCordDocumentMenu"
                             Click="cmdCordDocumentMenu_Click"
                             Style="{StaticResource OtherButtonStyle}">
@@ -261,6 +262,7 @@
                             <Run Text="(Confirmation)" FontSize="18" />
                         </TextBlock>
                     </Button>
+                    -->
                 </ctrl:NGroupMenuItem>
             </ctrl:NGroupMenu>
         </DockPanel>
