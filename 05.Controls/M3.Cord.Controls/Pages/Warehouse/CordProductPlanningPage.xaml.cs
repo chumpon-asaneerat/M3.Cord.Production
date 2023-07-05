@@ -76,7 +76,7 @@ namespace M3.Cord.Pages
             string msg = (ret.Ok) ? "Update Success" : "Update Failed";
             var win2 = M3CordApp.Windows.MessageBox;
             win2.Setup(msg);
-            if (win.ShowDialog() == false) return;
+            if (win2.ShowDialog() == false) return;
 
             this.InvokeAction(() =>
             {
