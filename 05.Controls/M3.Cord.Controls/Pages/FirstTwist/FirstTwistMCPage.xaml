@@ -4,6 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:S1cond="clr-namespace:M3.Cord.Controls.Documents.FirstTwist.S1"
+             xmlns:S4x1cond="clr-namespace:M3.Cord.Controls.Documents.FirstTwist.S4x1"
+             xmlns:S4x2cond="clr-namespace:M3.Cord.Controls.Documents.FirstTwist.S4x2"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="450"
@@ -38,7 +41,7 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <!--  ITEMS  -->
+            <!--  MACHINES  -->
             <ListBox x:Name="mcList"
                      Margin="0,0,5,5"
                      DockPanel.Dock="Left"
@@ -156,19 +159,43 @@
                     </StackPanel>
                     <TextBlock Height="10" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                    <Button x:Name="cmdPrepare"
+                            Style="{StaticResource InlineButton}"
+                            Content="Prepare"
+                            Click="cmdPrepare_Click" />
+                    <TextBlock Width="10" />
+                </StackPanel>
             </DockPanel>
-            <!--  LISTVIEW  -->
-            <ListView x:Name="grid"
-                      Margin="0,0,0,5"
-                      FontSize="{StaticResource FontSize18}"
-                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
-                      ItemsSource="{Binding}"
-                      Style="{StaticResource SingleSelectListView}">
-                <ListView.View>
-                    <GridView />
-                </ListView.View>
-            </ListView>
+            <!--  LISTVIEWS  -->
+            <TabControl x:Name="tabs"
+                        Margin="5"
+                        FontSize="18"
+                        SelectionChanged="tabs_SelectionChanged">
+                <TabItem Header="Raw Material Check Sheet">
+                    <ListView x:Name="gridRawMat"
+                              Margin="0,0,0,5"
+                              FontSize="{StaticResource FontSize18}"
+                              ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                              ItemsSource="{Binding}"
+                              Style="{StaticResource SingleSelectListView}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
+                                <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource ItemYarn}" />
+                                <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
+                                <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNos}" />
+                                <GridViewColumn Header="InputCH" CellTemplate="{StaticResource InputCH}" />
+                                <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNos}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </TabItem>
+                <TabItem Header="MC Condition">
+                    <S1cond:S1ProductConditionControl />
+                </TabItem>
+                <TabItem Header="PC Card" />
+            </TabControl>
         </DockPanel>
-
     </page:NPage>
 </UserControl>

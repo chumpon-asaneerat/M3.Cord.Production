@@ -221,6 +221,11 @@ namespace M3.Cord
             {
                 get { return GetWindow<ChooseCordProductWindow>(); }
             }
+            /// <summary>Gets Prepare Doff Window.</summary>
+            public static PrepareDoffWindow PrepareDoff
+            {
+                get { return GetWindow<PrepareDoffWindow>(); }
+            }
             /*
             /// <summary>Gets Yarn Loading Window.</summary>
             public static YarnLoadingWindow YarnLoading

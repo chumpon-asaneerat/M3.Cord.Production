@@ -85,6 +85,30 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void cmdPrepare_Click(object sender, RoutedEventArgs e)
+        {
+            // Prepare Doff
+            if (null == selectedMC || null == rawMatSheet)
+                return;
+            var mc = selectedMC;
+
+            var win = M3CordApp.Windows.PrepareDoff;
+            win.Setup(rawMatSheet);
+            if (win.ShowDialog() == false) return;
+            var items = win.Items;
+            if (null != items)
+            {
+                items.ForEach(item => 
+                { 
+                    var ret = RawMaterialSheetItem.Save(item); 
+                    if (!ret.Ok)
+                    {
+                        Console.WriteLine(ret.ErrMsg);
+                    }
+                });
+            }
+        }
+
         #endregion
 
         #region ListBox Handlers
@@ -96,6 +120,15 @@ namespace M3.Cord.Pages
                 selectedMC = mcList.SelectedItem as FirstTwistMC;
                 UpdateMCStatus(selectedMC);
             }
+        }
+
+        #endregion
+
+        #region Tab Handlers
+
+        private void tabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
         }
 
         #endregion
@@ -141,17 +174,30 @@ namespace M3.Cord.Pages
                 paMC.DataContext = rawMatSheet;
                 cmdAdd.IsEnabled = (null == rawMatSheet);
             }
-            RefreshGrid(mc);
+
+            this.InvokeAction(() => 
+            {
+                RefreshGrid();
+            });
         }
 
-        private void RefreshGrid(FirstTwistMC mc)
+        private void RefreshGrid()
         {
-            /*
-            doffGrid.ItemsSource = null;
-            if (null == mc)
-                return;
-            doffGrid.ItemsSource = mc.RawMaterialSheets;
-            */
+            if (tabs.SelectedIndex == 0)
+            {
+                gridRawMat.ItemsSource = null;
+                if (null == rawMatSheet)
+                    return;
+                gridRawMat.ItemsSource = RawMaterialSheetItem.Gets(rawMatSheet.RawMaterialSheetId).Value();
+            }
+            else if (tabs.SelectedIndex == 1)
+            {
+
+            }
+            else if (tabs.SelectedIndex == 2)
+            {
+
+            }
         }
 
         #endregion

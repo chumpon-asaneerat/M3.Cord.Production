@@ -1,0 +1,104 @@
+﻿<Window x:Class="M3.Cord.Windows.PrepareDoffWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        mc:Ignorable="d"
+        Title="G4 Receive Raw Material"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="500"
+        Width="900">
+    <page:NPage HeaderText="Prepare Doff">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdOk"
+                                        DockPanel.Dock="Right"
+                                        IconType="Ok"
+                                        Text="Ok"
+                                        Click="cmdOk_Click" />
+                <Grid />
+            </DockPanel>
+            <!--  WORK AREA  -->
+            <DockPanel LastChildFill="True">
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  DATE TIME  -->
+                    <ctrl:NTextBox CaptionText="DATE/TIME:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding Path=ProductionDate, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                   IsReadOnly="True"
+                                   Width="250" />
+                    <!--  ITEM YARN  -->
+                    <ctrl:NTextBox CaptionText="Item Yarn:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding ItemYarn}"
+                                   IsReadOnly="True"
+                                   Width="250" />
+                    <!--  LOT NO  -->
+                    <ctrl:NTextBox CaptionText="Lot No:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding ProductLotNo}"
+                                   IsReadOnly="True"
+                                   Width="200" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  Doff No  -->
+                    <ctrl:NTextBox CaptionText="Doff No:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding DoffNos}"
+                                   Width="180" />
+                    <!--  Trace No  -->
+                    <ctrl:NTextBox CaptionText="Trace No:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding TraceNo}"
+                                   Width="200" />
+                    <!--  Input CH -->
+                    <ctrl:NTextBox CaptionText="Input CH:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding InputCH}"
+                                   Width="150" />
+                    <!--  SP No.  -->
+                    <ctrl:NTextBox CaptionText="SP No:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding SPNos}"
+                                   Width="180" />
+                    <Button x:Name="Add" 
+                            VerticalAlignment="Bottom" Style="{StaticResource InlineButton}" 
+                            Content="Add"
+                            Click="Add_Click"/>
+                    <Grid />
+                </DockPanel>
+                <!--  PALLET/TRACE  -->
+                <ListView x:Name="grid"
+                          Margin="0,0,0,5"
+                          FontSize="{StaticResource FontSize18}"
+                          ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                          ItemsSource="{Binding}"
+                          Style="{StaticResource SingleSelectListView}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
+                            <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNos}" />
+                            <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNos}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>
+
