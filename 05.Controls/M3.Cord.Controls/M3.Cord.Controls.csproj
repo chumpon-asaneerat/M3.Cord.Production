@@ -132,21 +132,6 @@
     <Compile Include="Windows\Warehouse\CordProcuctPlanningWindow.xaml.cs">
       <DependentUpon>CordProcuctPlanningWindow.xaml</DependentUpon>
     </Compile>
-    <None Include="Windows\_V1\FirstTwist\ProductionConditionSheetWindow.xaml.cs">
-      <DependentUpon>ProductionConditionSheetWindow.xaml</DependentUpon>
-    </None>
-    <None Include="Windows\_V1\FirstTwist\YarnTwistRecordSheetWindow.xaml.cs">
-      <DependentUpon>YarnTwistRecordSheetWindow.xaml</DependentUpon>
-    </None>
-    <None Include="Windows\_V1\FirstTwist\YarnLoadingWindow.xaml.cs">
-      <DependentUpon>YarnLoadingWindow.xaml</DependentUpon>
-    </None>
-    <None Include="Windows\_V1\FirstTwist\ChooseCordProductWindow.xaml.cs">
-      <DependentUpon>ChooseCordProductWindow.xaml</DependentUpon>
-    </None>
-    <None Include="Windows\_V1\CordWarehouse\CordProcuctPlanningWindow.xaml.cs">
-      <DependentUpon>CordProcuctPlanningWindow.xaml</DependentUpon>
-    </None>
     <Compile Include="Services\Warehouse\CordProductPlanningService.cs" />
     <Compile Include="Services\Warehouse\WarehouseReceiveYarnService.cs" />
     <Compile Include="Windows\G4\G4ReceiveYarnWindow.xaml.cs">
@@ -161,15 +146,6 @@
     <Compile Include="Windows\SignIn\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
-    <None Include="Pages\_v1\CordWarehouse\CordPlanningPage.xaml.cs">
-      <DependentUpon>CordPlanningPage.xaml</DependentUpon>
-    </None>
-    <None Include="Pages\_v1\CordWarehouse\CordReceiveYarnPage.xaml.cs">
-      <DependentUpon>CordReceiveYarnPage.xaml</DependentUpon>
-    </None>
-    <None Include="Pages\_v1\FirstTwist\FirstTwistMCPage.xaml.cs">
-      <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
-    </None>
     <Compile Include="Services\M3CordApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -184,9 +160,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Windows\_V1\Sample\SampleWindow.xaml.cs">
-      <DependentUpon>SampleWindow.xaml</DependentUpon>
-    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -263,18 +236,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="Pages\_v1\CordWarehouse\CordPlanningPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Pages\_v1\CordWarehouse\CordReceiveYarnPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Pages\_v1\FirstTwist\FirstTwistMCPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <Page Include="Pages\FirstTwist\S4x2UpTwisterConditionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -327,30 +288,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="Windows\_V1\FirstTwist\ProductionConditionSheetWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Windows\_V1\FirstTwist\YarnTwistRecordSheetWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Windows\_V1\FirstTwist\YarnLoadingWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Windows\_V1\FirstTwist\ChooseCordProductWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Windows\_V1\CordWarehouse\CordProcuctPlanningWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Windows\_V1\Sample\SampleWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <Page Include="Themes\ListViewColumns.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
