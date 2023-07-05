@@ -41,7 +41,7 @@ namespace M3.Cord
         private decimal _totalWeight = decimal.Zero;
         private decimal _totalCH = decimal.Zero;
 
-        private List<WarehouseCordYarn> sources = null;
+        //private List<WarehouseCordYarn> sources = null;
         private List<WarehouseCordYarn> items = null;
 
         #endregion
