@@ -97,6 +97,9 @@ namespace M3.Cord.Pages
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
+            // connect
+            AS400DbServer.Instance.Start();
+
             string msg = string.Empty;
             int iCnt = G4ReceiveYarnService.Instance.LoadFromAS400();
             if (iCnt != -1)
@@ -110,6 +113,8 @@ namespace M3.Cord.Pages
                 msg = "Load data from AS400 failed.";
                 med.Err(msg);
             }
+            // disconnect
+            AS400DbServer.Instance.Shutdown();
 
             var win = M3CordApp.Windows.MessageBox;
             win.Setup(msg);
