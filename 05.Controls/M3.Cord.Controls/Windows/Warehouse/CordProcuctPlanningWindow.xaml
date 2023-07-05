@@ -41,7 +41,7 @@
                                     CaptionText="Item Yarn:"
                                     DisplayMemberPath="ItemYarn"
                                     Width="250" />
-                    <!--  CUSTOMER -->
+                    <!--  CUSTOMER  -->
                     <ctrl:NTextBox CaptionText="Customer:"
                                    DockPanel.Dock="Left"
                                    Text="{Binding CustomerName}"
@@ -71,7 +71,7 @@
                                    Width="200" />
                     <Grid />
                 </DockPanel>
-                <Grid/>
+                <Grid />
             </DockPanel>
         </DockPanel>
     </page:NPage>

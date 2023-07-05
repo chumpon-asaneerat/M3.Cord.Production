@@ -14,6 +14,7 @@ using NLib;
 using Dapper;
 using Newtonsoft.Json;
 using System.Net;
+using NLib.Models;
 
 #endregion
 
@@ -23,32 +24,56 @@ namespace M3.Cord.Models
     {
         #region Public Properties
 
-        public string MCName { get; set; }
-        public int BBCount { get; set; } = 102;
-        public int SheetPerBB { get; set; } = 1;
-
-        public CordProduct Product { get; set; } = null;
-        public List<RawMaterialSheetItem> RawMaterialSheets { get; set; } = new List<RawMaterialSheetItem>();
+        public string MCCode { get; set; }
+        public string ProcessName { get; set; }
+        public int DeckPerCore { get; set; }
+        public int StartCore { get; set; }
+        public int EndCore { get; set; }
 
         #endregion
 
         #region Static Methods
 
-        public static List<FirstTwistMC> Gets()
+        public static NDbResult<List<FirstTwistMC>> Gets()
         {
-            List<FirstTwistMC> rets = new List<FirstTwistMC>();
+            MethodBase med = MethodBase.GetCurrentMethod();
 
-            /*
-            rets.Add(new FirstTwistMC()
+            NDbResult<List<FirstTwistMC>> rets = new NDbResult<List<FirstTwistMC>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
             {
-                MCName = "S-1",
-                SheetPerBB = 2,
-                Product = CordProduct.Create(1, "BANDO", "100-364-704M", "9H 0663L", "ลายดาว", "21091", 5400, "S-1-1"),
-                RawMaterialSheets = RawMaterialSheetItem.GetRawMaterialSheets("S-1")
-            });
-            */
-            rets.Add(new FirstTwistMC() { MCName = "S-1", SheetPerBB = 2 });
-            rets.Add(new FirstTwistMC() { MCName = "S-4" });
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+
+            try
+            {
+                var items = cnn.Query<FirstTwistMC>("GetFirstTwistMCs", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<FirstTwistMC>();
+            }
 
             return rets;
         }

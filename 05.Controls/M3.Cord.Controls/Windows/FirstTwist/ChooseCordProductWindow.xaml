@@ -36,13 +36,46 @@
             <DockPanel LastChildFill="True">
                 <!--  LISTVIEW  -->
                 <ListView x:Name="grid"
-                      Margin="0,0,0,5"
-                      FontSize="{StaticResource FontSize18}"
-                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
-                      ItemsSource="{Binding}"
-                      Style="{StaticResource SingleSelectListView}">
+                          Margin="0,0,0,5"
+                          FontSize="{StaticResource FontSize18}"
+                          ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                          ItemsSource="{Binding}"
+                          Style="{StaticResource SingleSelectListView}">
                     <ListView.View>
                         <GridView>
+                            <GridViewColumn Header="CustomerName" CellTemplate="{StaticResource CustomerName}" />
+                            <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ItemCode}" />
+                            <GridViewColumn Header="Lot No" CellTemplate="{StaticResource ProductLotNo}" />
+                            <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
+                            <GridViewColumn Header="Qty (Target)" CellTemplate="{StaticResource TargetQty}" />
+                            <!--  BUTTONS  -->
+                            <GridViewColumn Header="">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center">
+                                            <!--  SELECT  -->
+                                            <Button x:Name="cmdSelect"
+                                                    DockPanel.Dock="Left"
+                                                    Style="{StaticResource InlineButton}"
+                                                    Margin="5,0"
+                                                    Width="100"
+                                                    Height="30"
+                                                    Click="cmdSelect_Click">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                    <TextBlock Margin="3,0"
+                                                               FontFamily="{StaticResource THSarabun}"
+                                                               FontSize="{StaticResource IBFSize}"
+                                                               Text="Select"
+                                                               VerticalAlignment="Center" />
+                                                </StackPanel>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>

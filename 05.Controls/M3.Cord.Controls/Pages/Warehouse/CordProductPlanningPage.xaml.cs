@@ -41,12 +41,6 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region Internal Variables
-
-        private List<CordProduct> allItems;
-
-        #endregion
-
         #region Loaded/Unloaded
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -77,7 +71,12 @@ namespace M3.Cord.Pages
             if (win.ShowDialog() == false) return;
 
             // Save change.
-            CordProduct.Save(item);
+            var ret = CordProduct.Save(item);
+
+            string msg = (ret.Ok) ? "Update Success" : "Update Failed";
+            var win2 = M3CordApp.Windows.MessageBox;
+            win2.Setup(msg);
+            if (win.ShowDialog() == false) return;
 
             this.InvokeAction(() =>
             {
@@ -97,7 +96,12 @@ namespace M3.Cord.Pages
             if (win.ShowDialog() == false) return;
 
             // Save change.
-            CordProduct.Save(item);
+            var ret = CordProduct.Save(item);
+
+            string msg = (ret.Ok) ? "Update Success" : "Update Failed";
+            var win2 = M3CordApp.Windows.MessageBox;
+            win2.Setup(msg);
+            if (win.ShowDialog() == false) return;
 
             this.InvokeAction(() =>
             {
@@ -111,10 +115,14 @@ namespace M3.Cord.Pages
             if (null == btn) return;
             var item = btn.DataContext as CordProduct;
             if (null == item) return;
-            /*
-            LobaclDb.Products.Remove(item);
-            Cord.LobaclDb.SaveCordProducts();
-            */
+
+            var win = M3CordApp.Windows.MessageBoxOKCancel;
+            win.Setup("Confirm delete record?");
+            if (win.ShowDialog() == false) return;
+
+            // Delete
+            CordProduct.Delete(item);
+
             RefreshGrid();
         }
 
@@ -205,8 +213,6 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            //Cord.LobaclDb.LoadCordProducts();
-
             ResetControls();
             LoadComboBoxes();
             RefreshGrid();

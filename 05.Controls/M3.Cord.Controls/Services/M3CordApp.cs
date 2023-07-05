@@ -215,13 +215,13 @@ namespace M3.Cord
             #endregion
 
             #region First Twist
-            /*
+
             /// <summary>Gets Choose Cord Product Window.</summary>
             public static ChooseCordProductWindow ChooseCordProduct
             {
                 get { return GetWindow<ChooseCordProductWindow>(); }
             }
-
+            /*
             /// <summary>Gets Yarn Loading Window.</summary>
             public static YarnLoadingWindow YarnLoading
             {

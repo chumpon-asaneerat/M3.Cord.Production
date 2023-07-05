@@ -45,6 +45,7 @@ namespace M3.Cord.Pages
 
         private List<FirstTwistMC> machines;
         private FirstTwistMC selectedMC;
+        private RawMaterialSheet rawMatSheet;
 
         #endregion
 
@@ -75,7 +76,6 @@ namespace M3.Cord.Pages
                 return;
             var mc = selectedMC;
 
-            /*
             var win = M3CordApp.Windows.ChooseCordProduct;
             win.Setup();
             if (win.ShowDialog() == false) return;
@@ -83,7 +83,6 @@ namespace M3.Cord.Pages
             {
                 AddNew(mc, win.SelectedProduct);
             }
-            */
         }
 
         #endregion
@@ -105,17 +104,15 @@ namespace M3.Cord.Pages
 
         private void AddNew(FirstTwistMC mc, CordProduct product)
         {
-            /*
-            if (null != product)
+            if (null != mc && null != product)
             {
-                product.IsUsed = true; // mark is used.
-                Cord.LobaclDb.SaveCordProducts();
-            }
+                var ret = RawMaterialSheet.AddNew(mc, product);
+                if (ret.Ok)
+                {
 
-            mc.Product = product;
+                }
+            }
             UpdateMCStatus(mc);
-            Cord.LobaclDb.SaveMachines();
-            */
         }
 
         private void ResetControls()
@@ -125,22 +122,24 @@ namespace M3.Cord.Pages
 
         private void RefreshMC()
         {
-            /*
             selectedMC = null;
             mcList.ItemsSource = null;
             mcList.ItemsSource = machines;
-            */
         }
 
         private void UpdateMCStatus(FirstTwistMC mc)
         {
-            //cmdAddNew.IsEnabled = false;
+            cmdAdd.IsEnabled = false;
 
-            //paMC.DataContext = null;
+            rawMatSheet = null;
+            paMC.DataContext = null;
+
             if (null != mc)
             {
-                //paMC.DataContext = mc.Product;
-                //cmdAddNew.IsEnabled = (null == mc.Product);
+                rawMatSheet = RawMaterialSheet.Get(mc.MCCode).Value();
+                // Binding
+                paMC.DataContext = rawMatSheet;
+                cmdAdd.IsEnabled = (null == rawMatSheet);
             }
             RefreshGrid(mc);
         }
@@ -161,8 +160,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            Cord.LobaclDb.LoadMachines();
-            machines = Cord.LobaclDb.Machines;
+            machines = FirstTwistMC.Gets().Value();
 
             ResetControls();
             RefreshMC();

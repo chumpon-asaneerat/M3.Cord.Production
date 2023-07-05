@@ -64,7 +64,7 @@
                                         DockPanel.Dock="Top"
                                         HorizontalAlignment="Stretch"
                                         CornerRadius="3">
-                                    <TextBlock Text="{Binding MCName}"
+                                    <TextBlock Text="{Binding MCCode}"
                                                Margin="2"
                                                Style="{StaticResource LabelText}"
                                                FontWeight="Bold"
@@ -110,7 +110,7 @@
                             <TextBlock Text="Lot No: "
                                        Style="{StaticResource LabelText}"
                                        Foreground="Black" />
-                            <TextBlock Text="{Binding LotNo}"
+                            <TextBlock Text="{Binding ProductLotNo}"
                                        Style="{StaticResource LabelText}"
                                        Foreground="Navy"
                                        FontWeight="Bold"
@@ -148,7 +148,7 @@
                             <TextBlock Text="Flow: "
                                        Style="{StaticResource LabelText}"
                                        Foreground="Black" />
-                            <TextBlock Text="{Binding Flow}"
+                            <TextBlock Text="{Binding MCCode}"
                                        Style="{StaticResource LabelText}"
                                        FontWeight="Bold"
                                        Foreground="Navy" />

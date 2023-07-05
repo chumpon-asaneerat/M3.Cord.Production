@@ -114,7 +114,6 @@
                                                 Margin="5,0"
                                                 Width="100"
                                                 Height="30"
-                                                Visibility="Collapsed"
                                                 Click="cmdDelete_Click">
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />

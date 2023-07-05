@@ -39,12 +39,6 @@ namespace M3.Cord.Windows
 
         #endregion
 
-        #region Internal Variables
-
-        private List<CordProduct> allItems;
-
-        #endregion
-
         #region Button Handlers
 
         private void cmdCancel_Click(object sender, RoutedEventArgs e)
@@ -54,6 +48,19 @@ namespace M3.Cord.Windows
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
+            if (null != grid.SelectedItem && grid.SelectedItem is CordProduct)
+            {
+                SelectedProduct = grid.SelectedItem as CordProduct;
+            }
+            DialogResult = true;
+        }
+
+        private void cmdSelect_Click(object sender, RoutedEventArgs e)
+        {
+            if (null != grid.SelectedItem && grid.SelectedItem is CordProduct)
+            {
+                SelectedProduct = grid.SelectedItem as CordProduct;
+            }
             DialogResult = true;
         }
 
@@ -63,17 +70,11 @@ namespace M3.Cord.Windows
 
         private void RefreshGrid()
         {
-            /*
-            // Reload all items
-            allItems = LobaclDb.Products;
-
             grid.ItemsSource = null;
 
             List<CordProduct> items;
-            items = allItems.FindAll((item) => !item.IsUsed);
-
+            items = CordProduct.Gets().Value();
             grid.ItemsSource = items;
-            */
         }
 
         #endregion
@@ -85,12 +86,6 @@ namespace M3.Cord.Windows
         /// </summary>
         public void Setup()
         {
-            /*
-            if (null == LobaclDb.Products || LobaclDb.Products.Count <= 0)
-            {
-                LobaclDb.LoadCordProducts();
-            }
-            */
             SelectedProduct = null;
             RefreshGrid();
         }
