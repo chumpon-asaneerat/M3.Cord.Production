@@ -12,7 +12,8 @@
     <Grid>
         <!--
         <npage:SampleNInputPage />
-        -->
         <local:TestFormControl />
+        -->
+        <npage:TestDbPage1 />
     </Grid>
 </Window>

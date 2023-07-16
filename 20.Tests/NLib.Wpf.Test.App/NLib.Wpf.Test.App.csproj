@@ -90,6 +90,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\TestDbPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\SampleGroupMenuPage.xaml.cs">
@@ -100,6 +104,9 @@
     </Compile>
     <Compile Include="Pages\SamplePage.xaml.cs">
       <DependentUpon>SamplePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestDbPage1.xaml.cs">
+      <DependentUpon>TestDbPage1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -138,6 +145,14 @@
     <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
       <Project>{41a9d6c0-c833-403f-9bc1-eecdc246a428}</Project>
       <Name>NLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\01.Core\M3.Cord.Core\M3.Cord.Core.csproj">
+      <Project>{97207fa7-d028-4f2f-812e-f2a3e2a85c81}</Project>
+      <Name>M3.Cord.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\02.Models\M3.Cord.Models\M3.Cord.Models.csproj">
+      <Project>{79b5dfda-fc06-4dc2-a260-07de878e5fa7}</Project>
+      <Name>M3.Cord.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
