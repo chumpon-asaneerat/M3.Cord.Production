@@ -331,6 +331,7 @@
     <Folder Include="Controls\Documents\Ageing\Elements\" />
     <Folder Include="Controls\Documents\SamplingDetails\Elements\" />
     <Folder Include="Pages\Documents\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\toray.png" />
