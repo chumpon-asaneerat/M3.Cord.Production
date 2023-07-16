@@ -71,6 +71,29 @@ namespace M3.Cord.Pages
             RefreshGrid();
         }
 
+        private void cmdPrint_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (null != G4StockService.Instance.Stocks)
+            {
+                List<G4Yarn> items = new List<G4Yarn>();
+                G4StockService.Instance.Stocks.ForEach(item => 
+                {
+                    if (null != item && item.Selected)
+                    {
+                        items.Add(item);
+                    }
+                });
+
+                if (null != items && items.Count > 0)
+                {
+                    var page = M3CordApp.Pages.GoLabelPreview;
+                    page.Setup(items);
+                    PageContentManager.Instance.Current = page;
+                }
+            }
+        }
+
         #endregion
 
         #region Combobox Handlers

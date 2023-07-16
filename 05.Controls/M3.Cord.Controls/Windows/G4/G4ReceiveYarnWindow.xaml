@@ -63,6 +63,9 @@
                         <ctrl:NDatePicker CaptionText="Expired Date"
                                           SelectedDate="{Binding ExpiredDate}"
                                           Width="180" />
+                        <ctrl:NTextBox CaptionText="Directions No:"
+                                       Text="{Binding DirectionNo}"
+                                       Width="150" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <ctrl:NInputGroup CaptionText="Verify">

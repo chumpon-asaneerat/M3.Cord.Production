@@ -172,6 +172,29 @@ namespace M3.Cord.Models
         /// </summary>
         public bool? DeleteFlag { get; set; }
 
+        public string From
+        {
+            get 
+            {
+                if (string.IsNullOrWhiteSpace(ItemYarn))
+                {
+                    return string.Empty;
+                }
+                else
+                {
+                    if (ItemYarn.Contains("TT")) 
+                    {
+                        return "Thailand";
+                    }
+                    else
+                    {
+                        return "Japan";
+                    }
+                }
+            }
+            set { }
+        }
+
         /// <summary>
         /// Gets or sets OK flag.
         /// </summary>

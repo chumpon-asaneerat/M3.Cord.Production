@@ -65,6 +65,16 @@ namespace M3.Cord.Windows
                     win.ShowDialog();
                     return;
                 }
+
+                if (string.IsNullOrWhiteSpace(_item.DirectionNo))
+                {
+                    string msg = "Please Enter Directions No.";
+                    var win = M3CordApp.Windows.MessageBox;
+                    win.Owner = this; // change owner.
+                    win.Setup(msg);
+                    win.ShowDialog();
+                    return;
+                }
             }
             DialogResult = true;
         }

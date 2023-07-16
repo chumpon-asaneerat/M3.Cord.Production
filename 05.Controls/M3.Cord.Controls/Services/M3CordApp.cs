@@ -97,6 +97,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.G4StockPage>(); }
             }
+            /// <summary>Gets G4 Go Label Preview Page.</summary>
+            public static Cord.Pages.GOLabelPreviewPage GoLabelPreview
+            {
+                get { return GetPage<Cord.Pages.GOLabelPreviewPage>(); }
+            }
             /// <summary>Gets G4 Receive Return Meterial Page.</summary>
             public static Cord.Pages.G4ReceiveReturnMeterialPage G4ReceiveReturnMeterial
             {
