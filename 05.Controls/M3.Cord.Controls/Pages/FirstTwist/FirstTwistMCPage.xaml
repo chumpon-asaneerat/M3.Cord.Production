@@ -159,13 +159,6 @@
                     </StackPanel>
                     <TextBlock Height="10" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                    <Button x:Name="cmdPrepare"
-                            Style="{StaticResource InlineButton}"
-                            Content="Prepare"
-                            Click="cmdPrepare_Click" />
-                    <TextBlock Width="10" />
-                </StackPanel>
             </DockPanel>
             <!--  LISTVIEWS  -->
             <TabControl x:Name="tabs"
@@ -173,25 +166,54 @@
                         FontSize="18"
                         SelectionChanged="tabs_SelectionChanged">
                 <TabItem Header="Raw Material Check Sheet">
-                    <ListView x:Name="gridRawMat"
-                              Margin="0,0,0,5"
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+                            <Button x:Name="cmdLoadYarn"
+                            Style="{StaticResource InlineButton}"
+                            Content="Load Yarn"
+                            Click="cmdLoadYarn_Click" />
+                            <TextBlock Width="10" />
+                        </StackPanel>
+                        <ListView x:Name="gridRawMat"
+                              Margin="0,0,0,1"
                               FontSize="{StaticResource FontSize18}"
                               ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
                               ItemsSource="{Binding}"
                               Style="{StaticResource SingleSelectListView}">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
-                                <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource ItemYarn}" />
-                                <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
-                                <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNos}" />
-                                <GridViewColumn Header="InputCH" CellTemplate="{StaticResource InputCH}" />
-                                <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNos}" />
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
+                                    <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource ItemYarn}" />
+                                    <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
+                                    <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNos}" />
+                                    <GridViewColumn Header="InputCH" CellTemplate="{StaticResource InputCH}" />
+                                    <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNos}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </DockPanel>
                 </TabItem>
                 <TabItem Header="MC Condition">
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+                            <Button x:Name="cmdNewCondition"
+                            Style="{StaticResource InlineButton}"
+                            Content="New Condition"
+                            Click="cmdNewCondition_Click" />
+                            <TextBlock Width="10" />
+                        </StackPanel>
+                        <ListView x:Name="gridMCCondition"
+                              Margin="0,0,0,1"
+                              FontSize="{StaticResource FontSize18}"
+                              ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                              ItemsSource="{Binding}"
+                              Style="{StaticResource SingleSelectListView}">
+                            <ListView.View>
+                                <GridView />
+                            </ListView.View>
+                        </ListView>
+                    </DockPanel>
+                    <!--
                     <TabItem.Style>
                         <Style TargetType="TabItem">
                             <Style.Triggers>
@@ -233,23 +255,13 @@
                             </Style.Triggers>
                         </Style>
                     </TabItem.Style>
-                    <!--
-                    <ContentControl>
-                        <ContentControl.Style>
-                            <Style TargetType="ContentControl">
-                                <Setter Property="ContentTemplate">
-                                    <Setter.Value>
-                                        <DataTemplate>
-                                            <S1cond:S1ProductConditionControl />
-                                        </DataTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </ContentControl.Style>
-                    </ContentControl>
                     -->
                 </TabItem>
-                <TabItem Header="PC Card" />
+                <TabItem Header="PC Card">
+                    <DockPanel LastChildFill="True">
+
+                    </DockPanel>
+                </TabItem>
             </TabControl>
         </DockPanel>
     </page:NPage>

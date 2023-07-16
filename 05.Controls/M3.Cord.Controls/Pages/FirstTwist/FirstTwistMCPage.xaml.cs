@@ -85,7 +85,7 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void cmdPrepare_Click(object sender, RoutedEventArgs e)
+        private void cmdLoadYarn_Click(object sender, RoutedEventArgs e)
         {
             // Prepare Doff
             if (null == selectedMC || null == rawMatSheet)
@@ -107,6 +107,18 @@ namespace M3.Cord.Pages
                     }
                 });
             }
+        }
+
+        private void cmdNewCondition_Click(object sender, RoutedEventArgs e)
+        {
+            // Prepare Doff
+            if (null == selectedMC || null == rawMatSheet)
+                return;
+            var mc = selectedMC;
+
+            var win = M3CordApp.Windows.S1Condition;
+            win.Setup(mc, rawMatSheet);
+            if (win.ShowDialog() == false) return;
         }
 
         #endregion

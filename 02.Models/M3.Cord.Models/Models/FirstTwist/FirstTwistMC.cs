@@ -81,6 +81,55 @@ namespace M3.Cord.Models
         #endregion
     }
 
+    public class MCBBCondition
+    {
+        #region Public Properties
+
+        public DateTime RecordDate { get; set; }
+
+        public string ProductLotNo { get; set; }
+        public string ItemCode { get; set; }
+
+        public string MCCode { get; set; }
+        public int DoffNo { get; set; }
+
+        #endregion
+    }
+
+    public class MCBBConditionItem
+    {
+        #region Public Properties
+
+        public int BBNo { get; set; }
+
+        public bool RawmaterialB { get; set; }
+        public bool RawmaterialA { get; set; }
+
+        public bool CrossYarnB { get; set; }
+        public bool CrossYarnA { get; set; }
+
+        public bool FormB { get; set; }
+        public bool FormA { get; set; }
+
+        public bool KebaB { get; set; }
+        public bool KebaA { get; set; }
+
+        public bool StainB { get; set; }
+        public bool StainA { get; set; }
+
+        public bool PaperTubeB { get; set; }
+        public bool PaperTubeA { get; set; }
+
+        public bool YarnNoB { get; set; }
+        public bool YarnNoA { get; set; }
+
+        public bool BBMarkB { get; set; }
+        public bool BBMarkA { get; set; }
+
+        #endregion
+    }
+
+    /*
     public class YarnLoadingItem : NInpc
     {
         public string DoffNo { get; set; }
@@ -115,4 +164,5 @@ namespace M3.Cord.Models
             return rets;
         }
     }
+    */
 }

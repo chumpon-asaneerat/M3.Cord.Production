@@ -6,7 +6,7 @@
         xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
         xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
         mc:Ignorable="d"
-        Title="G4 Receive Raw Material"
+        Title="Load Yarn"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
         ResizeMode="NoResize"
@@ -14,7 +14,7 @@
         WindowStartupLocation="CenterOwner"
         Height="500"
         Width="900">
-    <page:NPage HeaderText="Prepare Doff">
+    <page:NPage HeaderText="Load Yarn">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
             <DockPanel LastChildFill="True"
@@ -66,7 +66,7 @@
                                    DockPanel.Dock="Left"
                                    Text="{Binding TraceNo}"
                                    Width="200" />
-                    <!--  Input CH -->
+                    <!--  Input CH  -->
                     <ctrl:NTextBox CaptionText="Input CH:"
                                    DockPanel.Dock="Left"
                                    Text="{Binding InputCH}"
@@ -76,10 +76,11 @@
                                    DockPanel.Dock="Left"
                                    Text="{Binding SPNos}"
                                    Width="180" />
-                    <Button x:Name="Add" 
-                            VerticalAlignment="Bottom" Style="{StaticResource InlineButton}" 
+                    <Button x:Name="Add"
+                            VerticalAlignment="Bottom"
+                            Style="{StaticResource InlineButton}"
                             Content="Add"
-                            Click="Add_Click"/>
+                            Click="Add_Click" />
                     <Grid />
                 </DockPanel>
                 <!--  PALLET/TRACE  -->

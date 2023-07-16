@@ -231,6 +231,11 @@ namespace M3.Cord
             {
                 get { return GetWindow<PrepareDoffWindow>(); }
             }
+            /// <summary>Gets S1 Condition Window.</summary>
+            public static S1ConditionWindow S1Condition
+            {
+                get { return GetWindow<S1ConditionWindow>(); }
+            }
             /*
             /// <summary>Gets Yarn Loading Window.</summary>
             public static YarnLoadingWindow YarnLoading

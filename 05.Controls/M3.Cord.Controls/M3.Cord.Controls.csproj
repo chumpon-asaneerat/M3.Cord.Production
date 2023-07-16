@@ -156,6 +156,9 @@
     <Compile Include="Windows\FirstTwist\PrepareDoffWindow.xaml.cs">
       <DependentUpon>PrepareDoffWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\FirstTwist\S1ConditionWindow.xaml.cs">
+      <DependentUpon>S1ConditionWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Warehouse\CordProcuctPlanningWindow.xaml.cs">
       <DependentUpon>CordProcuctPlanningWindow.xaml</DependentUpon>
     </Compile>
@@ -333,6 +336,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\FirstTwist\PrepareDoffWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FirstTwist\S1ConditionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
