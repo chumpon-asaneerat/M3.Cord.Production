@@ -109,6 +109,10 @@ namespace M3.Cord.Models
         /// Gets or sets Expired Date.
         /// </summary>
         public DateTime? ExpiredDate { get; set; }
+        /// <summary>
+        /// Gets or sets Direction No.
+        /// </summary>
+        public string DirectionNo { get; set; }
 
         /// <summary>
         /// Gets or sets is Verify.
@@ -295,6 +299,7 @@ namespace M3.Cord.Models
             p.Add("@MovementDate", value.MovementDate);
 
             p.Add("@ExpiredDate", value.ExpiredDate);
+            p.Add("@DirectionNo", value.DirectionNo);
 
             p.Add("@Verify", value.Verify);
             p.Add("@Packing", value.Packing);
