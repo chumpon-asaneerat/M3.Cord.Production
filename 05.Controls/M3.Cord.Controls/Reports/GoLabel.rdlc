@@ -2257,6 +2257,22 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <Image Name="PALLETNOImage">
+                          <Source>Database</Source>
+                          <Value>=Fields!PalletNoImage.Value</Value>
+                          <MIMEType>image/png</MIMEType>
+                          <Sizing>Fit</Sizing>
+                          <Top>11.75734cm</Top>
+                          <Left>0.78915cm</Left>
+                          <Height>0.6cm</Height>
+                          <Width>8.78862cm</Width>
+                          <ZIndex>60</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Image>
                       </ReportItems>
                       <KeepTogether>true</KeepTogether>
                       <Style>
@@ -2374,6 +2390,10 @@
         <Field Name="PalletNo">
           <DataField>PalletNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PalletNoImage">
+          <DataField>PalletNoImage</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
         </Field>
         <Field Name="LotNo">
           <DataField>LotNo</DataField>

@@ -19,10 +19,22 @@ using System.Diagnostics;
 
 #endregion
 
+using BarcodeLib;
+
 namespace M3.Cord.Models
 {
     public class G4Yarn : NInpc
     {
+        private static Barcode BarcodeGenerator = null;
+
+        static G4Yarn()
+        {
+            BarcodeGenerator = new Barcode();
+            BarcodeGenerator.EncodedType = BarcodeLib.TYPE.CODE39;
+            BarcodeGenerator.Alignment = BarcodeLib.AlignmentPositions.CENTER;
+            BarcodeGenerator.IncludeLabel = false;
+        }
+
         #region Public Properties
 
         /// <summary>
@@ -33,6 +45,23 @@ namespace M3.Cord.Models
         /// Gets or sets Entry Date.
         /// </summary>
         public DateTime? EntryDate { get; set; }
+
+        public byte[] PalletNoImage
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(PalletNo))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType, 
+                        PalletNo, 400, 160);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
 
         /// <summary>
         /// Gets or sets TraceNo (รหัสจาก supplier).
