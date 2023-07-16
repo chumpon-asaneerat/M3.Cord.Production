@@ -44,6 +44,9 @@ namespace M3.Cord.Windows
         private FirstTwistMC _mc = null;
         private RawMaterialSheet _rawMat = null;
 
+        private MCBBCondition _cond = null;
+        private List<MCBBConditionItem> _condItems = null;
+
         #endregion
 
         #region Button Handlers
@@ -71,19 +74,28 @@ namespace M3.Cord.Windows
         {
             this.DataContext = null;
 
-            var mcCond = new MCBBCondition();
-            mcCond.RecordDate = DateTime.Now;
-            mcCond.MCCode = (null != _mc) ? _mc.MCCode : null;
-            mcCond.ProductLotNo = (null != _rawMat) ? _rawMat.ProductLotNo : null;
-            mcCond.ItemCode = (null != _rawMat) ? _rawMat.ItemCode : null;
+            _cond = new MCBBCondition();
+            _cond.RecordDate = DateTime.Now;
+            _cond.MCCode = (null != _mc) ? _mc.MCCode : null;
+            _cond.ProductLotNo = (null != _rawMat) ? _rawMat.ProductLotNo : null;
+            _cond.ItemCode = (null != _rawMat) ? _rawMat.ItemCode : null;
 
-            this.DataContext = mcCond;
+            this.DataContext = _cond;
+
+            grid.ItemsSource = null;
 
             if (null == _mc) return;
+
+            _condItems = new List<MCBBConditionItem>();
+
             for (int i =_mc.StartCore; i < _mc.EndCore; i++)
             {
-
+                var item = new MCBBConditionItem();
+                item.BBNo = i;
+                _condItems.Add(item);
             }
+
+            grid.ItemsSource = _condItems;
         }
 
 

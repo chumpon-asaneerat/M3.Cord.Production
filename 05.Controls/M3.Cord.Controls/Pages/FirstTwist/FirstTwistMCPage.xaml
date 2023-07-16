@@ -169,17 +169,17 @@
                     <DockPanel LastChildFill="True">
                         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
                             <Button x:Name="cmdLoadYarn"
-                            Style="{StaticResource InlineButton}"
-                            Content="Load Yarn"
-                            Click="cmdLoadYarn_Click" />
+                                    Style="{StaticResource InlineButton}"
+                                    Content="Load Yarn"
+                                    Click="cmdLoadYarn_Click" />
                             <TextBlock Width="10" />
                         </StackPanel>
                         <ListView x:Name="gridRawMat"
-                              Margin="0,0,0,1"
-                              FontSize="{StaticResource FontSize18}"
-                              ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
-                              ItemsSource="{Binding}"
-                              Style="{StaticResource SingleSelectListView}">
+                                  Margin="0,0,0,1"
+                                  FontSize="{StaticResource FontSize18}"
+                                  ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                                  ItemsSource="{Binding}"
+                                  Style="{StaticResource SingleSelectListView}">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
@@ -197,19 +197,23 @@
                     <DockPanel LastChildFill="True">
                         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
                             <Button x:Name="cmdNewCondition"
-                            Style="{StaticResource InlineButton}"
-                            Content="New Condition"
-                            Click="cmdNewCondition_Click" />
+                                    Style="{StaticResource InlineButton}"
+                                    Content="New Condition"
+                                    Click="cmdNewCondition_Click" />
                             <TextBlock Width="10" />
                         </StackPanel>
                         <ListView x:Name="gridMCCondition"
-                              Margin="0,0,0,1"
-                              FontSize="{StaticResource FontSize18}"
-                              ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
-                              ItemsSource="{Binding}"
-                              Style="{StaticResource SingleSelectListView}">
+                                  Margin="0,0,0,1"
+                                  FontSize="{StaticResource FontSize18}"
+                                  ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                                  ItemsSource="{Binding}"
+                                  Style="{StaticResource SingleSelectListView}">
                             <ListView.View>
-                                <GridView />
+                                <GridView>
+                                    <GridView.Columns>
+                                        <GridViewColumn Header="Doff No." />
+                                    </GridView.Columns>
+                                </GridView>
                             </ListView.View>
                         </ListView>
                     </DockPanel>
@@ -258,9 +262,7 @@
                     -->
                 </TabItem>
                 <TabItem Header="PC Card">
-                    <DockPanel LastChildFill="True">
-
-                    </DockPanel>
+                    <DockPanel LastChildFill="True" />
                 </TabItem>
             </TabControl>
         </DockPanel>

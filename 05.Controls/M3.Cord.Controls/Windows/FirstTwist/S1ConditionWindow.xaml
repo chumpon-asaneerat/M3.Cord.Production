@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
         xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        xmlns:S1cond="clr-namespace:M3.Cord.Controls.Documents.FirstTwist.S1"
         mc:Ignorable="d"
         Title="S-1 M/C Condition"
         HorizontalAlignment="Center"
@@ -12,8 +13,8 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="600"
-        Width="1000">
+        Height="700"
+        Width="1400">
     <page:NPage HeaderText="S-1 M/C Condition">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
@@ -52,14 +53,150 @@
                         <ctrl:NDatePicker x:Name="dt"
                                           CaptionText="Date:"
                                           IsEnabled="False"
-                                          Width="200" 
-                                          SelectedDate="{Binding RecordDate}"/>
+                                          Width="200"
+                                          SelectedDate="{Binding RecordDate}" />
                         <ctrl:NTextBox x:Name="txtDoffNo"
                                        CaptionText="Doff No:"
                                        Width="120"
                                        Text="{Binding DoffNo}" />
                     </StackPanel>
-                    <Grid />
+                    <TabControl>
+                        <TabItem Header="BB Comdition">
+                            <ListView x:Name="grid"
+                                      Margin="0,0,0,1"
+                                      FontSize="{StaticResource FontSize18}"
+                                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                                      ItemsSource="{Binding}"
+                                      Style="{StaticResource SingleSelectListView}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="BB No.">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding BBNo}" Style="{StaticResource LabelText}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Rawmaterial" Width="200">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                        <CheckBox Content="ก่อน"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding RawmaterialB}" />
+                                                        <CheckBox Content="หลัง"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding RawmaterialA}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Cross Yarn" Width="200">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                        <CheckBox Content="ก่อน"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding CrossYarnB}" />
+                                                        <CheckBox Content="หลัง"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding CrossYarnA}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Form" Width="200">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                        <CheckBox Content="ก่อน"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding FormB}" />
+                                                        <CheckBox Content="หลัง"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding FormA}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Keba" Width="200">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                        <CheckBox Content="ก่อน"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding KebaB}" />
+                                                        <CheckBox Content="หลัง"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding KebaA}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Stain" Width="200">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                        <CheckBox Content="ก่อน"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding StainB}" />
+                                                        <CheckBox Content="หลัง"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding StainA}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Paper Tube" Width="200">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                        <CheckBox Content="ก่อน"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding PaperTubeB}" />
+                                                        <CheckBox Content="หลัง"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding PaperTubeA}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Yarn No." Width="200">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                        <CheckBox Content="ก่อน"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding YarnNoB}" />
+                                                        <CheckBox Content="หลัง"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding YarnNoA}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="BB Mark." Width="200">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                        <CheckBox Content="ก่อน"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding BBMarkB}" />
+                                                        <CheckBox Content="หลัง"
+                                                                  Style="{StaticResource CommonCheckBox}"
+                                                                  IsChecked="{Binding BBMarkA}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </TabItem>
+                        <TabItem Header="M/C Comdition">
+                            <S1cond:S1ProductConditionControl />
+                        </TabItem>
+                    </TabControl>
                 </DockPanel>
                 <Grid />
             </DockPanel>
