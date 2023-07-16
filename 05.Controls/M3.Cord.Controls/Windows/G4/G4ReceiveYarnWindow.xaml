@@ -65,7 +65,7 @@
                                           Width="180" />
                         <ctrl:NTextBox CaptionText="Directions No:"
                                        Text="{Binding DirectionNo}"
-                                       Width="150" />
+                                       Width="180" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <ctrl:NInputGroup CaptionText="Verify">
