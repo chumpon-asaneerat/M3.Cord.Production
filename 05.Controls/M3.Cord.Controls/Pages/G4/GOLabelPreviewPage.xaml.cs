@@ -72,10 +72,32 @@ namespace M3.Cord.Pages
 
         private void cmdPrint_Click(object sender, RoutedEventArgs e)
         {
-
+            Print();
         }
 
         #endregion
+
+        private void Print()
+        {
+            cmdPrint.Visibility = Visibility.Collapsed;
+
+            MethodBase med = MethodBase.GetCurrentMethod();
+            try
+            {
+                if (null != _items)
+                {
+                    this.rptViewer.Print(ReportDisplayName);
+                }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
+
+            cmdPrint.Visibility = Visibility.Visible;
+
+            M3CordApp.Pages.GotoCordMainMenu();
+        }
 
         #region Report methods
 
