@@ -67,6 +67,23 @@ namespace M3.Cord.Models
         /// Gets or sets TraceNo (รหัสจาก supplier).
         /// </summary>
         public string TraceNo { get; set; }
+
+        public byte[] TraceNoImage
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(TraceNo))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        TraceNo, 400, 160);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
         /// <summary>
         /// Gets or sets PalletNo (รหัสแท่นวาง).
         /// </summary>

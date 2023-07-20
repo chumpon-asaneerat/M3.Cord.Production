@@ -702,8 +702,8 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <Top>12.4279cm</Top>
-                          <Left>2.65676cm</Left>
+                          <Top>12.39262cm</Top>
+                          <Left>2.98665cm</Left>
                           <Height>0.55cm</Height>
                           <Width>5.22045cm</Width>
                           <ZIndex>18</ZIndex>
@@ -2289,6 +2289,46 @@
                             </Border>
                           </Style>
                         </Image>
+                        <Textbox Name="Textbox74">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Directions No : </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <Top>12.39262cm</Top>
+                          <Left>0.65137cm</Left>
+                          <Height>0.55cm</Height>
+                          <Width>2.3cm</Width>
+                          <ZIndex>62</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
                       </ReportItems>
                       <KeepTogether>true</KeepTogether>
                       <Style>
