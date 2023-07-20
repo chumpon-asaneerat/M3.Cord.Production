@@ -10,8 +10,10 @@ M3 Cord Production System #448
 M3 Cord Production System #447
 - 
 
+[commited]
 M3 Cord Production System #446
-- 
+- M3.Cord.Production.App re-implements #245.
+  - Implements Advance ListView for Condition Documents.
 
 [commited]
 M3 Cord Production System #445

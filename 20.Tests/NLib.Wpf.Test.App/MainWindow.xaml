@@ -13,7 +13,8 @@
         <!--
         <npage:SampleNInputPage />
         <local:TestFormControl />
-        -->
         <npage:TestDbPage1 />
+        -->
+        <npage:AdvListView1Page />
     </Grid>
 </Window>
