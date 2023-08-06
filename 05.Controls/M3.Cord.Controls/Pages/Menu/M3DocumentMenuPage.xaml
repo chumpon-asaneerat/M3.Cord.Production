@@ -182,7 +182,7 @@
                                      HeaderBackground="{StaticResource FirstTwistBG}"
                                      Style="{StaticResource CommonGroupItemStyle}">
                     <!--  CONDITION S-1 (RF-TW-10-06)  -->
-                    <Button x:Name="cmdS1ProductCondition" 
+                    <Button x:Name="cmdS1ProductCondition"
                             Click="cmdS1ProductCondition_Click"
                             Style="{StaticResource FirstTwistButtonStyle}">
                         <TextBlock TextAlignment="Center">
@@ -196,7 +196,7 @@
                         </TextBlock>
                     </Button>
                     <!--  CONDITION S-4-1 (RF- TW-13 -05)  -->
-                    <Button x:Name="cmdS4x1ProductCondition" 
+                    <Button x:Name="cmdS4x1ProductCondition"
                             Click="cmdS4x1ProductCondition_Click"
                             Style="{StaticResource FirstTwistButtonStyle}">
                         <TextBlock TextAlignment="Center">
@@ -210,7 +210,7 @@
                         </TextBlock>
                     </Button>
                     <!--  CONDITION S-4-2 (RF- TW-13 -05)  -->
-                    <Button x:Name="cmdS4x2ProductCondition" 
+                    <Button x:Name="cmdS4x2ProductCondition"
                             Click="cmdS4x2ProductCondition_Click"
                             Style="{StaticResource FirstTwistButtonStyle}">
                         <TextBlock TextAlignment="Center">

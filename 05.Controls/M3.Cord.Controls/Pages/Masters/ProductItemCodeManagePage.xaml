@@ -50,22 +50,19 @@
                                    DockPanel.Dock="Left"
                                    CaptionText="Customer:"
                                    TextAlignment="Center"
-                                   Width="200"
-                                   PreviewKeyDown="txtCustomer_PreviewKeyDown" />
+                                   Width="200" />
                     <!--  Lot No (Product).  -->
                     <ctrl:NTextBox x:Name="txtLotNo"
                                    DockPanel.Dock="Left"
                                    CaptionText="Lot No (Product):"
                                    TextAlignment="Center"
-                                   Width="250"
-                                   PreviewKeyDown="txtLotNo_PreviewKeyDown" />
+                                   Width="250" />
                     <!--  ITEM YARN  -->
                     <ctrl:NComboBox x:Name="cbItemYanrs"
                                     DockPanel.Dock="Left"
                                     CaptionText="Item Yarn:"
                                     DisplayMemberPath="ItemYarn"
-                                    Width="250"
-                                    SelectionChanged="cbItemYanrs_SelectionChanged" />
+                                    Width="250" />
                     <Grid />
                 </DockPanel>
             </DockPanel>
@@ -96,8 +93,7 @@
                                                 Style="{StaticResource InlineButton}"
                                                 Margin="5,0"
                                                 Width="100"
-                                                Height="30"
-                                                Click="cmdEdit_Click">
+                                                Height="30">
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
                                                 <TextBlock Margin="3,0"
@@ -113,8 +109,7 @@
                                                 Style="{StaticResource InlineButton}"
                                                 Margin="5,0"
                                                 Width="100"
-                                                Height="30"
-                                                Click="cmdDelete_Click">
+                                                Height="30">
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
                                                 <TextBlock Margin="3,0"

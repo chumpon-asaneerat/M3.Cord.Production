@@ -37,6 +37,20 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Loaded/Unloaded
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UserControl_Unloaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        #endregion
+
         #region Button Handlers
 
         private void cmdMainMenu_Click(object sender, RoutedEventArgs e)

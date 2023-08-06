@@ -149,6 +149,8 @@ namespace M3.Cord.Pages
         private void cmdMasterDataMenu_Click(object sender, RoutedEventArgs e)
         {
             // Master Data
+            var page = M3CordApp.Pages.MasterDataMenu;
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdCordDocumentMenu_Click(object sender, RoutedEventArgs e)

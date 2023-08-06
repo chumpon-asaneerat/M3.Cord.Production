@@ -221,7 +221,7 @@
                             Click="cmdS4x1StdCondiction_Click"
                             Style="{StaticResource SamplingButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="Setup S-1" />
+                            <Run Text="Setup S-4-1" />
                             <LineBreak />
                             <Run Text="Standard" />
                         </TextBlock>
@@ -231,7 +231,7 @@
                             Click="cmdS4x2StdCondiction_Click"
                             Style="{StaticResource SamplingButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="Setup S-1" />
+                            <Run Text="Setup S-4-2" />
                             <LineBreak />
                             <Run Text="Standard" />
                         </TextBlock>
