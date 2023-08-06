@@ -28,15 +28,17 @@ M3 Cord Production System #452
 M3 Cord Production System #451
 - 
 
+[commited]
 M3 Cord Production System #450
-- 
+- M3.Cord.Production.App re-implements #250.
 
 [commited]
 M3 Cord Production System #449
-- M3.Cord.Production.App re-implements #248.
+- M3.Cord.Production.App re-implements #249.
 
 [commited]
 M3 Cord Production System #448
+- M3.Cord.Production.App re-implements #248.
 - Prepare history.txt
 
 [commited]

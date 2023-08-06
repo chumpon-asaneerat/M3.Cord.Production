@@ -57,16 +57,31 @@ namespace NLib.Wpf.Test.App.Pages
         public static MDocument GetMDocument()
         {
             var doc = new MDocument();
-            doc.Items.Add(new MDocumentItem() { Name = "Item 1", Value = "Test 1" } );
-            doc.Items.Add(new MDocumentItem() { Name = "Item 2", Value = DateTime.Today });
+            doc.Items.Add(new MDocumentItem() 
+            { 
+                Name = "Item 1", Value = "Test 1", PropertyType = PropertyType.String 
+            });
+            doc.Items.Add(new MDocumentItem() 
+            { 
+                Name = "Item 2", Value = DateTime.Today, PropertyType = PropertyType.DateTime 
+            });
             return doc;
         }
+    }
+
+    public enum PropertyType
+    {
+        String = 1,
+        Int = 2,
+        Decinal = 3,
+        Bool = 4,
+        DateTime = 5
     }
 
     public class MDocumentItem
     {
         public string Name { get; set; }
         public object Value { get; set; }
-        public Type DataType { get; set; }
+        public PropertyType PropertyType { get; set; }
     }
 }
