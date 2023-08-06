@@ -42,7 +42,19 @@ namespace M3.Cord.Windows
         #region Internal Variables
 
         private YarnLoadSheet _sheet = null;
-        //private RawMaterialSheetItem _item = null;
+        private YarnLoadSheetDoff _item = null;
+
+        #endregion
+
+        #region TextBox Handlers
+
+        private void txtPallet_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                e.Handled = true;
+            }
+        }
 
         #endregion
 
@@ -60,7 +72,6 @@ namespace M3.Cord.Windows
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            /*
             if (null != _item && null != Items)
             {
                 Items.Add(_item);
@@ -70,7 +81,6 @@ namespace M3.Cord.Windows
                 RefreshGrid();
                 NewItem();
             });
-            */
         }
 
         #endregion
@@ -81,32 +91,23 @@ namespace M3.Cord.Windows
         {
             this.DataContext = null; 
 
-            /*
             if (null != _sheet)
             {
-                _item = new RawMaterialSheetItem();
-                _item.ProductionDate = DateTime.Now;
-                _item.RawMaterialSheetId = _sheet.RawMaterialSheetId;
-                _item.Seq = 0;
+                _item = new YarnLoadSheetDoff();
+                _item.RecordDate = DateTime.Now;
+                _item.YarnLoadSheetId = _sheet.YarnLoadSheetId;
                 _item.ProductLotNo = _sheet.ProductLotNo;
                 _item.ItemYarn = _sheet.ItemYarn;
-                _item.PalletNo = string.Empty;
-                _item.TraceNo = string.Empty;
                 _item.DoffNos = string.Empty;
-                _item.InputCH = 0;
-                _item.SPNos = string.Empty;
-
+                _item.Shift = string.Empty;
                 this.DataContext = _item;
             }
-            */
         }
 
         private void RefreshGrid()
         {
-            /*
             grid.ItemsSource = null;
             grid.ItemsSource = Items;
-            */
         }
 
         #endregion
@@ -117,7 +118,7 @@ namespace M3.Cord.Windows
         {
             _sheet = sheet;
             
-            //this.Items = new List<RawMaterialSheetItem>();
+            this.Items = new List<YarnLoadSheetDoff>();
             NewItem();
             RefreshGrid();
         }
@@ -126,7 +127,7 @@ namespace M3.Cord.Windows
 
         #region Public Properties
 
-        //public List<RawMaterialSheetItem> Items { get; private set; }
+        public List<YarnLoadSheetDoff> Items { get; private set; }
 
         #endregion
     }

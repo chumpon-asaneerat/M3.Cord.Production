@@ -30,10 +30,14 @@ namespace M3.Cord.Models
 
         #endregion
 
+        #region Constructor
+
         public YarnLoadSheet()
         {
-            //Pallets = new List<CordProductPallet>();
+            
         }
+
+        #endregion
 
         #region Public Properties
 

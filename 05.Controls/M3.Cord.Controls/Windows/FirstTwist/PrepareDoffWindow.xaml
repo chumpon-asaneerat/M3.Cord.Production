@@ -12,8 +12,8 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="500"
-        Width="900">
+        Height="800"
+        Width="1100">
     <page:NPage HeaderText="Load Yarn">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
@@ -38,7 +38,7 @@
                     <!--  DATE TIME  -->
                     <ctrl:NTextBox CaptionText="DATE/TIME:"
                                    DockPanel.Dock="Left"
-                                   Text="{Binding Path=ProductionDate, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                   Text="{Binding Path=RecordDate, StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}"
                                    IsReadOnly="True"
                                    Width="250" />
                     <!--  ITEM YARN  -->
@@ -53,29 +53,49 @@
                                    Text="{Binding ProductLotNo}"
                                    IsReadOnly="True"
                                    Width="200" />
-                    <Grid />
-                </DockPanel>
-                <DockPanel DockPanel.Dock="Top">
                     <!--  Doff No  -->
                     <ctrl:NTextBox CaptionText="Doff No:"
                                    DockPanel.Dock="Left"
                                    Text="{Binding DoffNos}"
                                    Width="180" />
-                    <!--  Trace No  -->
-                    <ctrl:NTextBox CaptionText="Trace No:"
+                    <!--  Shift  -->
+                    <ctrl:NTextBox CaptionText="Shift:"
                                    DockPanel.Dock="Left"
-                                   Text="{Binding TraceNo}"
-                                   Width="200" />
-                    <!--  Input CH  -->
-                    <ctrl:NTextBox CaptionText="Input CH:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding InputCH}"
+                                   Text="{Binding Shift}"
                                    Width="150" />
-                    <!--  SP No.  -->
-                    <ctrl:NTextBox CaptionText="SP No:"
+                    <Grid />
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <ctrl:NTextBox x:Name="txtPallet"
+                                   CaptionText="Pallet No:"
                                    DockPanel.Dock="Left"
-                                   Text="{Binding SPNos}"
-                                   Width="180" />
+                                   Text=""
+                                   Width="200" 
+                                   PreviewKeyDown="txtPallet_PreviewKeyDown"/>
+                    <ctrl:NTextBox x:Name="txtTraceNo"
+                                   CaptionText="Trace No:"
+                                   DockPanel.Dock="Left"
+                                   Text=""
+                                   IsReadOnly="True"
+                                   Width="200" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <ctrl:NTextBox x:Name="txtSPNo"
+                                   CaptionText="SP No:"
+                                   DockPanel.Dock="Left"
+                                   Text="1"
+                                   Width="200" />
+                    <ctrl:NTextBox x:Name="txtDeckNo"
+                                   CaptionText="เส้นที่:"
+                                   DockPanel.Dock="Left"
+                                   Text="1"
+                                   Width="200" />
+                    <ctrl:NTextBox x:Name="txtYarnBarcode"
+                                   CaptionText="Yarn Barcode:"
+                                   DockPanel.Dock="Left"
+                                   Text=""
+                                   Width="200" />
                     <Button x:Name="Add"
                             VerticalAlignment="Bottom"
                             Style="{StaticResource InlineButton}"
