@@ -82,6 +82,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AdvListView2Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SampleGroupMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,6 +106,9 @@
   <ItemGroup>
     <Compile Include="Pages\AdvListView1Page.xaml.cs">
       <DependentUpon>AdvListView1Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdvListView2Page.xaml.cs">
+      <DependentUpon>AdvListView2Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SampleGroupMenuPage.xaml.cs">
       <DependentUpon>SampleGroupMenuPage.xaml</DependentUpon>

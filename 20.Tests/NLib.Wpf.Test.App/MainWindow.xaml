@@ -14,7 +14,8 @@
         <npage:SampleNInputPage />
         <local:TestFormControl />
         <npage:TestDbPage1 />
-        -->
         <npage:AdvListView1Page />
+        -->
+        <npage:AdvListView2Page />
     </Grid>
 </Window>
