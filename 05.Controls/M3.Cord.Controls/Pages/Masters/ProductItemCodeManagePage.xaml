@@ -29,7 +29,7 @@
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Left"
                             VerticalAlignment="Center">
-                    <!--  NEW  -->
+                    <!--  SAVE  -->
                     <ctrl:FontAwesomeButton x:Name="cmdSave"
                                             Margin="5,0,0,0"
                                             IconType="Save"
@@ -45,24 +45,18 @@
                            LastChildFill="True"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
-                    <!--  CUSTOMER  -->
-                    <ctrl:NTextBox x:Name="txtCustomer"
+                    <!--  Item Code  -->
+                    <ctrl:NTextBox x:Name="txtItemCode"
                                    DockPanel.Dock="Left"
-                                   CaptionText="Customer:"
+                                   CaptionText="Item Code:"
                                    TextAlignment="Center"
                                    Width="200" />
-                    <!--  Lot No (Product).  -->
-                    <ctrl:NTextBox x:Name="txtLotNo"
-                                   DockPanel.Dock="Left"
-                                   CaptionText="Lot No (Product):"
-                                   TextAlignment="Center"
-                                   Width="250" />
-                    <!--  ITEM YARN  -->
-                    <ctrl:NComboBox x:Name="cbItemYanrs"
-                                    DockPanel.Dock="Left"
-                                    CaptionText="Item Yarn:"
-                                    DisplayMemberPath="ItemYarn"
-                                    Width="250" />
+                    <ctrl:FontAwesomeButton x:Name="cmdAdd"
+                                            Click="cmdAdd_Click"
+                                            Margin="5,0,0,0"
+                                            IconType="Add"
+                                            VerticalAlignment="Bottom"
+                                            Text="Add" />
                     <Grid />
                 </DockPanel>
             </DockPanel>
@@ -75,51 +69,10 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="CustomerName" CellTemplate="{StaticResource CustomerName}" />
-                        <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ItemCode}" />
-                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource ProductLotNo}" />
-                        <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
-                        <GridViewColumn Header="Qty (Target)" CellTemplate="{StaticResource TargetQty}" />
-                        <!--  BUTTONS  -->
-                        <GridViewColumn Header="">
+                        <GridViewColumn Header="Item Code">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center">
-                                        <!--  EDIT  -->
-                                        <Button x:Name="cmdEdit"
-                                                DockPanel.Dock="Left"
-                                                Style="{StaticResource InlineButton}"
-                                                Margin="5,0"
-                                                Width="100"
-                                                Height="30">
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
-                                                <TextBlock Margin="3,0"
-                                                           FontFamily="{StaticResource THSarabun}"
-                                                           FontSize="{StaticResource IBFSize}"
-                                                           Text="Edit"
-                                                           VerticalAlignment="Center" />
-                                            </StackPanel>
-                                        </Button>
-                                        <!--  DELETE  -->
-                                        <Button x:Name="cmdDelete"
-                                                DockPanel.Dock="Left"
-                                                Style="{StaticResource InlineButton}"
-                                                Margin="5,0"
-                                                Width="100"
-                                                Height="30">
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
-                                                <TextBlock Margin="3,0"
-                                                           FontFamily="{StaticResource THSarabun}"
-                                                           FontSize="{StaticResource IBFSize}"
-                                                           Text="Cancel"
-                                                           VerticalAlignment="Center" />
-                                            </StackPanel>
-                                        </Button>
-                                    </StackPanel>
+                                    <TextBox Margin="2" Text="{Binding ItemCode}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

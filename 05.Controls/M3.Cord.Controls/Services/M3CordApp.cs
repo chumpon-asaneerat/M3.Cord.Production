@@ -57,6 +57,14 @@ namespace M3.Cord
                 var page = Pages.M3CordMainMenu;
                 PageContentManager.Instance.Current = page;
             }
+            /// <summary>
+            /// Goto Cord Master Menu.
+            /// </summary>
+            public static void GotoCordMasterMenu()
+            {
+                var page = Pages.MasterDataMenu;
+                PageContentManager.Instance.Current = page;
+            }
 
             #endregion
 

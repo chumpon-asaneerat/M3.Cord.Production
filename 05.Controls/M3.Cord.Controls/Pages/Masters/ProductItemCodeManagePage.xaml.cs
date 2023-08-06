@@ -41,6 +41,12 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Internal Variables
+
+        private List<ProductItemCode> _items = null;
+
+        #endregion
+
         #region Loaded/Unloaded
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -59,12 +65,47 @@ namespace M3.Cord.Pages
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoCordMainMenu();
+            M3CordApp.Pages.GotoCordMasterMenu();
+        }
+
+        private void cmdAdd_Click(object sender, RoutedEventArgs e)
+        {
+            string itemCode = txtItemCode.Text.Trim();
+            if (string.IsNullOrEmpty(itemCode)) return;
+            
+            var item = new ProductItemCode() { ItemId = new int?(), ItemCode = itemCode };
+            ProductItemCode.Save(item);
+
+            this.InvokeAction(() => 
+            {
+                RefreshGrid();
+            });
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
+            if (null != _items &&  _items.Count > 0) 
+            {
+                foreach (var item in _items) 
+                {
+                    ProductItemCode.Save(item);
+                }
+                this.InvokeAction(() =>
+                {
+                    RefreshGrid();
+                });
+            }
+        }
 
+        #endregion
+
+        #region Private Methods
+
+        private void RefreshGrid()
+        {
+            grid.ItemsSource = null;
+            _items = ProductItemCode.Gets().Value();
+            grid.ItemsSource = _items;
         }
 
         #endregion
@@ -73,7 +114,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-
+            RefreshGrid();
         }
 
         #endregion

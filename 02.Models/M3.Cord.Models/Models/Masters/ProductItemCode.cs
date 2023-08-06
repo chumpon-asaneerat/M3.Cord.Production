@@ -23,7 +23,7 @@ namespace M3.Cord.Models
     {
         #region Public Proeprties
 
-        public int ItemId { get; set; }
+        public int? ItemId { get; set; }
         public string ItemCode { get; set; }
 
         #endregion
