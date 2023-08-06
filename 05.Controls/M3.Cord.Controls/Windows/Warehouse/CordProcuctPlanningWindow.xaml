@@ -42,18 +42,20 @@
                                     DisplayMemberPath="ItemYarn"
                                     Width="250" />
                     <!--  CUSTOMER  -->
-                    <ctrl:NTextBox CaptionText="Customer:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding CustomerName}"
-                                   Width="250" />
+                    <ctrl:NComboBox x:Name="cbCustomers"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Customer:"
+                                    DisplayMemberPath="CustomerName"
+                                    Width="250" />
                     <Grid />
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Top">
                     <!--  Item Code  -->
-                    <ctrl:NTextBox CaptionText="Item Code:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding ItemCode}"
-                                   Width="200" />
+                    <ctrl:NComboBox x:Name="cbItemCodes"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Item Code:"
+                                    DisplayMemberPath="ItemCode"
+                                    Width="200" />
                     <!--  LOT NO  -->
                     <ctrl:NTextBox CaptionText="Lot No:"
                                    DockPanel.Dock="Left"
