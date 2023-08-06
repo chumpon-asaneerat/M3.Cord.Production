@@ -69,10 +69,31 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Item Code">
+                        <GridViewColumn Header="Item Code" Width="Auto">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Margin="2" Text="{Binding ItemCode}" />
+                                    <TextBox Margin="2"
+                                             Text="{Binding ItemCode}"
+                                             Style="{StaticResource CommonTextBox}"
+                                             Width="200" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  DELETE  -->
+                                        <ctrl:FontAwesomeButton x:Name="cmdDelete"
+                                                                IconType="Delete"
+                                                                Text="Delete"
+                                                                Margin="5,0"
+                                                                Width="150"
+                                                                Height="30"
+                                                                Click="cmdDelete_Click" />
+                                    </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

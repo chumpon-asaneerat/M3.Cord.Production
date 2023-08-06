@@ -88,6 +88,16 @@ namespace M3.Cord
 
             #endregion
 
+            #region Master Data
+
+            /// <summary>Gets M3 Cord Product Item Code Manage Page.</summary>
+            public static Cord.Pages.ProductItemCodeManagePage ProductItemCodeManage
+            {
+                get { return GetPage<Cord.Pages.ProductItemCodeManagePage>(); }
+            }
+
+            #endregion
+
             #region Document Menu (Cord) - Temporary
 
             /// <summary>Gets M3 Cord Document Menu Page.</summary>

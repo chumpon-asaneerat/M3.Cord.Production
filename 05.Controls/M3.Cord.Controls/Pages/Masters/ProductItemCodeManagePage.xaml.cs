@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using NLib.Wpf.Controls;
 
 #endregion
 
@@ -71,12 +72,26 @@ namespace M3.Cord.Pages
         private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
             string itemCode = txtItemCode.Text.Trim();
+            txtItemCode.Text = string.Empty;
             if (string.IsNullOrEmpty(itemCode)) return;
             
             var item = new ProductItemCode() { ItemId = new int?(), ItemCode = itemCode };
             ProductItemCode.Save(item);
 
             this.InvokeAction(() => 
+            {
+                RefreshGrid();
+            });
+        }
+
+        private void cmdDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as FontAwesomeButton;
+            if (null == btn) return;
+            var item = btn.DataContext as ProductItemCode;
+            ProductItemCode.Delete(item);
+
+            this.InvokeAction(() =>
             {
                 RefreshGrid();
             });
