@@ -41,8 +41,8 @@ namespace M3.Cord.Windows
 
         #region Internal Variables
 
-        private RawMaterialSheet _sheet = null;
-        private RawMaterialSheetItem _item = null;
+        //private RawMaterialSheet _sheet = null;
+        //private RawMaterialSheetItem _item = null;
 
         #endregion
 
@@ -60,6 +60,7 @@ namespace M3.Cord.Windows
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
+            /*
             if (null != _item && null != Items)
             {
                 Items.Add(_item);
@@ -69,6 +70,7 @@ namespace M3.Cord.Windows
                 RefreshGrid();
                 NewItem();
             });
+            */
         }
 
         #endregion
@@ -79,6 +81,7 @@ namespace M3.Cord.Windows
         {
             this.DataContext = null; 
 
+            /*
             if (null != _sheet)
             {
                 _item = new RawMaterialSheetItem();
@@ -95,24 +98,28 @@ namespace M3.Cord.Windows
 
                 this.DataContext = _item;
             }
+            */
         }
 
         private void RefreshGrid()
         {
+            /*
             grid.ItemsSource = null;
             grid.ItemsSource = Items;
+            */
         }
 
         #endregion
 
         #region Public Methods
 
-        public void Setup(RawMaterialSheet sheet)
+        public void Setup(/*RawMaterialSheet sheet*/)
         {
+            /*
             _sheet = sheet;
             
             this.Items = new List<RawMaterialSheetItem>();
-
+            */
             NewItem();
             RefreshGrid();
         }
@@ -121,7 +128,7 @@ namespace M3.Cord.Windows
 
         #region Public Properties
 
-        public List<RawMaterialSheetItem> Items { get; private set; }
+        //public List<RawMaterialSheetItem> Items { get; private set; }
 
         #endregion
     }

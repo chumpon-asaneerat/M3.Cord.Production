@@ -45,7 +45,7 @@ namespace M3.Cord.Pages
 
         private List<FirstTwistMC> machines;
         private FirstTwistMC selectedMC;
-        private RawMaterialSheet rawMatSheet;
+        //private RawMaterialSheet rawMatSheet;
 
         #endregion
 
@@ -88,6 +88,7 @@ namespace M3.Cord.Pages
         private void cmdLoadYarn_Click(object sender, RoutedEventArgs e)
         {
             // Prepare Doff
+            /*
             if (null == selectedMC || null == rawMatSheet)
                 return;
             var mc = selectedMC;
@@ -107,11 +108,13 @@ namespace M3.Cord.Pages
                     }
                 });
             }
+            */
         }
 
         private void cmdNewCondition_Click(object sender, RoutedEventArgs e)
         {
             // Prepare Doff
+            /*
             if (null == selectedMC || null == rawMatSheet)
                 return;
             var mc = selectedMC;
@@ -119,6 +122,7 @@ namespace M3.Cord.Pages
             var win = M3CordApp.Windows.S1Condition;
             win.Setup(mc, rawMatSheet);
             if (win.ShowDialog() == false) return;
+            */
         }
 
         #endregion
@@ -149,6 +153,7 @@ namespace M3.Cord.Pages
 
         private void AddNew(FirstTwistMC mc, CordProduct product)
         {
+            /*
             if (null != mc && null != product)
             {
                 var ret = RawMaterialSheet.AddNew(mc, product);
@@ -158,6 +163,7 @@ namespace M3.Cord.Pages
                 }
             }
             UpdateMCStatus(mc);
+            */
         }
 
         private void ResetControls()
@@ -176,15 +182,17 @@ namespace M3.Cord.Pages
         {
             cmdAdd.IsEnabled = false;
 
-            rawMatSheet = null;
+            //rawMatSheet = null;
             paMC.DataContext = null;
 
             if (null != mc)
             {
+                /*
                 rawMatSheet = RawMaterialSheet.Get(mc.MCCode).Value();
                 // Binding
                 paMC.DataContext = rawMatSheet;
                 cmdAdd.IsEnabled = (null == rawMatSheet);
+                */
             }
             // update tabs data context for dynamic template switching
             tabs.DataContext = paMC.DataContext;
@@ -199,10 +207,12 @@ namespace M3.Cord.Pages
         {
             if (tabs.SelectedIndex == 0)
             {
+                /*
                 gridRawMat.ItemsSource = null;
                 if (null == rawMatSheet)
                     return;
                 gridRawMat.ItemsSource = RawMaterialSheetItem.Gets(rawMatSheet.RawMaterialSheetId).Value();
+                */
             }
             else if (tabs.SelectedIndex == 1)
             {

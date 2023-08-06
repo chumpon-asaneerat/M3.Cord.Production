@@ -64,7 +64,7 @@
     <Compile Include="AS400DbServer.cs" />
     <Compile Include="Models\Common\ModelCommon.cs" />
     <Compile Include="Models\CordItemYarn\CordItemCode.cs" />
-    <Compile Include="Models\FirstTwist\RawMaterialSheet.cs" />
+    <None Include="Models\FirstTwist\RawMaterialSheet.cs" />
     <Compile Include="Models\G4\BCSPRFTP.cs" />
     <Compile Include="Models\G4\G4IssueYarn.cs" />
     <Compile Include="Models\G4\G4Yarn.cs" />
