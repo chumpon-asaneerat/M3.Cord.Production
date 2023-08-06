@@ -146,6 +146,11 @@ namespace M3.Cord.Pages
             // Dipping
         }
 
+        private void cmdMasterDataMenu_Click(object sender, RoutedEventArgs e)
+        {
+            // Master Data
+        }
+
         private void cmdCordDocumentMenu_Click(object sender, RoutedEventArgs e)
         {
             // M3 Cord Document Menu
