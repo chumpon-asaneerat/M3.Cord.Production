@@ -42,7 +42,7 @@ namespace M3.Cord.Windows
         #region Internal Variables
 
         private FirstTwistMC _mc = null;
-        //private RawMaterialSheet _rawMat = null;
+        private YarnLoadSheet _loadSheet = null;
 
         private MCBBCondition _cond = null;
         private List<MCBBConditionItem> _condItems = null;
@@ -77,8 +77,8 @@ namespace M3.Cord.Windows
             _cond = new MCBBCondition();
             _cond.RecordDate = DateTime.Now;
             _cond.MCCode = (null != _mc) ? _mc.MCCode : null;
-            //_cond.ProductLotNo = (null != _rawMat) ? _rawMat.ProductLotNo : null;
-            //_cond.ItemCode = (null != _rawMat) ? _rawMat.ItemCode : null;
+            _cond.ProductLotNo = (null != _loadSheet) ? _loadSheet.ProductLotNo : null;
+            _cond.ItemCode = (null != _loadSheet) ? _loadSheet.ItemCode : null;
 
             this.DataContext = _cond;
 
@@ -103,10 +103,10 @@ namespace M3.Cord.Windows
 
         #region Public Methods
 
-        public void Setup(FirstTwistMC mc/*, RawMaterialSheet rawMat*/)
+        public void Setup(FirstTwistMC mc, YarnLoadSheet loadSheet)
         {
             _mc = mc;
-            //_rawMat = rawMat;
+            _loadSheet = loadSheet;
             InitMCBB();
         }
 

@@ -45,7 +45,7 @@ namespace M3.Cord.Pages
 
         private List<FirstTwistMC> machines;
         private FirstTwistMC selectedMC;
-        //private RawMaterialSheet rawMatSheet;
+        private YarnLoadSheet loadSheet;
 
         #endregion
 
@@ -88,14 +88,14 @@ namespace M3.Cord.Pages
         private void cmdLoadYarn_Click(object sender, RoutedEventArgs e)
         {
             // Prepare Doff
-            /*
-            if (null == selectedMC || null == rawMatSheet)
+            if (null == selectedMC || null == loadSheet)
                 return;
             var mc = selectedMC;
 
             var win = M3CordApp.Windows.PrepareDoff;
-            win.Setup(rawMatSheet);
+            win.Setup(loadSheet);
             if (win.ShowDialog() == false) return;
+            /*
             var items = win.Items;
             if (null != items)
             {
@@ -114,15 +114,13 @@ namespace M3.Cord.Pages
         private void cmdNewCondition_Click(object sender, RoutedEventArgs e)
         {
             // Prepare Doff
-            /*
-            if (null == selectedMC || null == rawMatSheet)
+            if (null == selectedMC || null == loadSheet)
                 return;
             var mc = selectedMC;
 
             var win = M3CordApp.Windows.S1Condition;
-            win.Setup(mc, rawMatSheet);
+            win.Setup(mc, loadSheet);
             if (win.ShowDialog() == false) return;
-            */
         }
 
         #endregion
@@ -153,17 +151,15 @@ namespace M3.Cord.Pages
 
         private void AddNew(FirstTwistMC mc, CordProduct product)
         {
-            /*
             if (null != mc && null != product)
             {
-                var ret = RawMaterialSheet.AddNew(mc, product);
+                var ret = YarnLoadSheet.AddNew(mc, product);
                 if (ret.Ok)
                 {
 
                 }
             }
             UpdateMCStatus(mc);
-            */
         }
 
         private void ResetControls()
@@ -182,17 +178,15 @@ namespace M3.Cord.Pages
         {
             cmdAdd.IsEnabled = false;
 
-            //rawMatSheet = null;
+            loadSheet = null;
             paMC.DataContext = null;
 
             if (null != mc)
             {
-                /*
-                rawMatSheet = RawMaterialSheet.Get(mc.MCCode).Value();
+                loadSheet = YarnLoadSheet.Get(mc.MCCode).Value();
                 // Binding
-                paMC.DataContext = rawMatSheet;
-                cmdAdd.IsEnabled = (null == rawMatSheet);
-                */
+                paMC.DataContext = loadSheet;
+                cmdAdd.IsEnabled = (null == loadSheet);
             }
             // update tabs data context for dynamic template switching
             tabs.DataContext = paMC.DataContext;
@@ -209,7 +203,7 @@ namespace M3.Cord.Pages
             {
                 /*
                 gridRawMat.ItemsSource = null;
-                if (null == rawMatSheet)
+                if (null == loadSheet)
                     return;
                 gridRawMat.ItemsSource = RawMaterialSheetItem.Gets(rawMatSheet.RawMaterialSheetId).Value();
                 */

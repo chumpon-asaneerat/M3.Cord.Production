@@ -41,7 +41,7 @@ namespace M3.Cord.Windows
 
         #region Internal Variables
 
-        //private RawMaterialSheet _sheet = null;
+        private YarnLoadSheet _sheet = null;
         //private RawMaterialSheetItem _item = null;
 
         #endregion
@@ -113,13 +113,11 @@ namespace M3.Cord.Windows
 
         #region Public Methods
 
-        public void Setup(/*RawMaterialSheet sheet*/)
+        public void Setup(YarnLoadSheet sheet)
         {
-            /*
             _sheet = sheet;
             
-            this.Items = new List<RawMaterialSheetItem>();
-            */
+            //this.Items = new List<RawMaterialSheetItem>();
             NewItem();
             RefreshGrid();
         }

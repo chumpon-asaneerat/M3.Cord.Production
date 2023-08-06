@@ -65,6 +65,7 @@
     <Compile Include="Models\Common\ModelCommon.cs" />
     <Compile Include="Models\CordItemYarn\CordItemCode.cs" />
     <None Include="Models\FirstTwist\RawMaterialSheet.cs" />
+    <Compile Include="Models\FirstTwist\YarnLoadSheet.cs" />
     <Compile Include="Models\G4\BCSPRFTP.cs" />
     <Compile Include="Models\G4\G4IssueYarn.cs" />
     <Compile Include="Models\G4\G4Yarn.cs" />
