@@ -39,11 +39,11 @@ namespace M3.Cord.Models
 
         public int YarnLoadSheetId { get; set; }
         public int CordProductPkId { get; set; }
-        public DateTime? RecordDate { get; set; }
-        public string ProductLotNo { get; set; }
         public string MCCode { get; set; }
-        public string DoffNos { get; set; }
-        public string Shift { get; set; }
+        public bool DeleteFlag { get; set; }
+        public bool FinishFlag { get; set; }
+
+        public string ProductLotNo { get; set; }
         public string CustomerCode { get; set; }
         public string CustomerName { get; set; }
         public string ItemYarn { get; set; }
@@ -52,8 +52,6 @@ namespace M3.Cord.Models
         public string Color { get; set; }
         public decimal TargetQty { get; set; } = decimal.Zero;
         public decimal ActualQty { get; set; } = decimal.Zero;
-        public bool DeleteFlag { get; set; }
-        public bool FinishFlag { get; set; }
         public string ProcessName { get; set; }
         public int DeckPerCore { get; set; }
         public int StartCore { get; set; }
@@ -94,11 +92,9 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@CordProductPkId", value.CordProductPkId);
-            p.Add("@RecordDate", value.RecordDate);
             p.Add("@MCCode", value.MCCode);
-            p.Add("@DoffNos", value.DoffNos);
-            p.Add("@Shift", value.Shift);
-
+            p.Add("@FinishFlag", value.FinishFlag);
+            p.Add("@DeleteFlag", value.DeleteFlag);
             p.Add("@YarnLoadSheetId", value.YarnLoadSheetId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
@@ -199,20 +195,15 @@ namespace M3.Cord.Models
             var p = new DynamicParameters();
             p.Add("@MCCode", mc.MCCode);
             p.Add("@CordProductPkId", product.CordProductPkId);
-            p.Add("@RecordDate", DateTime.Now);
-
-/*
-, @DoffNos nvarchar(50)
-, @Shift nvarchar(10)
-, @YarnLoadSheetId int = null out
-*/
+            p.Add("@FinishFlag", false);
+            p.Add("@DeleteFlag", false);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 
             try
             {
-                cnn.Execute("NewRawMaterialSheet", p, commandType: CommandType.StoredProcedure);
+                cnn.Execute("SaveYarnLoadSheet", p, commandType: CommandType.StoredProcedure);
                 ret.Success();
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
