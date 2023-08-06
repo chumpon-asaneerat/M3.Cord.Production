@@ -95,6 +95,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.ProductItemCodeManagePage>(); }
             }
+            /// <summary>Gets M3 Cord Customer Manage Page.</summary>
+            public static Cord.Pages.CustomerManagePage CustomerManage
+            {
+                get { return GetPage<Cord.Pages.CustomerManagePage>(); }
+            }
 
             #endregion
 

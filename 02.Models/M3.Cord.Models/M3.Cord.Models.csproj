@@ -68,6 +68,7 @@
     <Compile Include="Models\G4\BCSPRFTP.cs" />
     <Compile Include="Models\G4\G4IssueYarn.cs" />
     <Compile Include="Models\G4\G4Yarn.cs" />
+    <Compile Include="Models\Masters\Customer.cs" />
     <Compile Include="Models\Masters\ProductItemCode.cs" />
     <Compile Include="Models\Warehouse\CordProduct.cs" />
     <Compile Include="Models\Warehouse\WarehouseCordYarn.cs" />

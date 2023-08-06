@@ -61,6 +61,10 @@ namespace M3.Cord.Pages
         private void cmdCustomer_Click(object sender, RoutedEventArgs e)
         {
             // Customer Manage
+            var page = M3CordApp.Pages.CustomerManage;
+            page.Setup();
+
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdProductItemCode_Click(object sender, RoutedEventArgs e)
