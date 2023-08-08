@@ -159,6 +159,14 @@ namespace M3.Cord.Pages
             var item = G4ReceiveYarnService.Instance.SerachByTranceNo(traceNo);
             if (null != item)
             {
+                // set expired date
+                if (!item.ExpiredDate.HasValue)
+                {
+                    DateTime itemDate = (item.EntryDate.HasValue) ? item.EntryDate.Value : DateTime.Today.Date;
+                    DateTime expireDate = itemDate.AddYears(1).AddDays(-1);
+                    item.ExpiredDate = expireDate;
+                }
+
                 var win = M3CordApp.Windows.G4ReceiveYarn;
                 win.Setup(item);
                 if (win.ShowDialog() == true)

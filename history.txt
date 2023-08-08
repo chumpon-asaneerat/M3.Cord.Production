@@ -7,8 +7,10 @@ M3 Cord Production System #469
 M3 Cord Production System #468
 - 
 
+[commited]
 M3 Cord Production System #467
-- 
+- M3.Cord.Production.App re-implements #266.
+  - G4 Receive Yarn - set default expired date
 
 [commited]
 M3 Cord Production System #466
