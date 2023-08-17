@@ -65,6 +65,7 @@
     <Compile Include="Models\Common\ModelCommon.cs" />
     <Compile Include="Models\CordItemYarn\CordItemCode.cs" />
     <Compile Include="Models\FirstTwist\PCTwist1.cs" />
+    <Compile Include="Models\FirstTwist\Twist1LoadRecord.cs" />
     <Compile Include="Models\PCCard\PCCard.cs" />
     <None Include="_V2\FirstTwist\FirstTwistMC.cs" />
     <None Include="_V2\Masters\Customer.cs" />

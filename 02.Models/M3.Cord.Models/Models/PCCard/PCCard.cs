@@ -136,7 +136,7 @@ namespace M3.Cord.Models
             p.Add("@CustomerId", value.CustomerId);
             p.Add("@ProductCode", value.ProductCode);
             p.Add("@ProductLotNo", value.ProductLotNo);
-            p.Add("@@TargetQty", value.@TargetQty);
+            p.Add("@TargetQty", value.@TargetQty);
             p.Add("@FinishFlag", value.FinishFlag);
             p.Add("@DeleteFlag", value.DeleteFlag);
             p.Add("@PCId", value.PCId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
