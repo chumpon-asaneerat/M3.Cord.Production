@@ -177,6 +177,7 @@
     <Compile Include="Services\G4\G4IssueYarnService.cs" />
     <Compile Include="Services\G4\G4ReceiveYarnService.cs" />
     <Compile Include="Services\G4\G4StockService.cs" />
+    <Compile Include="Services\PCCard\CordProductPlanningService.cs" />
     <Compile Include="Services\SignInService.cs" />
     <Compile Include="Services\Warehouse\WarehouseReceiveYarnService.cs" />
     <Compile Include="Windows\G4\G4ReceiveYarnWindow.xaml.cs">
@@ -187,6 +188,9 @@
     </Compile>
     <Compile Include="Windows\MessageBox\MessageBoxWindow.xaml.cs">
       <DependentUpon>MessageBoxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PCCard\PCCardEditorWindow.xaml.cs">
+      <DependentUpon>PCCardEditorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SignIn\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
@@ -374,6 +378,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\PCCard\PCCardEditorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Windows\SignIn\SignInWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -411,7 +419,6 @@
     <Folder Include="Pages\Documents\" />
     <Folder Include="Pages\Masters\" />
     <Folder Include="Windows\FirstTwist\" />
-    <Folder Include="Windows\Warehouse\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\toray.png" />

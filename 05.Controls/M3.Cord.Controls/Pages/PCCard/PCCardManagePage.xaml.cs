@@ -64,10 +64,10 @@ namespace M3.Cord.Pages
 
         private void cmdNew_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var item = new PCCard();
+            item.PCDate = DateTime.Today; // default today
 
-            var win = M3CordApp.Windows.CordProductPlanning;
+            var win = M3CordApp.Windows.PCCardEditor;
             win.Setup(item);
             if (win.ShowDialog() == false) return;
 
@@ -83,18 +83,16 @@ namespace M3.Cord.Pages
             {
                 RefreshGrid();
             });
-            */
         }
 
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var btn = sender as Button;
             if (null == btn) return;
-            var item = btn.DataContext as Product;
+            var item = btn.DataContext as PCCard;
             if (null == item) return;
 
-            var win = M3CordApp.Windows.CordProductPlanning;
+            var win = M3CordApp.Windows.PCCardEditor;
             win.Setup(item);
             if (win.ShowDialog() == false) return;
 
@@ -110,12 +108,10 @@ namespace M3.Cord.Pages
             {
                 RefreshGrid();
             });
-            */
         }
 
         private void cmdDelete_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var btn = sender as Button;
             if (null == btn) return;
             var item = btn.DataContext as PCCard;
@@ -129,7 +125,6 @@ namespace M3.Cord.Pages
             PCCard.Delete(item);
 
             RefreshGrid();
-            */
         }
 
         #endregion
@@ -186,6 +181,7 @@ namespace M3.Cord.Pages
 
         private void LoadComboBoxes()
         {
+            /*
             cbItemYanrs.ItemsSource = null;
 
             var itemYarns = CordItemYarn.Gets().Value();
@@ -195,24 +191,22 @@ namespace M3.Cord.Pages
             {
                 if (null != itemYarns && itemYarns.Count > 0) cbItemYanrs.SelectedIndex = 0;
             });
+            */
         }
 
         private void RefreshGrid()
         {
-            /*
             grid.ItemsSource = null;
-
+            /*
             var itemYarn = (null != cbItemYanrs.SelectedItem) ?
                 cbItemYanrs.SelectedItem as CordItemYarn : null;
-
+            */
             string lotNo = txtLotNo.Text.Trim();
             string customer = txtCustomer.Text.Trim();
-            string sItemYarn = (null != itemYarn) ? itemYarn.ItemYarn : null;
             
-            CordProductPlanningService.Instance.Search(lotNo, customer, sItemYarn);
+            PCCardService.Instance.Search(lotNo, customer);
 
-            grid.ItemsSource = CordProductPlanningService.Instance.Products;
-            */
+            grid.ItemsSource = PCCardService.Instance.PCCards;
         }
 
         #endregion

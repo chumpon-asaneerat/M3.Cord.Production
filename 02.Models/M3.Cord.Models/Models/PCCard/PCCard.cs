@@ -23,12 +23,19 @@ namespace M3.Cord.Models
 {
     public class PCCard
     {
+        #region Const
+
+        public static readonly SolidColorBrush RedColor = new SolidColorBrush(Colors.Red);
+        public static readonly SolidColorBrush BlackColor = new SolidColorBrush(Colors.Black);
+
+        #endregion
+
         #region Public Proeprties
 
         public int? PCId { get; set; }
         public string PINo { get; set; }
         public DateTime? @PCDate { get; set; }
-        public string CustomerId { get; set; }
+        public int? CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
@@ -39,6 +46,8 @@ namespace M3.Cord.Models
         public bool? FinishFlag { get; set; }
         public bool? DeleteFlag { get; set; }
 
+        public SolidColorBrush TextColor { get { return BlackColor; } set { } }
+
         #endregion
 
         #region Static Methods
@@ -47,7 +56,7 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<PCCard>> Gets()
+        public static NDbResult<List<PCCard>> Gets(string productLotNo = null, string customerName = null)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -66,7 +75,8 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-
+            p.Add("@ProductLotNo", string.IsNullOrWhiteSpace(productLotNo) ? null : productLotNo);
+            p.Add("@CustomerName", string.IsNullOrWhiteSpace(customerName) ? null : customerName);
             try
             {
                 var items = cnn.Query<PCCard>("GetPCCards", p,
@@ -140,6 +150,60 @@ namespace M3.Cord.Models
                 ret.Success(value);
                 // Set PK
                 value.PCId = p.Get<int>("@PCId");
+                // Set error number/message
+                ret.ErrNum = p.Get<int>("@errNum");
+                ret.ErrMsg = p.Get<string>("@errMsg");
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+        /// <summary>
+        /// Delete
+        /// </summary>
+        /// <param name="value">The PCCard item to delete.</param>
+        /// <returns></returns>
+        public static NDbResult Delete(PCCard value)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            if (null == value)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@PCId", value.PCId);
+
+            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
+
+            try
+            {
+                cnn.Execute("DeletePCCard", p, commandType: CommandType.StoredProcedure);
+                ret.Success();
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");

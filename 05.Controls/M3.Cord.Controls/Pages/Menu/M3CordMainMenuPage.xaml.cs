@@ -113,6 +113,10 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
+            // PC Card
+            var page = M3CordApp.Pages.PCCardManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdFirstTwist_Click(object sender, RoutedEventArgs e)

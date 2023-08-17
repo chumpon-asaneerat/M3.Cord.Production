@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
+using static M3.Cord.AppConsts.Application;
 
 //using NLib.Services;
 //using M3.Cord.Models;
@@ -155,13 +156,16 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.WarehouseReceiveYarnPage>(); }
             }
-            /// <summary>Gets Cord Product Planning Page.</summary>
-            /*
-            public static Cord.Pages.CordProductPlanningPage CordProductPlanning
+
+            #endregion
+
+            #region PCCard
+
+            /// <summary>Gets PC Card Manage Page.</summary>
+            public static Cord.Pages.PCCardManagePage PCCardManage
             {
-                get { return GetPage<Cord.Pages.CordProductPlanningPage>(); }
+                get { return GetPage<Cord.Pages.PCCardManagePage>(); }
             }
-            */
 
             #endregion
 
@@ -255,15 +259,13 @@ namespace M3.Cord
 
             #endregion
 
-            #region Warehouse (Cord Planning)
+            #region PC Card
 
             /// <summary>Gets Cord Procuct Planning Window.</summary>
-            /*
-            public static CordProcuctPlanningWindow CordProductPlanning
+            public static PCCardEditorWindow PCCardEditor
             {
-                get { return GetWindow<CordProcuctPlanningWindow>(); }
+                get { return GetWindow<PCCardEditorWindow>(); }
             }
-            */
 
             #endregion
 
