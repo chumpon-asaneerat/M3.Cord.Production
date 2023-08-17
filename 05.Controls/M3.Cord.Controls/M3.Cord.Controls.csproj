@@ -168,6 +168,9 @@
     <None Include="_V2\Pages\Warehouse\CordProductPlanningPage.xaml.cs">
       <DependentUpon>CordProductPlanningPage.xaml</DependentUpon>
     </None>
+    <Compile Include="Pages\PCCard\PCCardManagePage.xaml.cs">
+      <DependentUpon>PCCardManagePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Warehouse\WarehouseReceiveYarnPage.xaml.cs">
       <DependentUpon>WarehouseReceiveYarnPage.xaml</DependentUpon>
     </Compile>
@@ -343,6 +346,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Pages\PCCard\PCCardManagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Warehouse\WarehouseReceiveYarnPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

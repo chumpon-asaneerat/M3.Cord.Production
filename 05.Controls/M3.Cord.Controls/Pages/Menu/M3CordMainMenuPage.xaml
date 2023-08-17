@@ -206,13 +206,11 @@
                         </TextBlock>
                     </Button>
                     <!--  PLANNING  -->
-                    <Button x:Name="cmdPlaning"
-                            Click="cmdPlaning_Click"
+                    <Button x:Name="cmdPCCard"
+                            Click="cmdPCCard_Click"
                             Style="{StaticResource CordWarehouseButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="Product" />
-                            <LineBreak />
-                            <Run Text="Planning" />
+                            <Run Text="PC Card" />
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>

@@ -108,7 +108,7 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
-        private void cmdPlaning_Click(object sender, RoutedEventArgs e)
+        private void cmdPCCard_Click(object sender, RoutedEventArgs e)
         {
             // Sign In
             var win = M3CordApp.Windows.SignIn;
