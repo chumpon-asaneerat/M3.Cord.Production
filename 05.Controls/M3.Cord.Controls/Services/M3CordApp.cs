@@ -271,13 +271,12 @@ namespace M3.Cord
 
             #region First Twist
 
-            /// <summary>Gets Choose Cord Product Window.</summary>
-            /*
-            public static ChooseCordProductWindow ChooseCordProduct
+            /// <summary>Gets Choose PC Card for First Twist Window.</summary>
+            public static ChoosePCCardTwist1Window ChoosePCCardTwist1
             {
-                get { return GetWindow<ChooseCordProductWindow>(); }
+                get { return GetWindow<ChoosePCCardTwist1Window>(); }
             }
-            */
+
             /// <summary>Gets Prepare Doff Window.</summary>
             /*
             public static PrepareDoffWindow PrepareDoff

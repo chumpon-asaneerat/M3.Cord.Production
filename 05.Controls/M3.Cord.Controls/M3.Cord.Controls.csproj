@@ -180,6 +180,9 @@
     <Compile Include="Services\PCCard\CordProductPlanningService.cs" />
     <Compile Include="Services\SignInService.cs" />
     <Compile Include="Services\Warehouse\WarehouseReceiveYarnService.cs" />
+    <Compile Include="Windows\FirstTwist\ChoosePCCardTwist1Window.xaml.cs">
+      <DependentUpon>ChoosePCCardTwist1Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\G4\G4ReceiveYarnWindow.xaml.cs">
       <DependentUpon>G4ReceiveYarnWindow.xaml</DependentUpon>
     </Compile>
@@ -366,6 +369,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\FirstTwist\ChoosePCCardTwist1Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Windows\G4\G4ReceiveYarnWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -418,7 +425,6 @@
     <Folder Include="Controls\Documents\SamplingDetails\Elements\" />
     <Folder Include="Pages\Documents\" />
     <Folder Include="Pages\Masters\" />
-    <Folder Include="Windows\FirstTwist\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\toray.png" />

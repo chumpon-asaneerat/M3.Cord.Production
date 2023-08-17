@@ -43,6 +43,9 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private List<FirstTwistMC> machines;
+        private FirstTwistMC selectedMC;
+
         #endregion
 
         #region Loaded/Unloaded
@@ -68,7 +71,17 @@ namespace M3.Cord.Pages
 
         private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
+            if (null == selectedMC)
+                return;
+            var mc = selectedMC;
 
+            var win = M3CordApp.Windows.ChoosePCCardTwist1;
+            win.Setup();
+            if (win.ShowDialog() == false) return;
+            if (null != win.SelectedPCCard)
+            {
+                AddNew(mc, win.SelectedPCCard);
+            }
         }
 
         private void cmdLoadYarn_Click(object sender, RoutedEventArgs e)
@@ -87,7 +100,11 @@ namespace M3.Cord.Pages
 
         private void mcList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (null != mcList.SelectedItem)
+            {
+                selectedMC = mcList.SelectedItem as FirstTwistMC;
+                UpdateMCStatus(selectedMC);
+            }
         }
 
         #endregion
@@ -103,13 +120,66 @@ namespace M3.Cord.Pages
 
         #region Private Methods
 
+        private void AddNew(FirstTwistMC mc, PCCard pccard)
+        {
+            if (null != mc && null != pccard)
+            {
+                /*
+                var ret = YarnLoadSheet.AddNew(mc, product);
+                if (ret.Ok)
+                {
+
+                }
+                */
+            }
+            UpdateMCStatus(mc);
+        }
+
+        private void UpdateMCStatus(FirstTwistMC mc)
+        {
+            cmdAdd.IsEnabled = false;
+
+            //loadSheet = null;
+            paMC.DataContext = null;
+
+            if (null != mc)
+            {
+                /*
+                loadSheet = YarnLoadSheet.Get(mc.MCCode).Value();
+                // Binding
+                paMC.DataContext = loadSheet;
+                cmdAdd.IsEnabled = (null == loadSheet);
+                */
+            }
+            // update tabs data context for dynamic template switching
+            tabs.DataContext = paMC.DataContext;
+
+            this.InvokeAction(() =>
+            {
+                RefreshGrid();
+            });
+        }
+
+        private void RefreshMC()
+        {
+            mcList.ItemsSource = null;
+            selectedMC = null;
+            mcList.ItemsSource = machines;
+        }
+
+        private void RefreshGrid()
+        {
+
+        }
+
         #endregion
 
         #region Public Methods
 
         public void Setup()
         {
-
+            machines = FirstTwistMC.Gets().Value();
+            RefreshMC();
         }
 
         #endregion
