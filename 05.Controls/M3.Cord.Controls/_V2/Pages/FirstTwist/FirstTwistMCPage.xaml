@@ -4,6 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:S1cond="clr-namespace:M3.Cord.Controls.Documents.FirstTwist.S1"
+             xmlns:S4x1cond="clr-namespace:M3.Cord.Controls.Documents.FirstTwist.S4x1"
+             xmlns:S4x2cond="clr-namespace:M3.Cord.Controls.Documents.FirstTwist.S4x2"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="450"
@@ -162,6 +165,105 @@
                         Margin="5"
                         FontSize="18"
                         SelectionChanged="tabs_SelectionChanged">
+                <TabItem Header="Raw Material Check Sheet">
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+                            <Button x:Name="cmdLoadYarn"
+                                    Style="{StaticResource InlineButton}"
+                                    Content="Load Yarn"
+                                    Click="cmdLoadYarn_Click" />
+                            <TextBlock Width="10" />
+                        </StackPanel>
+                        <ListView x:Name="gridRawMat"
+                                  Margin="0,0,0,1"
+                                  FontSize="{StaticResource FontSize18}"
+                                  ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                                  ItemsSource="{Binding}"
+                                  Style="{StaticResource SingleSelectListView}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
+                                    <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource ItemYarn}" />
+                                    <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
+                                    <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNos}" />
+                                    <GridViewColumn Header="InputCH" CellTemplate="{StaticResource InputCH}" />
+                                    <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNos}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </DockPanel>
+                </TabItem>
+                <TabItem Header="MC Condition">
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+                            <Button x:Name="cmdNewCondition"
+                                    Style="{StaticResource InlineButton}"
+                                    Content="New Condition"
+                                    Click="cmdNewCondition_Click" />
+                            <TextBlock Width="10" />
+                        </StackPanel>
+                        <ListView x:Name="gridMCCondition"
+                                  Margin="0,0,0,1"
+                                  FontSize="{StaticResource FontSize18}"
+                                  ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                                  ItemsSource="{Binding}"
+                                  Style="{StaticResource SingleSelectListView}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridView.Columns>
+                                        <GridViewColumn Header="Doff No." />
+                                    </GridView.Columns>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </DockPanel>
+                    <!--
+                    <TabItem.Style>
+                        <Style TargetType="TabItem">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding MCCode}" Value="S-1-1">
+                                    <Setter Property="Content">
+                                        <Setter.Value>
+                                            <S1cond:S1ProductConditionControl />
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding MCCode}" Value="S-1-2">
+                                    <Setter Property="Content">
+                                        <Setter.Value>
+                                            <S1cond:S1ProductConditionControl />
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding MCCode}" Value="S-1-3">
+                                    <Setter Property="Content">
+                                        <Setter.Value>
+                                            <S1cond:S1ProductConditionControl />
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding MCCode}" Value="S-4-1">
+                                    <Setter Property="Content" >
+                                        <Setter.Value>
+                                            <S4x1cond:S4x1UpTwisterConditionControl />
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding MCCode}" Value="S-4-2">
+                                    <Setter Property="Content" >
+                                        <Setter.Value>
+                                            <S4x2cond:S4x2UpTwisterConditionControl />
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TabItem.Style>
+                    -->
+                </TabItem>
+                <TabItem Header="PC Card">
+                    <DockPanel LastChildFill="True" />
+                </TabItem>
             </TabControl>
         </DockPanel>
     </page:NPage>

@@ -91,26 +91,31 @@ namespace M3.Cord
             #region Master Data
 
             /// <summary>Gets M3 Cord Product Item Code Manage Page.</summary>
+            /*
             public static Cord.Pages.ProductItemCodeManagePage ProductItemCodeManage
             {
                 get { return GetPage<Cord.Pages.ProductItemCodeManagePage>(); }
             }
+            */
             /// <summary>Gets M3 Cord Customer Manage Page.</summary>
+            /*
             public static Cord.Pages.CustomerManagePage CustomerManage
             {
                 get { return GetPage<Cord.Pages.CustomerManagePage>(); }
             }
+            */
 
             #endregion
 
             #region Document Menu (Cord) - Temporary
 
             /// <summary>Gets M3 Cord Document Menu Page.</summary>
+            /*
             public static Cord.Pages.M3DocumentMenuPage M3CordDocumentMenu
             {
                 get { return GetPage<Cord.Pages.M3DocumentMenuPage>(); }
             }
-
+            */
             #endregion
 
             #region G4
@@ -151,10 +156,12 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.WarehouseReceiveYarnPage>(); }
             }
             /// <summary>Gets Cord Product Planning Page.</summary>
+            /*
             public static Cord.Pages.CordProductPlanningPage CordProductPlanning
             {
                 get { return GetPage<Cord.Pages.CordProductPlanningPage>(); }
             }
+            */
 
             #endregion
 
@@ -167,20 +174,26 @@ namespace M3.Cord
             }
 
             /// <summary>Gets S1ProductCondition Page.</summary>
+            /*
             public static Cord.Pages.S1ProductConditionPage S1ProductCondition
             {
                 get { return GetPage<Cord.Pages.S1ProductConditionPage>(); }
             }
+            */
             /// <summary>Gets S4x1UpTwisterConditionPage Page.</summary>
+            /*
             public static Cord.Pages.S4x1UpTwisterConditionPage S4x1UpTwisterCondition
             {
                 get { return GetPage<Cord.Pages.S4x1UpTwisterConditionPage>(); }
             }
+            */
             /// <summary>Gets S4x2UpTwisterCondition Page.</summary>
+            /*
             public static Cord.Pages.S4x2UpTwisterConditionPage S4x2UpTwisterCondition
             {
                 get { return GetPage<Cord.Pages.S4x2UpTwisterConditionPage>(); }
             }
+            */
 
             #endregion
         }
@@ -245,30 +258,38 @@ namespace M3.Cord
             #region Warehouse (Cord Planning)
 
             /// <summary>Gets Cord Procuct Planning Window.</summary>
+            /*
             public static CordProcuctPlanningWindow CordProductPlanning
             {
                 get { return GetWindow<CordProcuctPlanningWindow>(); }
             }
+            */
 
             #endregion
 
             #region First Twist
 
             /// <summary>Gets Choose Cord Product Window.</summary>
+            /*
             public static ChooseCordProductWindow ChooseCordProduct
             {
                 get { return GetWindow<ChooseCordProductWindow>(); }
             }
+            */
             /// <summary>Gets Prepare Doff Window.</summary>
+            /*
             public static PrepareDoffWindow PrepareDoff
             {
                 get { return GetWindow<PrepareDoffWindow>(); }
             }
+            */
             /// <summary>Gets S1 Condition Window.</summary>
+            /*
             public static S1ConditionWindow S1Condition
             {
                 get { return GetWindow<S1ConditionWindow>(); }
             }
+            */
             /*
             /// <summary>Gets Yarn Loading Window.</summary>
             public static YarnLoadingWindow YarnLoading

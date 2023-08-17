@@ -113,10 +113,6 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
-            // Cord Product Planning
-            var page = M3CordApp.Pages.CordProductPlanning;
-            page.Setup();
-            PageContentManager.Instance.Current = page;
         }
 
         private void cmdFirstTwist_Click(object sender, RoutedEventArgs e)
@@ -156,8 +152,6 @@ namespace M3.Cord.Pages
         private void cmdCordDocumentMenu_Click(object sender, RoutedEventArgs e)
         {
             // M3 Cord Document Menu
-            var page = M3CordApp.Pages.M3CordDocumentMenu;
-            PageContentManager.Instance.Current = page;
         }
 
         #endregion

@@ -64,20 +64,21 @@
     <Compile Include="AS400DbServer.cs" />
     <Compile Include="Models\Common\ModelCommon.cs" />
     <Compile Include="Models\CordItemYarn\CordItemCode.cs" />
-    <None Include="Models\FirstTwist\RawMaterialSheet.cs" />
-    <Compile Include="Models\FirstTwist\YarnLoadSheet.cs" />
-    <Compile Include="Models\FirstTwist\YarnLoadSheetDoff.cs" />
+    <None Include="_V2\Masters\Customer.cs" />
+    <None Include="_V2\Masters\ProductItemCode.cs" />
+    <None Include="_V2\Warehouse\CordProduct.cs" />
+    <None Include="_V2\Warehouse\WarehouseCordYarn.cs" />
+    <None Include="_V2\FirstTwist\RawMaterialSheet.cs" />
+    <None Include="_V2\FirstTwist\YarnLoadSheet.cs" />
+    <None Include="_V2\FirstTwist\YarnLoadSheetDoff.cs" />
     <Compile Include="Models\G4\BCSPRFTP.cs" />
     <Compile Include="Models\G4\G4IssueYarn.cs" />
     <Compile Include="Models\G4\G4Yarn.cs" />
-    <Compile Include="Models\Masters\Customer.cs" />
-    <Compile Include="Models\Masters\ProductItemCode.cs" />
-    <Compile Include="Models\Warehouse\CordProduct.cs" />
-    <Compile Include="Models\Warehouse\WarehouseCordYarn.cs" />
     <Compile Include="Models\CordItemYarn\CordItemYarn.cs" />
     <Compile Include="Models\Users\UserInfo.cs" />
     <Compile Include="Models\Users\UserRole.cs" />
     <Compile Include="Models\FirstTwist\FirstTwistMC.cs" />
+    <Compile Include="Models\Warehouse\WarehouseCordYarn.cs" />
     <Compile Include="MsSqlDbServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -115,7 +116,9 @@
       <Name>M3.Cord.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\Masters\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(SolutionDir)References\Dapper.*" "$(TargetDir)\..\M3.Cord\Developer\Dapper.*" /Y/D/E
