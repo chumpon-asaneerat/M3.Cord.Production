@@ -157,11 +157,37 @@
                     <TextBlock Height="10" />
                 </StackPanel>
             </DockPanel>
-            <!--  LISTVIEWS  -->
+            <!--  TABS  -->
             <TabControl x:Name="tabs"
                         Margin="5"
                         FontSize="18"
-                        SelectionChanged="tabs_SelectionChanged" />
+                        SelectionChanged="tabs_SelectionChanged">
+                <TabItem Header="Raw Material Check Sheet">
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <ctrl:FontAwesomeButton x:Name="cmdLoadYarn"
+                                            Margin="5,0,0,0"
+                                            IconType="Add"
+                                            Text="Load Yarn"/>
+                            <ctrl:FontAwesomeButton x:Name="cmdMCCondition"
+                                            Margin="5,0,0,0"
+                                            IconType="Edit"
+                                            Text="Condition"/>
+                            <ctrl:FontAwesomeButton x:Name="cmdDefect"
+                                            Margin="5,0,0,0"
+                                            IconType="Edit"
+                                            Text="Defects"/>
+                        </StackPanel>
+                        <ListView x:Name="lvRaws"
+                                  Margin="2" />
+                    </DockPanel>
+                </TabItem>
+                <TabItem Header="PC Card">
+                    <DockPanel LastChildFill="True">
+                        <ListView x:Name="lvPCTwist1s" />
+                    </DockPanel>
+                </TabItem>
+            </TabControl>
         </DockPanel>
     </page:NPage>
 </UserControl>

@@ -46,6 +46,10 @@ namespace M3.Cord.Models
         public string CordStructure { get; set; }
         public string ProductLotNo { get; set; }
         public decimal? TargetQty { get; set; }
+
+        public int LastTestNo { get; set; }
+        public int LastDoffNo { get; set; }
+
         public bool? FinishFlag { get; set; }
         public bool? DeleteFlag { get; set; }
 
