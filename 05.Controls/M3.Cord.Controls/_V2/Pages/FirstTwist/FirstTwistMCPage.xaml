@@ -126,7 +126,7 @@
                             <TextBlock Text="Item Code: "
                                        Style="{StaticResource LabelText}"
                                        Foreground="Black" />
-                            <TextBlock Text="{Binding ItemCode}"
+                            <TextBlock Text="{Binding ProductCode}"
                                        Style="{StaticResource LabelText}"
                                        Foreground="Navy"
                                        FontWeight="Bold"

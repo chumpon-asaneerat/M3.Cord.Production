@@ -45,6 +45,7 @@ namespace M3.Cord.Pages
 
         private List<FirstTwistMC> machines;
         private FirstTwistMC selectedMC;
+        private PCTwist1 mcCard;
 
         #endregion
 
@@ -124,13 +125,11 @@ namespace M3.Cord.Pages
         {
             if (null != mc && null != pccard)
             {
-                /*
-                var ret = YarnLoadSheet.AddNew(mc, product);
+                var ret = PCTwist1.AddNew(mc, pccard);
                 if (ret.Ok)
                 {
 
                 }
-                */
             }
             UpdateMCStatus(mc);
         }
@@ -139,17 +138,15 @@ namespace M3.Cord.Pages
         {
             cmdAdd.IsEnabled = false;
 
-            //loadSheet = null;
+            mcCard = null;
             paMC.DataContext = null;
 
             if (null != mc)
             {
-                /*
-                loadSheet = YarnLoadSheet.Get(mc.MCCode).Value();
+                mcCard = PCTwist1.Get(mc.MCCode).Value();
                 // Binding
-                paMC.DataContext = loadSheet;
-                cmdAdd.IsEnabled = (null == loadSheet);
-                */
+                paMC.DataContext = mcCard;
+                cmdAdd.IsEnabled = (null == mcCard);
             }
             // update tabs data context for dynamic template switching
             tabs.DataContext = paMC.DataContext;
