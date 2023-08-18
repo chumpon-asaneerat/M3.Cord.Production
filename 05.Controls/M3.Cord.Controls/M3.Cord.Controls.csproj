@@ -129,6 +129,9 @@
     <Compile Include="Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FirstTwist\S1ProductConditionPage.xaml.cs">
+      <DependentUpon>S1ProductConditionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\G4\G4ReceiveReturnMeterialPage.xaml.cs">
       <DependentUpon>G4ReceiveReturnMeterialPage.xaml</DependentUpon>
     </Compile>
@@ -185,6 +188,9 @@
     </Compile>
     <Compile Include="Windows\FirstTwist\Twist1LoadRecordEditorWindow.xaml.cs">
       <DependentUpon>Twist1LoadRecordEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FirstTwist\Twist1S1ConditionWindow.xaml.cs">
+      <DependentUpon>Twist1S1ConditionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\G4\G4ReceiveYarnWindow.xaml.cs">
       <DependentUpon>G4ReceiveYarnWindow.xaml</DependentUpon>
@@ -304,6 +310,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\FirstTwist\S1ProductConditionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\G4\G4ReceiveReturnMeterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -379,6 +389,10 @@
     <Page Include="Windows\FirstTwist\Twist1LoadRecordEditorWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\FirstTwist\Twist1S1ConditionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\G4\G4ReceiveYarnWindow.xaml">
       <SubType>Designer</SubType>

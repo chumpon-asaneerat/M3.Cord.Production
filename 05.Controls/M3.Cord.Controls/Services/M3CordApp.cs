@@ -282,14 +282,11 @@ namespace M3.Cord
             {
                 get { return GetWindow<Twist1LoadRecordEditorWindow>(); }
             }
-
             /// <summary>Gets S1 Condition Window.</summary>
-            /*
-            public static S1ConditionWindow S1Condition
+            public static Twist1S1ConditionWindow S1Condition
             {
-                get { return GetWindow<S1ConditionWindow>(); }
+                get { return GetWindow<Twist1S1ConditionWindow>(); }
             }
-            */
             /*
             /// <summary>Gets Yarn Loading Window.</summary>
             public static YarnLoadingWindow YarnLoading

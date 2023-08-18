@@ -130,6 +130,18 @@ namespace M3.Cord.Pages
             */
         }
 
+        private void cmdMCCondition_Click(object sender, RoutedEventArgs e)
+        {
+            // Prepare Doff
+            if (null == selectedMC || null == mcCard)
+                return;
+            var mc = selectedMC;
+
+            var win = M3CordApp.Windows.S1Condition;
+            win.Setup();
+            if (win.ShowDialog() == false) return;
+        }
+
         #endregion
 
         #region ListBox Handlers

@@ -166,21 +166,21 @@
                     <DockPanel LastChildFill="True">
                         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                             <ctrl:FontAwesomeButton x:Name="cmdLoadYarn"
-                                            Margin="5,0,0,0"
-                                            IconType="Add"
-                                            Text="Load Yarn"
-                                                    Click="cmdLoadYarn_Click"/>
+                                                    Margin="5,0,0,0"
+                                                    IconType="Add"
+                                                    Text="Load Yarn"
+                                                    Click="cmdLoadYarn_Click" />
                             <ctrl:FontAwesomeButton x:Name="cmdMCCondition"
-                                            Margin="5,0,0,0"
-                                            IconType="Edit"
-                                            Text="Condition"/>
+                                                    Margin="5,0,0,0"
+                                                    IconType="Edit"
+                                                    Text="Condition"
+                                                    Click="cmdMCCondition_Click" />
                             <ctrl:FontAwesomeButton x:Name="cmdDefect"
-                                            Margin="5,0,0,0"
-                                            IconType="Edit"
-                                            Text="Defects"/>
+                                                    Margin="5,0,0,0"
+                                                    IconType="Edit"
+                                                    Text="Defects" />
                         </StackPanel>
-                        <ListView x:Name="lvRaws"
-                                  Margin="2" />
+                        <ListView x:Name="lvRaws" Margin="2" />
                     </DockPanel>
                 </TabItem>
                 <TabItem Header="PC Card">
