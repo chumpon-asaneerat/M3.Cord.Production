@@ -50,6 +50,8 @@ namespace M3.Cord.Models
         public bool Form { get; set; }
         public bool Stain { get; set; }
 
+        public string ProductLotNo { get; set; }
+
         public SolidColorBrush TextColor { get { return BlackColor; } set { } }
 
         #endregion
@@ -149,7 +151,7 @@ namespace M3.Cord.Models
             p.Add("@Form", value.Form);
             p.Add("@Stain", value.Stain);
 
-            p.Add("@Twist1LoadId", value.Twist1LoadId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
+            p.Add("@Twist1LoadId", value.Twist1LoadId, DbType.Int32, direction: ParameterDirection.InputOutput);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
@@ -159,7 +161,7 @@ namespace M3.Cord.Models
                 cnn.Execute("SaveTwist1LoadRecord", p, commandType: CommandType.StoredProcedure);
                 ret.Success(value);
                 // Set PK
-                value.Twist1LoadId = p.Get<int>("@Twist1LoadId");
+                value.Twist1LoadId = p.Get<int?>("@Twist1LoadId");
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");

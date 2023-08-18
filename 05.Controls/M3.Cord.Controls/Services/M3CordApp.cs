@@ -277,13 +277,12 @@ namespace M3.Cord
                 get { return GetWindow<ChoosePCCardTwist1Window>(); }
             }
 
-            /// <summary>Gets Prepare Doff Window.</summary>
-            /*
-            public static PrepareDoffWindow PrepareDoff
+            /// <summary>Gets Twist1 Load Record Editor Window.</summary>
+            public static Twist1LoadRecordEditorWindow Twist1LoadRecordEditor
             {
-                get { return GetWindow<PrepareDoffWindow>(); }
+                get { return GetWindow<Twist1LoadRecordEditorWindow>(); }
             }
-            */
+
             /// <summary>Gets S1 Condition Window.</summary>
             /*
             public static S1ConditionWindow S1Condition

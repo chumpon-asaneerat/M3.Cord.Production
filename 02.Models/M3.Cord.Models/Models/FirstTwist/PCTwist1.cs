@@ -205,7 +205,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@CTwist1Id", value.PCTwist1Id);
+            p.Add("@PCTwist1Id", value.PCTwist1Id);
             p.Add("@IssueDate", value.IssueDate);
             p.Add("@IssueBy", value.IssueBy);
             p.Add("@CheckBy", value.CheckBy);
@@ -215,6 +215,9 @@ namespace M3.Cord.Models
             p.Add("@ActualQty", value.ActualQty);
             p.Add("@PaperTubeColor", value.PaperTubeColor);
             p.Add("@Remark", value.Remark);
+
+            p.Add("@LastTestNo", value.LastTestNo);
+            p.Add("@LastDoffNo", value.LastDoffNo);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);

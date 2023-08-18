@@ -32,7 +32,7 @@ namespace M3.Cord.Models
 
         #region Public Proeprties
 
-        public int? PCId { get; set; }
+        public int PCId { get; set; }
         public string PINo { get; set; }
         public DateTime? @PCDate { get; set; }
         public int? CustomerId { get; set; }

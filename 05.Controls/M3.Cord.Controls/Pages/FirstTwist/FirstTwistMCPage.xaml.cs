@@ -87,12 +87,47 @@ namespace M3.Cord.Pages
 
         private void cmdLoadYarn_Click(object sender, RoutedEventArgs e)
         {
+            // Prepare Doff
+            if (null == selectedMC || null == mcCard)
+                return;
+            var mc = selectedMC;
 
-        }
+            var win = M3CordApp.Windows.Twist1LoadRecordEditor;
+            win.Setup(mc, mcCard);
+            if (win.ShowDialog() == false) return;
 
-        private void cmdNewCondition_Click(object sender, RoutedEventArgs e)
-        {
+            // Save Twist1LoadRecord
+            var record = Twist1LoadRecord.Save(win.Record).Value();
+            if (null != record && record.Twist1LoadId > 0)
+            {
+                // Save SP items
 
+                if (record.TestFlag)
+                {
+                    mcCard.LastTestNo++;
+                }
+                else
+                {
+                    mcCard.LastDoffNo++;
+                }
+                // update last running no
+                PCTwist1.Save(mcCard);
+            }
+
+            /*
+            var items = win.Items;
+            if (null != items)
+            {
+                items.ForEach(item => 
+                { 
+                    var ret = RawMaterialSheetItem.Save(item); 
+                    if (!ret.Ok)
+                    {
+                        Console.WriteLine(ret.ErrMsg);
+                    }
+                });
+            }
+            */
         }
 
         #endregion
