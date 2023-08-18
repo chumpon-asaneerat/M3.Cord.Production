@@ -18,6 +18,8 @@ using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.Windows;
 using System.Text;
+using System.Drawing;
+using System.Data.OleDb;
 
 #endregion
 
@@ -218,6 +220,73 @@ namespace M3.Cord.Models
             {
                 string query = GetQuery();
                 return Gets(query);
+            }
+
+            public static bool Issue(BCSPRFTP item)
+            {
+                bool ret = false;
+                if (null == item)
+                    return ret;
+
+                string queryString;
+                queryString = " INSERT INTO BCSPRFTP( #ANNUL, #FLAGS, #RECTY, #CDSTO, #USRNM "
+                                + " , #DTTRA  , #DTINP"
+                                + " , #CDEL0, #CDCON "
+                                + " , #BLELE "
+                                + " , #CDUM0 , #CDKE1 , #CDKE2, #CDKE3, #CDKE4, #CDKE5 "
+                                + " , #CDLOT, #CDTRA, #REFER , #LOCAT, #CDQUA, #QUACA "
+                                + " , #TECU1, #TECU2 , #TECU3, #TECU4 "
+                                + " , #TECU5 , #TECU6, #COMM0 "
+                                + " , #DTORA ) "
+                                + " VALUES( ? , ? , ? , ? , ? "
+                                + " , ? , ? "
+                                + " , ? , ? "
+                                + " , ? "
+                                + " , ? , ? , ? , ? , ? , ? "
+                                + " , ? , ? , ? , ? , ? , ? "
+                                + " , ? , ? , ? , ? "
+                                + " , ? , ?, ? "
+                                + " , ? ) ";
+                var cmd = AS400DbServer.Instance.GetCommand(queryString);
+                if (null != cmd)
+                {
+                    cmd.Parameters.AddWithValue("@#ANNUL", OleDbType.Char).Value = item.ANNUL;
+                    cmd.Parameters.AddWithValue("@#FLAGS", OleDbType.Char).Value = item.FLAGS;
+                    cmd.Parameters.AddWithValue("@#RECTY", OleDbType.Char).Value = item.RECTY;
+                    cmd.Parameters.AddWithValue("@#CDSTO", OleDbType.Char).Value = item.CDSTO;
+                    cmd.Parameters.AddWithValue("@#USRNM", OleDbType.Char).Value = item.USRNM;
+                    cmd.Parameters.AddWithValue("@#DTTRA", OleDbType.Numeric).Value = item.DTTRA;
+                    cmd.Parameters.AddWithValue("@#DTINP", OleDbType.Numeric).Value = item.DTINP;
+                    cmd.Parameters.AddWithValue("@#CDEL0", OleDbType.Char).Value = item.CDEL0;
+                    cmd.Parameters.AddWithValue("@#CDCON", OleDbType.Char).Value = item.CDCON;
+                    cmd.Parameters.AddWithValue("@#BLELE", OleDbType.Numeric).Value = item.BLELE;
+                    cmd.Parameters.AddWithValue("@#CDUM0", OleDbType.Char).Value = item.CDUM0;
+                    cmd.Parameters.AddWithValue("@#CDKE1", OleDbType.Char).Value = item.CDKE1;
+                    cmd.Parameters.AddWithValue("@#CDKE2", OleDbType.Char).Value = item.CDKE2;
+                    cmd.Parameters.AddWithValue("@#CDKE3", OleDbType.Char).Value = item.CDKE3;
+                    cmd.Parameters.AddWithValue("@#CDKE4", OleDbType.Char).Value = item.CDKE4;
+                    cmd.Parameters.AddWithValue("@#CDKE5", OleDbType.Char).Value = item.CDKE5;
+                    cmd.Parameters.AddWithValue("@#CDLOT", OleDbType.Char).Value = item.CDLOT;
+                    cmd.Parameters.AddWithValue("@#CDTRA", OleDbType.Char).Value = item.CDTRA;
+                    cmd.Parameters.AddWithValue("@#REFER", OleDbType.Char).Value = item.REFER;
+                    cmd.Parameters.AddWithValue("@#LOCAT", OleDbType.Char).Value = item.LOCAT;
+                    cmd.Parameters.AddWithValue("@#CDQUA", OleDbType.Char).Value = item.CDQUA;
+                    cmd.Parameters.AddWithValue("@#QUACA", OleDbType.Char).Value = item.QUACA;
+                    cmd.Parameters.AddWithValue("@#TECU1", OleDbType.Numeric).Value = item.TECU1;
+                    cmd.Parameters.AddWithValue("@#TECU2", OleDbType.Numeric).Value = item.TECU2;
+                    cmd.Parameters.AddWithValue("@#TECU3", OleDbType.Numeric).Value = item.TECU3;
+                    cmd.Parameters.AddWithValue("@#TECU4", OleDbType.Numeric).Value = item.TECU4;
+                    cmd.Parameters.AddWithValue("@#TECU5", OleDbType.Char).Value = item.TECU5;
+                    cmd.Parameters.AddWithValue("@#TECU6", OleDbType.Char).Value = item.TECU6;
+                    cmd.Parameters.AddWithValue("@#COMM0", OleDbType.Char).Value = item.COMM0;
+                    cmd.Parameters.AddWithValue("@#DTORA", OleDbType.Numeric).Value = item.DTORA;
+
+                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
+                    cmd.Dispose();
+                }
+
+                return ret;
             }
 
             public static bool Delete(BCSPRFTP item)

@@ -270,6 +270,23 @@ namespace M3.Cord
             return success;
         }
 
+        public OleDbCommand GetCommand(string query)
+        {
+            OleDbCommand cmd;
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            try
+            {
+                cmd = new OleDbCommand(query, _connection);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                cmd = null;
+            }
+            return cmd;
+        }
+
         #endregion
 
         #region Public Properties
