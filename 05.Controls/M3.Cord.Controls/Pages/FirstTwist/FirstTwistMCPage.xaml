@@ -180,7 +180,111 @@
                                                     IconType="Edit"
                                                     Text="Defects" />
                         </StackPanel>
-                        <ListView x:Name="lvRaws" Margin="2" />
+                        <ListView x:Name="lvRaws" Margin="2">
+                            <ListView.Resources>
+                                <!--  FREEZE COLUMN  -->
+                                <Style x:Key="CommonHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    <Setter Property="IsEnabled" Value="True" />
+                                    <Setter Property="IsHitTestVisible" Value="False" />
+                                    <Setter Property="FontSize" Value="18" />
+                                </Style>
+                                <!--  EACH CELL TEMPLATE  -->
+                                <DataTemplate x:Key="Keiba">
+                                    <TextBlock FontSize="18"
+                                               Text="{Binding Path=Keiba, Mode=OneWay}"
+                                               TextAlignment="Center" />
+                                </DataTemplate>
+                                <DataTemplate x:Key="Traverse">
+                                    <TextBlock FontSize="18"
+                                               Text="{Binding Path=Traverse, Mode=OneWay}"
+                                               TextAlignment="Center" />
+                                </DataTemplate>
+                                <DataTemplate x:Key="Crossing">
+                                    <TextBlock FontSize="18"
+                                               Text="{Binding Path=Crossing, Mode=OneWay}"
+                                               TextAlignment="Center" />
+                                </DataTemplate>
+                                <DataTemplate x:Key="ScrapeTube">
+                                    <TextBlock FontSize="18"
+                                               Text="{Binding Path=ScrapeTube, Mode=OneWay}"
+                                               TextAlignment="Center" />
+                                </DataTemplate>
+                                <DataTemplate x:Key="Form">
+                                    <TextBlock FontSize="18"
+                                               Text="{Binding Path=Form, Mode=OneWay}"
+                                               TextAlignment="Center" />
+                                </DataTemplate>
+                                <DataTemplate x:Key="Stain">
+                                    <TextBlock FontSize="18"
+                                               Text="{Binding Path=Stain, Mode=OneWay}"
+                                               TextAlignment="Center" />
+                                </DataTemplate>
+                                <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+                                <GridViewColumnCollection x:Key="AllDefectColumns">
+                                    <GridViewColumn Width="{StaticResource ListViewColWidth}"
+                                                    CellTemplate="{StaticResource Keiba}"
+                                                    Header=" Keiba "
+                                                    HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+                                    <GridViewColumn Width="{StaticResource ListViewColWidth}"
+                                                    CellTemplate="{StaticResource Traverse}"
+                                                    Header=" Traverse "
+                                                    HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+                                    <GridViewColumn Width="{StaticResource ListViewColWidth}"
+                                                    CellTemplate="{StaticResource Crossing}"
+                                                    Header=" Crossing "
+                                                    HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+                                    <GridViewColumn Width="{StaticResource ListViewColWidth}"
+                                                    CellTemplate="{StaticResource ScrapeTube}"
+                                                    Header=" ScrapeTube "
+                                                    HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+                                    <GridViewColumn Width="{StaticResource ListViewColWidth}"
+                                                    CellTemplate="{StaticResource Form}"
+                                                    Header=" Form "
+                                                    HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+                                    <GridViewColumn Width="{StaticResource ListViewColWidth}"
+                                                    CellTemplate="{StaticResource Stain}"
+                                                    Header=" Stain "
+                                                    HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+                                </GridViewColumnCollection>
+                                <!--  COLUMNS HEADER TEMPLATE  -->
+                                <DataTemplate x:Key="DefectColumnsHeader">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Row="0"
+                                                   HorizontalAlignment="Center"
+                                                   Text="{Binding}" />
+                                        <GridViewHeaderRowPresenter Grid.Row="1"
+                                                                    HorizontalAlignment="Stretch"
+                                                                    Columns="{StaticResource AllDefectColumns}" />
+                                    </Grid>
+                                </DataTemplate>
+                                <!--  ROW COLUMNS CELL TEMPLATE  -->
+                                <DataTemplate x:Key="DefectColumns">
+                                    <Grid>
+                                        <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource DefectColumns}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.Resources>
+                            <ListView.View>
+                                <GridView>
+                                    <GridView.Columns>
+                                        <GridViewColumn Width="Auto" Header="Production Date" />
+                                        <GridViewColumn Width="Auto" Header="YarnType" />
+                                        <GridViewColumn Width="Auto" Header="TraceNo" />
+                                        <GridViewColumn Width="Auto" Header="Input (CH)" />
+                                        <GridViewColumn Width="Auto"
+                                                        CellTemplate="{StaticResource DefectColumns}"
+                                                        Header="Defect Type"
+                                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                                        HeaderTemplate="{StaticResource DefectColumnsHeader}" />
+                                    </GridView.Columns>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
                     </DockPanel>
                 </TabItem>
                 <TabItem Header="PC Card">
