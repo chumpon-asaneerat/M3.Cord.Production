@@ -1,4 +1,6 @@
-﻿#region Using
+﻿//#define ENABLE_SEND400
+
+#region Using
 
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,14 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using NLib.Models;
 using Newtonsoft.Json.Linq;
+using System.Drawing.Drawing2D;
+using System.Globalization;
+using static NLib.IO.Folders;
+using System.Drawing;
+using System.Text.RegularExpressions;
+using System.Windows.Media.Media3D;
+using System.Windows;
+using System.Threading;
 
 #endregion
 
@@ -249,6 +259,86 @@ namespace M3.Cord.Models
                     if (null == oRet || oRet.HasError) // something error.
                     {
                         ++iErrCnt;
+                    }
+                    else
+                    {
+                        // success then send to AS400
+                        // variables
+#if ENABLE_SEND400
+                        string dIssue = yarn.IssueDate.Value.ToString("yyyyMMdd",
+                            CultureInfo.CreateSpecificCulture("en-US"));
+                        string dSend = DateTime.Now.ToString("yyyyMMddHHmm",
+                            CultureInfo.CreateSpecificCulture("en-US"));
+
+                        double defPound = 2.2046;
+                        string sPound = null;
+                        if (yarn.WeightQty.HasValue)
+                        {
+                            decimal? dPound = Utils.MathEx.Round(
+                                Convert.ToDecimal(Convert.ToDouble(yarn.WeightQty.Value) * (double)defPound), 2);
+                            sPound = dPound.ToString();
+                        }
+
+                        BCSPRFTP item = new BCSPRFTP();
+
+                        item.ANNUL = string.Empty;
+                        item.CDSTO = "3G";
+                        item.FLAGS = "R";
+                        item.RECTY = "S";
+                        item.USRNM = "PGMR";
+
+                        //if (cbIssueTo.SelectedValue.ToString() == "Warp AB")
+                        //    ISSUETO = "SB";
+                        //else if (cbIssueTo.SelectedValue.ToString() == "Weft AB")
+                        //    ISSUETO = "SA";
+                        //else if (cbIssueTo.SelectedValue.ToString() == "Warp AD")
+                        //    ISSUETO = "SD";
+                        //else if (cbIssueTo.SelectedValue.ToString() == "Weft AD")
+                        //    ISSUETO = "SC";
+
+                        item.CDTRA = null; // The ISSUETO is first twist, aging, etc code require
+
+                        item.DTTRA = dIssue;
+                        item.DTINP = dIssue;
+
+                        item.CDUM0 = "KG";
+                        item.LOCAT = "GD";
+                        item.CDQUA = "1";
+                        item.COMM0 = string.Empty;
+                        item.QUACA = string.Empty;
+
+                        item.REFER = yarn.RequestNo.Trim();
+
+                        item.CDEL0 = yarn.PalletNo.Trim();
+                        item.CDCON = yarn.PalletNo.Trim();
+                        item.BLELE = (yarn.WeightQty.HasValue) ? yarn.WeightQty.Value.ToString() : null;
+                        item.CDKE1 = yarn.Item400.Trim();
+                        item.CDKE2 = string.Empty;
+                        item.CDKE3 = string.Empty;
+                        item.CDKE4 = string.Empty;
+                        item.CDKE5 = string.Empty;
+                        item.CDLOT = yarn.LotNo.Trim();
+
+
+                        item.TECU1 = sPound;
+                        item.TECU2 = sPound;
+                        item.TECU3 = (yarn.ConeCH.HasValue) ? yarn.ConeCH.Value.ToString() : null;
+                        item.TECU4 = (yarn.WeightQty.HasValue) ? yarn.WeightQty.Value.ToString() : null;
+                        item.TECU5 = string.Empty;
+                        item.TECU6 = yarn.TraceNo.Trim();
+
+                        item.DTORA = dSend;
+
+                        bool success = BCSPRFTP.AS400.Issue(item);
+                        if (success)
+                        {
+                            med.Info("Send To AS400 success.");
+                        }
+                        else
+                        {
+                            med.Info("Send To AS400 failed.");
+                        }
+#endif
                     }
                 }
 
