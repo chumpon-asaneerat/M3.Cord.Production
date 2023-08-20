@@ -7,7 +7,20 @@
              d:DesignHeight="450" 
              d:DesignWidth="800"
              Loaded="UserControl_Loaded">
-    <Grid>
-        <TextBlock Text="{Binding [field1], Mode=TwoWay}" />
-    </Grid>
+    <DockPanel LastChildFill="True">
+        <StackPanel Margin="5" Orientation="Horizontal" DockPanel.Dock="Top"
+                    VerticalAlignment="Center">
+            <TextBlock FontSize="18" Text="Field1:" />
+            <TextBox FontSize="18" Text="{Binding [field1], Mode=TwoWay}" Width="100" />
+            <TextBlock FontSize="18" Text="Field2:" />
+            <TextBox FontSize="18" Text="{Binding [field2], Mode=TwoWay}" Width="200" />
+            <TextBlock FontSize="18" Text="Field3:" />
+            <DatePicker FontSize="18" SelectedDate="{Binding [field3], Mode=TwoWay}" Width="180" />
+            <Button x:Name="cmdCheckValue" FontSize="18" Content="Check Value" Click="cmdCheckValue_Click"/>
+        </StackPanel>
+        <StackPanel Margin="5" Orientation="Horizontal" DockPanel.Dock="Top">
+            <TextBlock x:Name="txtOutput" />
+        </StackPanel>
+        <Grid />
+    </DockPanel>
 </UserControl>

@@ -42,11 +42,40 @@ namespace NLib.Wpf.Test.App.Pages
 
         #endregion
 
+        #region Buttoh Handlers
+
+        private void cmdCheckValue_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateValues();
+        }
+
+        #endregion
+
         #region Private Methods
+
+        private Dictionary<string, object> _data = new Dictionary<string, object>();
 
         private void Init()
         {
+            _data["field1"] = 100;
+            _data["field2"] = "Pete Brown";
+            _data["field3"] = new DateTime(2010, 03, 08);
 
+            this.DataContext = _data;
+        }
+
+        private void UpdateValues()
+        {
+            if (null != _data)
+            {
+                string sOut = string.Empty;
+                foreach (var key in _data.Keys) 
+                {
+                    sOut += string.Format("'{0}' = '{1}'. ", key, _data[key]);
+                }
+                
+                txtOutput.Text = sOut;
+            }
         }
 
         #endregion
