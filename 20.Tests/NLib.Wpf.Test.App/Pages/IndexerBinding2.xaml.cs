@@ -49,9 +49,58 @@ namespace NLib.Wpf.Test.App.Pages
 
         private void Init()
         {
-
+            
         }
 
         #endregion
+    }
+
+    public class DoubleToString : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter,
+            System.Globalization.CultureInfo culture)
+        {
+            if (value != null)
+            {
+                return value.ToString();
+            }
+            return null;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter,
+            System.Globalization.CultureInfo culture)
+        {
+            string strValue = value as string;
+            if (strValue != null)
+            {
+                double result;
+                bool converted = Double.TryParse(strValue, out result);
+                if (converted)
+                {
+                    return result;
+                }
+            }
+            return null;
+        }
+    }
+
+    public enum DistanceType
+    {
+        Miles,
+        Kilometres
+    }
+
+    public class DistanceConverter
+    {
+        public string Convert(double amount, DistanceType distancetype)
+        {
+            if (distancetype == DistanceType.Miles)
+                return (amount * 1.6).ToString("0.##") + " km";
+
+            if (distancetype == DistanceType.Kilometres)
+                return (amount * 0.6).ToString("0.##") + " m";
+
+            throw new ArgumentOutOfRangeException("distanceType");
+        }
     }
 }

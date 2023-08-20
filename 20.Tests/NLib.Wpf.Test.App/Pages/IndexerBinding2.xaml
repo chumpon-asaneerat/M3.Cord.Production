@@ -3,9 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:NLib.Wpf.Test.App.Pages"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800"
              Loaded="UserControl_Loaded">
-    <Grid />
+    <UserControl.Resources>
+        <local:DoubleToString x:Key="doubleToString" />
+        <ObjectDataProvider x:Key="convertDistance"
+                            ObjectType="{x:Type local:DistanceConverter}"
+                            MethodName="Convert">
+            <ObjectDataProvider.MethodParameters>
+                <sys:Double>0</sys:Double>
+                <local:DistanceType>Miles</local:DistanceType>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+    <StackPanel>
+        <TextBlock Text="Enter a distance to convert:" />
+        <TextBox Text="{Binding Source={StaticResource convertDistance}, Path=MethodParameters[0], BindsDirectlyToSource=true, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource doubleToString}}" />
+
+        <ComboBox Width="80"
+                  HorizontalAlignment="Left"
+                  SelectedValue="{Binding Source={StaticResource convertDistance}, Path=MethodParameters[1], BindsDirectlyToSource=true}">
+            <local:DistanceType>Miles</local:DistanceType>
+            <local:DistanceType>Kilometres</local:DistanceType>
+        </ComboBox>
+
+        <TextBlock Text="Result:" />
+        <TextBlock Text="{Binding Source={StaticResource convertDistance}}" />
+    </StackPanel>
 </UserControl>
