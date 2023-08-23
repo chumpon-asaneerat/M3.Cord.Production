@@ -1,8 +1,40 @@
+M3 Cord Production System #500
+- 
+
+M3 Cord Production System #499
+- 
+
+M3 Cord Production System #498
+- 
+
+M3 Cord Production System #497
+- 
+
+M3 Cord Production System #496
+- 
+
+M3 Cord Production System #495
+- 
+
+M3 Cord Production System #494
+- 
+
+M3 Cord Production System #493
+- 
+
+M3 Cord Production System #492
+- 
+
+M3 Cord Production System #491
+- 
+
 M3 Cord Production System #490
 - 
 
+[commited]
 M3 Cord Production System #489
-- 
+- M3.Cord.Production.App re-implements #287
+  - Note. Need app status bar for display at least version update
 
 [commited]
 M3 Cord Production System #488
