@@ -28,8 +28,10 @@ M3 Cord Production System #492
 M3 Cord Production System #491
 - 
 
+[commited]
 M3 Cord Production System #490
-- 
+- M3.Cord.Production.App re-implements #287
+  - Need to check SP SaveBCSPRFTP in case Duplicate due to IssueYarn
 
 [commited]
 M3 Cord Production System #489
