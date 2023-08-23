@@ -1,4 +1,4 @@
-﻿//#define ENABLE_SEND400
+﻿#define ENABLE_SEND400
 
 #region Using
 
@@ -214,6 +214,12 @@ namespace M3.Cord.Models
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");
+
+                // success then send to AS400
+                if (ret.ErrNum == 0)
+                {
+                    SendIssueToAS400(value);
+                }
             }
             catch (Exception ex)
             {
@@ -224,6 +230,79 @@ namespace M3.Cord.Models
             }
 
             return ret;
+        }
+
+        public static void SendIssueToAS400(G4IssueYarn value)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            if (null == value)
+                return;
+
+#if ENABLE_SEND400
+            string dIssue = value.IssueDate.Value.ToString("yyyyMMdd",
+                CultureInfo.CreateSpecificCulture("en-US"));
+            string dSend = DateTime.Now.ToString("yyyyMMddHHmm",
+                CultureInfo.CreateSpecificCulture("en-US"));
+
+            double defPound = 2.2046;
+            string sPound = null;
+            if (value.WeightQty.HasValue)
+            {
+                decimal? dPound = Utils.MathEx.Round(
+                    Convert.ToDecimal(Convert.ToDouble(value.WeightQty.Value) * (double)defPound), 2);
+                sPound = dPound.ToString();
+            }
+
+            BCSPRFTP item = new BCSPRFTP();
+
+            item.ANNUL = string.Empty;
+            item.CDSTO = "3G";
+            item.FLAGS = "R";
+            item.RECTY = "S";
+            item.USRNM = "PGMR";
+            item.CDTRA = "SB"; // The ISSUETO is SB
+
+            item.DTTRA = dIssue;
+            item.DTINP = dIssue;
+
+            item.CDUM0 = "KG";
+            item.LOCAT = "GD";
+            item.CDQUA = "1";
+            item.COMM0 = string.Empty;
+            item.QUACA = string.Empty;
+
+            item.REFER = value.RequestNo.Trim();
+
+            item.CDEL0 = value.PalletNo.Trim();
+            item.CDCON = value.PalletNo.Trim();
+            item.BLELE = (value.WeightQty.HasValue) ? value.WeightQty.Value.ToString() : null;
+            item.CDKE1 = value.Item400.Trim();
+            item.CDKE2 = string.Empty;
+            item.CDKE3 = string.Empty;
+            item.CDKE4 = string.Empty;
+            item.CDKE5 = string.Empty;
+            item.CDLOT = value.LotNo.Trim();
+
+            item.TECU1 = sPound;
+            item.TECU2 = sPound;
+            item.TECU3 = (value.ConeCH.HasValue) ? value.ConeCH.Value.ToString() : null;
+            item.TECU4 = (value.WeightQty.HasValue) ? value.WeightQty.Value.ToString() : null;
+            item.TECU5 = string.Empty; // Direct No. may need to send back.
+            item.TECU6 = value.TraceNo.Trim();
+
+            item.DTORA = dSend;
+
+            bool success = BCSPRFTP.AS400.Issue(item);
+            if (success)
+            {
+                med.Info("Send To AS400 success.");
+            }
+            else
+            {
+                med.Info("Send To AS400 failed.");
+            }
+#endif
         }
 
         public static NDbResult Save(List<G4IssueYarn> values)
@@ -259,86 +338,6 @@ namespace M3.Cord.Models
                     if (null == oRet || oRet.HasError) // something error.
                     {
                         ++iErrCnt;
-                    }
-                    else
-                    {
-                        // success then send to AS400
-                        // variables
-#if ENABLE_SEND400
-                        string dIssue = yarn.IssueDate.Value.ToString("yyyyMMdd",
-                            CultureInfo.CreateSpecificCulture("en-US"));
-                        string dSend = DateTime.Now.ToString("yyyyMMddHHmm",
-                            CultureInfo.CreateSpecificCulture("en-US"));
-
-                        double defPound = 2.2046;
-                        string sPound = null;
-                        if (yarn.WeightQty.HasValue)
-                        {
-                            decimal? dPound = Utils.MathEx.Round(
-                                Convert.ToDecimal(Convert.ToDouble(yarn.WeightQty.Value) * (double)defPound), 2);
-                            sPound = dPound.ToString();
-                        }
-
-                        BCSPRFTP item = new BCSPRFTP();
-
-                        item.ANNUL = string.Empty;
-                        item.CDSTO = "3G";
-                        item.FLAGS = "R";
-                        item.RECTY = "S";
-                        item.USRNM = "PGMR";
-
-                        //if (cbIssueTo.SelectedValue.ToString() == "Warp AB")
-                        //    ISSUETO = "SB";
-                        //else if (cbIssueTo.SelectedValue.ToString() == "Weft AB")
-                        //    ISSUETO = "SA";
-                        //else if (cbIssueTo.SelectedValue.ToString() == "Warp AD")
-                        //    ISSUETO = "SD";
-                        //else if (cbIssueTo.SelectedValue.ToString() == "Weft AD")
-                        //    ISSUETO = "SC";
-
-                        item.CDTRA = null; // The ISSUETO is first twist, aging, etc code require
-
-                        item.DTTRA = dIssue;
-                        item.DTINP = dIssue;
-
-                        item.CDUM0 = "KG";
-                        item.LOCAT = "GD";
-                        item.CDQUA = "1";
-                        item.COMM0 = string.Empty;
-                        item.QUACA = string.Empty;
-
-                        item.REFER = yarn.RequestNo.Trim();
-
-                        item.CDEL0 = yarn.PalletNo.Trim();
-                        item.CDCON = yarn.PalletNo.Trim();
-                        item.BLELE = (yarn.WeightQty.HasValue) ? yarn.WeightQty.Value.ToString() : null;
-                        item.CDKE1 = yarn.Item400.Trim();
-                        item.CDKE2 = string.Empty;
-                        item.CDKE3 = string.Empty;
-                        item.CDKE4 = string.Empty;
-                        item.CDKE5 = string.Empty;
-                        item.CDLOT = yarn.LotNo.Trim();
-
-
-                        item.TECU1 = sPound;
-                        item.TECU2 = sPound;
-                        item.TECU3 = (yarn.ConeCH.HasValue) ? yarn.ConeCH.Value.ToString() : null;
-                        item.TECU4 = (yarn.WeightQty.HasValue) ? yarn.WeightQty.Value.ToString() : null;
-                        item.TECU5 = string.Empty;
-                        item.TECU6 = yarn.TraceNo.Trim();
-
-                        item.DTORA = dSend;
-
-                        bool success = BCSPRFTP.AS400.Issue(item);
-                        if (success)
-                        {
-                            med.Info("Send To AS400 success.");
-                        }
-                        else
-                        {
-                            med.Info("Send To AS400 failed.");
-                        }
-#endif
                     }
                 }
 

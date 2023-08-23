@@ -251,6 +251,7 @@ namespace M3.Cord.Models
                                 + " , ? , ? , ? , ? "
                                 + " , ? , ?, ? "
                                 + " , ? ) ";
+
                 var cmd = AS400DbServer.Instance.GetCommand(queryString);
                 if (null != cmd)
                 {
@@ -302,7 +303,7 @@ namespace M3.Cord.Models
 
                         Console.WriteLine(dump);
 
-                        //cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
                     }
                     catch (Exception ex)
                     {
@@ -474,7 +475,7 @@ namespace M3.Cord.Models
                 p.Add("@TECU2", ToDecimal(value.TECU2));
                 p.Add("@TECU3", ToDecimal(value.TECU3)); // Cone CH
                 p.Add("@TECU4", ToDecimal(value.TECU4));
-                p.Add("@TECU5", ToDecimal(value.TECU5));
+                p.Add("@TECU5", value.TECU5); // Direct No.
 
                 p.Add("@TECU6", value.TECU6); // Trace No
 
@@ -526,11 +527,17 @@ namespace M3.Cord.Models
 
                 try
                 {
+                    // Connect
+                    AS400DbServer.Instance.Start();
+
                     foreach (var item in values) 
                     { 
                         Save(item); 
                     }
                     ret.Success(); // mark as success
+
+                    // Disconnet
+                    AS400DbServer.Instance.Shutdown();
                 }
                 catch (Exception ex)
                 {
