@@ -61,6 +61,8 @@ namespace M3.Cord.Models
         public DateTime? ReceiveDate { get; set; }
         public int? ReceiveBy { get; set; }
 
+        public string DirectionNo { get; set; }
+
         /// <summary>
         /// Gets or sets Expired Date.
         /// </summary>
@@ -272,24 +274,24 @@ namespace M3.Cord.Models
             item.COMM0 = string.Empty;
             item.QUACA = string.Empty;
 
-            item.REFER = value.RequestNo.Trim();
+            item.REFER = !string.IsNullOrEmpty(value.RequestNo) ? value.RequestNo.Trim() : null;
 
-            item.CDEL0 = value.PalletNo.Trim();
-            item.CDCON = value.PalletNo.Trim();
+            item.CDEL0 = !string.IsNullOrEmpty(value.PalletNo) ? value.PalletNo.Trim() : null;
+            item.CDCON = !string.IsNullOrEmpty(value.PalletNo) ? value.PalletNo.Trim() : null;
             item.BLELE = (value.WeightQty.HasValue) ? value.WeightQty.Value.ToString() : null;
-            item.CDKE1 = value.Item400.Trim();
+            item.CDKE1 = !string.IsNullOrEmpty(value.Item400) ? value.Item400.Trim() : null;
             item.CDKE2 = string.Empty;
             item.CDKE3 = string.Empty;
             item.CDKE4 = string.Empty;
             item.CDKE5 = string.Empty;
-            item.CDLOT = value.LotNo.Trim();
+            item.CDLOT = !string.IsNullOrEmpty(value.LotNo) ? value.LotNo.Trim() : null;
 
             item.TECU1 = sPound;
             item.TECU2 = sPound;
             item.TECU3 = (value.ConeCH.HasValue) ? value.ConeCH.Value.ToString() : null;
             item.TECU4 = (value.WeightQty.HasValue) ? value.WeightQty.Value.ToString() : null;
-            item.TECU5 = string.Empty; // Direct No. may need to send back.
-            item.TECU6 = value.TraceNo.Trim();
+            item.TECU5 = !string.IsNullOrEmpty(value.DirectionNo) ? value.DirectionNo.Trim() : null;
+            item.TECU6 = !string.IsNullOrEmpty(value.TraceNo) ? value.TraceNo.Trim() : null;
 
             item.DTORA = dSend;
 

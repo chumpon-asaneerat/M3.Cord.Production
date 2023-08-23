@@ -149,6 +149,7 @@ namespace M3.Cord
                     inst.ReceiveDate = yarnStock.ReceiveDate;
                     inst.TraceNo = yarnStock.TraceNo;
                     inst.WeightQty = yarnStock.WeightQty;
+                    inst.DirectionNo = yarnStock.DirectionNo;
                     // add to list.
                     _issueItems.Add(inst);
                 });
