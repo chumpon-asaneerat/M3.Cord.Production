@@ -263,6 +263,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Users", "Cord Users", 
 		Documents\Cord\Cord User\Cord Jul'23 รายชื่อ พนักงาน.xlsx = Documents\Cord\Cord User\Cord Jul'23 รายชื่อ พนักงาน.xlsx
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Documents 3", "Cord Documents 3", "{F7354561-7AED-4DDA-AE91-EF1FBDAF8728}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\Cord Documents 3\4673.xlsx = Documents\Cord\Cord Documents 3\4673.xlsx
+		Documents\Cord\Cord Documents 3\8335.xlsx = Documents\Cord\Cord Documents 3\8335.xlsx
+		Documents\Cord\Cord Documents 3\KT3R16.xlsx = Documents\Cord\Cord Documents 3\KT3R16.xlsx
+		Documents\Cord\Cord Documents 3\KT3S71.xlsx = Documents\Cord\Cord Documents 3\KT3S71.xlsx
+		Documents\Cord\Cord Documents 3\P1100TT.xlsx = Documents\Cord\Cord Documents 3\P1100TT.xlsx
+		Documents\Cord\Cord Documents 3\P1402TRH.xlsx = Documents\Cord\Cord Documents 3\P1402TRH.xlsx
+		Documents\Cord\Cord Documents 3\P1670T1R.xlsx = Documents\Cord\Cord Documents 3\P1670T1R.xlsx
+		Documents\Cord\Cord Documents 3\P1671T.xlsx = Documents\Cord\Cord Documents 3\P1671T.xlsx
+		Documents\Cord\Cord Documents 3\P1671TT.xlsx = Documents\Cord\Cord Documents 3\P1671TT.xlsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -376,6 +389,7 @@ Global
 		{40B588C6-09B5-4446-9E61-2A6F3B9890DD} = {B2818B90-A408-452A-B236-02309FC6455F}
 		{3BFE983F-FEFA-4B91-B41E-8539188CC6D3} = {B2818B90-A408-452A-B236-02309FC6455F}
 		{544BD3D4-3D18-43A4-86AA-A8238C51713F} = {B2818B90-A408-452A-B236-02309FC6455F}
+		{F7354561-7AED-4DDA-AE91-EF1FBDAF8728} = {B2818B90-A408-452A-B236-02309FC6455F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
