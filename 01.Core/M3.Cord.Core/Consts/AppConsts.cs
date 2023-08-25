@@ -23,8 +23,8 @@ namespace M3.Cord
                     // common
                     public static string Version = AppConsts.Version;
                     public static string Minor = AppConsts.Minor;
-                    public static string Build = "488";
-                    public static DateTime LastUpdate = new DateTime(2023, 8, 25, 11, 00, 00);
+                    public static string Build = "490";
+                    public static DateTime LastUpdate = new DateTime(2023, 8, 25, 15, 40, 00);
                 }
 
                 public static class QA
@@ -33,8 +33,8 @@ namespace M3.Cord
                     // common
                     public static string Version = AppConsts.Version;
                     public static string Minor = AppConsts.Minor;
-                    public static string Build = "488";
-                    public static DateTime LastUpdate = new DateTime(2023, 8, 25, 11, 00, 00);
+                    public static string Build = "490";
+                    public static DateTime LastUpdate = new DateTime(2023, 8, 25, 15, 40, 00);
                 }
 
                 public static class Developer
@@ -43,8 +43,8 @@ namespace M3.Cord
                     // common
                     public static string Version = AppConsts.Version;
                     public static string Minor = AppConsts.Minor;
-                    public static string Build = "488";
-                    public static DateTime LastUpdate = new DateTime(2023, 8, 25, 11, 00, 00);
+                    public static string Build = "490";
+                    public static DateTime LastUpdate = new DateTime(2023, 8, 25, 15, 40, 00);
                 }
             }
         }
