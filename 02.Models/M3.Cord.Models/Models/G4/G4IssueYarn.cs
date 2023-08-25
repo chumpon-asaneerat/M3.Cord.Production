@@ -236,12 +236,13 @@ namespace M3.Cord.Models
             return ret;
         }
 
-        public static void SendIssueToAS400(G4IssueYarn value)
+        public static bool SendIssueToAS400(G4IssueYarn value)
         {
+            bool success = false;
             MethodBase med = MethodBase.GetCurrentMethod();
 
             if (null == value)
-                return;
+                return success;
 
 #if ENABLE_SEND400
             string dIssue = value.IssueDate.Value.ToString("yyyyMMdd",
@@ -297,7 +298,7 @@ namespace M3.Cord.Models
 
             item.DTORA = dSend;
 
-            bool success = BCSPRFTP.AS400.Issue(item);
+            success = BCSPRFTP.AS400.Issue(item);
             if (success)
             {
                 med.Info("Send To AS400 success.");
@@ -306,6 +307,8 @@ namespace M3.Cord.Models
             {
                 med.Info("Send To AS400 failed.");
             }
+
+            return success;
 #endif
         }
 
@@ -333,6 +336,8 @@ namespace M3.Cord.Models
                 return ret;
             }
 
+
+            AS400DbServer.Instance.Start();
             try
             {
                 int iErrCnt = 0;
@@ -357,6 +362,8 @@ namespace M3.Cord.Models
                 ret.ErrNum = 9999;
                 ret.ErrMsg = ex.Message;
             }
+
+            AS400DbServer.Instance.Shutdown();
 
             return ret;
         }

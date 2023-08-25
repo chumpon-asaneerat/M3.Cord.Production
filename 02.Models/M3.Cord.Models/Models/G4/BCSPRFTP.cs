@@ -232,6 +232,13 @@ namespace M3.Cord.Models
                 if (null == item)
                     return ret;
 
+                if (!AS400DbServer.Instance.Connected)
+                {
+                    string msg = "Connection is null or cannot connect to database server.";
+                    med.Err(msg);
+                    return ret;
+                }
+
                 string queryString;
                 queryString = " INSERT INTO BCSPRFTP( #ANNUL, #FLAGS, #RECTY, #CDSTO, #USRNM "
                                 + " , #DTTRA  , #DTINP"
@@ -302,18 +309,26 @@ namespace M3.Cord.Models
                         dump += "--- END SEND BCSPRFTP TO AS400 DUMP ---" + Environment.NewLine;
 
                         Console.WriteLine(dump);
+                        med.Info(dump);
 
                         cmd.ExecuteNonQuery();
+                        // success
+                        ret = true;
                     }
                     catch (Exception ex)
                     {
                         med.Err(ex);
+                        ret = false;
                     }
                     finally
                     {
                         cmd.Parameters.Clear();
                         cmd.Dispose();
                     }
+                }
+                else
+                {
+                    med.Info("AS400 Command object is null");
                 }
 
                 return ret;
@@ -527,17 +542,11 @@ namespace M3.Cord.Models
 
                 try
                 {
-                    // Connect
-                    AS400DbServer.Instance.Start();
-
                     foreach (var item in values) 
                     { 
                         Save(item); 
                     }
                     ret.Success(); // mark as success
-
-                    // Disconnet
-                    AS400DbServer.Instance.Shutdown();
                 }
                 catch (Exception ex)
                 {
