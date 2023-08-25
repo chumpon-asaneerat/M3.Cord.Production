@@ -180,6 +180,14 @@ namespace M3.Cord.Models
                 return ret;
             }
 
+            // success then send to AS400
+            bool sendAS400 = SendIssueToAS400(value);
+            if (!sendAS400)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
             IDbConnection cnn = DbServer.Instance.Db;
             if (null == cnn || !DbServer.Instance.Connected)
             {
@@ -216,12 +224,6 @@ namespace M3.Cord.Models
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");
-
-                // success then send to AS400
-                if (ret.ErrNum == 0)
-                {
-                    SendIssueToAS400(value);
-                }
             }
             catch (Exception ex)
             {
