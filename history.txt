@@ -13,8 +13,10 @@ M3 Cord Production System #497
 M3 Cord Production System #496
 - 
 
+[commited]
 M3 Cord Production System #495
-- 
+- M3.Cord.Production.App re-implements #291
+  - Need to check success send issue to AS400 before save issue to cord db
 
 [commited]
 M3 Cord Production System #494
