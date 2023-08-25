@@ -66,6 +66,7 @@ namespace M3.Cord.Windows
                     return;
                 }
 
+                /*
                 if (string.IsNullOrWhiteSpace(_item.DirectionNo))
                 {
                     string msg = "Please Enter Directions No.";
@@ -75,6 +76,7 @@ namespace M3.Cord.Windows
                     win.ShowDialog();
                     return;
                 }
+                */
             }
             DialogResult = true;
         }
