@@ -199,7 +199,7 @@
                           <Top>1.3181cm</Top>
                           <Left>7.08699cm</Left>
                           <Height>0.55cm</Height>
-                          <Width>1.3cm</Width>
+                          <Width>1.09361cm</Width>
                           <ZIndex>4</ZIndex>
                           <Style>
                             <Border>
@@ -454,14 +454,14 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Top>1.3181cm</Top>
-                          <Left>8.44699cm</Left>
+                          <Left>8.19299cm</Left>
                           <Height>0.55cm</Height>
-                          <Width>1.4377cm</Width>
+                          <Width>1.70228cm</Width>
                           <ZIndex>11</ZIndex>
                           <Style>
                             <Border>
@@ -977,7 +977,7 @@
                           <Top>5.02627cm</Top>
                           <Left>7.11349cm</Left>
                           <Height>0.55cm</Height>
-                          <Width>1.3cm</Width>
+                          <Width>1.09361cm</Width>
                           <ZIndex>25</ZIndex>
                           <Style>
                             <Border>
@@ -1232,14 +1232,14 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Top>5.02627cm</Top>
-                          <Left>8.47349cm</Left>
+                          <Left>8.21949cm</Left>
                           <Height>0.55cm</Height>
-                          <Width>1.4377cm</Width>
+                          <Width>1.70228cm</Width>
                           <ZIndex>32</ZIndex>
                           <Style>
                             <Border>
@@ -1599,7 +1599,7 @@
                           <Top>9.39334cm</Top>
                           <Left>7.08699cm</Left>
                           <Height>0.55cm</Height>
-                          <Width>1.3cm</Width>
+                          <Width>1.09361cm</Width>
                           <ZIndex>42</ZIndex>
                           <Style>
                             <Border>
@@ -1854,14 +1854,14 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Top>9.39334cm</Top>
-                          <Left>8.44699cm</Left>
+                          <Left>8.19299cm</Left>
                           <Height>0.55cm</Height>
-                          <Width>1.4377cm</Width>
+                          <Width>1.70228cm</Width>
                           <ZIndex>49</ZIndex>
                           <Style>
                             <Border>
