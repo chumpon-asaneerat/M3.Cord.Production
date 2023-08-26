@@ -228,6 +228,7 @@ namespace M3.Cord.Models
                 }
                 else
                 {
+                    // Gets From from itemcode table
                     if (ItemYarn.Contains("TT")) 
                     {
                         return "Thailand";
