@@ -229,13 +229,13 @@ namespace M3.Cord.Models
                 else
                 {
                     // Gets From from itemcode table
-                    if (ItemYarn.Contains("TT")) 
+                    if (ItemYarn.Contains("OKA")) 
                     {
-                        return "Thailand";
+                        return "Japan";
                     }
                     else
                     {
-                        return "Japan";
+                        return "Thailand";
                     }
                 }
             }
