@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using NLib.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 #endregion
 
@@ -40,7 +42,20 @@ namespace M3.Cord.Controls.Elements
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            UpdateUI();
+        }
 
+        #endregion
+
+        #region Private Methods
+
+        private void UpdateUI()
+        {
+            Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
+            {
+                var ipaddr = NetworkUtils.GetLocalIPAddress();
+                txtStatus.Text = (null != ipaddr) ? ipaddr.ToString() : "0.0.0.0";
+            }));
         }
 
         #endregion

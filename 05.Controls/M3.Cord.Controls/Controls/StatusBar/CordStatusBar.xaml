@@ -10,6 +10,7 @@
              mc:Ignorable="d" >
     <DockPanel Background="DimGray" LastChildFill="True">
         <elem:AppVersionElement DockPanel.Dock="Right" />
+        <elem:ClientInfoElement DockPanel.Dock="Right" />
         <Grid/>
     </DockPanel>
 </UserControl>
