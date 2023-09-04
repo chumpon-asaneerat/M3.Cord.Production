@@ -107,6 +107,9 @@
     <Compile Include="Controls\StatusBar\Elements\AppVersionElement.xaml.cs">
       <DependentUpon>AppVersionElement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\StatusBar\Elements\ClientInfoElement.xaml.cs">
+      <DependentUpon>ClientInfoElement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
@@ -302,6 +305,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\StatusBar\Elements\AppVersionElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StatusBar\Elements\ClientInfoElement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

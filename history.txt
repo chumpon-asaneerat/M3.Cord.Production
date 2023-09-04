@@ -16,8 +16,9 @@ M3 Cord Production System #506
 M3 Cord Production System #505
 - 
 
+[commited]
 M3 Cord Production System #504
-- 
+- M3.Cord.Production.App re-implements #299
 
 [commited]
 M3 Cord Production System #503
