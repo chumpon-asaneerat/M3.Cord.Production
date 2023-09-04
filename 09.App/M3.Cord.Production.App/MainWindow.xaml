@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:M3.Cord.Controls;assembly=M3.Cord.Controls"
         mc:Ignorable="d"
         Title="M3 Cord Production System"
         Height="450"
@@ -13,6 +14,7 @@
         Unloaded="Window_Unloaded">
     <Grid Background="{StaticResource WhiteBrush}">
         <DockPanel LastChildFill="True">
+            <ctrl:CordStatusBar x:Name="statusbar" DockPanel.Dock="Bottom" />
             <ContentPresenter x:Name="container" />
         </DockPanel>
     </Grid>
