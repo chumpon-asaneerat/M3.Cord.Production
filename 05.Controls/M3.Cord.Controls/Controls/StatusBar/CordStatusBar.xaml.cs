@@ -17,19 +17,19 @@ using System.Windows.Shapes;
 
 #endregion
 
-namespace M3.Cord.Controls.Elements
+namespace M3.Cord.Controls
 {
     /// <summary>
-    /// Interaction logic for AppVersionElement.xaml
+    /// Interaction logic for CordStatusBar.xaml
     /// </summary>
-    public partial class AppVersionElement : UserControl
+    public partial class CordStatusBar : UserControl
     {
         #region Constructor
 
         /// <summary>
-        /// Constructor
+        /// Constructor.
         /// </summary>
-        public AppVersionElement()
+        public CordStatusBar()
         {
             InitializeComponent();
         }

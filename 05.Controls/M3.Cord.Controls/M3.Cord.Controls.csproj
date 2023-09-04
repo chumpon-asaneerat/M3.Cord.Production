@@ -101,6 +101,9 @@
     <Compile Include="Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml.cs">
       <DependentUpon>S4x2UpTwisterConditionControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\StatusBar\CordStatusBar.xaml.cs">
+      <DependentUpon>CordStatusBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StatusBar\Elements\AppVersionElement.xaml.cs">
       <DependentUpon>AppVersionElement.xaml</DependentUpon>
     </Compile>
@@ -291,6 +294,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StatusBar\CordStatusBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
