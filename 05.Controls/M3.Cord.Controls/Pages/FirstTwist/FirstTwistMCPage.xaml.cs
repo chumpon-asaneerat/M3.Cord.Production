@@ -85,22 +85,6 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region ListBox Handlers
-
-        private void mcList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (null != mcList.SelectedItem)
-            {
-                selectedMC = mcList.SelectedItem as FirstTwistMC;
-                // Show MC Operation Menu.
-                var page = M3CordApp.Pages.FirstTwistOperation;
-                page.Setup(selectedMC);
-                PageContentManager.Instance.Current = page;
-            }
-        }
-
-        #endregion
-
         #region Private Methods
 
         private void RefreshMC()
