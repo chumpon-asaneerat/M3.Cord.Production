@@ -24,6 +24,15 @@
                                             Text="Back"
                                             Click="cmdBack_Click" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <ctrl:FontAwesomeButton x:Name="cmdSelectPCCard"
+                                            Margin="5,0,0,0"
+                                            IconType="Import"
+                                            Text="Set PC Card"
+                                            Click="cmdSelectPCCard_Click" />
+                </StackPanel>
                 <Grid />
             </DockPanel>
             <DockPanel x:Name="paPCCard" LastChildFill="True">
@@ -49,19 +58,6 @@
                                        Width="120"
                                        IsReadOnly="True"
                                        Text="{Binding MCCode}" />
-                        <Button x:Name="cmdSelectPCCard"
-                                Height="65"
-                                Width="150"
-                                Style="{StaticResource InlineButton}"
-                                Margin="3"
-                                FontSize="25"
-                                Click="cmdSelectPCCard_Click">
-                            <TextBlock>
-                                <Run Text="Choose" />
-                                <LineBreak />
-                                <Run Text="PC Card" />
-                            </TextBlock>
-                        </Button>
                     </StackPanel>
                 </DockPanel>
                 <DockPanel LastChildFill="True" DockPanel.Dock="Top">
