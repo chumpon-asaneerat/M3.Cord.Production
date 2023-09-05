@@ -43,6 +43,10 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private List<FirstTwistMC> machines;
+        private FirstTwistMC selectedMC;
+        private PCTwist1 mcCard;
+
         #endregion
 
         #region Loaded/Unloaded
@@ -68,8 +72,27 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region ListBox Handlers
+
+        private void mcList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (null != mcList.SelectedItem)
+            {
+                selectedMC = mcList.SelectedItem as FirstTwistMC;
+                //UpdateMCStatus(selectedMC);
+            }
+        }
+
+        #endregion
+
         #region Private Methods
 
+        private void RefreshMC()
+        {
+            mcList.ItemsSource = null;
+            selectedMC = null;
+            mcList.ItemsSource = machines;
+        }
 
         private void RefreshGrid()
         {
@@ -82,7 +105,8 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-
+            machines = FirstTwistMC.Gets().Value();
+            RefreshMC();
         }
 
         #endregion
