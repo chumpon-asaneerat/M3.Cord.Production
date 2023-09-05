@@ -41,6 +41,10 @@ namespace M3.Cord.Models
         public string ProductName { get; set; }
         public string ItemYarn { get; set; }
         public string CordStructure { get; set; }
+
+        public string TreatRoute { get; set; }
+        public string TwistSpec { get; set; }
+        
         public string ProductLotNo { get; set; }
         public decimal? TargetQty { get; set; }
         public bool? FinishFlag { get; set; }

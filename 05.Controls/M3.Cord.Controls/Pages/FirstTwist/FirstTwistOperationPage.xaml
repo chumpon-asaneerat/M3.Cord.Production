@@ -72,7 +72,10 @@
                                    Width="350"
                                    IsReadOnly="True"
                                    Text="{Binding ItemYarn}" />
-                    <ctrl:NTextBox CaptionText="Twist spec (SC):" IsReadOnly="True" />
+                    <ctrl:NTextBox CaptionText="Twist spec (SC):"
+                                   Width="350"
+                                   IsReadOnly="True"
+                                   Text="{Binding TwistSpec}" />
                     <Grid />
                 </DockPanel>
                 <Grid />

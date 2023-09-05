@@ -29,6 +29,9 @@ namespace M3.Cord.Models
         public string ItemYarn { get; set; }
         public string CordStructure { get; set; }
 
+        public string TreatRoute { get; set; }
+        public string TwistSpec { get; set; }
+
         #endregion
 
         #region Static Methods
@@ -115,6 +118,8 @@ namespace M3.Cord.Models
             p.Add("@ProductName", value.ProductName);
             p.Add("@ItemYarn", value.ItemYarn);
             p.Add("@CordStructure", value.CordStructure);
+            p.Add("@TreatRoute", value.TreatRoute);
+            p.Add("@TwistSpec", value.TwistSpec);
             p.Add("@ProductId", value.ProductId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
