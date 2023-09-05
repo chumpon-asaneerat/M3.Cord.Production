@@ -276,6 +276,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Documents 3", "Cord Do
 		Documents\Cord\Cord Documents 3\P1671TT.xlsx = Documents\Cord\Cord Documents 3\P1671TT.xlsx
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Imports", "Cord Imports", "{939688C7-1359-4B3B-A8BB-E673B1479DC7}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\Cord Imports\S1ConditionStd.xlsx = Documents\Cord\Cord Imports\S1ConditionStd.xlsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -390,6 +395,7 @@ Global
 		{3BFE983F-FEFA-4B91-B41E-8539188CC6D3} = {B2818B90-A408-452A-B236-02309FC6455F}
 		{544BD3D4-3D18-43A4-86AA-A8238C51713F} = {B2818B90-A408-452A-B236-02309FC6455F}
 		{F7354561-7AED-4DDA-AE91-EF1FBDAF8728} = {B2818B90-A408-452A-B236-02309FC6455F}
+		{939688C7-1359-4B3B-A8BB-E673B1479DC7} = {B2818B90-A408-452A-B236-02309FC6455F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
