@@ -1,7 +1,5 @@
 ﻿#region Using
 
-using M3.Cord.Models;
-using NLib.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +14,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
+using NLib.Services;
+using M3.Cord.Models;
+using NLib.Models;
+using NLib;
 
 #endregion
 
@@ -41,6 +44,7 @@ namespace M3.Cord.Pages
         #region Internal Variables
 
         private FirstTwistMC selectedMC;
+        private PCTwist1 pcCard;
 
         #endregion
 
@@ -54,6 +58,45 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdSelectPCCard_Click(object sender, RoutedEventArgs e)
+        {
+            if (null == selectedMC)
+                return;
+            var win = M3CordApp.Windows.ChoosePCCardTwist1;
+            win.Setup();
+            if (win.ShowDialog() == false) return;
+            if (null != win.SelectedPCCard)
+            {
+                AddNew(win.SelectedPCCard);
+            }
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void AddNew(PCCard pccard)
+        {
+            if (null != selectedMC && null != pccard)
+            {
+                var ret = PCTwist1.AddNew(selectedMC, pccard);
+                if (ret.Ok)
+                {
+
+                }
+            }
+            UpdateMCStatus();
+        }
+
+        private void UpdateMCStatus()
+        {
+            // Get PC Card if assigned.
+            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
+            // Binding
+            paPCCard.DataContext = pcCard;
+            cmdSelectPCCard.IsEnabled = (null == pcCard);
+        }
+
         #endregion
 
         #region Public Methods
@@ -63,12 +106,13 @@ namespace M3.Cord.Pages
             selectedMC = mc;
             if (null !=  selectedMC) 
             {
-                page.HeaderText = "1st Twisting Menu - " + selectedMC.MCCode;
+                page.HeaderText = "1st Twisting - " + selectedMC.MCCode;
             }
             else
             {
-                page.HeaderText = "1st Twisting Menu - ";
+                page.HeaderText = "1st Twisting ";
             }
+            UpdateMCStatus();
         }
 
         #endregion

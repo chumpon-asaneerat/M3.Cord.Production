@@ -192,7 +192,7 @@
     <Compile Include="Services\G4\G4IssueYarnService.cs" />
     <Compile Include="Services\G4\G4ReceiveYarnService.cs" />
     <Compile Include="Services\G4\G4StockService.cs" />
-    <Compile Include="Services\PCCard\CordProductPlanningService.cs" />
+    <Compile Include="Services\PCCard\PCCardService.cs" />
     <Compile Include="Services\SignInService.cs" />
     <Compile Include="Services\Warehouse\WarehouseReceiveYarnService.cs" />
     <Compile Include="Windows\FirstTwist\ChoosePCCardTwist1Window.xaml.cs">

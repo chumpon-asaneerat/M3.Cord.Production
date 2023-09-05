@@ -7,8 +7,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="800">
-    <page:NPage x:Name="page" HeaderText="1st Twisting Menu - ">
+             d:DesignWidth="1200">
+    <page:NPage x:Name="page" HeaderText="1st Twisting - ">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTONS  -->
             <DockPanel LastChildFill="True"
@@ -22,11 +22,61 @@
                                             Margin="5,0,0,0"
                                             IconType="Back"
                                             Text="Back"
-                                            Click="cmdBack_Click"/>
+                                            Click="cmdBack_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <Grid/>
+            <DockPanel x:Name="paPCCard" LastChildFill="True">
+                <DockPanel LastChildFill="True" DockPanel.Dock="Top">
+                    <StackPanel Orientation="Horizontal">
+                        <ctrl:NTextBox CaptionText="Customer:"
+                                       IsReadOnly="True"
+                                       Text="{Binding CustomerName}" />
+                        <ctrl:NTextBox CaptionText="Product Name:"
+                                       IsReadOnly="True"
+                                       Text="{Binding ProductName}" />
+                        <ctrl:NTextBox CaptionText="Product Code:"
+                                       IsReadOnly="True"
+                                       Text="{Binding ProductCode}" />
+                        <ctrl:NTextBox CaptionText="Lot No:"
+                                       IsReadOnly="True"
+                                       Text="{Binding ProductLotNo}" />
+                        <ctrl:NTextBox CaptionText="Weight:"
+                                       Width="150"
+                                       IsReadOnly="True"
+                                       Text="{Binding TargetQty}" />
+                        <ctrl:NTextBox CaptionText="Flow:"
+                                       Width="120"
+                                       IsReadOnly="True"
+                                       Text="{Binding MCCode}" />
+                        <Button x:Name="cmdSelectPCCard"
+                                Height="65"
+                                Width="150"
+                                Style="{StaticResource InlineButton}"
+                                Margin="3"
+                                FontSize="25"
+                                Click="cmdSelectPCCard_Click">
+                            <TextBlock>
+                                <Run Text="Choose" />
+                                <LineBreak />
+                                <Run Text="PC Card" />
+                            </TextBlock>
+                        </Button>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel LastChildFill="True" DockPanel.Dock="Top">
+                    <ctrl:NTextBox CaptionText="Cord Structure:"
+                                   IsReadOnly="True"
+                                   Text="{Binding CordStructure}" />
+                    <ctrl:NTextBox CaptionText="Raw Yarn:"
+                                   Width="350"
+                                   IsReadOnly="True"
+                                   Text="{Binding ItemYarn}" />
+                    <ctrl:NTextBox CaptionText="Twist spec (SC):" IsReadOnly="True" />
+                    <Grid />
+                </DockPanel>
+                <Grid />
+            </DockPanel>
         </DockPanel>
     </page:NPage>
 </UserControl>

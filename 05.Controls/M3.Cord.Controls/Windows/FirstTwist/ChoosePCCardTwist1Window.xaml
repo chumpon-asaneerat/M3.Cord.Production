@@ -14,7 +14,7 @@
         WindowStartupLocation="CenterOwner"
         Height="600"
         Width="1000">
-    <page:NPage HeaderText="Product Planning">
+    <page:NPage HeaderText="Product Planning (PC Card)">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
             <DockPanel LastChildFill="True"
