@@ -101,6 +101,12 @@
     <Compile Include="Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml.cs">
       <DependentUpon>S4x2UpTwisterConditionControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Excels\ExcelColumnMapControl.xaml.cs">
+      <DependentUpon>ExcelColumnMapControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Excels\ExcelDataViewControl.xaml.cs">
+      <DependentUpon>ExcelDataViewControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StatusBar\CordStatusBar.xaml.cs">
       <DependentUpon>CordStatusBar.xaml</DependentUpon>
     </Compile>
@@ -210,6 +216,9 @@
     <Compile Include="Windows\G4\G4ReceiveYarnWindow.xaml.cs">
       <DependentUpon>G4ReceiveYarnWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ImportConditionStdWindow.xaml.cs">
+      <DependentUpon>ImportConditionStdWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MessageBox\MessageBoxOKCancelWindow.xaml.cs">
       <DependentUpon>MessageBoxOKCancelWindow.xaml</DependentUpon>
     </Compile>
@@ -306,6 +315,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Excels\ExcelColumnMapControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Excels\ExcelDataViewControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -425,6 +442,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\ImportConditionStdWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\MessageBox\MessageBoxOKCancelWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -481,6 +502,7 @@
     <Folder Include="Controls\Documents\SamplingDetails\Elements\" />
     <Folder Include="Pages\Documents\" />
     <Folder Include="Pages\Masters\" />
+    <Folder Include="Windows\Imports\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\toray.png" />

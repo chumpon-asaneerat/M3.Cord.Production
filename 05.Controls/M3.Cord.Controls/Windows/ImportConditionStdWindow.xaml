@@ -1,0 +1,82 @@
+﻿<Window x:Class="M3.Cord.Windows.ImportConditionStdWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        Title="Import Process Condition Standard"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="600"
+        Width="1000"
+        mc:Ignorable="d">
+    <page:NPage HeaderText="Import Process Condition Standard">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdImport"
+                                        DockPanel.Dock="Right"
+                                        IconType="Import"
+                                        Text="Import"
+                                        Click="cmdImport_Click" />
+                <Grid />
+            </DockPanel>
+            <DockPanel LastChildFill="True">
+                <!--  EXCEL FILES INFO / CHOOSE  -->
+                <DockPanel LastChildFill="True"
+                           DockPanel.Dock="Top"
+                           Height="40">
+                    <TextBlock DockPanel.Dock="Left"
+                               Style="{StaticResource LabelText}"
+                               FontSize="22"
+                               VerticalAlignment="Center"
+                               TextAlignment="Right"
+                               Width="150"
+                               Text="Excel File: " />
+                    <TextBlock DockPanel.Dock="Left" Width="5" />
+                    <TextBlock x:Name="txtFileName"
+                               Style="{StaticResource LabelText}"
+                               FontSize="22"
+                               DockPanel.Dock="Left"
+                               VerticalAlignment="Center"
+                               TextAlignment="Left"
+                               Text="{Binding FileName}"
+                               TextWrapping="Wrap"
+                               TextTrimming="WordEllipsis"
+                               ClipToBounds="True"
+                               Width="Auto"
+                               MaxWidth="650"
+                               MinWidth="300" />
+                    <TextBlock DockPanel.Dock="Left" Width="5" />
+                    <ctrl:FontAwesomeButton x:Name="cmdChooseExcel"
+                                            Margin="3"
+                                            DockPanel.Dock="Right"
+                                            IconType="Search"
+                                            Text="Choose" />
+                    <TextBlock DockPanel.Dock="Right" Width="5" />
+                    <Grid />
+                </DockPanel>
+                <!--  EXCEL SHEETS, MAP COLUMNS, PREVIEW DATA  -->
+                <DockPanel LastChildFill="True">
+                    <!--  EXCEL SHEETS, MAP COLUMNS  -->
+
+                    <!--  PREVIEW DATA  -->
+                    <Grid/>
+                </DockPanel>
+                <Grid />
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>
+
