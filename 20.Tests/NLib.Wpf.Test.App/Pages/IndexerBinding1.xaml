@@ -11,7 +11,7 @@
         <StackPanel Margin="5" Orientation="Horizontal" DockPanel.Dock="Top"
                     VerticalAlignment="Center">
             <TextBlock FontSize="18" Text="Field1:" />
-            <TextBox FontSize="18" Text="{Binding [field1], Mode=TwoWay}" Width="100" />
+            <TextBox FontSize="18" Text="{Binding [field1].No, Mode=TwoWay}" Width="100" />
             <TextBlock FontSize="18" Text="Field2:" />
             <TextBox FontSize="18" Text="{Binding [field2], Mode=TwoWay}" Width="200" />
             <TextBlock FontSize="18" Text="Field3:" />

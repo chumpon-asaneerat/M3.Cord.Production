@@ -57,7 +57,7 @@ namespace NLib.Wpf.Test.App.Pages
 
         private void Init()
         {
-            _data["field1"] = 100;
+            _data["field1"] = new Field1() { No = 100 };
             _data["field2"] = "Pete Brown";
             _data["field3"] = new DateTime(2010, 03, 08);
 
@@ -79,5 +79,15 @@ namespace NLib.Wpf.Test.App.Pages
         }
 
         #endregion
+    }
+
+    public class Field1
+    {
+        public override string ToString()
+        {
+            return this.No.ToString();
+        }
+
+        public int No { get; set; }
     }
 }

@@ -17,7 +17,8 @@
         <npage:AdvListView1Page />
         <npage:AdvListView2Page />
         <npage:IndexerBinding1 />
-        -->
         <npage:IndexerBinding2 />
+        -->
+        <npage:IndexerBinding1 />
     </Grid>
 </Window>
