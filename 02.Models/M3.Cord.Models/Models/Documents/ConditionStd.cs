@@ -15,6 +15,7 @@ using Dapper;
 using Newtonsoft.Json;
 using System.Net;
 using NLib.Models;
+using System.Runtime.CompilerServices;
 
 #endregion
 
@@ -42,6 +43,24 @@ namespace M3.Cord.Models
     /// </summary>
     public class ConditionStd : NInpc
     {
+        #region Override Methods
+
+        public override int GetHashCode()
+        {
+            string code = string.Format("{0}_{1}_{2}", ProcessName, ProductCode, ParamName);
+            return code.GetHashCode();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (null == obj) return false;
+            if ((obj is ConditionStd)) 
+                return obj.GetHashCode().Equals(this.GetHashCode());
+            else return false;
+        }
+
+        #endregion
+
         #region Public Properties
 
         public string ProcessName { get; set; }
@@ -57,6 +76,151 @@ namespace M3.Cord.Models
         #endregion
 
         #region Static Methods
+
+        /// <summary>
+        /// Create String Parameter.
+        /// </summary>
+        /// <param name="productCode"></param>
+        /// <param name="pName"></param>
+        /// <param name="pType"></param>
+        /// <param name="sc"></param>
+        /// <param name="sVal"></param>
+        /// <param name="dVal"></param>
+        /// <param name="eVal"></param>
+        /// <returns></returns>
+        public static ConditionStd Create(string productCode,
+            string pName, ConditionParamTypes pType, bool sc,
+            string sVal = null,
+            decimal? dVal = new decimal?(),
+            decimal? eVal = new decimal?())
+        {
+            return new ConditionStd()
+            {
+                ProcessName = "S-1",
+                ProductCode = productCode,
+                ParamName = pName,
+                ParamType = pType,
+                SC = sc,
+                StdValueS = sVal,
+                StdValueD = dVal,
+                StdValueE = eVal
+            };
+        }
+        /// <summary>
+        /// Create Number Parameter.
+        /// </summary>
+        /// <param name="processName"></param>
+        /// <param name="productCode"></param>
+        /// <param name="pName"></param>
+        /// <param name="sVal"></param>
+        /// <param name="sc"></param>
+        /// <returns></returns>
+        public static ConditionStd Create(string processName, string productCode, string pName,
+            string sVal, bool sc = false)
+        {
+            return new ConditionStd()
+            {
+                ProcessName = processName,
+                ProductCode = productCode,
+                ParamName = pName,
+                ParamType = ConditionParamTypes.String,
+                SC = sc,
+                StdValueS = sVal,
+                StdValueD = new decimal?(),
+                StdValueE = new decimal?(),
+                StdValueB = new bool?(),
+            };
+        }
+        /// <summary>
+        /// Create Number with error range Parameter.
+        /// </summary>
+        /// <param name="processName"></param>
+        /// <param name="productCode"></param>
+        /// <param name="pName"></param>
+        /// <param name="dVal"></param>
+        /// <param name="sc"></param>
+        /// <returns></returns>
+        public static ConditionStd Create(string processName, string productCode, string pName,
+            decimal? dVal, bool sc = false)
+        {
+            return new ConditionStd()
+            {
+                ProcessName = processName,
+                ProductCode = productCode,
+                ParamName = pName,
+                ParamType = ConditionParamTypes.Number,
+                SC = sc,
+                StdValueS = null,
+                StdValueD = dVal,
+                StdValueE = new decimal?(),
+                StdValueB = new bool?(),
+            };
+        }
+        public static ConditionStd Create(string processName, string productCode, string pName,
+            decimal? dVal, decimal? eVal, bool sc = false)
+        {
+            return new ConditionStd()
+            {
+                ProcessName = processName,
+                ProductCode = productCode,
+                ParamName = pName,
+                ParamType = ConditionParamTypes.NumberRange,
+                SC = sc,
+                StdValueS = null,
+                StdValueD = dVal,
+                StdValueE = eVal,
+                StdValueB = new bool?(),
+            };
+        }
+        /// <summary>
+        /// Create Bool Parameter.
+        /// </summary>
+        /// <param name="processName"></param>
+        /// <param name="productCode"></param>
+        /// <param name="pName"></param>
+        /// <param name="bVal"></param>
+        /// <param name="sc"></param>
+        /// <returns></returns>
+        public static ConditionStd Create(string processName, string productCode, string pName,
+            bool? bVal, bool sc = false)
+        {
+            return new ConditionStd()
+            {
+                ProcessName = processName,
+                ProductCode = productCode,
+                ParamName = pName,
+                ParamType = ConditionParamTypes.NumberRange,
+                SC = sc,
+                StdValueS = null,
+                StdValueD = new decimal?(),
+                StdValueE = new decimal?(),
+                StdValueB = bVal,
+            };
+        }
+
+
+        private static List<ConditionStd> Creates(string productCode)
+        {
+            var results = new List<ConditionStd>();
+
+            // Ring Diameter
+            results.Add(Create(productCode, "RingDiameter", ConditionParamTypes.String, false, "8 1/2\" R x 14\" L"));
+            // TwistChangeGear (I x J x K)
+            results.Add(Create(productCode, "TwistChangeGearI", ConditionParamTypes.Number, true, null, 41));
+            results.Add(Create(productCode, "TwistChangeGearJ", ConditionParamTypes.Number, true, null, 45));
+            results.Add(Create(productCode, "TwistChangeGearK", ConditionParamTypes.Number, true, null, 83));
+            // LifterChangeGear (A x B)
+            results.Add(Create(productCode, "LifterChangeGearA", ConditionParamTypes.Number, false, null, 48));
+            results.Add(Create(productCode, "LifterChangeGearB", ConditionParamTypes.Number, false, null, 56));
+            // Outer Diameter
+            results.Add(Create(productCode, "OuterDiameter", ConditionParamTypes.Number, false, null, 217));
+            // TravellerNo
+            results.Add(Create(productCode, "TravellerNo", ConditionParamTypes.String, false, "RK-500 J x 1 Pcs."));
+
+            return results;
+        }
+
+
 
         /// <summary>
         /// Save
@@ -172,4 +336,39 @@ namespace M3.Cord.Models
     }
 
     #endregion
+
+    public class ProcessConditionStd : NInpc
+    {
+        private Dictionary<string, ConditionStd> _productStds = new Dictionary<string, ConditionStd>();
+
+        public ProcessConditionStd() 
+        {
+        }
+
+        public string ProcessName { get; set; }
+
+        public static ProcessConditionStd Get()
+        {
+            var products = Product.Gets().Value();
+            if (null != products && products.Count > 0)
+            {
+                foreach (var item in products)
+                {
+                    //results.Add(new ProductConditionStd() { ProductCode = item.ProductCode });
+                }
+            }
+            return null;
+        }
+    }
+
+    public class ProductConditionStd
+    {
+        public ProductConditionStd(ProcessConditionStd process)
+        {
+            this.Process = process;
+        }
+
+        public ProcessConditionStd Process { get; private set; }
+        public string ProductCode { get; set; }
+    }
 }
