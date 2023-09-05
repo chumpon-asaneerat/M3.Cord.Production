@@ -67,7 +67,8 @@
                                             Margin="3"
                                             DockPanel.Dock="Right"
                                             IconType="Search"
-                                            Text="Choose" />
+                                            Text="Choose" 
+                                            Click="cmdChooseExcel_Click"/>
                     <TextBlock DockPanel.Dock="Right" Width="5" />
                     <Grid />
                 </DockPanel>

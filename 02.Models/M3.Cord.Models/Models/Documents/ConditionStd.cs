@@ -67,20 +67,132 @@ namespace M3.Cord.Models
         public string ProcessName { get; set; }
         [ExcelColumn("ProductCode", 2)]
         public string ProductCode { get; set; }
-        [ExcelColumn("ParamName", 3)]
+        [ExcelColumn("ParameterName", 3)]
         public string ParamName { get; set; }
-        [ExcelColumn("Type", 4)]
+
         public ConditionParamTypes ParamType { get; set; }
-        [ExcelColumn("SC", 5)]
+
+        /// <summary>ParamType For Excel Import</summary>
+        [ExcelColumn("ParameterType", 4)]
+        public string SParamType 
+        {
+            get { return ParamType.ToString(); }
+            set
+            {
+                try
+                {
+                    ParamType = (ConditionParamTypes)Enum.Parse(typeof(ConditionParamTypes), value, true);
+                }
+                catch 
+                {
+                    ParamType = ConditionParamTypes.String;
+                }
+            }
+        }
+
         public bool? SC { get; set; }
-        [ExcelColumn("ValueS", 6)]
+
+        /// <summary>SC For Excel Import</summary>
+        [ExcelColumn("SC", 5)]
+        public string IsSC
+        {
+            get { return (SC.HasValue) ? SC.Value.ToString() : null;  }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    SC = new bool?();
+                }
+                else
+                {
+                    try 
+                    { 
+                        SC = bool.Parse(value); 
+                    }
+                    catch
+                    {
+                        SC = new bool?();
+                    }
+                }
+            }
+        }
+
         public string StdValueS { get; set; }
-        [ExcelColumn("ValueD", 7)]
         public decimal? StdValueD { get; set; }
-        [ExcelColumn("ErrorRange", 8)]
         public decimal? StdValueE { get; set; }
-        [ExcelColumn("ValueB", 9)]
         public bool? StdValueB { get; set; }
+
+        /// <summary>Std Value For Excel Import</summary>
+        [ExcelColumn("StdValue", 6)]
+        public string StdValue
+        {
+            get 
+            { 
+                if (ParamType == ConditionParamTypes.String)
+                    return StdValueS;
+                else if (ParamType == ConditionParamTypes.Number)
+                    return (StdValueD.HasValue) ? StdValueD.Value.ToString() : null;
+                else if (ParamType == ConditionParamTypes.Bool)
+                    return (StdValueB.HasValue) ? StdValueB.Value.ToString() : null;
+                else return null;
+            }
+            set
+            {
+                if (ParamType == ConditionParamTypes.String)
+                    StdValueS = value;
+                else if (ParamType == ConditionParamTypes.Number)
+                {
+                    try
+                    {
+                        StdValueD = decimal.Parse(value);
+                    }
+                    catch 
+                    {
+                        StdValueD = new decimal?();
+                    }
+                }
+                else if (ParamType == ConditionParamTypes.Bool)
+                {
+                    try
+                    {
+                        StdValueB = bool.Parse(value);
+                    }
+                    catch
+                    {
+                        StdValueB = new bool?();
+                    }
+                }
+            }
+        }
+        /// <summary>Err Range For Excel Import</summary>
+        [ExcelColumn("ErrorRange", 7)]
+        public string ErrorRange
+        {
+            get
+            {
+                if (ParamType == ConditionParamTypes.NumberRange)
+                    return (StdValueE.HasValue) ? StdValueE.Value.ToString() : null;                    
+                else return null;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    StdValueE = new decimal?();
+                }
+                else
+                {
+                    try
+                    {
+                        StdValueE = decimal.Parse(value);
+                    }
+                    catch
+                    {
+                        StdValueE = new decimal?();
+                    }
+                }
+            }
+        }
 
         #endregion
 
@@ -126,7 +238,7 @@ namespace M3.Cord.Models
         /// <returns></returns>
         public static ConditionStd Create(string processName, string productCode, string pName,
             string sVal, bool sc = false)
-        {
+        { 
             return new ConditionStd()
             {
                 ProcessName = processName,

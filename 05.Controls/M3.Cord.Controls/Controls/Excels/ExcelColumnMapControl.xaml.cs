@@ -63,6 +63,7 @@ namespace M3.Cord.Controls.Excels
                 map.SelectedColumn = null; // reset
             }
         }
+
         private void cmdLoadExcelData_Click(object sender, RoutedEventArgs e)
         {
             if (null == _model || null == _sheet)
@@ -87,12 +88,14 @@ namespace M3.Cord.Controls.Excels
                 }
             }
         }
+
         private void LoadSheetColumns(NExcelWorksheet sheet)
         {
             lvMaps.ItemsSource = null;
 
             ResetMaps(sheet);
         }
+
         private void ResetMaps(NExcelWorksheet sheet)
         {
             _sheet = sheet;

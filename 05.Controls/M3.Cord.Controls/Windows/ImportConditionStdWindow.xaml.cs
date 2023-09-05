@@ -1,4 +1,6 @@
-﻿using M3.Cord.Models;
+﻿#region Using
+
+using M3.Cord.Models;
 using NLib;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+
+#endregion
 
 namespace M3.Cord.Windows
 {
@@ -97,7 +101,6 @@ namespace M3.Cord.Windows
         }
 
         #endregion
-
 
         #region Private Methods
 

@@ -33,16 +33,19 @@
                        FontSize="22"
                        Margin="2,5" />
         </DockPanel>
-        <ListView x:Name="lvMaps" Style="{StaticResource SingleSelectListView}">
+        <ListView x:Name="lvMaps"
+                  Style="{StaticResource SingleSelectListView}"
+                  FontSize="22">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name"
                                     Width="Auto"
                                     DisplayMemberBinding="{Binding DisplayText}" />
-                    <GridViewColumn Header="From Colunm" Width="215">
+                    <GridViewColumn Header="From Colunm" Width="Auto">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <ComboBox x:Name="cbColumns"
+                                          FontSize="22"
                                           Width="200"
                                           HorizontalAlignment="Stretch"
                                           ItemsSource="{Binding Columns}"
@@ -51,15 +54,15 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="" Width="65">
+                    <GridViewColumn Header="" Width="Auto">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <ctrl:FontAwesomeButton x:Name="cmdResetMapProperty"
-                                                        Margin="3,0"
-                                                        Foreground="Red"
+                                                        Margin="2,0"
                                                         DockPanel.Dock="Right"
                                                         IconType="Refresh"
                                                         Text="Reset"
+                                                        Width="Auto"
                                                         Click="cmdResetMapProperty_Click" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
