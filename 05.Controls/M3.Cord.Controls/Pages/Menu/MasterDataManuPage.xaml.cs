@@ -80,6 +80,17 @@ namespace M3.Cord.Pages
             */
         }
 
+        private void cmdImportConditionStd_Click(object sender, RoutedEventArgs e)
+        {
+            // Import Condition Standard
+            var win = M3CordApp.Windows.ImportConditionStd;
+            win.Setup();
+            if (win.ShowDialog() == true)
+            {
+
+            }
+        }
+
         private void cmdS1StdCondiction_Click(object sender, RoutedEventArgs e)
         {
 

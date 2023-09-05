@@ -63,14 +63,23 @@ namespace M3.Cord.Models
 
         #region Public Properties
 
+        [ExcelColumn("ProcessName", 1)]
         public string ProcessName { get; set; }
+        [ExcelColumn("ProductCode", 2)]
         public string ProductCode { get; set; }
+        [ExcelColumn("ParamName", 3)]
         public string ParamName { get; set; }
+        [ExcelColumn("Type", 4)]
         public ConditionParamTypes ParamType { get; set; }
+        [ExcelColumn("SC", 5)]
         public bool? SC { get; set; }
+        [ExcelColumn("ValueS", 6)]
         public string StdValueS { get; set; }
+        [ExcelColumn("ValueD", 7)]
         public decimal? StdValueD { get; set; }
+        [ExcelColumn("ErrorRange", 8)]
         public decimal? StdValueE { get; set; }
+        [ExcelColumn("ValueB", 9)]
         public bool? StdValueB { get; set; }
 
         #endregion

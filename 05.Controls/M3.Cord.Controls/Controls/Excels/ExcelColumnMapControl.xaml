@@ -3,46 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="500">
     <DockPanel LastChildFill="True" Margin="3">
         <TextBlock DockPanel.Dock="Top"
-                   Text="กรุณาเลือก worksheet:"
+                   Style="{StaticResource LabelText}"
+                   FontSize="22"
+                   Text="Select worksheet:"
                    Margin="2,5" />
         <ComboBox x:Name="cbSheets"
                   DockPanel.Dock="Top"
                   Margin="3,0"
+                  FontSize="22"
                   DisplayMemberPath="SheetName"
                   SelectionChanged="cbSheets_SelectionChanged" />
         <DockPanel DockPanel.Dock="Top"
                    LastChildFill="True"
                    Height="Auto">
-            <Button x:Name="cmdLoadExcelData"
-                    DockPanel.Dock="Right"
-                    Margin="3,0"
-                    Width="150"
-                    Height="30"
-                    Style="{StaticResource InlineButton}"
-                    Click="cmdLoadExcelData_Click">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Style="{StaticResource fa-scan}" FontSize="{StaticResource IBFSize}" />
-                    <TextBlock Margin="3,0"
-                               FontFamily="{StaticResource THSarabun}"
-                               FontSize="{StaticResource IBFSize}"
-                               Text="อ่านข้อมูล"
-                               VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <TextBlock Text="รายละเอียดข้อมูลนำเข้า:" Margin="2,5" />
+            <ctrl:FontAwesomeButton x:Name="cmdLoadExcelData"
+                                    Margin="3,0"
+                                    DockPanel.Dock="Right"
+                                    IconType="Refresh"
+                                    Text="Read"
+                                    Click="cmdLoadExcelData_Click" />
+            <TextBlock Text="Import Information:"
+                       Style="{StaticResource LabelText}"
+                       FontSize="22"
+                       Margin="2,5" />
         </DockPanel>
         <ListView x:Name="lvMaps" Style="{StaticResource SingleSelectListView}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ชื่อข้อมูล"
+                    <GridViewColumn Header="Name"
                                     Width="Auto"
                                     DisplayMemberBinding="{Binding DisplayText}" />
-                    <GridViewColumn Header="นำเข้าจากคอลัมน์" Width="215">
+                    <GridViewColumn Header="From Colunm" Width="215">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <ComboBox x:Name="cbColumns"
@@ -57,13 +54,13 @@
                     <GridViewColumn Header="" Width="65">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="cmdResetMapProperty"
-                                        Style="{StaticResource InlineButton}"
-                                        Width="30"
-                                        Foreground="Red"
-                                        Click="cmdResetMapProperty_Click">
-                                    <TextBlock Style="{StaticResource fa-cancel}" FontSize="{StaticResource IBFSize}" />
-                                </Button>
+                                <ctrl:FontAwesomeButton x:Name="cmdResetMapProperty"
+                                                        Margin="3,0"
+                                                        Foreground="Red"
+                                                        DockPanel.Dock="Right"
+                                                        IconType="Refresh"
+                                                        Text="Reset"
+                                                        Click="cmdResetMapProperty_Click" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

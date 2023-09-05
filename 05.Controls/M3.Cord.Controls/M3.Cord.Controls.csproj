@@ -228,6 +228,9 @@
     <Compile Include="Windows\PCCard\PCCardEditorWindow.xaml.cs">
       <DependentUpon>PCCardEditorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ProgressWindow.xaml.cs">
+      <DependentUpon>ProgressWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\SignIn\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
@@ -457,6 +460,10 @@
     <Page Include="Windows\PCCard\PCCardEditorWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ProgressWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\SignIn\SignInWindow.xaml">
       <SubType>Designer</SubType>

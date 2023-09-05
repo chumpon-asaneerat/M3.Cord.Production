@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:xlsCtrl="clr-namespace:M3.Cord.Controls.Excels"
         xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
         Title="Import Process Condition Standard"
         HorizontalAlignment="Center"
@@ -13,6 +14,9 @@
         WindowStartupLocation="CenterOwner"
         Height="600"
         Width="1000"
+        Loaded="UserControl_Loaded"
+        Unloaded="UserControl_Unloaded"
+        Closing="Window_Closing"
         mc:Ignorable="d">
     <page:NPage HeaderText="Import Process Condition Standard">
         <DockPanel LastChildFill="True" Margin="5">
@@ -36,7 +40,7 @@
                 <!--  EXCEL FILES INFO / CHOOSE  -->
                 <DockPanel LastChildFill="True"
                            DockPanel.Dock="Top"
-                           Height="40">
+                           Height="50">
                     <TextBlock DockPanel.Dock="Left"
                                Style="{StaticResource LabelText}"
                                FontSize="22"
@@ -70,11 +74,12 @@
                 <!--  EXCEL SHEETS, MAP COLUMNS, PREVIEW DATA  -->
                 <DockPanel LastChildFill="True">
                     <!--  EXCEL SHEETS, MAP COLUMNS  -->
-
+                    <xlsCtrl:ExcelColumnMapControl x:Name="wsMap"
+                                                   DockPanel.Dock="Left"
+                                                   Width="500" />
                     <!--  PREVIEW DATA  -->
-                    <Grid/>
+                    <xlsCtrl:ExcelDataViewControl x:Name="lvMapPreview" Margin="3" />
                 </DockPanel>
-                <Grid />
             </DockPanel>
         </DockPanel>
     </page:NPage>

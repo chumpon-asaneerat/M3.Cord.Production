@@ -254,6 +254,26 @@ namespace M3.Cord
 
             #endregion
 
+            #region Import
+
+            /// <summary>Gets Import Condition Std Window.</summary>
+            public static ImportConditionStdWindow ImportConditionStd
+            {
+                get { return GetWindow<ImportConditionStdWindow>(); }
+            }
+
+            #endregion
+
+            #region Common Progress Dialog
+
+            /// <summary>Gets Common Progress Dialog Window.</summary>
+            public static ProgressWindow ProgressDialog
+            {
+                get { return GetWindow<ProgressWindow>(); }
+            }
+
+            #endregion
+
             #region G4
 
             /// <summary>Gets G4 Receive Yarn Window.</summary>
