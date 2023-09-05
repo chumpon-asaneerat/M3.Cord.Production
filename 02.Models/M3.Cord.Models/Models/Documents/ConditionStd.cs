@@ -20,13 +20,26 @@ using NLib.Models;
 
 namespace M3.Cord.Models
 {
+    #region ConditionParamTypes
+
+    /// <summary>
+    /// ConditionParamTypes enum
+    /// </summary>
     public enum ConditionParamTypes : int
     {
         String = 1, 
         Number = 2, 
-        NumberRange = 3
+        NumberRange = 3,
+        Bool = 4
     }
 
+    #endregion
+
+    #region ConditionStd
+
+    /// <summary>
+    /// The ConditionStd class.
+    /// </summary>
     public class ConditionStd : NInpc
     {
         #region Public Properties
@@ -39,6 +52,7 @@ namespace M3.Cord.Models
         public string StdValueS { get; set; }
         public decimal? StdValueD { get; set; }
         public decimal? StdValueE { get; set; }
+        public bool? StdValueB { get; set; }
 
         #endregion
 
@@ -82,6 +96,7 @@ namespace M3.Cord.Models
             p.Add("@StdValueS", value.StdValueS);
             p.Add("@StdValueD", value.StdValueD);
             p.Add("@StdValueE", value.StdValueE);
+            p.Add("@StdValueB", value.StdValueB);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
@@ -155,4 +170,6 @@ namespace M3.Cord.Models
 
         #endregion
     }
+
+    #endregion
 }
