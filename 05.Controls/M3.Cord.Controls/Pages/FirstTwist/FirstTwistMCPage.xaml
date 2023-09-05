@@ -33,43 +33,47 @@
                       Background="White"
                       ItemContainerStyle="{StaticResource BASEListBoxItemContainer}"
                       Style="{StaticResource SingleSelectWrapListBox}"
-                      IsSynchronizedWithCurrentItem="True"
-                      SelectionChanged="mcList_SelectionChanged">
+                      IsSynchronizedWithCurrentItem="True">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="Silver"
-                                BorderThickness="1"
+                        <Button x:Name="cmd"
                                 Cursor="Hand"
-                                CornerRadius="3"
-                                Margin="1"
-                                ClipToBounds="True">
-                            <DockPanel LastChildFill="True"
-                                       Margin="2"
-                                       Width="250"
-                                       Height="140">
-                                <!--  MC NAME  -->
-                                <Border BorderBrush="Silver"
-                                        BorderThickness="1"
-                                        Background="CornflowerBlue"
-                                        Margin="2"
-                                        DockPanel.Dock="Top"
-                                        HorizontalAlignment="Stretch"
-                                        CornerRadius="3">
-                                    <TextBlock Text="{Binding MCCode}"
-                                               Margin="2"
-                                               Style="{StaticResource LabelText}"
-                                               FontWeight="Bold"
-                                               TextAlignment="Center"
-                                               VerticalAlignment="Center" />
-                                </Border>
-                                <!--  MC IMAGE  -->
-                                <Image RenderOptions.BitmapScalingMode="LowQuality"
-                                       RenderOptions.EdgeMode="Aliased"
-                                       Source="/M3.Cord.Controls;component/Images/FirstTwist/TwistingMC.jpg"
-                                       Width="Auto"
-                                       Height="Auto" />
-                            </DockPanel>
-                        </Border>
+                                Margin="2"
+                                Padding="2"
+                                Click="cmd_Click">
+                            <Border BorderBrush="Silver"
+                                    BorderThickness="1"
+                                    CornerRadius="3"
+                                    Margin="1"
+                                    ClipToBounds="True">
+                                <DockPanel LastChildFill="True"
+                                           Margin="2"
+                                           Width="250"
+                                           Height="140">
+                                    <!--  MC NAME  -->
+                                    <Border BorderBrush="Silver"
+                                            BorderThickness="1"
+                                            Background="CornflowerBlue"
+                                            Margin="2"
+                                            DockPanel.Dock="Top"
+                                            HorizontalAlignment="Stretch"
+                                            CornerRadius="3">
+                                        <TextBlock Text="{Binding MCCode}"
+                                                   Margin="2"
+                                                   Style="{StaticResource LabelText}"
+                                                   FontWeight="Bold"
+                                                   TextAlignment="Center"
+                                                   VerticalAlignment="Center" />
+                                    </Border>
+                                    <!--  MC IMAGE  -->
+                                    <Image RenderOptions.BitmapScalingMode="LowQuality"
+                                           RenderOptions.EdgeMode="Aliased"
+                                           Source="/M3.Cord.Controls;component/Images/FirstTwist/TwistingMC.jpg"
+                                           Width="Auto"
+                                           Height="Auto" />
+                                </DockPanel>
+                            </Border>
+                        </Button>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListView>

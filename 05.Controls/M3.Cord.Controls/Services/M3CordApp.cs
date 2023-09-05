@@ -176,6 +176,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.FirstTwistMCPage>(); }
             }
+            /// <summary>Gets FirstTwist Operation Page.</summary>
+            public static Cord.Pages.FirstTwistOperationPage FirstTwistOperation
+            {
+                get { return GetPage<Cord.Pages.FirstTwistOperationPage>(); }
+            }
 
             /// <summary>Gets S1ProductCondition Page.</summary>
             /*

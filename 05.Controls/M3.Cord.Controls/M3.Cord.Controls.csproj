@@ -138,6 +138,9 @@
     <None Include="_V2\Pages\FirstTwist\S4x2UpTwisterConditionPage.xaml.cs">
       <DependentUpon>S4x2UpTwisterConditionPage.xaml</DependentUpon>
     </None>
+    <Compile Include="Pages\FirstTwistOperationPage.xaml.cs">
+      <DependentUpon>FirstTwistOperationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
     </Compile>
@@ -323,6 +326,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Pages\FirstTwistOperationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\FirstTwist\FirstTwistMCPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

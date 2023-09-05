@@ -45,7 +45,6 @@ namespace M3.Cord.Pages
 
         private List<FirstTwistMC> machines;
         private FirstTwistMC selectedMC;
-        private PCTwist1 mcCard;
 
         #endregion
 
@@ -70,6 +69,20 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
+        private void cmd_Click(object sender, RoutedEventArgs e)
+        {
+            var ctrl = sender as Button;
+            var dc = (null != ctrl) ? ctrl.DataContext : null;
+            selectedMC = (null != dc) ? dc as FirstTwistMC : null;
+            if (null != selectedMC)
+            {
+                // Show MC Operation Menu.
+                var page = M3CordApp.Pages.FirstTwistOperation;
+                page.Setup(selectedMC);
+                PageContentManager.Instance.Current = page;
+            }
+        }
+
         #endregion
 
         #region ListBox Handlers
@@ -79,7 +92,10 @@ namespace M3.Cord.Pages
             if (null != mcList.SelectedItem)
             {
                 selectedMC = mcList.SelectedItem as FirstTwistMC;
-                //UpdateMCStatus(selectedMC);
+                // Show MC Operation Menu.
+                var page = M3CordApp.Pages.FirstTwistOperation;
+                page.Setup(selectedMC);
+                PageContentManager.Instance.Current = page;
             }
         }
 
@@ -92,11 +108,6 @@ namespace M3.Cord.Pages
             mcList.ItemsSource = null;
             selectedMC = null;
             mcList.ItemsSource = machines;
-        }
-
-        private void RefreshGrid()
-        {
-
         }
 
         #endregion
