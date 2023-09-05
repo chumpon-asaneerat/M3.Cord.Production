@@ -186,6 +186,9 @@
     <Compile Include="Pages\PCCard\PCCardManagePage.xaml.cs">
       <DependentUpon>PCCardManagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\S1ConditionStdSettingPage.xaml.cs">
+      <DependentUpon>S1ConditionStdSettingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Warehouse\WarehouseReceiveYarnPage.xaml.cs">
       <DependentUpon>WarehouseReceiveYarnPage.xaml</DependentUpon>
     </Compile>
@@ -389,6 +392,10 @@
     <Page Include="Pages\PCCard\PCCardManagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\S1ConditionStdSettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Warehouse\WarehouseReceiveYarnPage.xaml">
       <SubType>Designer</SubType>
