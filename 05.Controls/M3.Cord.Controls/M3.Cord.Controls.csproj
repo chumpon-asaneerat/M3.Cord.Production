@@ -237,7 +237,7 @@
     <Compile Include="Windows\G4\G4ReceiveYarnWindow.xaml.cs">
       <DependentUpon>G4ReceiveYarnWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\ImportConditionStdWindow.xaml.cs">
+    <Compile Include="Windows\Imports\ImportConditionStdWindow.xaml.cs">
       <DependentUpon>ImportConditionStdWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MessageBox\MessageBoxOKCancelWindow.xaml.cs">
@@ -249,7 +249,7 @@
     <Compile Include="Windows\PCCard\PCCardEditorWindow.xaml.cs">
       <DependentUpon>PCCardEditorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\ProgressWindow.xaml.cs">
+    <Compile Include="Windows\Imports\ProgressWindow.xaml.cs">
       <DependentUpon>ProgressWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SignIn\SignInWindow.xaml.cs">
@@ -430,7 +430,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\ImportConditionStdWindow.xaml">
+    <Page Include="Windows\Imports\ImportConditionStdWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -446,7 +446,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Windows\ProgressWindow.xaml">
+    <Page Include="Windows\Imports\ProgressWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -561,7 +561,6 @@
     <Folder Include="Controls\Documents\SamplingDetails\" />
     <Folder Include="Pages\Documents\" />
     <Folder Include="Pages\Masters\" />
-    <Folder Include="Windows\Imports\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
     <Folder Include="_V3\Controls\Documents\Ageing\Elements\" />
