@@ -134,6 +134,9 @@
     <Compile Include="_Templates\03.Ageing\S5ConditionDocument.xaml.cs">
       <DependentUpon>S5ConditionDocument.xaml</DependentUpon>
     </Compile>
+    <Compile Include="_Templates\Twist1PCCardDocument.xaml.cs">
+      <DependentUpon>Twist1PCCardDocument.xaml</DependentUpon>
+    </Compile>
     <None Include="_V3\Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
     </None>
@@ -529,6 +532,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="_Templates\03.Ageing\S5ConditionDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_Templates\Twist1PCCardDocument.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
