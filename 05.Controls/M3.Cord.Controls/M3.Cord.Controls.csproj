@@ -92,7 +92,7 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\ImportReportWindow.xaml.cs">
+    <Compile Include="Windows\Imports\ImportReportWindow.xaml.cs">
       <DependentUpon>ImportReportWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="_Templates\09.QA\CordSamplingDetialsDocument.xaml.cs">
@@ -433,7 +433,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\ImportReportWindow.xaml">
+    <Page Include="Windows\Imports\ImportReportWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
