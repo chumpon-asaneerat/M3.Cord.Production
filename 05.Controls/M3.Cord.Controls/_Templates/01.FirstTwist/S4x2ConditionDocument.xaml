@@ -48,16 +48,25 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <!--#region COLUMN HEADERS-->
-        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+
+        <Border Grid.Row="0"
+                Grid.Column="0"
+                Grid.RowSpan="2">
             <!--  NO  -->
             <TextBlock Text="No." />
         </Border>
-        <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+        <Border Grid.Row="0"
+                Grid.Column="1"
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="2">
             <!--  MC  -->
-            <TextBlock Text="S-4-2" Foreground="DarkRed" FontWeight="Bold" FontSize="28"/>
+            <TextBlock Text="S-4-2"
+                       Foreground="DarkRed"
+                       FontWeight="Bold"
+                       FontSize="28" />
         </Border>
         <Border Grid.Row="0"
-                Grid.Column="2"
+                Grid.Column="3"
                 Grid.RowSpan="2">
             <!--  Class  -->
             <TextBlock Text="Class" RenderTransformOrigin="0.5,0.5">
@@ -68,255 +77,66 @@
                 </TextBlock.RenderTransform>
             </TextBlock>
         </Border>
-        <Border Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2">
-            <!--  CONDITION (MERGE COLUMN) -->
-            <TextBlock Text="Condition  (สภาวะที่ใช้)" />
+        <Border Grid.Row="0"
+                Grid.Column="4"
+                Grid.ColumnSpan="2">
+            <!--  CONDITION (MERGE COLUMN)  -->
+            <TextBlock Text="Condition (สภาวะที่ใช้)" />
         </Border>
-        <Border Grid.Row="1" Grid.Column="3">
-            <!-- STANDARD -->
+        <Border Grid.Row="1" Grid.Column="5">
+            <!--  STANDARD  -->
             <TextBlock Text="Standard (มาตรฐานที่ใช้)" />
         </Border>
         <Border Grid.Row="1" Grid.Column="4">
-            <!-- ACTUAL -->
+            <!--  ACTUAL  -->
             <TextBlock Text="Actual (ค่าที่ใช้จริง)" />
         </Border>
 
         <!--#endregion-->
 
-        <!--#region NO 1 (GRID ROW 2)-->
+        <!--#region NO 1-->
 
-        <Border Grid.Row="2" Grid.Column="0">
+        <Border Grid.Row="2"
+                Grid.Column="0"
+                Grid.RowSpan="2">
             <TextBlock Text="1" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="2" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="Ring diameter (in) * lift length (in)" />
-                <LineBreak />
-                <Run Text="เส้นผ่าศูนย์กลางของแหวน (นิ้ว)" />
-                <LineBreak />
-                <Run Text="ความยาวลิฟท์ (นิ้ว)" />
-            </TextBlock>
+            <StackPanel Orientation="Vertical">
+                <TextBlock FontSize="18" HorizontalAlignment="Left">
+                    <Run Text="Full package mode" />
+                </TextBlock>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="2">
+            <StackPanel Orientation="Vertical">
+                <TextBlock FontSize="18" HorizontalAlignment="Left" />
+            </StackPanel>
         </Border>
 
         <!--#endregion-->
 
-        <!--#region NO 2 (GRID ROW 3)-->
+        <!--#region NO 2-->
 
-        <Border Grid.Row="3" Grid.Column="0">
-            <TextBlock Text="2" HorizontalAlignment="Center" />
+        <Border Grid.Row="3"
+                Grid.Column="1"
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="2">
+            <TextBlock Text="1" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="3" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
+            <StackPanel Orientation="Vertical">
+                <TextBlock FontSize="18" HorizontalAlignment="Left">
+                    <Run Text="Counter (ความยาว)" />
+                </TextBlock>
+            </StackPanel>
         </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 3 (GRID ROW 4)-->
-
-        <Border Grid.Row="4" Grid.Column="0">
-            <TextBlock Text="3" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="4" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 4 (GRID ROW 5)-->
-
-        <Border Grid.Row="5" Grid.Column="0">
-            <TextBlock Text="4" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="5" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 5 (GRID ROW 6)-->
-
-        <Border Grid.Row="6" Grid.Column="0">
-            <TextBlock Text="5" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="6" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 6 (GRID ROW 7)-->
-
-        <Border Grid.Row="7" Grid.Column="0">
-            <TextBlock Text="6" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="7" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 7 (GRID ROW 8)-->
-
-        <Border Grid.Row="8" Grid.Column="0">
-            <TextBlock Text="7" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="8" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 8 (GRID ROW 9)-->
-
-        <Border Grid.Row="9" Grid.Column="0">
-            <TextBlock Text="8" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="9" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 9 (GRID ROW 10)-->
-
-        <Border Grid.Row="10" Grid.Column="0">
-            <TextBlock Text="9" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="10" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 10 (GRID ROW 11)-->
-
-        <Border Grid.Row="11" Grid.Column="0">
-            <TextBlock Text="10" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="11" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 11 (GRID ROW 12)-->
-
-        <Border Grid.Row="12" Grid.Column="0">
-            <TextBlock Text="11" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="12" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 12 (GRID ROW 13)-->
-
-        <Border Grid.Row="13" Grid.Column="0">
-            <TextBlock Text="12" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="13" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 13 (GRID ROW 14)-->
-
-        <Border Grid.Row="14" Grid.Column="0">
-            <TextBlock Text="13" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="14" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 14 (GRID ROW 15)-->
-
-        <Border Grid.Row="15" Grid.Column="0">
-            <TextBlock Text="14" HorizontalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="15" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
+        <Border Grid.Row="3" Grid.Column="2">
+            <StackPanel Orientation="Vertical">
+                <TextBlock FontSize="18" HorizontalAlignment="Left">
+                    <Run Text="m (เมตร)" />
+                </TextBlock>
+            </StackPanel>
         </Border>
 
         <!--#endregion-->
