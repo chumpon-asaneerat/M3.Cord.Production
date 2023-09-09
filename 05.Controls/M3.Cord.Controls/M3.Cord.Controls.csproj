@@ -216,7 +216,7 @@
     <Compile Include="Pages\PCCard\PCCardManagePage.xaml.cs">
       <DependentUpon>PCCardManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\S1ConditionStdSettingPage.xaml.cs">
+    <Compile Include="Pages\Masters\S1ConditionStdSettingPage.xaml.cs">
       <DependentUpon>S1ConditionStdSettingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Warehouse\WarehouseReceiveYarnPage.xaml.cs">
@@ -401,7 +401,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\S1ConditionStdSettingPage.xaml">
+    <Page Include="Pages\Masters\S1ConditionStdSettingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -567,7 +567,6 @@
     <Folder Include="Controls\Documents\FirstTwist\S4x2\" />
     <Folder Include="Controls\Documents\SamplingDetails\" />
     <Folder Include="Pages\Documents\" />
-    <Folder Include="Pages\Masters\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
     <Folder Include="_V3\Controls\Documents\Ageing\Elements\" />
