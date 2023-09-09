@@ -10,7 +10,7 @@
         <!--  LOCAL STYLES  -->
         <Style TargetType="Border">
             <Setter Property="Padding" Value="5" />
-            <Setter Property="BorderBrush" Value="Silver" />
+            <Setter Property="BorderBrush" Value="DimGray" />
             <Setter Property="BorderThickness" Value="0.5" />
         </Style>
         <Style TargetType="TextBlock">

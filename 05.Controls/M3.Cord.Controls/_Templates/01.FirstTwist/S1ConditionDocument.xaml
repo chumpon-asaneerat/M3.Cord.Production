@@ -4,16 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              d:DesignHeight="1000"
-             d:DesignWidth="800"
+             d:DesignWidth="1000"
              mc:Ignorable="d">
     <UserControl.Resources>
         <!--  LOCAL STYLES  -->
         <Style TargetType="Border">
             <Setter Property="Padding" Value="5" />
-            <Setter Property="BorderBrush" Value="Silver" />
+            <Setter Property="BorderBrush" Value="DimGray" />
             <Setter Property="BorderThickness" Value="0.5" />
         </Style>
         <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource CommonTextBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource CommonCheckBox}">
             <Setter Property="FontSize" Value="18" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -45,26 +55,31 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <!--#region COLUMN HEADERS-->
         <Border Grid.Row="0"
                 Grid.Column="0"
-                Grid.ColumnSpan="2">
+                Grid.ColumnSpan="2"
+                Background="Silver">
             <!--  CHECKING ITEM (MERGE COLUMN)  -->
             <TextBlock Text="Checking Item (รายการที่ตรวจสอบ)" />
         </Border>
-        <Border Grid.Row="1" Grid.Column="0">
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                Background="Silver">
             <!--  NO  -->
             <TextBlock Text="No." />
         </Border>
-        <Border Grid.Row="1" Grid.Column="1">
+        <Border Grid.Row="1"
+                Grid.Column="1"
+                Background="Silver">
             <!--  MC Setting  -->
             <TextBlock Text="Machine Secting (ค่าที่ปรับตั้ง)" />
         </Border>
         <Border Grid.Row="0"
                 Grid.Column="2"
-                Grid.RowSpan="2">
+                Grid.RowSpan="2"
+                Background="Silver">
             <!--  Class  -->
             <TextBlock Text="Class" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
@@ -73,6 +88,25 @@
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
+        </Border>
+        <Border Grid.Row="0"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                Background="Silver">
+            <!--  Class  -->
+            <TextBlock Text="First Twisting (การตีเกลียวครั้งที่ 1)" />
+        </Border>
+        <Border Grid.Row="1"
+                Grid.Column="3"
+                Background="Silver">
+            <!--  Class  -->
+            <TextBlock Text="Standard (ค่ามาตรฐาน)" />
+        </Border>
+        <Border Grid.Row="1"
+                Grid.Column="4"
+                Background="Silver">
+            <!--  Class  -->
+            <TextBlock Text="ACTUAL (ค่าที่ได้จริง)" />
         </Border>
 
         <!--#endregion-->
@@ -83,7 +117,7 @@
             <TextBlock Text="1" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="2" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
+            <TextBlock HorizontalAlignment="Left">
                 <Run Text="Ring diameter (in) * lift length (in)" />
                 <LineBreak />
                 <Run Text="เส้นผ่าศูนย์กลางของแหวน (นิ้ว)" />
@@ -91,6 +125,19 @@
                 <Run Text="ความยาวลิฟท์ (นิ้ว)" />
             </TextBlock>
         </Border>
+        <Border Grid.Row="2" Grid.Column="2">
+            <CheckBox Content="SC" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="3">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBlock Text="S-1-1"
+                           Foreground="DarkRed"
+                           FontWeight="Bold"
+                           FontSize="25" />
+                <TextBox Width="200" Text="" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="4" />
 
         <!--#endregion-->
 
@@ -101,13 +148,37 @@
         </Border>
         <Border Grid.Row="3" Grid.Column="1">
             <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
+                <Run Text="Twist change gear" />
                 <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
+                <Run Text="การเปลี่ยนเกียร์ตีเกลียว" />
             </TextBlock>
         </Border>
+        <Border Grid.Row="3" Grid.Column="2">
+            <CheckBox Content="SC" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="( I )" />
+                    <TextBox Width="50" Text="" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text=" x " />
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="( J )" />
+                    <TextBox Width="50" Text="" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text=" x " />
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="( K )" />
+                    <TextBox Width="50" Text="" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="4" />
 
         <!--#endregion-->
 
@@ -117,14 +188,31 @@
             <TextBlock Text="3" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="4" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="Lifter change gear" />
                 <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
+                <Run Text="การเปลี่ยนลิฟเตอร์เกียร์" />
             </TextBlock>
         </Border>
+        <Border Grid.Row="4" Grid.Column="2">
+            <CheckBox Content="SC" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="( A )" />
+                    <TextBox Width="70" Text="" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text=" x " />
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="( B )" />
+                    <TextBox Width="70" Text="" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="4" />
 
         <!--#endregion-->
 
@@ -134,14 +222,19 @@
             <TextBlock Text="4" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="5" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="Outer diameter fo motor pulley (mm)" />
                 <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
+                <Run Text="เส้นผ่าศูนย์กลางภายนอกของมอเตอร์พูลลี่ (มม.)" />
             </TextBlock>
         </Border>
+        <Border Grid.Row="5" Grid.Column="2">
+            <CheckBox Content="SC" />
+        </Border>
+        <Border Grid.Row="5" Grid.Column="3">
+            <TextBox Width="200" Text="" />
+        </Border>
+        <Border Grid.Row="5" Grid.Column="4" />
 
         <!--#endregion-->
 
@@ -151,14 +244,19 @@
             <TextBlock Text="5" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="6" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="Traveller no." />
                 <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
+                <Run Text="เบอร์ทราเวลเลอร์" />
             </TextBlock>
         </Border>
+        <Border Grid.Row="6" Grid.Column="2">
+            <CheckBox Content="SC" />
+        </Border>
+        <Border Grid.Row="6" Grid.Column="3">
+            <TextBox Width="200" Text="" />
+        </Border>
+        <Border Grid.Row="6" Grid.Column="4" />
 
         <!--#endregion-->
 
@@ -168,14 +266,38 @@
             <TextBlock Text="6" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="7" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="Couter ความยาว" />
                 <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
+                <Run Text="Unit weight (น้ำหนัก/หน่วย)" />
             </TextBlock>
         </Border>
+        <Border Grid.Row="7" Grid.Column="2">
+            <CheckBox Content="SC" />
+        </Border>
+        <Border Grid.Row="7" Grid.Column="3">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                    <TextBox Width="80" Text="" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="60" Text="" />
+                    <TextBlock Text=" m." />
+                </StackPanel>
+                <TextBlock Height="3" />
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                    <TextBlock Text=" ( " />
+                    <TextBox Width="80" Text="" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="60" Text="" />
+                    <TextBlock Text=" kg ) " />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="7" Grid.Column="4" />
 
         <!--#endregion-->
 
@@ -185,14 +307,23 @@
             <TextBlock Text="7" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="8" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="Counter system" />
                 <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
+                <Run Text="ระบบการทำงานของ Counter" />
             </TextBlock>
         </Border>
+        <Border Grid.Row="8" Grid.Column="2">
+            <CheckBox Content="SC" />
+        </Border>
+        <Border Grid.Row="8" Grid.Column="3">
+            <TextBlock HorizontalAlignment="Center">
+                <Run Text="เมื่อด้ายเต็ม Counter ที่ตั้งไว้" />
+                <LineBreak />
+                <Run Text="เครื่องต้องหยุดและมีสัญญาณไฟเตือน" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="4" />
 
         <!--#endregion-->
 
@@ -202,12 +333,59 @@
             <TextBlock Text="8" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="9" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="SENSER YARN BREAK" />
                 <LineBreak />
-                <Run Text="" />
+                <Run Text="เซ็นเซอร์เตือนเมื่อด้ายขาด" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="2">
+            <CheckBox Content="SC" />
+        </Border>
+        <Border Grid.Row="9" Grid.Column="3">
+            <TextBlock HorizontalAlignment="Center">
+                <Run Text="เมื่อด้ายขาด เครื่องหยุด" />
                 <LineBreak />
+                <Run Text="และมีสัญญาณเตือน" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="4" />
+
+        <!--#endregion-->
+
+        <!--#region ACTUAL-->
+
+        <Border Grid.Row="10"
+                Grid.Column="0"
+                Background="Beige">
+            <TextBlock Text="" HorizontalAlignment="Center" />
+        </Border>
+        <Border Grid.Row="10"
+                Grid.Column="1"
+                Background="Beige">
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="Actual Value  ( ค่าที่ตรวจสอบได้จริง )" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="10"
+                Grid.Column="2"
+                Background="Beige">
+            <TextBlock HorizontalAlignment="Left">
                 <Run Text="" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="10"
+                Grid.Column="3"
+                Background="Beige">
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="Standard (ค่ามาตรฐาน)" />
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="10"
+                Grid.Column="4"
+                Background="Beige">
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="ACTUAL (ค่าที่ได้จริง)" />
             </TextBlock>
         </Border>
 
@@ -215,103 +393,105 @@
 
         <!--#region NO 9-->
 
-        <Border Grid.Row="10" Grid.Column="0">
+        <Border Grid.Row="11" Grid.Column="0">
             <TextBlock Text="9" HorizontalAlignment="Center" />
         </Border>
-        <Border Grid.Row="10" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
+        <Border Grid.Row="11" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="Calculated twisting number (t/m)" />
                 <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
+                <Run Text="จำนวนการตีเกลียวที่คำนวณ (เกลียว/เมตร)" />
             </TextBlock>
         </Border>
+        <Border Grid.Row="11" Grid.Column="2">
+            <CheckBox Content="SC" />
+        </Border>
+        <Border Grid.Row="11" Grid.Column="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Text="" />
+                <TextBlock Text=" (S) " />
+                <TextBlock Text=" ± " />
+                <TextBox Width="70" Text="" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="11" Grid.Column="4" />
 
         <!--#endregion-->
 
         <!--#region NO 10-->
 
-        <Border Grid.Row="11" Grid.Column="0">
+        <Border Grid.Row="12" Grid.Column="0">
             <TextBlock Text="10" HorizontalAlignment="Center" />
         </Border>
-        <Border Grid.Row="11" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
+        <Border Grid.Row="12" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="Number of spindle rotation (rpm)" />
                 <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
+                <Run Text="จำนวนรอบหมุนของสปินเดิล (รอบ/นาที)" />
             </TextBlock>
         </Border>
+        <Border Grid.Row="12" Grid.Column="2">
+            <CheckBox Content="SC" />
+        </Border>
+        <Border Grid.Row="12" Grid.Column="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Text="" />
+                <TextBlock Text=" ± " />
+                <TextBox Width="70" Text="" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="12" Grid.Column="4" />
 
         <!--#endregion-->
 
         <!--#region NO 11-->
 
-        <Border Grid.Row="12" Grid.Column="0">
+        <Border Grid.Row="13" Grid.Column="0">
             <TextBlock Text="11" HorizontalAlignment="Center" />
         </Border>
-        <Border Grid.Row="12" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
+        <Border Grid.Row="13" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="Yarn speed (m/min)" />
                 <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
+                <Run Text="ความเร็วของด้าย (เมตร/นาที)" />
             </TextBlock>
         </Border>
+        <Border Grid.Row="13" Grid.Column="2">
+            <CheckBox Content="SC" />
+        </Border>
+        <Border Grid.Row="13" Grid.Column="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Text="" />
+                <TextBlock Text=" ± " />
+                <TextBox Width="70" Text="" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="13" Grid.Column="4" />
 
         <!--#endregion-->
 
         <!--#region NO 12-->
 
-        <Border Grid.Row="13" Grid.Column="0">
+        <Border Grid.Row="14" Grid.Column="0">
             <TextBlock Text="12" HorizontalAlignment="Center" />
         </Border>
-        <Border Grid.Row="13" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
-        </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 13-->
-
-        <Border Grid.Row="14" Grid.Column="0">
-            <TextBlock Text="13" HorizontalAlignment="Center" />
-        </Border>
         <Border Grid.Row="14" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
+            <TextBlock HorizontalAlignment="Left">
+                <Run Text="Special mention" />
                 <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
+                <Run Text="หมายเหตุ" />
             </TextBlock>
         </Border>
-
-        <!--#endregion-->
-
-        <!--#region NO 14-->
-
-        <Border Grid.Row="15" Grid.Column="0">
-            <TextBlock Text="14" HorizontalAlignment="Center" />
+        <Border Grid.Row="14" Grid.Column="2">
+            <CheckBox Content="SC" />
         </Border>
-        <Border Grid.Row="15" Grid.Column="1">
-            <TextBlock FontSize="18" HorizontalAlignment="Left">
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-                <LineBreak />
-                <Run Text="" />
-            </TextBlock>
+        <Border Grid.Row="14" Grid.Column="3">
+            <TextBox Width="250"
+                     Height="50"
+                     AcceptsReturn="True"
+                     Text="มีรอยต่อ ได้ 2 รอยต่อ" />
         </Border>
+        <Border Grid.Row="14" Grid.Column="4" />
 
         <!--#endregion-->
     </Grid>
