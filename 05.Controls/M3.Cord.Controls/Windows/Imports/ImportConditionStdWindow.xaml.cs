@@ -168,12 +168,10 @@ namespace M3.Cord.Windows
 
             if (null != errors && errors.Count > 0)
             {
-                /*
                 var errWin = M3CordApp.Windows.ImportReport;
                 errWin.Owner = this;
                 errWin.Setup(errors);
                 errWin.ShowDialog();
-                */
             }
 
             EanbleButtons(true); // completed import enable all buttons.

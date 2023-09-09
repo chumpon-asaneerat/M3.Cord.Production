@@ -273,6 +273,16 @@ namespace M3.Cord
 
             #endregion
 
+            #region Import Error Dialog
+
+            /// <summary>Gets Import Report Dialog Window.</summary>
+            public static ImportReportWindow ImportReport
+            {
+                get { return GetWindow<ImportReportWindow>(); }
+            }
+
+            #endregion
+
             #region G4
 
             /// <summary>Gets G4 Receive Yarn Window.</summary>

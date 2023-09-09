@@ -1,0 +1,129 @@
+﻿<Window x:Class="M3.Cord.Windows.ImportReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:xlsCtrl="clr-namespace:M3.Cord.Controls.Excels"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        ShowInTaskbar="False"
+        WindowState="Normal"
+        WindowStartupLocation="CenterOwner"
+        SizeToContent="Width"
+        Title="Import Errors Report"
+        Height="600"
+        Width="1000"
+        MaxWidth="1300"
+        mc:Ignorable="d">
+    <page:NPage HeaderText="Import Errors Report">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTONS BAR  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <!--  OK  -->
+                <Button x:Name="cmdOk"
+                        Style="{StaticResource InlineButton}"
+                        Margin="5,0"
+                        Width="150"
+                        Height="30"
+                        Click="cmdOk_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource fa-ok}" FontSize="{StaticResource IBFSize}" />
+                        <TextBlock Margin="3,0"
+                                   FontFamily="{StaticResource THSarabun}"
+                                   FontSize="{StaticResource IBFSize}"
+                                   Text="ตกลง"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </DockPanel>
+            <!--  INFO BAR  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Height="40">
+                <!--  COPY TO CLIPBOARD  -->
+                <Button x:Name="cmdCopy"
+                        DockPanel.Dock="Left"
+                        Style="{StaticResource InlineButton}"
+                        Margin="5,0"
+                        Width="30"
+                        Height="30"
+                        Click="cmdCopy_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource fa-copy}" FontSize="{StaticResource IBFSize}" />
+                    </StackPanel>
+                </Button>
+                <DockPanel LastChildFill="True">
+                    <TextBlock Text="Total Errors:"
+                               Margin="5"
+                               FontSize="{StaticResource FontSize24}"
+                               VerticalAlignment="Center" />
+                    <TextBlock x:Name="txtTotalCount"
+                               Text="0"
+                               Margin="5"
+                               Foreground="DarkOrange"
+                               FontSize="{StaticResource FontSize30}"
+                               FontWeight="Bold"
+                               VerticalAlignment="Center" />
+                    <TextBlock Text="รายการ"
+                               Margin="5"
+                               Foreground="{StaticResource WhiteBrush}"
+                               FontSize="{StaticResource FontSize24}"
+                               VerticalAlignment="Center" />
+                    <Grid />
+                </DockPanel>
+            </DockPanel>
+            <!--  ITEMS  -->
+            <ListView x:Name="lvItems" Style="{StaticResource SingleSelectListView}">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="No">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                        <TextBlock Width="100"
+                                                   Text="{Binding RowNo}"
+                                                   VerticalAlignment="Top"
+                                                   TextAlignment="Right" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Error">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                        <TextBlock Width="Auto"
+                                                   Text="{Binding ErrMsg}"
+                                                   VerticalAlignment="Top"
+                                                   TextAlignment="Left" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Source Data">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                        <TextBlock Width="Auto"
+                                                   Text="{Binding DataString}"
+                                                   VerticalAlignment="Top"
+                                                   TextAlignment="Left" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </page:NPage>
+</Window>
