@@ -20,16 +20,16 @@ using System.Windows.Shapes;
 namespace M3.Cord._Templates
 {
     /// <summary>
-    /// Interaction logic for CordSamplingDetialsDocument.xaml
+    /// Interaction logic for S5ConditionDocument.xaml
     /// </summary>
-    public partial class CordSamplingDetialsDocument : UserControl
+    public partial class S5ConditionDocument : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public CordSamplingDetialsDocument()
+        public S5ConditionDocument()
         {
             InitializeComponent();
         }

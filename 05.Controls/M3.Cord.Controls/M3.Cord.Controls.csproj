@@ -131,6 +131,9 @@
     <Compile Include="_Templates\S4x2ConditionDocument.xaml.cs">
       <DependentUpon>S4x2ConditionDocument.xaml</DependentUpon>
     </Compile>
+    <Compile Include="_Templates\S5ConditionDocument.xaml.cs">
+      <DependentUpon>S5ConditionDocument.xaml</DependentUpon>
+    </Compile>
     <None Include="_V3\Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
     </None>
@@ -522,6 +525,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="_Templates\S4x2ConditionDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_Templates\S5ConditionDocument.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
