@@ -119,19 +119,19 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="_Templates\CordSamplingDetialsDocument.xaml.cs">
+    <Compile Include="_Templates\09.QA\CordSamplingDetialsDocument.xaml.cs">
       <DependentUpon>CordSamplingDetialsDocument.xaml</DependentUpon>
     </Compile>
-    <Compile Include="_Templates\S1ConditionDocument.xaml.cs">
+    <Compile Include="_Templates\01.FirstTwist\S1ConditionDocument.xaml.cs">
       <DependentUpon>S1ConditionDocument.xaml</DependentUpon>
     </Compile>
-    <Compile Include="_Templates\S4x1ConditionDocument.xaml.cs">
+    <Compile Include="_Templates\01.FirstTwist\S4x1ConditionDocument.xaml.cs">
       <DependentUpon>S4x1ConditionDocument.xaml</DependentUpon>
     </Compile>
-    <Compile Include="_Templates\S4x2ConditionDocument.xaml.cs">
+    <Compile Include="_Templates\01.FirstTwist\S4x2ConditionDocument.xaml.cs">
       <DependentUpon>S4x2ConditionDocument.xaml</DependentUpon>
     </Compile>
-    <Compile Include="_Templates\S5ConditionDocument.xaml.cs">
+    <Compile Include="_Templates\03.Ageing\S5ConditionDocument.xaml.cs">
       <DependentUpon>S5ConditionDocument.xaml</DependentUpon>
     </Compile>
     <None Include="_V3\Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
@@ -512,23 +512,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </None>
-    <Page Include="_Templates\CordSamplingDetialsDocument.xaml">
+    <Page Include="_Templates\09.QA\CordSamplingDetialsDocument.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="_Templates\S1ConditionDocument.xaml">
+    <Page Include="_Templates\01.FirstTwist\S1ConditionDocument.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="_Templates\S4x1ConditionDocument.xaml">
+    <Page Include="_Templates\01.FirstTwist\S4x1ConditionDocument.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="_Templates\S4x2ConditionDocument.xaml">
+    <Page Include="_Templates\01.FirstTwist\S4x2ConditionDocument.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="_Templates\S5ConditionDocument.xaml">
+    <Page Include="_Templates\03.Ageing\S5ConditionDocument.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -545,11 +545,8 @@
     <Folder Include="Pages\Documents\" />
     <Folder Include="Pages\Masters\" />
     <Folder Include="Windows\Imports\" />
-    <Folder Include="_Templates\01.FirstTwist\" />
     <Folder Include="_Templates\02.SecondTwist\" />
-    <Folder Include="_Templates\03.Ageing\" />
     <Folder Include="_Templates\04.DIP\" />
-    <Folder Include="_Templates\09.QA\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\toray.png" />
