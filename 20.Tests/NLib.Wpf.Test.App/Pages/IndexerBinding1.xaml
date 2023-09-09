@@ -34,7 +34,9 @@
                     DockPanel.Dock="Top">
             <TextBlock x:Name="txtOutput" />
         </StackPanel>
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Top"
+                    Margin="5">
             <RadioButton x:Name="rbS11"
                          Style="{StaticResource CheckedRadioButton}"
                          Content="S-1-1"
@@ -47,6 +49,20 @@
                          Style="{StaticResource CheckedRadioButton}"
                          Content="S-1-3"
                          GroupName="S1" />
+            <Button x:Name="cmdDisable"
+                    Style="{StaticResource InlineButton}"
+                    Height="26"
+                    Width="80"
+                    FontSize="14"
+                    Content="Disable"
+                    Click="cmdDisable_Click" />
+            <Button x:Name="cmdEnable"
+                    Style="{StaticResource InlineButton}"
+                    Height="26"
+                    Width="80"
+                    FontSize="14"
+                    Content="Enable"
+                    Click="cmdEnable_Click" />
         </StackPanel>
         <Grid />
     </DockPanel>

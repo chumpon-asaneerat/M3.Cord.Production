@@ -49,6 +49,16 @@ namespace NLib.Wpf.Test.App.Pages
             UpdateValues();
         }
 
+        private void cmdDisable_Click(object sender, RoutedEventArgs e)
+        {
+            SetRadioButtonsEnable(false);
+        }
+
+        private void cmdEnable_Click(object sender, RoutedEventArgs e)
+        {
+            SetRadioButtonsEnable(true);
+        }
+
         #endregion
 
         #region Private Methods
@@ -76,6 +86,13 @@ namespace NLib.Wpf.Test.App.Pages
                 
                 txtOutput.Text = sOut;
             }
+        }
+
+        private void SetRadioButtonsEnable(bool enabled)
+        {
+            rbS11.IsEnabled = enabled;
+            rbS12.IsEnabled = enabled;
+            rbS13.IsEnabled = enabled;
         }
 
         #endregion
