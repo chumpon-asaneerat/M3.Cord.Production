@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
         xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
-             xmlns:S1="clr-namespace:M3.Cord.Controls.Documents.FirstTwist.S1"
         mc:Ignorable="d"
         Title="S-1 Condition"
         HorizontalAlignment="Center"
@@ -36,7 +35,7 @@
             <!--  WORK AREA  -->
             <DockPanel LastChildFill="True">
                 <!--  CONDITION  -->
-                <S1:S1ProductConditionControl />
+                <Grid />
             </DockPanel>
         </DockPanel>
     </page:NPage>

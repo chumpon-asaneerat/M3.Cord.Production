@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using static M3.Cord.AppConsts.Application;
 
 //using NLib.Services;
 //using M3.Cord.Models;

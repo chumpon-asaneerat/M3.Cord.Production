@@ -74,33 +74,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml.cs">
-      <DependentUpon>HeaderPart.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Documents\FirstTwist\S1\Elements\ItemsPart.xaml.cs">
-      <DependentUpon>ItemsPart.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Documents\FirstTwist\S1\S1ProductConditionControl.xaml.cs">
-      <DependentUpon>S1ProductConditionControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Documents\FirstTwist\S4x1\Elements\HeaderPart.xaml.cs">
-      <DependentUpon>HeaderPart.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Documents\FirstTwist\S4x1\Elements\ItemsPart.xaml.cs">
-      <DependentUpon>ItemsPart.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Documents\FirstTwist\S4x1\S4x1UpTwisterConditionControl.xaml.cs">
-      <DependentUpon>S4x1UpTwisterConditionControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Documents\FirstTwist\S4x2\Elements\HeaderPart.xaml.cs">
-      <DependentUpon>HeaderPart.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Documents\FirstTwist\S4x2\Elements\ItemsPart.xaml.cs">
-      <DependentUpon>ItemsPart.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml.cs">
-      <DependentUpon>S4x2UpTwisterConditionControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\Excels\ExcelColumnMapControl.xaml.cs">
       <DependentUpon>ExcelColumnMapControl.xaml</DependentUpon>
     </Compile>
@@ -140,6 +113,33 @@
     <Compile Include="_Templates\01.FirstTwist\Twist1RawMaterialCheckSheetDocument.xaml.cs">
       <DependentUpon>Twist1RawMaterialCheckSheetDocument.xaml</DependentUpon>
     </Compile>
+    <None Include="_V3\Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml.cs">
+      <DependentUpon>HeaderPart.xaml</DependentUpon>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S1\Elements\ItemsPart.xaml.cs">
+      <DependentUpon>ItemsPart.xaml</DependentUpon>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S1\S1ProductConditionControl.xaml.cs">
+      <DependentUpon>S1ProductConditionControl.xaml</DependentUpon>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\Elements\HeaderPart.xaml.cs">
+      <DependentUpon>HeaderPart.xaml</DependentUpon>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\Elements\ItemsPart.xaml.cs">
+      <DependentUpon>ItemsPart.xaml</DependentUpon>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\S4x1UpTwisterConditionControl.xaml.cs">
+      <DependentUpon>S4x1UpTwisterConditionControl.xaml</DependentUpon>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\Elements\HeaderPart.xaml.cs">
+      <DependentUpon>HeaderPart.xaml</DependentUpon>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\Elements\ItemsPart.xaml.cs">
+      <DependentUpon>ItemsPart.xaml</DependentUpon>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml.cs">
+      <DependentUpon>S4x2UpTwisterConditionControl.xaml</DependentUpon>
+    </None>
     <None Include="_V3\Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
     </None>
@@ -306,42 +306,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Documents\FirstTwist\S1\Elements\ItemsPart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Documents\FirstTwist\S1\S1ProductConditionControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Documents\FirstTwist\S4x1\Elements\HeaderPart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Documents\FirstTwist\S4x1\Elements\ItemsPart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Documents\FirstTwist\S4x1\S4x1UpTwisterConditionControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Documents\FirstTwist\S4x2\Elements\HeaderPart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Documents\FirstTwist\S4x2\Elements\ItemsPart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Controls\Excels\ExcelColumnMapControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -546,6 +510,42 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <None Include="_V3\Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S1\Elements\ItemsPart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S1\S1ProductConditionControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\Elements\HeaderPart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\Elements\ItemsPart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\S4x1UpTwisterConditionControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\Elements\HeaderPart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\Elements\ItemsPart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\barcode-scanner.png" />
@@ -554,13 +554,18 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\Documents\Ageing\Elements\" />
-    <Folder Include="Controls\Documents\SamplingDetails\Elements\" />
+    <Folder Include="Controls\Documents\Ageing\" />
+    <Folder Include="Controls\Documents\FirstTwist\S1\" />
+    <Folder Include="Controls\Documents\FirstTwist\S4x1\" />
+    <Folder Include="Controls\Documents\FirstTwist\S4x2\" />
+    <Folder Include="Controls\Documents\SamplingDetails\" />
     <Folder Include="Pages\Documents\" />
     <Folder Include="Pages\Masters\" />
     <Folder Include="Windows\Imports\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
+    <Folder Include="_V3\Controls\Documents\Ageing\Elements\" />
+    <Folder Include="_V3\Controls\Documents\SamplingDetails\Elements\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\toray.png" />
