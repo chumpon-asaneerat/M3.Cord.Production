@@ -137,7 +137,7 @@
     <Compile Include="_Templates\01.FirstTwist\Twist1PCCardDocument.xaml.cs">
       <DependentUpon>Twist1PCCardDocument.xaml</DependentUpon>
     </Compile>
-    <Compile Include="_Templates\Twist1RawMaterialCheckSheetDocument.xaml.cs">
+    <Compile Include="_Templates\01.FirstTwist\Twist1RawMaterialCheckSheetDocument.xaml.cs">
       <DependentUpon>Twist1RawMaterialCheckSheetDocument.xaml</DependentUpon>
     </Compile>
     <None Include="_V3\Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
@@ -542,7 +542,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="_Templates\Twist1RawMaterialCheckSheetDocument.xaml">
+    <Page Include="_Templates\01.FirstTwist\Twist1RawMaterialCheckSheetDocument.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
