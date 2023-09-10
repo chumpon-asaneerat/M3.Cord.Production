@@ -24,7 +24,7 @@
                        Foreground="White"
                        FontWeight="DemiBold"
                        TextAlignment="Center"
-                       Text="BRAKE HOSE" />
+                       Text="{Binding ProductName}" />
         </StackPanel>
     </Border>
 </UserControl>

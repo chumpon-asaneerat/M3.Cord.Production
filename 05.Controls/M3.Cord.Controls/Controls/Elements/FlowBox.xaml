@@ -24,7 +24,7 @@
                        Foreground="White"
                        FontWeight="DemiBold"
                        TextAlignment="Center"
-                       Text="S-1-1" />
+                       Text="{Binding MCCode}" />
         </StackPanel>
     </Border>
 </UserControl>

@@ -24,7 +24,7 @@
                        Foreground="White"
                        FontWeight="DemiBold"
                        TextAlignment="Center"
-                       Text="P 1100T//2" />
+                       Text="{Binding CordStructure}" />
         </StackPanel>
     </Border>
 </UserControl>

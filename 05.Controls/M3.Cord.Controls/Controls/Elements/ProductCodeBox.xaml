@@ -24,7 +24,7 @@
                        Foreground="White"
                        FontWeight="DemiBold"
                        TextAlignment="Center"
-                       Text="KT3S71" />
+                       Text="{Binding ProductCode}" />
         </StackPanel>
     </Border>
 </UserControl>

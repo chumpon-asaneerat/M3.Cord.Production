@@ -20,20 +20,14 @@
                 <Run Text="ปริมาณ (กก.)" />
             </TextBlock>
             <DockPanel LastChildFill="True">
-                <!--
                 <TextBlock Margin="0,2"
-                           FontSize="48"
+                           FontSize="36"
                            Foreground="White"
                            FontWeight="DemiBold"
-                           TextAlignment="Center"
-                           Text="{Binding TotalWeight, StringFormat='{}{0:n1}'}" />
-                -->
-                <TextBlock Margin="0,2"
-                       FontSize="36"
-                       Foreground="White"
-                       FontWeight="DemiBold"
-                       TextAlignment="Center"
-                       Text="0.0" />
+                           TextAlignment="Center">
+                    <Run Text="{Binding TargetQty, StringFormat='{}{0:n0}'}" />
+                    <Run Text=" KG" />
+                </TextBlock>
             </DockPanel>
         </StackPanel>
     </Border>

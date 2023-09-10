@@ -24,7 +24,7 @@
                        Foreground="White"
                        FontWeight="DemiBold"
                        TextAlignment="Center"
-                       Text="23F10T" />
+                       Text="{Binding ProductLotNo}" />
         </StackPanel>
     </Border>
 </UserControl>
