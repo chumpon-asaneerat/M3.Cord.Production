@@ -74,6 +74,33 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Elements\CordStructureBox.xaml.cs">
+      <DependentUpon>CordStructureBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\CustomerBox.xaml.cs">
+      <DependentUpon>CustomerBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\ItemYarnBox.xaml.cs">
+      <DependentUpon>ItemYarnBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\PaperTubeBox.xaml.cs">
+      <DependentUpon>PaperTubeBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\PINoBox.xaml.cs">
+      <DependentUpon>PINoBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\ProductCodeBox.xaml.cs">
+      <DependentUpon>ProductCodeBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\ProductNameBox.xaml.cs">
+      <DependentUpon>ProductNameBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\StdTwistNoBox.xaml.cs">
+      <DependentUpon>StdTwistNoBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\TargetQtyBox.xaml.cs">
+      <DependentUpon>TargetQtyBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Excels\ExcelColumnMapControl.xaml.cs">
       <DependentUpon>ExcelColumnMapControl.xaml</DependentUpon>
     </Compile>
@@ -309,6 +336,42 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\Elements\CordStructureBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\CustomerBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\ItemYarnBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\PaperTubeBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\PINoBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\ProductCodeBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\ProductNameBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\StdTwistNoBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\TargetQtyBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Excels\ExcelColumnMapControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
