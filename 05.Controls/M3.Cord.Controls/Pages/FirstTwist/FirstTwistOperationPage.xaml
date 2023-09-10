@@ -57,7 +57,11 @@
                             <elem:FlowBox />
                             <Grid />
                         </DockPanel>
-                        <Grid />
+                        <ListView x:Name="lvPCCards" Margin="0,0,0,5"
+                                  FontSize="{StaticResource FontSize18}"
+                                  ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                                  ItemsSource="{Binding}"
+                                  Style="{StaticResource SingleSelectListView}" />
                     </DockPanel>
                 </DockPanel>
             </TabItem>
@@ -107,7 +111,18 @@
                             <elem:FlowBox />
                             <Grid />
                         </DockPanel>
-                        <Grid />
+                        <ListView x:Name="lvRawMats" Margin="0,0,0,5"
+                                  FontSize="{StaticResource FontSize18}"
+                                  ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                                  ItemsSource="{Binding}"
+                                  Style="{StaticResource SingleSelectListView}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
+                                    <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource ItemYarn}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
                     </DockPanel>
                 </DockPanel>
             </TabItem>

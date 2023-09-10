@@ -191,7 +191,7 @@ namespace M3.Cord.Windows
                     if (null != loaditem)
                     {
                         int id = loaditem.Twist1LoadId.Value;
-                        foreach (var item in Items) 
+                        foreach (var item in _item.Items) 
                         {
                             item.Twist1LoadId = id;
                             Twist1LoadRecordItem.Save(item);
@@ -340,13 +340,13 @@ namespace M3.Cord.Windows
             string palletNo, string traceNo,
             string yarnBarcode)
         {
-            if (null != Items)
+            if (null != _item && null != _item.Items)
             {
-                int idx = Items.FindIndex((item) =>
+                int idx = _item.Items.FindIndex((item) =>
                 {
                     return (item.Twist1LoadId == loadId && item.SPNo == spNo && item.DeckNo == deckNo);
                 });
-                Items.Add(new Twist1LoadRecordItem() 
+                _item.Items.Add(new Twist1LoadRecordItem() 
                 { 
                     SPNo = spNo, DeckNo = deckNo,
                     PalletNo = palletNo, TraceNo = traceNo,
@@ -363,7 +363,10 @@ namespace M3.Cord.Windows
         private void RefreshGrid()
         {
             grid.ItemsSource = null;
-            grid.ItemsSource = Items;
+            if (null != _item)
+            {
+                grid.ItemsSource = _item.Items;
+            }
         }
 
         #endregion
@@ -379,8 +382,6 @@ namespace M3.Cord.Windows
             _item = record;
 
             EnableScanOption();
-
-            this.Items = new List<Twist1LoadRecordItem>();
 
             if (record == null)
             {
@@ -399,7 +400,6 @@ namespace M3.Cord.Windows
         #region Public Properties
 
         public Twist1LoadRecord Record { get { return _item; } }
-        public List<Twist1LoadRecordItem> Items { get; private set; }
 
         #endregion
     }

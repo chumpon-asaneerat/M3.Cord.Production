@@ -110,6 +110,27 @@ namespace M3.Cord.Pages
 
             cmdSelectPCCard.IsEnabled = (null == pcCard);
             cmdLoadYarn.IsEnabled = (null != pcCard);
+
+            RefreshGrids();
+        }
+
+        private void RefreshGrids()
+        {
+            RefreshPCCards();
+            RefreshRawMaterials();
+        }
+
+        private void RefreshPCCards()
+        {
+
+        }
+
+        private void RefreshRawMaterials()
+        {
+            lvRawMats.ItemsSource = null;
+            if (null == pcCard) return;
+            var items = RawMaterialSummary.Gets(pcCard.PCTwist1Id.Value).Value();
+            lvRawMats.ItemsSource = items;
         }
 
         #endregion

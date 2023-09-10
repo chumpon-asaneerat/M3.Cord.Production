@@ -32,6 +32,11 @@ namespace M3.Cord.Models
 
         #endregion
 
+        public Twist1LoadRecord()
+        {
+            this.Items = new List<Twist1LoadRecordItem>();
+        }
+
         #region Public Properties
 
         public int? Twist1LoadId { get; set; }
@@ -58,6 +63,20 @@ namespace M3.Cord.Models
         public string ProductLotNo { get; set; }
 
         public SolidColorBrush TextColor { get { return BlackColor; } set { } }
+
+        public List<Twist1LoadRecordItem> Items { get; set; }
+
+        #endregion
+
+        #region Public Methods
+
+        public void LoadItems()
+        {
+            if (Twist1LoadId.HasValue && Twist1LoadId.Value > 0)
+            {
+                this.Items = Twist1LoadRecordItem.Gets(Twist1LoadId.Value).Value();
+            }
+        }
 
         #endregion
 
