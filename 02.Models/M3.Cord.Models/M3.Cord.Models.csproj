@@ -100,6 +100,7 @@
     <Compile Include="Models\Excels\ExcelModels.cs" />
     <Compile Include="Models\FirstTwist\PCTwist1.cs" />
     <Compile Include="Models\FirstTwist\RawMaterialSummary.cs" />
+    <Compile Include="Models\FirstTwist\Twist1CheckSheet.cs" />
     <Compile Include="Models\FirstTwist\Twist1LoadRecord.cs" />
     <Compile Include="Models\FirstTwist\Twist1LoadRecordItem.cs" />
     <Compile Include="Models\PCCard\PCCard.cs" />

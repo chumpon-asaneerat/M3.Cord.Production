@@ -23,7 +23,7 @@ using Newtonsoft.Json.Linq;
 
 namespace M3.Cord.Models
 {
-    public class Twist1LoadRecord : NInpc
+    public class Twist1CheckSheet : NInpc
     {
         #region Const
 
@@ -34,49 +34,27 @@ namespace M3.Cord.Models
 
         public SolidColorBrush TextColor { get { return BlackColor; } set { } }
 
-        public Twist1LoadRecord()
-        {
-            this.Items = new List<Twist1LoadRecordItem>();
-        }
-
         #region Public Properties
 
-        public int? Twist1LoadId { get; set; }
-        public int? PCTwist1Id { get; set; }
-        public DateTime ProductionDate { get; set; }
-        public bool TestFlag { get; set; }
+        public int Twist1LoadId { get; set; }
+        public int SPNo { get; set; }
 
-        public int DoffNo 
-        {
-            get { return Get<int>(); }
-            set { Set(value); }
-        }
-        public string ItemYarn { get; set; }
-        public string ShiftName { get; set; }
-        public string Chief { get; set; }
-        public string Remark { get; set; }
-        public bool Keiba { get; set; }
-        public bool Traverse { get; set; }
-        public bool Crossing { get; set; }
-        public bool ScrapeTube { get; set; }
-        public bool Form { get; set; }
-        public bool Stain { get; set; }
-
-        public string ProductLotNo { get; set; }
-
-        public List<Twist1LoadRecordItem> Items { get; set; }
-
-        #endregion
-
-        #region Public Methods
-
-        public void LoadItems()
-        {
-            if (Twist1LoadId.HasValue && Twist1LoadId.Value > 0)
-            {
-                this.Items = Twist1LoadRecordItem.Gets(Twist1LoadId.Value).Value();
-            }
-        }
+        public bool RawB { get; set; }
+        public bool RawE { get; set; }
+        public bool CrossB { get; set; }
+        public bool CrossE { get; set; }
+        public bool FormB { get; set; }
+        public bool FormE { get; set; }
+        public bool KebaB { get; set; }
+        public bool KebaE { get; set; }
+        public bool StainB { get; set; }
+        public bool StainE { get; set; }
+        public bool PaperTubeB { get; set; }
+        public bool PaperTubeE { get; set; }
+        public bool YarnNoB { get; set; }
+        public bool YarnNoE { get; set; }
+        public bool BBMarkB { get; set; }
+        public bool BBMarkE { get; set; }
 
         #endregion
 
@@ -86,11 +64,11 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<Twist1LoadRecord>> Gets(int PCTwist1Id)
+        public static NDbResult<List<Twist1CheckSheet>> Gets(int PCTwist1Id)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
-            NDbResult<List<Twist1LoadRecord>> rets = new NDbResult<List<Twist1LoadRecord>>();
+            NDbResult<List<Twist1CheckSheet>> rets = new NDbResult<List<Twist1CheckSheet>>();
 
             IDbConnection cnn = DbServer.Instance.Db;
             if (null == cnn || !DbServer.Instance.Connected)
@@ -108,7 +86,7 @@ namespace M3.Cord.Models
             p.Add("@PCTwist1Id", PCTwist1Id);
             try
             {
-                var items = cnn.Query<Twist1LoadRecord>("GetTwist1LoadRecords", p,
+                var items = cnn.Query<Twist1CheckSheet>("GetTwist1CheckSheets", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);
@@ -124,7 +102,7 @@ namespace M3.Cord.Models
             if (null == rets.data)
             {
                 // create empty list.
-                rets.data = new List<Twist1LoadRecord>();
+                rets.data = new List<Twist1CheckSheet>();
             }
 
             return rets;
@@ -132,13 +110,13 @@ namespace M3.Cord.Models
         /// <summary>
         /// Save
         /// </summary>
-        /// <param name="value">The Twist1LoadRecord item to save.</param>
+        /// <param name="value">The Twist1CheckSheet item to save.</param>
         /// <returns></returns>
-        public static NDbResult<Twist1LoadRecord> Save(Twist1LoadRecord value)
+        public static NDbResult<Twist1CheckSheet> Save(Twist1CheckSheet value)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
-            NDbResult<Twist1LoadRecord> ret = new NDbResult<Twist1LoadRecord>();
+            NDbResult<Twist1CheckSheet> ret = new NDbResult<Twist1CheckSheet>();
 
             if (null == value)
             {
@@ -159,33 +137,35 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@PCTwist1Id", value.PCTwist1Id);
-            p.Add("@ProductionDate", value.ProductionDate);
-            p.Add("@TestFlag", value.TestFlag);
-            p.Add("@DoffNo", value.DoffNo);
-            p.Add("@ItemYarn", value.ItemYarn);
-            p.Add("@ShiftName", value.ShiftName);
-            p.Add("@Chief", value.Chief);
-            p.Add("@Remark", value.Remark);
 
-            p.Add("@Keiba", value.Keiba);
-            p.Add("@Traverse", value.Traverse);
-            p.Add("@Crossing", value.Crossing);
-            p.Add("@ScrapeTube", value.ScrapeTube);
-            p.Add("@Form", value.Form);
-            p.Add("@Stain", value.Stain);
+            p.Add("@Twist1LoadId", value.Twist1LoadId);
+            p.Add("@SPNo", value.SPNo);
 
-            p.Add("@Twist1LoadId", value.Twist1LoadId, DbType.Int32, direction: ParameterDirection.InputOutput);
+            p.Add("@RawB", value.RawB);
+            p.Add("@RawE", value.RawE);
+            p.Add("@CrossB", value.CrossB);
+            p.Add("@CrossE", value.CrossE);
+            p.Add("@FormB", value.FormB);
+            p.Add("@FormE", value.FormE);
+            p.Add("@KebaB", value.KebaB);
+            p.Add("@KebaE", value.KebaE);
+            p.Add("@StainB", value.StainB);
+            p.Add("@StainE", value.StainE);
+            p.Add("@PaperTubeB", value.PaperTubeB);
+            p.Add("@PaperTubeE", value.PaperTubeE);
+            p.Add("@YarnNoB", value.YarnNoB);
+            p.Add("@YarnNoE", value.YarnNoE);
+            p.Add("@BBMarkB", value.BBMarkB);
+            p.Add("@BBMarkE", value.BBMarkE);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 
             try
             {
-                cnn.Execute("SaveTwist1LoadRecord", p, commandType: CommandType.StoredProcedure);
+                cnn.Execute("SaveTwist1CheckSheet", p, commandType: CommandType.StoredProcedure);
                 ret.Success(value);
-                // Set PK
-                value.Twist1LoadId = p.Get<int?>("@Twist1LoadId");
+
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");

@@ -74,6 +74,15 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Documents\S1ConditionPage.xaml.cs">
+      <DependentUpon>S1ConditionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\S4x1ConditionPage.xaml.cs">
+      <DependentUpon>S4x1ConditionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\S4x2ConditionPage.xaml.cs">
+      <DependentUpon>S4x2ConditionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Elements\CordStructureBox.xaml.cs">
       <DependentUpon>CordStructureBox.xaml</DependentUpon>
     </Compile>
@@ -360,6 +369,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\Documents\S1ConditionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\S4x1ConditionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\S4x2ConditionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Elements\CordStructureBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

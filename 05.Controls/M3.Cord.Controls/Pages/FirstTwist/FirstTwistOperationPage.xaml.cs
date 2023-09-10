@@ -118,6 +118,7 @@ namespace M3.Cord.Pages
         {
             RefreshPCCards();
             RefreshRawMaterials();
+            RefreshCheckSheets();
         }
 
         private void RefreshPCCards()
@@ -131,6 +132,26 @@ namespace M3.Cord.Pages
             if (null == pcCard) return;
             var items = RawMaterialSummary.Gets(pcCard.PCTwist1Id.Value).Value();
             lvRawMats.ItemsSource = items;
+        }
+
+        private void RefreshCheckSheets()
+        {
+            lvCheckSheet.ItemsSource = null;
+            if (null == pcCard || null == selectedMC) return;
+            var items = Twist1CheckSheet.Gets(0).Value();
+            if (null == items || items.Count <= 0)
+            {
+                items = new List<Twist1CheckSheet>();
+                for (int i = selectedMC.StartCore; i < selectedMC.EndCore; i++)
+                {
+                    items.Add(new Twist1CheckSheet() { Twist1LoadId = 0, SPNo = i });
+                }
+            }
+            else
+            {
+
+            }
+            lvCheckSheet.ItemsSource = items;
         }
 
         #endregion
