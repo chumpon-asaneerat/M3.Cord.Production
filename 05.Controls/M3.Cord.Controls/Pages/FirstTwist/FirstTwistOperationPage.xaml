@@ -10,71 +10,107 @@
              d:DesignHeight="800"
              d:DesignWidth="1200">
     <page:NPage x:Name="page" HeaderText="1st Twisting - ">
-        <DockPanel LastChildFill="True" Margin="5">
-            <!--  BUTTONS  -->
-            <DockPanel LastChildFill="True"
-                       DockPanel.Dock="Bottom"
-                       Height="40">
-                <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Right"
-                            VerticalAlignment="Center">
-                    <!--  HOME  -->
-                    <ctrl:FontAwesomeButton x:Name="cmdBack"
-                                            Margin="5,0,0,0"
-                                            IconType="Back"
-                                            Text="Back"
-                                            Click="cmdBack_Click" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Left"
-                            VerticalAlignment="Center">
-                    <ctrl:FontAwesomeButton x:Name="cmdSelectPCCard"
-                                            Margin="5,0,0,0"
-                                            IconType="Add"
-                                            Text="Set PC Card"
-                                            Click="cmdSelectPCCard_Click" />
-                    <ctrl:FontAwesomeButton x:Name="cmdLoadYarn"
-                                            Margin="5,0,0,0"
-                                            IconType="Import"
-                                            Text="Load Yarn"
-                                            Click="cmdLoadYarn_Click" />
-                </StackPanel>
-                <Grid />
-            </DockPanel>
-            <DockPanel x:Name="paPCCard" LastChildFill="True">
-                <DockPanel LastChildFill="True"
-                           DockPanel.Dock="Top"
-                           Margin="2">
-                    <StackPanel Orientation="Horizontal">
-                        <elem:CustomerBox />
-                        <elem:ProductInfoBox />
-                        <elem:TargetQtyBox />
-                        <elem:FlowBox />
-                        <!--
-                        <ctrl:NTextBox CaptionText="Lot No:"
-                                       IsReadOnly="True"
-                                       Text="{Binding ProductLotNo}" />
-                        <ctrl:NTextBox CaptionText="Flow:"
-                                       Width="120"
-                                       IsReadOnly="True"
-                                       Text="{Binding MCCode}" />
-                        -->
-                    </StackPanel>
+        <TabControl>
+            <TabItem Header="PC Card">
+                <DockPanel LastChildFill="True" Margin="5">
+                    <!--  BUTTONS  -->
+                    <DockPanel LastChildFill="True"
+                               DockPanel.Dock="Bottom"
+                               Height="40">
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Right"
+                                    VerticalAlignment="Center">
+                            <!--  HOME  -->
+                            <ctrl:FontAwesomeButton x:Name="cmdBack1"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Back"
+                                                    Text="Back"
+                                                    Click="cmdBack_Click" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Left"
+                                    VerticalAlignment="Center">
+                            <ctrl:FontAwesomeButton x:Name="cmdSelectPCCard"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Add"
+                                                    Text="Set PC Card"
+                                                    Click="cmdSelectPCCard_Click" />
+                        </StackPanel>
+                        <Grid />
+                    </DockPanel>
+                    <DockPanel x:Name="paPCCard" LastChildFill="True">
+                        <DockPanel LastChildFill="True"
+                                   DockPanel.Dock="Top"
+                                   Margin="2">
+                            <StackPanel Orientation="Horizontal">
+                                <elem:PINoBox />
+                                <elem:CustomerBox />
+                                <elem:ProductInfoBox />
+                            </StackPanel>
+                        </DockPanel>
+                        <DockPanel LastChildFill="True"
+                                   DockPanel.Dock="Top"
+                                   Margin="2">
+                            <elem:TargetQtyBox />
+                            <elem:ItemYarnBox />
+                            <elem:ProductLotNo />
+                            <elem:FlowBox />
+                            <Grid />
+                        </DockPanel>
+                        <Grid />
+                    </DockPanel>
                 </DockPanel>
-                <DockPanel LastChildFill="True"
-                           DockPanel.Dock="Top"
-                           Margin="2">
-                    <elem:ItemYarnBox />
-                    <elem:StdTwistNoBox />
-                    <elem:CordStructureBox />
-                    <!--
-                    <elem:PaperTubeBox />
-                    -->
-                    <elem:ProductLotNo />
-                    <Grid />
+            </TabItem>
+            <TabItem Header="Raw Material">
+                <DockPanel LastChildFill="True" Margin="5">
+                    <!--  BUTTONS  -->
+                    <DockPanel LastChildFill="True"
+                               DockPanel.Dock="Bottom"
+                               Height="40">
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Right"
+                                    VerticalAlignment="Center">
+                            <!--  HOME  -->
+                            <ctrl:FontAwesomeButton x:Name="cmdBack2"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Back"
+                                                    Text="Back"
+                                                    Click="cmdBack_Click" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Left"
+                                    VerticalAlignment="Center">
+                            <ctrl:FontAwesomeButton x:Name="cmdLoadYarn"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Import"
+                                                    Text="Load Yarn"
+                                                    Click="cmdLoadYarn_Click" />
+                        </StackPanel>
+                        <Grid />
+                    </DockPanel>
+                    <DockPanel x:Name="paRawMat" LastChildFill="True">
+                        <DockPanel LastChildFill="True"
+                                   DockPanel.Dock="Top"
+                                   Margin="2">
+                            <StackPanel Orientation="Horizontal">
+                                <elem:PINoBox />
+                                <elem:CustomerBox />
+                                <elem:ProductInfoBox />
+                            </StackPanel>
+                        </DockPanel>
+                        <DockPanel LastChildFill="True"
+                                   DockPanel.Dock="Top"
+                                   Margin="2">
+                            <elem:TargetQtyBox />
+                            <elem:ItemYarnBox />
+                            <elem:ProductLotNo />
+                            <elem:FlowBox />
+                            <Grid />
+                        </DockPanel>
+                        <Grid />
+                    </DockPanel>
                 </DockPanel>
-                <Grid />
-            </DockPanel>
-        </DockPanel>
+            </TabItem>
+        </TabControl>
     </page:NPage>
 </UserControl>

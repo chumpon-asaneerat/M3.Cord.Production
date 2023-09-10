@@ -142,8 +142,8 @@
                                    WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
                                    WatermarkText="Scan Yarn Barcode"
                                    Text=""
-                                   Width="300" 
-                                   PreviewKeyDown="txtYarnBarcode_PreviewKeyDown"/>
+                                   Width="300"
+                                   PreviewKeyDown="txtYarnBarcode_PreviewKeyDown" />
                     <Button x:Name="cmdAdd"
                             VerticalAlignment="Bottom"
                             Style="{StaticResource InlineButton}"
@@ -164,6 +164,7 @@
                             <GridViewColumn Header="เส้นที่" CellTemplate="{StaticResource DeckNo}" />
                             <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletNo}" />
                             <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
+                            <GridViewColumn Header="Yarn Barcode" CellTemplate="{StaticResource YarnBarcode}" />
                         </GridView>
                     </ListView.View>
                 </ListView>

@@ -76,7 +76,7 @@ namespace M3.Cord.Pages
             if (null == selectedMC || null == pcCard)
                 return;
             var win = M3CordApp.Windows.Twist1LoadRecordEditor;
-            win.Setup(selectedMC, pcCard, true);
+            win.Setup(selectedMC, pcCard, null); // New
             if (win.ShowDialog() == false) return;
 
             // reload pc card to refresh last doff/test no. 
@@ -106,6 +106,8 @@ namespace M3.Cord.Pages
             pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
             // Binding
             paPCCard.DataContext = pcCard;
+            paRawMat.DataContext = pcCard;
+
             cmdSelectPCCard.IsEnabled = (null == pcCard);
             cmdLoadYarn.IsEnabled = (null != pcCard);
         }

@@ -73,6 +73,12 @@
                    TextAlignment="Left"
                    MinWidth="150" />
     </DataTemplate>
+    <DataTemplate x:Key="YarnBarcode">
+        <TextBlock Text="{Binding Path=YarnBarcode, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Left"
+                   MinWidth="150" />
+    </DataTemplate>
 
     <DataTemplate x:Key="ProductionDate">
         <TextBlock Text="{Binding Path=ProductionDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"

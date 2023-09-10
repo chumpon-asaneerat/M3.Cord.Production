@@ -157,6 +157,14 @@ namespace M3.Cord.Windows
             RefreshCurrentPallet();
         }
 
+        private void EditItem()
+        {
+            this.DataContext = null;
+            this.DataContext = _item;
+
+            RefreshCurrentPallet();
+        }
+
         private void RefreshDoffNo()
         {
             if (null == _pcCard || null == _item) return;
@@ -179,7 +187,16 @@ namespace M3.Cord.Windows
                 var ret = Twist1LoadRecord.Save(_item);
                 if (ret.Ok)
                 {
-
+                    var loaditem = ret.Value();
+                    if (null != loaditem)
+                    {
+                        int id = loaditem.Twist1LoadId.Value;
+                        foreach (var item in Items) 
+                        {
+                            item.Twist1LoadId = id;
+                            Twist1LoadRecordItem.Save(item);
+                        }
+                    }
                 }
             }
         }
@@ -353,21 +370,27 @@ namespace M3.Cord.Windows
 
         #region Public Methods
 
-        public void Setup(FirstTwistMC mc, PCTwist1 pcCard, bool isNew)
+        public void Setup(FirstTwistMC mc, PCTwist1 pcCard, Twist1LoadRecord record = null)
         {
             RefreshCurrentPallet();
 
             _mc = mc;
             _pcCard = pcCard;
+            _item = record;
 
             EnableScanOption();
 
             this.Items = new List<Twist1LoadRecordItem>();
 
-            if (isNew)
+            if (record == null)
             {
                 NewItem();
             }
+            else
+            {
+                EditItem();
+            }
+
             RefreshGrid();
         }
 
