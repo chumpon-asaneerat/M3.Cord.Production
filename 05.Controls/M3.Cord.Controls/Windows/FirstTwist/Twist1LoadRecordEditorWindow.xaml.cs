@@ -252,7 +252,7 @@ namespace M3.Cord.Windows
 
         private void AppendYarn()
         {
-            if (null == _mc)
+            if (null == _mc || null == _item || null == _pallet)
                 return;
 
             string spNo = txtSPNo.Text.Trim();
@@ -273,6 +273,9 @@ namespace M3.Cord.Windows
             {
                 return;
             }
+            // Add to list
+            int id = _item.Twist1LoadId.HasValue ? _item.Twist1LoadId.Value : 0;
+            AddRecordItem(id, iSPNo, iDeckNo, _pallet.PalletNo, _pallet.TraceNo, yarnBarcode);
 
             if (_mc.DeckPerCore == 2)
             {
@@ -316,17 +319,41 @@ namespace M3.Cord.Windows
             txtSPNo.Text = iSPNo.ToString();
         }
 
+        private void AddRecordItem(int loadId, int spNo, int deckNo,
+            string palletNo, string traceNo,
+            string yarnBarcode)
+        {
+            if (null != Items)
+            {
+                int idx = Items.FindIndex((item) =>
+                {
+                    return (item.Twist1LoadId == loadId && item.SPNo == spNo && item.DeckNo == deckNo);
+                });
+                Items.Add(new Twist1LoadRecordItem() 
+                { 
+                    SPNo = spNo, DeckNo = deckNo,
+                    PalletNo = palletNo, TraceNo = traceNo,
+                    YarnBarcode = yarnBarcode 
+                });
+
+                this.InvokeAction(() => 
+                {
+                    RefreshGrid();
+                });
+            }
+        }
+
         private void RefreshGrid()
         {
             grid.ItemsSource = null;
-            //grid.ItemsSource = Items;
+            grid.ItemsSource = Items;
         }
 
         #endregion
 
         #region Public Methods
 
-        public void Setup(FirstTwistMC mc, PCTwist1 pcCard)
+        public void Setup(FirstTwistMC mc, PCTwist1 pcCard, bool isNew)
         {
             RefreshCurrentPallet();
 
@@ -335,10 +362,12 @@ namespace M3.Cord.Windows
 
             EnableScanOption();
 
-            /*
-            this.Items = new List<YarnLoadSheetDoff>();
-            */
-            NewItem();
+            this.Items = new List<Twist1LoadRecordItem>();
+
+            if (isNew)
+            {
+                NewItem();
+            }
             RefreshGrid();
         }
 
@@ -347,7 +376,7 @@ namespace M3.Cord.Windows
         #region Public Properties
 
         public Twist1LoadRecord Record { get { return _item; } }
-        //public List<YarnLoadSheetDoff> Items { get; private set; }
+        public List<Twist1LoadRecordItem> Items { get; private set; }
 
         #endregion
     }

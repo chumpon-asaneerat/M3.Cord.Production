@@ -76,7 +76,7 @@ namespace M3.Cord.Pages
             if (null == selectedMC || null == pcCard)
                 return;
             var win = M3CordApp.Windows.Twist1LoadRecordEditor;
-            win.Setup(selectedMC, pcCard);
+            win.Setup(selectedMC, pcCard, true);
             if (win.ShowDialog() == false) return;
 
             // reload pc card to refresh last doff/test no. 

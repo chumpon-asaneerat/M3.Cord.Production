@@ -53,6 +53,20 @@
                    TextAlignment="Left"
                    MinWidth="150" />
     </DataTemplate>
+
+    <DataTemplate x:Key="SPNo">
+        <TextBlock Text="{Binding Path=SPNo, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="DeckNo">
+        <TextBlock Text="{Binding Path=DeckNo, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
     <DataTemplate x:Key="LotNo">
         <TextBlock Text="{Binding Path=LotNo, Mode=OneWay}"
                    Foreground="{Binding TextColor}"

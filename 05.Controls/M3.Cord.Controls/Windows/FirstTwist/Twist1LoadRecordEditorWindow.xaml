@@ -160,9 +160,10 @@
                           Style="{StaticResource SingleSelectListView}">
                     <ListView.View>
                         <GridView>
+                            <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
+                            <GridViewColumn Header="เส้นที่" CellTemplate="{StaticResource DeckNo}" />
+                            <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletNo}" />
                             <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
-                            <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNos}" />
-                            <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNos}" />
                         </GridView>
                     </ListView.View>
                 </ListView>
