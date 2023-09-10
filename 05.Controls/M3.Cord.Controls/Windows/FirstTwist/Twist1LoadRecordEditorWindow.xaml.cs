@@ -68,6 +68,16 @@ namespace M3.Cord.Windows
             }
         }
 
+        private void txtYarnBarcode_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                AppendYarn();
+
+                e.Handled = true;
+            }
+        }
+
         #endregion
 
         #region Button Handlers
@@ -248,6 +258,8 @@ namespace M3.Cord.Windows
             string spNo = txtSPNo.Text.Trim();
             string deckNo = txtDeckNo.Text.Trim();
             string yarnBarcode = txtYarnBarcode.Text.Trim();
+            txtYarnBarcode.Text = string.Empty;
+
             if (string.IsNullOrEmpty(spNo) || string.IsNullOrEmpty(deckNo))
             {
                 return;
