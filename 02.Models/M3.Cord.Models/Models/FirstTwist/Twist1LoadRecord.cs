@@ -23,7 +23,7 @@ using Newtonsoft.Json.Linq;
 
 namespace M3.Cord.Models
 {
-    public class Twist1LoadRecord
+    public class Twist1LoadRecord : NInpc
     {
         #region Const
 
@@ -38,7 +38,12 @@ namespace M3.Cord.Models
         public int? PCTwist1Id { get; set; }
         public DateTime ProductionDate { get; set; }
         public bool TestFlag { get; set; }
-        public int DoffNo { get; set; }
+
+        public int DoffNo 
+        {
+            get { return Get<int>(); }
+            set { Set(value); }
+        }
         public string ItemYarn { get; set; }
         public string ShiftName { get; set; }
         public string Chief { get; set; }

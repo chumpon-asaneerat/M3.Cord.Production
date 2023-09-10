@@ -22,8 +22,8 @@
                        Foreground="White"
                        FontWeight="DemiBold"
                        TextAlignment="Center">
-                    <Run Text="{Binding WeightQty, StringFormat='{}{0:n0}'}" />
-                    <Run Text=" KG" />
+                <Run Text="{Binding WeightQty, StringFormat='{}{0:n0}'}" />
+                <Run Text=" KG" />
             </TextBlock>
         </StackPanel>
     </Border>

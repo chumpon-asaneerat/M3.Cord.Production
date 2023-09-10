@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using NLib.Models;
 using M3.Cord.Models;
 using NLib;
+using NLib.Data.Design;
 
 #endregion
 
@@ -73,6 +74,7 @@ namespace M3.Cord.Windows
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
+            Save();
             DialogResult = true;
         }
 
@@ -81,7 +83,7 @@ namespace M3.Cord.Windows
             DialogResult = false;
         }
 
-        private void Add_Click(object sender, RoutedEventArgs e)
+        private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
             AppendYarn();
             /*
@@ -103,16 +105,12 @@ namespace M3.Cord.Windows
 
         private void chkTest_Checked(object sender, RoutedEventArgs e)
         {
-            if (null == _pcCard || null == _item) return;
-            _item.TestFlag = true;
-            _item.DoffNo = _pcCard.LastDoffNo + 1;
+            RefreshDoffNo();
         }
 
         private void chkTest_Unchecked(object sender, RoutedEventArgs e)
         {
-            if (null == _pcCard || null == _item) return;
-            _item.TestFlag = false;
-            _item.DoffNo = _pcCard.LastTestNo + 1;
+            RefreshDoffNo();
         }
 
         #endregion
@@ -147,6 +145,33 @@ namespace M3.Cord.Windows
             }
 
             RefreshCurrentPallet();
+        }
+
+        private void RefreshDoffNo()
+        {
+            if (null == _pcCard || null == _item) return;
+            if (chkTest.IsChecked == true)
+            {
+                _item.TestFlag = true;
+                _item.DoffNo = _pcCard.LastTestNo + 1;
+            }
+            else
+            {
+                _item.TestFlag = false;
+                _item.DoffNo = _pcCard.LastDoffNo + 1;
+            }
+        }
+
+        private void Save()
+        {
+            if (null != _item)
+            {
+                var ret = Twist1LoadRecord.Save(_item);
+                if (ret.Ok)
+                {
+
+                }
+            }
         }
 
         private void RefreshCurrentPallet()
@@ -268,6 +293,13 @@ namespace M3.Cord.Windows
 
                 }
             }
+            else
+            {
+                iSPNo++;
+            }
+
+            if (iSPNo > _mc.EndCore) iSPNo = _mc.StartCore;
+
             txtDeckNo.Text = iDeckNo.ToString();
             txtSPNo.Text = iSPNo.ToString();
         }

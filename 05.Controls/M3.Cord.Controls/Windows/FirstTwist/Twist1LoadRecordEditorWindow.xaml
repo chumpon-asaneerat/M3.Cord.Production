@@ -60,7 +60,6 @@
                         <ctrl:NTextBox CaptionText="Doff No:"
                                        DockPanel.Dock="Left"
                                        Text="{Binding DoffNo}"
-                                       IsReadOnly="True"
                                        Width="150" />
                         <!--  SHIFT NO  -->
                         <ctrl:NTextBox CaptionText="Shift:"
@@ -103,23 +102,23 @@
                                      GroupName="ScanOption"
                                      Style="{StaticResource CommonRadioButton}"
                                      FontSize="24"
-                                     Content="SP 1 Only" 
-                                     Checked="rbOption_Checked"/>
+                                     Content="SP 1 Only"
+                                     Checked="rbOption_Checked" />
                         <RadioButton x:Name="rb2Only"
                                      Margin="2"
                                      GroupName="ScanOption"
                                      Style="{StaticResource CommonRadioButton}"
                                      FontSize="24"
-                                     Content="SP 2 Only" 
-                                     Checked="rbOption_Checked"/>
+                                     Content="SP 2 Only"
+                                     Checked="rbOption_Checked" />
                         <RadioButton x:Name="rbToggle"
                                      Margin="2"
                                      GroupName="ScanOption"
                                      Style="{StaticResource CommonRadioButton}"
                                      FontSize="24"
                                      IsChecked="True"
-                                     Content="SP 1-&gt;2" 
-                                     Checked="rbOption_Checked"/>
+                                     Content="SP 1-&gt;2"
+                                     Checked="rbOption_Checked" />
                     </StackPanel>
                     <Grid />
                 </DockPanel>
@@ -138,13 +137,17 @@
                     <ctrl:NTextBox x:Name="txtYarnBarcode"
                                    CaptionText="Yarn Barcode:"
                                    DockPanel.Dock="Left"
+                                   WatermarkImageWidth="30"
+                                   WatermarkImageHeight="25"
+                                   WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
+                                   WatermarkText="Scan Yarn Barcode"
                                    Text=""
-                                   Width="200" />
-                    <Button x:Name="Add"
+                                   Width="300" />
+                    <Button x:Name="cmdAdd"
                             VerticalAlignment="Bottom"
                             Style="{StaticResource InlineButton}"
-                            Content="Add"
-                            Click="Add_Click" />
+                            Content="Scan"
+                            Click="cmdAdd_Click" />
                     <Grid />
                 </DockPanel>
                 <!--  SPs  -->
