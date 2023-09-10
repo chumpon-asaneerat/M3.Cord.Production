@@ -130,7 +130,8 @@ namespace M3.Cord.Models
             { 
                 if (ParamType == ConditionParamTypes.String)
                     return StdValueS;
-                else if (ParamType == ConditionParamTypes.Number)
+                else if (ParamType == ConditionParamTypes.Number ||
+                    ParamType == ConditionParamTypes.NumberRange)
                     return (StdValueD.HasValue) ? StdValueD.Value.ToString() : null;
                 else if (ParamType == ConditionParamTypes.Bool)
                     return (StdValueB.HasValue) ? StdValueB.Value.ToString() : null;
@@ -140,7 +141,8 @@ namespace M3.Cord.Models
             {
                 if (ParamType == ConditionParamTypes.String)
                     StdValueS = value;
-                else if (ParamType == ConditionParamTypes.Number)
+                else if (ParamType == ConditionParamTypes.Number ||
+                    ParamType == ConditionParamTypes.NumberRange)
                 {
                     try
                     {

@@ -279,6 +279,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Imports", "Cord Imports", "{939688C7-1359-4B3B-A8BB-E673B1479DC7}"
 	ProjectSection(SolutionItems) = preProject
 		Documents\Cord\Cord Imports\S1ConditionStd.xlsx = Documents\Cord\Cord Imports\S1ConditionStd.xlsx
+		Documents\Cord\Cord Imports\S4ConditionStd.xlsx = Documents\Cord\Cord Imports\S4ConditionStd.xlsx
 	EndProjectSection
 EndProject
 Global
