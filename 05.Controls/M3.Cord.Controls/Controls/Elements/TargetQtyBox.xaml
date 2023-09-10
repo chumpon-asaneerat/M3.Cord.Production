@@ -4,28 +4,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              d:DesignHeight="120"
-             d:DesignWidth="300"
              mc:Ignorable="d">
     <Border Margin="0,0,5,0"
             BorderThickness="1"
-            Background="CornflowerBlue"
+            Background="DarkOrange"
             CornerRadius="5">
-        <StackPanel Orientation="Vertical" Width="250">
+        <StackPanel Orientation="Vertical" Width="300">
             <TextBlock Margin="10,5"
                        Foreground="White"
                        FontSize="16"
                        FontWeight="DemiBold"
                        TextAlignment="Left">
-                <Run Text="Standard twisting Number" />
+                <Run Text="Quantity (kgs.)" />
                 <LineBreak />
-                <Run Text="(จำนวนเกลียวมาตรฐาน), (SC)" />
+                <Run Text="ปริมาณ (กก.)" />
             </TextBlock>
-            <TextBlock Margin="0,2"
-                       FontSize="28"
+            <DockPanel LastChildFill="True">
+                <!--
+                <TextBlock Margin="0,2"
+                           FontSize="48"
+                           Foreground="White"
+                           FontWeight="DemiBold"
+                           TextAlignment="Center"
+                           Text="{Binding TotalWeight, StringFormat='{}{0:n1}'}" />
+                -->
+                <TextBlock Margin="0,2"
+                       FontSize="36"
                        Foreground="White"
                        FontWeight="DemiBold"
                        TextAlignment="Center"
-                       Text="120.0 +15.0( S ) T/M" />
+                       Text="0.0" />
+            </DockPanel>
         </StackPanel>
     </Border>
 </UserControl>

@@ -80,6 +80,9 @@
     <Compile Include="Controls\Elements\CustomerBox.xaml.cs">
       <DependentUpon>CustomerBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Elements\FlowBox.xaml.cs">
+      <DependentUpon>FlowBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Elements\ItemYarnBox.xaml.cs">
       <DependentUpon>ItemYarnBox.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,12 @@
     </Compile>
     <Compile Include="Controls\Elements\ProductCodeBox.xaml.cs">
       <DependentUpon>ProductCodeBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\ProductInfoBox.xaml.cs">
+      <DependentUpon>ProductInfoBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\ProductLotNo.xaml.cs">
+      <DependentUpon>ProductLotNo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Elements\ProductNameBox.xaml.cs">
       <DependentUpon>ProductNameBox.xaml</DependentUpon>
@@ -344,6 +353,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Elements\FlowBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Elements\ItemYarnBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -357,6 +370,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Elements\ProductCodeBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\ProductInfoBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\ProductLotNo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

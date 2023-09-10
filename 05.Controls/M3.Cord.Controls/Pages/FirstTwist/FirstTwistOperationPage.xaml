@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             d:DesignHeight="450"
+             d:DesignHeight="800"
              d:DesignWidth="1200">
     <page:NPage x:Name="page" HeaderText="1st Twisting - ">
         <DockPanel LastChildFill="True" Margin="5">
@@ -36,42 +37,35 @@
                 <Grid />
             </DockPanel>
             <DockPanel x:Name="paPCCard" LastChildFill="True">
-                <DockPanel LastChildFill="True" DockPanel.Dock="Top">
+                <DockPanel LastChildFill="True"
+                           DockPanel.Dock="Top"
+                           Margin="2">
                     <StackPanel Orientation="Horizontal">
-                        <ctrl:NTextBox CaptionText="Customer:"
-                                       IsReadOnly="True"
-                                       Text="{Binding CustomerName}" />
-                        <ctrl:NTextBox CaptionText="Product Name:"
-                                       IsReadOnly="True"
-                                       Text="{Binding ProductName}" />
-                        <ctrl:NTextBox CaptionText="Product Code:"
-                                       IsReadOnly="True"
-                                       Text="{Binding ProductCode}" />
+                        <elem:CustomerBox />
+                        <elem:ProductInfoBox />
+                        <elem:TargetQtyBox />
+                        <elem:FlowBox />
+                        <!--
                         <ctrl:NTextBox CaptionText="Lot No:"
                                        IsReadOnly="True"
                                        Text="{Binding ProductLotNo}" />
-                        <ctrl:NTextBox CaptionText="Weight:"
-                                       Width="150"
-                                       IsReadOnly="True"
-                                       Text="{Binding TargetQty}" />
                         <ctrl:NTextBox CaptionText="Flow:"
                                        Width="120"
                                        IsReadOnly="True"
                                        Text="{Binding MCCode}" />
+                        -->
                     </StackPanel>
                 </DockPanel>
-                <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-                    <ctrl:NTextBox CaptionText="Cord Structure:"
-                                   IsReadOnly="True"
-                                   Text="{Binding CordStructure}" />
-                    <ctrl:NTextBox CaptionText="Raw Yarn:"
-                                   Width="350"
-                                   IsReadOnly="True"
-                                   Text="{Binding ItemYarn}" />
-                    <ctrl:NTextBox CaptionText="Twist spec (SC):"
-                                   Width="350"
-                                   IsReadOnly="True"
-                                   Text="{Binding TwistSpec}" />
+                <DockPanel LastChildFill="True"
+                           DockPanel.Dock="Top"
+                           Margin="2">
+                    <elem:ItemYarnBox />
+                    <elem:StdTwistNoBox />
+                    <elem:CordStructureBox />
+                    <!--
+                    <elem:PaperTubeBox />
+                    -->
+                    <elem:ProductLotNo />
                     <Grid />
                 </DockPanel>
                 <Grid />
