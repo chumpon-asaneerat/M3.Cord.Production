@@ -30,9 +30,14 @@
                             VerticalAlignment="Center">
                     <ctrl:FontAwesomeButton x:Name="cmdSelectPCCard"
                                             Margin="5,0,0,0"
-                                            IconType="Import"
+                                            IconType="Add"
                                             Text="Set PC Card"
                                             Click="cmdSelectPCCard_Click" />
+                    <ctrl:FontAwesomeButton x:Name="cmdLoadYarn"
+                                            Margin="5,0,0,0"
+                                            IconType="Import"
+                                            Text="Load Yarn"
+                                            Click="cmdLoadYarn_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>

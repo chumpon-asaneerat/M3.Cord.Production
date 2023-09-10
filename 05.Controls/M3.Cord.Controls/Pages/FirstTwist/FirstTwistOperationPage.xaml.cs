@@ -71,6 +71,15 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void cmdLoadYarn_Click(object sender, RoutedEventArgs e)
+        {
+            if (null == selectedMC || null == pcCard)
+                return;
+            var win = M3CordApp.Windows.Twist1LoadRecordEditor;
+            win.Setup(selectedMC, pcCard);
+            if (win.ShowDialog() == false) return;
+        }
+
         #endregion
 
         #region Private Methods
@@ -95,6 +104,7 @@ namespace M3.Cord.Pages
             // Binding
             paPCCard.DataContext = pcCard;
             cmdSelectPCCard.IsEnabled = (null == pcCard);
+            cmdLoadYarn.IsEnabled = (null != pcCard);
         }
 
         #endregion
