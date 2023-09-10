@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
         xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
         mc:Ignorable="d"
         Title="Load Yarn"
@@ -36,78 +37,93 @@
             <DockPanel LastChildFill="True">
                 <DockPanel DockPanel.Dock="Top">
                     <!--  DATE TIME  -->
-                    <ctrl:NTextBox CaptionText="DATE/TIME:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding Path=ProductionDate, StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}"
-                                   IsReadOnly="True"
-                                   Width="250" />
+                    <elem:ProductionDateBox DockPanel.Dock="Left" />
                     <!--  ITEM YARN  -->
-                    <ctrl:NTextBox CaptionText="Item Yarn:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding ItemYarn}"
-                                   IsReadOnly="True"
-                                   Width="300" />
+                    <elem:ItemYarnBox DockPanel.Dock="Left" />
                     <!--  LOT NO  -->
-                    <ctrl:NTextBox CaptionText="Lot No:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding ProductLotNo}"
-                                   IsReadOnly="True"
-                                   Width="150" />
-                    <CheckBox x:Name="chkTest" Style="{StaticResource CommonCheckBox}" 
-                              Margin="0,0,0,10"
-                              FontSize="20"
-                              Content="Test"
-                              VerticalAlignment="Bottom"
-                              Checked="chkTest_Checked"
-                              Unchecked="chkTest_Unchecked"/>
-                    <!--  Doff No  -->
-                    <ctrl:NTextBox CaptionText="Doff No:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding DoffNo}"
-                                   IsReadOnly="True"
-                                   Width="150" />
-                    <!--  Shift  -->
-                    <ctrl:NTextBox CaptionText="Shift:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding ShiftName}"
-                                   Width="100" />
+                    <elem:ProductLotNo DockPanel.Dock="Left" />
                     <Grid />
                 </DockPanel>
-                <DockPanel DockPanel.Dock="Top">
-                    <ctrl:NTextBox x:Name="txtScanPallet"
-                                   CaptionText="Pallet No:"
-                                   DockPanel.Dock="Left"
-                                   Text=""
-                                   Width="200"
-                                   PreviewKeyDown="txtScanPallet_PreviewKeyDown" />
+                <!--  INPUT INFO  -->
+                <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                    <StackPanel Orientation="Horizontal">
+                        <!--  TEST/NORMAL DOFF MODE  -->
+                        <CheckBox x:Name="chkTest"
+                                  Style="{StaticResource CommonCheckBox}"
+                                  Margin="5"
+                                  FontSize="24"
+                                  Content="Test (DOFF)"
+                                  VerticalAlignment="Bottom"
+                                  Checked="chkTest_Checked"
+                                  Unchecked="chkTest_Unchecked" />
+                        <!--  DOFF NO  -->
+                        <ctrl:NTextBox CaptionText="Doff No:"
+                                       DockPanel.Dock="Left"
+                                       Text="{Binding DoffNo}"
+                                       IsReadOnly="True"
+                                       Width="150" />
+                        <!--  SHIFT NO  -->
+                        <ctrl:NTextBox CaptionText="Shift:"
+                                       DockPanel.Dock="Left"
+                                       Text="{Binding ShiftName}"
+                                       Width="100" />
+                        <!--  Scan Pallet No  -->
+                        <ctrl:NTextBox x:Name="txtScanPallet"
+                                       CaptionText="Pallet No:"
+                                       DockPanel.Dock="Left"
+                                       WatermarkImageWidth="30"
+                                       WatermarkImageHeight="25"
+                                       WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
+                                       WatermarkText="Scan Pallet No"
+                                       Text=""
+                                       Width="250"
+                                       PreviewKeyDown="txtScanPallet_PreviewKeyDown" />
+                    </StackPanel>
+                </DockPanel>
+                <!--  CURRENT PALLET INFO  -->
+                <DockPanel x:Name="paCurrPallet" DockPanel.Dock="Top">
+                    <!--  Pallet No  -->
+                    <elem:PalletNoBox DockPanel.Dock="Left" />
+                    <!--  Trace No  -->
+                    <elem:TraceNoBox DockPanel.Dock="Left" />
+                    <!--  Total CH  -->
+                    <elem:TotalCHBox DockPanel.Dock="Left" />
+                    <!--  Total Weight  -->
+                    <elem:TotalWeightBox DockPanel.Dock="Left" />
                     <Grid />
                 </DockPanel>
-                <DockPanel DockPanel.Dock="Top">
-                    <ctrl:NTextBox x:Name="txtPallet"
-                                   CaptionText="Pallet No:"
-                                   DockPanel.Dock="Left"
-                                   Text=""
-                                   Width="200" />
-                    <ctrl:NTextBox x:Name="txtTraceNo"
-                                   CaptionText="Trace No:"
-                                   DockPanel.Dock="Left"
-                                   Text=""
-                                   IsReadOnly="True"
-                                   Width="200" />
-                    <ctrl:NTextBox x:Name="txtTotalCH"
-                                   CaptionText="Total CH:"
-                                   DockPanel.Dock="Left"
-                                   Text=""
-                                   IsReadOnly="True"
-                                   Width="180" />
-                    <ctrl:NTextBox x:Name="txtTotalWg"
-                                   CaptionText="Total Weight:"
-                                   DockPanel.Dock="Left"
-                                   Text=""
-                                   IsReadOnly="True"
-                                   Width="180" />
+                <!--  SCAN OPTIONS  -->
+                <DockPanel x:Name="paScanOption"
+                           DockPanel.Dock="Top"
+                           LastChildFill="True"
+                           Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton x:Name="rb1Only"
+                                     Margin="2"
+                                     GroupName="ScanOption"
+                                     Style="{StaticResource CommonRadioButton}"
+                                     FontSize="24"
+                                     Content="SP 1 Only" 
+                                     Checked="rbOption_Checked"/>
+                        <RadioButton x:Name="rb2Only"
+                                     Margin="2"
+                                     GroupName="ScanOption"
+                                     Style="{StaticResource CommonRadioButton}"
+                                     FontSize="24"
+                                     Content="SP 2 Only" 
+                                     Checked="rbOption_Checked"/>
+                        <RadioButton x:Name="rbToggle"
+                                     Margin="2"
+                                     GroupName="ScanOption"
+                                     Style="{StaticResource CommonRadioButton}"
+                                     FontSize="24"
+                                     IsChecked="True"
+                                     Content="SP 1-&gt;2" 
+                                     Checked="rbOption_Checked"/>
+                    </StackPanel>
                     <Grid />
                 </DockPanel>
+                <!--  SP SCAN INFO  -->
                 <DockPanel DockPanel.Dock="Top">
                     <ctrl:NTextBox x:Name="txtSPNo"
                                    CaptionText="SP No:"

@@ -86,6 +86,9 @@
     <Compile Include="Controls\Elements\ItemYarnBox.xaml.cs">
       <DependentUpon>ItemYarnBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Elements\PalletNoBox.xaml.cs">
+      <DependentUpon>PalletNoBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Elements\PaperTubeBox.xaml.cs">
       <DependentUpon>PaperTubeBox.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,9 @@
     <Compile Include="Controls\Elements\ProductInfoBox.xaml.cs">
       <DependentUpon>ProductInfoBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Elements\ProductionDateBox.xaml.cs">
+      <DependentUpon>ProductionDateBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Elements\ProductLotNo.xaml.cs">
       <DependentUpon>ProductLotNo.xaml</DependentUpon>
     </Compile>
@@ -109,6 +115,15 @@
     </Compile>
     <Compile Include="Controls\Elements\TargetQtyBox.xaml.cs">
       <DependentUpon>TargetQtyBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\TotalCHBox.xaml.cs">
+      <DependentUpon>TotalCHBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\TotalWeightBox.xaml.cs">
+      <DependentUpon>TotalWeightBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\TraceNoBox.xaml.cs">
+      <DependentUpon>TraceNoBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Excels\ExcelColumnMapControl.xaml.cs">
       <DependentUpon>ExcelColumnMapControl.xaml</DependentUpon>
@@ -361,6 +376,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Elements\PalletNoBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Elements\PaperTubeBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -377,6 +396,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Elements\ProductionDateBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Elements\ProductLotNo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -390,6 +413,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Elements\TargetQtyBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\TotalCHBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\TotalWeightBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\TraceNoBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

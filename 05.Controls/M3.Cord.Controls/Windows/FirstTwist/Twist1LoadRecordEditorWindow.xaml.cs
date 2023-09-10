@@ -44,7 +44,7 @@ namespace M3.Cord.Windows
         private FirstTwistMC _mc;
         private PCTwist1 _pcCard;
         private Twist1LoadRecord _item = null;
-        private G4IssueYarn _pallet = null;
+        private G4IssueYarn _pallet = null; // current pallet
 
         #endregion
 
@@ -59,13 +59,10 @@ namespace M3.Cord.Windows
                 if (!string.IsNullOrEmpty(palletNo))
                 {
                     _pallet = G4IssueYarn.SearchWarehousePallet(palletNo).Value();
-                    txtPallet.Text = (null != _pallet) ? _pallet.PalletNo : string.Empty;
-                    txtTraceNo.Text = (null != _pallet) ? _pallet.TraceNo : string.Empty;
-                    txtTotalCH.Text = (null != _pallet && _pallet.ConeCH.HasValue) ? 
-                        _pallet.ConeCH.Value.ToString("n0") : "0";
-                    txtTotalWg.Text = (null != _pallet && _pallet.WeightQty.HasValue) ? 
-                        _pallet.WeightQty.Value.ToString("n2") : "0";
                 }
+
+                RefreshCurrentPallet();
+
                 e.Handled = true;
             }
         }
@@ -86,6 +83,7 @@ namespace M3.Cord.Windows
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
+            AppendYarn();
             /*
             if (null != _item && null != Items)
             {
@@ -119,6 +117,15 @@ namespace M3.Cord.Windows
 
         #endregion
 
+        #region Radio Button Handlers
+
+        private void rbOption_Checked(object sender, RoutedEventArgs e)
+        {
+            CheckEnableScanOption();
+        }
+
+        #endregion
+
         #region Private Methods
 
         private void NewItem()
@@ -138,6 +145,131 @@ namespace M3.Cord.Windows
 
                 this.DataContext = _item;
             }
+
+            RefreshCurrentPallet();
+        }
+
+        private void RefreshCurrentPallet()
+        {
+            paCurrPallet.DataContext = _pallet;
+        }
+
+        private void EnableScanOption()
+        {
+            if (null != _mc)
+            {
+                txtSPNo.IsReadOnly = false;
+                txtDeckNo.IsReadOnly = false;
+
+                txtSPNo.Text = _mc.StartCore.ToString();
+
+                if (_mc.DeckPerCore == 2)
+                {
+                    paScanOption.Visibility = Visibility.Visible;
+                    CheckEnableScanOption();
+                }
+                else
+                {
+                    paScanOption.Visibility = Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                paScanOption.Visibility = Visibility.Collapsed;
+
+                txtSPNo.Text = "0";
+                txtDeckNo.Text = "0";
+
+                txtSPNo.IsReadOnly = true;
+                txtDeckNo.IsReadOnly = true;
+            }
+        }
+
+        private void CheckEnableScanOption()
+        {
+            try
+            {
+                if (null == txtDeckNo)
+                    return;
+                if (rb1Only.IsChecked == true)
+                {
+                    txtDeckNo.Text = "1";
+                    txtDeckNo.IsReadOnly = true;
+                }
+                else if (rb2Only.IsChecked == true)
+                {
+                    txtDeckNo.Text = "2";
+                    txtDeckNo.IsReadOnly = true;
+                }
+                else if (rbToggle.IsChecked == true)
+                {
+                    txtDeckNo.Text = "1";
+                    txtDeckNo.IsReadOnly = false;
+                }
+                else
+                {
+                    txtDeckNo.Text = "1";
+                    txtDeckNo.IsReadOnly = false;
+                }
+            }
+            catch { }
+        }
+
+        private void AppendYarn()
+        {
+            if (null == _mc)
+                return;
+
+            string spNo = txtSPNo.Text.Trim();
+            string deckNo = txtDeckNo.Text.Trim();
+            string yarnBarcode = txtYarnBarcode.Text.Trim();
+            if (string.IsNullOrEmpty(spNo) || string.IsNullOrEmpty(deckNo))
+            {
+                return;
+            }
+            int iSPNo, iDeckNo;
+            if (!int.TryParse(spNo, out iSPNo))
+            {
+                return;
+            }
+            if (!int.TryParse(deckNo, out iDeckNo))
+            {
+                return;
+            }
+
+            if (_mc.DeckPerCore == 2)
+            {
+                if (rb1Only.IsChecked == true)
+                {
+                    iDeckNo = 1;
+                    iSPNo++;
+                    txtSPNo.Text = iSPNo.ToString();
+                }
+                else if (rb2Only.IsChecked == true)
+                {
+                    iDeckNo = 2;
+                    iSPNo++;
+                    txtSPNo.Text = iSPNo.ToString();
+                }
+                else if (rbToggle.IsChecked == true)
+                {
+                    if (iDeckNo == 1)
+                    {
+                        iDeckNo = 2;
+                    }
+                    else
+                    {
+                        iDeckNo = 1;
+                        iSPNo++;
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            txtDeckNo.Text = iDeckNo.ToString();
+            txtSPNo.Text = iSPNo.ToString();
         }
 
         private void RefreshGrid()
@@ -152,8 +284,13 @@ namespace M3.Cord.Windows
 
         public void Setup(FirstTwistMC mc, PCTwist1 pcCard)
         {
+            RefreshCurrentPallet();
+
             _mc = mc;
             _pcCard = pcCard;
+
+            EnableScanOption();
+
             /*
             this.Items = new List<YarnLoadSheetDoff>();
             */

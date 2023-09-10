@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="M3.Cord.Controls.Elements.ProductionDateBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             d:DesignHeight="120"
+             mc:Ignorable="d">
+    <Border Margin="0,0,5,0"
+            BorderThickness="1"
+            Background="DarkMagenta"
+            CornerRadius="5">
+        <StackPanel Orientation="Vertical" Width="250">
+            <TextBlock Margin="10,5"
+                       Foreground="White"
+                       FontSize="16"
+                       FontWeight="DemiBold"
+                       TextAlignment="Left">
+                <Run Text="DATE/TIME" />
+                <LineBreak />
+                <Run Text="(วันที่ผลิต)" />
+            </TextBlock>
+            <TextBlock Margin="0,2"
+                       FontSize="18"
+                       Foreground="White"
+                       FontWeight="DemiBold"
+                       TextAlignment="Center">
+                <Run Text="{Binding Path=ProductionDate, StringFormat='{}{0:dd/MM/yyyy}'}" />
+                <LineBreak />
+                <Run Text="{Binding Path=ProductionDate, StringFormat='{}{0:HH:mm:ss}'}" />
+            </TextBlock>
+        </StackPanel>
+    </Border>
+</UserControl>
