@@ -9,6 +9,111 @@
              mc:Ignorable="d"
              d:DesignHeight="800"
              d:DesignWidth="1200">
+    <UserControl.Resources>
+        <Style x:Key="CommonHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="True" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style x:Key="RotateHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="True" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="FontSize" Value="18" />
+            <!--
+            <Setter Property="LayoutTransform">
+                <Setter.Value>
+                    <RotateTransform Angle="-90" />
+                </Setter.Value>
+            </Setter>
+            -->
+        </Style>
+        <!--  EACH CELL TEMPLATE  -->
+        <DataTemplate x:Key="Keiba">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=SKeiba, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <DataTemplate x:Key="Traverse">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=STraverse, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <DataTemplate x:Key="Crossing">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=SCrossing, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <DataTemplate x:Key="ScrapeTube">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=SScrapeTube, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <DataTemplate x:Key="Form">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=SForm, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <DataTemplate x:Key="Stain">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=SStain, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="DefectGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource Keiba}"
+                            Header=" Keiba "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource Traverse}"
+                            Header=" Traverse "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource Crossing}"
+                            Header=" Crossing "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="120"
+                            CellTemplate="{StaticResource ScrapeTube}"
+                            Header=" Scrape Tube "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource Form}"
+                            Header=" Form "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource Stain}"
+                            Header=" Stain "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="DefectColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Defect Type" />
+                    <LineBreak />
+                    <Run Text="(ชนิดของเสีย)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource DefectGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="DefectColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource DefectGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
     <page:NPage x:Name="page" HeaderText="1st Twisting - ">
         <TabControl>
             <TabItem Header="PC Card">
@@ -57,7 +162,8 @@
                             <elem:FlowBox />
                             <Grid />
                         </DockPanel>
-                        <ListView x:Name="lvPCCards" Margin="0,0,0,5"
+                        <ListView x:Name="lvPCCards"
+                                  Margin="0,0,0,5"
                                   FontSize="{StaticResource FontSize18}"
                                   ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
                                   ItemsSource="{Binding}"
@@ -111,7 +217,8 @@
                             <elem:FlowBox />
                             <Grid />
                         </DockPanel>
-                        <ListView x:Name="lvRawMats" Margin="0,0,0,5"
+                        <ListView x:Name="lvRawMats"
+                                  Margin="0,0,0,5"
                                   FontSize="{StaticResource FontSize18}"
                                   ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
                                   ItemsSource="{Binding}"
@@ -120,6 +227,15 @@
                                 <GridView>
                                     <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
                                     <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource ItemYarn}" />
+                                    <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
+                                    <GridViewColumn Header="Input (CH)" CellTemplate="{StaticResource InputCH}" />
+                                    <GridViewColumn Header="Doff" CellTemplate="{StaticResource DoffNo}" />
+                                    <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNos}" />
+                                    <GridViewColumn Width="Auto"
+                                                    CellTemplate="{StaticResource DefectColumns}"
+                                                    HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                                    HeaderTemplate="{StaticResource DefectColumnsHeader}" />
+                                    <GridViewColumn Header="Shift" CellTemplate="{StaticResource ShiftName}" />
                                 </GridView>
                             </ListView.View>
                         </ListView>

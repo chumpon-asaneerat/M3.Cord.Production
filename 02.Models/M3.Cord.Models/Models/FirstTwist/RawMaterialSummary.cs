@@ -76,6 +76,42 @@ namespace M3.Cord.Models
         public bool Form { get; set; }
         public bool Stain { get; set; }
 
+        public string SKeiba
+        {
+            get { return (Keiba) ? "X" : "-"; }
+            set { }
+        }
+        public string STraverse
+        {
+            get { return (Traverse) ? "X" : "-"; }
+            set { }
+        }
+
+        public string SCrossing
+        {
+            get { return (Crossing) ? "X" : "-"; }
+            set { }
+        }
+
+        public string SScrapeTube
+        {
+            get { return (ScrapeTube) ? "X" : "-"; }
+            set { }
+        }
+
+        public string SForm
+        {
+            get { return (Form) ? "X" : "-"; }
+            set { }
+        }
+
+        public string SStain
+        {
+            get { return (Stain) ? "X" : "-"; }
+            set { }
+        }
+
+
         public SolidColorBrush TextColor { get { return BlackColor; } set { } }
 
         #endregion
