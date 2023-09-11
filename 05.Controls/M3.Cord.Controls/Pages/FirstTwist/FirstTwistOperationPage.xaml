@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:s1="clr-namespace:M3.Cord.Controls.Documents"
              xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -379,6 +380,18 @@
                                                     IconType="Add"
                                                     Text="Set PC Card"
                                                     Click="cmdSelectPCCard_Click" />
+
+                            <ctrl:FontAwesomeButton x:Name="cmdStartDoff"
+                                                    Margin="5,0,0,0"
+                                                    IconType="None"
+                                                    Text="Start Doff"
+                                                    Click="cmdStartDoff_Click" />
+
+                            <ctrl:FontAwesomeButton x:Name="cmdEndDoff"
+                                                    Margin="5,0,0,0"
+                                                    IconType="None"
+                                                    Text="End Doff"
+                                                    Click="cmdEndDoff_Click" />
                         </StackPanel>
                         <Grid />
                     </DockPanel>
@@ -406,20 +419,20 @@
                                   FontSize="{StaticResource FontSize18}"
                                   ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
                                   ItemsSource="{Binding}"
-                                  Style="{StaticResource SingleSelectListView}">
+                                  Style="{StaticResource SingleSelectListView}"
+                                  SelectionChanged="lvPCCards_SelectionChanged">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
-                                    <GridViewColumn Header="Process" />
+                                    <GridViewColumn Header="Process" CellTemplate="{StaticResource MCCode}" />
                                     <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNo}" />
-                                    <GridViewColumn Header="Unit weight" />
-                                    <GridViewColumn Header="Number" />
-                                    <GridViewColumn Header="Product" />
-                                    <GridViewColumn Header="Start time" />
-                                    <GridViewColumn Header="End time" />
-                                    <GridViewColumn Header="Waste weight" />
-                                    <GridViewColumn Header="Shift" />
-                                    <GridViewColumn Header="Remark" />
+                                    <GridViewColumn Header="Unit weight" CellTemplate="{StaticResource UnitWeight}" />
+                                    <GridViewColumn Header="Number" CellTemplate="{StaticResource OutputCH}" />
+                                    <GridViewColumn Header="Product" CellTemplate="{StaticResource ProductWeight}" />
+                                    <GridViewColumn Header="Start time" CellTemplate="{StaticResource StartTime}"/>
+                                    <GridViewColumn Header="End time" CellTemplate="{StaticResource EndTime}"/>
+                                    <GridViewColumn Header="Waste weight" CellTemplate="{StaticResource WasteWeight}"/>
+                                    <GridViewColumn Header="Remark" CellTemplate="{StaticResource Remark}"/>
                                 </GridView>
                             </ListView.View>
                         </ListView>
@@ -596,7 +609,7 @@
                         </StackPanel>
                         <Grid />
                     </DockPanel>
-                    <Grid />
+                    <s1:S1ConditionPage />
                 </DockPanel>
             </TabItem>
         </TabControl>

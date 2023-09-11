@@ -321,6 +321,18 @@ namespace M3.Cord
             {
                 get { return GetWindow<Twist1S1ConditionWindow>(); }
             }
+
+            /// <summary>Gets Start Twist1 Op Window.</summary>
+            public static StartTwist1OpWindow StartTwist1Op
+            {
+                get { return GetWindow<StartTwist1OpWindow>(); }
+            }
+            /// <summary>Gets End Twist1 Op Window.</summary>
+            public static EndTwist1OpWindow EndTwist1Op
+            {
+                get { return GetWindow<EndTwist1OpWindow>(); }
+            }
+
             /*
             /// <summary>Gets Yarn Loading Window.</summary>
             public static YarnLoadingWindow YarnLoading

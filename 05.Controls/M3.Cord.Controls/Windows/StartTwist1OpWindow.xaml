@@ -1,0 +1,65 @@
+﻿<Window x:Class="M3.Cord.Windows.StartTwist1OpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        mc:Ignorable="d"
+        Title="Start Doff"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="400"
+        Width="600">
+    <page:NPage HeaderText="Start Doff">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdOk"
+                                        DockPanel.Dock="Right"
+                                        IconType="Ok"
+                                        Text="Ok"
+                                        Click="cmdOk_Click" />
+                <Grid />
+            </DockPanel>
+            <!--  WORK AREA  -->
+            <DockPanel LastChildFill="True">
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  DATE TIME  -->
+                    <elem:ProductionDateBox DockPanel.Dock="Left" />
+                    <elem:FlowBox DockPanel.Dock="Left" />
+                    <Grid />
+                </DockPanel>
+                <!--  INPUT INFO  -->
+                <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                    <StackPanel Orientation="Horizontal">
+                        <!--  TEST/NORMAL DOFF MODE  -->
+                        <CheckBox x:Name="chkTest"
+                                  Style="{StaticResource CommonCheckBox}"
+                                  Margin="5"
+                                  FontSize="24"
+                                  Content="Test (DOFF)"
+                                  VerticalAlignment="Bottom" />
+                        <!--  DOFF NO  -->
+                        <ctrl:NTextBox CaptionText="Doff No:"
+                                       DockPanel.Dock="Left"
+                                       Text="{Binding DoffNo}"
+                                       Width="150" />
+                    </StackPanel>
+                </DockPanel>
+                <Grid />
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>

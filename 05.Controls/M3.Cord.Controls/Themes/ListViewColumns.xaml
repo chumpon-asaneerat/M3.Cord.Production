@@ -80,10 +80,58 @@
                    MinWidth="150" />
     </DataTemplate>
 
+    <DataTemplate x:Key="MCCode">
+        <TextBlock Text="{Binding Path=MCCode, Mode=OneWay}"
+                   TextAlignment="Left"
+                   MinWidth="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="Remark">
+        <TextBlock Text="{Binding Path=Remark, Mode=OneWay}"
+                   TextAlignment="Left"
+                   MinWidth="200" />
+    </DataTemplate>
+
     <DataTemplate x:Key="ProductionDate">
         <TextBlock Text="{Binding Path=ProductionDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="StartTime">
+        <TextBlock Text="{Binding Path=StartTime, StringFormat='{}{0:HH:mm}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="EndTime">
+        <TextBlock Text="{Binding Path=EndTime, StringFormat='{}{0:HH:mm}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="UnitWeight">
+        <TextBlock Text="{Binding Path=UnitWeight, Mode=OneWay, StringFormat='{}{0:n1}'}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="ProductWeight">
+        <TextBlock Text="{Binding Path=ProductWeight, Mode=OneWay, StringFormat='{}{0:n1}'}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="WasteWeight">
+        <TextBlock Text="{Binding Path=WasteWeight, Mode=OneWay, StringFormat='{}{0:n1}'}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="OutputCH">
+        <TextBlock Text="{Binding Path=OutputCH, Mode=OneWay, StringFormat='{}{0:n0}'}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
     </DataTemplate>
 
     <DataTemplate x:Key="InputCH">

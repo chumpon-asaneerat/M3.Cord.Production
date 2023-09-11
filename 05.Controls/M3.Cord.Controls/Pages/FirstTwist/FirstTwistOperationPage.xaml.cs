@@ -45,6 +45,7 @@ namespace M3.Cord.Pages
 
         private FirstTwistMC selectedMC;
         private PCTwist1 pcCard;
+        private PCTwist1Operation _operation = null;
 
         private List<Twist1CheckSheet> checkSheets = null;
 
@@ -91,6 +92,62 @@ namespace M3.Cord.Pages
             SaveCheckSheets();
         }
 
+        private void cmdStartDoff_Click(object sender, RoutedEventArgs e)
+        {
+            if (null == selectedMC || null == pcCard)
+                return;
+            var win = M3CordApp.Windows.StartTwist1Op;
+            _operation = new PCTwist1Operation();
+            _operation.PCTwist1Id = pcCard.PCTwist1Id;
+            _operation.ProductionDate = DateTime.Now;
+            _operation.MCCode = selectedMC.MCCode;
+            win.Setup(_operation); // New
+            if (win.ShowDialog() == false) return;
+            RefreshPCCards();
+        }
+
+        private void cmdEndDoff_Click(object sender, RoutedEventArgs e)
+        {
+            if (null != lvPCCards.SelectedItem)
+            {
+                var selected = lvPCCards.SelectedItem as PCTwist1Operation;
+                if (null != selected)
+                {
+                    _operation = selected;
+                }
+                else
+                {
+                    _operation = null;
+                }
+
+                // already has end time.
+                if (null != _operation && _operation.EndTime.HasValue)
+                {
+                    _operation = null;
+                    return;
+                }
+            }
+
+            if (null == selectedMC || null == pcCard || null == _operation)
+                return;
+
+            var win = M3CordApp.Windows.EndTwist1Op;
+            _operation.PCTwist1Id = pcCard.PCTwist1Id;
+            _operation.MCCode = selectedMC.MCCode;
+            win.Setup(_operation); // New
+            if (win.ShowDialog() == false) return;
+            RefreshPCCards();
+        }
+
+        #endregion
+
+        #region ListView Handlers
+
+        private void lvPCCards_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
         #endregion
 
         #region Private Methods
@@ -131,7 +188,10 @@ namespace M3.Cord.Pages
 
         private void RefreshPCCards()
         {
-
+            lvPCCards.ItemsSource = null;
+            if (null == pcCard) return;
+            var items = PCTwist1Operation.Gets(pcCard.PCTwist1Id.Value).Value();
+            lvPCCards.ItemsSource = items;
         }
 
         private void RefreshRawMaterials()
