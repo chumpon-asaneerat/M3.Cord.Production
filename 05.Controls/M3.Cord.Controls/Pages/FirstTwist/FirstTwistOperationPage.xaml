@@ -121,12 +121,12 @@
         <DataTemplate x:Key="RawB">
             <CheckBox FontSize="18"
                       Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding Path=RawB, Mode=OneWay}" />
+                      IsChecked="{Binding Path=RawB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="RawE">
             <CheckBox FontSize="18"
                       Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding Path=RawE, Mode=OneWay}" />
+                      IsChecked="{Binding Path=RawE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="RawColumns">
@@ -168,12 +168,12 @@
         <DataTemplate x:Key="CrossB">
             <CheckBox FontSize="18"
                       Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding Path=CrossB, Mode=OneWay}" />
+                      IsChecked="{Binding Path=CrossB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="CrossE">
             <CheckBox FontSize="18"
                       Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding Path=CrossE, Mode=OneWay}" />
+                      IsChecked="{Binding Path=CrossE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="CrossColumns">
@@ -215,12 +215,12 @@
         <DataTemplate x:Key="FormB">
             <CheckBox FontSize="18"
                       Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding Path=FormB, Mode=OneWay}" />
+                      IsChecked="{Binding Path=FormB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="FormE">
             <CheckBox FontSize="18"
                       Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding Path=FormE, Mode=OneWay}" />
+                      IsChecked="{Binding Path=FormE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="FormColumns">
@@ -262,12 +262,12 @@
         <DataTemplate x:Key="KeibaB">
             <CheckBox FontSize="18"
                       Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding Path=KebaB, Mode=OneWay}" />
+                      IsChecked="{Binding Path=KebaB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="KeibaE">
             <CheckBox FontSize="18"
                       Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding Path=KebaE, Mode=OneWay}" />
+                      IsChecked="{Binding Path=KebaE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="KeibaColumns">
@@ -309,12 +309,12 @@
         <DataTemplate x:Key="StainB">
             <CheckBox FontSize="18"
                       Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding Path=StainB, Mode=OneWay}" />
+                      IsChecked="{Binding Path=StainB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="StainE">
             <CheckBox FontSize="18"
                       Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding Path=StainE, Mode=OneWay}" />
+                      IsChecked="{Binding Path=StainE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="StainColumns">
@@ -406,7 +406,23 @@
                                   FontSize="{StaticResource FontSize18}"
                                   ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
                                   ItemsSource="{Binding}"
-                                  Style="{StaticResource SingleSelectListView}" />
+                                  Style="{StaticResource SingleSelectListView}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
+                                    <GridViewColumn Header="Process" />
+                                    <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNo}" />
+                                    <GridViewColumn Header="Unit weight" />
+                                    <GridViewColumn Header="Number" />
+                                    <GridViewColumn Header="Product" />
+                                    <GridViewColumn Header="Start time" />
+                                    <GridViewColumn Header="End time" />
+                                    <GridViewColumn Header="Waste weight" />
+                                    <GridViewColumn Header="Shift" />
+                                    <GridViewColumn Header="Remark" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
                     </DockPanel>
                 </DockPanel>
             </TabItem>
@@ -503,7 +519,8 @@
                             <ctrl:FontAwesomeButton x:Name="cmdSave"
                                                     Margin="5,0,0,0"
                                                     IconType="Add"
-                                                    Text="Save" />
+                                                    Text="Save"
+                                                    Click="cmdSave_Click" />
                         </StackPanel>
                         <Grid />
                     </DockPanel>

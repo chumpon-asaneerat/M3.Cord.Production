@@ -64,7 +64,7 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<Twist1CheckSheet>> Gets(int PCTwist1Id)
+        public static NDbResult<List<Twist1CheckSheet>> Gets(int Twist1LoadId)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -83,7 +83,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@PCTwist1Id", PCTwist1Id);
+            p.Add("@Twist1LoadId", Twist1LoadId);
             try
             {
                 var items = cnn.Query<Twist1CheckSheet>("GetTwist1CheckSheets", p,

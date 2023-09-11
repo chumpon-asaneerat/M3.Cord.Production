@@ -46,6 +46,8 @@ namespace M3.Cord.Pages
         private FirstTwistMC selectedMC;
         private PCTwist1 pcCard;
 
+        private List<Twist1CheckSheet> checkSheets = null;
+
         #endregion
 
         #region Button Handlers
@@ -81,6 +83,12 @@ namespace M3.Cord.Pages
 
             // reload pc card to refresh last doff/test no. 
             pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
+        }
+
+        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        {
+            // Save Check Sheet
+            SaveCheckSheets();
         }
 
         #endregion
@@ -138,20 +146,29 @@ namespace M3.Cord.Pages
         {
             lvCheckSheet.ItemsSource = null;
             if (null == pcCard || null == selectedMC) return;
-            var items = Twist1CheckSheet.Gets(0).Value();
-            if (null == items || items.Count <= 0)
+            checkSheets = Twist1CheckSheet.Gets(0).Value();
+            if (null == checkSheets || checkSheets.Count <= 0)
             {
-                items = new List<Twist1CheckSheet>();
+                checkSheets = new List<Twist1CheckSheet>();
                 for (int i = selectedMC.StartCore; i < selectedMC.EndCore; i++)
                 {
-                    items.Add(new Twist1CheckSheet() { Twist1LoadId = 0, SPNo = i });
+                    checkSheets.Add(new Twist1CheckSheet() { Twist1LoadId = 0, SPNo = i });
                 }
             }
             else
             {
 
             }
-            lvCheckSheet.ItemsSource = items;
+            lvCheckSheet.ItemsSource = checkSheets;
+        }
+
+        private void SaveCheckSheets()
+        {
+            if (null != checkSheets)
+            {
+                checkSheets.ForEach(checkSheet => { Twist1CheckSheet.Save(checkSheet); });
+            }
+            RefreshCheckSheets();
         }
 
         #endregion
