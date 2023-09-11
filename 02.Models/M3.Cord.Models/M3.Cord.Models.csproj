@@ -99,6 +99,7 @@
     <Compile Include="Models\Documents\S1ConditionStd.cs" />
     <Compile Include="Models\Excels\ExcelModels.cs" />
     <Compile Include="Models\FirstTwist\PCTwist1.cs" />
+    <Compile Include="Models\FirstTwist\PCTwist1Operation.cs" />
     <Compile Include="Models\FirstTwist\RawMaterialSummary.cs" />
     <Compile Include="Models\FirstTwist\Twist1CheckSheet.cs" />
     <Compile Include="Models\FirstTwist\Twist1LoadRecord.cs" />
