@@ -152,6 +152,15 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FirstTwist\SubPages\FirstTwistPCCardPage.xaml.cs">
+      <DependentUpon>FirstTwistPCCardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTwist\SubPages\FirstTwistRawMateriaPagel.xaml.cs">
+      <DependentUpon>FirstTwistRawMateriaPagel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTwist\SubPages\FirstTwistYarnRecordSheetPage.xaml.cs">
+      <DependentUpon>FirstTwistYarnRecordSheetPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\EndTwist1OpWindow.xaml.cs">
       <DependentUpon>EndTwist1OpWindow.xaml</DependentUpon>
     </Compile>
@@ -483,6 +492,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Pages\FirstTwist\SubPages\FirstTwistPCCardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FirstTwist\SubPages\FirstTwistRawMateriaPagel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FirstTwist\SubPages\FirstTwistYarnRecordSheetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\FirstTwist\FirstTwistOperationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
