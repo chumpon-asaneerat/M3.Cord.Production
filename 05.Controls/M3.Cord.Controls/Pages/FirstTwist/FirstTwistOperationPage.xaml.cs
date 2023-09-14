@@ -172,6 +172,7 @@ namespace M3.Cord.Pages
             // Binding
             paPCCard.DataContext = pcCard;
             paRawMat.DataContext = pcCard;
+            paCondition.DataContext = pcCard;
 
             cmdSelectPCCard.IsEnabled = (null == pcCard);
             cmdLoadYarn.IsEnabled = (null != pcCard);

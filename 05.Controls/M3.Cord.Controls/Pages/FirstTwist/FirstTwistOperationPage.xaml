@@ -429,10 +429,10 @@
                                     <GridViewColumn Header="Unit weight" CellTemplate="{StaticResource UnitWeight}" />
                                     <GridViewColumn Header="Number" CellTemplate="{StaticResource OutputCH}" />
                                     <GridViewColumn Header="Product" CellTemplate="{StaticResource ProductWeight}" />
-                                    <GridViewColumn Header="Start time" CellTemplate="{StaticResource StartTime}"/>
-                                    <GridViewColumn Header="End time" CellTemplate="{StaticResource EndTime}"/>
-                                    <GridViewColumn Header="Waste weight" CellTemplate="{StaticResource WasteWeight}"/>
-                                    <GridViewColumn Header="Remark" CellTemplate="{StaticResource Remark}"/>
+                                    <GridViewColumn Header="Start time" CellTemplate="{StaticResource StartTime}" />
+                                    <GridViewColumn Header="End time" CellTemplate="{StaticResource EndTime}" />
+                                    <GridViewColumn Header="Waste weight" CellTemplate="{StaticResource WasteWeight}" />
+                                    <GridViewColumn Header="Remark" CellTemplate="{StaticResource Remark}" />
                                 </GridView>
                             </ListView.View>
                         </ListView>
@@ -606,6 +606,23 @@
                                                     Margin="5,0,0,0"
                                                     IconType="Add"
                                                     Text="Save" />
+                        </StackPanel>
+                        <Grid />
+                    </DockPanel>
+                    <DockPanel x:Name="paCondition"
+                               LastChildFill="True"
+                               DockPanel.Dock="Top"
+                               Margin="2">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                                <elem:CustomerBox />
+                                <elem:ItemYarnBox />
+                                <elem:CordStructureBox />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                                <elem:ProductInfoBox />
+                                <elem:StdTwistNoBox />
+                            </StackPanel>
                         </StackPanel>
                         <Grid />
                     </DockPanel>
