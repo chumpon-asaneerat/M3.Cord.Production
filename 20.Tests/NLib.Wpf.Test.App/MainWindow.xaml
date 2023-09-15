@@ -18,7 +18,8 @@
         <npage:AdvListView2Page />
         <npage:IndexerBinding1 />
         <npage:IndexerBinding2 />
-        -->
         <npage:TestComboboxPage />
+        -->
+        <npage:TestCombobox2Page />
     </Grid>
 </Window>

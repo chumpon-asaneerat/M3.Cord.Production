@@ -107,6 +107,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\TestCombobox2Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\TestComboboxPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +141,9 @@
     </Compile>
     <Compile Include="Pages\SamplePage.xaml.cs">
       <DependentUpon>SamplePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestCombobox2Page.xaml.cs">
+      <DependentUpon>TestCombobox2Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TestComboboxPage.xaml.cs">
       <DependentUpon>TestComboboxPage.xaml</DependentUpon>

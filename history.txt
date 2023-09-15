@@ -10,8 +10,10 @@ M3 Cord Production System #578
 M3 Cord Production System #577
 - 
 
+[commited]
 M3 Cord Production System #576
-- 
+- M3.Cord.Production.App re-implements #366
+  - Implements Auto Completed Combobox #5
 
 [commited]
 M3 Cord Production System #575

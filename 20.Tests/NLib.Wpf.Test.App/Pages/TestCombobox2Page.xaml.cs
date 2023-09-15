@@ -20,16 +20,13 @@ using System.Windows.Shapes;
 namespace NLib.Wpf.Test.App.Pages
 {
     /// <summary>
-    /// Interaction logic for TestComboboxPage.xaml
+    /// Interaction logic for TestCombobox2Page.xaml
     /// </summary>
-    public partial class TestComboboxPage : UserControl
+    public partial class TestCombobox2Page : UserControl
     {
         #region Constructor
 
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        public TestComboboxPage()
+        public TestCombobox2Page()
         {
             InitializeComponent();
         }
@@ -49,9 +46,7 @@ namespace NLib.Wpf.Test.App.Pages
 
         private void LoadComboBox()
         {
-            var items = new CollectionViewSource();
-            items.Source = DataItem.GetItems();
-            cbItems.ItemsSource = items.View;
+            cbItems.ItemsSource = DataItem.GetItems();
         }
 
         #endregion
