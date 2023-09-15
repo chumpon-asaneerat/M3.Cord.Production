@@ -4,8 +4,10 @@ M3 Cord Production System #580
 M3 Cord Production System #579
 - 
 
+[commited]
 M3 Cord Production System #578
-- 
+- M3.Cord.Production.App re-implements #368
+  - Update NCombobox control -> Add IsEditable proeprty
 
 [commited]
 M3 Cord Production System #577

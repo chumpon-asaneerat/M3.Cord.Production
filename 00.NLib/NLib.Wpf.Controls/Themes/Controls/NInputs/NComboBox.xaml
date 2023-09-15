@@ -33,6 +33,7 @@
                                   SelectedValuePath="{Binding SelectedValuePath, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedValue="{Binding SelectedValue, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
+                                  IsEditable="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NComboBox}, UpdateSourceTrigger=PropertyChanged}"
                                   FontSize="{TemplateBinding FontSize}"
                                   FontWeight="{TemplateBinding FontWeight}"
                                   Foreground="{TemplateBinding InputForeground}" />

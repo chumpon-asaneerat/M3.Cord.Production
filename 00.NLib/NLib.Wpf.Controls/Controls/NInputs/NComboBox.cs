@@ -123,6 +123,28 @@ namespace NLib.Wpf.Controls
 
         #endregion
 
+        #region IsEditable (for enable editable search)
+
+        /// <summary>
+        /// The IsEditableProperty Dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsEditableProperty =
+            DependencyProperty.Register(
+                nameof(IsEditable),
+                typeof(bool),
+                typeof(NComboBox),
+                new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        /// <summary>
+        /// Gets or sets IsEditable.
+        /// </summary>
+        public bool IsEditable
+        {
+            get { return (bool)GetValue(IsEditableProperty); }
+            set { SetValue(IsEditableProperty, value); }
+        }
+
+        #endregion
+
         #region ItemsSource (for datasoure binding info)
 
         /// <summary>
@@ -251,6 +273,8 @@ namespace NLib.Wpf.Controls
 
         #endregion
 
+        #region Event Handlers
+
         /// <summary>
         /// The SelectionChangedEvent Route Event.
         /// </summary>
@@ -267,5 +291,7 @@ namespace NLib.Wpf.Controls
             add { AddHandler(SelectionChangedEvent, value); }
             remove { RemoveHandler(SelectionChangedEvent, value); }
         }
+
+        #endregion
     }
 }
