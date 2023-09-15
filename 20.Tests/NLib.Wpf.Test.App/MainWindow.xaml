@@ -19,6 +19,6 @@
         <npage:IndexerBinding1 />
         <npage:IndexerBinding2 />
         -->
-        <npage:IndexerBinding1 />
+        <npage:TestComboboxPage />
     </Grid>
 </Window>
