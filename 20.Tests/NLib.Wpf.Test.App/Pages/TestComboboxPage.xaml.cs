@@ -49,7 +49,9 @@ namespace NLib.Wpf.Test.App.Pages
 
         private void LoadComboBox()
         {
-            cbItems.ItemsSource = DataItem.GetItems();
+            var items = new CollectionViewSource();
+            items.Source = DataItem.GetItems();
+            cbItems.ItemsSource = items.View;
         }
 
         #endregion

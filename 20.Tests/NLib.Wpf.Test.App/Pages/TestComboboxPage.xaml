@@ -17,6 +17,7 @@
             <ComboBox x:Name="cbItems"
                       IsEditable="True"
                       util:ComboboxAttachProperties.IsFilterOnAutocompleteEnabled="True"
+                      DisplayMemberPath="Name"
                       Width="300" />
         </StackPanel>
         <Grid />
