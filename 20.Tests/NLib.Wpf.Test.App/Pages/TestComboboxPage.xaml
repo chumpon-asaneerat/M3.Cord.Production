@@ -11,14 +11,17 @@
     <DockPanel LastChildFill="True">
         <StackPanel Orientation="Vertical"
                     DockPanel.Dock="Top"
-                    Height="50"
+                    Margin="5"
                     HorizontalAlignment="Left">
-            <TextBlock Text="Select Item:" />
+            <TextBlock Text="Avaliable Items:" />
             <ComboBox x:Name="cbItems"
                       IsEditable="True"
                       util:ComboboxAttachProperties.IsFilterOnAutocompleteEnabled="True"
                       DisplayMemberPath="Name"
                       Width="300" />
+            <TextBlock Text="Select Item:" />
+            <TextBlock DataContext="{Binding ElementName=cbItems, Path=SelectedItem}"
+                Text="{Binding Name}" />
         </StackPanel>
         <Grid />
     </DockPanel>
