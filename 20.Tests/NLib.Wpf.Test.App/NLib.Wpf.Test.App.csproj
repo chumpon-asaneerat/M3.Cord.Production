@@ -71,6 +71,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AttachProperties\ComboboxAttachProperties.cs" />
     <Compile Include="Controls\TestFormControl.xaml.cs">
       <DependentUpon>TestFormControl.xaml</DependentUpon>
     </Compile>
