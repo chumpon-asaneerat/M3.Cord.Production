@@ -161,7 +161,7 @@
     <Compile Include="Pages\FirstTwist\SubPages\FirstTwistYarnRecordSheetPage.xaml.cs">
       <DependentUpon>FirstTwistYarnRecordSheetPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\WarehouseYarnStockPage.xaml.cs">
+    <Compile Include="Pages\Warehouse\WarehouseYarnStockPage.xaml.cs">
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
@@ -576,7 +576,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\WarehouseYarnStockPage.xaml">
+    <Page Include="Pages\Warehouse\WarehouseYarnStockPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
