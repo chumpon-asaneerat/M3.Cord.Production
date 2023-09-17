@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="M3.Cord.Controls.Elements.TargetQtyBox"
+﻿<UserControl x:Class="M3.Cord.Controls.Elements.ActualQtyBox"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,7 +7,7 @@
              mc:Ignorable="d">
     <Border Margin="0,0,5,0"
             BorderThickness="1"
-            Background="DarkOrange"
+            Background="ForestGreen"
             CornerRadius="5">
         <StackPanel Orientation="Vertical" Width="300">
             <TextBlock Margin="10,5"
@@ -15,7 +15,7 @@
                        FontSize="16"
                        FontWeight="DemiBold"
                        TextAlignment="Left">
-                <Run Text="Quantity (kgs.)" />
+                <Run Text="Actual Quantity (kgs.)" />
                 <LineBreak />
                 <Run Text="ปริมาณ (กก.)" />
             </TextBlock>
@@ -25,7 +25,7 @@
                            Foreground="White"
                            FontWeight="DemiBold"
                            TextAlignment="Center">
-                    <Run Text="{Binding TargetQty, StringFormat='{}{0:n2}'}" />
+                    <Run Text="{Binding ActualQty, StringFormat='{}{0:n2}'}" />
                     <Run Text=" KG" />
                 </TextBlock>
             </DockPanel>

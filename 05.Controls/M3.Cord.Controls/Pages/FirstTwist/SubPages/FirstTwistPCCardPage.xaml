@@ -65,6 +65,7 @@
                 <elem:ItemYarnBox />
                 <elem:ProductLotNo />
                 <elem:FlowBox />
+                <elem:ActualQtyBox />
                 <Grid />
             </DockPanel>
             <ListView x:Name="lvPCCards"

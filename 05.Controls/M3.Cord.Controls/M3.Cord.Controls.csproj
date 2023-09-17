@@ -83,6 +83,9 @@
     <Compile Include="Controls\Documents\S4x2ConditionPage.xaml.cs">
       <DependentUpon>S4x2ConditionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Elements\ActualQtyBox.xaml.cs">
+      <DependentUpon>ActualQtyBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Elements\CordStructureBox.xaml.cs">
       <DependentUpon>CordStructureBox.xaml</DependentUpon>
     </Compile>
@@ -406,6 +409,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Documents\S4x2ConditionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\ActualQtyBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
