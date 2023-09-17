@@ -152,6 +152,10 @@ namespace M3.Cord.Pages
             pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
             // Binding
             paPCCard.DataContext = pcCard;
+            cmdSelectPCCard.IsEnabled = (null == pcCard);
+            // Check enable start/end doff
+            cmdStartDoff.IsEnabled = (null != pcCard && null == _operation);
+            cmdEndDoff.IsEnabled = (null != pcCard && null != _operation);
         }
 
         #endregion

@@ -19,7 +19,7 @@
                         DockPanel.Dock="Right"
                         VerticalAlignment="Center">
                 <!--  HOME  -->
-                <ctrl:FontAwesomeButton x:Name="cmdBack1"
+                <ctrl:FontAwesomeButton x:Name="cmdBack"
                                         Margin="5,0,0,0"
                                         IconType="Back"
                                         Text="Back"
