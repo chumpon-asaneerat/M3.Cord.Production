@@ -47,6 +47,35 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region TabControl Handlers
+
+        private void tabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (tabs.SelectedIndex)
+            {
+                case 0:
+                    // PC Card
+                    pagePCCard.RefreshGrids();
+                    break;
+                case 1:
+                    // Raw Material
+                    pageRawMat.RefreshGrids();
+                    break;
+                case 2:
+                    // Check Sheet
+                    pageCheckSheet.RefreshGrids();
+                    break;
+                case 3:
+                    // MC Condition
+                    //pageMCCondition.RefreshGrids();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        #endregion
+
         #region Public Methods
 
         public void Setup(FirstTwistMC mc)
@@ -65,6 +94,8 @@ namespace M3.Cord.Pages
             pageRawMat.Setup(selectedMC);
             pageCheckSheet.Setup(selectedMC);
             pageMCCondition.Setup(selectedMC);
+
+            tabs.SelectedIndex = 0; // reset index
         }
 
         #endregion
