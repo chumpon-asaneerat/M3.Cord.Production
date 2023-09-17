@@ -157,14 +157,6 @@ namespace M3.Cord.Pages
             RefreshGrids();
         }
 
-        private void RefreshGrids()
-        {
-            lvPCCards.ItemsSource = null;
-            if (null == pcCard) return;
-            var items = PCTwist1Operation.Gets(pcCard.PCTwist1Id.Value).Value();
-            lvPCCards.ItemsSource = items;
-        }
-
         #endregion
 
         #region Public Methods
@@ -173,6 +165,14 @@ namespace M3.Cord.Pages
         {
             selectedMC = mc;
             UpdateMCStatus();
+        }
+
+        public void RefreshGrids()
+        {
+            lvPCCards.ItemsSource = null;
+            if (null == pcCard) return;
+            var items = PCTwist1Operation.Gets(pcCard.PCTwist1Id.Value).Value();
+            lvPCCards.ItemsSource = items;
         }
 
         #endregion

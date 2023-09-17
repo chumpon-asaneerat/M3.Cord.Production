@@ -6,6 +6,7 @@
              xmlns:s1="clr-namespace:M3.Cord.Controls.Documents"
              xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:spage="clr-namespace:M3.Cord.Pages"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="800"
@@ -13,10 +14,13 @@
     <page:NPage x:Name="page" HeaderText="1st Twisting - ">
         <TabControl FontSize="18">
             <TabItem Header="PC Card">
+                <spage:FirstTwistPCCardPage x:Name="pagePCCard" />
             </TabItem>
             <TabItem Header="Raw Material">
+                <spage:FirstTwistRawMateriaPagel x:Name="pageRawMat" />
             </TabItem>
             <TabItem Header="Actual Yarn Twist Record Sheet">
+                <spage:FirstTwistYarnRecordSheetPage x:Name="pageCheckSheet" />
             </TabItem>
             <TabItem Header="Production condition">
                 <DockPanel LastChildFill="True">

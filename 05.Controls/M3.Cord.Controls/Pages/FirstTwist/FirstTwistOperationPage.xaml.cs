@@ -71,6 +71,10 @@ namespace M3.Cord.Pages
             {
                 page.HeaderText = "1st Twisting ";
             }
+
+            pagePCCard.Setup(selectedMC);
+            pageRawMat.Setup(selectedMC);
+            pageCheckSheet.Setup(selectedMC);
         }
 
         #endregion

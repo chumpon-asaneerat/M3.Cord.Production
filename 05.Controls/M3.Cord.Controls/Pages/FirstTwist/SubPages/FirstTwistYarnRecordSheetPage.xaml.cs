@@ -93,8 +93,30 @@ namespace M3.Cord.Pages
             RefreshGrids();
         }
 
-        private void RefreshCheckSheets()
+        private void SaveCheckSheets()
         {
+            if (null != checkSheets)
+            {
+                checkSheets.ForEach(checkSheet => { Twist1CheckSheet.Save(checkSheet); });
+            }
+            RefreshGrids();
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public void Setup(FirstTwistMC mc)
+        {
+            selectedMC = mc;
+            UpdateMCStatus();
+        }
+
+        public void RefreshGrids()
+        {
+            // Get PC Card if assigned.
+            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
+
             lvCheckSheet.ItemsSource = null;
             if (null == pcCard || null == selectedMC) return;
             checkSheets = Twist1CheckSheet.Gets(0).Value();
@@ -111,33 +133,6 @@ namespace M3.Cord.Pages
 
             }
             lvCheckSheet.ItemsSource = checkSheets;
-        }
-
-        private void RefreshGrids()
-        {
-            // Get PC Card if assigned.
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
-
-            RefreshGrids();
-        }
-
-        private void SaveCheckSheets()
-        {
-            if (null != checkSheets)
-            {
-                checkSheets.ForEach(checkSheet => { Twist1CheckSheet.Save(checkSheet); });
-            }
-            RefreshCheckSheets();
-        }
-
-        #endregion
-
-        #region Public Methods
-
-        public void Setup(FirstTwistMC mc)
-        {
-            selectedMC = mc;
-            UpdateMCStatus();
         }
 
         #endregion
