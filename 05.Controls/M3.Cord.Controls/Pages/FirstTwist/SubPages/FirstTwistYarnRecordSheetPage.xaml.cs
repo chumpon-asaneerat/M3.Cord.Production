@@ -83,12 +83,12 @@ namespace M3.Cord.Pages
 
         private void UpdateMCStatus()
         {
+            paCheckSheet.DataContext = null;
+
             // Get PC Card if assigned.
             pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
             // Binding
             paCheckSheet.DataContext = pcCard;
-
-            RefreshGrids();
         }
 
         private void SaveCheckSheets()
@@ -107,13 +107,12 @@ namespace M3.Cord.Pages
         public void Setup(FirstTwistMC mc)
         {
             selectedMC = mc;
-            UpdateMCStatus();
+            RefreshGrids();
         }
 
         public void RefreshGrids()
         {
-            // Get PC Card if assigned.
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
+            UpdateMCStatus();
 
             lvCheckSheet.ItemsSource = null;
             if (null == pcCard || null == selectedMC) return;

@@ -142,17 +142,16 @@ namespace M3.Cord.Pages
 
                 }
             }
-            UpdateMCStatus();
+            RefreshGrids();
         }
 
         private void UpdateMCStatus()
         {
+            paPCCard.DataContext = null;
             // Get PC Card if assigned.
             pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
             // Binding
             paPCCard.DataContext = pcCard;
-
-            RefreshGrids();
         }
 
         #endregion
@@ -162,11 +161,13 @@ namespace M3.Cord.Pages
         public void Setup(FirstTwistMC mc)
         {
             selectedMC = mc;
-            UpdateMCStatus();
+            RefreshGrids();
         }
 
         public void RefreshGrids()
         {
+            UpdateMCStatus();
+
             lvPCCards.ItemsSource = null;
             if (null == pcCard) return;
             var items = PCTwist1Operation.Gets(pcCard.PCTwist1Id.Value).Value();

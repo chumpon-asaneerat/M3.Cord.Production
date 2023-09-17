@@ -60,6 +60,25 @@ namespace M3.Cord.Windows
                 if (!string.IsNullOrEmpty(palletNo))
                 {
                     _pallet = G4IssueYarn.SearchWarehousePallet(palletNo).Value();
+
+                    if (null == _pallet)
+                    {
+                        var win = M3CordApp.Windows.MessageBox;
+                        win.Setup("Pallet not avaliable.");
+                        win.ShowDialog();
+                    }
+                    else
+                    {
+                        // Check is match ItemYarn
+                        if (null != _pcCard && null != _pallet &&
+                            _pallet.ItemYarn != _pcCard.ItemYarn)
+                        {
+                            var win = M3CordApp.Windows.MessageBox;
+                            win.Setup("Pallet's Item Yarn does not match with PC card.");
+                            win.ShowDialog();
+                            _pallet = null;
+                        }
+                    }
                 }
 
                 RefreshCurrentPallet();

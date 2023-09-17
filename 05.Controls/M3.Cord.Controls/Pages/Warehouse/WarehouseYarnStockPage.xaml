@@ -40,7 +40,7 @@
                                     DockPanel.Dock="Left"
                                     CaptionText="Item Yarn:"
                                     DisplayMemberPath="ItemYarn"
-                                    Width="250"
+                                    Width="300"
                                     SelectionChanged="cbItemYanrs_SelectionChanged" />
                     <Grid />
                 </DockPanel>

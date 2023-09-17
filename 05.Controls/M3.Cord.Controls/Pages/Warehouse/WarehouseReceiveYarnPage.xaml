@@ -33,7 +33,7 @@
                     <ctrl:FontAwesomeButton x:Name="cmdSave"
                                             Margin="5,0,0,0"
                                             IconType="Save"
-                                            Text="Save" 
+                                            Text="Save"
                                             Click="cmdSave_Click" />
                 </StackPanel>
                 <Grid />
@@ -50,14 +50,14 @@
                                     DockPanel.Dock="Left"
                                     CaptionText="Item Yarn:"
                                     DisplayMemberPath="ItemYarn"
-                                    Width="250"
+                                    Width="300"
                                     SelectionChanged="cbItemYanrs_SelectionChanged" />
                     <!--  RequestNo  -->
                     <ctrl:NTextBox x:Name="txtRequestNo"
-                                      DockPanel.Dock="Left"
-                                      CaptionText="Request No:"
-                                      Width="200" 
-                                   PreviewKeyDown="txtRequestNo_PreviewKeyDown"/>
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Request No:"
+                                   Width="200"
+                                   PreviewKeyDown="txtRequestNo_PreviewKeyDown" />
                     <Button x:Name="cmdSearch"
                             Content="Search"
                             DockPanel.Dock="Left"
@@ -82,8 +82,8 @@
                                    WatermarkImageHeight="25"
                                    WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
                                    WatermarkText="Scan Pallet No."
-                                   Width="220" 
-                                   PreviewKeyDown="txtPalletNo_PreviewKeyDown"/>
+                                   Width="220"
+                                   PreviewKeyDown="txtPalletNo_PreviewKeyDown" />
                     <Button x:Name="cmdReceiveAll"
                             Content="Receive All"
                             DockPanel.Dock="Left"

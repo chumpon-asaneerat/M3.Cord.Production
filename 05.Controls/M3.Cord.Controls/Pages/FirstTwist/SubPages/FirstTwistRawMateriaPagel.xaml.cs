@@ -76,13 +76,13 @@ namespace M3.Cord.Pages
 
         private void UpdateMCStatus()
         {
+            paRawMat.DataContext = null;
+
             // Get PC Card if assigned.
             pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
             // Binding
             paRawMat.DataContext = pcCard;
             cmdLoadYarn.IsEnabled = (null != pcCard);
-
-            RefreshGrids();
         }
 
         #endregion
@@ -92,11 +92,13 @@ namespace M3.Cord.Pages
         public void Setup(FirstTwistMC mc)
         {
             selectedMC = mc;
-            UpdateMCStatus();
+            RefreshGrids();
         }
 
         public void RefreshGrids()
         {
+            UpdateMCStatus();
+
             lvRawMats.ItemsSource = null;
             if (null == pcCard) return;
             var items = RawMaterialSummary.Gets(pcCard.PCTwist1Id.Value).Value();
