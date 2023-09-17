@@ -152,6 +152,15 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FirstTwistS1ConditionPage.xaml.cs">
+      <DependentUpon>FirstTwistS1ConditionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTwistS4x1ConditionPage.xaml.cs">
+      <DependentUpon>FirstTwistS4x1ConditionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTwistS4x2ConditionPage.xaml.cs">
+      <DependentUpon>FirstTwistS4x2ConditionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FirstTwist\SubPages\FirstTwistPCCardPage.xaml.cs">
       <DependentUpon>FirstTwistPCCardPage.xaml</DependentUpon>
     </Compile>
@@ -496,6 +505,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Pages\FirstTwistS1ConditionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FirstTwistS4x1ConditionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FirstTwistS4x2ConditionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\FirstTwist\SubPages\FirstTwistPCCardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

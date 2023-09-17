@@ -23,49 +23,6 @@
                 <spage:FirstTwistYarnRecordSheetPage x:Name="pageCheckSheet" />
             </TabItem>
             <TabItem Header="Production condition">
-                <DockPanel LastChildFill="True">
-                    <!--  BUTTONS  -->
-                    <DockPanel LastChildFill="True"
-                               DockPanel.Dock="Bottom"
-                               Height="40">
-                        <StackPanel Orientation="Horizontal"
-                                    DockPanel.Dock="Right"
-                                    VerticalAlignment="Center">
-                            <!--  HOME  -->
-                            <ctrl:FontAwesomeButton x:Name="cmdBack"
-                                                    Margin="5,0,0,0"
-                                                    IconType="Back"
-                                                    Text="Back"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal"
-                                    DockPanel.Dock="Left"
-                                    VerticalAlignment="Center">
-                            <ctrl:FontAwesomeButton x:Name="cmdSave2"
-                                                    Margin="5,0,0,0"
-                                                    IconType="Add"
-                                                    Text="Save" />
-                        </StackPanel>
-                        <Grid />
-                    </DockPanel>
-                    <DockPanel x:Name="paCondition"
-                               LastChildFill="True"
-                               DockPanel.Dock="Top"
-                               Margin="2">
-                        <StackPanel Orientation="Vertical">
-                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-                                <elem:CustomerBox />
-                                <elem:ItemYarnBox />
-                                <elem:CordStructureBox />
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-                                <elem:ProductInfoBox />
-                                <elem:StdTwistNoBox />
-                            </StackPanel>
-                        </StackPanel>
-                        <Grid />
-                    </DockPanel>
-                    <s1:S1ConditionPage />
-                </DockPanel>
             </TabItem>
         </TabControl>
     </page:NPage>
