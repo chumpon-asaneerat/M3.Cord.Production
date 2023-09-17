@@ -99,6 +99,43 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region TextBox Handlers
+
+        private void txtRequestNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter || e.Key == Key.Return)
+            {
+                RefreshGrid();
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Escape)
+            {
+                txtRequestNo.Text = string.Empty;
+                e.Handled = true;
+            }
+        }
+
+        private void txtPalletNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter || e.Key == Key.Return)
+            {
+                string palletNo = txtPalletNo.Text;
+                MarkPallet(palletNo);
+                // clear pallet no.
+                txtPalletNo.Text = string.Empty;
+
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Escape)
+            {
+                // clear pallet no.
+                txtPalletNo.Text = string.Empty;
+                e.Handled = true;
+            }
+        }
+
+        #endregion
+
         #region Combobox Handlers
 
         private void cbItemYanrs_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -112,7 +149,8 @@ namespace M3.Cord.Pages
 
         private void ResetControls()
         {
-            dtIssueDate.SelectedDate = DateTime.Now;
+            txtRequestNo.Text = string.Empty;
+            txtPalletNo.Text = string.Empty;
         }
 
         private void LoadComboBoxes()
@@ -128,6 +166,16 @@ namespace M3.Cord.Pages
             });
         }
 
+        private void MarkPallet(string palletNo)
+        {
+            var item = WarehouseReceiveYarnService.Instance.FindByPalletNo(palletNo);
+            if (null != item)
+            {
+                WarehouseReceiveYarnService.Instance.MarkReceive(item);
+            }
+        }
+
+
         private void RefreshGrid()
         {
             grid.ItemsSource = null;
@@ -136,7 +184,9 @@ namespace M3.Cord.Pages
                 cbItemYanrs.SelectedItem as CordItemYarn : null;
 
             string sItemYarn = (null != itemYarn) ? itemYarn.ItemYarn : null;
-            WarehouseReceiveYarnService.Instance.LoadIssueYarns(dtIssueDate.SelectedDate, sItemYarn);
+            string sRequsetNo = (string.IsNullOrEmpty(txtRequestNo.Text)) ? null : txtRequestNo.Text.Trim();
+
+            WarehouseReceiveYarnService.Instance.LoadIssueYarns(sItemYarn, sRequsetNo);
 
             grid.ItemsSource = WarehouseReceiveYarnService.Instance.IssueItems;
         }

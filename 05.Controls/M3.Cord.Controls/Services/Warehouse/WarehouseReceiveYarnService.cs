@@ -91,11 +91,11 @@ namespace M3.Cord
             CalcTotals();
         }
 
-        public void LoadIssueYarns(DateTime? issueDate, string itemYarn)
+        public void LoadIssueYarns(string itemYarn, string requestNo)
         {
             Clear();
 
-            items = WarehouseCordYarn.SearchG4IssueYarns(issueDate, itemYarn).Value();
+            items = WarehouseCordYarn.SearchG4IssueYarns(itemYarn, requestNo).Value();
         }
 
         public void MarkReceive(WarehouseCordYarn item)
@@ -147,6 +147,23 @@ namespace M3.Cord
             Clear(); // clear list.
 
             return bSuccess;
+        }
+
+        public WarehouseCordYarn FindByPalletNo(string palletNo)
+        {
+            WarehouseCordYarn ret = null;
+            if (string.IsNullOrEmpty(palletNo))
+                return ret;
+
+            if (null != items && items.Count > 0) 
+            {
+                ret = items.Find((yarn) =>
+                {
+                    return string.Compare(yarn.PalletNo, palletNo, true) == 0;
+                });
+            }
+
+            return ret;
         }
 
         #endregion

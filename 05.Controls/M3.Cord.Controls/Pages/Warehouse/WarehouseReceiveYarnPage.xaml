@@ -52,11 +52,12 @@
                                     DisplayMemberPath="ItemYarn"
                                     Width="250"
                                     SelectionChanged="cbItemYanrs_SelectionChanged" />
-                    <!--  Issue DATE  -->
-                    <ctrl:NDatePicker x:Name="dtIssueDate"
+                    <!--  RequestNo  -->
+                    <ctrl:NTextBox x:Name="txtRequestNo"
                                       DockPanel.Dock="Left"
-                                      CaptionText="Issue Date:"
-                                      Width="200" />
+                                      CaptionText="Request No:"
+                                      Width="200" 
+                                   PreviewKeyDown="txtRequestNo_PreviewKeyDown"/>
                     <Button x:Name="cmdSearch"
                             Content="Search"
                             DockPanel.Dock="Left"
@@ -81,7 +82,8 @@
                                    WatermarkImageHeight="25"
                                    WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
                                    WatermarkText="Scan Pallet No."
-                                   Width="220" />
+                                   Width="220" 
+                                   PreviewKeyDown="txtPalletNo_PreviewKeyDown"/>
                     <Button x:Name="cmdReceiveAll"
                             Content="Receive All"
                             DockPanel.Dock="Left"

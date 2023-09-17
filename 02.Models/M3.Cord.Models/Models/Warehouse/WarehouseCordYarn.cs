@@ -87,7 +87,7 @@ namespace M3.Cord.Models
         #region Static Methods
 
         public static NDbResult<List<WarehouseCordYarn>> SearchG4IssueYarns(
-            DateTime? issueDate, string itemYarn)
+            string itemYarn, string requestNo)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -106,7 +106,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@IssueDate", issueDate);
+            p.Add("@RequestNo", requestNo);
             p.Add("@ItemYarn", itemYarn);
             //p.Add("@Item400", Item400);
 
