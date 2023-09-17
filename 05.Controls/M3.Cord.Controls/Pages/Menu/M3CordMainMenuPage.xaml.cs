@@ -119,6 +119,17 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdCheckStockYarn_Click(object sender, RoutedEventArgs e)
+        {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Check Stock Yarn
+            var page = M3CordApp.Pages.PCCardManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
+
         private void cmdFirstTwist_Click(object sender, RoutedEventArgs e)
         {
             // Sign In

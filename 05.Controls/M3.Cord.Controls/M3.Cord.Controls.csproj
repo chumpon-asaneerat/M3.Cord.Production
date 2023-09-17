@@ -161,6 +161,9 @@
     <Compile Include="Pages\FirstTwist\SubPages\FirstTwistYarnRecordSheetPage.xaml.cs">
       <DependentUpon>FirstTwistYarnRecordSheetPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\WarehouseYarnStockPage.xaml.cs">
+      <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\EndTwist1OpWindow.xaml.cs">
       <DependentUpon>EndTwist1OpWindow.xaml</DependentUpon>
     </Compile>
@@ -569,6 +572,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Masters\S1ConditionStdSettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WarehouseYarnStockPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

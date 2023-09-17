@@ -205,12 +205,22 @@
                             <Run Text="Yarn" />
                         </TextBlock>
                     </Button>
-                    <!--  PLANNING  -->
+                    <!--  PC CARD  -->
                     <Button x:Name="cmdPCCard"
                             Click="cmdPCCard_Click"
                             Style="{StaticResource CordWarehouseButtonStyle}">
                         <TextBlock TextAlignment="Center">
                             <Run Text="PC Card" />
+                        </TextBlock>
+                    </Button>
+                    <!--  CHECK STOCK YARN  -->
+                    <Button x:Name="cmdCheckStockYarn"
+                            Click="cmdCheckStockYarn_Click"
+                            Style="{StaticResource CordWarehouseButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Check Stock" />
+                            <LineBreak />
+                            <Run Text="Yarn" />
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>
