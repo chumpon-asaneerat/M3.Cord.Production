@@ -33,18 +33,22 @@
                                         IconType="Add"
                                         Text="Set PC Card"
                                         Click="cmdSelectPCCard_Click" />
-
                 <ctrl:FontAwesomeButton x:Name="cmdStartDoff"
                                         Margin="5,0,0,0"
                                         IconType="None"
                                         Text="Start Doff"
                                         Click="cmdStartDoff_Click" />
-
                 <ctrl:FontAwesomeButton x:Name="cmdEndDoff"
                                         Margin="5,0,0,0"
                                         IconType="None"
                                         Text="End Doff"
                                         Click="cmdEndDoff_Click" />
+                <TextBlock Width="20" />
+                <ctrl:FontAwesomeButton x:Name="cmdFinish"
+                                        Margin="5,0,0,0"
+                                        IconType="Ok"
+                                        Text="Finish"
+                                        Click="cmdFinish_Click" />
             </StackPanel>
             <Grid />
         </DockPanel>

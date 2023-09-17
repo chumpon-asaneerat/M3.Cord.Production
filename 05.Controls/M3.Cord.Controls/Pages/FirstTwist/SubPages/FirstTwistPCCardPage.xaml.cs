@@ -221,6 +221,16 @@ namespace M3.Cord.Pages
             RefreshGrids();
         }
 
+        private void cmdFinish_Click(object sender, RoutedEventArgs e)
+        {
+            if (null == selectedMC || null == pcCard)
+                return;
+
+            // Check current operations
+            bool bReachQuota = (pcCard.TargetQty.HasValue && pcCard.ActualQty.HasValue &&
+                pcCard.TargetQty.Value < pcCard.ActualQty.Value);
+        }
+
         #endregion
 
         #region ListView Handlers
@@ -255,7 +265,11 @@ namespace M3.Cord.Pages
             // Binding
             paPCCard.DataContext = pcCard;
             cmdSelectPCCard.IsEnabled = (null == pcCard);
+
             // Check current operations
+            bool bReachQuota = (pcCard.TargetQty.HasValue && pcCard.ActualQty.HasValue &&
+                pcCard.TargetQty.Value < pcCard.ActualQty.Value);
+
             var operations = lvPCCards.ItemsSource as List<PCTwist1Operation>;
             if (null != operations && operations.Count > 0)
             {
@@ -269,8 +283,9 @@ namespace M3.Cord.Pages
             }
 
             // Check enable start/end doff
-            cmdStartDoff.IsEnabled = (null != pcCard && null == _operation);
-            cmdEndDoff.IsEnabled = (null != pcCard && null != _operation);
+            cmdStartDoff.IsEnabled = (null != pcCard && null == _operation && !bReachQuota);
+            cmdEndDoff.IsEnabled = (null != pcCard && null != _operation && !bReachQuota);
+            cmdFinish.IsEnabled = (null != pcCard);
         }
 
         #endregion
