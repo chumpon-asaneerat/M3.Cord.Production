@@ -45,8 +45,6 @@ namespace M3.Cord.Pages
 
         private FirstTwistMC selectedMC;
         private PCTwist1 pcCard;
-        private PCTwist1Operation _operation = null;
-
         private List<Twist1CheckSheet> checkSheets = null;
 
         #endregion

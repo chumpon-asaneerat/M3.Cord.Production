@@ -23,6 +23,7 @@
                 <spage:FirstTwistYarnRecordSheetPage x:Name="pageCheckSheet" />
             </TabItem>
             <TabItem Header="Production condition">
+                <spage:FirstTwistS1ConditionPage x:Name="pageMCCondition" />
             </TabItem>
         </TabControl>
     </page:NPage>

@@ -25,16 +25,16 @@ using NLib;
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for FirstTwistS1ConditionPage.xaml
+    /// Interaction logic for FirstTwistS4x1ConditionPage.xaml
     /// </summary>
-    public partial class FirstTwistS1ConditionPage : UserControl
+    public partial class FirstTwistS4x1ConditionPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public FirstTwistS1ConditionPage()
+        public FirstTwistS4x1ConditionPage()
         {
             InitializeComponent();
         }
@@ -45,7 +45,6 @@ namespace M3.Cord.Pages
 
         private FirstTwistMC selectedMC;
         private PCTwist1 pcCard;
-        private PCTwist1Operation _operation = null;
 
         #endregion
 

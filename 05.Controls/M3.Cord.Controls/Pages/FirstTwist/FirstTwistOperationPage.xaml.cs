@@ -44,17 +44,6 @@ namespace M3.Cord.Pages
         #region Internal Variables
 
         private FirstTwistMC selectedMC;
-        private PCTwist1 pcCard;
-        private PCTwist1Operation _operation = null;
-
-        #endregion
-
-        #region Private Methods
-
-        private void RefreshGrids()
-        {
-
-        }
 
         #endregion
 
@@ -75,6 +64,7 @@ namespace M3.Cord.Pages
             pagePCCard.Setup(selectedMC);
             pageRawMat.Setup(selectedMC);
             pageCheckSheet.Setup(selectedMC);
+            pageMCCondition.Setup(selectedMC);
         }
 
         #endregion
