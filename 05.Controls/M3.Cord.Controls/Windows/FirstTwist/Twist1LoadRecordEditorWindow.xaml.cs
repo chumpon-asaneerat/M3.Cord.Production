@@ -365,12 +365,26 @@ namespace M3.Cord.Windows
                 {
                     return (item.Twist1LoadId == loadId && item.SPNo == spNo && item.DeckNo == deckNo);
                 });
-                _item.Items.Add(new Twist1LoadRecordItem() 
-                { 
-                    SPNo = spNo, DeckNo = deckNo,
-                    PalletNo = palletNo, TraceNo = traceNo,
-                    YarnBarcode = yarnBarcode 
-                });
+                if (idx == -1)
+                {
+                    // Add
+                    _item.Items.Add(new Twist1LoadRecordItem()
+                    {
+                        SPNo = spNo,
+                        DeckNo = deckNo,
+                        PalletNo = palletNo,
+                        TraceNo = traceNo,
+                        YarnBarcode = yarnBarcode
+                    });
+                }
+                else
+                {
+                    // Update
+                    var existItem = _item.Items[idx];
+                    existItem.PalletNo = palletNo;
+                    existItem.TraceNo = traceNo;
+                    existItem.YarnBarcode = yarnBarcode;
+                }
 
                 this.InvokeAction(() => 
                 {
