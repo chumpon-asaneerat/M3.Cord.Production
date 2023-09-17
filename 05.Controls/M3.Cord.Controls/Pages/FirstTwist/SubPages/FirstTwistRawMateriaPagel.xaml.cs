@@ -110,6 +110,8 @@ namespace M3.Cord.Pages
 
             // reload pc card to refresh last doff/test no. 
             pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
+
+            RefreshGrids();
         }
 
         #endregion

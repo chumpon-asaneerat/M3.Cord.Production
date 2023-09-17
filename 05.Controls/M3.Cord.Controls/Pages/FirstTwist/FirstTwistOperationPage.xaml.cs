@@ -84,6 +84,11 @@ namespace M3.Cord.Pages
             pageRawMat.ShowLoadYarnDialog();
         }
 
+        private void pagePCCard_FinishPCCard(object sender, EventArgs e)
+        {
+            Setup(selectedMC);
+        }
+
         #endregion
 
         #region Public Methods

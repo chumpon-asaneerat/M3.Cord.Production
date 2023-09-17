@@ -45,7 +45,23 @@ namespace M3.Cord
 
         public void Search(string productLotNo, string customerName)
         {
-            items = PCCard.Gets(productLotNo, customerName).Value();
+            var rets = PCCard.Gets(productLotNo, customerName).Value();
+            items = new List<PCCard>();
+            if (null != rets)
+            {
+                rets.ForEach(pc =>
+                {
+                    bool isFinished = pc.FinishFlag.HasValue && pc.FinishFlag == true;
+                    bool isDeleted = pc.DeleteFlag.HasValue && pc.DeleteFlag == true;
+                    bool isT1Finished = pc.Twist1FinishFlag.HasValue && pc.Twist1FinishFlag == true;
+                    bool isT1Deleted = pc.Twist1FinishFlag.HasValue && pc.Twist1FinishFlag == true;
+
+                    if (!isFinished && !isDeleted && !isT1Finished && !isT1Deleted)
+                    {
+                        items.Add(pc);
+                    }
+                });
+            }
         }
 
         #endregion

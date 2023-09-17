@@ -223,6 +223,9 @@ namespace M3.Cord.Models
             p.Add("@LastTestNo", value.LastTestNo);
             p.Add("@LastDoffNo", value.LastDoffNo);
 
+            p.Add("@FinishFlag", value.FinishFlag);
+            p.Add("@DeleteFlag", value.DeleteFlag);
+
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 

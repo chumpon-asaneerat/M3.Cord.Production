@@ -14,7 +14,9 @@
     <page:NPage x:Name="page" HeaderText="1st Twisting - ">
         <TabControl x:Name="tabs" FontSize="18" SelectionChanged="tabs_SelectionChanged">
             <TabItem Header="PC Card">
-                <spage:FirstTwistPCCardPage x:Name="pagePCCard" RequestLoadYarn="pagePCCard_RequestLoadYarn" />
+                <spage:FirstTwistPCCardPage x:Name="pagePCCard" 
+                                            RequestLoadYarn="pagePCCard_RequestLoadYarn" 
+                                            FinishPCCard="pagePCCard_FinishPCCard"/>
             </TabItem>
             <TabItem Header="Raw Material">
                 <spage:FirstTwistRawMateriaPagel x:Name="pageRawMat" />

@@ -72,8 +72,22 @@ namespace M3.Cord.Windows
         {
             grid.ItemsSource = null;
 
-            List<PCCard> items;
-            items = PCCard.Gets().Value();
+            List<PCCard> items = new List<PCCard>();
+            var pcCards = PCCard.Gets().Value();
+
+            pcCards.ForEach(pc =>
+            {
+                bool isFinished = pc.FinishFlag.HasValue && pc.FinishFlag == true;
+                bool isDeleted = pc.DeleteFlag.HasValue && pc.DeleteFlag == true;
+                bool isT1Finished = pc.Twist1FinishFlag.HasValue && pc.Twist1FinishFlag == true;
+                bool isT1Deleted = pc.Twist1FinishFlag.HasValue && pc.Twist1FinishFlag == true;
+
+                if (!isFinished && !isDeleted && !isT1Finished && !isT1Deleted)
+                {
+                    items.Add(pc);
+                }
+            });
+
             grid.ItemsSource = items;
         }
 

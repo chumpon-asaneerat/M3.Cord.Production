@@ -50,6 +50,9 @@ namespace M3.Cord.Models
         public bool? FinishFlag { get; set; }
         public bool? DeleteFlag { get; set; }
 
+        public bool? Twist1FinishFlag { get; set; }
+        public bool? Twist1DeleteFlag { get; set; }
+
         public SolidColorBrush TextColor { get { return BlackColor; } set { } }
 
         #endregion

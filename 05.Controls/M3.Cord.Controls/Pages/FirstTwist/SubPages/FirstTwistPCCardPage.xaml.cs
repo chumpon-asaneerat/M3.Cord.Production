@@ -229,6 +229,31 @@ namespace M3.Cord.Pages
             // Check current operations
             bool bReachQuota = (pcCard.TargetQty.HasValue && pcCard.ActualQty.HasValue &&
                 pcCard.TargetQty.Value < pcCard.ActualQty.Value);
+
+            if (!bReachQuota)
+            {
+                var msg = M3CordApp.Windows.MessageBoxOKCancel;
+                string txt = "Actual Qty < Target Qty." + Environment.NewLine;
+                txt += "Finish ths PC Card?";
+                msg.Setup(txt);
+                if (msg.ShowDialog() == true)
+                {
+                    pcCard.FinishFlag = true;
+                    PCTwist1.Save(pcCard);
+
+                    pcCard = null; // reset pc card
+
+                    RefreshGrids();
+                }
+            }
+            else
+            {
+                pcCard.FinishFlag = true;
+                PCTwist1.Save(pcCard);
+
+                FinishPCCard.Call(this, EventArgs.Empty);
+            }
+
         }
 
         #endregion
@@ -267,7 +292,7 @@ namespace M3.Cord.Pages
             cmdSelectPCCard.IsEnabled = (null == pcCard);
 
             // Check current operations
-            bool bReachQuota = (pcCard.TargetQty.HasValue && pcCard.ActualQty.HasValue &&
+            bool bReachQuota = (null != pcCard && pcCard.TargetQty.HasValue && pcCard.ActualQty.HasValue &&
                 pcCard.TargetQty.Value < pcCard.ActualQty.Value);
 
             var operations = lvPCCards.ItemsSource as List<PCTwist1Operation>;
@@ -315,6 +340,7 @@ namespace M3.Cord.Pages
         #region Public Events
 
         public event System.EventHandler RequestLoadYarn;
+        public event System.EventHandler FinishPCCard;
 
         #endregion
     }
