@@ -2,9 +2,192 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:s1="clr-namespace:M3.Cord.Controls.Documents"
+             xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             d:DesignHeight="450"
-             d:DesignWidth="800"
-             mc:Ignorable="d">
-    <Grid />
+             mc:Ignorable="d"
+             d:DesignHeight="800"
+             d:DesignWidth="1200">
+    <UserControl.Resources>
+        <Style x:Key="CommonHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="True" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style x:Key="RotateHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="True" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="FontSize" Value="18" />
+            <!--
+            <Setter Property="LayoutTransform">
+                <Setter.Value>
+                    <RotateTransform Angle="-90" />
+                </Setter.Value>
+            </Setter>
+            -->
+        </Style>
+
+        <!--  RAW MATERIALS  -->
+        <!--#region DEFECTS-->
+
+        <!--  EACH CELL TEMPLATE  -->
+        <DataTemplate x:Key="Keiba">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=SKeiba, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <DataTemplate x:Key="Traverse">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=STraverse, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <DataTemplate x:Key="Crossing">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=SCrossing, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <DataTemplate x:Key="ScrapeTube">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=SScrapeTube, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <DataTemplate x:Key="Form">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=SForm, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <DataTemplate x:Key="Stain">
+            <TextBlock FontSize="18"
+                       Text="{Binding Path=SStain, Mode=OneWay}"
+                       TextAlignment="Center" />
+        </DataTemplate>
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="DefectGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource Keiba}"
+                            Header=" Keiba "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource Traverse}"
+                            Header=" Traverse "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource Crossing}"
+                            Header=" Crossing "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="120"
+                            CellTemplate="{StaticResource ScrapeTube}"
+                            Header=" Scrape Tube "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource Form}"
+                            Header=" Form "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource Stain}"
+                            Header=" Stain "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="DefectColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Defect Type" />
+                    <LineBreak />
+                    <Run Text="(ชนิดของเสีย)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource DefectGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="DefectColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource DefectGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+    </UserControl.Resources>
+    <DockPanel LastChildFill="True" Margin="5">
+        <!--  BUTTONS  -->
+        <DockPanel LastChildFill="True"
+                   DockPanel.Dock="Bottom"
+                   Height="40">
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Right"
+                        VerticalAlignment="Center">
+                <!--  HOME  -->
+                <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                        Margin="5,0,0,0"
+                                        IconType="Back"
+                                        Text="Back"
+                                        Click="cmdBack_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Left"
+                        VerticalAlignment="Center">
+                <ctrl:FontAwesomeButton x:Name="cmdLoadYarn"
+                                        Margin="5,0,0,0"
+                                        IconType="Import"
+                                        Text="Load Yarn"
+                                        Click="cmdLoadYarn_Click" />
+            </StackPanel>
+            <Grid />
+        </DockPanel>
+        <DockPanel x:Name="paRawMat" LastChildFill="True">
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Horizontal">
+                    <elem:PINoBox />
+                    <elem:CustomerBox />
+                    <elem:ProductInfoBox />
+                </StackPanel>
+            </DockPanel>
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <elem:TargetQtyBox />
+                <elem:ItemYarnBox />
+                <elem:ProductLotNo />
+                <elem:FlowBox />
+                <Grid />
+            </DockPanel>
+            <ListView x:Name="lvRawMats"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
+                        <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource ItemYarn}" />
+                        <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
+                        <GridViewColumn Header="Input (CH)" CellTemplate="{StaticResource InputCH}" />
+                        <GridViewColumn Header="Doff" CellTemplate="{StaticResource DoffNo}" />
+                        <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNos}" />
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource DefectColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource DefectColumnsHeader}" />
+                        <GridViewColumn Header="Shift" CellTemplate="{StaticResource ShiftName}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </DockPanel>
 </UserControl>

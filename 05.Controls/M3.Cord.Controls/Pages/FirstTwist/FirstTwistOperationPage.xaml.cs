@@ -47,189 +47,13 @@ namespace M3.Cord.Pages
         private PCTwist1 pcCard;
         private PCTwist1Operation _operation = null;
 
-        private List<Twist1CheckSheet> checkSheets = null;
-
-        #endregion
-
-        #region Button Handlers
-
-        private void cmdBack_Click(object sender, RoutedEventArgs e)
-        {
-            // First Twist
-            var page = M3CordApp.Pages.FirstTwistMC;
-            page.Setup();
-            PageContentManager.Instance.Current = page;
-        }
-
-        private void cmdSelectPCCard_Click(object sender, RoutedEventArgs e)
-        {
-            if (null == selectedMC)
-                return;
-            var win = M3CordApp.Windows.ChoosePCCardTwist1;
-            win.Setup();
-            if (win.ShowDialog() == false) return;
-            if (null != win.SelectedPCCard)
-            {
-                AddNew(win.SelectedPCCard);
-            }
-        }
-
-        private void cmdLoadYarn_Click(object sender, RoutedEventArgs e)
-        {
-            if (null == selectedMC || null == pcCard)
-                return;
-            var win = M3CordApp.Windows.Twist1LoadRecordEditor;
-            win.Setup(selectedMC, pcCard, null); // New
-            if (win.ShowDialog() == false) return;
-
-            // reload pc card to refresh last doff/test no. 
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
-        }
-
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
-        {
-            // Save Check Sheet
-            SaveCheckSheets();
-        }
-
-        private void cmdStartDoff_Click(object sender, RoutedEventArgs e)
-        {
-            if (null == selectedMC || null == pcCard)
-                return;
-            var win = M3CordApp.Windows.StartTwist1Op;
-            _operation = new PCTwist1Operation();
-            _operation.PCTwist1Id = pcCard.PCTwist1Id;
-            _operation.ProductionDate = DateTime.Now;
-            _operation.MCCode = selectedMC.MCCode;
-            win.Setup(_operation); // New
-            if (win.ShowDialog() == false) return;
-            RefreshPCCards();
-        }
-
-        private void cmdEndDoff_Click(object sender, RoutedEventArgs e)
-        {
-            if (null != lvPCCards.SelectedItem)
-            {
-                var selected = lvPCCards.SelectedItem as PCTwist1Operation;
-                if (null != selected)
-                {
-                    _operation = selected;
-                }
-                else
-                {
-                    _operation = null;
-                }
-
-                // already has end time.
-                if (null != _operation && _operation.EndTime.HasValue)
-                {
-                    _operation = null;
-                    return;
-                }
-            }
-
-            if (null == selectedMC || null == pcCard || null == _operation)
-                return;
-
-            var win = M3CordApp.Windows.EndTwist1Op;
-            _operation.PCTwist1Id = pcCard.PCTwist1Id;
-            _operation.MCCode = selectedMC.MCCode;
-            win.Setup(_operation); // New
-            if (win.ShowDialog() == false) return;
-            RefreshPCCards();
-        }
-
-        #endregion
-
-        #region ListView Handlers
-
-        private void lvPCCards_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         #endregion
 
         #region Private Methods
 
-        private void AddNew(PCCard pccard)
-        {
-            if (null != selectedMC && null != pccard)
-            {
-                var ret = PCTwist1.AddNew(selectedMC, pccard);
-                if (ret.Ok)
-                {
-
-                }
-            }
-            UpdateMCStatus();
-        }
-
-        private void UpdateMCStatus()
-        {
-            // Get PC Card if assigned.
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
-            // Binding
-            paPCCard.DataContext = pcCard;
-            paRawMat.DataContext = pcCard;
-            paCondition.DataContext = pcCard;
-
-            cmdSelectPCCard.IsEnabled = (null == pcCard);
-            cmdLoadYarn.IsEnabled = (null != pcCard);
-
-            RefreshGrids();
-        }
-
         private void RefreshGrids()
         {
-            RefreshPCCards();
-            RefreshRawMaterials();
-            RefreshCheckSheets();
-        }
 
-        private void RefreshPCCards()
-        {
-            lvPCCards.ItemsSource = null;
-            if (null == pcCard) return;
-            var items = PCTwist1Operation.Gets(pcCard.PCTwist1Id.Value).Value();
-            lvPCCards.ItemsSource = items;
-        }
-
-        private void RefreshRawMaterials()
-        {
-            lvRawMats.ItemsSource = null;
-            if (null == pcCard) return;
-            var items = RawMaterialSummary.Gets(pcCard.PCTwist1Id.Value).Value();
-            lvRawMats.ItemsSource = items;
-        }
-
-        private void RefreshCheckSheets()
-        {
-            lvCheckSheet.ItemsSource = null;
-            if (null == pcCard || null == selectedMC) return;
-            checkSheets = Twist1CheckSheet.Gets(0).Value();
-            if (null == checkSheets || checkSheets.Count <= 0)
-            {
-                checkSheets = new List<Twist1CheckSheet>();
-                for (int i = selectedMC.StartCore; i < selectedMC.EndCore; i++)
-                {
-                    checkSheets.Add(new Twist1CheckSheet() { Twist1LoadId = 0, SPNo = i });
-                }
-            }
-            else
-            {
-
-            }
-            lvCheckSheet.ItemsSource = checkSheets;
-        }
-
-        private void SaveCheckSheets()
-        {
-            if (null != checkSheets)
-            {
-                checkSheets.ForEach(checkSheet => { Twist1CheckSheet.Save(checkSheet); });
-            }
-            RefreshCheckSheets();
         }
 
         #endregion
@@ -247,7 +71,6 @@ namespace M3.Cord.Pages
             {
                 page.HeaderText = "1st Twisting ";
             }
-            UpdateMCStatus();
         }
 
         #endregion
