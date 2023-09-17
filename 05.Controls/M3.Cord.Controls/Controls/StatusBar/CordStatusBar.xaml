@@ -9,6 +9,7 @@
              Loaded="UserControl_Loaded"
              mc:Ignorable="d">
     <DockPanel Background="DimGray" LastChildFill="True">
+        <elem:OperatorInfoElement DockPanel.Dock="Left" />
         <elem:AppVersionElement DockPanel.Dock="Right" />
         <elem:ClientInfoElement DockPanel.Dock="Right" />
         <Grid />

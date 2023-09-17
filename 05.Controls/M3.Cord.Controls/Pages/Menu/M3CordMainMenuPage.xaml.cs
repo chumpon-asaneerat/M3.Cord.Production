@@ -170,5 +170,15 @@ namespace M3.Cord.Pages
         }
 
         #endregion
+
+        #region Public Methods
+
+        public void Setup()
+        {
+            // when open main menu signout all case
+            SignInManager.Instance.Signout();
+        }
+
+        #endregion
     }
 }

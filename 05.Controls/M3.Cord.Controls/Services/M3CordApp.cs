@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using M3.Cord.Models;
 using M3.Cord.Windows;
 using NLib.Services;
 using System;
@@ -18,6 +19,17 @@ namespace M3.Cord
 {
     public class M3CordApp
     {
+        /// <summary>
+        /// Current.
+        /// </summary>
+        public static class Current
+        {
+            /// <summary>
+            /// Gets Current User.
+            /// </summary>
+            public static UserInfo User { get { return SignInManager.Instance.User; } }
+        }
+
         /// <summary>
         /// Pages Static class.
         /// </summary>
@@ -55,6 +67,7 @@ namespace M3.Cord
             public static void GotoCordMainMenu()
             {
                 var page = Pages.M3CordMainMenu;
+                page.Setup();
                 PageContentManager.Instance.Current = page;
             }
             /// <summary>
@@ -73,7 +86,10 @@ namespace M3.Cord
             /// <summary>Gets M3 Cord MainMenu Page.</summary>
             public static Cord.Pages.M3CordMainMenuPage M3CordMainMenu
             {
-                get { return GetPage<Cord.Pages.M3CordMainMenuPage>(); }
+                get 
+                { 
+                    return GetPage<Cord.Pages.M3CordMainMenuPage>(); 
+                }
             }
 
             #endregion

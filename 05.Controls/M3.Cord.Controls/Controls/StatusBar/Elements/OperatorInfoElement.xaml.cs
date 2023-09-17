@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using NLib.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 #endregion
 
-namespace M3.Cord.Controls.StatusBar.Elements
+namespace M3.Cord.Controls.Elements
 {
     /// <summary>
     /// Interaction logic for OperatorInfoElement.xaml
@@ -32,6 +34,42 @@ namespace M3.Cord.Controls.StatusBar.Elements
         public OperatorInfoElement()
         {
             InitializeComponent();
+        }
+
+        #endregion
+
+        #region Loaded
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            SignInManager.Instance.UserChanged += Instance_UserChanged;
+        }
+
+        private void UserControl_Unloaded(object sender, RoutedEventArgs e)
+        {
+            SignInManager.Instance.UserChanged -= Instance_UserChanged;
+        }
+
+        #endregion
+
+        #region SignInManager Handlers
+
+        private void Instance_UserChanged(object sender, EventArgs e)
+        {
+            UpdateUI();
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void UpdateUI()
+        {
+            Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
+            {
+                var usr = M3CordApp.Current.User;
+                txtUserInfo.Text = (null != usr) ? usr.FullName + " (" + usr.RoleName + ")" : "-";
+            }));
         }
 
         #endregion
