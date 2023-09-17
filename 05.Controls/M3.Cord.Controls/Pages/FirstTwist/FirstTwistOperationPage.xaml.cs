@@ -76,6 +76,16 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region PCCard Handlers
+
+        private void pagePCCard_RequestLoadYarn(object sender, EventArgs e)
+        {
+            tabs.SelectedIndex = 1;
+            pageRawMat.ShowLoadYarnDialog();
+        }
+
+        #endregion
+
         #region Public Methods
 
         public void Setup(FirstTwistMC mc)

@@ -78,25 +78,27 @@ namespace M3.Cord.Pages
                 return;
 
             var msg = M3CordApp.Windows.MessageBoxOKCancel;
-            msg.Setup("Continue Next Doff with Existing Yarn Lot");
+            msg.Setup("Continue Next Doff" + Environment.NewLine + "with Existing Yarn Lot");
             if (msg.ShowDialog() == true)
             {
-                // Yes
+                // Yes - copy previous yarn load record to new one
+
+
+                // Show start doff
+                var win = M3CordApp.Windows.StartTwist1Op;
+                _operation = new PCTwist1Operation();
+                _operation.PCTwist1Id = pcCard.PCTwist1Id;
+                _operation.ProductionDate = DateTime.Now;
+                _operation.MCCode = selectedMC.MCCode;
+                win.Setup(_operation); // New
+                if (win.ShowDialog() == false) return;
+                RefreshGrids();
             }
             else
             {
-                // No
+                // No = show yarn load record window by raise event
+                RequestLoadYarn.Call(this, System.EventArgs.Empty);
             }
-
-
-            var win = M3CordApp.Windows.StartTwist1Op;
-            _operation = new PCTwist1Operation();
-            _operation.PCTwist1Id = pcCard.PCTwist1Id;
-            _operation.ProductionDate = DateTime.Now;
-            _operation.MCCode = selectedMC.MCCode;
-            win.Setup(_operation); // New
-            if (win.ShowDialog() == false) return;
-            RefreshGrids();
         }
 
         private void cmdEndDoff_Click(object sender, RoutedEventArgs e)
