@@ -86,7 +86,7 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
-        public static NDbResult<List<WarehouseCordYarn>> GetCordYarns(
+        public static NDbResult<List<WarehouseCordYarn>> SearchG4IssueYarns(
             DateTime? issueDate, string itemYarn)
         {
             MethodBase med = MethodBase.GetCurrentMethod();

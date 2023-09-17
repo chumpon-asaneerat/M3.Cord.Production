@@ -367,7 +367,7 @@ namespace M3.Cord.Models
 
             return ret;
         }
-
+        /*
         public static NDbResult<List<G4IssueYarn>> SearchG4IssueYarns(
             DateTime? IssueDate = new DateTime?(), 
             string ItemYarn = null, 
@@ -417,7 +417,7 @@ namespace M3.Cord.Models
 
             return rets;
         }
-
+        */
         public static NDbResult<G4IssueYarn> SearchWarehousePallet(string PalletNo)
         {
             MethodBase med = MethodBase.GetCurrentMethod();

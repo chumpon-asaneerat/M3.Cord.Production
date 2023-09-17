@@ -95,7 +95,7 @@ namespace M3.Cord
         {
             Clear();
 
-            items = WarehouseCordYarn.GetCordYarns(issueDate, itemYarn).Value();
+            items = WarehouseCordYarn.SearchG4IssueYarns(issueDate, itemYarn).Value();
         }
 
         public void MarkReceive(WarehouseCordYarn item)
