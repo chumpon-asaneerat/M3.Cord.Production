@@ -77,27 +77,97 @@ namespace M3.Cord.Pages
             if (null == selectedMC || null == pcCard)
                 return;
 
-            var msg = M3CordApp.Windows.MessageBoxOKCancel;
-            msg.Setup("Continue Next Doff" + Environment.NewLine + "with Existing Yarn Lot");
-            if (msg.ShowDialog() == true)
+            // Check operations
+            var operations = lvPCCards.ItemsSource as List<PCTwist1Operation>;
+
+            bool isNew = true;
+            if (null != operations && operations.Count > 0)
             {
-                // Yes - copy previous yarn load record to new one
-
-
-                // Show start doff
+                isNew = false;
+            }
+            if (isNew)
+            {
+                // Check load yarn
+                var records = Twist1LoadRecord.Gets(pcCard.PCTwist1Id.Value).Value();
+                if (null == records || records.Count <= 0)
+                {
+                    // No yarn load so open load yarn dialog
+                    RequestLoadYarn.Call(this, System.EventArgs.Empty);
+                    return;
+                }
+                // First Doff - Show start doff
                 var win = M3CordApp.Windows.StartTwist1Op;
                 _operation = new PCTwist1Operation();
                 _operation.PCTwist1Id = pcCard.PCTwist1Id;
                 _operation.ProductionDate = DateTime.Now;
                 _operation.MCCode = selectedMC.MCCode;
+                _operation.DoffNo = 1; // doff
                 win.Setup(_operation); // New
                 if (win.ShowDialog() == false) return;
                 RefreshGrids();
             }
             else
             {
-                // No = show yarn load record window by raise event
-                RequestLoadYarn.Call(this, System.EventArgs.Empty);
+                // Yarn load exists
+                var records = Twist1LoadRecord.Gets(pcCard.PCTwist1Id.Value).Value();
+                if (null != records && records.Count > 0)
+                {
+                    var record = records[records.Count - 1];
+
+                    var msg = M3CordApp.Windows.MessageBoxOKCancel;
+                    msg.Setup("Continue Next Doff" + Environment.NewLine + "with Existing Yarn Lot");
+                    if (msg.ShowDialog() == true)
+                    {
+                        // Show start doff
+                        var win = M3CordApp.Windows.StartTwist1Op;
+                        _operation = new PCTwist1Operation();
+                        _operation.PCTwist1Id = pcCard.PCTwist1Id;
+                        _operation.ProductionDate = DateTime.Now;
+                        _operation.MCCode = selectedMC.MCCode;
+                        _operation.DoffNo = record.DoffNo + 1; // doff
+                        win.Setup(_operation); // New Doff
+                        if (win.ShowDialog() == false) return;
+                        RefreshGrids();
+
+                        var inst = new Twist1LoadRecord();
+                        inst.ProductionDate = DateTime.Now;
+                        inst.PCTwist1Id = record.PCTwist1Id;
+                        inst.ItemYarn = record.ItemYarn;
+
+                        inst.ProductLotNo = record.ProductLotNo;
+                        inst.TestFlag = record.TestFlag;
+                        inst.DoffNo = record.DoffNo + 1;
+                        inst.ShiftName = record.ShiftName;
+
+                        inst = Twist1LoadRecord.Save(inst).Value();
+                        var recordItems = Twist1LoadRecordItem.Gets(record.Twist1LoadId.Value).Value();
+                        if (null != recordItems)
+                        {
+                            foreach (var recordItem in recordItems)
+                            {
+                                // copy all items
+                                var instItem = new Twist1LoadRecordItem();
+                                instItem.Twist1LoadId = inst.Twist1LoadId.Value;
+                                instItem.SPNo = recordItem.SPNo;
+                                instItem.DeckNo = recordItem.DeckNo;
+                                instItem.PalletNo = recordItem.PalletNo;
+                                instItem.TraceNo = recordItem.TraceNo;
+                                instItem.YarnBarcode = recordItem.YarnBarcode;
+                                Twist1LoadRecordItem.Save(instItem);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // No = show yarn load record window by raise event
+                        RequestLoadYarn.Call(this, System.EventArgs.Empty);
+                    }
+                }
+                else
+                {
+                    // No yarn load so need to load first.
+                    RequestLoadYarn.Call(this, System.EventArgs.Empty);
+                }
             }
         }
 

@@ -70,7 +70,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@PCTwist1Id", Twist1LoadId);
+            p.Add("@Twist1LoadId", Twist1LoadId);
             try
             {
                 var items = cnn.Query<Twist1LoadRecordItem>("GetTwist1LoadRecordItems", p,
