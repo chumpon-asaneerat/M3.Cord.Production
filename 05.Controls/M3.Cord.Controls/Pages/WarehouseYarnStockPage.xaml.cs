@@ -62,78 +62,6 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
-        private void cmdSearch_Click(object sender, RoutedEventArgs e)
-        {
-            RefreshGrid();
-        }
-
-        private void cmdReceiveAll_Click(object sender, RoutedEventArgs e)
-        {
-            WarehouseReceiveYarnService.Instance.ReceiveAll();
-        }
-
-        private void cmdReceive_Click(object sender, RoutedEventArgs e)
-        {
-            var btn = sender as Button;
-            if (null == btn) return;
-            var item = btn.DataContext as WarehouseCordYarn;
-            WarehouseReceiveYarnService.Instance.MarkReceive(item);
-        }
-
-        private void cmdDelete_Click(object sender, RoutedEventArgs e)
-        {
-            var btn = sender as Button;
-            if (null == btn) return;
-            var item = btn.DataContext as WarehouseCordYarn;
-            WarehouseReceiveYarnService.Instance.UnmarkReceive(item);
-        }
-
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
-        {
-            WarehouseReceiveYarnService.Instance.SaveReceiveItems();
-            this.InvokeAction(() =>
-            {
-                RefreshGrid();
-            });
-        }
-
-        #endregion
-
-        #region TextBox Handlers
-
-        private void txtRequestNo_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter || e.Key == Key.Return)
-            {
-                RefreshGrid();
-                e.Handled = true;
-            }
-            else if (e.Key == Key.Escape)
-            {
-                txtRequestNo.Text = string.Empty;
-                e.Handled = true;
-            }
-        }
-
-        private void txtPalletNo_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter || e.Key == Key.Return)
-            {
-                string palletNo = txtPalletNo.Text;
-                MarkPallet(palletNo);
-                // clear pallet no.
-                txtPalletNo.Text = string.Empty;
-
-                e.Handled = true;
-            }
-            else if (e.Key == Key.Escape)
-            {
-                // clear pallet no.
-                txtPalletNo.Text = string.Empty;
-                e.Handled = true;
-            }
-        }
-
         #endregion
 
         #region Combobox Handlers
@@ -146,12 +74,6 @@ namespace M3.Cord.Pages
         #endregion
 
         #region Private Methods
-
-        private void ResetControls()
-        {
-            txtRequestNo.Text = string.Empty;
-            txtPalletNo.Text = string.Empty;
-        }
 
         private void LoadComboBoxes()
         {
@@ -166,16 +88,6 @@ namespace M3.Cord.Pages
             });
         }
 
-        private void MarkPallet(string palletNo)
-        {
-            var item = WarehouseReceiveYarnService.Instance.FindByPalletNo(palletNo);
-            if (null != item)
-            {
-                WarehouseReceiveYarnService.Instance.MarkReceive(item);
-            }
-        }
-
-
         private void RefreshGrid()
         {
             grid.ItemsSource = null;
@@ -184,11 +96,10 @@ namespace M3.Cord.Pages
                 cbItemYanrs.SelectedItem as CordItemYarn : null;
 
             string sItemYarn = (null != itemYarn) ? itemYarn.ItemYarn : null;
-            string sRequsetNo = (string.IsNullOrEmpty(txtRequestNo.Text)) ? null : txtRequestNo.Text.Trim();
 
-            WarehouseReceiveYarnService.Instance.LoadIssueYarns(sItemYarn, sRequsetNo);
+            WarehouseStockYarnService.Instance.LoadStockYarns(sItemYarn);
 
-            grid.ItemsSource = WarehouseReceiveYarnService.Instance.IssueItems;
+            grid.ItemsSource = WarehouseStockYarnService.Instance.IssueItems;
         }
 
         #endregion
@@ -197,9 +108,8 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            this.DataContext = WarehouseReceiveYarnService.Instance;
+            this.DataContext = WarehouseStockYarnService.Instance;
 
-            ResetControls();
             LoadComboBoxes();
 
             RefreshGrid();

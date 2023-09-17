@@ -156,6 +156,12 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.WarehouseReceiveYarnPage>(); }
             }
 
+            /// <summary>Gets WareHouse Check Stock Yarn Page.</summary>
+            public static Cord.Pages.WarehouseYarnStockPage WarehouseYarnStock
+            {
+                get { return GetPage<Cord.Pages.WarehouseYarnStockPage>(); }
+            }
+
             #endregion
 
             #region PCCard

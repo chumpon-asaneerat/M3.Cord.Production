@@ -164,6 +164,7 @@
     <Compile Include="Pages\WarehouseYarnStockPage.xaml.cs">
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
     <Compile Include="Windows\EndTwist1OpWindow.xaml.cs">
       <DependentUpon>EndTwist1OpWindow.xaml</DependentUpon>
     </Compile>

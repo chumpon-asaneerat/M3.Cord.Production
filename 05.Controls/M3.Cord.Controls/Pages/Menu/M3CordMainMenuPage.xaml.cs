@@ -125,7 +125,7 @@ namespace M3.Cord.Pages
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
             // Check Stock Yarn
-            var page = M3CordApp.Pages.PCCardManage;
+            var page = M3CordApp.Pages.WarehouseYarnStock;
             page.Setup();
             PageContentManager.Instance.Current = page;
         }

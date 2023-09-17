@@ -10,7 +10,7 @@
              d:DesignWidth="800"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
-    <page:NPage HeaderText="Warehouse Receive Yarn">
+    <page:NPage HeaderText="Stock Yarn Cord">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTONS  -->
             <DockPanel LastChildFill="True"
@@ -25,16 +25,6 @@
                                             IconType="Home"
                                             Text="Home"
                                             Click="cmdHome_Click" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Left"
-                            VerticalAlignment="Center">
-                    <!--  SAVE  -->
-                    <ctrl:FontAwesomeButton x:Name="cmdSave"
-                                            Margin="5,0,0,0"
-                                            IconType="Save"
-                                            Text="Save"
-                                            Click="cmdSave_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
@@ -52,46 +42,6 @@
                                     DisplayMemberPath="ItemYarn"
                                     Width="250"
                                     SelectionChanged="cbItemYanrs_SelectionChanged" />
-                    <!--  RequestNo  -->
-                    <ctrl:NTextBox x:Name="txtRequestNo"
-                                   DockPanel.Dock="Left"
-                                   CaptionText="Request No:"
-                                   Width="200"
-                                   PreviewKeyDown="txtRequestNo_PreviewKeyDown" />
-                    <Button x:Name="cmdSearch"
-                            Content="Search"
-                            DockPanel.Dock="Left"
-                            Width="150"
-                            VerticalAlignment="Bottom"
-                            Margin="5,2"
-                            Style="{StaticResource InlineButton}"
-                            Click="cmdSearch_Click" />
-                    <Grid />
-                </DockPanel>
-                <DockPanel Margin="0,0,0,5"
-                           DockPanel.Dock="Top"
-                           LastChildFill="True"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left">
-                    <!--  PALLET NO  -->
-                    <ctrl:NTextBox x:Name="txtPalletNo"
-                                   DockPanel.Dock="Left"
-                                   CaptionText="Pallet No:"
-                                   TextAlignment="Center"
-                                   WatermarkImageWidth="30"
-                                   WatermarkImageHeight="25"
-                                   WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
-                                   WatermarkText="Scan Pallet No."
-                                   Width="220"
-                                   PreviewKeyDown="txtPalletNo_PreviewKeyDown" />
-                    <Button x:Name="cmdReceiveAll"
-                            Content="Receive All"
-                            DockPanel.Dock="Left"
-                            Width="150"
-                            VerticalAlignment="Bottom"
-                            Margin="5,2"
-                            Style="{StaticResource InlineButton}"
-                            Click="cmdReceiveAll_Click" />
                     <Grid />
                 </DockPanel>
             </DockPanel>
@@ -182,54 +132,8 @@
                         <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
                         <GridViewColumn Header="Lot No" CellTemplate="{StaticResource LotNo}" />
                         <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
-                        <GridViewColumn Header="Pallet Type" CellTemplate="{StaticResource PalletType}" />
                         <GridViewColumn Header="Weight" CellTemplate="{StaticResource WeightQty}" />
                         <GridViewColumn Header="CH" CellTemplate="{StaticResource ConeCH}" />
-                        <!--  BUTTONS  -->
-                        <GridViewColumn Header="">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center">
-                                        <!--  RECEIVE  -->
-                                        <Button x:Name="cmdReceive"
-                                                DockPanel.Dock="Left"
-                                                Style="{StaticResource InlineButton}"
-                                                Margin="5,0"
-                                                Width="100"
-                                                Height="30"
-                                                Click="cmdReceive_Click">
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Style="{StaticResource fa-scan}" FontSize="{StaticResource IBFSize}" />
-                                                <TextBlock Margin="3,0"
-                                                           FontFamily="{StaticResource THSarabun}"
-                                                           FontSize="{StaticResource IBFSize}"
-                                                           Text="Receive"
-                                                           VerticalAlignment="Center" />
-                                            </StackPanel>
-                                        </Button>
-                                        <!--  DELETE  -->
-                                        <Button x:Name="cmdDelete"
-                                                DockPanel.Dock="Left"
-                                                Style="{StaticResource InlineButton}"
-                                                Margin="5,0"
-                                                Width="100"
-                                                Height="30"
-                                                Click="cmdDelete_Click">
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
-                                                <TextBlock Margin="3,0"
-                                                           FontFamily="{StaticResource THSarabun}"
-                                                           FontSize="{StaticResource IBFSize}"
-                                                           Text="Cancel"
-                                                           VerticalAlignment="Center" />
-                                            </StackPanel>
-                                        </Button>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>

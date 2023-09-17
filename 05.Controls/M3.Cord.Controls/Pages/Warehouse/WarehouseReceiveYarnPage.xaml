@@ -182,7 +182,6 @@
                         <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
                         <GridViewColumn Header="Lot No" CellTemplate="{StaticResource LotNo}" />
                         <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
-                        <GridViewColumn Header="Pallet Type" CellTemplate="{StaticResource PalletType}" />
                         <GridViewColumn Header="Weight" CellTemplate="{StaticResource WeightQty}" />
                         <GridViewColumn Header="CH" CellTemplate="{StaticResource ConeCH}" />
                         <!--  BUTTONS  -->
