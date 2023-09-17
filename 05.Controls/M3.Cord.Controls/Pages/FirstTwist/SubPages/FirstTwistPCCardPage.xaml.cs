@@ -76,6 +76,19 @@ namespace M3.Cord.Pages
         {
             if (null == selectedMC || null == pcCard)
                 return;
+
+            var msg = M3CordApp.Windows.MessageBoxOKCancel;
+            msg.Setup("Continue Next Doff with Existing Yarn Lot");
+            if (msg.ShowDialog() == true)
+            {
+                // Yes
+            }
+            else
+            {
+                // No
+            }
+
+
             var win = M3CordApp.Windows.StartTwist1Op;
             _operation = new PCTwist1Operation();
             _operation.PCTwist1Id = pcCard.PCTwist1Id;
@@ -192,6 +205,12 @@ namespace M3.Cord.Pages
 
             UpdateMCStatus();
         }
+
+        #endregion
+
+        #region Public Events
+
+        public event System.EventHandler RequestLoadYarn;
 
         #endregion
     }

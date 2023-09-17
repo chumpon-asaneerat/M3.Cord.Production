@@ -61,14 +61,7 @@ namespace M3.Cord.Pages
 
         private void cmdLoadYarn_Click(object sender, RoutedEventArgs e)
         {
-            if (null == selectedMC || null == pcCard)
-                return;
-            var win = M3CordApp.Windows.Twist1LoadRecordEditor;
-            win.Setup(selectedMC, pcCard, null); // New
-            if (win.ShowDialog() == false) return;
-
-            // reload pc card to refresh last doff/test no. 
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
+            ShowLoadYarnDialog();
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
@@ -133,6 +126,18 @@ namespace M3.Cord.Pages
             }
 
             UpdateMCStatus();
+        }
+
+        public void ShowLoadYarnDialog()
+        {
+            if (null == selectedMC || null == pcCard)
+                return;
+            var win = M3CordApp.Windows.Twist1LoadRecordEditor;
+            win.Setup(selectedMC, pcCard, null); // New
+            if (win.ShowDialog() == false) return;
+
+            // reload pc card to refresh last doff/test no. 
+            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
         }
 
         #endregion
