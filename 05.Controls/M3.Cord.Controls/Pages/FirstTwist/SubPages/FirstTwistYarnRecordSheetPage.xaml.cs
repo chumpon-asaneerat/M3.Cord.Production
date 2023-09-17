@@ -112,24 +112,27 @@ namespace M3.Cord.Pages
 
         public void RefreshGrids()
         {
-            UpdateMCStatus();
-
             lvCheckSheet.ItemsSource = null;
-            if (null == pcCard || null == selectedMC) return;
-            checkSheets = Twist1CheckSheet.Gets(0).Value();
-            if (null == checkSheets || checkSheets.Count <= 0)
-            {
-                checkSheets = new List<Twist1CheckSheet>();
-                for (int i = selectedMC.StartCore; i < selectedMC.EndCore; i++)
-                {
-                    checkSheets.Add(new Twist1CheckSheet() { Twist1LoadId = 0, SPNo = i });
-                }
-            }
-            else
-            {
 
+            if (null != pcCard && null != selectedMC)
+            {
+                checkSheets = Twist1CheckSheet.Gets(0).Value();
+                if (null == checkSheets || checkSheets.Count <= 0)
+                {
+                    checkSheets = new List<Twist1CheckSheet>();
+                    for (int i = selectedMC.StartCore; i < selectedMC.EndCore; i++)
+                    {
+                        checkSheets.Add(new Twist1CheckSheet() { Twist1LoadId = 0, SPNo = i });
+                    }
+                }
+                else
+                {
+
+                }
+                lvCheckSheet.ItemsSource = checkSheets;
             }
-            lvCheckSheet.ItemsSource = checkSheets;
+
+            UpdateMCStatus();
         }
 
         #endregion

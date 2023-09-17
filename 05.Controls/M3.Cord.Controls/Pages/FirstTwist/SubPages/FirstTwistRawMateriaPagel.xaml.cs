@@ -97,12 +97,14 @@ namespace M3.Cord.Pages
 
         public void RefreshGrids()
         {
-            UpdateMCStatus();
-
             lvRawMats.ItemsSource = null;
-            if (null == pcCard) return;
-            var items = RawMaterialSummary.Gets(pcCard.PCTwist1Id.Value).Value();
-            lvRawMats.ItemsSource = items;
+            if (null != pcCard)
+            {
+                var items = RawMaterialSummary.Gets(pcCard.PCTwist1Id.Value).Value();
+                lvRawMats.ItemsSource = items;
+            }
+
+            UpdateMCStatus();
         }
 
         #endregion

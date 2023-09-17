@@ -24,12 +24,23 @@ namespace M3.Cord.Windows
     /// </summary>
     public partial class EndTwist1OpWindow : Window
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public EndTwist1OpWindow()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region Internal Variables
+        
         private PCTwist1Operation _item = null;
+
+        #endregion
 
         #region Button Handlers
 
@@ -46,6 +57,8 @@ namespace M3.Cord.Windows
 
         #endregion
 
+        #region Private Methods
+
         private void Save()
         {
             if (null != _item)
@@ -55,10 +68,16 @@ namespace M3.Cord.Windows
             }
         }
 
+        #endregion
+
+        #region Public Methods
+
         public void Setup(PCTwist1Operation item)
         {
             _item = item;
             this.DataContext = _item;
         }
+
+        #endregion
     }
 }

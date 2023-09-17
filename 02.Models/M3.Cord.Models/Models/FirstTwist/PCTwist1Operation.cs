@@ -50,8 +50,39 @@ namespace M3.Cord.Models
             set { Set(value); }
         }
 
-        public decimal? UnitWeight { get; set; }
-        public decimal? OutputCH { get; set; }
+        public decimal? UnitWeight
+        {
+            get { return Get<decimal?>(); }
+            set 
+            { 
+                Set(value, () => 
+                { 
+                    Raise(() => this.CalcProductWeight); 
+                }); 
+            }
+        }
+        public decimal? OutputCH
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.CalcProductWeight);
+                });
+            }
+        }
+
+        public decimal? CalcProductWeight 
+        {
+            get 
+            {
+                return (UnitWeight.HasValue && OutputCH.HasValue) ?
+                    UnitWeight.Value * OutputCH.Value : new decimal?();
+            }
+            set { }
+        }
+
         public decimal? ProductWeight { get; set; }
         public decimal? WasteWeight { get; set; }
 
@@ -201,6 +232,8 @@ namespace M3.Cord.Models
 
                 return ret;
             }
+
+            value.ProductWeight = value.CalcProductWeight;
 
             var p = new DynamicParameters();
             p.Add("@PCTwist1Id", value.PCTwist1Id);

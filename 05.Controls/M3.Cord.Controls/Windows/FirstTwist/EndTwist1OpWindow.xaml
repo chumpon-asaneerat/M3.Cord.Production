@@ -15,7 +15,7 @@
         WindowStartupLocation="CenterOwner"
         Height="450"
         Width="850">
-    <page:NPage HeaderText="Load Yarn">
+    <page:NPage HeaderText="End Doff">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
             <DockPanel LastChildFill="True"
@@ -51,7 +51,7 @@
                                   Margin="5"
                                   FontSize="24"
                                   Content="Test (DOFF)"
-                                  VerticalAlignment="Bottom"/>
+                                  VerticalAlignment="Bottom" />
                         <!--  DOFF NO  -->
                         <ctrl:NTextBox CaptionText="Doff No:"
                                        IsEnabled="False"
@@ -63,20 +63,21 @@
                 <!--  INPUT INFO  -->
                 <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                     <StackPanel Orientation="Horizontal">
-                        <!--  Unit Weight   -->
+                        <!--  Unit Weight  -->
                         <ctrl:NTextBox CaptionText="Unit Weight:"
                                        DockPanel.Dock="Left"
                                        Text="{Binding UnitWeight}"
                                        Width="200" />
                         <!--  Output No  -->
-                        <ctrl:NTextBox CaptionText="Outpu Number:"
+                        <ctrl:NTextBox CaptionText="Output Number:"
                                        DockPanel.Dock="Left"
                                        Text="{Binding OutputCH}"
                                        Width="200" />
                         <!--  Product  -->
                         <ctrl:NTextBox CaptionText="Product:"
                                        DockPanel.Dock="Left"
-                                       Text="{Binding ProductWeight}"
+                                       Text="{Binding CalcProductWeight}"
+                                       IsReadOnly="True"
                                        Width="200" />
                         <!--  Waste Weight  -->
                         <ctrl:NTextBox CaptionText="Waste Weight:"

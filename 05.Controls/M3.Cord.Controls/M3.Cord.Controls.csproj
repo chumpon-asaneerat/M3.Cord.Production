@@ -174,13 +174,13 @@
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
-    <Compile Include="Windows\EndTwist1OpWindow.xaml.cs">
+    <Compile Include="Windows\FirstTwist\EndTwist1OpWindow.xaml.cs">
       <DependentUpon>EndTwist1OpWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Imports\ImportReportWindow.xaml.cs">
       <DependentUpon>ImportReportWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\StartTwist1OpWindow.xaml.cs">
+    <Compile Include="Windows\FirstTwist\StartTwist1OpWindow.xaml.cs">
       <DependentUpon>StartTwist1OpWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="_Templates\09.QA\CordSamplingDetialsDocument.xaml.cs">
@@ -613,7 +613,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\EndTwist1OpWindow.xaml">
+    <Page Include="Windows\FirstTwist\EndTwist1OpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -689,7 +689,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </None>
-    <Page Include="Windows\StartTwist1OpWindow.xaml">
+    <Page Include="Windows\FirstTwist\StartTwist1OpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -153,6 +153,19 @@ namespace M3.Cord.Pages
             // Binding
             paPCCard.DataContext = pcCard;
             cmdSelectPCCard.IsEnabled = (null == pcCard);
+            // Check current operations
+            var operations = lvPCCards.ItemsSource as List<PCTwist1Operation>;
+            if (null != operations && operations.Count > 0)
+            {
+                int idx = operations.Count - 1;
+                _operation = operations[idx];
+                if (_operation.EndTime.HasValue)
+                {
+                    // already end.
+                    _operation = null;
+                }
+            }
+
             // Check enable start/end doff
             cmdStartDoff.IsEnabled = (null != pcCard && null == _operation);
             cmdEndDoff.IsEnabled = (null != pcCard && null != _operation);
@@ -170,12 +183,14 @@ namespace M3.Cord.Pages
 
         public void RefreshGrids()
         {
-            UpdateMCStatus();
-
             lvPCCards.ItemsSource = null;
-            if (null == pcCard) return;
-            var items = PCTwist1Operation.Gets(pcCard.PCTwist1Id.Value).Value();
-            lvPCCards.ItemsSource = items;
+            if (null != pcCard)
+            {
+                var items = PCTwist1Operation.Gets(pcCard.PCTwist1Id.Value).Value();
+                lvPCCards.ItemsSource = items;
+            }
+
+            UpdateMCStatus();
         }
 
         #endregion
