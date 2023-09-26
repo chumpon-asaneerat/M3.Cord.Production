@@ -35,7 +35,7 @@
                                      FontSize="{TemplateBinding FontSize}"
                                      FontWeight="{TemplateBinding FontWeight}"
                                      Foreground="{TemplateBinding InputForeground}"
-                                     Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NTextBox}, UpdateSourceTrigger=PropertyChanged}"
+                                     Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NTextBox}, UpdateSourceTrigger=LostFocus, TargetNullValue=''}"
                                      TextAlignment="{TemplateBinding TextAlignment}"
                                      TextWrapping="{TemplateBinding TextWrapping}"
                                      IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource FindAncestor, AncestorType=local:NTextBox}, UpdateSourceTrigger=PropertyChanged}"
