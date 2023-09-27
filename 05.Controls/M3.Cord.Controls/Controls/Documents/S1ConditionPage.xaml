@@ -138,7 +138,10 @@
                     <TextBox Width="200" Text="" />
                 </StackPanel>
             </Border>
-            <Border Grid.Row="2" Grid.Column="4" />
+
+            <Border Grid.Row="2" Grid.Column="4">
+                <TextBox Width="200" Text="" />
+            </Border>
 
             <!--#endregion-->
 
@@ -179,7 +182,9 @@
                     </StackPanel>
                 </StackPanel>
             </Border>
-            <Border Grid.Row="3" Grid.Column="4" />
+            <Border Grid.Row="3" Grid.Column="4">
+                <TextBox Width="200" Text="" />
+            </Border>
 
             <!--#endregion-->
 
@@ -213,7 +218,9 @@
                     </StackPanel>
                 </StackPanel>
             </Border>
-            <Border Grid.Row="4" Grid.Column="4" />
+            <Border Grid.Row="4" Grid.Column="4">
+                <TextBox Width="200" Text="" />
+            </Border>
 
             <!--#endregion-->
 
@@ -235,7 +242,9 @@
             <Border Grid.Row="5" Grid.Column="3">
                 <TextBox Width="200" Text="" />
             </Border>
-            <Border Grid.Row="5" Grid.Column="4" />
+            <Border Grid.Row="5" Grid.Column="4">
+                <TextBox Width="200" Text="" />
+            </Border>
 
             <!--#endregion-->
 
@@ -257,7 +266,9 @@
             <Border Grid.Row="6" Grid.Column="3">
                 <TextBox Width="200" Text="" />
             </Border>
-            <Border Grid.Row="6" Grid.Column="4" />
+            <Border Grid.Row="6" Grid.Column="4">
+                <TextBox Width="200" Text="" />
+            </Border>
 
             <!--#endregion-->
 
@@ -298,7 +309,9 @@
                     </StackPanel>
                 </StackPanel>
             </Border>
-            <Border Grid.Row="7" Grid.Column="4" />
+            <Border Grid.Row="7" Grid.Column="4">
+                <TextBox Width="200" Text="" />
+            </Border>
 
             <!--#endregion-->
 
@@ -324,7 +337,19 @@
                     <Run Text="เครื่องต้องหยุดและมีสัญญาณไฟเตือน" />
                 </TextBlock>
             </Border>
-            <Border Grid.Row="8" Grid.Column="4" />
+            <Border Grid.Row="8" Grid.Column="4" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical" Width="80" >
+                        <CheckBox/>
+                        <TextBlock Text="YES" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="80">
+                        <CheckBox />
+                        <TextBlock Text="NO" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
 
             <!--#endregion-->
 
@@ -350,7 +375,19 @@
                     <Run Text="และมีสัญญาณเตือน" />
                 </TextBlock>
             </Border>
-            <Border Grid.Row="9" Grid.Column="4" />
+            <Border Grid.Row="9" Grid.Column="4">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical" Width="80" >
+                        <CheckBox/>
+                        <TextBlock Text="YES" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="80">
+                        <CheckBox />
+                        <TextBlock Text="NO" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
 
             <!--#endregion-->
 
@@ -415,7 +452,9 @@
                     <TextBox Width="70" Text="" />
                 </StackPanel>
             </Border>
-            <Border Grid.Row="11" Grid.Column="4" />
+            <Border Grid.Row="11" Grid.Column="4" >
+                <TextBox Width="200" Text="" />
+            </Border>
 
             <!--#endregion-->
 
@@ -441,8 +480,9 @@
                     <TextBox Width="70" Text="" />
                 </StackPanel>
             </Border>
-            <Border Grid.Row="12" Grid.Column="4" />
-
+            <Border Grid.Row="12" Grid.Column="4" >
+                <TextBox Width="200" Text="" />
+            </Border>
             <!--#endregion-->
 
             <!--#region NO 11-->
@@ -467,7 +507,11 @@
                     <TextBox Width="70" Text="" />
                 </StackPanel>
             </Border>
-            <Border Grid.Row="13" Grid.Column="4" />
+            <Border Grid.Row="13" Grid.Column="4" >
+                <TextBlock HorizontalAlignment="Center">
+                    <Run Text="คำนวนโดย ข้อ 10 ตั้ง หารด้วย ข้อ 9" />
+                </TextBlock>
+            </Border>
 
             <!--#endregion-->
 
@@ -492,7 +536,9 @@
                          AcceptsReturn="True"
                          Text="มีรอยต่อ ได้ 2 รอยต่อ" />
             </Border>
-            <Border Grid.Row="14" Grid.Column="4" />
+            <Border Grid.Row="14" Grid.Column="4">
+                <TextBox Width="200" Text="" />
+            </Border>
 
             <!--#endregion-->
         </Grid>

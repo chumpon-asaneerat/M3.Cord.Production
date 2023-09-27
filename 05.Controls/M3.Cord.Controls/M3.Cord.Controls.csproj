@@ -74,6 +74,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Documents\CordSamplingDetailsPage.xaml.cs">
+      <DependentUpon>CordSamplingDetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\S1ConditionPage.xaml.cs">
       <DependentUpon>S1ConditionPage.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,9 @@
     </Compile>
     <Compile Include="Controls\Documents\S4x2ConditionPage.xaml.cs">
       <DependentUpon>S4x2ConditionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\S5ConditionPage.xaml.cs">
+      <DependentUpon>S5ConditionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Elements\ActualQtyBox.xaml.cs">
       <DependentUpon>ActualQtyBox.xaml</DependentUpon>
@@ -400,6 +406,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\Documents\CordSamplingDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Documents\S1ConditionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -409,6 +419,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Documents\S4x2ConditionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\S5ConditionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
