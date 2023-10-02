@@ -51,15 +51,15 @@ namespace M3.Cord.Windows
 
         #region TextBox Handlers
 
-        private void txtScanPallet_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void txtScanTrace_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                string palletNo = txtScanPallet.Text;
-                txtScanPallet.Text = string.Empty;
-                if (!string.IsNullOrEmpty(palletNo))
+                string traceNo = txtScanTrace.Text;
+                txtScanTrace.Text = string.Empty;
+                if (!string.IsNullOrEmpty(traceNo))
                 {
-                    _pallet = G4IssueYarn.SearchWarehousePallet(palletNo).Value();
+                    _pallet = G4IssueYarn.SearchWarehousePallet(traceNo).Value();
 
                     if (null == _pallet)
                     {

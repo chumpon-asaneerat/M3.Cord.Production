@@ -66,8 +66,8 @@
                                        DockPanel.Dock="Left"
                                        Text="{Binding ShiftName}"
                                        Width="100" />
-                        <!--  Scan Pallet No  -->
-                        <ctrl:NTextBox x:Name="txtScanPallet"
+                        <!--  Scan Trace No  -->
+                        <ctrl:NTextBox x:Name="txtScanTrace"
                                        CaptionText="Pallet No:"
                                        DockPanel.Dock="Left"
                                        WatermarkImageWidth="30"
@@ -76,7 +76,7 @@
                                        WatermarkText="Scan Pallet No"
                                        Text=""
                                        Width="250"
-                                       PreviewKeyDown="txtScanPallet_PreviewKeyDown" />
+                                       PreviewKeyDown="txtScanTrace_PreviewKeyDown" />
                     </StackPanel>
                 </DockPanel>
                 <!--  CURRENT PALLET INFO  -->
