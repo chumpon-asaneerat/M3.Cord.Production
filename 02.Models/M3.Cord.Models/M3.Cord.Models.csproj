@@ -94,7 +94,7 @@
   <ItemGroup>
     <Compile Include="AS400DbServer.cs" />
     <Compile Include="Models\Common\ModelCommon.cs" />
-    <Compile Include="Models\CordItemYarn\CordItemCode.cs" />
+    <Compile Include="Models\Masters\CordItemCode.cs" />
     <Compile Include="Models\Documents\ConditionStd.cs" />
     <Compile Include="Models\Documents\S1ConditionStd.cs" />
     <Compile Include="Models\Excels\ExcelModels.cs" />
