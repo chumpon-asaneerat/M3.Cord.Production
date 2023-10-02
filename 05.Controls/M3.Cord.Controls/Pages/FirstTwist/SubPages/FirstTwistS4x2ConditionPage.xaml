@@ -54,6 +54,6 @@
             </StackPanel>
             <Grid />
         </DockPanel>
-        <s1:S1ConditionPage />
+        <s1:S1ConditionStdPage />
     </DockPanel>
 </UserControl>

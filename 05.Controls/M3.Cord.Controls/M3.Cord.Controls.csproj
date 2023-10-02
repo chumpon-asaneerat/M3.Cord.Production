@@ -77,8 +77,11 @@
     <Compile Include="Controls\Documents\CordSamplingDetailsPage.xaml.cs">
       <DependentUpon>CordSamplingDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S1ConditionPage.xaml.cs">
-      <DependentUpon>S1ConditionPage.xaml</DependentUpon>
+    <Compile Include="Controls\Documents\S1ConditionEntryPage.xaml.cs">
+      <DependentUpon>S1ConditionEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\S1ConditionStdPage.xaml.cs">
+      <DependentUpon>S1ConditionStdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Documents\S4x1ConditionPage.xaml.cs">
       <DependentUpon>S4x1ConditionPage.xaml</DependentUpon>
@@ -410,7 +413,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S1ConditionPage.xaml">
+    <Page Include="Controls\Documents\S1ConditionEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\S1ConditionStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

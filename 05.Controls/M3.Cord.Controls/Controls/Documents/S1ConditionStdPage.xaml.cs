@@ -18,9 +18,9 @@ namespace M3.Cord.Controls.Documents
     /// <summary>
     /// Interaction logic for S1ConditionPage.xaml
     /// </summary>
-    public partial class S1ConditionPage : UserControl
+    public partial class S1ConditionStdPage : UserControl
     {
-        public S1ConditionPage()
+        public S1ConditionStdPage()
         {
             InitializeComponent();
         }
