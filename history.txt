@@ -10,8 +10,10 @@ M3 Cord Production System #608
 M3 Cord Production System #607
 - 
 
+[commited]
 M3 Cord Production System #606
-- 
+- M3.Cord.Production.App re-implements #396
+  - Update document ageing
 
 [commited]
 M3 Cord Production System #605
