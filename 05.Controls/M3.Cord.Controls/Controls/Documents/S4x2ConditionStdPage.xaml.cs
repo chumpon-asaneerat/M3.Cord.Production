@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace M3.Cord.Controls.Documents
 {
     /// <summary>
-    /// Interaction logic for S4x1ConditionPage.xaml
+    /// Interaction logic for S4x2ConditionStdPage.xaml
     /// </summary>
-    public partial class S4x1ConditionPage : UserControl
+    public partial class S4x2ConditionStdPage : UserControl
     {
-        public S4x1ConditionPage()
+        public S4x2ConditionStdPage()
         {
             InitializeComponent();
         }

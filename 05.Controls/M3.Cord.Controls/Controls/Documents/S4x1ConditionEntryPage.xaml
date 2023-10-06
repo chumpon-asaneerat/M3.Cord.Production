@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="M3.Cord.Controls.Documents.S4x1ConditionPage"
+﻿<UserControl x:Class="M3.Cord.Controls.Documents.S4x1ConditionEntryPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -134,31 +134,31 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="2" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding TwistChangeGearSC}"/>
             </Border>
             <Border Grid.Row="2" Grid.Column="3">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="" />
+                            <TextBox Width="70"  Text="{Binding TwistChangeGearE}" IsReadOnly="True"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" x " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="" />
+                            <TextBox Width="70" Text="{Binding TwistChangeGearF}" IsReadOnly="True"/>
                     </StackPanel>
                 </StackPanel>
                     <TextBlock Height="5"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="" />
+                            <TextBox Width="70" Text="{Binding TwistChangeGearG}" IsReadOnly="True"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" x " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="" />
+                            <TextBox Width="70" Text="{Binding TwistChangeGearH}" IsReadOnly="True"/>
                     </StackPanel>
                 </StackPanel>
                 </StackPanel>
@@ -166,9 +166,29 @@
 
             <Border Grid.Row="2" Grid.Column="4">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Vertical">
+                            <TextBox Width="70"  Text="{Binding TwistChangeGearEActual}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text=" x " />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBox Width="70" Text="{Binding TwistChangeGearFActual}" />
+                        </StackPanel>
+                    </StackPanel>
                     <TextBlock Height="5"/>
-                    <TextBox Width="200" Text="" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Vertical">
+                            <TextBox Width="70" Text="{Binding TwistChangeGearGActual}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text=" x " />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBox Width="70" Text="{Binding TwistChangeGearHActual}" />
+                        </StackPanel>
+                    </StackPanel>
                 </StackPanel>
             </Border>
 
@@ -194,21 +214,21 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="3" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding MotorPulleyDiaSC}"/>
             </Border>
             <Border Grid.Row="3" Grid.Column="3">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding MotorPulleyDia}" IsReadOnly="True"/>
                     <TextBlock Height="5"/>
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding DrivingPulleyDia}" IsReadOnly="True"/>
                 </StackPanel>
 
             </Border>
             <Border Grid.Row="3" Grid.Column="4">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding MotorPulleyDiaActual}" />
                     <TextBlock Height="5"/>
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding DrivingPulleyDiaActual}" />
                 </StackPanel>
             </Border>
 
@@ -234,20 +254,20 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="4" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding OverFeedSC}"/>
             </Border>
             <Border Grid.Row="4" Grid.Column="3">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding OverFeedRate}" IsReadOnly="True"/>
                     <TextBlock Height="5"/>
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding OverFeedGear}" IsReadOnly="True"/>
                 </StackPanel>
             </Border>
             <Border Grid.Row="4" Grid.Column="4">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding OverFeedRateActual}" />
                     <TextBlock Height="5"/>
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding OverFeedGearActual}" />
                 </StackPanel>
             </Border>
 
@@ -278,30 +298,40 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="5" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding WindAngleSC}"/>
             </Border>
             <Border Grid.Row="5" Grid.Column="3">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding WindAngleDeg}" IsReadOnly="True"/>
                     <TextBlock Height="5"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="" />
+                            <TextBox Width="70"  Text="{Binding WindAngleGearA}" IsReadOnly="True"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text=" x " />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="" />
+                            <TextBox Width="70" Text="{Binding WindAngleGearB}" IsReadOnly="True"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
             </Border>
             <Border Grid.Row="5" Grid.Column="4">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding WindAngleDegActual}"/>
                     <TextBlock Height="5"/>
-                    <TextBox Width="200" Text="" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Vertical">
+                            <TextBox Width="70"  Text="{Binding WindAngleGearAActual}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text=" x " />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBox Width="70" Text="{Binding WindAngleGearBActual}"/>
+                        </StackPanel>
+                    </StackPanel>
                 </StackPanel>
             </Border>
 
@@ -320,30 +350,30 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="6" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding TensorDialSetSC}"/>
             </Border>
             <Border Grid.Row="6" Grid.Column="3">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200"  Text="{Binding TensorDialSet}" IsReadOnly="True"/>
                     <TextBlock Height="5"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="" />
+                            <TextBox Width="70" Text="{Binding NumberOfLoop}" IsReadOnly="True"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text=" ± " />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="" />
+                            <TextBox Width="70"  Text="{Binding NumberOfLoopErr}" IsReadOnly="True"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
             </Border>
             <Border Grid.Row="6" Grid.Column="4">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding TensorDialSetActual}" />
                     <TextBlock Height="5"/>
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding NumberOfLoopActual}" />
                 </StackPanel>
             </Border>
 
@@ -370,30 +400,30 @@
                
             </Border>
             <Border Grid.Row="7" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding MethodOfKnotSC}"/>
             </Border>
             <Border Grid.Row="7" Grid.Column="3">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding MethodOfKnot}" IsReadOnly="True"/>
                     <TextBlock Height="5"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="" />
+                            <TextBox Width="70" Text="{Binding WindQuantity}" IsReadOnly="True"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text=" ± " />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="" />
+                            <TextBox Width="70" Text="{Binding WindQuantityErr}" IsReadOnly="True"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
             </Border>
             <Border Grid.Row="7" Grid.Column="4">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding MethodOfKnotActual}" />
                     <TextBlock Height="5"/>
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding WindQuantityActual}"/>
                 </StackPanel>
             </Border>
 
@@ -419,40 +449,40 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="8" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding LengthSC}"/>
             </Border>
             <Border Grid.Row="8" Grid.Column="3">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="" />
+                            <TextBox Width="70" Text="{Binding Length}" IsReadOnly="True"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text=" ± " />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="" />
+                            <TextBox Width="70" Text="{Binding LengthErr}" IsReadOnly="True"/>
                         </StackPanel>
                     </StackPanel>
                     <TextBlock Height="5"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="" />
+                            <TextBox Width="70" Text="{Binding DoffTime}" IsReadOnly="True"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text=" ± " />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="" />
+                            <TextBox Width="70" Text="{Binding DoffTimeErr}" IsReadOnly="True"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
             </Border>
             <Border Grid.Row="8" Grid.Column="4" >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding LengthActual}" />
                     <TextBlock Height="5"/>
-                    <TextBox Width="200" Text="" />
+                    <TextBox Width="200" Text="{Binding DoffTimeActual}" />
                 </StackPanel>
             </Border>
 
@@ -478,20 +508,39 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="9" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding ProductQuantitySC}"/>
             </Border>
             <Border Grid.Row="9" Grid.Column="3">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Vertical">
+                            <TextBox Width="70" Text="{Binding ProductQuantityKg}" IsReadOnly="True"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text=" / " />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBox Width="70" Text="{Binding ProductQuantityDay}" IsReadOnly="True"/>
+                        </StackPanel>
+                    </StackPanel>
                     <TextBlock Height="5"/>
-                    <TextBox Width="200" Text="ต้องการพันหางที่ก้นหลอด" />
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBox Width="200" Text="ต้องการพันหางที่ก้นหลอด" IsReadOnly="True"/>
+                    </StackPanel>
                 </StackPanel>
+                
             </Border>
             <Border Grid.Row="9" Grid.Column="4">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="" />
-                    <TextBlock Height="5"/>
-                    <TextBlock Text="" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Orientation="Vertical">
+                        <TextBox Width="70" Text="{Binding ProductQuantityKgActual}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text=" / " />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBox Width="70" Text="{Binding ProductQuantityDayActual}" />
+                    </StackPanel>
                 </StackPanel>
             </Border>
 
@@ -548,18 +597,18 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="11" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding CalculatedTwistingNumberSC}"/>
             </Border>
             <Border Grid.Row="11" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="" />
+                    <TextBox Width="100" Text="{Binding CalculatedTwistingNumber}" IsReadOnly="True"/>
                     <TextBlock Text=" (S) " />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="" />
+                    <TextBox Width="70" Text="{Binding CalculatedTwistingNumberErr}" IsReadOnly="True"/>
                 </StackPanel>
             </Border>
             <Border Grid.Row="11" Grid.Column="4" >
-                <TextBox Width="200" Text="" />
+                <TextBox Width="200" Text="{Binding CalculatedTwistingNumberActual}" />
             </Border>
 
             <!--#endregion-->
@@ -577,17 +626,17 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="12" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding NumberOfSpindleRotationSC}"/>
             </Border>
             <Border Grid.Row="12" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="" />
+                    <TextBox Width="100" Text="{Binding NumberOfSpindleRotation}" IsReadOnly="True"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="" />
+                    <TextBox Width="70" Text="{Binding NumberOfSpindleRotationErr}" IsReadOnly="True"/>
                 </StackPanel>
             </Border>
             <Border Grid.Row="12" Grid.Column="4" >
-                <TextBox Width="200" Text="" />
+                <TextBox Width="200" Text="{Binding NumberOfSpindleRotationActual}"/>
             </Border>
             <!--#endregion-->
 
@@ -604,19 +653,17 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="13" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding YarnSpeedSC}"/>
             </Border>
             <Border Grid.Row="13" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="" />
+                    <TextBox Width="100" Text="{Binding YarnSpeed}" IsReadOnly="True"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="" />
+                    <TextBox Width="70" Text="{Binding YarnSpeedErr}" IsReadOnly="True"/>
                 </StackPanel>
             </Border>
             <Border Grid.Row="13" Grid.Column="4" >
-                <TextBlock HorizontalAlignment="Center">
-                    <Run Text="คำนวนโดย ข้อ 11 ตั้ง หารด้วย ข้อ 10 X 2" />
-                </TextBlock>
+                <TextBox Width="200" Text="{Binding YarnSpeedActual}"/>
             </Border>
 
             <!--#endregion-->
@@ -634,16 +681,16 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="14" Grid.Column="2">
-                <CheckBox Content="SC" />
+                <CheckBox Content="SC" IsChecked="{Binding SpecialMentionSC}"/>
             </Border>
             <Border Grid.Row="14" Grid.Column="3">
                 <TextBox Width="250"
                          Height="50"
                          AcceptsReturn="True"
-                         Text="ไม่มีรอยต่อ" />
+                         Text="ไม่มีรอยต่อ" IsReadOnly="True"/>
             </Border>
             <Border Grid.Row="14" Grid.Column="4">
-                <TextBox Width="200" Text="" />
+                <TextBox Width="200" Text="{Binding SpecialMentionActual}"/>
             </Border>
 
             <!--#endregion-->

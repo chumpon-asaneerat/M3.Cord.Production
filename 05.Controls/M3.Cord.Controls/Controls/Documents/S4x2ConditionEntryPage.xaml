@@ -1,11 +1,12 @@
-﻿<UserControl x:Class="M3.Cord.Controls.Documents.S1ConditionEntryPage"
+﻿<UserControl x:Class="M3.Cord.Controls.Documents.S4x2ConditionEntryPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:M3.Cord.Controls.Documents"
+             mc:Ignorable="d" 
              d:DesignHeight="1000"
-             d:DesignWidth="1000"
-             mc:Ignorable="d">
+             d:DesignWidth="1000">
     <UserControl.Resources>
         <!--  LOCAL STYLES  -->
         <Style TargetType="Border">
@@ -56,6 +57,12 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <!--#region COLUMN HEADERS-->
             <Border Grid.Row="0"
@@ -63,7 +70,7 @@
                     Grid.ColumnSpan="2"
                     Background="Silver">
                 <!--  CHECKING ITEM (MERGE COLUMN)  -->
-                <TextBlock Text="Checking Item (รายการที่ตรวจสอบ)" />
+                <TextBlock Text="S - 4 - 2" />
             </Border>
             <Border Grid.Row="1"
                     Grid.Column="0"
@@ -75,7 +82,7 @@
                     Grid.Column="1"
                     Background="Silver">
                 <!--  MC Setting  -->
-                <TextBlock Text="Machine Secting (ค่าที่ปรับตั้ง)" />
+                <TextBlock Text="" />
             </Border>
             <Border Grid.Row="0"
                     Grid.Column="2"
@@ -95,19 +102,19 @@
                     Grid.ColumnSpan="2"
                     Background="Silver">
                 <!--  Class  -->
-                <TextBlock Text="First Twisting (การตีเกลียวครั้งที่ 1)" />
+                <TextBlock Text="Condition  ( สภาวะที่ใช้ )" />
             </Border>
             <Border Grid.Row="1"
                     Grid.Column="3"
                     Background="Silver">
                 <!--  Class  -->
-                <TextBlock Text="Standard (ค่ามาตรฐาน)" />
+                <TextBlock Text="Standard (มาตรฐานที่ใช้ )" />
             </Border>
             <Border Grid.Row="1"
                     Grid.Column="4"
                     Background="Silver">
                 <!--  Class  -->
-                <TextBlock Text="ACTUAL (ค่าที่ได้จริง)" />
+                <TextBlock Text="Actual ( ค่าที่ใช้จริง )" />
             </Border>
 
             <!--#endregion-->
@@ -119,28 +126,18 @@
             </Border>
             <Border Grid.Row="2" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
-                    <Run Text="Ring diameter (in) * lift length (in)" />
-                    <LineBreak />
-                    <Run Text="เส้นผ่าศูนย์กลางของแหวน (นิ้ว)" />
-                    <LineBreak />
-                    <Run Text="ความยาวลิฟท์ (นิ้ว)" />
+                    <Run Text="Full package mode" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="2" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding RingDiameterSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding FullPackageModeSC}"/>
             </Border>
             <Border Grid.Row="2" Grid.Column="3">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                    <TextBlock Text="S-1-1"
-                               Foreground="DarkRed"
-                               FontWeight="Bold"
-                               FontSize="25" />
-                    <TextBox Width="200" Text="{Binding RingDiameter}" IsReadOnly="True"/>
-                </StackPanel>
+                <TextBox Width="200" Text="Full package" IsReadOnly="True"/>
             </Border>
 
             <Border Grid.Row="2" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding RingDiameterActual}" />
+                <TextBox Width="200" Text="{Binding FullPackageModeActual}"/>
             </Border>
 
             <!--#endregion-->
@@ -151,58 +148,33 @@
                 <TextBlock Text="2" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="3" Grid.Column="1">
-                <TextBlock FontSize="18" HorizontalAlignment="Left">
-                    <Run Text="Twist change gear" />
-                    <LineBreak />
-                    <Run Text="การเปลี่ยนเกียร์ตีเกลียว" />
-                </TextBlock>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock Width="250">
+                    <Run Text="Counter  ( ความยาว )" />
+                    </TextBlock>
+                    <TextBlock >
+                    <Run Text="m ( เมตร )" />
+                    </TextBlock>
+                </StackPanel>
             </Border>
             <Border Grid.Row="3" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding TwistChangeGearSC}"/>
+                <CheckBox Content="SC"  IsChecked="{Binding LengthSC}"/>
             </Border>
             <Border Grid.Row="3" Grid.Column="3">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="( I )" />
-                        <TextBox Width="50" Text="{Binding TwistChangeGearI}"  IsReadOnly="True"/>
+                        <TextBox Width="70" Text="{Binding Length}" IsReadOnly="True" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text=" x " />
+                        <TextBlock Text=" ± " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="( J )" />
-                        <TextBox Width="50" Text="{Binding TwistChangeGearJ}" IsReadOnly="True"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text=" x " />
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="( K )" />
-                        <TextBox Width="50" Text="{Binding TwistChangeGearK}" IsReadOnly="True"/>
+                        <TextBox Width="70" Text="{Binding LengthErr}" IsReadOnly="True"/>
                     </StackPanel>
                 </StackPanel>
             </Border>
             <Border Grid.Row="3" Grid.Column="4">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="( I )" />
-                        <TextBox Width="50" Text="{Binding TwistChangeGearIActual}" />
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text=" x " />
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="( J )" />
-                        <TextBox Width="50" Text="{Binding TwistChangeGearJActual}" />
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text=" x " />
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="( K )" />
-                        <TextBox Width="50" Text="{Binding TwistChangeGearKActual}" />
-                    </StackPanel>
-                </StackPanel>
+                <TextBox Width="200" Text="{Binding LengthActual}" />
             </Border>
 
             <!--#endregion-->
@@ -214,43 +186,17 @@
             </Border>
             <Border Grid.Row="4" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
-                    <Run Text="Lifter change gear" />
-                    <LineBreak />
-                    <Run Text="การเปลี่ยนลิฟเตอร์เกียร์" />
+                    <Run Text="Wind Angle shift function" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="4" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding LifterChangeGearSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding WindAngleShiftFunctionSC}"/>
             </Border>
             <Border Grid.Row="4" Grid.Column="3">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="( A )" />
-                        <TextBox Width="70" Text="{Binding LifterChangeGearA}" IsReadOnly="True"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text=" x " />
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="( B )" />
-                        <TextBox Width="70" Text="{Binding LifterChangeGearB}" IsReadOnly="True"/>
-                    </StackPanel>
-                </StackPanel>
+                <TextBox Width="200" Text="Linear" IsReadOnly="True" />
             </Border>
             <Border Grid.Row="4" Grid.Column="4">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="( A )" />
-                        <TextBox Width="70" Text="{Binding LifterChangeGearAActual}"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text=" x " />
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="( B )" />
-                        <TextBox Width="70" Text="{Binding LifterChangeGearBActual}"/>
-                    </StackPanel>
-                </StackPanel>
+                <TextBox Width="200" Text="{Binding WindAngleShiftFunctionActual}" />
             </Border>
 
             <!--#endregion-->
@@ -262,19 +208,17 @@
             </Border>
             <Border Grid.Row="5" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
-                    <Run Text="Outer diameter fo motor pulley (mm)" />
-                    <LineBreak />
-                    <Run Text="เส้นผ่าศูนย์กลางภายนอกของมอเตอร์พูลลี่ (มม.)" />
+                    <Run Text="Amount of disturb (%)" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="5" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding OuterDiameterSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding AmountOfDisturbSC}"/>
             </Border>
             <Border Grid.Row="5" Grid.Column="3">
-                <TextBox Width="200" Text="{Binding OuterDiameter}" IsReadOnly="True"/>
+                <TextBox Width="200" Text="{Binding AmountOfDisturb}" IsReadOnly="True"/>
             </Border>
             <Border Grid.Row="5" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding OuterDiameterActual}" />
+                <TextBox Width="200" Text="{Binding AmountOfDisturbActual}" />
             </Border>
 
             <!--#endregion-->
@@ -285,20 +229,23 @@
                 <TextBlock Text="5" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="6" Grid.Column="1">
-                <TextBlock HorizontalAlignment="Left">
-                    <Run Text="Traveller no." />
-                    <LineBreak />
-                    <Run Text="เบอร์ทราเวลเลอร์" />
-                </TextBlock>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock Width="250">
+                    <Run Text="Wind Angle ( มุม )" />
+                    </TextBlock>
+                    <TextBlock >
+                    <Run Text="deg ( องศา )" />
+                    </TextBlock>
+                </StackPanel>
             </Border>
             <Border Grid.Row="6" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding TravellerNoSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding WindAngleSC}"/>
             </Border>
             <Border Grid.Row="6" Grid.Column="3">
-                <TextBox Width="200" Text="{Binding TravellerNo}" IsReadOnly="True"/>
+                <TextBox Width="200" Text="{Binding WindAngle}" IsReadOnly="True" />
             </Border>
             <Border Grid.Row="6" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding TravellerNoActual}" />
+                <TextBox Width="200"  Text="{Binding WindAngleActual}" />
             </Border>
 
             <!--#endregion-->
@@ -310,51 +257,17 @@
             </Border>
             <Border Grid.Row="7" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
-                    <Run Text="Couter ความยาว" />
-                    <LineBreak />
-                    <Run Text="Unit weight (น้ำหนัก/หน่วย)" />
+                    <Run Text="Distueb acceleration time" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="7" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding CouterUnitSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding DistuebAccelerationTimeSC}"/>
             </Border>
             <Border Grid.Row="7" Grid.Column="3">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                    <StackPanel Orientation="Horizontal"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Center">
-                        <TextBox Width="80" Text="{Binding CouterUnit}" IsReadOnly="True"/>
-                        <TextBlock Text=" ± " />
-                        <TextBox Width="60" Text="{Binding CouterUnitErr}" IsReadOnly="True"/>
-                        <TextBlock Text=" m." />
-                    </StackPanel>
-                    <TextBlock Height="3" />
-                    <StackPanel Orientation="Horizontal"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Center">
-                        <TextBlock Text=" ( " />
-                        <TextBox Width="80" Text="{Binding CouterWeight}" IsReadOnly="True"/>
-                        <TextBlock Text=" ± " />
-                        <TextBox Width="60" Text="{Binding CouterWeightErr}" IsReadOnly="True"/>
-                        <TextBlock Text=" kg ) " />
-                    </StackPanel>
-                </StackPanel>
+                <TextBox Width="200" Text="{Binding DistuebAccelerationTime}" IsReadOnly="True" />
             </Border>
             <Border Grid.Row="7" Grid.Column="4">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                    <StackPanel Orientation="Horizontal"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Center">
-                        <TextBox Width="200"  Text="{Binding CouterUnitActual}" />
-                    </StackPanel>
-                    <TextBlock Height="3" />
-                    <StackPanel Orientation="Horizontal"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Center">
-                        <TextBox Width="200"  Text="{Binding CouterWeightActual}" />
-                    </StackPanel>
-                </StackPanel>
-                
+                <TextBox Width="200" Text="{Binding DistuebAccelerationTimeActual}" />
             </Border>
 
             <!--#endregion-->
@@ -366,33 +279,17 @@
             </Border>
             <Border Grid.Row="8" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
-                    <Run Text="Counter system" />
-                    <LineBreak />
-                    <Run Text="ระบบการทำงานของ Counter" />
+                    <Run Text="Distueb dcceleration time" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="8" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding CounterSystemSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding DistuebDccelerationTimeSC}"/>
             </Border>
             <Border Grid.Row="8" Grid.Column="3">
-                <TextBlock HorizontalAlignment="Center">
-                    <Run Text="เมื่อด้ายเต็ม Counter ที่ตั้งไว้" />
-                    <LineBreak />
-                    <Run Text="เครื่องต้องหยุดและมีสัญญาณไฟเตือน" />
-                </TextBlock>
+                <TextBox Width="200" Text="{Binding DistuebDccelerationTime}" IsReadOnly="True" />
             </Border>
-            <Border Grid.Row="8" Grid.Column="4">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel Orientation="Vertical" Width="80">
-                        <CheckBox IsChecked="{Binding CounterSystemActual}"/>
-                        <TextBlock Text="YES" />
-                    </StackPanel>
-
-                    <StackPanel Orientation="Vertical" Width="80">
-                        <CheckBox  IsChecked="{Binding CounterSystemActual}"/>
-                        <TextBlock Text="NO" />
-                    </StackPanel>
-                </StackPanel>
+            <Border Grid.Row="8" Grid.Column="4" >
+                <TextBox Width="200" Text="{Binding DistuebDccelerationTimeActual}" />
             </Border>
 
             <!--#endregion-->
@@ -404,66 +301,203 @@
             </Border>
             <Border Grid.Row="9" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
-                    <Run Text="SENSER YARN BREAK" />
-                    <LineBreak />
-                    <Run Text="เซ็นเซอร์เตือนเมื่อด้ายขาด" />
+                    <Run Text="Tensor Setting (No.)" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="9" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding SenserYarnBreakSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding TensorSettingSC}"/>
             </Border>
             <Border Grid.Row="9" Grid.Column="3">
-                <TextBlock HorizontalAlignment="Center">
-                    <Run Text="เมื่อด้ายขาด เครื่องหยุด" />
-                    <LineBreak />
-                    <Run Text="และมีสัญญาณเตือน" />
-                </TextBlock>
+                <TextBox Width="200" Text="{Binding TensorSetting}" IsReadOnly="True" />
             </Border>
             <Border Grid.Row="9" Grid.Column="4">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel Orientation="Vertical" Width="80">
-                        <CheckBox IsChecked="{Binding SenserYarnBreakActual}"/>
-                        <TextBlock Text="YES" />
-                    </StackPanel>
-
-                    <StackPanel Orientation="Vertical" Width="80">
-                        <CheckBox IsChecked="{Binding SenserYarnBreakActual}"/>
-                        <TextBlock Text="NO" />
-                    </StackPanel>
-                </StackPanel>
+                <TextBox Width="200" Text="{Binding TensorSettingActual}" />
             </Border>
 
             <!--#endregion-->
 
+            <Border Grid.Row="10" Grid.Column="0">
+                <TextBlock Text="9" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="10" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Feed roller setting" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="10" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding FeedRollerSettingSC}"/>
+            </Border>
+            <Border Grid.Row="10" Grid.Column="3">
+                <TextBox Width="200"  Text="{Binding FeedRollerSetting}" IsReadOnly="True" />
+            </Border>
+            <Border Grid.Row="10" Grid.Column="4">
+                <TextBox Width="200" Text="{Binding FeedRollerSettingActual}"/>
+            </Border>
+
+            <Border Grid.Row="11" Grid.Column="0">
+                <TextBlock Text="10" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="11" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Bollon Setting" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="11" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding BollonSettingSC}"/>
+            </Border>
+            <Border Grid.Row="11" Grid.Column="3">
+                <TextBox Width="200"  Text="{Binding BollonSetting}" IsReadOnly="True"/>
+            </Border>
+            <Border Grid.Row="11" Grid.Column="4">
+                <TextBox Width="200" Text="{Binding BollonSettingActual}" />
+            </Border>
+
+            <Border Grid.Row="12" Grid.Column="0">
+                <TextBlock Text="11" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="12" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Method of knot  ( วิธีในการต่อด้าย )" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="12" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding MethodOfKnotSC}"/>
+            </Border>
+            <Border Grid.Row="12" Grid.Column="3">
+                <TextBox Width="200" Text="NO KNOT" IsReadOnly="True"/>
+            </Border>
+            <Border Grid.Row="12" Grid.Column="4">
+                <TextBox Width="200" Text="{Binding MethodOfKnotActual}" />
+            </Border>
+
+            <Border Grid.Row="13" Grid.Column="0">
+                <TextBlock Text="12" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="13" Grid.Column="1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock Width="250">
+                    <Run Text="Wind quantity (ปริมาณที่กรอ)" />
+                    </TextBlock>
+                    <TextBlock >
+                    <Run Text="Kg. ( กก. )" />
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="13" Grid.Column="2">
+                <CheckBox Content="SC"  IsChecked="{Binding WindQuantitySC}"/>
+            </Border>
+            <Border Grid.Row="13" Grid.Column="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Orientation="Vertical">
+                        <TextBox Width="70" Text="{Binding WindQuantity}" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text=" ± " />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBox Width="70" Text="{Binding WindQuantityErr}" IsReadOnly="True"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="13" Grid.Column="4">
+                <TextBox Width="200" Text="{Binding WindQuantityActual}" />
+            </Border>
+
+            <Border Grid.Row="14" Grid.Column="0">
+                <TextBlock Text="13" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="14" Grid.Column="1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock Width="250">
+                    <Run Text="Doff time  ( ระยะเวลาที่ใช้ )" />
+                    </TextBlock>
+                    <TextBlock >
+                    <Run Text="Hr.  ( ชั่วโมง )" />
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="14" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding DoffTimeSC}"/>
+            </Border>
+            <Border Grid.Row="14" Grid.Column="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Orientation="Vertical">
+                        <TextBox Width="70" Text="{Binding DoffTime}" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text=" ± " />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBox Width="70" Text="{Binding DoffTimeErr}" IsReadOnly="True"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="14" Grid.Column="4">
+                <TextBox Width="200"  Text="{Binding DoffTimeActual}" />
+            </Border>
+
+            <Border Grid.Row="15" Grid.Column="0">
+                <TextBlock Text="14" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="15" Grid.Column="1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock Width="250">
+                    <Run Text="Product quantity  ( ปริมาณผลิตภัณฑ์ )" />
+                    </TextBlock>
+                    <TextBlock >
+                    <Run Text="Kg./day (กก./วัน)" />
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="15" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding ProductQuantitySC}"/>
+            </Border>
+            <Border Grid.Row="15" Grid.Column="3">
+                <TextBox Width="200" Text="NO KNOT" IsReadOnly="True"/>
+            </Border>
+            <Border Grid.Row="15" Grid.Column="4">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Orientation="Vertical">
+                        <TextBox Width="70" Text="{Binding ProductQuantityKgActual}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text=" / " />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBox Width="70" Text="{Binding ProductQuantityDayActual}" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
             <!--#region ACTUAL-->
 
-            <Border Grid.Row="10"
+            <Border Grid.Row="16"
                     Grid.Column="0"
                     Background="Beige">
                 <TextBlock Text="" HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Row="10"
+            <Border Grid.Row="16"
                     Grid.Column="1"
                     Background="Beige">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="Actual Value  ( ค่าที่ตรวจสอบได้จริง )" />
                 </TextBlock>
             </Border>
-            <Border Grid.Row="10"
+            <Border Grid.Row="16"
                     Grid.Column="2"
                     Background="Beige">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="" />
                 </TextBlock>
             </Border>
-            <Border Grid.Row="10"
+            <Border Grid.Row="16"
                     Grid.Column="3"
                     Background="Beige">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="Standard (ค่ามาตรฐาน)" />
                 </TextBlock>
             </Border>
-            <Border Grid.Row="10"
+            <Border Grid.Row="16"
                     Grid.Column="4"
                     Background="Beige">
                 <TextBlock HorizontalAlignment="Left">
@@ -475,20 +509,20 @@
 
             <!--#region NO 9-->
 
-            <Border Grid.Row="11" Grid.Column="0">
-                <TextBlock Text="9" HorizontalAlignment="Center" />
+            <Border Grid.Row="17" Grid.Column="0">
+                <TextBlock Text="15" HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Row="11" Grid.Column="1">
+            <Border Grid.Row="17" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="Calculated twisting number (t/m)" />
                     <LineBreak />
                     <Run Text="จำนวนการตีเกลียวที่คำนวณ (เกลียว/เมตร)" />
                 </TextBlock>
             </Border>
-            <Border Grid.Row="11" Grid.Column="2">
+            <Border Grid.Row="17" Grid.Column="2">
                 <CheckBox Content="SC" IsChecked="{Binding CalculatedTwistingNumberSC}"/>
             </Border>
-            <Border Grid.Row="11" Grid.Column="3">
+            <Border Grid.Row="17" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="100" Text="{Binding CalculatedTwistingNumber}" IsReadOnly="True"/>
                     <TextBlock Text=" (S) " />
@@ -496,7 +530,7 @@
                     <TextBox Width="70" Text="{Binding CalculatedTwistingNumberErr}" IsReadOnly="True"/>
                 </StackPanel>
             </Border>
-            <Border Grid.Row="11" Grid.Column="4">
+            <Border Grid.Row="17" Grid.Column="4" >
                 <TextBox Width="200" Text="{Binding CalculatedTwistingNumberActual}" />
             </Border>
 
@@ -504,86 +538,85 @@
 
             <!--#region NO 10-->
 
-            <Border Grid.Row="12" Grid.Column="0">
-                <TextBlock Text="10" HorizontalAlignment="Center" />
+            <Border Grid.Row="18" Grid.Column="0">
+                <TextBlock Text="16" HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Row="12" Grid.Column="1">
+            <Border Grid.Row="18" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="Number of spindle rotation (rpm)" />
                     <LineBreak />
                     <Run Text="จำนวนรอบหมุนของสปินเดิล (รอบ/นาที)" />
                 </TextBlock>
             </Border>
-            <Border Grid.Row="12" Grid.Column="2">
+            <Border Grid.Row="18" Grid.Column="2">
                 <CheckBox Content="SC" IsChecked="{Binding NumberOfSpindleRotationSC}"/>
             </Border>
-            <Border Grid.Row="12" Grid.Column="3">
+            <Border Grid.Row="18" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="100" Text="{Binding NumberOfSpindleRotation}" IsReadOnly="True"/>
                     <TextBlock Text=" ± " />
                     <TextBox Width="70" Text="{Binding NumberOfSpindleRotationErr}" IsReadOnly="True"/>
                 </StackPanel>
             </Border>
-            <Border Grid.Row="12" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding NumberOfSpindleRotationActual}" />
+            <Border Grid.Row="18" Grid.Column="4" >
+                <TextBox Width="200" Text="{Binding NumberOfSpindleRotationActual}"/>
             </Border>
             <!--#endregion-->
 
             <!--#region NO 11-->
 
-            <Border Grid.Row="13" Grid.Column="0">
-                <TextBlock Text="11" HorizontalAlignment="Center" />
+            <Border Grid.Row="19" Grid.Column="0">
+                <TextBlock Text="17" HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Row="13" Grid.Column="1">
+            <Border Grid.Row="19" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="Yarn speed (m/min)" />
                     <LineBreak />
                     <Run Text="ความเร็วของด้าย (เมตร/นาที)" />
                 </TextBlock>
             </Border>
-            <Border Grid.Row="13" Grid.Column="2">
+            <Border Grid.Row="19" Grid.Column="2">
                 <CheckBox Content="SC" IsChecked="{Binding YarnSpeedSC}"/>
             </Border>
-            <Border Grid.Row="13" Grid.Column="3">
+            <Border Grid.Row="19" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="100" Text="{Binding YarnSpeed}" IsReadOnly="True"/>
                     <TextBlock Text=" ± " />
                     <TextBox Width="70" Text="{Binding YarnSpeedErr}" IsReadOnly="True"/>
                 </StackPanel>
             </Border>
-            <Border Grid.Row="13" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding YarnSpeedActual}" />
+            <Border Grid.Row="19" Grid.Column="4" >
+                <TextBox Width="200" Text="{Binding YarnSpeedActual}"/>
             </Border>
 
             <!--#endregion-->
 
             <!--#region NO 12-->
 
-            <Border Grid.Row="14" Grid.Column="0">
-                <TextBlock Text="12" HorizontalAlignment="Center" />
+            <Border Grid.Row="20" Grid.Column="0">
+                <TextBlock Text="18" HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Row="14" Grid.Column="1">
+            <Border Grid.Row="20" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="Special mention" />
                     <LineBreak />
                     <Run Text="หมายเหตุ" />
                 </TextBlock>
             </Border>
-            <Border Grid.Row="14" Grid.Column="2">
+            <Border Grid.Row="20" Grid.Column="2">
                 <CheckBox Content="SC" IsChecked="{Binding SpecialMentionSC}"/>
             </Border>
-            <Border Grid.Row="14" Grid.Column="3">
+            <Border Grid.Row="20" Grid.Column="3">
                 <TextBox Width="250"
                          Height="50"
                          AcceptsReturn="True"
-                         Text="มีรอยต่อ ได้ 2 รอยต่อ" IsReadOnly="True"/>
+                         Text="ไม่มีรอยต่อ"  IsReadOnly="True"/>
             </Border>
-            <Border Grid.Row="14" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding SpecialMentionActual}" />
+            <Border Grid.Row="20" Grid.Column="4">
+                <TextBox Width="200" Text="{Binding SpecialMentionActual}"/>
             </Border>
 
             <!--#endregion-->
         </Grid>
     </ScrollViewer>
 </UserControl>
-
