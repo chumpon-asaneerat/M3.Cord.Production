@@ -19,47 +19,41 @@ using Newtonsoft.Json;
 
 namespace M3.Cord.Models
 {
-    public class S4_1Condition
+    public class S4x2Condition
     {
         #region Public Proeprties
-
         public string ProductCode { get; set; }
-        public bool? TwistChangeGearSC { get; set; }
-        public decimal? TwistChangeGearE { get; set; }
-        public decimal? TwistChangeGearEActual { get; set; }
-        public decimal? TwistChangeGearF { get; set; }
-        public decimal? TwistChangeGearFActual { get; set; }
-        public decimal? TwistChangeGearG { get; set; }
-        public decimal? TwistChangeGearGActual { get; set; }
-        public decimal? TwistChangeGearH { get; set; }
-        public decimal? TwistChangeGearHActual { get; set; }
-        public bool? MotorPulleyDiaSC { get; set; }
-        public decimal? MotorPulleyDia { get; set; }
-        public decimal? MotorPulleyDiaActual { get; set; }
-        public bool? DrivingPulleyDiaSC { get; set; }
-        public decimal? DrivingPulleyDia { get; set; }
-        public decimal? DrivingPulleyDiaActual { get; set; }
-        public bool? OverFeedSC { get; set; }
-        public decimal? OverFeedRate { get; set; }
-        public decimal? OverFeedRateActual { get; set; }
-        public decimal? OverFeedGear { get; set; }
-        public decimal? OverFeedGearActual { get; set; }
+        public bool? FullPackageModeSC { get; set; }
+        public string FullPackageMode { get; set; }
+        public string FullPackageModeActual { get; set; }
+        public bool? LengthSC { get; set; }
+        public decimal? Length { get; set; }
+        public decimal? LengthErr { get; set; }
+        public decimal? LengthActual { get; set; }
+        public bool? WindAngleShiftFunctionSC { get; set; }
+        public string WindAngleShiftFunction { get; set; }
+        public string WindAngleShiftFunctionActual { get; set; }
+        public bool? AmountOfDisturbSC { get; set; }
+        public string AmountOfDisturb { get; set; }
+        public string AmountOfDisturbActual { get; set; }
         public bool? WindAngleSC { get; set; }
-        public decimal? WindAngleDeg { get; set; }
-        public decimal? WindAngleDegActual { get; set; }
-        public decimal? WindAngleGearA { get; set; }
-        public decimal? WindAngleGearAActual { get; set; }
-        public decimal? WindAngleGearB { get; set; }
-        public decimal? WindAngleGearBActual { get; set; }
-
-        public bool? TensorDialSetSC { get; set; }
-        public decimal? TensorDialSet { get; set; }
-        public decimal? TensorDialSetActual { get; set; }
-
-        public bool? NumberOfLoopSC { get; set; }
-        public decimal? NumberOfLoop { get; set; }
-        public decimal? NumberOfLoopErr { get; set; }
-        public decimal? NumberOfLoopActual { get; set; }
+        public decimal? WindAngle { get; set; }
+        public decimal? WindAngleActual { get; set; }
+        public bool? DistuebAccelerationTimeSC { get; set; }
+        public decimal? DistuebAccelerationTime { get; set; }
+        public decimal? DistuebAccelerationTimeActual { get; set; }
+        public bool? DistuebDccelerationTimeSC { get; set; }
+        public decimal? DistuebDccelerationTime { get; set; }
+        public decimal? DistuebDccelerationTimeActual { get; set; }
+        public bool? TensorSettingSC { get; set; }
+        public string TensorSetting { get; set; }
+        public string TensorSettingActual { get; set; }
+        public bool? FeedRollerSettingSC { get; set; }
+        public string FeedRollerSetting { get; set; }
+        public string FeedRollerSettingActual { get; set; }
+        public bool? BollonSettingSC { get; set; }
+        public string BollonSetting { get; set; }
+        public string BollonSettingActual { get; set; }
         public bool? MethodOfKnotSC { get; set; }
         public string MethodOfKnot { get; set; }
         public string MethodOfKnotActual { get; set; }
@@ -67,10 +61,6 @@ namespace M3.Cord.Models
         public decimal? WindQuantity { get; set; }
         public decimal? WindQuantityErr { get; set; }
         public decimal? WindQuantityActual { get; set; }
-        public bool? LengthSC { get; set; }
-        public decimal? Length { get; set; }
-        public decimal? LengthErr { get; set; }
-        public decimal? LengthActual { get; set; }
         public bool? DoffTimeSC { get; set; }
         public decimal? DoffTime { get; set; }
         public decimal? DoffTimeErr { get; set; }
@@ -104,11 +94,11 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<S4_1Condition>> Gets()
+        public static NDbResult<List<S4x2Condition>> Gets()
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
-            NDbResult<List<S4_1Condition>> rets = new NDbResult<List<S4_1Condition>>();
+            NDbResult<List<S4x2Condition>> rets = new NDbResult<List<S4x2Condition>>();
 
             IDbConnection cnn = DbServer.Instance.Db;
             if (null == cnn || !DbServer.Instance.Connected)
@@ -126,7 +116,7 @@ namespace M3.Cord.Models
 
             try
             {
-                var items = cnn.Query<S4_1Condition>("GetS4_1Condition", p,
+                var items = cnn.Query<S4x2Condition>("GetS4x2Condition", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);
@@ -142,7 +132,7 @@ namespace M3.Cord.Models
             if (null == rets.data)
             {
                 // create empty list.
-                rets.data = new List<S4_1Condition>();
+                rets.data = new List<S4x2Condition>();
             }
 
             return rets;
@@ -151,13 +141,13 @@ namespace M3.Cord.Models
         /// <summary>
         /// Save
         /// </summary>
-        /// <param name="value">The S4_1Condition item to save.</param>
+        /// <param name="value">The S4x2Condition item to save.</param>
         /// <returns></returns>
-        public static NDbResult<S4_1Condition> Save(S4_1Condition value)
+        public static NDbResult<S4x2Condition> Save(S4x2Condition value)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
-            NDbResult<S4_1Condition> ret = new NDbResult<S4_1Condition>();
+            NDbResult<S4x2Condition> ret = new NDbResult<S4x2Condition>();
 
             if (null == value)
             {
@@ -179,42 +169,37 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@ProductCode", value.ProductCode);
-            p.Add("@TwistChangeGearSC", value.TwistChangeGearSC);
-            p.Add("@TwistChangeGearE", value.TwistChangeGearE);
-            p.Add("@TwistChangeGearEActual", value.TwistChangeGearEActual);
-            p.Add("@TwistChangeGearF", value.TwistChangeGearF);
-            p.Add("@TwistChangeGearFActual", value.TwistChangeGearFActual);
-            p.Add("@TwistChangeGearG", value.TwistChangeGearG);
-            p.Add("@TwistChangeGearGActual", value.TwistChangeGearGActual);
-            p.Add("@TwistChangeGearH", value.TwistChangeGearH);
-            p.Add("@TwistChangeGearHActual", value.TwistChangeGearHActual);
-            p.Add("@MotorPulleyDiaSC", value.MotorPulleyDiaSC);
-            p.Add("@MotorPulleyDia", value.MotorPulleyDia);
-            p.Add("@MotorPulleyDiaActual", value.MotorPulleyDiaActual);
-            p.Add("@DrivingPulleyDiaSC", value.DrivingPulleyDiaSC);
-            p.Add("@DrivingPulleyDia", value.DrivingPulleyDia);
-            p.Add("@DrivingPulleyDiaActual", value.DrivingPulleyDiaActual);
-            p.Add("@OverFeedSC", value.OverFeedSC);
-            p.Add("@OverFeedRate", value.OverFeedRate);
-            p.Add("@OverFeedRateActual", value.OverFeedRateActual);
-            p.Add("@OverFeedGear", value.OverFeedGear);
-            p.Add("@OverFeedGearActual", value.OverFeedGearActual);
+            p.Add("@FullPackageModeSC", value.FullPackageModeSC);
+            p.Add("@FullPackageMode", value.FullPackageMode);
+            p.Add("@FullPackageModeActual", value.FullPackageModeActual);
+            p.Add("@LengthSC", value.LengthSC);
+            p.Add("@Length", value.Length);
+            p.Add("@LengthErr", value.LengthErr);
+            p.Add("@LengthActual", value.LengthActual);
+            p.Add("@WindAngleShiftFunctionSC", value.WindAngleShiftFunctionSC);
+            p.Add("@WindAngleShiftFunction", value.WindAngleShiftFunction);
+            p.Add("@WindAngleShiftFunctionActual", value.WindAngleShiftFunctionActual);
+            p.Add("@AmountOfDisturbSC", value.AmountOfDisturbSC);
+            p.Add("@AmountOfDisturb", value.AmountOfDisturb);
+            p.Add("@AmountOfDisturbActual", value.AmountOfDisturbActual);
             p.Add("@WindAngleSC", value.WindAngleSC);
-            p.Add("@WindAngleDeg", value.WindAngleDeg);
-            p.Add("@WindAngleDegActual", value.WindAngleDegActual);
-            p.Add("@WindAngleGearA", value.WindAngleGearA);
-            p.Add("@WindAngleGearAActual", value.WindAngleGearAActual);
-            p.Add("@WindAngleGearB", value.WindAngleGearB);
-            p.Add("@WindAngleGearBActual", value.WindAngleGearBActual);
-
-            p.Add("@TensorDialSetSC", value.TensorDialSetSC);
-            p.Add("@TensorDialSet", value.TensorDialSet);
-            p.Add("@TensorDialSetActual", value.TensorDialSetActual);
-
-            p.Add("@NumberOfLoopSC", value.NumberOfLoopSC);
-            p.Add("@NumberOfLoop", value.NumberOfLoop);
-            p.Add("@NumberOfLoopErr", value.NumberOfLoopErr);
-            p.Add("@NumberOfLoopActual", value.NumberOfLoopActual);
+            p.Add("@WindAngle", value.WindAngle);
+            p.Add("@WindAngleActual", value.WindAngleActual);
+            p.Add("@DistuebAccelerationTimeSC", value.DistuebAccelerationTimeSC);
+            p.Add("@DistuebAccelerationTime", value.DistuebAccelerationTime);
+            p.Add("@DistuebAccelerationTimeActual", value.DistuebAccelerationTimeActual);
+            p.Add("@DistuebDccelerationTimeSC", value.DistuebDccelerationTimeSC);
+            p.Add("@DistuebDccelerationTime", value.DistuebDccelerationTime);
+            p.Add("@DistuebDccelerationTimeActual", value.DistuebDccelerationTimeActual);
+            p.Add("@TensorSettingSC", value.TensorSettingSC);
+            p.Add("@TensorSetting", value.TensorSetting);
+            p.Add("@TensorSettingActual", value.TensorSettingActual);
+            p.Add("@FeedRollerSettingSC", value.FeedRollerSettingSC);
+            p.Add("@FeedRollerSetting", value.FeedRollerSetting);
+            p.Add("@FeedRollerSettingActual", value.FeedRollerSettingActual);
+            p.Add("@BollonSettingSC", value.BollonSettingSC);
+            p.Add("@BollonSetting", value.BollonSetting);
+            p.Add("@BollonSettingActual", value.BollonSettingActual);
             p.Add("@MethodOfKnotSC", value.MethodOfKnotSC);
             p.Add("@MethodOfKnot", value.MethodOfKnot);
             p.Add("@MethodOfKnotActual", value.MethodOfKnotActual);
@@ -222,10 +207,6 @@ namespace M3.Cord.Models
             p.Add("@WindQuantity", value.WindQuantity);
             p.Add("@WindQuantityErr", value.WindQuantityErr);
             p.Add("@WindQuantityActual", value.WindQuantityActual);
-            p.Add("@LengthSC", value.LengthSC);
-            p.Add("@Length", value.Length);
-            p.Add("@LengthErr", value.LengthErr);
-            p.Add("@LengthActual", value.LengthActual);
             p.Add("@DoffTimeSC", value.DoffTimeSC);
             p.Add("@DoffTime", value.DoffTime);
             p.Add("@DoffTimeErr", value.DoffTimeErr);
@@ -256,7 +237,7 @@ namespace M3.Cord.Models
 
             try
             {
-                cnn.Execute("SaveS4_1Condition", p, commandType: CommandType.StoredProcedure);
+                cnn.Execute("SaveS4x2Condition", p, commandType: CommandType.StoredProcedure);
                 ret.Success(value);
 
                 // Set error number/message
@@ -274,7 +255,7 @@ namespace M3.Cord.Models
             return ret;
         }
 
-        public static NDbResult Delete(S4_1Condition value)
+        public static NDbResult Delete(S4x2Condition value)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -303,7 +284,7 @@ namespace M3.Cord.Models
 
             try
             {
-                cnn.Execute("DELETE FROM S4_1Condition WHERE ProductCode = @ProductCode", p, commandType: CommandType.Text);
+                cnn.Execute("DELETE FROM S4x2Condition WHERE ProductCode = @ProductCode", p, commandType: CommandType.Text);
                 ret.Success();
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");

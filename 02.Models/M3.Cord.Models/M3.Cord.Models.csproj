@@ -120,12 +120,12 @@
     <Compile Include="Models\CordItemYarn\CordItemYarn.cs" />
     <Compile Include="Models\Masters\Customer.cs" />
     <Compile Include="Models\Masters\Product.cs" />
-    <Compile Include="Models\S4_1Condition\S4_1ConditionStd.cs" />
-    <Compile Include="Models\S4_1Condition\S4_1Condition.cs" />
+    <Compile Include="Models\S4x1Condition\S4x1ConditionStd.cs" />
+    <Compile Include="Models\S4x1Condition\S4x1Condition.cs" />
     <Compile Include="Models\S1Condition\S1ConditionStandard.cs" />
     <Compile Include="Models\S1Condition\S1Condition.cs" />
-    <Compile Include="Models\S4_2Condition\S4_2ConditionStd.cs" />
-    <Compile Include="Models\S4_2Condition\S4_2Condition.cs" />
+    <Compile Include="Models\S4x2Condition\S4x2ConditionStd.cs" />
+    <Compile Include="Models\S4x2Condition\S4x2Condition.cs" />
     <Compile Include="Models\S5Condition\S5ConditionStd.cs" />
     <Compile Include="Models\S5Condition\S5Condition.cs" />
     <Compile Include="Models\Users\UserInfo.cs" />
