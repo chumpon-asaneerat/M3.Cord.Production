@@ -164,6 +164,16 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdPalletSetting_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdChemicalRecipe_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void cmdCordDocumentMenu_Click(object sender, RoutedEventArgs e)
         {
             // M3 Cord Document Menu
