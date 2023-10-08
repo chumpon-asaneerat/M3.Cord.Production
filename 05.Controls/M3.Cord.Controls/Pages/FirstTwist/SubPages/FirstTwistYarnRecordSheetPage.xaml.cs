@@ -104,6 +104,7 @@ namespace M3.Cord.Pages
 
             if (null != pcCard && null != selectedMC)
             {
+                /*
                 checkSheets = Twist1CheckSheet.Gets(0).Value();
                 if (null == checkSheets || checkSheets.Count <= 0)
                 {
@@ -117,6 +118,7 @@ namespace M3.Cord.Pages
                 {
 
                 }
+                */
                 lvCheckSheet.ItemsSource = checkSheets;
             }
 

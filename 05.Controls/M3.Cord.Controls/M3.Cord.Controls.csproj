@@ -191,6 +191,18 @@
     <Compile Include="Pages\FirstTwist\SubPages\FirstTwistYarnRecordSheetPage.xaml.cs">
       <DependentUpon>FirstTwistYarnRecordSheetPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\S1StdManagePage.xaml.cs">
+      <DependentUpon>S1StdManagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S4x1StdManagePage.xaml.cs">
+      <DependentUpon>S4x1StdManagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S4x2StdManagePage.xaml.cs">
+      <DependentUpon>S4x2StdManagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S5StdManagePage.xaml.cs">
+      <DependentUpon>S5StdManagePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Warehouse\WarehouseYarnStockPage.xaml.cs">
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
@@ -324,9 +336,6 @@
     </None>
     <Compile Include="Pages\PCCard\PCCardManagePage.xaml.cs">
       <DependentUpon>PCCardManagePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Masters\S1ConditionStdSettingPage.xaml.cs">
-      <DependentUpon>S1ConditionStdSettingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Warehouse\WarehouseReceiveYarnPage.xaml.cs">
       <DependentUpon>WarehouseReceiveYarnPage.xaml</DependentUpon>
@@ -642,7 +651,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Masters\S1ConditionStdSettingPage.xaml">
+    <Page Include="Pages\S1StdManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\S4x1StdManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\S4x2StdManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\S5StdManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -819,7 +840,10 @@
     <Folder Include="Controls\Documents\FirstTwist\S4x1\" />
     <Folder Include="Controls\Documents\FirstTwist\S4x2\" />
     <Folder Include="Controls\Documents\SamplingDetails\" />
-    <Folder Include="Pages\Documents\" />
+    <Folder Include="Pages\Documents\S1Std\" />
+    <Folder Include="Pages\Documents\S4x1Std\" />
+    <Folder Include="Pages\Documents\S4x2Std\" />
+    <Folder Include="Pages\Documents\S5Std\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
     <Folder Include="_V3\Controls\Documents\Ageing\Elements\" />

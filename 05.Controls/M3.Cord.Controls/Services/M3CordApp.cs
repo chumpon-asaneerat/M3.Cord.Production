@@ -94,7 +94,7 @@ namespace M3.Cord
 
             #endregion
 
-            #region Master Data Menu
+            #region Master Data Main Menu
 
             /// <summary>Gets M3 Cord Master Data Menu Page.</summary>
             public static Cord.Pages.MasterDataManuPage MasterDataMenu
@@ -120,6 +120,31 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.CustomerManagePage>(); }
             }
             */
+
+            #endregion
+
+            #region Condition Standard
+
+            /// <summary>Gets S1 Condition Manage Page.</summary>
+            public static Cord.Pages.S1StdManagePage S1StdManage
+            {
+                get { return GetPage<Cord.Pages.S1StdManagePage>(); }
+            }
+            /// <summary>Gets S4x1 Condition Manage Page.</summary>
+            public static Cord.Pages.S4x1StdManagePage S4x1StdManage
+            {
+                get { return GetPage<Cord.Pages.S4x1StdManagePage>(); }
+            }
+            /// <summary>Gets S4x2 Condition Manage Page.</summary>
+            public static Cord.Pages.S4x2StdManagePage S4x2StdManage
+            {
+                get { return GetPage<Cord.Pages.S4x2StdManagePage>(); }
+            }
+            /// <summary>Gets S5 Condition Manage Page.</summary>
+            public static Cord.Pages.S5StdManagePage S5StdManage
+            {
+                get { return GetPage<Cord.Pages.S5StdManagePage>(); }
+            }
 
             #endregion
 
