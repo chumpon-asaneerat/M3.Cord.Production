@@ -191,16 +191,16 @@
     <Compile Include="Pages\FirstTwist\SubPages\FirstTwistYarnRecordSheetPage.xaml.cs">
       <DependentUpon>FirstTwistYarnRecordSheetPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\S1StdManagePage.xaml.cs">
+    <Compile Include="Pages\Documents\S1\S1StdManagePage.xaml.cs">
       <DependentUpon>S1StdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\S4x1StdManagePage.xaml.cs">
+    <Compile Include="Pages\Documents\S4x1\S4x1StdManagePage.xaml.cs">
       <DependentUpon>S4x1StdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\S4x2StdManagePage.xaml.cs">
+    <Compile Include="Pages\Documents\S4x2\S4x2StdManagePage.xaml.cs">
       <DependentUpon>S4x2StdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\S5StdManagePage.xaml.cs">
+    <Compile Include="Pages\Documents\S5\S5StdManagePage.xaml.cs">
       <DependentUpon>S5StdManagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Warehouse\WarehouseYarnStockPage.xaml.cs">
@@ -651,19 +651,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\S1StdManagePage.xaml">
+    <Page Include="Pages\Documents\S1\S1StdManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\S4x1StdManagePage.xaml">
+    <Page Include="Pages\Documents\S4x1\S4x1StdManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\S4x2StdManagePage.xaml">
+    <Page Include="Pages\Documents\S4x2\S4x2StdManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\S5StdManagePage.xaml">
+    <Page Include="Pages\Documents\S5\S5StdManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -835,10 +835,6 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\Documents\S1Std\" />
-    <Folder Include="Pages\Documents\S4x1Std\" />
-    <Folder Include="Pages\Documents\S4x2Std\" />
-    <Folder Include="Pages\Documents\S5Std\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
     <Folder Include="_V3\Controls\Documents\Ageing\Elements\" />
