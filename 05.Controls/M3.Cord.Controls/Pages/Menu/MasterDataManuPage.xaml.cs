@@ -93,17 +93,30 @@ namespace M3.Cord.Pages
 
         private void cmdS1StdCondiction_Click(object sender, RoutedEventArgs e)
         {
-
+            var page = M3CordApp.Pages.S1StdManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdS4x1StdCondiction_Click(object sender, RoutedEventArgs e)
         {
-
+            var page = M3CordApp.Pages.S4x1StdManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdS4x2StdCondiction_Click(object sender, RoutedEventArgs e)
         {
+            var page = M3CordApp.Pages.S4x2StdManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
 
+        private void cmd5StdCondiction_Click(object sender, RoutedEventArgs e)
+        {
+            var page = M3CordApp.Pages.S5StdManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion

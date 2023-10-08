@@ -6,7 +6,7 @@
              xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
              mc:Ignorable="d"
-             d:DesignHeight="450"
+             d:DesignHeight="650"
              d:DesignWidth="800"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
@@ -202,6 +202,7 @@
                         </TextBlock>
                     </Button>
                     <!--  Import Conditon Std  -->
+                    <!--
                     <Button x:Name="cmdImportConditionStd"
                             Click="cmdImportConditionStd_Click"
                             Style="{StaticResource FirstTwistButtonStyle}">
@@ -211,6 +212,7 @@
                             <Run Text="(Import)" FontSize="18" />
                         </TextBlock>
                     </Button>
+                    -->
                 </ctrl:NGroupMenuItem>
                 <!--  STANDARD CONDITION MENU  -->
                 <ctrl:NGroupMenuItem HeaderText="Comdition"
@@ -242,6 +244,16 @@
                             Style="{StaticResource SamplingButtonStyle}">
                         <TextBlock TextAlignment="Center">
                             <Run Text="Setup S-4-2" />
+                            <LineBreak />
+                            <Run Text="Standard" />
+                        </TextBlock>
+                    </Button>
+                    <!--  S5 Standard Condition  -->
+                    <Button x:Name="cmd5StdCondiction"
+                            Click="cmd5StdCondiction_Click"
+                            Style="{StaticResource SamplingButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Setup S-5" />
                             <LineBreak />
                             <Run Text="Standard" />
                         </TextBlock>

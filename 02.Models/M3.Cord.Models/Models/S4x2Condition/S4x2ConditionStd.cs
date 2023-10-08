@@ -75,7 +75,7 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<S4x2ConditionStd>> Gets()
+        public static NDbResult<List<S4x2ConditionStd>> Gets(string productCode)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -94,6 +94,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+            p.Add("@ProductCode", productCode);
 
             try
             {

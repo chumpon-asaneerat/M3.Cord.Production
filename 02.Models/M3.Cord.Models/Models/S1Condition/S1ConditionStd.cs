@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 
 namespace M3.Cord.Models
 {
-    public class S1ConditionStandard
+    public class S1ConditionStd
     {
         #region Public Proeprties
         public string ProductCode { get; set; }
@@ -72,11 +72,11 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<S1ConditionStandard>> Gets()
+        public static NDbResult<List<S1ConditionStd>> Gets(string productCode)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
-            NDbResult<List<S1ConditionStandard>> rets = new NDbResult<List<S1ConditionStandard>>();
+            NDbResult<List<S1ConditionStd>> rets = new NDbResult<List<S1ConditionStd>>();
 
             IDbConnection cnn = DbServer.Instance.Db;
             if (null == cnn || !DbServer.Instance.Connected)
@@ -91,10 +91,11 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+            p.Add("@ProductCode", productCode);
 
             try
             {
-                var items = cnn.Query<S1ConditionStandard>("GetS1ConditionStd", p,
+                var items = cnn.Query<S1ConditionStd>("GetS1ConditionStd", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);
@@ -110,7 +111,7 @@ namespace M3.Cord.Models
             if (null == rets.data)
             {
                 // create empty list.
-                rets.data = new List<S1ConditionStandard>();
+                rets.data = new List<S1ConditionStd>();
             }
 
             return rets;
@@ -121,11 +122,11 @@ namespace M3.Cord.Models
         /// </summary>
         /// <param name="value">The S1ConditionStandard item to save.</param>
         /// <returns></returns>
-        public static NDbResult<S1ConditionStandard> Save(S1ConditionStandard value)
+        public static NDbResult<S1ConditionStd> Save(S1ConditionStd value)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
-            NDbResult<S1ConditionStandard> ret = new NDbResult<S1ConditionStandard>();
+            NDbResult<S1ConditionStd> ret = new NDbResult<S1ConditionStd>();
 
             if (null == value)
             {
@@ -211,7 +212,7 @@ namespace M3.Cord.Models
             return ret;
         }
 
-        public static NDbResult Delete(S1ConditionStandard value)
+        public static NDbResult Delete(S1ConditionStd value)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 

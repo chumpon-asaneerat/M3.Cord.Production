@@ -74,31 +74,31 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Documents\CordSamplingDetailsPage.xaml.cs">
+    <Compile Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml.cs">
       <DependentUpon>CordSamplingDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S1ConditionEntryPage.xaml.cs">
+    <Compile Include="Controls\Documents\FirstTwist\S1\S1ConditionEntryPage.xaml.cs">
       <DependentUpon>S1ConditionEntryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S1ConditionStdPage.xaml.cs">
+    <Compile Include="Controls\Documents\FirstTwist\S1\S1ConditionStdPage.xaml.cs">
       <DependentUpon>S1ConditionStdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S4x1ConditionEntryPage.xaml.cs">
+    <Compile Include="Controls\Documents\FirstTwist\S4x1\S4x1ConditionEntryPage.xaml.cs">
       <DependentUpon>S4x1ConditionEntryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S4x1ConditionStdPage.xaml.cs">
+    <Compile Include="Controls\Documents\FirstTwist\S4x1\S4x1ConditionStdPage.xaml.cs">
       <DependentUpon>S4x1ConditionStdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S4x2ConditionEntryPage.xaml.cs">
+    <Compile Include="Controls\Documents\FirstTwist\S4x2\S4x2ConditionEntryPage.xaml.cs">
       <DependentUpon>S4x2ConditionEntryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S4x2ConditionStdPage.xaml.cs">
+    <Compile Include="Controls\Documents\FirstTwist\S4x2\S4x2ConditionStdPage.xaml.cs">
       <DependentUpon>S4x2ConditionStdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S5ConditionEntryPage.xaml.cs">
+    <Compile Include="Controls\Documents\Ageing\S5ConditionEntryPage.xaml.cs">
       <DependentUpon>S5ConditionEntryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S5ConditionStdPage.xaml.cs">
+    <Compile Include="Controls\Documents\Ageing\S5ConditionStdPage.xaml.cs">
       <DependentUpon>S5ConditionStdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Elements\ActualQtyBox.xaml.cs">
@@ -427,39 +427,39 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\Documents\CordSamplingDetailsPage.xaml">
+    <Page Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S1ConditionEntryPage.xaml">
+    <Page Include="Controls\Documents\FirstTwist\S1\S1ConditionEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S1ConditionStdPage.xaml">
+    <Page Include="Controls\Documents\FirstTwist\S1\S1ConditionStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S4x1ConditionEntryPage.xaml">
+    <Page Include="Controls\Documents\FirstTwist\S4x1\S4x1ConditionEntryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\Documents\S4x1ConditionStdPage.xaml">
+    <Page Include="Controls\Documents\FirstTwist\S4x1\S4x1ConditionStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S4x2ConditionEntryPage.xaml">
+    <Page Include="Controls\Documents\FirstTwist\S4x2\S4x2ConditionEntryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\Documents\S4x2ConditionStdPage.xaml">
+    <Page Include="Controls\Documents\FirstTwist\S4x2\S4x2ConditionStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S5ConditionEntryPage.xaml">
+    <Page Include="Controls\Documents\Ageing\S5ConditionEntryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\Documents\S5ConditionStdPage.xaml">
+    <Page Include="Controls\Documents\Ageing\S5ConditionStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -835,11 +835,6 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\Documents\Ageing\" />
-    <Folder Include="Controls\Documents\FirstTwist\S1\" />
-    <Folder Include="Controls\Documents\FirstTwist\S4x1\" />
-    <Folder Include="Controls\Documents\FirstTwist\S4x2\" />
-    <Folder Include="Controls\Documents\SamplingDetails\" />
     <Folder Include="Pages\Documents\S1Std\" />
     <Folder Include="Pages\Documents\S4x1Std\" />
     <Folder Include="Pages\Documents\S4x2Std\" />

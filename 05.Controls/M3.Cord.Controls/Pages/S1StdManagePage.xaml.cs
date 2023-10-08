@@ -77,7 +77,32 @@ namespace M3.Cord.Pages
 
         private void RefreshGrid()
         {
+            var product = cbProducts.SelectedItem as Product;
+            if (product != null)
+            {
+                string productCode = product.ProductCode;
+                var std = S1ConditionStd.Gets(productCode).Value().FirstOrDefault();
+                if (null == std)
+                {
+                    std = new S1ConditionStd();
+                }
+                cond.DataContext = std;
+                cond.IsEnabled = true;
+            }
+            else
+            {
+                cond.DataContext = null;
+                cond.IsEnabled = false;
+            }
+        }
 
+        #endregion
+
+        #region Public Methods
+
+        public void Setup()
+        {
+            cbProducts.ItemsSource = Product.Gets().Value();
         }
 
         #endregion

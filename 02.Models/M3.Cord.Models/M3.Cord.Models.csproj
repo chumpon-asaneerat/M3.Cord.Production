@@ -97,7 +97,6 @@
     <Compile Include="Models\CordSamplingDetails\CordSamplingDetails.cs" />
     <Compile Include="Models\Masters\CordItemCode.cs" />
     <Compile Include="Models\Documents\ConditionStd.cs" />
-    <Compile Include="Models\Documents\S1ConditionStd.cs" />
     <Compile Include="Models\Excels\ExcelModels.cs" />
     <Compile Include="Models\FirstTwist\PCTwist1.cs" />
     <Compile Include="Models\FirstTwist\PCTwist1Operation.cs" />
@@ -122,7 +121,7 @@
     <Compile Include="Models\Masters\Product.cs" />
     <Compile Include="Models\S4x1Condition\S4x1ConditionStd.cs" />
     <Compile Include="Models\S4x1Condition\S4x1Condition.cs" />
-    <Compile Include="Models\S1Condition\S1ConditionStandard.cs" />
+    <Compile Include="Models\S1Condition\S1ConditionStd.cs" />
     <Compile Include="Models\S1Condition\S1Condition.cs" />
     <Compile Include="Models\S4x2Condition\S4x2ConditionStd.cs" />
     <Compile Include="Models\S4x2Condition\S4x2Condition.cs" />
