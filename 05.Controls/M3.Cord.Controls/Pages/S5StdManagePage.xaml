@@ -18,6 +18,16 @@
                        DockPanel.Dock="Bottom"
                        Height="40">
                 <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <!--  SAVE  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdSave"
+                                            Margin="5,0,0,0"
+                                            IconType="Save"
+                                            Text="Save"
+                                            Click="cmdSave_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Right"
                             VerticalAlignment="Center">
                     <!--  HOME  -->

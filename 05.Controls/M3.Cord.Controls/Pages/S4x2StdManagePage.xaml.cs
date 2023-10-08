@@ -57,6 +57,11 @@ namespace M3.Cord.Pages
 
         #region Button Handlers
 
+        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        {
+            Save();
+        }
+
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
             M3CordApp.Pages.GotoCordMasterMenu();
@@ -75,6 +80,14 @@ namespace M3.Cord.Pages
 
         #region Private Methods
 
+        private void Save()
+        {
+            if (null == cond.DataContext) return;
+            var std = cond.DataContext as S4x2ConditionStd;
+            if (null == std) return;
+            S4x2ConditionStd.Save(std);
+        }
+
         private void RefreshGrid()
         {
             var product = cbProducts.SelectedItem as Product;
@@ -85,6 +98,7 @@ namespace M3.Cord.Pages
                 if (null == std)
                 {
                     std = new S4x2ConditionStd();
+                    std.ProductCode = productCode;
                 }
                 cond.DataContext = std;
                 cond.IsEnabled = true;
