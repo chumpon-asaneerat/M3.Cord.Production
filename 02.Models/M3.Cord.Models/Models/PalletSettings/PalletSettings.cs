@@ -46,6 +46,15 @@ namespace M3.Cord.Models
         public PalletType PalletType { get; set; }
         public PalletStatus PalletStatus { get; set; }
 
+        public SolidColorBrush TextColor
+        {
+            get
+            {
+                return ModelConsts.BlackColor;
+            }
+            set { }
+        }
+
         #endregion
 
         #region Static Methods
@@ -61,6 +70,15 @@ namespace M3.Cord.Models
         public int DoffNo { get; set; }
         public int? SPNoStart { get; set; }
         public int? SPNoEnd { get; set; }
+
+        public SolidColorBrush TextColor
+        {
+            get
+            {
+                return ModelConsts.BlackColor;
+            }
+            set { }
+        }
 
         #endregion
 
