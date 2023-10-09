@@ -166,7 +166,13 @@ namespace M3.Cord.Pages
 
         private void cmdPalletSetting_Click(object sender, RoutedEventArgs e)
         {
-
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Pallet Setting
+            var page = M3CordApp.Pages.PalletSettingManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdChemicalRecipe_Click(object sender, RoutedEventArgs e)

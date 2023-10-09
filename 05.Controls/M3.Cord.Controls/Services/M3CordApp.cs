@@ -251,6 +251,16 @@ namespace M3.Cord
             */
 
             #endregion
+
+            #region Pallet Setting
+
+            /// <summary>Gets Pallet Setting Page.</summary>
+            public static Cord.Pages.PalletSettingManagePage PalletSettingManage
+            {
+                get { return GetPage<Cord.Pages.PalletSettingManagePage>(); }
+            }
+
+            #endregion
         }
 
         /// <summary>
