@@ -90,6 +90,19 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
+        public static S4x2Condition Create(string productCode)
+        {
+            var inst = new S4x2Condition();
+
+            var std = S4x2ConditionStd.Gets(productCode).Value().FirstOrDefault();
+            if (null != std)
+            {
+                inst.CalculatedTwistingNumber = std.CalculatedTwistingNumber;
+                inst.CalculatedTwistingNumberErr = std.CalculatedTwistingNumberErr;
+            }
+
+            return inst;
+        }
         /// <summary>
         /// Gets
         /// </summary>

@@ -86,6 +86,20 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
+        public static S1Condition Create(string productCode)
+        {
+            var inst = new S1Condition();
+
+            var std = S1ConditionStd.Gets(productCode).Value().FirstOrDefault();
+            if (null != std)
+            {
+                inst.CalculatedTwistingNumber = std.CalculatedTwistingNumber;
+                inst.CalculatedTwistingNumberErr = std.CalculatedTwistingNumberErr;
+            }
+
+            return inst;
+        }
+
         /// <summary>
         /// Gets
         /// </summary>

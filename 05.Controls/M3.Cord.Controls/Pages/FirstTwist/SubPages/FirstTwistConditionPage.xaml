@@ -55,8 +55,8 @@
             </StackPanel>
             <Grid />
         </DockPanel>
-        <doc:S1ConditionEntryPage x:Name="s1" Visibility="Visible"/>
-        <doc:S4x1ConditionEntryPage x:Name="s4x1" Visibility="Collapsed"/>
-        <doc:S4x2ConditionEntryPage x:Name="s4x2" Visibility="Collapsed"/>
+        <doc:S1ConditionEntryPage x:Name="s1" Visibility="Visible" />
+        <doc:S4x1ConditionEntryPage x:Name="s4x1" Visibility="Collapsed" />
+        <doc:S4x2ConditionEntryPage x:Name="s4x2" Visibility="Collapsed" />
     </DockPanel>
 </UserControl>

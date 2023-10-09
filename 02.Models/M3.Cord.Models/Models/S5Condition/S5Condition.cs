@@ -105,6 +105,20 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
+
+        public static S5Condition Create(string productCode)
+        {
+            var inst = new S5Condition();
+
+            var std = S5ConditionStd.Gets(productCode).Value().FirstOrDefault();
+            if (null != std)
+            {
+                inst.CordStructureSet = std.CordStructureSet;
+                inst.CordStructureSpec = std.CordStructureSpec;
+            }
+
+            return inst;
+        }
         /// <summary>
         /// Gets
         /// </summary>
