@@ -12,7 +12,7 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="300"
+        Height="800"
         Width="850">
     <page:NPage HeaderText="Create Pallet/Cart">
         <DockPanel LastChildFill="True" Margin="5">
@@ -35,41 +35,56 @@
             <!--  WORK AREA  -->
             <DockPanel LastChildFill="True">
                 <DockPanel DockPanel.Dock="Top">
-                    <!--  CUSTOMER  -->
-                    <ctrl:NComboBox x:Name="cbCustomers"
-                                    DockPanel.Dock="Left"
-                                    CaptionText="Customer:"
-                                    DisplayMemberPath="CustomerName"
-                                    Width="250" />
-                    <!--  Item Code  -->
-                    <ctrl:NComboBox x:Name="cbItemCodes"
-                                    DockPanel.Dock="Left"
-                                    CaptionText="Item Code:"
-                                    DisplayMemberPath="ProductCode"
-                                    Width="200" />
+                    <!--  LOT NO  -->
+                    <ctrl:NTextBox x:Name="txtProductLotNo"
+                                   CaptionText="Lot No:"
+                                   DockPanel.Dock="Left"
+                                   Width="200"
+                                   PreviewKeyDown="txtProductLotNo_PreviewKeyDown" />
+                    <!--  MC Code  -->
+                    <ctrl:NTextBox CaptionText="MC:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding MCCode}"
+                                   IsReadOnly="True"
+                                   Width="200" />
                     <Grid />
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Top">
-                    <!--  LOT NO  -->
-                    <ctrl:NTextBox CaptionText="Lot No:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding ProductLotNo}"
-                                   Width="200" />
-                    <!--  PINO  -->
-                    <ctrl:NTextBox CaptionText="PI NO:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding PINo}"
-                                   Width="200" />
-                    <ctrl:NDatePicker x:Name="dtPCDate"
-                                      CaptionText="PC Date:"
-                                      DockPanel.Dock="Left"
-                                      SelectedDate="{Binding PCDate}"
-                                      Width="200" />
-                    <!--  Target Weight  -->
-                    <ctrl:NTextBox CaptionText="Weight:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding TargetQty, StringFormat=n1}"
-                                   Width="200" />
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <!--  CUSTOMER  -->
+                        <ctrl:NTextBox CaptionText="Customer:"
+                                       Text="{Binding CustomerName}"
+                                       IsReadOnly="True"
+                                       Width="350" />
+                        <!--  Product  -->
+                        <ctrl:NTextBox CaptionText="Product:"
+                                       Text="{Binding ProductCode}"
+                                       IsReadOnly="True"
+                                       Width="200" />
+                        <!--  ItemYarn  -->
+                        <ctrl:NTextBox CaptionText="Item Yarn:"
+                                       Text="{Binding ItemYarn}"
+                                       IsReadOnly="True"
+                                       Width="250" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <!--  PALLET CODE  -->
+                        <ctrl:NTextBox CaptionText="Pallet Code:"
+                                       Text="{Binding PalletCode}"
+                                       Width="200" />
+                        <!--  TWIST NO  -->
+                        <ctrl:NTextBox CaptionText="Twist No:"
+                                       Text="{Binding TwistNo}"
+                                       Width="200" />
+                        <!--  Counter  -->
+                        <ctrl:NTextBox CaptionText="Counter:"
+                                       Text="{Binding Counter}"
+                                       Width="200" />
+                        <!--  Counter  -->
+                        <ctrl:NTextBox CaptionText="Mts:"
+                                       Text="{Binding Mts}"
+                                       Width="200" />
+                    </StackPanel>
                     <Grid />
                 </DockPanel>
                 <Grid />

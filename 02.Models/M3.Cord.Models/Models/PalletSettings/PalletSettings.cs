@@ -39,8 +39,10 @@ namespace M3.Cord.Models
         public int? PalletId { get; set; }
         public int? PCTwist1Id { get; set; }
         public string PalletCode { get; set; }
-        public string CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
+        public string TwistNo { get; set; }
         public int Counter { get; set; }
+        public string Mts { get; set; }
         // Create UserId
         public int UserId { get; set; }
         public PalletType PalletType { get; set; }
@@ -208,7 +210,9 @@ namespace M3.Cord.Models
             p.Add("@PCTwist1Id", value.PCTwist1Id);
             p.Add("@PalletCode", value.PalletCode);
             p.Add("@CreateDate", value.CreateDate);
+            p.Add("@TwistNo", value.TwistNo);
             p.Add("@Counter", value.Counter);
+            p.Add("@Mts", value.Mts);
             p.Add("@UserId", value.UserId);
             p.Add("@PalletType", value.PalletType);
             p.Add("@PalletStatus", value.PalletStatus);
