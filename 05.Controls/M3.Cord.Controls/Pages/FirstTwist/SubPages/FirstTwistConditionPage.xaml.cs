@@ -100,7 +100,7 @@ namespace M3.Cord.Pages
                     pcCard.MCCode == "S-1-2" ||
                     pcCard.MCCode == "S-1-3")
                 {
-                    s1.DataContext = new S1Condition();
+                    s1.DataContext = S1Condition.Create(pcCard.ProductCode);
 
                     s1.Visibility = Visibility.Visible;
                     s4x1.Visibility = Visibility.Collapsed;
@@ -108,7 +108,7 @@ namespace M3.Cord.Pages
                 }
                 else if (pcCard.MCCode == "S-4-1")
                 {
-                    s4x1.DataContext = new S4x1Condition();
+                    s4x1.DataContext = S4x1Condition.Create(pcCard.ProductCode);
 
                     s1.Visibility = Visibility.Collapsed;
                     s4x1.Visibility = Visibility.Visible;
@@ -116,7 +116,7 @@ namespace M3.Cord.Pages
                 }
                 else if (pcCard.MCCode == "S-4-2")
                 {
-                    s4x2.DataContext = new S4x2Condition();
+                    s4x2.DataContext = S4x2Condition.Create(pcCard.ProductCode);
 
                     s1.Visibility = Visibility.Collapsed;
                     s4x1.Visibility = Visibility.Collapsed;

@@ -100,6 +100,9 @@ namespace M3.Cord.Models
             {
                 dst.CalculatedTwistingNumber = src.CalculatedTwistingNumber;
                 dst.CalculatedTwistingNumberErr = src.CalculatedTwistingNumberErr;
+                dst.LifterChangeGearA = src.LifterChangeGearA;
+                dst.LifterChangeGearB = src.LifterChangeGearB;
+                dst.LifterChangeGearSC = src.LifterChangeGearSC;
             }
         }
         /// <summary>
