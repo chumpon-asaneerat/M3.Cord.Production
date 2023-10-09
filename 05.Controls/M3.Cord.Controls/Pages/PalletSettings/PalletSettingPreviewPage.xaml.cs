@@ -89,6 +89,14 @@ namespace M3.Cord.Pages
             {
                 if (null != _items)
                 {
+                    foreach (var item in _items) 
+                    {
+                        PalletSetting.Save(item);
+                        foreach (var item2 in item.Items)
+                        {
+                            PalletSettingItem.Save(item2);
+                        }
+                    }
                     this.rptViewer.Print(ReportDisplayName);
                 }
             }
