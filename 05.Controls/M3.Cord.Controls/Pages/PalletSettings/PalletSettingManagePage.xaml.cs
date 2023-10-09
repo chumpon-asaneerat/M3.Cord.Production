@@ -122,7 +122,7 @@ namespace M3.Cord.Pages
         {
             grid.ItemsSource = null;
 
-            string productLotNo = txtProductLotNo.Text.Trim();
+            string productLotNo = txtProductLotNo.Text;
             DateTime? begin = dtBegin.SelectedDate;
             DateTime? end = dtEnd.SelectedDate;
             Product product = cbProducts.SelectedItem as Product;

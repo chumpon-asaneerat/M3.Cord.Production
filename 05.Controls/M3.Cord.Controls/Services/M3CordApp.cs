@@ -266,6 +266,16 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region Ageing
+
+            /// <summary>Gets Ageing Condition Page.</summary>
+            public static Cord.Pages.AgeingManagePage AgeingManage
+            {
+                get { return GetPage<Cord.Pages.AgeingManagePage>(); }
+            }
+
+            #endregion
         }
 
         /// <summary>

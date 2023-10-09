@@ -85,6 +85,22 @@
                                        Text="{Binding Mts}"
                                        Width="200" />
                     </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <ctrl:NInputGroup>
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton Content="Pallet"
+                                             FontWeight="SemiBold"
+                                             FontSize="20"
+                                             Style="{StaticResource CommonRadioButton}"
+                                             GroupName="rbPalletType" />
+                                <RadioButton Content="Cart"
+                                             FontWeight="SemiBold"
+                                             FontSize="20"
+                                             Style="{StaticResource CommonRadioButton}"
+                                             GroupName="rbPalletType" />
+                            </StackPanel>
+                        </ctrl:NInputGroup>
+                    </StackPanel>
                     <StackPanel x:Name="paItem"
                                 Orientation="Horizontal"
                                 DockPanel.Dock="Top">
