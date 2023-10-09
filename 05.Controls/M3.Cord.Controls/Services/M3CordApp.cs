@@ -410,6 +410,16 @@ namespace M3.Cord
             }
             */
             #endregion
+
+            #region Pallet Setting
+
+            /// <summary>Gets Create Pallet Window.</summary>
+            public static CreatePalletWindow CreatePallet
+            {
+                get { return GetWindow<CreatePalletWindow>(); }
+            }
+
+            #endregion
         }
     }
 }
