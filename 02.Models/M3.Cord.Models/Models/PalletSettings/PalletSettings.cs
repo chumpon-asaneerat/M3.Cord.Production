@@ -124,6 +124,58 @@ namespace M3.Cord.Models
             return rets;
         }
         /// <summary>
+        /// Search
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<List<PalletSetting>> Search(string productLotNo, 
+            DateTime? begin, DateTime? end, string productCode)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<PalletSetting>> rets = new NDbResult<List<PalletSetting>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@ProductLotNo", productLotNo);
+            p.Add("@beginDate", begin);
+            p.Add("@endDate", end);
+            p.Add("@ProductCode", productCode);
+
+            try
+            {
+                var items = cnn.Query<PalletSetting>("SearchPalletSettings", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<PalletSetting>();
+            }
+
+            return rets;
+        }
+        /// <summary>
         /// Save
         /// </summary>
         /// <param name="value">The PalletSetting to save.</param>

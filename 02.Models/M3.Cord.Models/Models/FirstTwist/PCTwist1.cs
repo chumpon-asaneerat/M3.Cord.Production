@@ -249,6 +249,53 @@ namespace M3.Cord.Models
         }
 
         /// <summary>
+        /// Search By LotNo
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<PCTwist1> SearchByLotNo(string ProductLotNo = null)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<PCTwist1> rets = new NDbResult<PCTwist1>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@ProductLotNo", string.IsNullOrWhiteSpace(ProductLotNo) ? null : ProductLotNo);
+            try
+            {
+                var items = cnn.Query<PCTwist1>("SearchPCTwist1ByLotNo", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList().FirstOrDefault() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                rets.data = null;
+            }
+
+            return rets;
+        }
+
+        /// <summary>
         /// Delete
         /// </summary>
         /// <param name="value">The PCCard item to delete.</param>

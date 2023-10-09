@@ -62,13 +62,68 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
+        private void cmdSearch_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshGrid();
+
+        }
+
+        private void cmdClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtProductLotNo.Text = string.Empty;
+            dtBegin.SelectedDate = new DateTime?();
+            dtEnd.SelectedDate = new DateTime?();
+            cbProducts.SelectedIndex = -1;
+
+            RefreshGrid();
+        }
+
+        private void cmdCreate_Click(object sender, RoutedEventArgs e)
+        {
+            var win = M3CordApp.Windows.CreatePallet;
+            if (win.ShowDialog() == true)
+            {
+                // Show Print Preview
+            }
+        }
+
+        #endregion
+
+        #region Combobox Handlers
+
+        private void cbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        #endregion
+
+        #region TextBox Handlers
+
+        private void txtProductLotNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) 
+            {
+                RefreshGrid();
+                e.Handled = true;
+            }
+        }
+
         #endregion
 
         #region Private Methods
 
         private void RefreshGrid()
         {
+            grid.ItemsSource = null;
 
+            string productLotNo = txtProductLotNo.Text.Trim();
+            DateTime? begin = dtBegin.SelectedDate;
+            DateTime? end = dtEnd.SelectedDate;
+            Product product = cbProducts.SelectedItem as Product;
+            string productCode = (null != product) ? product.ProductCode : null;
+            
+            grid.ItemsSource = PalletSetting.Search(productLotNo, begin, end, productCode).Value();
         }
 
         #endregion
@@ -77,7 +132,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-
+            cbProducts.ItemsSource = Product.Gets().Value();
             RefreshGrid();
         }
 

@@ -7,7 +7,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="800"
+             d:DesignWidth="900"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
     <page:NPage HeaderText="Pallet Setting">
@@ -26,6 +26,16 @@
                                             Text="Home"
                                             Click="cmdHome_Click" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <!--  HOME  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdCreate"
+                                            Margin="5,0,0,0"
+                                            IconType="Add"
+                                            Text="Create"
+                                            Click="cmdCreate_Click" />
+                </StackPanel>
                 <Grid />
             </DockPanel>
             <!--  TOP ENTRY  -->
@@ -35,12 +45,47 @@
                            LastChildFill="True"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
-                    <!--  ITEM YARN  -->
-                    <ctrl:NComboBox x:Name="cbItemYanrs"
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <!--  CREATE DATE  -->
+                        <ctrl:NDatePicker x:Name="dtBegin"
+                                          CaptionText="Create Date:"
+                                          Width="200" />
+                        <TextBlock Text="-"
+                                   VerticalAlignment="Bottom"
+                                   Width="20"
+                                   TextAlignment="Center" />
+                        <ctrl:NDatePicker x:Name="dtEnd" Width="200" />
+                        <!--  LOT NO  -->
+                        <ctrl:NTextBox x:Name="txtProductLotNo"
+                                       CaptionText="Lot No"
+                                       Width="200" 
+                                       PreviewKeyDown="txtProductLotNo_PreviewKeyDown"/>
+                        <!--  PRODUCT  -->
+                        <ctrl:NComboBox x:Name="cbProducts"
                                     DockPanel.Dock="Left"
-                                    CaptionText="Item Yarn:"
-                                    DisplayMemberPath="ItemYarn"
-                                    Width="300" />
+                                    CaptionText="Item Code:"
+                                    DisplayMemberPath="ProductCode"
+                                    Width="300"
+                                    SelectionChanged="cbProducts_SelectionChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <Button x:Name="cmdSearch"
+                            Content="Search"
+                            DockPanel.Dock="Left"
+                            Width="150"
+                            VerticalAlignment="Bottom"
+                            Margin="5,2"
+                            Style="{StaticResource InlineButton}"
+                            Click="cmdSearch_Click" />
+                        <Button x:Name="cmdClear"
+                            Content="Clear"
+                            DockPanel.Dock="Left"
+                            Width="150"
+                            VerticalAlignment="Bottom"
+                            Margin="5,2"
+                            Style="{StaticResource InlineButton}"
+                            Click="cmdClear_Click" />
+                    </StackPanel>
                     <Grid />
                 </DockPanel>
             </DockPanel>
@@ -53,12 +98,13 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletNo}" />
-                        <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
-                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource LotNo}" />
-                        <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
-                        <GridViewColumn Header="Weight" CellTemplate="{StaticResource WeightQty}" />
-                        <GridViewColumn Header="CH" CellTemplate="{StaticResource ConeCH}" />
+                        <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletCode}" />
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource ProductLotNo}" />
+                        <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
+                        <GridViewColumn Header="Total CH" />
+                        <GridViewColumn Header="Total Weight" />
+                        <GridViewColumn Header="Pallet Date" CellTemplate="{StaticResource CreateDate}" />
+                        <GridViewColumn Header="Pallet By" />
                     </GridView>
                 </ListView.View>
             </ListView>

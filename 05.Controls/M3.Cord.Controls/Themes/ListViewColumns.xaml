@@ -92,6 +92,12 @@
                    MinWidth="200" />
     </DataTemplate>
 
+    <DataTemplate x:Key="CreateDate">
+        <TextBlock Text="{Binding Path=CreateDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
     <DataTemplate x:Key="ProductionDate">
         <TextBlock Text="{Binding Path=ProductionDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
                    TextAlignment="Center"
@@ -168,6 +174,13 @@
     </DataTemplate>
     <DataTemplate x:Key="ProductLotNo">
         <TextBlock Text="{Binding Path=ProductLotNo, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Left"
+                   MinWidth="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="PalletCode">
+        <TextBlock Text="{Binding Path=PalletCode, Mode=OneWay}"
                    Foreground="{Binding TextColor}"
                    TextAlignment="Left"
                    MinWidth="150" />
