@@ -43,6 +43,7 @@ namespace M3.Cord.Windows
 
         private PCTwist1 pcCard = null;
         private PalletSetting _pallet = null;
+        private PalletSettingItem _item = null;
 
         #endregion
 
@@ -56,11 +57,30 @@ namespace M3.Cord.Windows
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
             // test save
+            /*
             if (null != _pallet)
             {
                 PalletSetting.Save(_pallet);
             }
+            */
             DialogResult = true;
+        }
+
+        private void cmdAppend_Click(object sender, RoutedEventArgs e)
+        {
+            if (null != _pallet && null != _item)
+            {
+                grid.ItemsSource = null;
+                paItem.DataContext = null;
+
+                _pallet.Items.Add(_item);
+
+                // Pre create item
+                _item = new PalletSettingItem();
+                paItem.DataContext = _item;
+
+                grid.ItemsSource = _pallet.Items;
+            }
         }
 
         #endregion
@@ -83,6 +103,10 @@ namespace M3.Cord.Windows
         private void GetLotInfo()
         {
             this.DataContext = null;
+            paItem.DataContext = null;
+            paItem.IsEnabled = false;
+            grid.ItemsSource = null;
+
             pcCard = PCTwist1.SearchByLotNo(txtProductLotNo.Text).Value();
             if (null != pcCard)
             {
@@ -105,6 +129,12 @@ namespace M3.Cord.Windows
                 _pallet.UserId = M3CordApp.Current.User.UserId;
 
                 this.DataContext = _pallet;
+                grid.ItemsSource = _pallet.Items;
+
+                // Pre create item
+                _item = new PalletSettingItem();
+                paItem.DataContext = _item;
+                paItem.IsEnabled = true;
             }
         }
 
@@ -116,6 +146,8 @@ namespace M3.Cord.Windows
         {
             pcCard = null;
             this.DataContext = null;
+            paItem.DataContext = null;
+            paItem.IsEnabled = false;
         }
 
         #endregion

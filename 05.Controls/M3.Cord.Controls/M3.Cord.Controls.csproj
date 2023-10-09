@@ -197,6 +197,9 @@
     <Compile Include="Pages\Documents\S5\S5StdManagePage.xaml.cs">
       <DependentUpon>S5StdManagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PalletSettingPreviewPage.xaml.cs">
+      <DependentUpon>PalletSettingPreviewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PalletSettings\PalletSettingManagePage.xaml.cs">
       <DependentUpon>PalletSettingManagePage.xaml</DependentUpon>
     </Compile>
@@ -237,6 +240,7 @@
     <Compile Include="_Templates\01.FirstTwist\Twist1RawMaterialCheckSheetDocument.xaml.cs">
       <DependentUpon>Twist1RawMaterialCheckSheetDocument.xaml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\PalletSetting.rdlc" />
     <None Include="_V3\Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml.cs">
       <DependentUpon>HeaderPart.xaml</DependentUpon>
     </None>
@@ -639,6 +643,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Pages\PalletSettingPreviewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PalletSettings\PalletSettingManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -835,6 +843,7 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
     <Folder Include="_V3\Controls\Documents\Ageing\Elements\" />

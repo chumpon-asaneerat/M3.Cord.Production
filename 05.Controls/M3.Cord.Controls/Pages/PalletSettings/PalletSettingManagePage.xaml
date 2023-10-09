@@ -58,33 +58,33 @@
                         <!--  LOT NO  -->
                         <ctrl:NTextBox x:Name="txtProductLotNo"
                                        CaptionText="Lot No"
-                                       Width="200" 
-                                       PreviewKeyDown="txtProductLotNo_PreviewKeyDown"/>
+                                       Width="200"
+                                       PreviewKeyDown="txtProductLotNo_PreviewKeyDown" />
                         <!--  PRODUCT  -->
                         <ctrl:NComboBox x:Name="cbProducts"
-                                    DockPanel.Dock="Left"
-                                    CaptionText="Item Code:"
-                                    DisplayMemberPath="ProductCode"
-                                    Width="300"
-                                    SelectionChanged="cbProducts_SelectionChanged" />
+                                        DockPanel.Dock="Left"
+                                        CaptionText="Item Code:"
+                                        DisplayMemberPath="ProductCode"
+                                        Width="300"
+                                        SelectionChanged="cbProducts_SelectionChanged" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <Button x:Name="cmdSearch"
-                            Content="Search"
-                            DockPanel.Dock="Left"
-                            Width="150"
-                            VerticalAlignment="Bottom"
-                            Margin="5,2"
-                            Style="{StaticResource InlineButton}"
-                            Click="cmdSearch_Click" />
+                                Content="Search"
+                                DockPanel.Dock="Left"
+                                Width="150"
+                                VerticalAlignment="Bottom"
+                                Margin="5,2"
+                                Style="{StaticResource InlineButton}"
+                                Click="cmdSearch_Click" />
                         <Button x:Name="cmdClear"
-                            Content="Clear"
-                            DockPanel.Dock="Left"
-                            Width="150"
-                            VerticalAlignment="Bottom"
-                            Margin="5,2"
-                            Style="{StaticResource InlineButton}"
-                            Click="cmdClear_Click" />
+                                Content="Clear"
+                                DockPanel.Dock="Left"
+                                Width="150"
+                                VerticalAlignment="Bottom"
+                                Margin="5,2"
+                                Style="{StaticResource InlineButton}"
+                                Click="cmdClear_Click" />
                     </StackPanel>
                     <Grid />
                 </DockPanel>
@@ -101,10 +101,9 @@
                         <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletCode}" />
                         <GridViewColumn Header="Lot No" CellTemplate="{StaticResource ProductLotNo}" />
                         <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
-                        <GridViewColumn Header="Total CH" />
-                        <GridViewColumn Header="Total Weight" />
+                        <GridViewColumn Header="Total CH" CellTemplate="{StaticResource TotalCH}" />
                         <GridViewColumn Header="Pallet Date" CellTemplate="{StaticResource CreateDate}" />
-                        <GridViewColumn Header="Pallet By" />
+                        <GridViewColumn Header="Pallet By" CellTemplate="{StaticResource UserId}" />
                     </GridView>
                 </ListView.View>
             </ListView>

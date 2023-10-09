@@ -116,6 +116,12 @@
                    MinWidth="100" />
     </DataTemplate>
 
+    <DataTemplate x:Key="CH">
+        <TextBlock Text="{Binding Path=CH, Mode=OneWay, StringFormat='{}{0:n0}'}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
+    </DataTemplate>
+
     <DataTemplate x:Key="UnitWeight">
         <TextBlock Text="{Binding Path=UnitWeight, Mode=OneWay, StringFormat='{}{0:n1}'}"
                    TextAlignment="Center"
@@ -179,6 +185,26 @@
                    MinWidth="150" />
     </DataTemplate>
 
+    <DataTemplate x:Key="TotalCH">
+        <TextBlock Text="{Binding Path=TotalCH, Mode=OneWay, StringFormat='{}{0:n0}'}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Right"
+                   Width="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="UserId">
+        <TextBlock Text="{Binding Path=UserId, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Center"
+                   Width="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="TotalWeight">
+        <TextBlock Text="{Binding Path=TotalWeight, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Right"
+                   Width="150" />
+    </DataTemplate>
     <DataTemplate x:Key="PalletCode">
         <TextBlock Text="{Binding Path=PalletCode, Mode=OneWay}"
                    Foreground="{Binding TextColor}"

@@ -85,9 +85,51 @@
                                        Text="{Binding Mts}"
                                        Width="200" />
                     </StackPanel>
+                    <StackPanel x:Name="paItem"
+                                Orientation="Horizontal"
+                                DockPanel.Dock="Top">
+                        <ctrl:NTextBox CaptionText="Doff No:"
+                                       Text="{Binding DoffNo}"
+                                       Width="120" />
+                        <ctrl:NTextBox CaptionText="CH:"
+                                       Text="{Binding CH}"
+                                       IsReadOnly="True"
+                                       Width="120" />
+                        <ctrl:NTextBox CaptionText="SPNo:"
+                                       Text="{Binding SPNoStart}"
+                                       Width="120" />
+                        <TextBlock Width="10"
+                                   Text="-"
+                                   VerticalAlignment="Bottom" />
+                        <ctrl:NTextBox CaptionText=""
+                                       Text="{Binding SPNoEnd}"
+                                       Width="120" />
+                        <Button x:Name="cmdAppend"
+                                Content="Add"
+                                DockPanel.Dock="Left"
+                                Width="150"
+                                VerticalAlignment="Bottom"
+                                Margin="5,2"
+                                Style="{StaticResource InlineButton}"
+                                Click="cmdAppend_Click" />
+                    </StackPanel>
                     <Grid />
                 </DockPanel>
-                <Grid />
+                <!--  LISTVIEW  -->
+                <ListView x:Name="grid"
+                          Margin="0,0,0,5"
+                          FontSize="{StaticResource FontSize18}"
+                          ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                          ItemsSource="{Binding}"
+                          Style="{StaticResource SingleSelectListView}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNo}" />
+                            <GridViewColumn Header="CH" CellTemplate="{StaticResource CH}" />
+                            <GridViewColumn Header="SPNos" CellTemplate="{StaticResource SPNos}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </DockPanel>
         </DockPanel>
     </page:NPage>

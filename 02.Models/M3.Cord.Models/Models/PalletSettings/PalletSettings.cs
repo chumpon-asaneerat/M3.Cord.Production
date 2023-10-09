@@ -14,6 +14,7 @@ using NLib.Models;
 
 using Dapper;
 using Newtonsoft.Json;
+using System.ComponentModel;
 
 #endregion
 
@@ -32,8 +33,17 @@ namespace M3.Cord.Models
         Dip = 2
     }
 
-    public class PalletSetting
+    public class PalletSetting : NInpc
     {
+        #region Constructor
+
+        public PalletSetting() : base()
+        {
+            Items = new List<PalletSettingItem>();
+        }
+
+        #endregion
+
         #region Public Properties
 
         public int? PalletId { get; set; }
@@ -72,6 +82,26 @@ namespace M3.Cord.Models
                 return ModelConsts.BlackColor;
             }
             set { }
+        }
+
+        public decimal? TotalCH { get; set; }
+
+        public List<PalletSettingItem> Items { get; set; }
+
+        #endregion
+
+        #region Public Methods
+
+        public void Calculate()
+        {
+            if (null != Items)
+            {
+                decimal totalCH = decimal.Zero;
+                foreach (var item in Items)
+                {
+                    totalCH += (item.CH.HasValue) ? item.CH.Value : decimal.Zero;
+                }
+            }
         }
 
         #endregion
@@ -246,15 +276,78 @@ namespace M3.Cord.Models
         #endregion
     }
 
-    public class PalletSettingItem
+    public class PalletSettingItem : NInpc
     {
+        #region Internal Variables
+
+        private decimal? _CH = new decimal?(0);
+
+        #endregion
+
+        private void Calculate()
+        {
+            if (SPNoStart.HasValue && SPNoEnd.HasValue)
+            {
+                CH = SPNoEnd.Value - SPNoStart.Value + 1;
+                SPNos = string.Format("{0} - {1}", SPNoStart.Value, SPNoEnd.Value);
+            }
+            else if (!SPNoStart.HasValue && SPNoEnd.HasValue)
+            {
+                CH = 1;
+                SPNos = string.Format("{0}", SPNoEnd.Value);
+            }
+            else if (SPNoStart.HasValue && !SPNoEnd.HasValue)
+            {
+                CH = 1;
+                SPNos = string.Format("{0}", SPNoStart.Value);
+            }
+            else
+            {
+                CH = 0;
+                SPNos = string.Empty;
+            }
+            Raise(() => this.CH);
+            Raise(() => this.SPNos);
+        }
+
         #region Public Properties
 
         public int PalletId { get; set; }
         public int DoffNo { get; set; }
-        public decimal? CH { get; set; }
-        public int? SPNoStart { get; set; }
-        public int? SPNoEnd { get; set; }
+        public decimal? CH 
+        {
+            get { return Get<decimal?>(); }
+            set 
+            {
+                Set(value, () =>
+                {
+                });
+            }
+        }
+        public int? SPNoStart 
+        {
+            get { return Get<int?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Calculate();
+                });
+            }
+        }
+        public int? SPNoEnd 
+        {
+            get { return Get<int?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Calculate();
+                });
+            }
+        }
+
+        public string SPNos { get; set; }
 
         public SolidColorBrush TextColor
         {
