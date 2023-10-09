@@ -102,8 +102,50 @@ namespace M3.Cord.Models
         {
             if (null != src && null != dst)
             {
+                dst.ProductCode = src.ProductCode;
+                dst.FullPackageModeSC = src.FullPackageModeSC;
+                dst.FullPackageMode = src.FullPackageMode;
+                dst.LengthSC = src.LengthSC;
+                dst.Length = src.Length;
+                dst.LengthErr = src.LengthErr;
+                dst.WindAngleShiftFunctionSC = src.WindAngleShiftFunctionSC;
+                dst.WindAngleShiftFunction = src.WindAngleShiftFunction;
+                dst.AmountOfDisturbSC = src.AmountOfDisturbSC;
+                dst.AmountOfDisturb = src.AmountOfDisturb;
+                dst.WindAngleSC = src.WindAngleSC;
+                dst.WindAngle = src.WindAngle;
+                dst.DistuebAccelerationTimeSC = src.DistuebAccelerationTimeSC;
+                dst.DistuebAccelerationTime = src.DistuebAccelerationTime;
+                dst.DistuebDccelerationTimeSC = src.DistuebDccelerationTimeSC;
+                dst.DistuebDccelerationTime = src.DistuebDccelerationTime;
+                dst.TensorSettingSC = src.TensorSettingSC;
+                dst.TensorSetting = src.TensorSetting;
+                dst.FeedRollerSettingSC = src.FeedRollerSettingSC;
+                dst.FeedRollerSetting = src.FeedRollerSetting;
+                dst.BollonSettingSC = src.BollonSettingSC;
+                dst.BollonSetting = src.BollonSetting;
+                dst.MethodOfKnotSC = src.MethodOfKnotSC;
+                dst.MethodOfKnot = src.MethodOfKnot;
+                dst.WindQuantitySC = src.WindQuantitySC;
+                dst.WindQuantity = src.WindQuantity;
+                dst.WindQuantityErr = src.WindQuantityErr;
+                dst.DoffTimeSC = src.DoffTimeSC;
+                dst.DoffTime = src.DoffTime;
+                dst.DoffTimeErr = src.DoffTimeErr;
+                dst.ProductQuantitySC = src.ProductQuantitySC;
+                dst.ProductQuantityKg = src.ProductQuantityKg;
+                dst.ProductQuantityDay = src.ProductQuantityDay;
+                dst.CalculatedTwistingNumberSC = src.CalculatedTwistingNumberSC;
                 dst.CalculatedTwistingNumber = src.CalculatedTwistingNumber;
                 dst.CalculatedTwistingNumberErr = src.CalculatedTwistingNumberErr;
+                dst.NumberOfSpindleRotationSC = src.NumberOfSpindleRotationSC;
+                dst.NumberOfSpindleRotation = src.NumberOfSpindleRotation;
+                dst.NumberOfSpindleRotationErr = src.NumberOfSpindleRotationErr;
+                dst.YarnSpeedSC = src.YarnSpeedSC;
+                dst.YarnSpeed = src.YarnSpeed;
+                dst.YarnSpeedErr = src.YarnSpeedErr;
+                dst.SpecialMentionSC = src.SpecialMentionSC;
+                dst.SpecialMention = src.SpecialMention;
             }
         }
         /// <summary>

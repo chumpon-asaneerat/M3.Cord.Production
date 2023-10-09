@@ -98,11 +98,48 @@ namespace M3.Cord.Models
         {
             if (null != src && null != dst)
             {
-                dst.CalculatedTwistingNumber = src.CalculatedTwistingNumber;
-                dst.CalculatedTwistingNumberErr = src.CalculatedTwistingNumberErr;
+                dst.ProductCode = src.ProductCode;
+                dst.RingDiameterSC = src.RingDiameterSC;
+                dst.RingDiameter = src.RingDiameter;
+                dst.TwistChangeGearSC = src.TwistChangeGearSC;
+                dst.TwistChangeGearI = src.TwistChangeGearI;
+                dst.TwistChangeGearJ = src.TwistChangeGearJ;
+                dst.TwistChangeGearK = src.TwistChangeGearK;
+                dst.LifterChangeGearSC = src.LifterChangeGearSC;
                 dst.LifterChangeGearA = src.LifterChangeGearA;
                 dst.LifterChangeGearB = src.LifterChangeGearB;
-                dst.LifterChangeGearSC = src.LifterChangeGearSC;
+                dst.OuterDiameterSC = src.OuterDiameterSC;
+                dst.OuterDiameter = src.OuterDiameter;
+                dst.TravellerNoSC = src.TravellerNoSC;
+                dst.TravellerNo = src.TravellerNo;
+                dst.CouterUnitSC = src.CouterUnitSC;
+                dst.CouterUnit = src.CouterUnit;
+                dst.CouterUnitErr = src.CouterUnitErr;
+                dst.CouterUnit2SC = src.CouterUnit2SC;
+                dst.CouterUnit2 = src.CouterUnit2;
+                dst.CouterUnit2Err = src.CouterUnit2Err;
+                dst.CouterWeightSC = src.CouterWeightSC;
+                dst.CouterWeight = src.CouterWeight;
+                dst.CouterWeightErr = src.CouterWeightErr;
+                dst.CouterWeight2SC = src.CouterWeight2SC;
+                dst.CouterWeight2 = src.CouterWeight2;
+                dst.CouterWeight2Err = src.CouterWeight2Err;
+                dst.CounterSystemSC = src.CounterSystemSC;
+                dst.CounterSystem = src.CounterSystem;
+                dst.SenserYarnBreakSC = src.SenserYarnBreakSC;
+                dst.SenserYarnBreak = src.SenserYarnBreak;
+                dst.CalculatedTwistingNumberSC = src.CalculatedTwistingNumberSC;
+                dst.CalculatedTwistingNumber = src.CalculatedTwistingNumber;
+                dst.CalculatedTwistingNumberErr = src.CalculatedTwistingNumberErr;
+                dst.NumberOfSpindleRotationSC = src.NumberOfSpindleRotationSC;
+                dst.NumberOfSpindleRotation = src.NumberOfSpindleRotation;
+                dst.NumberOfSpindleRotationErr = src.NumberOfSpindleRotationErr;
+                dst.YarnSpeedSC = src.YarnSpeedSC;
+                dst.YarnSpeed = src.YarnSpeed;
+                dst.YarnSpeedErr = src.YarnSpeedErr;
+                dst.SpecialMentionSC = src.SpecialMentionSC;
+                dst.SpecialMention = src.SpecialMention;
+
             }
         }
         /// <summary>

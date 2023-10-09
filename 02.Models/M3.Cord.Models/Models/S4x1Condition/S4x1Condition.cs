@@ -112,8 +112,53 @@ namespace M3.Cord.Models
         {
             if (null != src && null != dst)
             {
+                dst.ProductCode = src.ProductCode;
+                dst.TwistChangeGearSC = src.TwistChangeGearSC;
+                dst.TwistChangeGearE = src.TwistChangeGearE;
+                dst.TwistChangeGearF = src.TwistChangeGearF;
+                dst.TwistChangeGearG = src.TwistChangeGearG;
+                dst.TwistChangeGearH = src.TwistChangeGearH;
+                dst.MotorPulleyDiaSC = src.MotorPulleyDiaSC;
+                dst.MotorPulleyDia = src.MotorPulleyDia;
+                dst.DrivingPulleyDiaSC = src.DrivingPulleyDiaSC;
+                dst.DrivingPulleyDia = src.DrivingPulleyDia;
+                dst.OverFeedSC = src.OverFeedSC;
+                dst.OverFeedRate = src.OverFeedRate;
+                dst.OverFeedGear = src.OverFeedGear;
+                dst.WindAngleSC = src.WindAngleSC;
+                dst.WindAngleDeg = src.WindAngleDeg;
+                dst.WindAngleGearA = src.WindAngleGearA;
+                dst.WindAngleGearB = src.WindAngleGearB;
+                dst.TensorDialSetSC = src.TensorDialSetSC;
+                dst.TensorDialSet = src.TensorDialSet;
+                dst.NumberOfLoopSC = src.NumberOfLoopSC;
+                dst.NumberOfLoop = src.NumberOfLoop;
+                dst.NumberOfLoopErr = src.NumberOfLoopErr;
+                dst.MethodOfKnotSC = src.MethodOfKnotSC;
+                dst.MethodOfKnot = src.MethodOfKnot;
+                dst.WindQuantitySC = src.WindQuantitySC;
+                dst.WindQuantity = src.WindQuantity;
+                dst.WindQuantityErr = src.WindQuantityErr;
+                dst.LengthSC = src.LengthSC;
+                dst.Length = src.Length;
+                dst.LengthErr = src.LengthErr;
+                dst.DoffTimeSC = src.DoffTimeSC;
+                dst.DoffTime = src.DoffTime;
+                dst.DoffTimeErr = src.DoffTimeErr;
+                dst.ProductQuantitySC = src.ProductQuantitySC;
+                dst.ProductQuantityKg = src.ProductQuantityKg;
+                dst.ProductQuantityDay = src.ProductQuantityDay;
+                dst.CalculatedTwistingNumberSC = src.CalculatedTwistingNumberSC;
                 dst.CalculatedTwistingNumber = src.CalculatedTwistingNumber;
                 dst.CalculatedTwistingNumberErr = src.CalculatedTwistingNumberErr;
+                dst.NumberOfSpindleRotationSC = src.NumberOfSpindleRotationSC;
+                dst.NumberOfSpindleRotation = src.NumberOfSpindleRotation;
+                dst.NumberOfSpindleRotationErr = src.NumberOfSpindleRotationErr;
+                dst.YarnSpeedSC = src.YarnSpeedSC;
+                dst.YarnSpeed = src.YarnSpeed;
+                dst.YarnSpeedErr = src.YarnSpeedErr;
+                dst.SpecialMentionSC = src.SpecialMentionSC;
+                dst.SpecialMention = src.SpecialMention;
             }
         }
         /// <summary>

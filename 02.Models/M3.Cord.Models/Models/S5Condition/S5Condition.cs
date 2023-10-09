@@ -117,8 +117,49 @@ namespace M3.Cord.Models
         {
             if (null != src && null != dst)
             {
+                dst.ProductCode = src.ProductCode;
+                dst.MainSupplySteamPressureSC = src.MainSupplySteamPressureSC;
+                dst.MainSupplySteamPressureSet = src.MainSupplySteamPressureSet;
+                dst.MainSupplySteamPressureSetErr = src.MainSupplySteamPressureSetErr;
+                dst.MainSupplySteamPressureSpec = src.MainSupplySteamPressureSpec;
+                dst.MainSupplySteamPressureSpecErr = src.MainSupplySteamPressureSpecErr;
+                dst.AgeingSteamPressureSC = src.AgeingSteamPressureSC;
+                dst.AgeingSteamPressureSet = src.AgeingSteamPressureSet;
+                dst.AgeingSteamPressureSetErr = src.AgeingSteamPressureSetErr;
+                dst.AgeingSteamPressureSpec = src.AgeingSteamPressureSpec;
+                dst.AgeingSteamPressureSpecErr = src.AgeingSteamPressureSpecErr;
+                dst.SettingTemperatureSC = src.SettingTemperatureSC;
+                dst.SettingTemperatureSet = src.SettingTemperatureSet;
+                dst.SettingTemperatureSetErr = src.SettingTemperatureSetErr;
+                dst.SettingTemperatureSpec = src.SettingTemperatureSpec;
+                dst.SettingTemperatureSpecErr = src.SettingTemperatureSpecErr;
+                dst.SettingTimeSC = src.SettingTimeSC;
+                dst.SettingTimeSet = src.SettingTimeSet;
+                dst.SettingTimeSetErr = src.SettingTimeSetErr;
+                dst.SettingTimeSpec = src.SettingTimeSpec;
+                dst.SettingTimeSpecErr = src.SettingTimeSpecErr;
+                dst.LampStatusSystemSC = src.LampStatusSystemSC;
+                dst.LampStatusSystemSet = src.LampStatusSystemSet;
+                dst.LampStatusSystemSpec = src.LampStatusSystemSpec;
+                dst.SoudSystemTemperatureSC = src.SoudSystemTemperatureSC;
+                dst.SoudSystemTemperatureSet = src.SoudSystemTemperatureSet;
+                dst.SoudSystemTemperatureSpec = src.SoudSystemTemperatureSpec;
+                dst.YarnTypeSC = src.YarnTypeSC;
+                dst.YarnTypeSet = src.YarnTypeSet;
+                dst.YarnTypeSpec = src.YarnTypeSpec;
+                dst.CordStructureSC = src.CordStructureSC;
                 dst.CordStructureSet = src.CordStructureSet;
                 dst.CordStructureSpec = src.CordStructureSpec;
+                dst.TwistingNoSC = src.TwistingNoSC;
+                dst.TwistingNoSet = src.TwistingNoSet;
+                dst.TwistingNoSetErr = src.TwistingNoSetErr;
+                dst.TwistingNoSpec = src.TwistingNoSpec;
+                dst.TwistingNoSpecErr = src.TwistingNoSpecErr;
+                dst.UnitWeightSC = src.UnitWeightSC;
+                dst.UnitWeightSet = src.UnitWeightSet;
+                dst.UnitWeightSetErr = src.UnitWeightSetErr;
+                dst.UnitWeightSpec = src.UnitWeightSpec;
+                dst.UnitWeightSpecErr = src.UnitWeightSpecErr;
             }
         }
         /// <summary>
