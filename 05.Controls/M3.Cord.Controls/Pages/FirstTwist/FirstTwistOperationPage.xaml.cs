@@ -67,7 +67,7 @@ namespace M3.Cord.Pages
                     break;
                 case 3:
                     // MC Condition
-                    //pageMCCondition.RefreshGrids();
+                    pageMCCondition.RefreshGrids();
                     break;
                 default:
                     break;

@@ -92,7 +92,6 @@
             </Border>
             <Border Grid.Row="0"
                     Grid.Column="3"
-
                     Background="Silver">
                 <!--  Class  -->
                 <TextBlock Text="First Twisting (การตีเกลียวครั้งที่ 1)" />
@@ -103,7 +102,7 @@
                 <!--  Class  -->
                 <TextBlock Text="Standard (ค่ามาตรฐาน)" />
             </Border>
-            
+
 
             <!--#endregion-->
 
@@ -122,11 +121,13 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="2" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding RingDiameterSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding RingDiameterSC}" />
             </Border>
             <Border Grid.Row="2" Grid.Column="3">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Width="200" Text="{Binding RingDiameter}"/>
+                <StackPanel Orientation="Vertical"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                    <TextBox Width="200" Text="{Binding RingDiameter}" />
                 </StackPanel>
             </Border>
 
@@ -147,7 +148,7 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="3" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding TwistChangeGearSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding TwistChangeGearSC}" />
             </Border>
             <Border Grid.Row="3" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -167,7 +168,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="( K )" />
-                        <TextBox Width="50" Text="{Binding TwistChangeGearK}"/>
+                        <TextBox Width="50" Text="{Binding TwistChangeGearK}" />
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -188,7 +189,7 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="4" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding LifterChangeGearSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding LifterChangeGearSC}" />
             </Border>
             <Border Grid.Row="4" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -222,7 +223,7 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="5" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding OuterDiameterSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding OuterDiameterSC}" />
             </Border>
             <Border Grid.Row="5" Grid.Column="3">
                 <TextBox Width="200" Text="{Binding OuterDiameter}" />
@@ -243,7 +244,7 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="6" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding TravellerNoSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding TravellerNoSC}" />
             </Border>
             <Border Grid.Row="6" Grid.Column="3">
                 <TextBox Width="200" Text="{Binding TravellerNo}" />
@@ -264,7 +265,7 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="7" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding CouterUnitSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding CouterUnitSC}" />
             </Border>
             <Border Grid.Row="7" Grid.Column="3">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
@@ -304,7 +305,7 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="8" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding CounterSystemSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding CounterSystemSC}" />
             </Border>
             <Border Grid.Row="8" Grid.Column="3">
                 <TextBlock HorizontalAlignment="Center">
@@ -329,7 +330,7 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="9" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding SenserYarnBreakSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding SenserYarnBreakSC}" />
             </Border>
             <Border Grid.Row="9" Grid.Column="3">
                 <TextBlock HorizontalAlignment="Center">
@@ -385,7 +386,7 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="11" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding CalculatedTwistingNumberSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding CalculatedTwistingNumberSC}" />
             </Border>
             <Border Grid.Row="11" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -411,7 +412,7 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="12" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding NumberOfSpindleRotationSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding NumberOfSpindleRotationSC}" />
             </Border>
             <Border Grid.Row="12" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -435,7 +436,7 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="13" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding YarnSpeedSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding YarnSpeedSC}" />
             </Border>
             <Border Grid.Row="13" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -460,7 +461,7 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="14" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding SpecialMentionSC}"/>
+                <CheckBox Content="SC" IsChecked="{Binding SpecialMentionSC}" />
             </Border>
             <Border Grid.Row="14" Grid.Column="3">
                 <TextBox Width="250"
