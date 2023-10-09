@@ -23,8 +23,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>0cm</Top>
-        <Left>0.53566cm</Left>
+        <Top>0.1507cm</Top>
+        <Left>0.4795cm</Left>
         <Height>0.5cm</Height>
         <Width>9.30035cm</Width>
         <Style>
@@ -58,8 +58,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>0.46014cm</Top>
-        <Left>0.53566cm</Left>
+        <Top>0.61084cm</Top>
+        <Left>0.4795cm</Left>
         <Height>0.5cm</Height>
         <Width>9.30035cm</Width>
         <ZIndex>1</ZIndex>
@@ -77,12 +77,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.21911in</Width>
+              <Width>3.96911in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>4.66667in</Height>
+              <Height>3.49067in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -566,7 +566,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Counter</rd:DefaultName>
@@ -626,7 +628,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>TotalCH</rd:DefaultName>
@@ -656,7 +660,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>TwistNo</rd:DefaultName>
@@ -686,7 +692,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>ProductLotNo</rd:DefaultName>
@@ -716,14 +724,16 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>CustomerName</rd:DefaultName>
                           <Top>0.57856in</Top>
                           <Left>2.10001in</Left>
                           <Height>0.25in</Height>
-                          <Width>1.81355in</Width>
+                          <Width>1.78576in</Width>
                           <ZIndex>20</ZIndex>
                           <Style>
                             <Border>
@@ -746,14 +756,16 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>CustomerName</rd:DefaultName>
                           <Top>0.84245in</Top>
-                          <Left>2.1in</Left>
+                          <Left>2.10001in</Left>
                           <Height>0.25in</Height>
-                          <Width>1.81355in</Width>
+                          <Width>1.78576in</Width>
                           <ZIndex>21</ZIndex>
                           <Style>
                             <Border>
@@ -776,14 +788,16 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>CustomerName</rd:DefaultName>
                           <Top>1.13412in</Top>
-                          <Left>2.08611in</Left>
+                          <Left>2.10001in</Left>
                           <Height>0.25in</Height>
-                          <Width>1.81355in</Width>
+                          <Width>1.78576in</Width>
                           <ZIndex>22</ZIndex>
                           <Style>
                             <Border>
@@ -806,12 +820,14 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>TwistNo</rd:DefaultName>
                           <Top>1.68967in</Top>
-                          <Left>2.11389in</Left>
+                          <Left>2.10001in</Left>
                           <Height>0.25in</Height>
                           <Width>1.78576in</Width>
                           <ZIndex>23</ZIndex>
@@ -912,10 +928,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>main</DataSetName>
-        <Top>0.43833in</Top>
-        <Left>0.08589in</Left>
-        <Height>4.66667in</Height>
-        <Width>4.21911in</Width>
+        <Top>0.49766in</Top>
+        <Left>0.06378in</Left>
+        <Height>3.49067in</Height>
+        <Width>3.96911in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -924,10 +940,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>5.18in</Height>
+    <Height>4.13in</Height>
     <Style />
   </Body>
-  <Width>4.305in</Width>
+  <Width>4.09667in</Width>
   <Page>
     <PageHeight>5.83in</PageHeight>
     <PageWidth>4.13in</PageWidth>
