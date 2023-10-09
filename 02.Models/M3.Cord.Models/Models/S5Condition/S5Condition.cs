@@ -105,7 +105,6 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
-
         public static S5Condition Create(string productCode)
         {
             var inst = new S5Condition();
