@@ -155,6 +155,17 @@ namespace M3.Cord.Models
                 var items = cnn.Query<PalletSetting>("GetPalletSettings", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
+
+                // load items
+                data.ForEach(d => 
+                {
+                    if (d.PalletId.HasValue)
+                    {
+                        d.Items = PalletSettingItem.Gets(d.PalletId.Value).Value();
+                        d.Calculate();
+                    }
+                });
+
                 rets.Success(data);
             }
             catch (Exception ex)
@@ -207,6 +218,17 @@ namespace M3.Cord.Models
                 var items = cnn.Query<PalletSetting>("SearchPalletSettings", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
+
+                // load items
+                data.ForEach(d =>
+                {
+                    if (d.PalletId.HasValue)
+                    {
+                        d.Items = PalletSettingItem.Gets(d.PalletId.Value).Value();
+                        d.Calculate();
+                    }
+                });
+
                 rets.Success(data);
             }
             catch (Exception ex)
