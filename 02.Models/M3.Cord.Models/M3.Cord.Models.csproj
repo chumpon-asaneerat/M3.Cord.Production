@@ -104,6 +104,7 @@
     <Compile Include="Models\FirstTwist\Twist1CheckSheet.cs" />
     <Compile Include="Models\FirstTwist\Twist1LoadRecord.cs" />
     <Compile Include="Models\FirstTwist\Twist1LoadRecordItem.cs" />
+    <Compile Include="Models\PalletSettings\PalletSettings.cs" />
     <Compile Include="Models\PCCard\PCCard.cs" />
     <None Include="_V2\FirstTwist\FirstTwistMC.cs" />
     <None Include="_V2\Masters\Customer.cs" />
