@@ -93,15 +93,18 @@ namespace M3.Cord.Models
         public static S4x2Condition Create(string productCode)
         {
             var inst = new S4x2Condition();
-
             var std = S4x2ConditionStd.Gets(productCode).Value().FirstOrDefault();
-            if (null != std)
-            {
-                inst.CalculatedTwistingNumber = std.CalculatedTwistingNumber;
-                inst.CalculatedTwistingNumberErr = std.CalculatedTwistingNumberErr;
-            }
-
+            Assign(std, inst);
             return inst;
+        }
+
+        public static void Assign(S4x2ConditionStd src, S4x2Condition dst)
+        {
+            if (null != src && null != dst)
+            {
+                dst.CalculatedTwistingNumber = src.CalculatedTwistingNumber;
+                dst.CalculatedTwistingNumberErr = src.CalculatedTwistingNumberErr;
+            }
         }
         /// <summary>
         /// Gets

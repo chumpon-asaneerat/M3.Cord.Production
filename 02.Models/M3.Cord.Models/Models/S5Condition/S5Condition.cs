@@ -109,15 +109,18 @@ namespace M3.Cord.Models
         public static S5Condition Create(string productCode)
         {
             var inst = new S5Condition();
-
             var std = S5ConditionStd.Gets(productCode).Value().FirstOrDefault();
-            if (null != std)
-            {
-                inst.CordStructureSet = std.CordStructureSet;
-                inst.CordStructureSpec = std.CordStructureSpec;
-            }
-
+            Assign(std, inst);
             return inst;
+        }
+
+        public static void Assign(S5ConditionStd src, S5Condition dst)
+        {
+            if (null != src && null != dst)
+            {
+                dst.CordStructureSet = src.CordStructureSet;
+                dst.CordStructureSpec = src.CordStructureSpec;
+            }
         }
         /// <summary>
         /// Gets

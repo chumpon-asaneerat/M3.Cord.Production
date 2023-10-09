@@ -89,17 +89,19 @@ namespace M3.Cord.Models
         public static S1Condition Create(string productCode)
         {
             var inst = new S1Condition();
-
             var std = S1ConditionStd.Gets(productCode).Value().FirstOrDefault();
-            if (null != std)
-            {
-                inst.CalculatedTwistingNumber = std.CalculatedTwistingNumber;
-                inst.CalculatedTwistingNumberErr = std.CalculatedTwistingNumberErr;
-            }
-
+            Assign(std, inst);
             return inst;
         }
 
+        public static void Assign(S1ConditionStd src, S1Condition dst)
+        {
+            if (null != src && null != dst)
+            {
+                dst.CalculatedTwistingNumber = src.CalculatedTwistingNumber;
+                dst.CalculatedTwistingNumberErr = src.CalculatedTwistingNumberErr;
+            }
+        }
         /// <summary>
         /// Gets
         /// </summary>
