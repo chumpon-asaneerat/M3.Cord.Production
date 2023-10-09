@@ -197,7 +197,7 @@
     <Compile Include="Pages\Documents\S5\S5StdManagePage.xaml.cs">
       <DependentUpon>S5StdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PalletSettingPreviewPage.xaml.cs">
+    <Compile Include="Pages\PalletSettings\PalletSettingPreviewPage.xaml.cs">
       <DependentUpon>PalletSettingPreviewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PalletSettings\PalletSettingManagePage.xaml.cs">
@@ -643,7 +643,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <Page Include="Pages\PalletSettingPreviewPage.xaml">
+    <Page Include="Pages\PalletSettings\PalletSettingPreviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -843,7 +843,6 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
     <Folder Include="_V3\Controls\Documents\Ageing\Elements\" />

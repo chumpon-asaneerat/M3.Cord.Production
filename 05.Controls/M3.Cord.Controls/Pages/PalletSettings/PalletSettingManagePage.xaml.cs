@@ -81,9 +81,14 @@ namespace M3.Cord.Pages
         private void cmdCreate_Click(object sender, RoutedEventArgs e)
         {
             var win = M3CordApp.Windows.CreatePallet;
-            if (win.ShowDialog() == true)
+            if (win.ShowDialog() == true && null != win.Pallet)
             {
                 // Show Print Preview
+                var page = M3CordApp.Pages.PalletSettingPreview;
+                var items = new List<PalletSetting>();
+                items.Add(win.Pallet);
+                page.Setup(items);
+                PageContentManager.Instance.Current = page;
             }
         }
 

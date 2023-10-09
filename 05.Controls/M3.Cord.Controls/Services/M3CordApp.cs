@@ -259,6 +259,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.PalletSettingManagePage>(); }
             }
+            /// <summary>Gets M3 Cord PalletSetting Preview Page.</summary>
+            public static Cord.Pages.PalletSettingPreviewPage PalletSettingPreview
+            {
+                get { return GetPage<Cord.Pages.PalletSettingPreviewPage>(); }
+            }
 
             #endregion
         }

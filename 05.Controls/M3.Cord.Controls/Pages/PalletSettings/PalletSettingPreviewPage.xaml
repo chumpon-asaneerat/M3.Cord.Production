@@ -11,7 +11,7 @@
              d:DesignWidth="800"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
-    <page:NPage HeaderText="GO Label Preview">
+    <page:NPage HeaderText="Pallet Setting Preview">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTONS  -->
             <DockPanel LastChildFill="True"

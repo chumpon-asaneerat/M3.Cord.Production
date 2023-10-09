@@ -72,6 +72,8 @@ namespace M3.Cord.Models
         public string ProductLotNo { get; set; }
         public string MCCode { get; set; }
 
+        public string DoffNos { get; set; }
+
         public decimal? ActualQty { get; set; }
         public decimal? TargetQty { get; set; }
 
