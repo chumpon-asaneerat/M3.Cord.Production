@@ -41,6 +41,7 @@ namespace M3.Cord.Models
         public string PalletCode { get; set; }
         public string CreateDate { get; set; }
         public int Counter { get; set; }
+        // Create UserId
         public int UserId { get; set; }
         public PalletType PalletType { get; set; }
         public PalletStatus PalletStatus { get; set; }
