@@ -22,8 +22,8 @@ namespace M3.Cord.Models
 {
     public enum PalletType : int
     {
-        Cart = 0,
-        Pallet = 1
+        Pallet = 0,
+        Cart = 1
     }
 
     public enum PalletStatus : int
@@ -76,6 +76,44 @@ namespace M3.Cord.Models
 
         public decimal? ActualQty { get; set; }
         public decimal? TargetQty { get; set; }
+
+        public bool IsCart
+        {
+            get { return PalletType == PalletType.Cart; }
+            set 
+            { 
+                if (value)
+                {
+                    PalletType = PalletType.Cart;
+                }
+                else
+                {
+                    PalletType = PalletType.Pallet;
+                }
+                Raise(() => this.PalletType);
+                Raise(() => this.IsCart);
+                Raise(() => this.IsPallet);
+            }
+        }
+
+        public bool IsPallet
+        {
+            get { return PalletType == PalletType.Pallet; }
+            set 
+            {
+                if (value)
+                {
+                    PalletType = PalletType.Pallet;
+                }
+                else
+                {
+                    PalletType = PalletType.Cart;
+                }
+                Raise(() => this.PalletType);
+                Raise(() => this.IsCart);
+                Raise(() => this.IsPallet);
+            }
+        }
 
         public SolidColorBrush TextColor
         {

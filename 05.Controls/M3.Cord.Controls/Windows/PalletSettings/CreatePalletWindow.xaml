@@ -91,11 +91,13 @@
                                 <RadioButton Content="Pallet"
                                              FontWeight="SemiBold"
                                              FontSize="20"
+                                             IsChecked="{Binding IsPallet}"
                                              Style="{StaticResource CommonRadioButton}"
                                              GroupName="rbPalletType" />
                                 <RadioButton Content="Cart"
                                              FontWeight="SemiBold"
                                              FontSize="20"
+                                             IsChecked="{Binding IsCart}"
                                              Style="{StaticResource CommonRadioButton}"
                                              GroupName="rbPalletType" />
                             </StackPanel>
