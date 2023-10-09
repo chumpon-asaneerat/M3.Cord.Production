@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using NLib.Wpf.Controls;
 
 #endregion
 
@@ -69,6 +70,14 @@ namespace M3.Cord.Pages
             {
                 RefreshGrid();
             });
+        }
+
+        private void cmdDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as FontAwesomeButton;
+            if (null == btn) return;
+            var item = btn.DataContext as G4IssueYarn;
+            DeleteItem(item);
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
@@ -188,6 +197,15 @@ namespace M3.Cord.Pages
             dtIssueDate.IsEnabled = hasRequestId;
             cbItemYanrs.IsEnabled = hasRequestId;
             */
+        }
+
+        private void DeleteItem(G4IssueYarn item)
+        {
+            G4IssueYarnService.Instance.Delete(item);
+            this.InvokeAction(() =>
+            {
+                RefreshGrid();
+            });
         }
 
         private void LoadComboBoxes()

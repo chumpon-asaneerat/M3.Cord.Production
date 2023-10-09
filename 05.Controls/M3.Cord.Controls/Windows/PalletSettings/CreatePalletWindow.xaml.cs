@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using NLib.Models;
 using M3.Cord.Models;
 using NLib;
+using NLib.Wpf.Controls;
 
 #endregion
 
@@ -56,13 +57,6 @@ namespace M3.Cord.Windows
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
-            // test save
-            /*
-            if (null != _pallet)
-            {
-                PalletSetting.Save(_pallet);
-            }
-            */
             DialogResult = true;
         }
 
@@ -74,11 +68,37 @@ namespace M3.Cord.Windows
                 paItem.DataContext = null;
 
                 _pallet.Items.Add(_item);
+                _pallet.Calculate();
 
                 // Pre create item
                 _item = new PalletSettingItem();
                 paItem.DataContext = _item;
 
+                grid.ItemsSource = _pallet.Items;
+            }
+        }
+
+        private void cmdDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as FontAwesomeButton;
+            if (null == btn) return;
+
+            var item = btn.DataContext as PalletSettingItem;
+            if (null != _pallet && null != item)
+            {
+                grid.ItemsSource = null;
+
+                var idx = _pallet.Items.FindIndex((src) =>
+                {
+                    return src.DoffNo == item.DoffNo && src.SPNos == item.SPNos;
+
+                });
+                if (idx != -1)
+                {
+                    _pallet.Items.RemoveAt(idx);
+                    _pallet.Calculate();
+                }
+                
                 grid.ItemsSource = _pallet.Items;
             }
         }
@@ -152,7 +172,7 @@ namespace M3.Cord.Windows
 
         #endregion
 
-        #region Public Property
+        #region Public Properties
 
         /// <summary>
         /// Gets Pallet instnace

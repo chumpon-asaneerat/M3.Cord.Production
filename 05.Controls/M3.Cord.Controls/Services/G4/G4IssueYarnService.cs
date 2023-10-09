@@ -172,6 +172,13 @@ namespace M3.Cord
             return idx;
         }
 
+        public void Delete(G4IssueYarn item)
+        {
+            item.UnmarkIssue();
+
+            CalcTotals();
+        }
+
         public void MarkIssue(string requestNo, string palletNo)
         {
             if (string.IsNullOrEmpty(requestNo))

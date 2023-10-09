@@ -99,10 +99,26 @@ namespace M3.Cord.Models
             if (null != Items)
             {
                 decimal totalCH = decimal.Zero;
+                string doffStr = string.Empty;
+
+                int cnt = 0;
+                int max = Items.Count;
                 foreach (var item in Items)
                 {
                     totalCH += (item.CH.HasValue) ? item.CH.Value : decimal.Zero;
+                    doffStr += "D" + item.DoffNo.ToString();
+                    cnt++;
+                    if (cnt < max)
+                    {
+                        doffStr += ", ";
+                    }
                 }
+
+                TotalCH = totalCH;
+                DoffNos = doffStr.Trim();
+
+                Raise(() => this.TotalCH);
+                Raise(() => this.DoffNos);
             }
         }
 
@@ -291,7 +307,14 @@ namespace M3.Cord.Models
             if (SPNoStart.HasValue && SPNoEnd.HasValue)
             {
                 CH = SPNoEnd.Value - SPNoStart.Value + 1;
-                SPNos = string.Format("{0} - {1}", SPNoStart.Value, SPNoEnd.Value);
+                if (SPNoStart.Value == SPNoEnd.Value)
+                {
+                    SPNos = string.Format("{0}", SPNoStart.Value);
+                }
+                else
+                {
+                    SPNos = string.Format("{0} - {1}", SPNoStart.Value, SPNoEnd.Value);
+                }
             }
             else if (!SPNoStart.HasValue && SPNoEnd.HasValue)
             {

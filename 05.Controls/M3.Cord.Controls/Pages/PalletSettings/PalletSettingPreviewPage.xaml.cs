@@ -92,9 +92,13 @@ namespace M3.Cord.Pages
                     foreach (var item in _items) 
                     {
                         PalletSetting.Save(item);
-                        foreach (var item2 in item.Items)
+                        if (item.PalletId.HasValue)
                         {
-                            PalletSettingItem.Save(item2);
+                            foreach (var item2 in item.Items)
+                            {
+                                item2.PalletId = item.PalletId.Value;
+                                PalletSettingItem.Save(item2);
+                            }
                         }
                     }
                     this.rptViewer.Print(ReportDisplayName);

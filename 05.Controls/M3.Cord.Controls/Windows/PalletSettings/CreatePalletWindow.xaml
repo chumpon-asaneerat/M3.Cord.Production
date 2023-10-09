@@ -143,6 +143,24 @@
                             <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNo}" />
                             <GridViewColumn Header="CH" CellTemplate="{StaticResource CH}" />
                             <GridViewColumn Header="SPNos" CellTemplate="{StaticResource SPNos}" />
+                            <GridViewColumn Header="">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center">
+                                            <!--  DELETE  -->
+                                            <ctrl:FontAwesomeButton x:Name="cmdDelete"
+                                                                    IconType="Delete"
+                                                                    Text="Delete"
+                                                                    Margin="5,0"
+                                                                    Width="150"
+                                                                    Height="30" 
+                                                                    Click="cmdDelete_Click"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>

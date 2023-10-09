@@ -193,7 +193,8 @@
                                                                     IsEnabled="{Binding CanRemove}"
                                                                     Margin="5,0"
                                                                     Width="150"
-                                                                    Height="30" />
+                                                                    Height="30" 
+                                                                    Click="cmdDelete_Click"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
