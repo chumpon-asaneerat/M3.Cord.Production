@@ -76,25 +76,18 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void RefreshGrids()
+        private void UpdateUI()
         {
+            this.DataContext = null;
 
-        }
-
-        public void Setup(FirstTwistMC mc)
-        {
             s1.DataContext = null;
             s4x1.DataContext = null;
             s4x2.DataContext = null;
 
-            selectedMC = mc;
-
             // Get PC Card if assigned.
             pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
 
-            this.DataContext = pcCard;
-
-            if (pcCard != null) 
+            if (pcCard != null)
             {
                 if (pcCard.MCCode == "S-1-1" ||
                     pcCard.MCCode == "S-1-2" ||
@@ -129,6 +122,26 @@ namespace M3.Cord.Pages
                     s4x2.Visibility = Visibility.Collapsed;
                 }
             }
+            else
+            {
+                s1.Visibility = Visibility.Collapsed;
+                s4x1.Visibility = Visibility.Collapsed;
+                s4x2.Visibility = Visibility.Collapsed;
+            }
+
+            this.DataContext = pcCard;
+        }
+
+        public void RefreshGrids()
+        {
+            UpdateUI();
+        }
+
+        public void Setup(FirstTwistMC mc)
+        {
+            selectedMC = mc;
+
+            UpdateUI();
         }
 
         #endregion
