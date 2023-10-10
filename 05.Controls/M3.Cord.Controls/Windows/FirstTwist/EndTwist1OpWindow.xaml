@@ -66,12 +66,12 @@
                         <!--  Unit Weight  -->
                         <ctrl:NTextBox CaptionText="Unit Weight:"
                                        DockPanel.Dock="Left"
-                                       Text="{Binding UnitWeight}"
+                                       Text="{Binding UnitWeight, UpdateSourceTrigger=LostFocus}"
                                        Width="200" />
                         <!--  Output No  -->
                         <ctrl:NTextBox CaptionText="Output Number:"
                                        DockPanel.Dock="Left"
-                                       Text="{Binding OutputCH}"
+                                       Text="{Binding OutputCH, UpdateSourceTrigger=LostFocus}"
                                        Width="200" />
                         <!--  Product  -->
                         <ctrl:NTextBox CaptionText="Product:"
@@ -82,7 +82,7 @@
                         <!--  Waste Weight  -->
                         <ctrl:NTextBox CaptionText="Waste Weight:"
                                        DockPanel.Dock="Left"
-                                       Text="{Binding WasteWeight}"
+                                       Text="{Binding WasteWeight, UpdateSourceTrigger=LostFocus}"
                                        Width="200" />
                     </StackPanel>
                 </DockPanel>

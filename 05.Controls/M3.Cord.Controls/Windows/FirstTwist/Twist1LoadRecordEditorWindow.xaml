@@ -67,16 +67,16 @@
                                        Text="{Binding ShiftName}"
                                        Width="100" />
                         <!--  Scan Pallet No  -->
-                        <ctrl:NTextBox x:Name="txtScanPallet"
-                                       CaptionText="Pallet No:"
+                        <ctrl:NTextBox x:Name="txtScanTraceNo"
+                                       CaptionText="Trace No:"
                                        DockPanel.Dock="Left"
                                        WatermarkImageWidth="30"
                                        WatermarkImageHeight="25"
                                        WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
-                                       WatermarkText="Scan Pallet No"
+                                       WatermarkText="Scan Trace No"
                                        Text=""
                                        Width="250"
-                                       PreviewKeyDown="txtScanPallet_PreviewKeyDown" />
+                                       PreviewKeyDown="txtScanTraceNo_PreviewKeyDown" />
                     </StackPanel>
                 </DockPanel>
                 <!--  CURRENT PALLET INFO  -->
