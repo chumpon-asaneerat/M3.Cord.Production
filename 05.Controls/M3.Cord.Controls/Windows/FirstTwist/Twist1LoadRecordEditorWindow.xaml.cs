@@ -55,11 +55,13 @@ namespace M3.Cord.Windows
         {
             if (e.Key == Key.Enter)
             {
+                string itemYarn = (null != _pcCard) ? _pcCard.ItemYarn : null;
+
                 string traceNo = txtScanTraceNo.Text;
                 txtScanTraceNo.Text = string.Empty;
                 if (!string.IsNullOrEmpty(traceNo))
                 {
-                    _pallet = G4IssueYarn.SearchWarehousePallet(traceNo).Value();
+                    _pallet = G4IssueYarn.SearchWarehousePallet(traceNo, itemYarn).Value();
 
                     if (null == _pallet)
                     {

@@ -423,7 +423,7 @@ namespace M3.Cord.Models
 
         #endregion
 
-        public static NDbResult<G4IssueYarn> SearchWarehousePallet(string traceNo)
+        public static NDbResult<G4IssueYarn> SearchWarehousePallet(string traceNo, string itemYarn)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -443,6 +443,7 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@TraceNo", traceNo);
+            p.Add("@ItemYarn", itemYarn);
 
             try
             {
