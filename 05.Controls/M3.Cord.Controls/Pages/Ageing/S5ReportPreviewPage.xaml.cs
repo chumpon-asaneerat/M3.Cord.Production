@@ -67,10 +67,7 @@ namespace M3.Cord.Pages
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
-            // Pallet Setting
-            var page = M3CordApp.Pages.PalletSettingManage;
-            page.Setup();
-            PageContentManager.Instance.Current = page;
+            M3CordApp.Pages.GotoCordMainMenu();
         }
 
         private void cmdPrint_Click(object sender, RoutedEventArgs e)
