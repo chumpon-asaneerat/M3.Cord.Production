@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using M3.Cord.Models;
 using NLib.Services;
 using System;
 using System.Collections.Generic;
@@ -186,6 +187,18 @@ namespace M3.Cord.Pages
         private void cmdCordDocumentMenu_Click(object sender, RoutedEventArgs e)
         {
             // M3 Cord Document Menu
+        }
+
+        private void cmdS5Preview_Click(object sender, RoutedEventArgs e)
+        {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Pallet Setting
+            var page = M3CordApp.Pages.S5ReportPreview;
+            var items = S5ConditionPrintModel.GetSamples();
+            page.Setup(items);
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion

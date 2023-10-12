@@ -246,6 +246,16 @@
                             <Run Text="(for DIP Cord)" />
                         </TextBlock>
                     </Button>
+                    <!--  Ageing Preview (Test)  -->
+                    <Button x:Name="cmdS5Preview"
+                            Click="cmdS5Preview_Click"
+                            Style="{StaticResource CordProductionButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Ageing" />
+                            <LineBreak />
+                            <Run Text="(Preview Test)" />
+                        </TextBlock>
+                    </Button>
                     <!--  Dipping  -->
                     <Button x:Name="cmdDipping"
                             Click="cmdDipping_Click"

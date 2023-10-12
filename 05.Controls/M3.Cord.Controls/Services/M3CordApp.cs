@@ -274,6 +274,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.AgeingManagePage>(); }
             }
+            /// <summary>Gets S5 (Ageing) Report Preview Page.</summary>
+            public static Cord.Pages.S5ReportPreviewPage S5ReportPreview
+            {
+                get { return GetPage<Cord.Pages.S5ReportPreviewPage>(); }
+            }
 
             #endregion
         }
