@@ -129,7 +129,7 @@ namespace M3.Cord.Pages
             // Set Display Name (default file name).
             inst.DisplayName = ReportDisplayName;
 
-            inst.Definition.EmbededReportName = "M3.Cord.Reports.PalletSetting.rdlc";
+            inst.Definition.EmbededReportName = "M3.Cord.Reports.PalletSettingA5.rdlc";
             inst.Definition.RdlcInstance = RdlcReportUtils.GetEmbededReport(assembly,
                 inst.Definition.EmbededReportName);
             // clear reprot datasource.

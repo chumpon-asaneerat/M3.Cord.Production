@@ -247,7 +247,10 @@
       <DependentUpon>Twist1RawMaterialCheckSheetDocument.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reports\PalletSetting.rdlc" />
+    <EmbeddedResource Include="Reports\PalletSettingA5.rdlc" />
     <EmbeddedResource Include="Reports\S5Condition.rdlc" />
+    <None Include="Properties\DataSources\M3.Cord.Models.PalletSetting.datasource" />
+    <None Include="Properties\DataSources\M3.Cord.Models.S5ConditionPrintModel.datasource" />
     <None Include="_V3\Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml.cs">
       <DependentUpon>HeaderPart.xaml</DependentUpon>
     </None>

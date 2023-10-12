@@ -107,8 +107,19 @@ namespace M3.Cord.Models
         {
             var results = new List<S5ConditionPrintModel>();
             
-            results.Add(new S5ConditionPrintModel() { DoffNo1Doff = "1", DoffNo1MCNo = "S-1-1" });
-            results.Add(new S5ConditionPrintModel() { DoffNo1Doff = "2", DoffNo1MCNo = "S-4-1" });
+            results.Add(new S5ConditionPrintModel() 
+            { 
+                DoffNo1Doff = "1",
+                DoffNo1MCNo = "S-1-1",
+                SoudSystemTemperatureSet = "100"
+
+            });
+            results.Add(new S5ConditionPrintModel() 
+            { 
+                DoffNo1Doff = "2",
+                DoffNo1MCNo = "S-4-1",
+                SoudSystemTemperatureSet = "60"
+            });
 
             return results;
         }

@@ -49,6 +49,9 @@ namespace M3.Cord.Models
         public int? PalletId { get; set; }
         public int? PCTwist1Id { get; set; }
         public string PalletCode { get; set; }
+        // Pallet barcode
+        public byte[] PalletCodeImage { get; set; } = null;
+
         public DateTime? CreateDate { get; set; }
         public string TwistNo { get; set; }
         public int Counter { get; set; }
