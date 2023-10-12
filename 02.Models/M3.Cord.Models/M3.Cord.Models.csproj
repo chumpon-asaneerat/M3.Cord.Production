@@ -126,6 +126,7 @@
     <Compile Include="Models\S1Condition\S1Condition.cs" />
     <Compile Include="Models\S4x2Condition\S4x2ConditionStd.cs" />
     <Compile Include="Models\S4x2Condition\S4x2Condition.cs" />
+    <Compile Include="Models\S5Condition\S5ConditionPrintModel.cs" />
     <Compile Include="Models\S5Condition\S5ConditionStd.cs" />
     <Compile Include="Models\S5Condition\S5Condition.cs" />
     <Compile Include="Models\Users\UserInfo.cs" />
