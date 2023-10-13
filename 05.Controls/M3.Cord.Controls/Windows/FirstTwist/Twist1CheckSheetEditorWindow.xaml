@@ -15,6 +15,300 @@
         WindowStartupLocation="CenterOwner"
         Height="800"
         Width="1100">
+    <Window.Resources>
+        <Style x:Key="CommonHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="True" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style x:Key="RotateHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="True" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="FontSize" Value="18" />
+            <!--
+            <Setter Property="LayoutTransform">
+                <Setter.Value>
+                    <RotateTransform Angle="-90" />
+                </Setter.Value>
+            </Setter>
+            -->
+        </Style>
+
+        <!--  CHECK SHEETS  -->
+        <!--#region RAW-->
+
+        <DataTemplate x:Key="RawB">
+            <CheckBox FontSize="18"
+                      Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding Path=RawB, Mode=TwoWay}" />
+        </DataTemplate>
+        <DataTemplate x:Key="RawE">
+            <CheckBox FontSize="18"
+                      Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding Path=RawE, Mode=TwoWay}" />
+        </DataTemplate>
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="RawColumns">
+            <GridViewColumn Width="70"
+                            CellTemplate="{StaticResource RawB}"
+                            Header=" ก่อน "
+                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+            <GridViewColumn Width="70"
+                            CellTemplate="{StaticResource RawE}"
+                            Header=" หลัง "
+                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="RawColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Raw Material" />
+                    <LineBreak />
+                    <Run Text="(สภาพวัตถุดิบ)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource RawColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="RawColumnsHeaderColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource RawColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region Cross-->
+
+        <DataTemplate x:Key="CrossB">
+            <CheckBox FontSize="18"
+                      Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding Path=CrossB, Mode=TwoWay}" />
+        </DataTemplate>
+        <DataTemplate x:Key="CrossE">
+            <CheckBox FontSize="18"
+                      Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding Path=CrossE, Mode=TwoWay}" />
+        </DataTemplate>
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="CrossColumns">
+            <GridViewColumn Width="70"
+                            CellTemplate="{StaticResource CrossB}"
+                            Header=" ก่อน "
+                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+            <GridViewColumn Width="70"
+                            CellTemplate="{StaticResource CrossE}"
+                            Header=" หลัง "
+                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="CrossColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Cross Yarn" />
+                    <LineBreak />
+                    <Run Text="(ด้ายไขว้)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource CrossColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="CrossColumnsHeaderColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource CrossColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region Form-->
+
+        <DataTemplate x:Key="FormB">
+            <CheckBox FontSize="18"
+                      Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding Path=FormB, Mode=TwoWay}" />
+        </DataTemplate>
+        <DataTemplate x:Key="FormE">
+            <CheckBox FontSize="18"
+                      Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding Path=FormE, Mode=TwoWay}" />
+        </DataTemplate>
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="FormColumns">
+            <GridViewColumn Width="70"
+                            CellTemplate="{StaticResource FormB}"
+                            Header=" ก่อน "
+                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+            <GridViewColumn Width="70"
+                            CellTemplate="{StaticResource FormE}"
+                            Header=" หลัง "
+                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="FormColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Form" />
+                    <LineBreak />
+                    <Run Text="(ฟอร์ม)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource FormColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="FormColumnsHeaderColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource FormColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region Keiba-->
+
+        <DataTemplate x:Key="KeibaB">
+            <CheckBox FontSize="18"
+                      Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding Path=KebaB, Mode=TwoWay}" />
+        </DataTemplate>
+        <DataTemplate x:Key="KeibaE">
+            <CheckBox FontSize="18"
+                      Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding Path=KebaE, Mode=TwoWay}" />
+        </DataTemplate>
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="KeibaColumns">
+            <GridViewColumn Width="70"
+                            CellTemplate="{StaticResource KeibaB}"
+                            Header=" ก่อน "
+                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+            <GridViewColumn Width="70"
+                            CellTemplate="{StaticResource KeibaE}"
+                            Header=" หลัง "
+                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="KeibaColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Keiba" />
+                    <LineBreak />
+                    <Run Text="(เคบะ)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource KeibaColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="KeibaColumnsHeaderColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource KeibaColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region Stain-->
+
+        <DataTemplate x:Key="StainB">
+            <CheckBox FontSize="18"
+                      Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding Path=StainB, Mode=TwoWay}" />
+        </DataTemplate>
+        <DataTemplate x:Key="StainE">
+            <CheckBox FontSize="18"
+                      Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding Path=StainE, Mode=TwoWay}" />
+        </DataTemplate>
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="StainColumns">
+            <GridViewColumn Width="70"
+                            CellTemplate="{StaticResource StainB}"
+                            Header=" ก่อน "
+                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+            <GridViewColumn Width="70"
+                            CellTemplate="{StaticResource StainE}"
+                            Header=" หลัง "
+                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="StainColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Stain" />
+                    <LineBreak />
+                    <Run Text="(เปื้อน)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource StainColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="StainColumnsHeaderColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource StainColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region XXX-->
+
+        <!--#endregion-->
+
+        <!--#region XXX-->
+
+        <!--#endregion-->
+
+        <!--#region XXX-->
+
+        <!--#endregion-->
+
+        <!--#region XXX-->
+
+        <!--#endregion-->
+    </Window.Resources>
     <page:NPage HeaderText="Load Yarn">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
@@ -70,18 +364,34 @@
                 </DockPanel>
                 <!--  SPs  -->
                 <ListView x:Name="grid"
-                          Margin="0,0,0,5"
-                          FontSize="{StaticResource FontSize18}"
-                          ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
-                          ItemsSource="{Binding}"
-                          Style="{StaticResource SingleSelectListView}">
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
-                            <GridViewColumn Header="เส้นที่" CellTemplate="{StaticResource DeckNo}" />
-                            <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletNo}" />
-                            <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
-                            <GridViewColumn Header="Yarn Barcode" CellTemplate="{StaticResource YarnBarcode}" />
+                            <GridViewColumn Width="140"
+                                        CellTemplate="{StaticResource RawColumnsHeaderColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource RawColumnsHeader}" />
+                            <GridViewColumn Width="140"
+                                        CellTemplate="{StaticResource CrossColumnsHeaderColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource CrossColumnsHeader}" />
+                            <GridViewColumn Width="140"
+                                        CellTemplate="{StaticResource FormColumnsHeaderColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource FormColumnsHeader}" />
+                            <GridViewColumn Width="140"
+                                        CellTemplate="{StaticResource KeibaColumnsHeaderColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource KeibaColumnsHeader}" />
+                            <GridViewColumn Width="140"
+                                        CellTemplate="{StaticResource StainColumnsHeaderColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource StainColumnsHeader}" />
                         </GridView>
                     </ListView.View>
                 </ListView>

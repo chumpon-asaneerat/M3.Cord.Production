@@ -64,7 +64,36 @@ namespace M3.Cord.Windows
 
         #endregion
 
+        #region CheckBox
+
+        private void chkTest_Checked(object sender, RoutedEventArgs e)
+        {
+            RefreshDoffNo();
+        }
+
+        private void chkTest_Unchecked(object sender, RoutedEventArgs e)
+        {
+            RefreshDoffNo();
+        }
+
+        #endregion
+
         #region Private Methods
+
+        private void RefreshDoffNo()
+        {
+            if (null == _pcCard || null == _sheet) return;
+            if (chkTest.IsChecked == true)
+            {
+                _sheet.TestFlag = true;
+                _sheet.DoffNo = _pcCard.LastTestNo + 1;
+            }
+            else
+            {
+                _sheet.TestFlag = false;
+                _sheet.DoffNo = _pcCard.LastDoffNo + 1;
+            }
+        }
 
         private void Save()
         {

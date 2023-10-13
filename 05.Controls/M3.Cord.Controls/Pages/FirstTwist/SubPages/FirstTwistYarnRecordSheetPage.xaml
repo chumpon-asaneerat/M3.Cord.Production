@@ -322,11 +322,11 @@
             <StackPanel Orientation="Horizontal"
                         DockPanel.Dock="Left"
                         VerticalAlignment="Center">
-                <ctrl:FontAwesomeButton x:Name="cmdSave"
+                <ctrl:FontAwesomeButton x:Name="cmdNewSheet"
                                         Margin="5,0,0,0"
                                         IconType="Add"
-                                        Text="Save"
-                                        Click="cmdSave_Click" />
+                                        Text="New Sheet"
+                                        Click="cmdNewSheet_Click" />
             </StackPanel>
             <Grid />
         </DockPanel>
@@ -349,27 +349,14 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
-                        <GridViewColumn Width="140"
-                                        CellTemplate="{StaticResource RawColumnsHeaderColumns}"
-                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                        HeaderTemplate="{StaticResource RawColumnsHeader}" />
-                        <GridViewColumn Width="140"
-                                        CellTemplate="{StaticResource CrossColumnsHeaderColumns}"
-                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                        HeaderTemplate="{StaticResource CrossColumnsHeader}" />
-                        <GridViewColumn Width="140"
-                                        CellTemplate="{StaticResource FormColumnsHeaderColumns}"
-                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                        HeaderTemplate="{StaticResource FormColumnsHeader}" />
-                        <GridViewColumn Width="140"
-                                        CellTemplate="{StaticResource KeibaColumnsHeaderColumns}"
-                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                        HeaderTemplate="{StaticResource KeibaColumnsHeader}" />
-                        <GridViewColumn Width="140"
-                                        CellTemplate="{StaticResource StainColumnsHeaderColumns}"
-                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                        HeaderTemplate="{StaticResource StainColumnsHeader}" />
+                        <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
+                        <GridViewColumn Header="Doff" CellTemplate="{StaticResource DoffNo}" />
+                        <!--
+                        <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource ItemYarn}" />
+                        <GridViewColumn Header="Input (CH)" CellTemplate="{StaticResource InputCH}" />
+                        -->
+                        <GridViewColumn Header="Shift" CellTemplate="{StaticResource ShiftName}" />
+                        <GridViewColumn Header="Operator" CellTemplate="{StaticResource UserId}" />
                     </GridView>
                 </ListView.View>
             </ListView>

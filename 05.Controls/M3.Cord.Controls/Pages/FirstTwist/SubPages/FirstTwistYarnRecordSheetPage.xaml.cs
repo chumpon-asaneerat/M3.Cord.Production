@@ -59,10 +59,10 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        private void cmdNewSheet_Click(object sender, RoutedEventArgs e)
         {
-            // Save Check Sheet
-            SaveCheckSheets();
+            // Show Check Sheet Dialig
+            ShowCheckSheetDialog();
         }
 
         #endregion
@@ -98,17 +98,28 @@ namespace M3.Cord.Pages
             RefreshGrids();
         }
 
+        private void ShowCheckSheetDialog()
+        {
+            if (null == selectedMC || null == pcCard)
+                return;
+            var win = M3CordApp.Windows.Twist1CheckSheetEditor;
+            win.Setup(selectedMC, pcCard, null); // New
+            if (win.ShowDialog() == false) return;
+
+            // reload pc card to refresh last doff/test no. 
+            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
+
+            RefreshGrids();
+        }
+
         public void RefreshGrids()
         {
             lvCheckSheet.ItemsSource = null;
 
             if (null != pcCard)
             {
-                // New!!
-                /*
                 var items = Twist1CheckSheet.Gets(pcCard.PCTwist1Id.Value).Value();
-                lvRawMats.ItemsSource = items;
-                */
+                lvCheckSheet.ItemsSource = items;
             }
 
             if (null != pcCard && null != selectedMC)
@@ -127,8 +138,8 @@ namespace M3.Cord.Pages
                 {
 
                 }
-                */
                 lvCheckSheet.ItemsSource = checkSheets;
+                */
             }
 
             UpdateMCStatus();

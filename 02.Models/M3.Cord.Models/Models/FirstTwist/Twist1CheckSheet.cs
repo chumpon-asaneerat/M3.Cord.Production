@@ -38,6 +38,7 @@ namespace M3.Cord.Models
 
         public int Twist1CheckId { get; set; }
         public int PCTwist1Id { get; set; }
+        public DateTime? ConditionDate { get; set; }
         public bool TestFlag { get; set; }
         public int DoffNo { get; set; }
         public string ShiftName { get; set; }
@@ -128,6 +129,7 @@ namespace M3.Cord.Models
             var p = new DynamicParameters();
 
             p.Add("@PCTwist1Id", value.PCTwist1Id);
+            p.Add("@ConditionDate", value.ConditionDate);
             p.Add("@DoffNo", value.DoffNo);
             p.Add("@ShiftName", value.ShiftName);
             p.Add("@UserId", value.UserId);

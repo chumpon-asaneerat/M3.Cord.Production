@@ -410,6 +410,11 @@ namespace M3.Cord
                 get { return GetWindow<EndTwist1OpWindow>(); }
             }
 
+            /// <summary>Gets Twist 1 Check Sheet Window.</summary>
+            public static Twist1CheckSheetEditorWindow Twist1CheckSheetEditor
+            {
+                get { return GetWindow<Twist1CheckSheetEditorWindow>(); }
+            }
             /*
             /// <summary>Gets Yarn Loading Window.</summary>
             public static YarnLoadingWindow YarnLoading
