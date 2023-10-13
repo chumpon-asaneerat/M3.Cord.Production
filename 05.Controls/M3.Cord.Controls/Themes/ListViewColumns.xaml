@@ -172,6 +172,16 @@
                    TextAlignment="Center"
                    MinWidth="80" />
     </DataTemplate>
+    <DataTemplate x:Key="UserName">
+        <TextBlock Text="{Binding Path=UserName, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
+    </DataTemplate>
+    <DataTemplate x:Key="Chief">
+        <TextBlock Text="{Binding Path=Chief, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
+    </DataTemplate>
     <DataTemplate x:Key="ProductCode">
         <TextBlock Text="{Binding Path=ProductCode, Mode=OneWay}"
                    Foreground="{Binding TextColor}"

@@ -62,7 +62,7 @@
                         <GridViewColumn Header="Input (CH)" CellTemplate="{StaticResource InputCH}" />
                         -->
                         <GridViewColumn Header="Shift" CellTemplate="{StaticResource ShiftName}" />
-                        <GridViewColumn Header="Operator" CellTemplate="{StaticResource UserId}" />
+                        <GridViewColumn Header="Operator" CellTemplate="{StaticResource UserName}" />
                     </GridView>
                 </ListView.View>
             </ListView>

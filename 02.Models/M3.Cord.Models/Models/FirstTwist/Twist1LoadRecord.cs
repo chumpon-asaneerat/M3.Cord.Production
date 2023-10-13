@@ -53,6 +53,7 @@ namespace M3.Cord.Models
         }
         public string ItemYarn { get; set; }
         public string ShiftName { get; set; }
+        public string UserName { get; set; }
         public string Chief { get; set; }
         public string Remark { get; set; }
         public bool Keiba { get; set; }
@@ -165,6 +166,7 @@ namespace M3.Cord.Models
             p.Add("@DoffNo", value.DoffNo);
             p.Add("@ItemYarn", value.ItemYarn);
             p.Add("@ShiftName", value.ShiftName);
+            p.Add("@UserName", value.UserName);
             p.Add("@Chief", value.Chief);
             p.Add("@Remark", value.Remark);
 

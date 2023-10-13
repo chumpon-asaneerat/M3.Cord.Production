@@ -44,7 +44,7 @@ namespace M3.Cord.Models
         public int DoffNo { get; set; }
         public string ItemYarn { get; set; }
         public string ShiftName { get; set; }
-        public int UserId { get; set; }
+        public string UserName { get; set; }
         public string Chief { get; set; }
         public string Remark { get; set; }
         // Runtime only
@@ -141,7 +141,7 @@ namespace M3.Cord.Models
             p.Add("@DoffNo", value.DoffNo);
             p.Add("@ItemYarn", value.ItemYarn);
             p.Add("@ShiftName", value.ShiftName);
-            p.Add("@UserId", value.UserId);
+            p.Add("@UserName", value.UserName);
             p.Add("@Chief", value.Chief);
             p.Add("@Remark", value.Remark);
 

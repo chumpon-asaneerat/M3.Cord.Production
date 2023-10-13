@@ -185,6 +185,7 @@
                                         HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
                                         HeaderTemplate="{StaticResource DefectColumnsHeader}" />
                         <GridViewColumn Header="Shift" CellTemplate="{StaticResource ShiftName}" />
+                        <GridViewColumn Header="Operator" CellTemplate="{StaticResource UserName}" />
                     </GridView>
                 </ListView.View>
             </ListView>

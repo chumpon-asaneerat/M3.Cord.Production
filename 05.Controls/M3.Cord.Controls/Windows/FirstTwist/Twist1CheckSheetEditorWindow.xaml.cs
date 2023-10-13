@@ -131,7 +131,11 @@ namespace M3.Cord.Windows
                 _sheet.TestFlag = false;
                 _sheet.DoffNo = _pcCard.LastDoffNo;
                 _sheet.ShiftName = string.Empty;
-                _sheet.UserId = M3CordApp.Current.User.UserId;
+                /*
+                _sheet.UserName = (!string.IsNullOrEmpty(M3CordApp.Current.User.FullName)) ? 
+                    M3CordApp.Current.User.FullName : M3CordApp.Current.User.UserName;
+                */
+                _sheet.UserName = M3CordApp.Current.User.UserName;
 
                 this.DataContext = _sheet;
             }

@@ -171,6 +171,11 @@ namespace M3.Cord.Windows
                 _item.TestFlag = false;
                 _item.DoffNo = _pcCard.LastDoffNo + 1;
                 _item.ShiftName = string.Empty;
+                /*
+                _item.UserName = (!string.IsNullOrEmpty(M3CordApp.Current.User.FullName)) ? 
+                    M3CordApp.Current.User.FullName : M3CordApp.Current.User.UserName;
+                */
+                _item.UserName = M3CordApp.Current.User.UserName;
 
                 this.DataContext = _item;
             }
