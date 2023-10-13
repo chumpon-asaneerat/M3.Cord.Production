@@ -104,6 +104,12 @@
                    MinWidth="100" />
     </DataTemplate>
 
+    <DataTemplate x:Key="ConditionDate">
+        <TextBlock Text="{Binding Path=ConditionDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
     <DataTemplate x:Key="StartTime">
         <TextBlock Text="{Binding Path=StartTime, StringFormat='{}{0:HH:mm}', Mode=OneWay}"
                    TextAlignment="Center"

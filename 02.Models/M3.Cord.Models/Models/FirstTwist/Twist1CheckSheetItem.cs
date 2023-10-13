@@ -36,7 +36,7 @@ namespace M3.Cord.Models
 
         #region Public Properties
 
-        public int Twist1CheckId { get; set; }
+        public int? Twist1CheckId { get; set; }
         public int SPNo { get; set; }
 
         public bool RawB { get; set; }
@@ -64,7 +64,7 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<Twist1CheckSheetItem>> Gets(int Twist1CheckId)
+        public static NDbResult<List<Twist1CheckSheetItem>> Gets(int? Twist1CheckId)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 

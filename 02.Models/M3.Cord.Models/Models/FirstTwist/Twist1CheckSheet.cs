@@ -36,15 +36,19 @@ namespace M3.Cord.Models
 
         #region Public Properties
 
-        public int Twist1CheckId { get; set; }
+        public int? Twist1CheckId { get; set; }
         public int PCTwist1Id { get; set; }
+        public DateTime? ProductionDate { get; set; }
         public DateTime? ConditionDate { get; set; }
         public bool TestFlag { get; set; }
         public int DoffNo { get; set; }
+        public string ItemYarn { get; set; }
         public string ShiftName { get; set; }
         public int UserId { get; set; }
         public string Chief { get; set; }
         public string Remark { get; set; }
+        // Runtime only
+        public string ProductLotNo { get; set; }
 
         #endregion
 
@@ -54,7 +58,8 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<Twist1CheckSheet>> Gets(int Twist1CheckId)
+        public static NDbResult<List<Twist1CheckSheet>> Gets(int PCTwist1Id, 
+            int? Twist1CheckId = new int?())
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -73,6 +78,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+            p.Add("@PCTwist1Id", PCTwist1Id);
             p.Add("@Twist1CheckId", Twist1CheckId);
             try
             {
@@ -129,14 +135,17 @@ namespace M3.Cord.Models
             var p = new DynamicParameters();
 
             p.Add("@PCTwist1Id", value.PCTwist1Id);
+            p.Add("@ProductionDate", value.ProductionDate);
             p.Add("@ConditionDate", value.ConditionDate);
+            p.Add("@TestFlag", value.TestFlag);
             p.Add("@DoffNo", value.DoffNo);
+            p.Add("@ItemYarn", value.ItemYarn);
             p.Add("@ShiftName", value.ShiftName);
             p.Add("@UserId", value.UserId);
             p.Add("@Chief", value.Chief);
             p.Add("@Remark", value.Remark);
 
-            p.Add("@Twist1CheckId", value.Twist1CheckId, DbType.Int32, direction: ParameterDirection.InputOutput); p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.Add("@Twist1CheckId", value.Twist1CheckId, DbType.Int32, direction: ParameterDirection.InputOutput); 
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
@@ -145,6 +154,9 @@ namespace M3.Cord.Models
             {
                 cnn.Execute("SaveTwist1CheckSheet", p, commandType: CommandType.StoredProcedure);
                 ret.Success(value);
+
+                // get pk
+                value.Twist1CheckId = p.Get<int?>("@Twist1CheckId");
 
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");

@@ -331,7 +331,7 @@
             <DockPanel LastChildFill="True">
                 <DockPanel DockPanel.Dock="Top">
                     <!--  DATE TIME  -->
-                    <elem:ProductionDateBox DockPanel.Dock="Left" />
+                    <elem:ConditionDateBox DockPanel.Dock="Left" />
                     <!--  ITEM YARN  -->
                     <elem:ItemYarnBox DockPanel.Dock="Left" />
                     <!--  LOT NO  -->

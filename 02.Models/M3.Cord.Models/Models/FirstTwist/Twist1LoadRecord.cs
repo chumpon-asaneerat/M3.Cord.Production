@@ -61,7 +61,7 @@ namespace M3.Cord.Models
         public bool ScrapeTube { get; set; }
         public bool Form { get; set; }
         public bool Stain { get; set; }
-
+        // Runtime only
         public string ProductLotNo { get; set; }
 
         public List<Twist1LoadRecordItem> Items { get; set; }

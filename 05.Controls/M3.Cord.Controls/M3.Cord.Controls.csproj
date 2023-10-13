@@ -104,6 +104,9 @@
     <Compile Include="Controls\Elements\ActualQtyBox.xaml.cs">
       <DependentUpon>ActualQtyBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Elements\ConditionDateBox.xaml.cs">
+      <DependentUpon>ConditionDateBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Elements\CordStructureBox.xaml.cs">
       <DependentUpon>CordStructureBox.xaml</DependentUpon>
     </Compile>
@@ -481,6 +484,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Elements\ActualQtyBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\ConditionDateBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

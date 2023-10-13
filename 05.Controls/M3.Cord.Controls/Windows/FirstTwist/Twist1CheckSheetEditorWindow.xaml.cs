@@ -86,33 +86,119 @@ namespace M3.Cord.Windows
             if (chkTest.IsChecked == true)
             {
                 _sheet.TestFlag = true;
-                _sheet.DoffNo = _pcCard.LastTestNo + 1;
+                _sheet.DoffNo = _pcCard.LastTestNo;
             }
             else
             {
                 _sheet.TestFlag = false;
-                _sheet.DoffNo = _pcCard.LastDoffNo + 1;
+                _sheet.DoffNo = _pcCard.LastDoffNo;
             }
         }
 
         private void Save()
         {
+            if (null != _sheet)
+            {
+                _sheet = Twist1CheckSheet.Save(_sheet).Value(); // Save check sheet
+                if (null == _sheet || _sheet.Twist1CheckId <= 0) return;
+                SaveCheckSheets();
+            }
+        }
 
+        private void SaveCheckSheets()
+        {
+            if (null != _sheet && null != _items)
+            {
+                _items.ForEach(item => 
+                {
+                    item.Twist1CheckId = _sheet.Twist1CheckId; // update key
+                    Twist1CheckSheetItem.Save(item); 
+                });
+            }
+            RefreshGrid();
         }
 
         private void NewItem()
         {
+            this.DataContext = null;
+            if (null != _pcCard)
+            {
+                _sheet = new Twist1CheckSheet();
+                _sheet.ConditionDate = DateTime.Now;
+                _sheet.PCTwist1Id = (_pcCard.PCTwist1Id.HasValue) ? _pcCard.PCTwist1Id.Value : 0;
+                _sheet.ItemYarn = _pcCard.ItemYarn;
+                _sheet.ProductLotNo = _pcCard.ProductLotNo;
+                _sheet.TestFlag = false;
+                _sheet.DoffNo = _pcCard.LastDoffNo;
+                _sheet.ShiftName = string.Empty;
+                _sheet.UserId = M3CordApp.Current.User.UserId;
 
+                this.DataContext = _sheet;
+            }
         }
 
         private void EditItem()
         {
-
+            this.DataContext = null;
+            this.DataContext = _sheet;
         }
 
         private void RefreshGrid()
         {
+            if (null != _pcCard && null != _mc)
+            {
+                _items = new List<Twist1CheckSheetItem>();
+                for (int i = _mc.StartCore; i < _mc.EndCore; i++)
+                {
+                    _items.Add(new Twist1CheckSheetItem() { Twist1CheckId = 0, SPNo = i });
+                }
 
+                if (null != _sheet)
+                {
+                    var existItems = Twist1CheckSheetItem.Gets(_sheet.Twist1CheckId).Value();
+                    if (null != existItems && existItems.Count > 0)
+                    {
+                        foreach (var existItem in existItems)
+                        {
+                            int idx = _items.FindIndex((item =>
+                            {
+                                return (existItem.SPNo == item.SPNo);
+                            }));
+                            if (idx != -1 && null != _items[idx])
+                            {
+                                _items[idx].Twist1CheckId = existItem.Twist1CheckId;
+                                //_items[idx].SPNo = existItem.SPNo;
+
+                                _items[idx].BBMarkB = existItem.BBMarkB;
+                                _items[idx].BBMarkE = existItem.BBMarkE;
+
+                                _items[idx].CrossB = existItem.CrossB;
+                                _items[idx].CrossE = existItem.CrossE;
+
+                                _items[idx].RawB = existItem.RawB;
+                                _items[idx].RawE = existItem.RawE;
+
+                                _items[idx].FormB = existItem.FormB;
+                                _items[idx].FormE = existItem.FormE;
+
+                                _items[idx].KebaB = existItem.KebaB;
+                                _items[idx].KebaE = existItem.KebaE;
+
+                                _items[idx].PaperTubeB = existItem.PaperTubeB;
+                                _items[idx].PaperTubeE = existItem.PaperTubeE;
+
+                                _items[idx].StainB = existItem.StainB;
+                                _items[idx].StainE = existItem.StainE;
+
+                                _items[idx].YarnNoB = existItem.YarnNoB;
+                                _items[idx].YarnNoE = existItem.YarnNoE;
+                            }
+                        }
+                    }
+                }
+
+                grid.ItemsSource = _items;
+            }
         }
 
         #endregion
