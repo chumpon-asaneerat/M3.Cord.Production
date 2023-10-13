@@ -102,6 +102,15 @@ namespace M3.Cord.Pages
         {
             lvCheckSheet.ItemsSource = null;
 
+            if (null != pcCard)
+            {
+                // New!!
+                /*
+                var items = Twist1CheckSheet.Gets(pcCard.PCTwist1Id.Value).Value();
+                lvRawMats.ItemsSource = items;
+                */
+            }
+
             if (null != pcCard && null != selectedMC)
             {
                 /*
