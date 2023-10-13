@@ -225,6 +225,9 @@
     <Compile Include="Windows\FirstTwist\StartTwist1OpWindow.xaml.cs">
       <DependentUpon>StartTwist1OpWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\FirstTwist\Twist1CheckSheetEditorWindow.xaml.cs">
+      <DependentUpon>Twist1CheckSheetEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="_Templates\09.QA\CordSamplingDetialsDocument.xaml.cs">
       <DependentUpon>CordSamplingDetialsDocument.xaml</DependentUpon>
     </Compile>
@@ -786,6 +789,10 @@
       <SubType>Designer</SubType>
     </None>
     <Page Include="Windows\FirstTwist\StartTwist1OpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FirstTwist\Twist1CheckSheetEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
