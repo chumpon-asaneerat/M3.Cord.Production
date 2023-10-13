@@ -19,6 +19,8 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using NLib.Wpf.Controls;
+using M3.Cord.Windows;
 
 #endregion
 
@@ -60,7 +62,22 @@ namespace M3.Cord.Pages
 
         private void cmdLoadYarn_Click(object sender, RoutedEventArgs e)
         {
-            ShowLoadYarnDialog();
+            ShowLoadYarnDialog(null);
+        }
+
+        private void cmdDetail_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var ctx = (null != button) ? button.DataContext : null;
+            var item = ctx as RawMaterialSummary;
+            if (null != item)
+            {
+                var inst = Twist1LoadRecord.Gets(item.PCTwist1Id, item.Twist1LoadId).Value().FirstOrDefault();
+                if (null != inst)
+                {
+                    ShowLoadYarnDialog(inst);
+                }
+            }
         }
 
         #endregion
@@ -100,12 +117,14 @@ namespace M3.Cord.Pages
             UpdateMCStatus();
         }
 
-        public void ShowLoadYarnDialog()
+        public void ShowLoadYarnDialog(Twist1LoadRecord record)
         {
             if (null == selectedMC || null == pcCard)
                 return;
             var win = M3CordApp.Windows.Twist1LoadRecordEditor;
-            win.Setup(selectedMC, pcCard, null); // New
+            // set display mode
+            win.Mode = (null != record) ? DisplayMode.Edit : DisplayMode.New;
+            win.Setup(selectedMC, pcCard, record);
             if (win.ShowDialog() == false) return;
 
             // reload pc card to refresh last doff/test no. 

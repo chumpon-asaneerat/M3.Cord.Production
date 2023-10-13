@@ -50,6 +50,20 @@ namespace M3.Cord.Models
         // Runtime only
         public string ProductLotNo { get; set; }
 
+        public List<Twist1CheckSheetItem> Items { get; set; }
+
+        #endregion
+
+        #region Public Methods
+
+        public void LoadItems()
+        {
+            if (Twist1CheckId.HasValue && Twist1CheckId.Value > 0)
+            {
+                this.Items = Twist1CheckSheetItem.Gets(Twist1CheckId.Value).Value();
+            }
+        }
+
         #endregion
 
         #region Static Methods

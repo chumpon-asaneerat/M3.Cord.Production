@@ -143,6 +143,53 @@ namespace M3.Cord.Models
             return rets;
         }
         /// <summary>
+        /// Get Last
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<PCTwist1Operation> GetLast(int PCTwist1Id)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<PCTwist1Operation> ret = new NDbResult<PCTwist1Operation>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@PCTwist1Id", PCTwist1Id);
+            try
+            {
+                var item = cnn.Query<PCTwist1Operation>("GetCurrentTwist1Op", p,
+                    commandType: CommandType.StoredProcedure).FirstOrDefault();
+                var data = (null != item) ? item : null;
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            if (null == ret.data)
+            {
+                // create empty list.
+                ret.data = null;
+            }
+
+            return ret;
+        }
+        /// <summary>
         /// Start
         /// </summary>
         /// <param name="value">The PCTwist1Operation item to save.</param>

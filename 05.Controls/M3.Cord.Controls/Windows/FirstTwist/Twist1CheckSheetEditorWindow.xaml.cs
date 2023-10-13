@@ -144,6 +144,10 @@ namespace M3.Cord.Windows
         private void EditItem()
         {
             this.DataContext = null;
+            if (null != _sheet)
+            {
+                _sheet.LoadItems();
+            }
             this.DataContext = _sheet;
         }
 
@@ -205,6 +209,28 @@ namespace M3.Cord.Windows
             }
         }
 
+        private void CheckEnableSave()
+        {
+            bool canSave = false;
+            if (null != _pcCard)
+            {
+                if (Mode == DisplayMode.New)
+                {
+                    canSave = true;
+                }
+                else
+                {
+                    var op = PCTwist1Operation.GetLast(_pcCard.PCTwist1Id.Value).Value();
+                    if (null != op)
+                    {
+                        // has item but not start
+                        canSave = !op.StartTime.HasValue;
+                    }
+                }
+            }
+            cmdOk.IsEnabled = canSave;
+        }
+
         #endregion
 
         #region Public Methods
@@ -215,7 +241,9 @@ namespace M3.Cord.Windows
             _pcCard = pcCard;
             _sheet = sheet;
 
-            if (sheet == null)
+            CheckEnableSave();
+
+            if (_sheet == null)
             {
                 NewItem();
             }
@@ -226,6 +254,12 @@ namespace M3.Cord.Windows
 
             RefreshGrid();
         }
+
+        #endregion
+
+        #region Public Proeprties
+
+        public DisplayMode Mode { get; set; } = DisplayMode.New;
 
         #endregion
     }

@@ -66,6 +66,7 @@ namespace M3.Cord.Models
         }
 
         public string ShiftName { get; set; }
+        public string UserName { get; set; }
         public string Chief { get; set; }
         public string Remark { get; set; }
 

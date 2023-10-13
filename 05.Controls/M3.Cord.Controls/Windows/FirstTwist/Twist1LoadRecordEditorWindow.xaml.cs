@@ -117,17 +117,6 @@ namespace M3.Cord.Windows
         private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
             AppendYarn();
-            /*
-            if (null != _item && null != Items)
-            {
-                Items.Add(_item);
-            }
-            this.InvokeAction(() =>
-            {
-                RefreshGrid();
-                NewItem();
-            });
-            */
         }
 
         #endregion
@@ -186,6 +175,10 @@ namespace M3.Cord.Windows
         private void EditItem()
         {
             this.DataContext = null;
+            if (null != _item)
+            {
+                _item.LoadItems();
+            }
             this.DataContext = _item;
 
             RefreshCurrentPallet();
@@ -194,15 +187,33 @@ namespace M3.Cord.Windows
         private void RefreshDoffNo()
         {
             if (null == _pcCard || null == _item) return;
-            if (chkTest.IsChecked == true)
+            if (Mode == DisplayMode.New)
             {
-                _item.TestFlag = true;
-                _item.DoffNo = _pcCard.LastTestNo + 1;
+                // New
+                if (chkTest.IsChecked == true)
+                {
+                    _item.TestFlag = true;
+                    _item.DoffNo = _pcCard.LastTestNo + 1;
+                }
+                else
+                {
+                    _item.TestFlag = false;
+                    _item.DoffNo = _pcCard.LastDoffNo + 1;
+                }
             }
             else
             {
-                _item.TestFlag = false;
-                _item.DoffNo = _pcCard.LastDoffNo + 1;
+                // View or Edit
+                if (chkTest.IsChecked == true)
+                {
+                    _item.TestFlag = true;
+                    _item.DoffNo = _pcCard.LastTestNo;
+                }
+                else
+                {
+                    _item.TestFlag = false;
+                    _item.DoffNo = _pcCard.LastDoffNo;
+                }
             }
         }
 
@@ -229,6 +240,10 @@ namespace M3.Cord.Windows
 
         private void RefreshCurrentPallet()
         {
+            txtSPNo.IsEnabled = (null != paCurrPallet);
+            txtDeckNo.IsEnabled = (null != paCurrPallet);
+            txtYarnBarcode.IsEnabled = (null != paCurrPallet);
+
             paCurrPallet.DataContext = _pallet;
         }
 
@@ -409,6 +424,28 @@ namespace M3.Cord.Windows
             }
         }
 
+        private void CheckEnableSave()
+        {
+            bool canSave = false;
+            if (null != _pcCard)
+            {
+                if (Mode == DisplayMode.New)
+                {
+                    canSave = true;
+                }
+                else
+                {
+                    var op = PCTwist1Operation.GetLast(_pcCard.PCTwist1Id.Value).Value();
+                    if (null != op)
+                    {
+                        // has item but not start
+                        canSave = !op.StartTime.HasValue;
+                    }
+                }
+            }
+            cmdOk.IsEnabled = canSave;
+        }
+
         #endregion
 
         #region Public Methods
@@ -421,9 +458,10 @@ namespace M3.Cord.Windows
             _pcCard = pcCard;
             _item = record;
 
+            CheckEnableSave();
             EnableScanOption();
 
-            if (record == null)
+            if (_item == null)
             {
                 NewItem();
             }
@@ -439,6 +477,7 @@ namespace M3.Cord.Windows
 
         #region Public Properties
 
+        public DisplayMode Mode { get; set; } = DisplayMode.New;
         public Twist1LoadRecord Record { get { return _item; } }
 
         #endregion

@@ -216,6 +216,7 @@
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
+    <Compile Include="Windows\Common\Common.cs" />
     <Compile Include="Windows\PalletSettings\CreatePalletWindow.xaml.cs">
       <DependentUpon>CreatePalletWindow.xaml</DependentUpon>
     </Compile>

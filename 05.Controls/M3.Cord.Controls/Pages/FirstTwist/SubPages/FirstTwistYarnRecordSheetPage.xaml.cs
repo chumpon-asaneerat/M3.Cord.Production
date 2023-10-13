@@ -61,7 +61,22 @@ namespace M3.Cord.Pages
         private void cmdNewSheet_Click(object sender, RoutedEventArgs e)
         {
             // Show Check Sheet Dialig
-            ShowCheckSheetDialog();
+            ShowCheckSheetDialog(null);
+        }
+
+        private void cmdDetail_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var ctx = (null != button) ? button.DataContext : null;
+            var item = ctx as Twist1CheckSheet;
+            if (null != item)
+            {
+                var inst = Twist1CheckSheet.Gets(item.PCTwist1Id, item.Twist1CheckId).Value().FirstOrDefault();
+                if (null != inst)
+                {
+                    ShowCheckSheetDialog(inst);
+                }
+            }
         }
 
         #endregion
@@ -88,12 +103,14 @@ namespace M3.Cord.Pages
             RefreshGrids();
         }
 
-        private void ShowCheckSheetDialog()
+        private void ShowCheckSheetDialog(Twist1CheckSheet sheet)
         {
             if (null == selectedMC || null == pcCard)
                 return;
             var win = M3CordApp.Windows.Twist1CheckSheetEditor;
-            win.Setup(selectedMC, pcCard, null); // New
+            // set display mode
+            win.Mode = (null != sheet) ? DisplayMode.Edit : DisplayMode.New;
+            win.Setup(selectedMC, pcCard, sheet);
             if (win.ShowDialog() == false) return;
 
             // reload pc card to refresh last doff/test no. 
