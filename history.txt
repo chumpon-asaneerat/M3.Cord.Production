@@ -4,8 +4,10 @@ M3 Cord Production System #650
 M3 Cord Production System #649
 - 
 
+[commited]
 M3 Cord Production System #648
-- 
+- M3.Cord.Production.App re-implements #438
+  - Merge Pallet Setting and S5 report frok kik.
 
 [commited]
 M3 Cord Production System #647
