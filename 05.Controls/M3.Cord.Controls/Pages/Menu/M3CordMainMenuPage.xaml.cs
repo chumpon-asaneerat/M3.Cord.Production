@@ -189,18 +189,6 @@ namespace M3.Cord.Pages
             // M3 Cord Document Menu
         }
 
-        private void cmdS5Preview_Click(object sender, RoutedEventArgs e)
-        {
-            // Sign In
-            var win = M3CordApp.Windows.SignIn;
-            if (win.ShowDialog() == false) return;
-            // Pallet Setting
-            var page = M3CordApp.Pages.S5ReportPreview;
-            var items = S5ConditionPrintModel.GetSamples();
-            page.Setup(items);
-            PageContentManager.Instance.Current = page;
-        }
-
         #endregion
 
         #region Public Methods
