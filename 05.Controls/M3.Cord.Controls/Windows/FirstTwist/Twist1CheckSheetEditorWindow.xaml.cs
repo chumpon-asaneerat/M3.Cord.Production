@@ -131,11 +131,8 @@ namespace M3.Cord.Windows
                 _sheet.TestFlag = false;
                 _sheet.DoffNo = _pcCard.LastDoffNo;
                 _sheet.ShiftName = string.Empty;
-                /*
                 _sheet.UserName = (!string.IsNullOrEmpty(M3CordApp.Current.User.FullName)) ? 
                     M3CordApp.Current.User.FullName : M3CordApp.Current.User.UserName;
-                */
-                _sheet.UserName = M3CordApp.Current.User.UserName;
 
                 this.DataContext = _sheet;
             }
@@ -218,14 +215,21 @@ namespace M3.Cord.Windows
                 {
                     canSave = true;
                 }
-                else
+                else if (Mode == DisplayMode.Edit)
                 {
+                    canSave = true;
+                    /*
                     var op = PCTwist1Operation.GetLast(_pcCard.PCTwist1Id.Value).Value();
                     if (null != op)
                     {
                         // has item but not start
                         canSave = !op.StartTime.HasValue;
                     }
+                    */
+                }
+                else
+                {
+                    canSave = false;
                 }
             }
             cmdOk.IsEnabled = canSave;

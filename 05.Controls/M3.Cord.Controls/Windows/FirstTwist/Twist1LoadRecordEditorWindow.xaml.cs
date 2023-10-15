@@ -160,11 +160,8 @@ namespace M3.Cord.Windows
                 _item.TestFlag = false;
                 _item.DoffNo = _pcCard.LastDoffNo + 1;
                 _item.ShiftName = string.Empty;
-                /*
                 _item.UserName = (!string.IsNullOrEmpty(M3CordApp.Current.User.FullName)) ? 
                     M3CordApp.Current.User.FullName : M3CordApp.Current.User.UserName;
-                */
-                _item.UserName = M3CordApp.Current.User.UserName;
 
                 this.DataContext = _item;
             }
@@ -433,14 +430,21 @@ namespace M3.Cord.Windows
                 {
                     canSave = true;
                 }
-                else
+                else if (Mode == DisplayMode.Edit)
                 {
+                    canSave = true;
+                    /*
                     var op = PCTwist1Operation.GetLast(_pcCard.PCTwist1Id.Value).Value();
                     if (null != op)
                     {
                         // has item but not start
                         canSave = !op.StartTime.HasValue;
                     }
+                    */
+                }
+                else
+                {
+                    canSave = false;
                 }
             }
             cmdOk.IsEnabled = canSave;

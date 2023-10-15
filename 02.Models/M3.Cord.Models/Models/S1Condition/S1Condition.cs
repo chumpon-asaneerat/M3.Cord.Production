@@ -22,6 +22,10 @@ namespace M3.Cord.Models
     public class S1Condition
     {
         #region Public Proeprties
+
+        public int? S1ConditionId { get; set; }
+        public int? PCTwist1Id { get; set; }
+
         public string ProductCode { get; set; }
         public bool? RingDiameterSC { get; set; }
         public string RingDiameter { get; set; }
@@ -81,6 +85,16 @@ namespace M3.Cord.Models
         public bool? SpecialMentionSC { get; set; }
         public string SpecialMention { get; set; }
         public string SpecialMentionActual { get; set; }
+
+        public string UpdateBy { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public string CheckedBy { get; set; }
+        public DateTime? CheckedDate { get; set; }
+        public string ApproveBy { get; set; }
+        public DateTime? ApproveDate { get; set; }
+
+        public string ShiftLeader { get; set; }
+        public string ProductionManager { get; set; }
 
         #endregion
 
@@ -146,7 +160,7 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<S1Condition>> Gets()
+        public static NDbResult<List<S1Condition>> Gets(int? PCTwist1Id, int? S1ConditionId = new int?())
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -165,10 +179,12 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+            p.Add("@PCTwist1Id", PCTwist1Id);
+            p.Add("@S1ConditionId", S1ConditionId);
 
             try
             {
-                var items = cnn.Query<S1Condition>("GetS1Condition", p,
+                var items = cnn.Query<S1Condition>("GetS1Conditions", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);
@@ -220,6 +236,8 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+
+            p.Add("@PCTwist1Id", value.PCTwist1Id);
             p.Add("@ProductCode", value.ProductCode);
             p.Add("@RingDiameterSC", value.RingDiameterSC);
             p.Add("@RingDiameter", value.RingDiameter);
@@ -280,6 +298,10 @@ namespace M3.Cord.Models
             p.Add("@SpecialMention", value.SpecialMention);
             p.Add("@SpecialMentionActual", value.SpecialMentionActual);
 
+            p.Add("@UpdateBy", value.UpdateBy);
+
+            p.Add("@S1ConditionId", value.S1ConditionId, DbType.Int32, direction: ParameterDirection.InputOutput);
+
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 
@@ -328,11 +350,11 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@ProductCode", value.ProductCode);
+            p.Add("@S1ConditionId", value.S1ConditionId);
 
             try
             {
-                cnn.Execute("DELETE FROM S1Condition WHERE ProductCode = @ProductCode", p, commandType: CommandType.Text);
+                cnn.Execute("DELETE FROM S1Condition WHERE S1ConditionId = @S1ConditionId", p, commandType: CommandType.Text);
                 ret.Success();
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");

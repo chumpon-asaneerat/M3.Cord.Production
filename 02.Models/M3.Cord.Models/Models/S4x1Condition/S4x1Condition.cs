@@ -23,6 +23,9 @@ namespace M3.Cord.Models
     {
         #region Public Proeprties
 
+        public int? S4x1ConditionId { get; set; }
+        public int? PCTwist1Id { get; set; }
+
         public string ProductCode { get; set; }
         public bool? TwistChangeGearSC { get; set; }
         public decimal? TwistChangeGearE { get; set; }
@@ -96,6 +99,16 @@ namespace M3.Cord.Models
         public string SpecialMention { get; set; }
         public string SpecialMentionActual { get; set; }
 
+        public string UpdateBy { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public string CheckedBy { get; set; }
+        public DateTime? CheckedDate { get; set; }
+        public string ApproveBy { get; set; }
+        public DateTime? ApproveDate { get; set; }
+
+        public string ShiftLeader { get; set; }
+        public string ProductionManager { get; set; }
+
         #endregion
 
         #region Static Methods
@@ -165,7 +178,7 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<S4x1Condition>> Gets()
+        public static NDbResult<List<S4x1Condition>> Gets(int? PCTwist1Id, int? S4x1ConditionId = new int?())
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -184,10 +197,12 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+            p.Add("@PCTwist1Id", PCTwist1Id);
+            p.Add("@S4x1ConditionId", S4x1ConditionId);
 
             try
             {
-                var items = cnn.Query<S4x1Condition>("GetS4x1Condition", p,
+                var items = cnn.Query<S4x1Condition>("GetS4x1Conditions", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);
@@ -239,6 +254,8 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+
+            p.Add("@PCTwist1Id", value.PCTwist1Id);
             p.Add("@ProductCode", value.ProductCode);
             p.Add("@TwistChangeGearSC", value.TwistChangeGearSC);
             p.Add("@TwistChangeGearE", value.TwistChangeGearE);
@@ -312,6 +329,10 @@ namespace M3.Cord.Models
             p.Add("@SpecialMention", value.SpecialMention);
             p.Add("@SpecialMentionActual", value.SpecialMentionActual);
 
+            p.Add("@UpdateBy", value.UpdateBy);
+
+            p.Add("@S4x1ConditionId", value.S4x1ConditionId, DbType.Int32, direction: ParameterDirection.InputOutput);
+
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 
@@ -360,11 +381,11 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@ProductCode", value.ProductCode);
+            p.Add("@S4x1ConditionId", value.S4x1ConditionId);
 
             try
             {
-                cnn.Execute("DELETE FROM S4x1Condition WHERE ProductCode = @ProductCode", p, commandType: CommandType.Text);
+                cnn.Execute("DELETE FROM S4x1Condition WHERE S4x1ConditionId = @S4x1ConditionId", p, commandType: CommandType.Text);
                 ret.Success();
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
