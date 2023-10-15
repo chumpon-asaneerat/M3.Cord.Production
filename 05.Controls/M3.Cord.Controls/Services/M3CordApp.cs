@@ -393,11 +393,6 @@ namespace M3.Cord
             {
                 get { return GetWindow<Twist1LoadRecordEditorWindow>(); }
             }
-            /// <summary>Gets S1 Condition Window.</summary>
-            public static Twist1S1ConditionWindow S1Condition
-            {
-                get { return GetWindow<Twist1S1ConditionWindow>(); }
-            }
 
             /// <summary>Gets Start Twist1 Op Window.</summary>
             public static StartTwist1OpWindow StartTwist1Op

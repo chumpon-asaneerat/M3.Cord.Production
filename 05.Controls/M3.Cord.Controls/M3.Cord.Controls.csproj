@@ -373,9 +373,6 @@
     <Compile Include="Windows\FirstTwist\Twist1LoadRecordEditorWindow.xaml.cs">
       <DependentUpon>Twist1LoadRecordEditorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\FirstTwist\Twist1S1ConditionWindow.xaml.cs">
-      <DependentUpon>Twist1S1ConditionWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\G4\G4ReceiveYarnWindow.xaml.cs">
       <DependentUpon>G4ReceiveYarnWindow.xaml</DependentUpon>
     </Compile>
@@ -731,10 +728,6 @@
     <Page Include="Windows\FirstTwist\Twist1LoadRecordEditorWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Windows\FirstTwist\Twist1S1ConditionWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\G4\G4ReceiveYarnWindow.xaml">
       <SubType>Designer</SubType>

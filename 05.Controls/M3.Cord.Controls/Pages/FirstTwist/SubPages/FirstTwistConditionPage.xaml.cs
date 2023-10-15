@@ -65,12 +65,33 @@ namespace M3.Cord.Pages
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
-
+            Save();
         }
 
         #endregion
 
         #region Private Methods
+
+        private void Save()
+        {
+            if (pcCard != null)
+            {
+                if (pcCard.MCCode == "S-1-1" ||
+                    pcCard.MCCode == "S-1-2" ||
+                    pcCard.MCCode == "S-1-3")
+                {
+                    s1.Save();
+                }
+                else if (pcCard.MCCode == "S-4-1")
+                {
+                    s4x1.Save();
+                }
+                else if (pcCard.MCCode == "S-4-2")
+                {
+                    s4x2.Save();
+                }
+            }
+        }
 
         #endregion
 
@@ -93,7 +114,13 @@ namespace M3.Cord.Pages
                     pcCard.MCCode == "S-1-2" ||
                     pcCard.MCCode == "S-1-3")
                 {
-                    s1.DataContext = S1Condition.Create(pcCard.ProductCode);
+                    var conds = S1Condition.Gets(pcCard.PCTwist1Id).Value(); // gets
+                    S1Condition cond = null;
+                    if (null != conds && conds.Count > 0)
+                    {
+                        cond = conds[conds.Count - 1]; // used last one
+                    }
+                    s1.Setup(selectedMC, pcCard, cond);
 
                     s1.Visibility = Visibility.Visible;
                     s4x1.Visibility = Visibility.Collapsed;
@@ -101,7 +128,13 @@ namespace M3.Cord.Pages
                 }
                 else if (pcCard.MCCode == "S-4-1")
                 {
-                    s4x1.DataContext = S4x1Condition.Create(pcCard.ProductCode);
+                    var conds = S4x1Condition.Gets(pcCard.PCTwist1Id).Value(); // gets
+                    S4x1Condition cond = null;
+                    if (null != conds && conds.Count > 0)
+                    {
+                        cond = conds[conds.Count - 1]; // used last one
+                    }
+                    s4x1.Setup(selectedMC, pcCard, cond);
 
                     s1.Visibility = Visibility.Collapsed;
                     s4x1.Visibility = Visibility.Visible;
@@ -109,7 +142,14 @@ namespace M3.Cord.Pages
                 }
                 else if (pcCard.MCCode == "S-4-2")
                 {
-                    s4x2.DataContext = S4x2Condition.Create(pcCard.ProductCode);
+                    var conds = S4x2Condition.Gets(pcCard.PCTwist1Id).Value(); // gets
+                    S4x2Condition cond = null;
+                    if (null != conds && conds.Count > 0)
+                    {
+                        cond = conds[conds.Count - 1]; // used last one
+                    }
+                    s4x2.Setup(selectedMC, pcCard, cond);
+
 
                     s1.Visibility = Visibility.Collapsed;
                     s4x1.Visibility = Visibility.Collapsed;
@@ -140,7 +180,6 @@ namespace M3.Cord.Pages
         public void Setup(FirstTwistMC mc)
         {
             selectedMC = mc;
-
             UpdateUI();
         }
 
