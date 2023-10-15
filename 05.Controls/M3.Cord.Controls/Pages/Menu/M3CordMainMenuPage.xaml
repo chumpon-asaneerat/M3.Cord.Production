@@ -282,7 +282,7 @@
                             Click="cmdPalletSetting_Click"
                             Style="{StaticResource OtherButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="Pallet Setting" />
+                            <Run Text="Doffing Report Slip" />
                         </TextBlock>
                     </Button>
                     <!--  CHEMICAL RECIPE  -->

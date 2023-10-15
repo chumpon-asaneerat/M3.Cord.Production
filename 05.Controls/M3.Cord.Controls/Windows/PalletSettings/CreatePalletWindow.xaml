@@ -83,7 +83,8 @@
                         <!--  Counter  -->
                         <ctrl:NTextBox CaptionText="Mts:"
                                        Text="{Binding Mts}"
-                                       Width="200" />
+                                       Width="200" 
+                                       Visibility="Collapsed"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <ctrl:NInputGroup>
