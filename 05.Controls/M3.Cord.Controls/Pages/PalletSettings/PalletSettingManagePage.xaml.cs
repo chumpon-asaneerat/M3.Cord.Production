@@ -122,13 +122,19 @@ namespace M3.Cord.Pages
         {
             grid.ItemsSource = null;
 
-            string productLotNo = txtProductLotNo.Text;
+
+            string txtLotNo = txtProductLotNo.Text.Trim();
+
+            string productLotNo = (!string.IsNullOrEmpty(txtLotNo)) ? txtLotNo : null;
             DateTime? begin = dtBegin.SelectedDate;
             DateTime? end = dtEnd.SelectedDate;
             Product product = cbProducts.SelectedItem as Product;
-            string productCode = (null != product) ? product.ProductCode : null;
+
+            string txtPCode = (null != product) ? product.ProductCode : null;
+            string productCode = (!string.IsNullOrEmpty(txtPCode)) ? txtPCode : null;
             
-            grid.ItemsSource = PalletSetting.Search(productLotNo, begin, end, productCode).Value();
+            grid.ItemsSource = PalletSetting.Search(
+                productLotNo, begin, end, productCode, PalletStatus.All).Value();
         }
 
         #endregion

@@ -113,7 +113,7 @@ namespace M3.Cord.Pages
                 return;
             }
 
-            pallet1 = PalletSetting.Search(palletCode).Value();
+            pallet1 = PalletSetting.Search(palletCode, PalletStatus.Create).Value();
             if (null != pallet1)
             {
                 pcCard1 = PCTwist1.Get(pallet1.PCTwist1Id.Value).Value();
@@ -137,7 +137,7 @@ namespace M3.Cord.Pages
                 return;
             }
 
-            pallet2 = PalletSetting.Search(palletCode).Value();
+            pallet2 = PalletSetting.Search(palletCode, PalletStatus.Create).Value();
             if (null != pallet2)
             {
                 pcCard2 = PCTwist1.Get(pallet2.PCTwist1Id.Value).Value();
