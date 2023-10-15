@@ -1,5 +1,37 @@
-M3 Cord Production System #660
+M3 Cord Production System #670
 - 
+
+M3 Cord Production System #669
+- 
+
+M3 Cord Production System #668
+- 
+
+M3 Cord Production System #667
+- 
+
+M3 Cord Production System #666
+- 
+
+M3 Cord Production System #665
+- 
+
+M3 Cord Production System #664
+- 
+
+M3 Cord Production System #663
+- 
+
+M3 Cord Production System #662
+- 
+
+M3 Cord Production System #661
+- 
+
+[commited]
+M3 Cord Production System #660
+- M3.Cord.Production.App re-implements #450
+  - Update build 750
 
 [commited]
 M3 Cord Production System #659
