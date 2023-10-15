@@ -22,6 +22,9 @@ namespace M3.Cord.Models
     public class S5ConditionPrintModel
     {
         #region Public Proeprties
+
+        public int? S5ConditionId { get; set; }
+
         public string ProductCode { get; set; }
         public bool? MainSupplySteamPressureSC { get; set; }
         public decimal? MainSupplySteamPressureSet { get; set; }
@@ -92,36 +95,84 @@ namespace M3.Cord.Models
         public DateTime? FinishTime { get; set; }
         public bool? OutTimeSC { get; set; }
         public DateTime? OutTime { get; set; }
+
         public bool? DoffNo1SC { get; set; }
+        public string DoffNo1PalletCode { get; set; }
+        public string DoffNo1TraceNo { get; set; }
         public string DoffNo1MCNo { get; set; }
         public string DoffNo1Doff { get; set; }
         public string DoffNo1Qty { get; set; }
+
         public bool? DoffNo2SC { get; set; }
+        public string DoffNo2PalletCode { get; set; }
+        public string DoffNo2TraceNo { get; set; }
         public string DoffNo2MCNo { get; set; }
         public string DoffNo2Doff { get; set; }
         public string DoffNo2Qty { get; set; }
 
+        public string UpdateBy { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public string CheckedBy { get; set; }
+        public DateTime? CheckedDate { get; set; }
+        public string ApproveBy { get; set; }
+        public DateTime? ApproveDate { get; set; }
+
+        public string ShiftLeader { get; set; }
+        public string ProductionManager { get; set; }
+
         #endregion
 
-        public static List<S5ConditionPrintModel> GetSamples()
+        #region Static Methods
+
+        /// <summary>
+        /// Gets
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<List<S5ConditionPrintModel>> Gets(int? S5ConditionId = new int?())
         {
-            var results = new List<S5ConditionPrintModel>();
-            
-            results.Add(new S5ConditionPrintModel() 
-            { 
-                DoffNo1Doff = "1",
-                DoffNo1MCNo = "S-1-1",
-                SoudSystemTemperatureSet = "100"
+            MethodBase med = MethodBase.GetCurrentMethod();
 
-            });
-            results.Add(new S5ConditionPrintModel() 
-            { 
-                DoffNo1Doff = "2",
-                DoffNo1MCNo = "S-4-1",
-                SoudSystemTemperatureSet = "60"
-            });
+            NDbResult<List<S5ConditionPrintModel>> rets = new NDbResult<List<S5ConditionPrintModel>>();
 
-            return results;
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@S5ConditionId", S5ConditionId);
+
+            try
+            {
+                var items = cnn.Query<S5ConditionPrintModel>("GetS5Conditions", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<S5ConditionPrintModel>();
+            }
+
+            return rets;
         }
+
+        #endregion
     }
 }

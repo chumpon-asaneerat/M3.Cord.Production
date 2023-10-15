@@ -22,6 +22,9 @@ namespace M3.Cord.Models
     public class S5Condition
     {
         #region Public Proeprties
+
+        public int? S5ConditionId { get; set; }
+
         public string ProductCode { get; set; }
         public bool? MainSupplySteamPressureSC { get; set; }
         public decimal? MainSupplySteamPressureSet { get; set; }
@@ -92,14 +95,30 @@ namespace M3.Cord.Models
         public DateTime? FinishTime { get; set; }
         public bool? OutTimeSC { get; set; }
         public DateTime? OutTime { get; set; }
+
         public bool? DoffNo1SC { get; set; }
+        public string DoffNo1PalletCode { get; set; }
+        public string DoffNo1TraceNo { get; set; }
         public string DoffNo1MCNo { get; set; }
         public string DoffNo1Doff { get; set; }
         public string DoffNo1Qty { get; set; }
+
         public bool? DoffNo2SC { get; set; }
+        public string DoffNo2PalletCode { get; set; }
+        public string DoffNo2TraceNo { get; set; }
         public string DoffNo2MCNo { get; set; }
         public string DoffNo2Doff { get; set; }
         public string DoffNo2Qty { get; set; }
+
+        public string UpdateBy { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public string CheckedBy { get; set; }
+        public DateTime? CheckedDate { get; set; }
+        public string ApproveBy { get; set; }
+        public DateTime? ApproveDate { get; set; }
+
+        public string ShiftLeader { get; set; }
+        public string ProductionManager { get; set; }
 
         #endregion
 
@@ -166,7 +185,7 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<S5Condition>> Gets()
+        public static NDbResult<List<S5Condition>> Gets(int? S5ConditionId = new int?())
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -185,10 +204,11 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+            p.Add("@S5ConditionId", S5ConditionId);
 
             try
             {
-                var items = cnn.Query<S5Condition>("GetS5Condition", p,
+                var items = cnn.Query<S5Condition>("GetS5Conditions", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);
@@ -208,6 +228,47 @@ namespace M3.Cord.Models
             }
 
             return rets;
+        }
+        /// <summary>
+        /// Gets
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<S5Condition> GetCurrent()
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<S5Condition> ret = new NDbResult<S5Condition>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+
+            try
+            {
+                var item = cnn.Query<S5Condition>("GetCurrentS5Condition", p,
+                    commandType: CommandType.StoredProcedure).FirstOrDefault();
+                var data = item;
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
         }
 
         /// <summary>
@@ -240,6 +301,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+
             p.Add("@ProductCode", value.ProductCode);
             p.Add("@MainSupplySteamPressureSC", value.MainSupplySteamPressureSC);
             p.Add("@MainSupplySteamPressureSet", value.MainSupplySteamPressureSet);
@@ -311,13 +373,21 @@ namespace M3.Cord.Models
             p.Add("@OutTimeSC", value.OutTimeSC);
             p.Add("@OutTime", value.OutTime);
             p.Add("@DoffNo1SC", value.DoffNo1SC);
+            p.Add("@DoffNo1PalletCode", value.DoffNo1PalletCode);
+            p.Add("@DoffNo1TraceNo", value.DoffNo1TraceNo);
             p.Add("@DoffNo1MCNo", value.DoffNo1MCNo);
             p.Add("@DoffNo1Doff", value.DoffNo1Doff);
             p.Add("@DoffNo1Qty", value.DoffNo1Qty);
             p.Add("@DoffNo2SC", value.DoffNo2SC);
+            p.Add("@DoffNo2PalletCode", value.DoffNo2PalletCode);
+            p.Add("@DoffNo2TraceNo", value.DoffNo2TraceNo);
             p.Add("@DoffNo2MCNo", value.DoffNo2MCNo);
             p.Add("@DoffNo2Doff", value.DoffNo2Doff);
             p.Add("@DoffNo2Qty", value.DoffNo2Qty);
+
+            p.Add("@UpdateBy", value.UpdateBy);
+
+            p.Add("@S5ConditionId", value.S5ConditionId, DbType.Int32, direction: ParameterDirection.InputOutput);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
@@ -367,11 +437,11 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@ProductCode", value.ProductCode);
+            p.Add("@S5ConditionId", value.S5ConditionId);
 
             try
             {
-                cnn.Execute("DELETE FROM S5Condition WHERE ProductCode = @ProductCode", p, commandType: CommandType.Text);
+                cnn.Execute("DELETE FROM S5Condition WHERE S5ConditionId = @S5ConditionId", p, commandType: CommandType.Text);
                 ret.Success();
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");

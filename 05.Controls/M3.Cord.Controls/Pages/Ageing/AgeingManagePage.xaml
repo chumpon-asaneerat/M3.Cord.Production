@@ -30,11 +30,30 @@
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Left"
                             VerticalAlignment="Center">
+                    <!--  SAVE  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdSave"
+                                            Margin="5,0,0,0"
+                                            IconType="None"
+                                            Text="Save"
+                                            Click="cmdSave_Click" />
                     <!--  START  -->
                     <ctrl:FontAwesomeButton x:Name="cmdStart"
                                             Margin="5,0,0,0"
                                             IconType="None"
-                                            Text="Start" />
+                                            Text="Start"
+                                            Click="cmdStart_Click" />
+                    <!--  END  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdEnd"
+                                            Margin="5,0,0,0"
+                                            IconType="None"
+                                            Text="End"
+                                            Click="cmdEnd_Click" />
+                    <!--  FINISH  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdFinish"
+                                            Margin="5,0,0,0"
+                                            IconType="None"
+                                            Text="Finish"
+                                            Click="cmdFinish_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
@@ -52,7 +71,7 @@
                                        PreviewKeyDown="txtPalletNo1_PreviewKeyDown"
                                        Width="200" />
                         <!--  ITEM CODE  -->
-                        <ctrl:NTextBox x:Name="itemCode1"
+                        <ctrl:NTextBox x:Name="txtItemCode1"
                                        CaptionText="Item Code (1)"
                                        IsReadOnly="True"
                                        Width="200" />
@@ -62,7 +81,7 @@
                                        PreviewKeyDown="txtPalletNo2_PreviewKeyDown"
                                        Width="200" />
                         <!--  ITEM CODE  -->
-                        <ctrl:NTextBox x:Name="itemCode2"
+                        <ctrl:NTextBox x:Name="txtItemCode2"
                                        CaptionText="Item Code (2)"
                                        IsReadOnly="True"
                                        Width="200" />
@@ -71,7 +90,7 @@
                 </DockPanel>
             </DockPanel>
             <!--  LISTVIEW  -->
-            <doc:S5ConditionEntryPage />
+            <doc:S5ConditionEntryPage x:Name="s5" />
         </DockPanel>
 
     </page:NPage>
