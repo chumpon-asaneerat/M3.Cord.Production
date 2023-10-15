@@ -87,7 +87,20 @@ namespace M3.Cord.Models
         // Create UserId
         public int UserId { get; set; }
         // Runtime data
-        public string UserName { get; set; }
+        private string _UserName = null;
+        public string UserName 
+        {
+            get 
+            { 
+                if (null == _UserName)
+                {
+                    var user = UserInfo.Get(UserId).Value();
+                    _UserName = (null != user) ? user.FullName : string.Empty;
+                }
+                return _UserName;
+            }
+            set { }
+        }
         public PalletType PalletType { get; set; }
 
         public string PalletTypeText
