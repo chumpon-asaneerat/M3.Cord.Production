@@ -105,18 +105,21 @@ namespace M3.Cord.Pages
 
         private void UpdatePallet1(string palletCode)
         {
+            itemCode1.Text = string.Empty;
+
             if (string.IsNullOrEmpty(palletCode))
             {
                 txtPalletNo1.Text = string.Empty;
                 return;
             }
 
-            //pallet1 = PalletSetting.Search(palletCode).Value();
+            pallet1 = PalletSetting.Search(palletCode).Value();
             if (null != pallet1)
             {
                 pcCard1 = PCTwist1.Get(pallet1.PCTwist1Id.Value).Value();
                 if (null != pcCard1)
                 {
+                    itemCode1.Text = pcCard1.ProductCode;
                     var stds = S5ConditionStd.Gets(pcCard1.ProductCode).Value();
                     std1 = (null != stds && stds.Count > 0) ? stds.FirstOrDefault() : null;
                     VerifyCondition();
@@ -126,18 +129,21 @@ namespace M3.Cord.Pages
 
         private void UpdatePallet2(string palletCode)
         {
+            itemCode2.Text = string.Empty;
+
             if (string.IsNullOrEmpty(palletCode))
             {
                 txtPalletNo2.Text = string.Empty;
                 return;
             }
 
-            //pallet2 = PalletSetting.Search(palletCode).Value();
+            pallet2 = PalletSetting.Search(palletCode).Value();
             if (null != pallet2)
             {
                 pcCard2 = PCTwist1.Get(pallet2.PCTwist1Id.Value).Value();
                 if (null != pcCard2)
                 {
+                    itemCode2.Text = pcCard2.ProductCode;
                     var stds = S5ConditionStd.Gets(pcCard2.ProductCode).Value();
                     std2 = (null != stds && stds.Count > 0) ? stds.FirstOrDefault() : null;
                     VerifyCondition();

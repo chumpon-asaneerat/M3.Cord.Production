@@ -258,6 +258,49 @@ namespace M3.Cord.Models
         /// Search
         /// </summary>
         /// <returns></returns>
+        public static NDbResult<PalletSetting> Search(string palletCode)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<PalletSetting> ret = new NDbResult<PalletSetting>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@PalletCode", palletCode);
+
+            try
+            {
+                var item = cnn.Query<PalletSetting>("SearchPalletSetting", p,
+                    commandType: CommandType.StoredProcedure).FirstOrDefault();
+                var data = item;
+
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+        /// <summary>
+        /// Search
+        /// </summary>
+        /// <returns></returns>
         public static NDbResult<List<PalletSetting>> Search(string productLotNo, 
             DateTime? begin, DateTime? end, string productCode)
         {
