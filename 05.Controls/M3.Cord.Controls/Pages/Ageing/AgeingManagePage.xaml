@@ -34,12 +34,7 @@
                     <ctrl:FontAwesomeButton x:Name="cmdStart"
                                             Margin="5,0,0,0"
                                             IconType="None"
-                                            Text="Start"/>
-                    <!--  END  -->
-                    <ctrl:FontAwesomeButton x:Name="cmdEnd"
-                                            Margin="5,0,0,0"
-                                            IconType="None"
-                                            Text="End"/>
+                                            Text="Start" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
@@ -51,22 +46,26 @@
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                        <!--  PALLET -->
+                        <!--  PALLET  -->
                         <ctrl:NTextBox x:Name="txtPalletNo1"
                                        CaptionText="Pallet No (1)"
-                                       Width="200"/>
-                        <!--  ITEM CODE -->
-                        <ctrl:NTextBox CaptionText="Item Code (1)"
+                                       PreviewKeyDown="txtPalletNo1_PreviewKeyDown"
+                                       Width="200" />
+                        <!--  ITEM CODE  -->
+                        <ctrl:NTextBox x:Name="itemCode1"
+                                       CaptionText="Item Code (1)"
                                        IsReadOnly="True"
-                                       Width="200"/>
-                        <!--  PALLET -->
+                                       Width="200" />
+                        <!--  PALLET  -->
                         <ctrl:NTextBox x:Name="txtPalletNo2"
                                        CaptionText="Pallet No (2)"
-                                       Width="200"/>
-                        <!--  ITEM CODE -->
-                        <ctrl:NTextBox CaptionText="Item Code (2)"
+                                       PreviewKeyDown="txtPalletNo2_PreviewKeyDown"
+                                       Width="200" />
+                        <!--  ITEM CODE  -->
+                        <ctrl:NTextBox x:Name="itemCode2"
+                                       CaptionText="Item Code (2)"
                                        IsReadOnly="True"
-                                       Width="200"/>
+                                       Width="200" />
                     </StackPanel>
                     <Grid />
                 </DockPanel>
