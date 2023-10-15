@@ -135,7 +135,7 @@ namespace M3.Cord.Windows
                 // pallet code
                 var pCode = PalletCode.GetLastId(pcCard.MCCode).Value();
                 string sCode = (null != pCode) ?
-                    string.Format("{0:D4}.{1}.{2:D5}", pCode.Year, pCode.MCCode, pCode.LastId) : null;
+                    string.Format("{0:D4}.{1}.{2:D5}", pCode.Year, pCode.MCCode, pCode.LastId + 1) : null;
                 _pallet.PalletCode = sCode;
                 // get Counter and TwistNo
                 //_pallet.Counter;

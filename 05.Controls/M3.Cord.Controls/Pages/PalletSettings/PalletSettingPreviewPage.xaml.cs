@@ -94,6 +94,13 @@ namespace M3.Cord.Pages
                         PalletSetting.Save(item);
                         if (item.PalletId.HasValue)
                         {
+                            // update id
+                            var pCode = PalletCode.GetLastId(item.MCCode).Value();
+                            if (pCode != null) 
+                            {
+                                PalletCode.UpdateLastId(item.MCCode, pCode.LastId + 1);
+                            }
+
                             foreach (var item2 in item.Items)
                             {
                                 item2.PalletId = item.PalletId.Value;
