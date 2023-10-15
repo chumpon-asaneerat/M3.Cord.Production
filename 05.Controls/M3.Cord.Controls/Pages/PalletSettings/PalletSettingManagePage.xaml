@@ -106,6 +106,33 @@
                         <GridViewColumn Header="Pallet By" CellTemplate="{StaticResource UserName}" />
                         <GridViewColumn Header="Status" CellTemplate="{StaticResource PalletStatusText}" />
                         <GridViewColumn Header="Type" CellTemplate="{StaticResource PalletTypeText}" />
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  PRINT  -->
+                                        <Button x:Name="cmdRePrint"
+                                                DockPanel.Dock="Left"
+                                                Style="{StaticResource InlineButton}"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdRePrint_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-print}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Print"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>

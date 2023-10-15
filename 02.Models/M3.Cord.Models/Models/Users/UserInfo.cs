@@ -279,6 +279,56 @@ namespace M3.Cord.Models
 
             return rets;
         }
+        /// <summary>
+        /// Gets User.
+        /// </summary>
+        /// <param name="userId">The user id.</param>
+        /// <param name="active">The active status.</param>
+        /// <returns>Returns match userinfo instance.</returns>
+        public static NDbResult<UserInfo> Get(int userId, int? active = new int?())
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<UserInfo> rets = new NDbResult<UserInfo>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@UserId", userId);
+            p.Add("@Active", active);
+
+            try
+            {
+                var data = cnn.Query<UserInfo>("FindUser", p,
+                    commandType: CommandType.StoredProcedure).FirstOrDefault();
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // set to null.
+                rets.data = null;
+            }
+
+            return rets;
+        }
 
         #endregion
     }

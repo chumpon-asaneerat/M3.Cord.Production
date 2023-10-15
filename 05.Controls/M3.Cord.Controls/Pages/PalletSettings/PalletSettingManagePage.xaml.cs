@@ -70,11 +70,7 @@ namespace M3.Cord.Pages
 
         private void cmdClear_Click(object sender, RoutedEventArgs e)
         {
-            txtProductLotNo.Text = string.Empty;
-            dtBegin.SelectedDate = new DateTime?();
-            dtEnd.SelectedDate = new DateTime?();
-            cbProducts.SelectedIndex = -1;
-
+            ClearInputs();
             RefreshGrid();
         }
 
@@ -87,9 +83,24 @@ namespace M3.Cord.Pages
                 var page = M3CordApp.Pages.PalletSettingPreview;
                 var items = new List<PalletSetting>();
                 items.Add(win.Pallet);
-                page.Setup(items);
+                page.Setup(items, false);
                 PageContentManager.Instance.Current = page;
             }
+        }
+
+        private void cmdRePrint_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var ctx = (null != button) ? button.DataContext : null;
+            var item = (null != ctx) ? ctx as PalletSetting : null;
+            if (null == item) return;
+
+            // Show Print Preview
+            var page = M3CordApp.Pages.PalletSettingPreview;
+            var items = new List<PalletSetting>();
+            items.Add(item);
+            page.Setup(items, true); // reprint
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion
@@ -118,6 +129,14 @@ namespace M3.Cord.Pages
 
         #region Private Methods
 
+        private void ClearInputs()
+        {
+            txtProductLotNo.Text = string.Empty;
+            dtBegin.SelectedDate = new DateTime?();
+            dtEnd.SelectedDate = new DateTime?();
+            cbProducts.SelectedIndex = -1;
+        }
+
         private void RefreshGrid()
         {
             grid.ItemsSource = null;
@@ -144,6 +163,7 @@ namespace M3.Cord.Pages
         public void Setup()
         {
             cbProducts.ItemsSource = Product.Gets().Value();
+            ClearInputs();
             RefreshGrid();
         }
 

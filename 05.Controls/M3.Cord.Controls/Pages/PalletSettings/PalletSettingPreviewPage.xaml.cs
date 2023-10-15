@@ -45,6 +45,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private bool _reprint = false;
         private List<PalletSetting> _items = null;
 
         #endregion
@@ -67,10 +68,7 @@ namespace M3.Cord.Pages
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
-            // Pallet Setting
-            var page = M3CordApp.Pages.PalletSettingManage;
-            page.Setup();
-            PageContentManager.Instance.Current = page;
+            GoBack();
         }
 
         private void cmdPrint_Click(object sender, RoutedEventArgs e)
@@ -91,20 +89,24 @@ namespace M3.Cord.Pages
                 {
                     foreach (var item in _items) 
                     {
-                        PalletSetting.Save(item);
-                        if (item.PalletId.HasValue)
+                        if (!_reprint)
                         {
-                            // update id
-                            var pCode = PalletCode.GetLastId(item.MCCode).Value();
-                            if (pCode != null) 
+                            // Create new
+                            PalletSetting.Save(item);
+                            if (item.PalletId.HasValue)
                             {
-                                PalletCode.UpdateLastId(item.MCCode, pCode.LastId + 1);
-                            }
+                                // update id
+                                var pCode = PalletCode.GetLastId(item.MCCode).Value();
+                                if (pCode != null)
+                                {
+                                    PalletCode.UpdateLastId(item.MCCode, pCode.LastId + 1);
+                                }
 
-                            foreach (var item2 in item.Items)
-                            {
-                                item2.PalletId = item.PalletId.Value;
-                                PalletSettingItem.Save(item2);
+                                foreach (var item2 in item.Items)
+                                {
+                                    item2.PalletId = item.PalletId.Value;
+                                    PalletSettingItem.Save(item2);
+                                }
                             }
                         }
                     }
@@ -118,7 +120,15 @@ namespace M3.Cord.Pages
 
             cmdPrint.Visibility = Visibility.Visible;
 
-            M3CordApp.Pages.GotoCordMainMenu();
+            GoBack();
+        }
+
+        private void GoBack()
+        {
+            // Back to Pallet Setting Manage page
+            var page = M3CordApp.Pages.PalletSettingManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         #region Report methods
@@ -170,8 +180,9 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup(List<PalletSetting> items)
+        public void Setup(List<PalletSetting> items, bool reprint)
         {
+            _reprint = reprint;
             _items = items;
 
             var model = GetReportModel();
