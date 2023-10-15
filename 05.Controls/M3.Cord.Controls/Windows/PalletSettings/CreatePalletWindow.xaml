@@ -71,6 +71,7 @@
                         <!--  PALLET CODE  -->
                         <ctrl:NTextBox CaptionText="Pallet Code:"
                                        Text="{Binding PalletCode}"
+                                       IsReadOnly="True"
                                        Width="200" />
                         <!--  TWIST NO  -->
                         <ctrl:NTextBox CaptionText="Twist No:"
@@ -83,8 +84,8 @@
                         <!--  Counter  -->
                         <ctrl:NTextBox CaptionText="Mts:"
                                        Text="{Binding Mts}"
-                                       Width="200" 
-                                       Visibility="Collapsed"/>
+                                       Width="200"
+                                       Visibility="Collapsed" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <ctrl:NInputGroup>
@@ -158,8 +159,8 @@
                                                                     Text="Delete"
                                                                     Margin="5,0"
                                                                     Width="150"
-                                                                    Height="30" 
-                                                                    Click="cmdDelete_Click"/>
+                                                                    Height="30"
+                                                                    Click="cmdDelete_Click" />
                                         </StackPanel>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>

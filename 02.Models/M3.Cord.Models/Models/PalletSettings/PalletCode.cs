@@ -18,7 +18,7 @@ using System.ComponentModel;
 
 #endregion
 
-namespace M3.Cord.Models.PalletSettings
+namespace M3.Cord.Models
 {
     public class PalletCode
     {
@@ -32,11 +32,11 @@ namespace M3.Cord.Models.PalletSettings
 
         #region Static Methods
 
-        public static NDbResult<PalletSettingItem> GetLastId(string mcCode, int? year = new int?())
+        public static NDbResult<PalletCode> GetLastId(string mcCode, int? year = new int?())
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
-            NDbResult<PalletSettingItem> ret = new NDbResult<PalletSettingItem>();
+            NDbResult<PalletCode> ret = new NDbResult<PalletCode>();
 
             IDbConnection cnn = DbServer.Instance.Db;
             if (null == cnn || !DbServer.Instance.Connected)
@@ -56,7 +56,7 @@ namespace M3.Cord.Models.PalletSettings
 
             try
             {
-                var item = cnn.Query<PalletSettingItem>("GetPalletCode", p,
+                var item = cnn.Query<PalletCode>("GetPalletCode", p,
                     commandType: CommandType.StoredProcedure).FirstOrDefault();
                 var data = item;
                 ret.Success(data);

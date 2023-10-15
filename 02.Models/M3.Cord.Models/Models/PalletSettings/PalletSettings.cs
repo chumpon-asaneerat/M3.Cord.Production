@@ -18,6 +18,8 @@ using System.ComponentModel;
 
 #endregion
 
+using BarcodeLib;
+
 namespace M3.Cord.Models
 {
     public enum PalletType : int
@@ -35,6 +37,16 @@ namespace M3.Cord.Models
 
     public class PalletSetting : NInpc
     {
+        private static Barcode BarcodeGenerator = null;
+
+        static PalletSetting()
+        {
+            BarcodeGenerator = new Barcode();
+            BarcodeGenerator.EncodedType = BarcodeLib.TYPE.CODE39;
+            BarcodeGenerator.Alignment = BarcodeLib.AlignmentPositions.CENTER;
+            BarcodeGenerator.IncludeLabel = false;
+        }
+
         #region Constructor
 
         public PalletSetting() : base()
@@ -50,7 +62,22 @@ namespace M3.Cord.Models
         public int? PCTwist1Id { get; set; }
         public string PalletCode { get; set; }
         // Pallet barcode
-        public byte[] PalletCodeImage { get; set; } = null;
+        public byte[] PalletCodeImage
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(PalletCode))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        PalletCode, 400, 160);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
 
         public DateTime? CreateDate { get; set; }
         public string TwistNo { get; set; }
@@ -58,6 +85,8 @@ namespace M3.Cord.Models
         public string Mts { get; set; }
         // Create UserId
         public int UserId { get; set; }
+        // Runtime data
+        public string UserName { get; set; }
         public PalletType PalletType { get; set; }
         public PalletStatus PalletStatus { get; set; }
 

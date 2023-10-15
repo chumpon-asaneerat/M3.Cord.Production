@@ -132,6 +132,15 @@ namespace M3.Cord.Windows
             {
                 _pallet = new PalletSetting();
                 _pallet.MCCode = pcCard.MCCode;
+                // pallet code
+                var pCode = PalletCode.GetLastId(pcCard.MCCode).Value();
+                string sCode = (null != pCode) ?
+                    string.Format("{0:D4}.{1}.{2:D5}", pCode.Year, pCode.MCCode, pCode.LastId) : null;
+                _pallet.PalletCode = sCode;
+                // get Counter and TwistNo
+                //_pallet.Counter;
+                //_pallet.TwistNo;
+
                 _pallet.ActualQty = pcCard.ActualQty;
                 _pallet.CordStructure = pcCard.CordStructure;
                 _pallet.CreateDate = DateTime.Now;
@@ -147,6 +156,7 @@ namespace M3.Cord.Windows
                 _pallet.TreatRoute = pcCard.TreatRoute;
                 _pallet.TwistSpec = pcCard.TwistSpec;
                 _pallet.UserId = M3CordApp.Current.User.UserId;
+                _pallet.UserName = M3CordApp.Current.User.FullName;
 
                 this.DataContext = _pallet;
                 grid.ItemsSource = _pallet.Items;
