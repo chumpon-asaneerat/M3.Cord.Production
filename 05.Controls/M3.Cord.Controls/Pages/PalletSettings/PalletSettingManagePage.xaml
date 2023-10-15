@@ -103,7 +103,9 @@
                         <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
                         <GridViewColumn Header="Total CH" CellTemplate="{StaticResource TotalCH}" />
                         <GridViewColumn Header="Pallet Date" CellTemplate="{StaticResource CreateDate}" />
-                        <GridViewColumn Header="Pallet By" CellTemplate="{StaticResource UserId}" />
+                        <GridViewColumn Header="Pallet By" CellTemplate="{StaticResource UserName}" />
+                        <GridViewColumn Header="Status" CellTemplate="{StaticResource PalletStatusText}" />
+                        <GridViewColumn Header="Type" CellTemplate="{StaticResource PalletTypeText}" />
                     </GridView>
                 </ListView.View>
             </ListView>

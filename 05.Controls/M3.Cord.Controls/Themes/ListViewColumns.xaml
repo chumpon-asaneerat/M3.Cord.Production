@@ -227,6 +227,18 @@
                    TextAlignment="Left"
                    MinWidth="150" />
     </DataTemplate>
+    <DataTemplate x:Key="PalletTypeText">
+        <TextBlock Text="{Binding Path=PalletTypeText, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Center"
+                   Width="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="PalletStatusText">
+        <TextBlock Text="{Binding Path=PalletStatusText, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Center"
+                   Width="150" />
+    </DataTemplate>
 
     <DataTemplate x:Key="ItemCode">
         <TextBlock Text="{Binding Path=ItemCode, Mode=OneWay}"
