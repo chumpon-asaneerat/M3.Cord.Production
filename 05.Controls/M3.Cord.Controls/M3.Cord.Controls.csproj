@@ -254,6 +254,7 @@
       <DependentUpon>Twist1RawMaterialCheckSheetDocument.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reports\PalletSetting.rdlc" />
+    <EmbeddedResource Include="Reports\PalletSettingA6.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA5.rdlc" />
     <EmbeddedResource Include="Reports\S5Condition.rdlc" />
     <None Include="Properties\DataSources\M3.Cord.Models.PalletSetting.datasource" />

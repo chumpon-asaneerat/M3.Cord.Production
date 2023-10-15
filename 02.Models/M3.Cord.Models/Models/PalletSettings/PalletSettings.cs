@@ -70,7 +70,7 @@ namespace M3.Cord.Models
                 if (!string.IsNullOrWhiteSpace(PalletCode))
                 {
                     System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
-                        PalletCode, 400, 160);
+                        PalletCode, 400, 100);
 
                     results = NLib.Utils.ImageUtils.GetImage(img);
                 }
