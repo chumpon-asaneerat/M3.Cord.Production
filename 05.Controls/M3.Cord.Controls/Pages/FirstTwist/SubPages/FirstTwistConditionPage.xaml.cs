@@ -179,8 +179,15 @@ namespace M3.Cord.Pages
 
         public void Setup(FirstTwistMC mc)
         {
-            selectedMC = mc;
-            UpdateUI();
+            try
+            {
+                selectedMC = mc;
+                UpdateUI();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         #endregion

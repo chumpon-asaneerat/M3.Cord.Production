@@ -62,7 +62,6 @@ namespace M3.Cord.Controls.Documents
         {
             selectedMC = mc;
             pcCard = PCCard;
-            condition = item;
             if (null != pcCard)
             {
                 if (null == item)

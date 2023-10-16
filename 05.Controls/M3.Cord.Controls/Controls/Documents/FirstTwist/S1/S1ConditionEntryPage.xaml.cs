@@ -62,10 +62,9 @@ namespace M3.Cord.Controls.Documents
         {
             selectedMC = mc;
             pcCard = PCCard;
-            condition = item;
-            if (null != pcCard && null == item)
+            if (null != pcCard)
             {
-                if (null != item)
+                if (null == item)
                 {
                     condition = S1Condition.Create(pcCard.ProductCode);
                     condition.PCTwist1Id = pcCard.PCTwist1Id;
