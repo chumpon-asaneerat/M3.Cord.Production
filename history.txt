@@ -13,8 +13,10 @@ M3 Cord Production System #667
 M3 Cord Production System #666
 - 
 
+[commited]
 M3 Cord Production System #665
-- 
+- M3.Cord.Production.App re-implements #455
+  - Update documents DIP Weight
 
 [commited]
 M3 Cord Production System #664
