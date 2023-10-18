@@ -19,17 +19,18 @@ M3 Cord Production System #665
 M3 Cord Production System #664
 - 
 
+[commited]
 M3 Cord Production System #663
-- 
+- M3.Cord.Production.App re-implements #453
 
 [commited]
 M3 Cord Production System #662
-- M3.Cord.Production.App re-implements #451
+- M3.Cord.Production.App re-implements #452
   - Update documents
 
 [commited]
 M3 Cord Production System #661
-- M3.Cord.Production.App re-implements #450
+- M3.Cord.Production.App re-implements #451
   - Update build 751 (fixed bug)
 
 [commited]
