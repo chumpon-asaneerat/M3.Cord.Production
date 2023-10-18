@@ -317,6 +317,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{72D745
 		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214093.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214093.jpg
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord DIP Weight", "Cord DIP Weight", "{6110E55C-5DD6-483E-93D4-E975675D596B}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\Cord DIP Weight\546871.jpg = Documents\Cord\Cord DIP Weight\546871.jpg
+		Documents\Cord\Cord DIP Weight\546872.jpg = Documents\Cord\Cord DIP Weight\546872.jpg
+		Documents\Cord\Cord DIP Weight\Serial_Log_txt.log = Documents\Cord\Cord DIP Weight\Serial_Log_txt.log
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -436,6 +443,7 @@ Global
 		{9DA220EA-1E6A-46A0-87A5-6CFED94726FA} = {B8B7AE64-A723-4FA3-B9DC-76863699ACFA}
 		{349F4929-C503-444E-92F8-7D92F5D95179} = {B2818B90-A408-452A-B236-02309FC6455F}
 		{72D74552-3754-41C4-B1F6-289E4823DE83} = {349F4929-C503-444E-92F8-7D92F5D95179}
+		{6110E55C-5DD6-483E-93D4-E975675D596B} = {B2818B90-A408-452A-B236-02309FC6455F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
