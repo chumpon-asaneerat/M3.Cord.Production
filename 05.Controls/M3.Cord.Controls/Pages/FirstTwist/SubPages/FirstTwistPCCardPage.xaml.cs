@@ -225,11 +225,9 @@ namespace M3.Cord.Pages
         {
             if (null == selectedMC || null == pcCard)
                 return;
-
             // Check current operations
             bool bReachQuota = (pcCard.TargetQty.HasValue && pcCard.ActualQty.HasValue &&
                 pcCard.TargetQty.Value < pcCard.ActualQty.Value);
-
             if (!bReachQuota)
             {
                 var msg = M3CordApp.Windows.MessageBoxOKCancel;
@@ -250,10 +248,8 @@ namespace M3.Cord.Pages
             {
                 pcCard.FinishFlag = true;
                 PCTwist1.Save(pcCard);
-
                 FinishPCCard.Call(this, EventArgs.Empty);
             }
-
         }
 
         #endregion
