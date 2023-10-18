@@ -302,6 +302,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cord Documents 5 - S7,S8,S9
 		Documents\Cord\Cord Documents 5 - S7,S8,S9\RF-CS-11 Cord setter condition (Dipping Condition).xls = Documents\Cord\Cord Documents 5 - S7,S8,S9\RF-CS-11 Cord setter condition (Dipping Condition).xls
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{72D74552-3754-41C4-B1F6-289E4823DE83}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214039.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214039.jpg
+		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214046_0.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214046_0.jpg
+		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214047_0.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214047_0.jpg
+		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214048_0.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214048_0.jpg
+		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214049_0.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214049_0.jpg
+		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214050_0.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214050_0.jpg
+		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214051_0.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214051_0.jpg
+		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214052_0.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214052_0.jpg
+		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214080.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214080.jpg
+		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214088.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214088.jpg
+		Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214093.jpg = Documents\Cord\Cord Documents 5 - S7,S8,S9\Images\214093.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -420,6 +435,7 @@ Global
 		{B8B7AE64-A723-4FA3-B9DC-76863699ACFA} = {B2818B90-A408-452A-B236-02309FC6455F}
 		{9DA220EA-1E6A-46A0-87A5-6CFED94726FA} = {B8B7AE64-A723-4FA3-B9DC-76863699ACFA}
 		{349F4929-C503-444E-92F8-7D92F5D95179} = {B2818B90-A408-452A-B236-02309FC6455F}
+		{72D74552-3754-41C4-B1F6-289E4823DE83} = {349F4929-C503-444E-92F8-7D92F5D95179}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
