@@ -95,6 +95,11 @@
     <Compile Include="AS400DbServer.cs" />
     <Compile Include="Models\Common\ModelCommon.cs" />
     <Compile Include="Models\CordSamplingDetails\CordSamplingDetails.cs" />
+    <Compile Include="Models\DIPCondition\DIPConditionStd.cs" />
+    <Compile Include="Models\DIPCondition\DIPCondition.cs" />
+    <Compile Include="Models\DIPTimeTableStd\DIPTimeTable.cs" />
+    <Compile Include="Models\DIPTimeTableStd\DIPTimeTableStd.cs" />
+    <Compile Include="Models\DIPProductionCondition\DIPProductionCondition.cs" />
     <Compile Include="Models\FirstTwist\Twist1CheckSheetItem.cs" />
     <Compile Include="Models\Masters\CordItemCode.cs" />
     <Compile Include="Models\Documents\ConditionStd.cs" />
@@ -131,6 +136,9 @@
     <Compile Include="Models\S5Condition\S5ConditionPrintModel.cs" />
     <Compile Include="Models\S5Condition\S5ConditionStd.cs" />
     <Compile Include="Models\S5Condition\S5Condition.cs" />
+    <Compile Include="Models\S8BeforeConditionStd\S8BeforeConditionItem.cs" />
+    <Compile Include="Models\S8BeforeConditionStd\S8BeforeConditionCF.cs" />
+    <Compile Include="Models\S8BeforeConditionStd\S8BeforeConditionStd.cs" />
     <Compile Include="Models\Users\UserInfo.cs" />
     <Compile Include="Models\Users\UserRole.cs" />
     <Compile Include="Models\FirstTwist\FirstTwistMC.cs" />
