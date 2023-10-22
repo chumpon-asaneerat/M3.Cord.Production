@@ -39,11 +39,11 @@ namespace M3.Cord.Models
 		public decimal? S7Yarn1stTwistActual { get; set; }
 		public string S7Yarn1stTwistSet2 { get; set; }
 		public decimal? S7Yarn1stTwistActual2 { get; set; }
-		public bool? S7Yarn2stTwistSC { get; set; }
-		public string S7Yarn2stTwistSet { get; set; }
-		public decimal? S7Yarn2stTwistActual { get; set; }
-		public string S7Yarn2stTwistSet2 { get; set; }
-		public decimal? S7Yarn2stTwistActual2 { get; set; }
+		public bool? S7Yarn2ndTwistSC { get; set; }
+		public string S7Yarn2ndTwistSet { get; set; }
+		public decimal? S7Yarn2ndTwistActual { get; set; }
+		public string S7Yarn2ndTwistSet2 { get; set; }
+		public decimal? S7Yarn2ndTwistActual2 { get; set; }
 		public bool? S7YarnLabelOfYarnSC { get; set; }
 		public string S7YarnLabelOfYarnSet { get; set; }
 		public string S7YarnLabelOfYarnActual { get; set; }
@@ -66,6 +66,11 @@ namespace M3.Cord.Models
 		public decimal? S7CreelSettingKnotConditionActual { get; set; }
 		public decimal? S7CreelSettingKnotConditionSet2 { get; set; }
 		public decimal? S7CreelSettingKnotConditionActual2 { get; set; }
+		public bool? S7CreelSettingSlubCatsweSC { get; set; }
+		public decimal? S7CreelSettingSlubCatsweSet { get; set; }
+		public decimal? S7CreelSettingSlubCatsweActual { get; set; }
+		public decimal? S7CreelSettingSlubCatsweSet2 { get; set; }
+		public decimal? S7CreelSettingSlubCatsweActual2 { get; set; }
 		public bool? S8StretchDryerSC { get; set; }
 		public decimal? S8StretchDryerSet { get; set; }
 		public decimal? S8StretchDryerSetErr { get; set; }
@@ -157,6 +162,11 @@ namespace M3.Cord.Models
 		public decimal? S8DippingNo1NipBackActual { get; set; }
 		public string S8DippingNo1NipBackSet2 { get; set; }
 		public decimal? S8DippingNo1NipBackActual2 { get; set; }
+		public bool? S8DippingNo1WPUstdSC { get; set; }
+		public string S8DippingNo1WPUstdSet { get; set; }
+		public decimal? S8DippingNo1WPUstdActual { get; set; }
+		public string S8DippingNo1WPUstdSet2 { get; set; }
+		public decimal? S8DippingNo1WPUstdActual2 { get; set; }
 		public bool? S8DippingNo2ConcentrationSC { get; set; }
 		public string S8DippingNo2ConcentrationSet { get; set; }
 		public string S8DippingNo2ConcentrationActual { get; set; }
@@ -172,6 +182,11 @@ namespace M3.Cord.Models
 		public decimal? S8DippingNo2NipBackActual { get; set; }
 		public string S8DippingNo2NipBackSet2 { get; set; }
 		public decimal? S8DippingNo2NipBackActual2 { get; set; }
+		public bool? S8DippingNo2WPUstdSC { get; set; }
+		public string S8DippingNo2WPUstdSet { get; set; }
+		public decimal? S8DippingNo2WPUstdActual { get; set; }
+		public string S8DippingNo2WPUstdSet2 { get; set; }
+		public decimal? S8DippingNo2WPUstdActual2 { get; set; }
 		public bool? S9WinderAyameDaialSC { get; set; }
 		public decimal? S9WinderAyameDaialSet { get; set; }
 		public decimal? S9WinderAyameDaialActual { get; set; }
@@ -323,11 +338,11 @@ namespace M3.Cord.Models
 			p.Add("@S7Yarn1stTwistActual", value.S7Yarn1stTwistActual);
 			p.Add("@S7Yarn1stTwistSet2", value.S7Yarn1stTwistSet2);
 			p.Add("@S7Yarn1stTwistActual2", value.S7Yarn1stTwistActual2);
-			p.Add("@S7Yarn2stTwistSC", value.S7Yarn2stTwistSC);
-			p.Add("@S7Yarn2stTwistSet", value.S7Yarn2stTwistSet);
-			p.Add("@S7Yarn2stTwistActual", value.S7Yarn2stTwistActual);
-			p.Add("@S7Yarn2stTwistSet2", value.S7Yarn2stTwistSet2);
-			p.Add("@S7Yarn2stTwistActual2", value.S7Yarn2stTwistActual2);
+			p.Add("@S7Yarn2ndTwistSC", value.S7Yarn2ndTwistSC);
+			p.Add("@S7Yarn2ndTwistSet", value.S7Yarn2ndTwistSet);
+			p.Add("@S7Yarn2ndTwistActual", value.S7Yarn2ndTwistActual);
+			p.Add("@S7Yarn2ndTwistSet2", value.S7Yarn2ndTwistSet2);
+			p.Add("@S7Yarn2ndTwistActual2", value.S7Yarn2ndTwistActual2);
 			p.Add("@S7YarnLabelOfYarnSC", value.S7YarnLabelOfYarnSC);
 			p.Add("@S7YarnLabelOfYarnSet", value.S7YarnLabelOfYarnSet);
 			p.Add("@S7YarnLabelOfYarnActual", value.S7YarnLabelOfYarnActual);
@@ -350,6 +365,13 @@ namespace M3.Cord.Models
 			p.Add("@S7CreelSettingKnotConditionActual", value.S7CreelSettingKnotConditionActual);
 			p.Add("@S7CreelSettingKnotConditionSet2", value.S7CreelSettingKnotConditionSet2);
 			p.Add("@S7CreelSettingKnotConditionActual2", value.S7CreelSettingKnotConditionActual2);
+
+			p.Add("@S7CreelSettingSlubCatsweSC", value.S7CreelSettingSlubCatsweSC);
+			p.Add("@S7CreelSettingSlubCatsweSet", value.S7CreelSettingSlubCatsweSet);
+			p.Add("@S7CreelSettingSlubCatsweActual", value.S7CreelSettingSlubCatsweActual);
+			p.Add("@S7CreelSettingSlubCatsweSet2", value.S7CreelSettingSlubCatsweSet2);
+			p.Add("@S7CreelSettingSlubCatsweActual2", value.S7CreelSettingSlubCatsweActual2);
+
 			p.Add("@S8StretchDryerSC", value.S8StretchDryerSC);
 			p.Add("@S8StretchDryerSet", value.S8StretchDryerSet);
 			p.Add("@S8StretchDryerSetErr", value.S8StretchDryerSetErr);
@@ -441,6 +463,13 @@ namespace M3.Cord.Models
 			p.Add("@S8DippingNo1NipBackActual", value.S8DippingNo1NipBackActual);
 			p.Add("@S8DippingNo1NipBackSet2", value.S8DippingNo1NipBackSet2);
 			p.Add("@S8DippingNo1NipBackActual2", value.S8DippingNo1NipBackActual2);
+
+			p.Add("@S8DippingNo1WPUstdSC", value.S8DippingNo1WPUstdSC);
+			p.Add("@S8DippingNo1WPUstdSet", value.S8DippingNo1WPUstdSet);
+			p.Add("@S8DippingNo1WPUstdActual", value.S8DippingNo1WPUstdActual);
+			p.Add("@S8DippingNo1WPUstdSet2", value.S8DippingNo1WPUstdSet2);
+			p.Add("@S8DippingNo1WPUstdActual2", value.S8DippingNo1WPUstdActual2);
+
 			p.Add("@S8DippingNo2ConcentrationSC", value.S8DippingNo2ConcentrationSC);
 			p.Add("@S8DippingNo2ConcentrationSet", value.S8DippingNo2ConcentrationSet);
 			p.Add("@S8DippingNo2ConcentrationActual", value.S8DippingNo2ConcentrationActual);
@@ -456,6 +485,13 @@ namespace M3.Cord.Models
 			p.Add("@S8DippingNo2NipBackActual", value.S8DippingNo2NipBackActual);
 			p.Add("@S8DippingNo2NipBackSet2", value.S8DippingNo2NipBackSet2);
 			p.Add("@S8DippingNo2NipBackActual2", value.S8DippingNo2NipBackActual2);
+
+			p.Add("@S8DippingNo2WPUstdSC", value.S8DippingNo2WPUstdSC);
+			p.Add("@S8DippingNo2WPUstdSet", value.S8DippingNo2WPUstdSet);
+			p.Add("@S8DippingNo2WPUstdActual", value.S8DippingNo2WPUstdActual);
+			p.Add("@S8DippingNo2WPUstdSet2", value.S8DippingNo2WPUstdSet2);
+			p.Add("@S8DippingNo2WPUstdActual2", value.S8DippingNo2WPUstdActual2);
+
 			p.Add("@S9WinderAyameDaialSC", value.S9WinderAyameDaialSC);
 			p.Add("@S9WinderAyameDaialSet", value.S9WinderAyameDaialSet);
 			p.Add("@S9WinderAyameDaialActual", value.S9WinderAyameDaialActual);

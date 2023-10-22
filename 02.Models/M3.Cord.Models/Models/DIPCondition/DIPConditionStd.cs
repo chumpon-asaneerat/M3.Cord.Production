@@ -33,9 +33,9 @@ namespace M3.Cord.Models
 		public bool? S7Yarn1stTwistSC { get; set; }
 		public string S7Yarn1stTwistSet { get; set; }
 		public string S7Yarn1stTwistSet2 { get; set; }
-		public bool? S7Yarn2stTwistSC { get; set; }
-		public string S7Yarn2stTwistSet { get; set; }
-		public string S7Yarn2stTwistSet2 { get; set; }
+		public bool? S7Yarn2ndTwistSC { get; set; }
+		public string S7Yarn2ndTwistSet { get; set; }
+		public string S7Yarn2ndTwistSet2 { get; set; }
 		public bool? S7YarnLabelOfYarnSC { get; set; }
 		public string S7YarnLabelOfYarnSet { get; set; }
 		public string S7YarnLabelOfYarnSet2 { get; set; }
@@ -50,6 +50,9 @@ namespace M3.Cord.Models
 		public bool? S7CreelSettingKnotConditionSC { get; set; }
 		public decimal? S7CreelSettingKnotConditionSet { get; set; }
 		public decimal? S7CreelSettingKnotConditionSet2 { get; set; }
+		public bool? S7CreelSettingSlubCatsweSC { get; set; }
+		public decimal? S7CreelSettingSlubCatsweSet { get; set; }
+		public decimal? S7CreelSettingSlubCatsweSet2 { get; set; }
 		public bool? S8StretchDryerSC { get; set; }
 		public decimal? S8StretchDryerSet { get; set; }
 		public decimal? S8StretchDryerSetErr { get; set; }
@@ -111,6 +114,9 @@ namespace M3.Cord.Models
 		public bool? S8DippingNo1NipBackSC { get; set; }
 		public string S8DippingNo1NipBackSet { get; set; }
 		public string S8DippingNo1NipBackSet2 { get; set; }
+		public bool? S8DippingNo1WPUstdSC { get; set; }
+		public string S8DippingNo1WPUstdSet { get; set; }
+		public string S8DippingNo1WPUstdSet2 { get; set; }
 		public bool? S8DippingNo2ConcentrationSC { get; set; }
 		public string S8DippingNo2ConcentrationSet { get; set; }
 		public string S8DippingNo2ConcentrationSet2 { get; set; }
@@ -120,6 +126,9 @@ namespace M3.Cord.Models
 		public bool? S8DippingNo2NipBackSC { get; set; }
 		public string S8DippingNo2NipBackSet { get; set; }
 		public string S8DippingNo2NipBackSet2 { get; set; }
+		public bool? S8DippingNo2WPUstdSC { get; set; }
+		public string S8DippingNo2WPUstdSet { get; set; }
+		public string S8DippingNo2WPUstdSet2 { get; set; }
 		public bool? S9WinderAyameDaialSC { get; set; }
 		public decimal? S9WinderAyameDaialSet { get; set; }
 		public decimal? S9WinderAyameDaialSet2 { get; set; }
@@ -241,9 +250,9 @@ namespace M3.Cord.Models
 			p.Add("@S7Yarn1stTwistSC", value.S7Yarn1stTwistSC);
 			p.Add("@S7Yarn1stTwistSet", value.S7Yarn1stTwistSet);
 			p.Add("@S7Yarn1stTwistSet2", value.S7Yarn1stTwistSet2);
-			p.Add("@S7Yarn2stTwistSC", value.S7Yarn2stTwistSC);
-			p.Add("@S7Yarn2stTwistSet", value.S7Yarn2stTwistSet);
-			p.Add("@S7Yarn2stTwistSet2", value.S7Yarn2stTwistSet2);
+			p.Add("@S7Yarn2ndTwistSC", value.S7Yarn2ndTwistSC);
+			p.Add("@S7Yarn2ndTwistSet", value.S7Yarn2ndTwistSet);
+			p.Add("@S7Yarn2ndTwistSet2", value.S7Yarn2ndTwistSet2);
 			p.Add("@S7YarnLabelOfYarnSC", value.S7YarnLabelOfYarnSC);
 			p.Add("@S7YarnLabelOfYarnSet", value.S7YarnLabelOfYarnSet);
 			p.Add("@S7YarnLabelOfYarnSet2", value.S7YarnLabelOfYarnSet2);
@@ -258,6 +267,11 @@ namespace M3.Cord.Models
 			p.Add("@S7CreelSettingKnotConditionSC", value.S7CreelSettingKnotConditionSC);
 			p.Add("@S7CreelSettingKnotConditionSet", value.S7CreelSettingKnotConditionSet);
 			p.Add("@S7CreelSettingKnotConditionSet2", value.S7CreelSettingKnotConditionSet2);
+
+			p.Add("@S7CreelSettingSlubCatsweSC", value.S7CreelSettingSlubCatsweSC);
+			p.Add("@S7CreelSettingSlubCatsweSet", value.S7CreelSettingSlubCatsweSet);
+			p.Add("@S7CreelSettingSlubCatsweSet2", value.S7CreelSettingSlubCatsweSet2);
+
 			p.Add("@S8StretchDryerSC", value.S8StretchDryerSC);
 			p.Add("@S8StretchDryerSet", value.S8StretchDryerSet);
 			p.Add("@S8StretchDryerSetErr", value.S8StretchDryerSetErr);
@@ -319,6 +333,11 @@ namespace M3.Cord.Models
 			p.Add("@S8DippingNo1NipBackSC", value.S8DippingNo1NipBackSC);
 			p.Add("@S8DippingNo1NipBackSet", value.S8DippingNo1NipBackSet);
 			p.Add("@S8DippingNo1NipBackSet2", value.S8DippingNo1NipBackSet2);
+
+			p.Add("@S8DippingNo1WPUstdSC", value.S8DippingNo1WPUstdSC);
+			p.Add("@S8DippingNo1WPUstdSet", value.S8DippingNo1WPUstdSet);
+			p.Add("@S8DippingNo1WPUstdSet2", value.S8DippingNo1WPUstdSet2);
+
 			p.Add("@S8DippingNo2ConcentrationSC", value.S8DippingNo2ConcentrationSC);
 			p.Add("@S8DippingNo2ConcentrationSet", value.S8DippingNo2ConcentrationSet);
 			p.Add("@S8DippingNo2ConcentrationSet2", value.S8DippingNo2ConcentrationSet2);
@@ -328,6 +347,11 @@ namespace M3.Cord.Models
 			p.Add("@S8DippingNo2NipBackSC", value.S8DippingNo2NipBackSC);
 			p.Add("@S8DippingNo2NipBackSet", value.S8DippingNo2NipBackSet);
 			p.Add("@S8DippingNo2NipBackSet2", value.S8DippingNo2NipBackSet2);
+
+			p.Add("@S8DippingNo2WPUstdSC", value.S8DippingNo2WPUstdSC);
+			p.Add("@S8DippingNo2WPUstdSet", value.S8DippingNo2WPUstdSet);
+			p.Add("@S8DippingNo2WPUstdSet2", value.S8DippingNo2WPUstdSet2);
+
 			p.Add("@S9WinderAyameDaialSC", value.S9WinderAyameDaialSC);
 			p.Add("@S9WinderAyameDaialSet", value.S9WinderAyameDaialSet);
 			p.Add("@S9WinderAyameDaialSet2", value.S9WinderAyameDaialSet2);
