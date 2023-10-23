@@ -74,6 +74,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Documents\DIPCondition\DIPConditionStdPage.xaml.cs">
+      <DependentUpon>DIPConditionStdPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\DIPCondition\DIPConditionEntryPage.xaml.cs">
       <DependentUpon>DIPConditionEntryPage.xaml</DependentUpon>
     </Compile>
@@ -449,6 +452,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\Documents\DIPCondition\DIPConditionStdPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\Documents\DIPCondition\DIPConditionEntryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

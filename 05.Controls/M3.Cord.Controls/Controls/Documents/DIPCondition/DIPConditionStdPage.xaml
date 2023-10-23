@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="M3.Cord.Controls.Documents.DIPConditionEntryPage"
+﻿<UserControl x:Class="M3.Cord.Controls.Documents.DIPConditionStdPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              d:DesignHeight="1660"
-             d:DesignWidth="1240"
+             d:DesignWidth="1000"
              mc:Ignorable="d">
     <UserControl.Resources>
         <!--  LOCAL STYLES  -->
@@ -32,8 +32,6 @@
     <ScrollViewer>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
@@ -135,18 +133,6 @@
                     Grid.Column="5"
                     Background="Silver">
                 <!--  Class  -->
-                <TextBlock Text="เช็คโดยบุคคลที่ 1" />
-            </Border>
-            <Border Grid.Row="1"
-                    Grid.Column="5"
-                    Background="Silver">
-                <!--  Class  -->
-                <TextBlock Text="Actual Set" />
-            </Border>
-            <Border Grid.Row="0"
-                    Grid.Column="6"
-                    Background="Silver">
-                <!--  Class  -->
                 <TextBlock HorizontalAlignment="Center">
                     <Run Text="   ค่าที่กำหนด" />
                     <LineBreak />
@@ -154,22 +140,10 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="1"
-                    Grid.Column="6"
+                    Grid.Column="5"
                     Background="Silver">
                 <!--  Class  -->
                 <TextBlock Text="Set" />
-            </Border>
-            <Border Grid.Row="0"
-                    Grid.Column="7"
-                    Background="Silver">
-                <!--  Class  -->
-                <TextBlock Text="เช็คโดยบุคคลที่ 2" />
-            </Border>
-            <Border Grid.Row="1"
-                    Grid.Column="7"
-                    Background="Silver">
-                <!--  Class  -->
-                <TextBlock Text="Actual Set" />
             </Border>
             <!--#endregion-->
 
@@ -191,18 +165,12 @@
             <Border Grid.Row="2" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S7YarnCordStructureSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="2" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7YarnCordStructureActual}" />
-            </Border>
-            <Border Grid.Row="2" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S7YarnCordStructureSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="2" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7YarnCordStructureActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -218,18 +186,12 @@
             <Border Grid.Row="3" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S7YarnYarnTypeSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="3" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7YarnYarnTypeActual}" />
-            </Border>
-            <Border Grid.Row="3" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S7YarnYarnTypeSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="3" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7YarnYarnTypeActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -245,18 +207,12 @@
             <Border Grid.Row="4" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S7Yarn1stTwistSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="4" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7Yarn1stTwistActual}" />
-            </Border>
-            <Border Grid.Row="4" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S7Yarn1stTwistSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="4" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7Yarn1stTwistActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -272,18 +228,12 @@
             <Border Grid.Row="5" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S7Yarn2ndTwistSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="5" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7Yarn2ndTwistActual}" />
-            </Border>
-            <Border Grid.Row="5" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S7Yarn2ndTwistSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="5" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7Yarn2ndTwistActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -299,18 +249,12 @@
             <Border Grid.Row="6" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S7YarnLabelOfYarnSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="6" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7YarnLabelOfYarnActual}" />
-            </Border>
-            <Border Grid.Row="6" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S7YarnLabelOfYarnSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="6" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7YarnLabelOfYarnActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -327,29 +271,23 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S7YarnWeightSet}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S7YarnWeightSetErr}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
             </Border>
             <Border Grid.Row="7" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7YarnWeightActual}" />
-            </Border>
-            <Border Grid.Row="7" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S7YarnWeightSet2}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S7YarnWeightSetErr2}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
-            </Border>
-            <Border Grid.Row="7" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7YarnWeightActual2}" />
             </Border>
             <!--#endregion-->
 
@@ -368,18 +306,12 @@
             <Border Grid.Row="8" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S7CreelSettingUseTensorSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="8" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7CreelSettingUseTensorActual}" />
-            </Border>
-            <Border Grid.Row="8" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S7CreelSettingUseTensorSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="8" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7CreelSettingUseTensorActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -395,18 +327,12 @@
             <Border Grid.Row="9" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S7CreelSettingKnotConditionSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="9" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7CreelSettingKnotConditionActual}" />
-            </Border>
-            <Border Grid.Row="9" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S7CreelSettingKnotConditionSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="9" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7CreelSettingKnotConditionActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -422,18 +348,12 @@
             <Border Grid.Row="10" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S7CreelSettingSlubCatsweSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="10" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7CreelSettingSlubCatsweActual}" />
-            </Border>
-            <Border Grid.Row="10" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S7CreelSettingSlubCatsweSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="10" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7CreelSettingSlubCatsweActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -456,29 +376,23 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8StretchDryerSet}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8StretchDryerSetErr}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
             </Border>
             <Border Grid.Row="11" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8StretchDryerActual}" />
-            </Border>
-            <Border Grid.Row="11" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8StretchDryerSet2}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8StretchDryerSetErr2}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
-            </Border>
-            <Border Grid.Row="11" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8StretchDryerActual2}" />
             </Border>
             <!--#endregion-->
 
@@ -495,29 +409,23 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8StretchStretchHotSet}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8StretchStretchHotSetErr}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
             </Border>
             <Border Grid.Row="12" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8StretchHotActual}" />
-            </Border>
-            <Border Grid.Row="12" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8StretchStretchHotSet2}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8StretchStretchHotSetErr2}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
-            </Border>
-            <Border Grid.Row="12" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8StretchHotActual2}" />
             </Border>
             <!--#endregion-->
 
@@ -534,29 +442,23 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8StretchNormalSet}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8StretchNormalSetErr}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
             </Border>
             <Border Grid.Row="13" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8StretchNormalActual}" />
-            </Border>
-            <Border Grid.Row="13" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8StretchNormalSet2}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8StretchNormalSetErr2}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
-            </Border>
-            <Border Grid.Row="13" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8StretchNormalActual2}" />
             </Border>
             <!--#endregion-->
 
@@ -573,29 +475,23 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8StretchTotalSet}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8StretchTotalSetErr}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
             </Border>
             <Border Grid.Row="14" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8StretchTotalActual}" />
-            </Border>
-            <Border Grid.Row="14" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8StretchTotalSet2}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8StretchTotalSetErr2}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
-            </Border>
-            <Border Grid.Row="14" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8StretchTotalActual2}" />
             </Border>
             <!--#endregion-->
 
@@ -615,29 +511,23 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8TempDryerSet}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8TempDryerSetErr}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
             </Border>
             <Border Grid.Row="15" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8TempDryerActual}" />
-            </Border>
-            <Border Grid.Row="15" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8TempDryerSet2}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8TempDryerSetErr2}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
-            </Border>
-            <Border Grid.Row="15" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8TempDryerActual2}" />
             </Border>
             <!--#endregion-->
 
@@ -654,29 +544,23 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8TempHotSet}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8TempHotSetErr}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
             </Border>
             <Border Grid.Row="16" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8TempHotActual}" />
-            </Border>
-            <Border Grid.Row="16" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8TempHotSet2}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8TempHotSetErr2}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
-            </Border>
-            <Border Grid.Row="16" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8TempHotActual2}" />
             </Border>
             <!--#endregion-->
 
@@ -693,29 +577,23 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8TempNormalSet}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8TempNormalSetErr}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
             </Border>
             <Border Grid.Row="17" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8TempNormalActual}" />
-            </Border>
-            <Border Grid.Row="17" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8TempNormalSet2}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8TempNormalSetErr2}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
-            </Border>
-            <Border Grid.Row="17" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8TempNormalActual2}" />
             </Border>
             <!--#endregion-->
 
@@ -734,18 +612,12 @@
             <Border Grid.Row="18" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8CounterSettingSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="18" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8CounterSettingActual}" />
-            </Border>
-            <Border Grid.Row="18" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8CounterSettingSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="18" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8CounterSettingActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -765,29 +637,23 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8SpeedSet}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8SpeedErr}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
             </Border>
             <Border Grid.Row="19" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8SpeedActual}" />
-            </Border>
-            <Border Grid.Row="19" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="40"
                              Text="{Binding S8SpeedSet2}"
-                             IsReadOnly="True" />
+                              />
                     <TextBlock Text=" ± " />
                     <TextBox Width="40"
                              Text="{Binding S8SpeedErr2}"
-                             IsReadOnly="True" />
+                              />
                 </StackPanel>
-            </Border>
-            <Border Grid.Row="19" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8SpeedActual2}" />
             </Border>
             <!--#endregion-->
 
@@ -808,18 +674,12 @@
             <Border Grid.Row="20" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8NoOfCordsSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="20" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8NoOfCordsActual}" />
-            </Border>
-            <Border Grid.Row="20" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8NoOfCordsSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="20" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8NoOfCordsActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -838,18 +698,12 @@
             <Border Grid.Row="21" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8SofnorSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="21" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8SofnorActual}" />
-            </Border>
-            <Border Grid.Row="21" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8SofnorSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="21" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8SofnorActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -865,18 +719,12 @@
             <Border Grid.Row="22" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8DrawNipSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="22" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DrawNipActual}" />
-            </Border>
-            <Border Grid.Row="22" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8DrawNipSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="22" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DrawNipActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -899,18 +747,12 @@
             <Border Grid.Row="23" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo1ConcentrationSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="23" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo1ConcentrationActual}" />
-            </Border>
-            <Border Grid.Row="23" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo1ConcentrationSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="23" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo1ConcentrationActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -926,18 +768,12 @@
             <Border Grid.Row="24" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo1NipFrontSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="24" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo1NipFrontActual}" />
-            </Border>
-            <Border Grid.Row="24" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo1NipFrontSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="24" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo1NipFrontActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -953,18 +789,13 @@
             <Border Grid.Row="25" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo1NipBackSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
+            <Border Grid.Row="25" Grid.Column="5"/>
             <Border Grid.Row="25" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo1NipBackActual}" />
-            </Border>
-            <Border Grid.Row="25" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo1NipBackSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="25" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo1NipBackActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -982,18 +813,12 @@
             <Border Grid.Row="26" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo1WPUstdSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="26" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo1WPUstdActual}" />
-            </Border>
-            <Border Grid.Row="26" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo1WPUstdSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="26" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo1WPUstdActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1016,18 +841,12 @@
             <Border Grid.Row="27" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo2ConcentrationSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="27" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo2ConcentrationActual}" />
-            </Border>
-            <Border Grid.Row="27" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo2ConcentrationSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="27" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo2ConcentrationActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1043,18 +862,12 @@
             <Border Grid.Row="28" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo2NipFrontSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="28" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo2NipFrontActual}" />
-            </Border>
-            <Border Grid.Row="28" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo2NipFrontSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="28" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo2NipFrontActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1070,18 +883,12 @@
             <Border Grid.Row="29" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo2NipBackSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="29" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo2NipBackActual}" />
-            </Border>
-            <Border Grid.Row="29" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo2NipBackSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="29" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo2NipBackActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1099,18 +906,12 @@
             <Border Grid.Row="30" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo2WPUstdSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="30" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo2WPUstdActual}" />
-            </Border>
-            <Border Grid.Row="30" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S8DippingNo2WPUstdSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="30" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo2WPUstdActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1132,18 +933,12 @@
             <Border Grid.Row="31" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9WinderAyameDaialSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="31" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9WinderAyameDaialActual}" />
-            </Border>
-            <Border Grid.Row="31" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9WinderAyameDaialSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="31" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9WinderAyameDaialActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1159,18 +954,12 @@
             <Border Grid.Row="32" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9WinderMpaSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="32" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9WinderMpaActual}" />
-            </Border>
-            <Border Grid.Row="32" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9WinderMpaSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="32" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9WinderMpaActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1186,18 +975,12 @@
             <Border Grid.Row="33" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9WinderSpringSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="33" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9WinderSpringActual}" />
-            </Border>
-            <Border Grid.Row="33" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9WinderSpringSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="33" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9WinderSpringActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1213,18 +996,12 @@
             <Border Grid.Row="34" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9WinderPeperTubeColorSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="34" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9WinderPeperTubeColorActual}" />
-            </Border>
-            <Border Grid.Row="34" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9WinderPeperTubeColorSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="34" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9WinderPeperTubeColorActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1240,18 +1017,12 @@
             <Border Grid.Row="35" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9WinderCheeseWeightSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="35" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9WinderCheeseWeightActual}" />
-            </Border>
-            <Border Grid.Row="35" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9WinderCheeseWeightSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="35" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9WinderCheeseWeightActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1270,18 +1041,12 @@
             <Border Grid.Row="36" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOven1CirculatingFanSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="36" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1CirculatingFanActual}" />
-            </Border>
-            <Border Grid.Row="36" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOven1CirculatingFanSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="36" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1CirculatingFanActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1297,18 +1062,12 @@
             <Border Grid.Row="37" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOven2CirculatingFanSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="37" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2CirculatingFanActual}" />
-            </Border>
-            <Border Grid.Row="37" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOven2CirculatingFanSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="37" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2CirculatingFanActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1324,18 +1083,12 @@
             <Border Grid.Row="38" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOven1ExhaustFanSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="38" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1ExhaustFanActual}" />
-            </Border>
-            <Border Grid.Row="38" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOven1ExhaustFanSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="38" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1ExhaustFanActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1351,18 +1104,12 @@
             <Border Grid.Row="39" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOven2ExhaustFanSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="39" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2ExhaustFanActual}" />
-            </Border>
-            <Border Grid.Row="39" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOven2ExhaustFanSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="39" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2ExhaustFanActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1378,18 +1125,12 @@
             <Border Grid.Row="40" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOvenFrontExhaustFanSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="40" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenFrontExhaustFanActual}" />
-            </Border>
-            <Border Grid.Row="40" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOvenFrontExhaustFanSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="40" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenFrontExhaustFanActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1405,18 +1146,12 @@
             <Border Grid.Row="41" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOvenBackExhaustFanSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="41" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenBackExhaustFanActual}" />
-            </Border>
-            <Border Grid.Row="41" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9ExhaustFanOvenBackExhaustFanSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="41" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenBackExhaustFanActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
@@ -1435,18 +1170,12 @@
             <Border Grid.Row="42" Grid.Column="4">
                 <TextBox Width="100"
                              Text="{Binding S9SpongSet}"
-                             IsReadOnly="True" />
+                              />
             </Border>
             <Border Grid.Row="42" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9SpongActual}" />
-            </Border>
-            <Border Grid.Row="42" Grid.Column="6">
                 <TextBox Width="100"
                              Text="{Binding S9SpongSet2}"
-                             IsReadOnly="True" />
-            </Border>
-            <Border Grid.Row="42" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9SpongActual2}" />
+                              />
             </Border>
             <!--#endregion-->
 
