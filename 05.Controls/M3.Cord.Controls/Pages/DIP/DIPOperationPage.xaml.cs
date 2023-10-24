@@ -1,4 +1,8 @@
-﻿using System;
+﻿#region Using
+
+using M3.Cord.Models;
+using NLib.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+#endregion
+
 namespace M3.Cord.Pages
 {
     /// <summary>
@@ -20,9 +26,48 @@ namespace M3.Cord.Pages
     /// </summary>
     public partial class DIPOperationPage : UserControl
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public DIPOperationPage()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Internal Variables
+
+        private DIPPCCard pcCard = null;
+
+        #endregion
+
+        #region Tab Handlers
+
+        private void tabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        #endregion
+
+        #region Public Methods
+
+        public void Setup()
+        {
+            pcCard = DIPPCCard.Get().Value();
+            if (null == pcCard)
+            {
+
+            }
+        }
+
+        #endregion
     }
 }
