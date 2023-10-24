@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="M3.Cord.Pages.DIPOperationPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:s1="clr-namespace:M3.Cord.Controls.Documents"
+             xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:spage="clr-namespace:M3.Cord.Pages"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="800"
+             d:DesignWidth="1200">
+    <page:NPage x:Name="page" HeaderText="DIP">
+        <TabControl x:Name="tabs"
+                    FontSize="18"
+                    SelectionChanged="tabs_SelectionChanged">
+            <TabItem Header="PC Card">
+
+            </TabItem>
+            <TabItem Header="Raw Material">
+
+            </TabItem>
+            <TabItem Header="Actual Yarn Twist Record Sheet">
+
+            </TabItem>
+            <TabItem Header="Production condition">
+
+            </TabItem>
+        </TabControl>
+    </page:NPage>
+</UserControl>
