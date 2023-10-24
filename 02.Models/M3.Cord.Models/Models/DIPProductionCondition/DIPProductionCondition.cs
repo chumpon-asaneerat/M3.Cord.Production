@@ -142,7 +142,7 @@ namespace M3.Cord.Models
 
 			try
 			{
-				var item = cnn.Query<DIPProductionCondition>("GetDIPProductionCondition", p,
+				var item = cnn.Query<DIPProductionCondition>("GetDIPProductionConditions", p,
 					commandType: CommandType.StoredProcedure).FirstOrDefault();
 				var data = item;
 				ret.Success(data);

@@ -65,7 +65,7 @@ namespace M3.Cord.Models
 
 			try
 			{
-				var item = cnn.Query<DIPTimeTable>("GetDIPTimeTable", p,
+				var item = cnn.Query<DIPTimeTable>("GetDIPTimeTables", p,
 					commandType: CommandType.StoredProcedure).FirstOrDefault();
 				var data = item;
 				ret.Success(data);

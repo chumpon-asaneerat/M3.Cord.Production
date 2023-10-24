@@ -275,7 +275,7 @@ namespace M3.Cord.Models
 
 			try
 			{
-				var item = cnn.Query<DIPCondition>("GetDIPCondition", p,
+				var item = cnn.Query<DIPCondition>("GetDIPConditions", p,
 					commandType: CommandType.StoredProcedure).FirstOrDefault();
 				var data = item;
 				ret.Success(data);
