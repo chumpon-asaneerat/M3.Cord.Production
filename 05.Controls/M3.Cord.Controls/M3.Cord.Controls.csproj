@@ -185,6 +185,9 @@
     <Compile Include="Pages\Ageing\AgeingManagePage.xaml.cs">
       <DependentUpon>AgeingManagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DIPOperationPage.xaml.cs">
+      <DependentUpon>DIPOperationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FirstTwist\SubPages\FirstTwistConditionPage.xaml.cs">
       <DependentUpon>FirstTwistConditionPage.xaml</DependentUpon>
     </Compile>
@@ -604,6 +607,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DIPOperationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\FirstTwist\SubPages\FirstTwistConditionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -884,6 +891,8 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Pages\DIP\SubPages\" />
+    <Folder Include="Windows\DIP\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
     <Folder Include="_V3\Controls\Documents\Ageing\Elements\" />
