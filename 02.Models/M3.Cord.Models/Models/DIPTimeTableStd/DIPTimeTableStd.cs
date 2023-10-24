@@ -22,6 +22,7 @@ namespace M3.Cord.Models
 	public class DIPTimeTableStd
 	{
 		#region Public Proeprties
+
 		public string ProductCode { get; set; }
 		public bool? S7Bobbin { get; set; }
 		public decimal? S8CoolingWaterSystemBath1SC { get; set; }

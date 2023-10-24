@@ -22,6 +22,7 @@ namespace M3.Cord.Models
 	public class DIPTimeTable
 	{
 		#region Public Proeprties
+
 		public string ProductCode { get; set; }
 		public string PeriodTime { get; set; }
 		public bool? S7Bobbin { get; set; }
