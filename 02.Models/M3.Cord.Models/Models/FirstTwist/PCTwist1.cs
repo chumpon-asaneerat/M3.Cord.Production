@@ -32,6 +32,8 @@ namespace M3.Cord.Models
 
         #endregion
 
+        public SolidColorBrush TextColor { get { return BlackColor; } set { } }
+
         #region Public Proeprties
 
         public int? PCTwist1Id { get; set; }
@@ -67,8 +69,6 @@ namespace M3.Cord.Models
         public string SectionMgr { get; set; }
         public decimal? ActualQty { get; set; }
         public string Remark { get; set; }
-
-        public SolidColorBrush TextColor { get { return BlackColor; } set { } }
 
         #endregion
 
