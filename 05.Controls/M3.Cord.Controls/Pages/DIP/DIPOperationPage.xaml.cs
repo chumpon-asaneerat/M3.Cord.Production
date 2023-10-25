@@ -47,9 +47,40 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region Tab Handlers
+        #region Button Handlers
 
-        private void tabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private void cmdMaterialCheckSheet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdS7CreelCheckSheet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdDIPCondition_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdChemicalRequisitionRecordSheet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdS9CleaningCheckSheet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdDIPProductionTimeTable_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdS9AppearanceCheckSheet_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -64,6 +95,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
+            /*
             pcCard = DIPPCCard.Current().Value();
             if (null == pcCard)
             {
@@ -80,6 +112,7 @@ namespace M3.Cord.Pages
             {
 
             }
+            */
         }
 
         #endregion
