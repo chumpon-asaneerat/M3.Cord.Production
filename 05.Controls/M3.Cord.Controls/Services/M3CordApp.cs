@@ -78,6 +78,15 @@ namespace M3.Cord
                 var page = Pages.MasterDataMenu;
                 PageContentManager.Instance.Current = page;
             }
+            /// <summary>
+            /// Goto DIP Operation Menu.
+            /// </summary>
+            public static void GotoDIPOperationMenu()
+            {
+                var page = Pages.DIPOperation;
+                page.Setup();
+                PageContentManager.Instance.Current = page;
+            }
 
             #endregion
 
@@ -289,6 +298,41 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.DIPOperationPage>(); }
             }
+            /// <summary>Gets DIP Material Check Sheet Page.</summary>
+            public static Cord.Pages.DIPMaterialCheckSheetPage DIPMaterialCheckSheet
+            {
+                get { return GetPage<Cord.Pages.DIPMaterialCheckSheetPage>(); }
+            }
+            /// <summary>Gets S7Creel Check Sheet Page.</summary>
+            public static Cord.Pages.S7CreelCheckSheetPage S7CreelCheckSheet
+            {
+                get { return GetPage<Cord.Pages.S7CreelCheckSheetPage>(); }
+            }
+            /// <summary>Gets S8 Before Start Summary Page.</summary>
+            public static Cord.Pages.S8BeforeStartSummaryPage S8BeforeStartSummary
+            {
+                get { return GetPage<Cord.Pages.S8BeforeStartSummaryPage>(); }
+            }
+            /// <summary>Gets Chemical Requisition Record Page.</summary>
+            public static Cord.Pages.ChemicalRequisitionRecordPage ChemicalRequisitionRecord
+            {
+                get { return GetPage<Cord.Pages.ChemicalRequisitionRecordPage>(); }
+            }
+            /// <summary>Gets S9 Cleanning Check Sheet Page.</summary>
+            public static Cord.Pages.S9CleanningCheckSheetPage S9CleanningCheckSheet
+            {
+                get { return GetPage<Cord.Pages.S9CleanningCheckSheetPage>(); }
+            }
+            /// <summary>Gets DIP Time Table Page.</summary>
+            public static Cord.Pages.DIPTimeTablePage DIPTimeTable
+            {
+                get { return GetPage<Cord.Pages.DIPTimeTablePage>(); }
+            }
+            /// <summary>Gets S9 Appearance Check Sheet Page.</summary>
+            public static Cord.Pages.S9AppearanceCheckSheetPage S9AppearanceCheckSheet
+            {
+                get { return GetPage<Cord.Pages.S9AppearanceCheckSheetPage>(); }
+            }
 
             #endregion
         }
@@ -420,25 +464,7 @@ namespace M3.Cord
             {
                 get { return GetWindow<Twist1CheckSheetEditorWindow>(); }
             }
-            /*
-            /// <summary>Gets Yarn Loading Window.</summary>
-            public static YarnLoadingWindow YarnLoading
-            {
-                get { return GetWindow<YarnLoadingWindow>(); }
-            }
 
-            /// <summary>Gets Yarn Twist Record Sheet Window.</summary>
-            public static YarnTwistRecordSheetWindow YarnTwistRecordSheet
-            {
-                get { return GetWindow<YarnTwistRecordSheetWindow>(); }
-            }
-
-            /// <summary>Gets Production Condition Sheet Window.</summary>
-            public static ProductionConditionSheetWindow ProductionConditionSheet
-            {
-                get { return GetWindow<ProductionConditionSheetWindow>(); }
-            }
-            */
             #endregion
 
             #region Pallet Setting

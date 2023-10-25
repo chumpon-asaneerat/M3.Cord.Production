@@ -29,65 +29,83 @@
         </Style>
     </UserControl.Resources>
     <page:NPage x:Name="page" HeaderText="DIP Process Menu">
-        <WrapPanel>
-            <!--  Material Check Sheet  -->
-            <Button x:Name="cmdMaterialCheckSheet" Click="cmdMaterialCheckSheet_Click">
-                <TextBlock>
-                    <Run Text="ตรวจสอบเส้นด้าย" />
-                    <LineBreak />
-                    <Run Text="ก่อนนำเข้า S-7" />
-                </TextBlock>
-            </Button>
-            <!--  S7 Creel Check Sheet  -->
-            <Button x:Name="cmdS7CreelCheckSheet" Click="cmdS7CreelCheckSheet_Click">
-                <TextBlock>
-                    <Run Text="Yarn Path Check Sheet" />
-                    <LineBreak />
-                    <Run Text="for Creel (S-7)" />
-                </TextBlock>
-            </Button>
-            <!--  DIP Condition  -->
-            <Button x:Name="cmdDIPCondition" Click="cmdDIPCondition_Click">
-                <TextBlock>
-                    <Run Text="ตรวจเช็คสภาวะการผลิต" />
-                    <LineBreak />
-                    <Run Text="ก่อนเปิดเครื่อง (S-8-1)" />
-                </TextBlock>
-            </Button>
-            <!--  Chemical Requisition Record Sheet  -->
-            <Button x:Name="cmdChemicalRequisitionRecordSheet" Click="cmdChemicalRequisitionRecordSheet_Click">
-                <TextBlock>
-                    <Run Text="Chemical Requisition" />
-                    <LineBreak />
-                    <Run Text="Record Sheet" />
-                </TextBlock>
-            </Button>
-            <!--  S9 Cleaning Check Sheet  -->
-            <Button x:Name="cmdS9CleaningCheckSheet" Click="cmdS9CleaningCheckSheet_Click">
-                <TextBlock>
-                    <Run Text="ใบบันทึก" />
-                    <LineBreak />
-                    <Run Text="การทำความสะอาด (S-9)" />
-                </TextBlock>
-            </Button>
-            <!--  DIP Production Time Table  -->
-            <Button x:Name="cmdDIPProductionTimeTable" Click="cmdDIPProductionTimeTable_Click">
-                <TextBlock>
-                    <Run Text="Production Periodic" />
-                    <LineBreak />
-                    <Run Text="Check Sheet" />
-                </TextBlock>
-            </Button>
-            <!--  S9 Appearance Check Sheet  -->
-            <Button x:Name="cmdS9AppearanceCheckSheet" Click="cmdS9AppearanceCheckSheet_Click">
-                <TextBlock>
-                    <Run Text="Cord production" />
-                    <LineBreak />
-                    <Run Text="Appearance" />
-                    <LineBreak />
-                    <Run Text="Check Sheet" />
-                </TextBlock>
-            </Button>
-        </WrapPanel>
+        <DockPanel LastChildFill="True">
+            <!--  BUTTONS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Right"
+                            VerticalAlignment="Center">
+                    <!--  HOME  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                            Margin="5,0,0,0"
+                                            IconType="Back"
+                                            Text="Back"
+                                            Click="cmdBack_Click" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <WrapPanel>
+                <!--  Material Check Sheet  -->
+                <Button x:Name="cmdMaterialCheckSheet" Click="cmdMaterialCheckSheet_Click">
+                    <TextBlock>
+                        <Run Text="ตรวจสอบเส้นด้าย" />
+                        <LineBreak />
+                        <Run Text="ก่อนนำเข้า S-7" />
+                    </TextBlock>
+                </Button>
+                <!--  S7 Creel Check Sheet  -->
+                <Button x:Name="cmdS7CreelCheckSheet" Click="cmdS7CreelCheckSheet_Click">
+                    <TextBlock>
+                        <Run Text="Yarn Path Check Sheet" />
+                        <LineBreak />
+                        <Run Text="for Creel (S-7)" />
+                    </TextBlock>
+                </Button>
+                <!--  DIP Condition  -->
+                <Button x:Name="cmdDIPCondition" Click="cmdDIPCondition_Click">
+                    <TextBlock>
+                        <Run Text="ตรวจเช็คสภาวะการผลิต" />
+                        <LineBreak />
+                        <Run Text="ก่อนเปิดเครื่อง (S-8-1)" />
+                    </TextBlock>
+                </Button>
+                <!--  Chemical Requisition Record Sheet  -->
+                <Button x:Name="cmdChemicalRequisitionRecordSheet" Click="cmdChemicalRequisitionRecordSheet_Click">
+                    <TextBlock>
+                        <Run Text="Chemical Requisition" />
+                        <LineBreak />
+                        <Run Text="Record Sheet" />
+                    </TextBlock>
+                </Button>
+                <!--  S9 Cleaning Check Sheet  -->
+                <Button x:Name="cmdS9CleaningCheckSheet" Click="cmdS9CleaningCheckSheet_Click">
+                    <TextBlock>
+                        <Run Text="ใบบันทึก" />
+                        <LineBreak />
+                        <Run Text="การทำความสะอาด (S-9)" />
+                    </TextBlock>
+                </Button>
+                <!--  DIP Production Time Table  -->
+                <Button x:Name="cmdDIPProductionTimeTable" Click="cmdDIPProductionTimeTable_Click">
+                    <TextBlock>
+                        <Run Text="Production Periodic" />
+                        <LineBreak />
+                        <Run Text="Check Sheet" />
+                    </TextBlock>
+                </Button>
+                <!--  S9 Appearance Check Sheet  -->
+                <Button x:Name="cmdS9AppearanceCheckSheet" Click="cmdS9AppearanceCheckSheet_Click">
+                    <TextBlock>
+                        <Run Text="Cord production" />
+                        <LineBreak />
+                        <Run Text="Appearance" />
+                        <LineBreak />
+                        <Run Text="Check Sheet" />
+                    </TextBlock>
+                </Button>
+            </WrapPanel>
+        </DockPanel>
     </page:NPage>
 </UserControl>

@@ -49,7 +49,7 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoCordMainMenu();
+            M3CordApp.Pages.GotoDIPOperationMenu();
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
@@ -72,12 +72,13 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
+            /*
+            pcCard = DIPUI.PCCard.Current();
+            if (null != pcCard)
+            {
 
-        }
-
-        public void RefreshGrid()
-        {
-
+            }
+            */
         }
 
         #endregion
