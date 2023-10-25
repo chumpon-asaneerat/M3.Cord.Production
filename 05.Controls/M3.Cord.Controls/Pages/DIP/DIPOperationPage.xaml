@@ -63,8 +63,8 @@
                         <Run Text="for Creel (S-7)" />
                     </TextBlock>
                 </Button>
-                <!--  DIP Condition  -->
-                <Button x:Name="cmdDIPCondition" Click="cmdDIPCondition_Click">
+                <!--  S8 Before Start  -->
+                <Button x:Name="cmdS8BeforeStart" Click="cmdS8BeforeStart_Click">
                     <TextBlock>
                         <Run Text="ตรวจเช็คสภาวะการผลิต" />
                         <LineBreak />
@@ -85,6 +85,22 @@
                         <Run Text="Chemical Requisition" />
                         <LineBreak />
                         <Run Text="Record Sheet" />
+                    </TextBlock>
+                </Button>
+                <!--  DIP Condition  -->
+                <Button x:Name="cmdDIPCondition" Click="cmdDIPCondition_Click">
+                    <TextBlock>
+                        <Run Text="Confirm Condition" />
+                        <LineBreak />
+                        <Run Text="Check Sheet" />
+                    </TextBlock>
+                </Button>
+                <!--  S8 Condition Summary -->
+                <Button x:Name="cmdS8ConditionSummary" Click="cmdS8ConditionSummary_Click">
+                    <TextBlock>
+                        <Run Text="ใบบันทึกค่า" />
+                        <LineBreak />
+                        <Run Text="สภาวะการผลิต S-8-1" />
                     </TextBlock>
                 </Button>
                 <!--  DIP Production Time Table  -->

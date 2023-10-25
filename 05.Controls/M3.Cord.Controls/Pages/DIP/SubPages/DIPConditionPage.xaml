@@ -12,7 +12,7 @@
              mc:Ignorable="d"
              d:DesignHeight="800"
              d:DesignWidth="1200">
-    <page:NPage x:Name="page" HeaderText="">
+    <page:NPage x:Name="page" HeaderText="Confirm Condition Check Sheet">
         <DockPanel LastChildFill="True">
             <!--  BUTTONS  -->
             <DockPanel LastChildFill="True"

@@ -62,9 +62,9 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
-        private void cmdDIPCondition_Click(object sender, RoutedEventArgs e)
+        private void cmdS8BeforeStart_Click(object sender, RoutedEventArgs e)
         {
-            var page = M3CordApp.Pages.DIPCondition;
+            var page = M3CordApp.Pages.S8BeforeStartSummary;
             page.Setup();
             PageContentManager.Instance.Current = page;
         }
@@ -83,6 +83,20 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdDIPCondition_Click(object sender, RoutedEventArgs e)
+        {
+            var page = M3CordApp.Pages.DIPCondition;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
+
+        private void cmdS8ConditionSummary_Click(object sender, RoutedEventArgs e)
+        {
+            var page = M3CordApp.Pages.S8ConditionSummary;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
+
         private void cmdDIPProductionTimeTable_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.DIPTimeTable;
@@ -96,10 +110,6 @@ namespace M3.Cord.Pages
             page.Setup();
             PageContentManager.Instance.Current = page;
         }
-
-        #endregion
-
-        #region Private Methods
 
         #endregion
 
