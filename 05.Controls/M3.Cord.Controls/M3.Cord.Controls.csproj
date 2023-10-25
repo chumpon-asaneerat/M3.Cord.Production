@@ -305,58 +305,6 @@
     <EmbeddedResource Include="Reports\S5Condition.rdlc" />
     <None Include="Properties\DataSources\M3.Cord.Models.PalletSetting.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.S5ConditionPrintModel.datasource" />
-    <None Include="_V3\Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml.cs">
-      <DependentUpon>HeaderPart.xaml</DependentUpon>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S1\Elements\ItemsPart.xaml.cs">
-      <DependentUpon>ItemsPart.xaml</DependentUpon>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S1\S1ProductConditionControl.xaml.cs">
-      <DependentUpon>S1ProductConditionControl.xaml</DependentUpon>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\Elements\HeaderPart.xaml.cs">
-      <DependentUpon>HeaderPart.xaml</DependentUpon>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\Elements\ItemsPart.xaml.cs">
-      <DependentUpon>ItemsPart.xaml</DependentUpon>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\S4x1UpTwisterConditionControl.xaml.cs">
-      <DependentUpon>S4x1UpTwisterConditionControl.xaml</DependentUpon>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\Elements\HeaderPart.xaml.cs">
-      <DependentUpon>HeaderPart.xaml</DependentUpon>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\Elements\ItemsPart.xaml.cs">
-      <DependentUpon>ItemsPart.xaml</DependentUpon>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml.cs">
-      <DependentUpon>S4x2UpTwisterConditionControl.xaml</DependentUpon>
-    </None>
-    <None Include="_V3\Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
-      <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
-    </None>
-    <None Include="_V3\Pages\FirstTwist\S1ProductConditionPage.xaml.cs">
-      <DependentUpon>S1ProductConditionPage.xaml</DependentUpon>
-    </None>
-    <None Include="_V2\Windows\FirstTwist\ChooseCordProductWindow.xaml.cs">
-      <DependentUpon>ChooseCordProductWindow.xaml</DependentUpon>
-    </None>
-    <None Include="_V2\Windows\FirstTwist\PrepareDoffWindow.xaml.cs">
-      <DependentUpon>PrepareDoffWindow.xaml</DependentUpon>
-    </None>
-    <None Include="_V2\Windows\FirstTwist\S1ConditionWindow.xaml.cs">
-      <DependentUpon>S1ConditionWindow.xaml</DependentUpon>
-    </None>
-    <None Include="_V2\Windows\Warehouse\CordProcuctPlanningWindow.xaml.cs">
-      <DependentUpon>CordProcuctPlanningWindow.xaml</DependentUpon>
-    </None>
-    <None Include="_V2\Services\Warehouse\CordProductPlanningService.cs" />
-    <None Include="_V2\Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
-      <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
-    </None>
-    <None Include="_V2\Pages\FirstTwist\S4x2UpTwisterConditionPage.xaml.cs">
-      <DependentUpon>S4x2UpTwisterConditionPage.xaml</DependentUpon>
-    </None>
     <Compile Include="Pages\FirstTwist\FirstTwistOperationPage.xaml.cs">
       <DependentUpon>FirstTwistOperationPage.xaml</DependentUpon>
     </Compile>
@@ -378,30 +326,12 @@
     <Compile Include="Pages\G4\GOLabelPreviewPage.xaml.cs">
       <DependentUpon>GOLabelPreviewPage.xaml</DependentUpon>
     </Compile>
-    <None Include="_V2\Pages\Masters\CustomerManagePage.xaml.cs">
-      <DependentUpon>CustomerManagePage.xaml</DependentUpon>
-    </None>
-    <None Include="_V2\Pages\Masters\ProductItemCodeManagePage.xaml.cs">
-      <DependentUpon>ProductItemCodeManagePage.xaml</DependentUpon>
-    </None>
-    <None Include="_V2\Pages\Menu\M3DocumentMenuPage.xaml.cs">
-      <DependentUpon>M3DocumentMenuPage.xaml</DependentUpon>
-    </None>
     <Compile Include="Pages\Menu\M3CordMainMenuPage.xaml.cs">
       <DependentUpon>M3CordMainMenuPage.xaml</DependentUpon>
     </Compile>
-    <None Include="_V2\Pages\FirstTwist\S1ProductConditionPage.xaml.cs">
-      <DependentUpon>S1ProductConditionPage.xaml</DependentUpon>
-    </None>
-    <None Include="_V2\Pages\FirstTwist\S4x1UpTwisterConditionPage.xaml.cs">
-      <DependentUpon>S4x1UpTwisterConditionPage.xaml</DependentUpon>
-    </None>
     <Compile Include="Pages\Menu\MasterDataManuPage.xaml.cs">
       <DependentUpon>MasterDataManuPage.xaml</DependentUpon>
     </Compile>
-    <None Include="_V2\Pages\Warehouse\CordProductPlanningPage.xaml.cs">
-      <DependentUpon>CordProductPlanningPage.xaml</DependentUpon>
-    </None>
     <Compile Include="Pages\PCCard\PCCardManagePage.xaml.cs">
       <DependentUpon>PCCardManagePage.xaml</DependentUpon>
     </Compile>
@@ -644,10 +574,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="_V2\Pages\FirstTwist\S4x2UpTwisterConditionPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <Page Include="Pages\Ageing\AgeingManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -716,38 +642,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="_V2\Pages\Masters\CustomerManagePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="_V2\Pages\Masters\ProductItemCodeManagePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="_V2\Pages\Menu\M3DocumentMenuPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <Page Include="Pages\Menu\M3CordMainMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="_V2\Pages\FirstTwist\S1ProductConditionPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="_V2\Pages\FirstTwist\S4x1UpTwisterConditionPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <Page Include="Pages\Menu\MasterDataManuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="_V2\Pages\Warehouse\CordProductPlanningPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <Page Include="Pages\PalletSettings\PalletSettingPreviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -868,34 +770,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="_V2\Pages\FirstTwist\FirstTwistMCPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V2\Windows\FirstTwist\ChooseCordProductWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V2\Windows\FirstTwist\PrepareDoffWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V2\Windows\FirstTwist\S1ConditionWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V2\Windows\Warehouse\CordProcuctPlanningWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V3\Pages\FirstTwist\FirstTwistMCPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V3\Pages\FirstTwist\S1ProductConditionPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
     <Page Include="Windows\FirstTwist\StartTwist1OpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -932,42 +806,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="_V3\Controls\Documents\FirstTwist\S1\Elements\HeaderPart.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S1\Elements\ItemsPart.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S1\S1ProductConditionControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\Elements\HeaderPart.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\Elements\ItemsPart.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x1\S4x1UpTwisterConditionControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\Elements\HeaderPart.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\Elements\ItemsPart.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_V3\Controls\Documents\FirstTwist\S4x2\S4x2UpTwisterConditionControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\barcode-scanner.png" />
@@ -978,8 +816,6 @@
   <ItemGroup>
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
-    <Folder Include="_V3\Controls\Documents\Ageing\Elements\" />
-    <Folder Include="_V3\Controls\Documents\SamplingDetails\Elements\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\toray.png" />

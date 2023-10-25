@@ -115,14 +115,6 @@
     <Compile Include="Models\PalletSettings\PalletCode.cs" />
     <Compile Include="Models\PalletSettings\PalletSettings.cs" />
     <Compile Include="Models\PCCard\PCCard.cs" />
-    <None Include="_V2\FirstTwist\FirstTwistMC.cs" />
-    <None Include="_V2\Masters\Customer.cs" />
-    <None Include="_V2\Masters\ProductItemCode.cs" />
-    <None Include="_V2\Warehouse\CordProduct.cs" />
-    <None Include="_V2\Warehouse\WarehouseCordYarn.cs" />
-    <None Include="_V2\FirstTwist\RawMaterialSheet.cs" />
-    <None Include="_V2\FirstTwist\YarnLoadSheet.cs" />
-    <None Include="_V2\FirstTwist\YarnLoadSheetDoff.cs" />
     <Compile Include="Models\G4\BCSPRFTP.cs" />
     <Compile Include="Models\G4\G4IssueYarn.cs" />
     <Compile Include="Models\G4\G4Yarn.cs" />
