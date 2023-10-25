@@ -185,6 +185,18 @@
     <Compile Include="Pages\Ageing\AgeingManagePage.xaml.cs">
       <DependentUpon>AgeingManagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ChemicalRequisitionRecordPage.xaml.cs">
+      <DependentUpon>ChemicalRequisitionRecordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPConditionPage.xaml.cs">
+      <DependentUpon>DIPConditionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPMaterialCheckSheetPage.xaml.cs">
+      <DependentUpon>DIPMaterialCheckSheetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPTimeTablePage.xaml.cs">
+      <DependentUpon>DIPTimeTablePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DIP\DIPOperationPage.xaml.cs">
       <DependentUpon>DIPOperationPage.xaml</DependentUpon>
     </Compile>
@@ -220,6 +232,21 @@
     </Compile>
     <Compile Include="Pages\Ageing\S5ReportPreviewPage.xaml.cs">
       <DependentUpon>S5ReportPreviewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S7CreelCheckSheetPage.xaml.cs">
+      <DependentUpon>S7CreelCheckSheetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S8BeforeStartSummaryPage.xaml.cs">
+      <DependentUpon>S8BeforeStartSummaryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S8ConditionSummaryPage.xaml.cs">
+      <DependentUpon>S8ConditionSummaryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S9AppearanceCheckSheetPage.xaml.cs">
+      <DependentUpon>S9AppearanceCheckSheetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S9CleanningCheckSheetPage.xaml.cs">
+      <DependentUpon>S9CleanningCheckSheetPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Warehouse\WarehouseYarnStockPage.xaml.cs">
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
@@ -607,6 +634,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ChemicalRequisitionRecordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DIPConditionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DIPMaterialCheckSheetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DIPTimeTablePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DIP\DIPOperationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -716,6 +759,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Ageing\S5ReportPreviewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\S7CreelCheckSheetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\S8BeforeStartSummaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\S8ConditionSummaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\S9AppearanceCheckSheetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\S9CleanningCheckSheetPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

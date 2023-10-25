@@ -19,7 +19,6 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
-using Microsoft.SqlServer.Server;
 
 #endregion
 

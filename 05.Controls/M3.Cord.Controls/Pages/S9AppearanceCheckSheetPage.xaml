@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="M3.Cord.Pages.S9AppearanceCheckSheetPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:doc="clr-namespace:M3.Cord.Controls.Documents"
+             xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:spage="clr-namespace:M3.Cord.Pages"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             x:Name="root"
+             mc:Ignorable="d"
+             d:DesignHeight="800"
+             d:DesignWidth="1200">
+    <DockPanel LastChildFill="True">
+        <!--  BUTTONS  -->
+        <DockPanel LastChildFill="True"
+                   DockPanel.Dock="Bottom"
+                   Height="40">
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Right"
+                        VerticalAlignment="Center">
+                <!--  HOME  -->
+                <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                        Margin="5,0,0,0"
+                                        IconType="Back"
+                                        Text="Back"
+                                        Click="cmdBack_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Left"
+                        VerticalAlignment="Center">
+                <ctrl:FontAwesomeButton x:Name="cmdSave"
+                                        Margin="5,0,0,0"
+                                        IconType="Add"
+                                        Text="Save"
+                                        Click="cmdSave_Click" />
+            </StackPanel>
+            <Grid />
+        </DockPanel>
+        <DockPanel x:Name="paCondition"
+                   LastChildFill="True"
+                   DockPanel.Dock="Top"
+                   Margin="2">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <!--
+                    <elem:ProductInfoBox />
+                    <elem:StdTwistNoBox />
+                    -->
+                </StackPanel>
+            </StackPanel>
+            <Grid />
+        </DockPanel>
+        <!--
+        <doc:S1ConditionEntryPage x:Name="s1" Visibility="Visible" />
+        -->
+        <Grid />
+    </DockPanel>
+</UserControl>
