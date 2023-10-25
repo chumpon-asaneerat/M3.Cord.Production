@@ -95,24 +95,11 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            /*
-            pcCard = DIPPCCard.Current().Value();
-            if (null == pcCard)
-            {
-                pcCard = new DIPPCCard();
-                var win = M3CordApp.Windows.DIPPCCardEditor;
-                win.Setup(pcCard);
-                if (win.ShowDialog() == true)
-                {
-                    DIPPCCard.Save(pcCard);
-                }
-            }
-
+            pcCard = DIPUI.PCCard.Current();
             if (null != pcCard)
             {
 
             }
-            */
         }
 
         #endregion
