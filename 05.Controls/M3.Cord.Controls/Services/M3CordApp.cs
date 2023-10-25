@@ -313,6 +313,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.S8BeforeStartSummaryPage>(); }
             }
+            /// <summary>Gets DIP Condition Page.</summary>
+            public static Cord.Pages.DIPConditionPage DIPCondition
+            {
+                get { return GetPage<Cord.Pages.DIPConditionPage>(); }
+            }
             /// <summary>Gets Chemical Requisition Record Page.</summary>
             public static Cord.Pages.ChemicalRequisitionRecordPage ChemicalRequisitionRecord
             {
