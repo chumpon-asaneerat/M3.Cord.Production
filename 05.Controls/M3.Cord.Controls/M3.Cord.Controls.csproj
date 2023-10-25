@@ -259,6 +259,9 @@
     </Compile>
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
     <Compile Include="Windows\Common\Common.cs" />
+    <Compile Include="Windows\DIPPCCardEditorWindow.xaml.cs">
+      <DependentUpon>DIPPCCardEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\PalletSettings\CreatePalletWindow.xaml.cs">
       <DependentUpon>CreatePalletWindow.xaml</DependentUpon>
     </Compile>
@@ -809,6 +812,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\ListViewColumns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DIPPCCardEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

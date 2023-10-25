@@ -1,0 +1,61 @@
+﻿<Window x:Class="M3.Cord.Windows.DIPPCCardEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        mc:Ignorable="d"
+        Title="Setup DIP Product"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="250"
+        Width="850">
+    <page:NPage HeaderText="Setup DIP Product">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdOk"
+                                        DockPanel.Dock="Right"
+                                        IconType="Ok"
+                                        Text="Ok"
+                                        Click="cmdOk_Click" />
+                <Grid />
+            </DockPanel>
+            <!--  WORK AREA  -->
+            <DockPanel LastChildFill="True">
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  CUSTOMER  -->
+                    <ctrl:NComboBox x:Name="cbCustomers"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Customer:"
+                                    DisplayMemberPath="CustomerName"
+                                    Width="250" />
+                    <!--  Item Code  -->
+                    <ctrl:NComboBox x:Name="cbItemCodes"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Item Code:"
+                                    DisplayMemberPath="ProductCode"
+                                    Width="200" />
+                    <!--  LOT NO  -->
+                    <ctrl:NTextBox CaptionText="Lot No:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding DIPLotNo}"
+                                   Width="200" />
+                    <Grid />
+                </DockPanel>
+                <Grid />
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>
