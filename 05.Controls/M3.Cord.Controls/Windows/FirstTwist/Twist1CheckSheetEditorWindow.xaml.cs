@@ -153,7 +153,7 @@ namespace M3.Cord.Windows
             if (null != _pcCard && null != _mc)
             {
                 _items = new List<Twist1CheckSheetItem>();
-                for (int i = _mc.StartCore; i < _mc.EndCore; i++)
+                for (int i = _mc.StartCore; i <= _mc.EndCore; i++)
                 {
                     _items.Add(new Twist1CheckSheetItem() { Twist1CheckId = 0, SPNo = i });
                 }
