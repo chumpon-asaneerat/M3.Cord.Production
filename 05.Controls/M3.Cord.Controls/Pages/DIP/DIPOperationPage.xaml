@@ -11,14 +11,83 @@
              mc:Ignorable="d"
              d:DesignHeight="800"
              d:DesignWidth="1200">
-    <page:NPage x:Name="page" HeaderText="DIP Process">
-        <TabControl x:Name="tabs"
-                    FontSize="18"
-                    SelectionChanged="tabs_SelectionChanged">
-            <TabItem Header="PC Card" />
-            <TabItem Header="Raw Material" />
-            <TabItem Header="Actual Yarn Twist Record Sheet" />
-            <TabItem Header="Production condition" />
-        </TabControl>
+    <UserControl.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource MenuButtonStyle}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Width" Value="350" />
+            <Setter Property="Height" Value="150" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <page:NPage x:Name="page" HeaderText="DIP Process Menu">
+        <WrapPanel>
+            <!--  Material Check Sheet  -->
+            <Button x:Name="cmdMaterialCheckSheet" Click="cmdMaterialCheckSheet_Click">
+                <TextBlock>
+                    <Run Text="ตรวจสอบเส้นด้าย" />
+                    <LineBreak />
+                    <Run Text="ก่อนนำเข้า S-7" />
+                </TextBlock>
+            </Button>
+            <!--  S7 Creel Check Sheet  -->
+            <Button x:Name="cmdS7CreelCheckSheet" Click="cmdS7CreelCheckSheet_Click">
+                <TextBlock>
+                    <Run Text="Yarn Path Check Sheet" />
+                    <LineBreak />
+                    <Run Text="for Creel (S-7)" />
+                </TextBlock>
+            </Button>
+            <!--  DIP Condition  -->
+            <Button x:Name="cmdDIPCondition" Click="cmdDIPCondition_Click">
+                <TextBlock>
+                    <Run Text="ตรวจเช็คสภาวะการผลิต" />
+                    <LineBreak />
+                    <Run Text="ก่อนเปิดเครื่อง (S-8-1)" />
+                </TextBlock>
+            </Button>
+            <!--  Chemical Requisition Record Sheet  -->
+            <Button x:Name="cmdChemicalRequisitionRecordSheet" Click="cmdChemicalRequisitionRecordSheet_Click">
+                <TextBlock>
+                    <Run Text="Chemical Requisition" />
+                    <LineBreak />
+                    <Run Text="Record Sheet" />
+                </TextBlock>
+            </Button>
+            <!--  S9 Cleaning Check Sheet  -->
+            <Button x:Name="cmdS9CleaningCheckSheet" Click="cmdS9CleaningCheckSheet_Click">
+                <TextBlock>
+                    <Run Text="ใบบันทึก" />
+                    <LineBreak />
+                    <Run Text="การทำความสะอาด (S-9)" />
+                </TextBlock>
+            </Button>
+            <!--  DIP Production Time Table  -->
+            <Button x:Name="cmdDIPProductionTimeTable" Click="cmdDIPProductionTimeTable_Click">
+                <TextBlock>
+                    <Run Text="Production Periodic" />
+                    <LineBreak />
+                    <Run Text="Check Sheet" />
+                </TextBlock>
+            </Button>
+            <!--  S9 Appearance Check Sheet  -->
+            <Button x:Name="cmdS9AppearanceCheckSheet" Click="cmdS9AppearanceCheckSheet_Click">
+                <TextBlock>
+                    <Run Text="Cord production" />
+                    <LineBreak />
+                    <Run Text="Appearance" />
+                    <LineBreak />
+                    <Run Text="Check Sheet" />
+                </TextBlock>
+            </Button>
+        </WrapPanel>
     </page:NPage>
 </UserControl>
