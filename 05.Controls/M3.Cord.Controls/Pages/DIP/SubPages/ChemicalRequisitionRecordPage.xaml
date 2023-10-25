@@ -44,10 +44,8 @@
                    Margin="2">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-                    <!--
-                    <elem:ProductInfoBox />
-                    <elem:StdTwistNoBox />
-                    -->
+                    <elem:ProductCodeBox />
+                    <elem:DIPLotNoBox />
                 </StackPanel>
             </StackPanel>
             <Grid />
