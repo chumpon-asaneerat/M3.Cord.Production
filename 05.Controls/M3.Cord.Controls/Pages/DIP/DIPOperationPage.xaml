@@ -11,22 +11,14 @@
              mc:Ignorable="d"
              d:DesignHeight="800"
              d:DesignWidth="1200">
-    <page:NPage x:Name="page" HeaderText="DIP">
+    <page:NPage x:Name="page" HeaderText="DIP Process">
         <TabControl x:Name="tabs"
                     FontSize="18"
                     SelectionChanged="tabs_SelectionChanged">
-            <TabItem Header="PC Card">
-
-            </TabItem>
-            <TabItem Header="Raw Material">
-
-            </TabItem>
-            <TabItem Header="Actual Yarn Twist Record Sheet">
-
-            </TabItem>
-            <TabItem Header="Production condition">
-
-            </TabItem>
+            <TabItem Header="PC Card" />
+            <TabItem Header="Raw Material" />
+            <TabItem Header="Actual Yarn Twist Record Sheet" />
+            <TabItem Header="Production condition" />
         </TabControl>
     </page:NPage>
 </UserControl>

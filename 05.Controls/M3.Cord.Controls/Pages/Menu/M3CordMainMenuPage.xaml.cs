@@ -159,6 +159,9 @@ namespace M3.Cord.Pages
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
             // Dipping
+            var page = M3CordApp.Pages.DIPOperation;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdMasterDataMenu_Click(object sender, RoutedEventArgs e)
