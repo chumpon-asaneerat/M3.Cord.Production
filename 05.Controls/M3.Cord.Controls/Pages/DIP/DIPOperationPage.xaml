@@ -71,14 +71,6 @@
                         <Run Text="ก่อนเปิดเครื่อง (S-8-1)" />
                     </TextBlock>
                 </Button>
-                <!--  Chemical Requisition Record Sheet  -->
-                <Button x:Name="cmdChemicalRequisitionRecordSheet" Click="cmdChemicalRequisitionRecordSheet_Click">
-                    <TextBlock>
-                        <Run Text="Chemical Requisition" />
-                        <LineBreak />
-                        <Run Text="Record Sheet" />
-                    </TextBlock>
-                </Button>
                 <!--  S9 Cleaning Check Sheet  -->
                 <Button x:Name="cmdS9CleaningCheckSheet" Click="cmdS9CleaningCheckSheet_Click">
                     <TextBlock>
@@ -87,12 +79,20 @@
                         <Run Text="การทำความสะอาด (S-9)" />
                     </TextBlock>
                 </Button>
+                <!--  Chemical Requisition Record Sheet  -->
+                <Button x:Name="cmdChemicalRequisitionRecordSheet" Click="cmdChemicalRequisitionRecordSheet_Click">
+                    <TextBlock>
+                        <Run Text="Chemical Requisition" />
+                        <LineBreak />
+                        <Run Text="Record Sheet" />
+                    </TextBlock>
+                </Button>
                 <!--  DIP Production Time Table  -->
                 <Button x:Name="cmdDIPProductionTimeTable" Click="cmdDIPProductionTimeTable_Click">
                     <TextBlock>
                         <Run Text="Production Periodic" />
                         <LineBreak />
-                        <Run Text="Check Sheet" />
+                        <Run Text="Record Sheet" />
                     </TextBlock>
                 </Button>
                 <!--  S9 Appearance Check Sheet  -->

@@ -12,47 +12,49 @@
              mc:Ignorable="d"
              d:DesignHeight="800"
              d:DesignWidth="1200">
-    <DockPanel LastChildFill="True">
-        <!--  BUTTONS  -->
-        <DockPanel LastChildFill="True"
-                   DockPanel.Dock="Bottom"
-                   Height="40">
-            <StackPanel Orientation="Horizontal"
-                        DockPanel.Dock="Right"
-                        VerticalAlignment="Center">
-                <!--  HOME  -->
-                <ctrl:FontAwesomeButton x:Name="cmdBack"
-                                        Margin="5,0,0,0"
-                                        IconType="Back"
-                                        Text="Back"
-                                        Click="cmdBack_Click" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal"
-                        DockPanel.Dock="Left"
-                        VerticalAlignment="Center">
-                <ctrl:FontAwesomeButton x:Name="cmdSave"
-                                        Margin="5,0,0,0"
-                                        IconType="Add"
-                                        Text="Save"
-                                        Click="cmdSave_Click" />
-            </StackPanel>
-            <Grid />
-        </DockPanel>
-        <DockPanel x:Name="paCondition"
-                   LastChildFill="True"
-                   DockPanel.Dock="Top"
-                   Margin="2">
-            <StackPanel Orientation="Vertical">
-                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-                    <elem:ProductCodeBox />
-                    <elem:DIPLotNoBox />
+    <page:NPage x:Name="page" HeaderText="">
+        <DockPanel LastChildFill="True">
+            <!--  BUTTONS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Right"
+                            VerticalAlignment="Center">
+                    <!--  HOME  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                            Margin="5,0,0,0"
+                                            IconType="Back"
+                                            Text="Back"
+                                            Click="cmdBack_Click" />
                 </StackPanel>
-            </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <ctrl:FontAwesomeButton x:Name="cmdSave"
+                                            Margin="5,0,0,0"
+                                            IconType="Add"
+                                            Text="Save"
+                                            Click="cmdSave_Click" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <DockPanel x:Name="paCondition"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                        <elem:ProductCodeBox />
+                        <elem:DIPLotNoBox />
+                    </StackPanel>
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <!--
+        <doc:S1ConditionEntryPage x:Name="s1" Visibility="Visible" />
+            -->
             <Grid />
         </DockPanel>
-        <!--
-        <doc:S1ConditionEntryPage x:Name="s1" Visibility="Visible" />
-        -->
-        <Grid />
-    </DockPanel>
+    </page:NPage>
 </UserControl>
