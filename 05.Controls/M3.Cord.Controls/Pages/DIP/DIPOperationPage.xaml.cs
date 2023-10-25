@@ -64,7 +64,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            pcCard = DIPPCCard.Get().Value();
+            pcCard = DIPPCCard.Current().Value();
             if (null == pcCard)
             {
                 pcCard = new DIPPCCard();
