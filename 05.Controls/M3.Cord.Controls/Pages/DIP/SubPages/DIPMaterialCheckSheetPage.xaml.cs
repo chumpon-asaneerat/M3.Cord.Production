@@ -43,6 +43,11 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private DIPPCCard pcCard = null;
+        private DIPMC mc = null;
+        private DIPMaterialCheckSheet sheet = null;
+        private List<DIPMaterialCheckSheetItem> items = null;
+
         #endregion
 
         #region Button Handlers
@@ -57,13 +62,79 @@ namespace M3.Cord.Pages
             Save();
         }
 
+        private void cmdAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddItem();
+        }
+
+        #endregion
+
+        #region TextBox Handlers
+
+        private void txtSPNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                AddItem();
+                e.Handled = true;
+            }
+        }
+
+        private void txtLotNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                AddItem();
+                e.Handled = true;
+            }
+        }
+
+        private void txtCHNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                AddItem();
+                e.Handled = true;
+            }
+        }
+
         #endregion
 
         #region Private Methods
 
+        private void LoadComcoBox()
+        {
+            cbS7MC.ItemsSource = DIPMC.Gets("S-7").Value();
+            cbS7MC.SelectedIndex = -1;
+        }
+
+        private void ResetCheckBoxInputs()
+        {
+            chkCheckYarnNo.IsChecked = false;
+            chkCheckYanScrap.IsChecked = false;
+            chkCheckYarnBall.IsChecked = false;
+            chkCheckCover.IsChecked = false;
+            chkCheckSensor.IsChecked = false;
+            chkCheckDustFilter.IsChecked = false;
+        }
+
+        private void AddItem()
+        {
+            ResetCheckBoxInputs();
+        }
+
         private void Save()
         {
+            if (null != sheet)
+            {
+                var mc = cbS7MC.SelectedItem as DIPMC;
+                if (null != mc)
+                {
+                    sheet.MCCode = mc.MCCode;
+                }
 
+                DIPMaterialCheckSheet.Save(sheet);
+            }
         }
 
         #endregion
@@ -72,13 +143,34 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            /*
+            sheet = null;
+
+            paCondition.DataContext = null;
+            paSheetInfo.DataContext = null;
+
+            LoadComcoBox();
+
+            ResetCheckBoxInputs();
+
             pcCard = DIPUI.PCCard.Current();
             if (null != pcCard)
             {
-
+                var sheets = DIPMaterialCheckSheet.Gets(pcCard.DIPPCId.Value).Value();
+                sheet = (null != sheets) ? sheets.LastOrDefault() : null;
+                if (null == sheet)
+                {
+                    sheet = new DIPMaterialCheckSheet();
+                    sheet.DIPPCId = pcCard.DIPPCId.Value;
+                    sheet.CheckDate = DateTime.Now;
+                }
+                else
+                {
+                    cbS7MC.SelectedValue = sheet.MCCode;
+                }
             }
-            */
+
+            paCondition.DataContext = pcCard;
+            paSheetInfo.DataContext = sheet;
         }
 
         #endregion

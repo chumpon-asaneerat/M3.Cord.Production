@@ -32,7 +32,7 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
-        public static NDbResult<List<DIPMC>> Gets()
+        public static NDbResult<List<DIPMC>> Gets(string processName = null, string mcCode = null)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -51,6 +51,8 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+            p.Add("@ProcessName", processName);
+            p.Add("@MCCode", mcCode);
 
             try
             {
