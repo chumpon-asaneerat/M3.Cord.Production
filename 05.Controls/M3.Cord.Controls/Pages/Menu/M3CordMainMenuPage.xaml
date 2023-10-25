@@ -280,7 +280,7 @@
                             Click="cmdChemicalRecipe_Click"
                             Style="{StaticResource OtherButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="Chemical Recipe" />
+                            <Run Text="Solution" />
                         </TextBlock>
                     </Button>
                     <!--  CORD DOCUMENT MENU  -->

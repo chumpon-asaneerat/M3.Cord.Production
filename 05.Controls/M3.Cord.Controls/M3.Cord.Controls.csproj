@@ -259,7 +259,7 @@
     </Compile>
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
     <Compile Include="Windows\Common\Common.cs" />
-    <Compile Include="Windows\DIPPCCardEditorWindow.xaml.cs">
+    <Compile Include="Windows\DIP\DIPPCCardEditorWindow.xaml.cs">
       <DependentUpon>DIPPCCardEditorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\PalletSettings\CreatePalletWindow.xaml.cs">
@@ -815,7 +815,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\DIPPCCardEditorWindow.xaml">
+    <Page Include="Windows\DIP\DIPPCCardEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -975,7 +975,6 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Windows\DIP\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
     <Folder Include="_V3\Controls\Documents\Ageing\Elements\" />

@@ -450,6 +450,16 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region DIP
+
+            /// <summary>Gets DIP PC Card Editor Window.</summary>
+            public static DIPPCCardEditorWindow DIPPCCardEditor
+            {
+                get { return GetWindow<DIPPCCardEditorWindow>(); }
+            }
+
+            #endregion
         }
     }
 }

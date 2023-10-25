@@ -67,6 +67,17 @@ namespace M3.Cord.Pages
             pcCard = DIPPCCard.Get().Value();
             if (null == pcCard)
             {
+                pcCard = new DIPPCCard();
+                var win = M3CordApp.Windows.DIPPCCardEditor;
+                win.Setup(pcCard);
+                if (win.ShowDialog() == true)
+                {
+                    DIPPCCard.Save(pcCard);
+                }
+            }
+
+            if (null != pcCard)
+            {
 
             }
         }
