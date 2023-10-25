@@ -75,7 +75,7 @@ namespace M3.Cord.Pages
         {
             mc = cbS7MC.SelectedItem as DIPMC;
 
-            RefreshGrid();
+            RefreshGrid(true);
         }
 
         #endregion
@@ -216,7 +216,7 @@ namespace M3.Cord.Pages
                 items.Add(item);
             }
 
-            RefreshGrid();
+            RefreshGrid(false);
 
             #endregion
 
@@ -240,44 +240,47 @@ namespace M3.Cord.Pages
             #endregion
         }
 
-        private void RefreshGrid()
+        private void RefreshGrid(bool bInit)
         {
             grid.ItemsSource = null;
 
             if (null != sheet && null != mc)
             {
-                // Init all core
-                items = new List<DIPMaterialCheckSheetItem>();
-                for (int i = mc.StartCore; i <= mc.EndCore; i++)
+                if (null == items || bInit)
                 {
-                    items.Add(new DIPMaterialCheckSheetItem() { SPNo = i });
-                }
-
-                var existItems = DIPMaterialCheckSheetItem.Gets(sheet.MaterialCheckId).Value();
-                if (null != existItems && existItems.Count > 0)
-                {
-                    foreach (var existItem in existItems)
+                    // Init all core
+                    items = new List<DIPMaterialCheckSheetItem>();
+                    for (int i = mc.StartCore; i <= mc.EndCore; i++)
                     {
-                        int idx = items.FindIndex((item =>
-                        {
-                            return (existItem.SPNo == item.SPNo);
-                        }));
-                        if (idx != -1 && null != items[idx])
-                        {
-                            var item = items[idx];
-                            if (null != item)
-                            {
-                                item.MaterialCheckId = existItem.MaterialCheckId;
-                                item.SPNo = existItem.SPNo;
-                                item.LotNo = existItem.LotNo;
-                                item.CHNo = existItem.CHNo;
+                        items.Add(new DIPMaterialCheckSheetItem() { SPNo = i });
+                    }
 
-                                item.CheckYarnNo = existItem.CheckYarnNo;
-                                item.CheckYanScrap = existItem.CheckYanScrap;
-                                item.CheckYarnBall = existItem.CheckYarnBall;
-                                item.CheckCover = existItem.CheckCover;
-                                item.CheckSensor = existItem.CheckSensor;
-                                item.CheckDustFilter = existItem.CheckDustFilter;
+                    var existItems = DIPMaterialCheckSheetItem.Gets(sheet.MaterialCheckId).Value();
+                    if (null != existItems && existItems.Count > 0)
+                    {
+                        foreach (var existItem in existItems)
+                        {
+                            int idx = items.FindIndex((item =>
+                            {
+                                return (existItem.SPNo == item.SPNo);
+                            }));
+                            if (idx != -1 && null != items[idx])
+                            {
+                                var item = items[idx];
+                                if (null != item)
+                                {
+                                    item.MaterialCheckId = existItem.MaterialCheckId;
+                                    item.SPNo = existItem.SPNo;
+                                    item.LotNo = existItem.LotNo;
+                                    item.CHNo = existItem.CHNo;
+
+                                    item.CheckYarnNo = existItem.CheckYarnNo;
+                                    item.CheckYanScrap = existItem.CheckYanScrap;
+                                    item.CheckYarnBall = existItem.CheckYarnBall;
+                                    item.CheckCover = existItem.CheckCover;
+                                    item.CheckSensor = existItem.CheckSensor;
+                                    item.CheckDustFilter = existItem.CheckDustFilter;
+                                }
                             }
                         }
                     }
@@ -295,6 +298,8 @@ namespace M3.Cord.Pages
                 {
                     sheet.MCCode = mc.MCCode;
                 }
+
+                sheet.UserName = M3CordApp.Current.User.FullName; // set current user
                 DIPMaterialCheckSheet.Save(sheet);
 
                 if (sheet.MaterialCheckId.HasValue)
@@ -346,7 +351,7 @@ namespace M3.Cord.Pages
                 ResetTextBoxInputs();
                 ResetCheckBoxInputs();
 
-                RefreshGrid();
+                RefreshGrid(true);
             });
         }
 

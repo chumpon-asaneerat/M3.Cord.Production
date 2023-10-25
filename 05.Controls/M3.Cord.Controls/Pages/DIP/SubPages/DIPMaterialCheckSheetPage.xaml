@@ -93,7 +93,9 @@
                             Click="cmdAdd_Click" />
                 </StackPanel>
                 <TextBlock Height="3" />
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            Margin="5">
                     <CheckBox x:Name="chkCheckYarnNo"
                               FontSize="20"
                               Content="เบอร์ด้าย/สภาพด้าย"
