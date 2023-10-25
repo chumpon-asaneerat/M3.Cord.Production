@@ -41,14 +41,12 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region Internal Variables
-
-        private DIPPCCard pcCard = null;
-
-        #endregion
-
         #region Button Handlers
 
+        private void cmdBack_Click(object sender, RoutedEventArgs e)
+        {
+            M3CordApp.Pages.GotoCordMainMenu();
+        }
 
         private void cmdMaterialCheckSheet_Click(object sender, RoutedEventArgs e)
         {
@@ -95,11 +93,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            pcCard = DIPUI.PCCard.Current();
-            if (null != pcCard)
-            {
 
-            }
         }
 
         #endregion
