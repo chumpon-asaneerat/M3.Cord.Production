@@ -14,6 +14,7 @@ using NLib.Models;
 
 using Dapper;
 using Newtonsoft.Json;
+using System.Windows.Controls.Primitives;
 
 #endregion
 
@@ -33,12 +34,22 @@ namespace M3.Cord.Models
         #region Public Properties
 
         public int? DIPPCId { get; set; }
+
+        public int? CustomerId { get; set; }
+        public string CustomerName { get; set; }
+
         public string ProductCode { get; set; }
-        public string DIPLotNo { get; set; }
+        public string ProductName { get; set; }
         public string ItemYarn { get; set; }
+        public string CordStructure { get; set; }
+        public string TreatRoute { get; set; }
+        public string TwistSpec { get; set; }
+
+        public string DIPLotNo { get; set; }
 
         public bool? FinishFlag { get; set; }
         public bool? DeleteFlag { get; set; }
+
 
         #endregion
 
@@ -120,6 +131,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+            p.Add("@CustomerId", value.CustomerId);
             p.Add("@ProductCode", value.ProductCode);
             p.Add("@DIPLotNo", value.DIPLotNo);
             p.Add("@ItemYarn", value.ItemYarn);
