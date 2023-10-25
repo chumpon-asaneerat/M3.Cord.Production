@@ -95,7 +95,7 @@
                         <Run Text="Check Sheet" />
                     </TextBlock>
                 </Button>
-                <!--  S8 Condition Summary -->
+                <!--  S8 Condition Summary  -->
                 <Button x:Name="cmdS8ConditionSummary" Click="cmdS8ConditionSummary_Click">
                     <TextBlock>
                         <Run Text="ใบบันทึกค่า" />

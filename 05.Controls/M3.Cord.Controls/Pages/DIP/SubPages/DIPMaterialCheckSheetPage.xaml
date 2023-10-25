@@ -39,6 +39,7 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
+            <!--  PC Card  -->
             <DockPanel x:Name="paCondition"
                        LastChildFill="True"
                        DockPanel.Dock="Top"
@@ -48,6 +49,74 @@
                         <elem:ProductCodeBox />
                         <elem:DIPLotNoBox />
                     </StackPanel>
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <DockPanel x:Name="paSheetInfo"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                    <ctrl:NDatePicker CaptionText="Date:"
+                                      x:Name="dtCheckDate"
+                                      SelectedDate="{Binding CheckDate}" />
+                    <ctrl:NTextBox CaptionText="Doff No:"
+                                   x:Name="txtDoffNo"
+                                   Text="{Binding DoffNo}" />
+                    <ctrl:NComboBox CaptionText="S-7 MC:"
+                                    x:Name="cbS7MC"
+                                    DisplayMemberPath="MCCode"
+                                    SelectedValuePath="MCCode"/>
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <!--  SCAN PANEL  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                    <ctrl:NTextBox CaptionText="SP No:"
+                                   x:Name="txtSPNo"
+                                   PreviewKeyDown="txtSPNo_PreviewKeyDown" />
+                    <ctrl:NTextBox CaptionText="Lot No:"
+                                   x:Name="txtLotNo"
+                                   PreviewKeyDown="txtLotNo_PreviewKeyDown" />
+                    <ctrl:NTextBox CaptionText="CH No:"
+                                   x:Name="txtCHNo"
+                                   PreviewKeyDown="txtCHNo_PreviewKeyDown" />
+                    <TextBlock Width="10" />
+                    <Button x:Name="cmdAdd"
+                            VerticalAlignment="Bottom"
+                            Style="{StaticResource InlineButton}"
+                            Content="Update"
+                            Click="cmdAdd_Click" />
+                </StackPanel>
+                <TextBlock Height="3" />
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <CheckBox x:Name="chkCheckYarnNo"
+                              FontSize="20"
+                              Content="เบอร์ด้าน/สภาพด้าย"
+                              Style="{StaticResource CommonCheckBox}" />
+                    <CheckBox x:Name="chkCheckYanScrap"
+                              FontSize="20"
+                              Content="ไม่มีเศษด้าย"
+                              Style="{StaticResource CommonCheckBox}" />
+                    <CheckBox x:Name="chkCheckYarnBall"
+                              FontSize="20"
+                              Content="ลูกด้าย"
+                              Style="{StaticResource CommonCheckBox}" />
+                    <CheckBox x:Name="chkCheckCover"
+                              FontSize="20"
+                              Content="ผ้าคลุม"
+                              Style="{StaticResource CommonCheckBox}" />
+                    <CheckBox x:Name="chkCheckSensor"
+                              FontSize="20"
+                              Content="Sensor"
+                              Style="{StaticResource CommonCheckBox}" />
+                    <CheckBox x:Name="chkCheckDustFilter"
+                              FontSize="20"
+                              Content="ตัวดักปน"
+                              Style="{StaticResource CommonCheckBox}" />
                 </StackPanel>
                 <Grid />
             </DockPanel>

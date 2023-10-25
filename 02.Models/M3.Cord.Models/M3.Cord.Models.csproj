@@ -97,6 +97,8 @@
     <Compile Include="Models\CordSamplingDetails\CordSamplingDetails.cs" />
     <Compile Include="Models\DIPCondition\DIPConditionStd.cs" />
     <Compile Include="Models\DIPCondition\DIPCondition.cs" />
+    <Compile Include="Models\DIP\DIPMaterialCheckSheet.cs" />
+    <Compile Include="Models\DIP\DIPMaterialCheckSheetItem.cs" />
     <Compile Include="Models\DIP\DIPMC.cs" />
     <Compile Include="Models\DIPTimeTableStd\DIPTimeTable.cs" />
     <Compile Include="Models\DIPTimeTableStd\DIPTimeTableStd.cs" />
