@@ -73,12 +73,75 @@
                    TextAlignment="Left"
                    MinWidth="150" />
     </DataTemplate>
+    <DataTemplate x:Key="CHNo">
+        <TextBlock Text="{Binding Path=CHNo, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Left"
+                   MinWidth="150" />
+    </DataTemplate>
     <DataTemplate x:Key="YarnBarcode">
         <TextBlock Text="{Binding Path=YarnBarcode, Mode=OneWay}"
                    Foreground="{Binding TextColor}"
                    TextAlignment="Left"
                    MinWidth="150" />
     </DataTemplate>
+    <!-- CHECK BOX FOR DIP MATERIAL CHECK SHEET  -->
+    <DataTemplate x:Key="CheckYarnNo">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      Foreground="{Binding TextColor}"
+                      IsChecked="{Binding CheckYarnNo}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="CheckYanScrap">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      Foreground="{Binding TextColor}"
+                      IsChecked="{Binding CheckYanScrap}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="CheckYarnBall">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      Foreground="{Binding TextColor}"
+                      IsChecked="{Binding CheckYarnBall}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="CheckCover">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      Foreground="{Binding TextColor}"
+                      IsChecked="{Binding CheckCover}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="CheckSensor">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      Foreground="{Binding TextColor}"
+                      IsChecked="{Binding CheckSensor}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="CheckDustFilter">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      Foreground="{Binding TextColor}"
+                      IsChecked="{Binding CheckDustFilter}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+
+
 
     <DataTemplate x:Key="MCCode">
         <TextBlock Text="{Binding Path=MCCode, Mode=OneWay}"
