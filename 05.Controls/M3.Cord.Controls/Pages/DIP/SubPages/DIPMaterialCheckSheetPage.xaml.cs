@@ -46,7 +46,7 @@ namespace M3.Cord.Pages
         private DIPPCCard pcCard = null;
         private DIPMC mc = null;
         private DIPMaterialCheckSheet sheet = null;
-        private List<DIPMaterialCheckSheetItem> items = null;
+        private List<DIPMaterialCheckSheetItem> items = new List<DIPMaterialCheckSheetItem>();
 
         #endregion
 
@@ -65,6 +65,15 @@ namespace M3.Cord.Pages
         private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
             AddItem();
+        }
+
+        #endregion
+
+        #region Combobox Handlers
+
+        private void cbS7MC_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            mc = cbS7MC.SelectedItem as DIPMC;
         }
 
         #endregion
@@ -108,6 +117,13 @@ namespace M3.Cord.Pages
             cbS7MC.SelectedIndex = -1;
         }
 
+        private void ResetTextBoxInputs()
+        {
+            txtSPNo.Text = (null != mc) ? mc.StartCore.ToString() : string.Empty;
+            txtLotNo.Text = string.Empty;
+            txtCHNo.Text = string.Empty;
+        }
+
         private void ResetCheckBoxInputs()
         {
             chkCheckYarnNo.IsChecked = false;
@@ -120,20 +136,131 @@ namespace M3.Cord.Pages
 
         private void AddItem()
         {
+            #region Check empty inputs
+
+            if (string.IsNullOrWhiteSpace(txtSPNo.Text))
+            {
+                txtSPNo.FocusControl();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtLotNo.Text))
+            {
+                txtLotNo.FocusControl();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtCHNo.Text))
+            {
+                txtCHNo.FocusControl();
+                return;
+            }
+
+            #endregion
+
+            #region Get SPNo/LotNo/CHNo
+
+            int iSP;
+            if (!int.TryParse(txtSPNo.Text, out iSP))
+            {
+                iSP = -1;
+            }
+
+            int iCH;
+            if (!int.TryParse(txtCHNo.Text, out iCH))
+            {
+                iCH = 0;
+            }
+
+            string lotNo = txtLotNo.Text;
+
+            #endregion
+
+            #region Add/Update
+
+            int idx = items.FindIndex((match) =>
+            {
+                return match.SPNo == iSP;
+            });
+
+            DIPMaterialCheckSheetItem item;
+            if (idx != -1)
+            {
+                item = items[idx];
+
+                item.LotNo = lotNo;
+                item.CHNo = iCH;
+
+                item.CheckYarnNo = chkCheckYarnNo.IsChecked.Value;
+                item.CheckYanScrap = chkCheckYanScrap.IsChecked.Value;
+                item.CheckYarnBall = chkCheckYarnBall.IsChecked.Value;
+                item.CheckCover = chkCheckCover.IsChecked.Value;
+                item.CheckSensor = chkCheckSensor.IsChecked.Value;
+                item.CheckDustFilter = chkCheckDustFilter.IsChecked.Value;
+            }
+            else
+            {
+                item = new DIPMaterialCheckSheetItem();
+
+                item.SPNo = iSP;
+                item.LotNo = lotNo;
+                item.CHNo = iCH;
+
+                item.CheckYarnNo = chkCheckYarnNo.IsChecked.Value;
+                item.CheckYanScrap = chkCheckYanScrap.IsChecked.Value;
+                item.CheckYarnBall = chkCheckYarnBall.IsChecked.Value;
+                item.CheckCover = chkCheckCover.IsChecked.Value;
+                item.CheckSensor = chkCheckSensor.IsChecked.Value;
+                item.CheckDustFilter = chkCheckDustFilter.IsChecked.Value;
+
+                items.Add(item);
+            }
+
+            RefreshGrid();
+
+            #endregion
+
+            #region Reset Inputs
+
+            ResetTextBoxInputs();
             ResetCheckBoxInputs();
+
+            // Increase next SP
+            if (iSP != -1)
+            {
+                iSP++;
+                if (null != mc && iSP > mc.EndCore) iSP = mc.StartCore;
+                txtSPNo.Text = iSP.ToString();
+            }
+            else
+            {
+                txtSPNo.Text = string.Empty;
+            }
+
+            #endregion
+        }
+
+        private void RefreshGrid()
+        {
+            grid.ItemsSource = null;
+            grid.ItemsSource = items;
         }
 
         private void Save()
         {
             if (null != sheet)
             {
-                var mc = cbS7MC.SelectedItem as DIPMC;
                 if (null != mc)
                 {
                     sheet.MCCode = mc.MCCode;
                 }
-
                 DIPMaterialCheckSheet.Save(sheet);
+
+                if (sheet.MaterialCheckId.HasValue)
+                {
+                    foreach (var item in items)
+                    {
+                        item.MaterialCheckId = sheet.MaterialCheckId.Value;
+                    }
+                }
             }
         }
 
@@ -149,8 +276,6 @@ namespace M3.Cord.Pages
             paSheetInfo.DataContext = null;
 
             LoadComcoBox();
-
-            ResetCheckBoxInputs();
 
             pcCard = DIPUI.PCCard.Current();
             if (null != pcCard)
@@ -171,6 +296,12 @@ namespace M3.Cord.Pages
 
             paCondition.DataContext = pcCard;
             paSheetInfo.DataContext = sheet;
+
+            this.InvokeAction(() =>
+            {
+                ResetTextBoxInputs();
+                ResetCheckBoxInputs();
+            });
         }
 
         #endregion

@@ -66,7 +66,8 @@
                     <ctrl:NComboBox CaptionText="S-7 MC:"
                                     x:Name="cbS7MC"
                                     DisplayMemberPath="MCCode"
-                                    SelectedValuePath="MCCode"/>
+                                    SelectedValuePath="MCCode"
+                                    SelectionChanged="cbS7MC_SelectionChanged" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
@@ -95,7 +96,7 @@
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <CheckBox x:Name="chkCheckYarnNo"
                               FontSize="20"
-                              Content="เบอร์ด้าน/สภาพด้าย"
+                              Content="เบอร์ด้าย/สภาพด้าย"
                               Style="{StaticResource CommonCheckBox}" />
                     <CheckBox x:Name="chkCheckYanScrap"
                               FontSize="20"
@@ -120,10 +121,27 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <!--
-        <doc:S1ConditionEntryPage x:Name="s1" Visibility="Visible" />
-            -->
-            <Grid />
+            <!--  SPs  -->
+            <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource LotNo}" />
+                        <GridViewColumn Header="CH No" CellTemplate="{StaticResource CHNo}" />
+                        <GridViewColumn Header="เบอร์ด้าย/สภาพด้าย" CellTemplate="{StaticResource CheckYarnNo}" />
+                        <GridViewColumn Header="ไม่มีเศษด้าย" CellTemplate="{StaticResource CheckYanScrap}" />
+                        <GridViewColumn Header="ลูกด้าย" CellTemplate="{StaticResource CheckYarnBall}" />
+                        <GridViewColumn Header="ผ้าคลุม" CellTemplate="{StaticResource CheckCover}" />
+                        <GridViewColumn Header="Sensor" CellTemplate="{StaticResource CheckSensor}" />
+                        <GridViewColumn Header="ตัวดักปน" CellTemplate="{StaticResource CheckDustFilter}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </DockPanel>
     </page:NPage>
 </UserControl>
