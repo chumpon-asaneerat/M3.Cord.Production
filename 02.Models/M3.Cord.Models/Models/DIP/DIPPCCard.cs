@@ -102,6 +102,52 @@ namespace M3.Cord.Models
             return rets;
         }
         /// <summary>
+        /// Get
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<DIPPCCard> Current()
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<DIPPCCard> rets = new NDbResult<DIPPCCard>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+
+            try
+            {
+                var items = cnn.Query<DIPPCCard>("GetLastDIPPCCard", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList().FirstOrDefault() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                rets.data = null;
+            }
+
+            return rets;
+        }
+        /// <summary>
         /// Save
         /// </summary>
         /// <param name="value">The DIP PCCard item to save.</param>
