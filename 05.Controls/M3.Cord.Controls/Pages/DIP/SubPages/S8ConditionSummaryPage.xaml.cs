@@ -43,6 +43,8 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private DIPPCCard pcCard = null;
+
         #endregion
 
         #region Button Handlers
@@ -72,13 +74,13 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            /*
             pcCard = DIPUI.PCCard.Current();
             if (null != pcCard)
             {
 
             }
-            */
+
+            paCondition.DataContext = pcCard;
         }
 
         #endregion
