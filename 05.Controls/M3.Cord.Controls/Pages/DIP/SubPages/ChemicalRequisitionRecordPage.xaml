@@ -31,11 +31,11 @@
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Left"
                             VerticalAlignment="Center">
-                    <ctrl:FontAwesomeButton x:Name="cmdSave"
+                    <ctrl:FontAwesomeButton x:Name="cmdNew"
                                             Margin="5,0,0,0"
                                             IconType="Add"
-                                            Text="Save"
-                                            Click="cmdSave_Click" />
+                                            Text="New"
+                                            Click="cmdNew_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
@@ -51,10 +51,27 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <!--
-        <doc:S1ConditionEntryPage x:Name="s1" Visibility="Visible" />
-            -->
-            <Grid />
+            <!--  SPs  -->
+            <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="วันที่" CellTemplate="{StaticResource ReqDate}" />
+                        <GridViewColumn Header="ผลิตภัณฑ์" CellTemplate="{StaticResource ProductCode}" />
+                        <GridViewColumn Header="ชื่อน้ำยา" CellTemplate="{StaticResource SolutionName}" />
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource DIPLotNo}" />
+                        <GridViewColumn Header="ถังเบอร์" CellTemplate="{StaticResource TankNo}" />
+                        <GridViewColumn Header="จำนวนเบิก" CellTemplate="{StaticResource Quantity}" />
+                        <GridViewColumn Header="S-8 ล๊อตเบอร์" CellTemplate="{StaticResource S8LotNo}" />
+                        <GridViewColumn Header="ผู้ปฏิบัตงาน" CellTemplate="{StaticResource UserName}" />
+                        <GridViewColumn Header="หัวหน้ากะ" CellTemplate="{StaticResource Chief}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </DockPanel>
     </page:NPage>
 </UserControl>

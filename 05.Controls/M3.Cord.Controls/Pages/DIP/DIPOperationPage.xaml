@@ -43,8 +43,35 @@
                                             IconType="Back"
                                             Text="Back"
                                             Click="cmdBack_Click" />
+                    <!--  START  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdStart"
+                                            Margin="5,0,0,0"
+                                            IconType="None"
+                                            Text="Start DIP"
+                                            Click="cmdStart_Click" />
+                    <!--  END  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdEnd"
+                                            Margin="5,0,0,0"
+                                            IconType="None"
+                                            Text="End DIP"
+                                            Click="cmdEnd_Click" />
+                    <!--  FINISH  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdFinish"
+                                            Margin="5,0,0,0"
+                                            IconType="None"
+                                            Text="Finish DIP"
+                                            Click="cmdFinish_Click" />
                 </StackPanel>
                 <Grid />
+            </DockPanel>
+            <DockPanel x:Name="paCondition"
+                       Margin="5"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <elem:ProductCodeBox />
+                    <elem:DIPLotNoBox />
+                </StackPanel>
             </DockPanel>
             <WrapPanel>
                 <!--  Material Check Sheet  -->

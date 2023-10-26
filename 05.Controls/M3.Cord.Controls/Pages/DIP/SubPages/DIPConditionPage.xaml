@@ -53,7 +53,6 @@
                 <Grid />
             </DockPanel>
             <doc:DIPConditionEntryPage x:Name="dip" Visibility="Visible" />
-            <Grid />
         </DockPanel>
     </page:NPage>
 </UserControl>

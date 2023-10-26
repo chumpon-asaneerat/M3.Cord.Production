@@ -324,6 +324,38 @@
         </StackPanel>
     </DataTemplate>
 
+    <!--  DIP CHEMICAL RECORD SHEET  -->
+    <DataTemplate x:Key="ReqDate">
+        <TextBlock Text="{Binding Path=ReqDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="Quantity">
+        <TextBlock Text="{Binding Path=Quantity, Mode=OneWay, StringFormat='{}{0:n0}'}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
+    </DataTemplate>
+    <DataTemplate x:Key="SolutionName">
+        <TextBlock Text="{Binding Path=SolutionName, Mode=OneWay}"
+                   TextAlignment="Left"
+                   MinWidth="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="DIPLotNo">
+        <TextBlock Text="{Binding Path=DIPLotNo, Mode=OneWay}"
+                   TextAlignment="Left"
+                   MinWidth="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="TankNo">
+        <TextBlock Text="{Binding Path=TankNo, Mode=OneWay}"
+                   TextAlignment="Left"
+                   MinWidth="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="S8LotNo">
+        <TextBlock Text="{Binding Path=S8LotNo, Mode=OneWay}"
+                   TextAlignment="Left"
+                   MinWidth="150" />
+    </DataTemplate>
+
 
     <DataTemplate x:Key="MCCode">
         <TextBlock Text="{Binding Path=MCCode, Mode=OneWay}"
