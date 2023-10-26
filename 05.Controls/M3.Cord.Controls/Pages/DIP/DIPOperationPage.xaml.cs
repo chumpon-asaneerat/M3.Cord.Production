@@ -41,6 +41,12 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Internal Variables
+
+        private DIPPCCard pcCard = null;
+
+        #endregion
+
         #region Button Handlers
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
@@ -111,13 +117,81 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdStart_Click(object sender, RoutedEventArgs e)
+        {
+            if (null != pcCard && pcCard.DIPPCId.HasValue)
+            {
+                DIPPCCard.Start(pcCard.DIPPCId.Value);
+                Refresh();
+            }
+        }
+
+        private void cmdEnd_Click(object sender, RoutedEventArgs e)
+        {
+            if (null != pcCard && pcCard.DIPPCId.HasValue)
+            {
+                DIPPCCard.End(pcCard.DIPPCId.Value);
+                Refresh();
+            }
+        }
+
+        private void cmdFinish_Click(object sender, RoutedEventArgs e)
+        {
+            if (null != pcCard && pcCard.DIPPCId.HasValue)
+            {
+                DIPPCCard.Finish(pcCard.DIPPCId.Value);
+                Refresh();
+            }
+        }
+
         #endregion
+
+        private void Refresh()
+        {
+            paCondition.DataContext = null;
+            pcCard = DIPUI.PCCard.Current();
+            if (null != pcCard)
+            {
+                paCondition.DataContext = pcCard;
+                this.InvokeAction(() =>
+                {
+                    CheckButtons();
+                });
+            }
+        }
+
+        private void CheckButtons()
+        {
+            if (null != pcCard)
+            {
+                if (!pcCard.StartTime.HasValue)
+                {
+                    cmdStart.IsEnabled = true;
+                    cmdEnd.IsEnabled = false;
+                    cmdFinish.IsEnabled = false;
+                }
+                else
+                {
+                    cmdStart.IsEnabled = false;
+                    if (!pcCard.EndTime.HasValue)
+                    {
+                        cmdEnd.IsEnabled = true;
+                        cmdFinish.IsEnabled = false;
+                    }
+                    else
+                    {
+                        cmdEnd.IsEnabled = false;
+                        cmdFinish.IsEnabled = true;
+                    }
+                }
+            }
+        }
 
         #region Public Methods
 
         public void Setup()
         {
-
+            Refresh();
         }
 
         #endregion

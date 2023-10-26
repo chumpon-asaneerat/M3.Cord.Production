@@ -494,6 +494,11 @@ namespace M3.Cord
             {
                 get { return GetWindow<DIPPCCardEditorWindow>(); }
             }
+            /// <summary>Gets Chemical Requisition Editor Window.</summary>
+            public static ChemicalRequisitionEditorWindow ChemicalRequisitionEditor
+            {
+                get { return GetWindow<ChemicalRequisitionEditorWindow>(); }
+            }
 
             #endregion
         }

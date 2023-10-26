@@ -259,6 +259,9 @@
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
+    <Compile Include="Windows\DIP\ChemicalRequisitionEditorWindow.xaml.cs">
+      <DependentUpon>ChemicalRequisitionEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Common\Common.cs" />
     <Compile Include="Windows\DIP\DIPPCCardEditorWindow.xaml.cs">
       <DependentUpon>DIPPCCardEditorWindow.xaml</DependentUpon>
@@ -715,6 +718,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\ListViewColumns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DIP\ChemicalRequisitionEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

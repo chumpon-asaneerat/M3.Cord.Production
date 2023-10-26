@@ -1,0 +1,83 @@
+﻿<Window x:Class="M3.Cord.Windows.ChemicalRequisitionEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        mc:Ignorable="d"
+        Title="Chemical Requisition Record"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="300"
+        Width="850">
+    <page:NPage HeaderText="Chemical Requisition Record">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdOk"
+                                        DockPanel.Dock="Right"
+                                        IconType="Ok"
+                                        Text="Ok"
+                                        Click="cmdOk_Click" />
+                <Grid />
+            </DockPanel>
+            <!--  WORK AREA  -->
+            <DockPanel LastChildFill="True">
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  REQ Date  -->
+                    <ctrl:NDatePicker x:Name="dtReqDate" 
+                                      DockPanel.Dock="Left"
+                                      CaptionText="Req Date:"
+                                      SelectedDate="{Binding ReqDate}"/>
+                    <!--  Product Code  -->
+                    <ctrl:NTextBox CaptionText="Product Code:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding ProductCode}"
+                                   Width="200" />
+                    <!--  SOLUTION  -->
+                    <ctrl:NComboBox x:Name="cbSolutions"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Solution:"
+                                    DisplayMemberPath="SolutionName"
+                                    Width="250" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  LOT NO  -->
+                    <ctrl:NTextBox CaptionText="Lot No:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding DIPLotNo}"
+                                   Width="200" />
+                    <!--  TANK NO  -->
+                    <ctrl:NTextBox CaptionText="Tank No:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding TankNo}"
+                                   Width="200" />
+                    <!--  QTY  -->
+                    <ctrl:NTextBox CaptionText="Quantity (kg):"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding Quantity}"
+                                   Width="200" />
+                    <!--  QTY  -->
+                    <ctrl:NTextBox CaptionText="S-8 Lot No:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding S8LotNo}"
+                                   Width="200" />
+                    <Grid />
+                </DockPanel>
+                <Grid />
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>

@@ -44,6 +44,7 @@ namespace M3.Cord.Pages
         #region Internal Variables
 
         private DIPPCCard pcCard = null;
+        private List<DIPChemicalReqisition> items = null;
 
         #endregion
 
@@ -54,18 +55,39 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoDIPOperationMenu();
         }
 
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        private void cmdNew_Click(object sender, RoutedEventArgs e)
         {
-            Save();
+            if (null != pcCard && pcCard.DIPPCId.HasValue)
+            {
+                var win = M3CordApp.Windows.ChemicalRequisitionEditor;
+                var item = new DIPChemicalReqisition();
+                item.ReqDate = DateTime.Now;
+                item.ProductCode = pcCard.ProductCode;
+                item.DIPLotNo = pcCard.DIPLotNo;
+                item.DIPPCId = pcCard.DIPPCId.Value;
+                item.UserName = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
+                win.Setup(item);
+                if (win.ShowDialog() == true)
+                {
+                    DIPChemicalReqisition.Save(item);
+                    RefreshGrid();
+                }
+            }
         }
 
         #endregion
 
         #region Private Methods
 
-        private void Save()
+        private void RefreshGrid()
         {
+            grid.ItemsSource = null;
+            if (null != pcCard && pcCard.DIPPCId.HasValue)
+            {
+                items = DIPChemicalReqisition.Gets(pcCard.DIPPCId.Value).Value();
 
+                grid.ItemsSource = items;
+            }
         }
 
         #endregion
@@ -81,6 +103,8 @@ namespace M3.Cord.Pages
             }
 
             paCondition.DataContext = pcCard;
+
+            RefreshGrid();
         }
 
         #endregion
