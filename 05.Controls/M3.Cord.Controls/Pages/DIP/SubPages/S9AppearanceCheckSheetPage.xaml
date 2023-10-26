@@ -39,6 +39,7 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
+            <!--  PC Card  -->
             <DockPanel x:Name="paCondition"
                        LastChildFill="True"
                        DockPanel.Dock="Top"
@@ -51,10 +52,44 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <!--
-        <doc:S1ConditionEntryPage x:Name="s1" Visibility="Visible" />
-            -->
-            <Grid />
+            <DockPanel x:Name="paSheetInfo"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                    <ctrl:NDatePicker CaptionText="Date:"
+                                      x:Name="dtCheckDate"
+                                      SelectedDate="{Binding CheckDate}" />
+                    <ctrl:NComboBox CaptionText="S-9 MC:"
+                                    x:Name="cbS9MC"
+                                    DisplayMemberPath="MCCode"
+                                    SelectedValuePath="MCCode"
+                                    SelectionChanged="cbS9MC_SelectionChanged" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <!--  SPs  -->
+            <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
+                        <GridViewColumn Header="ฟอร์มดี" CellTemplate="{StaticResource CheckGood}" />
+                        <GridViewColumn Header="ฟอร์มไม่ดี" CellTemplate="{StaticResource CheckBad}" />
+                        <GridViewColumn Header="ด้าย 2 สี" CellTemplate="{StaticResource Check2Color}" />
+                        <GridViewColumn Header="เคบะ" CellTemplate="{StaticResource CheckKeiba}" />
+                        <GridViewColumn Header="น้ำหนักไม่พอ" CellTemplate="{StaticResource CheckWeight}" />
+                        <GridViewColumn Header="ไข้วหน้า" CellTemplate="{StaticResource CheckFrontTwist}" />
+                        <GridViewColumn Header="ไข้วหลัง" CellTemplate="{StaticResource CheckBackTwist}" />
+                        <GridViewColumn Header="Snarl" CellTemplate="{StaticResource CheckSnarl}" />
+                        <GridViewColumn Header="หลอด" CellTemplate="{StaticResource CheckTube}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </DockPanel>
     </page:NPage>
 </UserControl>

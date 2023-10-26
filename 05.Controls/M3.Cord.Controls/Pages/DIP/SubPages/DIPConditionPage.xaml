@@ -35,6 +35,7 @@
                                             Margin="5,0,0,0"
                                             IconType="Add"
                                             Text="Save"
+                                            IsEnabled="False"
                                             Click="cmdSave_Click" />
                 </StackPanel>
                 <Grid />
@@ -51,9 +52,7 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <!--
-        <doc:S1ConditionEntryPage x:Name="s1" Visibility="Visible" />
-            -->
+                <doc:DIPConditionEntryPage x:Name="dip" Visibility="Visible" />
             <Grid />
         </DockPanel>
     </page:NPage>
