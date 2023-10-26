@@ -97,6 +97,7 @@
     <Compile Include="Models\CordSamplingDetails\CordSamplingDetails.cs" />
     <Compile Include="Models\DIPCondition\DIPConditionStd.cs" />
     <Compile Include="Models\DIPCondition\DIPCondition.cs" />
+    <Compile Include="Models\DIP\DIPChemicalReqisition.cs" />
     <Compile Include="Models\DIP\DIPMaterialCheckSheet.cs" />
     <Compile Include="Models\DIP\DIPMaterialCheckSheetItem.cs" />
     <Compile Include="Models\DIP\DIPMC.cs" />
@@ -104,6 +105,12 @@
     <Compile Include="Models\DIPTimeTableStd\DIPTimeTableStd.cs" />
     <Compile Include="Models\DIPProductionCondition\DIPProductionCondition.cs" />
     <Compile Include="Models\DIP\DIPPCCard.cs" />
+    <Compile Include="Models\DIP\S7CreelCheckSheet.cs" />
+    <Compile Include="Models\DIP\S7CreelCheckSheetItem.cs" />
+    <Compile Include="Models\DIP\S9AppearanceCheckSheet.cs" />
+    <Compile Include="Models\DIP\S9AppearanceCheckSheetItem.cs" />
+    <Compile Include="Models\DIP\S9CleanCheckSheet.cs" />
+    <Compile Include="Models\DIP\S9CleanCheckSheetItem.cs" />
     <Compile Include="Models\FirstTwist\Twist1CheckSheetItem.cs" />
     <Compile Include="Models\Masters\CordItemCode.cs" />
     <Compile Include="Models\Documents\ConditionStd.cs" />
