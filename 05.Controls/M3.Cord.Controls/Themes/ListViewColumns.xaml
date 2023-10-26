@@ -140,6 +140,43 @@
                       Width="50" />
         </StackPanel>
     </DataTemplate>
+    <!-- CHECK BOX FOR S7 Creel CHECK SHEET  -->
+    <DataTemplate x:Key="CheckUnstable">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      Foreground="{Binding TextColor}"
+                      IsChecked="{Binding CheckUnstable}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="CheckNotReachEnd">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      Foreground="{Binding TextColor}"
+                      IsChecked="{Binding CheckNotReachEnd}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="CheckNotStraight">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      Foreground="{Binding TextColor}"
+                      IsChecked="{Binding CheckNotStraight}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="CheckHasSound">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      Foreground="{Binding TextColor}"
+                      IsChecked="{Binding CheckHasSound}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
 
 
 

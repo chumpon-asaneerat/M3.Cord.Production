@@ -36,13 +36,13 @@ namespace M3.Cord.Models
         public int CleanId { get; set; }
         public int SPNo { get; set; }
 
-        public bool? CheckSplitter { get; set; }
-        public bool? CheckRollerCeramic { get; set; }
-        public bool? CheckSlidebar { get; set; }
-        public bool? CheckRollerCambox { get; set; }
-        public bool? CheckTopGuide { get; set; }
-        public bool? CheckBottomGuide { get; set; }
-        public bool? CheckRollerFrontS9 { get; set; }
+        public bool CheckSplitter { get; set; } = false;
+        public bool CheckRollerCeramic { get; set; } = false;
+        public bool CheckSlidebar { get; set; } = false;
+        public bool CheckRollerCambox { get; set; } = false;
+        public bool CheckTopGuide { get; set; } = false;
+        public bool CheckBottomGuide { get; set; } = false;
+        public bool CheckRollerFrontS9 { get; set; } = false;
 
         #endregion
 

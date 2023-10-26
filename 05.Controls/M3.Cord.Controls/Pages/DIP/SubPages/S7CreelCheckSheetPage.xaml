@@ -39,6 +39,7 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
+            <!--  PC Card  -->
             <DockPanel x:Name="paCondition"
                        LastChildFill="True"
                        DockPanel.Dock="Top"
@@ -51,10 +52,39 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <!--
-        <doc:S1ConditionEntryPage x:Name="s1" Visibility="Visible" />
-            -->
-            <Grid />
+            <DockPanel x:Name="paSheetInfo"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                    <ctrl:NDatePicker CaptionText="Date:"
+                                      x:Name="dtCheckDate"
+                                      SelectedDate="{Binding CheckDate}" />
+                    <ctrl:NComboBox CaptionText="S-7 MC:"
+                                    x:Name="cbS7MC"
+                                    DisplayMemberPath="MCCode"
+                                    SelectedValuePath="MCCode"
+                                    SelectionChanged="cbS7MC_SelectionChanged" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <!--  SPs  -->
+            <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
+                        <GridViewColumn Header="แกนสั่น" CellTemplate="{StaticResource CheckUnstable}" />
+                        <GridViewColumn Header="ใส่หลอดไม่สุด" CellTemplate="{StaticResource CheckNotReachEnd}" />
+                        <GridViewColumn Header="แกนไม่ตรง" CellTemplate="{StaticResource CheckNotStraight}" />
+                        <GridViewColumn Header="แกนมีเสียงดัง" CellTemplate="{StaticResource CheckHasSound}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </DockPanel>
     </page:NPage>
 </UserControl>
