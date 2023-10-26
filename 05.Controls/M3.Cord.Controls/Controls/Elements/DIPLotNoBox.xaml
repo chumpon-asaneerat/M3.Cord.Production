@@ -16,6 +16,8 @@
                        FontWeight="DemiBold"
                        TextAlignment="Left">
                 <Run Text=" Lot No" />
+                <LineBreak />
+                <Run Text=" (เลขที่ล๊อต)" />
             </TextBlock>
             <TextBlock Margin="0,2"
                        FontSize="28"

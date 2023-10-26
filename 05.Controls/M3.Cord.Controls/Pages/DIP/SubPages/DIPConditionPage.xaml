@@ -52,7 +52,7 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-                <doc:DIPConditionEntryPage x:Name="dip" Visibility="Visible" />
+            <doc:DIPConditionEntryPage x:Name="dip" Visibility="Visible" />
             <Grid />
         </DockPanel>
     </page:NPage>
