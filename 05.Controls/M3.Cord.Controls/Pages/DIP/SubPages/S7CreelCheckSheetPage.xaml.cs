@@ -43,6 +43,11 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private DIPPCCard pcCard = null;
+        private DIPMC mc = null;
+        private S7CreelCheckSheet sheet = null;
+        private List<S7CreelCheckSheetItem> items = null;
+
         #endregion
 
         #region Button Handlers
@@ -59,11 +64,92 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Combobox Handlers
+
+        private void cbS7MC_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            mc = cbS7MC.SelectedItem as DIPMC;
+
+            RefreshGrid(true);
+        }
+
+        #endregion
+
         #region Private Methods
+
+        private void LoadComcoBox()
+        {
+            cbS7MC.ItemsSource = DIPMC.Gets("S-7").Value();
+            cbS7MC.SelectedIndex = -1;
+        }
+
+        private void RefreshGrid(bool bInit)
+        {
+            grid.ItemsSource = null;
+
+            if (null != sheet && null != mc)
+            {
+                if (null == items || bInit)
+                {
+                    // Init all core
+                    items = new List<S7CreelCheckSheetItem>();
+                    for (int i = mc.StartCore; i <= mc.EndCore; i++)
+                    {
+                        items.Add(new S7CreelCheckSheetItem() { SPNo = i });
+                    }
+
+                    var existItems = S7CreelCheckSheetItem.Gets(sheet.CreelId).Value();
+                    if (null != existItems && existItems.Count > 0)
+                    {
+                        foreach (var existItem in existItems)
+                        {
+                            int idx = items.FindIndex((item =>
+                            {
+                                return (existItem.SPNo == item.SPNo);
+                            }));
+                            if (idx != -1 && null != items[idx])
+                            {
+                                var item = items[idx];
+                                if (null != item)
+                                {
+                                    item.CreelId = existItem.CreelId;
+                                    item.SPNo = existItem.SPNo;
+
+                                    item.CheckUnstable = existItem.CheckUnstable;
+                                    item.CheckNotReachEnd = existItem.CheckNotReachEnd;
+                                    item.CheckNotStraight = existItem.CheckNotStraight;
+                                    item.CheckHasSound = existItem.CheckHasSound;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            grid.ItemsSource = items;
+        }
 
         private void Save()
         {
+            if (null != sheet)
+            {
+                if (null != mc)
+                {
+                    sheet.MCCode = mc.MCCode;
+                }
 
+                sheet.UserName = M3CordApp.Current.User.FullName; // set current user
+                S7CreelCheckSheet.Save(sheet);
+
+                if (sheet.CreelId.HasValue)
+                {
+                    foreach (var item in items)
+                    {
+                        item.CreelId = sheet.CreelId.Value;
+                        S7CreelCheckSheetItem.Save(item);
+                    }
+                }
+            }
         }
 
         #endregion
@@ -72,13 +158,32 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            /*
+            LoadComcoBox();
+
             pcCard = DIPUI.PCCard.Current();
             if (null != pcCard)
             {
-
+                var sheets = S7CreelCheckSheet.Gets(pcCard.DIPPCId.Value).Value();
+                sheet = (null != sheets) ? sheets.LastOrDefault() : null;
+                if (null == sheet)
+                {
+                    sheet = new S7CreelCheckSheet();
+                    sheet.DIPPCId = pcCard.DIPPCId.Value;
+                    sheet.CheckDate = DateTime.Now;
+                }
+                else
+                {
+                    cbS7MC.SelectedValue = sheet.MCCode;
+                }
             }
-            */
+
+            paCondition.DataContext = pcCard;
+            paSheetInfo.DataContext = sheet;
+
+            this.InvokeAction(() =>
+            {
+                RefreshGrid(true);
+            });
         }
 
         #endregion
