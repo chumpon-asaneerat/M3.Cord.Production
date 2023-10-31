@@ -283,6 +283,14 @@
                             <Run Text="Solution" />
                         </TextBlock>
                     </Button>
+                    <!--  DIP REPORT SLIP -->
+                    <Button x:Name="cmdDIPSlip"
+                            Click="cmdDIPSlip_Click"
+                            Style="{StaticResource OtherButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="DIP Slip" />
+                        </TextBlock>
+                    </Button>
                     <!--  CORD DOCUMENT MENU  -->
                     <!--
                     <Button x:Name="cmdCordDocumentMenu"

@@ -203,5 +203,14 @@ namespace M3.Cord.Pages
         }
 
         #endregion
+
+        private void cmdDIPSlip_Click(object sender, RoutedEventArgs e)
+        {
+            var items = DIPPalletSlip.GetSamples();
+            // G4 - Issue Raw Material
+            var page = M3CordApp.Pages.DIPPalletSlipPreview;
+            page.Setup(items, false);
+            PageContentManager.Instance.Current = page;
+        }
     }
 }
