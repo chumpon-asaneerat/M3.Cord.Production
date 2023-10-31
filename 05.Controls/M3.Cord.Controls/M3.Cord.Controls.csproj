@@ -191,6 +191,12 @@
     <Compile Include="Pages\Ageing\AgeingManagePage.xaml.cs">
       <DependentUpon>AgeingManagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DIPPalletSlip\DIPPalletSlipManagePage.xaml.cs">
+      <DependentUpon>DIPPalletSlipManagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPPalletSlip\DIPPalletSlipPreviewPage.xaml.cs">
+      <DependentUpon>DIPPalletSlipPreviewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DIP\DIPHelper.cs" />
     <Compile Include="Pages\DIP\SubPages\ChemicalRequisitionRecordPage.xaml.cs">
       <DependentUpon>ChemicalRequisitionRecordPage.xaml</DependentUpon>
@@ -578,6 +584,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Ageing\AgeingManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DIPPalletSlip\DIPPalletSlipManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DIPPalletSlip\DIPPalletSlipPreviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
