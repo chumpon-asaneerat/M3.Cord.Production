@@ -941,7 +941,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>No of full package</Value>
+                        <Value>(Number of full package)</Value>
                         <Style>
                           <FontSize>9pt</FontSize>
                         </Style>
