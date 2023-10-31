@@ -310,9 +310,11 @@
     </Compile>
     <EmbeddedResource Include="Reports\DIPPalletSlipA6.rdlc" />
     <EmbeddedResource Include="Reports\PalletSetting.rdlc" />
+    <EmbeddedResource Include="Reports\DIPPalletSlipA5.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA6.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA5.rdlc" />
     <EmbeddedResource Include="Reports\S5Condition.rdlc" />
+    <None Include="Properties\DataSources\M3.Cord.Models.DIPPalletSlip.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.PalletSetting.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.S5ConditionPrintModel.datasource" />
     <Compile Include="Pages\FirstTwist\FirstTwistOperationPage.xaml.cs">

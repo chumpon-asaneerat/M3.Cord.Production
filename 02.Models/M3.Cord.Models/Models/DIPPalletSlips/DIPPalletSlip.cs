@@ -108,6 +108,7 @@ namespace M3.Cord.Models
         public string DoffNos { get; set; }
 
         public decimal? ActualQty { get; set; }
+        public decimal? ActualWeight { get; set; }
         public decimal? TargetQty { get; set; }
 
         public SolidColorBrush TextColor
@@ -130,9 +131,10 @@ namespace M3.Cord.Models
             var rets = new List<DIPPalletSlip>();
             rets.Add(new DIPPalletSlip
             {
-                ActualQty = 10,
+                ActualQty = 126,
+                ActualWeight = decimal.Parse("5.12"),
                 CordStructure = @"P123//22/22",
-                Counter = 20,
+                Counter = 29000,
                 CreateDate = DateTime.Now,
                 CustomerName = "BANDO",
                 MCCode = "S-8-1",
