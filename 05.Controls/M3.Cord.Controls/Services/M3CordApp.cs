@@ -345,6 +345,21 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region DIP Slip
+
+            /// <summary>Gets DIP Pallet Slip Manage Page.</summary>
+            public static Cord.Pages.DIPPalletSlipManagePage DIPPalletSlipManage
+            {
+                get { return GetPage<Cord.Pages.DIPPalletSlipManagePage>(); }
+            }
+            /// <summary>Gets M3 Cord DIP Pallet Slip Preview Page.</summary>
+            public static Cord.Pages.DIPPalletSlipPreviewPage DIPPalletSlipPreview
+            {
+                get { return GetPage<Cord.Pages.DIPPalletSlipPreviewPage>(); }
+            }
+
+            #endregion
         }
 
         /// <summary>

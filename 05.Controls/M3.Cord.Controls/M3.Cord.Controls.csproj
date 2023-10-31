@@ -308,6 +308,7 @@
     <Compile Include="_Templates\01.FirstTwist\Twist1RawMaterialCheckSheetDocument.xaml.cs">
       <DependentUpon>Twist1RawMaterialCheckSheetDocument.xaml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\DIPPalletSlipA6.rdlc" />
     <EmbeddedResource Include="Reports\PalletSetting.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA6.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA5.rdlc" />
