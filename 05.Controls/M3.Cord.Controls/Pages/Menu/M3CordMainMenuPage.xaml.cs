@@ -159,7 +159,7 @@ namespace M3.Cord.Pages
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
             // Dipping
-            var page = M3CordApp.Pages.DIPOperation;
+            var page = M3CordApp.Pages.DIPMC;
             page.Setup();
             PageContentManager.Instance.Current = page;
         }

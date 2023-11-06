@@ -293,6 +293,11 @@ namespace M3.Cord
 
             #region DIP
 
+            /// <summary>Gets DIP MC Page.</summary>
+            public static Cord.Pages.DIPMCPage DIPMC
+            {
+                get { return GetPage<Cord.Pages.DIPMCPage>(); }
+            }
             /// <summary>Gets DIP Operation Page.</summary>
             public static Cord.Pages.DIPOperationPage DIPOperation
             {
