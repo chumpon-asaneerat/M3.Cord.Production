@@ -59,7 +59,7 @@ namespace M3.Cord.Pages
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoCordMainMenu();
+            M3CordApp.Pages.GotoProductionReportMenu();
         }
 
         private void cmdSearch_Click(object sender, RoutedEventArgs e)

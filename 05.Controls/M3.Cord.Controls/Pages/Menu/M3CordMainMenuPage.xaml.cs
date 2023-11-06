@@ -171,14 +171,10 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
-        private void cmdPalletSetting_Click(object sender, RoutedEventArgs e)
+        private void cmdProductinReport_Click(object sender, RoutedEventArgs e)
         {
-            // Sign In
-            var win = M3CordApp.Windows.SignIn;
-            if (win.ShowDialog() == false) return;
-            // Pallet Setting
-            var page = M3CordApp.Pages.PalletSettingManage;
-            page.Setup();
+            // Production Report
+            var page = M3CordApp.Pages.ProductionReport;
             PageContentManager.Instance.Current = page;
         }
 
@@ -206,11 +202,13 @@ namespace M3.Cord.Pages
 
         private void cmdDIPSlip_Click(object sender, RoutedEventArgs e)
         {
+            /*
             var items = DIPPalletSlip.GetSamples();
             // G4 - Issue Raw Material
             var page = M3CordApp.Pages.DIPPalletSlipPreview;
             page.Setup(items, false);
             PageContentManager.Instance.Current = page;
+            */
         }
     }
 }

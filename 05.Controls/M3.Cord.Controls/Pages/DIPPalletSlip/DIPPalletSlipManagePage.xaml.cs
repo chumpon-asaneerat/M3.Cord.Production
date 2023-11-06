@@ -92,19 +92,17 @@ namespace M3.Cord.Pages
 
         private void cmdRePrint_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var button = sender as Button;
             var ctx = (null != button) ? button.DataContext : null;
-            var item = (null != ctx) ? ctx as PalletSetting : null;
+            var item = (null != ctx) ? ctx as DIPPalletSlip : null;
             if (null == item) return;
 
             // Show Print Preview
-            var page = M3CordApp.Pages.PalletSettingPreview;
-            var items = new List<PalletSetting>();
+            var page = M3CordApp.Pages.DIPPalletSlipPreview;
+            var items = new List<DIPPalletSlip>();
             items.Add(item);
             page.Setup(items, true); // reprint
             PageContentManager.Instance.Current = page;
-            */
         }
 
         #endregion
@@ -120,7 +118,7 @@ namespace M3.Cord.Pages
 
         #region TextBox Handlers
 
-        private void txtProductLotNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void txtDIPLotNo_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -135,23 +133,20 @@ namespace M3.Cord.Pages
 
         private void ClearInputs()
         {
-            /*
-            txtProductLotNo.Text = string.Empty;
+            txtDIPLotNo.Text = string.Empty;
             dtBegin.SelectedDate = new DateTime?();
             dtEnd.SelectedDate = new DateTime?();
             cbProducts.SelectedIndex = -1;
-            */
         }
 
         private void RefreshGrid()
         {
-            /*
             grid.ItemsSource = null;
 
 
-            string txtLotNo = txtProductLotNo.Text.Trim();
+            string txtLotNo = txtDIPLotNo.Text.Trim();
 
-            string productLotNo = (!string.IsNullOrEmpty(txtLotNo)) ? txtLotNo : null;
+            string dipLotNo = (!string.IsNullOrEmpty(txtLotNo)) ? txtLotNo : null;
             DateTime? begin = dtBegin.SelectedDate;
             DateTime? end = dtEnd.SelectedDate;
             Product product = cbProducts.SelectedItem as Product;
@@ -159,9 +154,8 @@ namespace M3.Cord.Pages
             string txtPCode = (null != product) ? product.ProductCode : null;
             string productCode = (!string.IsNullOrEmpty(txtPCode)) ? txtPCode : null;
 
-            grid.ItemsSource = PalletSetting.Search(
-                productLotNo, begin, end, productCode, PalletStatus.All).Value();
-            */
+            grid.ItemsSource = DIPPalletSlip.Search(
+                dipLotNo, begin, end, productCode, DIPPalletStatus.All).Value();
         }
 
         #endregion
@@ -170,11 +164,9 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            /*
             cbProducts.ItemsSource = Product.Gets().Value();
             ClearInputs();
             RefreshGrid();
-            */
         }
 
         #endregion

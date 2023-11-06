@@ -87,6 +87,15 @@ namespace M3.Cord
                 page.Setup();
                 PageContentManager.Instance.Current = page;
             }
+            /// <summary>
+            /// Goto Production Report Menu.
+            /// </summary>
+            public static void GotoProductionReportMenu()
+            {
+                var page = Pages.ProductionReport;
+                page.Setup();
+                PageContentManager.Instance.Current = page;
+            }
 
             #endregion
 
@@ -109,6 +118,16 @@ namespace M3.Cord
             public static Cord.Pages.MasterDataManuPage MasterDataMenu
             {
                 get { return GetPage<Cord.Pages.MasterDataManuPage>(); }
+            }
+
+            #endregion
+
+            #region Production Report Main Menu
+
+            /// <summary>Gets M3 Cord Production Report Menu Page.</summary>
+            public static Cord.Pages.ProductionReportMenu ProductionReport
+            {
+                get { return GetPage<Cord.Pages.ProductionReportMenu>(); }
             }
 
             #endregion

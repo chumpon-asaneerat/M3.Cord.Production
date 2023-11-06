@@ -264,10 +264,16 @@
     <Compile Include="Pages\DIP\SubPages\S9CleanningCheckSheetPage.xaml.cs">
       <DependentUpon>S9CleanningCheckSheetPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Menu\ProductionReportMenu.xaml.cs">
+      <DependentUpon>ProductionReportMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Warehouse\WarehouseYarnStockPage.xaml.cs">
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
+    <Compile Include="Windows\CreateDIPSlipWindow.xaml.cs">
+      <DependentUpon>CreateDIPSlipWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\DIP\ChemicalRequisitionEditorWindow.xaml.cs">
       <DependentUpon>ChemicalRequisitionEditorWindow.xaml</DependentUpon>
     </Compile>
@@ -729,6 +735,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Menu\ProductionReportMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Warehouse\WarehouseYarnStockPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -742,6 +752,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\ListViewColumns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CreateDIPSlipWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -845,6 +859,7 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Windows\DIPSlip\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
   </ItemGroup>

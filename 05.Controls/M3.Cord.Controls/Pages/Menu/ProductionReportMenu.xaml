@@ -1,0 +1,198 @@
+﻿<UserControl x:Class="M3.Cord.Pages.ProductionReportMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="650"
+             d:DesignWidth="800"
+             Loaded="UserControl_Loaded"
+             Unloaded="UserControl_Unloaded">
+    <UserControl.Resources>
+        <!--  COLORS  -->
+        <SolidColorBrush x:Key="SlipBG" Color="DarkOrange" />
+        <SolidColorBrush x:Key="SlipBGHover" Color="DarkRed" />
+        <SolidColorBrush x:Key="SlipFG" Color="WhiteSmoke" />
+
+        <SolidColorBrush x:Key="ReportBG" Color="Goldenrod" />
+        <SolidColorBrush x:Key="ReportBGHover" Color="DarkGoldenrod" />
+        <SolidColorBrush x:Key="ReportFG" Color="WhiteSmoke" />
+
+        <SolidColorBrush x:Key="OtherBG" Color="Navy" />
+        <SolidColorBrush x:Key="OtherBGHover" Color="RoyalBlue" />
+        <SolidColorBrush x:Key="OtherFG" Color="WhiteSmoke" />
+        <!--  GROUP ITEM STYLES  -->
+        <Style x:Key="CommonGroupItemStyle" TargetType="ctrl:NGroupMenuItem">
+            <Setter Property="HeaderBorderBrush" Value="Transparent" />
+            <Setter Property="GroupWidth" Value="300" />
+            <Setter Property="FontWeight" Value="Regular" />
+            <Setter Property="FontSize" Value="32" />
+        </Style>
+
+        <!--  BUTTON STYLES  -->
+        <Style x:Key="CommonButtonStyle"
+               BasedOn="{StaticResource MenuButtonStyle}"
+               TargetType="Button">
+            <Setter Property="Margin" Value="0,5" />
+            <Setter Property="Height" Value="120" />
+            <Setter Property="FontSize" Value="30" />
+        </Style>
+        <Style x:Key="SlipButtonStyle"
+               BasedOn="{StaticResource CommonButtonStyle}"
+               TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource SlipBG}" />
+            <Setter Property="Foreground" Value="{StaticResource SlipFG}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource SlipBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource SlipFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource SlipBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource SlipFG}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ReportButtonStyle"
+               BasedOn="{StaticResource CommonButtonStyle}"
+               TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource ReportBG}" />
+            <Setter Property="Foreground" Value="{StaticResource ReportFG}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource ReportBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource ReportFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource ReportBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource ReportFG}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="OtherButtonStyle"
+               BasedOn="{StaticResource CommonButtonStyle}"
+               TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource OtherBG}" />
+            <Setter Property="Foreground" Value="{StaticResource OtherFG}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource OtherBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource OtherFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource OtherBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource OtherFG}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <page:NPage HeaderText="Production Reports">
+        <DockPanel LastChildFill="True" Margin="5">
+            <TextBlock DockPanel.Dock="Top" Height="20" />
+            <ctrl:NGroupMenu>
+                <!--  PALLET SLIP  -->
+                <ctrl:NGroupMenuItem HeaderText="Pallet Slip"
+                                     HeaderBackground="{StaticResource SlipBG}"
+                                     Style="{StaticResource CommonGroupItemStyle}">
+                    <!--  1st TWIST DOFF PALLET SLIP  -->
+                    <Button x:Name="cmdFirstTwistSlip"
+                            Click="cmdFirstTwistSlip_Click"
+                            Style="{StaticResource SlipButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Doffing Report Slip" />
+                            <LineBreak />
+                            <Run Text="(1st Twist)" />
+                        </TextBlock>
+                    </Button>
+                    <!--  DIP PALLET SLIP  -->
+                    <Button x:Name="cmdDIPSlip"
+                            Click="cmdDIPSlip_Click"
+                            Style="{StaticResource SlipButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Doffing Report Slip" />
+                            <LineBreak />
+                            <Run Text="(DIP)" />
+                        </TextBlock>
+                    </Button>
+                </ctrl:NGroupMenuItem>
+                <!--  PRODUCTION REPORTS  -->
+                <ctrl:NGroupMenuItem HeaderText="Productions"
+                                     HeaderBackground="{StaticResource ReportBG}"
+                                     Style="{StaticResource CommonGroupItemStyle}">
+                    <!--  1st Twist Reports  -->
+                    <Button x:Name="cmdFirstTwistReports"
+                            Click="cmdFirstTwistReports_Click"
+                            Style="{StaticResource ReportButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="1st Twisting" />
+                            <LineBreak />
+                            <Run Text="Reports" />
+                        </TextBlock>
+                    </Button>
+                    <!--  Ageing Reports  -->
+                    <Button x:Name="cmdAgeingReports"
+                            Click="cmdAgeingReports_Click"
+                            Style="{StaticResource ReportButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Ageing" />
+                            <LineBreak />
+                            <Run Text="Reports" />
+                        </TextBlock>
+                    </Button>
+                    <!--  DIP Reports  -->
+                    <Button x:Name="cmdDIPReports"
+                            Click="cmdDIPReports_Click"
+                            Style="{StaticResource ReportButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="DIP" />
+                            <LineBreak />
+                            <Run Text="Reports" />
+                        </TextBlock>
+                    </Button>
+                </ctrl:NGroupMenuItem>
+                <!--  OTHER MENU  -->
+                <ctrl:NGroupMenuItem HeaderText="Other"
+                                     HeaderBackground="{StaticResource OtherBG}"
+                                     Style="{StaticResource CommonGroupItemStyle}">
+                    <!--  MAIN MENU  -->
+                    <Button x:Name="cmdMainMenu"
+                            Click="cmdMainMenu_Click"
+                            Style="{StaticResource OtherButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Main Menu" />
+                        </TextBlock>
+                    </Button>
+                </ctrl:NGroupMenuItem>
+            </ctrl:NGroupMenu>
+        </DockPanel>
+    </page:NPage>
+</UserControl>

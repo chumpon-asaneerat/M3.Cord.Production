@@ -1,0 +1,109 @@
+﻿<Window x:Class="M3.Cord.Windows.CreateDIPSlipWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        mc:Ignorable="d"
+        Title="Create DIP Pallet Slip"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="500"
+        Width="850">
+    <page:NPage HeaderText="Create DIP Pallet Slip">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdOk"
+                                        DockPanel.Dock="Right"
+                                        IconType="Ok"
+                                        Text="Ok"
+                                        Click="cmdOk_Click" />
+                <Grid />
+            </DockPanel>
+            <!--  WORK AREA  -->
+            <DockPanel LastChildFill="True">
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  LOT NO  -->
+                    <ctrl:NTextBox x:Name="txtDIPLotNo"
+                                   CaptionText="Lot No:"
+                                   DockPanel.Dock="Left"
+                                   Width="200"
+                                   PreviewKeyDown="txtDIPLotNo_PreviewKeyDown" />
+                    <!--  MC Code  -->
+                    <ctrl:NTextBox CaptionText="MC:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding MCCode}"
+                                   IsReadOnly="True"
+                                   Width="200" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <!--  CUSTOMER  -->
+                        <ctrl:NTextBox CaptionText="Customer:"
+                                       Text="{Binding CustomerName}"
+                                       IsReadOnly="True"
+                                       Width="350" />
+                        <!--  Product  -->
+                        <ctrl:NTextBox CaptionText="Product:"
+                                       Text="{Binding ProductCode}"
+                                       IsReadOnly="True"
+                                       Width="200" />
+                        <!--  ItemYarn  -->
+                        <ctrl:NTextBox CaptionText="Item Yarn:"
+                                       Text="{Binding ItemYarn}"
+                                       IsReadOnly="True"
+                                       Width="250" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <!--  PALLET CODE  -->
+                        <ctrl:NTextBox CaptionText="Pallet Code:"
+                                       Text="{Binding PalletCode}"
+                                       IsReadOnly="True"
+                                       Width="200" />
+                        <!--  TWIST NO  -->
+                        <ctrl:NTextBox CaptionText="Twist No:"
+                                       Text="{Binding TwistNo}"
+                                       Width="200" />
+                        <!--  Counter  -->
+                        <ctrl:NTextBox CaptionText="Counter:"
+                                       Text="{Binding Counter}"
+                                       Width="200" />
+                        <!--  Counter  -->
+                        <ctrl:NTextBox CaptionText="Mts:"
+                                       Text="{Binding Mts}"
+                                       Width="200"
+                                       Visibility="Collapsed" />
+                    </StackPanel>
+                    <Grid />
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <!--  ACTUAL QTY  -->
+                        <ctrl:NTextBox CaptionText="Actual Qty:"
+                                       Text="{Binding ActualQty}"
+                                       Width="200" />
+                        <!--  ACTUAL WEIGHT  -->
+                        <ctrl:NTextBox CaptionText="Actual Weight:"
+                                       Text="{Binding ActualWeight}"
+                                       Width="200" />
+                    </StackPanel>
+                    <Grid />
+                </DockPanel>
+                <Grid />
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>

@@ -56,10 +56,10 @@
                                    TextAlignment="Center" />
                         <ctrl:NDatePicker x:Name="dtEnd" Width="200" />
                         <!--  LOT NO  -->
-                        <ctrl:NTextBox x:Name="txtProductLotNo"
+                        <ctrl:NTextBox x:Name="txtDIPLotNo"
                                        CaptionText="Lot No"
                                        Width="200"
-                                       PreviewKeyDown="txtProductLotNo_PreviewKeyDown" />
+                                       PreviewKeyDown="txtDIPLotNo_PreviewKeyDown" />
                         <!--  PRODUCT  -->
                         <ctrl:NComboBox x:Name="cbProducts"
                                         DockPanel.Dock="Left"

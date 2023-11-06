@@ -19,6 +19,7 @@ using System.ComponentModel;
 #endregion
 
 using BarcodeLib;
+using System.Windows.Markup;
 
 namespace M3.Cord.Models
 {
@@ -86,14 +87,27 @@ namespace M3.Cord.Models
         public string TreatRoute { get; set; }
         public string TwistSpec { get; set; }
 
-        public string ProductLotNo { get; set; }
-        public string MCCode { get; set; }
+        public string MCCode 
+        {
+            get { return S7MCCode; }
+            set { }
+        }
 
-        public string DoffNos { get; set; }
+        // runtime properties
+        public string ProductLotNo 
+        {
+            get { return DIPLotNo; }
+            set { }
+        }
+        // runtime properties
+        public string DoffNos 
+        {
+            get { return DoffNo.ToString(); }
+            set { }
+        }
 
         public decimal? ActualQty { get; set; }
         public decimal? ActualWeight { get; set; }
-        public decimal? TargetQty { get; set; }
 
         public DIPPalletStatus PalletStatus { get; set; }
 
@@ -113,6 +127,11 @@ namespace M3.Cord.Models
             set { }
         }
 
+        // wrapper
+        public string DIPLotNo { get; set; }
+        public string DoffNo { get; set; }
+        public string S7MCCode { get; set; }
+
         public SolidColorBrush TextColor
         {
             get
@@ -122,14 +141,140 @@ namespace M3.Cord.Models
             set { }
         }
 
-        //public List<PalletSettingItem> Items { get; set; }
-
         #endregion
 
         #region Static Methods
 
+        /// <summary>
+        /// Search
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<List<DIPPalletSlip>> Search(string dipLotNo,
+            DateTime? begin, DateTime? end, string productCode,
+            DIPPalletStatus palletStatus)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<DIPPalletSlip>> rets = new NDbResult<List<DIPPalletSlip>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            int? status = new int?();
+            if (palletStatus != DIPPalletStatus.All)
+            {
+                status = new int?((int)palletStatus);
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@DIPLotNo", dipLotNo);
+            p.Add("@beginDate", begin);
+            p.Add("@endDate", end);
+            p.Add("@ProductCode", productCode);
+            p.Add("@PalletStatus", status);
+
+            try
+            {
+                var items = cnn.Query<DIPPalletSlip>("SearchDIPPalletSlips", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<DIPPalletSlip>();
+            }
+
+            return rets;
+        }
+        /// <summary>
+        /// Save
+        /// </summary>
+        /// <param name="value">The DIPPalletSlip to save.</param>
+        /// <returns></returns>
+        public static NDbResult<DIPPalletSlip> Save(DIPPalletSlip value)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<DIPPalletSlip> ret = new NDbResult<DIPPalletSlip>();
+
+            if (null == value)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@DIPPCId", value.DIPPCId);
+            p.Add("@PalletCode", value.PalletCode);
+            p.Add("@CreateDate", value.CreateDate);
+            p.Add("@TwistNo", value.TwistNo);
+            p.Add("@Counter", value.Counter);
+            p.Add("@ActualQty", value.ActualQty);
+            p.Add("@ActualWeight", value.ActualWeight);
+            p.Add("@UserName", value.UserName);
+            p.Add("@PalletStatus", value.PalletStatus);
+
+            p.Add("@PalletId", value.PalletId, DbType.Int32, direction: ParameterDirection.InputOutput);
+            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
+
+            try
+            {
+                cnn.Execute("SaveDIPPalletSlip", p, commandType: CommandType.StoredProcedure);
+                ret.Success(value);
+
+                // Set PK
+                value.PalletId = p.Get<int?>("@PalletId");
+                // Set error number/message
+                ret.ErrNum = p.Get<int>("@errNum");
+                ret.ErrMsg = p.Get<string>("@errMsg");
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
         #endregion
 
+        /*
         public static List<DIPPalletSlip> GetSamples()
         {
             var rets = new List<DIPPalletSlip>();
@@ -153,5 +298,6 @@ namespace M3.Cord.Models
             });
             return rets;
         }
+        */
     }
 }

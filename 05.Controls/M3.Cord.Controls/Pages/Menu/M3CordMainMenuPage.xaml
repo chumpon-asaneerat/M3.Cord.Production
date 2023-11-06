@@ -268,11 +268,13 @@
                         </TextBlock>
                     </Button>
                     <!--  PALLET SETTING MENU  -->
-                    <Button x:Name="cmdPalletSetting"
-                            Click="cmdPalletSetting_Click"
+                    <Button x:Name="cmdProductinReport"
+                            Click="cmdProductinReport_Click"
                             Style="{StaticResource OtherButtonStyle}">
                         <TextBlock TextAlignment="Center">
-                            <Run Text="Doffing Report Slip" />
+                            <Run Text="Production" />
+                            <LineBreak />
+                            <Run Text="Slip / Reports" />
                         </TextBlock>
                     </Button>
                     <!--  CHEMICAL RECIPE  -->
