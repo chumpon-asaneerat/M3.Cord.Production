@@ -76,18 +76,16 @@ namespace M3.Cord.Pages
 
         private void cmdCreate_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            var win = M3CordApp.Windows.CreatePallet;
+            var win = M3CordApp.Windows.CreateDIPSlip;
             if (win.ShowDialog() == true && null != win.Pallet)
             {
                 // Show Print Preview
-                var page = M3CordApp.Pages.PalletSettingPreview;
-                var items = new List<PalletSetting>();
+                var page = M3CordApp.Pages.DIPPalletSlipPreview;
+                var items = new List<DIPPalletSlip>();
                 items.Add(win.Pallet);
                 page.Setup(items, false);
                 PageContentManager.Instance.Current = page;
             }
-            */
         }
 
         private void cmdRePrint_Click(object sender, RoutedEventArgs e)

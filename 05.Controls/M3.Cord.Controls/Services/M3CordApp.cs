@@ -540,6 +540,16 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region DIP Slip
+
+            /// <summary>Gets Create DIP Slip Window.</summary>
+            public static CreateDIPSlipWindow CreateDIPSlip
+            {
+                get { return GetWindow<CreateDIPSlipWindow>(); }
+            }
+
+            #endregion
         }
     }
 }
