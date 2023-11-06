@@ -80,7 +80,7 @@ namespace M3.Cord.Windows
         {
             this.DataContext = null;
 
-            pcCard = DIPPalletSlip.SearchByLotNo(txtDIPLotNo.Text).Value();
+            pcCard = DIPPCCard.SearchByLotNo(txtDIPLotNo.Text).Value();
             if (null != pcCard)
             {
                 _pallet = new DIPPalletSlip();

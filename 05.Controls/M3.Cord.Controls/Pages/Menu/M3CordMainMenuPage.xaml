@@ -285,7 +285,7 @@
                             <Run Text="Solution" />
                         </TextBlock>
                     </Button>
-                    <!--  DIP REPORT SLIP -->
+                    <!--  DIP REPORT SLIP  -->
                     <Button x:Name="cmdDIPSlip"
                             Click="cmdDIPSlip_Click"
                             Style="{StaticResource OtherButtonStyle}">
