@@ -267,7 +267,15 @@
                             <Run Text="Master Data" />
                         </TextBlock>
                     </Button>
-                    <!--  PALLET SETTING MENU  -->
+                    <!--  CHEMICAL RECIPE  -->
+                    <Button x:Name="cmdChemicalRecipe"
+                            Click="cmdChemicalRecipe_Click"
+                            Style="{StaticResource OtherButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Solution" />
+                        </TextBlock>
+                    </Button>
+                    <!--  PRODUCTION REPORT MENU  -->
                     <Button x:Name="cmdProductinReport"
                             Click="cmdProductinReport_Click"
                             Style="{StaticResource OtherButtonStyle}">
@@ -277,34 +285,6 @@
                             <Run Text="Slip / Reports" />
                         </TextBlock>
                     </Button>
-                    <!--  CHEMICAL RECIPE  -->
-                    <Button x:Name="cmdChemicalRecipe"
-                            Click="cmdChemicalRecipe_Click"
-                            Style="{StaticResource OtherButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="Solution" />
-                        </TextBlock>
-                    </Button>
-                    <!--  DIP REPORT SLIP  -->
-                    <Button x:Name="cmdDIPSlip"
-                            Click="cmdDIPSlip_Click"
-                            Style="{StaticResource OtherButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="DIP Slip" />
-                        </TextBlock>
-                    </Button>
-                    <!--  CORD DOCUMENT MENU  -->
-                    <!--
-                    <Button x:Name="cmdCordDocumentMenu"
-                            Click="cmdCordDocumentMenu_Click"
-                            Style="{StaticResource OtherButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="Cord Documents" />
-                            <LineBreak />
-                            <Run Text="(Confirmation)" FontSize="18" />
-                        </TextBlock>
-                    </Button>
-                    -->
                 </ctrl:NGroupMenuItem>
             </ctrl:NGroupMenu>
         </DockPanel>
