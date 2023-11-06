@@ -336,6 +336,40 @@ namespace M3.Cord.Models
             return ret;
         }
 
+        public static int GetLastDoffNo(string mcCode, DateTime createDate)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            int ret = -1;
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@MCCode", mcCode);
+            p.Add("@CreateDate", createDate);
+
+            try
+            {
+                var items = cnn.Query<int>("GetDIPDoffNo", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = items.First();
+
+                ret = data;
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
+
+            return ret;
+        }
+
         #endregion
     }
 }

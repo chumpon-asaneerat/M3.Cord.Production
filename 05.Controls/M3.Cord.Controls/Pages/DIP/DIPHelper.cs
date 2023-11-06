@@ -41,6 +41,8 @@ namespace M3.Cord.Pages
                         pcCard.MCCode = mcCode; // set mc
                         pcCard.CreateDate = DateTime.Now;
                         pcCard.CreateBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.UserName : null;
+                        int lastDoff = GetLastDoffNo(mcCode, DateTime.Today);
+                        pcCard.DoffNo = (lastDoff > -1) ? lastDoff + 1 : 1;
                         var win = M3CordApp.Windows.DIPPCCardEditor;
                         win.Setup(pcCard);
                         if (win.ShowDialog() == true)
@@ -55,6 +57,16 @@ namespace M3.Cord.Pages
                 }
 
                 return pcCard;
+            }
+
+            public static int GetLastDoffNo(string mcCode, DateTime? CreateDate)
+            {
+                int ret = -1;
+                if (!string.IsNullOrEmpty(mcCode) && CreateDate.HasValue)
+                {
+                    ret = DIPPCCard.GetLastDoffNo(mcCode, CreateDate.Value);
+                }
+                return ret;
             }
         }
     }
