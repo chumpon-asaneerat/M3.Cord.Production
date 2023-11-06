@@ -22,6 +22,12 @@ using BarcodeLib;
 
 namespace M3.Cord.Models
 {
+    public enum DIPPalletStatus : int
+    {
+        All = -1,
+        Create = 0
+    }
+
     public class DIPPalletSlip : NInpc
     {
         private static Barcode BarcodeGenerator = null;
@@ -46,7 +52,7 @@ namespace M3.Cord.Models
         #region Public Properties
 
         public int? PalletId { get; set; }
-        //public int? PCTwist1Id { get; set; }
+        public int? DIPPCId { get; set; }
         public string PalletCode { get; set; }
         // Pallet barcode
         public byte[] PalletCodeImage
@@ -69,29 +75,7 @@ namespace M3.Cord.Models
         public DateTime? CreateDate { get; set; }
         public string TwistNo { get; set; }
         public int Counter { get; set; }
-        //public string Mts { get; set; }
-        // Create UserId
-        public int UserId { get; set; }
-
         public string UserName { get; set; }
-        /*
-        // Runtime data
-        private string _UserName = null;
-        public string UserName
-        {
-            get
-            {
-                if (null == _UserName)
-                {
-                    var user = UserInfo.Get(UserId).Value();
-                    _UserName = (null != user) ? user.FullName : string.Empty;
-                }
-                return _UserName;
-            }
-            set { }
-        }
-        */
-        public int? DIPPCId { get; set; }
         public DateTime? PCDate { get; set; }
         public int? CustomerId { get; set; }
         public string CustomerName { get; set; }
@@ -111,6 +95,24 @@ namespace M3.Cord.Models
         public decimal? ActualWeight { get; set; }
         public decimal? TargetQty { get; set; }
 
+        public DIPPalletStatus PalletStatus { get; set; }
+
+        public string PalletStatusText
+        {
+            get
+            {
+                if (PalletStatus == DIPPalletStatus.Create)
+                {
+                    return "DIP";
+                }
+                else
+                {
+                    return "Create";
+                }
+            }
+            set { }
+        }
+
         public SolidColorBrush TextColor
         {
             get
@@ -120,9 +122,11 @@ namespace M3.Cord.Models
             set { }
         }
 
-        //public decimal? TotalCH { get; set; }
-
         //public List<PalletSettingItem> Items { get; set; }
+
+        #endregion
+
+        #region Static Methods
 
         #endregion
 
