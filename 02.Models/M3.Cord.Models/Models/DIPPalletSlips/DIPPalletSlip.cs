@@ -248,8 +248,10 @@ namespace M3.Cord.Models
             p.Add("@CreateDate", value.CreateDate);
             p.Add("@TwistNo", value.TwistNo);
             p.Add("@Counter", value.Counter);
+            
             p.Add("@ActualQty", value.ActualQty);
             p.Add("@ActualWeight", value.ActualWeight);
+
             p.Add("@UserName", value.UserName);
             p.Add("@PalletStatus", value.PalletStatus);
 
