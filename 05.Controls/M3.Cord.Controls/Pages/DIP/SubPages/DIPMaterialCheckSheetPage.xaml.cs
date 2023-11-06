@@ -69,17 +69,6 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region Combobox Handlers
-
-        private void cbS7MC_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            mc = cbS7MC.SelectedItem as DIPMC;
-
-            RefreshGrid(true);
-        }
-
-        #endregion
-
         #region TextBox Handlers
 
         private void txtSPNo_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -112,12 +101,6 @@ namespace M3.Cord.Pages
         #endregion
 
         #region Private Methods
-
-        private void LoadComcoBox()
-        {
-            cbS7MC.ItemsSource = DIPMC.Gets("S-7").Value();
-            cbS7MC.SelectedIndex = -1;
-        }
 
         private void ResetTextBoxInputs()
         {
@@ -324,8 +307,6 @@ namespace M3.Cord.Pages
             paCondition.DataContext = null;
             paSheetInfo.DataContext = null;
 
-            LoadComcoBox();
-
             if (null != selecteedMC)
             {
                 mc = selecteedMC;
@@ -339,10 +320,9 @@ namespace M3.Cord.Pages
                         sheet = new DIPMaterialCheckSheet();
                         sheet.DIPPCId = pcCard.DIPPCId.Value;
                         sheet.CheckDate = DateTime.Now;
-                    }
-                    else
-                    {
-                        cbS7MC.SelectedValue = sheet.MCCode;
+                        // set same as PCCard
+                        sheet.MCCode = pcCard.MCCode;
+                        sheet.DoffNo = pcCard.DoffNo;
                     }
                 }
             }

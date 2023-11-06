@@ -63,12 +63,12 @@
                                       SelectedDate="{Binding CheckDate}" />
                     <ctrl:NTextBox CaptionText="Doff No:"
                                    x:Name="txtDoffNo"
-                                   Text="{Binding DoffNo}" />
-                    <ctrl:NComboBox CaptionText="S-7 MC:"
-                                    x:Name="cbS7MC"
-                                    DisplayMemberPath="MCCode"
-                                    SelectedValuePath="MCCode"
-                                    SelectionChanged="cbS7MC_SelectionChanged" />
+                                   Text="{Binding DoffNo}" 
+                                   IsReadOnly="True"/>
+                    <ctrl:NTextBox CaptionText="S-7 MC:"
+                                   x:Name="txtS7MC"
+                                   Text="{Binding MCCode}" 
+                                   IsReadOnly="True"/>
                 </StackPanel>
                 <Grid />
             </DockPanel>

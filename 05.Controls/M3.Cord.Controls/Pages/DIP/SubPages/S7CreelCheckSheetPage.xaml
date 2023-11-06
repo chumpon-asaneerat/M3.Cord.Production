@@ -61,11 +61,10 @@
                     <ctrl:NDatePicker CaptionText="Date:"
                                       x:Name="dtCheckDate"
                                       SelectedDate="{Binding CheckDate}" />
-                    <ctrl:NComboBox CaptionText="S-7 MC:"
-                                    x:Name="cbS7MC"
-                                    DisplayMemberPath="MCCode"
-                                    SelectedValuePath="MCCode"
-                                    SelectionChanged="cbS7MC_SelectionChanged" />
+                    <ctrl:NTextBox CaptionText="S-7 MC:"
+                                   x:Name="txtS7MC"
+                                   Text="{Binding MCCode}" 
+                                   IsReadOnly="True"/>
                 </StackPanel>
                 <Grid />
             </DockPanel>

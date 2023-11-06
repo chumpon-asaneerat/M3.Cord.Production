@@ -64,24 +64,7 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region Combobox Handlers
-
-        private void cbS7MC_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            mc = cbS7MC.SelectedItem as DIPMC;
-
-            RefreshGrid(true);
-        }
-
-        #endregion
-
         #region Private Methods
-
-        private void LoadComcoBox()
-        {
-            cbS7MC.ItemsSource = DIPMC.Gets("S-7").Value();
-            cbS7MC.SelectedIndex = -1;
-        }
 
         private void RefreshGrid(bool bInit)
         {
@@ -158,8 +141,6 @@ namespace M3.Cord.Pages
 
         public void Setup(DIPMC selecteedMC)
         {
-            LoadComcoBox();
-
             mc = selecteedMC;
             pcCard = DIPUI.PCCard.Current(mc.MCCode);
             if (null != pcCard)
@@ -171,10 +152,8 @@ namespace M3.Cord.Pages
                     sheet = new S7CreelCheckSheet();
                     sheet.DIPPCId = pcCard.DIPPCId.Value;
                     sheet.CheckDate = DateTime.Now;
-                }
-                else
-                {
-                    cbS7MC.SelectedValue = sheet.MCCode;
+                    // set same as PCCard
+                    sheet.MCCode = pcCard.MCCode;
                 }
             }
 
