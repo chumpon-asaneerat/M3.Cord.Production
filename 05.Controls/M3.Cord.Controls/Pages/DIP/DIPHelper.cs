@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using static M3.Cord.Pages.DIPUI;
 
 #endregion
 
@@ -28,21 +29,26 @@ namespace M3.Cord.Pages
     {
         public class PCCard
         {
-            public static DIPPCCard Current()
+            public static DIPPCCard Current(string mcCode)
             {
-                var pcCard = DIPPCCard.Current().Value();
-                if (null == pcCard)
+                DIPPCCard pcCard = null;
+                if (!string.IsNullOrEmpty(mcCode))
                 {
-                    pcCard = new DIPPCCard();
-                    var win = M3CordApp.Windows.DIPPCCardEditor;
-                    win.Setup(pcCard);
-                    if (win.ShowDialog() == true)
+                    pcCard = DIPPCCard.Current(mcCode).Value();
+                    if (null == pcCard)
                     {
-                        DIPPCCard.Save(pcCard);
-                    }
-                    else
-                    {
-                        pcCard = null;
+                        pcCard = new DIPPCCard();
+                        pcCard.MCCode = mcCode; // set mc
+                        var win = M3CordApp.Windows.DIPPCCardEditor;
+                        win.Setup(pcCard);
+                        if (win.ShowDialog() == true)
+                        {
+                            DIPPCCard.Save(pcCard);
+                        }
+                        else
+                        {
+                            pcCard = null;
+                        }
                     }
                 }
 

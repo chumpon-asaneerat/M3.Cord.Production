@@ -15,6 +15,7 @@ using NLib.Models;
 using Dapper;
 using Newtonsoft.Json;
 using System.Windows.Controls.Primitives;
+using System.Web;
 
 #endregion
 
@@ -53,6 +54,11 @@ namespace M3.Cord.Models
 
         public bool? FinishFlag { get; set; }
         public bool? DeleteFlag { get; set; }
+
+        public string MCCode { get; set; }
+        public int DoffNo { get; set; }
+        public DateTime? CreateDate { get; set; }
+        public string CreateBy { get; set; }
 
         #endregion
 
@@ -108,7 +114,7 @@ namespace M3.Cord.Models
         /// Get
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<DIPPCCard> Current()
+        public static NDbResult<DIPPCCard> Current(string mcCode)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -127,6 +133,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+            p.Add("@MCCode", mcCode);
 
             try
             {
@@ -187,6 +194,11 @@ namespace M3.Cord.Models
 
             p.Add("@FinishFlag", value.FinishFlag);
             p.Add("@DeleteFlag", value.DeleteFlag);
+
+            p.Add("@MCCode", value.MCCode);
+            p.Add("@DoffNo", value.DoffNo);
+            p.Add("@CreateBy", value.CreateBy);
+            p.Add("@CreateDate", value.CreateDate);
 
             p.Add("@DIPPCId", value.DIPPCId, DbType.Int32, direction: ParameterDirection.InputOutput);
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);

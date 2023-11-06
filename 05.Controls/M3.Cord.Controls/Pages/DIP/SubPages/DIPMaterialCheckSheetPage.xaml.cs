@@ -43,8 +43,8 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private DIPPCCard pcCard = null;
         private DIPMC mc = null;
+        private DIPPCCard pcCard = null;
         private DIPMaterialCheckSheet sheet = null;
         private List<DIPMaterialCheckSheetItem> items = null;
 
@@ -54,7 +54,7 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoDIPOperationMenu();
+            M3CordApp.Pages.GotoDIPMCMenu();
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
@@ -317,7 +317,7 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup()
+        public void Setup(DIPMC selecteedMC)
         {
             sheet = null;
 
@@ -326,20 +326,24 @@ namespace M3.Cord.Pages
 
             LoadComcoBox();
 
-            pcCard = DIPUI.PCCard.Current();
-            if (null != pcCard)
+            if (null != selecteedMC)
             {
-                var sheets = DIPMaterialCheckSheet.Gets(pcCard.DIPPCId.Value).Value();
-                sheet = (null != sheets) ? sheets.LastOrDefault() : null;
-                if (null == sheet)
+                mc = selecteedMC;
+                pcCard = DIPUI.PCCard.Current(mc.MCCode);
+                if (null != pcCard)
                 {
-                    sheet = new DIPMaterialCheckSheet();
-                    sheet.DIPPCId = pcCard.DIPPCId.Value;
-                    sheet.CheckDate = DateTime.Now;
-                }
-                else
-                {
-                    cbS7MC.SelectedValue = sheet.MCCode;
+                    var sheets = DIPMaterialCheckSheet.Gets(pcCard.DIPPCId.Value).Value();
+                    sheet = (null != sheets) ? sheets.LastOrDefault() : null;
+                    if (null == sheet)
+                    {
+                        sheet = new DIPMaterialCheckSheet();
+                        sheet.DIPPCId = pcCard.DIPPCId.Value;
+                        sheet.CheckDate = DateTime.Now;
+                    }
+                    else
+                    {
+                        cbS7MC.SelectedValue = sheet.MCCode;
+                    }
                 }
             }
 

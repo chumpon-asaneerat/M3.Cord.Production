@@ -43,8 +43,8 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private DIPPCCard pcCard = null;
         private DIPMC mc = null;
+        private DIPPCCard pcCard = null;
         private S9CleanCheckSheet sheet = null;
         private List<S9CleanCheckSheetItem> items = null;
 
@@ -54,7 +54,7 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoDIPOperationMenu();
+            M3CordApp.Pages.GotoDIPMCMenu();
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
@@ -159,24 +159,28 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup()
+        public void Setup(DIPMC selecteedMC)
         {
             LoadComcoBox();
 
-            pcCard = DIPUI.PCCard.Current();
-            if (null != pcCard)
+            if (null != selecteedMC)
             {
-                var sheets = S9CleanCheckSheet.Gets(pcCard.DIPPCId.Value).Value();
-                sheet = (null != sheets) ? sheets.LastOrDefault() : null;
-                if (null == sheet)
+                mc = selecteedMC;
+                pcCard = DIPUI.PCCard.Current(mc.MCCode);
+                if (null != pcCard)
                 {
-                    sheet = new S9CleanCheckSheet();
-                    sheet.DIPPCId = pcCard.DIPPCId.Value;
-                    sheet.CheckDate = DateTime.Now;
-                }
-                else
-                {
-                    cbS9MC.SelectedValue = sheet.MCCode;
+                    var sheets = S9CleanCheckSheet.Gets(pcCard.DIPPCId.Value).Value();
+                    sheet = (null != sheets) ? sheets.LastOrDefault() : null;
+                    if (null == sheet)
+                    {
+                        sheet = new S9CleanCheckSheet();
+                        sheet.DIPPCId = pcCard.DIPPCId.Value;
+                        sheet.CheckDate = DateTime.Now;
+                    }
+                    else
+                    {
+                        cbS9MC.SelectedValue = sheet.MCCode;
+                    }
                 }
             }
 

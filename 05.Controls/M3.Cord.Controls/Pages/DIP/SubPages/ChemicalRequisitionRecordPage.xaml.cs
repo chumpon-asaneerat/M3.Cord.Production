@@ -43,6 +43,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private DIPMC mc = null;
         private DIPPCCard pcCard = null;
         private List<DIPChemicalReqisition> items = null;
 
@@ -52,7 +53,7 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoDIPOperationMenu();
+            M3CordApp.Pages.GotoDIPMCMenu();
         }
 
         private void cmdNew_Click(object sender, RoutedEventArgs e)
@@ -94,12 +95,16 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup()
+        public void Setup(DIPMC selecteedMC)
         {
-            pcCard = DIPUI.PCCard.Current();
-            if (null != pcCard)
+            if (null != selecteedMC)
             {
+                mc = selecteedMC;
+                pcCard = DIPUI.PCCard.Current(mc.MCCode);
+                if (null != pcCard)
+                {
 
+                }
             }
 
             paCondition.DataContext = pcCard;

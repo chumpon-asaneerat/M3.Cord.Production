@@ -43,6 +43,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private DIPMC mc = null;
         private DIPPCCard pcCard = null;
 
         #endregion
@@ -57,63 +58,63 @@ namespace M3.Cord.Pages
         private void cmdMaterialCheckSheet_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.DIPMaterialCheckSheet;
-            page.Setup();
+            page.Setup(mc);
             PageContentManager.Instance.Current = page;
         }
 
         private void cmdS7CreelCheckSheet_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.S7CreelCheckSheet;
-            page.Setup();
+            page.Setup(mc);
             PageContentManager.Instance.Current = page;
         }
 
         private void cmdS8BeforeStart_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.S8BeforeStartSummary;
-            page.Setup();
+            page.Setup(mc);
             PageContentManager.Instance.Current = page;
         }
 
         private void cmdChemicalRequisitionRecordSheet_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.ChemicalRequisitionRecord;
-            page.Setup();
+            page.Setup(mc);
             PageContentManager.Instance.Current = page;
         }
 
         private void cmdS9CleaningCheckSheet_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.S9CleanningCheckSheet;
-            page.Setup();
+            page.Setup(mc);
             PageContentManager.Instance.Current = page;
         }
 
         private void cmdDIPCondition_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.DIPCondition;
-            page.Setup();
+            page.Setup(mc);
             PageContentManager.Instance.Current = page;
         }
 
         private void cmdS8ConditionSummary_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.S8ConditionSummary;
-            page.Setup();
+            page.Setup(mc);
             PageContentManager.Instance.Current = page;
         }
 
         private void cmdDIPProductionTimeTable_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.DIPTimeTable;
-            page.Setup();
+            page.Setup(mc);
             PageContentManager.Instance.Current = page;
         }
 
         private void cmdS9AppearanceCheckSheet_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.S9AppearanceCheckSheet;
-            page.Setup();
+            page.Setup(mc);
             PageContentManager.Instance.Current = page;
         }
 
@@ -149,14 +150,17 @@ namespace M3.Cord.Pages
         private void Refresh()
         {
             paCondition.DataContext = null;
-            pcCard = DIPUI.PCCard.Current();
-            if (null != pcCard)
+            if (null != mc)
             {
-                paCondition.DataContext = pcCard;
-                this.InvokeAction(() =>
+                pcCard = DIPUI.PCCard.Current(mc.MCCode);
+                if (null != pcCard)
                 {
-                    CheckButtons();
-                });
+                    paCondition.DataContext = pcCard;
+                    this.InvokeAction(() =>
+                    {
+                        CheckButtons();
+                    });
+                }
             }
         }
 
@@ -189,8 +193,9 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup()
+        public void Setup(DIPMC selectedMC)
         {
+            mc = selectedMC;
             Refresh();
         }
 

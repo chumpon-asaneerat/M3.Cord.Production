@@ -103,6 +103,12 @@ namespace M3.Cord.Windows
 
         public void Setup(DIPPCCard item)
         {
+            if (null != item)
+            {
+                page.HeaderText = "Setup DIP Product for " + item.MCCode;
+            }
+            else page.HeaderText = "Setup DIP Product";
+
             LoadComboBoxes();
 
             var customers = cbCustomers.ItemsSource as List<Customer>;

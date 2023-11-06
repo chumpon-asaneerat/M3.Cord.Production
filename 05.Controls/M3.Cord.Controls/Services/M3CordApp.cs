@@ -79,11 +79,11 @@ namespace M3.Cord
                 PageContentManager.Instance.Current = page;
             }
             /// <summary>
-            /// Goto DIP Operation Menu.
+            /// Goto DIP MC Menu.
             /// </summary>
-            public static void GotoDIPOperationMenu()
+            public static void GotoDIPMCMenu()
             {
-                var page = Pages.DIPOperation;
+                var page = Pages.DIPMC;
                 page.Setup();
                 PageContentManager.Instance.Current = page;
             }

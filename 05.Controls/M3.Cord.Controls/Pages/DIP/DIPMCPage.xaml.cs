@@ -76,12 +76,10 @@ namespace M3.Cord.Pages
             selectedMC = (null != dc) ? dc as DIPMC : null;
             if (null != selectedMC)
             {
-                /*
                 // Show MC Operation Menu.
-                var page = M3CordApp.Pages.FirstTwistOperation;
+                var page = M3CordApp.Pages.DIPOperation;
                 page.Setup(selectedMC);
                 PageContentManager.Instance.Current = page;
-                */
             }
         }
 

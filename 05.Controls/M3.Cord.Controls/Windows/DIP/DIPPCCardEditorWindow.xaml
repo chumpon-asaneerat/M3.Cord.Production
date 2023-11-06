@@ -13,8 +13,8 @@
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
         Height="250"
-        Width="850">
-    <page:NPage HeaderText="Setup DIP Product">
+        Width="880">
+    <page:NPage x:Name="page" HeaderText="Setup DIP Product">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
             <DockPanel LastChildFill="True"
@@ -51,6 +51,11 @@
                     <ctrl:NTextBox CaptionText="Lot No:"
                                    DockPanel.Dock="Left"
                                    Text="{Binding DIPLotNo}"
+                                   Width="200" />
+                    <!--  DOFF NO  -->
+                    <ctrl:NTextBox CaptionText="Doff No:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding DoffNo}"
                                    Width="200" />
                     <Grid />
                 </DockPanel>
