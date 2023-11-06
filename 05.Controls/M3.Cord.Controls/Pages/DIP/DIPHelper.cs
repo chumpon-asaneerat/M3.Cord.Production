@@ -39,6 +39,8 @@ namespace M3.Cord.Pages
                     {
                         pcCard = new DIPPCCard();
                         pcCard.MCCode = mcCode; // set mc
+                        pcCard.CreateDate = DateTime.Now;
+                        pcCard.CreateBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.UserName : null;
                         var win = M3CordApp.Windows.DIPPCCardEditor;
                         win.Setup(pcCard);
                         if (win.ShowDialog() == true)

@@ -47,6 +47,7 @@
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
                         <elem:ProductCodeBox />
                         <elem:DIPLotNoBox />
+                        <elem:DoffNoBox Width="200"/>
                     </StackPanel>
                 </StackPanel>
                 <Grid />
