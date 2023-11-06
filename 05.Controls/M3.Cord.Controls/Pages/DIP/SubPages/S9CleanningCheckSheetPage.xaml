@@ -44,11 +44,11 @@
                        LastChildFill="True"
                        DockPanel.Dock="Top"
                        Margin="2">
-                <StackPanel Orientation="Vertical">
-                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                <StackPanel Orientation="Vertical" DockPanel.Dock="Left">
+                    <StackPanel Orientation="Horizontal">
                         <elem:ProductCodeBox />
                         <elem:DIPLotNoBox />
-                        <elem:DoffNoBox Width="200"/>
+                        <elem:DoffNoBox Width="200" />
                     </StackPanel>
                 </StackPanel>
                 <Grid />

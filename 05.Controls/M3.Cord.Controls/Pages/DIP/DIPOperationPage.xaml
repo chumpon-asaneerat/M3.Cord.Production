@@ -20,9 +20,9 @@
             <Setter Property="HorizontalContentAlignment" Value="Center" />
             <Setter Property="Cursor" Value="Hand" />
         </Style>
-        <Style TargetType="TextBlock">
+        <Style x:Key="ButtonText" TargetType="TextBlock">
             <Setter Property="Margin" Value="5" />
-            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontSize" Value="28" />
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="TextAlignment" Value="Center" />
@@ -65,18 +65,22 @@
                 <Grid />
             </DockPanel>
             <DockPanel x:Name="paCondition"
-                       Margin="5"
                        LastChildFill="True"
-                       DockPanel.Dock="Top">
-                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-                    <elem:ProductCodeBox />
-                    <elem:DIPLotNoBox />
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                        <elem:ProductCodeBox />
+                        <elem:DIPLotNoBox />
+                        <elem:DoffNoBox Width="200" />
+                    </StackPanel>
                 </StackPanel>
+                <Grid />
             </DockPanel>
             <WrapPanel>
                 <!--  Material Check Sheet  -->
                 <Button x:Name="cmdMaterialCheckSheet" Click="cmdMaterialCheckSheet_Click">
-                    <TextBlock>
+                    <TextBlock Style="{StaticResource ButtonText}">
                         <Run Text="ตรวจสอบเส้นด้าย" />
                         <LineBreak />
                         <Run Text="ก่อนนำเข้า S-7" />
@@ -84,7 +88,7 @@
                 </Button>
                 <!--  S7 Creel Check Sheet  -->
                 <Button x:Name="cmdS7CreelCheckSheet" Click="cmdS7CreelCheckSheet_Click">
-                    <TextBlock>
+                    <TextBlock Style="{StaticResource ButtonText}">
                         <Run Text="Yarn Path Check Sheet" />
                         <LineBreak />
                         <Run Text="for Creel (S-7)" />
@@ -92,7 +96,7 @@
                 </Button>
                 <!--  S8 Before Start  -->
                 <Button x:Name="cmdS8BeforeStart" Click="cmdS8BeforeStart_Click">
-                    <TextBlock>
+                    <TextBlock Style="{StaticResource ButtonText}">
                         <Run Text="ตรวจเช็คสภาวะการผลิต" />
                         <LineBreak />
                         <Run Text="ก่อนเปิดเครื่อง (S-8-1)" />
@@ -100,7 +104,7 @@
                 </Button>
                 <!--  S9 Cleaning Check Sheet  -->
                 <Button x:Name="cmdS9CleaningCheckSheet" Click="cmdS9CleaningCheckSheet_Click">
-                    <TextBlock>
+                    <TextBlock Style="{StaticResource ButtonText}">
                         <Run Text="ใบบันทึก" />
                         <LineBreak />
                         <Run Text="การทำความสะอาด (S-9)" />
@@ -108,7 +112,7 @@
                 </Button>
                 <!--  Chemical Requisition Record Sheet  -->
                 <Button x:Name="cmdChemicalRequisitionRecordSheet" Click="cmdChemicalRequisitionRecordSheet_Click">
-                    <TextBlock>
+                    <TextBlock Style="{StaticResource ButtonText}">
                         <Run Text="Chemical Requisition" />
                         <LineBreak />
                         <Run Text="Record Sheet" />
@@ -116,7 +120,7 @@
                 </Button>
                 <!--  DIP Condition  -->
                 <Button x:Name="cmdDIPCondition" Click="cmdDIPCondition_Click">
-                    <TextBlock>
+                    <TextBlock Style="{StaticResource ButtonText}">
                         <Run Text="Confirm Condition" />
                         <LineBreak />
                         <Run Text="Check Sheet" />
@@ -124,7 +128,7 @@
                 </Button>
                 <!--  S8 Condition Summary  -->
                 <Button x:Name="cmdS8ConditionSummary" Click="cmdS8ConditionSummary_Click">
-                    <TextBlock>
+                    <TextBlock Style="{StaticResource ButtonText}">
                         <Run Text="ใบบันทึกค่า" />
                         <LineBreak />
                         <Run Text="สภาวะการผลิต S-8-1" />
@@ -132,7 +136,7 @@
                 </Button>
                 <!--  DIP Production Time Table  -->
                 <Button x:Name="cmdDIPProductionTimeTable" Click="cmdDIPProductionTimeTable_Click">
-                    <TextBlock>
+                    <TextBlock Style="{StaticResource ButtonText}">
                         <Run Text="Production Periodic" />
                         <LineBreak />
                         <Run Text="Record Sheet" />
@@ -140,7 +144,7 @@
                 </Button>
                 <!--  S9 Appearance Check Sheet  -->
                 <Button x:Name="cmdS9AppearanceCheckSheet" Click="cmdS9AppearanceCheckSheet_Click">
-                    <TextBlock>
+                    <TextBlock Style="{StaticResource ButtonText}">
                         <Run Text="Cord production" />
                         <LineBreak />
                         <Run Text="Appearance" />
