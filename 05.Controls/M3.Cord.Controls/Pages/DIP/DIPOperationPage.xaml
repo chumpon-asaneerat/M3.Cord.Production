@@ -43,6 +43,10 @@
                                             IconType="Back"
                                             Text="Back"
                                             Click="cmdBack_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
                     <!--  START  -->
                     <ctrl:FontAwesomeButton x:Name="cmdStart"
                                             Margin="5,0,0,0"
@@ -99,7 +103,7 @@
                     <TextBlock Style="{StaticResource ButtonText}">
                         <Run Text="ตรวจเช็คสภาวะการผลิต" />
                         <LineBreak />
-                        <Run Text="ก่อนเปิดเครื่อง (S-8-1)" />
+                        <Run Text="ก่อนเปิดเครื่อง (S-8)" />
                     </TextBlock>
                 </Button>
                 <!--  S9 Cleaning Check Sheet  -->
@@ -131,7 +135,7 @@
                     <TextBlock Style="{StaticResource ButtonText}">
                         <Run Text="ใบบันทึกค่า" />
                         <LineBreak />
-                        <Run Text="สภาวะการผลิต S-8-1" />
+                        <Run Text="สภาวะการผลิต S-8" />
                     </TextBlock>
                 </Button>
                 <!--  DIP Production Time Table  -->
