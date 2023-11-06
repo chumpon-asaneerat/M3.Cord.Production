@@ -89,7 +89,11 @@ namespace M3.Cord.Models
 
         public string MCCode 
         {
-            get { return S7MCCode; }
+            get 
+            {
+                // change S7 to S8
+                return (string.IsNullOrWhiteSpace(S7MCCode)) ? string.Empty : S7MCCode.Replace("7", "8"); 
+            }
             set { }
         }
 
@@ -102,7 +106,10 @@ namespace M3.Cord.Models
         // runtime properties
         public string DoffNos 
         {
-            get { return DoffNo.ToString(); }
+            get 
+            { 
+                return string.IsNullOrWhiteSpace(DoffNo) ? string.Empty : DoffNo.ToString(); 
+            }
             set { }
         }
 

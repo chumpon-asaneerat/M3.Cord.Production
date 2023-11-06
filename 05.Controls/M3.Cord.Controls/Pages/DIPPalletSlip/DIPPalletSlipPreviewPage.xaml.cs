@@ -91,25 +91,17 @@ namespace M3.Cord.Pages
                     {
                         if (!_reprint)
                         {
-                            /*
                             // Create new
                             DIPPalletSlip.Save(item);
                             if (item.PalletId.HasValue)
                             {
                                 // update id
-                                var pCode = DIPPalletCode.GetLastId(item.MCCode).Value();
+                                var pCode = PalletCode.GetLastId(item.MCCode).Value();
                                 if (pCode != null)
                                 {
-                                    DIPPalletCode.UpdateLastId(item.MCCode, pCode.LastId + 1);
-                                }
-
-                                foreach (var item2 in item.Items)
-                                {
-                                    item2.PalletId = item.PalletId.Value;
-                                    DIPPalletSlip.Save(item2);
+                                    PalletCode.UpdateLastId(item.MCCode, pCode.LastId + 1);
                                 }
                             }
-                            */
                         }
                     }
                     this.rptViewer.Print(ReportDisplayName);
@@ -127,13 +119,10 @@ namespace M3.Cord.Pages
 
         private void GoBack()
         {
-            /*
-            // Back to DIP Pallet Slip Manage page
+            // Back to DIP Slip Manage page
             var page = M3CordApp.Pages.DIPPalletSlipManage;
             page.Setup();
             PageContentManager.Instance.Current = page;
-            */
-            M3CordApp.Pages.GotoCordMainMenu();
         }
 
         #region Report methods

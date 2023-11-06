@@ -81,11 +81,6 @@
                         <ctrl:NTextBox CaptionText="Counter:"
                                        Text="{Binding Counter}"
                                        Width="200" />
-                        <!--  Counter  -->
-                        <ctrl:NTextBox CaptionText="Mts:"
-                                       Text="{Binding Mts}"
-                                       Width="200"
-                                       Visibility="Collapsed" />
                     </StackPanel>
                     <Grid />
                 </DockPanel>

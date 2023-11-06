@@ -84,9 +84,9 @@ namespace M3.Cord.Windows
             if (null != pcCard)
             {
                 _pallet = new DIPPalletSlip();
-                _pallet.MCCode = pcCard.MCCode;
+                _pallet.S7MCCode = pcCard.MCCode; // pc use s7 mc only
                 // pallet code
-                var pCode = PalletCode.GetLastId(pcCard.MCCode).Value();
+                var pCode = PalletCode.GetLastId(_pallet.MCCode).Value();
                 string sCode = (null != pCode) ?
                     string.Format("{0:D4}.{1}.{2:D5}", pCode.Year, pCode.MCCode, pCode.LastId + 1) : null;
                 _pallet.PalletCode = sCode;
