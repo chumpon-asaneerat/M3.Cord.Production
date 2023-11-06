@@ -310,7 +310,7 @@ namespace M3.Cord.Pages
             if (null != selecteedMC)
             {
                 mc = selecteedMC;
-                pcCard = DIPUI.PCCard.Current(mc.MCCode);
+                pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
                 if (null != pcCard)
                 {
                     var sheets = DIPMaterialCheckSheet.Gets(pcCard.DIPPCId.Value).Value();
@@ -320,10 +320,10 @@ namespace M3.Cord.Pages
                         sheet = new DIPMaterialCheckSheet();
                         sheet.DIPPCId = pcCard.DIPPCId.Value;
                         sheet.CheckDate = DateTime.Now;
-                        // set same as PCCard
-                        sheet.MCCode = pcCard.MCCode;
-                        sheet.DoffNo = pcCard.DoffNo;
                     }
+                    // set same as PCCard
+                    sheet.MCCode = pcCard.MCCode;
+                    sheet.DoffNo = pcCard.DoffNo;
                 }
             }
 

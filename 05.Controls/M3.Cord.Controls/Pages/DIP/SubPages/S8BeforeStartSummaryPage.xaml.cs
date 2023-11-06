@@ -77,11 +77,15 @@ namespace M3.Cord.Pages
         {
             if (null != selecteedMC)
             {
-                mc = selecteedMC;
-                pcCard = DIPUI.PCCard.Current(mc.MCCode);
-                if (null != pcCard)
+                string mcNo = (selecteedMC.MCCode.EndsWith("1")) ? "1" : "2";
+                mc = DIPMC.Gets("S-8", "S-8-" + mcNo).Value().FirstOrDefault();
+                if (null != mc)
                 {
+                    pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
+                    if (null != pcCard)
+                    {
 
+                    }
                 }
             }
 

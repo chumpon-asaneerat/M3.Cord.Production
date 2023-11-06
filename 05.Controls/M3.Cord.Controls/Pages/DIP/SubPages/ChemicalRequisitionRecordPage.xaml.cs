@@ -100,7 +100,7 @@ namespace M3.Cord.Pages
             if (null != selecteedMC)
             {
                 mc = selecteedMC;
-                pcCard = DIPUI.PCCard.Current(mc.MCCode);
+                pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
                 if (null != pcCard)
                 {
 

@@ -63,8 +63,8 @@
                                       SelectedDate="{Binding CheckDate}" />
                     <ctrl:NTextBox CaptionText="S-7 MC:"
                                    x:Name="txtS7MC"
-                                   Text="{Binding MCCode}" 
-                                   IsReadOnly="True"/>
+                                   Text="{Binding MCCode}"
+                                   IsReadOnly="True" />
                 </StackPanel>
                 <Grid />
             </DockPanel>

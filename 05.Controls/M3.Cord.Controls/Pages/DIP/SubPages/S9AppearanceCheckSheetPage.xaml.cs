@@ -64,24 +64,7 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region Combobox Handlers
-
-        private void cbS9MC_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            mc = cbS9MC.SelectedItem as DIPMC;
-
-            RefreshGrid(true);
-        }
-
-        #endregion
-
         #region Private Methods
-
-        private void LoadComcoBox()
-        {
-            cbS9MC.ItemsSource = DIPMC.Gets("S-9").Value();
-            cbS9MC.SelectedIndex = -1;
-        }
 
         private void RefreshGrid(bool bInit)
         {
@@ -163,25 +146,25 @@ namespace M3.Cord.Pages
 
         public void Setup(DIPMC selecteedMC)
         {
-            LoadComcoBox();
-
             if (null != selecteedMC)
             {
-                mc = selecteedMC;
-                pcCard = DIPUI.PCCard.Current(mc.MCCode);
-                if (null != pcCard)
+                string mcNo = (selecteedMC.MCCode.EndsWith("1")) ? "1" : "2";
+                mc = DIPMC.Gets("S-9", "S-9-" + mcNo).Value().FirstOrDefault();
+                if (null != mc)
                 {
-                    var sheets = S9AppearanceCheckSheet.Gets(pcCard.DIPPCId.Value).Value();
-                    sheet = (null != sheets) ? sheets.LastOrDefault() : null;
-                    if (null == sheet)
+                    pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
+                    if (null != pcCard)
                     {
-                        sheet = new S9AppearanceCheckSheet();
-                        sheet.DIPPCId = pcCard.DIPPCId.Value;
-                        sheet.CheckDate = DateTime.Now;
-                    }
-                    else
-                    {
-                        cbS9MC.SelectedValue = sheet.MCCode;
+                        var sheets = S9AppearanceCheckSheet.Gets(pcCard.DIPPCId.Value).Value();
+                        sheet = (null != sheets) ? sheets.LastOrDefault() : null;
+                        if (null == sheet)
+                        {
+                            sheet = new S9AppearanceCheckSheet();
+                            sheet.DIPPCId = pcCard.DIPPCId.Value;
+                            sheet.CheckDate = DateTime.Now;
+                        }
+                        // set same as PCCard/S9 MC
+                        sheet.MCCode = mc.MCCode;
                     }
                 }
             }

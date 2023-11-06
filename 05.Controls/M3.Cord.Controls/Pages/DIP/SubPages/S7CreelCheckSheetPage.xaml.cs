@@ -142,7 +142,7 @@ namespace M3.Cord.Pages
         public void Setup(DIPMC selecteedMC)
         {
             mc = selecteedMC;
-            pcCard = DIPUI.PCCard.Current(mc.MCCode);
+            pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
             if (null != pcCard)
             {
                 var sheets = S7CreelCheckSheet.Gets(pcCard.DIPPCId.Value).Value();
@@ -152,9 +152,9 @@ namespace M3.Cord.Pages
                     sheet = new S7CreelCheckSheet();
                     sheet.DIPPCId = pcCard.DIPPCId.Value;
                     sheet.CheckDate = DateTime.Now;
-                    // set same as PCCard
-                    sheet.MCCode = pcCard.MCCode;
                 }
+                // set same as PCCard
+                sheet.MCCode = pcCard.MCCode;
             }
 
             paCondition.DataContext = pcCard;
