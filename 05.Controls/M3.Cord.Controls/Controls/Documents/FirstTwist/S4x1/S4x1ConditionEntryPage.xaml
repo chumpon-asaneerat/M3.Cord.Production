@@ -145,7 +145,7 @@
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding TwistChangeGearE}"
+                                     Text="{Binding TwistChangeGearE, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
@@ -153,7 +153,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding TwistChangeGearF}"
+                                     Text="{Binding TwistChangeGearF, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                     </StackPanel>
@@ -163,7 +163,7 @@
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding TwistChangeGearG}"
+                                     Text="{Binding TwistChangeGearG, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
@@ -171,7 +171,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding TwistChangeGearH}"
+                                     Text="{Binding TwistChangeGearH, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                     </StackPanel>
@@ -186,13 +186,13 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="{Binding TwistChangeGearEActual}" />
+                            <TextBox Width="70" Text="{Binding TwistChangeGearEActual, StringFormat='{}{0:#,##0.##}'}" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text=" x " />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="{Binding TwistChangeGearFActual}" />
+                            <TextBox Width="70" Text="{Binding TwistChangeGearFActual, StringFormat='{}{0:#,##0.##}'}" />
                         </StackPanel>
                     </StackPanel>
                     <TextBlock Height="5" />
@@ -200,13 +200,13 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="{Binding TwistChangeGearGActual}" />
+                            <TextBox Width="70" Text="{Binding TwistChangeGearGActual, StringFormat='{}{0:#,##0.##}'}" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text=" x " />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="{Binding TwistChangeGearHActual}" />
+                            <TextBox Width="70" Text="{Binding TwistChangeGearHActual, StringFormat='{}{0:#,##0.##}'}" />
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
@@ -241,11 +241,11 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
                     <TextBox Width="200"
-                             Text="{Binding MotorPulleyDia}"
+                             Text="{Binding MotorPulleyDia, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Height="5" />
                     <TextBox Width="200"
-                             Text="{Binding DrivingPulleyDia}"
+                             Text="{Binding DrivingPulleyDia, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
 
@@ -254,9 +254,9 @@
                 <StackPanel Orientation="Vertical"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                    <TextBox Width="200" Text="{Binding MotorPulleyDiaActual}" />
+                    <TextBox Width="200" Text="{Binding MotorPulleyDiaActual, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Height="5" />
-                    <TextBox Width="200" Text="{Binding DrivingPulleyDiaActual}" />
+                    <TextBox Width="200" Text="{Binding DrivingPulleyDiaActual, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
 
@@ -289,11 +289,11 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
                     <TextBox Width="200"
-                             Text="{Binding OverFeedRate}"
+                             Text="{Binding OverFeedRate, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Height="5" />
                     <TextBox Width="200"
-                             Text="{Binding OverFeedGear}"
+                             Text="{Binding OverFeedGear, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
@@ -301,9 +301,9 @@
                 <StackPanel Orientation="Vertical"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                    <TextBox Width="200" Text="{Binding OverFeedRateActual}" />
+                    <TextBox Width="200" Text="{Binding OverFeedRateActual, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Height="5" />
-                    <TextBox Width="200" Text="{Binding OverFeedGearActual}" />
+                    <TextBox Width="200" Text="{Binding OverFeedGearActual, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
 
@@ -341,7 +341,7 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
                     <TextBox Width="200"
-                             Text="{Binding WindAngleDeg}"
+                             Text="{Binding WindAngleDeg, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Height="5" />
                     <StackPanel Orientation="Horizontal"
@@ -349,7 +349,7 @@
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding WindAngleGearA}"
+                                     Text="{Binding WindAngleGearA, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
@@ -357,7 +357,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding WindAngleGearB}"
+                                     Text="{Binding WindAngleGearB, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                     </StackPanel>
@@ -367,19 +367,19 @@
                 <StackPanel Orientation="Vertical"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                    <TextBox Width="200" Text="{Binding WindAngleDegActual}" />
+                    <TextBox Width="200" Text="{Binding WindAngleDegActual, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Height="5" />
                     <StackPanel Orientation="Horizontal"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="{Binding WindAngleGearAActual}" />
+                            <TextBox Width="70" Text="{Binding WindAngleGearAActual, StringFormat='{}{0:#,##0.##}'}" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text=" x " />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="{Binding WindAngleGearBActual}" />
+                            <TextBox Width="70" Text="{Binding WindAngleGearBActual, StringFormat='{}{0:#,##0.##}'}" />
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
@@ -407,7 +407,7 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
                     <TextBox Width="200"
-                             Text="{Binding TensorDialSet}"
+                             Text="{Binding TensorDialSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Height="5" />
                     <StackPanel Orientation="Horizontal"
@@ -415,7 +415,7 @@
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding NumberOfLoop}"
+                                     Text="{Binding NumberOfLoop, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
@@ -423,7 +423,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding NumberOfLoopErr}"
+                                     Text="{Binding NumberOfLoopErr, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                     </StackPanel>
@@ -433,9 +433,9 @@
                 <StackPanel Orientation="Vertical"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                    <TextBox Width="200" Text="{Binding TensorDialSetActual}" />
+                    <TextBox Width="200" Text="{Binding TensorDialSetActual, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Height="5" />
-                    <TextBox Width="200" Text="{Binding NumberOfLoopActual}" />
+                    <TextBox Width="200" Text="{Binding NumberOfLoopActual, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
 
@@ -477,7 +477,7 @@
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding WindQuantity}"
+                                     Text="{Binding WindQuantity, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
@@ -485,7 +485,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding WindQuantityErr}"
+                                     Text="{Binding WindQuantityErr, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                     </StackPanel>
@@ -497,7 +497,7 @@
                             VerticalAlignment="Center">
                     <TextBox Width="200" Text="{Binding MethodOfKnotActual}" />
                     <TextBlock Height="5" />
-                    <TextBox Width="200" Text="{Binding WindQuantityActual}" />
+                    <TextBox Width="200" Text="{Binding WindQuantityActual, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
 
@@ -534,7 +534,7 @@
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding Length}"
+                                     Text="{Binding Length, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
@@ -542,7 +542,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding LengthErr}"
+                                     Text="{Binding LengthErr, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                     </StackPanel>
@@ -552,7 +552,7 @@
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding DoffTime}"
+                                     Text="{Binding DoffTime, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
@@ -560,7 +560,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding DoffTimeErr}"
+                                     Text="{Binding DoffTimeErr, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                     </StackPanel>
@@ -570,9 +570,9 @@
                 <StackPanel Orientation="Vertical"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                    <TextBox Width="200" Text="{Binding LengthActual}" />
+                    <TextBox Width="200" Text="{Binding LengthActual, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Height="5" />
-                    <TextBox Width="200" Text="{Binding DoffTimeActual}" />
+                    <TextBox Width="200" Text="{Binding DoffTimeActual, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
 
@@ -609,7 +609,7 @@
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding ProductQuantityKg}"
+                                     Text="{Binding ProductQuantityKg, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
@@ -617,7 +617,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBox Width="70"
-                                     Text="{Binding ProductQuantityDay}"
+                                     Text="{Binding ProductQuantityDay, StringFormat='{}{0:#,##0.##}'}"
                                      IsReadOnly="True" />
                         </StackPanel>
                     </StackPanel>
@@ -637,13 +637,13 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding ProductQuantityKgActual}" />
+                        <TextBox Width="70" Text="{Binding ProductQuantityKgActual, StringFormat='{}{0:#,##0.##}'}" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" / " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding ProductQuantityDayActual}" />
+                        <TextBox Width="70" Text="{Binding ProductQuantityDayActual, StringFormat='{}{0:#,##0.##}'}" />
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -706,17 +706,17 @@
             <Border Grid.Row="11" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="100"
-                             Text="{Binding CalculatedTwistingNumber}"
+                             Text="{Binding CalculatedTwistingNumber, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" (S) " />
                     <TextBlock Text=" ± " />
                     <TextBox Width="70"
-                             Text="{Binding CalculatedTwistingNumberErr}"
+                             Text="{Binding CalculatedTwistingNumberErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="11" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding CalculatedTwistingNumberActual}" />
+                <TextBox Width="200" Text="{Binding CalculatedTwistingNumberActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -739,16 +739,16 @@
             <Border Grid.Row="12" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="100"
-                             Text="{Binding NumberOfSpindleRotation}"
+                             Text="{Binding NumberOfSpindleRotation, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="70"
-                             Text="{Binding NumberOfSpindleRotationErr}"
+                             Text="{Binding NumberOfSpindleRotationErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="12" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding NumberOfSpindleRotationActual}" />
+                <TextBox Width="200" Text="{Binding NumberOfSpindleRotationActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
@@ -770,16 +770,16 @@
             <Border Grid.Row="13" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="100"
-                             Text="{Binding YarnSpeed}"
+                             Text="{Binding YarnSpeed, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="70"
-                             Text="{Binding YarnSpeedErr}"
+                             Text="{Binding YarnSpeedErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="13" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding YarnSpeedActual}" />
+                <TextBox Width="200" Text="{Binding YarnSpeedActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->

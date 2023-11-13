@@ -153,33 +153,33 @@
             <Border Grid.Row="2" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding MainSupplySteamPressureSet}"
+                             Text="{Binding MainSupplySteamPressureSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding MainSupplySteamPressureSetErr}"
+                             Text="{Binding MainSupplySteamPressureSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="2" Grid.Column="4">
-                <TextBox Width="132" Text="{Binding MainSupplySteamPressureSetActual}" />
+                <TextBox Width="132" Text="{Binding MainSupplySteamPressureSetActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <Border Grid.Row="2" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding MainSupplySteamPressureSpec}"
+                             Text="{Binding MainSupplySteamPressureSpec, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding MainSupplySteamPressureSpecErr}"
+                             Text="{Binding MainSupplySteamPressureSpecErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="2" Grid.Column="6">
-                <TextBox Width="132" Text="{Binding MainSupplySteamPressureSpecActual}" />
+                <TextBox Width="132" Text="{Binding MainSupplySteamPressureSpecActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -202,33 +202,33 @@
             <Border Grid.Row="3" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding AgeingSteamPressureSet}"
+                             Text="{Binding AgeingSteamPressureSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding AgeingSteamPressureSetErr}"
+                             Text="{Binding AgeingSteamPressureSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="3" Grid.Column="4">
-                <TextBox Width="132" Text="{Binding AgeingSteamPressureSetActual}" />
+                <TextBox Width="132" Text="{Binding AgeingSteamPressureSetActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <Border Grid.Row="3" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding AgeingSteamPressureSpec}"
+                             Text="{Binding AgeingSteamPressureSpec, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding AgeingSteamPressureSpecErr}"
+                             Text="{Binding AgeingSteamPressureSpecErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="3" Grid.Column="6">
-                <TextBox Width="132" Text="{Binding AgeingSteamPressureActual}" />
+                <TextBox Width="132" Text="{Binding AgeingSteamPressureActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -249,33 +249,33 @@
             <Border Grid.Row="4" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding SettingTemperatureSet}"
+                             Text="{Binding SettingTemperatureSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding SettingTemperatureSetErr}"
+                             Text="{Binding SettingTemperatureSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="4" Grid.Column="4">
-                <TextBox Width="132" Text="{Binding SettingTemperatureSetActual}" />
+                <TextBox Width="132" Text="{Binding SettingTemperatureSetActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <Border Grid.Row="4" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding SettingTemperatureSpec}"
+                             Text="{Binding SettingTemperatureSpec, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding SettingTemperatureSpecErr}"
+                             Text="{Binding SettingTemperatureSpecErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="4" Grid.Column="6">
-                <TextBox Width="132" Text="{Binding SettingTemperatureSpecActual}" />
+                <TextBox Width="132" Text="{Binding SettingTemperatureSpecActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -296,33 +296,33 @@
             <Border Grid.Row="5" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding SettingTimeSet}"
+                             Text="{Binding SettingTimeSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding SettingTimeSetErr}"
+                             Text="{Binding SettingTimeSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="5" Grid.Column="4">
-                <TextBox Width="132" Text="{Binding SettingTimeSetActual}" />
+                <TextBox Width="132" Text="{Binding SettingTimeSetActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <Border Grid.Row="5" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding SettingTimeSpec}"
+                             Text="{Binding SettingTimeSpec, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding SettingTimeSpecErr}"
+                             Text="{Binding SettingTimeSpecErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="5" Grid.Column="6">
-                <TextBox Width="132" Text="{Binding SettingTimeSpecActual}" />
+                <TextBox Width="132" Text="{Binding SettingTimeSpecActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -535,35 +535,35 @@
             <Border Grid.Row="10" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding TwistingNoSet}"
+                             Text="{Binding TwistingNoSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding TwistingNoSetErr}"
+                             Text="{Binding TwistingNoSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" (S) T/M" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="10" Grid.Column="4">
-                <TextBox Width="132" Text="{Binding TwistingNoSetActual}" />
+                <TextBox Width="132" Text="{Binding TwistingNoSetActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <Border Grid.Row="10" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding TwistingNoSpec}"
+                             Text="{Binding TwistingNoSpec, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding TwistingNoSpecErr}"
+                             Text="{Binding TwistingNoSpecErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" (S) T/M" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="10" Grid.Column="6">
-                <TextBox Width="132" Text="{Binding TwistingNoSpecActual}" />
+                <TextBox Width="132" Text="{Binding TwistingNoSpecActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -584,35 +584,35 @@
             <Border Grid.Row="11" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding UnitWeightSet}"
+                             Text="{Binding UnitWeightSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding UnitWeightSetErr}"
+                             Text="{Binding UnitWeightSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" Kg/CH" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="11" Grid.Column="4">
-                <TextBox Width="132" Text="{Binding UnitWeightSetActual}" />
+                <TextBox Width="132" Text="{Binding UnitWeightSetActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <Border Grid.Row="11" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="55"
-                             Text="{Binding UnitWeightSpec}"
+                             Text="{Binding UnitWeightSpec, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
                     <TextBox Width="55"
-                             Text="{Binding UnitWeightSpecErr}"
+                             Text="{Binding UnitWeightSpecErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" Kg/CH" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="11" Grid.Column="6">
-                <TextBox Width="132" Text="{Binding UnitWeightSpecActual}" />
+                <TextBox Width="132" Text="{Binding UnitWeightSpecActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->

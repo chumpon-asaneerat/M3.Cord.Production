@@ -153,13 +153,13 @@
             <Border Grid.Row="3" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding Length}" />
+                        <TextBox Width="70" Text="{Binding Length, StringFormat='{}{0:#,##0.##}'}" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" ± " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding LengthErr}"/>
+                        <TextBox Width="70" Text="{Binding LengthErr, StringFormat='{}{0:#,##0.##}'}" />
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -223,7 +223,7 @@
                 <CheckBox Content="SC" IsChecked="{Binding WindAngleSC}"/>
             </Border>
             <Border Grid.Row="6" Grid.Column="3">
-                <TextBox Width="200" Text="{Binding WindAngle}" />
+                <TextBox Width="200" Text="{Binding WindAngle, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -242,7 +242,7 @@
                 <CheckBox Content="SC" IsChecked="{Binding DistuebAccelerationTimeSC}"/>
             </Border>
             <Border Grid.Row="7" Grid.Column="3">
-                <TextBox Width="200" Text="{Binding DistuebAccelerationTime}" />
+                <TextBox Width="200" Text="{Binding DistuebAccelerationTime, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -261,7 +261,7 @@
                 <CheckBox Content="SC" IsChecked="{Binding DistuebDccelerationTimeSC}"/>
             </Border>
             <Border Grid.Row="8" Grid.Column="3">
-                <TextBox Width="200" Text="{Binding DistuebDccelerationTime}" />
+                <TextBox Width="200" Text="{Binding DistuebDccelerationTime, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -349,13 +349,13 @@
             <Border Grid.Row="13" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding WindQuantity}"/>
+                        <TextBox Width="70" Text="{Binding WindQuantity, StringFormat='{}{0:#,##0.##}'}"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" ± " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding WindQuantityErr}" />
+                        <TextBox Width="70" Text="{Binding WindQuantityErr, StringFormat='{}{0:#,##0.##}'}" />
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -379,13 +379,13 @@
             <Border Grid.Row="14" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding DoffTime}"/>
+                        <TextBox Width="70" Text="{Binding DoffTime, StringFormat='{}{0:#,##0.##}'}"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" ± " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding DoffTimeErr}" />
+                        <TextBox Width="70" Text="{Binding DoffTimeErr, StringFormat='{}{0:#,##0.##}'}" />
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -458,10 +458,10 @@
             </Border>
             <Border Grid.Row="17" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="{Binding CalculatedTwistingNumber}" />
+                    <TextBox Width="100" Text="{Binding CalculatedTwistingNumber, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" (S) " />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="{Binding CalculatedTwistingNumberErr}"/>
+                    <TextBox Width="70" Text="{Binding CalculatedTwistingNumberErr, StringFormat='{}{0:#,##0.##}'}"/>
                 </StackPanel>
             </Border>
 
@@ -484,9 +484,9 @@
             </Border>
             <Border Grid.Row="18" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="{Binding NumberOfSpindleRotation}"/>
+                    <TextBox Width="100" Text="{Binding NumberOfSpindleRotation, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="{Binding NumberOfSpindleRotationErr}" />
+                    <TextBox Width="70" Text="{Binding NumberOfSpindleRotationErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <!--#endregion-->
@@ -508,9 +508,9 @@
             </Border>
             <Border Grid.Row="19" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="{Binding YarnSpeed}" />
+                    <TextBox Width="100" Text="{Binding YarnSpeed, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="{Binding YarnSpeedErr}"/>
+                    <TextBox Width="70" Text="{Binding YarnSpeedErr, StringFormat='{}{0:#,##0.##}'}"/>
                 </StackPanel>
             </Border>
 

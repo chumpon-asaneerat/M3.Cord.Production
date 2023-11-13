@@ -154,21 +154,21 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="( I )" />
-                        <TextBox Width="50" Text="{Binding TwistChangeGearI}" />
+                        <TextBox Width="50" Text="{Binding TwistChangeGearI, StringFormat='{}{0:#,##0.##}'}"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" x " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="( J )" />
-                        <TextBox Width="50" Text="{Binding TwistChangeGearJ}" />
+                        <TextBox Width="50" Text="{Binding TwistChangeGearJ, StringFormat='{}{0:#,##0.##}'}" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" x " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="( K )" />
-                        <TextBox Width="50" Text="{Binding TwistChangeGearK}" />
+                        <TextBox Width="50" Text="{Binding TwistChangeGearK, StringFormat='{}{0:#,##0.##}'}" />
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -195,14 +195,14 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="( A )" />
-                        <TextBox Width="70" Text="{Binding LifterChangeGearA}" />
+                        <TextBox Width="70" Text="{Binding LifterChangeGearA, StringFormat='{}{0:#,##0.##}'}" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" x " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="( B )" />
-                        <TextBox Width="70" Text="{Binding LifterChangeGearB}" />
+                        <TextBox Width="70" Text="{Binding LifterChangeGearB, StringFormat='{}{0:#,##0.##}'}" />
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -226,7 +226,7 @@
                 <CheckBox Content="SC" IsChecked="{Binding OuterDiameterSC}" />
             </Border>
             <Border Grid.Row="5" Grid.Column="3">
-                <TextBox Width="200" Text="{Binding OuterDiameter}" />
+                <TextBox Width="200" Text="{Binding OuterDiameter, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -272,9 +272,9 @@
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center">
-                        <TextBox Width="80" Text="{Binding CouterUnit}" />
+                        <TextBox Width="80" Text="{Binding CouterUnit, StringFormat='{}{0:#,##0.##}'}" />
                         <TextBlock Text=" ± " />
-                        <TextBox Width="60" Text="{Binding CouterUnitErr}" />
+                        <TextBox Width="60" Text="{Binding CouterUnitErr, StringFormat='{}{0:#,##0.##}'}" />
                         <TextBlock Text=" m." />
                     </StackPanel>
                     <TextBlock Height="3" />
@@ -282,9 +282,9 @@
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center">
                         <TextBlock Text=" ( " />
-                        <TextBox Width="80" Text="{Binding CouterWeight}" />
+                        <TextBox Width="80" Text="{Binding CouterWeight, StringFormat='{}{0:#,##0.##}'}" />
                         <TextBlock Text=" ± " />
-                        <TextBox Width="60" Text="{Binding CouterWeightErr}" />
+                        <TextBox Width="60" Text="{Binding CouterWeightErr, StringFormat='{}{0:#,##0.##}'}" />
                         <TextBlock Text=" kg ) " />
                     </StackPanel>
                 </StackPanel>
@@ -390,10 +390,10 @@
             </Border>
             <Border Grid.Row="11" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="{Binding CalculatedTwistingNumber}" />
+                    <TextBox Width="100" Text="{Binding CalculatedTwistingNumber, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" (S) " />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="{Binding CalculatedTwistingNumberErr}" />
+                    <TextBox Width="70" Text="{Binding CalculatedTwistingNumberErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
 
@@ -416,9 +416,9 @@
             </Border>
             <Border Grid.Row="12" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="{Binding NumberOfSpindleRotation}" />
+                    <TextBox Width="100" Text="{Binding NumberOfSpindleRotation, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="{Binding NumberOfSpindleRotationErr}" />
+                    <TextBox Width="70" Text="{Binding NumberOfSpindleRotationErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <!--#endregion-->
@@ -440,9 +440,9 @@
             </Border>
             <Border Grid.Row="13" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="{Binding YarnSpeed}" />
+                    <TextBox Width="100" Text="{Binding YarnSpeed, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="{Binding YarnSpeedErr}" />
+                    <TextBox Width="70" Text="{Binding YarnSpeedErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
 

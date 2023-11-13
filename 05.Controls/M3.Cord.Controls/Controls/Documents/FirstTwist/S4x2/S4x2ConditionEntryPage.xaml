@@ -163,18 +163,18 @@
             <Border Grid.Row="3" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding Length}" IsReadOnly="True" />
+                        <TextBox Width="70" Text="{Binding Length, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" ± " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding LengthErr}" IsReadOnly="True"/>
+                        <TextBox Width="70" Text="{Binding LengthErr, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True"/>
                     </StackPanel>
                 </StackPanel>
             </Border>
             <Border Grid.Row="3" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding LengthActual}" />
+                <TextBox Width="200" Text="{Binding LengthActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -242,10 +242,10 @@
                 <CheckBox Content="SC" IsChecked="{Binding WindAngleSC}"/>
             </Border>
             <Border Grid.Row="6" Grid.Column="3">
-                <TextBox Width="200" Text="{Binding WindAngle}" IsReadOnly="True" />
+                <TextBox Width="200" Text="{Binding WindAngle, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True" />
             </Border>
             <Border Grid.Row="6" Grid.Column="4">
-                <TextBox Width="200"  Text="{Binding WindAngleActual}" />
+                <TextBox Width="200"  Text="{Binding WindAngleActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -264,10 +264,10 @@
                 <CheckBox Content="SC" IsChecked="{Binding DistuebAccelerationTimeSC}"/>
             </Border>
             <Border Grid.Row="7" Grid.Column="3">
-                <TextBox Width="200" Text="{Binding DistuebAccelerationTime}" IsReadOnly="True" />
+                <TextBox Width="200" Text="{Binding DistuebAccelerationTime, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True" />
             </Border>
             <Border Grid.Row="7" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding DistuebAccelerationTimeActual}" />
+                <TextBox Width="200" Text="{Binding DistuebAccelerationTimeActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -286,10 +286,10 @@
                 <CheckBox Content="SC" IsChecked="{Binding DistuebDccelerationTimeSC}"/>
             </Border>
             <Border Grid.Row="8" Grid.Column="3">
-                <TextBox Width="200" Text="{Binding DistuebDccelerationTime}" IsReadOnly="True" />
+                <TextBox Width="200" Text="{Binding DistuebDccelerationTime, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True" />
             </Border>
             <Border Grid.Row="8" Grid.Column="4" >
-                <TextBox Width="200" Text="{Binding DistuebDccelerationTimeActual}" />
+                <TextBox Width="200" Text="{Binding DistuebDccelerationTimeActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -389,18 +389,18 @@
             <Border Grid.Row="13" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding WindQuantity}" IsReadOnly="True"/>
+                        <TextBox Width="70" Text="{Binding WindQuantity, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" ± " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding WindQuantityErr}" IsReadOnly="True"/>
+                        <TextBox Width="70" Text="{Binding WindQuantityErr, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True"/>
                     </StackPanel>
                 </StackPanel>
             </Border>
             <Border Grid.Row="13" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding WindQuantityActual}" />
+                <TextBox Width="200" Text="{Binding WindQuantityActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <Border Grid.Row="14" Grid.Column="0">
@@ -422,18 +422,18 @@
             <Border Grid.Row="14" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding DoffTime}" IsReadOnly="True"/>
+                        <TextBox Width="70" Text="{Binding DoffTime, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" ± " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding DoffTimeErr}" IsReadOnly="True"/>
+                        <TextBox Width="70" Text="{Binding DoffTimeErr, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True"/>
                     </StackPanel>
                 </StackPanel>
             </Border>
             <Border Grid.Row="14" Grid.Column="4">
-                <TextBox Width="200"  Text="{Binding DoffTimeActual}" />
+                <TextBox Width="200"  Text="{Binding DoffTimeActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <Border Grid.Row="15" Grid.Column="0">
@@ -458,13 +458,13 @@
             <Border Grid.Row="15" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding ProductQuantityKgActual}"/>
+                        <TextBox Width="70" Text="{Binding ProductQuantityKgActual, StringFormat='{}{0:#,##0.##}'}"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text=" / " />
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
-                        <TextBox Width="70" Text="{Binding ProductQuantityDayActual}" />
+                        <TextBox Width="70" Text="{Binding ProductQuantityDayActual, StringFormat='{}{0:#,##0.##}'}" />
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -524,14 +524,14 @@
             </Border>
             <Border Grid.Row="17" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="{Binding CalculatedTwistingNumber}" IsReadOnly="True"/>
+                    <TextBox Width="100" Text="{Binding CalculatedTwistingNumber, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True"/>
                     <TextBlock Text=" (S) " />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="{Binding CalculatedTwistingNumberErr}" IsReadOnly="True"/>
+                    <TextBox Width="70" Text="{Binding CalculatedTwistingNumberErr, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True"/>
                 </StackPanel>
             </Border>
             <Border Grid.Row="17" Grid.Column="4" >
-                <TextBox Width="200" Text="{Binding CalculatedTwistingNumberActual}" />
+                <TextBox Width="200" Text="{Binding CalculatedTwistingNumberActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
             <!--#endregion-->
@@ -553,13 +553,13 @@
             </Border>
             <Border Grid.Row="18" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="{Binding NumberOfSpindleRotation}" IsReadOnly="True"/>
+                    <TextBox Width="100" Text="{Binding NumberOfSpindleRotation, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="{Binding NumberOfSpindleRotationErr}" IsReadOnly="True"/>
+                    <TextBox Width="70" Text="{Binding NumberOfSpindleRotationErr, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True"/>
                 </StackPanel>
             </Border>
             <Border Grid.Row="18" Grid.Column="4" >
-                <TextBox Width="200" Text="{Binding NumberOfSpindleRotationActual}"/>
+                <TextBox Width="200" Text="{Binding NumberOfSpindleRotationActual, StringFormat='{}{0:#,##0.##}'}"/>
             </Border>
             <!--#endregion-->
 
@@ -580,13 +580,13 @@
             </Border>
             <Border Grid.Row="19" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="100" Text="{Binding YarnSpeed}" IsReadOnly="True"/>
+                    <TextBox Width="100" Text="{Binding YarnSpeed, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="70" Text="{Binding YarnSpeedErr}" IsReadOnly="True"/>
+                    <TextBox Width="70" Text="{Binding YarnSpeedErr, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True"/>
                 </StackPanel>
             </Border>
             <Border Grid.Row="19" Grid.Column="4" >
-                <TextBox Width="200" Text="{Binding YarnSpeedActual}"/>
+                <TextBox Width="200" Text="{Binding YarnSpeedActual, StringFormat='{}{0:#,##0.##}'}"/>
             </Border>
 
             <!--#endregion-->

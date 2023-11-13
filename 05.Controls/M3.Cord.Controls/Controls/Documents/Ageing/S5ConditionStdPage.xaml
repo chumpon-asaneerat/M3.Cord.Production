@@ -139,17 +139,17 @@
             </Border>
             <Border Grid.Row="2" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding MainSupplySteamPressureSet}"/>
+                    <TextBox Width="55" Text="{Binding MainSupplySteamPressureSet, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding MainSupplySteamPressureSetErr}"/>
+                    <TextBox Width="55" Text="{Binding MainSupplySteamPressureSetErr, StringFormat='{}{0:#,##0.##}'}"/>
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="2" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding MainSupplySteamPressureSpec}" />
+                    <TextBox Width="55" Text="{Binding MainSupplySteamPressureSpec, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding MainSupplySteamPressureSpecErr}" />
+                    <TextBox Width="55" Text="{Binding MainSupplySteamPressureSpecErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
 
@@ -172,17 +172,17 @@
             </Border>
             <Border Grid.Row="3" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding AgeingSteamPressureSet}"/>
+                    <TextBox Width="55" Text="{Binding AgeingSteamPressureSet, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding AgeingSteamPressureSetErr}"/>
+                    <TextBox Width="55" Text="{Binding AgeingSteamPressureSetErr, StringFormat='{}{0:#,##0.##}'}"/>
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="3" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding AgeingSteamPressureSpec}"/>
+                    <TextBox Width="55" Text="{Binding AgeingSteamPressureSpec, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding AgeingSteamPressureSpecErr}"/>
+                    <TextBox Width="55" Text="{Binding AgeingSteamPressureSpecErr, StringFormat='{}{0:#,##0.##}'}"/>
                 </StackPanel>
             </Border>
 
@@ -203,17 +203,17 @@
             </Border>
             <Border Grid.Row="4" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding SettingTemperatureSet}"/>
+                    <TextBox Width="55" Text="{Binding SettingTemperatureSet, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding SettingTemperatureSetErr}"/>
+                    <TextBox Width="55" Text="{Binding SettingTemperatureSetErr, StringFormat='{}{0:#,##0.##}'}"/>
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="4" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding SettingTemperatureSpec}"/>
+                    <TextBox Width="55" Text="{Binding SettingTemperatureSpec, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding SettingTemperatureSpecErr}"/>
+                    <TextBox Width="55" Text="{Binding SettingTemperatureSpecErr, StringFormat='{}{0:#,##0.##}'}"/>
                 </StackPanel>
             </Border>
 
@@ -234,17 +234,17 @@
             </Border>
             <Border Grid.Row="5" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding SettingTimeSet}"/>
+                    <TextBox Width="55" Text="{Binding SettingTimeSet, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding SettingTimeSetErr}"/>
+                    <TextBox Width="55" Text="{Binding SettingTimeSetErr, StringFormat='{}{0:#,##0.##}'}"/>
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="5" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding SettingTimeSpec}" />
+                    <TextBox Width="55" Text="{Binding SettingTimeSpec, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding SettingTimeSpecErr}" />
+                    <TextBox Width="55" Text="{Binding SettingTimeSpecErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
 
@@ -377,18 +377,18 @@
             </Border>
             <Border Grid.Row="10" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding TwistingNoSet}"/>
+                    <TextBox Width="55" Text="{Binding TwistingNoSet, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding TwistingNoSetErr}" />
+                    <TextBox Width="55" Text="{Binding TwistingNoSetErr, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" (S) T/M" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="10" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding TwistingNoSpec}"/>
+                    <TextBox Width="55" Text="{Binding TwistingNoSpec, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding TwistingNoSpecErr}"/>
+                    <TextBox Width="55" Text="{Binding TwistingNoSpecErr, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" (S) T/M" />
                 </StackPanel>
             </Border>
@@ -410,18 +410,18 @@
             </Border>
             <Border Grid.Row="11" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding UnitWeightSet}"/>
+                    <TextBox Width="55" Text="{Binding UnitWeightSet, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding UnitWeightSetErr}"/>
+                    <TextBox Width="55" Text="{Binding UnitWeightSetErr, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" Kg/CH" />
                 </StackPanel>
             </Border>
 
             <Border Grid.Row="11" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="55" Text="{Binding UnitWeightSpec}"/>
+                    <TextBox Width="55" Text="{Binding UnitWeightSpec, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" ± " />
-                    <TextBox Width="55" Text="{Binding UnitWeightSpecErr}"/>
+                    <TextBox Width="55" Text="{Binding UnitWeightSpecErr, StringFormat='{}{0:#,##0.##}'}"/>
                     <TextBlock Text=" Kg/CH" />
                 </StackPanel>
             </Border>
