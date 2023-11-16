@@ -322,9 +322,15 @@
     <EmbeddedResource Include="Reports\DIPPalletSlipA5.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA6.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA5.rdlc" />
+    <EmbeddedResource Include="Reports\S4x2Condition.rdlc" />
+    <EmbeddedResource Include="Reports\S4x1Condition.rdlc" />
+    <EmbeddedResource Include="Reports\S1Condition.rdlc" />
     <EmbeddedResource Include="Reports\S5Condition.rdlc" />
     <None Include="Properties\DataSources\M3.Cord.Models.DIPPalletSlip.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.PalletSetting.datasource" />
+    <None Include="Properties\DataSources\M3.Cord.Models.S1Condition.datasource" />
+    <None Include="Properties\DataSources\M3.Cord.Models.S4x1Condition.datasource" />
+    <None Include="Properties\DataSources\M3.Cord.Models.S4x2Condition.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.S5ConditionPrintModel.datasource" />
     <Compile Include="Pages\FirstTwist\FirstTwistOperationPage.xaml.cs">
       <DependentUpon>FirstTwistOperationPage.xaml</DependentUpon>
