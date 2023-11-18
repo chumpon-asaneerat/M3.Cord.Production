@@ -125,8 +125,8 @@ namespace M3.Cord.Pages
 
         private void GoBack()
         {
-            // Back to Pallet Setting Manage page
-            var page = M3CordApp.Pages.PalletSettingManage;
+            // Back to Solution Manage page
+            var page = M3CordApp.Pages.SolitionSlipManage;
             page.Setup();
             PageContentManager.Instance.Current = page;
         }

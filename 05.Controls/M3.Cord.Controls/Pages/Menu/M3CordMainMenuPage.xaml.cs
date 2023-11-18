@@ -175,12 +175,16 @@ namespace M3.Cord.Pages
         {
             // Production Report
             var page = M3CordApp.Pages.ProductionReport;
+            //page.Setup();
             PageContentManager.Instance.Current = page;
         }
 
         private void cmdChemicalRecipe_Click(object sender, RoutedEventArgs e)
         {
-
+            // Solution Main Menu
+            var page = M3CordApp.Pages.SolutionMenu;
+            //page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdCordDocumentMenu_Click(object sender, RoutedEventArgs e)

@@ -96,6 +96,15 @@ namespace M3.Cord
                 page.Setup();
                 PageContentManager.Instance.Current = page;
             }
+            /// <summary>
+            /// Goto Solution Menu.
+            /// </summary>
+            public static void GotoSolutionMenu()
+            {
+                var page = Pages.SolutionMenu;
+                page.Setup();
+                PageContentManager.Instance.Current = page;
+            }
 
             #endregion
 
@@ -128,6 +137,16 @@ namespace M3.Cord
             public static Cord.Pages.ProductionReportMenu ProductionReport
             {
                 get { return GetPage<Cord.Pages.ProductionReportMenu>(); }
+            }
+
+            #endregion
+
+            #region Solution Main Menu
+
+            /// <summary>Gets M3 CordSolution Menu Page.</summary>
+            public static Cord.Pages.SolutionMenuPage SolutionMenu
+            {
+                get { return GetPage<Cord.Pages.SolutionMenuPage>(); }
             }
 
             #endregion
@@ -387,6 +406,11 @@ namespace M3.Cord
 
             #region Solition
 
+            /// <summary>Gets M3 Cord Solition Slip Manage Page.</summary>
+            public static Cord.Pages.SolutionSlipManagePage SolitionSlipManage
+            {
+                get { return GetPage<Cord.Pages.SolutionSlipManagePage>(); }
+            }
             /// <summary>Gets M3 Cord Solition Slip Preview Page.</summary>
             public static Cord.Pages.SolutionSlipPreviewPage SolitionSlipPreview
             {
