@@ -25,16 +25,16 @@ using NLib;
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for PalletSettingManagePage.xaml
+    /// Interaction logic for SolutionSlipManagePage.xaml
     /// </summary>
-    public partial class PalletSettingManagePage : UserControl
+    public partial class SolutionSlipManagePage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public PalletSettingManagePage()
+        public SolutionSlipManagePage()
         {
             InitializeComponent();
         }
@@ -59,7 +59,7 @@ namespace M3.Cord.Pages
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoProductionReportMenu();
+            //M3CordApp.Pages.GotoProductionReportMenu();
         }
 
         private void cmdSearch_Click(object sender, RoutedEventArgs e)
@@ -69,26 +69,17 @@ namespace M3.Cord.Pages
 
         private void cmdClear_Click(object sender, RoutedEventArgs e)
         {
-            ClearInputs();
-            RefreshGrid();
+
         }
 
         private void cmdCreate_Click(object sender, RoutedEventArgs e)
         {
-            var win = M3CordApp.Windows.CreatePallet;
-            if (win.ShowDialog() == true && null != win.Pallet)
-            {
-                // Show Print Preview
-                var page = M3CordApp.Pages.PalletSettingPreview;
-                var items = new List<PalletSetting>();
-                items.Add(win.Pallet);
-                page.Setup(items, false);
-                PageContentManager.Instance.Current = page;
-            }
+
         }
 
         private void cmdRePrint_Click(object sender, RoutedEventArgs e)
         {
+            /*
             var button = sender as Button;
             var ctx = (null != button) ? button.DataContext : null;
             var item = (null != ctx) ? ctx as PalletSetting : null;
@@ -100,6 +91,7 @@ namespace M3.Cord.Pages
             items.Add(item);
             page.Setup(items, true); // reprint
             PageContentManager.Instance.Current = page;
+            */
         }
 
         #endregion
@@ -117,7 +109,7 @@ namespace M3.Cord.Pages
 
         private void txtProductLotNo_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter) 
+            if (e.Key == Key.Enter)
             {
                 RefreshGrid();
                 e.Handled = true;
@@ -128,42 +120,9 @@ namespace M3.Cord.Pages
 
         #region Private Methods
 
-        private void ClearInputs()
-        {
-            txtProductLotNo.Text = string.Empty;
-            dtBegin.SelectedDate = new DateTime?();
-            dtEnd.SelectedDate = new DateTime?();
-            cbProducts.SelectedIndex = -1;
-        }
-
         private void RefreshGrid()
         {
-            grid.ItemsSource = null;
 
-
-            string txtLotNo = txtProductLotNo.Text.Trim();
-
-            string productLotNo = (!string.IsNullOrEmpty(txtLotNo)) ? txtLotNo : null;
-            DateTime? begin = dtBegin.SelectedDate;
-            DateTime? end = dtEnd.SelectedDate;
-            Product product = cbProducts.SelectedItem as Product;
-
-            string txtPCode = (null != product) ? product.ProductCode : null;
-            string productCode = (!string.IsNullOrEmpty(txtPCode)) ? txtPCode : null;
-            
-            grid.ItemsSource = PalletSetting.Search(
-                productLotNo, begin, end, productCode, PalletStatus.All).Value();
-        }
-
-        #endregion
-
-        #region Public Methods
-
-        public void Setup()
-        {
-            cbProducts.ItemsSource = Product.Gets().Value();
-            ClearInputs();
-            RefreshGrid();
         }
 
         #endregion

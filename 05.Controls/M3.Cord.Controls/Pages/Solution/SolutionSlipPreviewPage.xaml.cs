@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for SolutionLabelPage.xaml
+    /// Interaction logic for SolutionSlipPreviewPage.xaml
     /// </summary>
-    public partial class SolutionLabelPage : UserControl
+    public partial class SolutionSlipPreviewPage : UserControl
     {
-        public SolutionLabelPage()
+        public SolutionSlipPreviewPage()
         {
             InitializeComponent();
         }

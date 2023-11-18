@@ -270,8 +270,11 @@
     <Compile Include="Pages\Menu\SolutionMenuPage.xaml.cs">
       <DependentUpon>SolutionMenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Solution\SolutionLabelPage.xaml.cs">
-      <DependentUpon>SolutionLabelPage.xaml</DependentUpon>
+    <Compile Include="Pages\Solution\SolutionSlipPreviewPage.xaml.cs">
+      <DependentUpon>SolutionSlipPreviewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Solution\SolutionSlipManagePage.xaml.cs">
+      <DependentUpon>SolutionSlipManagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Warehouse\WarehouseYarnStockPage.xaml.cs">
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
@@ -756,7 +759,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Solution\SolutionLabelPage.xaml">
+    <Page Include="Pages\Solution\SolutionSlipPreviewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Solution\SolutionSlipManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
