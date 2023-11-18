@@ -267,6 +267,9 @@
     <Compile Include="Pages\Menu\ProductionReportMenu.xaml.cs">
       <DependentUpon>ProductionReportMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Menu\SolutionMenuPage.xaml.cs">
+      <DependentUpon>SolutionMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Warehouse\WarehouseYarnStockPage.xaml.cs">
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
@@ -742,6 +745,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Menu\ProductionReportMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Menu\SolutionMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
