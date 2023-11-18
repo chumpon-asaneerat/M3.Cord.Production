@@ -24,5 +24,14 @@ namespace M3.Cord.Pages
         {
             InitializeComponent();
         }
+
+        #region Public Methods
+
+        public void Setup()
+        {
+
+        }
+
+        #endregion
     }
 }

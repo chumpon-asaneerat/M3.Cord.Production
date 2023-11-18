@@ -384,6 +384,16 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region Solition
+
+            /// <summary>Gets M3 Cord Solition Slip Preview Page.</summary>
+            public static Cord.Pages.SolutionSlipPreviewPage SolitionSlipPreview
+            {
+                get { return GetPage<Cord.Pages.SolutionSlipPreviewPage>(); }
+            }
+
+            #endregion
         }
 
         /// <summary>
