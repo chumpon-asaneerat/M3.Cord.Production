@@ -58,6 +58,42 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
+        private void cmdCreateSolutionLot_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdAddQAResult_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdAddAgeingTime_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdIssueReport_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdRecordWeight_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdIssueLabel_Click(object sender, RoutedEventArgs e)
+        {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Issue Solution Label.
+            var page = M3CordApp.Pages.SolitionSlipManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
+
         #endregion
 
         #region Public Methods
