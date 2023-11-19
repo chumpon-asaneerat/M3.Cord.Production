@@ -40,6 +40,7 @@
                                     DockPanel.Dock="Left"
                                     CaptionText="Customer:"
                                     DisplayMemberPath="CustomerName"
+                                    SelectionChanged="cbCustomers_SelectionChanged"
                                     Width="250" />
                     <!--  Item Code  -->
                     <ctrl:NComboBox x:Name="cbItemCodes"

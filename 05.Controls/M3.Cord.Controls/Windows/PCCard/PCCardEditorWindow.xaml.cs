@@ -82,6 +82,45 @@ namespace M3.Cord.Windows
 
         #endregion
 
+        #region Combobox Handlers
+
+        private void cbCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (null == cbCustomers.ItemsSource)
+                return;
+            var customer = cbCustomers.SelectedItem as Customer;
+            if (null == customer)
+                return;
+            // Item Code
+            cbItemCodes.ItemsSource = null;
+            var products = Product.Gets(customer.CustomerName).Value();
+            cbItemCodes.ItemsSource = products;
+
+            if (null != _item)
+            {
+                // Product
+                int idx3 = -1;
+                if (null != products)
+                {
+                    idx3 = products.FindIndex(product => { return product.ProductCode == _item.ProductCode; });
+                }
+                this.InvokeAction(() =>
+                {
+                    cbItemCodes.SelectedIndex = idx3;
+                    if (idx3 > -1)
+                    {
+                        var product = products[idx3];
+                    }
+                    else
+                    {
+                        if (products.Count > 0) cbItemCodes.SelectedIndex = 0;
+                    }
+                });
+            }
+        }
+
+        #endregion
+
         #region Privete Methods
 
         private void LoadComboBoxes()
@@ -93,8 +132,6 @@ namespace M3.Cord.Windows
 
             // Item Code
             cbItemCodes.ItemsSource = null;
-            var products = Product.Gets().Value();
-            cbItemCodes.ItemsSource = products;
         }
 
         #endregion
@@ -106,7 +143,6 @@ namespace M3.Cord.Windows
             LoadComboBoxes();
 
             var customers = cbCustomers.ItemsSource as List<Customer>;
-            var products = cbItemCodes.ItemsSource as List<Product>;
 
             _item = item;
             this.DataContext = _item;
@@ -127,21 +163,6 @@ namespace M3.Cord.Windows
                     if (idx2 > -1)
                     {
                         var customer = customers[idx2];
-                    }
-                });
-
-                // Product
-                int idx3 = -1;
-                if (null != products)
-                {
-                    idx3 = products.FindIndex(product => { return product.ProductCode == item.ProductCode; });
-                }
-                this.InvokeAction(() =>
-                {
-                    cbItemCodes.SelectedIndex = idx3;
-                    if (idx3 > -1)
-                    {
-                        var product = products[idx3];
                     }
                 });
             }

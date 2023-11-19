@@ -83,7 +83,54 @@ namespace M3.Cord.Models
 
             return rets;
         }
+        /// <summary>
+        /// Gets
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<List<Product>> Gets(string customerName)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
 
+            NDbResult<List<Product>> rets = new NDbResult<List<Product>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@CustomerName", customerName);
+
+            try
+            {
+                var items = cnn.Query<Product>("GetProductsByCustomerName", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<Product>();
+            }
+
+            return rets;
+        }
         /// <summary>
         /// Save
         /// </summary>
