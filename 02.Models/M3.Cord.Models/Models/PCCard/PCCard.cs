@@ -34,7 +34,7 @@ namespace M3.Cord.Models
 
         public int PCId { get; set; }
         public string PINo { get; set; }
-        public DateTime? @PCDate { get; set; }
+        public DateTime? PCDate { get; set; }
         public int? CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string ProductCode { get; set; }

@@ -144,6 +144,7 @@
     <Compile Include="Models\S8BeforeConditionStd\S8BeforeConditionItem.cs" />
     <Compile Include="Models\S8BeforeConditionStd\S8BeforeConditionCF.cs" />
     <Compile Include="Models\S8BeforeConditionStd\S8BeforeConditionStd.cs" />
+    <Compile Include="Models\Solution\SolutionLot.cs" />
     <Compile Include="Models\Users\UserInfo.cs" />
     <Compile Include="Models\Users\UserRole.cs" />
     <Compile Include="Models\FirstTwist\FirstTwistMC.cs" />
