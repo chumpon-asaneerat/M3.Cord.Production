@@ -16,12 +16,13 @@ using Dapper;
 using Newtonsoft.Json;
 using System.Net.NetworkInformation;
 using System.Xml.Linq;
+using BarcodeLib;
 
 #endregion
 
 namespace M3.Cord.Models
 {
-    public class SolutionLotLabel
+    public class SolutionLotLabel : NInpc
     {
         #region Const
 
@@ -30,10 +31,39 @@ namespace M3.Cord.Models
 
         #endregion
 
+        private static Barcode BarcodeGenerator = null;
+
+        static SolutionLotLabel()
+        {
+            BarcodeGenerator = new Barcode();
+            BarcodeGenerator.EncodedType = BarcodeLib.TYPE.CODE39;
+            BarcodeGenerator.Alignment = BarcodeLib.AlignmentPositions.CENTER;
+            BarcodeGenerator.IncludeLabel = false;
+        }
+
         #region Public Proeprties
 
         public int SolutionId { get; set; }
         public string SolutionLot { get; set; }
+        // SolutionLot barcode
+        public byte[] SolutionLotImage
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(SolutionLot))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        SolutionLot, 400, 100);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
+
+
         public decimal? DipSolutionQty { get; set; }
 
         public DateTime? MixDate { get; set; }
