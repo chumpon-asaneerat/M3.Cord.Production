@@ -46,7 +46,7 @@ namespace M3.Cord.Pages
         #region Internal Variables
 
         private bool _reprint = false;
-        private List<PalletSetting> _items = null;
+        private List<SolutionLotLabel> _items = null;
 
         #endregion
 
@@ -87,29 +87,6 @@ namespace M3.Cord.Pages
             {
                 if (null != _items)
                 {
-                    foreach (var item in _items)
-                    {
-                        if (!_reprint)
-                        {
-                            // Create new
-                            PalletSetting.Save(item);
-                            if (item.PalletId.HasValue)
-                            {
-                                // update id
-                                var pCode = PalletCode.GetLastId(item.MCCode).Value();
-                                if (pCode != null)
-                                {
-                                    PalletCode.UpdateLastId(item.MCCode, pCode.LastId + 1);
-                                }
-
-                                foreach (var item2 in item.Items)
-                                {
-                                    item2.PalletId = item.PalletId.Value;
-                                    PalletSettingItem.Save(item2);
-                                }
-                            }
-                        }
-                    }
                     this.rptViewer.Print(ReportDisplayName);
                 }
             }
@@ -127,7 +104,8 @@ namespace M3.Cord.Pages
         {
             // Back to Solution Manage page
             var page = M3CordApp.Pages.SolitionSlipManage;
-            page.Setup();
+            var item = (null != _items) ? _items[0] : null;
+            page.Setup(item); // restore last item
             PageContentManager.Instance.Current = page;
         }
 
@@ -152,7 +130,7 @@ namespace M3.Cord.Pages
             // clear reprot datasource.
             inst.DataSources.Clear();
 
-            List<PalletSetting> items = new List<PalletSetting>();
+            List<SolutionLotLabel> items = new List<SolutionLotLabel>();
             if (null != _items)
             {
                 foreach (var item in _items)
@@ -180,7 +158,7 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup(List<PalletSetting> items, bool reprint)
+        public void Setup(List<SolutionLotLabel> items, bool reprint)
         {
             _reprint = reprint;
             _items = items;

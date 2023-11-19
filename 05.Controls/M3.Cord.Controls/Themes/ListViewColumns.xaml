@@ -324,6 +324,33 @@
         </StackPanel>
     </DataTemplate>
 
+    <!--  SOLITION  -->
+    <DataTemplate x:Key="SolutionLot">
+        <TextBlock Text="{Binding Path=SolutionLot, Mode=OneWay}"
+                   TextAlignment="Left"
+                   MinWidth="150" />
+    </DataTemplate>
+    <DataTemplate x:Key="MixDate">
+        <TextBlock Text="{Binding Path=MixDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="QualifiedDate">
+        <TextBlock Text="{Binding Path=QualifiedDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="ExpireDate">
+        <TextBlock Text="{Binding Path=ExpireDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="DipSolutionQty">
+        <TextBlock Text="{Binding Path=DipSolutionQty, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
+    </DataTemplate>
+
     <!--  DIP CHEMICAL RECORD SHEET  -->
     <DataTemplate x:Key="ReqDate">
         <TextBlock Text="{Binding Path=ReqDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"

@@ -43,10 +43,25 @@ namespace M3.Cord.Models
         public int CreateBy { get; set; }
 
         // runtime
-        public int CreateByUserName 
-        { 
-            get; 
-            set; 
+        private string _CreateByUserName = null;
+        public string CreateByUserName 
+        {
+            get
+            {
+                if (_CreateByUserName == null)
+                {
+                    var user = UserInfo.Get(CreateBy).Value();
+                    if (null != user)
+                    {
+                        _CreateByUserName = user.FullName;
+                    }
+                    else
+                    {
+                        _CreateByUserName = string.Empty;
+                    }
+                }
+                return _CreateByUserName;
+            }
         }
 
         public string ProductCode { get; set; }

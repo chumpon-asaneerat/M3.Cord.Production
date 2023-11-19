@@ -26,49 +26,22 @@
                                             Text="Back"
                                             Click="cmdHome_Click" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Left"
-                            VerticalAlignment="Center">
-                    <!--  HOME  -->
-                    <ctrl:FontAwesomeButton x:Name="cmdCreate"
-                                            Margin="5,0,0,0"
-                                            IconType="Add"
-                                            Text="Create"
-                                            Click="cmdCreate_Click" />
-                </StackPanel>
                 <Grid />
             </DockPanel>
             <!--  TOP ENTRY  -->
             <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-                <DockPanel Margin="0,0,0,5"
+                <DockPanel Margin="0,0,5,5"
                            DockPanel.Dock="Top"
                            LastChildFill="True"
                            VerticalAlignment="Center"
-                           HorizontalAlignment="Left">
+                           HorizontalAlignment="Stretch">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                        <!--  CREATE DATE  -->
-                        <ctrl:NDatePicker x:Name="dtBegin"
-                                          CaptionText="Create Date:"
-                                          Width="200" />
-                        <TextBlock Text="-"
-                                   VerticalAlignment="Bottom"
-                                   Width="20"
-                                   TextAlignment="Center" />
-                        <ctrl:NDatePicker x:Name="dtEnd" Width="200" />
-                        <!--  LOT NO  -->
-                        <ctrl:NTextBox x:Name="txtProductLotNo"
+                        <!--  SOLUTION LOT NO  -->
+                        <ctrl:NTextBox x:Name="txtSolutionLotNo"
                                        CaptionText="Lot No"
                                        Width="200"
-                                       PreviewKeyDown="txtProductLotNo_PreviewKeyDown" />
-                        <!--  PRODUCT  -->
-                        <ctrl:NComboBox x:Name="cbProducts"
-                                        DockPanel.Dock="Left"
-                                        CaptionText="Item Code:"
-                                        DisplayMemberPath="ProductCode"
-                                        Width="300"
-                                        SelectionChanged="cbProducts_SelectionChanged" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                                       PreviewKeyDown="txtSolutionLotNo_PreviewKeyDown" />
+                        <!--  SEARCH  -->
                         <Button x:Name="cmdSearch"
                                 Content="Search"
                                 DockPanel.Dock="Left"
@@ -77,6 +50,16 @@
                                 Margin="5,2"
                                 Style="{StaticResource InlineButton}"
                                 Click="cmdSearch_Click" />
+                        <!--  CREATE NEW  -->
+                        <Button x:Name="cmdCreate"
+                                Content="New"
+                                DockPanel.Dock="Left"
+                                Width="150"
+                                VerticalAlignment="Bottom"
+                                Margin="5,2"
+                                Style="{StaticResource InlineButton}"
+                                Click="cmdCreate_Click" />
+                        <!--  CLEAR  -->
                         <Button x:Name="cmdClear"
                                 Content="Clear"
                                 DockPanel.Dock="Left"
@@ -86,11 +69,68 @@
                                 Style="{StaticResource InlineButton}"
                                 Click="cmdClear_Click" />
                     </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <!--  PRODUCT  -->
+                        <ctrl:NComboBox x:Name="cbProducts"
+                                        DockPanel.Dock="Left"
+                                        CaptionText="Item Code:"
+                                        DisplayMemberPath="ProductCode"
+                                        Width="300"
+                                        SelectionChanged="cbProducts_SelectionChanged" />
+                        <!--  CHEMICAL NAMES  -->
+                        <ctrl:NComboBox x:Name="cbChemicals"
+                                        DockPanel.Dock="Left"
+                                        CaptionText="Chemical Name:"
+                                        DisplayMemberPath="SolutionName"
+                                        Width="300"
+                                        SelectionChanged="cbChemicals_SelectionChanged" />
+                        <!--  QUANTITY  -->
+                        <ctrl:NTextBox x:Name="txtQty"
+                                       CaptionText="Quantity"
+                                       Width="120" />
+                        <TextBlock VerticalAlignment="Bottom"
+                                   Margin="5,0,0,8"
+                                   FontSize="20"
+                                   FontWeight="DemiBold"
+                                   Text="Lite" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <!--  MIX DATE  -->
+                        <ctrl:NDatePicker x:Name="dtMixDate"
+                                          CaptionText="Mixing Date:"
+                                          Width="200" />
+                        <!--  QUALIFIED DATE  -->
+                        <ctrl:NDatePicker x:Name="dtQualifiedDate"
+                                          CaptionText="Qualified Date:"
+                                          Width="200" />
+                        <!--  EXPIRE DATE  -->
+                        <ctrl:NDatePicker x:Name="dtExpireDate"
+                                          CaptionText="Expire Date:"
+                                          Width="200" />
+                    </StackPanel>
+                    <DockPanel LastChildFill="True" DockPanel.Dock="Top">
+                        <!--  HOME  -->
+                        <ctrl:FontAwesomeButton x:Name="cmdSave"
+                                                Click="cmdSave_Click"
+                                                DockPanel.Dock="Left"
+                                                Margin="5,0,0,0"
+                                                IconType="Save"
+                                                Text="Save" />
+                        <!--  HOME  -->
+                        <ctrl:FontAwesomeButton x:Name="cmdPrint"
+                                                Click="cmdPrint_Click"
+                                                DockPanel.Dock="Right"
+                                                Margin="5,0,0,0"
+                                                IconType="Print"
+                                                Text="Print" />
+                        <Grid />
+                    </DockPanel>
                     <Grid />
                 </DockPanel>
             </DockPanel>
             <!--  LISTVIEW  -->
             <ListView x:Name="grid"
+                      SelectionChanged="grid_SelectionChanged"
                       Margin="0,0,0,5"
                       FontSize="{StaticResource FontSize18}"
                       ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
@@ -98,41 +138,13 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletCode}" />
-                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource ProductLotNo}" />
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource SolutionLot}" />
                         <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
-                        <GridViewColumn Header="Total CH" CellTemplate="{StaticResource TotalCH}" />
-                        <GridViewColumn Header="Pallet Date" CellTemplate="{StaticResource CreateDate}" />
-                        <GridViewColumn Header="Pallet By" CellTemplate="{StaticResource UserName}" />
-                        <GridViewColumn Header="Status" CellTemplate="{StaticResource PalletStatusText}" />
-                        <GridViewColumn Header="Type" CellTemplate="{StaticResource PalletTypeText}" />
-                        <GridViewColumn Header="">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center">
-                                        <!--  PRINT  -->
-                                        <Button x:Name="cmdRePrint"
-                                                DockPanel.Dock="Left"
-                                                Style="{StaticResource InlineButton}"
-                                                Margin="5,0"
-                                                Width="100"
-                                                Height="30"
-                                                Click="cmdRePrint_Click">
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Style="{StaticResource fa-print}" FontSize="{StaticResource IBFSize}" />
-                                                <TextBlock Margin="3,0"
-                                                           FontFamily="{StaticResource THSarabun}"
-                                                           FontSize="{StaticResource IBFSize}"
-                                                           Text="Print"
-                                                           VerticalAlignment="Center" />
-                                            </StackPanel>
-                                        </Button>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
+                        <GridViewColumn Header="Chemical" CellTemplate="{StaticResource SolutionName}" />
+                        <GridViewColumn Header="Quantity" CellTemplate="{StaticResource DipSolutionQty}" />
+                        <GridViewColumn Header="Mixing Date" CellTemplate="{StaticResource MixDate}" />
+                        <GridViewColumn Header="Qualified Date" CellTemplate="{StaticResource QualifiedDate}" />
+                        <GridViewColumn Header="Expire Date" CellTemplate="{StaticResource ExpireDate}" />
                     </GridView>
                 </ListView.View>
             </ListView>
