@@ -191,6 +191,7 @@
     <Compile Include="Pages\Ageing\AgeingManagePage.xaml.cs">
       <DependentUpon>AgeingManagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Ageing\S5ConditionManager.cs" />
     <Compile Include="Pages\DIP\DIPMCPage.xaml.cs">
       <DependentUpon>DIPMCPage.xaml</DependentUpon>
     </Compile>

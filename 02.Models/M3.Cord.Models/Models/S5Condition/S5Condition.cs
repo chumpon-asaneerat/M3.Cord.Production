@@ -121,8 +121,10 @@ namespace M3.Cord.Models
         public string ProductionManager { get; set; }
 
         public string Remark { get; set; }
-
         public string LotOrTraceNo { get; set; }
+
+        public string ProductCode1 { get; set; }
+        public string ProductCode2 { get; set; }
 
         #endregion
 
@@ -393,6 +395,9 @@ namespace M3.Cord.Models
 
             p.Add("@Remark", value.Remark);
             p.Add("@LotOrTraceNo", value.LotOrTraceNo);
+
+            p.Add("@ProductCode1", value.ProductCode1);
+            p.Add("@ProductCode2", value.ProductCode2);
 
             p.Add("@S5ConditionId", value.S5ConditionId, DbType.Int32, direction: ParameterDirection.InputOutput);
 

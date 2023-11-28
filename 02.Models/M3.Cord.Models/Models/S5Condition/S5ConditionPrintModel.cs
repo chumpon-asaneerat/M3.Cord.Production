@@ -14,6 +14,7 @@ using NLib.Models;
 
 using Dapper;
 using Newtonsoft.Json;
+using System.Xml.Linq;
 
 #endregion
 
@@ -119,6 +120,22 @@ namespace M3.Cord.Models
 
         public string ShiftLeader { get; set; }
         public string ProductionManager { get; set; }
+
+        public string Remark { get; set; }
+        public string LotOrTraceNo { get; set; }
+
+        public string ProductCode1 { get; set; }
+        public string ProductCode2 { get; set; }
+
+        #endregion
+
+        #region Public Methods
+
+        public S5ConditionPrintModel ShallowCopy()
+        {
+            S5ConditionPrintModel inst = (S5ConditionPrintModel)MemberwiseClone();
+            return inst;
+        }
 
         #endregion
 
