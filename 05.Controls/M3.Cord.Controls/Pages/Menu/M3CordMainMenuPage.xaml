@@ -192,7 +192,7 @@
                     </Button>
                 </ctrl:NGroupMenuItem>
                 <!--  WAREHOUSE MENU  -->
-                <ctrl:NGroupMenuItem HeaderText="Warehouse"
+                <ctrl:NGroupMenuItem HeaderText="Cord Warehouse"
                                      HeaderBackground="{StaticResource CordWarehouseBG}"
                                      Style="{StaticResource CommonGroupItemStyle}">
                     <!--  RECEIVE YARN  -->
