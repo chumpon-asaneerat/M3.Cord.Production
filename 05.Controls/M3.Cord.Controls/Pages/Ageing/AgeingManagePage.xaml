@@ -82,6 +82,19 @@
                     </StackPanel>
                     <Grid />
                 </DockPanel>
+                <DockPanel Margin="0,0,0,5"
+                           DockPanel.Dock="Top"
+                           LastChildFill="True"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <!--  PALLET  -->
+                        <ctrl:NTextBox x:Name="txtLotOrTraceNo"
+                                       CaptionText="Lot No"
+                                       Width="200" />
+                    </StackPanel>
+                    <Grid />
+                </DockPanel>
             </DockPanel>
             <!--  LISTVIEW  -->
             <doc:S5ConditionEntryPage x:Name="s5" />

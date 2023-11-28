@@ -20,6 +20,7 @@ using M3.Cord.Models;
 using NLib.Models;
 using NLib;
 using static M3.Cord.Pages.DIPUI;
+using System.Security.Cryptography;
 
 #endregion
 
@@ -96,6 +97,12 @@ namespace M3.Cord.Pages
                 UpdatePallet1(palletCode);
                 e.Handled = true;
             }
+            else if (e.Key == Key.Escape)
+            {
+                txtPalletNo1.Text = string.Empty;
+                UpdatePallet1(null);
+                e.Handled = true;
+            }
         }
 
         private void txtPalletNo2_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -104,6 +111,12 @@ namespace M3.Cord.Pages
             {
                 string palletCode = txtPalletNo2.Text;
                 UpdatePallet2(palletCode);
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Escape)
+            {
+                txtPalletNo2.Text = string.Empty;
+                UpdatePallet2(null);
                 e.Handled = true;
             }
         }
@@ -119,7 +132,9 @@ namespace M3.Cord.Pages
                 string errMsg;
                 if (!manager.SetPallet1(palletCode, out errMsg))
                 {
-                    
+                    var win = M3CordApp.Windows.MessageBox;
+                    win.Setup(errMsg);
+                    win.ShowDialog();
                 }
                 RefreshContext();
             }
@@ -132,7 +147,9 @@ namespace M3.Cord.Pages
                 string errMsg;
                 if (!manager.SetPallet2(palletCode, out errMsg))
                 {
-                    
+                    var win = M3CordApp.Windows.MessageBox;
+                    win.Setup(errMsg);
+                    win.ShowDialog();
                 }
                 RefreshContext();
             }
@@ -144,8 +161,6 @@ namespace M3.Cord.Pages
             if (null != manager && null != manager.Condition)
             {
                 var cond = manager.Condition;
-                var pc1 = manager.PC1;
-                var pc2 = manager.PC2;
 
                 ChecnEnableButtons();
                 this.DataContext = cond;
@@ -155,7 +170,7 @@ namespace M3.Cord.Pages
                 if (!string.IsNullOrEmpty(cond.DoffNo1PalletCode))
                 {
                     txtPalletNo1.Text = cond.DoffNo1PalletCode;
-                    txtItemCode1.Text = (null != pc1) ? pc1.ProductCode : string.Empty;
+                    txtItemCode1.Text = manager.ProductCode1;
                 }
                 else
                 {
@@ -166,12 +181,21 @@ namespace M3.Cord.Pages
                 if (!string.IsNullOrEmpty(cond.DoffNo2PalletCode))
                 {
                     txtPalletNo2.Text = cond.DoffNo2PalletCode;
-                    txtItemCode2.Text = (null != pc2) ? pc2.ProductCode : string.Empty;
+                    txtItemCode2.Text = manager.ProductCode2;
                 }
                 else
                 {
                     txtPalletNo2.Text = string.Empty;
                     txtItemCode2.Text = string.Empty;
+                }
+                // Bind Lot/Trace No
+                if (!string.IsNullOrEmpty(cond.LotOrTraceNo))
+                {
+                    txtLotOrTraceNo.Text = cond.LotOrTraceNo;
+                }
+                else
+                {
+                    txtLotOrTraceNo.Text = string.Empty;
                 }
             }
         }
@@ -191,10 +215,11 @@ namespace M3.Cord.Pages
                 var condition = manager.Condition;
                 bool hasPallet = (!string.IsNullOrWhiteSpace(condition.DoffNo1PalletCode) ||
                     !string.IsNullOrWhiteSpace(condition.DoffNo2PalletCode));
+                bool validStd = manager.HasStd && manager.IsMatchStd;
 
                 if (isUser)
                 {
-                    cmdSave.IsEnabled = hasPallet;
+                    cmdSave.IsEnabled = hasPallet && validStd;
 
                     cmdSave.Visibility = Visibility.Visible;
                     cmdStart.Visibility = Visibility.Collapsed;
@@ -206,10 +231,10 @@ namespace M3.Cord.Pages
                     cmdStart.Visibility = Visibility.Visible;
                     cmdFinish.Visibility = Visibility.Visible;
 
-                    cmdStart.IsEnabled = hasPallet && 
+                    cmdStart.IsEnabled = hasPallet && validStd &&
                         !condition.StartingTimeStartAgeingTime.HasValue;
 
-                    cmdFinish.IsEnabled = hasPallet && 
+                    cmdFinish.IsEnabled = hasPallet && validStd &&
                         condition.StartingTimeStartAgeingTime.HasValue &&
                         condition.FinishTime.HasValue && !condition.OutTime.HasValue;
                 }
@@ -321,8 +346,9 @@ namespace M3.Cord.Pages
             return (null != stds && stds.Count > 0) ? stds.FirstOrDefault() : null;
         }
 
-        private void VerifyCondition()
+        private void VerifyCondition(out string errMsg)
         {
+            errMsg = null;
             if (null == Condition)
             {
                 return;
@@ -330,51 +356,107 @@ namespace M3.Cord.Pages
             // pallet 1
             if (!string.IsNullOrEmpty(Condition.DoffNo1PalletCode))
             {
-                // Load pallet, pccard 1 information
+                // Find pallet setting for product code information
                 var pallet1 = GetPalletByCode(Condition.DoffNo1PalletCode);
-                PC1 = GetPCTwist1(pallet1);
-                Std1 = (null != PC1) ? GetStd(PC1.ProductCode) : null;
+                var PC1 = GetPCTwist1(pallet1);
+                var code = (null != PC1) ? PC1.ProductCode : null;
+                if (string.IsNullOrEmpty(code))
+                {
+                    // find pallet in G4
+                    var g4 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo1PalletCode).Value();
+                    if (null != g4)
+                    {
+                        // Special case for Raw Material
+                        // Item Yarn must be 1620-288-707 and Product Code must be 1800TW
+                        code = "1800TW";
+                        
+                        IsLotNo = false;
+                        LotOrTraceNo1 = g4.TraceNo;
+                    }
+                    else
+                    {
+                        errMsg = "Pallet Not found.";
+                    }
+                }
+                else
+                {
+                    IsLotNo = true;
+                    LotOrTraceNo1 = (null != PC1) ? PC1.ProductLotNo : null;
+                }
+
+                ProductCode1 = code;
+                Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
+            }
+            else
+            {
+                ProductCode1 = null;
+                Std1 = null;
             }
 
             // pallet 2
             if (!string.IsNullOrEmpty(Condition.DoffNo2PalletCode))
             {
-                // Load pallet, pccard 2 information
+                // Find pallet setting for product code information
                 var pallet2 = GetPalletByCode(Condition.DoffNo2PalletCode);
-                PC2 = GetPCTwist1(pallet2);
-                Std2 = (null != PC2) ? GetStd(PC2.ProductCode) : null;
+                var PC2 = GetPCTwist1(pallet2);
+                var code = (null != PC2) ? PC2.ProductCode : null;
+                if (string.IsNullOrEmpty(code))
+                {
+                    // find pallet in G4
+                    var g4 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo2PalletCode).Value();
+                    if (null != g4)
+                    {
+                        // Special case for Raw Material
+                        // Item Yarn must be 1620-288-707 and Product Code must be 1800TW
+                        code = "1800TW";
+                        
+                        IsLotNo = false;
+                        LotOrTraceNo2 = g4.TraceNo;
+                    }
+                    else
+                    {
+                        errMsg = "Pallet Not found.";
+                    }
+                }
+                else
+                {
+                    IsLotNo = true;
+                    LotOrTraceNo2 = (null != PC2) ? PC2.ProductLotNo : null;
+                }
+
+                ProductCode2 = code;
+                Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
+            }
+            else
+            {
+                ProductCode2 = null;
+                Std2 = null;
             }
 
             if (null != Condition && null != Std1 && null != Std2)
             {
-                // Check valid
-                bool b1 = Std1.MainSupplySteamPressureSet != Std2.MainSupplySteamPressureSet;
-                bool b2 = Std1.AgeingSteamPressureSet != Std2.AgeingSteamPressureSet;
-                bool b3 = Std1.SettingTemperatureSet != Std2.SettingTemperatureSet;
-                bool b4 = Std1.SettingTimeSet != Std2.SettingTimeSet;
-                bool b5 = Std1.SettingTemperatureSet != Std2.SettingTemperatureSet;
-
-                if (b1 && b2 && b3 && b4 && b5)
+                if (!IsMatchStd)
                 {
-                    var win = M3CordApp.Windows.MessageBox;
-                    win.Setup("Item Code ไม่สามารถ เข้า Ageing พร้อมกันได้");
-                    win.ShowDialog();
+                    errMsg = "Item Code ไม่สามารถ เข้า Ageing พร้อมกันได้";
                     return;
                 }
 
                 S5Condition.Assign(Std1, Condition);
+                Condition.LotOrTraceNo = LotOrTraceNo1;
             }
             else if (null != Condition && null != Std1 && null == Std2)
             {
                 S5Condition.Assign(Std1, Condition);
+                Condition.LotOrTraceNo = LotOrTraceNo1;
             }
             else if (null != Condition && null == Std1 && null != Std2)
             {
                 S5Condition.Assign(Std2, Condition);
+                Condition.LotOrTraceNo = LotOrTraceNo2;
             }
             else
             {
-
+                Condition.LotOrTraceNo = null;
             }
         }
 
@@ -392,7 +474,21 @@ namespace M3.Cord.Pages
             bool ret = false;
             message = null;
 
-            Condition.DoffNo1PalletCode = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
+            if (null != Condition)
+            {
+                string code = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
+                if (!string.IsNullOrWhiteSpace(code))
+                {
+                    Condition.DoffNo1PalletCode = code;
+                }
+                else
+                {
+                    Condition.DoffNo1PalletCode = null;
+                }
+                VerifyCondition(out message);
+                if (string.IsNullOrEmpty(message))
+                    ret = true;
+            }
 
             return ret;
         }
@@ -402,14 +498,68 @@ namespace M3.Cord.Pages
             bool ret = false;
             message = null;
 
-            Condition.DoffNo2PalletCode = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
+            if (null != Condition)
+            {
+                string code = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
+                if (!string.IsNullOrWhiteSpace(code))
+                {
+                    Condition.DoffNo2PalletCode = code;
+                }
+                else
+                {
+                    Condition.DoffNo2PalletCode = null;
+                }
+                VerifyCondition(out message);
+                if (string.IsNullOrEmpty(message)) 
+                    ret = true;
+            }
 
             return ret;
         }
 
         public void Refresh()
         {
-            VerifyCondition();
+            string message;
+            VerifyCondition(out message);
+            if (!string.IsNullOrEmpty(message))
+            {
+                // something error.
+            }
+        }
+
+        public bool HasStd
+        {
+            get 
+            {
+                var std = (null != Std1) ? Std1 : Std2;
+                return null != std;
+            }
+        }
+
+        public bool IsMatchStd
+        {
+            get
+            {
+                if (null != Condition && null != Std1 && null != Std2)
+                {
+                    // Check valid
+                    bool b1 = Std1.SettingTemperatureSet == Std2.SettingTemperatureSet;
+                    bool b2 = Std1.SettingTimeSet == Std2.SettingTimeSet;
+                    return b1 && b2;
+                }
+                else if (null != Condition && null != Std1 && null == Std2)
+                {
+                    return true;
+                }
+                else if (null != Condition && null == Std1 && null != Std2)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
         public bool Start()
@@ -418,7 +568,16 @@ namespace M3.Cord.Pages
 
             if (null != Condition)
             {
-                Condition.StartingTimeStartAgeingTime = DateTime.Now;
+                var dt = DateTime.Now;
+                Condition.StartingTimeStartAgeingTime = dt;
+                var std = (null != Std1) ? Std1 : Std2;
+                if (null != std)
+                {
+                    // auto set finish time.
+                    double hrs = (std.SettingTimeSet.HasValue) ? (double)std.SettingTimeSet.Value : (double)0;
+                    Condition.FinishTime = dt.AddHours(hrs);
+                }
+
                 S5Condition.Save(Condition);
                 ret = true;
             }
@@ -430,7 +589,13 @@ namespace M3.Cord.Pages
         {
             bool ret = false;
             message = null;
-
+            if (null != Condition)
+            {
+                var dt = DateTime.Now;
+                Condition.OutTime = dt;
+                S5Condition.Save(Condition);
+                ret = true;
+            }
             return ret;
         }
 
@@ -456,12 +621,12 @@ namespace M3.Cord.Pages
             get; private set;
         }
 
-        public PCTwist1 PC1 
+        public string ProductCode1 
         { 
             get; private set; 
         }
 
-        public PCTwist1 PC2 
+        public string ProductCode2
         { 
             get; private set; 
         }
@@ -472,6 +637,21 @@ namespace M3.Cord.Pages
         }
 
         public S5ConditionStd Std2
+        {
+            get; private set;
+        }
+
+        public bool IsLotNo
+        {
+            get; private set;
+        }
+
+        public string LotOrTraceNo1
+        {
+            get; private set;
+        }
+
+        public string LotOrTraceNo2
         {
             get; private set;
         }

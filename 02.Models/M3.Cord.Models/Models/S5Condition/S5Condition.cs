@@ -122,6 +122,8 @@ namespace M3.Cord.Models
 
         public string Remark { get; set; }
 
+        public string LotOrTraceNo { get; set; }
+
         #endregion
 
         #region Static Methods
@@ -390,6 +392,7 @@ namespace M3.Cord.Models
             p.Add("@UpdateBy", value.UpdateBy);
 
             p.Add("@Remark", value.Remark);
+            p.Add("@LotOrTraceNo", value.LotOrTraceNo);
 
             p.Add("@S5ConditionId", value.S5ConditionId, DbType.Int32, direction: ParameterDirection.InputOutput);
 

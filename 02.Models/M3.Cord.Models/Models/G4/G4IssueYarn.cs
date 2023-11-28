@@ -26,6 +26,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Media.Media3D;
 using System.Windows;
 using System.Threading;
+using static OfficeOpenXml.ExcelErrorValue;
 
 #endregion
 
@@ -62,6 +63,10 @@ namespace M3.Cord.Models
         public int? ReceiveBy { get; set; }
 
         public string DirectionNo { get; set; }
+
+        public bool? IsAgeing { get; set; }
+        public DateTime? AgeingDate { get; set; }
+        public string AgeingBy { get; set; }
 
         /// <summary>
         /// Gets or sets Expired Date.
@@ -368,6 +373,57 @@ namespace M3.Cord.Models
             return ret;
         }
 
+        public static NDbResult MarkAgeing(int G4IssueYarnPkId, string ageingBy)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            if (G4IssueYarnPkId <= 0 || null == ageingBy)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@G4IssueYarnPkId", G4IssueYarnPkId);
+            p.Add("@IsAgeing", true); // set as true
+            p.Add("@AgeingBy", ageingBy);
+
+            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
+
+            try
+            {
+                cnn.Execute("G4MarkAgeingFlag", p, commandType: CommandType.StoredProcedure);
+                ret.Success();
+                // Set error number/message
+                ret.ErrNum = p.Get<int>("@errNum");
+                ret.ErrMsg = p.Get<string>("@errMsg");
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
         #region SearchG4IssueYarns - Comment out
         /*
         public static NDbResult<List<G4IssueYarn>> SearchG4IssueYarns(
@@ -448,6 +504,50 @@ namespace M3.Cord.Models
             try
             {
                 var items = cnn.Query<G4IssueYarn>("SearchWarehousePallet", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList().FirstOrDefault() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                rets.data = null;
+            }
+
+            return rets;
+        }
+
+        public static NDbResult<G4IssueYarn> SearchG4AgeingPallet(string PalletOrTraceNo)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<G4IssueYarn> rets = new NDbResult<G4IssueYarn>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@PalletOrTraceNo", PalletOrTraceNo);
+
+            try
+            {
+                var items = cnn.Query<G4IssueYarn>("SearchG4AgeingPallet", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList().FirstOrDefault() : null;
                 rets.Success(data);
