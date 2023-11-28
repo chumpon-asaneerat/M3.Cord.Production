@@ -119,8 +119,8 @@
         <DockPanel LastChildFill="True" Margin="5">
             <TextBlock DockPanel.Dock="Top" Height="20" />
             <ctrl:NGroupMenu>
-                <!--  PALLET SLIP  -->
-                <ctrl:NGroupMenuItem HeaderText="Pallet Slip"
+                <!--  SLIP/LABEL  -->
+                <ctrl:NGroupMenuItem HeaderText="Slip/Label"
                                      HeaderBackground="{StaticResource SlipBG}"
                                      Style="{StaticResource CommonGroupItemStyle}">
                     <!--  1st TWIST DOFF PALLET SLIP  -->
@@ -141,6 +141,16 @@
                             <Run Text="Doffing Report Slip" />
                             <LineBreak />
                             <Run Text="(DIP)" />
+                        </TextBlock>
+                    </Button>
+                    <!--  DIP PALLET SLIP  -->
+                    <Button x:Name="cmdS9CHLabel"
+                            Click="cmdS9CHLabel_Click"
+                            Style="{StaticResource SlipButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Label CH" />
+                            <LineBreak />
+                            <Run Text="(S9)" />
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>

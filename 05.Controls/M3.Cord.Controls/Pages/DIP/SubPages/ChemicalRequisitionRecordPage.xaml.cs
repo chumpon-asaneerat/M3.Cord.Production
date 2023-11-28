@@ -64,7 +64,7 @@ namespace M3.Cord.Pages
                 var item = new DIPChemicalReqisition();
                 item.ReqDate = DateTime.Now;
                 item.ProductCode = pcCard.ProductCode;
-                item.DIPLotNo = pcCard.DIPLotNo;
+                item.S8LotNo = pcCard.DIPLotNo;
                 item.DIPPCId = pcCard.DIPPCId.Value;
                 item.UserName = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
                 win.Setup(item);

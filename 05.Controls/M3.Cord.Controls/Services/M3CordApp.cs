@@ -152,22 +152,18 @@ namespace M3.Cord
             #endregion
 
             #region Master Data
-
-            /// <summary>Gets M3 Cord Product Item Code Manage Page.</summary>
             /*
+            /// <summary>Gets M3 Cord Product Item Code Manage Page.</summary>
             public static Cord.Pages.ProductItemCodeManagePage ProductItemCodeManage
             {
                 get { return GetPage<Cord.Pages.ProductItemCodeManagePage>(); }
             }
-            */
             /// <summary>Gets M3 Cord Customer Manage Page.</summary>
-            /*
             public static Cord.Pages.CustomerManagePage CustomerManage
             {
                 get { return GetPage<Cord.Pages.CustomerManagePage>(); }
             }
             */
-
             #endregion
 
             #region Condition Standard

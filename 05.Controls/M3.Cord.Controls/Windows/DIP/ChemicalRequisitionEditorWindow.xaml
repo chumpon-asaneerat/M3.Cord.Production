@@ -36,10 +36,10 @@
             <DockPanel LastChildFill="True">
                 <DockPanel DockPanel.Dock="Top">
                     <!--  REQ Date  -->
-                    <ctrl:NDatePicker x:Name="dtReqDate" 
+                    <ctrl:NDatePicker x:Name="dtReqDate"
                                       DockPanel.Dock="Left"
                                       CaptionText="Req Date:"
-                                      SelectedDate="{Binding ReqDate}"/>
+                                      SelectedDate="{Binding ReqDate}" />
                     <!--  Product Code  -->
                     <ctrl:NTextBox CaptionText="Product Code:"
                                    DockPanel.Dock="Left"

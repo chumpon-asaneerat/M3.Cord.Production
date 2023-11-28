@@ -80,6 +80,11 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdS9CHLabel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void cmdFirstTwistReports_Click(object sender, RoutedEventArgs e)
         {
 
