@@ -189,6 +189,15 @@ namespace M3.Cord.Pages
                     txtItemCode2.Text = string.Empty;
                 }
                 // Bind Lot/Trace No
+                if (manager.IsLotNo)
+                {
+                    txtLotOrTraceNo.CaptionText = "Lot No";
+                }
+                else
+                {
+                    txtLotOrTraceNo.CaptionText = "Trace No";
+                }
+
                 if (!string.IsNullOrEmpty(cond.LotOrTraceNo))
                 {
                     txtLotOrTraceNo.Text = cond.LotOrTraceNo;
