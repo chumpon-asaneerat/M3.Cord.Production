@@ -120,6 +120,8 @@ namespace M3.Cord.Models
         public string ShiftLeader { get; set; }
         public string ProductionManager { get; set; }
 
+        public string Remark { get; set; }
+
         #endregion
 
         #region Static Methods
@@ -386,6 +388,8 @@ namespace M3.Cord.Models
             p.Add("@DoffNo2Qty", value.DoffNo2Qty);
 
             p.Add("@UpdateBy", value.UpdateBy);
+
+            p.Add("@Remark", value.Remark);
 
             p.Add("@S5ConditionId", value.S5ConditionId, DbType.Int32, direction: ParameterDirection.InputOutput);
 

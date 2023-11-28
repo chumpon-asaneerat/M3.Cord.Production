@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using static M3.Cord.Pages.DIPUI;
 
 #endregion
 
@@ -43,16 +44,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private PalletSetting pallet1 = null;
-        private PalletSetting pallet2 = null;
-
-        private PCTwist1 pcCard1 = null;
-        private PCTwist1 pcCard2 = null;
-
-        private S5ConditionStd std1 = null;
-        private S5ConditionStd std2 = null;
-
-        private S5Condition condition = null;
+        private S5ConditionManager manager = null;
 
         #endregion
 
@@ -85,11 +77,6 @@ namespace M3.Cord.Pages
         private void cmdStart_Click(object sender, RoutedEventArgs e)
         {
             Start();
-        }
-
-        private void cmdEnd_Click(object sender, RoutedEventArgs e)
-        {
-            End();
         }
 
         private void cmdFinish_Click(object sender, RoutedEventArgs e)
@@ -127,130 +114,65 @@ namespace M3.Cord.Pages
 
         private void UpdatePallet1(string palletCode)
         {
-            if (null != condition)
+            if (null != manager)
             {
-                condition.DoffNo1PalletCode = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
-                VerifyCondition();
-            }
-
-            /*
-            if (string.IsNullOrEmpty(palletCode))
-            {
-                txtItemCode1.Text = string.Empty;
-                return;
-            }
-
-            
-            if (null != pallet1)
-            {
-                pcCard1 = PCTwist1.Get(pallet1.PCTwist1Id.Value).Value();
-                if (null != pcCard1)
+                string errMsg;
+                if (!manager.SetPallet1(palletCode, out errMsg))
                 {
-                    txtItemCode1.Text = pcCard1.ProductCode;
-                    var stds = S5ConditionStd.Gets(pcCard1.ProductCode).Value();
-                    std1 = (null != stds && stds.Count > 0) ? stds.FirstOrDefault() : null;
-                    VerifyCondition();
+                    
                 }
+                RefreshContext();
             }
-            */
         }
 
         private void UpdatePallet2(string palletCode)
         {
-            if (null != condition)
+            if (null != manager)
             {
-                condition.DoffNo2PalletCode = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
-                VerifyCondition();
-            }
-        }
-
-        private void VerifyCondition()
-        {
-            if (null == condition)
-            {
-                return;
-            }
-            // pallet 1
-            if (!string.IsNullOrEmpty(condition.DoffNo1PalletCode))
-            {
-                // Load pallet, pccard 1 information
-                pallet1 = GetPalletByCode(condition.DoffNo1PalletCode);
-                pcCard1 = GetPCTwist1(pallet1);
-                std1 = GetStd(pcCard1);
-
-                // update text box
-                txtPalletNo1.Text = condition.DoffNo1PalletCode;
-                txtItemCode1.Text = (null != pcCard1) ? pcCard1.ProductCode : string.Empty;
-            }
-            else
-            {
-                // update text box
-                txtPalletNo1.Text = string.Empty;
-                txtItemCode1.Text = string.Empty;
-            }
-
-            // pallet 2
-            if (!string.IsNullOrEmpty(condition.DoffNo2PalletCode))
-            {
-                // Load pallet, pccard 2 information
-                pallet2 = GetPalletByCode(condition.DoffNo2PalletCode);
-                pcCard2 = GetPCTwist1(pallet1);
-                std2 = GetStd(pcCard2);
-
-                // update text box
-                txtPalletNo2.Text = condition.DoffNo2PalletCode;
-                txtItemCode2.Text = (null != pcCard2) ? pcCard2.ProductCode : string.Empty;
-            }
-            else
-            {
-                // update text box
-                txtPalletNo2.Text = string.Empty;
-                txtItemCode2.Text = string.Empty;
-            }
-
-            if (null != std1 && null != std2)
-            {
-                // Check valid
-                bool b1 = std1.MainSupplySteamPressureSet != std2.MainSupplySteamPressureSet;
-                bool b2 = std1.AgeingSteamPressureSet != std2.AgeingSteamPressureSet;
-                bool b3 = std1.SettingTemperatureSet != std2.SettingTemperatureSet;
-                bool b4 = std1.SettingTimeSet != std2.SettingTimeSet;
-                bool b5 = std1.SettingTemperatureSet != std2.SettingTemperatureSet;
-
-                if (b1 && b2 && b3 && b4 && b5)
+                string errMsg;
+                if (!manager.SetPallet2(palletCode, out errMsg))
                 {
-                    var win = M3CordApp.Windows.MessageBox;
-                    win.Setup("Item Code ไม่สามารถ เข้า Ageing พร้อมกันได้");
-                    win.ShowDialog();
-                    return;
+                    
                 }
-
-                S5Condition.Assign(std1, condition);
+                RefreshContext();
             }
-            else if (null != std1 && null == std2)
-            {
-                S5Condition.Assign(std1, condition);
-            }
-            else if (null == std1 && null != std2)
-            {
-                S5Condition.Assign(std2, condition);
-            }
-            else
-            {
-
-            }
-
-            RefreshContext();
         }
 
         private void RefreshContext()
         {
             this.DataContext = null;
-            if (null != condition)
+            if (null != manager && null != manager.Condition)
             {
-                ChecnEnableButtons();
+                var cond = manager.Condition;
+                var pc1 = manager.PC1;
+                var pc2 = manager.PC2;
 
-                this.DataContext = condition;
+                ChecnEnableButtons();
+                this.DataContext = cond;
+                // Bind Pallet && Product Code
+                //
+                // Pallet 1
+                if (!string.IsNullOrEmpty(cond.DoffNo1PalletCode))
+                {
+                    txtPalletNo1.Text = cond.DoffNo1PalletCode;
+                    txtItemCode1.Text = (null != pc1) ? pc1.ProductCode : string.Empty;
+                }
+                else
+                {
+                    txtPalletNo1.Text = string.Empty;
+                    txtItemCode1.Text = string.Empty;
+                }
+                // Pallet 2
+                if (!string.IsNullOrEmpty(cond.DoffNo2PalletCode))
+                {
+                    txtPalletNo2.Text = cond.DoffNo2PalletCode;
+                    txtItemCode2.Text = (null != pc2) ? pc2.ProductCode : string.Empty;
+                }
+                else
+                {
+                    txtPalletNo2.Text = string.Empty;
+                    txtItemCode2.Text = string.Empty;
+                }
             }
         }
 
@@ -262,11 +184,11 @@ namespace M3.Cord.Pages
 
             cmdSave.IsEnabled = false;
             cmdStart.IsEnabled = false;
-            cmdEnd.IsEnabled = false;
             cmdFinish.IsEnabled = false;
 
-            if (null != condition)
+            if (null != manager && null != manager.Condition)
             {
+                var condition = manager.Condition;
                 bool hasPallet = (!string.IsNullOrWhiteSpace(condition.DoffNo1PalletCode) ||
                     !string.IsNullOrWhiteSpace(condition.DoffNo2PalletCode));
 
@@ -276,22 +198,16 @@ namespace M3.Cord.Pages
 
                     cmdSave.Visibility = Visibility.Visible;
                     cmdStart.Visibility = Visibility.Collapsed;
-                    cmdEnd.Visibility = Visibility.Collapsed;
                     cmdFinish.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
                     cmdSave.Visibility = Visibility.Collapsed;
                     cmdStart.Visibility = Visibility.Visible;
-                    cmdEnd.Visibility = Visibility.Visible;
                     cmdFinish.Visibility = Visibility.Visible;
 
                     cmdStart.IsEnabled = hasPallet && 
                         !condition.StartingTimeStartAgeingTime.HasValue;
-
-                    cmdEnd.IsEnabled = hasPallet && 
-                        condition.StartingTimeStartAgeingTime.HasValue &&
-                        !condition.FinishTime.HasValue;
 
                     cmdFinish.IsEnabled = hasPallet && 
                         condition.StartingTimeStartAgeingTime.HasValue &&
@@ -299,6 +215,89 @@ namespace M3.Cord.Pages
                 }
             }
         }
+
+        private void Save()
+        {
+            if (null != manager)
+            {
+                manager.Save();
+                RefreshContext();
+            }
+
+            M3CordApp.Pages.GotoCordMainMenu();
+        }
+
+        private void Start()
+        {
+            if (null != manager)
+            {
+                manager.Start();
+                RefreshContext();
+            }
+
+            M3CordApp.Pages.GotoCordMainMenu();
+        }
+
+        private void Finish()
+        {
+            if (null != manager)
+            {
+                string errMSg;
+                if (!manager.Finish(out errMSg))
+                {
+                    var win1 = M3CordApp.Windows.MessageBoxOKCancel;
+                    win1.Setup(errMSg);
+                    win1.ShowDialog();
+                    return;
+                }
+
+                RefreshContext();
+
+                var win = M3CordApp.Windows.MessageBoxOKCancel;
+                win.Setup("Print Ageing Condition (S-5) ?");
+                if (win.ShowDialog() == false)
+                {
+                    M3CordApp.Pages.GotoCordMainMenu();
+                }
+
+                var page = M3CordApp.Pages.S5ReportPreview;
+                var items = S5ConditionPrintModel.Gets(manager.Condition.S5ConditionId).Value();
+                page.Setup(items);
+                PageContentManager.Instance.Current = page;
+            }
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public void Setup()
+        {
+            manager = new S5ConditionManager();
+
+            if (null == manager.Condition)
+            {
+                manager.Create();
+            }
+            manager.Refresh();
+            RefreshContext();
+        }
+
+        #endregion
+    }
+
+    public class S5ConditionManager
+    {
+        #region Constructor
+
+        public S5ConditionManager() : base()
+        {
+
+        }
+
+        #endregion
+
+        #region Private Methods
 
         private PalletSetting GetPalletByCode(string palletCode)
         {
@@ -312,71 +311,70 @@ namespace M3.Cord.Pages
             return PCTwist1.Get(pallet.PCTwist1Id.Value).Value();
         }
 
-        private S5ConditionStd GetStd(PCTwist1 pcCard)
+        private S5ConditionStd GetStd(string productCode)
         {
-            if (null == pcCard || string.IsNullOrWhiteSpace(pcCard.ProductCode))
+            if (string.IsNullOrWhiteSpace(productCode))
             {
                 return null;
             }
-            var stds = S5ConditionStd.Gets(pcCard.ProductCode).Value();
+            var stds = S5ConditionStd.Gets(productCode).Value();
             return (null != stds && stds.Count > 0) ? stds.FirstOrDefault() : null;
         }
 
-        private void Save()
+        private void VerifyCondition()
         {
-            if (null != condition)
+            if (null == Condition)
             {
-                S5Condition.Save(condition);
-                RefreshContext();
+                return;
+            }
+            // pallet 1
+            if (!string.IsNullOrEmpty(Condition.DoffNo1PalletCode))
+            {
+                // Load pallet, pccard 1 information
+                var pallet1 = GetPalletByCode(Condition.DoffNo1PalletCode);
+                PC1 = GetPCTwist1(pallet1);
+                Std1 = (null != PC1) ? GetStd(PC1.ProductCode) : null;
             }
 
-            M3CordApp.Pages.GotoCordMainMenu();
-        }
-
-        private void Start()
-        {
-            if (null != condition)
+            // pallet 2
+            if (!string.IsNullOrEmpty(Condition.DoffNo2PalletCode))
             {
-                condition.StartingTimeStartAgeingTime = DateTime.Now;
-                S5Condition.Save(condition);
-                RefreshContext();
+                // Load pallet, pccard 2 information
+                var pallet2 = GetPalletByCode(Condition.DoffNo2PalletCode);
+                PC2 = GetPCTwist1(pallet2);
+                Std2 = (null != PC2) ? GetStd(PC2.ProductCode) : null;
             }
 
-            M3CordApp.Pages.GotoCordMainMenu();
-        }
-
-        private void End()
-        {
-            if (null != condition)
+            if (null != Condition && null != Std1 && null != Std2)
             {
-                condition.FinishTime = DateTime.Now;
-                S5Condition.Save(condition);
-                RefreshContext();
-            }
+                // Check valid
+                bool b1 = Std1.MainSupplySteamPressureSet != Std2.MainSupplySteamPressureSet;
+                bool b2 = Std1.AgeingSteamPressureSet != Std2.AgeingSteamPressureSet;
+                bool b3 = Std1.SettingTemperatureSet != Std2.SettingTemperatureSet;
+                bool b4 = Std1.SettingTimeSet != Std2.SettingTimeSet;
+                bool b5 = Std1.SettingTemperatureSet != Std2.SettingTemperatureSet;
 
-            M3CordApp.Pages.GotoCordMainMenu();
-        }
-
-        private void Finish()
-        {
-            if (null != condition)
-            {
-                condition.OutTime = DateTime.Now;
-                S5Condition.Save(condition);
-                RefreshContext();
-
-
-                var win = M3CordApp.Windows.MessageBoxOKCancel;
-                win.Setup("Print Ageing Condition (S-5) ?");
-                if (win.ShowDialog() == false)
+                if (b1 && b2 && b3 && b4 && b5)
                 {
-                    M3CordApp.Pages.GotoCordMainMenu();
+                    var win = M3CordApp.Windows.MessageBox;
+                    win.Setup("Item Code ไม่สามารถ เข้า Ageing พร้อมกันได้");
+                    win.ShowDialog();
+                    return;
                 }
 
-                var page = M3CordApp.Pages.S5ReportPreview;
-                var items = S5ConditionPrintModel.Gets(condition.S5ConditionId).Value();
-                page.Setup(items);
-                PageContentManager.Instance.Current = page;
+                S5Condition.Assign(Std1, Condition);
+            }
+            else if (null != Condition && null != Std1 && null == Std2)
+            {
+                S5Condition.Assign(Std1, Condition);
+            }
+            else if (null != Condition && null == Std1 && null != Std2)
+            {
+                S5Condition.Assign(Std2, Condition);
+            }
+            else
+            {
+
             }
         }
 
@@ -384,40 +382,98 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup()
+        public void Create()
         {
-            condition = S5Condition.GetCurrent().Value();
-            if (null == condition)
-            {
-                condition = new S5Condition();
-            }
+            Condition = new S5Condition();
+        }
 
+        public bool SetPallet1(string palletCode, out string message)
+        {
+            bool ret = false;
+            message = null;
+
+            Condition.DoffNo1PalletCode = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
+
+            return ret;
+        }
+
+        public bool SetPallet2(string palletCode, out string message)
+        {
+            bool ret = false;
+            message = null;
+
+            Condition.DoffNo2PalletCode = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
+
+            return ret;
+        }
+
+        public void Refresh()
+        {
             VerifyCondition();
-            RefreshContext();
+        }
 
-            if (!string.IsNullOrEmpty(condition.DoffNo1PalletCode))
+        public bool Start()
+        {
+            bool ret = false;
+
+            if (null != Condition)
             {
-                // Load pallet, pccard 1 information
-                pallet1 = GetPalletByCode(condition.DoffNo1PalletCode);
-                pcCard1 = GetPCTwist1(pallet1);
-            }
-            else
-            {
-                txtPalletNo1.Text = string.Empty;
-                txtItemCode1.Text = string.Empty;
+                Condition.StartingTimeStartAgeingTime = DateTime.Now;
+                S5Condition.Save(Condition);
+                ret = true;
             }
 
-            if (!string.IsNullOrEmpty(condition.DoffNo2PalletCode))
+            return ret;
+        }
+
+        public bool Finish(out string message)
+        {
+            bool ret = false;
+            message = null;
+
+            return ret;
+        }
+
+        public bool Save()
+        {
+            bool ret = false;
+
+            if (null != Condition)
             {
-                // Load pallet, pccard 2 information
-                pallet2 = GetPalletByCode(condition.DoffNo2PalletCode);
-                pcCard2 = GetPCTwist1(pallet1);
+                S5Condition.Save(Condition);
+                ret = true;
             }
-            else
-            {
-                txtPalletNo2.Text = string.Empty;
-                txtItemCode2.Text = string.Empty;
-            }
+
+            return ret;
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        public S5Condition Condition
+        {
+            get; private set;
+        }
+
+        public PCTwist1 PC1 
+        { 
+            get; private set; 
+        }
+
+        public PCTwist1 PC2 
+        { 
+            get; private set; 
+        }
+
+        public S5ConditionStd Std1
+        {
+            get; private set;
+        }
+
+        public S5ConditionStd Std2
+        {
+            get; private set;
         }
 
         #endregion

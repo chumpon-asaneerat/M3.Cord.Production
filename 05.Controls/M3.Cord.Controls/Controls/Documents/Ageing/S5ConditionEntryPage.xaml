@@ -59,6 +59,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <!--#region COLUMN HEADERS-->
             <Border Grid.Row="0"
@@ -886,6 +887,28 @@
 
             <!--#endregion-->
 
+            <!--#region NO 16-->
+
+            <Border Grid.Row="17" Grid.Column="0" />
+
+            <Border Grid.Row="17" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Run Text="Remark" />
+                </TextBlock>
+            </Border>
+
+            <Border Grid.Row="17"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="5">
+                <TextBox x:Name="txtReamrk"
+                         AcceptsReturn="True"
+                         Height="78"
+                         Width="500"
+                         HorizontalAlignment="Left" 
+                         Text="{Binding Remark}"/>
+            </Border>
+
+            <!--#endregion-->
         </Grid>
     </ScrollViewer>
 </UserControl>
