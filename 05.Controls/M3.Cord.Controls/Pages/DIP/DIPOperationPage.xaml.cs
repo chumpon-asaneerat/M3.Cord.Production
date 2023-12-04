@@ -123,7 +123,10 @@ namespace M3.Cord.Pages
             if (null != pcCard && pcCard.DIPPCId.HasValue)
             {
                 DIPPCCard.Start(pcCard.DIPPCId.Value);
-                Refresh();
+                if (Refresh())
+                {
+
+                }
             }
         }
 
@@ -132,7 +135,10 @@ namespace M3.Cord.Pages
             if (null != pcCard && pcCard.DIPPCId.HasValue)
             {
                 DIPPCCard.End(pcCard.DIPPCId.Value);
-                Refresh();
+                if (Refresh())
+                {
+
+                }
             }
         }
 
@@ -141,19 +147,25 @@ namespace M3.Cord.Pages
             if (null != pcCard && pcCard.DIPPCId.HasValue)
             {
                 DIPPCCard.Finish(pcCard.DIPPCId.Value);
-                Refresh();
+                if (Refresh())
+                {
+
+                }
             }
         }
 
         #endregion
 
-        private void Refresh()
+        private bool Refresh()
         {
+            bool ret = false;
+
             paCondition.DataContext = null;
             if (null != mc)
             {
                 pcCard = DIPUI.PCCard.Current(mc.MCCode);
-                if (null != pcCard)
+                ret = (null != pcCard);
+                if (ret)
                 {
                     paCondition.DataContext = pcCard;
                     this.InvokeAction(() =>
@@ -162,6 +174,7 @@ namespace M3.Cord.Pages
                     });
                 }
             }
+            return ret;
         }
 
         private void CheckButtons()
@@ -193,10 +206,10 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup(DIPMC selectedMC)
+        public bool Setup(DIPMC selectedMC)
         {
             mc = selectedMC;
-            Refresh();
+            return Refresh();
         }
 
         #endregion

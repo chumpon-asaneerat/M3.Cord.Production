@@ -78,8 +78,14 @@ namespace M3.Cord.Pages
             {
                 // Show MC Operation Menu.
                 var page = M3CordApp.Pages.DIPOperation;
-                page.Setup(selectedMC);
-                PageContentManager.Instance.Current = page;
+                if (page.Setup(selectedMC))
+                {
+                    PageContentManager.Instance.Current = page;
+                }
+                else
+                {
+                    // DIP PC Card Not found
+                }
             }
         }
 
