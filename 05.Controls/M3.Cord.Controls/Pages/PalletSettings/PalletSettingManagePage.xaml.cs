@@ -76,6 +76,7 @@ namespace M3.Cord.Pages
         private void cmdCreate_Click(object sender, RoutedEventArgs e)
         {
             var win = M3CordApp.Windows.CreatePallet;
+            win.Setup();
             if (win.ShowDialog() == true && null != win.Pallet)
             {
                 // Show Print Preview

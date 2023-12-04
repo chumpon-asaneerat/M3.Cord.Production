@@ -65,13 +65,7 @@ namespace M3.Cord.Windows
         private void cmdChoosePCTwist1_Click(object sender, RoutedEventArgs e)
         {
             pcCard = null;
-
-            var win = M3CordApp.Windows.ChoosePCTwist1;
-            win.Setup(pcCards);
-            if (win.ShowDialog() == true)
-            {
-                GetLotInfo();
-            }
+            ShowSelectWindow();
         }
 
         private void cmdAppend_Click(object sender, RoutedEventArgs e)
@@ -142,6 +136,40 @@ namespace M3.Cord.Windows
             grid.ItemsSource = null;
         }
 
+        private void GetPCCardByLot()
+        {
+            ClearContext();
+
+            cmdChoosePCTwist1.IsEnabled = false;
+            pcCards = PCTwist1.SearchByLotNo(txtProductLotNo.Text).Value();
+            if (null != pcCards && pcCards.Count > 0)
+            {
+                if (pcCards.Count == 1)
+                {
+                    // has only single lot so auto load
+                    pcCard = pcCards[0];
+                    GetLotInfo();
+                }
+                else
+                {
+                    cmdChoosePCTwist1.IsEnabled = true;
+                    ShowSelectWindow();
+                }
+            }
+        }
+
+        private void ShowSelectWindow()
+        {
+            var win = M3CordApp.Windows.ChoosePCTwist1;
+            win.Owner = this;
+            win.Setup(pcCards);
+            if (win.ShowDialog() == true)
+            {
+                pcCard = win.Item; // get select item
+                GetLotInfo();
+            }
+        }
+
         private void GetLotInfo()
         {
             ClearContext();
@@ -186,18 +214,6 @@ namespace M3.Cord.Windows
             }
         }
 
-        private void GetPCCardByLot()
-        {
-            ClearContext();
-
-            pcCards = PCTwist1.SearchByLotNo(txtProductLotNo.Text).Value();
-            GetAvaliableMC();
-        }
-
-        private void GetAvaliableMC()
-        {
-        }
-
         #endregion
 
         #region Public Methods
@@ -205,9 +221,12 @@ namespace M3.Cord.Windows
         public void Setup()
         {
             pcCard = null;
-            this.DataContext = null;
-            paItem.DataContext = null;
-            paItem.IsEnabled = false;
+            ClearContext();
+            this.InvokeAction(() => 
+            {
+                cmdChoosePCTwist1.IsEnabled = false;
+                txtProductLotNo.FocusControl();
+            });
         }
 
         #endregion

@@ -12,8 +12,8 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="300"
-        Width="850">
+        Height="400"
+        Width="1100">
     <page:NPage HeaderText="Select Lot to Create Pallet Slip">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
@@ -47,7 +47,7 @@
                             <GridViewColumn Header="MC Code" CellTemplate="{StaticResource MCCode}" />
                             <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
                             <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
-                            <GridViewColumn Header="Actual Qty." CellTemplate="{StaticResource ActualQty}" />
+                            <GridViewColumn Header="Production Date" CellTemplate="{StaticResource PCDate}" />
                             <GridViewColumn Header="Target Qty." CellTemplate="{StaticResource TargetQty}" />
                         </GridView>
                     </ListView.View>

@@ -587,6 +587,11 @@
                    TextAlignment="Right"
                    Width="150" />
     </DataTemplate>
+    <DataTemplate x:Key="PCDate">
+        <TextBlock Text="{Binding Path=PCDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
     <DataTemplate x:Key="ConeCH">
         <TextBlock Text="{Binding Path=ConeCH, Mode=OneWay, StringFormat='{}{0:n0}'}"
                    Foreground="{Binding TextColor}"
