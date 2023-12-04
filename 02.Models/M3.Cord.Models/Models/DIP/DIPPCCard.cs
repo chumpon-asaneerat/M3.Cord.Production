@@ -40,6 +40,7 @@ namespace M3.Cord.Models
         public string CustomerName { get; set; }
 
         public string ProductCode { get; set; }
+
         public string ProductName { get; set; }
         public string ItemYarn { get; set; }
         public string CordStructure { get; set; }

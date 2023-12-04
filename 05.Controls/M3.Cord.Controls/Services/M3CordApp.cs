@@ -106,6 +106,15 @@ namespace M3.Cord
                 PageContentManager.Instance.Current = page;
             }
             /// <summary>
+            /// Goto DIP Operation Menu.
+            /// </summary>
+            public static void GotoDIPOperationMenu(DIPMC mc)
+            {
+                var page = Pages.DIPOperation;
+                page.Setup(mc);
+                PageContentManager.Instance.Current = page;
+            }
+            /// <summary>
             /// Goto Ageing Operation Menu.
             /// </summary>
             public static void GotoAgeingOperationMenu()

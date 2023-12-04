@@ -52,7 +52,7 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoDIPMCMenu();
+            M3CordApp.Pages.GotoDIPOperationMenu(mc);
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
