@@ -242,8 +242,6 @@
                             Style="{StaticResource CordProductionButtonStyle}">
                         <TextBlock TextAlignment="Center">
                             <Run Text="Ageing" />
-                            <LineBreak />
-                            <Run Text="(for DIP Cord)" />
                         </TextBlock>
                     </Button>
                     <!--  Dipping  -->

@@ -67,7 +67,7 @@ namespace M3.Cord.Pages
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoCordMainMenu();
+            M3CordApp.Pages.GotoAgeingOperationMenu();
         }
 
         private void cmdPrint_Click(object sender, RoutedEventArgs e)

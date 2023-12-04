@@ -148,7 +148,7 @@ namespace M3.Cord.Pages
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
             // Ageing
-            var page = M3CordApp.Pages.AgeingManage;
+            var page = M3CordApp.Pages.AgeingOperation;
             page.Setup();
             PageContentManager.Instance.Current = page;
         }

@@ -105,6 +105,15 @@ namespace M3.Cord
                 page.Setup();
                 PageContentManager.Instance.Current = page;
             }
+            /// <summary>
+            /// Goto Ageing Operation Menu.
+            /// </summary>
+            public static void GotoAgeingOperationMenu()
+            {
+                var page = Pages.AgeingOperation;
+                page.Setup();
+                PageContentManager.Instance.Current = page;
+            }
 
             #endregion
 
@@ -312,6 +321,11 @@ namespace M3.Cord
 
             #region Ageing
 
+            /// <summary>Gets Ageing Operation Page.</summary>
+            public static Cord.Pages.AgeingOperationPage AgeingOperation
+            {
+                get { return GetPage<Cord.Pages.AgeingOperationPage>(); }
+            }
             /// <summary>Gets Ageing Condition Page.</summary>
             public static Cord.Pages.AgeingManagePage AgeingManage
             {

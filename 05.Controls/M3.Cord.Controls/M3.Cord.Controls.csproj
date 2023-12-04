@@ -188,10 +188,22 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Ageing\AgeingManagePage.xaml.cs">
+    <Compile Include="Pages\AgeingConditionFromDIPPage.xaml.cs">
+      <DependentUpon>AgeingConditionFromDIPPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AgeingConditionFromRawMeterialPage.xaml.cs">
+      <DependentUpon>AgeingConditionFromRawMeterialPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AgeingConditionFromTwistingPage.xaml.cs">
+      <DependentUpon>AgeingConditionFromTwistingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ageing\AgeingOperationPage.xaml.cs">
+      <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ageing\SubPages\AgeingManagePage.xaml.cs">
       <DependentUpon>AgeingManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Ageing\S5ConditionManager.cs" />
+    <Compile Include="Pages\Ageing\SubPages\S5ConditionManager.cs" />
     <Compile Include="Pages\DIP\DIPMCPage.xaml.cs">
       <DependentUpon>DIPMCPage.xaml</DependentUpon>
     </Compile>
@@ -247,7 +259,7 @@
     <Compile Include="Pages\PalletSettings\PalletSettingManagePage.xaml.cs">
       <DependentUpon>PalletSettingManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Ageing\S5ReportPreviewPage.xaml.cs">
+    <Compile Include="Pages\Ageing\SubPages\S5ReportPreviewPage.xaml.cs">
       <DependentUpon>S5ReportPreviewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\DIP\SubPages\S7CreelCheckSheetPage.xaml.cs">
@@ -616,7 +628,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Ageing\AgeingManagePage.xaml">
+    <Page Include="Pages\AgeingConditionFromDIPPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AgeingConditionFromRawMeterialPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AgeingConditionFromTwistingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Ageing\AgeingOperationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Ageing\SubPages\AgeingManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -732,7 +760,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Ageing\S5ReportPreviewPage.xaml">
+    <Page Include="Pages\Ageing\SubPages\S5ReportPreviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -896,6 +924,9 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Pages\Ageing\SubPages\DIP\" />
+    <Folder Include="Pages\Ageing\SubPages\Raw\" />
+    <Folder Include="Pages\Ageing\SubPages\Twist\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
   </ItemGroup>

@@ -524,7 +524,7 @@ namespace M3.Cord.Models
             return rets;
         }
 
-        public static NDbResult<G4IssueYarn> SearchG4AgeingPallet(string PalletOrTraceNo)
+        public static NDbResult<G4IssueYarn> SearchG4AgeingPallet(string traceNo)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -543,7 +543,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@PalletOrTraceNo", PalletOrTraceNo);
+            p.Add("@traceNo", traceNo);
 
             try
             {
