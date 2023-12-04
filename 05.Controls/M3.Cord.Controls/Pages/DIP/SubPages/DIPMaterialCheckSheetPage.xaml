@@ -80,9 +80,12 @@
                     <ctrl:NTextBox CaptionText="SP No:"
                                    x:Name="txtSPNo"
                                    PreviewKeyDown="txtSPNo_PreviewKeyDown" />
+                    <ctrl:NTextBox CaptionText="Pallet No:"
+                                   x:Name="txtPallet"
+                                   PreviewKeyDown="txtPallet_PreviewKeyDown" />
                     <ctrl:NTextBox CaptionText="Lot No:"
                                    x:Name="txtLotNo"
-                                   PreviewKeyDown="txtLotNo_PreviewKeyDown" />
+                                   IsReadOnly="True" />
                     <ctrl:NTextBox CaptionText="CH No:"
                                    x:Name="txtCHNo"
                                    PreviewKeyDown="txtCHNo_PreviewKeyDown" />
@@ -119,7 +122,7 @@
                               Style="{StaticResource CommonCheckBox}" />
                     <CheckBox x:Name="chkCheckDustFilter"
                               FontSize="20"
-                              Content="ตัวดักปน"
+                              Content="ตัวดักฝุ่น"
                               Style="{StaticResource CommonCheckBox}" />
                 </StackPanel>
                 <Grid />
@@ -141,7 +144,7 @@
                         <GridViewColumn Header="ลูกด้าย" CellTemplate="{StaticResource CheckYarnBall}" />
                         <GridViewColumn Header="ผ้าคลุม" CellTemplate="{StaticResource CheckCover}" />
                         <GridViewColumn Header="Sensor" CellTemplate="{StaticResource CheckSensor}" />
-                        <GridViewColumn Header="ตัวดักปน" CellTemplate="{StaticResource CheckDustFilter}" />
+                        <GridViewColumn Header="ตัวดักฝุ่น" CellTemplate="{StaticResource CheckDustFilter}" />
                     </GridView>
                 </ListView.View>
             </ListView>

@@ -71,7 +71,7 @@ namespace M3.Cord.Pages
 
         #region TextBox Handlers
 
-        private void txtSPNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void txtPallet_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -80,7 +80,7 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void txtLotNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void txtSPNo_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -104,6 +104,7 @@ namespace M3.Cord.Pages
 
         private void ResetTextBoxInputs()
         {
+            txtPallet.Text = string.Empty;
             txtSPNo.Text = (null != mc) ? mc.StartCore.ToString() : string.Empty;
             txtLotNo.Text = string.Empty;
             txtCHNo.Text = string.Empty;
@@ -123,14 +124,27 @@ namespace M3.Cord.Pages
         {
             #region Check empty inputs
 
+            if (string.IsNullOrWhiteSpace(txtPallet.Text))
+            {
+                txtPallet.FocusControl();
+                return;
+            }
+
+            // Find lot no by pallet
+            string palletNo = txtPallet.Text;
+
+            PalletSetting pallet = PalletSetting.Search(palletNo, PalletStatus.All).Value();
+            if (null == pallet)
+            {
+                txtPallet.FocusControl();
+                return;
+            }
+            string lotNo = (null != pallet) ? pallet.ProductLotNo : string.Empty;
+            txtLotNo.Text = lotNo;
+
             if (string.IsNullOrWhiteSpace(txtSPNo.Text))
             {
                 txtSPNo.FocusControl();
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(txtLotNo.Text))
-            {
-                txtLotNo.FocusControl();
                 return;
             }
             if (string.IsNullOrWhiteSpace(txtCHNo.Text))
@@ -154,8 +168,6 @@ namespace M3.Cord.Pages
             {
                 iCH = 0;
             }
-
-            string lotNo = txtLotNo.Text;
 
             #endregion
 
@@ -336,6 +348,8 @@ namespace M3.Cord.Pages
                 ResetCheckBoxInputs();
 
                 RefreshGrid(true);
+
+                txtPallet.FocusControl();
             });
         }
 
