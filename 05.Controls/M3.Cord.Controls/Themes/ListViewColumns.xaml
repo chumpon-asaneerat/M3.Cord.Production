@@ -581,6 +581,12 @@
                    TextAlignment="Right"
                    Width="150" />
     </DataTemplate>
+    <DataTemplate x:Key="ActualQty">
+        <TextBlock Text="{Binding Path=ActualQty, Mode=OneWay, StringFormat='{}{0:n1}'}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Right"
+                   Width="150" />
+    </DataTemplate>
     <DataTemplate x:Key="ConeCH">
         <TextBlock Text="{Binding Path=ConeCH, Mode=OneWay, StringFormat='{}{0:n0}'}"
                    Foreground="{Binding TextColor}"

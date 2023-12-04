@@ -553,6 +553,11 @@ namespace M3.Cord
             {
                 get { return GetWindow<CreatePalletWindow>(); }
             }
+            /// <summary>Gets Choose PC TWist1 Window.</summary>
+            public static ChoosePCTwist1Window ChoosePCTwist1
+            {
+                get { return GetWindow<ChoosePCTwist1Window>(); }
+            }
 
             #endregion
 

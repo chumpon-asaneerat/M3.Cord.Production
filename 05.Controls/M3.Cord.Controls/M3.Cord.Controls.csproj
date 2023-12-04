@@ -281,6 +281,9 @@
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
+    <Compile Include="Windows\PalletSettings\ChoosePCTwist1Window.xaml.cs">
+      <DependentUpon>ChoosePCTwist1Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\DIPSlip\CreateDIPSlipWindow.xaml.cs">
       <DependentUpon>CreateDIPSlipWindow.xaml</DependentUpon>
     </Compile>
@@ -782,6 +785,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\ListViewColumns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PalletSettings\ChoosePCTwist1Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

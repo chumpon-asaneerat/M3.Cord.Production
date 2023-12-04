@@ -299,11 +299,11 @@ namespace M3.Cord.Models
         /// Search By LotNo
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<PCTwist1> SearchByLotNo(string ProductLotNo = null)
+        public static NDbResult<List<PCTwist1>> SearchByLotNo(string ProductLotNo = null)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
-            NDbResult<PCTwist1> rets = new NDbResult<PCTwist1>();
+            NDbResult<List<PCTwist1>> rets = new NDbResult<List<PCTwist1>>();
 
             IDbConnection cnn = DbServer.Instance.Db;
             if (null == cnn || !DbServer.Instance.Connected)
@@ -323,7 +323,7 @@ namespace M3.Cord.Models
             {
                 var items = cnn.Query<PCTwist1>("SearchPCTwist1ByLotNo", p,
                     commandType: CommandType.StoredProcedure);
-                var data = (null != items) ? items.ToList().FirstOrDefault() : null;
+                var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);
             }
             catch (Exception ex)
@@ -336,7 +336,7 @@ namespace M3.Cord.Models
 
             if (null == rets.data)
             {
-                rets.data = null;
+                rets.data = new List<PCTwist1>();
             }
 
             return rets;

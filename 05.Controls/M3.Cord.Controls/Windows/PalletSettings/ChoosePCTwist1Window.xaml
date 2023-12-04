@@ -1,0 +1,58 @@
+﻿<Window x:Class="M3.Cord.Windows.ChoosePCTwist1Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        mc:Ignorable="d"
+        Title="Product Planning"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="300"
+        Width="850">
+    <page:NPage HeaderText="Select Lot to Create Pallet Slip">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdOk"
+                                        DockPanel.Dock="Right"
+                                        IconType="Ok"
+                                        Text="Ok"
+                                        Click="cmdOk_Click" />
+                <Grid />
+            </DockPanel>
+            <!--  WORK AREA  -->
+            <DockPanel LastChildFill="True">
+                <ListView x:Name="grid"
+                          Margin="0,0,0,5"
+                          FontSize="{StaticResource FontSize18}"
+                          ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                          ItemsSource="{Binding}"
+                          Style="{StaticResource SingleSelectListView}"
+                          SelectionChanged="grid_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Lot No" CellTemplate="{StaticResource ProductLotNo}" />
+                            <GridViewColumn Header="MC Code" CellTemplate="{StaticResource MCCode}" />
+                            <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
+                            <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
+                            <GridViewColumn Header="Actual Qty." CellTemplate="{StaticResource ActualQty}" />
+                            <GridViewColumn Header="Target Qty." CellTemplate="{StaticResource TargetQty}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>

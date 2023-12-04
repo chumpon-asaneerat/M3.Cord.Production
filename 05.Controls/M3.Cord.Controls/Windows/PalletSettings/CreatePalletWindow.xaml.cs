@@ -42,6 +42,8 @@ namespace M3.Cord.Windows
 
         #region Internal Variables
 
+        private List<PCTwist1> pcCards = null;
+
         private PCTwist1 pcCard = null;
         private PalletSetting _pallet = null;
         private PalletSettingItem _item = null;
@@ -58,6 +60,18 @@ namespace M3.Cord.Windows
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
+        }
+
+        private void cmdChoosePCTwist1_Click(object sender, RoutedEventArgs e)
+        {
+            pcCard = null;
+
+            var win = M3CordApp.Windows.ChoosePCTwist1;
+            win.Setup(pcCards);
+            if (win.ShowDialog() == true)
+            {
+                GetLotInfo();
+            }
         }
 
         private void cmdAppend_Click(object sender, RoutedEventArgs e)
@@ -111,7 +125,7 @@ namespace M3.Cord.Windows
         {
             if (e.Key == Key.Enter)
             {
-                GetLotInfo();
+                GetPCCardByLot();
                 e.Handled = true;
             }
         }
@@ -120,14 +134,18 @@ namespace M3.Cord.Windows
 
         #region Private Methods
 
-        private void GetLotInfo()
+        private void ClearContext()
         {
             this.DataContext = null;
             paItem.DataContext = null;
             paItem.IsEnabled = false;
             grid.ItemsSource = null;
+        }
 
-            pcCard = PCTwist1.SearchByLotNo(txtProductLotNo.Text).Value();
+        private void GetLotInfo()
+        {
+            ClearContext();
+
             if (null != pcCard)
             {
                 _pallet = new PalletSetting();
@@ -166,6 +184,18 @@ namespace M3.Cord.Windows
                 paItem.DataContext = _item;
                 paItem.IsEnabled = true;
             }
+        }
+
+        private void GetPCCardByLot()
+        {
+            ClearContext();
+
+            pcCards = PCTwist1.SearchByLotNo(txtProductLotNo.Text).Value();
+            GetAvaliableMC();
+        }
+
+        private void GetAvaliableMC()
+        {
         }
 
         #endregion
