@@ -162,7 +162,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            cbProducts.ItemsSource = Product.Gets().Value();
+            cbProducts.ItemsSource = Product.GetDipProducts(null).Value();
             ClearInputs();
             RefreshGrid();
         }

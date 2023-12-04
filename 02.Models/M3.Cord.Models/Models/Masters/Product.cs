@@ -25,6 +25,7 @@ namespace M3.Cord.Models
 
         public int? ProductId { get; set; }
         public string ProductCode { get; set; }
+        //public string TwistProductCode { get; set; }
         public string ProductName{ get; set; }
         public string ItemYarn { get; set; }
         public string CordStructure { get; set; }
@@ -111,6 +112,54 @@ namespace M3.Cord.Models
             try
             {
                 var items = cnn.Query<Product>("GetProductsByCustomerName", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<Product>();
+            }
+
+            return rets;
+        }
+        /// <summary>
+        /// Get Dip Products
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<List<Product>> GetDipProducts(string customerName)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<Product>> rets = new NDbResult<List<Product>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@CustomerName", customerName);
+
+            try
+            {
+                var items = cnn.Query<Product>("GetDIPProductsByCustomerName", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);

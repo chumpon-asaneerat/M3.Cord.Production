@@ -93,7 +93,7 @@ namespace M3.Cord.Windows
                 return;
             // Item Code
             cbItemCodes.ItemsSource = null;
-            var products = Product.Gets(customer.CustomerName).Value();
+            var products = Product.GetDipProducts(customer.CustomerName).Value();
             cbItemCodes.ItemsSource = products;
 
             if (null != _item)
