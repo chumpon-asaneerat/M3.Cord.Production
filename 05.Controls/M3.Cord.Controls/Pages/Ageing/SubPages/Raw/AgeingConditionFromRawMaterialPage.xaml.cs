@@ -25,16 +25,16 @@ using NLib;
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for AgeingConditionFromRawMeterialPage.xaml
+    /// Interaction logic for AgeingConditionFromRawMaterialPage.xaml
     /// </summary>
-    public partial class AgeingConditionFromRawMeterialPage : UserControl
+    public partial class AgeingConditionFromRawMaterialPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public AgeingConditionFromRawMeterialPage()
+        public AgeingConditionFromRawMaterialPage()
         {
             InitializeComponent();
         }

@@ -50,17 +50,23 @@ namespace M3.Cord.Pages
 
         private void cmdAgeingFromRawMaterial_Click(object sender, RoutedEventArgs e)
         {
-
+            var page = M3CordApp.Pages.AgeingConditionFromRawMaterial;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdAgeingFromTwisting_Click(object sender, RoutedEventArgs e)
         {
-
+            var page = M3CordApp.Pages.AgeingConditionFromTwisting;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdAgeingFromDIP_Click(object sender, RoutedEventArgs e)
         {
-
+            var page = M3CordApp.Pages.AgeingConditionFromDIP;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion

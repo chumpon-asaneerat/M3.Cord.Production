@@ -160,7 +160,7 @@ namespace M3.Cord
 
             #endregion
 
-            #region Master Data
+            #region Master Data (comment out)
             /*
             /// <summary>Gets M3 Cord Product Item Code Manage Page.</summary>
             public static Cord.Pages.ProductItemCodeManagePage ProductItemCodeManage
@@ -326,10 +326,20 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.AgeingOperationPage>(); }
             }
-            /// <summary>Gets Ageing Condition Page.</summary>
-            public static Cord.Pages.AgeingManagePage AgeingManage
+            /// <summary>Gets Ageing Condition From Raw Material Page.</summary>
+            public static Cord.Pages.AgeingConditionFromRawMaterialPage AgeingConditionFromRawMaterial
             {
-                get { return GetPage<Cord.Pages.AgeingManagePage>(); }
+                get { return GetPage<Cord.Pages.AgeingConditionFromRawMaterialPage>(); }
+            }
+            /// <summary>Gets Ageing Condition From Twisting Page.</summary>
+            public static Cord.Pages.AgeingConditionFromTwistingPage AgeingConditionFromTwisting
+            {
+                get { return GetPage<Cord.Pages.AgeingConditionFromTwistingPage>(); }
+            }
+            /// <summary>Gets Ageing Condition From DIP Page.</summary>
+            public static Cord.Pages.AgeingConditionFromDIPPage AgeingConditionFromDIP
+            {
+                get { return GetPage<Cord.Pages.AgeingConditionFromDIPPage>(); }
             }
             /// <summary>Gets S5 (Ageing) Report Preview Page.</summary>
             public static Cord.Pages.S5ReportPreviewPage S5ReportPreview

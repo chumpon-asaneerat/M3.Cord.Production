@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="M3.Cord.Pages.AgeingConditionFromRawMeterialPage"
+﻿<UserControl x:Class="M3.Cord.Pages.AgeingConditionFromRawMaterialPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -61,7 +61,7 @@
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <!--  PALLET  -->
                         <ctrl:NTextBox x:Name="txtPalletNo1"
-                                       CaptionText="Pallet No (1)"
+                                       CaptionText="Trace No (1)"
                                        PreviewKeyDown="txtPalletNo1_PreviewKeyDown"
                                        Width="200" />
                         <!--  ITEM CODE  -->
@@ -71,7 +71,7 @@
                                        Width="200" />
                         <!--  PALLET  -->
                         <ctrl:NTextBox x:Name="txtPalletNo2"
-                                       CaptionText="Pallet No (2)"
+                                       CaptionText="Trace No (2)"
                                        PreviewKeyDown="txtPalletNo2_PreviewKeyDown"
                                        Width="200" />
                         <!--  ITEM CODE  -->
