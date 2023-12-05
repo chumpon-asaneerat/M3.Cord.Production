@@ -147,6 +147,54 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
+        public bool SetPallet1(string palletCode, out string message)
+        {
+            bool ret = false;
+            message = null;
+
+            if (null != Condition)
+            {
+                string code = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
+                if (!string.IsNullOrWhiteSpace(code))
+                {
+                    Condition.DoffNo1PalletCode = code;
+                }
+                else
+                {
+                    Condition.DoffNo1PalletCode = null;
+                }
+                VerifyCondition(out message);
+                if (string.IsNullOrEmpty(message))
+                    ret = true;
+            }
+
+            return ret;
+        }
+
+        public bool SetPallet2(string palletCode, out string message)
+        {
+            bool ret = false;
+            message = null;
+
+            if (null != Condition)
+            {
+                string code = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
+                if (!string.IsNullOrWhiteSpace(code))
+                {
+                    Condition.DoffNo2PalletCode = code;
+                }
+                else
+                {
+                    Condition.DoffNo2PalletCode = null;
+                }
+                VerifyCondition(out message);
+                if (string.IsNullOrEmpty(message))
+                    ret = true;
+            }
+
+            return ret;
+        }
+
         public void Load()
         {
             Condition = S5Condition.GetCurrent(FromSources.Twist).Value();
@@ -154,6 +202,16 @@ namespace M3.Cord.Pages
             {
                 Condition = new S5Condition();
                 Condition.FromSource = FromSources.Twist;
+            }
+        }
+
+        public void Refresh()
+        {
+            string message;
+            VerifyCondition(out message);
+            if (!string.IsNullOrEmpty(message))
+            {
+                // something error.
             }
         }
 
@@ -177,6 +235,21 @@ namespace M3.Cord.Pages
                 ret = true;
             }
 
+            return ret;
+        }
+
+        public bool Finish(out string message)
+        {
+            bool ret = false;
+            message = null;
+            if (null != Condition)
+            {
+                var dt = DateTime.Now;
+                Condition.OutTime = dt;
+
+                S5Condition.Save(Condition);
+                ret = true;
+            }
             return ret;
         }
 

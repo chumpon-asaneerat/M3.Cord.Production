@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using System.Runtime.CompilerServices;
 
 #endregion
 
@@ -39,11 +40,6 @@ namespace M3.Cord.Pages
 
         #region Private Methods
 
-        private PalletSetting GetPalletByCode(string palletCode)
-        {
-            return PalletSetting.Search(palletCode, PalletStatus.Create).Value();
-        }
-
         private S5ConditionStd GetStd(string productCode)
         {
             if (string.IsNullOrWhiteSpace(productCode))
@@ -54,9 +50,148 @@ namespace M3.Cord.Pages
             return (null != stds && stds.Count > 0) ? stds.FirstOrDefault() : null;
         }
 
+        private void VerifyCondition(out string errMsg)
+        {
+            errMsg = null;
+            if (null == Condition)
+            {
+                return;
+            }
+            // pallet 1
+            if (!string.IsNullOrEmpty(Condition.DoffNo1TraceNo))
+            {
+                // Special case for Raw Material
+                // Item Yarn must be 1620-288-707 and Product Code must be 1800TW
+                var code = "1800TW";
+
+                // find pallet in G4
+                var g4 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo1TraceNo).Value();
+                if (null != g4)
+                {
+                    Condition.DoffNo1PalletCode = g4.PalletNo;
+                }
+                else
+                {
+                    errMsg = "Pallet Not found.";
+                    Condition.DoffNo1PalletCode = null;
+                }
+
+                Condition.ProductCode1 = code;
+                Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
+            }
+            else
+            {
+                Condition.ProductCode1 = null;
+                Std1 = null;
+            }
+
+            // pallet 2
+            if (!string.IsNullOrEmpty(Condition.DoffNo2TraceNo))
+            {
+                // Special case for Raw Material
+                // Item Yarn must be 1620-288-707 and Product Code must be 1800TW
+                var code = "1800TW";
+
+                // find pallet in G4
+                var g4 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo2TraceNo).Value();
+                if (null != g4)
+                {
+
+                    Condition.DoffNo2PalletCode = g4.PalletNo;
+                }
+                else
+                {
+                    errMsg = "Pallet Not found.";
+                    Condition.DoffNo2PalletCode = null;
+                }
+
+                Condition.ProductCode2 = code;
+                Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
+            }
+            else
+            {
+                Condition.ProductCode2 = null;
+                Std2 = null;
+            }
+
+            if (null != Condition && null != Std1 && null != Std2)
+            {
+                if (!IsMatchStd)
+                {
+                    errMsg = "Item Code ไม่สามารถ เข้า Ageing พร้อมกันได้";
+                    return;
+                }
+
+                S5Condition.Assign(Std1, Condition);
+                //Condition.LotOrTraceNo = LotOrTraceNo1;
+            }
+            else if (null != Condition && null != Std1 && null == Std2)
+            {
+                S5Condition.Assign(Std1, Condition);
+                //Condition.LotOrTraceNo = LotOrTraceNo1;
+            }
+            else if (null != Condition && null == Std1 && null != Std2)
+            {
+                S5Condition.Assign(Std2, Condition);
+                //Condition.LotOrTraceNo = LotOrTraceNo2;
+            }
+            else
+            {
+                //Condition.LotOrTraceNo = null;
+            }
+        }
+
         #endregion
 
         #region Public Methods
+
+        public bool SetTrace1(string traceNo, out string message)
+        {
+            bool ret = false;
+            message = null;
+
+            if (null != Condition)
+            {
+                string code = (!string.IsNullOrEmpty(traceNo)) ? traceNo.Trim() : null;
+                if (!string.IsNullOrWhiteSpace(code))
+                {
+                    Condition.DoffNo1PalletCode = code;
+                }
+                else
+                {
+                    Condition.DoffNo1TraceNo = null;
+                }
+                VerifyCondition(out message);
+                if (string.IsNullOrEmpty(message))
+                    ret = true;
+            }
+
+            return ret;
+        }
+
+        public bool SetTrace2(string traceNo, out string message)
+        {
+            bool ret = false;
+            message = null;
+
+            if (null != Condition)
+            {
+                string code = (!string.IsNullOrEmpty(traceNo)) ? traceNo.Trim() : null;
+                if (!string.IsNullOrWhiteSpace(code))
+                {
+                    Condition.DoffNo2TraceNo = code;
+                }
+                else
+                {
+                    Condition.DoffNo2PalletCode = null;
+                }
+                VerifyCondition(out message);
+                if (string.IsNullOrEmpty(message))
+                    ret = true;
+            }
+
+            return ret;
+        }
 
         public void Load()
         {
@@ -65,6 +200,16 @@ namespace M3.Cord.Pages
             {
                 Condition = new S5Condition();
                 Condition.FromSource = FromSources.RawMeterial;
+            }
+        }
+
+        public void Refresh()
+        {
+            string message;
+            VerifyCondition(out message);
+            if (!string.IsNullOrEmpty(message))
+            {
+                // something error.
             }
         }
 
@@ -88,6 +233,35 @@ namespace M3.Cord.Pages
                 ret = true;
             }
 
+            return ret;
+        }
+
+        public bool Finish(out string message)
+        {
+            bool ret = false;
+            message = null;
+            if (null != Condition)
+            {
+                var dt = DateTime.Now;
+                Condition.OutTime = dt;
+
+                // Need update G4 pallet status
+                string userName = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
+
+                var g4_1 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo1PalletCode).Value();
+                if (null != g4_1)
+                {
+                    G4IssueYarn.MarkAgeing(g4_1.G4IssueYarnPkId, userName);
+                }
+                var g4_2 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo2PalletCode).Value();
+                if (null != g4_2)
+                {
+                    G4IssueYarn.MarkAgeing(g4_2.G4IssueYarnPkId, userName);
+                }
+
+                S5Condition.Save(Condition);
+                ret = true;
+            }
             return ret;
         }
 
