@@ -1,0 +1,914 @@
+﻿<UserControl x:Class="M3.Cord.Controls.Documents.S5ConditionRawMeterialEntryPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:M3.Cord.Controls.Documents"
+             mc:Ignorable="d"
+             d:DesignHeight="1000"
+             d:DesignWidth="1190">
+    <UserControl.Resources>
+        <!--  LOCAL STYLES  -->
+        <Style TargetType="Border">
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderBrush" Value="DimGray" />
+            <Setter Property="BorderThickness" Value="0.5" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource CommonTextBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource CommonCheckBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <!--#region COLUMN HEADERS-->
+            <Border Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Background="Silver">
+                <!--  CHECKING ITEM (MERGE COLUMN)  -->
+                <TextBlock Text="Checking Item (รายการที่ตรวจสอบ)" />
+            </Border>
+            <Border Grid.Row="1"
+                    Grid.Column="0"
+                    Background="Silver">
+                <!--  NO  -->
+                <TextBlock Text="No." />
+            </Border>
+            <Border Grid.Row="1"
+                    Grid.Column="1"
+                    Background="Silver">
+                <!--  MC Setting  -->
+                <TextBlock Text="Machine Secting (ค่าที่ปรับตั้ง)" />
+            </Border>
+            <Border Grid.Row="0"
+                    Grid.Column="2"
+                    Grid.RowSpan="2"
+                    Background="Silver">
+                <!--  Class  -->
+                <TextBlock Text="Class" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="90" />
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="0"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="2"
+                    Background="Silver">
+                <!--  Class  -->
+                <TextBlock Text="(Specification)" />
+            </Border>
+            <Border Grid.Row="0"
+                    Grid.Column="5"
+                    Grid.ColumnSpan="2"
+                    Background="Silver">
+                <!--  Class  -->
+                <TextBlock Text="(Actual value)" />
+            </Border>
+            <Border Grid.Row="1"
+                    Grid.Column="3"
+                    Background="Silver">
+                <!--  Class  -->
+                <TextBlock Text="Set" />
+            </Border>
+            <Border Grid.Row="1"
+                    Grid.Column="4"
+                    Background="Silver">
+                <!--  Class  -->
+                <TextBlock Text="Actual Set" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="5"
+                    Background="Silver">
+                <!--  Class  -->
+                <TextBlock Text="Spec" />
+            </Border>
+            <Border Grid.Row="1"
+                    Grid.Column="6"
+                    Background="Silver">
+                <!--  Class  -->
+                <TextBlock Text="Actual" />
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 1-->
+
+            <Border Grid.Row="2" Grid.Column="0">
+                <TextBlock Text="1" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Main Supply Steam Pressure (kg/cm²)" />
+                    <LineBreak />
+                    <Run Text="แรงดันสตรีม (เมนต์วาวล์)(kg/cm²)" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding MainSupplySteamPressureSC}" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding MainSupplySteamPressureSet, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding MainSupplySteamPressureSetErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="2" Grid.Column="4">
+                <TextBox Width="132" Text="{Binding MainSupplySteamPressureSetActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <Border Grid.Row="2" Grid.Column="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding MainSupplySteamPressureSpec, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding MainSupplySteamPressureSpecErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="2" Grid.Column="6">
+                <TextBox Width="132" Text="{Binding MainSupplySteamPressureSpecActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 2-->
+
+            <Border Grid.Row="3" Grid.Column="0">
+                <TextBlock Text="2" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Ageing Steam pressure (kg/cm²)" />
+                    <LineBreak />
+                    <Run Text="แรงดันสตรีม (ตัวเครื่อง)(kg/cm²)" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding AgeingSteamPressureSC}" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding AgeingSteamPressureSet, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding AgeingSteamPressureSetErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="3" Grid.Column="4">
+                <TextBox Width="132" Text="{Binding AgeingSteamPressureSetActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <Border Grid.Row="3" Grid.Column="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding AgeingSteamPressureSpec, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding AgeingSteamPressureSpecErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="3" Grid.Column="6">
+                <TextBox Width="132" Text="{Binding AgeingSteamPressureActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 3-->
+
+            <Border Grid.Row="4" Grid.Column="0">
+                <TextBlock Text="3" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="4" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Setting Temperature (ตั้ง อุณหภูมิ)" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="4" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding SettingTemperatureSC}" />
+            </Border>
+            <Border Grid.Row="4" Grid.Column="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding SettingTemperatureSet, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding SettingTemperatureSetErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="4" Grid.Column="4">
+                <TextBox Width="132" Text="{Binding SettingTemperatureSetActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <Border Grid.Row="4" Grid.Column="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding SettingTemperatureSpec, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding SettingTemperatureSpecErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="4" Grid.Column="6">
+                <TextBox Width="132" Text="{Binding SettingTemperatureSpecActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 4-->
+
+            <Border Grid.Row="5" Grid.Column="0">
+                <TextBlock Text="4" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="5" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Setting time (ตั้ง เวลา)" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="5" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding SettingTimeSC}" />
+            </Border>
+            <Border Grid.Row="5" Grid.Column="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding SettingTimeSet, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding SettingTimeSetErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="5" Grid.Column="4">
+                <TextBox Width="132" Text="{Binding SettingTimeSetActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <Border Grid.Row="5" Grid.Column="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding SettingTimeSpec, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding SettingTimeSpecErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="5" Grid.Column="6">
+                <TextBox Width="132" Text="{Binding SettingTimeSpecActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 5-->
+
+            <Border Grid.Row="6" Grid.Column="0">
+                <TextBlock Text="5" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="6" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Lamp status system" />
+                    <LineBreak />
+                    <Run Text="สัญญานไฟเปิดเครื่อง" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="6" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding LampStatusSystemSC}" />
+            </Border>
+            <Border Grid.Row="6" Grid.Column="3">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="เมื่อกดเปิดเครื่อง" />
+                    <LineBreak />
+                    <Run Text="ต้องมีสัญญานไฟโชว์" />
+                </TextBlock>
+            </Border>
+
+            <Border Grid.Row="6" Grid.Column="4">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical" Width="60">
+                        <CheckBox IsChecked="{Binding LampStatusSystemSetActual}" />
+                        <TextBlock Text="YES" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="60">
+                        <CheckBox IsChecked="{Binding LampStatusSystemSetActual}" />
+                        <TextBlock Text="NO" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="6" Grid.Column="5">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="เมื่อกดเปิดเครื่อง" />
+                    <LineBreak />
+                    <Run Text="ต้องมีสัญญานไฟโชว์" />
+                </TextBlock>
+            </Border>
+
+            <Border Grid.Row="6" Grid.Column="6">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical" Width="60">
+                        <CheckBox IsChecked="{Binding LampStatusSystemSpecActual}" />
+                        <TextBlock Text="YES" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="60">
+                        <CheckBox IsChecked="{Binding LampStatusSystemSpecActual}" />
+                        <TextBlock Text="NO" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 6-->
+
+            <Border Grid.Row="7" Grid.Column="0">
+                <TextBlock Text="6" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="7" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Soud system Temperature" />
+                    <LineBreak />
+                    <Run Text="ระบบสัญญานเสียง เตือนอุณภูมิ" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="7" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding SoudSystemTemperatureSC}" />
+            </Border>
+            <Border Grid.Row="7" Grid.Column="3">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="มีสัญญานเสียงเตือนอุณภูมิ" />
+                </TextBlock>
+            </Border>
+
+            <Border Grid.Row="7" Grid.Column="4">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical" Width="60">
+                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSetActual}" />
+                        <TextBlock Text="YES" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="60">
+                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSetActual}" />
+                        <TextBlock Text="NO" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="7" Grid.Column="5">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="มีสัญญานเสียงเตือนอุณภูมิ" />
+                </TextBlock>
+            </Border>
+
+            <Border Grid.Row="7" Grid.Column="6">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical" Width="60">
+                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSpecActual}" />
+                        <TextBlock Text="YES" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="60">
+                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSpecActual}" />
+                        <TextBlock Text="NO" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 7-->
+
+            <Border Grid.Row="8" Grid.Column="0">
+                <TextBlock Text="7" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="8" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Yarn Type (เบอร์ด้าย)" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="8" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding YarnTypeSC}" />
+            </Border>
+            <Border Grid.Row="8" Grid.Column="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="132"
+                             Text="{Binding YarnTypeSet}"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="8" Grid.Column="4">
+                <TextBox Width="132" Text="{Binding YarnTypeSetActual}" />
+            </Border>
+
+            <Border Grid.Row="8" Grid.Column="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="132"
+                             Text="{Binding YarnTypeSpec}"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="8" Grid.Column="6">
+                <TextBox Width="132" Text="{Binding YarnTypeSpecActual}" />
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 8-->
+
+            <Border Grid.Row="9" Grid.Column="0">
+                <TextBlock Text="8" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="9" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Cord Structure (โครงสร้างเชือก)" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="9" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding CordStructureSC}" />
+            </Border>
+            <Border Grid.Row="9" Grid.Column="3">
+                <TextBox Width="132"
+                         Text="{Binding CordStructureSet}"
+                         IsReadOnly="True" />
+            </Border>
+
+            <Border Grid.Row="9" Grid.Column="4">
+                <TextBox Width="132" Text="{Binding CordStructureSetActual}" />
+            </Border>
+
+            <Border Grid.Row="9" Grid.Column="5">
+                <TextBox Width="132"
+                         Text="{Binding CordStructureSpec}"
+                         IsReadOnly="True" />
+            </Border>
+
+            <Border Grid.Row="9" Grid.Column="6">
+                <TextBox Width="132" Text="{Binding CordStructureSpecActual}" />
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 9-->
+
+            <Border Grid.Row="10" Grid.Column="0">
+                <TextBlock Text="9" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="10" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Twisting No.(จำนวนเกลียว)" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="10" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding TwistingNoSC}" />
+            </Border>
+            <Border Grid.Row="10" Grid.Column="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding TwistingNoSet, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding TwistingNoSetErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" (S) T/M" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="10" Grid.Column="4">
+                <TextBox Width="132" Text="{Binding TwistingNoSetActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <Border Grid.Row="10" Grid.Column="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding TwistingNoSpec, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding TwistingNoSpecErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" (S) T/M" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="10" Grid.Column="6">
+                <TextBox Width="132" Text="{Binding TwistingNoSpecActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 10-->
+
+            <Border Grid.Row="11" Grid.Column="0">
+                <TextBlock Text="10" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="11" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Unit weight (น้ำหนัก กก./ลูก)" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="11" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding UnitWeightSC}" />
+            </Border>
+            <Border Grid.Row="11" Grid.Column="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding UnitWeightSet, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding UnitWeightSetErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" Kg/CH" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="11" Grid.Column="4">
+                <TextBox Width="132" Text="{Binding UnitWeightSetActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <Border Grid.Row="11" Grid.Column="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Width="55"
+                             Text="{Binding UnitWeightSpec, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ± " />
+                    <TextBox Width="55"
+                             Text="{Binding UnitWeightSpecErr, StringFormat='{}{0:#,##0.##}'}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" Kg/CH" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="11" Grid.Column="6">
+                <TextBox Width="132" Text="{Binding UnitWeightSpecActual, StringFormat='{}{0:#,##0.##}'}" />
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 11-->
+
+            <Border Grid.Row="12" Grid.Column="0">
+                <TextBlock Text="11" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="12" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Starting time (เวลาเริ่มเปิด)" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="12" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding StartingTimeSC}" />
+            </Border>
+            <Border Grid.Row="12"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Date " />
+                        <LineBreak />
+                        <Run Text="วันที่: " />
+                    </TextBlock>
+                    <Line Width="45" />
+                    <TextBox Width="200"
+                             Text="{Binding StartingTimeStartAgeingTime, StringFormat='{}{0:dd/MM/yyyy}'}"
+                             VerticalContentAlignment="Center"
+                             IsReadOnly="True"
+                             FontSize="16"
+                             Height="30" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="12"
+                    Grid.Column="5"
+                    Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Setting Time " />
+                        <LineBreak />
+                        <Run Text="เวลาเริ้มเปิด: " />
+                    </TextBlock>
+                    <Line Width="5" />
+                    <TextBox Width="200"
+                             Text="{Binding StartingTimeStartAgeingTime, StringFormat='{}{0:HH:mm:ss}'}"
+                             VerticalContentAlignment="Center"
+                             IsReadOnly="True"
+                             FontSize="16"
+                             Height="30" />
+                </StackPanel>
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 12-->
+
+            <Border Grid.Row="13" Grid.Column="0">
+                <TextBlock Text="12" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="13" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Finish time (เวลาอบเสร็จ)" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="13" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding FinishTimeSC}" />
+            </Border>
+            <Border Grid.Row="13"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Date วันที่: " />
+                    </TextBlock>
+                    <Line Width="5" />
+                    <TextBox Width="200"
+                             Text="{Binding FinishTime, StringFormat='{}{0:dd/MM/yyyy}'}"
+                             VerticalContentAlignment="Center"
+                             IsReadOnly="True"
+                             FontSize="16"
+                             Height="30" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="13"
+                    Grid.Column="5"
+                    Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Time เวลา: " />
+                    </TextBlock>
+                    <Line Width="26" />
+                    <TextBox Width="200"
+                             Text="{Binding FinishTime, StringFormat='{}{0:HH:mm:ss}'}"
+                             VerticalContentAlignment="Center"
+                             IsReadOnly="True"
+                             FontSize="16"
+                             Height="30" />
+                </StackPanel>
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 13-->
+
+            <Border Grid.Row="14" Grid.Column="0">
+                <TextBlock Text="13" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="14" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left">
+                    <Run Text="Out time (เวลาเอาด้าย ออกจากตู้อบ)" />
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="14" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding OutTimeSC}" />
+            </Border>
+            <Border Grid.Row="14"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Date วันที่: " />
+                    </TextBlock>
+                    <Line Width="5" />
+                    <TextBox Width="200"
+                             Text="{Binding OutTime, StringFormat='{}{0:dd/MM/yyyy}'}"
+                             VerticalContentAlignment="Center"
+                             IsReadOnly="True"
+                             FontSize="16"
+                             Height="30" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="14"
+                    Grid.Column="5"
+                    Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Time เวลา: " />
+                    </TextBlock>
+                    <Line Width="26" />
+                    <TextBox Width="200"
+                             Text="{Binding OutTime, StringFormat='{}{0:HH:mm:ss}'}"
+                             VerticalContentAlignment="Center"
+                             IsReadOnly="True"
+                             FontSize="16"
+                             Height="30" />
+                </StackPanel>
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 14-->
+
+            <Border Grid.Row="15" Grid.Column="0">
+                <TextBlock Text="14" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="15" Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Doff No. ( พาเลท1 )" />
+                    </TextBlock>
+                    <TextBlock Width="5" />
+                    <TextBox Text="{Binding DoffNo1PalletCode}"
+                             Width="160"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="15" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding DoffNo1SC}" />
+            </Border>
+            <Border Grid.Row="15"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Machine เครื่อง: " />
+                    </TextBlock>
+                    <Line Width="5" />
+                    <TextBox Text="{Binding DoffNo1MCNo}"
+                             Width="160"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="15" Grid.Column="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Doff " />
+                        <LineBreak />
+                        <Run Text="ด็อป : " />
+                    </TextBlock>
+                    <Line Width="5" />
+                    <TextBox Text="{Binding DoffNo1Doff}" Width="100" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="15" Grid.Column="6">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Qty : " />
+                        <LineBreak />
+                        <Run Text="จำนวน : " />
+                    </TextBlock>
+                    <Line Width="5" />
+                    <TextBox Text="{Binding DoffNo1Qty}" Width="100" />
+                </StackPanel>
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 15-->
+
+            <Border Grid.Row="16" Grid.Column="0">
+                <TextBlock Text="15" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="16" Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Doff No. ( พาเลท2 )" />
+                    </TextBlock>
+                    <TextBlock Width="5" />
+                    <TextBox Text="{Binding DoffNo2PalletCode}"
+                             Width="160"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="16" Grid.Column="2">
+                <CheckBox Content="SC" IsChecked="{Binding DoffNo2SC}" />
+            </Border>
+            <Border Grid.Row="16"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Machine เครื่อง: " />
+                    </TextBlock>
+                    <Line Width="5" />
+                    <TextBox Text="{Binding DoffNo2MCNo}"
+                             Width="160"
+                             IsReadOnly="True" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="16" Grid.Column="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Doff " />
+                        <LineBreak />
+                        <Run Text="ด็อป : " />
+                    </TextBlock>
+                    <Line Width="5" />
+                    <TextBox Text="{Binding DoffNo2Doff}" Width="100" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="16" Grid.Column="6">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left">
+                        <Run Text="Qty : " />
+                        <LineBreak />
+                        <Run Text="จำนวน : " />
+                    </TextBlock>
+                    <Line Width="5" />
+                    <TextBox Text="{Binding DoffNo2Qty}" Width="100" />
+                </StackPanel>
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 16-->
+
+            <Border Grid.Row="17" Grid.Column="0" />
+
+            <Border Grid.Row="17" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Run Text="Remark" />
+                </TextBlock>
+            </Border>
+
+            <Border Grid.Row="17"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="5">
+                <TextBox x:Name="txtReamrk"
+                         AcceptsReturn="True"
+                         Height="78"
+                         Width="500"
+                         HorizontalAlignment="Left"
+                         Text="{Binding Remark}" />
+            </Border>
+
+            <!--#endregion-->
+        </Grid>
+    </ScrollViewer>
+</UserControl>

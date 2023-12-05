@@ -80,6 +80,15 @@
     <Compile Include="Controls\Documents\DIPCondition\DIPConditionEntryPage.xaml.cs">
       <DependentUpon>DIPConditionEntryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Documents\Ageing\S5ConditionDIPEntryPage.xaml.cs">
+      <DependentUpon>S5ConditionDIPEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\Ageing\S5ConditionTwistingEntryPage.xaml.cs">
+      <DependentUpon>S5ConditionTwistingEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\Ageing\S5ConditionRawMeterialEntryPage.xaml.cs">
+      <DependentUpon>S5ConditionRawMeterialEntryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml.cs">
       <DependentUpon>CordSamplingDetailsPage.xaml</DependentUpon>
     </Compile>
@@ -484,6 +493,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\Documents\DIPCondition\DIPConditionEntryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Documents\Ageing\S5ConditionDIPEntryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Documents\Ageing\S5ConditionTwistingEntryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Documents\Ageing\S5ConditionRawMeterialEntryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
