@@ -52,6 +52,42 @@ namespace M3.Cord.Pages
             }
         }
 
+        public bool Start()
+        {
+            bool ret = false;
+
+            if (null != Condition)
+            {
+                var dt = DateTime.Now;
+                Condition.StartingTimeStartAgeingTime = dt;
+                var std = (null != Std1) ? Std1 : Std2;
+                if (null != std)
+                {
+                    // auto set finish time.
+                    double hrs = (std.SettingTimeSet.HasValue) ? (double)std.SettingTimeSet.Value : (double)0;
+                    Condition.FinishTime = dt.AddHours(hrs);
+                }
+
+                S5Condition.Save(Condition);
+                ret = true;
+            }
+
+            return ret;
+        }
+
+        public bool Save()
+        {
+            bool ret = false;
+
+            if (null != Condition)
+            {
+                S5Condition.Save(Condition);
+                ret = true;
+            }
+
+            return ret;
+        }
+
         #endregion
 
         #region Public Properties

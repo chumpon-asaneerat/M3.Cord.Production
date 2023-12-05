@@ -157,21 +157,21 @@ namespace M3.Cord.Pages
                 }
 
                 S5Condition.Assign(Std1, Condition);
-                Condition.LotOrTraceNo = LotOrTraceNo1;
+                //Condition.LotOrTraceNo = LotOrTraceNo1;
             }
             else if (null != Condition && null != Std1 && null == Std2)
             {
                 S5Condition.Assign(Std1, Condition);
-                Condition.LotOrTraceNo = LotOrTraceNo1;
+                //Condition.LotOrTraceNo = LotOrTraceNo1;
             }
             else if (null != Condition && null == Std1 && null != Std2)
             {
                 S5Condition.Assign(Std2, Condition);
-                Condition.LotOrTraceNo = LotOrTraceNo2;
+                //Condition.LotOrTraceNo = LotOrTraceNo2;
             }
             else
             {
-                Condition.LotOrTraceNo = null;
+                //Condition.LotOrTraceNo = null;
             }
         }
 

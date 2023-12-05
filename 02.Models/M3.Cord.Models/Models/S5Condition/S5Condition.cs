@@ -19,6 +19,14 @@ using Newtonsoft.Json;
 
 namespace M3.Cord.Models
 {
+    public enum FromSources : int
+    {
+        RawMeterial = 0,
+        Twist = 1,
+        //Twist2 = 2,
+        DIP = 4
+    }
+
     public class S5Condition
     {
         #region Public Proeprties
@@ -121,10 +129,11 @@ namespace M3.Cord.Models
         public string ProductionManager { get; set; }
 
         public string Remark { get; set; }
-        public string LotOrTraceNo { get; set; }
 
         public string ProductCode1 { get; set; }
         public string ProductCode2 { get; set; }
+
+        public FromSources FromSource { get; set; }
 
         #endregion
 
@@ -394,10 +403,11 @@ namespace M3.Cord.Models
             p.Add("@UpdateBy", value.UpdateBy);
 
             p.Add("@Remark", value.Remark);
-            p.Add("@LotOrTraceNo", value.LotOrTraceNo);
 
             p.Add("@ProductCode1", value.ProductCode1);
             p.Add("@ProductCode2", value.ProductCode2);
+
+            p.Add("@FromSource", value.FromSource);
 
             p.Add("@S5ConditionId", value.S5ConditionId, DbType.Int32, direction: ParameterDirection.InputOutput);
 

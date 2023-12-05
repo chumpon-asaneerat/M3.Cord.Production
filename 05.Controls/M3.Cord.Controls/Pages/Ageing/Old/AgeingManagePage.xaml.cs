@@ -197,7 +197,7 @@ namespace M3.Cord.Pages
                 {
                     txtLotOrTraceNo.CaptionText = "Trace No";
                 }
-
+                /*
                 if (!string.IsNullOrEmpty(cond.LotOrTraceNo))
                 {
                     txtLotOrTraceNo.Text = cond.LotOrTraceNo;
@@ -206,6 +206,7 @@ namespace M3.Cord.Pages
                 {
                     txtLotOrTraceNo.Text = string.Empty;
                 }
+                */
             }
         }
 
