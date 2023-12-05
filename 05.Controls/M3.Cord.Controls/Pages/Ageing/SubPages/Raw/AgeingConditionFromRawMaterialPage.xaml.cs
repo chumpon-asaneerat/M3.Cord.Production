@@ -43,7 +43,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private S5ConditionManager manager = null;
+        private S5ConditionRawMaterialManager manager = null;
 
         #endregion
 
@@ -87,34 +87,34 @@ namespace M3.Cord.Pages
 
         #region TextBox Handlers
 
-        private void txtPalletNo1_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void txtTraceNo1_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                string palletCode = txtPalletNo1.Text;
-                UpdatePallet1(palletCode);
+                string palletCode = txtTraceNo1.Text;
+                UpdateTraceNo1(palletCode);
                 e.Handled = true;
             }
             else if (e.Key == Key.Escape)
             {
-                txtPalletNo1.Text = string.Empty;
-                UpdatePallet1(null);
+                txtTraceNo1.Text = string.Empty;
+                UpdateTraceNo1(null);
                 e.Handled = true;
             }
         }
 
-        private void txtPalletNo2_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void txtTraceNo2_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                string palletCode = txtPalletNo2.Text;
-                UpdatePallet2(palletCode);
+                string palletCode = txtTraceNo2.Text;
+                UpdateTraceNo2(palletCode);
                 e.Handled = true;
             }
             else if (e.Key == Key.Escape)
             {
-                txtPalletNo2.Text = string.Empty;
-                UpdatePallet2(null);
+                txtTraceNo2.Text = string.Empty;
+                UpdateTraceNo2(null);
                 e.Handled = true;
             }
         }
@@ -123,12 +123,12 @@ namespace M3.Cord.Pages
 
         #region Private Methods
 
-        private void UpdatePallet1(string palletCode)
+        private void UpdateTraceNo1(string traceNo)
         {
             if (null != manager)
             {
                 string errMsg;
-                if (!manager.SetPallet1(palletCode, out errMsg))
+                if (!manager.SetTrace1(traceNo, out errMsg))
                 {
                     var win = M3CordApp.Windows.MessageBox;
                     win.Setup(errMsg);
@@ -138,12 +138,12 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void UpdatePallet2(string palletCode)
+        private void UpdateTraceNo2(string traceNo)
         {
             if (null != manager)
             {
                 string errMsg;
-                if (!manager.SetPallet2(palletCode, out errMsg))
+                if (!manager.SetTrace2(traceNo, out errMsg))
                 {
                     var win = M3CordApp.Windows.MessageBox;
                     win.Setup(errMsg);
@@ -165,25 +165,25 @@ namespace M3.Cord.Pages
                 // Bind Pallet && Product Code
                 //
                 // Pallet 1
-                if (!string.IsNullOrEmpty(cond.DoffNo1PalletCode))
+                if (!string.IsNullOrEmpty(cond.DoffNo1TraceNo))
                 {
-                    txtPalletNo1.Text = cond.DoffNo1PalletCode;
+                    txtTraceNo1.Text = cond.DoffNo1TraceNo;
                     txtItemCode1.Text = cond.ProductCode1;
                 }
                 else
                 {
-                    txtPalletNo1.Text = string.Empty;
+                    txtTraceNo1.Text = string.Empty;
                     txtItemCode1.Text = string.Empty;
                 }
                 // Pallet 2
-                if (!string.IsNullOrEmpty(cond.DoffNo2PalletCode))
+                if (!string.IsNullOrEmpty(cond.DoffNo2TraceNo))
                 {
-                    txtPalletNo2.Text = cond.DoffNo2PalletCode;
+                    txtTraceNo2.Text = cond.DoffNo2TraceNo;
                     txtItemCode2.Text = cond.ProductCode2;
                 }
                 else
                 {
-                    txtPalletNo2.Text = string.Empty;
+                    txtTraceNo2.Text = string.Empty;
                     txtItemCode2.Text = string.Empty;
                 }
             }
@@ -310,7 +310,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            manager = new S5ConditionManager();
+            manager = new S5ConditionRawMaterialManager();
             manager.Load(); // load current
             manager.Refresh();
             RefreshContext();

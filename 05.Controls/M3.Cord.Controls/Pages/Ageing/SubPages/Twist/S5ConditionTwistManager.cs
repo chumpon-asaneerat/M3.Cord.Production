@@ -86,6 +86,7 @@ namespace M3.Cord.Pages
                 }
 
                 Condition.ProductCode1 = code;
+                Condition.DoffNo1MCNo = (null != pallet1) ? pallet1.MCCode : null;
                 Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
             }
             else
@@ -111,6 +112,7 @@ namespace M3.Cord.Pages
                 }
 
                 Condition.ProductCode2 = code;
+                Condition.DoffNo2MCNo = (null != pallet2) ? pallet2.MCCode : null;
                 Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
             }
             else

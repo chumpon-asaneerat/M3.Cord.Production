@@ -60,9 +60,9 @@
                            HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <!--  PALLET  -->
-                        <ctrl:NTextBox x:Name="txtPalletNo1"
+                        <ctrl:NTextBox x:Name="txtTraceNo1"
                                        CaptionText="Trace No (1)"
-                                       PreviewKeyDown="txtPalletNo1_PreviewKeyDown"
+                                       PreviewKeyDown="txtTraceNo1_PreviewKeyDown"
                                        Width="200" />
                         <!--  ITEM CODE  -->
                         <ctrl:NTextBox x:Name="txtItemCode1"
@@ -70,9 +70,9 @@
                                        IsReadOnly="True"
                                        Width="200" />
                         <!--  PALLET  -->
-                        <ctrl:NTextBox x:Name="txtPalletNo2"
+                        <ctrl:NTextBox x:Name="txtTraceNo2"
                                        CaptionText="Trace No (2)"
-                                       PreviewKeyDown="txtPalletNo2_PreviewKeyDown"
+                                       PreviewKeyDown="txtTraceNo2_PreviewKeyDown"
                                        Width="200" />
                         <!--  ITEM CODE  -->
                         <ctrl:NTextBox x:Name="txtItemCode2"

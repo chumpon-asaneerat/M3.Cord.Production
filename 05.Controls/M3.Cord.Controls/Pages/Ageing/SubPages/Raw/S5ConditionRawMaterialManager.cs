@@ -72,15 +72,17 @@ namespace M3.Cord.Pages
                 }
                 else
                 {
-                    errMsg = "Pallet Not found.";
+                    errMsg = "Trace No Not found.";
                     Condition.DoffNo1PalletCode = null;
                 }
 
+                Condition.ProductCode1 = code;
                 Condition.ProductCode1 = code;
                 Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
             }
             else
             {
+                Condition.ProductCode1 = null;
                 Condition.ProductCode1 = null;
                 Std1 = null;
             }
@@ -98,15 +100,16 @@ namespace M3.Cord.Pages
                 {
 
                     Condition.DoffNo2PalletCode = g4.PalletNo;
+                    Condition.ProductCode2 = code;
+                    Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
                 }
                 else
                 {
-                    errMsg = "Pallet Not found.";
+                    errMsg = "Trace No Not found.";
                     Condition.DoffNo2PalletCode = null;
+                    Condition.ProductCode2 = null;
+                    Std2 = null;
                 }
-
-                Condition.ProductCode2 = code;
-                Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
             }
             else
             {
@@ -155,7 +158,7 @@ namespace M3.Cord.Pages
                 string code = (!string.IsNullOrEmpty(traceNo)) ? traceNo.Trim() : null;
                 if (!string.IsNullOrWhiteSpace(code))
                 {
-                    Condition.DoffNo1PalletCode = code;
+                    Condition.DoffNo1TraceNo = code;
                 }
                 else
                 {
@@ -183,7 +186,7 @@ namespace M3.Cord.Pages
                 }
                 else
                 {
-                    Condition.DoffNo2PalletCode = null;
+                    Condition.DoffNo2TraceNo = null;
                 }
                 VerifyCondition(out message);
                 if (string.IsNullOrEmpty(message))
@@ -248,12 +251,12 @@ namespace M3.Cord.Pages
                 // Need update G4 pallet status
                 string userName = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
 
-                var g4_1 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo1PalletCode).Value();
+                var g4_1 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo1TraceNo).Value();
                 if (null != g4_1)
                 {
                     G4IssueYarn.MarkAgeing(g4_1.G4IssueYarnPkId, userName);
                 }
-                var g4_2 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo2PalletCode).Value();
+                var g4_2 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo2TraceNo).Value();
                 if (null != g4_2)
                 {
                     G4IssueYarn.MarkAgeing(g4_2.G4IssueYarnPkId, userName);

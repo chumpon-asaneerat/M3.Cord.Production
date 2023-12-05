@@ -43,7 +43,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private S5ConditionManager manager = null;
+        private S5ConditionTwistManager manager = null;
 
         #endregion
 
@@ -310,7 +310,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            manager = new S5ConditionManager();
+            manager = new S5ConditionTwistManager();
             manager.Load(); // load current
             manager.Refresh();
             RefreshContext();

@@ -142,7 +142,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@ProductCode", productCode);
+            p.Add("@DIPProductCode", productCode);
 
             try
             {
