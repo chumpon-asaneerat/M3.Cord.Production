@@ -248,7 +248,7 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<S5Condition> GetCurrent()
+        public static NDbResult<S5Condition> GetCurrent(FromSources fromSource)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -267,6 +267,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+            p.Add("@FromSource", (int)fromSource);
 
             try
             {

@@ -45,7 +45,7 @@ namespace M3.Cord.Pages
 
         public void Load()
         {
-            Condition = S5Condition.GetCurrent().Value();
+            Condition = S5Condition.GetCurrent(FromSources.Twist).Value();
             if (null == Condition)
             {
                 Condition = new S5Condition();
