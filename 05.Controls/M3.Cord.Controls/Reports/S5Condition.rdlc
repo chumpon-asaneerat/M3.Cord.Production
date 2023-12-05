@@ -45,6 +45,22 @@
           <DataField>AgeingSteamPressureSpecErr</DataField>
           <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
+        <Field Name="ApproveBy">
+          <DataField>ApproveBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ApproveDate">
+          <DataField>ApproveDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="CheckedBy">
+          <DataField>CheckedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CheckedDate">
+          <DataField>CheckedDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
         <Field Name="CordStructureSC">
           <DataField>CordStructureSC</DataField>
           <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
@@ -65,12 +81,20 @@
           <DataField>CordStructureSpecActual</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="DoffNo1Doff">
           <DataField>DoffNo1Doff</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DoffNo1MCNo">
           <DataField>DoffNo1MCNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DoffNo1PalletCode">
+          <DataField>DoffNo1PalletCode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DoffNo1Qty">
@@ -81,12 +105,20 @@
           <DataField>DoffNo1SC</DataField>
           <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
+        <Field Name="DoffNo1TraceNo">
+          <DataField>DoffNo1TraceNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="DoffNo2Doff">
           <DataField>DoffNo2Doff</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DoffNo2MCNo">
           <DataField>DoffNo2MCNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DoffNo2PalletCode">
+          <DataField>DoffNo2PalletCode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DoffNo2Qty">
@@ -97,6 +129,10 @@
           <DataField>DoffNo2SC</DataField>
           <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
+        <Field Name="DoffNo2TraceNo">
+          <DataField>DoffNo2TraceNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="FinishTime">
           <DataField>FinishTime</DataField>
           <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
@@ -104,6 +140,18 @@
         <Field Name="FinishTimeSC">
           <DataField>FinishTimeSC</DataField>
           <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="FromSource">
+          <DataField>FromSource</DataField>
+          <rd:TypeName>M3.Cord.Models.FromSources</rd:TypeName>
+        </Field>
+        <Field Name="IssueBy">
+          <DataField>IssueBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IssueDate">
+          <DataField>IssueDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
         <Field Name="LampStatusSystemSC">
           <DataField>LampStatusSystemSC</DataField>
@@ -165,6 +213,34 @@
           <DataField>ProductCode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="ProductCode1">
+          <DataField>ProductCode1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProductCode2">
+          <DataField>ProductCode2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProductionManager">
+          <DataField>ProductionManager</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProductName1">
+          <DataField>ProductName1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProductName2">
+          <DataField>ProductName2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Remark">
+          <DataField>Remark</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="S5ConditionId">
+          <DataField>S5ConditionId</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
         <Field Name="SettingTemperatureSC">
           <DataField>SettingTemperatureSC</DataField>
           <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
@@ -220,6 +296,10 @@
         <Field Name="SettingTimeSpecErr">
           <DataField>SettingTimeSpecErr</DataField>
           <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="ShiftLeader">
+          <DataField>ShiftLeader</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="SoudSystemTemperatureSC">
           <DataField>SoudSystemTemperatureSC</DataField>
@@ -308,6 +388,14 @@
         <Field Name="UnitWeightSpecErr">
           <DataField>UnitWeightSpecErr</DataField>
           <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="UpdateBy">
+          <DataField>UpdateBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UpdateDate">
+          <DataField>UpdateDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
         <Field Name="YarnTypeSC">
           <DataField>YarnTypeSC</DataField>
@@ -530,16 +618,17 @@
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox12">
+                            <Textbox Name="IssueDate">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!IssueDate.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
+                                        <Format>dd/MM/yy</Format>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -548,12 +637,13 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox12</rd:DefaultName>
+                              <rd:DefaultName>IssueDate</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -564,14 +654,14 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox13">
+                            <Textbox Name="IssueBy">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!IssueBy.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
@@ -582,12 +672,13 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox13</rd:DefaultName>
+                              <rd:DefaultName>IssueBy</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -598,14 +689,14 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox14">
+                            <Textbox Name="ApproveBy">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!ApproveBy.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
@@ -616,12 +707,13 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox14</rd:DefaultName>
+                              <rd:DefaultName>ApproveBy</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -647,6 +739,7 @@
                     <TablixMember />
                   </TablixMembers>
                 </TablixRowHierarchy>
+                <DataSetName>main</DataSetName>
                 <Top>0.62083cm</Top>
                 <Left>9.42875cm</Left>
                 <Height>1.14578cm</Height>
@@ -702,6 +795,7 @@
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -712,28 +806,31 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox36">
+                            <Textbox Name="CustomerName">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!CustomerName.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox36</rd:DefaultName>
+                              <rd:DefaultName>CustomerName</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -766,6 +863,7 @@
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -776,28 +874,31 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox33">
+                            <Textbox Name="ProductCode1">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!ProductCode1.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox33</rd:DefaultName>
+                              <rd:DefaultName>ProductCode1</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -835,6 +936,7 @@
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -845,28 +947,31 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox37">
+                            <Textbox Name="YarnTypeSet">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!YarnTypeSet.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox37</rd:DefaultName>
+                              <rd:DefaultName>YarnTypeSet</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -884,7 +989,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Use Produc (การใช้) </Value>
+                                      <Value>Use Product (การใช้) </Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
@@ -899,6 +1004,7 @@
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -909,28 +1015,31 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox34">
+                            <Textbox Name="ProductName1">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!ProductName1.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox34</rd:DefaultName>
+                              <rd:DefaultName>ProductName1</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -968,6 +1077,7 @@
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -978,28 +1088,31 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox38">
+                            <Textbox Name="CordStructureSet">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!CordStructureSet.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox38</rd:DefaultName>
+                              <rd:DefaultName>CordStructureSet</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -1032,6 +1145,7 @@
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -1042,28 +1156,34 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox35">
+                            <Textbox Name="TwistingNoSet">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=IIF(First(Fields!TwistingNoSet.Value, "main") Is Nothing,""
+,Format(CDec(First(Fields!TwistingNoSet.Value, "main")),"#,##0.##")
++ IIF(First(Fields!TwistingNoSetErr.Value, "main") Is Nothing,""
+," ± " +Format(CDec(First(Fields!TwistingNoSetErr.Value, "main")),"#,##0.##")+" ( S ) T/M"))</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox35</rd:DefaultName>
+                              <rd:DefaultName>TwistingNoSet</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
                                   <Style>Solid</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -1091,6 +1211,7 @@
                     <TablixMember />
                   </TablixMembers>
                 </TablixRowHierarchy>
+                <DataSetName>main</DataSetName>
                 <Top>2.04158cm</Top>
                 <Left>0.00001cm</Left>
                 <Height>1.708cm</Height>
@@ -2206,14 +2327,14 @@
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox170">
+                            <Textbox Name="UpdateBy">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!UpdateBy.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
@@ -2224,7 +2345,7 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox170</rd:DefaultName>
+                              <rd:DefaultName>UpdateBy</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -2242,14 +2363,14 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox171">
+                            <Textbox Name="CheckedBy">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!CheckedBy.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
@@ -2260,7 +2381,7 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox171</rd:DefaultName>
+                              <rd:DefaultName>CheckedBy</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -2294,6 +2415,7 @@
                     <TablixMember />
                   </TablixMembers>
                 </TablixRowHierarchy>
+                <DataSetName>main</DataSetName>
                 <Top>22.87cm</Top>
                 <Left>10.97978cm</Left>
                 <Height>2.4cm</Height>
@@ -2476,7 +2598,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!ShiftLeader.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
@@ -2512,7 +2634,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!ProductionManager.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
@@ -2556,6 +2678,7 @@
                     <TablixMember />
                   </TablixMembers>
                 </TablixRowHierarchy>
+                <DataSetName>main</DataSetName>
                 <Top>26.17cm</Top>
                 <Left>10.97978cm</Left>
                 <Height>1.8cm</Height>
@@ -6078,7 +6201,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=First(Fields!StartingTimeSettingTime.Value, "main")</Value>
+                            <Value>=First(Fields!StartingTimeStartAgeingTime.Value, "main")</Value>
                             <Style>
                               <FontSize>8pt</FontSize>
                               <Format>dd/MM/yy</Format>
@@ -6891,7 +7014,7 @@
                     <Top>0.07575cm</Top>
                     <Left>1.30074cm</Left>
                     <Height>0.9cm</Height>
-                    <Width>5.36706cm</Width>
+                    <Width>2.7cm</Width>
                     <ZIndex>6</ZIndex>
                     <Style>
                       <Border>
@@ -6944,7 +7067,11 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>  Machine เครื่อง:</Value>
+                            <Value>=Switch(First(Fields!FromSource.Value, "main") Is Nothing,""
+, First(Fields!FromSource.Value, "main") = 0,"Trace No. "
+, First(Fields!FromSource.Value, "main") = 1,"Machine เครื่อง : "
+, First(Fields!FromSource.Value, "main") = 4,"Machine เครื่อง : "
+)</Value>
                             <Style>
                               <FontSize>8pt</FontSize>
                             </Style>
@@ -6978,7 +7105,11 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=First(Fields!DoffNo1MCNo.Value, "main")</Value>
+                            <Value>=Switch(First(Fields!FromSource.Value, "main") Is Nothing,""
+, First(Fields!FromSource.Value, "main") = 0,First(Fields!DoffNo1TraceNo.Value, "main")
+, First(Fields!FromSource.Value, "main") = 1,First(Fields!DoffNo1MCNo.Value, "main")
+, First(Fields!FromSource.Value, "main") = 4,First(Fields!DoffNo1MCNo.Value, "main")
+)</Value>
                             <Style>
                               <FontSize>8pt</FontSize>
                             </Style>
@@ -7138,6 +7269,39 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <Textbox Name="DoffNo1PalletCode">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=First(Fields!DoffNo1PalletCode.Value, "main")</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.07575cm</Top>
+                    <Left>4.10657cm</Left>
+                    <Height>0.9cm</Height>
+                    <Width>2.56123cm</Width>
+                    <ZIndex>14</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
                 </ReportItems>
                 <KeepTogether>true</KeepTogether>
                 <Top>20.67cm</Top>
@@ -7263,7 +7427,7 @@
                     <Top>0.07575cm</Top>
                     <Left>1.30074cm</Left>
                     <Height>0.9cm</Height>
-                    <Width>5.36706cm</Width>
+                    <Width>2.7cm</Width>
                     <ZIndex>6</ZIndex>
                     <Style>
                       <Border>
@@ -7316,7 +7480,11 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>  Machine เครื่อง:</Value>
+                            <Value>=Switch(First(Fields!FromSource.Value, "main") Is Nothing,""
+, First(Fields!FromSource.Value, "main") = 0,"Trace No. "
+, First(Fields!FromSource.Value, "main") = 1,"Machine เครื่อง : "
+, First(Fields!FromSource.Value, "main") = 4,"Machine เครื่อง : "
+)</Value>
                             <Style>
                               <FontSize>8pt</FontSize>
                             </Style>
@@ -7350,7 +7518,11 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=First(Fields!DoffNo2MCNo.Value, "main")</Value>
+                            <Value>=Switch(First(Fields!FromSource.Value, "main") Is Nothing,""
+, First(Fields!FromSource.Value, "main") = 0,First(Fields!DoffNo2TraceNo.Value, "main")
+, First(Fields!FromSource.Value, "main") = 1,First(Fields!DoffNo2MCNo.Value, "main")
+, First(Fields!FromSource.Value, "main") = 4,First(Fields!DoffNo2MCNo.Value, "main")
+)</Value>
                             <Style>
                               <FontSize>8pt</FontSize>
                             </Style>
@@ -7510,6 +7682,39 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <Textbox Name="DoffNo2PalletCode">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=First(Fields!DoffNo2PalletCode.Value, "main")</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.07575cm</Top>
+                    <Left>4.10657cm</Left>
+                    <Height>0.9cm</Height>
+                    <Width>2.56123cm</Width>
+                    <ZIndex>14</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
                 </ReportItems>
                 <KeepTogether>true</KeepTogether>
                 <Top>21.77cm</Top>
@@ -7615,6 +7820,36 @@
                 <Height>0.2in</Height>
                 <Width>4.24194in</Width>
                 <ZIndex>25</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="FromSource">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=First(Fields!FromSource.Value, "main")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>FromSource</rd:DefaultName>
+                <Top>26.01283cm</Top>
+                <Left>3.96246cm</Left>
+                <Height>0.6cm</Height>
+                <Width>2.5cm</Width>
+                <ZIndex>26</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
