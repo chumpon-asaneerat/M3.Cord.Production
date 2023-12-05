@@ -20,6 +20,7 @@ using System.ComponentModel;
 
 using BarcodeLib;
 using System.Windows.Markup;
+using System.Windows;
 
 namespace M3.Cord.Models
 {
@@ -212,6 +213,59 @@ namespace M3.Cord.Models
             }
 
             return rets;
+        }
+        /// <summary>
+        /// <summary>
+        /// Search
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<DIPPalletSlip> Search(string palletCode,
+            DIPPalletStatus palletStatus)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<DIPPalletSlip> ret = new NDbResult<DIPPalletSlip>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            int? status = new int?();
+            if (palletStatus != DIPPalletStatus.All)
+            {
+                status = new int?((int)palletStatus);
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@PalletCode", palletCode);
+            p.Add("@PalletStatus", status);
+
+            try
+            {
+                var item = cnn.Query<DIPPalletSlip>("SearchDIPPalletSlip", p,
+                    commandType: CommandType.StoredProcedure).FirstOrDefault();
+
+                var data = item;
+
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
         }
         /// <summary>
         /// Save

@@ -39,6 +39,21 @@ namespace M3.Cord.Pages
 
         #region Private Methods
 
+        private PalletSetting GetPalletByCode(string palletCode)
+        {
+            return PalletSetting.Search(palletCode, PalletStatus.Create).Value();
+        }
+
+        private S5ConditionStd GetStd(string productCode)
+        {
+            if (string.IsNullOrWhiteSpace(productCode))
+            {
+                return null;
+            }
+            var stds = S5ConditionStd.Gets(productCode).Value();
+            return (null != stds && stds.Count > 0) ? stds.FirstOrDefault() : null;
+        }
+
         #endregion
 
         #region Public Methods
@@ -49,6 +64,7 @@ namespace M3.Cord.Pages
             if (null == Condition)
             {
                 Condition = new S5Condition();
+                Condition.FromSource = FromSources.RawMeterial;
             }
         }
 
@@ -91,6 +107,41 @@ namespace M3.Cord.Pages
         #endregion
 
         #region Public Properties
+
+        public bool HasStd
+        {
+            get
+            {
+                var std = (null != Std1) ? Std1 : Std2;
+                return null != std;
+            }
+        }
+
+        public bool IsMatchStd
+        {
+            get
+            {
+                if (null != Condition && null != Std1 && null != Std2)
+                {
+                    // Check valid
+                    bool b1 = Std1.SettingTemperatureSet == Std2.SettingTemperatureSet;
+                    bool b2 = Std1.SettingTimeSet == Std2.SettingTimeSet;
+                    return b1 && b2;
+                }
+                else if (null != Condition && null != Std1 && null == Std2)
+                {
+                    return true;
+                }
+                else if (null != Condition && null == Std1 && null != Std2)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
 
         public S5Condition Condition
         {
