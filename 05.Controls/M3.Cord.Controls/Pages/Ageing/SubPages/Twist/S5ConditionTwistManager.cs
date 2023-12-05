@@ -24,14 +24,14 @@ using NLib;
 
 namespace M3.Cord.Pages
 {
-    public class S5ConditionRawMaterialManager
+    public class S5ConditionTwistManager
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public S5ConditionRawMaterialManager() : base()
+        public S5ConditionTwistManager() : base()
         {
         }
 

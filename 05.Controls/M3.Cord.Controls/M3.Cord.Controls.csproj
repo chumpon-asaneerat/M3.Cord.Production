@@ -191,6 +191,7 @@
     <Compile Include="Pages\Ageing\SubPages\DIP\AgeingConditionFromDIPPage.xaml.cs">
       <DependentUpon>AgeingConditionFromDIPPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Ageing\SubPages\DIP\S5ConditionDIPManager.cs" />
     <Compile Include="Pages\Ageing\SubPages\Raw\AgeingConditionFromRawMaterialPage.xaml.cs">
       <DependentUpon>AgeingConditionFromRawMaterialPage.xaml</DependentUpon>
     </Compile>
@@ -205,6 +206,7 @@
       <DependentUpon>AgeingManagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Ageing\Old\S5ConditionManager.cs" />
+    <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
     <Compile Include="Pages\DIP\DIPMCPage.xaml.cs">
       <DependentUpon>DIPMCPage.xaml</DependentUpon>
     </Compile>
