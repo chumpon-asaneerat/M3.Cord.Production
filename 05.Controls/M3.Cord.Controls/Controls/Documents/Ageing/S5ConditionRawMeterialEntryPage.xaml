@@ -793,10 +793,10 @@
                     Grid.ColumnSpan="2">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <TextBlock HorizontalAlignment="Left">
-                        <Run Text="Machine เครื่อง: " />
+                        <Run Text="Trace No: " />
                     </TextBlock>
                     <Line Width="5" />
-                    <TextBox Text="{Binding DoffNo1MCNo}"
+                    <TextBox Text="{Binding DoffNo1TraceNo}"
                              Width="160"
                              IsReadOnly="True" />
                 </StackPanel>
@@ -852,10 +852,10 @@
                     Grid.ColumnSpan="2">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <TextBlock HorizontalAlignment="Left">
-                        <Run Text="Machine เครื่อง: " />
+                        <Run Text="Trace No: " />
                     </TextBlock>
                     <Line Width="5" />
-                    <TextBox Text="{Binding DoffNo2MCNo}"
+                    <TextBox Text="{Binding DoffNo2TraceNo}"
                              Width="160"
                              IsReadOnly="True" />
                 </StackPanel>
