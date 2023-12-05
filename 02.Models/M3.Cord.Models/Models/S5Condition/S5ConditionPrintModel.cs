@@ -122,10 +122,17 @@ namespace M3.Cord.Models
         public string ProductionManager { get; set; }
 
         public string Remark { get; set; }
-        public string LotOrTraceNo { get; set; }
 
         public string ProductCode1 { get; set; }
         public string ProductCode2 { get; set; }
+
+        public FromSources FromSource { get; set; }
+
+        public string CustomerName { get; set; }
+        public string ProductName1 { get; set; }
+        public string ProductName2 { get; set; }
+        public string IssueBy { get; set; }
+        public DateTime? IssueDate { get; set; }
 
         #endregion
 

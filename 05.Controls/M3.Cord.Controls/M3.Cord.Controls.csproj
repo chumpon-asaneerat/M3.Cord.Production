@@ -211,10 +211,6 @@
     <Compile Include="Pages\Ageing\AgeingOperationPage.xaml.cs">
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Ageing\Old\AgeingManagePage.xaml.cs">
-      <DependentUpon>AgeingManagePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Ageing\Old\S5ConditionManager.cs" />
     <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
     <Compile Include="Pages\DIP\DIPMCPage.xaml.cs">
       <DependentUpon>DIPMCPage.xaml</DependentUpon>
@@ -665,10 +661,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Ageing\AgeingOperationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Ageing\Old\AgeingManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

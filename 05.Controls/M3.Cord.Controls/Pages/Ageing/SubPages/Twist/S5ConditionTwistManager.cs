@@ -20,6 +20,7 @@ using M3.Cord.Models;
 using NLib.Models;
 using NLib;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 
 #endregion
 
@@ -75,7 +76,9 @@ namespace M3.Cord.Pages
                 // Find pallet setting for product code information
                 var pallet1 = GetPalletByCode(Condition.DoffNo1PalletCode);
                 var PC1 = GetPCTwist1(pallet1);
+                var customer = (null != PC1) ? PC1.CustomerName : null;
                 var code = (null != PC1) ? PC1.ProductCode : null;
+                var name = (null != PC1) ? PC1.ProductName : null;
                 if (string.IsNullOrEmpty(code))
                 {
                     errMsg = "Pallet Not found.";
@@ -85,7 +88,9 @@ namespace M3.Cord.Pages
                     //LotOrTraceNo1 = (null != PC1) ? PC1.ProductLotNo : null;
                 }
 
+                Condition.CustomerName = customer;
                 Condition.ProductCode1 = code;
+                Condition.ProductName1 = name;
                 Condition.DoffNo1MCNo = (null != pallet1) ? pallet1.MCCode : null;
                 Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
             }
@@ -101,7 +106,9 @@ namespace M3.Cord.Pages
                 // Find pallet setting for product code information
                 var pallet2 = GetPalletByCode(Condition.DoffNo2PalletCode);
                 var PC2 = GetPCTwist1(pallet2);
+                var customer = (null != PC2) ? PC2.CustomerName : null;
                 var code = (null != PC2) ? PC2.ProductCode : null;
+                var name = (null != PC2) ? PC2.ProductName : null;
                 if (string.IsNullOrEmpty(code))
                 {
                     errMsg = "Pallet Not found.";
@@ -111,7 +118,9 @@ namespace M3.Cord.Pages
                     //LotOrTraceNo2 = (null != PC2) ? PC2.ProductLotNo : null;
                 }
 
+                Condition.CustomerName = customer;
                 Condition.ProductCode2 = code;
+                Condition.ProductName2 = name;
                 Condition.DoffNo2MCNo = (null != pallet2) ? pallet2.MCCode : null;
                 Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
             }
@@ -248,6 +257,8 @@ namespace M3.Cord.Pages
             {
                 var dt = DateTime.Now;
                 Condition.OutTime = dt;
+                Condition.IssueBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
+                Condition.IssueDate = DateTime.Now;
 
                 S5Condition.Save(Condition);
                 ret = true;

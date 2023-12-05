@@ -20,6 +20,7 @@ using M3.Cord.Models;
 using NLib.Models;
 using NLib;
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
 
 #endregion
 
@@ -63,27 +64,32 @@ namespace M3.Cord.Pages
                 // Special case for Raw Material
                 // Item Yarn must be 1620-288-707 and Product Code must be 1800TW
                 var code = "1800TW";
+                var name = "BRAKE HOSE";
 
                 // find pallet in G4
                 var g4 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo1TraceNo).Value();
                 if (null != g4)
                 {
                     Condition.DoffNo1PalletCode = g4.PalletNo;
+                    Condition.ProductCode1 = code;
+                    Condition.ProductName1 = name;
+
+                    Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
                 }
                 else
                 {
                     errMsg = "Trace No Not found.";
                     Condition.DoffNo1PalletCode = null;
+                    Condition.ProductCode1 = null;
+                    Condition.ProductName1 = null;
+                    Std1 = null;
                 }
-
-                Condition.ProductCode1 = code;
-                Condition.ProductCode1 = code;
-                Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
             }
             else
             {
+                Condition.DoffNo1PalletCode = null;
                 Condition.ProductCode1 = null;
-                Condition.ProductCode1 = null;
+                Condition.ProductName1 = null;
                 Std1 = null;
             }
 
@@ -93,6 +99,7 @@ namespace M3.Cord.Pages
                 // Special case for Raw Material
                 // Item Yarn must be 1620-288-707 and Product Code must be 1800TW
                 var code = "1800TW";
+                var name = "BRAKE HOSE";
 
                 // find pallet in G4
                 var g4 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo2TraceNo).Value();
@@ -101,6 +108,7 @@ namespace M3.Cord.Pages
 
                     Condition.DoffNo2PalletCode = g4.PalletNo;
                     Condition.ProductCode2 = code;
+                    Condition.ProductName2 = name;
                     Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
                 }
                 else
@@ -108,12 +116,15 @@ namespace M3.Cord.Pages
                     errMsg = "Trace No Not found.";
                     Condition.DoffNo2PalletCode = null;
                     Condition.ProductCode2 = null;
+                    Condition.ProductName2 = null;
                     Std2 = null;
                 }
             }
             else
             {
+                Condition.DoffNo2PalletCode = null;
                 Condition.ProductCode2 = null;
+                Condition.ProductName2 = null;
                 Std2 = null;
             }
 
@@ -247,6 +258,8 @@ namespace M3.Cord.Pages
             {
                 var dt = DateTime.Now;
                 Condition.OutTime = dt;
+                Condition.IssueBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
+                Condition.IssueDate = DateTime.Now;
 
                 // Need update G4 pallet status
                 string userName = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;

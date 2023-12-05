@@ -135,6 +135,12 @@ namespace M3.Cord.Models
 
         public FromSources FromSource { get; set; }
 
+        public string CustomerName { get; set; }
+        public string ProductName1 { get; set; }
+        public string ProductName2 { get; set; }
+        public string IssueBy { get; set; }
+        public DateTime? IssueDate { get; set; }
+
         #endregion
 
         #region Static Methods
@@ -409,6 +415,13 @@ namespace M3.Cord.Models
             p.Add("@ProductCode2", value.ProductCode2);
 
             p.Add("@FromSource", value.FromSource);
+
+            p.Add("@CustomerName", value.CustomerName);
+            p.Add("@ProductName1", value.ProductName1);
+            p.Add("@ProductName2", value.ProductName2);
+
+            p.Add("@IssueBy", value.IssueBy);
+            p.Add("@IssueDate", value.IssueDate);
 
             p.Add("@S5ConditionId", value.S5ConditionId, DbType.Int32, direction: ParameterDirection.InputOutput);
 
