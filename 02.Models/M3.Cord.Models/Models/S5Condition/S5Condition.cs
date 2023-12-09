@@ -27,7 +27,7 @@ namespace M3.Cord.Models
         DIP = 4
     }
 
-    public class S5Condition
+    public class S5Condition : NInpc
     {
         #region Public Proeprties
 
@@ -64,14 +64,130 @@ namespace M3.Cord.Models
         public decimal? SettingTimeSpecActual { get; set; }
         public bool? LampStatusSystemSC { get; set; }
         public string LampStatusSystemSet { get; set; }
-        public bool? LampStatusSystemSetActual { get; set; }
+
+        #region LampStatusSystemSetActual with Yes/No Runtime properties
+
+        public bool? LampStatusSystemSetActual 
+        {
+            get { return Get<bool?>(); }
+            set
+            {
+                Set(value, () => 
+                {
+                    Raise(() => LampStatusSystemSetActualY);
+                    Raise(() => LampStatusSystemSetActualN);
+                });
+            }
+        }
+
+        public bool? LampStatusSystemSetActualY
+        {
+            get { return (LampStatusSystemSetActual == true); }
+            set { LampStatusSystemSetActual = true; }
+        }
+
+        public bool? LampStatusSystemSetActualN
+        {
+            get { return (LampStatusSystemSetActual == false); }
+            set { LampStatusSystemSetActual = false; }
+        }
+
+        #endregion
+
         public string LampStatusSystemSpec { get; set; }
-        public bool? LampStatusSystemSpecActual { get; set; }
+
+        #region LampStatusSystemSpecActual with Yes/No Runtime properties
+
+        public bool? LampStatusSystemSpecActual
+        {
+            get { return Get<bool?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => LampStatusSystemSpecActualY);
+                    Raise(() => LampStatusSystemSpecActualN);
+                });
+            }
+        }
+
+        public bool? LampStatusSystemSpecActualY
+        {
+            get { return (LampStatusSystemSpecActual == true); }
+            set { LampStatusSystemSpecActual = true; }
+        }
+
+        public bool? LampStatusSystemSpecActualN
+        {
+            get { return (LampStatusSystemSpecActual == false); }
+            set { LampStatusSystemSpecActual = false; }
+        }
+
+        #endregion
+
         public bool? SoudSystemTemperatureSC { get; set; }
         public string SoudSystemTemperatureSet { get; set; }
-        public bool? SoudSystemTemperatureSetActual { get; set; }
+
+        #region SoudSystemTemperatureSetActual with Yes/No Runtime properties
+
+        public bool? SoudSystemTemperatureSetActual
+        {
+            get { return Get<bool?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => SoudSystemTemperatureSetActualY);
+                    Raise(() => SoudSystemTemperatureSetActualN);
+                });
+            }
+        }
+
+        public bool? SoudSystemTemperatureSetActualY
+        {
+            get { return (SoudSystemTemperatureSetActual == true); }
+            set { SoudSystemTemperatureSetActual = true; }
+        }
+
+        public bool? SoudSystemTemperatureSetActualN
+        {
+            get { return (SoudSystemTemperatureSetActual == false); }
+            set { SoudSystemTemperatureSetActual = false; }
+        }
+
+        #endregion
+
         public string SoudSystemTemperatureSpec { get; set; }
-        public bool? SoudSystemTemperatureSpecActual { get; set; }
+
+        #region SoudSystemTemperatureSpecActual with Yes/No Runtime properties
+
+        public bool? SoudSystemTemperatureSpecActual
+        {
+            get { return Get<bool?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => SoudSystemTemperatureSpecActualY);
+                    Raise(() => SoudSystemTemperatureSpecActualN);
+                });
+            }
+        }
+
+        public bool? SoudSystemTemperatureSpecActualY
+        {
+            get { return (SoudSystemTemperatureSpecActual == true); }
+            set { SoudSystemTemperatureSpecActual = true; }
+        }
+
+        public bool? SoudSystemTemperatureSpecActualN
+        {
+            get { return (SoudSystemTemperatureSpecActual == false); }
+            set { SoudSystemTemperatureSpecActual = false; }
+        }
+
+        #endregion
+
         public bool? YarnTypeSC { get; set; }
         public string YarnTypeSet { get; set; }
         public string YarnTypeSetActual { get; set; }

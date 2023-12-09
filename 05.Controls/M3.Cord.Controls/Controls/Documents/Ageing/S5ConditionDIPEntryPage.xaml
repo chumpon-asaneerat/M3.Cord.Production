@@ -498,12 +498,12 @@
             <Border Grid.Row="6" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Vertical" Width="60">
-                        <CheckBox IsChecked="{Binding LampStatusSystemSetActual}" />
+                        <CheckBox IsChecked="{Binding LampStatusSystemSetActualY}" />
                         <TextBlock Text="YES" />
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical" Width="60">
-                        <CheckBox IsChecked="{Binding LampStatusSystemSetActual}" />
+                        <CheckBox IsChecked="{Binding LampStatusSystemSetActualN}" />
                         <TextBlock Text="NO" />
                     </StackPanel>
                 </StackPanel>
@@ -520,12 +520,12 @@
             <Border Grid.Row="6" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Vertical" Width="60">
-                        <CheckBox IsChecked="{Binding LampStatusSystemSpecActual}" />
+                        <CheckBox IsChecked="{Binding LampStatusSystemSpecActualY}" />
                         <TextBlock Text="YES" />
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical" Width="60">
-                        <CheckBox IsChecked="{Binding LampStatusSystemSpecActual}" />
+                        <CheckBox IsChecked="{Binding LampStatusSystemSpecActualN}" />
                         <TextBlock Text="NO" />
                     </StackPanel>
                 </StackPanel>
@@ -586,12 +586,12 @@
             <Border Grid.Row="7" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Vertical" Width="60">
-                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSetActual}" />
+                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSetActualY}" />
                         <TextBlock Text="YES" />
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical" Width="60">
-                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSetActual}" />
+                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSetActualN}" />
                         <TextBlock Text="NO" />
                     </StackPanel>
                 </StackPanel>
@@ -606,12 +606,12 @@
             <Border Grid.Row="7" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Vertical" Width="60">
-                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSpecActual}" />
+                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSpecActualY}" />
                         <TextBlock Text="YES" />
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical" Width="60">
-                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSpecActual}" />
+                        <CheckBox IsChecked="{Binding SoudSystemTemperatureSpecActualN}" />
                         <TextBlock Text="NO" />
                     </StackPanel>
                 </StackPanel>
