@@ -110,9 +110,6 @@
     <Compile Include="Controls\Documents\FirstTwist\S4x2\S4x2ConditionStdPage.xaml.cs">
       <DependentUpon>S4x2ConditionStdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\Ageing\S5ConditionEntryPage.xaml.cs">
-      <DependentUpon>S5ConditionEntryPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\Documents\Ageing\S5ConditionStdPage.xaml.cs">
       <DependentUpon>S5ConditionStdPage.xaml</DependentUpon>
     </Compile>
@@ -531,10 +528,6 @@
     <Page Include="Controls\Documents\FirstTwist\S4x2\S4x2ConditionStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Documents\Ageing\S5ConditionEntryPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\Documents\Ageing\S5ConditionStdPage.xaml">
       <SubType>Designer</SubType>
