@@ -200,6 +200,11 @@ namespace M3.Cord.Pages
                 txtSPNo.FocusControl();
                 return;
             }
+            if (string.IsNullOrWhiteSpace(txtPalletDoffNo.Text))
+            {
+                txtPalletDoffNo.FocusControl();
+                return;
+            }
             if (string.IsNullOrWhiteSpace(txtCHNo.Text))
             {
                 txtCHNo.FocusControl();

@@ -77,7 +77,7 @@
         <TextBlock Text="{Binding Path=CHNo, Mode=OneWay}"
                    Foreground="{Binding TextColor}"
                    TextAlignment="Left"
-                   MinWidth="150" />
+                   MinWidth="100" />
     </DataTemplate>
     <DataTemplate x:Key="YarnBarcode">
         <TextBlock Text="{Binding Path=YarnBarcode, Mode=OneWay}"
