@@ -67,6 +67,11 @@ namespace M3.Cord.Pages
             AddItem();
         }
 
+        private void cmdClear_Click(object sender, RoutedEventArgs e)
+        {
+            ResetTextBoxInputs(true);
+        }
+
         #endregion
 
         #region TextBox Handlers
@@ -78,6 +83,11 @@ namespace M3.Cord.Pages
                 AddItem();
                 e.Handled = true;
             }
+            else if (e.Key == Key.Escape)
+            {
+                txtPallet.Text = string.Empty;
+                e.Handled = true;
+            }
         }
 
         private void txtSPNo_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -85,6 +95,39 @@ namespace M3.Cord.Pages
             if (e.Key == Key.Enter)
             {
                 AddItem();
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Escape)
+            {
+                txtSPNo.Text = string.Empty;
+                e.Handled = true;
+            }
+        }
+
+        private void txtLotNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                AddItem();
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Escape)
+            {
+                txtLotNo.Text = string.Empty;
+                e.Handled = true;
+            }
+        }
+
+        private void txtPalletDoffNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                AddItem();
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Escape)
+            {
+                txtPalletDoffNo.Text = string.Empty;
                 e.Handled = true;
             }
         }
@@ -96,18 +139,28 @@ namespace M3.Cord.Pages
                 AddItem();
                 e.Handled = true;
             }
+            else if (e.Key == Key.Escape)
+            {
+                txtCHNo.Text = string.Empty;
+                e.Handled = true;
+            }
         }
 
         #endregion
 
         #region Private Methods
 
-        private void ResetTextBoxInputs()
+        private void ResetTextBoxInputs(bool clearAll)
         {
-            txtPallet.Text = string.Empty;
-            txtSPNo.Text = (null != mc) ? mc.StartCore.ToString() : string.Empty;
-            txtLotNo.Text = string.Empty;
+            if (clearAll)
+            {
+                txtPallet.Text = string.Empty;
+                txtLotNo.Text = string.Empty;
+            }
+
+            txtPalletDoffNo.Text = string.Empty;
             txtCHNo.Text = string.Empty;
+            txtSPNo.Text = (null != mc) ? mc.StartCore.ToString() : string.Empty;
         }
 
         private void ResetCheckBoxInputs()
@@ -155,12 +208,18 @@ namespace M3.Cord.Pages
 
             #endregion
 
-            #region Get SPNo/LotNo/CHNo
+            #region Get SPNo/LotNo/PalletDoffNo/CHNo
 
             int iSP;
             if (!int.TryParse(txtSPNo.Text, out iSP))
             {
                 iSP = -1;
+            }
+
+            int iPalletDoff;
+            if (!int.TryParse(txtPalletDoffNo.Text, out iPalletDoff))
+            {
+                iPalletDoff = 0;
             }
 
             int iCH;
@@ -184,6 +243,7 @@ namespace M3.Cord.Pages
                 item = items[idx];
 
                 item.LotNo = lotNo;
+                item.DoffNo = iPalletDoff;
                 item.CHNo = iCH;
 
                 item.CheckYarnNo = chkCheckYarnNo.IsChecked.Value;
@@ -199,6 +259,7 @@ namespace M3.Cord.Pages
 
                 item.SPNo = iSP;
                 item.LotNo = lotNo;
+                item.DoffNo = iPalletDoff;
                 item.CHNo = iCH;
 
                 item.CheckYarnNo = chkCheckYarnNo.IsChecked.Value;
@@ -217,7 +278,7 @@ namespace M3.Cord.Pages
 
             #region Reset Inputs
 
-            ResetTextBoxInputs();
+            ResetTextBoxInputs(false);
             ResetCheckBoxInputs();
 
             // Increase next SP
@@ -267,6 +328,7 @@ namespace M3.Cord.Pages
                                     item.MaterialCheckId = existItem.MaterialCheckId;
                                     item.SPNo = existItem.SPNo;
                                     item.LotNo = existItem.LotNo;
+                                    item.DoffNo = existItem.DoffNo;
                                     item.CHNo = existItem.CHNo;
 
                                     item.CheckYarnNo = existItem.CheckYarnNo;
@@ -344,7 +406,7 @@ namespace M3.Cord.Pages
 
             this.InvokeAction(() =>
             {
-                ResetTextBoxInputs();
+                ResetTextBoxInputs(true);
                 ResetCheckBoxInputs();
 
                 RefreshGrid(true);

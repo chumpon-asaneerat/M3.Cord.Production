@@ -16,8 +16,10 @@ M3 Cord Production System #776
 M3 Cord Production System #775
 - 
 
+[commited]
 M3 Cord Production System #774
-- 
+- M3.Cord.Production.App re-implements #564
+  - DIPMaterialCheckSheetItem Add DoffNo #2
 
 [commited]
 M3 Cord Production System #773
