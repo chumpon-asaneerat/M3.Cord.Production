@@ -37,6 +37,8 @@ namespace M3.Cord.Models
         public int SPNo { get; set; }
 
         public string LotNo { get; set; }
+        // Pallet's Doff No
+        public int? DoffNo { get; set; }
         public int CHNo { get; set; }
 
         public bool CheckYarnNo { get; set; } = false;
@@ -132,6 +134,7 @@ namespace M3.Cord.Models
             p.Add("@SPNo", value.SPNo);
 
             p.Add("@LotNo", value.LotNo);
+            p.Add("@DoffNo", value.DoffNo);
             p.Add("@CHNo", value.CHNo);
 
             p.Add("@CheckYarnNo", value.CheckYarnNo);

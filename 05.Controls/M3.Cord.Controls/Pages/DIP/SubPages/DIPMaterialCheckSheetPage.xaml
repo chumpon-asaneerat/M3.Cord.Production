@@ -138,6 +138,7 @@
                     <GridView>
                         <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
                         <GridViewColumn Header="Lot No" CellTemplate="{StaticResource LotNo}" />
+                        <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNo}" />
                         <GridViewColumn Header="CH No" CellTemplate="{StaticResource CHNo}" />
                         <GridViewColumn Header="เบอร์ด้าย/สภาพด้าย" CellTemplate="{StaticResource CheckYarnNo}" />
                         <GridViewColumn Header="ไม่มีเศษด้าย" CellTemplate="{StaticResource CheckYanScrap}" />
