@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 
 namespace M3.Cord.Models
 {
-    public class S1Condition
+    public class S1Condition : NInpc
     {
         #region Public Proeprties
 
@@ -66,10 +66,68 @@ namespace M3.Cord.Models
         public decimal? CouterWeight2Err { get; set; }
         public bool? CounterSystemSC { get; set; }
         public string CounterSystem { get; set; }
-        public bool? CounterSystemActual { get; set; }
+
+        #region CounterSystemActual with Yes/No Runtime properties
+
+        public bool? CounterSystemActual
+        {
+            get { return Get<bool?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => CounterSystemActualY);
+                    Raise(() => CounterSystemActualN);
+                });
+            }
+        }
+
+        public bool? CounterSystemActualY
+        {
+            get { return (CounterSystemActual == true); }
+            set { CounterSystemActual = true; }
+        }
+
+        public bool? CounterSystemActualN
+        {
+            get { return (CounterSystemActual == false); }
+            set { CounterSystemActual = false; }
+        }
+
+        #endregion
+
         public bool? SenserYarnBreakSC { get; set; }
         public string SenserYarnBreak { get; set; }
-        public bool? SenserYarnBreakActual { get; set; }
+        //public bool? SenserYarnBreakActual { get; set; }
+
+        #region SenserYarnBreakActual with Yes/No Runtime properties
+
+        public bool? SenserYarnBreakActual
+        {
+            get { return Get<bool?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => SenserYarnBreakActualY);
+                    Raise(() => SenserYarnBreakActualN);
+                });
+            }
+        }
+
+        public bool? SenserYarnBreakActualY
+        {
+            get { return (SenserYarnBreakActual == true); }
+            set { SenserYarnBreakActual = true; }
+        }
+
+        public bool? SenserYarnBreakActualN
+        {
+            get { return (SenserYarnBreakActual == false); }
+            set { SenserYarnBreakActual = false; }
+        }
+
+        #endregion
         public bool? CalculatedTwistingNumberSC { get; set; }
         public decimal? CalculatedTwistingNumber { get; set; }
         public decimal? CalculatedTwistingNumberErr { get; set; }

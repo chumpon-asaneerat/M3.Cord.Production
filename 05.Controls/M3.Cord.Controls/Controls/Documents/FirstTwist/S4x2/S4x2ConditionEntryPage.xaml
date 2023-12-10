@@ -120,6 +120,20 @@
             <!--#endregion-->
 
             <!--#region NO 1-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding FullPackageModeSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="2" Grid.Column="0">
                 <TextBlock Text="1" HorizontalAlignment="Center" />
@@ -130,7 +144,19 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="2" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding FullPackageModeSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding FullPackageModeSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding FullPackageModeSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="2" Grid.Column="3">
                 <TextBox Width="200" Text="Full package" IsReadOnly="True"/>
@@ -143,6 +169,20 @@
             <!--#endregion-->
 
             <!--#region NO 2-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding LengthSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="3" Grid.Column="0">
                 <TextBlock Text="2" HorizontalAlignment="Center" />
@@ -158,7 +198,19 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="3" Grid.Column="2">
-                <CheckBox Content="SC"  IsChecked="{Binding LengthSC}"/>
+                <!--<CheckBox Content="SC"  IsChecked="{Binding LengthSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding LengthSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="3" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -180,6 +232,20 @@
             <!--#endregion-->
 
             <!--#region NO 3-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding WindAngleShiftFunctionSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="4" Grid.Column="0">
                 <TextBlock Text="3" HorizontalAlignment="Center" />
@@ -190,7 +256,19 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="4" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding WindAngleShiftFunctionSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding WindAngleShiftFunctionSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding WindAngleShiftFunctionSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="4" Grid.Column="3">
                 <TextBox Width="200" Text="Linear" IsReadOnly="True" />
@@ -202,6 +280,20 @@
             <!--#endregion-->
 
             <!--#region NO 4-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding AmountOfDisturbSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="5" Grid.Column="0">
                 <TextBlock Text="4" HorizontalAlignment="Center" />
@@ -212,7 +304,19 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="5" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding AmountOfDisturbSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding AmountOfDisturbSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding AmountOfDisturbSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="5" Grid.Column="3">
                 <TextBox Width="200" Text="{Binding AmountOfDisturb}" IsReadOnly="True"/>
@@ -224,6 +328,20 @@
             <!--#endregion-->
 
             <!--#region NO 5-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding WindAngleSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="6" Grid.Column="0">
                 <TextBlock Text="5" HorizontalAlignment="Center" />
@@ -239,7 +357,19 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="6" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding WindAngleSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding WindAngleSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding WindAngleSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="6" Grid.Column="3">
                 <TextBox Width="200" Text="{Binding WindAngle, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True" />
@@ -251,6 +381,20 @@
             <!--#endregion-->
 
             <!--#region NO 6-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="7"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding DistuebAccelerationTimeSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="7" Grid.Column="0">
                 <TextBlock Text="6" HorizontalAlignment="Center" />
@@ -261,7 +405,19 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="7" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding DistuebAccelerationTimeSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding DistuebAccelerationTimeSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding DistuebAccelerationTimeSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="7" Grid.Column="3">
                 <TextBox Width="200" Text="{Binding DistuebAccelerationTime, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True" />
@@ -273,6 +429,20 @@
             <!--#endregion-->
 
             <!--#region NO 7-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="8"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding DistuebDccelerationTimeSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="8" Grid.Column="0">
                 <TextBlock Text="7" HorizontalAlignment="Center" />
@@ -283,7 +453,19 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="8" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding DistuebDccelerationTimeSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding DistuebDccelerationTimeSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding DistuebDccelerationTimeSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="8" Grid.Column="3">
                 <TextBox Width="200" Text="{Binding DistuebDccelerationTime, StringFormat='{}{0:#,##0.##}'}" IsReadOnly="True" />
@@ -295,6 +477,20 @@
             <!--#endregion-->
 
             <!--#region NO 8-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="9"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding TensorSettingSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="9" Grid.Column="0">
                 <TextBlock Text="8" HorizontalAlignment="Center" />
@@ -305,7 +501,19 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="9" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding TensorSettingSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding TensorSettingSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding TensorSettingSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="9" Grid.Column="3">
                 <TextBox Width="200" Text="{Binding TensorSetting}" IsReadOnly="True" />
@@ -316,6 +524,22 @@
 
             <!--#endregion-->
 
+            <!--#region NO 9-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="10"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding FeedRollerSettingSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+
             <Border Grid.Row="10" Grid.Column="0">
                 <TextBlock Text="9" HorizontalAlignment="Center" />
             </Border>
@@ -325,13 +549,42 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="10" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding FeedRollerSettingSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding FeedRollerSettingSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding FeedRollerSettingSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="10" Grid.Column="3">
                 <TextBox Width="200"  Text="{Binding FeedRollerSetting}" IsReadOnly="True" />
             </Border>
             <Border Grid.Row="10" Grid.Column="4">
                 <TextBox Width="200" Text="{Binding FeedRollerSettingActual}"/>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region NO 10-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="11"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding BollonSettingSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
             </Border>
 
             <Border Grid.Row="11" Grid.Column="0">
@@ -343,7 +596,19 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="11" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding BollonSettingSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding BollonSettingSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding BollonSettingSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="11" Grid.Column="3">
                 <TextBox Width="200"  Text="{Binding BollonSetting}" IsReadOnly="True"/>
@@ -352,6 +617,24 @@
                 <TextBox Width="200" Text="{Binding BollonSettingActual}" />
             </Border>
 
+            <!--#endregion-->
+
+            <!--#region NO 11-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="12"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding MethodOfKnotSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+            
             <Border Grid.Row="12" Grid.Column="0">
                 <TextBlock Text="11" HorizontalAlignment="Center" />
             </Border>
@@ -361,13 +644,43 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="12" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding MethodOfKnotSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding MethodOfKnotSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding MethodOfKnotSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="12" Grid.Column="3">
                 <TextBox Width="200" Text="NO KNOT" IsReadOnly="True"/>
             </Border>
             <Border Grid.Row="12" Grid.Column="4">
                 <TextBox Width="200" Text="{Binding MethodOfKnotActual}" />
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region NO 12-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="13"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding WindQuantitySC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
             </Border>
 
             <Border Grid.Row="13" Grid.Column="0">
@@ -384,7 +697,19 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="13" Grid.Column="2">
-                <CheckBox Content="SC"  IsChecked="{Binding WindQuantitySC}"/>
+                <!--<CheckBox Content="SC"  IsChecked="{Binding WindQuantitySC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding WindQuantitySC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="13" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -403,6 +728,24 @@
                 <TextBox Width="200" Text="{Binding WindQuantityActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
+            <!--#endregion-->
+
+            <!--#region NO 13-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="14"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding DoffTimeSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+
             <Border Grid.Row="14" Grid.Column="0">
                 <TextBlock Text="13" HorizontalAlignment="Center" />
             </Border>
@@ -417,7 +760,19 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="14" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding DoffTimeSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding DoffTimeSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding DoffTimeSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="14" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -436,6 +791,24 @@
                 <TextBox Width="200"  Text="{Binding DoffTimeActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
 
+            <!--#endregion-->
+
+            <!--#region NO 14-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="15"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ProductQuantitySC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+            
             <Border Grid.Row="15" Grid.Column="0">
                 <TextBlock Text="14" HorizontalAlignment="Center" />
             </Border>
@@ -450,7 +823,19 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="15" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding ProductQuantitySC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding ProductQuantitySC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ProductQuantitySC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="15" Grid.Column="3">
                 <TextBox Width="200" Text="NO KNOT" IsReadOnly="True"/>
@@ -468,6 +853,8 @@
                     </StackPanel>
                 </StackPanel>
             </Border>
+
+            <!--#endregion-->
 
             <!--#region ACTUAL-->
 
@@ -507,7 +894,21 @@
 
             <!--#endregion-->
 
-            <!--#region NO 9-->
+            <!--#region NO 15-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="17"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CalculatedTwistingNumberSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="17" Grid.Column="0">
                 <TextBlock Text="15" HorizontalAlignment="Center" />
@@ -520,7 +921,19 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="17" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding CalculatedTwistingNumberSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding CalculatedTwistingNumberSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding CalculatedTwistingNumberSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="17" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -536,7 +949,21 @@
 
             <!--#endregion-->
 
-            <!--#region NO 10-->
+            <!--#region NO 16-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="18"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding NumberOfSpindleRotationSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="18" Grid.Column="0">
                 <TextBlock Text="16" HorizontalAlignment="Center" />
@@ -549,7 +976,19 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="18" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding NumberOfSpindleRotationSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding NumberOfSpindleRotationSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding NumberOfSpindleRotationSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="18" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -563,7 +1002,21 @@
             </Border>
             <!--#endregion-->
 
-            <!--#region NO 11-->
+            <!--#region NO 17-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="19"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding YarnSpeedSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="19" Grid.Column="0">
                 <TextBlock Text="17" HorizontalAlignment="Center" />
@@ -576,7 +1029,19 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="19" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding YarnSpeedSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding YarnSpeedSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding YarnSpeedSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="19" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -591,7 +1056,21 @@
 
             <!--#endregion-->
 
-            <!--#region NO 12-->
+            <!--#region NO 18-->
+            <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <Border Grid.Row="20"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="5">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SpecialMentionSC}" Value="True">
+                                <Setter Property="Background" Value="LightYellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
 
             <Border Grid.Row="20" Grid.Column="0">
                 <TextBlock Text="18" HorizontalAlignment="Center" />
@@ -604,7 +1083,19 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="20" Grid.Column="2">
-                <CheckBox Content="SC" IsChecked="{Binding SpecialMentionSC}"/>
+                <!--<CheckBox Content="SC" IsChecked="{Binding SpecialMentionSC}"/>-->
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SpecialMentionSC}" Value="True">
+                                    <Setter Property="Text" Value="SC" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Border>
             <Border Grid.Row="20" Grid.Column="3">
                 <TextBox Width="250"

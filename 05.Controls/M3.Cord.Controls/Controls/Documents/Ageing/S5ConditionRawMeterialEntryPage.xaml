@@ -167,7 +167,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding MainSupplySteamPressureSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -244,7 +244,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding AgeingSteamPressureSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -320,7 +320,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding SettingTemperatureSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -396,7 +396,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding SettingTimeSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -474,7 +474,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding LampStatusSystemSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -564,7 +564,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding SoudSystemTemperatureSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -648,7 +648,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding YarnTypeSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -716,7 +716,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding CordStructureSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -780,7 +780,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding TwistingNoSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -858,7 +858,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding UnitWeightSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -936,7 +936,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding StartingTimeSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -1018,7 +1018,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding FinishTimeSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -1096,7 +1096,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding OutTimeSC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -1180,7 +1180,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding DoffNo1SC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -1268,7 +1268,7 @@
                 <!--
                 <CheckBox Content="SC" IsChecked="{Binding DoffNo2SC}" />
                 -->
-                <TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
