@@ -84,13 +84,23 @@ namespace M3.Cord.Models
 
         public bool? CounterSystemActualY
         {
-            get { return (CounterSystemActual == true); }
+            get
+            {
+                if (CounterSystemActual.HasValue)
+                    return (CounterSystemActual.Value == true);
+                else return CounterSystemActual;
+            }
             set { CounterSystemActual = true; }
         }
 
         public bool? CounterSystemActualN
         {
-            get { return (CounterSystemActual == false); }
+            get
+            {
+                if (CounterSystemActual.HasValue)
+                    return (CounterSystemActual.Value == false);
+                else return CounterSystemActual;
+            }
             set { CounterSystemActual = false; }
         }
 
@@ -98,7 +108,6 @@ namespace M3.Cord.Models
 
         public bool? SenserYarnBreakSC { get; set; }
         public string SenserYarnBreak { get; set; }
-        //public bool? SenserYarnBreakActual { get; set; }
 
         #region SenserYarnBreakActual with Yes/No Runtime properties
 
@@ -117,17 +126,28 @@ namespace M3.Cord.Models
 
         public bool? SenserYarnBreakActualY
         {
-            get { return (SenserYarnBreakActual == true); }
+            get 
+            {
+                if (SenserYarnBreakActual.HasValue)
+                    return (SenserYarnBreakActual.Value == true);
+                else return SenserYarnBreakActual;
+            }
             set { SenserYarnBreakActual = true; }
         }
 
         public bool? SenserYarnBreakActualN
         {
-            get { return (SenserYarnBreakActual == false); }
+            get 
+            {
+                if (SenserYarnBreakActual.HasValue)
+                    return (SenserYarnBreakActual.Value == false);
+                else return SenserYarnBreakActual;
+            }
             set { SenserYarnBreakActual = false; }
         }
 
         #endregion
+
         public bool? CalculatedTwistingNumberSC { get; set; }
         public decimal? CalculatedTwistingNumber { get; set; }
         public decimal? CalculatedTwistingNumberErr { get; set; }

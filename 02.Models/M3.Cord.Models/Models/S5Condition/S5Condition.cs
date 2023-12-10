@@ -82,13 +82,23 @@ namespace M3.Cord.Models
 
         public bool? LampStatusSystemSetActualY
         {
-            get { return (LampStatusSystemSetActual == true); }
+            get
+            {
+                if (LampStatusSystemSetActual.HasValue)
+                    return (LampStatusSystemSetActual.Value == true);
+                else return LampStatusSystemSetActual;
+            }
             set { LampStatusSystemSetActual = true; }
         }
 
         public bool? LampStatusSystemSetActualN
         {
-            get { return (LampStatusSystemSetActual == false); }
+            get
+            {
+                if (LampStatusSystemSetActual.HasValue)
+                    return (LampStatusSystemSetActual.Value == false);
+                else return LampStatusSystemSetActual;
+            }
             set { LampStatusSystemSetActual = false; }
         }
 
@@ -113,13 +123,23 @@ namespace M3.Cord.Models
 
         public bool? LampStatusSystemSpecActualY
         {
-            get { return (LampStatusSystemSpecActual == true); }
+            get
+            {
+                if (LampStatusSystemSpecActual.HasValue)
+                    return (LampStatusSystemSpecActual.Value == true);
+                else return LampStatusSystemSpecActual;
+            }
             set { LampStatusSystemSpecActual = true; }
         }
 
         public bool? LampStatusSystemSpecActualN
         {
-            get { return (LampStatusSystemSpecActual == false); }
+            get
+            {
+                if (LampStatusSystemSpecActual.HasValue)
+                    return (LampStatusSystemSpecActual.Value == false);
+                else return LampStatusSystemSpecActual;
+            }
             set { LampStatusSystemSpecActual = false; }
         }
 
@@ -145,13 +165,23 @@ namespace M3.Cord.Models
 
         public bool? SoudSystemTemperatureSetActualY
         {
-            get { return (SoudSystemTemperatureSetActual == true); }
+            get
+            {
+                if (SoudSystemTemperatureSetActual.HasValue)
+                    return (SoudSystemTemperatureSetActual.Value == true);
+                else return SoudSystemTemperatureSetActual;
+            }
             set { SoudSystemTemperatureSetActual = true; }
         }
 
         public bool? SoudSystemTemperatureSetActualN
         {
-            get { return (SoudSystemTemperatureSetActual == false); }
+            get
+            {
+                if (SoudSystemTemperatureSetActual.HasValue)
+                    return (SoudSystemTemperatureSetActual.Value == false);
+                else return SoudSystemTemperatureSetActual;
+            }
             set { SoudSystemTemperatureSetActual = false; }
         }
 
@@ -176,13 +206,23 @@ namespace M3.Cord.Models
 
         public bool? SoudSystemTemperatureSpecActualY
         {
-            get { return (SoudSystemTemperatureSpecActual == true); }
+            get
+            {
+                if (SoudSystemTemperatureSpecActual.HasValue)
+                    return (SoudSystemTemperatureSpecActual.Value == true);
+                else return SoudSystemTemperatureSpecActual;
+            }
             set { SoudSystemTemperatureSpecActual = true; }
         }
 
         public bool? SoudSystemTemperatureSpecActualN
         {
-            get { return (SoudSystemTemperatureSpecActual == false); }
+            get
+            {
+                if (SoudSystemTemperatureSpecActual.HasValue)
+                    return (SoudSystemTemperatureSpecActual.Value == false);
+                else return SoudSystemTemperatureSpecActual;
+            }
             set { SoudSystemTemperatureSpecActual = false; }
         }
 

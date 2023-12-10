@@ -664,12 +664,12 @@
             <Border Grid.Row="9" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Vertical" Width="80">
-                        <CheckBox IsChecked="{Binding SenserYarnBreakActual}" />
+                        <CheckBox IsChecked="{Binding SenserYarnBreakActualY}" />
                         <TextBlock Text="YES" />
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical" Width="80">
-                        <CheckBox IsChecked="{Binding SenserYarnBreakActual}" />
+                        <CheckBox IsChecked="{Binding SenserYarnBreakActualN}" />
                         <TextBlock Text="NO" />
                     </StackPanel>
                 </StackPanel>
