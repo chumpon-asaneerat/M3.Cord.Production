@@ -77,6 +77,18 @@ namespace NLib.Wpf.Controls
 
         #endregion
 
+        #region Virtual methods
+
+        /// <summary>
+        /// Focus internal control.
+        /// </summary>
+        public virtual void SelectAll()
+        {
+            if (null != ctrl) ctrl.SelectAll();
+        }
+
+        #endregion
+
         #region Public Properties
 
         #region InputForeground

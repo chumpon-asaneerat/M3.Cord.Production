@@ -160,7 +160,8 @@ namespace M3.Cord.Pages
 
             txtPalletDoffNo.Text = string.Empty;
             txtCHNo.Text = string.Empty;
-            txtSPNo.Text = (null != mc) ? mc.StartCore.ToString() : string.Empty;
+            //txtSPNo.Text = (null != mc) ? mc.StartCore.ToString() : string.Empty;
+            txtSPNo.Text = string.Empty;
         }
 
         private void ResetCheckBoxInputs()
@@ -220,6 +221,15 @@ namespace M3.Cord.Pages
             {
                 iSP = -1;
             }
+            // Check range.
+            if (null != mc && 
+                (iSP < mc.StartCore || iSP > mc.EndCore))
+            {
+                // Invalid range
+                txtSPNo.SelectAll();
+                txtSPNo.FocusControl();
+                return;
+            }
 
             int iPalletDoff;
             if (!int.TryParse(txtPalletDoffNo.Text, out iPalletDoff))
@@ -277,16 +287,12 @@ namespace M3.Cord.Pages
                 items.Add(item);
             }
 
-            RefreshGrid(false);
-
             #endregion
 
             #region Reset Inputs
 
-            ResetTextBoxInputs(false);
-            ResetCheckBoxInputs();
-
             // Increase next SP
+            /*
             if (iSP != -1)
             {
                 iSP++;
@@ -297,6 +303,17 @@ namespace M3.Cord.Pages
             {
                 txtSPNo.Text = string.Empty;
             }
+            */
+
+            this.InvokeAction(() =>
+            {
+                ResetTextBoxInputs(false);
+                ResetCheckBoxInputs();
+
+                RefreshGrid(false);
+
+                txtSPNo.FocusControl();
+            });
 
             #endregion
         }
@@ -416,7 +433,7 @@ namespace M3.Cord.Pages
 
                 RefreshGrid(true);
 
-                txtPallet.FocusControl();
+                txtSPNo.FocusControl();
             });
         }
 
