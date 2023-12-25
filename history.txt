@@ -4,8 +4,10 @@ M3 Cord Production System #790
 M3 Cord Production System #789
 - 
 
+[commited]
 M3 Cord Production System #788
-- 
+- M3.Cord.Production.App re-implements #577
+  - Fixed Pallet slip total CH must less than 125
 
 [commited]
 M3 Cord Production System #787

@@ -59,7 +59,17 @@ namespace M3.Cord.Windows
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            if (null != _pallet && _pallet.TotalCH.HasValue)
+            {
+                if (_pallet.TotalCH.Value > 125)
+                {
+                    var win = M3CordApp.Windows.MessageBox;
+                    win.Setup("Not allow to has Total CH over than 125 per pallet.");
+                    win.ShowDialog();
+                    return;
+                }
+                DialogResult = true;
+            }
         }
 
         private void cmdChoosePCTwist1_Click(object sender, RoutedEventArgs e)
