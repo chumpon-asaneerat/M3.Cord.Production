@@ -447,6 +447,14 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region Recipe
+            public static Cord.Pages.CreateRecipePage CreateRecipe
+            {
+                get { return GetPage<Cord.Pages.CreateRecipePage>(); }
+            }
+
+            #endregion
         }
 
         /// <summary>

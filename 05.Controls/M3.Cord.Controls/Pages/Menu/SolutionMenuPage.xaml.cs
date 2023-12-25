@@ -60,7 +60,9 @@ namespace M3.Cord.Pages
 
         private void cmdCreateSolutionLot_Click(object sender, RoutedEventArgs e)
         {
-
+            var page = M3CordApp.Pages.CreateRecipe;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdAddQAResult_Click(object sender, RoutedEventArgs e)
