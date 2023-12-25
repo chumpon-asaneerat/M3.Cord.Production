@@ -209,6 +209,9 @@
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
+    <Compile Include="Pages\CreateRecipe\CreateRecipePage.xaml.cs">
+      <DependentUpon>CreateRecipePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DIP\DIPMCPage.xaml.cs">
       <DependentUpon>DIPMCPage.xaml</DependentUpon>
     </Compile>
@@ -659,6 +662,10 @@
     <Page Include="Pages\Ageing\AgeingOperationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CreateRecipe\CreateRecipePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\DIP\DIPMCPage.xaml">
       <SubType>Designer</SubType>
