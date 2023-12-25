@@ -1,12 +1,14 @@
 M3 Cord Production System #790
 - 
 
+[commited]
 M3 Cord Production System #789
-- 
+- M3.Cord.Production.App re-implements #579
+  - Fixed Ageing Condition Load DoffNo and Qty.
 
 [commited]
 M3 Cord Production System #788
-- M3.Cord.Production.App re-implements #577
+- M3.Cord.Production.App re-implements #578
   - Fixed Pallet slip total CH must less than 125
 
 [commited]

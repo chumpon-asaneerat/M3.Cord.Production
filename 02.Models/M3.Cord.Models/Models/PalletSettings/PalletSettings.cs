@@ -243,6 +243,19 @@ namespace M3.Cord.Models
             }
         }
 
+        public void LoadItems()
+        {
+            if (PalletId.HasValue)
+            {
+                Items = PalletSettingItem.Gets(PalletId.Value).Value();
+            }
+            else
+            {
+                Items = new List<PalletSettingItem>();
+            }
+            Calculate();
+        }
+
         #endregion
 
         #region Static Methods

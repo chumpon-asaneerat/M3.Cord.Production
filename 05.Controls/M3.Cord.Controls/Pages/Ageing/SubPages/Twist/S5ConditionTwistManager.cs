@@ -92,6 +92,34 @@ namespace M3.Cord.Pages
                 Condition.ProductCode1 = code;
                 Condition.ProductName1 = name;
                 Condition.DoffNo1MCNo = (null != pallet1) ? pallet1.MCCode : null;
+
+                if (null != pallet1)
+                {
+                    pallet1.LoadItems();
+
+                    string doffNos = string.Empty;
+                    var doffs = pallet1.Items.Select(x => x.DoffNo).Distinct().ToList();
+                    if (null != doffs)
+                    {
+                        doffs.Sort();
+                        for (int i = 0; i < doffs.Count; ++i)
+                        {
+                            var doff = doffs[i];
+                            doffNos += doff.ToString();
+                            if (i < doffs.Count - 1) doffNos += ", ";
+                        }
+                    }
+
+                    Condition.DoffNo1Doff = doffNos.Trim();
+                    Condition.DoffNo1Qty = (pallet1.TotalCH.HasValue) ? 
+                        pallet1.TotalCH.Value.ToString("n0") : null;
+                }
+                else
+                {
+                    Condition.DoffNo1Doff = null;
+                    Condition.DoffNo1Qty = null;
+                }
+                
                 Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
             }
             else
@@ -122,6 +150,34 @@ namespace M3.Cord.Pages
                 Condition.ProductCode2 = code;
                 Condition.ProductName2 = name;
                 Condition.DoffNo2MCNo = (null != pallet2) ? pallet2.MCCode : null;
+
+                if (null != pallet2)
+                {
+                    pallet2.LoadItems();
+
+                    string doffNos = string.Empty;
+                    var doffs = pallet2.Items.Select(x => x.DoffNo).Distinct().ToList();
+                    if (null != doffs)
+                    {
+                        doffs.Sort();
+                        for (int i = 0; i < doffs.Count; ++i)
+                        {
+                            var doff = doffs[i];
+                            doffNos += doff.ToString();
+                            if (i < doffs.Count - 1) doffNos += ", ";
+                        }
+                    }
+
+                    Condition.DoffNo2Doff = doffNos.Trim();
+                    Condition.DoffNo2Qty = (pallet2.TotalCH.HasValue) ?
+                        pallet2.TotalCH.Value.ToString("n0") : null;
+                }
+                else
+                {
+                    Condition.DoffNo2Doff = null;
+                    Condition.DoffNo2Qty = null;
+                }
+
                 Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
             }
             else
