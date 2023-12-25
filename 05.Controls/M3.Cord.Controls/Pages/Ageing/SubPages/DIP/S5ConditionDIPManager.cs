@@ -93,6 +93,9 @@ namespace M3.Cord.Pages
                 Condition.ProductCode1 = code;
                 Condition.ProductName1 = name;
                 Condition.DoffNo1MCNo = (null != pallet1) ? pallet1.MCCode : null;
+                Condition.DoffNo1Doff = (null != pallet1) ? pallet1.DoffNos : null;
+                Condition.DoffNo1Qty = (null != pallet1 && pallet1.ActualQty.HasValue) ? pallet1.ActualQty.Value.ToString("n0") : null;
+
                 Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
             }
             else
@@ -123,6 +126,9 @@ namespace M3.Cord.Pages
                 Condition.ProductCode2 = code;
                 Condition.ProductName2 = name;
                 Condition.DoffNo2MCNo = (null != pallet2) ? pallet2.MCCode : null;
+                Condition.DoffNo2Doff = (null != pallet2) ? pallet2.DoffNos : null;
+                Condition.DoffNo2Qty = (null != pallet2 && pallet2.ActualQty.HasValue) ? pallet2.ActualQty.Value.ToString("n0") : null;
+
                 Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
             }
             else

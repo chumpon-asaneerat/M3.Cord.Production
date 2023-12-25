@@ -1,10 +1,42 @@
-M3 Cord Production System #790
+M3 Cord Production System #800
 - 
+
+M3 Cord Production System #799
+- 
+
+M3 Cord Production System #798
+- 
+
+M3 Cord Production System #797
+- 
+
+M3 Cord Production System #796
+- 
+
+M3 Cord Production System #795
+- 
+
+M3 Cord Production System #794
+- 
+
+M3 Cord Production System #793
+- 
+
+M3 Cord Production System #792
+- 
+
+M3 Cord Production System #791
+- 
+
+[commited]
+M3 Cord Production System #790
+- M3.Cord.Production.App re-implements #580
+  - Fixed Ageing Condition Load DoffNo and Qty (DIP).
 
 [commited]
 M3 Cord Production System #789
 - M3.Cord.Production.App re-implements #579
-  - Fixed Ageing Condition Load DoffNo and Qty.
+  - Fixed Ageing Condition Load DoffNo and Qty (First Twist).
 
 [commited]
 M3 Cord Production System #788

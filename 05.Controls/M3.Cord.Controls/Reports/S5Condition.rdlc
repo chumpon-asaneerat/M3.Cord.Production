@@ -7850,6 +7850,9 @@
                 <Height>0.6cm</Height>
                 <Width>2.5cm</Width>
                 <ZIndex>26</ZIndex>
+                <Visibility>
+                  <Hidden>true</Hidden>
+                </Visibility>
                 <Style>
                   <Border>
                     <Style>None</Style>
