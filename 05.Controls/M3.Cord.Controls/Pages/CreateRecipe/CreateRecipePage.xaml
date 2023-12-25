@@ -88,13 +88,11 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource SolutionLot}" />
-                        <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
-                        <GridViewColumn Header="Chemical" CellTemplate="{StaticResource SolutionName}" />
-                        <GridViewColumn Header="Quantity" CellTemplate="{StaticResource DipSolutionQty}" />
-                        <GridViewColumn Header="Mixing Date" CellTemplate="{StaticResource MixDate}" />
-                        <GridViewColumn Header="Qualified Date" CellTemplate="{StaticResource QualifiedDate}" />
-                        <GridViewColumn Header="Expire Date" CellTemplate="{StaticResource ExpireDate}" />
+                        <GridViewColumn Header="Solution" CellTemplate="{StaticResource SolutionLot}" Width="100"/>
+                        <GridViewColumn Header="Chemical (SC)" CellTemplate="{StaticResource ChemicalName}" Width="250"/>
+                        <GridViewColumn Header="Wet" CellTemplate="{StaticResource ChemWet}" Width="100"/>
+                        <GridViewColumn Header="Dry" CellTemplate="{StaticResource ChemDry}" Width="100"/>
+                        <GridViewColumn Header="Calculation Wet" CellTemplate="{StaticResource weightactual}" Width="150"/>
                     </GridView>
                 </ListView.View>
             </ListView>

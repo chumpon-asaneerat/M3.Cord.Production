@@ -22,10 +22,13 @@ namespace M3.Cord.Models
     public class SolutionRecipe : NInpc
     {
         #region Public Properties
-
+    
         public int SolutionId { get; set; }
         public int ProductId { get; set; }
+
+        //ใน stored update ใหม่เหมือนเปลี่ยนชื่อเป็น DIPProductCode
         public string ProductCode { get; set; }
+
         public string SolutionName { get; set; }
 
         public string Recipe1 { get; set; }
@@ -35,6 +38,11 @@ namespace M3.Cord.Models
 
         public string Remark { get; set; }
         public decimal? QtySpec { get; set; }
+
+        //New 25/12/23
+        public string DIPProductCode { get; set; }
+
+        public string Compound { get; set; }
 
         #endregion
 
