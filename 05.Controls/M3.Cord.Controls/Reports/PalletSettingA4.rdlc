@@ -27,7 +27,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox14</rd:DefaultName>
                 <Top>0.2cm</Top>
-                <Left>5.34982cm</Left>
+                <Left>5.09982cm</Left>
                 <Height>0.6cm</Height>
                 <Width>9.30035cm</Width>
                 <Style>
@@ -43,7 +43,7 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Height>1cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -169,7 +169,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox14</rd:DefaultName>
                 <Top>0.053cm</Top>
-                <Left>5.34982cm</Left>
+                <Left>5.09982cm</Left>
                 <Height>0.6cm</Height>
                 <Width>9.30035cm</Width>
                 <ZIndex>3</ZIndex>
@@ -177,56 +177,6 @@
                   <Border>
                     <Style>None</Style>
                   </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Image Name="Image1">
-                <Source>Database</Source>
-                <Value>=First(Fields!PalletCodeImage.Value, "main")</Value>
-                <MIMEType>image/jpeg</MIMEType>
-                <Sizing>Fit</Sizing>
-                <Top>0.71975cm</Top>
-                <Left>5.34982cm</Left>
-                <Height>1.1236cm</Height>
-                <Width>9.30035cm</Width>
-                <ZIndex>4</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
-              </Image>
-              <Textbox Name="PalletCode">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=First(Fields!PalletCode.Value, "main")</Value>
-                        <Style>
-                          <FontSize>8pt</FontSize>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style>
-                      <TextAlign>Center</TextAlign>
-                    </Style>
-                  </Paragraph>
-                </Paragraphs>
-                <Top>1.89274cm</Top>
-                <Left>5.34982cm</Left>
-                <Height>0.5cm</Height>
-                <Width>9.30035cm</Width>
-                <ZIndex>5</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <VerticalAlign>Top</VerticalAlign>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -249,10 +199,10 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox13</rd:DefaultName>
                 <Top>1.00837in</Top>
-                <Left>4.04018in</Left>
+                <Left>3.91518in</Left>
                 <Height>0.23622in</Height>
                 <Width>0.675in</Width>
-                <ZIndex>6</ZIndex>
+                <ZIndex>4</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -281,10 +231,10 @@
                 </Paragraphs>
                 <rd:DefaultName>CreateDate</rd:DefaultName>
                 <Top>1.28337in</Top>
-                <Left>4.74216in</Left>
+                <Left>4.61716in</Left>
                 <Height>0.23622in</Height>
                 <Width>1.601in</Width>
-                <ZIndex>7</ZIndex>
+                <ZIndex>5</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -311,10 +261,10 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox13</rd:DefaultName>
                 <Top>1.28337in</Top>
-                <Left>4.04018in</Left>
+                <Left>3.91518in</Left>
                 <Height>0.23622in</Height>
                 <Width>0.675in</Width>
-                <ZIndex>8</ZIndex>
+                <ZIndex>6</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -325,11 +275,61 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
+              <Image Name="Image1">
+                <Source>Database</Source>
+                <Value>=First(Fields!PalletCodeImage.Value, "main")</Value>
+                <MIMEType>image/jpeg</MIMEType>
+                <Sizing>Fit</Sizing>
+                <Top>0.71901cm</Top>
+                <Left>1.29271cm</Left>
+                <Height>1.1236cm</Height>
+                <Width>16.67807cm</Width>
+                <ZIndex>7</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Image>
+              <Textbox Name="PalletCode">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=First(Fields!PalletCode.Value, "main")</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.92375cm</Top>
+                <Left>1.29271cm</Left>
+                <Height>0.5cm</Height>
+                <Width>16.67807cm</Width>
+                <ZIndex>8</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <VerticalAlign>Top</VerticalAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>1cm</Top>
             <Height>4cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -371,17 +371,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Line Name="Line1">
-                <Left>10cm</Left>
-                <Height>1cm</Height>
-                <Width>0cm</Width>
-                <ZIndex>1</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>Solid</Style>
-                  </Border>
-                </Style>
-              </Line>
               <Textbox Name="CustomerName">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
@@ -400,10 +389,10 @@
                 </Paragraphs>
                 <rd:DefaultName>CustomerName</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>3.90585in</Left>
                 <Height>0.25in</Height>
                 <Width>2.31231in</Width>
-                <ZIndex>2</ZIndex>
+                <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -414,11 +403,22 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
+              <Line Name="Line1">
+                <Left>9.5cm</Left>
+                <Height>1cm</Height>
+                <Width>0cm</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>5cm</Top>
             <Height>1cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -432,7 +432,7 @@
           <Rectangle Name="Rectangle7">
             <ReportItems>
               <Line Name="Line2">
-                <Left>10cm</Left>
+                <Left>9.5cm</Left>
                 <Height>1cm</Height>
                 <Width>0cm</Width>
                 <Style>
@@ -489,7 +489,7 @@
                 </Paragraphs>
                 <rd:DefaultName>CustomerName</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>3.90585in</Left>
                 <Height>0.25in</Height>
                 <Width>2.31231in</Width>
                 <ZIndex>2</ZIndex>
@@ -507,7 +507,7 @@
             <KeepTogether>true</KeepTogether>
             <Top>6cm</Top>
             <Height>1cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -521,7 +521,7 @@
           <Rectangle Name="Rectangle8">
             <ReportItems>
               <Line Name="Line3">
-                <Left>10cm</Left>
+                <Left>9.5cm</Left>
                 <Height>1cm</Height>
                 <Width>0cm</Width>
                 <Style>
@@ -578,7 +578,7 @@
                 </Paragraphs>
                 <rd:DefaultName>CustomerName</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>3.90585in</Left>
                 <Height>0.25in</Height>
                 <Width>2.31231in</Width>
                 <ZIndex>2</ZIndex>
@@ -596,7 +596,7 @@
             <KeepTogether>true</KeepTogether>
             <Top>7cm</Top>
             <Height>1cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -610,7 +610,7 @@
           <Rectangle Name="Rectangle9">
             <ReportItems>
               <Line Name="Line4">
-                <Left>10cm</Left>
+                <Left>9.5cm</Left>
                 <Height>1cm</Height>
                 <Width>0cm</Width>
                 <Style>
@@ -667,7 +667,7 @@
                 </Paragraphs>
                 <rd:DefaultName>TwistNo</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>3.90585in</Left>
                 <Height>0.25in</Height>
                 <Width>2.31231in</Width>
                 <ZIndex>2</ZIndex>
@@ -685,7 +685,7 @@
             <KeepTogether>true</KeepTogether>
             <Top>8cm</Top>
             <Height>1cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -699,7 +699,7 @@
           <Rectangle Name="Rectangle10">
             <ReportItems>
               <Line Name="Line5">
-                <Left>10cm</Left>
+                <Left>9.5cm</Left>
                 <Height>2.5cm</Height>
                 <Width>0cm</Width>
                 <Style>
@@ -738,27 +738,26 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Textbox Name="TwistNo2">
+              <Textbox Name="Doff1">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=Fields!DoffNos.Value</Value>
+                        <Value>=Fields!Doff1.Value</Value>
                         <Style />
                       </TextRun>
                     </TextRuns>
                     <Style>
-                      <TextAlign>Left</TextAlign>
+                      <TextAlign>Center</TextAlign>
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <rd:DefaultName>TwistNo</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>4.40585in</Left>
                 <Height>0.25in</Height>
-                <Width>2.31231in</Width>
+                <Width>2.55906in</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
                   <Border>
@@ -772,13 +771,13 @@
               </Textbox>
               <Image Name="Image2">
                 <Source>Database</Source>
-                <Value>=First(Fields!PalletCodeImage.Value, "main")</Value>
+                <Value>=First(Fields!Doff1Image.Value, "main")</Value>
                 <MIMEType>image/jpeg</MIMEType>
                 <Sizing>Fit</Sizing>
                 <Top>0.93039cm</Top>
-                <Left>10.23836cm</Left>
+                <Left>11.19086cm</Left>
                 <Height>1.1236cm</Height>
-                <Width>9.30035cm</Width>
+                <Width>6.5cm</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
                   <Border>
@@ -790,21 +789,18 @@
             <KeepTogether>true</KeepTogether>
             <Top>9cm</Top>
             <Height>2.5cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <BottomBorder>
-                <Style>Solid</Style>
-              </BottomBorder>
             </Style>
           </Rectangle>
           <Rectangle Name="Rectangle11">
             <ReportItems>
               <Line Name="Line6">
-                <Left>10cm</Left>
+                <Left>9.5cm</Left>
                 <Height>1cm</Height>
                 <Width>0cm</Width>
                 <Style>
@@ -861,7 +857,7 @@
                 </Paragraphs>
                 <rd:DefaultName>ProductLotNo</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>3.90585in</Left>
                 <Height>0.25in</Height>
                 <Width>2.31231in</Width>
                 <ZIndex>2</ZIndex>
@@ -879,7 +875,7 @@
             <KeepTogether>true</KeepTogether>
             <Top>19cm</Top>
             <Height>1cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -893,7 +889,7 @@
           <Rectangle Name="Rectangle12">
             <ReportItems>
               <Line Name="Line7">
-                <Left>10cm</Left>
+                <Left>9.5cm</Left>
                 <Height>1.5cm</Height>
                 <Width>0cm</Width>
                 <Style>
@@ -960,7 +956,7 @@
                 </Paragraphs>
                 <rd:DefaultName>TotalCH</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>3.90585in</Left>
                 <Height>0.25in</Height>
                 <Width>2.31231in</Width>
                 <ZIndex>2</ZIndex>
@@ -978,7 +974,7 @@
             <KeepTogether>true</KeepTogether>
             <Top>20cm</Top>
             <Height>1.5cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -992,7 +988,7 @@
           <Rectangle Name="Rectangle13">
             <ReportItems>
               <Line Name="Line8">
-                <Left>10cm</Left>
+                <Left>9.5cm</Left>
                 <Height>1cm</Height>
                 <Width>0cm</Width>
                 <Style>
@@ -1050,7 +1046,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Counter</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>3.90585in</Left>
                 <Height>0.25in</Height>
                 <Width>2.31231in</Width>
                 <ZIndex>2</ZIndex>
@@ -1068,7 +1064,7 @@
             <KeepTogether>true</KeepTogether>
             <Top>21.5cm</Top>
             <Height>1cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -1082,7 +1078,7 @@
           <Rectangle Name="Rectangle14">
             <ReportItems>
               <Line Name="Line9">
-                <Left>10cm</Left>
+                <Left>9.5cm</Left>
                 <Height>1.5cm</Height>
                 <Width>0cm</Width>
                 <Style>
@@ -1146,7 +1142,7 @@
                 </Paragraphs>
                 <rd:DefaultName>UserName</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>3.90585in</Left>
                 <Height>0.6cm</Height>
                 <Width>5.87327cm</Width>
                 <ZIndex>2</ZIndex>
@@ -1164,7 +1160,7 @@
             <KeepTogether>true</KeepTogether>
             <Top>22.5cm</Top>
             <Height>1.5cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>10</ZIndex>
             <Style>
               <Border>
@@ -1178,7 +1174,7 @@
           <Rectangle Name="Rectangle15">
             <ReportItems>
               <Line Name="Line10">
-                <Left>10cm</Left>
+                <Left>9.5cm</Left>
                 <Height>2.5cm</Height>
                 <Width>0cm</Width>
                 <Style>
@@ -1187,58 +1183,27 @@
                   </Border>
                 </Style>
               </Line>
-              <Textbox Name="Textbox30">
+              <Textbox Name="Doff2">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>เบอร์ใบผลิตภัณฑ์ (Doffing No.)</Value>
-                        <Style />
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox13</rd:DefaultName>
-                <Top>0.07185in</Top>
-                <Left>0.11908in</Left>
-                <Height>0.25in</Height>
-                <Width>2.31231in</Width>
-                <ZIndex>1</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="TwistNo3">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=Fields!DoffNos.Value</Value>
+                        <Value>=Fields!Doff2.Value</Value>
                         <Style />
                       </TextRun>
                     </TextRuns>
                     <Style>
-                      <TextAlign>Left</TextAlign>
+                      <TextAlign>Center</TextAlign>
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <rd:DefaultName>TwistNo</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>4.40585in</Left>
                 <Height>0.25in</Height>
-                <Width>2.31231in</Width>
-                <ZIndex>2</ZIndex>
+                <Width>2.55906in</Width>
+                <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1251,14 +1216,14 @@
               </Textbox>
               <Image Name="Image3">
                 <Source>Database</Source>
-                <Value>=First(Fields!PalletCodeImage.Value, "main")</Value>
+                <Value>=First(Fields!Doff2Image.Value, "main")</Value>
                 <MIMEType>image/jpeg</MIMEType>
                 <Sizing>Fit</Sizing>
                 <Top>0.93039cm</Top>
-                <Left>10.23836cm</Left>
+                <Left>11.19086cm</Left>
                 <Height>1.1236cm</Height>
-                <Width>9.30035cm</Width>
-                <ZIndex>3</ZIndex>
+                <Width>6.5cm</Width>
+                <ZIndex>2</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1269,21 +1234,18 @@
             <KeepTogether>true</KeepTogether>
             <Top>11.5cm</Top>
             <Height>2.5cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <BottomBorder>
-                <Style>Solid</Style>
-              </BottomBorder>
             </Style>
           </Rectangle>
           <Rectangle Name="Rectangle16">
             <ReportItems>
               <Line Name="Line11">
-                <Left>10cm</Left>
+                <Left>9.5cm</Left>
                 <Height>2.5cm</Height>
                 <Width>0cm</Width>
                 <Style>
@@ -1292,58 +1254,27 @@
                   </Border>
                 </Style>
               </Line>
-              <Textbox Name="Textbox31">
+              <Textbox Name="Doff3">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>เบอร์ใบผลิตภัณฑ์ (Doffing No.)</Value>
-                        <Style />
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox13</rd:DefaultName>
-                <Top>0.07185in</Top>
-                <Left>0.11908in</Left>
-                <Height>0.25in</Height>
-                <Width>2.31231in</Width>
-                <ZIndex>1</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="TwistNo4">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=Fields!DoffNos.Value</Value>
+                        <Value>=Fields!Doff3.Value</Value>
                         <Style />
                       </TextRun>
                     </TextRuns>
                     <Style>
-                      <TextAlign>Left</TextAlign>
+                      <TextAlign>Center</TextAlign>
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <rd:DefaultName>TwistNo</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>4.40585in</Left>
                 <Height>0.25in</Height>
-                <Width>2.31231in</Width>
-                <ZIndex>2</ZIndex>
+                <Width>2.55906in</Width>
+                <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1356,14 +1287,14 @@
               </Textbox>
               <Image Name="Image4">
                 <Source>Database</Source>
-                <Value>=First(Fields!PalletCodeImage.Value, "main")</Value>
+                <Value>=First(Fields!Doff3Image.Value, "main")</Value>
                 <MIMEType>image/jpeg</MIMEType>
                 <Sizing>Fit</Sizing>
                 <Top>0.93039cm</Top>
-                <Left>10.23836cm</Left>
+                <Left>11.19086cm</Left>
                 <Height>1.1236cm</Height>
-                <Width>9.30035cm</Width>
-                <ZIndex>3</ZIndex>
+                <Width>6.5cm</Width>
+                <ZIndex>2</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1374,21 +1305,18 @@
             <KeepTogether>true</KeepTogether>
             <Top>14cm</Top>
             <Height>2.5cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>12</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <BottomBorder>
-                <Style>Solid</Style>
-              </BottomBorder>
             </Style>
           </Rectangle>
           <Rectangle Name="Rectangle17">
             <ReportItems>
               <Line Name="Line12">
-                <Left>10cm</Left>
+                <Left>9.5cm</Left>
                 <Height>2.5cm</Height>
                 <Width>0cm</Width>
                 <Style>
@@ -1397,58 +1325,27 @@
                   </Border>
                 </Style>
               </Line>
-              <Textbox Name="Textbox32">
+              <Textbox Name="Doff4">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>เบอร์ใบผลิตภัณฑ์ (Doffing No.)</Value>
-                        <Style />
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox13</rd:DefaultName>
-                <Top>0.07185in</Top>
-                <Left>0.11908in</Left>
-                <Height>0.25in</Height>
-                <Width>2.31231in</Width>
-                <ZIndex>1</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="TwistNo5">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=Fields!DoffNos.Value</Value>
+                        <Value>=Fields!Doff4.Value</Value>
                         <Style />
                       </TextRun>
                     </TextRuns>
                     <Style>
-                      <TextAlign>Left</TextAlign>
+                      <TextAlign>Center</TextAlign>
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <rd:DefaultName>TwistNo</rd:DefaultName>
                 <Top>0.07185in</Top>
-                <Left>4.03085in</Left>
+                <Left>4.40585in</Left>
                 <Height>0.25in</Height>
-                <Width>2.31231in</Width>
-                <ZIndex>2</ZIndex>
+                <Width>2.55906in</Width>
+                <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1461,14 +1358,14 @@
               </Textbox>
               <Image Name="Image5">
                 <Source>Database</Source>
-                <Value>=First(Fields!PalletCodeImage.Value, "main")</Value>
+                <Value>=First(Fields!Doff4Image.Value, "main")</Value>
                 <MIMEType>image/jpeg</MIMEType>
                 <Sizing>Fit</Sizing>
                 <Top>0.93039cm</Top>
-                <Left>10.23836cm</Left>
+                <Left>11.19086cm</Left>
                 <Height>1.1236cm</Height>
-                <Width>9.30035cm</Width>
-                <ZIndex>3</ZIndex>
+                <Width>6.5cm</Width>
+                <ZIndex>2</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1479,7 +1376,7 @@
             <KeepTogether>true</KeepTogether>
             <Top>16.5cm</Top>
             <Height>2.5cm</Height>
-            <Width>20cm</Width>
+            <Width>19cm</Width>
             <ZIndex>13</ZIndex>
             <Style>
               <Border>
@@ -1494,8 +1391,8 @@
         <KeepTogether>true</KeepTogether>
         <Top>0.40856cm</Top>
         <Left>0.06963cm</Left>
-        <Height>26.5475cm</Height>
-        <Width>20cm</Width>
+        <Height>24cm</Height>
+        <Width>19cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1517,7 +1414,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>10.66976in</Top>
+        <Top>9.66976in</Top>
         <Left>0.06492in</Left>
         <Height>0.25in</Height>
         <Width>3.99885in</Width>
@@ -1549,8 +1446,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>10.66976in</Top>
-        <Left>6.94133in</Left>
+        <Top>9.66976in</Top>
+        <Left>6.51633in</Left>
         <Height>0.25in</Height>
         <Width>0.93057in</Width>
         <ZIndex>2</ZIndex>
@@ -1565,10 +1462,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>28cm</Height>
+    <Height>25.3cm</Height>
     <Style />
   </Body>
-  <Width>20.3cm</Width>
+  <Width>19.4cm</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -1620,6 +1517,38 @@
           <DataField>CustomerName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Doff1">
+          <DataField>Doff1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Doff1Image">
+          <DataField>Doff1Image</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="Doff2">
+          <DataField>Doff2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Doff2Image">
+          <DataField>Doff2Image</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="Doff3">
+          <DataField>Doff3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Doff3Image">
+          <DataField>Doff3Image</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="Doff4">
+          <DataField>Doff4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Doff4Image">
+          <DataField>Doff4Image</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
         <Field Name="DoffNos">
           <DataField>DoffNos</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1664,9 +1593,17 @@
           <DataField>PalletStatus</DataField>
           <rd:TypeName>M3.Cord.Models.PalletStatus</rd:TypeName>
         </Field>
+        <Field Name="PalletStatusText">
+          <DataField>PalletStatusText</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="PalletType">
           <DataField>PalletType</DataField>
           <rd:TypeName>M3.Cord.Models.PalletType</rd:TypeName>
+        </Field>
+        <Field Name="PalletTypeText">
+          <DataField>PalletTypeText</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="PCDate">
           <DataField>PCDate</DataField>

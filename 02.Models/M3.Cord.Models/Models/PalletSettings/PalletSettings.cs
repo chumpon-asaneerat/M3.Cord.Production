@@ -239,7 +239,7 @@ namespace M3.Cord.Models
                 if (!string.IsNullOrWhiteSpace(Doff2))
                 {
                     System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
-                        Doff1, 400, 100);
+                        Doff2, 400, 100);
 
                     results = NLib.Utils.ImageUtils.GetImage(img);
                 }
@@ -257,7 +257,7 @@ namespace M3.Cord.Models
                 if (!string.IsNullOrWhiteSpace(Doff3))
                 {
                     System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
-                        Doff1, 400, 100);
+                        Doff3, 400, 100);
 
                     results = NLib.Utils.ImageUtils.GetImage(img);
                 }
@@ -272,10 +272,10 @@ namespace M3.Cord.Models
             get
             {
                 byte[] results = null;
-                if (!string.IsNullOrWhiteSpace(Doff3))
+                if (!string.IsNullOrWhiteSpace(Doff4))
                 {
                     System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
-                        Doff1, 400, 100);
+                        Doff4, 400, 100);
 
                     results = NLib.Utils.ImageUtils.GetImage(img);
                 }
@@ -340,23 +340,23 @@ namespace M3.Cord.Models
                 Doff2 = null;
                 Doff3 = null;
                 Doff4 = null;
-                for (int i = 0; i > doffs.Count; ++i)
+                for (int i = 0; i < doffs.Count; ++i)
                 {
                     if (i == 0)
                     {
-                        Doff1 = i.ToString();
+                        Doff1 = doffs[i].ToString();
                     }
                     else if (i == 1)
                     {
-                        Doff2 = i.ToString();
+                        Doff2 = doffs[i].ToString();
                     }
                     else if (i == 2)
                     {
-                        Doff3 = i.ToString();
+                        Doff3 = doffs[i].ToString();
                     }
                     else if (i == 3)
                     {
-                        Doff4 = i.ToString();
+                        Doff4 = doffs[i].ToString();
                     }
                 }
             }
