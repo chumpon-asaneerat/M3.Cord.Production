@@ -211,6 +211,79 @@ namespace M3.Cord.Models
 
         public List<PalletSettingItem> Items { get; set; }
 
+        public string Doff1 { get; set; }
+        // Doff1 barcode
+        public byte[] Doff1Image
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(Doff1))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        Doff1, 400, 100);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
+        public string Doff2 { get; set; }
+        // Doff2 barcode
+        public byte[] Doff2Image
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(Doff2))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        Doff1, 400, 100);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
+        public string Doff3 { get; set; }
+        // Doff3 barcode
+        public byte[] Doff3Image
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(Doff3))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        Doff1, 400, 100);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
+        public string Doff4 { get; set; }
+        // Doff4 barcode
+        public byte[] Doff4Image
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(Doff3))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        Doff1, 400, 100);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
+
         #endregion
 
         #region Public Methods
@@ -254,6 +327,39 @@ namespace M3.Cord.Models
                 Items = new List<PalletSettingItem>();
             }
             Calculate();
+        }
+
+        public void BuildDoffs()
+        {
+            if (null != Items)
+            {
+                var doffs = Items.Select(x => x.DoffNo).Distinct().ToList();
+                doffs.Sort();
+                // Reset all doff
+                Doff1 = null;
+                Doff2 = null;
+                Doff3 = null;
+                Doff4 = null;
+                for (int i = 0; i > doffs.Count; ++i)
+                {
+                    if (i == 0)
+                    {
+                        Doff1 = i.ToString();
+                    }
+                    else if (i == 1)
+                    {
+                        Doff2 = i.ToString();
+                    }
+                    else if (i == 2)
+                    {
+                        Doff3 = i.ToString();
+                    }
+                    else if (i == 3)
+                    {
+                        Doff4 = i.ToString();
+                    }
+                }
+            }
         }
 
         #endregion

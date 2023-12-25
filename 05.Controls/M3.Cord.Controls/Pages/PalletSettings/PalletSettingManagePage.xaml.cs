@@ -79,6 +79,10 @@ namespace M3.Cord.Pages
             win.Setup();
             if (win.ShowDialog() == true && null != win.Pallet)
             {
+                // calculate find doff list
+                win.Pallet.Calculate();
+                win.Pallet.BuildDoffs();
+
                 // Show Print Preview
                 var page = M3CordApp.Pages.PalletSettingPreview;
                 var items = new List<PalletSetting>();
@@ -94,6 +98,10 @@ namespace M3.Cord.Pages
             var ctx = (null != button) ? button.DataContext : null;
             var item = (null != ctx) ? ctx as PalletSetting : null;
             if (null == item) return;
+            // Load item and calculate to find doff list
+            item.LoadItems();
+            item.Calculate();
+            item.BuildDoffs();
 
             // Show Print Preview
             var page = M3CordApp.Pages.PalletSettingPreview;
