@@ -7,8 +7,10 @@ M3 Cord Production System #789
 M3 Cord Production System #788
 - 
 
+[commited]
 M3 Cord Production System #787
-- 
+- M3.Cord.Production.App re-implements #577
+  - Fixed Ageing Condition Extend ItemYarn Text Width
 
 [commited]
 M3 Cord Production System #786
