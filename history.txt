@@ -10,8 +10,10 @@ M3 Cord Production System #788
 M3 Cord Production System #787
 - 
 
+[commited]
 M3 Cord Production System #786
-- 
+- M3.Cord.Production.App re-implements #576
+  - Fixed Ageing Condition Actual Spec = Spec Set
 
 [commited]
 M3 Cord Production System #785

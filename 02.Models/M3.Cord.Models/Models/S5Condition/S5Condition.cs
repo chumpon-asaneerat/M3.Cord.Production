@@ -356,6 +356,16 @@ namespace M3.Cord.Models
                 dst.UnitWeightSetErr = src.UnitWeightSetErr;
                 dst.UnitWeightSpec = src.UnitWeightSpec;
                 dst.UnitWeightSpecErr = src.UnitWeightSpecErr;
+
+                // Spec = Set
+                dst.MainSupplySteamPressureSpec = src.MainSupplySteamPressureSet;
+                dst.MainSupplySteamPressureSpecErr = src.MainSupplySteamPressureSetErr;
+                dst.AgeingSteamPressureSpec = src.AgeingSteamPressureSet;
+                dst.AgeingSteamPressureSpecErr = src.AgeingSteamPressureSetErr;
+                dst.SettingTemperatureSpec = src.SettingTemperatureSet;
+                dst.SettingTemperatureSpecErr = src.SettingTemperatureSetErr;
+                dst.SettingTimeSpec = src.SettingTemperatureSet;
+                dst.SettingTimeSpecErr = src.SettingTemperatureSetErr;
             }
         }
         /// <summary>
