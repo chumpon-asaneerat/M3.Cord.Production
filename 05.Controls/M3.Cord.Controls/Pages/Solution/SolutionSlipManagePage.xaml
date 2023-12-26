@@ -73,14 +73,14 @@
                         <!--  PRODUCT  -->
                         <ctrl:NComboBox x:Name="cbProducts"
                                         DockPanel.Dock="Left"
-                                        CaptionText="Item Code:"
+                                        CaptionText="Dip Item Code:"
                                         DisplayMemberPath="ProductCode"
                                         Width="300"
                                         SelectionChanged="cbProducts_SelectionChanged" />
                         <!--  CHEMICAL NAMES  -->
                         <ctrl:NComboBox x:Name="cbChemicals"
                                         DockPanel.Dock="Left"
-                                        CaptionText="Chemical Name:"
+                                        CaptionText="Solution Name:"
                                         DisplayMemberPath="SolutionName"
                                         Width="300"
                                         SelectionChanged="cbChemicals_SelectionChanged" />

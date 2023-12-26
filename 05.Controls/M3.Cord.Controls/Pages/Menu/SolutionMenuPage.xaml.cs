@@ -60,6 +60,10 @@ namespace M3.Cord.Pages
 
         private void cmdCreateSolutionLot_Click(object sender, RoutedEventArgs e)
         {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Pallet Setting
             var page = M3CordApp.Pages.CreateRecipe;
             page.Setup();
             PageContentManager.Instance.Current = page;

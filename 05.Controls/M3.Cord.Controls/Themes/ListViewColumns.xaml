@@ -617,4 +617,35 @@
                       Width="50" />
         </StackPanel>
     </DataTemplate>
+    
+    <!-- -->
+    <DataTemplate x:Key="RecipeView">
+        <TextBlock Text="{Binding Path=RecipeView, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="ChemicalName">
+        <TextBlock Text="{Binding Path=ChemicalName, Mode=OneWay}"
+                   TextAlignment="Left"
+                   MinWidth="250" />
+    </DataTemplate>
+    <DataTemplate x:Key="ChemWet">
+        <TextBlock Text="{Binding Path=ChemWet, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Right"
+                   Width="120" />
+    </DataTemplate>
+    <DataTemplate x:Key="ChemDry">
+        <TextBlock Text="{Binding Path=ChemDry, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Right"
+                   Width="120" />
+    </DataTemplate>
+    <DataTemplate x:Key="CalculationWet">
+        <TextBlock Text="{Binding Path=CalculationWet, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Right"
+                   Width="120" />
+    </DataTemplate>
+    
 </ResourceDictionary>

@@ -19,40 +19,32 @@ using Newtonsoft.Json;
 
 namespace M3.Cord.Models
 {
-    public class SolutionRecipe : NInpc
+    public class SolutionLotDetail : NInpc
     {
         #region Public Properties
-
-        public int SolutionId { get; set; }
-        public int ProductId { get; set; }
-
-        //ใน stored update ใหม่เหมือนเปลี่ยนชื่อเป็น DIPProductCode
-        public string ProductCode { get; set; }
-
-        public string SolutionName { get; set; }
-
-        public string Recipe1 { get; set; }
-        public string Recipe2 { get; set; }
-        public string Recipe3 { get; set; }
-        public string Recipe4 { get; set; }
-
-        public string Remark { get; set; }
-        public decimal? QtySpec { get; set; }
-
-        //New 25/12/23
-        public string DIPProductCode { get; set; }
-
-        public string Compound { get; set; }
+        public string SolutionLot { get; set; }
+        public int? SolutionID { get; set; }
+        public int? RecipeOrder { get; set; }
+        public string Recipe { get; set; }
+        public int? MixOrder { get; set; }
+        public string ChemicalNo { get; set; }
+        public decimal? WeightCal { get; set; }
+        public decimal? WeightActual { get; set; }
+        public string WeightMc { get; set; }
+        public DateTime? WeightDate { get; set; }
+        public int? WeightBy { get; set; }
+        public string Column1 { get; set; }
+        public string ChemicalType { get; set; }
 
         #endregion
 
         #region Static Methods
 
-        public static NDbResult<List<SolutionRecipe>> Gets(string productcode = null)
+        public static NDbResult<List<SolutionLotDetail>> Gets(string solutionlot = null)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
-            NDbResult<List<SolutionRecipe>> rets = new NDbResult<List<SolutionRecipe>>();
+            NDbResult<List<SolutionLotDetail>> rets = new NDbResult<List<SolutionLotDetail>>();
 
             IDbConnection cnn = DbServer.Instance.Db;
             if (null == cnn || !DbServer.Instance.Connected)
@@ -67,11 +59,11 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@productcode", productcode);
+            p.Add("@solutionlot", solutionlot);
 
             try
             {
-                var items = cnn.Query<SolutionRecipe>("ChGetSolutionByItem", p,
+                var items = cnn.Query<SolutionLotDetail>("ChGetSolutionLotDetail", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);
@@ -87,7 +79,7 @@ namespace M3.Cord.Models
             if (null == rets.data)
             {
                 // create empty list.
-                rets.data = new List<SolutionRecipe>();
+                rets.data = new List<SolutionLotDetail>();
             }
 
             return rets;

@@ -73,7 +73,7 @@
                         <!--  QUANTITY  -->
                         <ctrl:NTextBox x:Name="txtQty"
                                        CaptionText="Dip Solution Qty (lites)"
-                                       Width="260" />
+                                       Width="260" PreviewKeyDown="txtQty_PreviewKeyDown" />
                     </StackPanel>
                     <Grid />
                 </DockPanel>
@@ -88,11 +88,11 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Solution" CellTemplate="{StaticResource SolutionLot}" Width="100"/>
-                        <GridViewColumn Header="Chemical (SC)" CellTemplate="{StaticResource ChemicalName}" Width="250"/>
-                        <GridViewColumn Header="Wet" CellTemplate="{StaticResource ChemWet}" Width="100"/>
-                        <GridViewColumn Header="Dry" CellTemplate="{StaticResource ChemDry}" Width="100"/>
-                        <GridViewColumn Header="Calculation Wet" CellTemplate="{StaticResource weightactual}" Width="150"/>
+                        <GridViewColumn Header="Solution" CellTemplate="{StaticResource RecipeView}" Width="100"/>
+                        <GridViewColumn Header="Chemical (SC)" CellTemplate="{StaticResource ChemicalName}" Width="280"/>
+                        <GridViewColumn Header="Wet" CellTemplate="{StaticResource ChemWet}" Width="150"/>
+                        <GridViewColumn Header="Dry" CellTemplate="{StaticResource ChemDry}" Width="150"/>
+                        <GridViewColumn Header="Calculation Wet" CellTemplate="{StaticResource CalculationWet}" Width="150"/>
                     </GridView>
                 </ListView.View>
             </ListView>
