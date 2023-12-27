@@ -46,6 +46,7 @@ namespace M3.Cord.Pages
         private List<Product> products = null;
         private List<SolutionRecipe> chemicals = null;
         private SolutionLotLabel item = null;
+        private SolutionRecipeDetailSpec itemDetail = null;
 
         #endregion
 
@@ -72,7 +73,127 @@ namespace M3.Cord.Pages
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
-           
+            item = new SolutionLotLabel();
+            string solutionLot = string.Empty;
+
+            #region Check Input
+
+            if (string.IsNullOrEmpty(txtSolutionLotNo.Text))
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("Please Enter Lot No.");
+                win.ShowDialog();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtQty.Text))
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("Please Enter QTY.");
+                win.ShowDialog();
+                return;
+            }
+            decimal val;
+            if (!decimal.TryParse(txtQty.Text, out val))
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("Please QTY must be number only.");
+                win.ShowDialog();
+                return;
+            }
+            if (cbProducts.SelectedItem == null)
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("Please Select Item.");
+                win.ShowDialog();
+                return;
+            }
+            if (cbChemicals.SelectedItem == null)
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("Please Select Chemical.");
+                win.ShowDialog();
+                return;
+            }
+
+            var product = cbProducts.SelectedItem as Product;
+            var chemical = cbChemicals.SelectedItem as SolutionRecipe;
+
+            #endregion
+
+            item.SolutionLot = txtSolutionLotNo.Text;
+
+            if (!string.IsNullOrEmpty(item.SolutionLot))
+                solutionLot = item.SolutionLot;
+
+            item.ProductCode = product.ProductCode;
+            item.SolutionId = chemical.SolutionId;
+            item.SolutionName = chemical.SolutionName;
+            item.DipSolutionQty = val;
+            item.CreateBy = M3CordApp.Current.User.UserId;
+            item.CreateDate = DateTime.Now;
+
+            var ret = SolutionLotLabel.Save(item);
+
+            if (!ret.HasError)
+            {
+                if (grid.ItemsSource != null)
+                {
+                    bool? chkErr = false;
+                    SaveSolutionLotDetail d = new SaveSolutionLotDetail();
+                    var detail = grid.ItemsSource as List<SolutionRecipeDetailSpec>;
+                    
+                    foreach (var itemD in detail)
+                    {
+                        if (!string.IsNullOrEmpty(itemD.Recipe))
+                        {
+                            d = new SaveSolutionLotDetail();
+
+                            //d.solutionlot = itemD.SolutionLot;
+                            d.solutionlot = solutionLot;
+                            d.recipe = itemD.Recipe;
+                            d.chemicalno = itemD.ChemicalNo;
+
+                            d.solutionid = itemD.SolutionID;
+                            d.recipeorder = itemD.RecipeOrder;
+                            d.mixorder = itemD.MixOrder;
+                            
+                            //d.weightcal = itemD.weightcal;
+                            //d.weightactual = itemD.weightactual;
+                            //d.weightmc = itemD.weightmc;
+                            //d.weightdate = itemD.weightdate;
+                            //d.weightby = itemD.weightby;
+
+                            var retD = SaveSolutionLotDetail.Save(d);
+
+                            if (retD.HasError)
+                            {
+                                chkErr = true;
+                                //break;
+                            }
+                        }
+                    }
+
+                    if (chkErr == false)
+                    {
+                        this.InvokeAction(() =>
+                        {
+                            item = null;
+                            RefreshGrid();
+                            ClearInputs();
+                        });
+                    }
+                }
+                else
+                {
+                    this.InvokeAction(() =>
+                    {
+                        item = null;
+                        RefreshGrid();
+                        ClearInputs();
+                    });
+                }
+            }
+
         }
 
         #endregion
@@ -88,18 +209,38 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void txtQty_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                RefreshGrid();
+                e.Handled = true;
+            }
+        }
+
         #endregion
 
         #region Combobox Handlers
 
         private void cbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            LoadChemicals();
         }
 
         private void cbChemicals_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (cbChemicals.SelectedItem != null)
+            {
+                var chemical = cbChemicals.SelectedItem as SolutionRecipe;
+                if (chemical != null)
+                    txtCompound.Text = chemical.Compound;
+                else
+                    txtCompound.Text = string.Empty;
+            }
+            else
+            {
+                txtCompound.Text = string.Empty;
+            }
         }
 
         #endregion
@@ -108,10 +249,10 @@ namespace M3.Cord.Pages
 
         private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //if (null == grid.ItemsSource) 
-            //    return;
+            if (null == grid.ItemsSource)
+                return;
 
-            //item = grid.SelectedItem as SolutionLotLabel;
+            itemDetail = grid.SelectedItem as SolutionRecipeDetailSpec;
             //UpdateUI();
         }
 
@@ -131,16 +272,17 @@ namespace M3.Cord.Pages
             cbProducts.SelectedIndex = -1;
             cbChemicals.SelectedIndex = -1;
 
-            this.InvokeAction(() =>
-            {
-                DisableInputs();
-            });
+            //this.InvokeAction(() =>
+            //{
+            //    DisableInputs();
+            //});
         }
 
         private void DisableInputs()
         {
+            txtCompound.IsReadOnly = true;
             txtQty.IsReadOnly = true;
-            txtCompound.IsEnabled = false;
+            
 
             cbProducts.IsEnabled = false;
             cbChemicals.IsEnabled = false;
@@ -148,9 +290,8 @@ namespace M3.Cord.Pages
 
         private void EnableInputs()
         {
+            //txtCompound.IsReadOnly = true;
             txtQty.IsReadOnly = false;
-
-            txtCompound.IsEnabled = true;
 
             cbProducts.IsEnabled = true;
             cbChemicals.IsEnabled = true;
@@ -224,16 +365,46 @@ namespace M3.Cord.Pages
 
         private void RefreshGrid()
         {
-            grid.ItemsSource = null;
-            string lotNo = txtSolutionLotNo.Text;
-            grid.ItemsSource = SolutionLotLabel.Gets(lotNo).Value();
+            System.Reflection.MethodBase med = System.Reflection.MethodBase.GetCurrentMethod();
+
+            try
+            {
+                grid.ItemsSource = null;
+                int? solutionid = null;
+                string recipe1 = null;
+                string recipe2 = null;
+                string recipe3 = null;
+                string recipe4 = null;
+                decimal? qty = null;
+
+                if (!string.IsNullOrEmpty(txtSolutionLotNo.Text))
+                    solutionid = int.Parse(txtSolutionLotNo.Text);
+
+                var chemical = cbChemicals.SelectedItem as SolutionRecipe;
+                if (chemical != null)
+                {
+                    recipe1 = (null != chemical) ? chemical.Recipe1 : null;
+                    recipe2 = (null != chemical) ? chemical.Recipe2 : null;
+                    recipe3 = (null != chemical) ? chemical.Recipe3 : null;
+                    recipe4 = (null != chemical) ? chemical.Recipe4 : null;
+                }
+
+                if (!string.IsNullOrEmpty(txtQty.Text))
+                    qty = decimal.Parse(txtQty.Text);
+
+                grid.ItemsSource = SolutionRecipeDetailSpec.Gets(solutionid, recipe1, recipe2, recipe3, recipe4 ,qty).Value();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
         }
 
         #endregion
 
         #region Public Methods
 
-        public void Setup(SolutionLotLabel value = null)
+        public void Setup(SolutionLotLabel value = null, SolutionRecipeDetailSpec valueDetail = null)
         {
             LoadProducts();
             if (null == value)
@@ -243,6 +414,10 @@ namespace M3.Cord.Pages
             else
             {
                 item = value;
+
+                if(null != valueDetail)
+                itemDetail = valueDetail;
+
                 this.InvokeAction(() =>
                 {
                     UpdateUI();
@@ -252,5 +427,6 @@ namespace M3.Cord.Pages
         }
 
         #endregion
+
     }
 }
