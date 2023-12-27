@@ -22,6 +22,13 @@ namespace M3.Cord.Models
     public class SolutionLotDetail : NInpc
     {
         #region Public Properties
+
+        public SolidColorBrush TextColor
+        {
+            get { return ModelConsts.BlackColor; }
+            set { }
+        }
+
         public string SolutionLot { get; set; }
         public int? SolutionID { get; set; }
         public int? RecipeOrder { get; set; }

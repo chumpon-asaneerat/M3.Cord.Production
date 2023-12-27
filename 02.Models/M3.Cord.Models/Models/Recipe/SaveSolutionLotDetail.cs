@@ -23,6 +23,12 @@ namespace M3.Cord.Models
     {
         #region Public Proeprties
 
+        public SolidColorBrush TextColor
+        {
+            get { return ModelConsts.BlackColor; }
+            set { }
+        }
+
         public string solutionlot { get; set; }
         public int? solutionid { get; set; }
         public int? recipeorder { get; set; }

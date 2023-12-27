@@ -1,8 +1,10 @@
 M3 Cord Production System #800
 - 
 
+[commited]
 M3 Cord Production System #799
-- 
+- M3.Cord.Production.App re-implements #588
+  - Fixed Solution - CreateRecipePage 
 
 [commited]
 M3 Cord Production System #798

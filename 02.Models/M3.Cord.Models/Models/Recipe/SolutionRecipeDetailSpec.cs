@@ -22,6 +22,13 @@ namespace M3.Cord.Models
     public class SolutionRecipeDetailSpec : NInpc
     {
         #region Public Properties
+
+        public SolidColorBrush TextColor
+        {
+            get { return ModelConsts.BlackColor; }
+            set { }
+        }
+
         public int? SolutionID { get; set; }
         public string Recipe { get; set; }
         public int? MixOrder { get; set; }
