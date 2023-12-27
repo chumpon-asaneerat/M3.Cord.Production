@@ -41,6 +41,20 @@
                    MinWidth="150" />
     </DataTemplate>
 
+    <DataTemplate x:Key="RequestNo">
+        <TextBlock Text="{Binding Path=RequestNo, Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Left"
+                   Width="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="WHReceiveDate">
+        <TextBlock Text="{Binding Path=WHReceiveDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Left"
+                   Width="150" />
+    </DataTemplate>
+
     <DataTemplate x:Key="TraceNo">
         <TextBlock Text="{Binding Path=TraceNo, Mode=OneWay}"
                    Foreground="{Binding TextColor}"

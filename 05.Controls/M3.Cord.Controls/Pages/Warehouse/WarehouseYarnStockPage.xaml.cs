@@ -62,6 +62,11 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
+        private void cmdSearch_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
         #endregion
 
         #region Combobox Handlers
@@ -96,8 +101,10 @@ namespace M3.Cord.Pages
                 cbItemYanrs.SelectedItem as CordItemYarn : null;
 
             string sItemYarn = (null != itemYarn) ? itemYarn.ItemYarn : null;
+            string requestNo = !string.IsNullOrWhiteSpace(txtRequsetNo.Text) ? txtRequsetNo.Text.Trim() : null;
+            DateTime? whReceiveDate = dtWHReceiveDate.SelectedDate;
 
-            WarehouseStockYarnService.Instance.LoadStockYarns(sItemYarn);
+            WarehouseStockYarnService.Instance.LoadStockYarns(sItemYarn, requestNo, whReceiveDate);
 
             grid.ItemsSource = WarehouseStockYarnService.Instance.IssueItems;
         }
@@ -116,5 +123,10 @@ namespace M3.Cord.Pages
         }
 
         #endregion
+
+        private void txtRequsetNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

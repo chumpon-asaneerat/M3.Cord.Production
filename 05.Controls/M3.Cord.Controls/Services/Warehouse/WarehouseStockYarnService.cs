@@ -91,11 +91,11 @@ namespace M3.Cord
             CalcTotals();
         }
 
-        public void LoadStockYarns(string itemYarn)
+        public void LoadStockYarns(string itemYarn, string requestNo, DateTime? whReceiveDate)
         {
             Clear();
 
-            items = WarehouseCordYarn.SearchStockYarns(itemYarn).Value();
+            items = WarehouseCordYarn.SearchStockYarns(itemYarn, requestNo, whReceiveDate).Value();
             CalcTotals();
         }
 

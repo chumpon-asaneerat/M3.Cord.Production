@@ -28,6 +28,8 @@ namespace M3.Cord.Models
         public DateTime? ReceiveDate { get; set; } = new DateTime?();
         public int? ReceiveBy { get; set; } = new int?();
 
+        public string RequestNo { get; set; }
+
         public string PalletNo { get; set; }
         public string TraceNo { get; set; }
         public string LotNo { get; set; }
@@ -135,7 +137,7 @@ namespace M3.Cord.Models
         }
 
         public static NDbResult<List<WarehouseCordYarn>> SearchStockYarns(
-            string itemYarn)
+            string itemYarn, string requestNo, DateTime? whReceiveDate)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -155,6 +157,8 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@ItemYarn", itemYarn);
+            p.Add("@RequestNo", requestNo);
+            p.Add("@WHReceiveDate", whReceiveDate);
 
             try
             {

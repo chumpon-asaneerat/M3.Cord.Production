@@ -13,12 +13,14 @@ M3 Cord Production System #797
 M3 Cord Production System #796
 - 
 
+[commited]
 M3 Cord Production System #795
-- 
+- M3.Cord.Production.App re-implements #585
+  - Update Warehouse Yarn Stock Page - supports search RequestNo, WHReceiveDate
 
 [commited]
 M3 Cord Production System #794
-- M3.Cord.Production.App re-implements #583
+- M3.Cord.Production.App re-implements #584
   - Update G4 Receive Raw Material #2
 
 [commited]
