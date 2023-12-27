@@ -446,10 +446,6 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.SolutionSlipPreviewPage>(); }
             }
 
-            #endregion
-
-            #region Recipe
-
             public static Cord.Pages.CreateRecipePage CreateRecipe
             {
                 get { return GetPage<Cord.Pages.CreateRecipePage>(); }
@@ -629,6 +625,15 @@ namespace M3.Cord
             public static CreateDIPSlipWindow CreateDIPSlip
             {
                 get { return GetWindow<CreateDIPSlipWindow>(); }
+            }
+
+            #endregion
+
+            #region Solution
+
+            public static SolutionWeightWindow SolutionWeight
+            {
+                get { return GetWindow<SolutionWeightWindow>(); }
             }
 
             #endregion

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 
 using NLib.Services;
 using M3.Cord.Models;
@@ -73,8 +74,18 @@ namespace M3.Cord.Pages
         {
             var btn = sender as Button;
             if (null == btn) return;
-            var item = btn.DataContext as SolutionLotLabel;
+            var item = btn.DataContext as SolutionLotDetail;
             if (null == item) return;
+
+            var win = M3CordApp.Windows.SolutionWeight;
+            win.Setup(item);
+            if (win.ShowDialog() == true)
+            {
+                if (win.Item != null)
+                {
+                    // do something....
+                }
+            }
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
@@ -242,7 +253,7 @@ namespace M3.Cord.Pages
 
         private void LoadSolutionLotLabel(string solutionlot)
         {
-            System.Reflection.MethodBase med = System.Reflection.MethodBase.GetCurrentMethod();
+            MethodBase med = MethodBase.GetCurrentMethod();
 
             try
             {

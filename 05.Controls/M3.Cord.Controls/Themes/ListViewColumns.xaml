@@ -632,7 +632,7 @@
         </StackPanel>
     </DataTemplate>
 
-    <!--    -->
+    <!--  SOLUTION RECIPE  -->
     <DataTemplate x:Key="RecipeView">
         <TextBlock Text="{Binding Path=RecipeView, Mode=OneWay}"
                    TextAlignment="Center"

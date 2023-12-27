@@ -55,6 +55,8 @@ namespace M3.Cord.Models
             set { }
         }
 
+        public string RecipeView { get; set; }
+
         #endregion
 
         #region Static Methods
