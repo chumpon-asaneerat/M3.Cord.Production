@@ -45,6 +45,12 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Internal Variables
+
+        List<CordItemYarn> itemYarns = null;
+
+        #endregion
+
         #region Loaded/Unloaded
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -149,7 +155,8 @@ namespace M3.Cord.Pages
         {
             this.InvokeAction(() =>
             {
-                RefreshGrid();
+                ReceivedTraceNo();
+                //RefreshGrid();
             });
         }
 
@@ -161,14 +168,21 @@ namespace M3.Cord.Pages
         {
             string traceNo = txtTraceNo.Text.Trim();
 
-            if (G4ReceiveYarnService.Instance.IsExist(traceNo))
+            if (string.IsNullOrWhiteSpace(traceNo)) 
+                return;
+
+            int idx = cbItemYanrs.SelectedIndex;
+            CordItemYarn yarn = (idx != -1) ? itemYarns[idx] : null;
+            string itemYarn = (null != yarn) ? yarn.ItemYarn : null;
+
+            if (G4ReceiveYarnService.Instance.IsExist(traceNo, itemYarn))
             {
                 // duplicate.
                 txtTraceNo.Text = string.Empty;
                 return;
             }
 
-            var item = G4ReceiveYarnService.Instance.SerachByTranceNo(traceNo);
+            var item = G4ReceiveYarnService.Instance.SerachByTranceNo(traceNo, itemYarn);
             if (null != item)
             {
                 // set expired date
@@ -234,7 +248,7 @@ namespace M3.Cord.Pages
         {
             cbItemYanrs.ItemsSource = null;
 
-            var itemYarns = CordItemYarn.Gets().Value();
+            itemYarns = CordItemYarn.Gets().Value();
             cbItemYanrs.ItemsSource = itemYarns;
 
             this.InvokeAction(() =>
@@ -243,7 +257,7 @@ namespace M3.Cord.Pages
             });
         }
 
-        public void RefreshGrid()
+        public void RefreshGrid(CordItemYarn yarn = null)
         {
             grid.ItemsSource = null;
             grid.ItemsSource = G4ReceiveYarnService.Instance.Receives;

@@ -125,14 +125,18 @@ namespace M3.Cord
         /// Check is trace no is already exist in current receive list.
         /// </summary>
         /// <param name="tranceNo">The Trace No.</param>
+        /// <param name="itemYarn">The Item Yarn.</param>
         /// <returns>Returns true if the trace no is in current receive list.</returns>
-        public bool IsExist(string traceNo)
+        public bool IsExist(string traceNo, string itemYarn)
         {
             if (null == _receives) Clear();
             int idx = -1;
             lock (this)
             {
-                idx = _receives.FindIndex(oitem => { return oitem.TraceNo.Trim() == traceNo; });
+                idx = _receives.FindIndex(oitem => 
+                { 
+                    return (oitem.TraceNo.Trim() == traceNo && oitem.ItemYarn.Trim() == itemYarn); 
+                });
             }
             return (idx != -1);
         }
@@ -140,10 +144,11 @@ namespace M3.Cord
         /// Gets G4Yarn by Trace No.
         /// </summary>
         /// <param name="tranceNo">The Trace No.</param>
+        /// <param name="itemYarn">The Item Yarn.</param>
         /// <returns>Returns match item if not found returns null.</returns>
-        public G4Yarn SerachByTranceNo(string tranceNo)
+        public G4Yarn SerachByTranceNo(string tranceNo, string itemYarn)
         {
-            var ret = G4Yarn.Get(tranceNo).Value();
+            var ret = G4Yarn.Get(tranceNo, itemYarn).Value();
             return ret;
         }
         /// <summary>

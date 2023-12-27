@@ -461,7 +461,7 @@ namespace M3.Cord.Models
         /// Get by Trace No.
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<G4Yarn> Get(string traceNo)
+        public static NDbResult<G4Yarn> Get(string traceNo, string itemYarn)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -481,6 +481,7 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@TraceNo", traceNo);
+            p.Add("@ItemYarn", itemYarn);
 
             try
             {
