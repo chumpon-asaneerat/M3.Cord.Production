@@ -1,9 +1,41 @@
-M3 Cord Production System #800
+M3 Cord Production System #810
+- 
+
+M3 Cord Production System #809
+- 
+
+M3 Cord Production System #808
+- 
+
+M3 Cord Production System #807
+- 
+
+M3 Cord Production System #806
+- 
+
+M3 Cord Production System #805
+- 
+
+M3 Cord Production System #804
+- 
+
+M3 Cord Production System #803
+- 
+
+M3 Cord Production System #802
+- 
+
+M3 Cord Production System #801
 - 
 
 [commited]
+M3 Cord Production System #800
+- M3.Cord.Production.App re-implements #590
+  - Fixed Solution -  RecordActualWeightPage
+
+[commited]
 M3 Cord Production System #799
-- M3.Cord.Production.App re-implements #588
+- M3.Cord.Production.App re-implements #589
   - Fixed Solution - CreateRecipePage 
 
 [commited]

@@ -69,6 +69,14 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoSolutionMenu();
         }
 
+        private void cmdWeight_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            if (null == btn) return;
+            var item = btn.DataContext as SolutionLotLabel;
+            if (null == item) return;
+        }
+
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
             item = new SolutionLotLabel();
@@ -277,6 +285,5 @@ namespace M3.Cord.Pages
         }
 
         #endregion
-
     }
 }

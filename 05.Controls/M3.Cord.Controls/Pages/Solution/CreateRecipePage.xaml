@@ -21,11 +21,11 @@
                             VerticalAlignment="Center">
                     <!--  HOME  -->
                     <ctrl:FontAwesomeButton x:Name="cmdSave"
-                                                Click="cmdSave_Click"
-                                                DockPanel.Dock="Left"
-                                                Margin="5,0,0,0"
-                                                IconType="Save"
-                                                Text="Save" />
+                                            Click="cmdSave_Click"
+                                            DockPanel.Dock="Left"
+                                            Margin="5,0,0,0"
+                                            IconType="Save"
+                                            Text="Save" />
 
                     <!--  HOME  -->
                     <ctrl:FontAwesomeButton x:Name="cmdHome"
@@ -69,11 +69,12 @@
                         <!--  SOLUTION LOT NO  -->
                         <ctrl:NTextBox x:Name="txtCompound"
                                        CaptionText="Compound"
-                                       Width="200"/>
+                                       Width="200" />
                         <!--  QUANTITY  -->
                         <ctrl:NTextBox x:Name="txtQty"
                                        CaptionText="Dip Solution Qty (lites)"
-                                       Width="260" PreviewKeyDown="txtQty_PreviewKeyDown" />
+                                       Width="260"
+                                       PreviewKeyDown="txtQty_PreviewKeyDown" />
                     </StackPanel>
                     <Grid />
                 </DockPanel>
@@ -88,11 +89,21 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Solution" CellTemplate="{StaticResource RecipeView}" Width="100"/>
-                        <GridViewColumn Header="Chemical (SC)" CellTemplate="{StaticResource ChemicalName}" Width="280"/>
-                        <GridViewColumn Header="Wet" CellTemplate="{StaticResource ChemWet}" Width="150"/>
-                        <GridViewColumn Header="Dry" CellTemplate="{StaticResource ChemDry}" Width="150"/>
-                        <GridViewColumn Header="Calculation Wet" CellTemplate="{StaticResource CalculationWet}" Width="150"/>
+                        <GridViewColumn Header="Solution"
+                                        CellTemplate="{StaticResource RecipeView}"
+                                        Width="100" />
+                        <GridViewColumn Header="Chemical (SC)"
+                                        CellTemplate="{StaticResource ChemicalName}"
+                                        Width="280" />
+                        <GridViewColumn Header="Wet"
+                                        CellTemplate="{StaticResource ChemWet}"
+                                        Width="150" />
+                        <GridViewColumn Header="Dry"
+                                        CellTemplate="{StaticResource ChemDry}"
+                                        Width="150" />
+                        <GridViewColumn Header="Calculation Wet"
+                                        CellTemplate="{StaticResource CalculationWet}"
+                                        Width="150" />
                     </GridView>
                 </ListView.View>
             </ListView>

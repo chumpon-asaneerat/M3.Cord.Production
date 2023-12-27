@@ -14,6 +14,7 @@ using NLib.Models;
 
 using Dapper;
 using Newtonsoft.Json;
+using System.Windows;
 
 #endregion
 
@@ -42,6 +43,17 @@ namespace M3.Cord.Models
         public int? WeightBy { get; set; }
         public string ChemicalName { get; set; }
         public string ChemicalType { get; set; }
+
+        // runtime properties
+        public Visibility ShowWeightButton
+        {
+            get 
+            {
+                bool isTypeC = (!string.IsNullOrWhiteSpace(ChemicalType) && ChemicalType == "C");
+                return (isTypeC) ? Visibility.Visible : Visibility.Hidden; 
+            }
+            set { }
+        }
 
         #endregion
 

@@ -209,7 +209,7 @@
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
-    <Compile Include="Pages\CreateRecipe\CreateRecipePage.xaml.cs">
+    <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
       <DependentUpon>CreateRecipePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\DIP\DIPMCPage.xaml.cs">
@@ -291,7 +291,7 @@
     <Compile Include="Pages\Menu\SolutionMenuPage.xaml.cs">
       <DependentUpon>SolutionMenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RecordActualWeight\RecordActualWeightPage.xaml.cs">
+    <Compile Include="Pages\Solution\RecordActualWeightPage.xaml.cs">
       <DependentUpon>RecordActualWeightPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Solution\SolutionSlipPreviewPage.xaml.cs">
@@ -666,7 +666,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CreateRecipe\CreateRecipePage.xaml">
+    <Page Include="Pages\Solution\CreateRecipePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -814,7 +814,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\RecordActualWeight\RecordActualWeightPage.xaml">
+    <Page Include="Pages\Solution\RecordActualWeightPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

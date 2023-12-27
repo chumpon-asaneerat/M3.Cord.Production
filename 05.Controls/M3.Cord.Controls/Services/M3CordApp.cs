@@ -449,9 +449,15 @@ namespace M3.Cord
             #endregion
 
             #region Recipe
+
             public static Cord.Pages.CreateRecipePage CreateRecipe
             {
                 get { return GetPage<Cord.Pages.CreateRecipePage>(); }
+            }
+
+            public static Cord.Pages.RecordActualWeightPage RecordActualWeight
+            {
+                get { return GetPage<Cord.Pages.RecordActualWeightPage>(); }
             }
 
             #endregion
