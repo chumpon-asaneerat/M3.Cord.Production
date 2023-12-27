@@ -359,9 +359,7 @@
     <EmbeddedResource Include="Reports\DIPPalletSlipA6.rdlc" />
     <EmbeddedResource Include="Reports\PalletSetting.rdlc" />
     <EmbeddedResource Include="Reports\DIPPalletSlipA5.rdlc" />
-    <EmbeddedResource Include="Reports\PalletSettingA4.rdlc">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PalletSettingA4.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA6.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA5.rdlc" />
     <EmbeddedResource Include="Reports\S4x2Condition.rdlc" />
