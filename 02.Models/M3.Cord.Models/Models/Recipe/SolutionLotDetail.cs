@@ -33,7 +33,7 @@ namespace M3.Cord.Models
         public string WeightMc { get; set; }
         public DateTime? WeightDate { get; set; }
         public int? WeightBy { get; set; }
-        public string Column1 { get; set; }
+        public string ChemicalName { get; set; }
         public string ChemicalType { get; set; }
 
         #endregion

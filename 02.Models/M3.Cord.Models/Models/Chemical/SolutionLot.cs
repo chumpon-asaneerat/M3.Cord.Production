@@ -96,6 +96,7 @@ namespace M3.Cord.Models
 
         public string ProductCode { get; set; }
         public string SolutionName { get; set; }
+        public string Compound { get; set; }
 
         public SolidColorBrush TextColor { get { return BlackColor; } set { } }
 
