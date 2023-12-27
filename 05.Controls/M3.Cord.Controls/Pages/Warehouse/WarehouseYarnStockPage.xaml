@@ -61,8 +61,8 @@
                             Width="150"
                             VerticalAlignment="Bottom"
                             Margin="5,2"
-                            Style="{StaticResource InlineButton}" 
-                            Click="cmdSearch_Click"/>
+                            Style="{StaticResource InlineButton}"
+                            Click="cmdSearch_Click" />
                     <Grid />
                 </DockPanel>
             </DockPanel>
