@@ -67,6 +67,13 @@
                                    WatermarkText="Scan Trace No"
                                    Width="300"
                                    PreviewKeyDown="txtTraceNo_PreviewKeyDown" />
+                    <!--  ITEM YARN  -->
+                    <ctrl:NComboBox x:Name="cbItemYanrs"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Item Yarn:"
+                                    DisplayMemberPath="ItemYarn"
+                                    Width="250"
+                                    SelectionChanged="cbItemYanrs_SelectionChanged" />
                     <Grid />
                 </DockPanel>
             </DockPanel>

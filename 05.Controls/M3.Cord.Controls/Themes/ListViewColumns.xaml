@@ -617,8 +617,8 @@
                       Width="50" />
         </StackPanel>
     </DataTemplate>
-    
-    <!-- -->
+
+    <!--    -->
     <DataTemplate x:Key="RecipeView">
         <TextBlock Text="{Binding Path=RecipeView, Mode=OneWay}"
                    TextAlignment="Center"
@@ -647,5 +647,5 @@
                    TextAlignment="Right"
                    Width="120" />
     </DataTemplate>
-    
+
 </ResourceDictionary>

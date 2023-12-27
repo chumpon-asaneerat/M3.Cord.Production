@@ -143,6 +143,18 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region Combobox Handlers
+
+        private void cbItemYanrs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.InvokeAction(() =>
+            {
+                RefreshGrid();
+            });
+        }
+
+        #endregion
+
         #region Private Methods
 
         private void ReceivedTraceNo()
@@ -218,6 +230,19 @@ namespace M3.Cord.Pages
             RefreshGrid();
         }
 
+        private void LoadComboBoxes()
+        {
+            cbItemYanrs.ItemsSource = null;
+
+            var itemYarns = CordItemYarn.Gets().Value();
+            cbItemYanrs.ItemsSource = itemYarns;
+
+            this.InvokeAction(() =>
+            {
+                if (null != itemYarns && itemYarns.Count > 0) cbItemYanrs.SelectedIndex = 0;
+            });
+        }
+
         public void RefreshGrid()
         {
             grid.ItemsSource = null;
@@ -233,6 +258,8 @@ namespace M3.Cord.Pages
         /// </summary>
         public void Setup()
         {
+            // init combobox
+            LoadComboBoxes();
             // Set data context for show total(s).
             this.DataContext = G4ReceiveYarnService.Instance;
             G4ReceiveYarnService.Instance.Clear();

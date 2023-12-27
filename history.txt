@@ -19,8 +19,10 @@ M3 Cord Production System #795
 M3 Cord Production System #794
 - 
 
+[commited]
 M3 Cord Production System #793
-- 
+- M3.Cord.Production.App re-implements #583
+  - Update G4 Receive Raw Material #1 
 
 [commited]
 M3 Cord Production System #792
