@@ -4,11 +4,14 @@ M3 Cord Production System #800
 M3 Cord Production System #799
 - 
 
+[commited]
 M3 Cord Production System #798
-- 
+- M3.Cord.Production.App re-implements #588
 
+[commited]
 M3 Cord Production System #797
-- 
+- M3.Cord.Production.App re-implements #587
+  - Merge from kik
 
 [commited]
 M3 Cord Production System #796
