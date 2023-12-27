@@ -19,13 +19,6 @@
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Right"
                             VerticalAlignment="Center">
-                    <!--  HOME  -->
-                    <ctrl:FontAwesomeButton x:Name="cmdSave"
-                                            Click="cmdSave_Click"
-                                            DockPanel.Dock="Left"
-                                            Margin="5,0,0,0"
-                                            IconType="Save"
-                                            Text="Save" />
 
                     <!--  HOME  -->
                     <ctrl:FontAwesomeButton x:Name="cmdHome"
@@ -71,6 +64,14 @@
                         <ctrl:NTextBox x:Name="txtQty"
                                        CaptionText="Dip Solution Qty (lites)"
                                        Width="260" />
+                        <Button x:Name="cmdSearch"
+                            Content="Search"
+                            DockPanel.Dock="Left"
+                            Width="150"
+                            VerticalAlignment="Bottom"
+                            Margin="5,2"
+                            Style="{StaticResource InlineButton}"
+                            Click="cmdSearch_Click" />
                     </StackPanel>
                     <Grid />
                 </DockPanel>

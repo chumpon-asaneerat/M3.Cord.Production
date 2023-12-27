@@ -70,6 +70,14 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoSolutionMenu();
         }
 
+        private void cmdSearch_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtSolutionLotNo.Text))
+            {
+                LoadSolutionLotLabel(txtSolutionLotNo.Text);
+            }
+        }
+
         private void cmdWeight_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
@@ -83,111 +91,17 @@ namespace M3.Cord.Pages
             {
                 if (win.Item != null)
                 {
+                    if(win.DialogResult == true)
+                    {
+                        if (!string.IsNullOrEmpty(txtSolutionLotNo.Text))
+                        {
+                            grid.ItemsSource = SolutionLotDetail.Gets(txtSolutionLotNo.Text).Value();
+                        }
+                    }
+                    
                     // do something....
                 }
             }
-        }
-
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
-        {
-            item = new SolutionLotLabel();
-            string solutionLot = string.Empty;
-
-            #region Check Input
-
-            if (string.IsNullOrEmpty(txtSolutionLotNo.Text))
-            {
-                var win = M3CordApp.Windows.MessageBox;
-                win.Setup("Please Enter Lot No.");
-                win.ShowDialog();
-                return;
-            }
-            if (string.IsNullOrEmpty(txtQty.Text))
-            {
-                var win = M3CordApp.Windows.MessageBox;
-                win.Setup("Please Enter QTY.");
-                win.ShowDialog();
-                return;
-            }
-            decimal val;
-            if (!decimal.TryParse(txtQty.Text, out val))
-            {
-                var win = M3CordApp.Windows.MessageBox;
-                win.Setup("Please QTY must be number only.");
-                win.ShowDialog();
-                return;
-            }
-
-            #endregion
-
-            item.SolutionLot = txtSolutionLotNo.Text;
-
-            if (!string.IsNullOrEmpty(item.SolutionLot))
-                solutionLot = item.SolutionLot;
-
-            item.CreateBy = M3CordApp.Current.User.UserId;
-            item.CreateDate = DateTime.Now;
-
-            var ret = SolutionLotLabel.Save(item);
-
-            if (!ret.HasError)
-            {
-                if (grid.ItemsSource != null)
-                {
-                    bool? chkErr = false;
-                    SaveSolutionLotDetail d = new SaveSolutionLotDetail();
-                    var detail = grid.ItemsSource as List<SolutionLotDetail>;
-
-                    foreach (var itemD in detail)
-                    {
-                        if (!string.IsNullOrEmpty(itemD.Recipe))
-                        {
-                            d = new SaveSolutionLotDetail();
-
-                            //d.solutionlot = itemD.SolutionLot;
-                            d.solutionlot = solutionLot;
-                            d.recipe = itemD.Recipe;
-                            d.chemicalno = itemD.ChemicalNo;
-
-                            d.solutionid = itemD.SolutionID;
-                            d.recipeorder = itemD.RecipeOrder;
-                            d.mixorder = itemD.MixOrder;
-
-                            d.weightcal = itemD.WeightCal;
-                            d.weightactual = itemD.WeightActual;
-                            d.weightmc = itemD.WeightMc;
-                            d.weightdate = itemD.WeightDate;
-                            d.weightby = itemD.WeightBy;
-
-                            var retD = SaveSolutionLotDetail.Save(d);
-
-                            if (retD.HasError)
-                            {
-                                chkErr = true;
-                                //break;
-                            }
-                        }
-                    }
-
-                    if (chkErr == false)
-                    {
-                        this.InvokeAction(() =>
-                        {
-                            item = null;
-                            ClearInputs();
-                        });
-                    }
-                }
-                else
-                {
-                    this.InvokeAction(() =>
-                    {
-                        item = null;
-                        ClearInputs();
-                    });
-                }
-            }
-
         }
 
         #endregion

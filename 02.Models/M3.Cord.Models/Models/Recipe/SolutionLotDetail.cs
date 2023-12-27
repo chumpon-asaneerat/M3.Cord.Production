@@ -87,7 +87,99 @@ namespace M3.Cord.Models
                 var items = cnn.Query<SolutionLotDetail>("ChGetSolutionLotDetail", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
-                rets.Success(data);
+                //rets.Success(data);
+
+                List<SolutionLotDetail> results = new List<SolutionLotDetail>();
+                SolutionLotDetail result = new SolutionLotDetail();
+
+                if (null != data && data.Count > 0)
+                {
+                    int? i1 = 0;
+                    int? count = data.Count;
+                    string rec = string.Empty;
+                    decimal? weightCal = 0;
+                    decimal? weightActual = 0;
+
+                    foreach (var item in data)
+                    {
+                        if (i1 > 0)
+                        {
+                            if (!string.IsNullOrEmpty(item.Recipe))
+                            {
+                                if (item.Recipe != rec)
+                                {
+                                    result = new SolutionLotDetail();
+
+                                    result.ChemicalName = "Total";
+                                    result.WeightCal = weightCal;
+                                    result.WeightActual = weightActual;
+
+                                    results.Add(result);
+
+                                    weightCal = 0;
+                                    weightActual = 0;
+                                }
+                            }
+                        }
+
+                        result = new SolutionLotDetail();
+
+                        result.SolutionLot = item.SolutionLot;
+                        result.SolutionID = item.SolutionID;
+                        result.RecipeOrder = item.RecipeOrder;
+                        result.Recipe = item.Recipe;
+
+                        if (!string.IsNullOrEmpty(result.Recipe))
+                        {
+                            if (result.Recipe != rec)
+                            {
+                                result.RecipeView = result.Recipe;
+                                rec = result.Recipe;
+                            }
+                        }
+
+                        result.MixOrder = item.MixOrder;
+                        result.ChemicalType = item.ChemicalType;
+                        result.ChemicalNo = item.ChemicalNo;
+                        result.ChemicalName = item.ChemicalName;
+
+                        result.WeightCal = item.WeightCal;
+                        if (result.WeightCal != null && result.WeightCal != 0)
+                        {
+                            weightCal += result.WeightCal;
+                        }
+
+                        result.WeightActual = item.WeightActual;
+                        if (result.WeightActual != null && result.WeightActual != 0)
+                        {
+                            weightActual += result.WeightActual;
+                        }
+
+                        result.WeightMc = item.WeightMc;
+                        result.WeightDate = item.WeightDate;
+                        result.WeightBy = item.WeightBy;
+
+                        results.Add(result);
+
+                        i1++;
+                        if (i1 == count)
+                        {
+                            result = new SolutionLotDetail();
+
+                            result.ChemicalName = "Total";
+                            result.WeightCal = weightCal;
+                            result.WeightActual = weightActual;
+
+                            results.Add(result);
+
+                            weightCal = 0;
+                            weightActual = 0;
+                        }
+                    }
+                }
+
+                if (results != null && results.Count > 0)
+                    rets.Success(results);
             }
             catch (Exception ex)
             {

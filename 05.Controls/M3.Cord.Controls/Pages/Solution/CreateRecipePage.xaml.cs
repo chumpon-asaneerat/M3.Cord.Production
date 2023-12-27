@@ -71,6 +71,13 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoSolutionMenu();
         }
 
+        private void cmdSearch_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtSolutionLotNo.Text) && !string.IsNullOrEmpty(txtQty.Text) && cbProducts.SelectedItem != null)
+            {
+                RefreshGrid();
+            }
+        }
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
             item = new SolutionLotLabel();

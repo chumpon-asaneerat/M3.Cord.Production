@@ -12,7 +12,7 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="300"
+        Height="380"
         Width="850">
     <page:NPage HeaderText="Solution Weight">
         <DockPanel LastChildFill="True" Margin="5">
@@ -34,7 +34,43 @@
             </DockPanel>
             <!--  WORK AREA  -->
             <DockPanel LastChildFill="True">
-                <Grid />
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  MC No  -->
+                    <ctrl:NTextBox Name="txtWeightMc"
+                                   CaptionText="MC No"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding WeightMc}"
+                                   Width="120" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  Recipe  -->
+                    <ctrl:NTextBox CaptionText="Solution"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding Recipe}" IsReadOnly="True"
+                                   Width="120" />
+                    <!--  ChemicalName  -->
+                    <ctrl:NTextBox CaptionText="Chemical"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding ChemicalName}"  IsReadOnly="True"
+                                   Width="400" />
+                    <!--  WeightCal  -->
+                    <ctrl:NTextBox CaptionText="Weight"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding WeightCal, StringFormat=n2}"  IsReadOnly="True"
+                                   Width="200" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+
+                    <!--  Target Weight  -->
+                    <ctrl:NTextBox Name="txtWeightActual"
+                                   CaptionText="Weight"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding WeightActual}"
+                                   Width="200" />
+
+                </DockPanel>
             </DockPanel>
         </DockPanel>
     </page:NPage>
