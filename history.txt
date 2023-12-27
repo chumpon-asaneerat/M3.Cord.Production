@@ -19,8 +19,10 @@ M3 Cord Production System #805
 M3 Cord Production System #804
 - 
 
+[commited]
 M3 Cord Production System #803
-- 
+- M3.Cord.Production.App re-implements #593
+  - Update RecordActualWeightPage #3
 
 [commited]
 M3 Cord Production System #802

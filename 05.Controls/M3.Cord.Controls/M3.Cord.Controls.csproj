@@ -332,7 +332,7 @@
     <Compile Include="Windows\FirstTwist\Twist1CheckSheetEditorWindow.xaml.cs">
       <DependentUpon>Twist1CheckSheetEditorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\SolutionWeightWindow.xaml.cs">
+    <Compile Include="Windows\Solution\SolutionWeightWindow.xaml.cs">
       <DependentUpon>SolutionWeightWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="_Templates\09.QA\CordSamplingDetialsDocument.xaml.cs">
@@ -915,7 +915,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\SolutionWeightWindow.xaml">
+    <Page Include="Windows\Solution\SolutionWeightWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -955,7 +955,6 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Windows\Solution\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
   </ItemGroup>
