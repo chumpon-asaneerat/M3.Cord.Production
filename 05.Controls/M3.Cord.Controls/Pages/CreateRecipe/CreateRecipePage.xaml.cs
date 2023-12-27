@@ -157,7 +157,7 @@ namespace M3.Cord.Pages
                             d.recipeorder = itemD.RecipeOrder;
                             d.mixorder = itemD.MixOrder;
                             
-                            //d.weightcal = itemD.weightcal;
+                            d.weightcal = itemD.CalculationWet;
                             //d.weightactual = itemD.weightactual;
                             //d.weightmc = itemD.weightmc;
                             //d.weightdate = itemD.weightdate;

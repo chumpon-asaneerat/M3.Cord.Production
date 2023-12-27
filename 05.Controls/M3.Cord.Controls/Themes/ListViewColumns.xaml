@@ -647,5 +647,19 @@
                    TextAlignment="Right"
                    Width="120" />
     </DataTemplate>
+
+
+    <DataTemplate x:Key="WeightCal">
+        <TextBlock Text="{Binding Path=WeightCal, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Right"
+                   Width="120" />
+    </DataTemplate>
+    <DataTemplate x:Key="WeightActual">
+        <TextBlock Text="{Binding Path=WeightActual, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   Foreground="{Binding TextColor}"
+                   TextAlignment="Right"
+                   Width="120" />
+    </DataTemplate>
     
 </ResourceDictionary>
