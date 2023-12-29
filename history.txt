@@ -16,8 +16,10 @@ M3 Cord Production System #806
 M3 Cord Production System #805
 - 
 
+[commited]
 M3 Cord Production System #804
-- 
+- M3.Cord.Production.App re-implements #594
+  - Update Record Weight from Kik
 
 [commited]
 M3 Cord Production System #803
