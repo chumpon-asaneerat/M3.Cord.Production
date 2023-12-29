@@ -42,13 +42,6 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region Internal Variables
-
-        private SolutionLotLabel item = null;
-        private SolutionLotDetail itemDetail = null;
-
-        #endregion
-
         #region Loaded/Unloaded
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -128,8 +121,6 @@ namespace M3.Cord.Pages
         {
             if (null == grid.ItemsSource)
                 return;
-
-            itemDetail = grid.SelectedItem as SolutionLotDetail;
         }
 
         #endregion
@@ -138,7 +129,6 @@ namespace M3.Cord.Pages
 
         private void ClearInputs()
         {
-            item = null;
             grid.ItemsSource = null;
             dtMixDate.SelectedDate = null;
             txtSolutionLotNo.Text = string.Empty;
@@ -204,9 +194,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-
             ClearInputs();
-
         }
 
         #endregion
