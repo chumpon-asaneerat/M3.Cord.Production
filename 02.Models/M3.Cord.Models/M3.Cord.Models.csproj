@@ -132,6 +132,7 @@
     <Compile Include="Models\CordItemYarn\CordItemYarn.cs" />
     <Compile Include="Models\Masters\Customer.cs" />
     <Compile Include="Models\Masters\Product.cs" />
+    <Compile Include="Models\Recipe\SolutionById.cs" />
     <Compile Include="Models\Recipe\SaveSolutionLotDetail.cs" />
     <Compile Include="Models\Recipe\SolutionRecipeDetailSpec.cs" />
     <Compile Include="Models\Recipe\SolutionLotDetail.cs" />

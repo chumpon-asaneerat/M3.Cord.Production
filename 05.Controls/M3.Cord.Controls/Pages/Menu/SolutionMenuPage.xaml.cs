@@ -69,6 +69,17 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdSolutionDetail_Click(object sender, RoutedEventArgs e)
+        {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Pallet Setting
+            var page = M3CordApp.Pages.SolutionDetail;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
+
         private void cmdAddQAResult_Click(object sender, RoutedEventArgs e)
         {
 

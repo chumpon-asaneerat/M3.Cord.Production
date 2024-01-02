@@ -42,27 +42,30 @@
                                        CaptionText="Lot No"
                                        Width="200"
                                        PreviewKeyDown="txtSolutionLotNo_PreviewKeyDown" />
+                        <!--  CHEMICAL NAMES  -->
+                        <ctrl:NComboBox x:Name="cbChemicals"
+                                        DockPanel.Dock="Left"
+                                        CaptionText="Dip Solution Name:"
+                                        DisplayMemberPath="SolutionName"
+                                        Width="300"
+                                        SelectionChanged="cbChemicals_SelectionChanged" />
                         <!--  PRODUCT  -->
                         <ctrl:NTextBox x:Name="txtProductCode"
                                        CaptionText="Dip Item Cord"
                                        Width="300" />
-                        <ctrl:NDatePicker x:Name="dtMixDate"
-                                          CaptionText="Mixing Date"
-                                          Width="200" />
+                        
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-
-                        <!--  CHEMICAL NAMES  -->
-                        <ctrl:NTextBox x:Name="txtSolutionName"
-                                       CaptionText="Dip Solution Name"
-                                       Width="300" />
-                        <!--  SOLUTION LOT NO  -->
+                        <!--  Compound  -->
                         <ctrl:NTextBox x:Name="txtCompound"
                                        CaptionText="Compound"
                                        Width="200" />
+                        <ctrl:NDatePicker x:Name="dtMixDate"
+                                          CaptionText="Mixing Date"
+                                          Width="200" />
                         <!--  QUANTITY  -->
                         <ctrl:NTextBox x:Name="txtQty"
-                                       CaptionText="Dip Solution Qty (lites)"
+                                       CaptionText="Dip Solution Qty (kg)"
                                        Width="260" />
                         <Button x:Name="cmdSearch"
                             Content="Search"

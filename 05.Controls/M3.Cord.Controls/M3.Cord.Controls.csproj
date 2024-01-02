@@ -291,6 +291,9 @@
     <Compile Include="Pages\Menu\SolutionMenuPage.xaml.cs">
       <DependentUpon>SolutionMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Solution\SolutionDetailPage.xaml.cs">
+      <DependentUpon>SolutionDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Solution\RecordActualWeightPage.xaml.cs">
       <DependentUpon>RecordActualWeightPage.xaml</DependentUpon>
     </Compile>
@@ -814,6 +817,10 @@
     <Page Include="Pages\Menu\SolutionMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Solution\SolutionDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Solution\RecordActualWeightPage.xaml">
       <Generator>MSBuild:Compile</Generator>

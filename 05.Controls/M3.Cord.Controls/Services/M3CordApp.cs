@@ -451,6 +451,10 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.CreateRecipePage>(); }
             }
 
+            public static Cord.Pages.SolutionDetailPage SolutionDetail
+            {
+                get { return GetPage<Cord.Pages.SolutionDetailPage>(); }
+            }
             public static Cord.Pages.RecordActualWeightPage RecordActualWeight
             {
                 get { return GetPage<Cord.Pages.RecordActualWeightPage>(); }

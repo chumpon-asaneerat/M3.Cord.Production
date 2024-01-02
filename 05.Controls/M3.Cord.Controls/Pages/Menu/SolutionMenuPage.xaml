@@ -162,8 +162,15 @@
                             <Run Text="Solution Lot" />
                         </TextBlock>
                     </Button>
+                    <Button x:Name="cmdSolutionDetail" 
+                            Click="cmdSolutionDetail_Click"
+                            Style="{StaticResource SolitionLotButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Solution Detail" />
+                        </TextBlock>
+                    </Button>
                     <!--  ADD QA RESULT  -->
-                    <Button x:Name="cmdAddQAResult" 
+                    <!--<Button x:Name="cmdAddQAResult" 
                             Click="cmdAddQAResult_Click"
                             Style="{StaticResource SolitionLotButtonStyle}">
                         <TextBlock TextAlignment="Center">
@@ -171,9 +178,9 @@
                             <LineBreak />
                             <Run Text="QA Result" />
                         </TextBlock>
-                    </Button>
+                    </Button>-->
                     <!--  ADD AGEING RESULT  -->
-                    <Button x:Name="cmdAddAgeingTime" 
+                    <!--<Button x:Name="cmdAddAgeingTime" 
                             Click="cmdAddAgeingTime_Click"
                             Style="{StaticResource SolitionLotButtonStyle}">
                         <TextBlock TextAlignment="Center">
@@ -181,7 +188,7 @@
                             <LineBreak />
                             <Run Text="Ageing Time" />
                         </TextBlock>
-                    </Button>
+                    </Button>-->
                     <!--  ISSUE REPORT AND LABEL  -->
                     <Button x:Name="cmdIssueReport" 
                             Click="cmdIssueReport_Click"
