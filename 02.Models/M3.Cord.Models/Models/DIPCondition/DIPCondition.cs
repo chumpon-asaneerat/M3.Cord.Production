@@ -247,7 +247,18 @@ namespace M3.Cord.Models
 		public string S9SpongActual { get; set; }
 		public string S9SpongSet2 { get; set; }
 		public string S9SpongActual2 { get; set; }
-
+		public System.String UpdateBy { get; set; }
+		public System.DateTime? UpdateDate { get; set; }
+		public System.String UpdateBy2 { get; set; }
+		public System.DateTime? UpdateDate2 { get; set; }
+		public System.String CheckedBy { get; set; }
+		public System.DateTime? CheckedDate { get; set; }
+		public System.String ApproveBy { get; set; }
+		public System.DateTime? ApproveDate { get; set; }
+		public System.String ShiftLeader { get; set; }
+		public System.String ProductionManager { get; set; }
+		public System.Int32? errNum { get; set; }
+		public System.String errMsg { get; set; }
 
 		#endregion
 
@@ -552,6 +563,17 @@ namespace M3.Cord.Models
 			p.Add("@S9SpongActual", value.S9SpongActual);
 			p.Add("@S9SpongSet2", value.S9SpongSet2);
 			p.Add("@S9SpongActual2", value.S9SpongActual2);
+
+			p.Add("@UpdateBy", value.UpdateBy);
+			p.Add("@UpdateDate", value.UpdateDate);
+			p.Add("@UpdateBy2", value.UpdateBy2);
+			p.Add("@UpdateDate2", value.UpdateDate2);
+			p.Add("@CheckedBy", value.CheckedBy);
+			p.Add("@CheckedDate", value.CheckedDate);
+			p.Add("@ApproveBy", value.ApproveBy);
+			p.Add("@ApproveDate", value.ApproveDate);
+			p.Add("@ShiftLeader", value.ShiftLeader);
+			p.Add("@ProductionManager", value.ProductionManager);
 
 			p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
 			p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);

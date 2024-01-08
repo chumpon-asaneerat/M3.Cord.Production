@@ -176,8 +176,8 @@
             <!--  # 1.Yarn 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="2"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -220,28 +220,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="2" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7YarnCordStructureSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="2" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7YarnCordStructureActual}" />
+                <TextBox Width="220" Text="{Binding S7YarnCordStructureActual}" />
             </Border>
             <Border Grid.Row="2" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7YarnCordStructureSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="2" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7YarnCordStructureActual2}" />
+                <TextBox Width="220" Text="{Binding S7YarnCordStructureActual2}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 1.Yarn 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="3"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -273,28 +273,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="3" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7YarnYarnTypeSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="3" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7YarnYarnTypeActual}" />
+                <TextBox Width="220" Text="{Binding S7YarnYarnTypeActual}" />
             </Border>
             <Border Grid.Row="3" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7YarnYarnTypeSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="3" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7YarnYarnTypeActual2}" />
+                <TextBox Width="220" Text="{Binding S7YarnYarnTypeActual2}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 1.Yarn 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="4"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -326,28 +326,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="4" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7Yarn1stTwistSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="4" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7Yarn1stTwistActual}" />
+                <TextBox Width="220" Text="{Binding S7Yarn1stTwistActual}" />
             </Border>
             <Border Grid.Row="4" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7Yarn1stTwistSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="4" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7Yarn1stTwistActual2}" />
+                <TextBox Width="220" Text="{Binding S7Yarn1stTwistActual2}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 1.Yarn 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="5"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -379,28 +379,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="5" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7Yarn2ndTwistSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="5" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7Yarn2ndTwistActual}" />
+                <TextBox Width="220" Text="{Binding S7Yarn2ndTwistActual}" />
             </Border>
             <Border Grid.Row="5" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7Yarn2ndTwistSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="5" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7Yarn2ndTwistActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S7Yarn2ndTwistActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 1.Yarn 5  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="6"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -432,28 +432,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="6" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7YarnLabelOfYarnSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="6" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7YarnLabelOfYarnActual}" />
+                <TextBox Width="220" Text="{Binding S7YarnLabelOfYarnActual}" />
             </Border>
             <Border Grid.Row="6" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7YarnLabelOfYarnSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="6" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7YarnLabelOfYarnActual2}" />
+                <TextBox Width="220" Text="{Binding S7YarnLabelOfYarnActual2}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 1.Yarn 6  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="7"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -486,39 +486,39 @@
             </Border>
             <Border Grid.Row="7" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S7YarnWeightSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S7YarnWeightSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="7" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7YarnWeightActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S7YarnWeightActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="7" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S7YarnWeightSet2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S7YarnWeightSetErr2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="7" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7YarnWeightActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S7YarnWeightActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 2.Creel setting 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="8"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -555,28 +555,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="8" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7CreelSettingUseTensorSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="8" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7CreelSettingUseTensorActual}" />
+                <TextBox Width="220" Text="{Binding S7CreelSettingUseTensorActual}" />
             </Border>
             <Border Grid.Row="8" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7CreelSettingUseTensorSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="8" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7CreelSettingUseTensorActual2}" />
+                <TextBox Width="220" Text="{Binding S7CreelSettingUseTensorActual2}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 2.Creel setting 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="9"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -608,28 +608,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="9" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7CreelSettingKnotConditionSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="9" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7CreelSettingKnotConditionActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S7CreelSettingKnotConditionActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="9" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7CreelSettingKnotConditionSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="9" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7CreelSettingKnotConditionActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S7CreelSettingKnotConditionActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 2.Yarn 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="10"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -661,28 +661,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="10" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7CreelSettingSlubCatsweSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="10" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S7CreelSettingSlubCatsweActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S7CreelSettingSlubCatsweActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="10" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S7CreelSettingSlubCatsweSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="10" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S7CreelSettingSlubCatsweActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S7CreelSettingSlubCatsweActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 3.Stretch 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="11"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -725,39 +725,39 @@
             </Border>
             <Border Grid.Row="11" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchDryerSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchDryerSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="11" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8StretchDryerActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8StretchDryerActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="11" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchDryerSet2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchDryerSetErr2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="11" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8StretchDryerActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8StretchDryerActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 3.Stretch 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="12"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -790,39 +790,39 @@
             </Border>
             <Border Grid.Row="12" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchStretchHotSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchStretchHotSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="12" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8StretchHotActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8StretchHotActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="12" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchStretchHotSet2, StringFormat='{}{0:#,##0.##}'}"
+                    <TextBox Width="100"
+                             Text="{Binding S8StretchHotSet2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchStretchHotSetErr2, StringFormat='{}{0:#,##0.##}'}"
+                    <TextBox Width="100"
+                             Text="{Binding S8StretchHotSetErr2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="12" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8StretchHotActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8StretchHotActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 3.Stretch 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="13"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -855,39 +855,39 @@
             </Border>
             <Border Grid.Row="13" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchNormalSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchNormalSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="13" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8StretchNormalActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8StretchNormalActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="13" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchNormalSet2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchNormalSetErr2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="13" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8StretchNormalActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8StretchNormalActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 3.Stretch 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="14"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -920,39 +920,39 @@
             </Border>
             <Border Grid.Row="14" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchTotalSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchTotalSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="14" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8StretchTotalActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8StretchTotalActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="14" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchTotalSet2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8StretchTotalSetErr2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="14" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8StretchTotalActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8StretchTotalActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 4.Temp 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="15"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -990,39 +990,39 @@
             </Border>
             <Border Grid.Row="15" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempDryerSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempDryerSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="15" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8TempDryerActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8TempDryerActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="15" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempDryerSet2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempDryerSetErr2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="15" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8TempDryerActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8TempDryerActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 4.Temp 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="16"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1055,39 +1055,39 @@
             </Border>
             <Border Grid.Row="16" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempHotSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempHotSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="16" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8TempHotActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8TempHotActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="16" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempHotSet2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempHotSetErr2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="16" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8TempHotActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8TempHotActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 4.Temp 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="17"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1120,39 +1120,39 @@
             </Border>
             <Border Grid.Row="17" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempNormalSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempNormalSetErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="17" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8TempNormalActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8TempNormalActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="17" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempNormalSet2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8TempNormalSetErr2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="17" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8TempNormalActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8TempNormalActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 5. Counter  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="18"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1187,28 +1187,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="18" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8CounterSettingSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="18" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8CounterSettingActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8CounterSettingActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="18" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8CounterSettingSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="18" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8CounterSettingActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8CounterSettingActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 6. Speed  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="19"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1244,39 +1244,39 @@
             </Border>
             <Border Grid.Row="19" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8SpeedSet, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8SpeedErr, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="19" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8SpeedActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8SpeedActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="19" Grid.Column="6">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
+                    <TextBox Width="100"
                              Text="{Binding S8SpeedSet2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8SpeedErr2, StringFormat='{}{0:#,##0.##}'}"
+                    <TextBox Width="100"
+                             Text="{Binding S8SpeedSetErr2, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="19" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8SpeedActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8SpeedActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 7. No. of cord  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="20"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1313,28 +1313,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="20" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8NoOfCordsSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="20" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8NoOfCordsActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8NoOfCordsActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="20" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8NoOfCordsSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="20" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8NoOfCordsActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8NoOfCordsActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 8. Sofnor 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="21"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1371,28 +1371,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="21" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8SofnorSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="21" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8SofnorActual}" />
+                <TextBox Width="220" Text="{Binding S8SofnorActual}" />
             </Border>
             <Border Grid.Row="21" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8SofnorSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="21" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8SofnorActual2}" />
+                <TextBox Width="220" Text="{Binding S8SofnorActual2}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 8. Sofnor 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="22"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1424,28 +1424,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="22" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DrawNipSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="22" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DrawNipActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DrawNipActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="22" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DrawNipSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="22" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DrawNipActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DrawNipActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 9.Dipping No1 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="23"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1486,28 +1486,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="23" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo1ConcentrationSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="23" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo1ConcentrationActual}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo1ConcentrationActual}" />
             </Border>
             <Border Grid.Row="23" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo1ConcentrationSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="23" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo1ConcentrationActual2}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo1ConcentrationActual2}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 9.Dipping No1 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="24"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1539,28 +1539,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="24" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo1NipFrontSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="24" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo1NipFrontActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo1NipFrontActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="24" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo1NipFrontSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="24" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo1NipFrontActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo1NipFrontActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 9.Dipping No1 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="25"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1592,28 +1592,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="25" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo1NipBackSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="25" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo1NipBackActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo1NipBackActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="25" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo1NipBackSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="25" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo1NipBackActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo1NipBackActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 9.Dipping No1 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="26"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1647,28 +1647,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="26" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo1WPUstdSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="26" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo1WPUstdActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo1WPUstdActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="26" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo1WPUstdSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="26" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo1WPUstdActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo1WPUstdActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 10. Dipping No2 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="27"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1709,28 +1709,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="27" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo2ConcentrationSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="27" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo2ConcentrationActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2ConcentrationActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="27" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo2ConcentrationSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="27" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo2ConcentrationActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2ConcentrationActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 10. Dipping No2 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="28"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1762,28 +1762,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="28" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo2NipFrontSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="28" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo2NipFrontActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2NipFrontActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="28" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo2NipFrontSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="28" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo2NipFrontActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2NipFrontActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 10. Dipping No2 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="29"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1815,28 +1815,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="29" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo2NipBackSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="29" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo2NipBackActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2NipBackActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="29" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo2NipBackSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="29" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo2NipBackActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2NipBackActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 10. Dipping No2 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="30"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1870,28 +1870,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="30" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo2WPUstdSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="30" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S8DippingNo2WPUstdActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2WPUstdActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="30" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S8DippingNo2WPUstdSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="30" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S8DippingNo2WPUstdActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2WPUstdActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # CS-9 Winder 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="31"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1933,28 +1933,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="31" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9WinderAyameDaialSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="31" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9WinderAyameDaialActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9WinderAyameDaialActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="31" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9WinderAyameDaialSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="31" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9WinderAyameDaialActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9WinderAyameDaialActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # CS-9 Winder 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="32"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -1986,28 +1986,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="32" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9WinderMpaSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="32" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9WinderMpaActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9WinderMpaActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="32" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9WinderMpaSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="32" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9WinderMpaActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9WinderMpaActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # CS-9 Winder 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="33"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -2039,28 +2039,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="33" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9WinderSpringSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="33" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9WinderSpringActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9WinderSpringActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="33" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9WinderSpringSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="33" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9WinderSpringActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9WinderSpringActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # CS-9 Winder 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="34"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -2092,28 +2092,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="34" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9WinderPeperTubeColorSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="34" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9WinderPeperTubeColorActual}" />
+                <TextBox Width="220" Text="{Binding S9WinderPeperTubeColorActual}" />
             </Border>
             <Border Grid.Row="34" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9WinderPeperTubeColorSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="34" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9WinderPeperTubeColorActual2}" />
+                <TextBox Width="220" Text="{Binding S9WinderPeperTubeColorActual2}" />
             </Border>
             <!--#endregion-->
 
             <!--  # CS-9 Winder 5  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="35"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -2145,28 +2145,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="35" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9WinderCheeseWeightSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="35" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9WinderCheeseWeightActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9WinderCheeseWeightActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="35" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9WinderCheeseWeightSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="35" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9WinderCheeseWeightActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9WinderCheeseWeightActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # CS-9 Exhaust Fan 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="36"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -2203,28 +2203,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="36" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOven1CirculatingFanSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="36" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1CirculatingFanActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOven1CirculatingFanActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="36" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOven1CirculatingFanSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="36" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1CirculatingFanActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOven1CirculatingFanActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # CS-9 Exhaust Fan 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="37"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -2256,28 +2256,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="37" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOven2CirculatingFanSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="37" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2CirculatingFanActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOven2CirculatingFanActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="37" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOven2CirculatingFanSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="37" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2CirculatingFanActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOven2CirculatingFanActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # CS-9 Exhaust Fan 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="38"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -2309,28 +2309,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="38" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOven1ExhaustFanSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="38" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1ExhaustFanActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOven1ExhaustFanActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="38" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOven1ExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="38" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1ExhaustFanActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOven1ExhaustFanActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # CS-9 Exhaust Fan 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="39"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -2362,28 +2362,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="39" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOven2ExhaustFanSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="39" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2ExhaustFanActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOven2ExhaustFanActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="39" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOven2ExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="39" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2ExhaustFanActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOven2ExhaustFanActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # CS-9 Exhaust Fan 5  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="40"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -2415,28 +2415,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="40" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOvenFrontExhaustFanSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="40" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenFrontExhaustFanActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOvenFrontExhaustFanActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="40" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOvenFrontExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="40" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenFrontExhaustFanActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOvenFrontExhaustFanActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # CS-9 Exhaust Fan 6  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="41"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -2468,28 +2468,28 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="41" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOvenBackExhaustFanSet, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="41" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenBackExhaustFanActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOvenBackExhaustFanActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="41" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9ExhaustFanOvenBackExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="41" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenBackExhaustFanActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9ExhaustFanOvenBackExhaustFanActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
             <!--  # 13.Spong  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="42"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="8">
+                    Grid.Column="2"
+                    Grid.ColumnSpan="6">
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Style.Triggers>
@@ -2524,20 +2524,20 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="42" Grid.Column="4">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9SpongSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="42" Grid.Column="5">
-                <TextBox Width="100" Text="{Binding S9SpongActual}" />
+                <TextBox Width="220" Text="{Binding S9SpongActual}" />
             </Border>
             <Border Grid.Row="42" Grid.Column="6">
-                <TextBox Width="100"
+                <TextBox Width="220"
                          Text="{Binding S9SpongSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="42" Grid.Column="7">
-                <TextBox Width="100" Text="{Binding S9SpongActual2}" />
+                <TextBox Width="220" Text="{Binding S9SpongActual2}" />
             </Border>
             <!--#endregion-->
 
