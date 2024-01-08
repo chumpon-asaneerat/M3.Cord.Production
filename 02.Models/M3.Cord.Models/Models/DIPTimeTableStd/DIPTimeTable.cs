@@ -24,6 +24,7 @@ namespace M3.Cord.Models
 		#region Public Proeprties
 
 		public string ProductCode { get; set; }
+		public int? Seq { get; set; }
 		public string PeriodTime { get; set; }
 		public bool? S7Bobbin { get; set; }
 		public decimal? S8CoolingWaterSystemBath1 { get; set; }
@@ -43,7 +44,7 @@ namespace M3.Cord.Models
 
 		#region Static Methods
 
-		public static NDbResult<DIPTimeTable> GetCurrent()
+		public static NDbResult<DIPTimeTable> GetCurrent(string ProductCode = null, int? Seq = null, string PeriodTime = null)
 		{
 			MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -62,6 +63,9 @@ namespace M3.Cord.Models
 			}
 
 			var p = new DynamicParameters();
+			p.Add("@ProductCode", ProductCode);
+			p.Add("@Seq", Seq);
+			p.Add("@PeriodTime", PeriodTime);
 
 			try
 			{
@@ -113,6 +117,7 @@ namespace M3.Cord.Models
 			var p = new DynamicParameters();
 
 			p.Add("@ProductCode", value.ProductCode);
+			p.Add("@Seq", value.Seq);
 			p.Add("@PeriodTime", value.PeriodTime);
 			p.Add("@S7Bobbin", value.S7Bobbin);
 			p.Add("@S8CoolingWaterSystemBath1", value.S8CoolingWaterSystemBath1);
@@ -178,10 +183,10 @@ namespace M3.Cord.Models
 			var p = new DynamicParameters();
 
 			p.Add("@ProductCode", value.ProductCode);
-
+			p.Add("@Seq", value.Seq);
 			try
 			{
-				cnn.Execute("DELETE FROM DIPTimeTable WHERE ProductCode = @ProductCode", p, commandType: CommandType.Text);
+				cnn.Execute("DELETE FROM DIPTimeTable WHERE ProductCode = @ProductCode And Seq = @Seq", p, commandType: CommandType.Text);
 				ret.Success();
 				// Set error number/message
 				ret.ErrNum = p.Get<int>("@errNum");

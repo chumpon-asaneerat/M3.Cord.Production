@@ -969,6 +969,7 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Pages\DIPTimeTable\" />
     <Folder Include="Pages\Documents\Dipping\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
