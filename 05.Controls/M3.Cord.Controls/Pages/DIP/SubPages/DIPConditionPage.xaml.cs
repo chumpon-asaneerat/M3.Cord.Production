@@ -67,7 +67,14 @@ namespace M3.Cord.Pages
 
         private void Save()
         {
+            if (null != cond)
+            {
+                var ret = DIPCondition.Save(cond);
+                if (null != ret && ret.Ok)
+                {
 
+                }
+            }
         }
 
         #endregion
@@ -85,12 +92,27 @@ namespace M3.Cord.Pages
                 pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
                 if (null != pcCard)
                 {
+                    var std = DIPConditionStd.Gets(pcCard.ProductCode).Value().FirstOrDefault();
                     cond = DIPCondition.Gets(pcCard.DIPPCId).Value();
                     if (null != cond) 
                     {
-                        cond = new DIPCondition();
+                        DIPCondition.Assign(std, cond);
                         cond.DIPPCId = pcCard.DIPPCId;
                         cond.ProductCode = pcCard.ProductCode;
+
+                        cond.UpdateBy = (null != M3CordApp.Current.User) ?
+                            M3CordApp.Current.User.FullName : null;
+                        cond.UpdateDate = DateTime.Now;
+                    }
+                    else
+                    {
+                        cond = DIPCondition.Create(pcCard.ProductCode);
+                        cond.DIPPCId = pcCard.DIPPCId;
+                        cond.ProductCode = pcCard.ProductCode;
+
+                        cond.UpdateBy = (null != M3CordApp.Current.User) ?
+                            M3CordApp.Current.User.FullName : null;
+                        cond.UpdateDate = DateTime.Now;
                     }
                 }
             }

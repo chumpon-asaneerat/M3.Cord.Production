@@ -23,7 +23,7 @@ namespace M3.Cord.Models
 	{
         #region Public Proeprties
 
-        public int? DIPConditionId { get; set; }
+        public int DIPConditionId { get; set; }
         public int? DIPPCId { get; set; }
 
 		public string ProductCode { get; set; }
@@ -492,7 +492,9 @@ namespace M3.Cord.Models
 
 			var p = new DynamicParameters();
 
-			p.Add("@ProductCode", value.ProductCode);
+            p.Add("@DIPPCId", value.DIPPCId);
+
+            p.Add("@ProductCode", value.ProductCode);
 			p.Add("@S7YarnCordStructureSC", value.S7YarnCordStructureSC);
 			p.Add("@S7YarnCordStructureSet", value.S7YarnCordStructureSet);
 			p.Add("@S7YarnCordStructureActual", value.S7YarnCordStructureActual);
@@ -734,7 +736,9 @@ namespace M3.Cord.Models
 			p.Add("@ShiftLeader", value.ShiftLeader);
 			p.Add("@ProductionManager", value.ProductionManager);
 
-			p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.Add("@DIPConditionId", value.DIPConditionId, DbType.Int32, direction: ParameterDirection.InputOutput);
+
+            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
 			p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 
 			try
@@ -742,8 +746,10 @@ namespace M3.Cord.Models
 				cnn.Execute("SaveDIPCondition", p, commandType: CommandType.StoredProcedure);
 				ret.Success(value);
 
-				// Set error number/message
-				ret.ErrNum = p.Get<int>("@errNum");
+                // Set PK
+                value.DIPConditionId = p.Get<dynamic>("@DIPConditionId");
+                // Set error number/message
+                ret.ErrNum = p.Get<int>("@errNum");
 				ret.ErrMsg = p.Get<string>("@errMsg");
 			}
 			catch (Exception ex)
