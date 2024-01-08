@@ -92,7 +92,7 @@
                                    Margin="5,0,0,8"
                                    FontSize="20"
                                    FontWeight="DemiBold"
-                                   Text="Lite" />
+                                   Text="Kg." />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <!--  MIX DATE  -->
