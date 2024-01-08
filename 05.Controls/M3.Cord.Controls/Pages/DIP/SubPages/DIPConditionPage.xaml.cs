@@ -45,6 +45,7 @@ namespace M3.Cord.Pages
 
         private DIPMC mc = null;
         private DIPPCCard pcCard = null;
+        private DIPCondition cond = null;
 
         #endregion
 
@@ -75,17 +76,27 @@ namespace M3.Cord.Pages
 
         public void Setup(DIPMC selecteedMC)
         {
+            paCondition.DataContext = null;
+            dip.DataContext = null;
+
             if (null != selecteedMC)
             {
                 mc = selecteedMC;
                 pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
                 if (null != pcCard)
                 {
-
+                    cond = DIPCondition.Gets(pcCard.DIPPCId).Value();
+                    if (null != cond) 
+                    {
+                        cond = new DIPCondition();
+                        cond.DIPPCId = pcCard.DIPPCId;
+                        cond.ProductCode = pcCard.ProductCode;
+                    }
                 }
             }
 
             paCondition.DataContext = pcCard;
+            dip.DataContext = cond;
         }
 
         #endregion

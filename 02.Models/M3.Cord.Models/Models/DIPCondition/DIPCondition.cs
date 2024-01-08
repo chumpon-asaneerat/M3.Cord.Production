@@ -21,7 +21,10 @@ namespace M3.Cord.Models
 {
 	public class DIPCondition
 	{
-		#region Public Proeprties
+        #region Public Proeprties
+
+        public int? DIPConditionId { get; set; }
+        public int? DIPPCId { get; set; }
 
 		public string ProductCode { get; set; }
 		public bool? S7YarnCordStructureSC { get; set; }
@@ -260,11 +263,166 @@ namespace M3.Cord.Models
 		public System.Int32? errNum { get; set; }
 		public System.String errMsg { get; set; }
 
-		#endregion
+        #endregion
 
-		#region Static Methods
+        #region Static Methods
 
-		public static NDbResult<DIPCondition> GetCurrent()
+        public static DIPCondition Create(string productCode)
+        {
+            var inst = new DIPCondition();
+            var std = DIPConditionStd.Gets(productCode).Value().FirstOrDefault();
+            Assign(std, inst);
+            return inst;
+        }
+
+        public static void Assign(DIPConditionStd src, DIPCondition dst)
+        {
+            if (null != src && null != dst)
+            {
+                dst.ProductCode = src.ProductCode;
+                dst.S7YarnCordStructureSC = src.S7YarnCordStructureSC;
+                dst.S7YarnCordStructureSet = src.S7YarnCordStructureSet;
+                dst.S7YarnCordStructureSet2 = src.S7YarnCordStructureSet2;
+                dst.S7YarnYarnTypeSC = src.S7YarnYarnTypeSC;
+                dst.S7YarnYarnTypeSet = src.S7YarnYarnTypeSet;
+                dst.S7YarnYarnTypeSet2 = src.S7YarnYarnTypeSet2;
+                dst.S7Yarn1stTwistSC = src.S7Yarn1stTwistSC;
+                dst.S7Yarn1stTwistSet = src.S7Yarn1stTwistSet;
+                dst.S7Yarn1stTwistSet2 = src.S7Yarn1stTwistSet2;
+                dst.S7Yarn2ndTwistSC = src.S7Yarn2ndTwistSC;
+                dst.S7Yarn2ndTwistSet = src.S7Yarn2ndTwistSet;
+                dst.S7Yarn2ndTwistSet2 = src.S7Yarn2ndTwistSet2;
+                dst.S7YarnLabelOfYarnSC = src.S7YarnLabelOfYarnSC;
+                dst.S7YarnLabelOfYarnSet = src.S7YarnLabelOfYarnSet;
+                dst.S7YarnLabelOfYarnSet2 = src.S7YarnLabelOfYarnSet2;
+                dst.S7YarnWeightSC = src.S7YarnWeightSC;
+                dst.S7YarnWeightSet = src.S7YarnWeightSet;
+                dst.S7YarnWeightSetErr = src.S7YarnWeightSetErr;
+                dst.S7YarnWeightSet2 = src.S7YarnWeightSet2;
+                dst.S7YarnWeightSetErr2 = src.S7YarnWeightSetErr2;
+                dst.S7CreelSettingUseTensorSC = src.S7CreelSettingUseTensorSC;
+                dst.S7CreelSettingUseTensorSet = src.S7CreelSettingUseTensorSet;
+                dst.S7CreelSettingUseTensorSet2 = src.S7CreelSettingUseTensorSet2;
+                dst.S7CreelSettingKnotConditionSC = src.S7CreelSettingKnotConditionSC;
+                dst.S7CreelSettingKnotConditionSet = src.S7CreelSettingKnotConditionSet;
+                dst.S7CreelSettingKnotConditionSet2 = src.S7CreelSettingKnotConditionSet2;
+                dst.S7CreelSettingSlubCatsweSC = src.S7CreelSettingSlubCatsweSC;
+                dst.S7CreelSettingSlubCatsweSet = src.S7CreelSettingSlubCatsweSet;
+                dst.S7CreelSettingSlubCatsweSet2 = src.S7CreelSettingSlubCatsweSet2;
+
+                dst.S8StretchDryerSC = src.S8StretchDryerSC;
+                dst.S8StretchDryerSet = src.S8StretchDryerSet;
+                dst.S8StretchDryerSetErr = src.S8StretchDryerSetErr;
+                dst.S8StretchDryerSet2 = src.S8StretchDryerSet2;
+                dst.S8StretchDryerSetErr2 = src.S8StretchDryerSetErr2;
+                dst.S8StretchStretchHotSC = src.S8StretchStretchHotSC;
+                dst.S8StretchStretchHotSet = src.S8StretchStretchHotSet;
+                dst.S8StretchStretchHotSetErr = src.S8StretchStretchHotSetErr;
+                dst.S8StretchHotSet2 = src.S8StretchHotSet2;
+                dst.S8StretchHotSetErr2 = src.S8StretchHotSetErr2;
+                dst.S8StretchNormalSC = src.S8StretchNormalSC;
+                dst.S8StretchNormalSet = src.S8StretchNormalSet;
+                dst.S8StretchNormalSetErr = src.S8StretchNormalSetErr;
+                dst.S8StretchNormalSet2 = src.S8StretchNormalSet2;
+                dst.S8StretchNormalSetErr2 = src.S8StretchNormalSetErr2;
+                dst.S8StretchTotalSC = src.S8StretchTotalSC;
+                dst.S8StretchTotalSet = src.S8StretchTotalSet;
+                dst.S8StretchTotalSetErr = src.S8StretchTotalSetErr;
+                dst.S8StretchTotalSet2 = src.S8StretchTotalSet2;
+                dst.S8StretchTotalSetErr2 = src.S8StretchTotalSetErr2;
+                dst.S8TempDryerSC = src.S8TempDryerSC;
+                dst.S8TempDryerSet = src.S8TempDryerSet;
+                dst.S8TempDryerSetErr = src.S8TempDryerSetErr;
+                dst.S8TempDryerSet2 = src.S8TempDryerSet2;
+                dst.S8TempDryerSetErr2 = src.S8TempDryerSetErr2;
+                dst.S8TempNormalSC = src.S8TempNormalSC;
+                dst.S8TempNormalSet = src.S8TempNormalSet;
+                dst.S8TempNormalSetErr = src.S8TempNormalSetErr;
+                dst.S8TempNormalSet2 = src.S8TempNormalSet2;
+                dst.S8TempNormalSetErr2 = src.S8TempNormalSetErr2;
+                dst.S8CounterSettingSC = src.S8CounterSettingSC;
+                dst.S8CounterSettingSet = src.S8CounterSettingSet;
+                dst.S8CounterSettingSet2 = src.S8CounterSettingSet2;
+                dst.S8SpeedSC = src.S8SpeedSC;
+                dst.S8SpeedSet = src.S8SpeedSet;
+                dst.S8SpeedErr = src.S8SpeedErr;
+                dst.S8SpeedSet2 = src.S8SpeedSet2;
+                dst.S8SpeedSetErr2 = src.S8SpeedSetErr2;
+                dst.S8NoOfCordsSC = src.S8NoOfCordsSC;
+                dst.S8NoOfCordsSet = src.S8NoOfCordsSet;
+                dst.S8NoOfCordsSet2 = src.S8NoOfCordsSet2;
+                dst.S8SofnorSC = src.S8SofnorSC;
+                dst.S8SofnorSet = src.S8SofnorSet;
+                dst.S8SofnorSet2 = src.S8SofnorSet2;
+                dst.S8DrawNipSC = src.S8DrawNipSC;
+                dst.S8DrawNipSet = src.S8DrawNipSet;
+                dst.S8DrawNipSet2 = src.S8DrawNipSet2;
+                dst.S8DippingNo1ConcentrationSC = src.S8DippingNo1ConcentrationSC;
+                dst.S8DippingNo1ConcentrationSet = src.S8DippingNo1ConcentrationSet;
+                dst.S8DippingNo1ConcentrationSet2 = src.S8DippingNo1ConcentrationSet2;
+                dst.S8DippingNo1NipFrontSC = src.S8DippingNo1NipFrontSC;
+                dst.S8DippingNo1NipFrontSet = src.S8DippingNo1NipFrontSet;
+                dst.S8DippingNo1NipFrontSet2 = src.S8DippingNo1NipFrontSet2;
+                dst.S8DippingNo1NipBackSC = src.S8DippingNo1NipBackSC;
+                dst.S8DippingNo1NipBackSet = src.S8DippingNo1NipBackSet;
+                dst.S8DippingNo1NipBackSet2 = src.S8DippingNo1NipBackSet2;
+                dst.S8DippingNo1WPUstdSC = src.S8DippingNo1WPUstdSC;
+                dst.S8DippingNo1WPUstdSet = src.S8DippingNo1WPUstdSet;
+                dst.S8DippingNo1WPUstdSet2 = src.S8DippingNo1WPUstdSet2;
+                dst.S8DippingNo2ConcentrationSC = src.S8DippingNo2ConcentrationSC;
+                dst.S8DippingNo2ConcentrationSet = src.S8DippingNo2ConcentrationSet;
+                dst.S8DippingNo2ConcentrationSet2 = src.S8DippingNo2ConcentrationSet2;
+                dst.S8DippingNo2NipFrontSC = src.S8DippingNo2NipFrontSC;
+                dst.S8DippingNo2NipFrontSet = src.S8DippingNo2NipFrontSet;
+                dst.S8DippingNo2NipFrontSet2 = src.S8DippingNo2NipFrontSet2;
+                dst.S8DippingNo2NipBackSC = src.S8DippingNo2NipBackSC;
+                dst.S8DippingNo2NipBackSet = src.S8DippingNo2NipBackSet;
+                dst.S8DippingNo2NipBackSet2 = src.S8DippingNo2NipBackSet2;
+                dst.S8DippingNo2WPUstdSC = src.S8DippingNo2WPUstdSC;
+                dst.S8DippingNo2WPUstdSet = src.S8DippingNo2WPUstdSet;
+                dst.S8DippingNo2WPUstdSet2 = src.S8DippingNo2WPUstdSet2;
+
+                dst.S9WinderAyameDaialSC = src.S9WinderAyameDaialSC;
+                dst.S9WinderAyameDaialSet = src.S9WinderAyameDaialSet;
+                dst.S9WinderAyameDaialSet2 = src.S9WinderAyameDaialSet2;
+                dst.S9WinderMpaSC = src.S9WinderMpaSC;
+                dst.S9WinderMpaSet = src.S9WinderMpaSet;
+                dst.S9WinderMpaSet2 = src.S9WinderMpaSet2;
+                dst.S9WinderSpringSC = src.S9WinderSpringSC;
+                dst.S9WinderSpringSet = src.S9WinderSpringSet;
+                dst.S9WinderSpringSet2 = src.S9WinderSpringSet2;
+                dst.S9WinderPeperTubeColorSC = src.S9WinderPeperTubeColorSC;
+                dst.S9WinderPeperTubeColorSet = src.S9WinderPeperTubeColorSet;
+                dst.S9WinderPeperTubeColorSet2 = src.S9WinderPeperTubeColorSet2;
+                dst.S9WinderCheeseWeightSC = src.S9WinderCheeseWeightSC;
+                dst.S9WinderCheeseWeightSet = src.S9WinderCheeseWeightSet;
+                dst.S9WinderCheeseWeightSet2 = src.S9WinderCheeseWeightSet2;
+                dst.S9ExhaustFanOven1CirculatingFanSC = src.S9ExhaustFanOven1CirculatingFanSC;
+                dst.S9ExhaustFanOven1CirculatingFanSet = src.S9ExhaustFanOven1CirculatingFanSet;
+                dst.S9ExhaustFanOven1CirculatingFanSet2 = src.S9ExhaustFanOven1CirculatingFanSet2;
+                dst.S9ExhaustFanOven2CirculatingFanSC = src.S9ExhaustFanOven2CirculatingFanSC;
+                dst.S9ExhaustFanOven2CirculatingFanSet = src.S9ExhaustFanOven2CirculatingFanSet;
+                dst.S9ExhaustFanOven2CirculatingFanSet2 = src.S9ExhaustFanOven2CirculatingFanSet2;
+                dst.S9ExhaustFanOven1ExhaustFanSC = src.S9ExhaustFanOven1ExhaustFanSC;
+                dst.S9ExhaustFanOven1ExhaustFanSet = src.S9ExhaustFanOven1ExhaustFanSet;
+                dst.S9ExhaustFanOven1ExhaustFanSet2 = src.S9ExhaustFanOven1ExhaustFanSet2;
+                dst.S9ExhaustFanOven2ExhaustFanSC = src.S9ExhaustFanOven2ExhaustFanSC;
+                dst.S9ExhaustFanOven2ExhaustFanSet = src.S9ExhaustFanOven2ExhaustFanSet;
+                dst.S9ExhaustFanOven2ExhaustFanSet2 = src.S9ExhaustFanOven2ExhaustFanSet2;
+                dst.S9ExhaustFanOvenFrontExhaustFanSC = src.S9ExhaustFanOvenFrontExhaustFanSC;
+                dst.S9ExhaustFanOvenFrontExhaustFanSet = src.S9ExhaustFanOvenFrontExhaustFanSet;
+                dst.S9ExhaustFanOvenFrontExhaustFanSet2 = src.S9ExhaustFanOvenFrontExhaustFanSet2;
+                dst.S9ExhaustFanOvenBackExhaustFanSC = src.S9ExhaustFanOvenBackExhaustFanSC;
+                dst.S9ExhaustFanOvenBackExhaustFanSet = src.S9ExhaustFanOvenBackExhaustFanSet;
+                dst.S9ExhaustFanOvenBackExhaustFanSet2 = src.S9ExhaustFanOvenBackExhaustFanSet2;
+                dst.S9SpongSC = src.S9SpongSC;
+                dst.S9SpongSet = src.S9SpongSet;
+                dst.S9SpongSet2 = src.S9SpongSet2;
+            }
+        }
+
+
+        public static NDbResult<DIPCondition> Gets(int? DIPPCId)
 		{
 			MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -283,8 +441,9 @@ namespace M3.Cord.Models
 			}
 
 			var p = new DynamicParameters();
+			p.Add("@DIPPCId", DIPPCId);
 
-			try
+            try
 			{
 				var item = cnn.Query<DIPCondition>("GetDIPConditions", p,
 					commandType: CommandType.StoredProcedure).FirstOrDefault();
@@ -583,52 +742,6 @@ namespace M3.Cord.Models
 				cnn.Execute("SaveDIPCondition", p, commandType: CommandType.StoredProcedure);
 				ret.Success(value);
 
-				// Set error number/message
-				ret.ErrNum = p.Get<int>("@errNum");
-				ret.ErrMsg = p.Get<string>("@errMsg");
-			}
-			catch (Exception ex)
-			{
-				med.Err(ex);
-				// Set error number/message
-				ret.ErrNum = 9999;
-				ret.ErrMsg = ex.Message;
-			}
-
-			return ret;
-		}
-
-		public static NDbResult Delete(DIPCondition value)
-		{
-			MethodBase med = MethodBase.GetCurrentMethod();
-
-			NDbResult ret = new NDbResult();
-
-			if (null == value)
-			{
-				ret.ParameterIsNull();
-				return ret;
-			}
-
-			IDbConnection cnn = DbServer.Instance.Db;
-			if (null == cnn || !DbServer.Instance.Connected)
-			{
-				string msg = "Connection is null or cannot connect to database server.";
-				med.Err(msg);
-				// Set error number/message
-				ret.ErrNum = 8000;
-				ret.ErrMsg = msg;
-
-				return ret;
-			}
-
-			var p = new DynamicParameters();
-			p.Add("@ProductCode", value.ProductCode);
-
-			try
-			{
-				cnn.Execute("DELETE FROM DIPCondition WHERE ProductCode = @ProductCode", p, commandType: CommandType.Text);
-				ret.Success();
 				// Set error number/message
 				ret.ErrNum = p.Get<int>("@errNum");
 				ret.ErrMsg = p.Get<string>("@errMsg");
