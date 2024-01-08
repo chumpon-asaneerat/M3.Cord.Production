@@ -171,50 +171,61 @@ namespace M3.Cord.Models
 
 		#region Static Methods
 
-		public static NDbResult<DIPConditionStd> GetCurrent()
-		{
-			MethodBase med = MethodBase.GetCurrentMethod();
+        /// <summary>
+        /// Gets
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<List<DIPConditionStd>> Gets(string productCode)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
 
-			NDbResult<DIPConditionStd> ret = new NDbResult<DIPConditionStd>();
+            NDbResult<List<DIPConditionStd>> rets = new NDbResult<List<DIPConditionStd>>();
 
-			IDbConnection cnn = DbServer.Instance.Db;
-			if (null == cnn || !DbServer.Instance.Connected)
-			{
-				string msg = "Connection is null or cannot connect to database server.";
-				med.Err(msg);
-				// Set error number/message
-				ret.ErrNum = 8000;
-				ret.ErrMsg = msg;
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
 
-				return ret;
-			}
+                return rets;
+            }
 
-			var p = new DynamicParameters();
+            var p = new DynamicParameters();
+            p.Add("@ProductCode", productCode);
 
-			try
-			{
-				var item = cnn.Query<DIPConditionStd>("GetDIPConditionStd", p,
-					commandType: CommandType.StoredProcedure).FirstOrDefault();
-				var data = item;
-				ret.Success(data);
-			}
-			catch (Exception ex)
-			{
-				med.Err(ex);
-				// Set error number/message
-				ret.ErrNum = 9999;
-				ret.ErrMsg = ex.Message;
-			}
+            try
+            {
+                var items = cnn.Query<DIPConditionStd>("GetDIPConditionStd", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
 
-			return ret;
-		}
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<DIPConditionStd>();
+            }
 
-		/// <summary>
-		/// Save
-		/// </summary>
-		/// <param name="value">The DIPConditionStd item to save.</param>
-		/// <returns></returns>
-		public static NDbResult<DIPConditionStd> Save(DIPConditionStd value)
+            return rets;
+        }
+
+        /// <summary>
+        /// Save
+        /// </summary>
+        /// <param name="value">The DIPConditionStd item to save.</param>
+        /// <returns></returns>
+        public static NDbResult<DIPConditionStd> Save(DIPConditionStd value)
 		{
 			MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -397,52 +408,6 @@ namespace M3.Cord.Models
 				cnn.Execute("SaveDIPConditionStd", p, commandType: CommandType.StoredProcedure);
 				ret.Success(value);
 
-				// Set error number/message
-				ret.ErrNum = p.Get<int>("@errNum");
-				ret.ErrMsg = p.Get<string>("@errMsg");
-			}
-			catch (Exception ex)
-			{
-				med.Err(ex);
-				// Set error number/message
-				ret.ErrNum = 9999;
-				ret.ErrMsg = ex.Message;
-			}
-
-			return ret;
-		}
-
-		public static NDbResult Delete(DIPConditionStd value)
-		{
-			MethodBase med = MethodBase.GetCurrentMethod();
-
-			NDbResult ret = new NDbResult();
-
-			if (null == value)
-			{
-				ret.ParameterIsNull();
-				return ret;
-			}
-
-			IDbConnection cnn = DbServer.Instance.Db;
-			if (null == cnn || !DbServer.Instance.Connected)
-			{
-				string msg = "Connection is null or cannot connect to database server.";
-				med.Err(msg);
-				// Set error number/message
-				ret.ErrNum = 8000;
-				ret.ErrMsg = msg;
-
-				return ret;
-			}
-
-			var p = new DynamicParameters();
-			p.Add("@ProductCode", value.ProductCode);
-
-			try
-			{
-				cnn.Execute("DELETE FROM DIPConditionStd WHERE ProductCode = @ProductCode", p, commandType: CommandType.Text);
-				ret.Success();
 				// Set error number/message
 				ret.ErrNum = p.Get<int>("@errNum");
 				ret.ErrMsg = p.Get<string>("@errMsg");

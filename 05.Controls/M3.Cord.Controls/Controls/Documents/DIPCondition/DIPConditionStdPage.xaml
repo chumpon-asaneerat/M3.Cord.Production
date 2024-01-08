@@ -147,7 +147,7 @@
             </Border>
             <!--#endregion-->
 
-            <!--# 1.Yarn 1-->
+            <!--  # 1.Yarn 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="2"
                     Grid.Column="0"
@@ -162,11 +162,15 @@
                     </Style>
                 </Border.Style>
             </Border>
-            
-            <Border Grid.Row="2" Grid.Column="0" Grid.RowSpan="9">
+
+            <Border Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.RowSpan="9">
                 <TextBlock Text="CS 7 Creel" HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Row="2" Grid.Column="1" Grid.RowSpan="6">
+            <Border Grid.Row="2"
+                    Grid.Column="1"
+                    Grid.RowSpan="6">
                 <TextBlock Text="1. Yarn" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="2" Grid.Column="2">
@@ -178,19 +182,15 @@
                 <CheckBox Content="" IsChecked="{Binding S7YarnCordStructureSC}" />
             </Border>
             <Border Grid.Row="2" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S7YarnCordStructureSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S7YarnCordStructureSet}" />
             </Border>
             <Border Grid.Row="2" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S7YarnCordStructureSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S7YarnCordStructureSet2}" />
             </Border>
-            
+
             <!--#endregion-->
 
-            <!--# 1.Yarn 2-->
+            <!--  # 1.Yarn 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="3"
                     Grid.Column="0"
@@ -205,7 +205,7 @@
                     </Style>
                 </Border.Style>
             </Border>
-            
+
             <Border Grid.Row="3" Grid.Column="2">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="1.2 Yarn type (ชนิดด้าย)" />
@@ -215,18 +215,14 @@
                 <CheckBox Content="" IsChecked="{Binding S7YarnYarnTypeSC}" />
             </Border>
             <Border Grid.Row="3" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S7YarnYarnTypeSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S7YarnYarnTypeSet}" />
             </Border>
             <Border Grid.Row="3" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S7YarnYarnTypeSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S7YarnYarnTypeSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 1.Yarn 3-->
+            <!--  # 1.Yarn 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="4"
                     Grid.Column="0"
@@ -250,18 +246,14 @@
                 <CheckBox Content="" IsChecked="{Binding S7Yarn1stTwistSC}" />
             </Border>
             <Border Grid.Row="4" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S7Yarn1stTwistSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S7Yarn1stTwistSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="4" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S7Yarn1stTwistSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S7Yarn1stTwistSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 1.Yarn 4-->
+            <!--  # 1.Yarn 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="5"
                     Grid.Column="0"
@@ -276,7 +268,7 @@
                     </Style>
                 </Border.Style>
             </Border>
-            
+
             <Border Grid.Row="5" Grid.Column="2">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="1.4 2nd twist (การตีเกลียวครั้งที่ 2)" />
@@ -286,18 +278,14 @@
                 <CheckBox Content="" IsChecked="{Binding S7Yarn2ndTwistSC}" />
             </Border>
             <Border Grid.Row="5" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S7Yarn2ndTwistSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S7Yarn2ndTwistSet}" />
             </Border>
             <Border Grid.Row="5" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S7Yarn2ndTwistSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S7Yarn2ndTwistSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 1.Yarn 5-->
+            <!--  # 1.Yarn 5  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="6"
                     Grid.Column="0"
@@ -321,18 +309,14 @@
                 <CheckBox Content="" IsChecked="{Binding S7YarnLabelOfYarnSC}" />
             </Border>
             <Border Grid.Row="6" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S7YarnLabelOfYarnSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S7YarnLabelOfYarnSet}" />
             </Border>
             <Border Grid.Row="6" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S7YarnLabelOfYarnSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S7YarnLabelOfYarnSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 1.Yarn 6-->
+            <!--  # 1.Yarn 6  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="7"
                     Grid.Column="0"
@@ -357,29 +341,21 @@
             </Border>
             <Border Grid.Row="7" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S7YarnWeightSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S7YarnWeightSet, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S7YarnWeightSetErr, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S7YarnWeightSetErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="7" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S7YarnWeightSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S7YarnWeightSet2, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S7YarnWeightSetErr2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S7YarnWeightSetErr2, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <!--#endregion-->
 
-            <!--# 2.Creel setting 1-->
+            <!--  # 2.Creel setting 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="8"
                     Grid.Column="0"
@@ -394,7 +370,9 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="8" Grid.Column="1" Grid.RowSpan="3">
+            <Border Grid.Row="8"
+                    Grid.Column="1"
+                    Grid.RowSpan="3">
                 <TextBlock Text="2. Creel setting" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="8" Grid.Column="2">
@@ -406,18 +384,14 @@
                 <CheckBox Content="" IsChecked="{Binding S7CreelSettingUseTensorSC}" />
             </Border>
             <Border Grid.Row="8" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S7CreelSettingUseTensorSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S7CreelSettingUseTensorSet}" />
             </Border>
             <Border Grid.Row="8" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S7CreelSettingUseTensorSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S7CreelSettingUseTensorSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 2.Creel setting 2-->
+            <!--  # 2.Creel setting 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="9"
                     Grid.Column="0"
@@ -441,18 +415,14 @@
                 <CheckBox Content="" IsChecked="{Binding S7CreelSettingKnotConditionSC}" />
             </Border>
             <Border Grid.Row="9" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S7CreelSettingKnotConditionSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S7CreelSettingKnotConditionSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="9" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S7CreelSettingKnotConditionSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S7CreelSettingKnotConditionSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 2.Yarn 3-->
+            <!--  # 2.Yarn 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="10"
                     Grid.Column="0"
@@ -476,18 +446,14 @@
                 <CheckBox Content="" IsChecked="{Binding S7CreelSettingSlubCatsweSC}" />
             </Border>
             <Border Grid.Row="10" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S7CreelSettingSlubCatsweSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S7CreelSettingSlubCatsweSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="10" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S7CreelSettingSlubCatsweSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S7CreelSettingSlubCatsweSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 3.Stretch 1-->
+            <!--  # 3.Stretch 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="11"
                     Grid.Column="0"
@@ -502,10 +468,14 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="11" Grid.Column="0" Grid.RowSpan="20">
+            <Border Grid.Row="11"
+                    Grid.Column="0"
+                    Grid.RowSpan="20">
                 <TextBlock Text="CS-8 Cordseter " HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Row="11" Grid.Column="1" Grid.RowSpan="4">
+            <Border Grid.Row="11"
+                    Grid.Column="1"
+                    Grid.RowSpan="4">
                 <TextBlock Text="3. Stretch" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="11" Grid.Column="2">
@@ -518,29 +488,21 @@
             </Border>
             <Border Grid.Row="11" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchDryerSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchDryerSet, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchDryerSetErr, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchDryerSetErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="11" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchDryerSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchDryerSet2, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchDryerSetErr2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchDryerSetErr2, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <!--#endregion-->
 
-            <!--# 3.Stretch 2-->
+            <!--  # 3.Stretch 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="12"
                     Grid.Column="0"
@@ -565,29 +527,21 @@
             </Border>
             <Border Grid.Row="12" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchStretchHotSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchStretchHotSet, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchStretchHotSetErr, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchStretchHotSetErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="12" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchStretchHotSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchStretchHotSet2, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchStretchHotSetErr2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchStretchHotSetErr2, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <!--#endregion-->
 
-            <!--# 3.Stretch 3-->
+            <!--  # 3.Stretch 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="13"
                     Grid.Column="0"
@@ -612,29 +566,21 @@
             </Border>
             <Border Grid.Row="13" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchNormalSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchNormalSet, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchNormalSetErr, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchNormalSetErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="13" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchNormalSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchNormalSet2, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchNormalSetErr2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchNormalSetErr2, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <!--#endregion-->
 
-            <!--# 3.Stretch 4-->
+            <!--  # 3.Stretch 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="14"
                     Grid.Column="0"
@@ -659,29 +605,21 @@
             </Border>
             <Border Grid.Row="14" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchTotalSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchTotalSet, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchTotalSetErr, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchTotalSetErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="14" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchTotalSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchTotalSet2, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8StretchTotalSetErr2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8StretchTotalSetErr2, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <!--#endregion-->
 
-            <!--# 4.Temp 1-->
+            <!--  # 4.Temp 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="15"
                     Grid.Column="0"
@@ -696,7 +634,9 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="15" Grid.Column="1" Grid.RowSpan="3">
+            <Border Grid.Row="15"
+                    Grid.Column="1"
+                    Grid.RowSpan="3">
                 <TextBlock Text="4.Temp" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="15" Grid.Column="2">
@@ -709,29 +649,21 @@
             </Border>
             <Border Grid.Row="15" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8TempDryerSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempDryerSet, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8TempDryerSetErr, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempDryerSetErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="15" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8TempDryerSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempDryerSet2, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8TempDryerSetErr2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempDryerSetErr2, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <!--#endregion-->
 
-            <!--# 4.Temp 2-->
+            <!--  # 4.Temp 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="16"
                     Grid.Column="0"
@@ -756,29 +688,21 @@
             </Border>
             <Border Grid.Row="16" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8TempHotSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempHotSet, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8TempHotSetErr, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempHotSetErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="16" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8TempHotSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempHotSet2, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8TempHotSetErr2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempHotSetErr2, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <!--#endregion-->
 
-            <!--# 4.Temp 3-->
+            <!--  # 4.Temp 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="17"
                     Grid.Column="0"
@@ -803,29 +727,21 @@
             </Border>
             <Border Grid.Row="17" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8TempNormalSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempNormalSet, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8TempNormalSetErr, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempNormalSetErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="17" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8TempNormalSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempNormalSet2, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8TempNormalSetErr2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8TempNormalSetErr2, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <!--#endregion-->
 
-            <!--# 5. Counter -->
+            <!--  # 5. Counter  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="18"
                     Grid.Column="0"
@@ -840,7 +756,7 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="18" Grid.Column="1" >
+            <Border Grid.Row="18" Grid.Column="1">
                 <TextBlock Text="5. Counter" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="18" Grid.Column="2">
@@ -852,18 +768,14 @@
                 <CheckBox Content="" IsChecked="{Binding S8CounterSettingSC}" />
             </Border>
             <Border Grid.Row="18" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8CounterSettingSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S8CounterSettingSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="18" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8CounterSettingSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S8CounterSettingSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 6. Speed -->
+            <!--  # 6. Speed  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="19"
                     Grid.Column="0"
@@ -878,7 +790,7 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="19" Grid.Column="1" >
+            <Border Grid.Row="19" Grid.Column="1">
                 <TextBlock Text="6. Speed" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="19" Grid.Column="2">
@@ -891,29 +803,21 @@
             </Border>
             <Border Grid.Row="19" Grid.Column="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8SpeedSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8SpeedSet, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8SpeedErr, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8SpeedErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <Border Grid.Row="19" Grid.Column="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="40"
-                             Text="{Binding S8SpeedSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8SpeedSet2, StringFormat='{}{0:#,##0.##}'}" />
                     <TextBlock Text=" ± " />
-                    <TextBox Width="40"
-                             Text="{Binding S8SpeedErr2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                    <TextBox Width="40" Text="{Binding S8SpeedErr2, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </Border>
             <!--#endregion-->
 
-            <!--# 7. No. of cord -->
+            <!--  # 7. No. of cord  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="20"
                     Grid.Column="0"
@@ -928,32 +832,28 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="20" Grid.Column="1" >
+            <Border Grid.Row="20" Grid.Column="1">
                 <TextBlock Text="7. No. of cord" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="20" Grid.Column="2">
                 <TextBlock HorizontalAlignment="Left">
-                    <Run Text="7.1 No.of cords of processing"/>
+                    <Run Text="7.1 No.of cords of processing" />
                     <LineBreak />
-                    <Run Text="(จำนวนเชือกที่ใช้กับขบวนการ)"/>
+                    <Run Text="(จำนวนเชือกที่ใช้กับขบวนการ)" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="20" Grid.Column="3">
                 <CheckBox Content="" IsChecked="{Binding S8NoOfCordsSC}" />
             </Border>
             <Border Grid.Row="20" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8NoOfCordsSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S8NoOfCordsSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="20" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8NoOfCordsSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S8NoOfCordsSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 8. Sofnor 1-->
+            <!--  # 8. Sofnor 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="21"
                     Grid.Column="0"
@@ -968,7 +868,9 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="21" Grid.Column="1" Grid.RowSpan="2">
+            <Border Grid.Row="21"
+                    Grid.Column="1"
+                    Grid.RowSpan="2">
                 <TextBlock Text="8. Sofnor" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="21" Grid.Column="2">
@@ -980,18 +882,14 @@
                 <CheckBox Content="" IsChecked="{Binding S8SofnorSC}" />
             </Border>
             <Border Grid.Row="21" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8SofnorSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S8SofnorSet}" />
             </Border>
             <Border Grid.Row="21" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8SofnorSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S8SofnorSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 8. Sofnor 2-->
+            <!--  # 8. Sofnor 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="22"
                     Grid.Column="0"
@@ -1015,18 +913,14 @@
                 <CheckBox Content="" IsChecked="{Binding S8DrawNipSC}" />
             </Border>
             <Border Grid.Row="22" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8DrawNipSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DrawNipSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="22" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8DrawNipSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DrawNipSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 9.Dipping No1 1-->
+            <!--  # 9.Dipping No1 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="23"
                     Grid.Column="0"
@@ -1041,10 +935,12 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="23" Grid.Column="1" Grid.RowSpan="4">
+            <Border Grid.Row="23"
+                    Grid.Column="1"
+                    Grid.RowSpan="4">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="9.Dipping No 1" />
-                     <LineBreak />
+                    <LineBreak />
                     <Run Text="อ่าง 1." />
                 </TextBlock>
             </Border>
@@ -1057,18 +953,14 @@
                 <CheckBox Content="" IsChecked="{Binding S8DippingNo1ConcentrationSC}" />
             </Border>
             <Border Grid.Row="23" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo1ConcentrationSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo1ConcentrationSet}" />
             </Border>
             <Border Grid.Row="23" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo1ConcentrationSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo1ConcentrationSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 9.Dipping No1 2-->
+            <!--  # 9.Dipping No1 2  -->
             <Border Grid.Row="24"
                     Grid.Column="0"
                     Grid.ColumnSpan="6">
@@ -1091,18 +983,14 @@
                 <CheckBox Content="" IsChecked="{Binding S8DippingNo1NipFrontSC}" />
             </Border>
             <Border Grid.Row="24" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo1NipFrontSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo1NipFrontSet}" />
             </Border>
             <Border Grid.Row="24" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo1NipFrontSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo1NipFrontSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 9.Dipping No1 3-->
+            <!--  # 9.Dipping No1 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="25"
                     Grid.Column="0"
@@ -1126,19 +1014,15 @@
                 <CheckBox Content="" IsChecked="{Binding S8DippingNo1NipBackSC}" />
             </Border>
             <Border Grid.Row="25" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo1NipBackSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo1NipBackSet}" />
             </Border>
-            <Border Grid.Row="25" Grid.Column="5"/>
+            <Border Grid.Row="25" Grid.Column="5" />
             <Border Grid.Row="25" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo1NipBackSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo1NipBackSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 9.Dipping No1 4-->
+            <!--  # 9.Dipping No1 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="26"
                     Grid.Column="0"
@@ -1155,27 +1039,23 @@
             </Border>
             <Border Grid.Row="26" Grid.Column="2">
                 <TextBlock HorizontalAlignment="Left">
-                    <Run Text="9.4 WPU standard (%)"/>
+                    <Run Text="9.4 WPU standard (%)" />
                     <LineBreak />
-                    <Run Text="(มาตรฐานการดูดซับน้ำยา)"/>
+                    <Run Text="(มาตรฐานการดูดซับน้ำยา)" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="26" Grid.Column="3">
                 <CheckBox Content="" IsChecked="{Binding S8DippingNo1WPUstdSC}" />
             </Border>
             <Border Grid.Row="26" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo1WPUstdSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo1WPUstdSet}" />
             </Border>
             <Border Grid.Row="26" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo1WPUstdSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo1WPUstdSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 10. Dipping No2 1-->
+            <!--  # 10. Dipping No2 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="27"
                     Grid.Column="0"
@@ -1190,10 +1070,12 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="27" Grid.Column="1" Grid.RowSpan="4">
+            <Border Grid.Row="27"
+                    Grid.Column="1"
+                    Grid.RowSpan="4">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="10.Dipping No 2" />
-                     <LineBreak />
+                    <LineBreak />
                     <Run Text="อ่าง 2." />
                 </TextBlock>
             </Border>
@@ -1206,18 +1088,14 @@
                 <CheckBox Content="" IsChecked="{Binding S8DippingNo2ConcentrationSC}" />
             </Border>
             <Border Grid.Row="27" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo2ConcentrationSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo2ConcentrationSet}" />
             </Border>
             <Border Grid.Row="27" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo2ConcentrationSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo2ConcentrationSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 10. Dipping No2 2-->
+            <!--  # 10. Dipping No2 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="28"
                     Grid.Column="0"
@@ -1241,18 +1119,14 @@
                 <CheckBox Content="" IsChecked="{Binding S8DippingNo2NipFrontSC}" />
             </Border>
             <Border Grid.Row="28" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo2NipFrontSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo2NipFrontSet}" />
             </Border>
             <Border Grid.Row="28" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo2NipFrontSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo2NipFrontSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 10. Dipping No2 3-->
+            <!--  # 10. Dipping No2 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="29"
                     Grid.Column="0"
@@ -1276,18 +1150,14 @@
                 <CheckBox Content="" IsChecked="{Binding S8DippingNo2NipBackSC}" />
             </Border>
             <Border Grid.Row="29" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo2NipBackSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo2NipBackSet}" />
             </Border>
             <Border Grid.Row="29" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo2NipBackSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo2NipBackSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 10. Dipping No2 4-->
+            <!--  # 10. Dipping No2 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="30"
                     Grid.Column="0"
@@ -1304,27 +1174,23 @@
             </Border>
             <Border Grid.Row="30" Grid.Column="2">
                 <TextBlock HorizontalAlignment="Left">
-                    <Run Text="10.4 WPU standard (%)"/>
+                    <Run Text="10.4 WPU standard (%)" />
                     <LineBreak />
-                    <Run Text="(มาตรฐานการดูดซับน้ำยา)"/>
+                    <Run Text="(มาตรฐานการดูดซับน้ำยา)" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="30" Grid.Column="3">
                 <CheckBox Content="" IsChecked="{Binding S8DippingNo2WPUstdSC}" />
             </Border>
             <Border Grid.Row="30" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo2WPUstdSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo2WPUstdSet}" />
             </Border>
             <Border Grid.Row="30" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S8DippingNo2WPUstdSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S8DippingNo2WPUstdSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# CS-9 Winder 1-->
+            <!--  # CS-9 Winder 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="31"
                     Grid.Column="0"
@@ -1339,10 +1205,14 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="31" Grid.Column="0" Grid.RowSpan="12">
+            <Border Grid.Row="31"
+                    Grid.Column="0"
+                    Grid.RowSpan="12">
                 <TextBlock Text="CS-9 Winder" HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Row="31" Grid.Column="1" Grid.RowSpan="6">
+            <Border Grid.Row="31"
+                    Grid.Column="1"
+                    Grid.RowSpan="6">
                 <TextBlock Text="11. Winder" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="31" Grid.Column="2">
@@ -1354,18 +1224,14 @@
                 <CheckBox Content="" IsChecked="{Binding S9WinderAyameDaialSC}" />
             </Border>
             <Border Grid.Row="31" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9WinderAyameDaialSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9WinderAyameDaialSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="31" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9WinderAyameDaialSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9WinderAyameDaialSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# CS-9 Winder 2-->
+            <!--  # CS-9 Winder 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="32"
                     Grid.Column="0"
@@ -1389,18 +1255,14 @@
                 <CheckBox Content="" IsChecked="{Binding S9WinderMpaSC}" />
             </Border>
             <Border Grid.Row="32" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9WinderMpaSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9WinderMpaSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="32" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9WinderMpaSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9WinderMpaSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# CS-9 Winder 3-->
+            <!--  # CS-9 Winder 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="33"
                     Grid.Column="0"
@@ -1424,18 +1286,14 @@
                 <CheckBox Content="" IsChecked="{Binding S9WinderSpringSC}" />
             </Border>
             <Border Grid.Row="33" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9WinderSpringSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9WinderSpringSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="33" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9WinderSpringSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9WinderSpringSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# CS-9 Winder 4-->
+            <!--  # CS-9 Winder 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="34"
                     Grid.Column="0"
@@ -1459,18 +1317,14 @@
                 <CheckBox Content="" IsChecked="{Binding S9WinderPeperTubeColorSC}" />
             </Border>
             <Border Grid.Row="34" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9WinderPeperTubeColorSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S9WinderPeperTubeColorSet}" />
             </Border>
             <Border Grid.Row="34" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9WinderPeperTubeColorSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S9WinderPeperTubeColorSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# CS-9 Winder 5-->
+            <!--  # CS-9 Winder 5  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="35"
                     Grid.Column="0"
@@ -1494,18 +1348,14 @@
                 <CheckBox Content="" IsChecked="{Binding S9WinderCheeseWeightSC}" />
             </Border>
             <Border Grid.Row="35" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9WinderCheeseWeightSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S9WinderCheeseWeightSet}" />
             </Border>
             <Border Grid.Row="35" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9WinderCheeseWeightSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S9WinderCheeseWeightSet2}" />
             </Border>
             <!--#endregion-->
 
-            <!--# CS-9 Exhaust Fan 1-->
+            <!--  # CS-9 Exhaust Fan 1  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="36"
                     Grid.Column="0"
@@ -1520,7 +1370,9 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="36" Grid.Column="1" Grid.RowSpan="6">
+            <Border Grid.Row="36"
+                    Grid.Column="1"
+                    Grid.RowSpan="6">
                 <TextBlock Text="12. Exhaust Fan" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="36" Grid.Column="2">
@@ -1532,18 +1384,14 @@
                 <CheckBox Content="" IsChecked="{Binding S9ExhaustFanOven1CirculatingFanSC}" />
             </Border>
             <Border Grid.Row="36" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOven1CirculatingFanSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1CirculatingFanSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="36" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOven1CirculatingFanSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1CirculatingFanSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# CS-9 Exhaust Fan 2-->
+            <!--  # CS-9 Exhaust Fan 2  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="37"
                     Grid.Column="0"
@@ -1567,18 +1415,14 @@
                 <CheckBox Content="" IsChecked="{Binding S9ExhaustFanOven2CirculatingFanSC}" />
             </Border>
             <Border Grid.Row="37" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOven2CirculatingFanSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2CirculatingFanSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="37" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOven2CirculatingFanSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2CirculatingFanSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# CS-9 Exhaust Fan 3-->
+            <!--  # CS-9 Exhaust Fan 3  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="38"
                     Grid.Column="0"
@@ -1602,18 +1446,14 @@
                 <CheckBox Content="" IsChecked="{Binding S9ExhaustFanOven1ExhaustFanSC}" />
             </Border>
             <Border Grid.Row="38" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOven1ExhaustFanSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1ExhaustFanSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="38" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOven1ExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOven1ExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# CS-9 Exhaust Fan 4-->
+            <!--  # CS-9 Exhaust Fan 4  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="39"
                     Grid.Column="0"
@@ -1637,18 +1477,14 @@
                 <CheckBox Content="" IsChecked="{Binding S9ExhaustFanOven2ExhaustFanSC}" />
             </Border>
             <Border Grid.Row="39" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOven2ExhaustFanSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2ExhaustFanSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="39" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOven2ExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOven2ExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# CS-9 Exhaust Fan 5-->
+            <!--  # CS-9 Exhaust Fan 5  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="40"
                     Grid.Column="0"
@@ -1672,18 +1508,14 @@
                 <CheckBox Content="" IsChecked="{Binding S9ExhaustFanOvenFrontExhaustFanSC}" />
             </Border>
             <Border Grid.Row="40" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOvenFrontExhaustFanSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenFrontExhaustFanSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="40" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOvenFrontExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenFrontExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# CS-9 Exhaust Fan 6-->
+            <!--  # CS-9 Exhaust Fan 6  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="41"
                     Grid.Column="0"
@@ -1707,18 +1539,14 @@
                 <CheckBox Content="" IsChecked="{Binding S9ExhaustFanOvenBackExhaustFanSC}" />
             </Border>
             <Border Grid.Row="41" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOvenBackExhaustFanSet, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenBackExhaustFanSet, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="41" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9ExhaustFanOvenBackExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}"
-                              />
+                <TextBox Width="100" Text="{Binding S9ExhaustFanOvenBackExhaustFanSet2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
-            <!--# 13.Spong -->
+            <!--  # 13.Spong  -->
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
             <Border Grid.Row="42"
                     Grid.Column="0"
@@ -1733,7 +1561,7 @@
                     </Style>
                 </Border.Style>
             </Border>
-            <Border Grid.Row="42" Grid.Column="1" >
+            <Border Grid.Row="42" Grid.Column="1">
                 <TextBlock Text="13.Spong" HorizontalAlignment="Center" />
             </Border>
             <Border Grid.Row="42" Grid.Column="2">
@@ -1745,14 +1573,10 @@
                 <CheckBox Content="" IsChecked="{Binding S9SpongSC}" />
             </Border>
             <Border Grid.Row="42" Grid.Column="4">
-                <TextBox Width="100"
-                             Text="{Binding S9SpongSet}"
-                              />
+                <TextBox Width="100" Text="{Binding S9SpongSet}" />
             </Border>
             <Border Grid.Row="42" Grid.Column="5">
-                <TextBox Width="100"
-                             Text="{Binding S9SpongSet2}"
-                              />
+                <TextBox Width="100" Text="{Binding S9SpongSet2}" />
             </Border>
             <!--#endregion-->
 

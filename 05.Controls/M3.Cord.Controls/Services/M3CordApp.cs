@@ -206,6 +206,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.S5StdManagePage>(); }
             }
+            /// <summary>Gets DIP Condition Manage Page.</summary>
+            public static Cord.Pages.DippingStdManagePage DippingStdManage
+            {
+                get { return GetPage<Cord.Pages.DippingStdManagePage>(); }
+            }
 
             #endregion
 

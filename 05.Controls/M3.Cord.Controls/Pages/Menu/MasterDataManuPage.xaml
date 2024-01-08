@@ -178,7 +178,7 @@
             <TextBlock DockPanel.Dock="Top" Height="20" />
             <ctrl:NGroupMenu>
                 <!--  COMMON MENU  -->
-                <ctrl:NGroupMenuItem HeaderText="COMMON"
+                <ctrl:NGroupMenuItem HeaderText="Common"
                                      HeaderBackground="{StaticResource FirstTwistBG}"
                                      Style="{StaticResource CommonGroupItemStyle}">
                     <!--  CUSTOMER  -->
@@ -214,8 +214,8 @@
                     </Button>
                     -->
                 </ctrl:NGroupMenuItem>
-                <!--  STANDARD CONDITION MENU  -->
-                <ctrl:NGroupMenuItem HeaderText="Comdition"
+                <!--  1st Twist CONDITION  -->
+                <ctrl:NGroupMenuItem HeaderText="1st Twist"
                                      HeaderBackground="{StaticResource SamplingBG}"
                                      Style="{StaticResource CommonGroupItemStyle}">
                     <!--  S1 Standard Condition  -->
@@ -225,7 +225,7 @@
                         <TextBlock TextAlignment="Center">
                             <Run Text="Setup S-1" />
                             <LineBreak />
-                            <Run Text="Standard" />
+                            <Run Text="Condition (std)" />
                         </TextBlock>
                     </Button>
                     <!--  S4x1 Standard Condition  -->
@@ -235,7 +235,7 @@
                         <TextBlock TextAlignment="Center">
                             <Run Text="Setup S-4-1" />
                             <LineBreak />
-                            <Run Text="Standard" />
+                            <Run Text="Condition (std)" />
                         </TextBlock>
                     </Button>
                     <!--  S4x2 Standard Condition  -->
@@ -245,9 +245,14 @@
                         <TextBlock TextAlignment="Center">
                             <Run Text="Setup S-4-2" />
                             <LineBreak />
-                            <Run Text="Standard" />
+                            <Run Text="Condition (std)" />
                         </TextBlock>
                     </Button>
+                </ctrl:NGroupMenuItem>
+                <!--  Ageing CONDITION MENU  -->
+                <ctrl:NGroupMenuItem HeaderText="Ageing, Dipping"
+                                     HeaderBackground="{StaticResource SamplingBG}"
+                                     Style="{StaticResource CommonGroupItemStyle}">
                     <!--  S5 Standard Condition  -->
                     <Button x:Name="cmd5StdCondiction"
                             Click="cmd5StdCondiction_Click"
@@ -255,7 +260,17 @@
                         <TextBlock TextAlignment="Center">
                             <Run Text="Setup S-5" />
                             <LineBreak />
-                            <Run Text="Standard" />
+                            <Run Text="Condition (std)" />
+                        </TextBlock>
+                    </Button>
+                    <!--  DIP Standard Condition  -->
+                    <Button x:Name="cmdDipCondition"
+                            Click="cmdDipCondition_Click"
+                            Style="{StaticResource SamplingButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Setup Dipping" />
+                            <LineBreak />
+                            <Run Text="Condition (std)" />
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>

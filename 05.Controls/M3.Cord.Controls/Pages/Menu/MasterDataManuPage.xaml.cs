@@ -119,6 +119,13 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdDipCondition_Click(object sender, RoutedEventArgs e)
+        {
+            var page = M3CordApp.Pages.DippingStdManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
+
         #endregion
     }
 }
