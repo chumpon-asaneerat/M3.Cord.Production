@@ -212,7 +212,7 @@
     <Compile Include="Pages\DIPTimeTable\DIPTimePage.xaml.cs">
       <DependentUpon>DIPTimePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Documents\DippingStdManagePage.xaml.cs">
+    <Compile Include="Pages\Documents\Dipping\DippingStdManagePage.xaml.cs">
       <DependentUpon>DippingStdManagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
@@ -676,9 +676,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Documents\DippingStdManagePage.xaml">
+    <Page Include="Pages\DIPTimeTable\DIPTimePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Documents\Dipping\DippingStdManagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Solution\CreateRecipePage.xaml">
       <Generator>MSBuild:Compile</Generator>
