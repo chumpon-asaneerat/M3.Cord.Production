@@ -16,8 +16,11 @@ M3 Cord Production System #816
 M3 Cord Production System #815
 - 
 
+[commited]
 M3 Cord Production System #814
-- 
+- M3.Cord.Production.App re-implements #604
+  - Fixed palletsetting and dip slip running no problem
+  - Update App build 1012
 
 [commited]
 M3 Cord Production System #813

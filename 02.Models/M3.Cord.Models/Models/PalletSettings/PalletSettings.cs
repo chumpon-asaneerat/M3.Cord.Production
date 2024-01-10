@@ -603,7 +603,7 @@ namespace M3.Cord.Models
                 ret.Success(value);
 
                 // Set PK
-                value.PalletId = p.Get<int?>("@PalletId");
+                value.PalletId = p.Get<dynamic>("@PalletId");
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");
