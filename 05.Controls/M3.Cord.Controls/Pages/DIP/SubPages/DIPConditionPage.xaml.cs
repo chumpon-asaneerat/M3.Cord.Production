@@ -45,6 +45,7 @@ namespace M3.Cord.Pages
 
         private DIPMC mc = null;
         private DIPPCCard pcCard = null;
+        private DIPCondition cond = null;
 
         #endregion
 
@@ -66,7 +67,14 @@ namespace M3.Cord.Pages
 
         private void Save()
         {
+            if (null != cond)
+            {
+                var ret = DIPCondition.Save(cond);
+                if (null != ret && ret.Ok)
+                {
 
+                }
+            }
         }
 
         #endregion
@@ -75,17 +83,42 @@ namespace M3.Cord.Pages
 
         public void Setup(DIPMC selecteedMC)
         {
+            paCondition.DataContext = null;
+            dip.DataContext = null;
+
             if (null != selecteedMC)
             {
                 mc = selecteedMC;
                 pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
                 if (null != pcCard)
                 {
+                    var std = DIPConditionStd.Gets(pcCard.ProductCode).Value().FirstOrDefault();
+                    cond = DIPCondition.Gets(pcCard.DIPPCId).Value();
+                    if (null != cond) 
+                    {
+                        DIPCondition.Assign(std, cond);
+                        cond.DIPPCId = pcCard.DIPPCId;
+                        cond.ProductCode = pcCard.ProductCode;
 
+                        cond.UpdateBy = (null != M3CordApp.Current.User) ?
+                            M3CordApp.Current.User.FullName : null;
+                        cond.UpdateDate = DateTime.Now;
+                    }
+                    else
+                    {
+                        cond = DIPCondition.Create(pcCard.ProductCode);
+                        cond.DIPPCId = pcCard.DIPPCId;
+                        cond.ProductCode = pcCard.ProductCode;
+
+                        cond.UpdateBy = (null != M3CordApp.Current.User) ?
+                            M3CordApp.Current.User.FullName : null;
+                        cond.UpdateDate = DateTime.Now;
+                    }
                 }
             }
 
             paCondition.DataContext = pcCard;
+            dip.DataContext = cond;
         }
 
         #endregion

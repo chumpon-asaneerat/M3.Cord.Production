@@ -320,6 +320,8 @@ namespace M3.Cord.Models
                 cnn.Execute("SaveS4x2Condition", p, commandType: CommandType.StoredProcedure);
                 ret.Success(value);
 
+                // Set PK
+                value.S4x2ConditionId = p.Get<dynamic>("@S4x2ConditionId");
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");

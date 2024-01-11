@@ -599,6 +599,8 @@ namespace M3.Cord.Models
                 cnn.Execute("SaveS5Condition", p, commandType: CommandType.StoredProcedure);
                 ret.Success(value);
 
+                // Set PK
+                value.S5ConditionId = p.Get<dynamic>("@S5ConditionId");
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");

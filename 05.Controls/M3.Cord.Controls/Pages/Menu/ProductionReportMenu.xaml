@@ -115,7 +115,7 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <page:NPage HeaderText="Production Reports">
+    <page:NPage HeaderText="Production Reports and Slips">
         <DockPanel LastChildFill="True" Margin="5">
             <TextBlock DockPanel.Dock="Top" Height="20" />
             <ctrl:NGroupMenu>

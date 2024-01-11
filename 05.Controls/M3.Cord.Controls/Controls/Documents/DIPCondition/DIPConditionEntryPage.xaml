@@ -29,7 +29,8 @@
             <Setter Property="HorizontalAlignment" Value="Center" />
         </Style>
     </UserControl.Resources>
-    <ScrollViewer>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -188,7 +189,7 @@
                     </Style>
                 </Border.Style>
             </Border>
-            
+
             <Border Grid.Row="2"
                     Grid.Column="0"
                     Grid.RowSpan="9">

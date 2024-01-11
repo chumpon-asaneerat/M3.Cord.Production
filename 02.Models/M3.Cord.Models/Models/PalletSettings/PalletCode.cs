@@ -98,9 +98,11 @@ namespace M3.Cord.Models
 
                 return ret;
             }
+            int year = DateTime.Now.Year;
 
             var p = new DynamicParameters();
             p.Add("@MCCode", mcCode);
+            p.Add("@Year", year);
             p.Add("@LastId", newId);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);

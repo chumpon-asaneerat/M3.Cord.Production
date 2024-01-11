@@ -339,7 +339,7 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=IIF(First(Fields!DipSolutionQty.Value, "main") Is Nothing,""
-,Format(CDec(First(Fields!DipSolutionQty.Value, "main")),"#,##0.##")+" ลิตร")</Value>
+,Format(CDec(First(Fields!DipSolutionQty.Value, "main")),"#,##0.##")+" Kg")</Value>
                         <Style>
                           <FontSize>11pt</FontSize>
                         </Style>
