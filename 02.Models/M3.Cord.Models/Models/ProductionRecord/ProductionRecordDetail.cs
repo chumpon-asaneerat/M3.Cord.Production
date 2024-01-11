@@ -52,8 +52,7 @@ namespace M3.Cord.Models
 		#endregion
 
 		#region Static Methods
-
-		public static NDbResult<ProductionRecordDetail> GetCurrent()
+		public static NDbResult<ProductionRecordDetail> GetCurrent(string productCode, string lotNo)
 		{
 			MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -72,7 +71,8 @@ namespace M3.Cord.Models
 			}
 
 			var p = new DynamicParameters();
-
+			p.Add("@ProductCode", productCode);
+			p.Add("@LotNo", lotNo);
 			try
 			{
 				var item = cnn.Query<ProductionRecordDetail>("GetProductionRecordDetail", p,
@@ -89,6 +89,47 @@ namespace M3.Cord.Models
 			}
 
 			return ret;
+		}
+
+		public static NDbResult<List<ProductionRecordDetail>> Gets(string productCode , string lotNo)
+		{
+			MethodBase med = MethodBase.GetCurrentMethod();
+
+			NDbResult<List<ProductionRecordDetail>> rets = new NDbResult<List<ProductionRecordDetail>>();
+
+			IDbConnection cnn = DbServer.Instance.Db;
+			if (null == cnn || !DbServer.Instance.Connected)
+			{
+				string msg = "Connection is null or cannot connect to database server.";
+				med.Err(msg);
+				// Set error number/message
+				rets.ErrNum = 8000;
+				rets.ErrMsg = msg;
+
+				return rets;
+			}
+
+			var p = new DynamicParameters();
+			p.Add("@ProductCode", productCode);
+			p.Add("@LotNo", lotNo);
+
+			try
+			{
+				var items = cnn.Query<ProductionRecordDetail>("GetProductionRecordDetail", p,
+					commandType: CommandType.StoredProcedure);
+				var data = (null != items) ? items.ToList() : null;
+
+				rets.Success(data);
+			}
+			catch (Exception ex)
+			{
+				med.Err(ex);
+				// Set error number/message
+				rets.ErrNum = 9999;
+				rets.ErrMsg = ex.Message;
+			}
+
+			return rets;
 		}
 
 		/// <summary>

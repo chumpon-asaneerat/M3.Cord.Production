@@ -465,6 +465,11 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.RecordActualWeightPage>(); }
             }
 
+
+            public static Cord.Pages.ProductionRecordStdPage ProductionRecordStd
+            {
+                get { return GetPage<Cord.Pages.ProductionRecordStdPage>(); }
+            }
             #endregion
         }
 
