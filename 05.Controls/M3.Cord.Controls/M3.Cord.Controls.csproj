@@ -89,6 +89,18 @@
     <Compile Include="Controls\Documents\Ageing\S5ConditionRawMeterialEntryPage.xaml.cs">
       <DependentUpon>S5ConditionRawMeterialEntryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Documents\DIPS8Before\DIPS8BeforeEntryPage.xaml.cs">
+      <DependentUpon>DIPS8BeforeEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\DIPS8Before\DIPS8BeforeStdPage.xaml.cs">
+      <DependentUpon>DIPS8BeforeStdPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\DIPTimeTable\DIPTimeTableEntryPage.xaml.cs">
+      <DependentUpon>DIPTimeTableEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\DIPTimeTable\DIPTimeTableStdPage.xaml.cs">
+      <DependentUpon>DIPTimeTableStdPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml.cs">
       <DependentUpon>CordSamplingDetailsPage.xaml</DependentUpon>
     </Compile>
@@ -209,7 +221,7 @@
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
-    <Compile Include="Pages\DIPTimeTableStdPage.xaml.cs">
+    <Compile Include="Pages\Documents\Dipping\DIPTimeTableStdPage.xaml.cs">
       <DependentUpon>DIPTimeTableStdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\DIPTimeTable\DIPTimePage.xaml.cs">
@@ -218,7 +230,7 @@
     <Compile Include="Pages\Documents\Dipping\DippingStdManagePage.xaml.cs">
       <DependentUpon>DippingStdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\S8BeforeConditionStdPage.xaml.cs">
+    <Compile Include="Pages\Documents\Dipping\S8BeforeConditionStdPage.xaml.cs">
       <DependentUpon>S8BeforeConditionStdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
@@ -526,6 +538,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\Documents\DIPS8Before\DIPS8BeforeEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\DIPS8Before\DIPS8BeforeStdPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\DIPTimeTable\DIPTimeTableEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\DIPTimeTable\DIPTimeTableStdPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -682,7 +710,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIPTimeTableStdPage.xaml">
+    <Page Include="Pages\Documents\Dipping\DIPTimeTableStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -694,7 +722,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\S8BeforeConditionStdPage.xaml">
+    <Page Include="Pages\Documents\Dipping\S8BeforeConditionStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
