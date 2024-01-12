@@ -656,6 +656,12 @@ namespace M3.Cord
             }
 
             #endregion
+
+            /// <summary>Gets DIP TimeTable Editor Editor Window.</summary>
+            public static DIPTimeTableEditorWindow DIPTimeTableEditor
+            {
+                get { return GetWindow<DIPTimeTableEditorWindow>(); }
+            }
         }
     }
 }

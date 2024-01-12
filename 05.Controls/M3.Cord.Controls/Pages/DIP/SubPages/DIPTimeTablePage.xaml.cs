@@ -55,18 +55,48 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoDIPOperationMenu(mc);
         }
 
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
-            Save();
+            Add();
+        }
+
+        private void cmdDetails_Click(object sender, RoutedEventArgs e)
+        {
+            Edit();
         }
 
         #endregion
 
         #region Private Methods
 
-        private void Save()
+        private void Add()
+        {
+            if (null == pcCard)
+                return;
+            var win = M3CordApp.Windows.DIPTimeTableEditor;
+            var item = DIPTimeTable.Create(pcCard.ProductCode);
+            item.DIPPCId = pcCard.DIPPCId;
+            item.ProductCode = pcCard.ProductCode;
+
+            win.Setup(item);
+            if (win.ShowDialog() == true)
+            {
+                RefreshGrid();
+            }
+        }
+
+        private void Edit()
         {
 
+        }
+
+        private void RefreshGrid()
+        {
+            grid.ItemsSource = null;
+            if (null != pcCard)
+            {
+                grid.ItemsSource = DIPTimeTable.Gets(pcCard.DIPPCId).Value();
+            }
         }
 
         #endregion
@@ -81,9 +111,10 @@ namespace M3.Cord.Pages
                 pcCard = DIPUI.PCCard.Current(mc.MCCode);
                 if (null != pcCard)
                 {
-
+                    
                 }
             }
+            RefreshGrid();
 
             paCondition.DataContext = pcCard;
         }

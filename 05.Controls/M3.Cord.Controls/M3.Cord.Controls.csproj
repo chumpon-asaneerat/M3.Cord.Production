@@ -224,9 +224,6 @@
     <Compile Include="Pages\Documents\Dipping\DIPTimeTableStdPage.xaml.cs">
       <DependentUpon>DIPTimeTableStdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPTimeTable\DIPTimePage.xaml.cs">
-      <DependentUpon>DIPTimePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Documents\Dipping\DippingStdManagePage.xaml.cs">
       <DependentUpon>DippingStdManagePage.xaml</DependentUpon>
     </Compile>
@@ -331,6 +328,9 @@
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
+    <Compile Include="Windows\DIP\DIPTimeTableEditorWindow.xaml.cs">
+      <DependentUpon>DIPTimeTableEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\PalletSettings\ChoosePCTwist1Window.xaml.cs">
       <DependentUpon>ChoosePCTwist1Window.xaml</DependentUpon>
     </Compile>
@@ -714,10 +714,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIPTimeTable\DIPTimePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\Documents\Dipping\DippingStdManagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -903,6 +899,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\ListViewColumns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DIP\DIPTimeTableEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

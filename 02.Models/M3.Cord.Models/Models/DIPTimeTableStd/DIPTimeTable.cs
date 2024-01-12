@@ -21,34 +21,123 @@ namespace M3.Cord.Models
 {
 	public class DIPTimeTable
 	{
-		#region Public Proeprties
+        #region Public Proeprties
 
-		public string ProductCode { get; set; }
-		public int? Seq { get; set; }
-		public string PeriodTime { get; set; }
+		public int? DIPTimeTableId { get; set; }
+        public int? DIPPCId { get; set; }
+
+        public string ProductCode { get; set; }
+		
+		public int RowType { get; set; } = 1;
+		public DateTime? PeriodTime { get; set; }
+
+        public bool? S7BobbinSC { get; set; }
 		public bool? S7Bobbin { get; set; }
-		public decimal? S8CoolingWaterSystemBath1 { get; set; }
-		public decimal? S8CoolingWaterSystemBath2 { get; set; }
-		public string S8ChemicalWork { get; set; }
-		public string S8ChemicalFilter { get; set; }
-		public decimal? S8Speed { get; set; }
-		public decimal? S8StretchD { get; set; }
-		public decimal? S8StretchH { get; set; }
-		public decimal? S8StretchN { get; set; }
-		public decimal? S8TempD { get; set; }
-		public decimal? S8TempHN { get; set; }
-		public bool? S9GlideStatus { get; set; }
+
+        public bool? S8CoolingWaterSystemBath1SC { get; set; }
+        public decimal? S8CoolingWaterSystemBath1 { get; set; }
+        public decimal? S8CoolingWaterSystemBath1Err { get; set; }
+        public decimal? S8CoolingWaterSystemBath1Value { get; set; }
+
+        public bool? S8CoolingWaterSystemBath2SC { get; set; }
+        public decimal? S8CoolingWaterSystemBath2 { get; set; }
+        public decimal? S8CoolingWaterSystemBath2Err { get; set; }
+        public decimal? S8CoolingWaterSystemBath2Value { get; set; }
+
+        public bool? S8ChemicalWorkSC { get; set; }
+        public bool? S8ChemicalWork { get; set; }
+        public bool? S8ChemicalFilterSC { get; set; }
+        public bool? S8ChemicalFilter { get; set; }
+
+        public bool? S8SpeedSC { get; set; }
+        public decimal? S8Speed { get; set; }
+        public decimal? S8SpeedErr { get; set; }
+        public decimal? S8SpeedValue { get; set; }
+
+        public bool? S8StretchDSC { get; set; }
+        public decimal? S8StretchD { get; set; }
+        public decimal? S8StretchDErr { get; set; }
+        public decimal? S8StretchDValue { get; set; }
+
+        public bool? S8StretchHSC { get; set; }
+        public decimal? S8StretchH { get; set; }
+        public decimal? S8StretchHErr { get; set; }
+        public decimal? S8StretchHValue { get; set; }
+
+        public bool? S8StretchNSC { get; set; }
+        public decimal? S8StretchN { get; set; }
+        public decimal? S8StretchNErr { get; set; }
+        public decimal? S8StretchNValue { get; set; }
+
+        public bool? S8TempDSC { get; set; }
+        public decimal? S8TempD { get; set; }
+        public decimal? S8TempDErr { get; set; }
+        public decimal? S8TempDValue { get; set; }
+
+        public bool? S8TempHNSC { get; set; }
+        public decimal? S8TempHN { get; set; }
+        public decimal? S8TempHNErr { get; set; }
+        public decimal? S8TempHNValue { get; set; }
+
+        public bool? S9GlideStatusSC { get; set; }
+        public bool? S9GlideStatus { get; set; }
+
 		public string Remark { get; set; }
+        public string CheckBy { get; set; }
+        public DateTime? CheckDate { get; set; }
 
-		#endregion
+        #endregion
 
-		#region Static Methods
+        #region Static Methods
 
-		public static NDbResult<DIPTimeTable> GetCurrent(string ProductCode = null, int? Seq = null, string PeriodTime = null)
-		{
+        public static DIPTimeTable Create(string productCode)
+        {
+            var inst = new DIPTimeTable();
+            var std = DIPTimeTableStd.Gets(productCode).Value().FirstOrDefault();
+            Assign(std, inst);
+            return inst;
+        }
+
+        public static void Assign(DIPTimeTableStd src, DIPTimeTable dst)
+        {
+            if (null != src && null != dst)
+            {
+                dst.ProductCode = src.ProductCode;
+                dst.S7BobbinSC = src.S7BobbinSC;
+                dst.S8CoolingWaterSystemBath1SC = src.S8CoolingWaterSystemBath1SC;
+                dst.S8CoolingWaterSystemBath1 = src.S8CoolingWaterSystemBath1;
+                dst.S8CoolingWaterSystemBath1Err = src.S8CoolingWaterSystemBath1Err;
+                dst.S8CoolingWaterSystemBath2SC = src.S8CoolingWaterSystemBath2SC;
+                dst.S8CoolingWaterSystemBath2 = src.S8CoolingWaterSystemBath2;
+                dst.S8ChemicalWorkSC = src.S8ChemicalWorkSC;
+                dst.S8ChemicalFilterSC = src.S8ChemicalFilterSC;
+                dst.S8SpeedSC = src.S8SpeedSC;
+                dst.S8Speed = src.S8Speed;
+                dst.S8SpeedErr = src.S8SpeedErr;
+                dst.S8StretchDSC = src.S8StretchDSC;
+                dst.S8StretchD = src.S8StretchD;
+                dst.S8StretchDErr = src.S8StretchDErr;
+                dst.S8StretchHSC = src.S8StretchHSC;
+                dst.S8StretchH = src.S8StretchH;
+                dst.S8StretchHErr = src.S8StretchHErr;
+                dst.S8StretchNSC = src.S8StretchNSC;
+                dst.S8StretchN = src.S8StretchN;
+                dst.S8StretchNErr = src.S8StretchNErr;
+                dst.S8TempDSC = src.S8TempDSC;
+                dst.S8TempD = src.S8TempD;
+                dst.S8TempDErr = src.S8TempDErr;
+                dst.S8TempHNSC = src.S8TempHNSC;
+                dst.S8TempHN = src.S8TempHN;
+                dst.S8TempHNErr = src.S8TempHNErr;
+                dst.S9GlideStatusSC = src.S9GlideStatusSC;
+            }
+        }
+
+        public static NDbResult<List<DIPTimeTable>> Gets(int? DIPPCId)
+        {
 			MethodBase med = MethodBase.GetCurrentMethod();
 
-			NDbResult<DIPTimeTable> ret = new NDbResult<DIPTimeTable>();
+			NDbResult<List<DIPTimeTable>> ret = new NDbResult<List<DIPTimeTable>>();
 
 			IDbConnection cnn = DbServer.Instance.Db;
 			if (null == cnn || !DbServer.Instance.Connected)
@@ -63,15 +152,13 @@ namespace M3.Cord.Models
 			}
 
 			var p = new DynamicParameters();
-			p.Add("@ProductCode", ProductCode);
-			p.Add("@Seq", Seq);
-			p.Add("@PeriodTime", PeriodTime);
+			p.Add("@DIPPCId", DIPPCId);
 
 			try
 			{
-				var item = cnn.Query<DIPTimeTable>("GetDIPTimeTables", p,
-					commandType: CommandType.StoredProcedure).FirstOrDefault();
-				var data = item;
+				var items = cnn.Query<DIPTimeTable>("GetDIPTimeTables", p,
+					commandType: CommandType.StoredProcedure);
+				var data = (null != items) ? items.ToList() : null;
 				ret.Success(data);
 			}
 			catch (Exception ex)
@@ -80,7 +167,8 @@ namespace M3.Cord.Models
 				// Set error number/message
 				ret.ErrNum = 9999;
 				ret.ErrMsg = ex.Message;
-			}
+				ret.data = new List<DIPTimeTable>();
+            }
 
 			return ret;
 		}
@@ -116,24 +204,69 @@ namespace M3.Cord.Models
 
 			var p = new DynamicParameters();
 
-			p.Add("@ProductCode", value.ProductCode);
-			p.Add("@Seq", value.Seq);
-			p.Add("@PeriodTime", value.PeriodTime);
-			p.Add("@S7Bobbin", value.S7Bobbin);
-			p.Add("@S8CoolingWaterSystemBath1", value.S8CoolingWaterSystemBath1);
-			p.Add("@S8CoolingWaterSystemBath2", value.S8CoolingWaterSystemBath2);
-			p.Add("@S8ChemicalWork", value.S8ChemicalWork);
-			p.Add("@S8ChemicalFilter", value.S8ChemicalFilter);
-			p.Add("@S8Speed", value.S8Speed);
-			p.Add("@S8StretchD", value.S8StretchD);
-			p.Add("@S8StretchH", value.S8StretchH);
-			p.Add("@S8StretchN", value.S8StretchN);
-			p.Add("@S8TempD", value.S8TempD);
-			p.Add("@S8TempHN", value.S8TempHN);
-			p.Add("@S9GlideStatus", value.S9GlideStatus);
-			p.Add("@Remark", value.Remark);
+            p.Add("@DIPPCId", value.DIPPCId);
+            p.Add("@ProductCode", value.ProductCode);
+            p.Add("@RowType", value.RowType);
+            p.Add("@PeriodTime", value.PeriodTime);
 
-			p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.Add("@S7BobbinSC", value.S7BobbinSC);
+            p.Add("@S7Bobbin", value.S7Bobbin);
+
+			p.Add("@S8CoolingWaterSystemBath1SC", value.S8CoolingWaterSystemBath1SC);
+            p.Add("@S8CoolingWaterSystemBath1", value.S8CoolingWaterSystemBath1);
+            p.Add("@S8CoolingWaterSystemBath1Err", value.S8CoolingWaterSystemBath1Err);
+            p.Add("@S8CoolingWaterSystemBath1Value", value.S8CoolingWaterSystemBath1Value);
+            
+            p.Add("@S8CoolingWaterSystemBath2SC", value.S8CoolingWaterSystemBath2SC);
+            p.Add("@S8CoolingWaterSystemBath2", value.S8CoolingWaterSystemBath2);
+            p.Add("@S8CoolingWaterSystemBath2Err", value.S8CoolingWaterSystemBath2Err);
+            p.Add("@S8CoolingWaterSystemBath2Value", value.S8CoolingWaterSystemBath2Value);
+
+			p.Add("@S8ChemicalWorkSC", value.S8ChemicalWorkSC);
+            p.Add("@S8ChemicalWork", value.S8ChemicalWork);
+            p.Add("@S8ChemicalFilterSC", value.S8ChemicalFilterSC);
+            p.Add("@S8ChemicalFilter", value.S8ChemicalFilter);
+
+			p.Add("@S8SpeedSC", value.S8SpeedSC);
+            p.Add("@S8Speed", value.S8Speed);
+            p.Add("@S8SpeedErr", value.S8SpeedErr);
+            p.Add("@S8SpeedValue", value.S8SpeedValue);
+
+            p.Add("@S8StretchDSC", value.S8StretchDSC);
+            p.Add("@S8StretchD", value.S8StretchD);
+            p.Add("@S8StretchDErr", value.S8StretchDErr);
+            p.Add("@S8StretchDValue", value.S8StretchDValue);
+
+            p.Add("@S8StretchHSC", value.S8StretchHSC);
+            p.Add("@S8StretchH", value.S8StretchH);
+            p.Add("@S8StretchHErr", value.S8StretchHErr);
+            p.Add("@S8StretchHValue", value.S8StretchHValue);
+
+            p.Add("@S8StretchNSC", value.S8StretchNSC);
+            p.Add("@S8StretchN", value.S8StretchN);
+            p.Add("@S8StretchNErr", value.S8StretchNErr);
+            p.Add("@S8StretchNValue", value.S8StretchNValue);
+
+            p.Add("@S8TempDSC", value.S8TempDSC);
+            p.Add("@S8TempD", value.S8TempD);
+            p.Add("@S8TempDErr", value.S8TempDErr);
+            p.Add("@S8TempDValue", value.S8TempDValue);
+
+            p.Add("@S8TempHNSC", value.S8TempHNSC);
+            p.Add("@S8TempHN", value.S8TempHN);
+            p.Add("@S8TempHNErr", value.S8TempHNErr);            
+            p.Add("@S8TempHNValue", value.S8TempHNValue);
+
+            p.Add("@S9GlideStatusSC", value.S9GlideStatusSC);
+            p.Add("@S9GlideStatus", value.S9GlideStatus);
+
+            p.Add("@Remark", value.Remark);
+            p.Add("@CheckBy", value.CheckBy);
+            p.Add("@CheckDate", value.CheckDate);
+
+            p.Add("@DIPTimeTableId", value.DIPTimeTableId, DbType.Int32, direction: ParameterDirection.InputOutput);
+
+            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
 			p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 
 			try
@@ -141,55 +274,11 @@ namespace M3.Cord.Models
 				cnn.Execute("SaveDIPTimeTable", p, commandType: CommandType.StoredProcedure);
 				ret.Success(value);
 
-				// Set error number/message
-				ret.ErrNum = p.Get<int>("@errNum");
-				ret.ErrMsg = p.Get<string>("@errMsg");
-			}
-			catch (Exception ex)
-			{
-				med.Err(ex);
-				// Set error number/message
-				ret.ErrNum = 9999;
-				ret.ErrMsg = ex.Message;
-			}
+                // Set PK
+                value.DIPTimeTableId = p.Get<dynamic>("@DIPTimeTableId");
 
-			return ret;
-		}
-
-		public static NDbResult Delete(DIPTimeTable value)
-		{
-			MethodBase med = MethodBase.GetCurrentMethod();
-
-			NDbResult ret = new NDbResult();
-
-			if (null == value)
-			{
-				ret.ParameterIsNull();
-				return ret;
-			}
-
-			IDbConnection cnn = DbServer.Instance.Db;
-			if (null == cnn || !DbServer.Instance.Connected)
-			{
-				string msg = "Connection is null or cannot connect to database server.";
-				med.Err(msg);
-				// Set error number/message
-				ret.ErrNum = 8000;
-				ret.ErrMsg = msg;
-
-				return ret;
-			}
-
-			var p = new DynamicParameters();
-
-			p.Add("@ProductCode", value.ProductCode);
-			p.Add("@Seq", value.Seq);
-			try
-			{
-				cnn.Execute("DELETE FROM DIPTimeTable WHERE ProductCode = @ProductCode And Seq = @Seq", p, commandType: CommandType.Text);
-				ret.Success();
-				// Set error number/message
-				ret.ErrNum = p.Get<int>("@errNum");
+                // Set error number/message
+                ret.ErrNum = p.Get<int>("@errNum");
 				ret.ErrMsg = p.Get<string>("@errMsg");
 			}
 			catch (Exception ex)
