@@ -211,6 +211,16 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.DippingStdManagePage>(); }
             }
+            /// <summary>Gets DIP Time Table Manage Page.</summary>
+            public static Cord.Pages.DIPTimeTableStdPage DipTimeTableStdManage
+            {
+                get { return GetPage<Cord.Pages.DIPTimeTableStdPage>(); }
+            }
+            /// <summary>Gets DIP S8 Before Manage Page.</summary>
+            public static Cord.Pages.S8BeforeConditionStdPage S8BeforeStdManage
+            {
+                get { return GetPage<Cord.Pages.S8BeforeConditionStdPage>(); }
+            }
 
             #endregion
 

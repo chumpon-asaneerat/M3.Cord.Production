@@ -82,25 +82,22 @@ namespace M3.Cord.Pages
 
         private void Save()
         {
-            /*
             if (null == cond.DataContext) return;
-            var std = cond.DataContext as DIPConditionStd;
+            var std = cond.DataContext as DIPTimeTableStd;
             if (null == std) return;
-            DIPConditionStd.Save(std);
-            */
+            DIPTimeTableStd.Save(std);
         }
 
         private void RefreshGrid()
         {
-            /*
             var product = cbProducts.SelectedItem as Product;
             if (product != null)
             {
                 string productCode = product.ProductCode;
-                var std = DIPConditionStd.Gets(productCode).Value().FirstOrDefault();
+                var std = DIPTimeTableStd.Gets(productCode).Value().FirstOrDefault();
                 if (null == std)
                 {
-                    std = new DIPConditionStd();
+                    std = new DIPTimeTableStd();
                     std.ProductCode = productCode;
                 }
                 cond.DataContext = std;
@@ -111,7 +108,6 @@ namespace M3.Cord.Pages
                 cond.DataContext = null;
                 cond.IsEnabled = false;
             }
-            */
         }
 
         #endregion

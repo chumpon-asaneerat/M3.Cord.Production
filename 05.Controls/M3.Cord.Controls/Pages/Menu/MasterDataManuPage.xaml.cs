@@ -126,6 +126,20 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdDipTimeTableCondition_Click(object sender, RoutedEventArgs e)
+        {
+            var page = M3CordApp.Pages.DipTimeTableStdManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
+
+        private void cmdS8BeforeCondition_Click(object sender, RoutedEventArgs e)
+        {
+            var page = M3CordApp.Pages.S8BeforeStdManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
+
         #endregion
     }
 }

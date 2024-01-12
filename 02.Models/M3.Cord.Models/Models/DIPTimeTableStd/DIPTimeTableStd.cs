@@ -24,15 +24,15 @@ namespace M3.Cord.Models
 		#region Public Proeprties
 
 		public string ProductCode { get; set; }
-		public bool? S7Bobbin { get; set; }
-		public decimal? S8CoolingWaterSystemBath1SC { get; set; }
+		public bool? S7BobbinSC { get; set; }
+		public bool? S8CoolingWaterSystemBath1SC { get; set; }
 		public decimal? S8CoolingWaterSystemBath1 { get; set; }
 		public decimal? S8CoolingWaterSystemBath1Err { get; set; }
 		public bool? S8CoolingWaterSystemBath2SC { get; set; }
 		public decimal? S8CoolingWaterSystemBath2 { get; set; }
 		public decimal? S8CoolingWaterSystemBath2Err { get; set; }
-		public string S8ChemicalWork { get; set; }
-		public string S8ChemicalFilter { get; set; }
+        public bool? S8ChemicalWorkSC { get; set; }
+        public bool? S8ChemicalFilterSC { get; set; }
 		public bool? S8SpeedSC { get; set; }
 		public decimal? S8Speed { get; set; }
 		public decimal? S8SpeedErr { get; set; }
@@ -51,17 +51,17 @@ namespace M3.Cord.Models
 		public bool? S8TempHNSC { get; set; }
 		public decimal? S8TempHN { get; set; }
 		public decimal? S8TempHNErr { get; set; }
-		public bool? S9GlideStatus { get; set; }
+		public bool? S9GlideStatusSC { get; set; }
 
 		#endregion
 
 		#region Static Methods
 
-		public static NDbResult<DIPTimeTableStd> GetCurrent()
+		public static NDbResult<List<DIPTimeTableStd>> Gets(string productCode)
 		{
 			MethodBase med = MethodBase.GetCurrentMethod();
 
-			NDbResult<DIPTimeTableStd> ret = new NDbResult<DIPTimeTableStd>();
+			NDbResult<List<DIPTimeTableStd>> ret = new NDbResult<List<DIPTimeTableStd>>();
 
 			IDbConnection cnn = DbServer.Instance.Db;
 			if (null == cnn || !DbServer.Instance.Connected)
@@ -76,13 +76,14 @@ namespace M3.Cord.Models
 			}
 
 			var p = new DynamicParameters();
+            p.Add("@ProductCode", productCode);
 
-			try
-			{
-				var item = cnn.Query<DIPTimeTableStd>("GetDIPTimeTableStd", p,
-					commandType: CommandType.StoredProcedure).FirstOrDefault();
-				var data = item;
-				ret.Success(data);
+            try
+            {
+				var items = cnn.Query<DIPTimeTableStd>("GetDIPTimeTableStd", p,
+					commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                ret.Success(data);
 			}
 			catch (Exception ex)
 			{
@@ -90,7 +91,8 @@ namespace M3.Cord.Models
 				// Set error number/message
 				ret.ErrNum = 9999;
 				ret.ErrMsg = ex.Message;
-			}
+                ret.data = new List<DIPTimeTableStd>();
+            }
 
 			return ret;
 		}
@@ -127,15 +129,15 @@ namespace M3.Cord.Models
 			var p = new DynamicParameters();
 
 			p.Add("@ProductCode", value.ProductCode);
-			p.Add("@S7Bobbin", value.S7Bobbin);
+			p.Add("@S7BobbinSC", value.S7BobbinSC);
 			p.Add("@S8CoolingWaterSystemBath1SC", value.S8CoolingWaterSystemBath1SC);
 			p.Add("@S8CoolingWaterSystemBath1", value.S8CoolingWaterSystemBath1);
 			p.Add("@S8CoolingWaterSystemBath1Err", value.S8CoolingWaterSystemBath1Err);
 			p.Add("@S8CoolingWaterSystemBath2SC", value.S8CoolingWaterSystemBath2SC);
 			p.Add("@S8CoolingWaterSystemBath2", value.S8CoolingWaterSystemBath2);
 			p.Add("@S8CoolingWaterSystemBath2Err", value.S8CoolingWaterSystemBath2Err);
-			p.Add("@S8ChemicalWork", value.S8ChemicalWork);
-			p.Add("@S8ChemicalFilter", value.S8ChemicalFilter);
+			p.Add("@S8ChemicalWorkSC", value.S8ChemicalWorkSC);
+			p.Add("@S8ChemicalFilterSC", value.S8ChemicalWorkSC);
 			p.Add("@S8SpeedSC", value.S8SpeedSC);
 			p.Add("@S8Speed", value.S8Speed);
 			p.Add("@S8SpeedErr", value.S8SpeedErr);
@@ -154,7 +156,7 @@ namespace M3.Cord.Models
 			p.Add("@S8TempHNSC", value.S8TempHNSC);
 			p.Add("@S8TempHN", value.S8TempHN);
 			p.Add("@S8TempHNErr", value.S8TempHNErr);
-			p.Add("@S9GlideStatus", value.S9GlideStatus);
+			p.Add("@S9GlideStatusSC", value.S9GlideStatusSC);
 
 			p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
 			p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
