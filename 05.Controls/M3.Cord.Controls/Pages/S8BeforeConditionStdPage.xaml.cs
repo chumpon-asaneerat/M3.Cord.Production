@@ -25,16 +25,16 @@ using NLib;
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for DippingStdManagePage.xaml
+    /// Interaction logic for S8BeforeConditionStdPage.xaml
     /// </summary>
-    public partial class DippingStdManagePage : UserControl
+    public partial class S8BeforeConditionStdPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public DippingStdManagePage()
+        public S8BeforeConditionStdPage()
         {
             InitializeComponent();
         }
@@ -82,17 +82,14 @@ namespace M3.Cord.Pages
 
         private void Save()
         {
-            /*
             if (null == cond.DataContext) return;
             var std = cond.DataContext as DIPConditionStd;
             if (null == std) return;
             DIPConditionStd.Save(std);
-            */
         }
 
         private void RefreshGrid()
         {
-            /*
             var product = cbProducts.SelectedItem as Product;
             if (product != null)
             {
@@ -111,7 +108,6 @@ namespace M3.Cord.Pages
                 cond.DataContext = null;
                 cond.IsEnabled = false;
             }
-            */
         }
 
         #endregion

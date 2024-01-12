@@ -25,16 +25,16 @@ using NLib;
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for DippingStdManagePage.xaml
+    /// Interaction logic for DIPTimeTableStdPage.xaml
     /// </summary>
-    public partial class DippingStdManagePage : UserControl
+    public partial class DIPTimeTableStdPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public DippingStdManagePage()
+        public DIPTimeTableStdPage()
         {
             InitializeComponent();
         }

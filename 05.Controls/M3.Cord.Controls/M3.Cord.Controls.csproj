@@ -209,11 +209,17 @@
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
+    <Compile Include="Pages\DIPTimeTableStdPage.xaml.cs">
+      <DependentUpon>DIPTimeTableStdPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DIPTimeTable\DIPTimePage.xaml.cs">
       <DependentUpon>DIPTimePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Documents\Dipping\DippingStdManagePage.xaml.cs">
       <DependentUpon>DippingStdManagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S8BeforeConditionStdPage.xaml.cs">
+      <DependentUpon>S8BeforeConditionStdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
       <DependentUpon>CreateRecipePage.xaml</DependentUpon>
@@ -676,6 +682,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DIPTimeTableStdPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DIPTimeTable\DIPTimePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -683,6 +693,10 @@
     <Page Include="Pages\Documents\Dipping\DippingStdManagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\S8BeforeConditionStdPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Solution\CreateRecipePage.xaml">
       <Generator>MSBuild:Compile</Generator>
