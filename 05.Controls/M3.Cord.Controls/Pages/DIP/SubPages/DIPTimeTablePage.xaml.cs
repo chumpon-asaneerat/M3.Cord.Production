@@ -111,7 +111,10 @@ namespace M3.Cord.Pages
                 pcCard = DIPUI.PCCard.Current(mc.MCCode);
                 if (null != pcCard)
                 {
-                    
+                    /*
+                    pcCard.DIPLotNo;
+                    pcCard.ProductCode;
+                    */
                 }
             }
             RefreshGrid();

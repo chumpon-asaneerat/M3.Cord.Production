@@ -1,5 +1,7 @@
+[commited]
 M3 Cord Production System #820
-- 
+- M3.Cord.Production.App re-implements #700
+  - Sync from kik
 
 [commited]
 M3 Cord Production System #819

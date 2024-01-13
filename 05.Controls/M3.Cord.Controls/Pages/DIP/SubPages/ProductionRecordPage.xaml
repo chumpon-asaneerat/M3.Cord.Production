@@ -61,104 +61,107 @@
             <DockPanel LastChildFill="True" DockPanel.Dock="Top">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                     <DockPanel Margin="0,0,5,5"
-                           DockPanel.Dock="Top"
-                           LastChildFill="True"
-                           VerticalAlignment="Top"
-                           HorizontalAlignment="Stretch">
-                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                        <ctrl:NTextBox x:Name="txtLotNo"
-                                       CaptionText="Lot No"
-                                       
-                                       Width="200" />
-                        <!--  SOLUTION LOT NO  -->
-                        <ctrl:NTextBox x:Name="txtProductCode"
-                                       CaptionText="Product Code"
-                                      
-                                       Width="200" />
-                        <!--  SEARCH  -->
-                        <Button x:Name="cmdSearch"
-                                Content="Search"
-                                Width="150"
-                                VerticalAlignment="Bottom"
-                                Margin="5,2"
-                                Style="{StaticResource InlineButton}"
-                                Click="cmdSearch_Click" />
-                       
-                        <!--  CLEAR  -->
-                        <Button x:Name="cmdClear"
-                                Content="Clear"
-                                DockPanel.Dock="Left"
-                                Width="150"
-                                VerticalAlignment="Bottom"
-                                Margin="5,2"
-                                Style="{StaticResource InlineButton}"
-                                Click="cmdClear_Click" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
+                               DockPanel.Dock="Top"
+                               LastChildFill="True"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <ctrl:NTextBox x:Name="txtLotNo"
+                                           CaptionText="Lot No"
+                                           Width="200" />
+                            <!--  SOLUTION LOT NO  -->
+                            <ctrl:NTextBox x:Name="txtProductCode"
+                                           CaptionText="Product Code"
+                                           Width="200" />
+                            <!--  SEARCH  -->
+                            <Button x:Name="cmdSearch"
+                                    Content="Search"
+                                    Width="150"
+                                    VerticalAlignment="Bottom"
+                                    Margin="5,2"
+                                    Style="{StaticResource InlineButton}"
+                                    Click="cmdSearch_Click" />
 
-                            <!--#region COLUMN HEADERS-->
+                            <!--  CLEAR  -->
+                            <Button x:Name="cmdClear"
+                                    Content="Clear"
+                                    DockPanel.Dock="Left"
+                                    Width="150"
+                                    VerticalAlignment="Bottom"
+                                    Margin="5,2"
+                                    Style="{StaticResource InlineButton}"
+                                    Click="cmdClear_Click" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
 
-                            <Border Grid.Row="0"
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan="2">
-                                <ctrl:NDatePicker x:Name="dtRecordDate"
-                                          CaptionText="Date (ว.ด.ป)"
-                                          SelectedDate ="{Binding RecordDate, StringFormat='{}{0:dd/MM/yy}'}"/>
-                            </Border>
-                            <Border Grid.Row="1"
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan="2">
-                                <TextBlock Text="Process (ขบวนการผลิต)" TextAlignment="Center" />
-                            </Border>
-                            <Border Grid.Row="3" Grid.Column="0">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="HS (ความร้อน)" TextAlignment="Center"/>
-                                    <CheckBox Content="" IsChecked="{Binding ProcessHS}"/>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="3" Grid.Column="1">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="DIP (การจุ่ม)" TextAlignment="Center"/>
-                                    <CheckBox Content="" IsChecked="{Binding ProcessDIP}"/>
-                                </StackPanel>
-                            </Border>
+                                <!--#region COLUMN HEADERS-->
 
-                            <Border Grid.Row="0"
-                                    Grid.Column="3">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="USER (ลูกค้า)" TextAlignment="Center"/>
-                                    <TextBox Width="200" Text="{Binding Customer}" />
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="1"
-                                    Grid.Column="3">
-                                <TextBlock Text="Counter M (ความยาวเมตร)" TextAlignment="Center" />
-                            </Border>
-                            <Border Grid.Row="2"
-                                    Grid.Column="3">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Border Grid.Row="0"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2">
+                                    <ctrl:NDatePicker x:Name="dtRecordDate"
+                                                      CaptionText="Date (ว.ด.ป)"
+                                                      SelectedDate="{Binding RecordDate, StringFormat='{}{0:dd/MM/yy}'}" />
+                                </Border>
+                                <Border Grid.Row="1"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2">
+                                    <TextBlock Text="Process (ขบวนการผลิต)" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="3" Grid.Column="0">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <TextBlock Text="HS (ความร้อน)" TextAlignment="Center" />
+                                        <CheckBox Content="" IsChecked="{Binding ProcessHS}" />
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="3" Grid.Column="1">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <TextBlock Text="DIP (การจุ่ม)" TextAlignment="Center" />
+                                        <CheckBox Content="" IsChecked="{Binding ProcessDIP}" />
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Grid.Row="0" Grid.Column="3">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <TextBlock Text="USER (ลูกค้า)" TextAlignment="Center" />
+                                        <TextBox Width="200" Text="{Binding Customer}" />
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="1" Grid.Column="3">
+                                    <TextBlock Text="Counter M (ความยาวเมตร)" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="2" Grid.Column="3">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
                                             <TextBox Width="70" Text="{Binding Counter, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
@@ -168,231 +171,262 @@
                                         <StackPanel Orientation="Vertical">
                                             <TextBox Width="70" Text="{Binding CounterErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
-                                </StackPanel>
-                            </Border>
+                                    </StackPanel>
+                                </Border>
 
-                            <Border Grid.Row="0"
-                                    Grid.Column="4"
-                                    Grid.ColumnSpan="2">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="Cord Structure (โครงสร้างเชือก)" TextAlignment="Center"/>
-                                    <TextBox Width="200" Text="{Binding CordStructure}" />
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="1"
-                                    Grid.Column="4">
-                                <TextBlock Text="Item Code" TextAlignment="Center" />
-                            </Border>
-                            <Border Grid.Row="2"
-                                    Grid.Column="4">
-                                <TextBox Width="100" Text="{Binding ProductCode}" />
-                            </Border>
-                            <Border Grid.Row="1"
-                                    Grid.Column="5">
-                                <TextBlock Text="Lot No" TextAlignment="Center" />
-                            </Border>
-                            <Border Grid.Row="2"
-                                    Grid.Column="5">
-                                <TextBox Width="100" Text="{Binding LotNo}" />
-                            </Border>
+                                <Border Grid.Row="0"
+                                        Grid.Column="4"
+                                        Grid.ColumnSpan="2">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <TextBlock Text="Cord Structure (โครงสร้างเชือก)" TextAlignment="Center" />
+                                        <TextBox Width="200" Text="{Binding CordStructure}" />
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="1" Grid.Column="4">
+                                    <TextBlock Text="Item Code" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="2" Grid.Column="4">
+                                    <TextBox Width="100" Text="{Binding ProductCode}" />
+                                </Border>
+                                <Border Grid.Row="1" Grid.Column="5">
+                                    <TextBlock Text="Lot No" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="2" Grid.Column="5">
+                                    <TextBox Width="100" Text="{Binding LotNo}" />
+                                </Border>
 
-                            <Border Grid.Row="0"
-                                    Grid.Column="6"
-                                    Grid.ColumnSpan="2">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                        <TextBlock Text="DIP Bath No.1"/>
-                                        <TextBlock Text="Solution Name"/>
+                                <Border Grid.Row="0"
+                                        Grid.Column="6"
+                                        Grid.ColumnSpan="2">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                            <TextBlock Text="DIP Bath No.1" />
+                                            <TextBlock Text="Solution Name" />
+                                        </StackPanel>
+
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <TextBox Width="200" Text="{Binding Bath1SolutionName}" />
+                                        </StackPanel>
                                     </StackPanel>
-                                    
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <TextBox Width="200" Text="{Binding Bath1SolutionName}" />
+                                </Border>
+                                <Border Grid.Row="1"
+                                        Grid.Column="6"
+                                        Grid.ColumnSpan="2">
+                                    <TextBlock Text="Nip Prcssure (kg/cm2)" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="2" Grid.Column="6">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                            <TextBlock Text="Front" />
+                                            <TextBox Width="70" Text="{Binding Bath1NipFront}" />
+                                        </StackPanel>
                                     </StackPanel>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="1"
-                                    Grid.Column="6" Grid.ColumnSpan="2">
-                                <TextBlock Text="Nip Prcssure (kg/cm2)" TextAlignment="Center" />
-                            </Border>
-                            <Border Grid.Row="2"
-                                    Grid.Column="6">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                        <TextBlock Text="Front"/>
-                                        <TextBox Width="70" Text="{Binding Bath1NipFront}" />
-                                    </StackPanel>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="2"
-                                    Grid.Column="7">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                        <TextBlock Text="Back"/>
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                            <StackPanel Orientation="Vertical">
-                                                <TextBox Width="70" Text="{Binding Bath1NipBack, StringFormat='{}{0:#,##0.##}'}" />
-                                            </StackPanel>
-                                            <StackPanel Orientation="Vertical">
-                                                <TextBlock Text=" ± " />
-                                            </StackPanel>
-                                            <StackPanel Orientation="Vertical">
-                                                <TextBox Width="70" Text="{Binding Bath1NipBackErr, StringFormat='{}{0:#,##0.##}'}" />
+                                </Border>
+                                <Border Grid.Row="2" Grid.Column="7">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                            <TextBlock Text="Back" />
+                                            <StackPanel Orientation="Horizontal"
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center">
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBox Width="70" Text="{Binding Bath1NipBack, StringFormat='{}{0:#,##0.##}'}" />
+                                                </StackPanel>
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBlock Text=" ± " />
+                                                </StackPanel>
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBox Width="70" Text="{Binding Bath1NipBackErr, StringFormat='{}{0:#,##0.##}'}" />
+                                                </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
-                                </StackPanel>
-                            </Border>
+                                </Border>
 
-                            <Border Grid.Row="0"
-                                    Grid.Column="8"
-                                    Grid.ColumnSpan="2">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                        <TextBlock Text="DIP Bath No.2"/>
-                                        <TextBlock Text="Solution Name"/>
-                                    </StackPanel>
+                                <Border Grid.Row="0"
+                                        Grid.Column="8"
+                                        Grid.ColumnSpan="2">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                            <TextBlock Text="DIP Bath No.2" />
+                                            <TextBlock Text="Solution Name" />
+                                        </StackPanel>
 
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <TextBox Width="200" Text="{Binding Bath2SolutionName}" />
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <TextBox Width="200" Text="{Binding Bath2SolutionName}" />
+                                        </StackPanel>
                                     </StackPanel>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="1"
-                                    Grid.Column="8" Grid.ColumnSpan="2">
-                                <TextBlock Text="Nip Prcssure (kg/cm2)" TextAlignment="Center" />
-                            </Border>
-                            <Border Grid.Row="2"
-                                    Grid.Column="8">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                        <TextBlock Text="Front"/>
-                                        <TextBox Width="70" Text="{Binding Bath2NipFront}" />
+                                </Border>
+                                <Border Grid.Row="1"
+                                        Grid.Column="8"
+                                        Grid.ColumnSpan="2">
+                                    <TextBlock Text="Nip Prcssure (kg/cm2)" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="2" Grid.Column="8">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                            <TextBlock Text="Front" />
+                                            <TextBox Width="70" Text="{Binding Bath2NipFront}" />
+                                        </StackPanel>
                                     </StackPanel>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="2"
-                                    Grid.Column="9">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                        <TextBlock Text="Back"/>
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                            <StackPanel Orientation="Vertical">
-                                                <TextBox Width="70" Text="{Binding Bath2NipBack, StringFormat='{}{0:#,##0.##}'}" />
-                                            </StackPanel>
-                                            <StackPanel Orientation="Vertical">
-                                                <TextBlock Text=" ± " />
-                                            </StackPanel>
-                                            <StackPanel Orientation="Vertical">
-                                                <TextBox Width="70" Text="{Binding Bath2NipBackErr, StringFormat='{}{0:#,##0.##}'}" />
+                                </Border>
+                                <Border Grid.Row="2" Grid.Column="9">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                            <TextBlock Text="Back" />
+                                            <StackPanel Orientation="Horizontal"
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center">
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBox Width="70" Text="{Binding Bath2NipBack, StringFormat='{}{0:#,##0.##}'}" />
+                                                </StackPanel>
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBlock Text=" ± " />
+                                                </StackPanel>
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBox Width="70" Text="{Binding Bath2NipBackErr, StringFormat='{}{0:#,##0.##}'}" />
+                                                </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
-                                </StackPanel>
-                            </Border>
+                                </Border>
 
-                            <Border Grid.Row="0"
-                                    Grid.Column="10"
-                                    Grid.ColumnSpan="2">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="SOFNER (ปรับให้นิ่ม)" TextAlignment="Center"/>
+                                <Border Grid.Row="0"
+                                        Grid.Column="10"
+                                        Grid.ColumnSpan="2">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <TextBlock Text="SOFNER (ปรับให้นิ่ม)" TextAlignment="Center" />
 
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center">
 
-                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                            <TextBlock Text="Sofner" Width="80" TextAlignment="Center"/>
-                                            <CheckBox Content="" IsChecked="{Binding Sofner}"/>
-                                        </StackPanel>
-                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                            <TextBlock Text="Darw Nip" Width="80" TextAlignment="Center"/>
-                                            <CheckBox Content="" IsChecked="{Binding DarwNip}"/>
+                                            <StackPanel Orientation="Vertical"
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center">
+                                                <TextBlock Text="Sofner"
+                                                           Width="80"
+                                                           TextAlignment="Center" />
+                                                <CheckBox Content="" IsChecked="{Binding Sofner}" />
+                                            </StackPanel>
+                                            <StackPanel Orientation="Vertical"
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center">
+                                                <TextBlock Text="Darw Nip"
+                                                           Width="80"
+                                                           TextAlignment="Center" />
+                                                <CheckBox Content="" IsChecked="{Binding DarwNip}" />
+                                            </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="1"
-                                    Grid.Column="10" Grid.ColumnSpan="2">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="Paper tube color use" TextAlignment="Center" />
-                                    <TextBlock Text="การใช้หลอดกระดาษสี" TextAlignment="Center"/>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="2"
-                                    Grid.Column="10" Grid.ColumnSpan="2">
-                                <TextBox Width="150" Text="{Binding PaperTubeColorUse}" />
-                            </Border>
-
-
-                            <Border Grid.Row="0"
-                                    Grid.Column="12"
-                                    Grid.ColumnSpan="2" Grid.RowSpan="3">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="TENSION (g/cord) (แรงดึง)" TextAlignment="Center"/>
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="Auto"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto" />
-                                                <RowDefinition Height="Auto" />
-                                                <RowDefinition Height="Auto" />
-                                                <RowDefinition Height="Auto" />
-                                                <RowDefinition Height="Auto" />
-                                            </Grid.RowDefinitions>
-                                            <Border Grid.Row="0" Grid.Column="0">
-                                                <TextBlock Text="Zone"/>
-                                            </Border>
-                                            <Border Grid.Row="0" Grid.Column="1">
-                                                <TextBlock Text="Monitor display (kg)"/>
-                                            </Border>
-
-                                            <Border Grid.Row="1" Grid.Column="0">
-                                                <TextBlock Text="D"/>
-                                            </Border>
-                                            <Border Grid.Row="1" Grid.Column="1">
-                                                <TextBox Width="70" Text="{Binding TensionD, StringFormat='{}{0:#,##0.##}'}"/>
-                                            </Border>
-                                            
-                                            <Border Grid.Row="2" Grid.Column="0">
-                                                <TextBlock Text="H"/>
-                                            </Border>
-                                            <Border Grid.Row="2" Grid.Column="1">
-                                                <TextBox Width="70" Text="{Binding TensionH, StringFormat='{}{0:#,##0.##}'}"/>
-                                            </Border>
-
-                                            <Border Grid.Row="3" Grid.Column="0">
-                                                <TextBlock Text="N"/>
-                                            </Border>
-                                            <Border Grid.Row="3" Grid.Column="1">
-                                                <TextBox Width="70" Text="{Binding TensionN, StringFormat='{}{0:#,##0.##}'}"/>
-                                            </Border>
-
-                                            <Border Grid.Row="4" Grid.Column="0">
-                                                <TextBlock Text="Winder"/>
-                                            </Border>
-                                            <Border Grid.Row="4" Grid.Column="1">
-                                                <TextBox Width="70" Text="{Binding TensionWinder, StringFormat='{}{0:#,##0.##}'}"/>
-                                            </Border>
-                                        </Grid>
-                                        
-                                        
+                                </Border>
+                                <Border Grid.Row="1"
+                                        Grid.Column="10"
+                                        Grid.ColumnSpan="2">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <TextBlock Text="Paper tube color use" TextAlignment="Center" />
+                                        <TextBlock Text="การใช้หลอดกระดาษสี" TextAlignment="Center" />
                                     </StackPanel>
-                                </StackPanel>
-                                
+                                </Border>
+                                <Border Grid.Row="2"
+                                        Grid.Column="10"
+                                        Grid.ColumnSpan="2">
+                                    <TextBox Width="150" Text="{Binding PaperTubeColorUse}" />
+                                </Border>
 
-                            </Border>
+
+                                <Border Grid.Row="0"
+                                        Grid.Column="12"
+                                        Grid.ColumnSpan="2"
+                                        Grid.RowSpan="3">
+                                    <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <TextBlock Text="TENSION (g/cord) (แรงดึง)" TextAlignment="Center" />
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Border Grid.Row="0" Grid.Column="0">
+                                                    <TextBlock Text="Zone" />
+                                                </Border>
+                                                <Border Grid.Row="0" Grid.Column="1">
+                                                    <TextBlock Text="Monitor display (kg)" />
+                                                </Border>
+
+                                                <Border Grid.Row="1" Grid.Column="0">
+                                                    <TextBlock Text="D" />
+                                                </Border>
+                                                <Border Grid.Row="1" Grid.Column="1">
+                                                    <TextBox Width="70" Text="{Binding TensionD, StringFormat='{}{0:#,##0.##}'}" />
+                                                </Border>
+
+                                                <Border Grid.Row="2" Grid.Column="0">
+                                                    <TextBlock Text="H" />
+                                                </Border>
+                                                <Border Grid.Row="2" Grid.Column="1">
+                                                    <TextBox Width="70" Text="{Binding TensionH, StringFormat='{}{0:#,##0.##}'}" />
+                                                </Border>
+
+                                                <Border Grid.Row="3" Grid.Column="0">
+                                                    <TextBlock Text="N" />
+                                                </Border>
+                                                <Border Grid.Row="3" Grid.Column="1">
+                                                    <TextBox Width="70" Text="{Binding TensionN, StringFormat='{}{0:#,##0.##}'}" />
+                                                </Border>
+
+                                                <Border Grid.Row="4" Grid.Column="0">
+                                                    <TextBlock Text="Winder" />
+                                                </Border>
+                                                <Border Grid.Row="4" Grid.Column="1">
+                                                    <TextBox Width="70" Text="{Binding TensionWinder, StringFormat='{}{0:#,##0.##}'}" />
+                                                </Border>
+                                            </Grid>
 
 
-                            <!--#endregion-->
-                            
+                                        </StackPanel>
+                                    </StackPanel>
+
+
+                                </Border>
+
+
+                                <!--#endregion-->
+
                             </Grid>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                        <Grid>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
@@ -416,179 +450,179 @@
                                 <!--#region COLUMN HEADERS-->
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan ="3"
-                                    Background="Silver">
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"
+                                        Background="Silver">
                                     <TextBlock Text="Stretch (%)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="0"
-                                    Background="Silver">
+                                        Grid.Column="0"
+                                        Background="Silver">
                                     <TextBlock Text="D" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="0"
-                                    Background="Silver">
+                                        Grid.Column="0"
+                                        Background="Silver">
                                     <TextBlock Text="ช่วงแห้ง" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="1"
-                                    Background="Silver">
+                                        Grid.Column="1"
+                                        Background="Silver">
                                     <TextBlock Text="H" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="1"
-                                    Background="Silver">
+                                        Grid.Column="1"
+                                        Background="Silver">
                                     <TextBlock Text="ช่วงร้อน" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="2"
-                                    Background="Silver">
+                                        Grid.Column="2"
+                                        Background="Silver">
                                     <TextBlock Text="N" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="2"
-                                    Background="Silver">
+                                        Grid.Column="2"
+                                        Background="Silver">
                                     <TextBlock Text="ช่วงปกติ" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="3"
-                                    Grid.ColumnSpan ="2"
-                                    Background="Silver">
+                                        Grid.Column="3"
+                                        Grid.ColumnSpan="2"
+                                        Background="Silver">
                                     <TextBlock Text="Temp (C) (อุณหภูมิ)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="3"
-                                    Background="Silver">
+                                        Grid.Column="3"
+                                        Background="Silver">
                                     <TextBlock Text="D" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="3"
-                                    Background="Silver">
+                                        Grid.Column="3"
+                                        Background="Silver">
                                     <TextBlock Text="ช่วงแห้ง" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="4"
-                                    Background="Silver">
+                                        Grid.Column="4"
+                                        Background="Silver">
                                     <TextBlock Text="HN" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="4"
-                                    Background="Silver">
+                                        Grid.Column="4"
+                                        Background="Silver">
                                     <TextBlock Text="ช่วงร้อน/แห้ง" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="5"
-                                    Background="Silver">
+                                        Grid.Column="5"
+                                        Background="Silver">
                                     <TextBlock Text="Speed" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="5"
-                                    Background="Silver">
+                                        Grid.Column="5"
+                                        Background="Silver">
                                     <TextBlock Text="(m/min)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="5"
-                                    Background="Silver">
+                                        Grid.Column="5"
+                                        Background="Silver">
                                     <TextBlock Text="ความเร็ว" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="6"
-                                    Background="Silver">
+                                        Grid.Column="6"
+                                        Background="Silver">
                                     <TextBlock Text="Treat" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="6"
-                                    Background="Silver">
+                                        Grid.Column="6"
+                                        Background="Silver">
                                     <TextBlock Text="Cord" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="6"
-                                    Background="Silver">
+                                        Grid.Column="6"
+                                        Background="Silver">
                                     <TextBlock Text="จำนวนเส้น" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="7"
-                                    Background="Silver">
+                                        Grid.Column="7"
+                                        Background="Silver">
                                     <TextBlock Text="Doffing" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="7"
-                                    Background="Silver">
+                                        Grid.Column="7"
+                                        Background="Silver">
                                     <TextBlock Text="Length (M)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="7"
-                                    Background="Silver">
+                                        Grid.Column="7"
+                                        Background="Silver">
                                     <TextBlock Text="ความยาว" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="8"
-                                    Background="Silver">
+                                        Grid.Column="8"
+                                        Background="Silver">
                                     <TextBlock Text="Weight" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="8"
-                                    Background="Silver">
+                                        Grid.Column="8"
+                                        Background="Silver">
                                     <TextBlock Text="(kg)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="8"
-                                    Background="Silver">
+                                        Grid.Column="8"
+                                        Background="Silver">
                                     <TextBlock Text="น้ำหนัก" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="9"
-                                    Background="Silver">
+                                        Grid.Column="9"
+                                        Background="Silver">
                                     <TextBlock Text="Spindle" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="9"
-                                    Background="Silver">
+                                        Grid.Column="9"
+                                        Background="Silver">
                                     <TextBlock Text="Use" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="9"
-                                    Background="Silver">
+                                        Grid.Column="9"
+                                        Background="Silver">
                                     <TextBlock Text="การใช้แกน" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="10"
-                                    Grid.ColumnSpan ="2"
-                                    Background="Silver">
+                                        Grid.Column="10"
+                                        Grid.ColumnSpan="2"
+                                        Background="Silver">
                                     <TextBlock Text="Production (ผลิตภัณฑ์)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="10"
-                                    Background="Silver">
+                                        Grid.Column="10"
+                                        Background="Silver">
                                     <TextBlock Text="Good" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="10"
-                                    Background="Silver">
+                                        Grid.Column="10"
+                                        Background="Silver">
                                     <TextBlock Text="ผลิตภัณฑ์ดี" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="11"
-                                    Background="Silver">
+                                        Grid.Column="11"
+                                        Background="Silver">
                                     <TextBlock Text="Total" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="11"
-                                    Background="Silver">
+                                        Grid.Column="11"
+                                        Background="Silver">
                                     <TextBlock Text="ผลรวมน้ำหนัก" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <!--#endregion-->
 
-                                <!--#region SC -->
+                                <!--#region SC-->
 
                                 <Border Grid.Row="3" Grid.Column="2">
                                     <!--<CheckBox Content="" IsChecked="{Binding S8CoolingWaterSystemBath1SC}" />-->
@@ -728,7 +762,7 @@
 
                                 <!--#endregion-->
 
-                                <!--#region SC -->
+                                <!--#region SC-->
                                 <Border Grid.Row="3" Grid.Column="0">
                                     <!--<CheckBox x:Name="chkStretchDSC" Content="" IsChecked="{Binding StretchDSC}"/>-->
                                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -913,128 +947,177 @@
 
                                 <!--#endregion-->
 
-                                <!--#region 1 -->
+                                <!--#region 1-->
 
                                 <Border Grid.Row="4" Grid.Column="0">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchD" Width="70" Text="{Binding StretchD, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchD"
+                                                     Width="70"
+                                                     Text="{Binding StretchD, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchDErr" Width="70" Text="{Binding StretchDErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchDErr"
+                                                     Width="70"
+                                                     Text="{Binding StretchDErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="1">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchH" Width="70" Text="{Binding StretchH, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchH"
+                                                     Width="70"
+                                                     Text="{Binding StretchH, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchHErr" Width="70" Text="{Binding StretchHErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchHErr"
+                                                     Width="70"
+                                                     Text="{Binding StretchHErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="2">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchN" Width="70" Text="{Binding StretchN, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchN"
+                                                     Width="70"
+                                                     Text="{Binding StretchN, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchNErr" Width="70" Text="{Binding StretchNErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchNErr"
+                                                     Width="70"
+                                                     Text="{Binding StretchNErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="3">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtTempD" Width="70" Text="{Binding TempD, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtTempD"
+                                                     Width="70"
+                                                     Text="{Binding TempD, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtTempDErr" Width="70" Text="{Binding TempDErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtTempDErr"
+                                                     Width="70"
+                                                     Text="{Binding TempDErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="4">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtTempHN" Width="70" Text="{Binding TempHN, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtTempHN"
+                                                     Width="70"
+                                                     Text="{Binding TempHN, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtTempHNErr" Width="70" Text="{Binding TempHNErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtTempHNErr"
+                                                     Width="70"
+                                                     Text="{Binding TempHNErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="5">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtSpeed" Width="70" Text="{Binding Speed, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtSpeed"
+                                                     Width="70"
+                                                     Text="{Binding Speed, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtSpeedErr" Width="70" Text="{Binding SpeedErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtSpeedErr"
+                                                     Width="70"
+                                                     Text="{Binding SpeedErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="6">
-                                    <TextBox x:Name="txtTreat" Width="100" Text="{Binding Treat}"/>
+                                    <TextBox x:Name="txtTreat"
+                                             Width="100"
+                                             Text="{Binding Treat}" />
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="7">
-                                    <TextBox x:Name="txtDoffingLength" Width="100" Text="{Binding DoffingLength}"/>
+                                    <TextBox x:Name="txtDoffingLength"
+                                             Width="100"
+                                             Text="{Binding DoffingLength}" />
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="8">
-                                    <TextBox x:Name="txtWeight" Width="100" Text="{Binding Weight}"/>
+                                    <TextBox x:Name="txtWeight"
+                                             Width="100"
+                                             Text="{Binding Weight}" />
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="9">
-                                    <TextBox x:Name="txtSpindle" Width="100" Text="{Binding Spindle}"/>
+                                    <TextBox x:Name="txtSpindle"
+                                             Width="100"
+                                             Text="{Binding Spindle}" />
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="10">
-                                    <TextBox x:Name="txtProductionGood" Width="100" Text="{Binding ProductionGood}"/>
+                                    <TextBox x:Name="txtProductionGood"
+                                             Width="100"
+                                             Text="{Binding ProductionGood}" />
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="11">
-                                    <TextBox x:Name="txtProductionTotal" Width="100" Text="{Binding ProductionTotal}"/>
+                                    <TextBox x:Name="txtProductionTotal"
+                                             Width="100"
+                                             Text="{Binding ProductionTotal}" />
                                 </Border>
 
                                 <!--#endregion-->
 
                             </Grid>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                        <Grid>
-                          <ListView x:Name="grid"
-                                  SelectionChanged="grid_SelectionChanged"
-                                  Margin="0,0,0,5"
-                                  FontSize="{StaticResource FontSize18}"
-                                  ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
-                                  ItemsSource="{Binding}"
-                                  Style="{StaticResource SingleSelectListView}"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Grid>
+                                <ListView x:Name="grid"
+                                          SelectionChanged="grid_SelectionChanged"
+                                          Margin="0,0,0,5"
+                                          FontSize="{StaticResource FontSize18}"
+                                          ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                                          ItemsSource="{Binding}"
+                                          Style="{StaticResource SingleSelectListView}"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                          ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListView.View>
                                         <GridView>
                                             <GridViewColumn Header="Date" Width="100">
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
-                                                            <DatePicker SelectedDate ="{Binding DoffingDate, StringFormat='{}{0:dd/MM/yy}'}"></DatePicker>
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
+                                                            <DatePicker SelectedDate="{Binding DoffingDate, StringFormat='{}{0:dd/MM/yy}'}" />
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1043,8 +1126,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding DoffingNo, StringFormat='{}{0:#,##0}'}" />
                                                         </StackPanel>
@@ -1055,8 +1138,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding StretchD, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1067,8 +1150,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding StretchH, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1079,8 +1162,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding StretchN, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1091,8 +1174,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding TempD, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1103,8 +1186,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding TempHN, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1115,8 +1198,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding Speed, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1127,8 +1210,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding Treat, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1139,8 +1222,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding DoffingLength, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1151,8 +1234,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding Weight, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1163,8 +1246,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding Spindle, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1175,8 +1258,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding ProductionGood, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1187,8 +1270,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding ProductionTotal, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1199,8 +1282,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding ProductionCut, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1211,8 +1294,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding PositionCordCutCreel, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1223,8 +1306,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding PositionCordCutCS, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1235,8 +1318,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding PositionCordCutWinder, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1247,8 +1330,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding PositionCordCutWasteYarn, StringFormat='{}{0:#,##0.##}'}" />
                                                         </StackPanel>
@@ -1259,9 +1342,9 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
-                                                            <DatePicker SelectedDate ="{Binding CheckTimeStart, StringFormat='{}{0:dd/MM/yy}'}"></DatePicker>
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
+                                                            <DatePicker SelectedDate="{Binding CheckTimeStart, StringFormat='{}{0:dd/MM/yy}'}" />
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1270,9 +1353,9 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
-                                                            <DatePicker SelectedDate ="{Binding CheckTimeFinish, StringFormat='{}{0:dd/MM/yy}'}"></DatePicker>
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
+                                                            <DatePicker SelectedDate="{Binding CheckTimeFinish, StringFormat='{}{0:dd/MM/yy}'}" />
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1281,9 +1364,9 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
-                                                            <DatePicker SelectedDate ="{Binding CheckTimeRecord, StringFormat='{}{0:dd/MM/yy}'}"></DatePicker>
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
+                                                            <DatePicker SelectedDate="{Binding CheckTimeRecord, StringFormat='{}{0:dd/MM/yy}'}" />
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1292,8 +1375,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding Opertor}" />
                                                         </StackPanel>
@@ -1304,8 +1387,8 @@
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center">
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center">
 
                                                             <TextBox Text="{Binding Leader}" />
                                                         </StackPanel>
@@ -1316,13 +1399,13 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
-                        </Grid>
-                    </StackPanel>
+                            </Grid>
+                        </StackPanel>
                         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
@@ -1345,139 +1428,120 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
 
-                                <!--#region COLUMN -->
-                                <Border Grid.Row="0"
-                                    Grid.Column="0">
-                                </Border>
-                                <Border Grid.Row="0"
-                                    Grid.Column="1">
+                                <!--#region COLUMN-->
+                                <Border Grid.Row="0" Grid.Column="0" />
+                                <Border Grid.Row="0" Grid.Column="1">
                                     <TextBlock Text="Before Use" TextAlignment="Center" />
                                 </Border>
-                                <Border Grid.Row="0"
-                                    Grid.Column="2">
+                                <Border Grid.Row="0" Grid.Column="2">
                                     <TextBlock Text="After Use" TextAlignment="Center" />
                                 </Border>
-                                <Border Grid.Row="0"
-                                    Grid.Column="3">
+                                <Border Grid.Row="0" Grid.Column="3">
                                     <TextBlock Text="Total" TextAlignment="Center" />
                                 </Border>
 
-                                <Border Grid.Row="1"
-                                    Grid.Column="0">
+                                <Border Grid.Row="1" Grid.Column="0">
                                     <TextBlock Text="Gas S-8" TextAlignment="Center" />
                                 </Border>
-                                <Border Grid.Row="1"
-                                    Grid.Column="1">
+                                <Border Grid.Row="1" Grid.Column="1">
                                     <TextBox Width="100" Text="{Binding GasBefore}" />
                                 </Border>
-                                <Border Grid.Row="1"
-                                    Grid.Column="2">
+                                <Border Grid.Row="1" Grid.Column="2">
                                     <TextBox Width="100" Text="{Binding GasAfter}" />
                                 </Border>
-                                <Border Grid.Row="1"
-                                    Grid.Column="3">
+                                <Border Grid.Row="1" Grid.Column="3">
                                     <TextBox Width="100" Text="{Binding GasTotal}" />
                                 </Border>
 
-                                <Border Grid.Row="2"
-                                    Grid.Column="0">
+                                <Border Grid.Row="2" Grid.Column="0">
                                     <TextBlock Text="Cooling Warter" TextAlignment="Center" />
                                 </Border>
-                                <Border Grid.Row="2"
-                                    Grid.Column="1">
+                                <Border Grid.Row="2" Grid.Column="1">
                                     <TextBox Width="100" Text="{Binding CoolingWarterBefore}" />
                                 </Border>
-                                <Border Grid.Row="2"
-                                    Grid.Column="2">
+                                <Border Grid.Row="2" Grid.Column="2">
                                     <TextBox Width="100" Text="{Binding CoolingWarterAfter}" />
                                 </Border>
-                                <Border Grid.Row="2"
-                                    Grid.Column="3">
+                                <Border Grid.Row="2" Grid.Column="3">
                                     <TextBox Width="100" Text="{Binding CoolingWarterTotal}" />
                                 </Border>
 
-                                <Border Grid.Row="3"
-                                    Grid.Column="0">
+                                <Border Grid.Row="3" Grid.Column="0">
                                     <TextBlock Text="Air Pressure" TextAlignment="Center" />
                                 </Border>
-                                <Border Grid.Row="3"
-                                    Grid.Column="1">
+                                <Border Grid.Row="3" Grid.Column="1">
                                     <TextBox Width="100" Text="{Binding AirPressureBefore}" />
                                 </Border>
-                                <Border Grid.Row="3"
-                                    Grid.Column="2">
+                                <Border Grid.Row="3" Grid.Column="2">
                                     <TextBox Width="100" Text="{Binding AirPressureAfter}" />
                                 </Border>
-                                <Border Grid.Row="3"
-                                    Grid.Column="3">
+                                <Border Grid.Row="3" Grid.Column="3">
                                     <TextBox Width="100" Text="{Binding AirPressureTotal}" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="4" Grid.RowSpan="2">
+                                        Grid.Column="4"
+                                        Grid.RowSpan="2">
                                     <TextBlock Text="Bath No.1" TextAlignment="Center" />
                                 </Border>
-                                <Border Grid.Row="0"
-                                    Grid.Column="5">
+                                <Border Grid.Row="0" Grid.Column="5">
                                     <TextBlock Text="Before Use" TextAlignment="Center" />
                                 </Border>
-                                <Border Grid.Row="0"
-                                    Grid.Column="6">
+                                <Border Grid.Row="0" Grid.Column="6">
                                     <TextBox Width="100" Text="{Binding Bath1Before}" />
                                 </Border>
-                                <Border Grid.Row="1"
-                                    Grid.Column="5">
+                                <Border Grid.Row="1" Grid.Column="5">
                                     <TextBlock Text="After Use" TextAlignment="Center" />
                                 </Border>
-                                <Border Grid.Row="1"
-                                    Grid.Column="6">
+                                <Border Grid.Row="1" Grid.Column="6">
                                     <TextBox Width="100" Text="{Binding Bath1After}" />
                                 </Border>
                                 <Border Grid.Row="0"
-                                    Grid.Column="7" Grid.RowSpan="2">
+                                        Grid.Column="7"
+                                        Grid.RowSpan="2">
                                     <TextBlock Text="WPU" TextAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="0"
-                                    Grid.Column="8" Grid.RowSpan="2">
+                                        Grid.Column="8"
+                                        Grid.RowSpan="2">
                                     <TextBox Width="100" Text="{Binding Bath1WPU}" />
                                 </Border>
 
                                 <Border Grid.Row="2"
-                                    Grid.Column="4" Grid.RowSpan="2">
+                                        Grid.Column="4"
+                                        Grid.RowSpan="2">
                                     <TextBlock Text="Bath No.2" TextAlignment="Center" />
                                 </Border>
-                                <Border Grid.Row="2"
-                                    Grid.Column="5">
+                                <Border Grid.Row="2" Grid.Column="5">
                                     <TextBlock Text="Before Use" TextAlignment="Center" />
                                 </Border>
-                                <Border Grid.Row="2"
-                                    Grid.Column="6">
+                                <Border Grid.Row="2" Grid.Column="6">
                                     <TextBox Width="100" Text="{Binding Bath2Before}" />
                                 </Border>
-                                <Border Grid.Row="3"
-                                    Grid.Column="5">
+                                <Border Grid.Row="3" Grid.Column="5">
                                     <TextBlock Text="After Use" TextAlignment="Center" />
                                 </Border>
-                                <Border Grid.Row="3"
-                                    Grid.Column="6">
+                                <Border Grid.Row="3" Grid.Column="6">
                                     <TextBox Width="100" Text="{Binding Bath2After}" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="7" Grid.RowSpan="2">
+                                        Grid.Column="7"
+                                        Grid.RowSpan="2">
                                     <TextBlock Text="WPU" TextAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="8" Grid.RowSpan="2">
+                                        Grid.Column="8"
+                                        Grid.RowSpan="2">
                                     <TextBox Width="100" Text="{Binding Bath2WPU}" />
                                 </Border>
-                                
+
                                 <!--#endregion-->
 
                             </Grid>
                         </StackPanel>
 
                         <Grid />
-                </DockPanel>
+                    </DockPanel>
                 </ScrollViewer>
             </DockPanel>
         </DockPanel>
