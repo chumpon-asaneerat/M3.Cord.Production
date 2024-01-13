@@ -92,9 +92,7 @@ namespace M3.Cord.Pages
 
         private void cmdIssueReport_Click(object sender, RoutedEventArgs e)
         {
-            var page = M3CordApp.Pages.ProductionRecord;
-            page.Setup();
-            PageContentManager.Instance.Current = page;
+
         }
 
         private void cmdRecordWeight_Click(object sender, RoutedEventArgs e)

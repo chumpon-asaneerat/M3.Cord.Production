@@ -215,10 +215,10 @@
     <Compile Include="Pages\Documents\Dipping\DippingStdManagePage.xaml.cs">
       <DependentUpon>DippingStdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ProductionRecord\ProductionRecordPage.xaml.cs">
+    <Compile Include="Pages\DIP\SubPages\ProductionRecordPage.xaml.cs">
       <DependentUpon>ProductionRecordPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ProductionRecord\ProductionRecordStdPage.xaml.cs">
+    <Compile Include="Pages\Documents\Dipping\ProductionRecordStdPage.xaml.cs">
       <DependentUpon>ProductionRecordStdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
@@ -690,11 +690,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\ProductionRecord\ProductionRecordPage.xaml">
+    <Page Include="Pages\DIP\SubPages\ProductionRecordPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\ProductionRecord\ProductionRecordStdPage.xaml">
+    <Page Include="Pages\Documents\Dipping\ProductionRecordStdPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
