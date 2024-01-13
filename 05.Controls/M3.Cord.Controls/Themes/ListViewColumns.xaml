@@ -776,4 +776,11 @@
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
+
+    <DataTemplate x:Key="DoffingDate">
+        <TextBlock Text="{Binding Path=PeriodTime, StringFormat='{}{0:dd/MM/yyyy}', Mode=TwoWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
 </ResourceDictionary>

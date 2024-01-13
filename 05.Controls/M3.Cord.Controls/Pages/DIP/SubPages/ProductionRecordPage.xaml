@@ -68,11 +68,14 @@
                         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                             <ctrl:NTextBox x:Name="txtLotNo"
                                            CaptionText="Lot No"
-                                           Width="200" />
+                                           Width="200" IsEnabled="False"/>
                             <!--  SOLUTION LOT NO  -->
-                            <ctrl:NTextBox x:Name="txtProductCode"
-                                           CaptionText="Product Code"
-                                           Width="200" />
+                            <ctrl:NComboBox x:Name="cbProducts"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Product :"
+                                    DisplayMemberPath="ProductCode"
+                                    Width="300"
+                                    SelectionChanged="cbProducts_SelectionChanged" />
                             <!--  SEARCH  -->
                             <Button x:Name="cmdSearch"
                                     Content="Search"
@@ -91,6 +94,15 @@
                                     Margin="5,2"
                                     Style="{StaticResource InlineButton}"
                                     Click="cmdClear_Click" />
+
+                            <Button x:Name="cmdAddDetail"
+                                    Content="Add Detail"
+                                    DockPanel.Dock="Left"
+                                    Width="150"
+                                    VerticalAlignment="Bottom"
+                                    Margin="5,2"
+                                    Style="{StaticResource InlineButton}"
+                                    Click="cmdAddDetail_Click" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                             <Grid>
@@ -188,13 +200,13 @@
                                     <TextBlock Text="Item Code" TextAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2" Grid.Column="4">
-                                    <TextBox Width="100" Text="{Binding ProductCode}" />
+                                    <TextBox Width="100" Text="{Binding ProductCode}" IsEnabled="False" />
                                 </Border>
                                 <Border Grid.Row="1" Grid.Column="5">
                                     <TextBlock Text="Lot No" TextAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2" Grid.Column="5">
-                                    <TextBox Width="100" Text="{Binding LotNo}" />
+                                    <TextBox Width="100" Text="{Binding LotNo}" IsEnabled="False"/>
                                 </Border>
 
                                 <Border Grid.Row="0"
@@ -1111,13 +1123,13 @@
                                           ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListView.View>
                                         <GridView>
-                                            <GridViewColumn Header="Date" Width="100">
+                                            <GridViewColumn Header="Date" Width="150">
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
-                                                            <DatePicker SelectedDate="{Binding DoffingDate, StringFormat='{}{0:dd/MM/yy}'}" />
+                                                            <DatePicker SelectedDate="{Binding DoffingDate ,StringFormat='{}{0:dd/MM/yyyy}'}" Width="150"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1129,7 +1141,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding DoffingNo, StringFormat='{}{0:#,##0}'}" />
+                                                            <TextBox Text="{Binding DoffingNo, StringFormat='{}{0:#,##0}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1141,7 +1153,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding StretchD, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding StretchD, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1153,7 +1165,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding StretchH, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding StretchH, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1165,7 +1177,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding StretchN, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding StretchN, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1177,7 +1189,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding TempD, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding TempD, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1189,7 +1201,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding TempHN, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding TempHN, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1201,7 +1213,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding Speed, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding Speed, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1213,7 +1225,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding Treat, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding Treat, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1225,7 +1237,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding DoffingLength, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding DoffingLength, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1237,7 +1249,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding Weight, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding Weight, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1249,7 +1261,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding Spindle, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding Spindle, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1261,7 +1273,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding ProductionGood, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding ProductionGood, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1273,7 +1285,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding ProductionTotal, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding ProductionTotal, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1285,7 +1297,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding ProductionCut, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding ProductionCut, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1297,7 +1309,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding PositionCordCutCreel, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding PositionCordCutCreel, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1309,7 +1321,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding PositionCordCutCS, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding PositionCordCutCS, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1321,7 +1333,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding PositionCordCutWinder, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding PositionCordCutWinder, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1333,40 +1345,40 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding PositionCordCutWasteYarn, StringFormat='{}{0:#,##0.##}'}" />
+                                                            <TextBox Text="{Binding PositionCordCutWasteYarn, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
                                             </GridViewColumn>
-                                            <GridViewColumn Header="Time Start" Width="100">
+                                            <GridViewColumn Header="Time Start" Width="150">
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
-                                                            <DatePicker SelectedDate="{Binding CheckTimeStart, StringFormat='{}{0:dd/MM/yy}'}" />
+                                                            <DatePicker SelectedDate="{Binding CheckTimeStart, StringFormat='{}{0:dd/MM/yy}'}" Width="150"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
                                             </GridViewColumn>
-                                            <GridViewColumn Header="Time Finish" Width="100">
+                                            <GridViewColumn Header="Time Finish" Width="150">
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
-                                                            <DatePicker SelectedDate="{Binding CheckTimeFinish, StringFormat='{}{0:dd/MM/yy}'}" />
+                                                            <DatePicker SelectedDate="{Binding CheckTimeFinish, StringFormat='{}{0:dd/MM/yy}'}" Width="150"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
                                             </GridViewColumn>
-                                            <GridViewColumn Header="Time Record" Width="100">
+                                            <GridViewColumn Header="Time Record" Width="150">
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal"
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
-                                                            <DatePicker SelectedDate="{Binding CheckTimeRecord, StringFormat='{}{0:dd/MM/yy}'}" />
+                                                            <DatePicker SelectedDate="{Binding CheckTimeRecord, StringFormat='{}{0:dd/MM/yy}'}" Width="150"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1378,7 +1390,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding Opertor}" />
+                                                            <TextBox Text="{Binding Opertor}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1390,7 +1402,7 @@
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center">
 
-                                                            <TextBox Text="{Binding Leader}" />
+                                                            <TextBox Text="{Binding Leader}" Width="100"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
@@ -1401,9 +1413,12 @@
                                 </ListView>
                             </Grid>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
                             <Grid>
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
@@ -1535,6 +1550,93 @@
                                     <TextBox Width="100" Text="{Binding Bath2WPU}" />
                                 </Border>
 
+                                <Border Grid.Row="0" Grid.Column="9" Grid.ColumnSpan="8">
+                                    <TextBlock Text="TEPM.RECORD" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="4">
+                                    <TextBlock Text="D.ZONE" TextAlignment="Center" />
+                                </Border>
+
+                                <Border Grid.Row="2" Grid.Column="9">
+                                    <TextBlock Text="1" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="2" Grid.Column="10">
+                                    <TextBox Width="100" Text="{Binding TempDZone1}" />
+                                </Border>
+                                <Border Grid.Row="3" Grid.Column="9">
+                                    <TextBlock Text="2" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="3" Grid.Column="10">
+                                    <TextBox Width="100" Text="{Binding TempDZone2}" />
+                                </Border>
+                                <Border Grid.Row="4" Grid.Column="9">
+                                    <TextBlock Text="3" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="4" Grid.Column="10">
+                                    <TextBox Width="100" Text="{Binding TempDZone3}" />
+                                </Border>
+
+                                <Border Grid.Row="2" Grid.Column="11">
+                                    <TextBlock Text="4" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="2" Grid.Column="12">
+                                    <TextBox Width="100" Text="{Binding TempDZone4}" />
+                                </Border>
+                                <Border Grid.Row="3" Grid.Column="11">
+                                    <TextBlock Text="5" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="3" Grid.Column="12">
+                                    <TextBox Width="100" Text="{Binding TempDZone5}" />
+                                </Border>
+                                <Border Grid.Row="4" Grid.Column="11">
+                                    <TextBlock Text="6" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="4" Grid.Column="12">
+                                    <TextBox Width="100" Text="{Binding TempDZone6}" />
+                                </Border>
+
+                                <Border Grid.Row="1" Grid.Column="13" Grid.ColumnSpan="4">
+                                    <TextBlock Text="H.N.ZONE" TextAlignment="Center" />
+                                </Border>
+
+                                <Border Grid.Row="2" Grid.Column="13">
+                                    <TextBlock Text="1" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="2" Grid.Column="14">
+                                    <TextBox Width="100" Text="{Binding TempHNZone1}" />
+                                </Border>
+                                <Border Grid.Row="3" Grid.Column="13">
+                                    <TextBlock Text="2" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="3" Grid.Column="14">
+                                    <TextBox Width="100" Text="{Binding TempHNZone2}" />
+                                </Border>
+                                <Border Grid.Row="4" Grid.Column="13">
+                                    <TextBlock Text="3" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="4" Grid.Column="14">
+                                    <TextBox Width="100" Text="{Binding TempHNZone3}" />
+                                </Border>
+
+                                <Border Grid.Row="2" Grid.Column="15">
+                                    <TextBlock Text="4" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="2" Grid.Column="16">
+                                    <TextBox Width="100" Text="{Binding TempHNZone4}" />
+                                </Border>
+                                <Border Grid.Row="3" Grid.Column="15">
+                                    <TextBlock Text="5" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="3" Grid.Column="16">
+                                    <TextBox Width="100" Text="{Binding TempHNZone5}" />
+                                </Border>
+                                <Border Grid.Row="4" Grid.Column="15">
+                                    <TextBlock Text="6" TextAlignment="Center" />
+                                </Border>
+                                <Border Grid.Row="4" Grid.Column="16">
+                                    <TextBox Width="100" Text="{Binding TempHNZone6}" />
+                                </Border>
+                                
                                 <!--#endregion-->
 
                             </Grid>

@@ -65,11 +65,12 @@
                            VerticalAlignment="Top"
                            HorizontalAlignment="Stretch">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                        <!--  SOLUTION LOT NO  -->
-                        <ctrl:NTextBox x:Name="txtProductCode"
-                                       CaptionText="Product Code"
-                                       Text="{Binding ProductCode}"
-                                       Width="200" />
+                        <ctrl:NComboBox x:Name="cbProducts"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Product :"
+                                    DisplayMemberPath="ProductCode"
+                                    Width="300"
+                                    SelectionChanged="cbProducts_SelectionChanged" />
                         <!--  SEARCH  -->
                         <Button x:Name="cmdSearch"
                                 Content="Search"

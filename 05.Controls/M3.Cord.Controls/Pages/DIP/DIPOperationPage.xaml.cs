@@ -102,7 +102,7 @@ namespace M3.Cord.Pages
             
             var page = M3CordApp.Pages.ProductionRecord;
             //page.Setup(mc); // Kik แก้ตรงนี้
-            page.Setup();
+            page.Setup(mc);
             PageContentManager.Instance.Current = page;
         }
 
