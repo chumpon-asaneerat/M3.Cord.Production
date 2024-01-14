@@ -85,7 +85,11 @@ namespace M3.Cord.Pages
             if (null == cond.DataContext) return;
             var std = cond.DataContext as DIPConditionStd;
             if (null == std) return;
-            DIPConditionStd.Save(std);
+
+            var ret = DIPConditionStd.Save(std);
+            if (null != ret && ret.Ok)
+                M3CordApp.Windows.SaveSuccess();
+            else M3CordApp.Windows.SaveFailed();
         }
 
         private void RefreshGrid()

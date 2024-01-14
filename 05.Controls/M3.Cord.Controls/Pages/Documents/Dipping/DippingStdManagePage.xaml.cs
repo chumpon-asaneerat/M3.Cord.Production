@@ -82,17 +82,18 @@ namespace M3.Cord.Pages
 
         private void Save()
         {
-            /*
             if (null == cond.DataContext) return;
             var std = cond.DataContext as DIPConditionStd;
             if (null == std) return;
-            DIPConditionStd.Save(std);
-            */
+
+            var ret = DIPConditionStd.Save(std);
+            if (null != ret && ret.Ok)
+                M3CordApp.Windows.SaveSuccess();
+            else M3CordApp.Windows.SaveFailed();
         }
 
         private void RefreshGrid()
         {
-            /*
             var product = cbProducts.SelectedItem as Product;
             if (product != null)
             {
@@ -111,7 +112,6 @@ namespace M3.Cord.Pages
                 cond.DataContext = null;
                 cond.IsEnabled = false;
             }
-            */
         }
 
         #endregion
