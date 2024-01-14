@@ -70,7 +70,7 @@ namespace M3.Cord.Pages
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoSolutionMenu();
+            M3CordApp.Pages.GotoDIPOperationMenu(mc);
         }
 
         private void cmdSearch_Click(object sender, RoutedEventArgs e)
