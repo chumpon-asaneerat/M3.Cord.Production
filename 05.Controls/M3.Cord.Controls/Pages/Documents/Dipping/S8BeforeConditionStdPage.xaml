@@ -57,7 +57,7 @@
                 </DockPanel>
             </DockPanel>
             <!--  STD VIEW  -->
-            <doc:DIPConditionStdPage x:Name="cond" />
+            <doc:DIPS8BeforeStdPage x:Name="cond" />
         </DockPanel>
     </page:NPage>
 </UserControl>

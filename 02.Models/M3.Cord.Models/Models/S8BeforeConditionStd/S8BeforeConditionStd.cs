@@ -22,6 +22,7 @@ namespace M3.Cord.Models
 	public class S8BeforeConditionStd
 	{
 		#region Public Proeprties
+
 		public string ProductCode { get; set; }
 		public string LotNo { get; set; }
 		public string SolutionNameBath1 { get; set; }
@@ -69,50 +70,52 @@ namespace M3.Cord.Models
 
 		#region Static Methods
 
-		public static NDbResult<S8BeforeConditionStd> GetCurrent()
-		{
-			MethodBase med = MethodBase.GetCurrentMethod();
+        public static NDbResult<List<S8BeforeConditionStd>> Gets(string productCode)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
 
-			NDbResult<S8BeforeConditionStd> ret = new NDbResult<S8BeforeConditionStd>();
+            NDbResult<List<S8BeforeConditionStd>> ret = new NDbResult<List<S8BeforeConditionStd>>();
 
-			IDbConnection cnn = DbServer.Instance.Db;
-			if (null == cnn || !DbServer.Instance.Connected)
-			{
-				string msg = "Connection is null or cannot connect to database server.";
-				med.Err(msg);
-				// Set error number/message
-				ret.ErrNum = 8000;
-				ret.ErrMsg = msg;
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
 
-				return ret;
-			}
+                return ret;
+            }
 
-			var p = new DynamicParameters();
+            var p = new DynamicParameters();
+            p.Add("@ProductCode", productCode);
 
-			try
-			{
-				var item = cnn.Query<S8BeforeConditionStd>("GetS8BeforeConditionStd", p,
-					commandType: CommandType.StoredProcedure).FirstOrDefault();
-				var data = item;
-				ret.Success(data);
-			}
-			catch (Exception ex)
-			{
-				med.Err(ex);
-				// Set error number/message
-				ret.ErrNum = 9999;
-				ret.ErrMsg = ex.Message;
-			}
+            try
+            {
+                var items = cnn.Query<S8BeforeConditionStd>("GetS8BeforeConditionStd", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+                ret.data = new List<S8BeforeConditionStd>();
+            }
 
-			return ret;
-		}
+            return ret;
+        }
 
-		/// <summary>
-		/// Save
-		/// </summary>
-		/// <param name="value">The S8BeforeConditionStd item to save.</param>
-		/// <returns></returns>
-		public static NDbResult<S8BeforeConditionStd> Save(S8BeforeConditionStd value)
+        /// <summary>
+        /// Save
+        /// </summary>
+        /// <param name="value">The S8BeforeConditionStd item to save.</param>
+        /// <returns></returns>
+        public static NDbResult<S8BeforeConditionStd> Save(S8BeforeConditionStd value)
 		{
 			MethodBase med = MethodBase.GetCurrentMethod();
 

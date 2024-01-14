@@ -13,8 +13,10 @@ M3 Cord Production System #827
 M3 Cord Production System #826
 - 
 
+[commited]
 M3 Cord Production System #825
-- 
+- M3.Cord.Production.App re-implements #703
+  - Common update #3 - Save message box Std (S8 Before Condition) - incompleted
 
 [commited]
 M3 Cord Production System #824

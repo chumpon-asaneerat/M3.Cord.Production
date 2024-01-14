@@ -83,10 +83,10 @@ namespace M3.Cord.Pages
         private void Save()
         {
             if (null == cond.DataContext) return;
-            var std = cond.DataContext as DIPConditionStd;
+            var std = cond.DataContext as S8BeforeConditionStd;
             if (null == std) return;
 
-            var ret = DIPConditionStd.Save(std);
+            var ret = S8BeforeConditionStd.Save(std);
             if (null != ret && ret.Ok)
                 M3CordApp.Windows.SaveSuccess();
             else M3CordApp.Windows.SaveFailed();
@@ -98,10 +98,10 @@ namespace M3.Cord.Pages
             if (product != null)
             {
                 string productCode = product.ProductCode;
-                var std = DIPConditionStd.Gets(productCode).Value().FirstOrDefault();
+                var std = S8BeforeConditionStd.Gets(productCode).Value().FirstOrDefault();
                 if (null == std)
                 {
-                    std = new DIPConditionStd();
+                    std = new S8BeforeConditionStd();
                     std.ProductCode = productCode;
                 }
                 cond.DataContext = std;
