@@ -44,6 +44,9 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+
+        private DIPMC mc = null;
+        private DIPPCCard pcCard = null;
         private ProductionRecord std;
         private List<ProductionRecordDetail> detail;
 
@@ -72,14 +75,17 @@ namespace M3.Cord.Pages
 
         private void cmdSearch_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtProductCode.Text))
-                LoadProductionRecordStd(txtProductCode.Text);
+            if (!string.IsNullOrEmpty(txtLotNo.Text) && cbProducts.SelectedValue != null)
+                LoadProductionRecord();
         }
 
         private void cmdClear_Click(object sender, RoutedEventArgs e)
         {
             this.InvokeAction(() =>
             {
+                //txtLotNo.Text = string.Empty;
+                cbProducts.SelectedValue = -1;
+
                 ClearInputs();
             });
         }
@@ -89,19 +95,20 @@ namespace M3.Cord.Pages
             Save();
         }
 
+        private void cmdAddDetail_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtLotNo.Text) && cbProducts.SelectedValue != null)
+                AddDetail();
+        }
+
         #endregion
 
-        #region TextBox Handlers
+        #region Combobox Handlers
 
-        private void txtProductCode_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void cbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.Key == Key.Enter)
-            {
-                if (!string.IsNullOrEmpty(txtProductCode.Text))
-                    LoadProductionRecordStd(txtProductCode.Text);
-
-                e.Handled = true;
-            }
+            //if (!string.IsNullOrEmpty(txtLotNo.Text) && cbProducts.SelectedValue != null)
+            //    LoadProductionRecord();
         }
 
         #endregion
@@ -120,25 +127,88 @@ namespace M3.Cord.Pages
         private void ClearInputs()
         {
             std = new ProductionRecord();
-
+            detail = new List<ProductionRecordDetail>();
+            grid.ItemsSource = null;
             this.DataContext = std;
 
         }
 
-        private void LoadProductionRecordStd(string productCode)
+        private void AddDetail()
+        {
+
+            var product = cbProducts.SelectedItem as Product;
+            string lotNo = string.Empty;
+            string productCode = product.ProductCode;
+
+            if (!string.IsNullOrEmpty(txtLotNo.Text))
+                lotNo = txtLotNo.Text;
+
+            if (product != null && !string.IsNullOrEmpty(lotNo))
+            {
+                ProductionRecordDetail d = new ProductionRecordDetail();
+                d.LotNo = lotNo;
+                d.ProductCode = productCode;
+                d.DoffingDate = DateTime.Now;
+
+                if (detail != null)
+                {
+                    d.DoffingNo = detail.Count + 1;
+                }
+                else
+                {
+                    d.DoffingNo = 1;
+                }
+
+                detail.Add(d);
+
+                grid.ItemsSource = null;
+
+                if (detail != null)
+                {
+                    grid.ItemsSource = detail;
+                }
+            }
+        }
+
+        private void LoadProductionRecord()
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
             try
             {
-                var ret = ProductionRecordStd.GetCurrent(productCode).Value();
-
-                if (ret != null)
+                var product = cbProducts.SelectedItem as Product;
+                if (product != null)
                 {
-                    this.DataContext = ret;
+                    string lotNo = string.Empty;
+                    string productCode = product.ProductCode;
+
+                    if (!string.IsNullOrEmpty(txtLotNo.Text))
+                        lotNo = txtLotNo.Text;
+
+                    var std = ProductionRecord.Get(lotNo, productCode).Value();
+                    if (null == std)
+                    {
+                        std = new ProductionRecord();
+                        std.ProductCode = productCode;
+                    }
+
+                    var stdDetail = ProductionRecordDetail.Gets(lotNo, productCode).Value();
+
+                    if (stdDetail != null)
+                    {
+                        detail = new List<ProductionRecordDetail>();
+                        detail = stdDetail;
+                        grid.ItemsSource = detail;
+                    }
+                        
+                    this.DataContext = std;
+                    this.IsEnabled = true;
                 }
                 else
                 {
+                    this.DataContext = null;
+                    this.IsEnabled = false;
+
                     var win = M3CordApp.Windows.MessageBox;
                     win.Setup("ไม่พบ Product Code ที่ระบุ ในระบบ");
                     win.ShowDialog();
@@ -151,7 +221,6 @@ namespace M3.Cord.Pages
                 med.Err(ex);
             }
         }
-
         private void Save()
         {
             MethodBase med = MethodBase.GetCurrentMethod();
@@ -164,6 +233,8 @@ namespace M3.Cord.Pages
 
                 if (!retD.HasError)
                 {
+                    SaveDetail();
+
                     var win = M3CordApp.Windows.MessageBox;
                     win.Setup("Save Complete");
                     win.ShowDialog();
@@ -181,23 +252,52 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void SaveDetail()
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            try
+            {
+                if (null == detail) return;
+
+                if(detail.Count > 0)
+                {
+                    foreach (var item in detail)
+                    {
+                        var retD = ProductionRecordDetail.Save(item);
+
+                        if (retD.HasError)
+                        {
+                            med.Err(retD.ErrMsg.ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
+        }
+
         #endregion
 
         #region Public Methods
 
-        public void Setup(ProductionRecordStd value = null)
+        public void Setup(DIPMC selecteedMC)
         {
-            if (null == value)
-            {
-                ClearInputs();
-            }
-            else
-            {
-                this.InvokeAction(() =>
-                {
+            cbProducts.ItemsSource = Product.GetDipProducts(null).Value();
 
-                });
+            if (null != selecteedMC)
+            {
+                mc = selecteedMC;
+                pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
+                if (null != pcCard)
+                {
+                    txtLotNo.Text = pcCard.DIPLotNo;
+                    ClearInputs();
+                }
             }
+           
         }
 
         #endregion

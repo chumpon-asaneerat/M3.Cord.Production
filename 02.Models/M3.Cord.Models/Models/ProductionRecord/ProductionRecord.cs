@@ -73,9 +73,193 @@ namespace M3.Cord.Models
 		public string SectionHead { get; set; }
 		public string SectionManager { get; set; }
 
+
+		//
+		public bool? StretchDSC { get; set; }
+		public decimal? StretchD { get; set; }
+		public decimal? StretchDErr { get; set; }
+		public bool? StretchHSC { get; set; }
+		public decimal? StretchH { get; set; }
+		public decimal? StretchHErr { get; set; }
+		public bool? StretchNSC { get; set; }
+		public decimal? StretchN { get; set; }
+		public decimal? StretchNErr { get; set; }
+		public bool? TempDSC { get; set; }
+		public decimal? TempD { get; set; }
+		public decimal? TempDErr { get; set; }
+		public bool? TempHNSC { get; set; }
+		public decimal? TempHN { get; set; }
+		public decimal? TempHNErr { get; set; }
+		public bool? SpeedSC { get; set; }
+		public decimal? Speed { get; set; }
+		public decimal? SpeedErr { get; set; }
+		public bool? TreatSC { get; set; }
+		public decimal? Treat { get; set; }
+		public bool? DoffingLengthSC { get; set; }
+		public decimal? DoffingLength { get; set; }
+		public bool? WeightSC { get; set; }
+		public decimal? Weight { get; set; }
+		public bool? SpindleSC { get; set; }
+		public decimal? Spindle { get; set; }
+		public bool? ProductionGoodSC { get; set; }
+		public decimal? ProductionGood { get; set; }
+		public bool? ProductionTotalSC { get; set; }
+		public decimal? ProductionTotal { get; set; }
+
+		//
 		#endregion
 
 		#region Static Methods
+
+		public static NDbResult<ProductionRecord> Get(string lotNo , string productCode)
+		{
+			MethodBase med = MethodBase.GetCurrentMethod();
+
+			NDbResult<ProductionRecord> ret = new NDbResult<ProductionRecord>();
+
+			IDbConnection cnn = DbServer.Instance.Db;
+			if (null == cnn || !DbServer.Instance.Connected)
+			{
+				string msg = "Connection is null or cannot connect to database server.";
+				med.Err(msg);
+				// Set error number/message
+				ret.ErrNum = 8000;
+				ret.ErrMsg = msg;
+
+				return ret;
+			}
+
+			var p = new DynamicParameters();
+			p.Add("@LotNo", lotNo);
+			p.Add("@ProductCode", productCode);
+
+			var pStd = new DynamicParameters();
+			pStd.Add("@ProductCode", productCode);
+
+			try
+			{
+				var item = cnn.Query<ProductionRecord>("GetProductionRecord", p,
+					commandType: CommandType.StoredProcedure).FirstOrDefault();
+				var data = item;
+				//ret.Success(data);
+
+				var itemStd = cnn.Query<ProductionRecordStd>("GetProductionRecordStd", pStd,
+					commandType: CommandType.StoredProcedure).FirstOrDefault();
+				var dataStd = itemStd;
+
+				if (data != null || dataStd != null)
+				{
+					ProductionRecord result = new ProductionRecord();
+
+					if (dataStd != null)
+					{
+						#region ProductionRecordStd
+						result.ProductCode = itemStd.ProductCode;
+
+						result.StretchDSC = itemStd.StretchDSC;
+						result.StretchD = itemStd.StretchD;
+						result.StretchDErr = itemStd.StretchDErr;
+						result.StretchHSC = itemStd.StretchHSC;
+						result.StretchH = itemStd.StretchH;
+						result.StretchHErr = itemStd.StretchHErr;
+						result.StretchNSC = itemStd.StretchNSC;
+						result.StretchN = itemStd.StretchN;
+						result.StretchNErr = itemStd.StretchNErr;
+						result.TempDSC = itemStd.TempDSC;
+						result.TempD = itemStd.TempD;
+						result.TempDErr = itemStd.TempDErr;
+						result.TempHNSC = itemStd.TempHNSC;
+						result.TempHN = itemStd.TempHN;
+						result.TempHNErr = itemStd.TempHNErr;
+						result.SpeedSC = itemStd.SpeedSC;
+						result.Speed = itemStd.Speed;
+						result.SpeedErr = itemStd.SpeedErr;
+						result.TreatSC = itemStd.TreatSC;
+						result.Treat = itemStd.Treat;
+						result.DoffingLengthSC = itemStd.DoffingLengthSC;
+						result.DoffingLength = itemStd.DoffingLength;
+						result.WeightSC = itemStd.WeightSC;
+						result.Weight = itemStd.Weight;
+						result.SpindleSC = itemStd.SpindleSC;
+						result.Spindle = itemStd.Spindle;
+						result.ProductionGoodSC = itemStd.ProductionGoodSC;
+						result.ProductionGood = itemStd.ProductionGood;
+						result.ProductionTotalSC = itemStd.ProductionTotalSC;
+						result.ProductionTotal = itemStd.ProductionTotal;
+						#endregion
+					}
+
+					if (data != null)
+					{
+						#region ProductionRecord
+
+						result.RecordDate = item.RecordDate;
+						result.ProcessHS = item.ProcessHS;
+						result.ProcessDIP = item.ProcessDIP;
+						result.Customer = item.Customer;
+						result.Counter = item.Counter;
+						result.CounterErr = item.CounterErr;
+						result.CordStructure = item.CordStructure;
+						result.ProductCode = item.ProductCode;
+						result.LotNo = item.LotNo;
+						result.Bath1SolutionName = item.Bath1SolutionName;
+						result.Bath1NipFront = item.Bath1NipFront;
+						result.Bath1NipBack = item.Bath1NipBack;
+						result.Bath1NipBackErr = item.Bath1NipBackErr;
+						result.Bath2SolutionName = item.Bath2SolutionName;
+						result.Bath2NipFront = item.Bath2NipFront;
+						result.Bath2NipBack = item.Bath2NipBack;
+						result.Bath2NipBackErr = item.Bath2NipBackErr;
+						result.Sofner = item.Sofner;
+						result.DarwNip = item.DarwNip;
+						result.PaperTubeColorUse = item.PaperTubeColorUse;
+						result.TensionD = item.TensionD;
+						result.TensionH = item.TensionH;
+						result.TensionN = item.TensionN;
+						result.TensionWinder = item.TensionWinder;
+						result.GasBefore = item.GasBefore;
+						result.GasAfter = item.GasAfter;
+						result.GasTotal = item.GasTotal;
+						result.CoolingWarterBefore = item.CoolingWarterBefore;
+						result.CoolingWarterAfter = item.CoolingWarterAfter;
+						result.CoolingWarterTotal = item.CoolingWarterTotal;
+						result.AirPressureBefore = item.AirPressureBefore;
+						result.AirPressureAfter = item.AirPressureAfter;
+						result.AirPressureTotal = item.AirPressureTotal;
+						result.Bath1Before = item.Bath1Before;
+						result.Bath1After = item.Bath1After;
+						result.Bath1WPU = item.Bath1WPU;
+						result.Bath2Before = item.Bath2Before;
+						result.Bath2After = item.Bath2After;
+						result.Bath2WPU = item.Bath2WPU;
+						result.TempDZone1 = item.TempDZone1;
+						result.TempDZone2 = item.TempDZone2;
+						result.TempDZone3 = item.TempDZone3;
+						result.TempHNZone1 = item.TempHNZone1;
+						result.TempHNZone2 = item.TempHNZone2;
+						result.TempHNZone3 = item.TempHNZone3;
+						result.TempHNZone4 = item.TempHNZone4;
+						result.TempHNZone5 = item.TempHNZone5;
+						result.TempHNZone6 = item.TempHNZone6;
+						result.SectionHead = item.SectionHead;
+						result.SectionManager = item.SectionManager;
+
+						#endregion
+					}
+
+					ret.Success(result);
+				}
+			}
+			catch (Exception ex)
+			{
+				med.Err(ex);
+				// Set error number/message
+				ret.ErrNum = 9999;
+				ret.ErrMsg = ex.Message;
+			}
+
+			return ret;
+		}
 
 		public static NDbResult<ProductionRecord> GetCurrent()
 		{

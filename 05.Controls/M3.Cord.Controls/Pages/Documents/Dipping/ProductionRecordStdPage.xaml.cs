@@ -71,8 +71,8 @@ namespace M3.Cord.Pages
 
         private void cmdSearch_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtProductCode.Text))
-                LoadProductionRecordStd(txtProductCode.Text);
+            if (cbProducts.SelectedValue != null)
+                LoadProductionRecordStd();
         }
 
         private void cmdClear_Click(object sender, RoutedEventArgs e)
@@ -90,17 +90,12 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region TextBox Handlers
+        #region Combobox Handlers
 
-        private void txtProductCode_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void cbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.Key == Key.Enter)
-            {
-                if (!string.IsNullOrEmpty(txtProductCode.Text))
-                    LoadProductionRecordStd(txtProductCode.Text);
-
-                e.Handled = true;
-            }
+            if (cbProducts.SelectedValue != null)
+                LoadProductionRecordStd();
         }
 
         #endregion
@@ -156,20 +151,32 @@ namespace M3.Cord.Pages
             //txtProductionTotal.Text = string.Empty;
         }
 
-        private void LoadProductionRecordStd(string productCode)
+        private void LoadProductionRecordStd()
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
             try
             {
-                var ret = ProductionRecordStd.GetCurrent(productCode).Value();
-
-                if (ret != null)
+                var product = cbProducts.SelectedItem as Product;
+                if (product != null)
                 {
-                    this.DataContext = ret;
+                    string productCode = product.ProductCode;
+
+                    var std = ProductionRecordStd.Gets(productCode).Value().FirstOrDefault();
+                    if (null == std)
+                    {
+                        std = new ProductionRecordStd();
+                        std.ProductCode = productCode;
+                    }
+
+                    this.DataContext = std;
+                    this.IsEnabled = true;
                 }
                 else
                 {
+                    this.DataContext = null;
+                    this.IsEnabled = false;
+
                     var win = M3CordApp.Windows.MessageBox;
                     win.Setup("ไม่พบ Product Code ที่ระบุ ในระบบ");
                     win.ShowDialog();
@@ -218,6 +225,8 @@ namespace M3.Cord.Pages
 
         public void Setup(ProductionRecordStd value = null)
         {
+            cbProducts.ItemsSource = Product.GetDipProducts(null).Value();
+
             if (null == value)
             {
                 ClearInputs();

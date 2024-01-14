@@ -91,7 +91,7 @@ namespace M3.Cord.Models
 			return ret;
 		}
 
-		public static NDbResult<List<ProductionRecordDetail>> Gets(string productCode , string lotNo)
+		public static NDbResult<List<ProductionRecordDetail>> Gets(string lotNo, string productCode)
 		{
 			MethodBase med = MethodBase.GetCurrentMethod();
 
