@@ -227,6 +227,13 @@ namespace M3.Cord.Pages
                         condition.StartingTimeStartAgeingTime.HasValue &&
                         condition.FinishTime.HasValue && !condition.OutTime.HasValue;
                 }
+
+                // lock textbox if already start.
+                /*
+                bool isStart = condition.StartingTimeStartAgeingTime.HasValue;
+                txtPalletNo1.IsEnabled = !isStart;
+                //txtPalletNo2.IsEnabled = string.IsNullOrEmpty(condition.DoffNo2PalletCode);
+                */
             }
         }
 
@@ -234,7 +241,11 @@ namespace M3.Cord.Pages
         {
             if (null != manager)
             {
-                manager.Save();
+                var ret = manager.Save();
+                if (ret)
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
+
                 RefreshContext();
             }
 
@@ -245,8 +256,14 @@ namespace M3.Cord.Pages
         {
             if (null != manager)
             {
-                manager.Start();
-                RefreshContext();
+                var ret = manager.Start();
+                var win = M3CordApp.Windows.MessageBox;
+                string msg = (ret) ?
+                    "Update Start Time success" + Environment.NewLine + "บันทึกข้อมูลเริ่มทำงานสำเร็จ" :
+                    "Update Start Time failed" + Environment.NewLine + "บันทึกข้อมูลเริ่มทำงานไม่สำเร็จ";
+                win.Setup(msg);
+                win.ShowDialog();
+
             }
 
             M3CordApp.Pages.GotoCordMainMenu();

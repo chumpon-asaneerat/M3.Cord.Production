@@ -364,8 +364,14 @@ namespace M3.Cord.Models
                 dst.AgeingSteamPressureSpecErr = src.AgeingSteamPressureSetErr;
                 dst.SettingTemperatureSpec = src.SettingTemperatureSet;
                 dst.SettingTemperatureSpecErr = src.SettingTemperatureSetErr;
-                dst.SettingTimeSpec = src.SettingTemperatureSet;
-                dst.SettingTimeSpecErr = src.SettingTemperatureSetErr;
+                dst.SettingTimeSpec = src.SettingTimeSet;
+                dst.SettingTimeSpecErr = src.SettingTimeSetErr;
+                dst.YarnTypeSpec = src.YarnTypeSet;
+                dst.CordStructureSpec = src.CordStructureSet;
+                dst.TwistingNoSpec = src.TwistingNoSet;
+                dst.TwistingNoSpecErr = src.TwistingNoSetErr;
+                dst.UnitWeightSpec = src.UnitWeightSet;
+                dst.UnitWeightSpecErr = src.UnitWeightSetErr;
             }
         }
         /// <summary>

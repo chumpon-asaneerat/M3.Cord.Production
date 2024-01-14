@@ -10,17 +10,19 @@ M3 Cord Production System #828
 M3 Cord Production System #827
 - 
 
+[commited]
 M3 Cord Production System #826
-- 
+- M3.Cord.Production.App re-implements #76
+  - Fixed Ageing condition show invalid value from S5 Standard.
 
 [commited]
 M3 Cord Production System #825
-- M3.Cord.Production.App re-implements #703
+- M3.Cord.Production.App re-implements #705
   - Common update #3 - Save message box Std (S8 Before Condition) - incompleted
 
 [commited]
 M3 Cord Production System #824
-- M3.Cord.Production.App re-implements #702
+- M3.Cord.Production.App re-implements #704
   - Common update #2 - Save message box Std (Dipping Condition, DIP TimeTable)
 
 [commited]
