@@ -45,6 +45,8 @@ namespace M3.Cord.Pages
         #region Internal Variables
 
         private List<SolutionLotLabel> chemicals = null;
+        private List<SolutionById> dipCondition = null;
+        private List<SolutionLotDetail> solutionLotDetail = null;
 
         #endregion
 
@@ -77,30 +79,14 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void cmdWeight_Click(object sender, RoutedEventArgs e)
+        private void cmdClear_Click(object sender, RoutedEventArgs e)
         {
-            var btn = sender as Button;
-            if (null == btn) return;
-            var item = btn.DataContext as SolutionLotDetail;
-            if (null == item) return;
+            ClearInputs();
+        }
 
-            var win = M3CordApp.Windows.SolutionWeight;
-            win.Setup(item);
-            if (win.ShowDialog() == true)
-            {
-                if (win.Item != null)
-                {
-                    if(win.DialogResult == true)
-                    {
-                        if (!string.IsNullOrEmpty(txtSolutionLotNo.Text))
-                        {
-                            grid.ItemsSource = SolutionLotDetail.Gets(txtSolutionLotNo.Text).Value();
-                        }
-                    }
-                    
-                    // do something....
-                }
-            }
+        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        {
+            Save();
         }
 
         #endregion
@@ -132,19 +118,71 @@ namespace M3.Cord.Pages
                 var chemicals = cbChemicals.SelectedItem as SolutionLotLabel;
                 if (chemicals != null)
                 {
-                    string solutionlot = chemicals.SolutionLot;
-                    int solutionid = chemicals.SolutionId;
-                    string recipe = null;
-
                     txtProductCode.Text = chemicals.ProductCode;
-                    txtCompound.Text = chemicals.Compound;
-                    dtMixDate.SelectedDate = chemicals.MixDate;
+                    dipCondition = SolutionById.Gets(chemicals.SolutionId).Value();
 
-                    if (chemicals.DipSolutionQty != null)
-                        txtQty.Text = chemicals.DipSolutionQty.Value.ToString("#,##0.##");
-
-                    grid.ItemsSource = SolutionLotDetail.Gets(solutionlot, solutionid, recipe).Value();
+                    if (dipCondition != null && dipCondition.Count > 0)
+                    {
+                        cbRecipe.ItemsSource = dipCondition;
+                        cbRecipe.SelectedItem = dipCondition[0].recipe;
+                    }
+                    else
+                    {
+                        cbRecipe.ItemsSource = null;
+                        cbRecipe.SelectedIndex = -1;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
+        }
+
+        private void cbRecipe_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            try
+            {
+                var recipe = cbRecipe.SelectedItem as SolutionById;
+                if (recipe != null)
+                {
+                    if (!string.IsNullOrEmpty(txtSolutionLotNo.Text))
+                        solutionLotDetail = SolutionLotDetail.GetsChemical(txtSolutionLotNo.Text, recipe.SolutionId, recipe.recipe).Value();
+
+                    if (solutionLotDetail != null && solutionLotDetail.Count > 0)
+                    {
+                        cbChemicalName.ItemsSource = solutionLotDetail;
+                        cbChemicalName.SelectedItem = solutionLotDetail[0].ChemicalName;
+                    }
+                    else
+                    {
+                        cbChemicalName.ItemsSource = null;
+                        cbChemicalName.SelectedIndex = -1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
+        }
+
+        private void cbChemicalName_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            try
+            {
+                var chemical = cbChemicalName.SelectedItem as SolutionLotDetail;
+
+                var weightCal = (null != chemical) ? chemical.WeightCal : null;
+
+                if (weightCal != null)
+                    txtWeightCal.Text = weightCal.Value.ToString("#,##0.##");
+                else
+                    txtWeightCal.Text = string.Empty;
             }
             catch (Exception ex)
             {
@@ -154,28 +192,24 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        #region ListView Handlers
-
-        private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (null == grid.ItemsSource)
-                return;
-        }
-
-        #endregion
-
         #region Private Methods
 
         private void ClearInputs()
         {
-            grid.ItemsSource = null;
-            dtMixDate.SelectedDate = null;
             txtSolutionLotNo.Text = string.Empty;
-            txtCompound.Text = string.Empty;
-            txtQty.Text = string.Empty;
 
             txtProductCode.Text = string.Empty;
             cbChemicals.SelectedIndex = -1;
+            cbRecipe.SelectedIndex = -1;
+            cbChemicalName.SelectedIndex = -1;
+            txtWeightCal.Text = string.Empty;
+
+            txtWeightMc.Text = string.Empty;
+            txtWeightActual.Text = string.Empty;
+
+            chemicals = null;
+            dipCondition = null;
+            solutionLotDetail = null;
 
             this.InvokeAction(() =>
             {
@@ -185,14 +219,9 @@ namespace M3.Cord.Pages
 
         private void DisableInputs()
         {
-            txtCompound.IsReadOnly = true;
-            dtMixDate.IsEnabled = false;
-            txtQty.IsReadOnly = true;
-
             txtProductCode.IsEnabled = false;
-            //cbChemicals.IsEnabled = true;
+            txtWeightCal.IsEnabled = false;
         }
-
 
         private void LoadSolutionLotLabel(string solutionlot)
         {
@@ -204,30 +233,88 @@ namespace M3.Cord.Pages
 
                 if (ret != null && ret.Count > 0)
                 {
-                    //txtProductCode.Text = ret[0].ProductCode;
-                    //txtCompound.Text = ret[0].Compound;
-                    //dtMixDate.SelectedDate = ret[0].MixDate;
-
-                    //if (ret[0].DipSolutionQty != null)
-                    //    txtQty.Text = ret[0].DipSolutionQty.Value.ToString("#,##0.##");
-
                     if (ret[0].SolutionName != null || ret.Count > 1)
                     {
                         chemicals = ret;
                         cbChemicals.ItemsSource = chemicals;
                         cbChemicals.SelectedItem = ret[0].SolutionName;
                     }
-
-                    //int? solutionid = null;
-                    //string recipe = string.Empty;
-                    //solutionid = ret[0].SolutionId;
-
-                    //grid.ItemsSource = SolutionLotDetail.Gets(solutionlot, solutionid, recipe).Value();
                 }
                 else
                 {
                     var win = M3CordApp.Windows.MessageBox;
                     win.Setup("ไม่พบ Lot No ที่ระบุ ในระบบ");
+                    win.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
+        }
+
+        private void Save()
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            try
+            {
+                SaveSolutionLotDetail d = new SaveSolutionLotDetail();
+
+                //if (!string.IsNullOrEmpty(txtSolutionLotNo.Text))
+                //    d.solutionlot = txtSolutionLotNo.Text;
+
+                //var chemicals = cbChemicals.SelectedValue as SolutionLotLabel;
+                //if (chemicals != null)
+                //{
+                //    d.chemicalno = chemicals.SolutionName;
+                //    d.solutionid = chemicals.SolutionId;
+                //}
+
+                //var recipes = cbRecipe.SelectedValue as SolutionById;
+                //if (recipes != null)
+                //{
+                //    d.recipe = recipes.recipe;
+                //}
+
+                var lotDetail = cbChemicalName.SelectedValue as SolutionLotDetail;
+
+                if (lotDetail != null)
+                {
+                    d.solutionlot = lotDetail.SolutionLot;
+                    d.recipe = lotDetail.Recipe;
+                    d.chemicalno = lotDetail.ChemicalNo;
+                    d.solutionid = lotDetail.SolutionID;
+                    d.recipeorder = lotDetail.RecipeOrder;
+                    d.mixorder = lotDetail.MixOrder;
+                    d.weightcal = lotDetail.WeightCal;
+                }
+
+                if (!string.IsNullOrEmpty(txtWeightActual.Text))
+                {
+                    d.weightactual = decimal.Parse(txtWeightActual.Text);
+                }
+
+                if (!string.IsNullOrEmpty(txtWeightMc.Text))
+                {
+                    d.weightmc = txtWeightMc.Text;
+                }
+
+                d.weightdate = DateTime.Now;
+                d.weightby = M3CordApp.Current.User.UserId;
+
+                var retD = SaveSolutionLotDetail.Save(d);
+
+                if (!retD.HasError)
+                {
+                    var win = M3CordApp.Windows.MessageBox;
+                    win.Setup("Save Complete");
+                    win.ShowDialog();
+                }
+                else
+                {
+                    var win = M3CordApp.Windows.MessageBox;
+                    win.Setup(retD.ErrMsg);
                     win.ShowDialog();
                 }
             }
@@ -247,5 +334,6 @@ namespace M3.Cord.Pages
         }
 
         #endregion
+
     }
 }

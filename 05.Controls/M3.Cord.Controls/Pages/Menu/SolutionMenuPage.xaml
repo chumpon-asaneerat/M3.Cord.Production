@@ -162,56 +162,22 @@
                             <Run Text="Solution Lot" />
                         </TextBlock>
                     </Button>
+                    <!--  RECORD WEIGHT FROM PLC  -->
+                    <Button x:Name="cmdRecordWeight" 
+                            Click="cmdRecordWeight_Click"
+                            Style="{StaticResource SolitionLotButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Record Weight" />
+                            <LineBreak />
+                            <Run Text="from PLC" />
+                        </TextBlock>
+                    </Button>
+                    <!--  RECORD WEIGHT FROM PLC  -->
                     <Button x:Name="cmdSolutionDetail" 
                             Click="cmdSolutionDetail_Click"
                             Style="{StaticResource SolitionLotButtonStyle}">
                         <TextBlock TextAlignment="Center">
                             <Run Text="Solution Detail" />
-                        </TextBlock>
-                    </Button>
-                    <!--  ADD QA RESULT  -->
-                    <!--<Button x:Name="cmdAddQAResult" 
-                            Click="cmdAddQAResult_Click"
-                            Style="{StaticResource SolitionLotButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="Add" />
-                            <LineBreak />
-                            <Run Text="QA Result" />
-                        </TextBlock>
-                    </Button>-->
-                    <!--  ADD AGEING RESULT  -->
-                    <!--<Button x:Name="cmdAddAgeingTime" 
-                            Click="cmdAddAgeingTime_Click"
-                            Style="{StaticResource SolitionLotButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="Add" />
-                            <LineBreak />
-                            <Run Text="Ageing Time" />
-                        </TextBlock>
-                    </Button>-->
-                    <!--  ISSUE REPORT AND LABEL  -->
-                    <Button x:Name="cmdIssueReport" 
-                            Click="cmdIssueReport_Click"
-                            Style="{StaticResource SolitionLotButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="Issue Report" />
-                            <LineBreak />
-                            <Run Text="and Label" />
-                        </TextBlock>
-                    </Button>
-                </ctrl:NGroupMenuItem>
-                <!--  CHEMICAL WEIGHT  -->
-                <ctrl:NGroupMenuItem HeaderText="Chemical Weight"
-                                     HeaderBackground="{StaticResource WeightBG}"
-                                     Style="{StaticResource CommonGroupItemStyle}">
-                    <!--  RECORD WEIGHT FROM PLC  -->
-                    <Button x:Name="cmdRecordWeight" 
-                            Click="cmdRecordWeight_Click"
-                            Style="{StaticResource WeightButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="Record Weight" />
-                            <LineBreak />
-                            <Run Text="from PLC" />
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>

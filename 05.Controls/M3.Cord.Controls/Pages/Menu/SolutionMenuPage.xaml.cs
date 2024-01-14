@@ -80,21 +80,6 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
-        private void cmdAddQAResult_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void cmdAddAgeingTime_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void cmdIssueReport_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void cmdRecordWeight_Click(object sender, RoutedEventArgs e)
         {
             // Sign In

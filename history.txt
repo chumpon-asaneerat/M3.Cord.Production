@@ -1,8 +1,10 @@
 M3 Cord Production System #840
 - 
 
+[commited]
 M3 Cord Production System #839
-- 
+- M3.Cord.Production.App re-implements #719
+  - Rearrange Solution related menu page.
 
 [commited]
 M3 Cord Production System #838

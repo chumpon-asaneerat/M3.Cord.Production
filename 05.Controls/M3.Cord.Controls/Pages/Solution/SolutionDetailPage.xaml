@@ -6,11 +6,11 @@
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             d:DesignHeight="550"
+             d:DesignHeight="450"
              d:DesignWidth="900"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
-    <page:NPage HeaderText="Solution Detail">
+    <page:NPage HeaderText="Solution Details">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTONS  -->
             <DockPanel LastChildFill="True"
@@ -20,12 +20,6 @@
                             DockPanel.Dock="Right"
                             VerticalAlignment="Center">
 
-                    <ctrl:FontAwesomeButton x:Name="cmdSave"
-                                            Click="cmdSave_Click"
-                                            DockPanel.Dock="Left"
-                                            Margin="5,0,0,0"
-                                            IconType="Save"
-                                            Text="Save" />
                     <!--  HOME  -->
                     <ctrl:FontAwesomeButton x:Name="cmdHome"
                                             Margin="5,0,0,0"
@@ -51,7 +45,7 @@
                         <!--  CHEMICAL NAMES  -->
                         <ctrl:NComboBox x:Name="cbChemicals"
                                         DockPanel.Dock="Left"
-                                        CaptionText="Dip Solution Name"
+                                        CaptionText="Dip Solution Name:"
                                         DisplayMemberPath="SolutionName"
                                         Width="300"
                                         SelectionChanged="cbChemicals_SelectionChanged" />
@@ -62,23 +56,17 @@
                         
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                        <!--  Recipe  -->
-                        <ctrl:NComboBox x:Name="cbRecipe"
-                                        DockPanel.Dock="Left"
-                                        CaptionText="Recipe"
-                                        DisplayMemberPath="recipe"
-                                        Width="100" SelectionChanged="cbRecipe_SelectionChanged" />
-                        <!--  ChemicalName  -->
-                        <ctrl:NComboBox x:Name="cbChemicalName"
-                                        DockPanel.Dock="Left"
-                                        CaptionText="Chemical"
-                                        DisplayMemberPath="ChemicalName"
-                                        Width="300" SelectionChanged="cbChemicalName_SelectionChanged" />
-                        <!--  Weight Spe  -->
-                        <ctrl:NTextBox Name="txtWeightCal" CaptionText="Weight Spec"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding WeightCal, StringFormat=n2}"  IsReadOnly="True"
-                                   Width="150" />
+                        <!--  Compound  -->
+                        <ctrl:NTextBox x:Name="txtCompound"
+                                       CaptionText="Compound"
+                                       Width="200" />
+                        <ctrl:NDatePicker x:Name="dtMixDate"
+                                          CaptionText="Mixing Date"
+                                          Width="200" />
+                        <!--  QUANTITY  -->
+                        <ctrl:NTextBox x:Name="txtQty"
+                                       CaptionText="Dip Solution Qty (kg)"
+                                       Width="260" />
                         <Button x:Name="cmdSearch"
                             Content="Search"
                             DockPanel.Dock="Left"
@@ -87,39 +75,63 @@
                             Margin="5,2"
                             Style="{StaticResource InlineButton}"
                             Click="cmdSearch_Click" />
-                        <Button x:Name="cmdClear"
-                            Content="Clear"
-                            DockPanel.Dock="Left"
-                            Width="150"
-                            VerticalAlignment="Bottom"
-                            Margin="5,2"
-                            Style="{StaticResource InlineButton}"
-                            Click="cmdClear_Click" />
                     </StackPanel>
                     <Grid />
                 </DockPanel>
             </DockPanel>
-            <DockPanel LastChildFill="True">
-                <DockPanel DockPanel.Dock="Top">
-                    <!--  MC No  -->
-                    <ctrl:NTextBox Name="txtWeightMc"
-                                   CaptionText="MC No"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding WeightMc}"
-                                   Width="120" />
-                    <Grid />
-                </DockPanel>
-                <DockPanel DockPanel.Dock="Top">
-
-                    <!--  Target Weight  -->
-                    <ctrl:NTextBox Name="txtWeightActual"
-                                   CaptionText="Weight"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding WeightActual}"
-                                   Width="200" />
-
-                </DockPanel>
-            </DockPanel>
+            <!--  LISTVIEW  -->
+            <ListView x:Name="grid"
+                      SelectionChanged="grid_SelectionChanged"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Solution"
+                                        CellTemplate="{StaticResource RecipeView}"
+                                        Width="100" />
+                        <GridViewColumn Header="Chemical (SC)"
+                                        CellTemplate="{StaticResource ChemicalName}"
+                                        Width="280" />
+                        <GridViewColumn Header="Calculation Wet (kg)"
+                                        CellTemplate="{StaticResource WeightCal}"
+                                        Width="180" />
+                        <GridViewColumn Header="Actual Wet (kg)"
+                                        CellTemplate="{StaticResource WeightActual}"
+                                        Width="180" />
+                        <!--  BUTTONS  -->
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  WEIGHT  -->
+                                        <Button x:Name="cmdWeight"
+                                                DockPanel.Dock="Left"
+                                                Style="{StaticResource InlineButton}"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Visibility="{Binding ShowWeightButton}"
+                                                Click="cmdWeight_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Weight"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </DockPanel>
     </page:NPage>
 </UserControl>
