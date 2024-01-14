@@ -55,16 +55,48 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoDIPOperationMenu(mc);
         }
 
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
-            Save();
+            Add();
+        }
+
+        private void cmdDetails_Click(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show("Edit");
+        }
+
+        private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show("Confirm");
         }
 
         #endregion
 
         #region Private Methods
 
-        private void Save()
+        private void Add()
+        {
+            if (null == pcCard)
+                return;
+            var win = M3CordApp.Windows.S8BeforeEditor;
+            var item = S8BeforeCondition.Create(pcCard.ProductCode);
+            item.DIPPCId = pcCard.DIPPCId;
+            item.ProductCode = pcCard.ProductCode;
+            item.LotNo = pcCard.DIPLotNo;
+            item.RowType = 1;
+            win.Setup(item);
+            if (win.ShowDialog() == true)
+            {
+                RefreshGrid();
+            }
+        }
+
+        private void Edit()
+        {
+
+        }
+
+        private void RefreshGrid()
         {
 
         }
@@ -79,6 +111,11 @@ namespace M3.Cord.Pages
             {
                 string mcNo = (selecteedMC.MCCode.EndsWith("1")) ? "1" : "2";
                 mc = DIPMC.Gets("S-8", "S-8-" + mcNo).Value().FirstOrDefault();
+
+                // update caption
+                string caption = "ตรวจเช็คสภาวะการผลิตก่อนเปิดเครื่อง(S-8 " + mcNo.ToString() + " )";
+                page.HeaderText = caption;
+
                 if (null != mc)
                 {
                     pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
@@ -90,6 +127,8 @@ namespace M3.Cord.Pages
             }
 
             paCondition.DataContext = pcCard;
+
+            RefreshGrid();
         }
 
         #endregion

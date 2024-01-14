@@ -12,7 +12,7 @@
              mc:Ignorable="d"
              d:DesignHeight="800"
              d:DesignWidth="1200">
-    <page:NPage x:Name="page" HeaderText="ตรวจเช็คสภาวะการผลิตก่อนเปิดเครื่อง (S-8-1)">
+    <page:NPage x:Name="page" HeaderText="ตรวจเช็คสภาวะการผลิตก่อนเปิดเครื่อง (S-8)">
         <DockPanel LastChildFill="True">
             <!--  BUTTONS  -->
             <DockPanel LastChildFill="True"
@@ -31,11 +31,11 @@
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Left"
                             VerticalAlignment="Center">
-                    <ctrl:FontAwesomeButton x:Name="cmdSave"
+                    <ctrl:FontAwesomeButton x:Name="cmdAdd"
                                             Margin="5,0,0,0"
                                             IconType="Add"
-                                            Text="Save"
-                                            Click="cmdSave_Click" />
+                                            Text="เพิ่ม"
+                                            Click="cmdAdd_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
@@ -45,17 +45,151 @@
                        Margin="2">
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-                        <elem:ProductCodeBox />
                         <elem:DIPLotNoBox />
-                        <elem:DoffNoBox Width="200" />
                     </StackPanel>
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <!--
-        <doc:S1ConditionEntryPage x:Name="s1" Visibility="Visible" />
-            -->
-            <Grid />
+            <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.Resources>
+                    <Style x:Key="buttonDetail"
+                           TargetType="{x:Type Button}"
+                           BasedOn="{StaticResource InlineButton}">
+                        <EventSetter Event="Click" Handler="cmdDetails_Click" />
+                    </Style>
+                    <Style x:Key="buttonConfirm"
+                           TargetType="{x:Type Button}"
+                           BasedOn="{StaticResource InlineButton}">
+                        <EventSetter Event="Click" Handler="cmdConfirmCondition_Click" />
+                    </Style>
+                </ListView.Resources>
+                <ListView.View>
+                    <GridView>
+                        <!--  BUTTONS  -->
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ContentControl>
+                                        <ContentControl.Style>
+                                            <Style TargetType="{x:Type ContentControl}">
+                                                <Style.Triggers>
+                                                    <!--  ROW TYPE -2  -->
+                                                    <DataTrigger Binding="{Binding RowType}" Value="-2">
+                                                        <Setter Property="ContentTemplate">
+                                                            <Setter.Value>
+                                                                <DataTemplate>
+                                                                    <StackPanel Orientation="Horizontal"
+                                                                                HorizontalAlignment="Center"
+                                                                                VerticalAlignment="Center" />
+                                                                </DataTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </DataTrigger>
+                                                    <!--  ROW TYPE -1  -->
+                                                    <DataTrigger Binding="{Binding RowType}" Value="-1">
+                                                        <Setter Property="ContentTemplate">
+                                                            <Setter.Value>
+                                                                <DataTemplate>
+                                                                    <StackPanel Orientation="Horizontal"
+                                                                                HorizontalAlignment="Center"
+                                                                                VerticalAlignment="Center" />
+                                                                </DataTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </DataTrigger>
+                                                    <!--  ROW TYPE 0  -->
+                                                    <DataTrigger Binding="{Binding RowType}" Value="0">
+                                                        <Setter Property="ContentTemplate">
+                                                            <Setter.Value>
+                                                                <DataTemplate>
+                                                                    <StackPanel Orientation="Horizontal"
+                                                                                HorizontalAlignment="Center"
+                                                                                VerticalAlignment="Center">
+                                                                        <!--  Confirm  -->
+                                                                        <Button x:Name="cmdConfirmCondition"
+                                                                                Style="{StaticResource buttonConfirm}"
+                                                                                DockPanel.Dock="Left"
+                                                                                Margin="5,0"
+                                                                                Width="100"
+                                                                                Height="30">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                                                <TextBlock Margin="3,0"
+                                                                                           FontFamily="{StaticResource THSarabun}"
+                                                                                           FontSize="{StaticResource IBFSize}"
+                                                                                           Text="Set"
+                                                                                           VerticalAlignment="Center" />
+                                                                            </StackPanel>
+                                                                        </Button>
+                                                                    </StackPanel>
+                                                                </DataTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </DataTrigger>
+                                                    <!--  ROW TYPE 1  -->
+                                                    <DataTrigger Binding="{Binding RowType}" Value="1">
+                                                        <Setter Property="ContentTemplate">
+                                                            <Setter.Value>
+                                                                <DataTemplate>
+                                                                    <StackPanel Orientation="Horizontal"
+                                                                                HorizontalAlignment="Center"
+                                                                                VerticalAlignment="Center">
+                                                                        <!--  Detail  -->
+                                                                        <Button x:Name="cmdDetails"
+                                                                                Style="{StaticResource buttonDetail}"
+                                                                                DockPanel.Dock="Left"
+                                                                                Margin="5,0"
+                                                                                Width="100"
+                                                                                Height="30">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                                                <TextBlock Margin="3,0"
+                                                                                           FontFamily="{StaticResource THSarabun}"
+                                                                                           FontSize="{StaticResource IBFSize}"
+                                                                                           Text="Edit"
+                                                                                           VerticalAlignment="Center" />
+                                                                            </StackPanel>
+                                                                        </Button>
+                                                                    </StackPanel>
+                                                                </DataTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ContentControl.Style>
+                                    </ContentControl>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Date" CellTemplate="{StaticResource SDate}" />
+                        <GridViewColumn Header="Time" CellTemplate="{StaticResource STime}" />
+                        <GridViewColumn Header="Bobbin" CellTemplate="{StaticResource S7Bobbin}" />
+
+                        <GridViewColumn Header="อ่าง 1" CellTemplate="{StaticResource S8CoolingWaterSystemBath1Value}" />
+                        <GridViewColumn Header="อ่าง 2" CellTemplate="{StaticResource S8CoolingWaterSystemBath2Value}" />
+
+                        <GridViewColumn Header="การทำงานของตัวปล่อยเคมี" CellTemplate="{StaticResource S8ChemicalWork}" />
+                        <GridViewColumn Header="ผ้ากรองเคมี" CellTemplate="{StaticResource S8ChemicalFilter}" />
+
+                        <GridViewColumn Header="ความเร็ว" CellTemplate="{StaticResource S8SpeedValue}" />
+                        <GridViewColumn Header="STRENGTH D.Zone" CellTemplate="{StaticResource S8StretchDValue}" />
+                        <GridViewColumn Header="STRENGTH H.Zone" CellTemplate="{StaticResource S8StretchHValue}" />
+                        <GridViewColumn Header="STRENGTH N.Zone" CellTemplate="{StaticResource S8StretchNValue}" />
+
+                        <GridViewColumn Header="TEMP D.Zone" CellTemplate="{StaticResource S8TempDValue}" />
+                        <GridViewColumn Header="TEMP H,N.Zone" CellTemplate="{StaticResource S8TempHNValue}" />
+
+                        <GridViewColumn Header="Remark" CellTemplate="{StaticResource Remark}" />
+                        <GridViewColumn Header="ตรวจเช็คโดย" CellTemplate="{StaticResource CheckBy}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </DockPanel>
     </page:NPage>
 </UserControl>

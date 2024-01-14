@@ -78,7 +78,7 @@
                 <TextBlock Width="10" />
                 <TextBlock Text=" ℃ " />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding TempJacketDrumBath1Value}" Width="150" />
+                <TextBox Text="{Binding TempJacketDrumBath1}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -99,7 +99,7 @@
                 <TextBlock Width="10" />
                 <TextBlock Text=" ℃ " />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding TempJacketDrumBath2Value}" Width="150" />
+                <TextBox Text="{Binding TempJacketDrumBath2}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -120,7 +120,7 @@
                 <TextBlock Width="10" />
                 <TextBlock Text=" ℃ " />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding TempChemicalBath1Value}" Width="150" />
+                <TextBox Text="{Binding TempChemicalBath1}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -141,7 +141,7 @@
                 <TextBlock Width="10" />
                 <TextBlock Text=" ℃ " />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding TempChemicalBath2Value}" Width="150" />
+                <TextBox Text="{Binding TempChemicalBath2}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 

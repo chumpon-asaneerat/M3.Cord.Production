@@ -116,50 +116,110 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
-        public static NDbResult<S8BeforeCondition> GetCurrent()
-		{
-			MethodBase med = MethodBase.GetCurrentMethod();
+        public static S8BeforeCondition Create(string productCode)
+        {
+            var inst = new S8BeforeCondition();
+            var std = S8BeforeConditionStd.Gets(productCode).Value().FirstOrDefault();
+            Assign(std, inst);
+            return inst;
+        }
 
-			NDbResult<S8BeforeCondition> ret = new NDbResult<S8BeforeCondition>();
+        public static void Assign(S8BeforeConditionStd src, S8BeforeCondition dst)
+        {
+            if (null != src && null != dst)
+            {
+                dst.ProductCode = src.ProductCode;
+                dst.SolutionNameBath1SC = src.SolutionNameBath1SC;
+                dst.SolutionNameBath1 = src.SolutionNameBath1;
+                dst.SolutionNameBath2SC = src.SolutionNameBath2SC;
+                dst.SolutionNameBath2 = src.SolutionNameBath2;
+                dst.TempJacketDrumBath1SC = src.TempJacketDrumBath1SC;
+                dst.TempJacketDrumBath1Min = src.TempJacketDrumBath1Min;
+                dst.TempJacketDrumBath1Max = src.TempJacketDrumBath1Max;
+                dst.TempJacketDrumBath2SC = src.TempJacketDrumBath2SC;
+                dst.TempJacketDrumBath2Min = src.TempJacketDrumBath2Min;
+                dst.TempJacketDrumBath2Max = src.TempJacketDrumBath2Max;
+                dst.TempChemicalBath1SC = src.TempChemicalBath1SC;
+                dst.TempChemicalBath1Min = src.TempChemicalBath1Min;
+                dst.TempChemicalBath1Max = src.TempChemicalBath1Max;
+                dst.TempChemicalBath2SC = src.TempChemicalBath2SC;
+                dst.TempChemicalBath2Min = src.TempChemicalBath2Min;
+                dst.TempChemicalBath2Max = src.TempChemicalBath2Max;
+                dst.StretchDSC = src.StretchDSC;
+                dst.StretchD = src.StretchD;
+                dst.StretchDErr = src.StretchDErr;
+                dst.StretchHSC = src.StretchHSC;
+                dst.StretchH = src.StretchH;
+                dst.StretchHErr = src.StretchHErr;
+                dst.StretchNSC = src.StretchNSC;
+                dst.StretchN = src.StretchN;
+                dst.StretchNErr = src.StretchNErr;
+                dst.TempDSC = src.TempDSC;
+                dst.TempD = src.TempD;
+                dst.TempDErr = src.TempDErr;
+                dst.TempHNSC = src.TempHNSC;
+                dst.TempHN = src.TempHN;
+                dst.TempHNErr = src.TempHNErr;
+                dst.SpeedSC = src.SpeedSC;
+                dst.Speed = src.Speed;
+                dst.SpeedErr = src.SpeedErr;
+                dst.ExhaustFanDryerSC = src.ExhaustFanDryerSC;
+                dst.ExhaustFanDryer = src.ExhaustFanDryer;
+                dst.ExhaustFanHNSC = src.ExhaustFanHNSC;
+                dst.ExhaustFanHN = src.ExhaustFanHN;
+                dst.CleanBath1SC = src.CleanBath1SC;
+                dst.CleanBath2SC = src.CleanBath2SC;
+                dst.CleanFrontSC = src.CleanFrontSC;
+                dst.CamboxSC = src.CamboxSC;
+            }
+        }
 
-			IDbConnection cnn = DbServer.Instance.Db;
-			if (null == cnn || !DbServer.Instance.Connected)
-			{
-				string msg = "Connection is null or cannot connect to database server.";
-				med.Err(msg);
-				// Set error number/message
-				ret.ErrNum = 8000;
-				ret.ErrMsg = msg;
+        public static NDbResult<List<S8BeforeCondition>> Gets(int? DIPPCId)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
 
-				return ret;
-			}
+            NDbResult<List<S8BeforeCondition>> ret = new NDbResult<List<S8BeforeCondition>>();
 
-			var p = new DynamicParameters();
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
 
-			try
-			{
-				var item = cnn.Query<S8BeforeCondition>("GetS8BeforeConditionItem", p,
-					commandType: CommandType.StoredProcedure).FirstOrDefault();
-				var data = item;
-				ret.Success(data);
-			}
-			catch (Exception ex)
-			{
-				med.Err(ex);
-				// Set error number/message
-				ret.ErrNum = 9999;
-				ret.ErrMsg = ex.Message;
-			}
+                return ret;
+            }
 
-			return ret;
-		}
+            var p = new DynamicParameters();
+            p.Add("@DIPPCId", DIPPCId);
 
-		/// <summary>
-		/// Save
-		/// </summary>
-		/// <param name="value">The S8BeforeConditionItem item to save.</param>
-		/// <returns></returns>
-		public static NDbResult<S8BeforeCondition> Save(S8BeforeCondition value)
+            try
+            {
+                var items = cnn.Query<S8BeforeCondition>("GetS8BeforeConditions", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+                ret.data = new List<S8BeforeCondition>();
+            }
+
+            return ret;
+        }
+
+        /// <summary>
+        /// Save
+        /// </summary>
+        /// <param name="value">The S8BeforeConditionItem item to save.</param>
+        /// <returns></returns>
+        public static NDbResult<S8BeforeCondition> Save(S8BeforeCondition value)
 		{
 			MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -186,8 +246,11 @@ namespace M3.Cord.Models
 			var p = new DynamicParameters();
 
 			p.Add("@DIPPCId", value.DIPPCId);
-			p.Add("@ProductCode", value.ProductCode);
-			p.Add("@LotNo", value.LotNo);
+			
+            p.Add("@ProductCode", value.ProductCode);
+            p.Add("@RowType", value.RowType);
+            p.Add("@LotNo", value.LotNo);
+
 			p.Add("@SolutionNameBath1SC", value.SolutionNameBath1SC);
             p.Add("@SolutionNameBath1", value.SolutionNameBath1);            
 			p.Add("@SolutionNameBath1Value", value.SolutionNameBath1Value);
@@ -278,7 +341,7 @@ namespace M3.Cord.Models
 
 			try
 			{
-				cnn.Execute("SaveS8BeforeConditionItem", p, commandType: CommandType.StoredProcedure);
+				cnn.Execute("SaveS8BeforeCondition", p, commandType: CommandType.StoredProcedure);
 				ret.Success(value);
 
                 // Set PK

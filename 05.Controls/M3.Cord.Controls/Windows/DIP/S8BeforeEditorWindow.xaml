@@ -14,7 +14,7 @@
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
         Height="700"
-        Width="700">
+        Width="800">
     <page:NPage x:Name="page" HeaderText="การตรวจเช็คสภาวะการผลิดตก่อนเปิดเครื่อง S-8">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
