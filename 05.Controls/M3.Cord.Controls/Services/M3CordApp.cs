@@ -659,6 +659,18 @@ namespace M3.Cord
                 get { return GetWindow<ChemicalRequisitionEditorWindow>(); }
             }
 
+            /// <summary>Gets DIP TimeTable Editor Editor Window.</summary>
+            public static DIPTimeTableEditorWindow DIPTimeTableEditor
+            {
+                get { return GetWindow<DIPTimeTableEditorWindow>(); }
+            }
+
+            /// <summary>Gets S8 Before Editor Editor Window.</summary>
+            public static S8BeforeEditorWindow S8BeforeEditor
+            {
+                get { return GetWindow<S8BeforeEditorWindow>(); }
+            }
+
             #endregion
 
             #region DIP Slip
@@ -679,12 +691,6 @@ namespace M3.Cord
             }
 
             #endregion
-
-            /// <summary>Gets DIP TimeTable Editor Editor Window.</summary>
-            public static DIPTimeTableEditorWindow DIPTimeTableEditor
-            {
-                get { return GetWindow<DIPTimeTableEditorWindow>(); }
-            }
         }
     }
 }

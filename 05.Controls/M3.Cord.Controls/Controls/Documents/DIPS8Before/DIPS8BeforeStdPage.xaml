@@ -36,11 +36,9 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding SolutionNameBath1SC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding SolutionNameBath1SC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding SolutionNameBath1}" Width="200" IsReadOnly="True" />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding SolutionNameBath1Value}" Width="150" />
+                <TextBox Text="{Binding SolutionNameBath1}" Width="200" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -49,11 +47,9 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding SolutionNameBath2SC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding SolutionNameBath2SC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding SolutionNameBath2}" Width="200" IsReadOnly="True" />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding SolutionNameBath2Value}" Width="150" />
+                <TextBox Text="{Binding SolutionNameBath2}" Width="200" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -62,15 +58,13 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding TempJacketDrumBath1SC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding TempJacketDrumBath1SC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding TempJacketDrumBath1Min, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True" />
+                <TextBox Text="{Binding TempJacketDrumBath1Min, StringFormat='{}{0:#,##0.##}'}" Width="75" />
                 <TextBlock Text=" - " />
-                <TextBox Text="{Binding TempJacketDrumBath1Max, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True" />
+                <TextBox Text="{Binding TempJacketDrumBath1Max, StringFormat='{}{0:#,##0.##}'}" Width="75" />
                 <TextBlock Width="10" />
                 <TextBlock Text=" ℃ " />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding TempJacketDrumBath1Value}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -79,15 +73,13 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding TempJacketDrumBath2SC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding TempJacketDrumBath2SC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding TempJacketDrumBath2Min, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True" />
+                <TextBox Text="{Binding TempJacketDrumBath2Min, StringFormat='{}{0:#,##0.##}'}" Width="75" />
                 <TextBlock Text=" - " />
-                <TextBox Text="{Binding TempJacketDrumBath2Max, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True" />
+                <TextBox Text="{Binding TempJacketDrumBath2Max, StringFormat='{}{0:#,##0.##}'}" Width="75" />
                 <TextBlock Width="10" />
                 <TextBlock Text=" ℃ " />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding TempJacketDrumBath2Value}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -96,15 +88,13 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding TempChemicalBath1SC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding TempChemicalBath1SC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding TempChemicalBath1Min, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True" />
+                <TextBox Text="{Binding TempChemicalBath1Min, StringFormat='{}{0:#,##0.##}'}" Width="75" />
                 <TextBlock Text=" - " />
-                <TextBox Text="{Binding TempChemicalBath1Max, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True" />
+                <TextBox Text="{Binding TempChemicalBath1Max, StringFormat='{}{0:#,##0.##}'}" Width="75" />
                 <TextBlock Width="10" />
                 <TextBlock Text=" ℃ " />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding TempChemicalBath1Value}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -113,15 +103,13 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding TempChemicalBath2SC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding TempChemicalBath2SC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding TempChemicalBath2Min, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True" />
+                <TextBox Text="{Binding TempChemicalBath2Min, StringFormat='{}{0:#,##0.##}'}" Width="75" />
                 <TextBlock Text=" - " />
-                <TextBox Text="{Binding TempChemicalBath2Max, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True" />
+                <TextBox Text="{Binding TempChemicalBath2Max, StringFormat='{}{0:#,##0.##}'}" Width="75" />
                 <TextBlock Width="10" />
                 <TextBlock Text=" ℃ " />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding TempChemicalBath2Value}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -130,13 +118,11 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding StretchDSC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding StretchDSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding StretchD, StringFormat='{}{0:#,##0.##}'}" Width="100" IsReadOnly="True" />
+                <TextBox Text="{Binding StretchD, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding StretchDErr, StringFormat='{}{0:#,##0.##}'}" Width="50" IsReadOnly="True" />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding StretchDValue}" Width="150" />
+                <TextBox Text="{Binding StretchDErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -145,13 +131,11 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding StretchHSC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding StretchHSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding StretchH, StringFormat='{}{0:#,##0.##}'}" Width="100" IsReadOnly="True" />
+                <TextBox Text="{Binding StretchH, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding StretchHErr, StringFormat='{}{0:#,##0.##}'}" Width="50" IsReadOnly="True" />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding StretchHValue}" Width="150" />
+                <TextBox Text="{Binding StretchHErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -160,13 +144,11 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding StretchNSC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding StretchNSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding StretchN, StringFormat='{}{0:#,##0.##}'}" Width="100" IsReadOnly="True" />
+                <TextBox Text="{Binding StretchN, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding StretchNErr, StringFormat='{}{0:#,##0.##}'}" Width="50" IsReadOnly="True" />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding StretchNValue}" Width="150" />
+                <TextBox Text="{Binding StretchNErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -175,13 +157,11 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding TempDSC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding TempDSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding TempD, StringFormat='{}{0:#,##0.##}'}" Width="100" IsReadOnly="True" />
+                <TextBox Text="{Binding TempD, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding TempDErr, StringFormat='{}{0:#,##0.##}'}" Width="50" IsReadOnly="True" />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding TempDValue}" Width="150" />
+                <TextBox Text="{Binding TempDErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -190,13 +170,11 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding TempHNSC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding TempHNSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding TempHN, StringFormat='{}{0:#,##0.##}'}" Width="100" IsReadOnly="True" />
+                <TextBox Text="{Binding TempHN, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding TempHNErr, StringFormat='{}{0:#,##0.##}'}" Width="50" IsReadOnly="True" />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding TempHNValue}" Width="150" />
+                <TextBox Text="{Binding TempHNErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -205,13 +183,11 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding SpeedSC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding SpeedSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding Speed, StringFormat='{}{0:#,##0.##}'}" Width="100" IsReadOnly="True" />
+                <TextBox Text="{Binding Speed, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding SpeedErr, StringFormat='{}{0:#,##0.##}'}" Width="50" IsReadOnly="True" />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding SpeedValue}" Width="150" />
+                <TextBox Text="{Binding SpeedErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -220,12 +196,9 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding ExhaustFanDryerSC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding ExhaustFanDryerSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding ExhaustFanDryer, StringFormat='{}{0:#,##0.##}'}" Width="100" IsReadOnly="True" />
-                <TextBlock Text=" Hz " />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding ExhaustFanDryerValue}" Width="150" />
+                <TextBox Text="{Binding ExhaustFanDryer, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" Hz " />
                 <TextBlock Width="10" />
             </StackPanel>
@@ -235,12 +208,9 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding ExhaustFanHNSC}" IsEnabled="False" />
+                <CheckBox IsChecked="{Binding ExhaustFanHNSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding ExhaustFanHN, StringFormat='{}{0:#,##0.##}'}" Width="100" IsReadOnly="True" />
-                <TextBlock Text=" Hz " />
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding ExhaustFanHNValue}" Width="150" />
+                <TextBox Text="{Binding ExhaustFanHN, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" Hz " />
                 <TextBlock Width="10" />
             </StackPanel>

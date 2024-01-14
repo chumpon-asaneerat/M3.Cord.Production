@@ -65,7 +65,11 @@ namespace M3.Cord.Windows
                     _item.PeriodTime = ptime;
                     _item.CheckBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
                     _item.CheckDate = DateTime.Now;
-                    DIPTimeTable.Save(_item);
+
+                    var ret = DIPTimeTable.Save(_item);
+                    if (null != ret && ret.Ok)
+                        M3CordApp.Windows.SaveSuccess();
+                    else M3CordApp.Windows.SaveFailed();
                 }
             }
             DialogResult = true;

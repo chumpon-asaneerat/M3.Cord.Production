@@ -365,6 +365,9 @@
     <Compile Include="Windows\FirstTwist\Twist1CheckSheetEditorWindow.xaml.cs">
       <DependentUpon>Twist1CheckSheetEditorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\DIP\S8BeforeEditorWindow.xaml.cs">
+      <DependentUpon>S8BeforeEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Solution\SolutionWeightWindow.xaml.cs">
       <DependentUpon>SolutionWeightWindow.xaml</DependentUpon>
     </Compile>
@@ -977,6 +980,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\Imports\ProgressWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DIP\S8BeforeEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
