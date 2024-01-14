@@ -51,7 +51,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="Lot:" />
-                            <TextBlock x:Name="txtLotNos" MinWidth="250"/>
+                            <TextBlock x:Name="txtLotNos" MinWidth="250" />
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>

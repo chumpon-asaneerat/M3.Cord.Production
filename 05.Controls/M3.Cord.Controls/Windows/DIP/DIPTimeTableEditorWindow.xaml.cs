@@ -60,7 +60,7 @@ namespace M3.Cord.Windows
                 if (null != hour && dtDate.SelectedDate.HasValue)
                 {
                     DateTime ptime = dtDate.SelectedDate.Value.Date;
-                    ptime.AddHours(hour.Hour);
+                    ptime = ptime.AddHours(hour.Hour);
                     // Set time
                     _item.PeriodTime = ptime;
                     _item.CheckBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
@@ -77,12 +77,26 @@ namespace M3.Cord.Windows
 
         public void Setup(DIPTimeTable item)
         {
+            dtDate.SelectedDate = DateTime.Today;
+            var hours = TimeHour.Gets();
+            cbTimes.ItemsSource = hours;
+
             _item = item;
             this.DataContext = _item;
-
             if (null != _item)
             {
-                cbTimes.ItemsSource = TimeHour.Gets();
+                int hour = DateTime.Now.Hour;
+                if (null != hours)
+                {
+                    int idx = hours.FindIndex(h => h.Hour == hour);
+                    if (idx != -1)
+                    {
+                        this.InvokeAction(() =>
+                        {
+                            cbTimes.SelectedIndex = idx;
+                        });
+                    }
+                }
             }
         }
 
