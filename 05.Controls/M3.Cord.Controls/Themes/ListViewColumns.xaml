@@ -682,7 +682,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="STime">
-        <TextBlock Text="{Binding Path=PeriodTime, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=PeriodTime, StringFormat='{}{0:HH:mm}', Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
@@ -698,13 +698,13 @@
 
     <DataTemplate x:Key="S8CoolingWaterSystemBath1Value">
         <TextBlock Text="{Binding Path=S8CoolingWaterSystemBath1Value, Mode=OneWay, StringFormat='{}{0:n2}'}"
-                   TextAlignment="Right"
+                   TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8CoolingWaterSystemBath2Value">
         <TextBlock Text="{Binding Path=S8CoolingWaterSystemBath2Value, Mode=OneWay, StringFormat='{}{0:n2}'}"
-                   TextAlignment="Right"
+                   TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
@@ -727,38 +727,38 @@
     </DataTemplate>
 
     <DataTemplate x:Key="S8SpeedValue">
-        <TextBlock Text="{Binding Path=S8SpeedValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
-                   TextAlignment="Right"
+        <TextBlock Text="{Binding Path=S8SpeedS, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8StretchDValue">
         <TextBlock Text="{Binding Path=S8StretchDValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
-                   TextAlignment="Right"
+                   TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8StretchHValue">
         <TextBlock Text="{Binding Path=S8StretchHValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
-                   TextAlignment="Right"
+                   TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8StretchNValue">
         <TextBlock Text="{Binding Path=S8StretchNValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
-                   TextAlignment="Right"
+                   TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8TempDValue">
         <TextBlock Text="{Binding Path=S8TempDValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
-                   TextAlignment="Right"
+                   TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8TempHNValue">
         <TextBlock Text="{Binding Path=S8TempHNValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
-                   TextAlignment="Right"
+                   TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 

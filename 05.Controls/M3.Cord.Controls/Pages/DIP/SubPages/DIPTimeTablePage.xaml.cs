@@ -62,7 +62,22 @@ namespace M3.Cord.Pages
 
         private void cmdDetails_Click(object sender, RoutedEventArgs e)
         {
+            //MessageBox.Show("Edit");
             Edit();
+        }
+
+        private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show("Confirm");
+        }
+
+        #endregion
+
+        #region Selection Change
+
+        private void dtDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
         }
 
         #endregion
@@ -113,6 +128,10 @@ namespace M3.Cord.Pages
 
         public void Setup(DIPMC selecteedMC)
         {
+            var today = DateTime.Today;
+            if (today.Hour <= 7) today = today.AddDays(-1);
+            dtDate.SelectedDate = today;
+
             if (null != selecteedMC)
             {
                 mc = selecteedMC;

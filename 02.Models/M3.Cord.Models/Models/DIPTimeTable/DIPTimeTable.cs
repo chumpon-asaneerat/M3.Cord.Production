@@ -53,6 +53,43 @@ namespace M3.Cord.Models
         public decimal? S8SpeedErr { get; set; }
         public decimal? S8SpeedValue { get; set; }
 
+        public string S8SpeedS
+        {
+            get 
+            { 
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (S8Speed.HasValue) ? S8Speed.Value.ToString("n2") : "";
+                    fmt += " ± ";
+                    fmt += (S8SpeedErr.HasValue) ? S8SpeedErr.Value.ToString("n2") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S8SpeedSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S8SpeedSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (S8SpeedValue.HasValue) ? S8SpeedValue.Value.ToString("n2") : "";
+                }
+                else
+                {
+                    return (S8SpeedValue.HasValue) ? S8SpeedValue.Value.ToString("n2") : "";
+                }
+            }
+            set { }
+        }
+
         public bool? S8StretchDSC { get; set; }
         public decimal? S8StretchD { get; set; }
         public decimal? S8StretchDErr { get; set; }
