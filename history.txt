@@ -7,8 +7,10 @@ M3 Cord Production System #829
 M3 Cord Production System #828
 - 
 
+[commited]
 M3 Cord Production System #827
-- 
+- M3.Cord.Production.App re-implements #707
+  - Common update #4 - Save message box Entry (S-1, S-4-1, S-4-2 Condition)
 
 [commited]
 M3 Cord Production System #826

@@ -88,7 +88,10 @@ namespace M3.Cord.Controls.Documents
         {
             if (null != condition)
             {
-                S4x1Condition.Save(condition);
+                var ret = S4x1Condition.Save(condition);
+                if (null != ret && ret.Ok)
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
             }
         }
 
