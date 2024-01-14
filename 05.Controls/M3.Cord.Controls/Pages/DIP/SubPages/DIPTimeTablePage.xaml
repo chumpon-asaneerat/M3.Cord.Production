@@ -12,7 +12,7 @@
              mc:Ignorable="d"
              d:DesignHeight="800"
              d:DesignWidth="1200">
-    <page:NPage x:Name="page" HeaderText="Production Periodic Record Sheet">
+    <page:NPage x:Name="page" HeaderText="ใบตรวจสอบผลิตภัณฑ์ระหว่างการผลิต S7, S8, S9">
         <DockPanel LastChildFill="True">
             <!--  BUTTONS  -->
             <DockPanel LastChildFill="True"
@@ -51,11 +51,10 @@
                                         FontSize="24"
                                         SelectedDateChanged="dtDate_SelectedDateChanged" />
                         </StackPanel>
+                        <TextBlock Width="20" />
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="Lot:" />
-                            <TextBlock x:Name="txtLotNos"
-                                       MinWidth="250"
-                                       FontSize="24" />
+                            <TextBlock x:Name="txtLotNos" MinWidth="250" />
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
@@ -68,10 +67,14 @@
                       ItemsSource="{Binding}"
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.Resources>
-                    <Style x:Key="buttonDetail" TargetType="{x:Type Button}" BasedOn="{StaticResource InlineButton}">
+                    <Style x:Key="buttonDetail"
+                           TargetType="{x:Type Button}"
+                           BasedOn="{StaticResource InlineButton}">
                         <EventSetter Event="Click" Handler="cmdDetails_Click" />
                     </Style>
-                    <Style x:Key="buttonConfirm" TargetType="{x:Type Button}" BasedOn="{StaticResource InlineButton}">
+                    <Style x:Key="buttonConfirm"
+                           TargetType="{x:Type Button}"
+                           BasedOn="{StaticResource InlineButton}">
                         <EventSetter Event="Click" Handler="cmdConfirmCondition_Click" />
                     </Style>
                 </ListView.Resources>
@@ -176,6 +179,9 @@
                         </GridViewColumn>
                         <GridViewColumn Header="Date" CellTemplate="{StaticResource SDate}" />
                         <GridViewColumn Header="Time" CellTemplate="{StaticResource STime}" />
+
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource SLotNo}" />
+
                         <GridViewColumn Header="Bobbin" CellTemplate="{StaticResource S7Bobbin}" />
 
                         <GridViewColumn Header="อ่าง 1" CellTemplate="{StaticResource S8CoolingWaterSystemBath1Value}" />

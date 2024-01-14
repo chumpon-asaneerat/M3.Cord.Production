@@ -210,12 +210,52 @@ namespace M3.Cord.Models
 			return ret;
 		}
 
-		/// <summary>
-		/// Save
-		/// </summary>
-		/// <param name="value">The DIPTimeTable item to save.</param>
-		/// <returns></returns>
-		public static NDbResult<DIPTimeTable> Save(DIPTimeTable value)
+        public static NDbResult<List<string>> GetLots(DateTime date)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<string>> ret = new NDbResult<List<string>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@Date", date);
+
+            try
+            {
+                var items = cnn.Query<string>("GetDIPTimeTableLotLists", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+                ret.data = new List<string>();
+            }
+
+            return ret;
+        }
+
+        /// <summary>
+        /// Save
+        /// </summary>
+        /// <param name="value">The DIPTimeTable item to save.</param>
+        /// <returns></returns>
+        public static NDbResult<DIPTimeTable> Save(DIPTimeTable value)
 		{
 			MethodBase med = MethodBase.GetCurrentMethod();
 

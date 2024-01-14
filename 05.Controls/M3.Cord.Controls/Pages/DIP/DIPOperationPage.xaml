@@ -141,9 +141,9 @@
                 <!--  DIP Production Time Table  -->
                 <Button x:Name="cmdDIPProductionTimeTable" Click="cmdDIPProductionTimeTable_Click">
                     <TextBlock Style="{StaticResource ButtonText}">
-                        <Run Text="Production Periodic" />
+                        <Run Text="ใบตรวจสอบผลิตภัณฑ์" />
                         <LineBreak />
-                        <Run Text="Record Sheet" />
+                        <Run Text="ระหว่างการผลิต S7, S8, S9" />
                     </TextBlock>
                 </Button>
                 <!--  S9 Appearance Check Sheet  -->

@@ -92,6 +92,7 @@ namespace M3.Cord.Pages
             var item = DIPTimeTable.Create(pcCard.ProductCode);
             item.ProductCode = pcCard.ProductCode;
             item.RowType = 1;
+            item.LotNo = pcCard.DIPLotNo;
 
             win.Setup(item);
             if (win.ShowDialog() == true)
@@ -119,6 +120,25 @@ namespace M3.Cord.Pages
                     return;
                 }
                 grid.ItemsSource = DIPTimeTable.Gets(dtDate.SelectedDate.Value.Date).Value();
+
+                // get lot list
+                List<string> lots = DIPTimeTable.GetLots(dtDate.SelectedDate.Value.Date).Value();
+                string sLot = string.Empty;
+                if (null != lots && lots.Count > 0)
+                {
+                    foreach (var lot in lots)
+                    {
+                        if (string.IsNullOrEmpty(lot)) continue;
+                        sLot += lot + ", ";
+                    }
+
+                    sLot = sLot.Trim();
+                    if (sLot.EndsWith(","))
+                    {
+                        sLot = sLot.Remove(sLot.Length - 1, 1);
+                    }
+                }
+                txtLotNos.Text = sLot;
             }
         }
 

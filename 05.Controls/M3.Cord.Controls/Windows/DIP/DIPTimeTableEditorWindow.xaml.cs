@@ -101,6 +101,8 @@ namespace M3.Cord.Windows
                         });
                     }
                 }
+
+                txtLotNo.Text = _item.LotNo;
             }
         }
 

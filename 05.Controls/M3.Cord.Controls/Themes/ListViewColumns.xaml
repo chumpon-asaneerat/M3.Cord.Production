@@ -681,6 +681,12 @@
     </DataTemplate>
 
     <!--  DIP TIME TABLES  -->
+    <DataTemplate x:Key="SLotNo">
+        <TextBlock Text="{Binding Path=LotNo, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="150" />
+    </DataTemplate>
+
     <DataTemplate x:Key="SDate">
         <TextBlock Text="{Binding Path=PeriodTime, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
                    TextAlignment="Center"

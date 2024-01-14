@@ -47,6 +47,12 @@
                                     CaptionText="TIME:"
                                     DisplayMemberPath="SHour"
                                     Width="200" />
+                    <!--  LOT  -->
+                    <ctrl:NTextBox x:Name="txtLotNo"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Lot No:"
+                                   IsReadOnly="True"
+                                   Width="200" />
                     <DockPanel />
                 </DockPanel>
                 <doc:DIPTimeTableEntryPage x:Name="doc" />
