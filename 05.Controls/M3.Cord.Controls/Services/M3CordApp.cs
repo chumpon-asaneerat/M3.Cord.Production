@@ -512,6 +512,20 @@ namespace M3.Cord
                 get { return GetWindow<Cord.Windows.MessageBoxWindow>(); }
             }
 
+            public static void SaveSuccess()
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("Save Success" + Environment.NewLine + "บันทึกข้อมูลสำเร็จ");
+                win.ShowDialog();
+            }
+
+            public static void SaveFailed()
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("Save Failed" + Environment.NewLine + "บันทึกข้อมูลไม่สำเร็จ");
+                win.ShowDialog();
+            }
+
             #endregion
 
             #region MessageBoxOKCancel

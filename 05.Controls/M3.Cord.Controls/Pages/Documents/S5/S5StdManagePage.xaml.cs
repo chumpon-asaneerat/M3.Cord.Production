@@ -85,7 +85,11 @@ namespace M3.Cord.Pages
             if (null == cond.DataContext) return;
             var std = cond.DataContext as S5ConditionStd;
             if (null == std) return;
-            S5ConditionStd.Save(std);
+
+            var ret = S5ConditionStd.Save(std);
+            if (null != ret && ret.Ok)
+                M3CordApp.Windows.SaveSuccess();
+            else M3CordApp.Windows.SaveFailed();
         }
 
         private void RefreshGrid()

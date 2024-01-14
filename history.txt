@@ -21,10 +21,12 @@ M3 Cord Production System #824
 
 [commited]
 M3 Cord Production System #823
-- 
+- M3.Cord.Production.App re-implements #703
+  - Common update #1 - Save message box (S-1, S-4-1, S-4-2, , S-5)
 
 [commited]
 M3 Cord Production System #822
+- M3.Cord.Production.App re-implements #702
 - Prepare history.txt
 
 [commited]
