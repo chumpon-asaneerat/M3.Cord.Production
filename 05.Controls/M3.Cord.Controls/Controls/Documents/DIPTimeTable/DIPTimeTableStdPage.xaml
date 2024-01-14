@@ -32,118 +32,146 @@
     <DockPanel LastChildFill="True" Margin="10">
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="Bobbin" Width="250" TextAlignment="Right" />
+                <TextBlock Text="Bobbin"
+                           Width="250"
+                           TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S7BobbinSC}"/>
+                <CheckBox IsChecked="{Binding S7BobbinSC}" />
                 <TextBlock Width="10" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="ระบบน้ำหล่อเย็น (อ่าง 1)" Width="250" TextAlignment="Right"  />
+                <TextBlock Text="ระบบน้ำหล่อเย็น (อ่าง 1)"
+                           Width="250"
+                           TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S8CoolingWaterSystemBath1SC}"/>
+                <CheckBox IsChecked="{Binding S8CoolingWaterSystemBath1SC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding S8CoolingWaterSystemBath1, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
+                <TextBox Text="{Binding S8CoolingWaterSystemBath1Min, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Text=" - " />
+                <TextBox Text="{Binding S8CoolingWaterSystemBath1Max, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Width="10" />
+                <TextBlock Text=" ℃ " />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="ระบบน้ำหล่อเย็น (อ่าง 2)"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding S8CoolingWaterSystemBath2SC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding S8CoolingWaterSystemBath2Min, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Text=" - " />
+                <TextBox Text="{Binding S8CoolingWaterSystemBath2Max, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Width="10" />
+                <TextBlock Text=" ℃ " />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="การทำงานของตัวปล่อยเคมี"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding S8ChemicalWorkSC}" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="ผ้ากรองเคมี"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding S8ChemicalFilterSC}" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="ความเร็ว"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding S8SpeedSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding S8Speed, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding S8CoolingWaterSystemBath1Err, StringFormat='{}{0:#,##0.##}'}" Width="50"/>
+                <TextBox Text="{Binding S8SpeedErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="ระบบน้ำหล่อเย็น (อ่าง 2)" Width="250" TextAlignment="Right" />
+                <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) D.Zone"
+                           Width="250"
+                           TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S8CoolingWaterSystemBath2SC}"/>
+                <CheckBox IsChecked="{Binding S8StretchDSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding S8CoolingWaterSystemBath2, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
+                <TextBox Text="{Binding S8StretchD, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding S8CoolingWaterSystemBath2Err, StringFormat='{}{0:#,##0.##}'}" Width="50"/>
+                <TextBox Text="{Binding S8StretchDErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="การทำงานของตัวปล่อยเคมี" Width="250" TextAlignment="Right" />
+                <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) H.Zone"
+                           Width="250"
+                           TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S8ChemicalWorkSC}"/>
+                <CheckBox IsChecked="{Binding S8StretchHSC}" />
                 <TextBlock Width="10" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="ผ้ากรองเคมี" Width="250" TextAlignment="Right" />
-                <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S8ChemicalFilterSC}"/>
-                <TextBlock Width="10" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="ความเร็ว" Width="250" TextAlignment="Right" />
-                <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S8SpeedSC}"/>
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding S8Speed, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
+                <TextBox Text="{Binding S8StretchH, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding S8SpeedErr, StringFormat='{}{0:#,##0.##}'}" Width="50"/>
+                <TextBox Text="{Binding S8StretchHErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) D.Zone" Width="250" TextAlignment="Right" />
+                <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) N.Zone"
+                           Width="250"
+                           TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S8StretchDSC}"/>
+                <CheckBox IsChecked="{Binding S8StretchNSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding S8StretchD, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
+                <TextBox Text="{Binding S8StretchN, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding S8StretchDErr, StringFormat='{}{0:#,##0.##}'}" Width="50"/>
+                <TextBox Text="{Binding S8StretchNErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) H.Zone" Width="250" TextAlignment="Right" />
+                <TextBlock Text="TEMP (อุณหภูมิ °C) D.Zone"
+                           Width="250"
+                           TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S8StretchHSC}"/>
+                <CheckBox IsChecked="{Binding S8TempDSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding S8StretchH, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
+                <TextBox Text="{Binding S8TempD, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding S8StretchHErr, StringFormat='{}{0:#,##0.##}'}" Width="50"/>
+                <TextBox Text="{Binding S8TempDErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) N.Zone" Width="250" TextAlignment="Right" />
+                <TextBlock Text="TEMP (อุณหภูมิ °C) H,N.Zone"
+                           Width="250"
+                           TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S8StretchNSC}"/>
+                <CheckBox IsChecked="{Binding S8TempHNSC}" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding S8StretchN, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
+                <TextBox Text="{Binding S8TempHN, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Text=" ± " />
-                <TextBox Text="{Binding S8StretchNErr, StringFormat='{}{0:#,##0.##}'}" Width="50"/>
+                <TextBox Text="{Binding S8TempHNErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
                 <TextBlock Width="10" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="TEMP (อุณหภูมิ °C) D.Zone" Width="250" TextAlignment="Right" />
+                <TextBlock Text="สภาพไกด์"
+                           Width="250"
+                           TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S8TempDSC}"/>
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding S8TempD, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
-                <TextBlock Text=" ± " />
-                <TextBox Text="{Binding S8TempDErr, StringFormat='{}{0:#,##0.##}'}" Width="50"/>
-                <TextBlock Width="10" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="TEMP (อุณหภูมิ °C) H,N.Zone" Width="250" TextAlignment="Right" />
-                <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S8TempHNSC}"/>
-                <TextBlock Width="10" />
-                <TextBox Text="{Binding S8TempHN, StringFormat='{}{0:#,##0.##}'}" Width="100"/>
-                <TextBlock Text=" ± " />
-                <TextBox Text="{Binding S8TempHNErr, StringFormat='{}{0:#,##0.##}'}" Width="50"/>
-                <TextBlock Width="10" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="0,2">
-                <TextBlock Text="สภาพไกด์" Width="250" TextAlignment="Right" />
-                <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding S9GlideStatusSC}"/>
+                <CheckBox IsChecked="{Binding S9GlideStatusSC}" />
                 <TextBlock Width="10" />
             </StackPanel>
         </StackPanel>

@@ -379,7 +379,7 @@ namespace M3.Cord.Pages
                 }
 
                 sheet.UserName = M3CordApp.Current.User.FullName; // set current user
-                DIPMaterialCheckSheet.Save(sheet);
+                var ret = DIPMaterialCheckSheet.Save(sheet);
 
                 if (sheet.MaterialCheckId.HasValue)
                 {
@@ -389,6 +389,10 @@ namespace M3.Cord.Pages
                         DIPMaterialCheckSheetItem.Save(item);
                     }
                 }
+
+                if (null != ret && ret.Ok)
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
             }
         }
 

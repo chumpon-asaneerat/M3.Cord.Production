@@ -75,8 +75,8 @@ namespace M3.Cord.Pages
                 return;
             var win = M3CordApp.Windows.DIPTimeTableEditor;
             var item = DIPTimeTable.Create(pcCard.ProductCode);
-            item.DIPPCId = pcCard.DIPPCId;
             item.ProductCode = pcCard.ProductCode;
+            item.RowType = 1;
 
             win.Setup(item);
             if (win.ShowDialog() == true)
@@ -95,7 +95,15 @@ namespace M3.Cord.Pages
             grid.ItemsSource = null;
             if (null != pcCard)
             {
-                grid.ItemsSource = DIPTimeTable.Gets(pcCard.DIPPCId).Value();
+                if (!dtDate.SelectedDate.HasValue)
+                {
+                    this.InvokeAction(() =>
+                    {
+                        dtDate.Focus();
+                    });
+                    return;
+                }
+                grid.ItemsSource = DIPTimeTable.Gets(dtDate.SelectedDate.Value.Date).Value();
             }
         }
 

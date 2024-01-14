@@ -23,25 +23,24 @@ namespace M3.Cord.Models
 	{
         #region Public Proeprties
 
-		public int? DIPTimeTableId { get; set; }
-        public int? DIPPCId { get; set; }
-
         public string ProductCode { get; set; }
 		
 		public int RowType { get; set; } = 1;
 		public DateTime? PeriodTime { get; set; }
 
+        public string LotNo { get; set; }
+
         public bool? S7BobbinSC { get; set; }
 		public bool? S7Bobbin { get; set; }
 
         public bool? S8CoolingWaterSystemBath1SC { get; set; }
-        public decimal? S8CoolingWaterSystemBath1 { get; set; }
-        public decimal? S8CoolingWaterSystemBath1Err { get; set; }
+        public decimal? S8CoolingWaterSystemBath1Min { get; set; }
+        public decimal? S8CoolingWaterSystemBath1Max { get; set; }
         public decimal? S8CoolingWaterSystemBath1Value { get; set; }
 
         public bool? S8CoolingWaterSystemBath2SC { get; set; }
-        public decimal? S8CoolingWaterSystemBath2 { get; set; }
-        public decimal? S8CoolingWaterSystemBath2Err { get; set; }
+        public decimal? S8CoolingWaterSystemBath2Min { get; set; }
+        public decimal? S8CoolingWaterSystemBath2Max { get; set; }
         public decimal? S8CoolingWaterSystemBath2Value { get; set; }
 
         public bool? S8ChemicalWorkSC { get; set; }
@@ -105,10 +104,11 @@ namespace M3.Cord.Models
                 dst.ProductCode = src.ProductCode;
                 dst.S7BobbinSC = src.S7BobbinSC;
                 dst.S8CoolingWaterSystemBath1SC = src.S8CoolingWaterSystemBath1SC;
-                dst.S8CoolingWaterSystemBath1 = src.S8CoolingWaterSystemBath1;
-                dst.S8CoolingWaterSystemBath1Err = src.S8CoolingWaterSystemBath1Err;
+                dst.S8CoolingWaterSystemBath1Min = src.S8CoolingWaterSystemBath1Min;
+                dst.S8CoolingWaterSystemBath1Max = src.S8CoolingWaterSystemBath1Max;
                 dst.S8CoolingWaterSystemBath2SC = src.S8CoolingWaterSystemBath2SC;
-                dst.S8CoolingWaterSystemBath2 = src.S8CoolingWaterSystemBath2;
+                dst.S8CoolingWaterSystemBath2Min = src.S8CoolingWaterSystemBath2Min;
+                dst.S8CoolingWaterSystemBath2Max = src.S8CoolingWaterSystemBath2Max;
                 dst.S8ChemicalWorkSC = src.S8ChemicalWorkSC;
                 dst.S8ChemicalFilterSC = src.S8ChemicalFilterSC;
                 dst.S8SpeedSC = src.S8SpeedSC;
@@ -133,7 +133,7 @@ namespace M3.Cord.Models
             }
         }
 
-        public static NDbResult<List<DIPTimeTable>> Gets(int? DIPPCId)
+        public static NDbResult<List<DIPTimeTable>> Gets(DateTime date)
         {
 			MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -152,7 +152,7 @@ namespace M3.Cord.Models
 			}
 
 			var p = new DynamicParameters();
-			p.Add("@DIPPCId", DIPPCId);
+			p.Add("@Date", date);
 
 			try
 			{
@@ -204,22 +204,22 @@ namespace M3.Cord.Models
 
 			var p = new DynamicParameters();
 
-            p.Add("@DIPPCId", value.DIPPCId);
             p.Add("@ProductCode", value.ProductCode);
             p.Add("@RowType", value.RowType);
             p.Add("@PeriodTime", value.PeriodTime);
+            p.Add("@LotNo", value.LotNo);
 
             p.Add("@S7BobbinSC", value.S7BobbinSC);
             p.Add("@S7Bobbin", value.S7Bobbin);
 
 			p.Add("@S8CoolingWaterSystemBath1SC", value.S8CoolingWaterSystemBath1SC);
-            p.Add("@S8CoolingWaterSystemBath1", value.S8CoolingWaterSystemBath1);
-            p.Add("@S8CoolingWaterSystemBath1Err", value.S8CoolingWaterSystemBath1Err);
+            p.Add("@S8CoolingWaterSystemBath1Min", value.S8CoolingWaterSystemBath1Min);
+            p.Add("@S8CoolingWaterSystemBath1Max", value.S8CoolingWaterSystemBath1Max);
             p.Add("@S8CoolingWaterSystemBath1Value", value.S8CoolingWaterSystemBath1Value);
             
             p.Add("@S8CoolingWaterSystemBath2SC", value.S8CoolingWaterSystemBath2SC);
-            p.Add("@S8CoolingWaterSystemBath2", value.S8CoolingWaterSystemBath2);
-            p.Add("@S8CoolingWaterSystemBath2Err", value.S8CoolingWaterSystemBath2Err);
+            p.Add("@S8CoolingWaterSystemBath2Min", value.S8CoolingWaterSystemBath2Min);
+            p.Add("@S8CoolingWaterSystemBath2Max", value.S8CoolingWaterSystemBath2Max);
             p.Add("@S8CoolingWaterSystemBath2Value", value.S8CoolingWaterSystemBath2Value);
 
 			p.Add("@S8ChemicalWorkSC", value.S8ChemicalWorkSC);
@@ -264,8 +264,6 @@ namespace M3.Cord.Models
             p.Add("@CheckBy", value.CheckBy);
             p.Add("@CheckDate", value.CheckDate);
 
-            p.Add("@DIPTimeTableId", value.DIPTimeTableId, DbType.Int32, direction: ParameterDirection.InputOutput);
-
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
 			p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 
@@ -273,9 +271,6 @@ namespace M3.Cord.Models
 			{
 				cnn.Execute("SaveDIPTimeTable", p, commandType: CommandType.StoredProcedure);
 				ret.Success(value);
-
-                // Set PK
-                value.DIPTimeTableId = p.Get<dynamic>("@DIPTimeTableId");
 
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");

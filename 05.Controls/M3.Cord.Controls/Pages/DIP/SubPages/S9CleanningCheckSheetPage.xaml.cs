@@ -125,7 +125,7 @@ namespace M3.Cord.Pages
                 }
 
                 sheet.UserName = M3CordApp.Current.User.FullName; // set current user
-                S9CleanCheckSheet.Save(sheet);
+                var ret = S9CleanCheckSheet.Save(sheet);
 
                 if (sheet.CleanId.HasValue)
                 {
@@ -135,6 +135,10 @@ namespace M3.Cord.Pages
                         S9CleanCheckSheetItem.Save(item);
                     }
                 }
+
+                if (null != ret && ret.Ok)
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
             }
         }
 

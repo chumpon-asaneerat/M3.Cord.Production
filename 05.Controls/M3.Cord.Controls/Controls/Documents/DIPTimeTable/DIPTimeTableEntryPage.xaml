@@ -41,9 +41,10 @@
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ระบบน้ำหล่อเย็น (อ่าง 1)" Width="250" TextAlignment="Right"  />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding S8CoolingWaterSystemBath1, StringFormat='{}{0:#,##0.##}'}" Width="100" IsReadOnly="True"/>
-                <TextBlock Text=" ± " />
-                <TextBox Text="{Binding S8CoolingWaterSystemBath1Err, StringFormat='{}{0:#,##0.##}'}" Width="50" IsReadOnly="True"/>
+                <TextBox Text="{Binding S8CoolingWaterSystemBath1Min, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True"/>
+                <TextBlock Text=" - " />
+                <TextBox Text="{Binding S8CoolingWaterSystemBath1Max, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True"/>
+                <TextBlock Text=" ℃ " />
                 <TextBlock Width="10" />
                 <TextBox Text="{Binding S8CoolingWaterSystemBath1Value, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Width="10" />
@@ -52,9 +53,10 @@
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ระบบน้ำหล่อเย็น (อ่าง 2)" Width="250" TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding S8CoolingWaterSystemBath2, StringFormat='{}{0:#,##0.##}'}" Width="100" IsReadOnly="True"/>
-                <TextBlock Text=" ± " />
-                <TextBox Text="{Binding S8CoolingWaterSystemBath2Err, StringFormat='{}{0:#,##0.##}'}" Width="50" IsReadOnly="True"/>
+                <TextBox Text="{Binding S8CoolingWaterSystemBath2Min, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True"/>
+                <TextBlock Text=" - " />
+                <TextBox Text="{Binding S8CoolingWaterSystemBath2Max, StringFormat='{}{0:#,##0.##}'}" Width="75" IsReadOnly="True"/>
+                <TextBlock Text=" ℃ " />
                 <TextBlock Width="10" />
                 <TextBox Text="{Binding S8CoolingWaterSystemBath2Value, StringFormat='{}{0:#,##0.##}'}" Width="100" />
                 <TextBlock Width="10" />

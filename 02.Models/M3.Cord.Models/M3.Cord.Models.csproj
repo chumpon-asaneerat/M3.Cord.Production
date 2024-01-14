@@ -103,8 +103,8 @@
     <Compile Include="Models\DIP\DIPMaterialCheckSheet.cs" />
     <Compile Include="Models\DIP\DIPMaterialCheckSheetItem.cs" />
     <Compile Include="Models\DIP\DIPMC.cs" />
-    <Compile Include="Models\DIPTimeTableStd\DIPTimeTable.cs" />
-    <Compile Include="Models\DIPTimeTableStd\DIPTimeTableStd.cs" />
+    <Compile Include="Models\DIPTimeTable\DIPTimeTable.cs" />
+    <Compile Include="Models\DIPTimeTable\DIPTimeTableStd.cs" />
     <Compile Include="Models\DIPProductionCondition\DIPProductionCondition.cs" />
     <Compile Include="Models\DIP\DIPPCCard.cs" />
     <Compile Include="Models\DIP\S7CreelCheckSheet.cs" />

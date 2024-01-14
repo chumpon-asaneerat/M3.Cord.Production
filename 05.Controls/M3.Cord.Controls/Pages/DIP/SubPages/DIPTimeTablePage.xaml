@@ -45,7 +45,14 @@
                        Margin="2">
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-                        <elem:DIPLotNoBox />
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Date:" />
+                            <DatePicker x:Name="dtDate" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Lot:" />
+                            <TextBlock x:Name="txtLotNos" MinWidth="250"/>
+                        </StackPanel>
                     </StackPanel>
                 </StackPanel>
                 <Grid />

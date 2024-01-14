@@ -122,7 +122,7 @@ namespace M3.Cord.Pages
                 }
 
                 sheet.UserName = M3CordApp.Current.User.FullName; // set current user
-                S7CreelCheckSheet.Save(sheet);
+                var ret = S7CreelCheckSheet.Save(sheet);
 
                 if (sheet.CreelId.HasValue)
                 {
@@ -132,6 +132,10 @@ namespace M3.Cord.Pages
                         S7CreelCheckSheetItem.Save(item);
                     }
                 }
+
+                if (null != ret && ret.Ok)
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
             }
         }
 

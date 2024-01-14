@@ -28,12 +28,19 @@ M3 Cord Production System #832
 M3 Cord Production System #831
 - 
 
+[commited]
 M3 Cord Production System #830
-- 
+- M3.Cord.Production.App re-implements #710
+  - Update DIPCondition Model 
+  - Update DIPTimeTable Model 
+  - Update DIPCondition Entry 
+  - Update DIPTimeTable Std 
+  - Update DIPTimeTable Entry 
+  - Common update #6 - Save message box Entry (S7 (creel), S9 (Appearance/clear), DIPCondition)
 
 [commited]
 M3 Cord Production System #829
-- M3.Cord.Production.App re-implements #708
+- M3.Cord.Production.App re-implements #709
   - Prepare history.txt
 
 [commited]

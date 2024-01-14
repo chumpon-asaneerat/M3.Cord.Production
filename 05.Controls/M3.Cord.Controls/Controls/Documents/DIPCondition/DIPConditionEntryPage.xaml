@@ -331,15 +331,15 @@
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="4" Grid.Column="5">
-                <TextBox Width="220" Text="{Binding S7Yarn1stTwistActual}" />
+                <TextBox Width="220" Text="{Binding S7Yarn1stTwistActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="4" Grid.Column="6">
                 <TextBox Width="220"
-                         Text="{Binding S7Yarn1stTwistSet2}"
+                         Text="{Binding S7Yarn1stTwistSet2, StringFormat='{}{0:#,##0.##}'}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="4" Grid.Column="7">
-                <TextBox Width="220" Text="{Binding S7Yarn1stTwistActual2}" />
+                <TextBox Width="220" Text="{Binding S7Yarn1stTwistActual2, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <!--#endregion-->
 
@@ -384,7 +384,7 @@
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="5" Grid.Column="5">
-                <TextBox Width="220" Text="{Binding S7Yarn2ndTwistActual}" />
+                <TextBox Width="220" Text="{Binding S7Yarn2ndTwistActual, StringFormat='{}{0:#,##0.##}'}" />
             </Border>
             <Border Grid.Row="5" Grid.Column="6">
                 <TextBox Width="220"

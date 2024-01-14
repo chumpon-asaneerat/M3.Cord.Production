@@ -418,6 +418,53 @@ namespace M3.Cord.Models
                 dst.S9SpongSC = src.S9SpongSC;
                 dst.S9SpongSet = src.S9SpongSet;
                 dst.S9SpongSet2 = src.S9SpongSet2;
+                // Replace with 2 with 1
+                dst.S7YarnCordStructureSet2 = src.S7YarnCordStructureSet;
+                dst.S7YarnYarnTypeSet2 = src.S7YarnYarnTypeSet;
+                dst.S7Yarn1stTwistSet2 = src.S7Yarn1stTwistSet;
+                dst.S7Yarn2ndTwistSet2 = src.S7Yarn2ndTwistSet;
+                dst.S7YarnLabelOfYarnSet2 = src.S7YarnLabelOfYarnSet;
+                dst.S7YarnWeightSet2 = src.S7YarnWeightSet;
+                dst.S7YarnWeightSetErr2 = src.S7YarnWeightSetErr;
+                dst.S7CreelSettingUseTensorSet2 = src.S7CreelSettingUseTensorSet;
+                dst.S7CreelSettingKnotConditionSet2 = src.S7CreelSettingKnotConditionSet;
+                dst.S7CreelSettingSlubCatsweSet2 = src.S7CreelSettingSlubCatsweSet;
+                dst.S8StretchDryerSet2 = src.S8StretchDryerSet;
+                dst.S8StretchDryerSetErr2 = src.S8StretchDryerSetErr;
+                dst.S8StretchHotSet2 = src.S8StretchStretchHotSet;
+                dst.S8StretchHotSetErr2 = src.S8StretchStretchHotSetErr;
+                dst.S8StretchNormalSet2 = src.S8StretchNormalSet;
+                dst.S8StretchNormalSetErr2 = src.S8StretchNormalSetErr;
+                dst.S8TempDryerSet2 = src.S8TempDryerSet;
+                dst.S8TempDryerSetErr2 = src.S8TempDryerSetErr;
+                dst.S8TempNormalSet2 = src.S8TempNormalSet;
+                dst.S8TempNormalSetErr2 = src.S8TempNormalSetErr;
+                dst.S8CounterSettingSet2 = src.S8CounterSettingSet;
+                dst.S8SpeedSet2 = src.S8SpeedSet;
+                dst.S8SpeedSetErr2 = src.S8SpeedErr;
+                dst.S8NoOfCordsSet2 = src.S8NoOfCordsSet;
+                dst.S8SofnorSet2 = src.S8SofnorSet;
+                dst.S8DrawNipSet2 = src.S8DrawNipSet;
+                dst.S8DippingNo1ConcentrationSet2 = src.S8DippingNo1ConcentrationSet;
+                dst.S8DippingNo1NipFrontSet2 = src.S8DippingNo1NipFrontSet;
+                dst.S8DippingNo1NipBackSet2 = src.S8DippingNo1NipBackSet;
+                dst.S8DippingNo1WPUstdSet2 = src.S8DippingNo1WPUstdSet;
+                dst.S8DippingNo2ConcentrationSet2 = src.S8DippingNo2ConcentrationSet;
+                dst.S8DippingNo2NipFrontSet2 = src.S8DippingNo2NipFrontSet;
+                dst.S8DippingNo2NipBackSet2 = src.S8DippingNo2NipBackSet;
+                dst.S8DippingNo2WPUstdSet2 = src.S8DippingNo2WPUstdSet;
+                dst.S9WinderAyameDaialSet2 = src.S9WinderAyameDaialSet;
+                dst.S9WinderMpaSet2 = src.S9WinderMpaSet;
+                dst.S9WinderSpringSet2 = src.S9WinderSpringSet;
+                dst.S9WinderPeperTubeColorSet2 = src.S9WinderPeperTubeColorSet;
+                dst.S9WinderCheeseWeightSet2 = src.S9WinderCheeseWeightSet;
+                dst.S9ExhaustFanOven1CirculatingFanSet2 = src.S9ExhaustFanOven1CirculatingFanSet;
+                dst.S9ExhaustFanOven2CirculatingFanSet2 = src.S9ExhaustFanOven2CirculatingFanSet;
+                dst.S9ExhaustFanOven1ExhaustFanSet2 = src.S9ExhaustFanOven1ExhaustFanSet;
+                dst.S9ExhaustFanOven2ExhaustFanSet2 = src.S9ExhaustFanOven2ExhaustFanSet;
+                dst.S9ExhaustFanOvenFrontExhaustFanSet2 = src.S9ExhaustFanOvenFrontExhaustFanSet;
+                dst.S9ExhaustFanOvenBackExhaustFanSet2 = src.S9ExhaustFanOvenBackExhaustFanSet;
+                dst.S9SpongSet2 = src.S9SpongSet;
             }
         }
 

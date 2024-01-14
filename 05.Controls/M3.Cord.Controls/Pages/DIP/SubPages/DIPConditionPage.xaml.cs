@@ -71,9 +71,8 @@ namespace M3.Cord.Pages
             {
                 var ret = DIPCondition.Save(cond);
                 if (null != ret && ret.Ok)
-                {
-
-                }
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
             }
         }
 

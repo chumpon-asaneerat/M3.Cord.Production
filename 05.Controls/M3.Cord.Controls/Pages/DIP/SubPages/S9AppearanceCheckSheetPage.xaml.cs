@@ -127,7 +127,7 @@ namespace M3.Cord.Pages
                 }
 
                 sheet.UserName = M3CordApp.Current.User.FullName; // set current user
-                S9AppearanceCheckSheet.Save(sheet);
+                var ret = S9AppearanceCheckSheet.Save(sheet);
 
                 if (sheet.AppearId.HasValue)
                 {
@@ -137,6 +137,10 @@ namespace M3.Cord.Pages
                         S9AppearanceCheckSheetItem.Save(item);
                     }
                 }
+
+                if (null != ret && ret.Ok)
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
             }
         }
 

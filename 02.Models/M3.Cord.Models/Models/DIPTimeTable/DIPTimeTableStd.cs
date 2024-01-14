@@ -26,11 +26,11 @@ namespace M3.Cord.Models
 		public string ProductCode { get; set; }
 		public bool? S7BobbinSC { get; set; }
 		public bool? S8CoolingWaterSystemBath1SC { get; set; }
-		public decimal? S8CoolingWaterSystemBath1 { get; set; }
-		public decimal? S8CoolingWaterSystemBath1Err { get; set; }
+		public decimal? S8CoolingWaterSystemBath1Min { get; set; }
+		public decimal? S8CoolingWaterSystemBath1Max { get; set; }
 		public bool? S8CoolingWaterSystemBath2SC { get; set; }
-		public decimal? S8CoolingWaterSystemBath2 { get; set; }
-		public decimal? S8CoolingWaterSystemBath2Err { get; set; }
+		public decimal? S8CoolingWaterSystemBath2Min { get; set; }
+		public decimal? S8CoolingWaterSystemBath2Max { get; set; }
         public bool? S8ChemicalWorkSC { get; set; }
         public bool? S8ChemicalFilterSC { get; set; }
 		public bool? S8SpeedSC { get; set; }
@@ -131,11 +131,11 @@ namespace M3.Cord.Models
 			p.Add("@ProductCode", value.ProductCode);
 			p.Add("@S7BobbinSC", value.S7BobbinSC);
 			p.Add("@S8CoolingWaterSystemBath1SC", value.S8CoolingWaterSystemBath1SC);
-			p.Add("@S8CoolingWaterSystemBath1", value.S8CoolingWaterSystemBath1);
-			p.Add("@S8CoolingWaterSystemBath1Err", value.S8CoolingWaterSystemBath1Err);
+			p.Add("@S8CoolingWaterSystemBath1Min", value.S8CoolingWaterSystemBath1Min);
+			p.Add("@S8CoolingWaterSystemBath1Max", value.S8CoolingWaterSystemBath1Max);
 			p.Add("@S8CoolingWaterSystemBath2SC", value.S8CoolingWaterSystemBath2SC);
-			p.Add("@S8CoolingWaterSystemBath2", value.S8CoolingWaterSystemBath2);
-			p.Add("@S8CoolingWaterSystemBath2Err", value.S8CoolingWaterSystemBath2Err);
+			p.Add("@S8CoolingWaterSystemBath2Min", value.S8CoolingWaterSystemBath2Min);
+			p.Add("@S8CoolingWaterSystemBath2Max", value.S8CoolingWaterSystemBath2Max);
 			p.Add("@S8ChemicalWorkSC", value.S8ChemicalWorkSC);
 			p.Add("@S8ChemicalFilterSC", value.S8ChemicalWorkSC);
 			p.Add("@S8SpeedSC", value.S8SpeedSC);
