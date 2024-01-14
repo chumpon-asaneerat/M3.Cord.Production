@@ -102,6 +102,8 @@ namespace M3.Cord.Windows
                 _sheet = Twist1CheckSheet.Save(_sheet).Value(); // Save check sheet
                 if (null == _sheet || _sheet.Twist1CheckId <= 0) return;
                 SaveCheckSheets();
+
+                M3CordApp.Windows.SaveSuccess();
             }
         }
 

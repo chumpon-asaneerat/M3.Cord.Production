@@ -4,8 +4,10 @@ M3 Cord Production System #830
 M3 Cord Production System #829
 - 
 
+[commited]
 M3 Cord Production System #828
-- 
+- M3.Cord.Production.App re-implements #708
+  - Common update #5 - Save message box Entry (Twist LoadYarn, CheckSheet)
 
 [commited]
 M3 Cord Production System #827

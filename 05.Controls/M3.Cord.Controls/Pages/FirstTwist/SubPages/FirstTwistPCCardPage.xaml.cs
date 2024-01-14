@@ -115,7 +115,8 @@ namespace M3.Cord.Pages
                     var record = records[records.Count - 1];
 
                     var msg = M3CordApp.Windows.MessageBoxOKCancel;
-                    msg.Setup("Continue Next Doff" + Environment.NewLine + "with Existing Yarn Lot");
+                    string sMsg = "Continue Next Doff" + Environment.NewLine + "with Existing Yarn Lot";
+                    msg.Setup(sMsg);
                     if (msg.ShowDialog() == true)
                     {
                         // Show start doff

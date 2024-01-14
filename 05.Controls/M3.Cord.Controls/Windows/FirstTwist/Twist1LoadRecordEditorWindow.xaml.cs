@@ -66,7 +66,8 @@ namespace M3.Cord.Windows
                     if (null == _pallet)
                     {
                         var win = M3CordApp.Windows.MessageBox;
-                        win.Setup("Pallet not avaliable.");
+                        win.Setup("Pallet not avaliable in stock." + 
+                            Environment.NewLine + "ไม่พบพาเลทที่ระบุใน stock");
                         win.ShowDialog();
                     }
                     else
@@ -76,7 +77,8 @@ namespace M3.Cord.Windows
                             _pallet.ItemYarn != _pcCard.ItemYarn)
                         {
                             var win = M3CordApp.Windows.MessageBox;
-                            win.Setup("Pallet's Item Yarn does not match with PC card.");
+                            win.Setup("Pallet's Item Yarn does not match with PC card." + 
+                                Environment.NewLine + "ข้อมูล Item Yarn ไม่ตรงกับใน PC Card.");
                             win.ShowDialog();
                             _pallet = null;
                         }
@@ -231,6 +233,12 @@ namespace M3.Cord.Windows
                             Twist1LoadRecordItem.Save(item);
                         }
                     }
+
+                    M3CordApp.Windows.SaveSuccess();
+                }
+                else
+                {
+                    M3CordApp.Windows.SaveFailed();
                 }
             }
         }
