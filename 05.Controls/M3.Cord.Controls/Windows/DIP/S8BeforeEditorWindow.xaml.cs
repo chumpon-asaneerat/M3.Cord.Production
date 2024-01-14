@@ -56,6 +56,9 @@ namespace M3.Cord.Windows
         {
             if (null != _item)
             {
+                _item.CheckBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
+                _item.CheckDate = DateTime.Now;
+
                 var ret = S8BeforeCondition.Save(_item);
                 if (null != ret && ret.Ok)
                     M3CordApp.Windows.SaveSuccess();

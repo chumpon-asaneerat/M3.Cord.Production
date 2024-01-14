@@ -674,7 +674,13 @@
                    Width="120" />
     </DataTemplate>
 
+    <DataTemplate x:Key="DoffingDate">
+        <TextBlock Text="{Binding Path=PeriodTime, StringFormat='{}{0:dd/MM/yyyy}', Mode=TwoWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
 
+    <!--  DIP TIME TABLES  -->
     <DataTemplate x:Key="SDate">
         <TextBlock Text="{Binding Path=PeriodTime, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
                    TextAlignment="Center"
@@ -777,10 +783,141 @@
                    MinWidth="100" />
     </DataTemplate>
 
-    <DataTemplate x:Key="DoffingDate">
-        <TextBlock Text="{Binding Path=PeriodTime, StringFormat='{}{0:dd/MM/yyyy}', Mode=TwoWay}"
+    <!--  DIP S8 BEFORE  -->
+
+    <DataTemplate x:Key="S8B_LotNo">
+        <TextBlock Text="{Binding Path=LotNo, Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
 
+    <DataTemplate x:Key="S8B_SolutionNameBath1Value">
+        <TextBlock Text="{Binding Path=SolutionNameBath1Value, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_SolutionNameBath2Value">
+        <TextBlock Text="{Binding Path=SolutionNameBath2Value, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_TempJacketDrumBath1">
+        <TextBlock Text="{Binding Path=TempJacketDrumBath1, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_TempJacketDrumBath2">
+        <TextBlock Text="{Binding Path=TempJacketDrumBath2, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_TempChemicalBath1">
+        <TextBlock Text="{Binding Path=TempChemicalBath1, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_TempChemicalBath2">
+        <TextBlock Text="{Binding Path=TempChemicalBath2, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_StretchDValue">
+        <TextBlock Text="{Binding Path=StretchDValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_StretchHValue">
+        <TextBlock Text="{Binding Path=StretchHValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_StretchNValue">
+        <TextBlock Text="{Binding Path=StretchNValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_TempDValue">
+        <TextBlock Text="{Binding Path=TempDValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_TempHNValue">
+        <TextBlock Text="{Binding Path=TempHNValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_SpeedValue">
+        <TextBlock Text="{Binding Path=SpeedValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_ExhaustFanDryerValue">
+        <TextBlock Text="{Binding Path=ExhaustFanDryerValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_ExhaustFanHNValue">
+        <TextBlock Text="{Binding Path=ExhaustFanHNValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_CleanBath1">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding CleanBath1}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="S8B_CleanBath2">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding CleanBath2}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="S8B_CleanFront">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding CleanFront}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="S8B_Cambox">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding Cambox}"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+
+
+    <DataTemplate x:Key="S8B_CheckBy">
+        <TextBlock Text="{Binding Path=CheckBy, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_VerifyBy">
+        <TextBlock Text="{Binding Path=VerifyBy, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
 </ResourceDictionary>

@@ -167,26 +167,35 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Date" CellTemplate="{StaticResource SDate}" />
-                        <GridViewColumn Header="Time" CellTemplate="{StaticResource STime}" />
-                        <GridViewColumn Header="Bobbin" CellTemplate="{StaticResource S7Bobbin}" />
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource S8B_LotNo}" />
+                        <GridViewColumn Header="ชื่อน้ำยาเคมี อ่าง 1" CellTemplate="{StaticResource S8B_SolutionNameBath1Value}" />
+                        <GridViewColumn Header="ชื่อน้ำยาเคมี อ่าง 2" CellTemplate="{StaticResource S8B_SolutionNameBath2Value}" />
 
-                        <GridViewColumn Header="อ่าง 1" CellTemplate="{StaticResource S8CoolingWaterSystemBath1Value}" />
-                        <GridViewColumn Header="อ่าง 2" CellTemplate="{StaticResource S8CoolingWaterSystemBath2Value}" />
+                        <GridViewColumn Header="อุณหภูมิ Jacket Drum อ่าง 1" CellTemplate="{StaticResource S8B_TempJacketDrumBath1}" />
+                        <GridViewColumn Header="อุณหภูมิ Jacket Drum อ่าง 2" CellTemplate="{StaticResource S8B_TempJacketDrumBath2}" />
 
-                        <GridViewColumn Header="การทำงานของตัวปล่อยเคมี" CellTemplate="{StaticResource S8ChemicalWork}" />
-                        <GridViewColumn Header="ผ้ากรองเคมี" CellTemplate="{StaticResource S8ChemicalFilter}" />
+                        <GridViewColumn Header="อุณหภูมิ อ่างเคมี อ่าง 1" CellTemplate="{StaticResource S8B_TempChemicalBath1}" />
+                        <GridViewColumn Header="อุณหภูมิ อ่างเคมี อ่าง 2" CellTemplate="{StaticResource S8B_TempChemicalBath2}" />
 
-                        <GridViewColumn Header="ความเร็ว" CellTemplate="{StaticResource S8SpeedValue}" />
-                        <GridViewColumn Header="STRENGTH D.Zone" CellTemplate="{StaticResource S8StretchDValue}" />
-                        <GridViewColumn Header="STRENGTH H.Zone" CellTemplate="{StaticResource S8StretchHValue}" />
-                        <GridViewColumn Header="STRENGTH N.Zone" CellTemplate="{StaticResource S8StretchNValue}" />
+                        <GridViewColumn Header="STRETCH D" CellTemplate="{StaticResource S8B_StretchDValue}" />
+                        <GridViewColumn Header="STRETCH H" CellTemplate="{StaticResource S8B_StretchHValue}" />
+                        <GridViewColumn Header="STRETCH N" CellTemplate="{StaticResource S8B_StretchNValue}" />
 
-                        <GridViewColumn Header="TEMP D.Zone" CellTemplate="{StaticResource S8TempDValue}" />
-                        <GridViewColumn Header="TEMP H,N.Zone" CellTemplate="{StaticResource S8TempHNValue}" />
+                        <GridViewColumn Header="อุณหภูมิ D" CellTemplate="{StaticResource S8B_TempDValue}" />
+                        <GridViewColumn Header="อุณหภูมิ H,N" CellTemplate="{StaticResource S8B_TempHNValue}" />
 
-                        <GridViewColumn Header="Remark" CellTemplate="{StaticResource Remark}" />
-                        <GridViewColumn Header="ตรวจเช็คโดย" CellTemplate="{StaticResource CheckBy}" />
+                        <GridViewColumn Header="ความเร็ว" CellTemplate="{StaticResource S8B_SpeedValue}" />
+
+                        <GridViewColumn Header="Exhaust Fan Dryer" CellTemplate="{StaticResource S8B_ExhaustFanDryerValue}" />
+                        <GridViewColumn Header="Exhaust Fan H,N" CellTemplate="{StaticResource S8B_ExhaustFanHNValue}" />
+
+                        <GridViewColumn Header="ความสะอาดลูกกลิ้ง อ่าง 1" CellTemplate="{StaticResource S8B_CleanBath1}" />
+                        <GridViewColumn Header="ความสะอาดลูกกลิ้ง อ่าง 2" CellTemplate="{StaticResource S8B_CleanBath2}" />
+                        <GridViewColumn Header="ความสะอาดลูกกลิ้ง หน้าตู้อบ" CellTemplate="{StaticResource S8B_CleanFront}" />
+                        <GridViewColumn Header="ความสะอาดลูกกลิ้ง Cambox" CellTemplate="{StaticResource S8B_Cambox}" />
+
+                        <GridViewColumn Header="ตรวจเช็คโดย" CellTemplate="{StaticResource S8B_CheckBy}" />
+                        <GridViewColumn Header="ทวนสอบโดย" CellTemplate="{StaticResource S8B_VerifyBy}" />
                     </GridView>
                 </ListView.View>
             </ListView>

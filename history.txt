@@ -4,8 +4,10 @@ M3 Cord Production System #840
 M3 Cord Production System #839
 - 
 
+[commited]
 M3 Cord Production System #838
-- 
+- M3.Cord.Production.App re-implements #718
+  - Update DIP S8 Before #5
 
 [commited]
 M3 Cord Production System #837

@@ -32,6 +32,16 @@
     <DockPanel LastChildFill="True" Margin="10">
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text=""
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <TextBlock Text="SC"
+                           Width="Auto"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ชื่อน้ำยาเคมี (อ่าง 1)"
                            Width="250"
                            TextAlignment="Right" />
@@ -298,8 +308,11 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding CleanBath1SC}" />
+                <CheckBox IsChecked="{Binding CleanBath1SC}" IsEnabled="False" />
                 <TextBlock Width="10" />
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Content="OK" IsChecked="{Binding CleanBath1}" />
+                </StackPanel>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
@@ -307,8 +320,11 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding CleanBath2SC}" />
+                <CheckBox IsChecked="{Binding CleanBath2SC}" IsEnabled="False" />
                 <TextBlock Width="10" />
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Content="OK" IsChecked="{Binding CleanBath2}" />
+                </StackPanel>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
@@ -316,8 +332,11 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding CleanFrontSC}" />
+                <CheckBox IsChecked="{Binding CleanFrontSC}" IsEnabled="False" />
                 <TextBlock Width="10" />
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Content="OK" IsChecked="{Binding CleanFront}" />
+                </StackPanel>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
@@ -325,8 +344,11 @@
                            Width="250"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
-                <CheckBox IsChecked="{Binding CamboxSC}" />
+                <CheckBox IsChecked="{Binding CamboxSC}" IsEnabled="False" />
                 <TextBlock Width="10" />
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Content="OK" IsChecked="{Binding Cambox}" />
+                </StackPanel>
             </StackPanel>
         </StackPanel>
         <Grid />

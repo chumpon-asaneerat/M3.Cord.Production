@@ -98,7 +98,11 @@ namespace M3.Cord.Pages
 
         private void RefreshGrid()
         {
-
+            grid.ItemsSource = null;
+            if (null != pcCard)
+            {
+                grid.ItemsSource = S8BeforeCondition.Gets(pcCard.DIPPCId).Value();
+            }
         }
 
         #endregion
