@@ -3,9 +3,254 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:M3.Cord.Controls.Documents"
              mc:Ignorable="d"
-             d:DesignHeight="450"
+             d:DesignHeight="600"
              d:DesignWidth="800">
-    <Grid />
+    <UserControl.Resources>
+        <!--  LOCAL STYLES  -->
+        <Style TargetType="Border">
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderBrush" Value="DimGray" />
+            <Setter Property="BorderThickness" Value="0.5" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource CommonTextBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource CommonCheckBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <DockPanel LastChildFill="True" Margin="10">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="ชื่อน้ำยาเคมี (อ่าง 1)"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding SolutionNameBath1SC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding SolutionNameBath1}" Width="200" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="ชื่อน้ำยาเคมี (อ่าง 2)"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding SolutionNameBath2SC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding SolutionNameBath2}" Width="200" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="อุณหภูมิ Jack Drum (อ่าง 1)"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding TempJacketDrumBath1SC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding TempJacketDrumBath1Min, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Text=" - " />
+                <TextBox Text="{Binding TempJacketDrumBath1Max, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Width="10" />
+                <TextBlock Text=" ℃ " />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="อุณหภูมิ Jack Drum (อ่าง 2)"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding TempJacketDrumBath2SC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding TempJacketDrumBath2Min, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Text=" - " />
+                <TextBox Text="{Binding TempJacketDrumBath2Max, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Width="10" />
+                <TextBlock Text=" ℃ " />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="อุณหภูมิ อ่างเคมี (อ่าง 1)"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding TempChemicalBath1SC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding TempChemicalBath1Min, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Text=" - " />
+                <TextBox Text="{Binding TempChemicalBath1Max, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Width="10" />
+                <TextBlock Text=" ℃ " />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="อุณหภูมิ อ่างเคมี (อ่าง 2)"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding TempChemicalBath2SC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding TempChemicalBath2Min, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Text=" - " />
+                <TextBox Text="{Binding TempChemicalBath2Max, StringFormat='{}{0:#,##0.##}'}" Width="75" />
+                <TextBlock Width="10" />
+                <TextBlock Text=" ℃ " />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) D.Zone"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding StretchDSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding StretchD, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Text=" ± " />
+                <TextBox Text="{Binding StretchDErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) H.Zone"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding StretchHSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding StretchH, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Text=" ± " />
+                <TextBox Text="{Binding StretchHErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) N.Zone"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding StretchNSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding StretchN, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Text=" ± " />
+                <TextBox Text="{Binding StretchNErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="TEMP (อุณหภูมิ °C) D.Zone"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding TempDSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding TempD, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Text=" ± " />
+                <TextBox Text="{Binding TempDErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="TEMP (อุณหภูมิ °C) H,N.Zone"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding TempHNSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding TempHN, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Text=" ± " />
+                <TextBox Text="{Binding TempHNErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="ความเร็ว"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding SpeedSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding Speed, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Text=" ± " />
+                <TextBox Text="{Binding SpeedErr, StringFormat='{}{0:#,##0.##}'}" Width="50" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Exhaust Fan Dryer"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding ExhaustFanDryerSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding ExhaustFanDryer, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Text=" Hz " />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Exhaust Fan H,N.Zone"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding ExhaustFanHNSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding ExhaustFanHN, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Text=" Hz " />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="ความสะอาดลูกกลิ้ง (อ่าง 1)"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding CleanBath1SC}" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="ความสะอาดลูกกลิ้ง (อ่าง 2)"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding CleanBath2SC}" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="ความสะอาดลูกกลิ้ง (หน้าตู้อบ)"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding CleanFrontSC}" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="ความสะอาดลูกกลิ้ง (Cambox)"
+                           Width="250"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding CamboxSC}" />
+                <TextBlock Width="10" />
+            </StackPanel>
+        </StackPanel>
+        <Grid />
+    </DockPanel>
 </UserControl>

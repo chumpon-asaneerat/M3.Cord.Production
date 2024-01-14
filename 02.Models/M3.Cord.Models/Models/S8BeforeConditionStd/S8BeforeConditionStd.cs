@@ -24,21 +24,22 @@ namespace M3.Cord.Models
 		#region Public Proeprties
 
 		public string ProductCode { get; set; }
-		public string LotNo { get; set; }
-		public string SolutionNameBath1 { get; set; }
-		public string SolutionNameBath2 { get; set; }
+        public bool? SolutionNameBath1SC { get; set; }
+        public string SolutionNameBath1 { get; set; }
+        public bool? SolutionNameBath2SC { get; set; }
+        public string SolutionNameBath2 { get; set; }
 		public bool? TempJacketDrumBath1SC { get; set; }
-		public decimal? TempJacketDrumBath1 { get; set; }
-		public decimal? TempJacketDrumBath1Err { get; set; }
+		public decimal? TempJacketDrumBath1Min { get; set; }
+		public decimal? TempJacketDrumBath1Max { get; set; }
 		public bool? TempJacketDrumBath2SC { get; set; }
-		public decimal? TempJacketDrumBath2 { get; set; }
-		public decimal? TempJacketDrumBath2Err { get; set; }
+		public decimal? TempJacketDrumBath2Min { get; set; }
+		public decimal? TempJacketDrumBath2Max { get; set; }
 		public bool? TempChemicalBath1SC { get; set; }
-		public decimal? TempChemicalBath1 { get; set; }
-		public decimal? TempChemicalBath1Err { get; set; }
+		public decimal? TempChemicalBath1Min { get; set; }
+		public decimal? TempChemicalBath1Max { get; set; }
 		public bool? TempChemicalBath2SC { get; set; }
-		public decimal? TempChemicalBath2 { get; set; }
-		public decimal? TempChemicalBath2Err { get; set; }
+		public decimal? TempChemicalBath2Min { get; set; }
+		public decimal? TempChemicalBath2Max { get; set; }
 		public bool? StretchDSC { get; set; }
 		public decimal? StretchD { get; set; }
 		public decimal? StretchDErr { get; set; }
@@ -61,10 +62,10 @@ namespace M3.Cord.Models
 		public decimal? ExhaustFanDryer { get; set; }
 		public bool? ExhaustFanHNSC { get; set; }
 		public decimal? ExhaustFanHN { get; set; }
-		public bool? CleanBath1 { get; set; }
-		public bool? CleanBath2 { get; set; }
-		public bool? CleanFront { get; set; }
-		public bool? Cambox { get; set; }
+		public bool? CleanBath1SC { get; set; }
+		public bool? CleanBath2SC { get; set; }
+		public bool? CleanFrontSC { get; set; }
+		public bool? CamboxSC { get; set; }
 
 		#endregion
 
@@ -142,21 +143,22 @@ namespace M3.Cord.Models
 			var p = new DynamicParameters();
 
 			p.Add("@ProductCode", value.ProductCode);
-			p.Add("@LotNo", value.LotNo);
-			p.Add("@SolutionNameBath1", value.SolutionNameBath1);
-			p.Add("@SolutionNameBath2", value.SolutionNameBath2);
+			p.Add("@SolutionNameBath1SC", value.SolutionNameBath1SC);
+            p.Add("@SolutionNameBath1", value.SolutionNameBath1);
+            p.Add("@SolutionNameBath2SC", value.SolutionNameBath2SC);
+            p.Add("@SolutionNameBath2", value.SolutionNameBath2);
 			p.Add("@TempJacketDrumBath1SC", value.TempJacketDrumBath1SC);
-			p.Add("@TempJacketDrumBath1", value.TempJacketDrumBath1);
-			p.Add("@TempJacketDrumBath1Err", value.TempJacketDrumBath1Err);
+			p.Add("@TempJacketDrumBath1Min", value.TempJacketDrumBath1Min);
+			p.Add("@TempJacketDrumBath1Max", value.TempJacketDrumBath1Max);
 			p.Add("@TempJacketDrumBath2SC", value.TempJacketDrumBath2SC);
-			p.Add("@TempJacketDrumBath2", value.TempJacketDrumBath2);
-			p.Add("@TempJacketDrumBath2Err", value.TempJacketDrumBath2Err);
+			p.Add("@TempJacketDrumBath2Min", value.TempJacketDrumBath2Min);
+			p.Add("@TempJacketDrumBath2Max", value.TempJacketDrumBath2Max);
 			p.Add("@TempChemicalBath1SC", value.TempChemicalBath1SC);
-			p.Add("@TempChemicalBath1", value.TempChemicalBath1);
-			p.Add("@TempChemicalBath1Err", value.TempChemicalBath1Err);
+			p.Add("@TempChemicalBath1Min", value.TempChemicalBath1Min);
+			p.Add("@TempChemicalBath1Max", value.TempChemicalBath1Max);
 			p.Add("@TempChemicalBath2SC", value.TempChemicalBath2SC);
-			p.Add("@TempChemicalBath2", value.TempChemicalBath2);
-			p.Add("@TempChemicalBath2Err", value.TempChemicalBath2Err);
+			p.Add("@TempChemicalBath2Min", value.TempChemicalBath2Min);
+			p.Add("@TempChemicalBath2Max", value.TempChemicalBath2Max);
 			p.Add("@StretchDSC", value.StretchDSC);
 			p.Add("@StretchD", value.StretchD);
 			p.Add("@StretchDErr", value.StretchDErr);
@@ -179,10 +181,10 @@ namespace M3.Cord.Models
 			p.Add("@ExhaustFanDryer", value.ExhaustFanDryer);
 			p.Add("@ExhaustFanHNSC", value.ExhaustFanHNSC);
 			p.Add("@ExhaustFanHN", value.ExhaustFanHN);
-			p.Add("@CleanBath1", value.CleanBath1);
-			p.Add("@CleanBath2", value.CleanBath2);
-			p.Add("@CleanFront", value.CleanFront);
-			p.Add("@Cambox", value.Cambox);
+			p.Add("@CleanBath1SC", value.CleanBath1SC);
+			p.Add("@CleanBath2SC", value.CleanBath2SC);
+			p.Add("@CleanFrontSC", value.CleanFrontSC);
+			p.Add("@CamboxSC", value.CamboxSC);
 
 			p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
 			p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);

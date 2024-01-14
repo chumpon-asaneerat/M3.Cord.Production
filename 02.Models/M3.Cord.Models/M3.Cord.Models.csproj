@@ -149,7 +149,6 @@
     <Compile Include="Models\S5Condition\S5ConditionStd.cs" />
     <Compile Include="Models\S5Condition\S5Condition.cs" />
     <Compile Include="Models\S8BeforeConditionStd\S8BeforeConditionItem.cs" />
-    <Compile Include="Models\S8BeforeConditionStd\S8BeforeConditionCF.cs" />
     <Compile Include="Models\S8BeforeConditionStd\S8BeforeConditionStd.cs" />
     <Compile Include="Models\Chemical\SolutionLot.cs" />
     <Compile Include="Models\Users\UserInfo.cs" />
