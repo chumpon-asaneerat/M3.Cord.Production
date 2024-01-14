@@ -17,18 +17,25 @@
             <Setter Property="BorderBrush" Value="DimGray" />
             <Setter Property="BorderThickness" Value="0.5" />
         </Style>
-        <Style TargetType="TextBlock">
+        <Style TargetType="TextBlock" >
             <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="Microsoft Sans Serif"/>
+            <!--<Setter Property="FontFamily" Value="Comic Sans MS"/>-->
+            <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="HorizontalAlignment" Value="Center" />
         </Style>
         <Style TargetType="TextBox" BasedOn="{StaticResource CommonTextBox}">
             <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="Microsoft Sans Serif"/>
+            <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="HorizontalAlignment" Value="Center" />
         </Style>
         <Style TargetType="CheckBox" BasedOn="{StaticResource CommonCheckBox}">
             <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="Microsoft Sans Serif"/>
+            <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="HorizontalAlignment" Value="Center" />
         </Style>
@@ -178,7 +185,7 @@
                                             <TextBox Width="70" Text="{Binding Counter, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text=" ± " />
+                                            <TextBlock Text=" ± " FontSize="18" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBox Width="70" Text="{Binding CounterErr, StringFormat='{}{0:#,##0.##}'}" />
@@ -192,7 +199,7 @@
                                     <StackPanel Orientation="Vertical"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
-                                        <TextBlock Text="Cord Structure (โครงสร้างเชือก)" TextAlignment="Center" />
+                                        <TextBlock Text="Cord Structure (โครงสร้างเชือก)" TextAlignment="Center"/>
                                         <TextBox Width="200" Text="{Binding CordStructure}" />
                                     </StackPanel>
                                 </Border>
@@ -216,8 +223,8 @@
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                            <TextBlock Text="DIP Bath No.1" />
-                                            <TextBlock Text="Solution Name" />
+                                            <TextBlock Text="DIP Bath No.1" FontSize="18" />
+                                            <TextBlock Text="Solution Name" FontSize="18" />
                                         </StackPanel>
 
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -235,7 +242,7 @@
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                            <TextBlock Text="Front" />
+                                            <TextBlock Text="Front" FontSize="18"/>
                                             <TextBox Width="70" Text="{Binding Bath1NipFront}" />
                                         </StackPanel>
                                     </StackPanel>
@@ -245,7 +252,7 @@
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                            <TextBlock Text="Back" />
+                                            <TextBlock Text="Back" FontSize="18"/>
                                             <StackPanel Orientation="Horizontal"
                                                         HorizontalAlignment="Center"
                                                         VerticalAlignment="Center">
@@ -253,7 +260,7 @@
                                                     <TextBox Width="70" Text="{Binding Bath1NipBack, StringFormat='{}{0:#,##0.##}'}" />
                                                 </StackPanel>
                                                 <StackPanel Orientation="Vertical">
-                                                    <TextBlock Text=" ± " />
+                                                    <TextBlock Text=" ± " FontSize="18"/>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Vertical">
                                                     <TextBox Width="70" Text="{Binding Bath1NipBackErr, StringFormat='{}{0:#,##0.##}'}" />
@@ -270,8 +277,8 @@
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                            <TextBlock Text="DIP Bath No.2" />
-                                            <TextBlock Text="Solution Name" />
+                                            <TextBlock Text="DIP Bath No.2" FontSize="18"/>
+                                            <TextBlock Text="Solution Name" FontSize="18"/>
                                         </StackPanel>
 
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -289,7 +296,7 @@
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                            <TextBlock Text="Front" />
+                                            <TextBlock Text="Front" FontSize="18"/>
                                             <TextBox Width="70" Text="{Binding Bath2NipFront}" />
                                         </StackPanel>
                                     </StackPanel>
@@ -299,7 +306,7 @@
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                            <TextBlock Text="Back" />
+                                            <TextBlock Text="Back" FontSize="18"/>
                                             <StackPanel Orientation="Horizontal"
                                                         HorizontalAlignment="Center"
                                                         VerticalAlignment="Center">
@@ -307,7 +314,7 @@
                                                     <TextBox Width="70" Text="{Binding Bath2NipBack, StringFormat='{}{0:#,##0.##}'}" />
                                                 </StackPanel>
                                                 <StackPanel Orientation="Vertical">
-                                                    <TextBlock Text=" ± " />
+                                                    <TextBlock Text=" ± " FontSize="18"/>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Vertical">
                                                     <TextBox Width="70" Text="{Binding Bath2NipBackErr, StringFormat='{}{0:#,##0.##}'}" />
@@ -372,7 +379,7 @@
                                     <StackPanel Orientation="Vertical"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
-                                        <TextBlock Text="TENSION (g/cord) (แรงดึง)" TextAlignment="Center" />
+                                        <TextBlock Text="TENSION (g/cord) (แรงดึง)" TextAlignment="Center" FontSize="18"/>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
@@ -387,35 +394,35 @@
                                                     <RowDefinition Height="Auto" />
                                                 </Grid.RowDefinitions>
                                                 <Border Grid.Row="0" Grid.Column="0">
-                                                    <TextBlock Text="Zone" />
+                                                    <TextBlock Text="Zone" FontSize="18"/>
                                                 </Border>
                                                 <Border Grid.Row="0" Grid.Column="1">
-                                                    <TextBlock Text="Monitor display (kg)" />
+                                                    <TextBlock Text="Monitor display (kg)" FontSize="18"/>
                                                 </Border>
 
                                                 <Border Grid.Row="1" Grid.Column="0">
-                                                    <TextBlock Text="D" />
+                                                    <TextBlock Text="D" FontSize="18"/>
                                                 </Border>
                                                 <Border Grid.Row="1" Grid.Column="1">
                                                     <TextBox Width="70" Text="{Binding TensionD, StringFormat='{}{0:#,##0.##}'}" />
                                                 </Border>
 
                                                 <Border Grid.Row="2" Grid.Column="0">
-                                                    <TextBlock Text="H" />
+                                                    <TextBlock Text="H" FontSize="18"/>
                                                 </Border>
                                                 <Border Grid.Row="2" Grid.Column="1">
                                                     <TextBox Width="70" Text="{Binding TensionH, StringFormat='{}{0:#,##0.##}'}" />
                                                 </Border>
 
                                                 <Border Grid.Row="3" Grid.Column="0">
-                                                    <TextBlock Text="N" />
+                                                    <TextBlock Text="N" FontSize="18"/>
                                                 </Border>
                                                 <Border Grid.Row="3" Grid.Column="1">
                                                     <TextBox Width="70" Text="{Binding TensionN, StringFormat='{}{0:#,##0.##}'}" />
                                                 </Border>
 
                                                 <Border Grid.Row="4" Grid.Column="0">
-                                                    <TextBlock Text="Winder" />
+                                                    <TextBlock Text="Winder" FontSize="18"/>
                                                 </Border>
                                                 <Border Grid.Row="4" Grid.Column="1">
                                                     <TextBox Width="70" Text="{Binding TensionWinder, StringFormat='{}{0:#,##0.##}'}" />
@@ -465,171 +472,171 @@
                                         Grid.Column="0"
                                         Grid.ColumnSpan="3"
                                         Background="Silver">
-                                    <TextBlock Text="Stretch (%)" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Stretch (%)" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="0"
                                         Background="Silver">
-                                    <TextBlock Text="D" HorizontalAlignment="Center" />
+                                    <TextBlock Text="D" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="0"
                                         Background="Silver">
-                                    <TextBlock Text="ช่วงแห้ง" HorizontalAlignment="Center" />
+                                    <TextBlock Text="ช่วงแห้ง" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="1"
                                         Background="Silver">
-                                    <TextBlock Text="H" HorizontalAlignment="Center" />
+                                    <TextBlock Text="H" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="1"
                                         Background="Silver">
-                                    <TextBlock Text="ช่วงร้อน" HorizontalAlignment="Center" />
+                                    <TextBlock Text="ช่วงร้อน" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="2"
                                         Background="Silver">
-                                    <TextBlock Text="N" HorizontalAlignment="Center" />
+                                    <TextBlock Text="N" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="2"
                                         Background="Silver">
-                                    <TextBlock Text="ช่วงปกติ" HorizontalAlignment="Center" />
+                                    <TextBlock Text="ช่วงปกติ" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
 
                                 <Border Grid.Row="0"
                                         Grid.Column="3"
                                         Grid.ColumnSpan="2"
                                         Background="Silver">
-                                    <TextBlock Text="Temp (C) (อุณหภูมิ)" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Temp (C) (อุณหภูมิ)" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="3"
                                         Background="Silver">
-                                    <TextBlock Text="D" HorizontalAlignment="Center" />
+                                    <TextBlock Text="D" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="3"
                                         Background="Silver">
-                                    <TextBlock Text="ช่วงแห้ง" HorizontalAlignment="Center" />
+                                    <TextBlock Text="ช่วงแห้ง" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="4"
                                         Background="Silver">
-                                    <TextBlock Text="HN" HorizontalAlignment="Center" />
+                                    <TextBlock Text="HN" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="4"
                                         Background="Silver">
-                                    <TextBlock Text="ช่วงร้อน/แห้ง" HorizontalAlignment="Center" />
+                                    <TextBlock Text="ช่วงร้อน/แห้ง" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
 
                                 <Border Grid.Row="0"
                                         Grid.Column="5"
                                         Background="Silver">
-                                    <TextBlock Text="Speed" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Speed" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="5"
                                         Background="Silver">
-                                    <TextBlock Text="(m/min)" HorizontalAlignment="Center" />
+                                    <TextBlock Text="(m/min)" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="5"
                                         Background="Silver">
-                                    <TextBlock Text="ความเร็ว" HorizontalAlignment="Center" />
+                                    <TextBlock Text="ความเร็ว" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
 
                                 <Border Grid.Row="0"
                                         Grid.Column="6"
                                         Background="Silver">
-                                    <TextBlock Text="Treat" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Treat" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="6"
                                         Background="Silver">
-                                    <TextBlock Text="Cord" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Cord" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="6"
                                         Background="Silver">
-                                    <TextBlock Text="จำนวนเส้น" HorizontalAlignment="Center" />
+                                    <TextBlock Text="จำนวนเส้น" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
 
                                 <Border Grid.Row="0"
                                         Grid.Column="7"
                                         Background="Silver">
-                                    <TextBlock Text="Doffing" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Doffing" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="7"
                                         Background="Silver">
-                                    <TextBlock Text="Length (M)" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Length (M)" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="7"
                                         Background="Silver">
-                                    <TextBlock Text="ความยาว" HorizontalAlignment="Center" />
+                                    <TextBlock Text="ความยาว" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
 
                                 <Border Grid.Row="0"
                                         Grid.Column="8"
                                         Background="Silver">
-                                    <TextBlock Text="Weight" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Weight" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="8"
                                         Background="Silver">
-                                    <TextBlock Text="(kg)" HorizontalAlignment="Center" />
+                                    <TextBlock Text="(kg)" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="8"
                                         Background="Silver">
-                                    <TextBlock Text="น้ำหนัก" HorizontalAlignment="Center" />
+                                    <TextBlock Text="น้ำหนัก" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
 
                                 <Border Grid.Row="0"
                                         Grid.Column="9"
                                         Background="Silver">
-                                    <TextBlock Text="Spindle" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Spindle" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="9"
                                         Background="Silver">
-                                    <TextBlock Text="Use" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Use" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="9"
                                         Background="Silver">
-                                    <TextBlock Text="การใช้แกน" HorizontalAlignment="Center" />
+                                    <TextBlock Text="การใช้แกน" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
 
                                 <Border Grid.Row="0"
                                         Grid.Column="10"
                                         Grid.ColumnSpan="2"
                                         Background="Silver">
-                                    <TextBlock Text="Production (ผลิตภัณฑ์)" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Production (ผลิตภัณฑ์)" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="10"
                                         Background="Silver">
-                                    <TextBlock Text="Good" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Good" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="10"
                                         Background="Silver">
-                                    <TextBlock Text="ผลิตภัณฑ์ดี" HorizontalAlignment="Center" />
+                                    <TextBlock Text="ผลิตภัณฑ์ดี" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="1"
                                         Grid.Column="11"
                                         Background="Silver">
-                                    <TextBlock Text="Total" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Total" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
                                 <Border Grid.Row="2"
                                         Grid.Column="11"
                                         Background="Silver">
-                                    <TextBlock Text="ผลรวมน้ำหนัก" HorizontalAlignment="Center" />
+                                    <TextBlock Text="ผลรวมน้ำหนัก" HorizontalAlignment="Center" FontSize="18" />
                                 </Border>
 
                                 <!--#endregion-->
@@ -783,6 +790,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding StretchDSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -799,6 +807,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding StretchHSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -814,6 +823,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding StretchNSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -829,6 +839,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding TempDSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -844,6 +855,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding TempHNSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -859,6 +871,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding SpeedSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -874,6 +887,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding TreatSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -889,6 +903,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding DoffingLengthSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -904,6 +919,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding WeightSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -919,6 +935,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding SpindleSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -934,6 +951,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding ProductionGoodSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -949,6 +967,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding ProductionTotalSC}" Value="True">
                                                         <Setter Property="Text" Value="SC" />
+                                                        <Setter Property="FontSize" Value="18" />
                                                         <Setter Property="FontWeight" Value="DemiBold" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -971,7 +990,7 @@
                                                      Text="{Binding StretchD, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text=" ± " />
+                                            <TextBlock Text=" ± " FontSize="18"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBox x:Name="txtStretchDErr"
@@ -990,7 +1009,7 @@
                                                      Text="{Binding StretchH, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text=" ± " />
+                                            <TextBlock Text=" ± " FontSize="18"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBox x:Name="txtStretchHErr"
@@ -1009,7 +1028,7 @@
                                                      Text="{Binding StretchN, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text=" ± " />
+                                            <TextBlock Text=" ± " FontSize="18"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBox x:Name="txtStretchNErr"
@@ -1028,7 +1047,7 @@
                                                      Text="{Binding TempD, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text=" ± " />
+                                            <TextBlock Text=" ± " FontSize="18"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBox x:Name="txtTempDErr"
@@ -1047,7 +1066,7 @@
                                                      Text="{Binding TempHN, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text=" ± " />
+                                            <TextBlock Text=" ± " FontSize="18"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBox x:Name="txtTempHNErr"
@@ -1066,7 +1085,7 @@
                                                      Text="{Binding Speed, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text=" ± " />
+                                            <TextBlock Text=" ± " FontSize="18"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBox x:Name="txtSpeedErr"
@@ -1116,6 +1135,7 @@
                                           SelectionChanged="grid_SelectionChanged"
                                           Margin="0,0,0,5"
                                           FontSize="{StaticResource FontSize18}"
+                                          FontFamily="Microsoft Sans Serif"
                                           ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
                                           ItemsSource="{Binding}"
                                           Style="{StaticResource SingleSelectListView}"
