@@ -12,6 +12,271 @@
              mc:Ignorable="d"
              d:DesignHeight="800"
              d:DesignWidth="1200">
+    <UserControl.Resources>
+        <!--#region Common GridView Header-->
+
+        <Style x:Key="CommonHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="True" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style x:Key="RotateHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="True" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+
+        <!--#endregion-->
+
+        <!--#region S8B_TempJacketDrum-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_TempJacketDrumGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempJacketDrumBath1}"
+                            Header=" อ่าง 1 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempJacketDrumBath2}"
+                            Header=" อ่าง 2 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempJacketDrumColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="อุณหภูมิ Jacket Drum" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_TempJacketDrumGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempJacketDrumColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_TempJacketDrumGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region S8B_TempChemical-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_TempChemicalGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempChemicalBath1}"
+                            Header=" อ่าง 1 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempChemicalBath2}"
+                            Header=" อ่าง 2 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempChemicalColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="อุณหภูมิ อ่างเคมี" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_TempChemicalGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempChemicalColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_TempChemicalGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region S8B_Stretch-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_StretchGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_StretchDValue}"
+                            Header=" D "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_StretchHValue}"
+                            Header=" H "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_StretchNValue}"
+                            Header=" N "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_StretchColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="แรงดึง (Stretch)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_StretchGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_StretchColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_StretchGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region S8B_Temp-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_TempGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempDValue}"
+                            Header=" D "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempHNValue}"
+                            Header=" H,N "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="อุณหภูมิ (Temp)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_TempGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_TempGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region S8B_ExhaustFan-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_ExhaustFanGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_ExhaustFanDryerValue}"
+                            Header=" Dryer "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_ExhaustFanHNValue}"
+                            Header=" H&amp;N "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_ExhaustFanColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Exhaust Fan" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_ExhaustFanGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_ExhaustFanColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_ExhaustFanGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region S8B_Clean-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_CleanGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_CleanBath1}"
+                            Header=" อ่าง 1 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_CleanBath2}"
+                            Header=" อ่าง 2 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_CleanFront}"
+                            Header=" หน้าตู้อบ "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_Cambox}"
+                            Header=" Cambox "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_CleanColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="ความสะอาดลูกกลิ้ง" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_CleanGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_CleanColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_CleanGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+    </UserControl.Resources>
     <page:NPage x:Name="page" HeaderText="ตรวจเช็คสภาวะการผลิตก่อนเปิดเครื่อง (S-8)">
         <DockPanel LastChildFill="True">
             <!--  BUTTONS  -->
@@ -168,31 +433,61 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Lot No" CellTemplate="{StaticResource S8B_LotNo}" />
-                        <GridViewColumn Header="ชื่อน้ำยาเคมี อ่าง 1" CellTemplate="{StaticResource S8B_SolutionNameBath1Value}" />
-                        <GridViewColumn Header="ชื่อน้ำยาเคมี อ่าง 2" CellTemplate="{StaticResource S8B_SolutionNameBath2Value}" />
 
-                        <GridViewColumn Header="อุณหภูมิ Jacket Drum อ่าง 1" CellTemplate="{StaticResource S8B_TempJacketDrumBath1}" />
-                        <GridViewColumn Header="อุณหภูมิ Jacket Drum อ่าง 2" CellTemplate="{StaticResource S8B_TempJacketDrumBath2}" />
+                        <GridViewColumn CellTemplate="{StaticResource S8B_SolutionNameBath1Value}">
+                            <GridViewColumn.Header>
+                                <TextBlock TextAlignment="Center">
+                                    <Run Text="ชื่อน้ำยาเคมี" FontSize="11" />
+                                    <LineBreak />
+                                    <Run Text="(Solution name)" FontSize="11" />
+                                    <LineBreak />
+                                    <Run Text="อ่าง 1" />
+                                </TextBlock>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn CellTemplate="{StaticResource S8B_SolutionNameBath2Value}">
+                            <GridViewColumn.Header>
+                                <TextBlock TextAlignment="Center">
+                                    <Run Text="ชื่อน้ำยาเคมี" FontSize="11" />
+                                    <LineBreak />
+                                    <Run Text="(Solution name)" FontSize="11" />
+                                    <LineBreak />
+                                    <Run Text="อ่าง 2" />
+                                </TextBlock>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
 
-                        <GridViewColumn Header="อุณหภูมิ อ่างเคมี อ่าง 1" CellTemplate="{StaticResource S8B_TempChemicalBath1}" />
-                        <GridViewColumn Header="อุณหภูมิ อ่างเคมี อ่าง 2" CellTemplate="{StaticResource S8B_TempChemicalBath2}" />
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_TempJacketDrumColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_TempJacketDrumColumnsHeader}" />
 
-                        <GridViewColumn Header="STRETCH D" CellTemplate="{StaticResource S8B_StretchDValue}" />
-                        <GridViewColumn Header="STRETCH H" CellTemplate="{StaticResource S8B_StretchHValue}" />
-                        <GridViewColumn Header="STRETCH N" CellTemplate="{StaticResource S8B_StretchNValue}" />
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_TempChemicalColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_TempChemicalColumnsHeader}" />
 
-                        <GridViewColumn Header="อุณหภูมิ D" CellTemplate="{StaticResource S8B_TempDValue}" />
-                        <GridViewColumn Header="อุณหภูมิ H,N" CellTemplate="{StaticResource S8B_TempHNValue}" />
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_StretchColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_StretchColumnsHeader}" />
+
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_TempColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_TempColumnsHeader}" />
 
                         <GridViewColumn Header="ความเร็ว" CellTemplate="{StaticResource S8B_SpeedValue}" />
 
-                        <GridViewColumn Header="Exhaust Fan Dryer" CellTemplate="{StaticResource S8B_ExhaustFanDryerValue}" />
-                        <GridViewColumn Header="Exhaust Fan H,N" CellTemplate="{StaticResource S8B_ExhaustFanHNValue}" />
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_ExhaustFanColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_ExhaustFanColumnsHeader}" />
 
-                        <GridViewColumn Header="ความสะอาดลูกกลิ้ง อ่าง 1" CellTemplate="{StaticResource S8B_CleanBath1}" />
-                        <GridViewColumn Header="ความสะอาดลูกกลิ้ง อ่าง 2" CellTemplate="{StaticResource S8B_CleanBath2}" />
-                        <GridViewColumn Header="ความสะอาดลูกกลิ้ง หน้าตู้อบ" CellTemplate="{StaticResource S8B_CleanFront}" />
-                        <GridViewColumn Header="ความสะอาดลูกกลิ้ง Cambox" CellTemplate="{StaticResource S8B_Cambox}" />
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_CleanColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_CleanColumnsHeader}" />
 
                         <GridViewColumn Header="ตรวจเช็คโดย" CellTemplate="{StaticResource S8B_CheckBy}" />
                         <GridViewColumn Header="ทวนสอบโดย" CellTemplate="{StaticResource S8B_VerifyBy}" />

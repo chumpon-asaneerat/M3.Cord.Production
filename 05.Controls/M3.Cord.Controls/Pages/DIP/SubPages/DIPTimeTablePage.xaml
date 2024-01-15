@@ -97,7 +97,7 @@
                 <TextBlock Grid.Row="0"
                            HorizontalAlignment="Center"
                            TextAlignment="Center">
-                    <Run Text="Stretch (แรงตึงเส้นด้าย)" />
+                    <Run Text="Stretch (แรงดึงเส้นด้าย)" />
                 </TextBlock>
                 <GridViewHeaderRowPresenter Grid.Row="1"
                                             HorizontalAlignment="Stretch"
