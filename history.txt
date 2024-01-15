@@ -13,8 +13,10 @@ M3 Cord Production System #847
 M3 Cord Production System #846
 - 
 
+[commited]
 M3 Cord Production System #845
-- 
+- M3.Cord.Production.App re-implements #725
+  - Update M3.Cord.Controls project add reference to NLib.Serial.Devices project
 
 [commited]
 M3 Cord Production System #844
