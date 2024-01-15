@@ -329,6 +329,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{D5F96D02
 		Documents\Cord\Logic\Logic 2023-10-30 DIP Screen.docx = Documents\Cord\Logic\Logic 2023-10-30 DIP Screen.docx
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLib.Serial.Devices", "00.NLib\NLib.Serial.Devices\NLib.Serial.Devices.csproj", "{32FAE440-947B-4B8F-A710-2CB8887136D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -399,6 +401,10 @@ Global
 		{2E161B42-CD75-435F-8FBE-589E63F96240}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E161B42-CD75-435F-8FBE-589E63F96240}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E161B42-CD75-435F-8FBE-589E63F96240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32FAE440-947B-4B8F-A710-2CB8887136D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32FAE440-947B-4B8F-A710-2CB8887136D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32FAE440-947B-4B8F-A710-2CB8887136D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32FAE440-947B-4B8F-A710-2CB8887136D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -450,6 +456,7 @@ Global
 		{72D74552-3754-41C4-B1F6-289E4823DE83} = {349F4929-C503-444E-92F8-7D92F5D95179}
 		{6110E55C-5DD6-483E-93D4-E975675D596B} = {B2818B90-A408-452A-B236-02309FC6455F}
 		{D5F96D02-85AB-4D7D-B133-C043FA572871} = {B2818B90-A408-452A-B236-02309FC6455F}
+		{32FAE440-947B-4B8F-A710-2CB8887136D5} = {55BDE894-1CA8-442F-8E7C-B827CD14A94F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DA7051-D33D-4883-8812-B521F0C8D191}
