@@ -4,8 +4,10 @@ M3 Cord Production System #850
 M3 Cord Production System #849
 - 
 
+[commited]
 M3 Cord Production System #848
-- 
+- M3.Cord.Production.App re-implements #728
+  - Update app build 1105
 
 [commited]
 M3 Cord Production System #847
