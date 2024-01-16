@@ -74,15 +74,15 @@
 
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="S8StretchGridViewColumns">
-            <GridViewColumn Width="100"
+            <GridViewColumn Width="180"
                             CellTemplate="{StaticResource S8StretchDValue}"
                             Header=" D.Zone "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
-            <GridViewColumn Width="100"
+            <GridViewColumn Width="180"
                             CellTemplate="{StaticResource S8StretchHValue}"
                             Header=" H.Zone "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
-            <GridViewColumn Width="100"
+            <GridViewColumn Width="180"
                             CellTemplate="{StaticResource S8StretchNValue}"
                             Header=" N.Zone "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
@@ -115,11 +115,11 @@
 
         <!--#region S8Temp (D,HN)-->
         <GridViewColumnCollection x:Key="S8TempGridViewColumns">
-            <GridViewColumn Width="100"
+            <GridViewColumn Width="180"
                             CellTemplate="{StaticResource S8TempDValue}"
                             Header=" D.Zone "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
-            <GridViewColumn Width="100"
+            <GridViewColumn Width="180"
                             CellTemplate="{StaticResource S8TempHNValue}"
                             Header=" H,N.Zone "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
@@ -205,6 +205,11 @@
                       ItemsSource="{Binding}"
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.Resources>
+                    <Style x:Key="buttonReset"
+                           TargetType="{x:Type Button}"
+                           BasedOn="{StaticResource InlineButton}">
+                        <EventSetter Event="Click" Handler="cmdReset_Click" />
+                    </Style>
                     <Style x:Key="buttonDetail"
                            TargetType="{x:Type Button}"
                            BasedOn="{StaticResource InlineButton}">
@@ -233,7 +238,24 @@
                                                                 <DataTemplate>
                                                                     <StackPanel Orientation="Horizontal"
                                                                                 HorizontalAlignment="Center"
-                                                                                VerticalAlignment="Center" />
+                                                                                VerticalAlignment="Center">
+                                                                        <!--  Reset  -->
+                                                                        <Button x:Name="cmdResets"
+                                                                                Style="{StaticResource buttonReset}"
+                                                                                DockPanel.Dock="Left"
+                                                                                Margin="5,0"
+                                                                                Width="100"
+                                                                                Height="30">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
+                                                                                <TextBlock Margin="3,0"
+                                                                                           FontFamily="{StaticResource THSarabun}"
+                                                                                           FontSize="{StaticResource IBFSize}"
+                                                                                           Text="Reset"
+                                                                                           VerticalAlignment="Center" />
+                                                                            </StackPanel>
+                                                                        </Button>
+                                                                    </StackPanel>
                                                                 </DataTemplate>
                                                             </Setter.Value>
                                                         </Setter>

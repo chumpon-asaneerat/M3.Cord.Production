@@ -33,7 +33,7 @@
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="Bobbin"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S7BobbinSC}" />
@@ -42,7 +42,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ระบบน้ำหล่อเย็น (อ่าง 1)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S8CoolingWaterSystemBath1SC}" />
@@ -57,7 +57,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ระบบน้ำหล่อเย็น (อ่าง 2)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S8CoolingWaterSystemBath2SC}" />
@@ -72,7 +72,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="การทำงานของตัวปล่อยเคมี"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S8ChemicalWorkSC}" />
@@ -81,7 +81,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ผ้ากรองเคมี"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S8ChemicalFilterSC}" />
@@ -90,7 +90,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ความเร็ว"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S8SpeedSC}" />
@@ -103,7 +103,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) D.Zone"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S8StretchDSC}" />
@@ -116,7 +116,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) H.Zone"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S8StretchHSC}" />
@@ -129,7 +129,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) N.Zone"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S8StretchNSC}" />
@@ -142,7 +142,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="TEMP (อุณหภูมิ °C) D.Zone"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S8TempDSC}" />
@@ -155,7 +155,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="TEMP (อุณหภูมิ °C) H,N.Zone"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S8TempHNSC}" />
@@ -168,7 +168,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="สภาพไกด์"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding S9GlideStatusSC}" />

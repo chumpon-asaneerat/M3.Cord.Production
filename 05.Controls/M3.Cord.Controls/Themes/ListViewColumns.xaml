@@ -682,19 +682,19 @@
 
     <!--  DIP TIME TABLES  -->
     <DataTemplate x:Key="SLotNo">
-        <TextBlock Text="{Binding Path=LotNo, Mode=OneWay}"
+        <TextBlock Text="{Binding Path=LotNoS, Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="150" />
     </DataTemplate>
 
     <DataTemplate x:Key="SDate">
-        <TextBlock Text="{Binding Path=PeriodTime, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=PeriodDateS, Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
 
     <DataTemplate x:Key="STime">
-        <TextBlock Text="{Binding Path=PeriodTime, StringFormat='{}{0:HH:mm}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=PeriodTimeS, Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
@@ -712,72 +712,63 @@
     </DataTemplate>
 
     <DataTemplate x:Key="S8CoolingWaterSystemBath2Value">
-        <TextBlock Text="{Binding Path=S8CoolingWaterSystemBath2Value, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=S8CoolingWaterSystemBath2S, Mode=OneWay}"
                    TextAlignment="Center"
                    Width="170" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8ChemicalWork">
-        <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <CheckBox Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding S8ChemicalWork}"
-                      HorizontalAlignment="Center"
-                      Width="50" />
-        </StackPanel>
+        <TextBlock Text="{Binding S8ChemicalWorkS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="50" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8ChemicalFilter">
-        <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <CheckBox Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding S8ChemicalFilter}"
-                      HorizontalAlignment="Center"
-                      Width="50" />
-        </StackPanel>
+        <TextBlock Text="{Binding S8ChemicalFilterS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="50" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8SpeedValue">
-        <TextBlock Text="{Binding Path=S8SpeedS, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=S8SpeedS, Mode=OneWay}"
                    TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8StretchDValue">
-        <TextBlock Text="{Binding Path=S8StretchDValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=S8StretchDValueS, Mode=OneWay}"
                    TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8StretchHValue">
-        <TextBlock Text="{Binding Path=S8StretchHValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=S8StretchHValueS, Mode=OneWay}"
                    TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8StretchNValue">
-        <TextBlock Text="{Binding Path=S8StretchNValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=S8StretchNValueS, Mode=OneWay}"
                    TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8TempDValue">
-        <TextBlock Text="{Binding Path=S8TempDValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=S8TempDValueS, Mode=OneWay}"
                    TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8TempHNValue">
-        <TextBlock Text="{Binding Path=S8TempHNValue, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=S8TempHNValueS, Mode=OneWay}"
                    TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
 
     <DataTemplate x:Key="S9GlideStatus">
-        <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <CheckBox Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding S9GlideStatus}"
-                      HorizontalAlignment="Center"
-                      Width="50" />
-        </StackPanel>
+        <TextBlock Text="{Binding S9GlideStatusS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="50" />
     </DataTemplate>
 
     <DataTemplate x:Key="CheckBy">

@@ -28,8 +28,10 @@ M3 Cord Production System #852
 M3 Cord Production System #851
 - 
 
+[commited]
 M3 Cord Production System #850
-- 
+- M3.Cord.Production.App re-implements #730
+  - Update DIPTimeTable UI #2
 
 [commited]
 M3 Cord Production System #849

@@ -30,7 +30,87 @@ namespace M3.Cord.Models
         public int RowType { get; set; } = 1;
 		public DateTime? PeriodTime { get; set; }
 
+        public string PeriodDateS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    return (PeriodTime.HasValue) ? 
+                        PeriodTime.Value.ToString("yyyy-MM-dd") : "";
+                }
+            }
+            set { }
+        }
+
+        public string PeriodTimeS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    return (PeriodTime.HasValue) ?
+                        PeriodTime.Value.ToString("HH:mm") : "";
+                }
+            }
+            set { }
+        }
+
         public string LotNo { get; set; }
+
+        public string LotNoS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    return LotNo;
+                }
+            }
+            set { }
+        }
 
         public bool? S7BobbinSC { get; set; }
 		public bool? S7Bobbin { get; set; }
@@ -47,13 +127,13 @@ namespace M3.Cord.Models
                 else if (RowType == -1)
                 {
                     string fmt = string.Empty;
-                    if (!S8SpeedSC.HasValue)
+                    if (!S7BobbinSC.HasValue)
                     {
                         fmt = "";
                     }
                     else
                     {
-                        fmt = (S8SpeedSC.Value) ? "SC" : "";
+                        fmt = (S7BobbinSC.Value) ? "SC" : "";
                     }
                     return fmt;
                 }
@@ -65,7 +145,7 @@ namespace M3.Cord.Models
                 {
                     // Check Symbol ✔
                     // Cross Symbol ✗
-                    return (S7Bobbin.HasValue) ? "✔" : "";
+                    return (S7Bobbin.HasValue && S7Bobbin.Value) ? "✔" : "";
                 }
             }
             set { }
@@ -83,9 +163,11 @@ namespace M3.Cord.Models
                 if (RowType == -2)
                 {
                     string fmt = string.Empty;
-                    fmt += (S8CoolingWaterSystemBath1Min.HasValue) ? S8CoolingWaterSystemBath1Min.Value.ToString("#,###.##") : "";
+                    fmt += (S8CoolingWaterSystemBath1Min.HasValue) ? 
+                        S8CoolingWaterSystemBath1Min.Value.ToString("#,###.##") : "";
                     fmt += " - ";
-                    fmt += (S8CoolingWaterSystemBath1Max.HasValue) ? S8CoolingWaterSystemBath1Max.Value.ToString("#,###.##") : "";
+                    fmt += (S8CoolingWaterSystemBath1Max.HasValue) ? 
+                        S8CoolingWaterSystemBath1Max.Value.ToString("#,###.##") : "";
                     fmt += " ℃ ";
                     return fmt;
                 }
@@ -120,10 +202,124 @@ namespace M3.Cord.Models
         public decimal? S8CoolingWaterSystemBath2Max { get; set; }
         public decimal? S8CoolingWaterSystemBath2Value { get; set; }
 
+        public string S8CoolingWaterSystemBath2S
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (S8CoolingWaterSystemBath2Min.HasValue) ? 
+                        S8CoolingWaterSystemBath2Min.Value.ToString("#,###.##") : "";
+                    fmt += " - ";
+                    fmt += (S8CoolingWaterSystemBath2Max.HasValue) ? 
+                        S8CoolingWaterSystemBath2Max.Value.ToString("#,###.##") : "";
+                    fmt += " ℃ ";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S8CoolingWaterSystemBath2SC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S8CoolingWaterSystemBath2SC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    return (S8CoolingWaterSystemBath2Value.HasValue) ?
+                        S8CoolingWaterSystemBath2Value.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public bool? S8ChemicalWorkSC { get; set; }
         public bool? S8ChemicalWork { get; set; }
+
+        public string S8ChemicalWorkS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S8ChemicalWorkSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S8ChemicalWorkSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    // Check Symbol ✔
+                    // Cross Symbol ✗
+                    return (S8ChemicalWork.HasValue && S8ChemicalWork.Value) ? "✔" : "";
+                }
+            }
+            set { }
+        }
+
         public bool? S8ChemicalFilterSC { get; set; }
         public bool? S8ChemicalFilter { get; set; }
+
+        public string S8ChemicalFilterS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S8ChemicalFilterSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S8ChemicalFilterSC.Value && S8ChemicalFilterSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    // Check Symbol ✔
+                    // Cross Symbol ✗
+                    return (S8ChemicalFilter.HasValue) ? "✔" : "";
+                }
+            }
+            set { }
+        }
 
         public bool? S8SpeedSC { get; set; }
         public decimal? S8Speed { get; set; }
@@ -137,9 +333,9 @@ namespace M3.Cord.Models
                 if (RowType == -2)
                 {
                     string fmt = string.Empty;
-                    fmt += (S8Speed.HasValue) ? S8Speed.Value.ToString("n2") : "";
+                    fmt += (S8Speed.HasValue) ? S8Speed.Value.ToString("#,###.##") : "";
                     fmt += " ± ";
-                    fmt += (S8SpeedErr.HasValue) ? S8SpeedErr.Value.ToString("n2") : "";
+                    fmt += (S8SpeedErr.HasValue) ? S8SpeedErr.Value.ToString("#,###.##") : "";
                     return fmt;
                 }
                 else if (RowType == -1)
@@ -157,11 +353,11 @@ namespace M3.Cord.Models
                 }
                 else if (RowType == 0)
                 {
-                    return (S8SpeedValue.HasValue) ? S8SpeedValue.Value.ToString("n2") : "";
+                    return (S8SpeedValue.HasValue) ? S8SpeedValue.Value.ToString("#,###.##") : "";
                 }
                 else
                 {
-                    return (S8SpeedValue.HasValue) ? S8SpeedValue.Value.ToString("n2") : "";
+                    return (S8SpeedValue.HasValue) ? S8SpeedValue.Value.ToString("#,###.##") : "";
                 }
             }
             set { }
@@ -172,30 +368,251 @@ namespace M3.Cord.Models
         public decimal? S8StretchDErr { get; set; }
         public decimal? S8StretchDValue { get; set; }
 
+        public string S8StretchDValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (S8StretchD.HasValue) ? S8StretchD.Value.ToString("#,###.##") : "";
+                    fmt += " ± ";
+                    fmt += (S8StretchDErr.HasValue) ? S8StretchDErr.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S8StretchDSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S8StretchDSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (S8StretchDValue.HasValue) ? S8StretchDValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (S8StretchDValue.HasValue) ? S8StretchDValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public bool? S8StretchHSC { get; set; }
         public decimal? S8StretchH { get; set; }
         public decimal? S8StretchHErr { get; set; }
         public decimal? S8StretchHValue { get; set; }
+
+        public string S8StretchHValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (S8StretchH.HasValue) ? S8StretchH.Value.ToString("#,###.##") : "";
+                    fmt += " ± ";
+                    fmt += (S8StretchHErr.HasValue) ? S8StretchHErr.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S8StretchHSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S8StretchHSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (S8StretchHValue.HasValue) ? S8StretchHValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (S8StretchHValue.HasValue) ? S8StretchHValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
 
         public bool? S8StretchNSC { get; set; }
         public decimal? S8StretchN { get; set; }
         public decimal? S8StretchNErr { get; set; }
         public decimal? S8StretchNValue { get; set; }
 
+        public string S8StretchNValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (S8StretchN.HasValue) ? S8StretchN.Value.ToString("#,###.##") : "";
+                    fmt += " ± ";
+                    fmt += (S8StretchNErr.HasValue) ? S8StretchNErr.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S8StretchNSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S8StretchNSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (S8StretchNValue.HasValue) ? S8StretchNValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (S8StretchNValue.HasValue) ? S8StretchNValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public bool? S8TempDSC { get; set; }
         public decimal? S8TempD { get; set; }
         public decimal? S8TempDErr { get; set; }
         public decimal? S8TempDValue { get; set; }
+
+        public string S8TempDValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (S8TempD.HasValue) ? S8TempD.Value.ToString("#,###.##") : "";
+                    fmt += " ± ";
+                    fmt += (S8TempDErr.HasValue) ? S8TempDErr.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S8TempDSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S8TempDSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (S8TempDValue.HasValue) ? S8TempDValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (S8StretchNValue.HasValue) ? S8StretchNValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
 
         public bool? S8TempHNSC { get; set; }
         public decimal? S8TempHN { get; set; }
         public decimal? S8TempHNErr { get; set; }
         public decimal? S8TempHNValue { get; set; }
 
+        public string S8TempHNValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (S8TempHN.HasValue) ? S8TempHN.Value.ToString("#,###.##") : "";
+                    fmt += " ± ";
+                    fmt += (S8TempHNErr.HasValue) ? S8TempHNErr.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S8TempHNSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S8TempHNSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (S8TempHNValue.HasValue) ? S8TempHNValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (S8TempHNValue.HasValue) ? S8TempHNValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public bool? S9GlideStatusSC { get; set; }
         public bool? S9GlideStatus { get; set; }
 
-		public string Remark { get; set; }
+        public string S9GlideStatusS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S9GlideStatusSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S9GlideStatusSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    // Check Symbol ✔
+                    // Cross Symbol ✗
+                    return (S9GlideStatus.HasValue && S9GlideStatus.Value) ? "✔" : "";
+                }
+            }
+            set { }
+        }
+
+        public string Remark { get; set; }
         public string CheckBy { get; set; }
         public DateTime? CheckDate { get; set; }
 
@@ -593,6 +1010,44 @@ namespace M3.Cord.Models
             try
             {
                 var items = cnn.Query<DIPTimeTable>("SaveDIPTimeTableStdBRow", p,
+                    commandType: CommandType.StoredProcedure);
+                ret.Success();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult DeleteStd(int? DIPPCId)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@DIPPCId", DIPPCId);
+
+            try
+            {
+                var items = cnn.Query<DIPTimeTable>("DeleteDIPTimeTableStd", p,
                     commandType: CommandType.StoredProcedure);
                 ret.Success();
             }

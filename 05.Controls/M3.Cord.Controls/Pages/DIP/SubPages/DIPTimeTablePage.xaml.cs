@@ -56,6 +56,11 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoDIPOperationMenu(mc);
         }
 
+        private void cmdReset_Click(object sender, RoutedEventArgs e)
+        {
+            ResetStd();
+        }
+
         private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
             Add();
@@ -84,6 +89,21 @@ namespace M3.Cord.Pages
         #endregion
 
         #region Private Methods
+
+        private void ResetStd()
+        {
+            if (null == pcCard)
+                return;
+            var ret = DIPTimeTable.DeleteStd(pcCard.DIPPCId);
+            if (null != ret && ret.Ok)
+            {
+                if (null != pcCard)
+                {
+                    CheckStd();
+                }
+                RefreshGrid();
+            }
+        }
 
         private void CheckStd()
         {
