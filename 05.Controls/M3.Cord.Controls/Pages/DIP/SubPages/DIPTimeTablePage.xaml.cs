@@ -68,13 +68,15 @@ namespace M3.Cord.Pages
 
         private void cmdDetails_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Edit");
-            Edit();
+            /*
+            var ctx = (sender as Button).DataContext;
+            var item = (null != ctx && ctx is DIPTimeTable) ? ctx as DIPTimeTable : null;
+            Edit(item);
+            */
         }
 
         private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Confirm");
         }
 
         #endregion
@@ -145,16 +147,16 @@ namespace M3.Cord.Pages
                 msgbox.ShowDialog();
                 return;
             }
-            
+
+            var dt = pcCard.StartTime.Value;
+            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
+
             var win = M3CordApp.Windows.DIPTimeTableEditor;
             var item = DIPTimeTable.Create(pcCard.ProductCode);
             item.DIPPCId = pcCard.DIPPCId;
             item.ProductCode = pcCard.ProductCode;
             item.RowType = 1;
             item.LotNo = pcCard.DIPLotNo;
-
-            var dt = pcCard.StartTime.Value;
-            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
 
             win.Setup(startDate, item);
             if (win.ShowDialog() == true)
@@ -163,9 +165,19 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void Edit()
+        private void Edit(DIPTimeTable item)
         {
+            if (null == item) return;
 
+            var dt = pcCard.StartTime.Value;
+            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
+
+            var win = M3CordApp.Windows.DIPTimeTableEditor;
+            win.Setup(startDate, item);
+            if (win.ShowDialog() == true)
+            {
+                RefreshGrid();
+            }
         }
 
         private void RefreshGrid()
@@ -216,8 +228,11 @@ namespace M3.Cord.Pages
 
             if (null != selecteedMC)
             {
+                string mcNo = (selecteedMC.MCCode.EndsWith("1")) ? "1" : "2";
+                mc = DIPMC.Gets("S-8", "S-8-" + mcNo).Value().FirstOrDefault();
+
                 mc = selecteedMC;
-                pcCard = DIPUI.PCCard.Current(mc.MCCode);
+                pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
                 if (null != pcCard)
                 {
                     CheckStd();

@@ -33,7 +33,7 @@
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text=""
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <TextBlock Text="SC"
@@ -43,7 +43,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ชื่อน้ำยาเคมี (อ่าง 1)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding SolutionNameBath1SC}" IsEnabled="False" />
@@ -58,7 +58,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ชื่อน้ำยาเคมี (อ่าง 2)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding SolutionNameBath2SC}" IsEnabled="False" />
@@ -73,7 +73,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="อุณหภูมิ Jack Drum (อ่าง 1)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding TempJacketDrumBath1SC}" IsEnabled="False" />
@@ -94,7 +94,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="อุณหภูมิ Jack Drum (อ่าง 2)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding TempJacketDrumBath2SC}" IsEnabled="False" />
@@ -115,7 +115,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="อุณหภูมิ อ่างเคมี (อ่าง 1)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding TempChemicalBath1SC}" IsEnabled="False" />
@@ -136,7 +136,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="อุณหภูมิ อ่างเคมี (อ่าง 2)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding TempChemicalBath2SC}" IsEnabled="False" />
@@ -157,7 +157,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) D.Zone"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding StretchDSC}" IsEnabled="False" />
@@ -176,7 +176,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) H.Zone"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding StretchHSC}" IsEnabled="False" />
@@ -195,7 +195,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="STRETCH (แรงดึงเส้นด้าย) N.Zone"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding StretchNSC}" IsEnabled="False" />
@@ -214,7 +214,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="TEMP (อุณหภูมิ °C) D.Zone"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding TempDSC}" IsEnabled="False" />
@@ -233,7 +233,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="TEMP (อุณหภูมิ °C) H,N.Zone"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding TempHNSC}" IsEnabled="False" />
@@ -252,7 +252,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ความเร็ว"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding SpeedSC}" IsEnabled="False" />
@@ -271,7 +271,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="Exhaust Fan Dryer"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding ExhaustFanDryerSC}" IsEnabled="False" />
@@ -288,7 +288,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="Exhaust Fan H,N.Zone"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding ExhaustFanHNSC}" IsEnabled="False" />
@@ -305,7 +305,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ความสะอาดลูกกลิ้ง (อ่าง 1)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding CleanBath1SC}" IsEnabled="False" />
@@ -317,7 +317,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ความสะอาดลูกกลิ้ง (อ่าง 2)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding CleanBath2SC}" IsEnabled="False" />
@@ -329,7 +329,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ความสะอาดลูกกลิ้ง (หน้าตู้อบ)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding CleanFrontSC}" IsEnabled="False" />
@@ -341,7 +341,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ความสะอาดลูกกลิ้ง (Cambox)"
-                           Width="250"
+                           Width="300"
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding CamboxSC}" IsEnabled="False" />

@@ -40,7 +40,7 @@
             <Setter Property="HorizontalAlignment" Value="Center" />
         </Style>
     </UserControl.Resources>
-    <page:NPage HeaderText="ใบบันทึกค่าสภาวะการผลิต S-8-1">
+    <page:NPage x:Name="page" HeaderText="ใบบันทึกค่าสภาวะการผลิต S-8-1">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTONS  -->
             <DockPanel LastChildFill="True"

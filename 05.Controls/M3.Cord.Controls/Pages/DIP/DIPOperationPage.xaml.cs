@@ -210,7 +210,8 @@ namespace M3.Cord.Pages
 
         public bool Setup(DIPMC selectedMC)
         {
-            mc = selectedMC;
+            string mcNo = (selectedMC.MCCode.EndsWith("1")) ? "1" : "2";
+            mc = DIPMC.Gets("S-7", "S-7-" + mcNo).Value().FirstOrDefault();
             return Refresh();
         }
 

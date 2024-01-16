@@ -290,7 +290,13 @@ namespace M3.Cord.Pages
 
             if (null != selecteedMC)
             {
-                mc = selecteedMC;
+                string mcNo = (selecteedMC.MCCode.EndsWith("1")) ? "1" : "2";
+                mc = DIPMC.Gets("S-8", "S-8-" + mcNo).Value().FirstOrDefault();
+
+                // update caption
+                string caption = "ใบบันทึกค่าสภาวะการผลิต (S-8 " + mcNo.ToString() + " )";
+                page.HeaderText = caption;
+
                 pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
                 if (null != pcCard)
                 {

@@ -321,114 +321,89 @@
                       ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
                       ItemsSource="{Binding}"
                       Style="{StaticResource SingleSelectListView}">
-                <ListView.Resources>
-                    <Style x:Key="buttonDetail"
-                           TargetType="{x:Type Button}"
-                           BasedOn="{StaticResource InlineButton}">
-                        <EventSetter Event="Click" Handler="cmdDetails_Click" />
-                    </Style>
-                    <Style x:Key="buttonConfirm"
-                           TargetType="{x:Type Button}"
-                           BasedOn="{StaticResource InlineButton}">
-                        <EventSetter Event="Click" Handler="cmdConfirmCondition_Click" />
-                    </Style>
-                </ListView.Resources>
                 <ListView.View>
                     <GridView>
                         <!--  BUTTONS  -->
                         <GridViewColumn Header="">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <ContentControl>
-                                        <ContentControl.Style>
-                                            <Style TargetType="{x:Type ContentControl}">
-                                                <Style.Triggers>
-                                                    <!--  ROW TYPE -2  -->
-                                                    <DataTrigger Binding="{Binding RowType}" Value="-2">
-                                                        <Setter Property="ContentTemplate">
-                                                            <Setter.Value>
-                                                                <DataTemplate>
-                                                                    <StackPanel Orientation="Horizontal"
-                                                                                HorizontalAlignment="Center"
-                                                                                VerticalAlignment="Center" />
-                                                                </DataTemplate>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                    </DataTrigger>
-                                                    <!--  ROW TYPE -1  -->
-                                                    <DataTrigger Binding="{Binding RowType}" Value="-1">
-                                                        <Setter Property="ContentTemplate">
-                                                            <Setter.Value>
-                                                                <DataTemplate>
-                                                                    <StackPanel Orientation="Horizontal"
-                                                                                HorizontalAlignment="Center"
-                                                                                VerticalAlignment="Center" />
-                                                                </DataTemplate>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                    </DataTrigger>
-                                                    <!--  ROW TYPE 0  -->
-                                                    <DataTrigger Binding="{Binding RowType}" Value="0">
-                                                        <Setter Property="ContentTemplate">
-                                                            <Setter.Value>
-                                                                <DataTemplate>
-                                                                    <StackPanel Orientation="Horizontal"
-                                                                                HorizontalAlignment="Center"
-                                                                                VerticalAlignment="Center">
-                                                                        <!--  Confirm  -->
-                                                                        <Button x:Name="cmdConfirmCondition"
-                                                                                Style="{StaticResource buttonConfirm}"
-                                                                                DockPanel.Dock="Left"
-                                                                                Margin="5,0"
-                                                                                Width="100"
-                                                                                Height="30">
-                                                                            <StackPanel Orientation="Horizontal">
-                                                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
-                                                                                <TextBlock Margin="3,0"
-                                                                                           FontFamily="{StaticResource THSarabun}"
-                                                                                           FontSize="{StaticResource IBFSize}"
-                                                                                           Text="Set"
-                                                                                           VerticalAlignment="Center" />
-                                                                            </StackPanel>
-                                                                        </Button>
-                                                                    </StackPanel>
-                                                                </DataTemplate>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                    </DataTrigger>
-                                                    <!--  ROW TYPE 1  -->
-                                                    <DataTrigger Binding="{Binding RowType}" Value="1">
-                                                        <Setter Property="ContentTemplate">
-                                                            <Setter.Value>
-                                                                <DataTemplate>
-                                                                    <StackPanel Orientation="Horizontal"
-                                                                                HorizontalAlignment="Center"
-                                                                                VerticalAlignment="Center">
-                                                                        <!--  Detail  -->
-                                                                        <Button x:Name="cmdDetails"
-                                                                                Style="{StaticResource buttonDetail}"
-                                                                                DockPanel.Dock="Left"
-                                                                                Margin="5,0"
-                                                                                Width="100"
-                                                                                Height="30">
-                                                                            <StackPanel Orientation="Horizontal">
-                                                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
-                                                                                <TextBlock Margin="3,0"
-                                                                                           FontFamily="{StaticResource THSarabun}"
-                                                                                           FontSize="{StaticResource IBFSize}"
-                                                                                           Text="Edit"
-                                                                                           VerticalAlignment="Center" />
-                                                                            </StackPanel>
-                                                                        </Button>
-                                                                    </StackPanel>
-                                                                </DataTemplate>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </ContentControl.Style>
-                                    </ContentControl>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  Reset  -->
+                                        <Button x:Name="cmdResets"
+                                                Style="{StaticResource InlineButton}"
+                                                DockPanel.Dock="Left"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdReset_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Reset"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                        <!--  Confirm  -->
+                                        <Button x:Name="cmdConfirmCondition"
+                                                Style="{StaticResource InlineButton}"
+                                                DockPanel.Dock="Left"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdConfirmCondition_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Set"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                        <!--  Detail  -->
+                                        <Button x:Name="cmdDetails"
+                                                Style="{StaticResource InlineButton}"
+                                                DockPanel.Dock="Left"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdDetails_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Edit"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                    <DataTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding RowType}" Value="-2">
+                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RowType}" Value="-1">
+                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RowType}" Value="0">
+                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RowType}" Value="1">
+                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </DataTemplate.Triggers>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

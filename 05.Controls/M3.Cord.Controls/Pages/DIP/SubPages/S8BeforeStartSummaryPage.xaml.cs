@@ -55,6 +55,11 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoDIPOperationMenu(mc);
         }
 
+        private void cmdReset_Click(object sender, RoutedEventArgs e)
+        {
+            ResetStd();
+        }
+
         private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
             Add();
@@ -62,17 +67,58 @@ namespace M3.Cord.Pages
 
         private void cmdDetails_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Edit");
+            var ctx = (sender as Button).DataContext;
+            var item = (null != ctx && ctx is S8BeforeCondition) ? ctx as S8BeforeCondition : null;
+            Edit(item);
         }
 
         private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Confirm");
+            var ctx = (sender as Button).DataContext;
+            var item = (null != ctx && ctx is S8BeforeCondition) ? ctx as S8BeforeCondition : null;
+            Edit(item);
         }
 
         #endregion
 
         #region Private Methods
+
+        private void ResetStd()
+        {
+            if (null == pcCard)
+                return;
+            var ret = S8BeforeCondition.DeleteStd(pcCard.DIPPCId);
+            if (null != ret && ret.Ok)
+            {
+                if (null != pcCard)
+                {
+                    CheckStd();
+                }
+                RefreshGrid();
+            }
+        }
+
+        private void CheckStd()
+        {
+            if (null == pcCard)
+                return;
+
+            var retV = S8BeforeCondition.GetStdV(pcCard.DIPPCId).Value();
+            if (null == retV)
+            {
+                S8BeforeCondition.SaveStdV(pcCard.DIPPCId, pcCard.ProductCode, pcCard.DIPLotNo);
+            }
+            var retB = S8BeforeCondition.GetStdB(pcCard.DIPPCId).Value();
+            if (null == retB)
+            {
+                S8BeforeCondition.SaveStdB(pcCard.DIPPCId, pcCard.ProductCode, pcCard.DIPLotNo);
+            }
+            var retCF = S8BeforeCondition.GetStdCF(pcCard.DIPPCId).Value();
+            if (null == retB)
+            {
+                S8BeforeCondition.SaveStdCF(pcCard.DIPPCId, pcCard.ProductCode, pcCard.DIPLotNo);
+            }
+        }
 
         private void Add()
         {
@@ -91,9 +137,17 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void Edit()
+        private void Edit(S8BeforeCondition item)
         {
-
+            if (null != item)
+            {
+                var win = M3CordApp.Windows.S8BeforeEditor;
+                win.Setup(item);
+                if (win.ShowDialog() == true)
+                {
+                    RefreshGrid();
+                }
+            }
         }
 
         private void RefreshGrid()
@@ -125,7 +179,7 @@ namespace M3.Cord.Pages
                     pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
                     if (null != pcCard)
                     {
-
+                        CheckStd();
                     }
                 }
             }

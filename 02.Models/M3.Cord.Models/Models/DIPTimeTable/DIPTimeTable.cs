@@ -664,7 +664,8 @@ namespace M3.Cord.Models
             }
         }
 
-        public static NDbResult<List<DIPTimeTable>> Gets(DateTime date)
+        public static NDbResult<List<DIPTimeTable>> Gets(DateTime date,
+            int? DIPPCId = new int?(), int? RowType = new int?())
         {
 			MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -684,9 +685,11 @@ namespace M3.Cord.Models
 
 			var p = new DynamicParameters();
 			p.Add("@Date", date);
+            p.Add("@DIPPCid", DIPPCId);
+            p.Add("@RowType", RowType);
 
-			try
-			{
+            try
+            {
 				var items = cnn.Query<DIPTimeTable>("GetDIPTimeTables", p,
 					commandType: CommandType.StoredProcedure);
 				var data = (null != items) ? items.ToList() : null;
@@ -704,8 +707,7 @@ namespace M3.Cord.Models
 			return ret;
 		}
 
-        public static NDbResult<List<string>> GetLots(DateTime date, 
-            int? DIPPCId = new int?(), int? RowType = new int?())
+        public static NDbResult<List<string>> GetLots(DateTime date)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -725,8 +727,8 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@Date", date);
-            p.Add("@DIPPCid", DIPPCId);
-            p.Add("@RowType", RowType);
+            //p.Add("@DIPPCid", DIPPCId);
+            //p.Add("@RowType", RowType);
 
             try
             {

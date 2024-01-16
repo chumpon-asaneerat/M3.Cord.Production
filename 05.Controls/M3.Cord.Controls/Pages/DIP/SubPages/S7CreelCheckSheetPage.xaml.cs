@@ -145,7 +145,9 @@ namespace M3.Cord.Pages
 
         public void Setup(DIPMC selecteedMC)
         {
-            mc = selecteedMC;
+            string mcNo = (selecteedMC.MCCode.EndsWith("1")) ? "1" : "2";
+            mc = DIPMC.Gets("S-7", "S-7-" + mcNo).Value().FirstOrDefault();
+
             pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
             if (null != pcCard)
             {
