@@ -71,14 +71,6 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoSolutionMenu();
         }
 
-        private void cmdSearch_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtSolutionLotNo.Text))
-            {
-                LoadSolutionLotLabel(txtSolutionLotNo.Text);
-            }
-        }
-
         private void cmdClear_Click(object sender, RoutedEventArgs e)
         {
             ClearInputs();
@@ -260,22 +252,6 @@ namespace M3.Cord.Pages
             try
             {
                 SaveSolutionLotDetail d = new SaveSolutionLotDetail();
-
-                //if (!string.IsNullOrEmpty(txtSolutionLotNo.Text))
-                //    d.solutionlot = txtSolutionLotNo.Text;
-
-                //var chemicals = cbChemicals.SelectedValue as SolutionLotLabel;
-                //if (chemicals != null)
-                //{
-                //    d.chemicalno = chemicals.SolutionName;
-                //    d.solutionid = chemicals.SolutionId;
-                //}
-
-                //var recipes = cbRecipe.SelectedValue as SolutionById;
-                //if (recipes != null)
-                //{
-                //    d.recipe = recipes.recipe;
-                //}
 
                 var lotDetail = cbChemicalName.SelectedValue as SolutionLotDetail;
 

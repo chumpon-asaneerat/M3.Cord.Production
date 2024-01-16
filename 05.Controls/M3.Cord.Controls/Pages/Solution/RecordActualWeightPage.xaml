@@ -79,14 +79,6 @@
                                    DockPanel.Dock="Left"
                                    Text="{Binding WeightCal, StringFormat=n2}"  IsReadOnly="True"
                                    Width="150" />
-                        <Button x:Name="cmdSearch"
-                            Content="Search"
-                            DockPanel.Dock="Left"
-                            Width="150"
-                            VerticalAlignment="Bottom"
-                            Margin="5,2"
-                            Style="{StaticResource InlineButton}"
-                            Click="cmdSearch_Click" />
                         <Button x:Name="cmdClear"
                             Content="Clear"
                             DockPanel.Dock="Left"

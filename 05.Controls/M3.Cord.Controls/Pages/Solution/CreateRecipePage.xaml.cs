@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 
 using NLib.Services;
 using M3.Cord.Models;
@@ -73,11 +74,13 @@ namespace M3.Cord.Pages
 
         private void cmdSearch_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtSolutionLotNo.Text) && !string.IsNullOrEmpty(txtQty.Text) && cbProducts.SelectedItem != null)
+            if (!string.IsNullOrEmpty(txtSolutionLotNo.Text) && 
+                !string.IsNullOrEmpty(txtQty.Text) && cbProducts.SelectedItem != null)
             {
                 RefreshGrid();
             }
         }
+
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
             item = new SolutionLotLabel();
@@ -248,6 +251,8 @@ namespace M3.Cord.Pages
             {
                 txtCompound.Text = string.Empty;
             }
+
+            RefreshGrid();
         }
 
         #endregion
@@ -306,7 +311,7 @@ namespace M3.Cord.Pages
 
         private void LoadProducts()
         {
-            products = Product.Gets().Value();
+            products = Product.GetDipProducts(null).Value();
             cbProducts.ItemsSource = products;
         }
 
@@ -372,7 +377,7 @@ namespace M3.Cord.Pages
 
         private void RefreshGrid()
         {
-            System.Reflection.MethodBase med = System.Reflection.MethodBase.GetCurrentMethod();
+            MethodBase med = MethodBase.GetCurrentMethod();
 
             try
             {
@@ -384,16 +389,15 @@ namespace M3.Cord.Pages
                 string recipe4 = null;
                 decimal? qty = null;
 
-                if (!string.IsNullOrEmpty(txtSolutionLotNo.Text))
-                    solutionid = int.Parse(txtSolutionLotNo.Text);
-
                 var chemical = cbChemicals.SelectedItem as SolutionRecipe;
+
                 if (chemical != null)
                 {
-                    recipe1 = (null != chemical) ? chemical.Recipe1 : null;
-                    recipe2 = (null != chemical) ? chemical.Recipe2 : null;
-                    recipe3 = (null != chemical) ? chemical.Recipe3 : null;
-                    recipe4 = (null != chemical) ? chemical.Recipe4 : null;
+                    solutionid = chemical.SolutionId;
+                    recipe1 = chemical.Recipe1;
+                    recipe2 = chemical.Recipe2;
+                    recipe3 = chemical.Recipe3;
+                    recipe4 = chemical.Recipe4;
                 }
 
                 if (!string.IsNullOrEmpty(txtQty.Text))

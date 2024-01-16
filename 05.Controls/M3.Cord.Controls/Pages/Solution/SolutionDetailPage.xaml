@@ -53,7 +53,7 @@
                         <ctrl:NTextBox x:Name="txtProductCode"
                                        CaptionText="Dip Item Cord"
                                        Width="300" />
-                        
+
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <!--  Compound  -->
@@ -68,13 +68,13 @@
                                        CaptionText="Dip Solution Qty (kg)"
                                        Width="260" />
                         <Button x:Name="cmdSearch"
-                            Content="Search"
-                            DockPanel.Dock="Left"
-                            Width="150"
-                            VerticalAlignment="Bottom"
-                            Margin="5,2"
-                            Style="{StaticResource InlineButton}"
-                            Click="cmdSearch_Click" />
+                                Content="Search"
+                                DockPanel.Dock="Left"
+                                Width="150"
+                                VerticalAlignment="Bottom"
+                                Margin="5,2"
+                                Style="{StaticResource InlineButton}"
+                                Click="cmdSearch_Click" />
                     </StackPanel>
                     <Grid />
                 </DockPanel>
@@ -102,13 +102,13 @@
                                         CellTemplate="{StaticResource WeightActual}"
                                         Width="180" />
                         <!--  BUTTONS  -->
+                        <!--
                         <GridViewColumn Header="">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
-                                        <!--  WEIGHT  -->
                                         <Button x:Name="cmdWeight"
                                                 DockPanel.Dock="Left"
                                                 Style="{StaticResource InlineButton}"
@@ -129,6 +129,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
+                        -->
                     </GridView>
                 </ListView.View>
             </ListView>

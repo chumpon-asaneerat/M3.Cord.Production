@@ -75,6 +75,7 @@
                                        CaptionText="Dip Solution Qty (lites)"
                                        Width="260"
                                        PreviewKeyDown="txtQty_PreviewKeyDown" />
+                        <!--
                         <Button x:Name="cmdSearch"
                             Content="Search"
                             DockPanel.Dock="Left"
@@ -83,6 +84,7 @@
                             Margin="5,2"
                             Style="{StaticResource InlineButton}"
                             Click="cmdSearch_Click" />
+                        -->
                     </StackPanel>
                     <Grid />
                 </DockPanel>
