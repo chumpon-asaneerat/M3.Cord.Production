@@ -700,24 +700,21 @@
     </DataTemplate>
 
     <DataTemplate x:Key="S7Bobbin">
-        <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <CheckBox Style="{StaticResource CommonCheckBox}"
-                      IsChecked="{Binding S7Bobbin}"
-                      HorizontalAlignment="Center"
-                      Width="50" />
-        </StackPanel>
+        <TextBlock Text="{Binding S7BobbinS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="50" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8CoolingWaterSystemBath1Value">
-        <TextBlock Text="{Binding Path=S8CoolingWaterSystemBath1Value, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=S8CoolingWaterSystemBath1S, Mode=OneWay}"
                    TextAlignment="Center"
-                   Width="120" />
+                   Width="170" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8CoolingWaterSystemBath2Value">
         <TextBlock Text="{Binding Path=S8CoolingWaterSystemBath2Value, Mode=OneWay, StringFormat='{}{0:n2}'}"
                    TextAlignment="Center"
-                   Width="120" />
+                   Width="170" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8ChemicalWork">

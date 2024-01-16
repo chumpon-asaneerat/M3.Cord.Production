@@ -24,8 +24,10 @@ namespace M3.Cord.Models
         #region Public Proeprties
 
         public string ProductCode { get; set; }
-		
-		public int RowType { get; set; } = 1;
+
+        public int? DIPPCId { get; set; }
+
+        public int RowType { get; set; } = 1;
 		public DateTime? PeriodTime { get; set; }
 
         public string LotNo { get; set; }
@@ -33,10 +35,85 @@ namespace M3.Cord.Models
         public bool? S7BobbinSC { get; set; }
 		public bool? S7Bobbin { get; set; }
 
+        public string S7BobbinS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S8SpeedSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S8SpeedSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    // Check Symbol ✔
+                    // Cross Symbol ✗
+                    return (S7Bobbin.HasValue) ? "✔" : "";
+                }
+            }
+            set { }
+        }
+
         public bool? S8CoolingWaterSystemBath1SC { get; set; }
         public decimal? S8CoolingWaterSystemBath1Min { get; set; }
         public decimal? S8CoolingWaterSystemBath1Max { get; set; }
         public decimal? S8CoolingWaterSystemBath1Value { get; set; }
+
+        public string S8CoolingWaterSystemBath1S
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (S8CoolingWaterSystemBath1Min.HasValue) ? S8CoolingWaterSystemBath1Min.Value.ToString("#,###.##") : "";
+                    fmt += " - ";
+                    fmt += (S8CoolingWaterSystemBath1Max.HasValue) ? S8CoolingWaterSystemBath1Max.Value.ToString("#,###.##") : "";
+                    fmt += " ℃ ";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!S8CoolingWaterSystemBath1SC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (S8CoolingWaterSystemBath1SC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    return (S8CoolingWaterSystemBath1Value.HasValue) ? 
+                        S8CoolingWaterSystemBath1Value.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
 
         public bool? S8CoolingWaterSystemBath2SC { get; set; }
         public decimal? S8CoolingWaterSystemBath2Min { get; set; }
@@ -210,7 +287,8 @@ namespace M3.Cord.Models
 			return ret;
 		}
 
-        public static NDbResult<List<string>> GetLots(DateTime date)
+        public static NDbResult<List<string>> GetLots(DateTime date, 
+            int? DIPPCId = new int?(), int? RowType = new int?())
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -230,6 +308,8 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@Date", date);
+            p.Add("@DIPPCid", DIPPCId);
+            p.Add("@RowType", RowType);
 
             try
             {
@@ -282,6 +362,7 @@ namespace M3.Cord.Models
 			var p = new DynamicParameters();
 
             p.Add("@ProductCode", value.ProductCode);
+            p.Add("@DIPPCId", value.DIPPCId);
             p.Add("@RowType", value.RowType);
             p.Add("@PeriodTime", value.PeriodTime);
             p.Add("@LotNo", value.LotNo);
@@ -364,6 +445,168 @@ namespace M3.Cord.Models
 			return ret;
 		}
 
-		#endregion
-	}
+        public static NDbResult<DIPTimeTable> GetStdV(int? DIPPCId)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<DIPTimeTable> ret = new NDbResult<DIPTimeTable>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@DIPPCId", DIPPCId);
+
+            try
+            {
+                var items = cnn.Query<DIPTimeTable>("GetDIPTableStdVRow", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.FirstOrDefault() : null;
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+                ret.data = null;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult<DIPTimeTable> GetStdB(int? DIPPCId)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<DIPTimeTable> ret = new NDbResult<DIPTimeTable>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@DIPPCId", DIPPCId);
+
+            try
+            {
+                var items = cnn.Query<DIPTimeTable>("GetDIPTableStdBRow", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.FirstOrDefault() : null;
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+                ret.data = null;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult SaveStdV(int? DIPPCId, string ProductCode, DateTime Date, string LotNo)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@ProductCode", ProductCode);
+            p.Add("@DIPPCId", DIPPCId);
+            p.Add("@Date", Date);
+            p.Add("@LotNo", LotNo);
+
+            try
+            {
+                var items = cnn.Query<DIPTimeTable>("SaveDIPTimeTableStdVRow", p,
+                    commandType: CommandType.StoredProcedure);
+                ret.Success();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult SaveStdB(int? DIPPCId, string ProductCode, DateTime Date, string LotNo)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@ProductCode", ProductCode);
+            p.Add("@DIPPCId", DIPPCId);
+            p.Add("@Date", Date);
+            p.Add("@LotNo", LotNo);
+
+            try
+            {
+                var items = cnn.Query<DIPTimeTable>("SaveDIPTimeTableStdBRow", p,
+                    commandType: CommandType.StoredProcedure);
+                ret.Success();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+        #endregion
+    }
 }

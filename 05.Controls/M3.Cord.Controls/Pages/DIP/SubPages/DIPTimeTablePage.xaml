@@ -35,11 +35,11 @@
 
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="S8CoolingWaterSystemGridViewColumns">
-            <GridViewColumn Width="100"
+            <GridViewColumn Width="180"
                             CellTemplate="{StaticResource S8CoolingWaterSystemBath1Value}"
                             Header=" อ่าง 1 "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
-            <GridViewColumn Width="100"
+            <GridViewColumn Width="180"
                             CellTemplate="{StaticResource S8CoolingWaterSystemBath2Value}"
                             Header=" อ่าง 2 "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />

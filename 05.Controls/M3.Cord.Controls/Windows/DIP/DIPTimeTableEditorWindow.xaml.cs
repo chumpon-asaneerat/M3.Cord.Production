@@ -41,6 +41,8 @@ namespace M3.Cord.Windows
 
         #region Internal Variables
 
+        private DateTime _StartTime = DateTime.MinValue;
+        private DateTime _EndTime = DateTime.MinValue;
         private DIPTimeTable _item = null;
 
         #endregion
@@ -54,13 +56,30 @@ namespace M3.Cord.Windows
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
-            if (null != _item)
+            if (null != _item && _StartTime != DateTime.MinValue && _EndTime != DateTime.MinValue)
             {
                 var hour = cbTimes.SelectedItem as TimeHour;
                 if (null != hour && dtDate.SelectedDate.HasValue)
                 {
                     DateTime ptime = dtDate.SelectedDate.Value.Date;
                     ptime = ptime.AddHours(hour.Hour);
+
+                    if (ptime < _StartTime)
+                    {
+                        var win = M3CordApp.Windows.MessageBox;
+                        win.Setup("Specificed time is less than start time." + Environment.NewLine + "เวลาที่ระบุน้อยกว่าเวลาเริ่มเดินเครื่อง");
+                        win.ShowDialog();
+                        return;
+                    }
+
+                    if (ptime > _EndTime)
+                    {
+                        var win = M3CordApp.Windows.MessageBox;
+                        win.Setup("Specificed time is over than current time." + Environment.NewLine + "เวลาที่ระบุมากกว่าเวลาปัจจุบัน");
+                        win.ShowDialog();
+                        return;
+                    }
+
                     // Set time
                     _item.PeriodTime = ptime;
                     _item.CheckBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
@@ -79,8 +98,12 @@ namespace M3.Cord.Windows
 
         #region Public Methods
 
-        public void Setup(DIPTimeTable item)
+        public void Setup(DateTime StartTime, DIPTimeTable item)
         {
+            _StartTime = StartTime;
+            var dt = DateTime.Now;
+            _EndTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
+
             dtDate.SelectedDate = DateTime.Today;
             var hours = TimeHour.Gets();
             cbTimes.ItemsSource = hours;

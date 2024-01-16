@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using System.Runtime.InteropServices.ComTypes;
 
 #endregion
 
@@ -84,17 +85,58 @@ namespace M3.Cord.Pages
 
         #region Private Methods
 
+        private void CheckStd()
+        {
+            if (null == pcCard)
+                return;
+            // Check is standard exits
+            DateTime? startDate = new DateTime?();
+            if (pcCard.StartTime.HasValue)
+            {
+                var dt = pcCard.StartTime.Value;
+                startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
+            }
+
+            if (!startDate.HasValue)
+            {
+                return;
+            }
+
+            var retV = DIPTimeTable.GetStdV(pcCard.DIPPCId).Value();
+            if (null == retV)
+            {
+                DIPTimeTable.SaveStdV(pcCard.DIPPCId, pcCard.ProductCode, startDate.Value, pcCard.DIPLotNo);
+            }
+            var retB = DIPTimeTable.GetStdB(pcCard.DIPPCId).Value();
+            if (null == retB)
+            {
+                DIPTimeTable.SaveStdB(pcCard.DIPPCId, pcCard.ProductCode, startDate.Value, pcCard.DIPLotNo);
+            }
+        }
+
         private void Add()
         {
             if (null == pcCard)
                 return;
+            if (!pcCard.StartTime.HasValue)
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("M/C is not start" + Environment.NewLine + "ยังไม่ทำการเดินเครื่อง");
+                msgbox.ShowDialog();
+                return;
+            }
+            
             var win = M3CordApp.Windows.DIPTimeTableEditor;
             var item = DIPTimeTable.Create(pcCard.ProductCode);
+            item.DIPPCId = pcCard.DIPPCId;
             item.ProductCode = pcCard.ProductCode;
             item.RowType = 1;
             item.LotNo = pcCard.DIPLotNo;
 
-            win.Setup(item);
+            var dt = pcCard.StartTime.Value;
+            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
+
+            win.Setup(startDate, item);
             if (win.ShowDialog() == true)
             {
                 RefreshGrid();
@@ -148,7 +190,7 @@ namespace M3.Cord.Pages
 
         public void Setup(DIPMC selecteedMC)
         {
-            var today = DateTime.Today;
+            var today = DateTime.Now;
             if (today.Hour <= 7) today = today.AddDays(-1);
             dtDate.SelectedDate = today;
 
@@ -158,10 +200,7 @@ namespace M3.Cord.Pages
                 pcCard = DIPUI.PCCard.Current(mc.MCCode);
                 if (null != pcCard)
                 {
-                    /*
-                    pcCard.DIPLotNo;
-                    pcCard.ProductCode;
-                    */
+                    CheckStd();
                 }
             }
             RefreshGrid();

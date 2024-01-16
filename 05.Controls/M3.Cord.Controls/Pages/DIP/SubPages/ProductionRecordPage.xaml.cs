@@ -20,6 +20,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using static M3.Cord.Pages.DIPUI;
 
 #endregion
 
