@@ -58,6 +58,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\M3.QA.Cord\References\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -318,6 +322,7 @@
     <Compile Include="Pages\Menu\SolutionMenuPage.xaml.cs">
       <DependentUpon>SolutionMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Solution\JIK6CABConfig.cs" />
     <Compile Include="Pages\Solution\RecordActualWeightPage.xaml.cs">
       <DependentUpon>RecordActualWeightPage.xaml</DependentUpon>
     </Compile>

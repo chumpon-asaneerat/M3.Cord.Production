@@ -20,6 +20,9 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using NLib.Serial;
+using NLib.Serial.Terminals;
+using System.Runtime.ConstrainedExecution;
 
 #endregion
 
@@ -44,6 +47,8 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private JIK6CABConfig _cfg = null;
+
         private List<SolutionLotLabel> chemicals = null;
         private List<SolutionById> dipCondition = null;
         private List<SolutionLotDetail> solutionLotDetail = null;
@@ -54,12 +59,17 @@ namespace M3.Cord.Pages
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-
+            JIK6CABTerminal.Instance.OnRx += Instance_OnRx;
+            this.InvokeAction(() =>
+            {
+                ChangeDevices();
+            });
         }
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
         {
-
+            JIK6CABTerminal.Instance.OnRx -= Instance_OnRx;
+            StopAllDevices();
         }
 
         #endregion
@@ -184,7 +194,108 @@ namespace M3.Cord.Pages
 
         #endregion
 
+        #region RadioButton Handlers
+
+        private void rbWeight_Checked(object sender, RoutedEventArgs e)
+        {
+            this.InvokeAction(() =>
+            {
+                ChangeDevices();
+            });
+        }
+
+        #endregion
+
+        #region CheckBox Handlers
+
+        private void chkManual_Checked(object sender, RoutedEventArgs e)
+        {
+            rbWeight1.IsEnabled = false;
+            rbWeight2.IsEnabled = true;
+            txtWeightActual.IsReadOnly = false;
+            txtWeightActual.Text = string.Empty;
+        }
+
+        private void chkManual_Unchecked(object sender, RoutedEventArgs e)
+        {
+            rbWeight1.IsEnabled = true;
+            rbWeight2.IsEnabled = true;
+            txtWeightActual.IsReadOnly = true;
+            txtWeightActual.Text = string.Empty;
+
+            this.InvokeAction(() =>
+            {
+                ChangeDevices();
+            });
+        }
+
+        #endregion
+
         #region Private Methods
+
+        private void CheckConfigs()
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            _cfg = JIK6CABConfig.GetConfig();
+            if (null != _cfg)
+            {
+                med.Info("JIK6CAB Config Loaded");
+            }
+            else
+            {
+                med.Info("JIK6CAB Config is null.");
+            }
+        }
+
+        private void ChangeDevices()
+        {
+            // Disconnect first
+            JIK6CABTerminal.Instance.Disconnect();
+            txtWeightActual.Text = string.Empty;
+
+            var dev = JIK6CABTerminal.Instance as ISerialDevice;
+            if (rbWeight1.IsChecked == true) 
+            {
+                dev.Config = (null != _cfg) ? _cfg.Device1 : null;
+            }
+            else if (rbWeight2.IsChecked == true)
+            {
+                dev.Config = (null != _cfg) ? _cfg.Device2 : null;
+            }
+
+            if (chkManual.IsChecked == false)
+            {
+                // Connect after load config
+                if (null != _cfg)
+                {
+                    JIK6CABTerminal.Instance.Connect();
+                }
+            }
+        }
+
+        private void Instance_OnRx(object sender, EventArgs e)
+        {
+            UpdateTextBox();
+        }
+
+        private void StopAllDevices()
+        {
+            JIK6CABTerminal.Instance.Disconnect();
+            txtWeightActual.Text = string.Empty;
+        }
+
+        private void UpdateTextBox()
+        {
+            this.InvokeAction(() => 
+            {
+                if (chkManual.IsChecked == false)
+                {
+                    var val = JIK6CABTerminal.Instance.Value;
+                    txtWeightActual.Text = val.NW.ToString("n2");
+                }
+            });
+        }
 
         private void ClearInputs()
         {
@@ -196,7 +307,6 @@ namespace M3.Cord.Pages
             cbChemicalName.SelectedIndex = -1;
             txtWeightCal.Text = string.Empty;
 
-            txtWeightMc.Text = string.Empty;
             txtWeightActual.Text = string.Empty;
 
             chemicals = null;
@@ -271,9 +381,9 @@ namespace M3.Cord.Pages
                     d.weightactual = decimal.Parse(txtWeightActual.Text);
                 }
 
-                if (!string.IsNullOrEmpty(txtWeightMc.Text))
+                if (!string.IsNullOrEmpty(txtWeightActual.Text) && chkManual.IsChecked == false)
                 {
-                    d.weightmc = txtWeightMc.Text;
+                    d.weightmc = txtWeightActual.Text;
                 }
 
                 d.weightdate = DateTime.Now;
@@ -307,9 +417,9 @@ namespace M3.Cord.Pages
         public void Setup()
         {
             ClearInputs();
+            CheckConfigs();
         }
 
         #endregion
-
     }
 }

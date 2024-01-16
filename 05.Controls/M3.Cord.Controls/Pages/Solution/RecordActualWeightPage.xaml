@@ -59,7 +59,7 @@
                         <ctrl:NTextBox x:Name="txtProductCode"
                                        CaptionText="Dip Item Cord"
                                        Width="300" />
-                        
+
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <!--  Recipe  -->
@@ -67,50 +67,71 @@
                                         DockPanel.Dock="Left"
                                         CaptionText="Recipe"
                                         DisplayMemberPath="recipe"
-                                        Width="100" SelectionChanged="cbRecipe_SelectionChanged" />
+                                        Width="100"
+                                        SelectionChanged="cbRecipe_SelectionChanged" />
                         <!--  ChemicalName  -->
                         <ctrl:NComboBox x:Name="cbChemicalName"
                                         DockPanel.Dock="Left"
                                         CaptionText="Chemical"
                                         DisplayMemberPath="ChemicalName"
-                                        Width="300" SelectionChanged="cbChemicalName_SelectionChanged" />
+                                        Width="300"
+                                        SelectionChanged="cbChemicalName_SelectionChanged" />
                         <!--  Weight Spe  -->
-                        <ctrl:NTextBox Name="txtWeightCal" CaptionText="Weight Spec"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding WeightCal, StringFormat=n2}"  IsReadOnly="True"
-                                   Width="150" />
+                        <ctrl:NTextBox Name="txtWeightCal"
+                                       CaptionText="Weight Spec"
+                                       DockPanel.Dock="Left"
+                                       Text="{Binding WeightCal, StringFormat=n2}"
+                                       IsReadOnly="True"
+                                       Width="150" />
                         <Button x:Name="cmdClear"
-                            Content="Clear"
-                            DockPanel.Dock="Left"
-                            Width="150"
-                            VerticalAlignment="Bottom"
-                            Margin="5,2"
-                            Style="{StaticResource InlineButton}"
-                            Click="cmdClear_Click" />
+                                Content="Clear"
+                                DockPanel.Dock="Left"
+                                Width="150"
+                                VerticalAlignment="Bottom"
+                                Margin="5,2"
+                                Style="{StaticResource InlineButton}"
+                                Click="cmdClear_Click" />
                     </StackPanel>
                     <Grid />
                 </DockPanel>
+                <Grid />
             </DockPanel>
             <DockPanel LastChildFill="True">
-                <DockPanel DockPanel.Dock="Top">
-                    <!--  MC No  -->
-                    <ctrl:NTextBox Name="txtWeightMc"
-                                   CaptionText="MC No"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding WeightMc}"
-                                   Width="120" />
-                    <Grid />
-                </DockPanel>
-                <DockPanel DockPanel.Dock="Top">
-
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Top"
+                            Margin="0,5">
+                    <RadioButton x:Name="rbWeight1"
+                                 Style="{StaticResource CommonRadioButton}"
+                                 Content="เครื่องชั่ง 1"
+                                 GroupName="WgGroup"
+                                 IsChecked="True"
+                                 Checked="rbWeight_Checked" />
+                    <RadioButton x:Name="rbWeight2"
+                                 Style="{StaticResource CommonRadioButton}"
+                                 Content="เครื่องชั่ง 2"
+                                 GroupName="WgGroup"
+                                 Checked="rbWeight_Checked" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Top"
+                            Margin="0,5">
+                    <CheckBox x:Name="chkManual"
+                              IsChecked="False"
+                              Style="{StaticResource CommonCheckBox}"
+                              Content="Manual Mode"
+                              Checked="chkManual_Checked"
+                              Unchecked="chkManual_Unchecked" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                     <!--  Target Weight  -->
-                    <ctrl:NTextBox Name="txtWeightActual"
+                    <ctrl:NTextBox x:Name="txtWeightActual"
                                    CaptionText="Weight"
                                    DockPanel.Dock="Left"
+                                   IsReadOnly="True"
                                    Text="{Binding WeightActual}"
                                    Width="200" />
-
-                </DockPanel>
+                </StackPanel>
+                <Grid />
             </DockPanel>
         </DockPanel>
     </page:NPage>
