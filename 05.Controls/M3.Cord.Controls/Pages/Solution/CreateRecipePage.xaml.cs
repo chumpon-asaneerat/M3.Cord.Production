@@ -387,6 +387,7 @@ namespace M3.Cord.Pages
                 string recipe2 = null;
                 string recipe3 = null;
                 string recipe4 = null;
+                decimal? qtySpec = null;
                 decimal? qty = null;
 
                 var chemical = cbChemicals.SelectedItem as SolutionRecipe;
@@ -398,12 +399,13 @@ namespace M3.Cord.Pages
                     recipe2 = chemical.Recipe2;
                     recipe3 = chemical.Recipe3;
                     recipe4 = chemical.Recipe4;
+                    qtySpec = chemical.QtySpec;
                 }
 
                 if (!string.IsNullOrEmpty(txtQty.Text))
                     qty = decimal.Parse(txtQty.Text);
 
-                grid.ItemsSource = SolutionRecipeDetailSpec.Gets(solutionid, recipe1, recipe2, recipe3, recipe4 ,qty).Value();
+                grid.ItemsSource = SolutionRecipeDetailSpec.Gets(solutionid, recipe1, recipe2, recipe3, recipe4 , qtySpec, qty).Value();
             }
             catch (Exception ex)
             {

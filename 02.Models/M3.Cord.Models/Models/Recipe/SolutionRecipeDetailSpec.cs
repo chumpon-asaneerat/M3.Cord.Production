@@ -53,6 +53,7 @@ namespace M3.Cord.Models
             , string recipe2 = null
             , string recipe3 = null
             , string recipe4 = null
+            , decimal? qtySpec = null
             , decimal? qty = null)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
@@ -136,10 +137,10 @@ namespace M3.Cord.Models
                             result.RecipeOrder = 1;
 
                             if ((item.ChemWet != null && item.ChemWet != 0)
-                                && (item.ChemDry != null && item.ChemDry != 0)
+                                && (qtySpec != null && qtySpec != 0)
                                 && (qty != null && qty != 0))
                             {
-                                result.CalculationWet = ((item.ChemWet * qty) / item.ChemDry);
+                                result.CalculationWet = ((item.ChemWet * qty) / qtySpec);
 
                                 calTotal += result.CalculationWet;
                             }
@@ -234,10 +235,10 @@ namespace M3.Cord.Models
                             result.RecipeOrder = 2;
 
                             if ((item.ChemWet != null && item.ChemWet != 0)
-                                && (item.ChemDry != null && item.ChemDry != 0)
+                                && (qtySpec != null && qtySpec != 0)
                                 && (qty != null && qty != 0))
                             {
-                                result.CalculationWet = ((item.ChemWet * qty) / item.ChemDry);
+                                result.CalculationWet = ((item.ChemWet * qty) / qtySpec);
 
                                 calTotal += result.CalculationWet;
                             }
@@ -331,10 +332,10 @@ namespace M3.Cord.Models
                             result.RecipeOrder = 3;
 
                             if ((item.ChemWet != null && item.ChemWet != 0)
-                                && (item.ChemDry != null && item.ChemDry != 0)
+                                && (qtySpec != null && qtySpec != 0)
                                 && (qty != null && qty != 0))
                             {
-                                result.CalculationWet = ((item.ChemWet * qty) / item.ChemDry);
+                                result.CalculationWet = ((item.ChemWet * qty) / qtySpec);
 
                                 calTotal += result.CalculationWet;
                             }
@@ -428,10 +429,10 @@ namespace M3.Cord.Models
                             result.RecipeOrder = 4;
 
                             if ((item.ChemWet != null && item.ChemWet != 0)
-                                && (item.ChemDry != null && item.ChemDry != 0)
+                                && (qtySpec != null && qtySpec != 0)
                                 && (qty != null && qty != 0))
                             {
-                                result.CalculationWet = ((item.ChemWet * qty) / item.ChemDry);
+                                result.CalculationWet = ((item.ChemWet * qty) / qtySpec);
 
                                 calTotal += result.CalculationWet;
                             }
