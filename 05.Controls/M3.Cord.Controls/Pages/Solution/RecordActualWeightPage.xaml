@@ -126,10 +126,11 @@
                     <!--  Target Weight  -->
                     <ctrl:NTextBox x:Name="txtWeightActual"
                                    CaptionText="Weight"
+                                   FontSize="140"
                                    DockPanel.Dock="Left"
                                    IsReadOnly="True"
                                    Text="{Binding WeightActual}"
-                                   Width="200" />
+                                   Width="800" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
