@@ -10,8 +10,11 @@ M3 Cord Production System #858
 M3 Cord Production System #857
 - 
 
+[commited]
 M3 Cord Production System #856
-- 
+- M3.Cord.Production.App re-implements #735
+  - Update Solution fixed calc from kik
+  - Update App build 1130
 
 [commited]
 M3 Cord Production System #855
