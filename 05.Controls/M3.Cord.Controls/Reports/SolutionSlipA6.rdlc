@@ -436,7 +436,7 @@
                         <Value>=First(Fields!MixDate.Value, "main")</Value>
                         <Style>
                           <FontSize>11pt</FontSize>
-                          <Format>dd/MM/yyyy</Format>
+                          <Format>dd/MM/yyyy HH:mm</Format>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -531,7 +531,7 @@
                         <Value>=First(Fields!QualifiedDate.Value, "main")</Value>
                         <Style>
                           <FontSize>11pt</FontSize>
-                          <Format>dd/MM/yyyy</Format>
+                          <Format>dd/MM/yyyy HH:mm</Format>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -626,7 +626,7 @@
                         <Value>=First(Fields!ExpireDate.Value, "main")</Value>
                         <Style>
                           <FontSize>11pt</FontSize>
-                          <Format>dd/MM/yyyy</Format>
+                          <Format>dd/MM/yyyy HH:mm</Format>
                         </Style>
                       </TextRun>
                     </TextRuns>

@@ -345,17 +345,17 @@
                    MinWidth="150" />
     </DataTemplate>
     <DataTemplate x:Key="MixDate">
-        <TextBlock Text="{Binding Path=MixDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=MixDate, StringFormat='{}{0:dd/MM/yyyy HH:mm}', Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
     <DataTemplate x:Key="QualifiedDate">
-        <TextBlock Text="{Binding Path=QualifiedDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=QualifiedDate, StringFormat='{}{0:dd/MM/yyyy HH:mm}', Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
     <DataTemplate x:Key="ExpireDate">
-        <TextBlock Text="{Binding Path=ExpireDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=ExpireDate, StringFormat='{}{0:dd/MM/yyyy HH:mm}', Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>

@@ -37,6 +37,8 @@ namespace M3.Cord.Pages
         public SolutionSlipManagePage()
         {
             InitializeComponent();
+
+            LoadHourMinute();
         }
 
         #endregion
@@ -53,7 +55,7 @@ namespace M3.Cord.Pages
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
@@ -172,9 +174,46 @@ namespace M3.Cord.Pages
                 item.SolutionId = chemical.SolutionId;
                 item.SolutionName = chemical.SolutionName;
                 item.DipSolutionQty = val;
-                item.MixDate = dtMixDate.SelectedDate.Value;
-                item.QualifiedDate = dtQualifiedDate.SelectedDate.Value;
-                item.ExpireDate = dtExpireDate.SelectedDate.Value;
+
+                if(dtMixDate.SelectedDate != null)
+                {
+                    if (cbMixH.SelectedValue != null && cbMixM.SelectedValue != null)
+                    {
+                        item.MixDate = DateTime.Parse(dtMixDate.SelectedDate.Value.ToString("dd/MM/yyyy") + " " 
+                            + cbMixH.SelectedValue.ToString() +" : "+ cbMixM.SelectedValue.ToString());
+                    }
+                    else
+                    {
+                        item.MixDate = dtMixDate.SelectedDate.Value;
+                    }
+                }
+
+                if (dtQualifiedDate.SelectedDate != null)
+                {
+                    if (cbQuaH.SelectedValue != null && cbQuaM.SelectedValue != null)
+                    {
+                        item.QualifiedDate = DateTime.Parse(dtQualifiedDate.SelectedDate.Value.ToString("dd/MM/yyyy") + " "
+                            + cbQuaH.SelectedValue.ToString() + " : " + cbQuaM.SelectedValue.ToString());
+                    }
+                    else
+                    {
+                        item.QualifiedDate = dtQualifiedDate.SelectedDate.Value;
+                    }
+                }
+
+                if (dtExpireDate.SelectedDate != null)
+                {
+                    if (cbQuaH.SelectedValue != null && cbQuaM.SelectedValue != null)
+                    {
+                        item.ExpireDate = DateTime.Parse(dtExpireDate.SelectedDate.Value.ToString("dd/MM/yyyy") + " "
+                            + cbExpH.SelectedValue.ToString() + " : " + cbExpM.SelectedValue.ToString());
+                    }
+                    else
+                    {
+                        item.ExpireDate = dtExpireDate.SelectedDate.Value;
+                    }
+                }
+
                 item.CreateBy = M3CordApp.Current.User.UserId;
                 item.CreateDate = DateTime.Now;
 
@@ -256,9 +295,19 @@ namespace M3.Cord.Pages
 
             txtQty.Text = string.Empty;
 
+            DateTime dt = DateTime.Now;
+
             dtMixDate.SelectedDate = new DateTime?();
+            cbMixH.SelectedIndex = -1;
+            cbMixM.SelectedIndex = -1;
+
             dtQualifiedDate.SelectedDate = new DateTime?();
+            cbQuaH.SelectedIndex = -1;
+            cbQuaM.SelectedIndex = -1;
+
             dtExpireDate.SelectedDate = new DateTime?();
+            cbExpH.SelectedIndex = -1;
+            cbExpM.SelectedIndex = -1;
 
             cbProducts.SelectedIndex = -1;
             cbChemicals.SelectedIndex = -1;
@@ -274,15 +323,19 @@ namespace M3.Cord.Pages
             txtQty.IsReadOnly = true;
 
             dtMixDate.IsEnabled = false;
+            cbMixH.IsEnabled = false;
+            cbMixM.IsEnabled = false;
+
             dtQualifiedDate.IsEnabled = false;
+            cbQuaH.IsEnabled = false;
+            cbQuaM.IsEnabled = false;
+
             dtExpireDate.IsEnabled = false;
+            cbExpH.IsEnabled = false;
+            cbExpM.IsEnabled = false;
 
             cbProducts.IsEnabled = false;
             cbChemicals.IsEnabled = false;
-
-            dtMixDate.SelectedDate = DateTime.Now;
-            dtQualifiedDate.SelectedDate = DateTime.Now;
-            dtExpireDate.SelectedDate = DateTime.Now;
         }
 
         private void EnableInputs()
@@ -290,8 +343,16 @@ namespace M3.Cord.Pages
             txtQty.IsReadOnly = false;
 
             dtMixDate.IsEnabled = true;
+            cbMixH.IsEnabled = true;
+            cbMixM.IsEnabled = true;
+
             dtQualifiedDate.IsEnabled = true;
+            cbQuaH.IsEnabled = true;
+            cbQuaM.IsEnabled = true;
+
             dtExpireDate.IsEnabled = true;
+            cbExpH.IsEnabled = true;
+            cbExpM.IsEnabled = true;
 
             cbProducts.IsEnabled = true;
             cbChemicals.IsEnabled = true;
@@ -299,7 +360,7 @@ namespace M3.Cord.Pages
 
         private void LoadProducts()
         {
-            products = Product.Gets().Value();
+            products = Product.GetDipProducts(null).Value();
             cbProducts.ItemsSource = products;
         }
 
@@ -309,6 +370,23 @@ namespace M3.Cord.Pages
             var productCode =  (null != product) ? product.ProductCode : null;
             chemicals = SolutionRecipe.Gets(productCode).Value();
             cbChemicals.ItemsSource = chemicals;
+        }
+
+        private void LoadHourMinute()
+        {
+            var mixhour = conTime.GetMixHours();
+            var quahour = conTime.GetQuaHours();
+            var exphour = conTime.GetExpHours();
+            cbMixH.ItemsSource = mixhour;
+            cbQuaH.ItemsSource = quahour;
+            cbExpH.ItemsSource = exphour;
+
+            var mixmin = conTime.GetMixMinutes();
+            var quamin = conTime.GetQuaMinutes();
+            var expmin = conTime.GetExpMinutes();
+            cbMixM.ItemsSource = mixmin;
+            cbQuaM.ItemsSource = quamin;
+            cbExpM.ItemsSource = expmin;
         }
 
         private void SelectProduct(string productCode)
@@ -347,12 +425,31 @@ namespace M3.Cord.Pages
             else
             {
                 txtSolutionLotNo.Text = item.SolutionLot;
-
                 txtQty.Text = item.DipSolutionQty.ToString();
 
-                dtMixDate.SelectedDate = item.MixDate.Value;
-                dtQualifiedDate.SelectedDate = item.QualifiedDate.Value;
-                dtExpireDate.SelectedDate = item.ExpireDate.Value;
+                if (item.MixDate != null)
+                {
+                    dtMixDate.SelectedDate = item.MixDate.Value;
+
+                    cbMixH.SelectedValue = item.MixDate.Value.ToString("HH");
+                    cbMixM.SelectedValue = item.MixDate.Value.ToString("mm");
+                }
+                
+                if(item.QualifiedDate != null)
+                {
+                    dtQualifiedDate.SelectedDate = item.QualifiedDate.Value;
+
+                    cbQuaH.SelectedValue = item.QualifiedDate.Value.ToString("HH");
+                    cbQuaM.SelectedValue = item.QualifiedDate.Value.ToString("mm");
+                }
+
+                if (item.ExpireDate != null)
+                {
+                    dtExpireDate.SelectedDate = item.ExpireDate.Value;
+
+                    cbExpH.SelectedValue = item.ExpireDate.Value.ToString("HH");
+                    cbExpM.SelectedValue = item.ExpireDate.Value.ToString("mm");
+                }
 
                 this.InvokeAction(() =>
                 {

@@ -98,15 +98,43 @@
                         <!--  MIX DATE  -->
                         <ctrl:NDatePicker x:Name="dtMixDate"
                                           CaptionText="Mixing Date:"
+    
                                           Width="200" />
+                        <ctrl:NComboBox x:Name="cbMixH"
+                                        DockPanel.Dock="Left"
+                                        
+                                        Width="70" />
+
+                        <ctrl:NComboBox x:Name="cbMixM"
+                                        DockPanel.Dock="Left"
+                                      
+                                        Width="70" />
                         <!--  QUALIFIED DATE  -->
                         <ctrl:NDatePicker x:Name="dtQualifiedDate"
                                           CaptionText="Qualified Date:"
                                           Width="200" />
+                        <ctrl:NComboBox x:Name="cbQuaH"
+                                        DockPanel.Dock="Left"
+                                        
+                                        Width="70" />
+
+                        <ctrl:NComboBox x:Name="cbQuaM"
+                                        DockPanel.Dock="Left"
+                                      
+                                        Width="70" />
                         <!--  EXPIRE DATE  -->
                         <ctrl:NDatePicker x:Name="dtExpireDate"
                                           CaptionText="Expire Date:"
                                           Width="200" />
+                        <ctrl:NComboBox x:Name="cbExpH"
+                                        DockPanel.Dock="Left"
+                                        
+                                        Width="70" />
+
+                        <ctrl:NComboBox x:Name="cbExpM"
+                                        DockPanel.Dock="Left"
+                                      
+                                        Width="70" />
                     </StackPanel>
                     <DockPanel LastChildFill="True" DockPanel.Dock="Top">
                         <!--  HOME  -->
@@ -142,7 +170,7 @@
                         <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
                         <GridViewColumn Header="Chemical" CellTemplate="{StaticResource SolutionName}" />
                         <GridViewColumn Header="Quantity" CellTemplate="{StaticResource DipSolutionQty}" />
-                        <GridViewColumn Header="Mixing Date" CellTemplate="{StaticResource MixDate}" />
+                        <GridViewColumn Header="Mixing Date" CellTemplate="{StaticResource MixDate}"/>
                         <GridViewColumn Header="Qualified Date" CellTemplate="{StaticResource QualifiedDate}" />
                         <GridViewColumn Header="Expire Date" CellTemplate="{StaticResource ExpireDate}" />
                     </GridView>
