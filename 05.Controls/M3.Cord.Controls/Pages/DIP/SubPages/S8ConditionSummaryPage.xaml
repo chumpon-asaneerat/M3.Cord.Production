@@ -413,6 +413,10 @@
                                                 HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
                                                 HeaderTemplate="{StaticResource S8PositionColumnsHeader}" />
 
+                                <GridViewColumn Width="Auto"
+                                                CellTemplate="{StaticResource S8CheckTimeColumns}"
+                                                HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                                HeaderTemplate="{StaticResource S8CheckTimeColumnsHeader}" />
 
                                 <GridViewColumn Header="Operator" CellTemplate="{StaticResource S8P_Operator}" />
                                 <GridViewColumn Header="Leader" CellTemplate="{StaticResource S8P_Leader}" />
