@@ -105,10 +105,10 @@
     <Compile Include="Controls\Documents\DIPTimeTable\DIPTimeTableStdPage.xaml.cs">
       <DependentUpon>DIPTimeTableStdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S8ProductionConditionHeader.xaml.cs">
+    <Compile Include="Controls\Documents\DIPS8Condition\S8ProductionConditionHeader.xaml.cs">
       <DependentUpon>S8ProductionConditionHeader.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S8ProductionConditionFooter.xaml.cs">
+    <Compile Include="Controls\Documents\DIPS8Condition\S8ProductionConditionFooter.xaml.cs">
       <DependentUpon>S8ProductionConditionFooter.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml.cs">
@@ -578,11 +578,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S8ProductionConditionHeader.xaml">
+    <Page Include="Controls\Documents\DIPS8Condition\S8ProductionConditionHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S8ProductionConditionFooter.xaml">
+    <Page Include="Controls\Documents\DIPS8Condition\S8ProductionConditionFooter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1062,7 +1062,6 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\Documents\DIPS8Condition\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
   </ItemGroup>
