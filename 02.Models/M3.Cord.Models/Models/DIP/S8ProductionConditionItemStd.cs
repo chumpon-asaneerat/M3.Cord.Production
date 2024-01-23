@@ -24,6 +24,7 @@ namespace M3.Cord.Models
         #region Public Proeprties
 
         public string ProductCode { get; set; }
+
         public bool? StretchDSC { get; set; }
         public decimal? StretchD { get; set; }
         public decimal? StretchDErr { get; set; }
@@ -130,6 +131,7 @@ namespace M3.Cord.Models
             var p = new DynamicParameters();
 
             p.Add("@ProductCode", value.ProductCode);
+
             p.Add("@StretchDSC", value.StretchDSC);
             p.Add("@StretchD", value.StretchD);
             p.Add("@StretchDErr", value.StretchDErr);

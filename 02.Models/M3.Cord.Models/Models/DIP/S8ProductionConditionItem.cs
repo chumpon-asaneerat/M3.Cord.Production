@@ -21,5 +21,254 @@ namespace M3.Cord.Models
 {
     public class S8ProductionConditionItem
     {
+        #region Public Proeprties
+
+        public int? S8ConditionId { get; set; }
+        public int RowType { get; set; } = 1;
+
+        public string ProductCode { get; set; }
+        public string LotNo { get; set; }
+        public DateTime? DoffingDate { get; set; }
+        public int? DoffingNo { get; set; }
+
+        public bool? StretchDSC { get; set; }
+        public decimal? StretchD { get; set; }
+        public decimal? StretchDErr { get; set; }
+        public decimal? StretchDValue { get; set; }
+
+        public bool? StretchHSC { get; set; }
+        public decimal? StretchH { get; set; }
+        public decimal? StretchHErr { get; set; }
+        public decimal? StretchHValue { get; set; }
+
+        public bool? StretchNSC { get; set; }
+        public decimal? StretchN { get; set; }
+        public decimal? StretchNErr { get; set; }
+        public decimal? StretchNValue { get; set; }
+
+        public bool? TempDSC { get; set; }
+        public decimal? TempD { get; set; }
+        public decimal? TempDErr { get; set; }
+        public decimal? TempDValue { get; set; }
+
+        public bool? TempHNSC { get; set; }
+        public decimal? TempHN { get; set; }
+        public decimal? TempHNErr { get; set; }
+        public decimal? TempHNValue { get; set; }
+
+        public bool? SpeedSC { get; set; }
+        public decimal? Speed { get; set; }
+        public decimal? SpeedErr { get; set; }
+        public decimal? SpeedValue { get; set; }
+
+        public bool? TreatSC { get; set; }
+        public decimal? Treat { get; set; }
+        public decimal? TreatValue { get; set; }
+
+        public bool? DoffingLengthSC { get; set; }
+        public decimal? DoffingLength { get; set; }
+        public decimal? DoffingLengthValue { get; set; }
+
+        public bool? WeightSC { get; set; }
+        public decimal? Weight { get; set; }
+        public decimal? WeightValue { get; set; }
+
+        public bool? SpindleSC { get; set; }
+        public decimal? Spindle { get; set; }
+        public decimal? SpindleValue { get; set; }
+
+        public bool? ProductionGoodSC { get; set; }
+        public decimal? ProductionGood { get; set; }
+        public decimal? ProductionGoodValue { get; set; }
+
+        public bool? ProductionTotalSC { get; set; }
+        public decimal? ProductionTotal { get; set; }
+        public decimal? ProductionTotalValue { get; set; }
+
+
+        public decimal? ProductionCut { get; set; }
+        public decimal? PositionCordCutCreel { get; set; }
+        public decimal? PositionCordCutCS { get; set; }
+        public decimal? PositionCordCutWinder { get; set; }
+        public decimal? PositionCordCutWasteYarn { get; set; }
+        public DateTime? CheckTimeStart { get; set; }
+        public DateTime? CheckTimeFinish { get; set; }
+        public DateTime? CheckTimeRecord { get; set; }
+        public string Opertor { get; set; }
+        public string Leader { get; set; }
+
+        #endregion
+
+        #region Static Methods
+
+        public static NDbResult<List<S8ProductionConditionItem>> Gets(int? S8ConditionId, string productCode)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<S8ProductionConditionItem>> rets = new NDbResult<List<S8ProductionConditionItem>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@S8ConditionId", S8ConditionId);
+
+            try
+            {
+                var items = cnn.Query<S8ProductionConditionItem>("GetS8ProductionConditionItems", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            return rets;
+        }
+
+        /// <summary>
+        /// Save
+        /// </summary>
+        /// <param name="value">The S8ProductionConditionItem item to save.</param>
+        /// <returns></returns>
+        public static NDbResult<S8ProductionConditionItem> Save(S8ProductionConditionItem value)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<S8ProductionConditionItem> ret = new NDbResult<S8ProductionConditionItem>();
+
+            if (null == value)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+
+            p.Add("@S8ConditionId", value.S8ConditionId);
+            p.Add("@RowType", value.RowType);
+
+            p.Add("@ProductCode", value.ProductCode);
+            p.Add("@LotNo", value.LotNo);
+            p.Add("@DoffingDate", value.DoffingDate);
+            p.Add("@DoffingNo", value.DoffingNo);
+
+
+            p.Add("@StretchDSC", value.StretchDSC);
+            p.Add("@StretchD", value.StretchD);
+            p.Add("@StretchDErr", value.StretchDErr);
+            p.Add("@StretchDValue", value.StretchDValue);
+
+            p.Add("@StretchHSC", value.StretchHSC);
+            p.Add("@StretchH", value.StretchH);
+            p.Add("@StretchHErr", value.StretchHErr);
+            p.Add("@StretchHValue", value.StretchHValue);
+
+            p.Add("@StretchNSC", value.StretchNSC);
+            p.Add("@StretchN", value.StretchN);
+            p.Add("@StretchNErr", value.StretchNErr);
+            p.Add("@StretchNValue", value.StretchNValue);
+
+            p.Add("@TempDSC", value.TempDSC);
+            p.Add("@TempD", value.TempD);
+            p.Add("@TempDErr", value.TempDErr);
+            p.Add("@TempDValue", value.TempDValue);
+
+            p.Add("@TempHNSC", value.TempHNSC);
+            p.Add("@TempHN", value.TempHN);
+            p.Add("@TempHNErr", value.TempHNErr);
+            p.Add("@TempHNValue", value.TempHNValue);
+
+            p.Add("@SpeedSC", value.SpeedSC);
+            p.Add("@Speed", value.Speed);
+            p.Add("@SpeedErr", value.SpeedErr);
+            p.Add("@SpeedValue", value.SpeedValue);
+
+            p.Add("@TreatSC", value.TreatSC);
+            p.Add("@Treat", value.Treat);
+            p.Add("@TreatValue", value.TreatValue);
+
+            p.Add("@DoffingLengthSC", value.DoffingLengthSC);
+            p.Add("@DoffingLength", value.DoffingLength);
+            p.Add("@DoffingLengthValue", value.DoffingLengthValue);
+
+            p.Add("@WeightSC", value.WeightSC);
+            p.Add("@Weight", value.Weight);
+            p.Add("@WeightValue", value.WeightValue);
+
+            p.Add("@SpindleSC", value.SpindleSC);
+            p.Add("@Spindle", value.Spindle);
+            p.Add("@SpindleValue", value.SpindleValue);
+
+            p.Add("@ProductionGoodSC", value.ProductionGoodSC);
+            p.Add("@ProductionGood", value.ProductionGood);
+            p.Add("@ProductionGoodValue", value.ProductionGoodValue);
+
+            p.Add("@ProductionTotalSC", value.ProductionTotalSC);
+            p.Add("@ProductionTotal", value.ProductionTotal);
+            p.Add("@ProductionTotalValue", value.ProductionTotalValue);
+
+            p.Add("@ProductionCut", value.ProductionCut);
+            p.Add("@PositionCordCutCreel", value.PositionCordCutCreel);
+            p.Add("@PositionCordCutCS", value.PositionCordCutCS);
+            p.Add("@PositionCordCutWinder", value.PositionCordCutWinder);
+            p.Add("@PositionCordCutWasteYarn", value.PositionCordCutWasteYarn);
+            p.Add("@CheckTimeStart", value.CheckTimeStart);
+            p.Add("@CheckTimeFinish", value.CheckTimeFinish);
+            p.Add("@CheckTimeRecord", value.CheckTimeRecord);
+            p.Add("@Opertor", value.Opertor);
+            p.Add("@Leader", value.Leader);
+
+            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
+
+            try
+            {
+                cnn.Execute("SaveS8ProductionConditionItem", p, commandType: CommandType.StoredProcedure);
+                ret.Success(value);
+
+                // Set error number/message
+                ret.ErrNum = p.Get<int>("@errNum");
+                ret.ErrMsg = p.Get<string>("@errMsg");
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+        #endregion
     }
 }
