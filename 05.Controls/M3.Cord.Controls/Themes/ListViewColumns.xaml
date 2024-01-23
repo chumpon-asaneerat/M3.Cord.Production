@@ -999,8 +999,32 @@
                    Width="120" />
     </DataTemplate>
 
+    <DataTemplate x:Key="S8P_PositionCordCutCreelValue">
+        <TextBlock Text="{Binding Path=PositionCordCutCreelValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_PositionCordCutCSValue">
+        <TextBlock Text="{Binding Path=PositionCordCutCSValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_PositionCordCutWinderValue">
+        <TextBlock Text="{Binding Path=PositionCordCutWinderValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_PositionCordCutWasteYarnValue">
+        <TextBlock Text="{Binding Path=PositionCordCutWasteYarnValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
     <DataTemplate x:Key="S8P_Operator">
-        <TextBlock Text="{Binding Path=Operator, Mode=OneWay}"
+        <TextBlock Text="{Binding Path=Opertor, Mode=OneWay}"
                    TextAlignment="Center"
                    Width="120" />
     </DataTemplate>

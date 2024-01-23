@@ -153,6 +153,53 @@
         </DataTemplate>
 
         <!--#endregion-->
+
+        <!--#region POSITION-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8PositionGridViewColumns">
+            <GridViewColumn Width="180"
+                            CellTemplate="{StaticResource S8P_PositionCordCutCreelValue}"
+                            Header=" Creel "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="180"
+                            CellTemplate="{StaticResource S8P_PositionCordCutCSValue}"
+                            Header=" CS m/c "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="180"
+                            CellTemplate="{StaticResource S8P_PositionCordCutWinderValue}"
+                            Header=" Winder "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="180"
+                            CellTemplate="{StaticResource S8P_PositionCordCutWasteYarnValue}"
+                            Header=" Waste Yarn (kg) "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8PositionColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Position Cord Cut (ตำแหน่งเชือกขาด)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8PositionGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8PositionColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8PositionGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
     </UserControl.Resources>
     <page:NPage x:Name="page" HeaderText="ใบบันทึกค่าสภาวะการผลิต S-8">
         <DockPanel LastChildFill="True">
@@ -317,6 +364,11 @@
                                                 CellTemplate="{StaticResource S8ProductColumns}"
                                                 HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
                                                 HeaderTemplate="{StaticResource S8ProductColumnsHeader}" />
+
+                                <GridViewColumn Width="Auto"
+                                                CellTemplate="{StaticResource S8PositionColumns}"
+                                                HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                                HeaderTemplate="{StaticResource S8PositionColumnsHeader}" />
 
 
                                 <GridViewColumn Header="Operator" CellTemplate="{StaticResource S8P_Operator}" />
