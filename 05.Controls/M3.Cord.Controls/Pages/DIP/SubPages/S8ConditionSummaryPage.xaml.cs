@@ -62,9 +62,115 @@ namespace M3.Cord.Pages
             Save();
         }
 
+        private void cmdReset_Click(object sender, RoutedEventArgs e)
+        {
+            ResetStd();
+        }
+
+        private void cmdAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Add();
+        }
+
+        private void cmdDetails_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+            var ctx = (sender as Button).DataContext;
+            var item = (null != ctx && ctx is S8ProductionConditionItem) ? ctx as S8ProductionConditionItem : null;
+            Edit(item);
+            */
+        }
+
+        private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         #endregion
 
         #region Private Methods
+
+        private void ResetStd()
+        {
+            if (null == pcCard)
+                return;
+            var ret = S8ProductionConditionItem.DeleteStd(pcCard.DIPPCId);
+            if (null != ret && ret.Ok)
+            {
+                if (null != pcCard)
+                {
+                    CheckStd();
+                }
+                RefreshGrid();
+            }
+        }
+
+        private void CheckStd()
+        {
+            if (null == pcCard)
+                return;
+            // Check is standard exits
+            DateTime? startDate = new DateTime?();
+            if (pcCard.StartTime.HasValue)
+            {
+                var dt = pcCard.StartTime.Value;
+                startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
+            }
+
+            if (!startDate.HasValue)
+            {
+                return;
+            }
+
+            var retV = S8ProductionConditionItem.GetStdV(pcCard.DIPPCId).Value();
+            if (null == retV)
+            {
+                S8ProductionConditionItem.SaveStdV(pcCard.DIPPCId, pcCard.ProductCode, startDate.Value, pcCard.DIPLotNo, pcCard.DoffNo);
+            }
+            var retB = S8ProductionConditionItem.GetStdB(pcCard.DIPPCId).Value();
+            if (null == retB)
+            {
+                S8ProductionConditionItem.SaveStdB(pcCard.DIPPCId, pcCard.ProductCode, startDate.Value, pcCard.DIPLotNo, pcCard.DoffNo);
+            }
+        }
+
+        private void Add()
+        {
+            if (null == pcCard)
+                return;
+            var dt = pcCard.StartTime.Value;
+            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
+
+            var win = M3CordApp.Windows.S8ProductionConditionItemEditor;
+            var item = S8ProductionConditionItem.Create(pcCard.ProductCode);
+            item.DIPPCId = pcCard.DIPPCId;
+            item.ProductCode = pcCard.ProductCode;
+            item.RowType = 1;
+            item.LotNo = pcCard.DIPLotNo;
+            item.DoffingDate = startDate;
+            item.DoffingNo = pcCard.DoffNo;
+
+            win.Setup(startDate, item);
+            if (win.ShowDialog() == true)
+            {
+                RefreshGrid();
+            }
+        }
+
+        private void Edit(S8ProductionConditionItem item)
+        {
+            if (null == item) return;
+
+            var dt = pcCard.StartTime.Value;
+            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
+
+            var win = M3CordApp.Windows.S8ProductionConditionItemEditor;
+            win.Setup(startDate, item);
+            if (win.ShowDialog() == true)
+            {
+                RefreshGrid();
+            }
+        }
 
         private void Save()
         {
@@ -72,13 +178,13 @@ namespace M3.Cord.Pages
             {
                 var ret = S8ProductionCondition.Save(sheet);
 
-                if (sheet.S8ConditionId.HasValue)
+                if (sheet.DIPPCId.HasValue)
                 {
                     if (null != items)
                     {
                         foreach (var item in items)
                         {
-                            item.S8ConditionId = sheet.S8ConditionId.Value;
+                            item.DIPPCId = sheet.DIPPCId.Value;
                             S8ProductionConditionItem.Save(item);
                         }
                     }
@@ -92,18 +198,22 @@ namespace M3.Cord.Pages
 
         private void RefreshGrid()
         {
-            //grid.ItemsSource = null;
+            grid.ItemsSource = null;
 
             if (null != sheet && null != mc)
             {
-                items = S8ProductionConditionItem.Gets(sheet.S8ConditionId).Value();
+                items = null;
+                if (sheet.DIPPCId.HasValue)
+                {
+                    items = S8ProductionConditionItem.Gets(sheet.DIPPCId.Value).Value();
+                }
                 if (null == items)
                 {
                     items = new List<S8ProductionConditionItem>();
                 }
             }
 
-            //grid.ItemsSource = items;
+            grid.ItemsSource = items;
         }
 
         #endregion
@@ -121,6 +231,8 @@ namespace M3.Cord.Pages
                     pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
                     if (null != pcCard)
                     {
+                        CheckStd();
+
                         var sheets = S8ProductionCondition.Gets(pcCard.DIPPCId.Value).Value();
                         sheet = (null != sheets) ? sheets.LastOrDefault() : null;
                         if (null == sheet)

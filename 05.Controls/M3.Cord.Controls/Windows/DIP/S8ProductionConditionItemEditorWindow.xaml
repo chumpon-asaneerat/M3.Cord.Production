@@ -46,7 +46,6 @@
                     <ctrl:NTextBox x:Name="txtDoffNo"
                                    DockPanel.Dock="Left"
                                    CaptionText="Doff No:"
-                                   IsReadOnly="True"
                                    Width="200"
                                    Text="{Binding DoffingNo}" />
                     <DockPanel />

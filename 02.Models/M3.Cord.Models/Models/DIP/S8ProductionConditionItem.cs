@@ -23,7 +23,7 @@ namespace M3.Cord.Models
     {
         #region Public Proeprties
 
-        public int? S8ConditionId { get; set; }
+        public int? DIPPCId { get; set; }
         public int RowType { get; set; } = 1;
 
         public string ProductCode { get; set; }
@@ -101,7 +101,65 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
-        public static NDbResult<List<S8ProductionConditionItem>> Gets(int? S8ConditionId)
+        public static S8ProductionConditionItem Create(string productCode)
+        {
+            var inst = new S8ProductionConditionItem();
+            var std = S8ProductionConditionItemStd.Gets(productCode).Value().FirstOrDefault();
+            Assign(std, inst);
+            return inst;
+        }
+
+        public static void Assign(S8ProductionConditionItemStd src, S8ProductionConditionItem dst)
+        {
+            if (null != src && null != dst)
+            {
+                dst.ProductCode = src.ProductCode;
+
+                dst.StretchDSC = src.StretchDSC;
+                dst.StretchD = src.StretchD;
+                dst.StretchDErr = src.StretchDErr;
+
+                dst.StretchHSC = src.StretchHSC;
+                dst.StretchH = src.StretchH;
+                dst.StretchHErr = src.StretchHErr;
+
+                dst.StretchNSC = src.StretchNSC;
+                dst.StretchN = src.StretchN;
+                dst.StretchNErr = src.StretchNErr;
+
+                dst.TempDSC = src.TempDSC;
+                dst.TempD = src.TempD;
+                dst.TempDErr = src.TempDErr;
+
+                dst.TempHNSC = src.TempHNSC;
+                dst.TempHN = src.TempHN;
+                dst.TempHNErr = src.TempHNErr;
+
+                dst.SpeedSC = src.SpeedSC;
+                dst.Speed = src.Speed;
+                dst.SpeedErr = src.SpeedErr;
+
+                dst.TreatSC = src.TreatSC;
+                dst.Treat = src.Treat;
+
+                dst.DoffingLengthSC = src.DoffingLengthSC;
+                dst.DoffingLength = src.DoffingLength;
+
+                dst.WeightSC = src.WeightSC;
+                dst.Weight = src.Weight;
+
+                dst.SpindleSC = src.SpindleSC;
+                dst.Spindle = src.Spindle;
+
+                dst.ProductionGoodSC = src.ProductionGoodSC;
+                dst.ProductionGood = src.ProductionGood;
+
+                dst.ProductionTotalSC = src.ProductionTotalSC;
+                dst.ProductionTotal = src.ProductionTotal;
+            }
+        }
+
+        public static NDbResult<List<S8ProductionConditionItem>> Gets(int? DIPPCId)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -120,7 +178,7 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
-            p.Add("@S8ConditionId", S8ConditionId);
+            p.Add("@DIPPCId", DIPPCId);
 
             try
             {
@@ -172,7 +230,7 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
 
-            p.Add("@S8ConditionId", value.S8ConditionId);
+            p.Add("@DIPPCId", value.DIPPCId);
             p.Add("@RowType", value.RowType);
 
             p.Add("@ProductCode", value.ProductCode);
@@ -257,6 +315,210 @@ namespace M3.Cord.Models
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult<S8ProductionConditionItem> GetStdV(int? DIPPCId)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<S8ProductionConditionItem> ret = new NDbResult<S8ProductionConditionItem>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@DIPPCId", DIPPCId);
+
+            try
+            {
+                var items = cnn.Query<S8ProductionConditionItem>("GetS8ProductionConditionItemStdVRow", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.FirstOrDefault() : null;
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+                ret.data = null;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult<S8ProductionConditionItem> GetStdB(int? DIPPCId)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<S8ProductionConditionItem> ret = new NDbResult<S8ProductionConditionItem>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@DIPPCId", DIPPCId);
+
+            try
+            {
+                var items = cnn.Query<S8ProductionConditionItem>("GetS8ProductionConditionItemStdBRow", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.FirstOrDefault() : null;
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+                ret.data = null;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult SaveStdV(int? DIPPCId, string ProductCode, DateTime Date, 
+            string LotNo, int? DoffingNo)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@ProductCode", ProductCode);
+            p.Add("@DIPPCId", DIPPCId);
+            p.Add("@Date", Date);
+            p.Add("@LotNo", LotNo);
+            p.Add("@DoffingNo", DoffingNo);
+
+            try
+            {
+                var items = cnn.Query<DIPTimeTable>("SaveS8ProductionConditionItemStdVRow", p,
+                    commandType: CommandType.StoredProcedure);
+                ret.Success();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult SaveStdB(int? DIPPCId, string ProductCode, DateTime Date, 
+            string LotNo, int? DoffingNo)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@ProductCode", ProductCode);
+            p.Add("@DIPPCId", DIPPCId);
+            p.Add("@Date", Date);
+            p.Add("@LotNo", LotNo);
+            p.Add("@DoffingNo", DoffingNo);
+
+            try
+            {
+                var items = cnn.Query<DIPTimeTable>("SaveS8ProductionConditionItemStdBRow", p,
+                    commandType: CommandType.StoredProcedure);
+                ret.Success();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult DeleteStd(int? DIPPCId)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@DIPPCId", DIPPCId);
+
+            try
+            {
+                var items = cnn.Query<DIPTimeTable>("DeleteS8ProductionConditionItemStd", p,
+                    commandType: CommandType.StoredProcedure);
+                ret.Success();
             }
             catch (Exception ex)
             {

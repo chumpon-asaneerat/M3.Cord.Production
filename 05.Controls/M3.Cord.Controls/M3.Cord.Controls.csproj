@@ -388,7 +388,7 @@
     <Compile Include="Windows\DIP\S8BeforeEditorWindow.xaml.cs">
       <DependentUpon>S8BeforeEditorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\S8ProductionConditionItemEditorWindow.xaml.cs">
+    <Compile Include="Windows\DIP\S8ProductionConditionItemEditorWindow.xaml.cs">
       <DependentUpon>S8ProductionConditionItemEditorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Solution\SolutionWeightWindow.xaml.cs">
@@ -1034,7 +1034,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\S8ProductionConditionItemEditorWindow.xaml">
+    <Page Include="Windows\DIP\S8ProductionConditionItemEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
