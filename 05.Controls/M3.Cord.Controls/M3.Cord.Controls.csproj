@@ -252,7 +252,7 @@
     <Compile Include="Pages\Documents\Dipping\S8BeforeConditionStdPage.xaml.cs">
       <DependentUpon>S8BeforeConditionStdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\S8ProductionConditionItemStdManagePage.xaml.cs">
+    <Compile Include="Pages\Documents\Dipping\S8ProductionConditionItemStdManagePage.xaml.cs">
       <DependentUpon>S8ProductionConditionItemStdManagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
@@ -387,6 +387,9 @@
     </Compile>
     <Compile Include="Windows\DIP\S8BeforeEditorWindow.xaml.cs">
       <DependentUpon>S8BeforeEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\S8ProductionConditionItemEditorWindow.xaml.cs">
+      <DependentUpon>S8ProductionConditionItemEditorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Solution\SolutionWeightWindow.xaml.cs">
       <DependentUpon>SolutionWeightWindow.xaml</DependentUpon>
@@ -779,7 +782,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\S8ProductionConditionItemStdManagePage.xaml">
+    <Page Include="Pages\Documents\Dipping\S8ProductionConditionItemStdManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1028,6 +1031,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\DIP\S8BeforeEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\S8ProductionConditionItemEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

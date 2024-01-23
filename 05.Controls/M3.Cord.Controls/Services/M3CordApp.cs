@@ -670,12 +670,19 @@ namespace M3.Cord
                 get { return GetWindow<DIPTimeTableEditorWindow>(); }
             }
 
-            /// <summary>Gets S8 Before Editor Editor Window.</summary>
+            /// <summary>Gets S8 Before Editor Window.</summary>
             public static S8BeforeEditorWindow S8BeforeEditor
             {
                 get { return GetWindow<S8BeforeEditorWindow>(); }
             }
 
+            /// <summary>Gets S8 Production Condition Item Editor Window.</summary>
+            public static S8ProductionConditionItemEditorWindow S8ProductionConditionItemEditor
+            {
+                get { return GetWindow<S8ProductionConditionItemEditorWindow>(); }
+            }
+
+            
             #endregion
 
             #region DIP Slip

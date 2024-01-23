@@ -1,0 +1,58 @@
+﻿<Window x:Class="M3.Cord.Windows.S8ProductionConditionItemEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:doc="clr-namespace:M3.Cord.Controls.Documents"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        mc:Ignorable="d"
+        Title="ใบบันทึกค่าสภาวะการผลิต S-8"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="700"
+        Width="700">
+    <page:NPage x:Name="page" HeaderText="ใบบันทึกค่าสภาวะการผลิต S-8">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdOk"
+                                        DockPanel.Dock="Right"
+                                        IconType="Ok"
+                                        Text="Ok"
+                                        Click="cmdOk_Click" />
+                <Grid />
+            </DockPanel>
+            <!--  WORK AREA  -->
+            <DockPanel LastChildFill="True">
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  DATE  -->
+                    <ctrl:NDatePicker x:Name="dtDate"
+                                      DockPanel.Dock="Left"
+                                      CaptionText="DATE:"
+                                      Width="250"
+                                      SelectedDate="{Binding DoffingDate}" />
+                    <!--  Doff No  -->
+                    <ctrl:NTextBox x:Name="txtDoffNo"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Doff No:"
+                                   IsReadOnly="True"
+                                   Width="200"
+                                   Text="{Binding DoffingNo}" />
+                    <DockPanel />
+                </DockPanel>
+                <doc:S8ProductionConditionItemEntryPage x:Name="doc" />
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>
