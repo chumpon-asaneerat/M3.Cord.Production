@@ -2,10 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             d:DesignHeight="450"
-             d:DesignWidth="800">
+             d:DesignHeight="800"
+             d:DesignWidth="1000">
     <UserControl.Resources>
         <!--  LOCAL STYLES  -->
         <Style TargetType="Border">
@@ -232,6 +233,81 @@
                          IsReadOnly="True" />
                 <TextBlock Width="10" />
                 <TextBox Text="{Binding ProductionTotalValue, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Production (ผลิตภัณฑ์) - Cord cut(sp/kg)"
+                           Width="350"
+                           TextAlignment="Right" />
+                <TextBlock Width="15" />
+                <TextBox Text="{Binding ProductionCut, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBlock Width="10" />
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Position Cord Cut - Creel"
+                           Width="350"
+                           TextAlignment="Right" />
+                <TextBlock Width="15" />
+                <TextBox Text="{Binding PositionCordCutCreel, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Position Cord Cut - CS m/c"
+                           Width="350"
+                           TextAlignment="Right" />
+                <TextBlock Width="15" />
+                <TextBox Text="{Binding PositionCordCutCS, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Position Cord Cut - Winder"
+                           Width="350"
+                           TextAlignment="Right" />
+                <TextBlock Width="15" />
+                <TextBox Text="{Binding PositionCordCutWinder, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Position Cord Cut - Waste Yarn"
+                           Width="350"
+                           TextAlignment="Right" />
+                <TextBlock Width="15" />
+                <TextBox Text="{Binding PositionCordCutWasteYarn, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Check Time - Start"
+                           Width="350"
+                           TextAlignment="Right" />
+                <TextBlock Width="15" />
+                <xctk:TimePicker Value="{Binding CheckTimeStart}" Width="150"
+                                 FontSize="18"/>
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Check Time - Finish"
+                           Width="350"
+                           TextAlignment="Right" />
+                <TextBlock Width="15" />
+                <xctk:TimePicker Value="{Binding CheckTimeFinish}" Width="150"
+                                 FontSize="18"/>
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Check Time - Record"
+                           Width="350"
+                           TextAlignment="Right" />
+                <TextBlock Width="15" />
+                <xctk:TimePicker Value="{Binding CheckTimeRecord}" Width="150"
+                                 FontSize="18"/>
                 <TextBlock Width="10" />
             </StackPanel>
         </StackPanel>

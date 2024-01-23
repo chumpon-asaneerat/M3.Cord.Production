@@ -681,8 +681,85 @@ namespace M3.Cord.Models
         }
 
         public DateTime? CheckTimeStart { get; set; }
+        public string CheckTimeStartS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (CheckTimeStart.HasValue) ? CheckTimeStart.Value.ToString("HH:mm") : "";
+                }
+                else
+                {
+                    return (CheckTimeStart.HasValue) ? CheckTimeStart.Value.ToString("HH:mm") : "";
+                }
+            }
+            set { }
+        }
+
         public DateTime? CheckTimeFinish { get; set; }
+        public string CheckTimeFinishS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (CheckTimeFinish.HasValue) ? CheckTimeFinish.Value.ToString("HH:mm") : "";
+                }
+                else
+                {
+                    return (CheckTimeFinish.HasValue) ? CheckTimeFinish.Value.ToString("HH:mm") : "";
+                }
+            }
+            set { }
+        }
+
         public DateTime? CheckTimeRecord { get; set; }
+        public string CheckTimeRecordS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (CheckTimeRecord.HasValue) ? CheckTimeRecord.Value.ToString("HH:mm") : "";
+                }
+                else
+                {
+                    return (CheckTimeRecord.HasValue) ? CheckTimeRecord.Value.ToString("HH:mm") : "";
+                }
+            }
+            set { }
+        }
 
         public string Opertor { get; set; }
         public string Leader { get; set; }

@@ -1023,6 +1023,24 @@
                    Width="120" />
     </DataTemplate>
 
+    <DataTemplate x:Key="S8P_CheckTimeStart">
+        <TextBlock Text="{Binding Path=CheckTimeStartS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_CheckTimeFinish">
+        <TextBlock Text="{Binding Path=CheckTimeFinishS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_CheckTimeRecord">
+        <TextBlock Text="{Binding Path=CheckTimeRecordS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
     <DataTemplate x:Key="S8P_Operator">
         <TextBlock Text="{Binding Path=Opertor, Mode=OneWay}"
                    TextAlignment="Center"

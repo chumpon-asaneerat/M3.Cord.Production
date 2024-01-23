@@ -55,12 +55,18 @@ namespace M3.Cord.Windows
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
-            var ret = S8ProductionConditionItem.Save(_item);
-            if (null != ret && ret.Ok)
-                M3CordApp.Windows.SaveSuccess();
-            else M3CordApp.Windows.SaveFailed();
+            if (null != _item)
+            {
+                _item.Opertor = (null != M3CordApp.Current.User) ?
+                        M3CordApp.Current.User.FullName : null;
+                var ret = S8ProductionConditionItem.Save(_item);
 
-            DialogResult = true;
+                if (null != ret && ret.Ok)
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
+
+                DialogResult = true;
+            }
         }
 
         #endregion

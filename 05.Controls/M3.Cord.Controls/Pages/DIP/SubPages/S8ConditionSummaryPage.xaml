@@ -200,6 +200,49 @@
         </DataTemplate>
 
         <!--#endregion-->
+
+        <!--#region CHECK TIMES-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8CheckTimeGridViewColumns">
+            <GridViewColumn Width="180"
+                            CellTemplate="{StaticResource S8P_CheckTimeStart}"
+                            Header=" Start "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="180"
+                            CellTemplate="{StaticResource S8P_CheckTimeFinish}"
+                            Header=" Finish "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="180"
+                            CellTemplate="{StaticResource S8P_CheckTimeRecord}"
+                            Header=" Record "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8CheckTimeColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Check Time (การบันทึกเวลา)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8CheckTimeGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8CheckTimeColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8CheckTimeGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
     </UserControl.Resources>
     <page:NPage x:Name="page" HeaderText="ใบบันทึกค่าสภาวะการผลิต S-8">
         <DockPanel LastChildFill="True">
