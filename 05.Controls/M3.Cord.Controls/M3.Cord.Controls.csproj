@@ -237,7 +237,7 @@
     <Compile Include="Pages\Documents\Dipping\DippingStdManagePage.xaml.cs">
       <DependentUpon>DippingStdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\SubPages\ProductionRecordPage.xaml.cs">
+    <Compile Include="Pages\DIP\SubPages\_V0\ProductionRecordPage.xaml.cs">
       <DependentUpon>ProductionRecordPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Documents\Dipping\ProductionRecordStdPage.xaml.cs">
@@ -754,7 +754,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\SubPages\ProductionRecordPage.xaml">
+    <Page Include="Pages\DIP\SubPages\_V0\ProductionRecordPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

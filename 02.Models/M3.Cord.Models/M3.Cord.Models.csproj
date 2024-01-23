@@ -135,9 +135,9 @@
     <Compile Include="Models\CordItemYarn\CordItemYarn.cs" />
     <Compile Include="Models\Masters\Customer.cs" />
     <Compile Include="Models\Masters\Product.cs" />
-    <Compile Include="Models\ProductionRecord\ProductionRecord.cs" />
-    <Compile Include="Models\ProductionRecord\ProductionRecordDetail.cs" />
-    <Compile Include="Models\ProductionRecord\ProductionRecordStd.cs" />
+    <Compile Include="Models\_V0\ProductionRecord\ProductionRecord.cs" />
+    <Compile Include="Models\_V0\ProductionRecord\ProductionRecordDetail.cs" />
+    <Compile Include="Models\_V0\ProductionRecord\ProductionRecordStd.cs" />
     <Compile Include="Models\Recipe\SolutionById.cs" />
     <Compile Include="Models\Recipe\SaveSolutionLotDetail.cs" />
     <Compile Include="Models\Recipe\SolutionRecipeDetailSpec.cs" />
