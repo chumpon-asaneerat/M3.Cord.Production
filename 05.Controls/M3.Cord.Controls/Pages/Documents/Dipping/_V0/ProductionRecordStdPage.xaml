@@ -66,11 +66,11 @@
                            HorizontalAlignment="Stretch">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <ctrl:NComboBox x:Name="cbProducts"
-                                    DockPanel.Dock="Left"
-                                    CaptionText="Product :"
-                                    DisplayMemberPath="ProductCode"
-                                    Width="300"
-                                    SelectionChanged="cbProducts_SelectionChanged" />
+                                        DockPanel.Dock="Left"
+                                        CaptionText="Product :"
+                                        DisplayMemberPath="ProductCode"
+                                        Width="300"
+                                        SelectionChanged="cbProducts_SelectionChanged" />
                         <!--  SEARCH  -->
                         <Button x:Name="cmdSearch"
                                 Content="Search"
@@ -79,7 +79,7 @@
                                 Margin="5,2"
                                 Style="{StaticResource InlineButton}"
                                 Click="cmdSearch_Click" />
-                       
+
                         <!--  CLEAR  -->
                         <Button x:Name="cmdClear"
                                 Content="Clear"
@@ -95,7 +95,7 @@
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
@@ -119,179 +119,179 @@
                                 <!--#region COLUMN HEADERS-->
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan ="3"
-                                    Background="Silver">
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"
+                                        Background="Silver">
                                     <TextBlock Text="Stretch (%)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="0"
-                                    Background="Silver">
+                                        Grid.Column="0"
+                                        Background="Silver">
                                     <TextBlock Text="D" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="0"
-                                    Background="Silver">
+                                        Grid.Column="0"
+                                        Background="Silver">
                                     <TextBlock Text="ช่วงแห้ง" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="1"
-                                    Background="Silver">
+                                        Grid.Column="1"
+                                        Background="Silver">
                                     <TextBlock Text="H" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="1"
-                                    Background="Silver">
+                                        Grid.Column="1"
+                                        Background="Silver">
                                     <TextBlock Text="ช่วงร้อน" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="2"
-                                    Background="Silver">
+                                        Grid.Column="2"
+                                        Background="Silver">
                                     <TextBlock Text="N" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="2"
-                                    Background="Silver">
+                                        Grid.Column="2"
+                                        Background="Silver">
                                     <TextBlock Text="ช่วงปกติ" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="3"
-                                    Grid.ColumnSpan ="2"
-                                    Background="Silver">
+                                        Grid.Column="3"
+                                        Grid.ColumnSpan="2"
+                                        Background="Silver">
                                     <TextBlock Text="Temp (C) (อุณหภูมิ)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="3"
-                                    Background="Silver">
+                                        Grid.Column="3"
+                                        Background="Silver">
                                     <TextBlock Text="D" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="3"
-                                    Background="Silver">
+                                        Grid.Column="3"
+                                        Background="Silver">
                                     <TextBlock Text="ช่วงแห้ง" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="4"
-                                    Background="Silver">
+                                        Grid.Column="4"
+                                        Background="Silver">
                                     <TextBlock Text="HN" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="4"
-                                    Background="Silver">
+                                        Grid.Column="4"
+                                        Background="Silver">
                                     <TextBlock Text="ช่วงร้อน/แห้ง" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="5"
-                                    Background="Silver">
+                                        Grid.Column="5"
+                                        Background="Silver">
                                     <TextBlock Text="Speed" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="5"
-                                    Background="Silver">
+                                        Grid.Column="5"
+                                        Background="Silver">
                                     <TextBlock Text="(m/min)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="5"
-                                    Background="Silver">
+                                        Grid.Column="5"
+                                        Background="Silver">
                                     <TextBlock Text="ความเร็ว" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="6"
-                                    Background="Silver">
+                                        Grid.Column="6"
+                                        Background="Silver">
                                     <TextBlock Text="Treat" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="6"
-                                    Background="Silver">
+                                        Grid.Column="6"
+                                        Background="Silver">
                                     <TextBlock Text="Cord" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="6"
-                                    Background="Silver">
+                                        Grid.Column="6"
+                                        Background="Silver">
                                     <TextBlock Text="จำนวนเส้น" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="7"
-                                    Background="Silver">
+                                        Grid.Column="7"
+                                        Background="Silver">
                                     <TextBlock Text="Doffing" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="7"
-                                    Background="Silver">
+                                        Grid.Column="7"
+                                        Background="Silver">
                                     <TextBlock Text="Length (M)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="7"
-                                    Background="Silver">
+                                        Grid.Column="7"
+                                        Background="Silver">
                                     <TextBlock Text="ความยาว" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="8"
-                                    Background="Silver">
+                                        Grid.Column="8"
+                                        Background="Silver">
                                     <TextBlock Text="Weight" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="8"
-                                    Background="Silver">
+                                        Grid.Column="8"
+                                        Background="Silver">
                                     <TextBlock Text="(kg)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="8"
-                                    Background="Silver">
+                                        Grid.Column="8"
+                                        Background="Silver">
                                     <TextBlock Text="น้ำหนัก" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="9"
-                                    Background="Silver">
+                                        Grid.Column="9"
+                                        Background="Silver">
                                     <TextBlock Text="Spindle" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="9"
-                                    Background="Silver">
+                                        Grid.Column="9"
+                                        Background="Silver">
                                     <TextBlock Text="Use" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="9"
-                                    Background="Silver">
+                                        Grid.Column="9"
+                                        Background="Silver">
                                     <TextBlock Text="การใช้แกน" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <Border Grid.Row="0"
-                                    Grid.Column="10"
-                                    Grid.ColumnSpan ="2"
-                                    Background="Silver">
+                                        Grid.Column="10"
+                                        Grid.ColumnSpan="2"
+                                        Background="Silver">
                                     <TextBlock Text="Production (ผลิตภัณฑ์)" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="10"
-                                    Background="Silver">
+                                        Grid.Column="10"
+                                        Background="Silver">
                                     <TextBlock Text="Good" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="10"
-                                    Background="Silver">
+                                        Grid.Column="10"
+                                        Background="Silver">
                                     <TextBlock Text="ผลิตภัณฑ์ดี" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="1"
-                                    Grid.Column="11"
-                                    Background="Silver">
+                                        Grid.Column="11"
+                                        Background="Silver">
                                     <TextBlock Text="Total" HorizontalAlignment="Center" />
                                 </Border>
                                 <Border Grid.Row="2"
-                                    Grid.Column="11"
-                                    Background="Silver">
+                                        Grid.Column="11"
+                                        Background="Silver">
                                     <TextBlock Text="ผลรวมน้ำหนัก" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <!--#endregion-->
 
-                                <!--#region SC -->
+                                <!--#region SC-->
 
                                 <Border Grid.Row="3" Grid.Column="2">
                                     <!--<CheckBox Content="" IsChecked="{Binding S8CoolingWaterSystemBath1SC}" />-->
@@ -431,144 +431,216 @@
 
                                 <!--#endregion-->
 
-                                <!--#region SC -->
+                                <!--#region SC-->
 
                                 <Border Grid.Row="3" Grid.Column="0">
-                                    <CheckBox x:Name="chkStretchDSC" Content="" IsChecked="{Binding StretchDSC}"/>
+                                    <CheckBox x:Name="chkStretchDSC"
+                                              Content=""
+                                              IsChecked="{Binding StretchDSC}" />
                                 </Border>
                                 <Border Grid.Row="3" Grid.Column="1">
-                                    <CheckBox x:Name="chkStretchHSC" Content="" IsChecked="{Binding StretchHSC}"/>
+                                    <CheckBox x:Name="chkStretchHSC"
+                                              Content=""
+                                              IsChecked="{Binding StretchHSC}" />
                                 </Border>
                                 <Border Grid.Row="3" Grid.Column="2">
-                                    <CheckBox x:Name="chkStretchNSC" Content="" IsChecked="{Binding StretchNSC}"/>
+                                    <CheckBox x:Name="chkStretchNSC"
+                                              Content=""
+                                              IsChecked="{Binding StretchNSC}" />
                                 </Border>
                                 <Border Grid.Row="3" Grid.Column="3">
-                                    <CheckBox x:Name="chkTempDSC" Content="" IsChecked="{Binding TempDSC}"/>
+                                    <CheckBox x:Name="chkTempDSC"
+                                              Content=""
+                                              IsChecked="{Binding TempDSC}" />
                                 </Border>
                                 <Border Grid.Row="3" Grid.Column="4">
-                                    <CheckBox x:Name="chkTempHNSC" Content="" IsChecked="{Binding TempHNSC}"/>
+                                    <CheckBox x:Name="chkTempHNSC"
+                                              Content=""
+                                              IsChecked="{Binding TempHNSC}" />
                                 </Border>
                                 <Border Grid.Row="3" Grid.Column="5">
-                                    <CheckBox x:Name="chkSpeedSC" Content="" IsChecked="{Binding SpeedSC}"/>
+                                    <CheckBox x:Name="chkSpeedSC"
+                                              Content=""
+                                              IsChecked="{Binding SpeedSC}" />
                                 </Border>
                                 <Border Grid.Row="3" Grid.Column="6">
-                                    <CheckBox x:Name="chkTreatSC" Content="" IsChecked="{Binding TreatSC}"/>
+                                    <CheckBox x:Name="chkTreatSC"
+                                              Content=""
+                                              IsChecked="{Binding TreatSC}" />
                                 </Border>
                                 <Border Grid.Row="3" Grid.Column="7">
-                                    <CheckBox x:Name="chkDoffingLengthSC" Content="" IsChecked="{Binding DoffingLengthSC}"/>
+                                    <CheckBox x:Name="chkDoffingLengthSC"
+                                              Content=""
+                                              IsChecked="{Binding DoffingLengthSC}" />
                                 </Border>
                                 <Border Grid.Row="3" Grid.Column="8">
-                                    <CheckBox x:Name="chkWeightSC" Content="" IsChecked="{Binding WeightSC}"/>
+                                    <CheckBox x:Name="chkWeightSC"
+                                              Content=""
+                                              IsChecked="{Binding WeightSC}" />
                                 </Border>
                                 <Border Grid.Row="3" Grid.Column="9">
-                                    <CheckBox x:Name="chkSpindleSC" Content="" IsChecked="{Binding SpindleSC}"/>
+                                    <CheckBox x:Name="chkSpindleSC"
+                                              Content=""
+                                              IsChecked="{Binding SpindleSC}" />
                                 </Border>
                                 <Border Grid.Row="3" Grid.Column="10">
-                                    <CheckBox x:Name="chkProductionGoodSC" Content="" IsChecked="{Binding ProductionGoodSC}"/>
+                                    <CheckBox x:Name="chkProductionGoodSC"
+                                              Content=""
+                                              IsChecked="{Binding ProductionGoodSC}" />
                                 </Border>
                                 <Border Grid.Row="3" Grid.Column="11">
-                                    <CheckBox x:Name="chkProductionTotalSC" Content="" IsChecked="{Binding ProductionTotalSC}"/>
+                                    <CheckBox x:Name="chkProductionTotalSC"
+                                              Content=""
+                                              IsChecked="{Binding ProductionTotalSC}" />
                                 </Border>
 
                                 <!--#endregion-->
 
-                                <!--#region 1 -->
+                                <!--#region 1-->
 
                                 <Border Grid.Row="4" Grid.Column="0">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchD" Width="70" Text="{Binding StretchD, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchD"
+                                                     Width="70"
+                                                     Text="{Binding StretchD, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchDErr" Width="70" Text="{Binding StretchDErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchDErr"
+                                                     Width="70"
+                                                     Text="{Binding StretchDErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="1">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchH" Width="70" Text="{Binding StretchH, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchH"
+                                                     Width="70"
+                                                     Text="{Binding StretchH, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchHErr" Width="70" Text="{Binding StretchHErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchHErr"
+                                                     Width="70"
+                                                     Text="{Binding StretchHErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="2">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchN" Width="70" Text="{Binding StretchN, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchN"
+                                                     Width="70"
+                                                     Text="{Binding StretchN, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtStretchNErr" Width="70" Text="{Binding StretchNErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtStretchNErr"
+                                                     Width="70"
+                                                     Text="{Binding StretchNErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="3">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtTempD" Width="70" Text="{Binding TempD, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtTempD"
+                                                     Width="70"
+                                                     Text="{Binding TempD, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtTempDErr" Width="70" Text="{Binding TempDErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtTempDErr"
+                                                     Width="70"
+                                                     Text="{Binding TempDErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="4">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtTempHN" Width="70" Text="{Binding TempHN, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtTempHN"
+                                                     Width="70"
+                                                     Text="{Binding TempHN, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtTempHNErr" Width="70" Text="{Binding TempHNErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtTempHNErr"
+                                                     Width="70"
+                                                     Text="{Binding TempHNErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="5">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtSpeed" Width="70" Text="{Binding Speed, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtSpeed"
+                                                     Width="70"
+                                                     Text="{Binding Speed, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text=" ± " />
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox x:Name="txtSpeedErr" Width="70" Text="{Binding SpeedErr, StringFormat='{}{0:#,##0.##}'}" />
+                                            <TextBox x:Name="txtSpeedErr"
+                                                     Width="70"
+                                                     Text="{Binding SpeedErr, StringFormat='{}{0:#,##0.##}'}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="6">
-                                    <TextBox x:Name="txtTreat" Width="100" Text="{Binding Treat}"/>
+                                    <TextBox x:Name="txtTreat"
+                                             Width="100"
+                                             Text="{Binding Treat}" />
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="7">
-                                    <TextBox x:Name="txtDoffingLength" Width="100" Text="{Binding DoffingLength}"/>
+                                    <TextBox x:Name="txtDoffingLength"
+                                             Width="100"
+                                             Text="{Binding DoffingLength}" />
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="8">
-                                    <TextBox x:Name="txtWeight" Width="100" Text="{Binding Weight}"/>
+                                    <TextBox x:Name="txtWeight"
+                                             Width="100"
+                                             Text="{Binding Weight}" />
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="9">
-                                    <TextBox x:Name="txtSpindle" Width="100" Text="{Binding Spindle}"/>
+                                    <TextBox x:Name="txtSpindle"
+                                             Width="100"
+                                             Text="{Binding Spindle}" />
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="10">
-                                    <TextBox x:Name="txtProductionGood" Width="100" Text="{Binding ProductionGood}"/>
+                                    <TextBox x:Name="txtProductionGood"
+                                             Width="100"
+                                             Text="{Binding ProductionGood}" />
                                 </Border>
                                 <Border Grid.Row="4" Grid.Column="11">
-                                    <TextBox x:Name="txtProductionTotal" Width="100" Text="{Binding ProductionTotal}"/>
+                                    <TextBox x:Name="txtProductionTotal"
+                                             Width="100"
+                                             Text="{Binding ProductionTotal}" />
                                 </Border>
 
                                 <!--#endregion-->

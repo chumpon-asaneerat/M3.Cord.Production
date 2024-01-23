@@ -6,8 +6,8 @@
              xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
              mc:Ignorable="d"
-             d:DesignHeight="650"
-             d:DesignWidth="1000"
+             d:DesignHeight="800"
+             d:DesignWidth="1600"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
     <UserControl.Resources>
@@ -273,16 +273,6 @@
                             <Run Text="Condition (std)" />
                         </TextBlock>
                     </Button>
-                    <!--  DIP TimeTable Condition  -->
-                    <Button x:Name="cmdDipTimeTableCondition"
-                            Click="cmdDipTimeTableCondition_Click"
-                            Style="{StaticResource SamplingButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="Setup ใบตรวจสอบ" />
-                            <LineBreak />
-                            <Run Text="ระหว่างการผลิต (Std)" />
-                        </TextBlock>
-                    </Button>
                     <!--  DIP S8 Before Condition  -->
                     <Button x:Name="cmdS8BeforeCondition"
                             Click="cmdS8BeforeCondition_Click"
@@ -291,6 +281,26 @@
                             <Run Text="การตรวจเช็คสภาวะ" />
                             <LineBreak />
                             <Run Text="การผลิตก่อนเปิดเครื่อง" />
+                        </TextBlock>
+                    </Button>
+                    <!--  DIP S8 Product Condition  -->
+                    <Button x:Name="cmdS8ProductCondition"
+                            Click="cmdS8ProductCondition_Click"
+                            Style="{StaticResource SamplingButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Setup ใบบันทึกค่า" />
+                            <LineBreak />
+                            <Run Text="สภาวะการผลิต S-8" />
+                        </TextBlock>
+                    </Button>
+                    <!--  DIP TimeTable Condition  -->
+                    <Button x:Name="cmdDipTimeTableCondition"
+                            Click="cmdDipTimeTableCondition_Click"
+                            Style="{StaticResource SamplingButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="Setup ใบตรวจสอบ" />
+                            <LineBreak />
+                            <Run Text="ระหว่างการผลิต (Std)" />
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>

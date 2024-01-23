@@ -221,6 +221,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.S8BeforeConditionStdPage>(); }
             }
+            /// <summary>Gets DIP S8 Product Condition Item Manage Page.</summary>
+            public static Cord.Pages.S8ProductionConditionItemStdManagePage S8ProductionConditionItemStdManage
+            {
+                get { return GetPage<Cord.Pages.S8ProductionConditionItemStdManagePage>(); }
+            }
 
             #endregion
 

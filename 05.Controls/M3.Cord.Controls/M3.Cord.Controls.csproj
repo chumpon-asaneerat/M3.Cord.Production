@@ -111,10 +111,10 @@
     <Compile Include="Controls\Documents\DIPS8Condition\S8ProductionConditionFooter.xaml.cs">
       <DependentUpon>S8ProductionConditionFooter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S8ProductionConditionItemEntryPage.xaml.cs">
+    <Compile Include="Controls\Documents\DIPS8Condition\S8ProductionConditionItemEntryPage.xaml.cs">
       <DependentUpon>S8ProductionConditionItemEntryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S8ProductionConditionItemStdPage.xaml.cs">
+    <Compile Include="Controls\Documents\DIPS8Condition\S8ProductionConditionItemStdPage.xaml.cs">
       <DependentUpon>S8ProductionConditionItemStdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml.cs">
@@ -246,11 +246,14 @@
     <Compile Include="Pages\DIP\SubPages\_V0\ProductionRecordPage.xaml.cs">
       <DependentUpon>ProductionRecordPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Documents\Dipping\ProductionRecordStdPage.xaml.cs">
+    <Compile Include="Pages\Documents\Dipping\_V0\ProductionRecordStdPage.xaml.cs">
       <DependentUpon>ProductionRecordStdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Documents\Dipping\S8BeforeConditionStdPage.xaml.cs">
       <DependentUpon>S8BeforeConditionStdPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\S8ProductionConditionItemStdManagePage.xaml.cs">
+      <DependentUpon>S8ProductionConditionItemStdManagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
       <DependentUpon>CreateRecipePage.xaml</DependentUpon>
@@ -592,11 +595,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S8ProductionConditionItemEntryPage.xaml">
+    <Page Include="Controls\Documents\DIPS8Condition\S8ProductionConditionItemEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S8ProductionConditionItemStdPage.xaml">
+    <Page Include="Controls\Documents\DIPS8Condition\S8ProductionConditionItemStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -772,9 +775,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Documents\Dipping\ProductionRecordStdPage.xaml">
+    <Page Include="Pages\Documents\Dipping\_V0\ProductionRecordStdPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\S8ProductionConditionItemStdManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Solution\CreateRecipePage.xaml">
       <Generator>MSBuild:Compile</Generator>
