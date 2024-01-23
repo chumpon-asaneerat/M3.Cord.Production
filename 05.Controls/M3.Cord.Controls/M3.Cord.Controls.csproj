@@ -111,6 +111,12 @@
     <Compile Include="Controls\Documents\DIPS8Condition\S8ProductionConditionFooter.xaml.cs">
       <DependentUpon>S8ProductionConditionFooter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Documents\S8ProductionConditionItemEntryPage.xaml.cs">
+      <DependentUpon>S8ProductionConditionItemEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\S8ProductionConditionItemStdPage.xaml.cs">
+      <DependentUpon>S8ProductionConditionItemStdPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml.cs">
       <DependentUpon>CordSamplingDetailsPage.xaml</DependentUpon>
     </Compile>
@@ -583,6 +589,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Documents\DIPS8Condition\S8ProductionConditionFooter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\S8ProductionConditionItemEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\S8ProductionConditionItemStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
