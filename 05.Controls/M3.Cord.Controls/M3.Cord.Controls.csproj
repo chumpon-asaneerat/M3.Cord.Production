@@ -258,6 +258,9 @@
     <Compile Include="Pages\Documents\Dipping\S8ProductionConditionItemStdManagePage.xaml.cs">
       <DependentUpon>S8ProductionConditionItemStdManagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FirstTwistSamplingPage.xaml.cs">
+      <DependentUpon>FirstTwistSamplingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
       <DependentUpon>CreateRecipePage.xaml</DependentUpon>
     </Compile>
@@ -786,6 +789,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Documents\Dipping\S8ProductionConditionItemStdManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FirstTwistSamplingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
