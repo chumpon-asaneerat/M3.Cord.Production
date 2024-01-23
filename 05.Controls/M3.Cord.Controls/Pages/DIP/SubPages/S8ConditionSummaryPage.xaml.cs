@@ -147,7 +147,7 @@ namespace M3.Cord.Pages
             item.ProductCode = pcCard.ProductCode;
             item.RowType = 1;
             item.LotNo = pcCard.DIPLotNo;
-            item.DoffingDate = startDate;
+            item.DoffingDate = DateTime.Today;
             item.DoffingNo = pcCard.DoffNo;
 
             win.Setup(startDate, item);
