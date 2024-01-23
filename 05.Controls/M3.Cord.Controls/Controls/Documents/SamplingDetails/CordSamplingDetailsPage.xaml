@@ -1,11 +1,12 @@
 ﻿<UserControl x:Class="M3.Cord.Controls.Documents.CordSamplingDetailsPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:M3.Cord.Controls.Documents"
-             mc:Ignorable="d" 
-             d:DesignHeight="1000" d:DesignWidth="1000">
+             mc:Ignorable="d"
+             d:DesignHeight="1000"
+             d:DesignWidth="1000">
     <UserControl.Resources>
         <!--  LOCAL STYLES  -->
         <Style TargetType="Border">
@@ -56,7 +57,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            
+
             <!--#region NO 1-->
 
             <Border Grid.Row="0" Grid.Column="0">
@@ -68,23 +69,25 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="3">
-                <DatePicker HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectedDate="{Binding SamplingDate}"/>
+                <DatePicker HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            SelectedDate="{Binding SamplingDate}" />
             </Border>
 
             <!--#endregion-->
 
             <!--#region NO 2-->
 
-            <Border Grid.Row="1" Grid.Column="0">
-                
-            </Border>
+            <Border Grid.Row="1" Grid.Column="0" />
             <Border Grid.Row="1" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="ลูกค้า (Customer)" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="1" Grid.Column="3">
-                <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding CustomerName}"/>
+                <TextBox HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         Text="{Binding CustomerName}" />
             </Border>
 
             <!--#endregion-->
@@ -92,7 +95,9 @@
             <!--#region NO 3-->
 
             <Border Grid.Row="2" Grid.Column="0">
-                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding TwistYarn}"/>
+                <CheckBox HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          IsChecked="{Binding TwistYarn}" />
             </Border>
             <Border Grid.Row="2" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
@@ -100,7 +105,9 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="2" Grid.Column="3">
-                <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding ProductCode}"/>
+                <TextBox HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         Text="{Binding ProductCode}" />
             </Border>
 
             <!--#endregion-->
@@ -116,7 +123,9 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="3" Grid.Column="3">
-                <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding CordStructure}"/>
+                <TextBox HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         Text="{Binding CordStructure}" />
             </Border>
 
             <!--#endregion-->
@@ -132,16 +141,16 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="4" Grid.Column="3">
-                <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding LotNo}" />
+                <TextBox HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         Text="{Binding LotNo}" />
             </Border>
 
             <!--#endregion-->
 
             <!--#region NO 6-->
 
-            <Border Grid.Row="5" Grid.Column="0">
-                
-            </Border>
+            <Border Grid.Row="5" Grid.Column="0" />
             <Border Grid.Row="5" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="สภาวะของกระบวนการ (Production Situation)" />
@@ -149,21 +158,21 @@
             </Border>
             <Border Grid.Row="5" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal" Width="110" >
-                        <CheckBox IsChecked="{Binding ProductionSituationTwisting}"/>
+                    <StackPanel Orientation="Horizontal" Width="110">
+                        <CheckBox IsChecked="{Binding ProductionSituationTwisting}" />
                         <TextBlock Text="Twisting" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="110" >
-                        <CheckBox IsChecked="{Binding ProductionSituationHeatSet}"/>
+                    <StackPanel Orientation="Horizontal" Width="110">
+                        <CheckBox IsChecked="{Binding ProductionSituationHeatSet}" />
                         <TextBlock Text="Heat set" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="110" >
-                        <CheckBox IsChecked="{Binding ProductionSituationDipCord}"/>
+                    <StackPanel Orientation="Horizontal" Width="110">
+                        <CheckBox IsChecked="{Binding ProductionSituationDipCord}" />
                         <TextBlock Text="Dip cord" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="110" >
-                        <CheckBox IsChecked="{Binding ProductionSituationJointing}"/>
-                        <TextBlock Text="Jointing" Foreground="Red"/>
+                    <StackPanel Orientation="Horizontal" Width="110">
+                        <CheckBox IsChecked="{Binding ProductionSituationJointing}" />
+                        <TextBlock Text="Jointing" Foreground="Red" />
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -172,18 +181,16 @@
 
             <!--#region NO 7-->
 
-            <Border Grid.Row="6" Grid.Column="0">
-                
-            </Border>
+            <Border Grid.Row="6" Grid.Column="0" />
             <Border Grid.Row="6" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="มาตรฐานการตีเกลียว (Standard of twisting)" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="6" Grid.Column="3">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
-                    <TextBox Text="{Binding StandardOfTwisting}" Width="330"/>
-                    <Line Width="5"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBox Text="{Binding StandardOfTwisting}" Width="330" />
+                    <Line Width="5" />
                     <TextBlock Text="(Times / Mt. )" />
                 </StackPanel>
             </Border>
@@ -193,7 +200,9 @@
             <!--#region NO 8-->
 
             <Border Grid.Row="7" Grid.Column="0">
-                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding CordDipping}"/>
+                <CheckBox HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          IsChecked="{Binding CordDipping}" />
             </Border>
             <Border Grid.Row="7" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
@@ -202,24 +211,24 @@
             </Border>
             <Border Grid.Row="7" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal" Width="82" >
-                        <CheckBox  IsChecked="{Binding S1}"/>
+                    <StackPanel Orientation="Horizontal" Width="82">
+                        <CheckBox IsChecked="{Binding S1}" />
                         <TextBlock Text="S-1" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="82" >
-                        <CheckBox IsChecked="{Binding S2}"/>
+                    <StackPanel Orientation="Horizontal" Width="82">
+                        <CheckBox IsChecked="{Binding S2}" />
                         <TextBlock Text="S-2" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="82" >
-                        <CheckBox  IsChecked="{Binding S4}"/>
+                    <StackPanel Orientation="Horizontal" Width="82">
+                        <CheckBox IsChecked="{Binding S4}" />
                         <TextBlock Text="S-4" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="82" >
-                        <CheckBox  IsChecked="{Binding S8}"/>
+                    <StackPanel Orientation="Horizontal" Width="82">
+                        <CheckBox IsChecked="{Binding S8}" />
                         <TextBlock Text="S-8" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="70" >
-                        <CheckBox  IsChecked="{Binding S19}"/>
+                    <StackPanel Orientation="Horizontal" Width="70">
+                        <CheckBox IsChecked="{Binding S19}" />
                         <TextBlock Text="S-19" />
                     </StackPanel>
                 </StackPanel>
@@ -239,21 +248,21 @@
             </Border>
             <Border Grid.Row="8" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal" Width="110" >
-                        <CheckBox IsChecked="{Binding Bobbin}"/>
+                    <StackPanel Orientation="Horizontal" Width="110">
+                        <CheckBox IsChecked="{Binding Bobbin}" />
                         <TextBlock Text="Bobbin" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="110" >
-                        <CheckBox IsChecked="{Binding Cheese}"/>
+                    <StackPanel Orientation="Horizontal" Width="110">
+                        <CheckBox IsChecked="{Binding Cheese}" />
                         <TextBlock Text="Cheese" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="110" >
-                        <CheckBox IsChecked="{Binding TaperBB}"/>
+                    <StackPanel Orientation="Horizontal" Width="110">
+                        <CheckBox IsChecked="{Binding TaperBB}" />
                         <TextBlock Text="Taper BB" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="110" >
-                        <CheckBox IsChecked="{Binding ContainerOthers}"/>
-                        <TextBlock Text="Others"/>
+                    <StackPanel Orientation="Horizontal" Width="110">
+                        <CheckBox IsChecked="{Binding ContainerOthers}" />
+                        <TextBlock Text="Others" />
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -271,25 +280,25 @@
                 </TextBlock>
             </Border>
             <Border Grid.Row="9" Grid.Column="3">
-                <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Text="{Binding SpindleNo}" />
+                <TextBox HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         Text="{Binding SpindleNo}" />
             </Border>
 
             <!--#endregion-->
 
             <!--#region NO 11-->
 
-            <Border Grid.Row="10" Grid.Column="0">
-               
-            </Border>
+            <Border Grid.Row="10" Grid.Column="0" />
             <Border Grid.Row="10" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="จำนวนผลิตภัณฑ์ (Quantity)" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="10" Grid.Column="3">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
-                    <TextBox Text="{Binding Quantity}" Width="330"/>
-                    <Line Width="5"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBox Text="{Binding Quantity}" Width="330" />
+                    <Line Width="5" />
                     <TextBlock Text="Kgs." />
                 </StackPanel>
             </Border>
@@ -299,7 +308,9 @@
             <!--#region NO 12-->
 
             <Border Grid.Row="11" Grid.Column="0">
-                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding Rawmaterial}"/>
+                <CheckBox HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          IsChecked="{Binding Rawmaterial}" />
             </Border>
             <Border Grid.Row="11" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
@@ -308,16 +319,16 @@
             </Border>
             <Border Grid.Row="11" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal" Width="110" >
-                        <CheckBox IsChecked="{Binding Polyester}"/>
+                    <StackPanel Orientation="Horizontal" Width="110">
+                        <CheckBox IsChecked="{Binding Polyester}" />
                         <TextBlock Text="Polyester" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="( Yarn type " />
-                        <TextBox Text="{Binding YarnType}" Width="250"/>
+                        <TextBox Text="{Binding YarnType}" Width="250" />
                         <TextBlock Text=" )" />
                     </StackPanel>
-                    
+
                 </StackPanel>
             </Border>
 
@@ -335,12 +346,12 @@
             </Border>
             <Border Grid.Row="12" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal" Width="150" >
-                        <CheckBox IsChecked="{Binding Nylon66}"/>
+                    <StackPanel Orientation="Horizontal" Width="150">
+                        <CheckBox IsChecked="{Binding Nylon66}" />
                         <TextBlock Text="Nylon 66" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="150" >
-                        <CheckBox IsChecked="{Binding MaterialOthers}"/>
+                    <StackPanel Orientation="Horizontal" Width="150">
+                        <CheckBox IsChecked="{Binding MaterialOthers}" />
                         <TextBlock Text="Others" />
                     </StackPanel>
                 </StackPanel>
@@ -350,9 +361,7 @@
 
             <!--#region NO 14-->
 
-            <Border Grid.Row="13" Grid.Column="0">
-        
-            </Border>
+            <Border Grid.Row="13" Grid.Column="0" />
             <Border Grid.Row="13" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="กระบวนการ (Process)" />
@@ -360,35 +369,35 @@
             </Border>
             <Border Grid.Row="13" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal" Width="120" >
-                        <CheckBox IsChecked="{Binding Process}"/>
+                    <StackPanel Orientation="Horizontal" Width="120">
+                        <CheckBox IsChecked="{Binding Process}" />
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="กระบวนการ" />
-                            <Line Height="5"/>
+                            <Line Height="5" />
                             <TextBlock Text="(Process)" />
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="120" >
-                        <CheckBox IsChecked="{Binding Product}"/>
+                    <StackPanel Orientation="Horizontal" Width="120">
+                        <CheckBox IsChecked="{Binding Product}" />
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="ผลิตภัณฑ์" />
-                            <Line Height="5"/>
+                            <Line Height="5" />
                             <TextBlock Text="(Product)" />
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="120" >
-                        <CheckBox IsChecked="{Binding Special}"/>
+                    <StackPanel Orientation="Horizontal" Width="120">
+                        <CheckBox IsChecked="{Binding Special}" />
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="พิเศษ" />
-                            <Line Height="5"/>
+                            <Line Height="5" />
                             <TextBlock Text="(Special)" />
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="120" >
-                        <CheckBox IsChecked="{Binding Trial}"/>
+                    <StackPanel Orientation="Horizontal" Width="120">
+                        <CheckBox IsChecked="{Binding Trial}" />
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="ทดลอง" />
-                            <Line Height="5"/>
+                            <Line Height="5" />
                             <TextBlock Text="(Trial)" />
                         </StackPanel>
                     </StackPanel>
@@ -399,9 +408,7 @@
 
             <!--#region NO 15-->
 
-            <Border Grid.Row="14" Grid.Column="0">
-                
-            </Border>
+            <Border Grid.Row="14" Grid.Column="0" />
             <Border Grid.Row="14" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="ผู้รับผิดชอบ  (Responsible person)" />
@@ -411,12 +418,12 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="กะทำงาน/Shift ( " />
-                        <TextBox Text="{Binding Shift}" Width="50"/>
+                        <TextBox Text="{Binding Shift}" Width="50" />
                         <TextBlock Text=" ) " />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="หัวหน้ากะ ( Name ) : " />
-                        <TextBox Text="{Binding ShiftName}" Width="120"/>
+                        <TextBox Text="{Binding ShiftName}" Width="120" />
                     </StackPanel>
 
                 </StackPanel>
@@ -426,16 +433,16 @@
 
             <!--#region NO 16-->
 
-            <Border Grid.Row="15" Grid.Column="0">
-
-            </Border>
+            <Border Grid.Row="15" Grid.Column="0" />
             <Border Grid.Row="15" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="หมายเหตุ  (Remark)" />
                 </TextBlock>
             </Border>
             <Border Grid.Row="15" Grid.Column="3">
-                <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding Remark}" />
+                <TextBox HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         Text="{Binding Remark}" />
             </Border>
 
             <!--#endregion-->
@@ -443,41 +450,47 @@
             <!--#region NO 17-->
 
             <Border Grid.Row="16" Grid.Column="0">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
-                    <TextBlock Text="แผนกควบคุมคุณภาพ"/>
-                    <Line Height="5"/>
-                    <TextBlock Text="(Quality Control)"/>
+                <StackPanel Orientation="Vertical"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top">
+                    <TextBlock Text="แผนกควบคุมคุณภาพ" />
+                    <Line Height="5" />
+                    <TextBlock Text="(Quality Control)" />
                 </StackPanel>
             </Border>
-            <Border Grid.Row="16" Grid.Column="1" VerticalAlignment="Top">
+            <Border Grid.Row="16"
+                    Grid.Column="1"
+                    VerticalAlignment="Top">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="วิธีทดสอบ (Test methods)" />
                 </TextBlock>
             </Border>
-            <Border Grid.Row="16" Grid.Column="3" >
+            <Border Grid.Row="16" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal" Width="120" VerticalAlignment="Top">
-                        <CheckBox IsChecked="{Binding Direct}"/>
+                    <StackPanel Orientation="Horizontal"
+                                Width="120"
+                                VerticalAlignment="Top">
+                        <CheckBox IsChecked="{Binding Direct}" />
                         <TextBlock Text="Direct" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">
-                            <CheckBox IsChecked="{Binding Relax}"/>
+                            <CheckBox IsChecked="{Binding Relax}" />
                             <TextBlock Text="Relax (k = " />
-                            <TextBox Width="100" Text="{Binding Relax_k}"/>
+                            <TextBox Width="100" Text="{Binding Relax_k}" />
                             <TextBlock Text="  n = " />
-                            <TextBox Width="100" Text="{Binding Relax_n}"/>
+                            <TextBox Width="100" Text="{Binding Relax_n}" />
                             <TextBlock Text="  )" />
                         </StackPanel>
-                        <Line Height="5"/>
+                        <Line Height="5" />
                         <StackPanel Orientation="Horizontal">
-                            <CheckBox IsChecked="{Binding Necessary}"/>
-                            <TextBlock Text="จำเป็น (Necessary)"/>
+                            <CheckBox IsChecked="{Binding Necessary}" />
+                            <TextBlock Text="จำเป็น (Necessary)" />
                         </StackPanel>
-                        <Line Height="5"/>
+                        <Line Height="5" />
                         <StackPanel Orientation="Horizontal">
-                            <CheckBox IsChecked="{Binding NotNecessary}"/>
-                            <TextBlock Text="ไม่จำเป็น (Not necessary)"/>
+                            <CheckBox IsChecked="{Binding NotNecessary}" />
+                            <TextBlock Text="ไม่จำเป็น (Not necessary)" />
                         </StackPanel>
                     </StackPanel>
 
@@ -488,26 +501,26 @@
 
             <!--#region NO 18-->
 
-            <Border Grid.Row="17" Grid.Column="0">
-                
-            </Border>
-            <Border Grid.Row="17" Grid.Column="1" VerticalAlignment="Top">
+            <Border Grid.Row="17" Grid.Column="0" />
+            <Border Grid.Row="17"
+                    Grid.Column="1"
+                    VerticalAlignment="Top">
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="เหตุผลพิเศษ (Special mention)" />
                 </TextBlock>
             </Border>
-            <Border Grid.Row="17" Grid.Column="3" >
+            <Border Grid.Row="17" Grid.Column="3">
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top">
                     <StackPanel Orientation="Horizontal">
-                        <CheckBox IsChecked="{Binding SpecialMentionJointing}"/>
-                        <TextBlock Text="Jointing" Foreground="Red"/>
-                        </StackPanel>
-                        <Line Height="5"/>
-                        <StackPanel Orientation="Horizontal">
-                        <CheckBox IsChecked="{Binding SpecialMentionNoJointing}"/>
-                        <TextBlock Text="No Jointing" Foreground="Red"/>
-                        </StackPanel>
+                        <CheckBox IsChecked="{Binding SpecialMentionJointing}" />
+                        <TextBlock Text="Jointing" Foreground="Red" />
                     </StackPanel>
+                    <Line Height="5" />
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding SpecialMentionNoJointing}" />
+                        <TextBlock Text="No Jointing" Foreground="Red" />
+                    </StackPanel>
+                </StackPanel>
             </Border>
 
             <!--#endregion-->

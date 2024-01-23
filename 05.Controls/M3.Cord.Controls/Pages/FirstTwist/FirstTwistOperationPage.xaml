@@ -29,6 +29,9 @@
             <TabItem Header="Production condition">
                 <spage:FirstTwistConditionPage x:Name="pageMCCondition" />
             </TabItem>
+            <TabItem Header="Cord Sampling Details">
+                <spage:FirstTwistSamplingPage x:Name="pageSampling" />
+            </TabItem>
         </TabControl>
     </page:NPage>
 </UserControl>

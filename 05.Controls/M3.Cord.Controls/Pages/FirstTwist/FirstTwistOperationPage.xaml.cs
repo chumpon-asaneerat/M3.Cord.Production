@@ -69,6 +69,10 @@ namespace M3.Cord.Pages
                     // MC Condition
                     pageMCCondition.RefreshGrids();
                     break;
+                case 4:
+                    // MC Condition
+                    pageSampling.RefreshGrids();
+                    break;
                 default:
                     break;
             }
@@ -109,6 +113,7 @@ namespace M3.Cord.Pages
             pageRawMat.Setup(selectedMC);
             pageCheckSheet.Setup(selectedMC);
             pageMCCondition.Setup(selectedMC);
+            pageSampling.Setup(selectedMC);
 
             tabs.SelectedIndex = 0; // reset index
         }
