@@ -901,4 +901,113 @@
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
+
+    <!--  DIP S8 PRODUCTION CONDITION  -->
+    <DataTemplate x:Key="S8P_LotNo">
+        <TextBlock Text="{Binding Path=LotNo, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_Date">
+        <TextBlock Text="{Binding Path=DoffingDateS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_DoffNo">
+        <TextBlock Text="{Binding Path=DoffingNo, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_StretchDValue">
+        <TextBlock Text="{Binding Path=StretchDValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_StretchHValue">
+        <TextBlock Text="{Binding Path=StretchHValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_StretchNValue">
+        <TextBlock Text="{Binding Path=StretchNValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_TempDValue">
+        <TextBlock Text="{Binding Path=TempDValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_TempHNValue">
+        <TextBlock Text="{Binding Path=TempHNValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_SpeedValue">
+        <TextBlock Text="{Binding Path=SpeedValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_TreatValue">
+        <TextBlock Text="{Binding Path=TreatValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_DoffingLengthValue">
+        <TextBlock Text="{Binding Path=DoffingLengthValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_WeightValue">
+        <TextBlock Text="{Binding Path=WeightValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_SpindleValue">
+        <TextBlock Text="{Binding Path=SpindleValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_ProductionGoodValue">
+        <TextBlock Text="{Binding Path=ProductionGoodValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_ProductionTotalValue">
+        <TextBlock Text="{Binding Path=ProductionTotalValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_ProductionCutValue">
+        <TextBlock Text="{Binding Path=ProductionCutValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_Operator">
+        <TextBlock Text="{Binding Path=Operator, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8P_Leader">
+        <TextBlock Text="{Binding Path=Leader, Mode=OneWay}"
+                   TextAlignment="Center"
+                   Width="120" />
+    </DataTemplate>
 </ResourceDictionary>

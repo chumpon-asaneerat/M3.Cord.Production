@@ -29,6 +29,34 @@ namespace M3.Cord.Models
         public string ProductCode { get; set; }
         public string LotNo { get; set; }
         public DateTime? DoffingDate { get; set; }
+
+        public string DoffingDateS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    return (DoffingDate.HasValue) ?
+                        DoffingDate.Value.ToString("yyyy-MM-dd") : "";
+                }
+            }
+            set { }
+        }
+
         public int? DoffingNo { get; set; }
 
         public bool? StretchDSC { get; set; }
@@ -36,64 +64,626 @@ namespace M3.Cord.Models
         public decimal? StretchDErr { get; set; }
         public decimal? StretchDValue { get; set; }
 
+        public string StretchDValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (StretchD.HasValue) ? StretchD.Value.ToString("#,###.##") : "";
+                    fmt += " ± ";
+                    fmt += (StretchDErr.HasValue) ? StretchDErr.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!StretchDSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (StretchDSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (StretchDValue.HasValue) ? StretchDValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (StretchDValue.HasValue) ? StretchDValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public bool? StretchHSC { get; set; }
         public decimal? StretchH { get; set; }
         public decimal? StretchHErr { get; set; }
         public decimal? StretchHValue { get; set; }
+
+        public string StretchHValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (StretchH.HasValue) ? StretchH.Value.ToString("#,###.##") : "";
+                    fmt += " ± ";
+                    fmt += (StretchHErr.HasValue) ? StretchHErr.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!StretchHSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (StretchHSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (StretchHValue.HasValue) ? StretchHValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (StretchHValue.HasValue) ? StretchHValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
 
         public bool? StretchNSC { get; set; }
         public decimal? StretchN { get; set; }
         public decimal? StretchNErr { get; set; }
         public decimal? StretchNValue { get; set; }
 
+        public string StretchNValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (StretchN.HasValue) ? StretchN.Value.ToString("#,###.##") : "";
+                    fmt += " ± ";
+                    fmt += (StretchNErr.HasValue) ? StretchNErr.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!StretchNSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (StretchNSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (StretchNValue.HasValue) ? StretchNValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (StretchNValue.HasValue) ? StretchNValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public bool? TempDSC { get; set; }
         public decimal? TempD { get; set; }
         public decimal? TempDErr { get; set; }
         public decimal? TempDValue { get; set; }
+
+        public string TempDValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (TempD.HasValue) ? TempD.Value.ToString("#,###.##") : "";
+                    fmt += " ± ";
+                    fmt += (TempDErr.HasValue) ? TempDErr.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!TempDSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (TempDSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (TempDValue.HasValue) ? TempDValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (TempDValue.HasValue) ? TempDValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
 
         public bool? TempHNSC { get; set; }
         public decimal? TempHN { get; set; }
         public decimal? TempHNErr { get; set; }
         public decimal? TempHNValue { get; set; }
 
+        public string TempHNValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (TempHN.HasValue) ? TempHN.Value.ToString("#,###.##") : "";
+                    fmt += " ± ";
+                    fmt += (TempHNErr.HasValue) ? TempHNErr.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!TempHNSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (TempHNSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (TempHNValue.HasValue) ? TempHNValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (TempHNValue.HasValue) ? TempHNValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public bool? SpeedSC { get; set; }
         public decimal? Speed { get; set; }
         public decimal? SpeedErr { get; set; }
         public decimal? SpeedValue { get; set; }
 
+        public string SpeedValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (Speed.HasValue) ? Speed.Value.ToString("#,###.##") : "";
+                    fmt += " ± ";
+                    fmt += (SpeedErr.HasValue) ? SpeedErr.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!SpeedSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (SpeedSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (SpeedValue.HasValue) ? SpeedValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (SpeedValue.HasValue) ? SpeedValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public bool? TreatSC { get; set; }
         public decimal? Treat { get; set; }
         public decimal? TreatValue { get; set; }
+
+        public string TreatValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (Treat.HasValue) ? Treat.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!TreatSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (TreatSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (TreatValue.HasValue) ? TreatValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (TreatValue.HasValue) ? TreatValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
 
         public bool? DoffingLengthSC { get; set; }
         public decimal? DoffingLength { get; set; }
         public decimal? DoffingLengthValue { get; set; }
 
+        public string DoffingLengthValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (DoffingLength.HasValue) ? DoffingLength.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!DoffingLengthSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (DoffingLengthSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (DoffingLengthValue.HasValue) ? DoffingLengthValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (DoffingLengthValue.HasValue) ? DoffingLengthValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public bool? WeightSC { get; set; }
         public decimal? Weight { get; set; }
         public decimal? WeightValue { get; set; }
+
+        public string WeightValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (Weight.HasValue) ? Weight.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!WeightSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (WeightSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (WeightValue.HasValue) ? WeightValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (WeightValue.HasValue) ? WeightValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
 
         public bool? SpindleSC { get; set; }
         public decimal? Spindle { get; set; }
         public decimal? SpindleValue { get; set; }
 
+        public string SpindleValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (Spindle.HasValue) ? Spindle.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!SpindleSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (SpindleSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (SpindleValue.HasValue) ? SpindleValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (SpindleValue.HasValue) ? SpindleValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public bool? ProductionGoodSC { get; set; }
         public decimal? ProductionGood { get; set; }
         public decimal? ProductionGoodValue { get; set; }
+
+        public string ProductionGoodValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (ProductionGood.HasValue) ? ProductionGood.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!ProductionGoodSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (ProductionGoodSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (ProductionGoodValue.HasValue) ? ProductionGoodValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (ProductionGoodValue.HasValue) ? ProductionGoodValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
 
         public bool? ProductionTotalSC { get; set; }
         public decimal? ProductionTotal { get; set; }
         public decimal? ProductionTotalValue { get; set; }
 
+        public string ProductionTotalValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    fmt += (ProductionTotal.HasValue) ? ProductionTotal.Value.ToString("#,###.##") : "";
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!ProductionTotalSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (ProductionTotalSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (ProductionTotalValue.HasValue) ? ProductionTotalValue.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (ProductionTotalValue.HasValue) ? ProductionTotalValue.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
 
         public decimal? ProductionCut { get; set; }
+        public string ProductionCutValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (ProductionCut.HasValue) ? ProductionCut.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (ProductionCut.HasValue) ? ProductionCut.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public decimal? PositionCordCutCreel { get; set; }
+        public string PositionCordCutCreelValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (PositionCordCutCreel.HasValue) ? PositionCordCutCreel.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (PositionCordCutCreel.HasValue) ? PositionCordCutCreel.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public decimal? PositionCordCutCS { get; set; }
+        public string PositionCordCutCSValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (PositionCordCutCS.HasValue) ? PositionCordCutCS.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (PositionCordCutCS.HasValue) ? PositionCordCutCS.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public decimal? PositionCordCutWinder { get; set; }
+        public string PositionCordCutWinderValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (PositionCordCutWinder.HasValue) ? PositionCordCutWinder.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (PositionCordCutWinder.HasValue) ? PositionCordCutWinder.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public decimal? PositionCordCutWasteYarn { get; set; }
+        public string PositionCordCutWasteYarnValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (PositionCordCutWasteYarn.HasValue) ? PositionCordCutWasteYarn.Value.ToString("#,###.##") : "";
+                }
+                else
+                {
+                    return (PositionCordCutWasteYarn.HasValue) ? PositionCordCutWasteYarn.Value.ToString("#,###.##") : "";
+                }
+            }
+            set { }
+        }
+
         public DateTime? CheckTimeStart { get; set; }
         public DateTime? CheckTimeFinish { get; set; }
         public DateTime? CheckTimeRecord { get; set; }
+
         public string Opertor { get; set; }
         public string Leader { get; set; }
 

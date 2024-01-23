@@ -31,59 +31,20 @@
 
         <!--#endregion-->
 
-        <!--#region S8CoolingWaterSystem-->
-
-        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
-        <GridViewColumnCollection x:Key="S8CoolingWaterSystemGridViewColumns">
-            <GridViewColumn Width="180"
-                            CellTemplate="{StaticResource S8CoolingWaterSystemBath1Value}"
-                            Header=" อ่าง 1 "
-                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
-            <GridViewColumn Width="180"
-                            CellTemplate="{StaticResource S8CoolingWaterSystemBath2Value}"
-                            Header=" อ่าง 2 "
-                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
-        </GridViewColumnCollection>
-        <!--  COLUMNS HEADER TEMPLATE  -->
-        <DataTemplate x:Key="S8CoolingWaterSystemColumnsHeader">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0"
-                           HorizontalAlignment="Center"
-                           TextAlignment="Center">
-                    <Run Text="ระบบน้ำหล่อเย็น" />
-                </TextBlock>
-                <GridViewHeaderRowPresenter Grid.Row="1"
-                                            HorizontalAlignment="Stretch"
-                                            Columns="{StaticResource S8CoolingWaterSystemGridViewColumns}" />
-            </Grid>
-        </DataTemplate>
-        <!--  ROW COLUMNS CELL TEMPLATE  -->
-        <DataTemplate x:Key="S8CoolingWaterSystemColumns">
-            <Grid>
-                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8CoolingWaterSystemGridViewColumns}" />
-            </Grid>
-        </DataTemplate>
-
-        <!--#endregion-->
-
         <!--#region S8Stretch (D,H,N)-->
 
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="S8StretchGridViewColumns">
             <GridViewColumn Width="180"
-                            CellTemplate="{StaticResource S8StretchDValue}"
+                            CellTemplate="{StaticResource S8P_StretchDValue}"
                             Header=" D.Zone "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
             <GridViewColumn Width="180"
-                            CellTemplate="{StaticResource S8StretchHValue}"
+                            CellTemplate="{StaticResource S8P_StretchHValue}"
                             Header=" H.Zone "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
             <GridViewColumn Width="180"
-                            CellTemplate="{StaticResource S8StretchNValue}"
+                            CellTemplate="{StaticResource S8P_StretchNValue}"
                             Header=" N.Zone "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
         </GridViewColumnCollection>
@@ -97,7 +58,7 @@
                 <TextBlock Grid.Row="0"
                            HorizontalAlignment="Center"
                            TextAlignment="Center">
-                    <Run Text="Stretch (แรงดึงเส้นด้าย)" />
+                    <Run Text="Stretch % (แรงยืด)" />
                 </TextBlock>
                 <GridViewHeaderRowPresenter Grid.Row="1"
                                             HorizontalAlignment="Stretch"
@@ -116,11 +77,11 @@
         <!--#region S8Temp (D,HN)-->
         <GridViewColumnCollection x:Key="S8TempGridViewColumns">
             <GridViewColumn Width="180"
-                            CellTemplate="{StaticResource S8TempDValue}"
+                            CellTemplate="{StaticResource S8P_TempDValue}"
                             Header=" D.Zone "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
             <GridViewColumn Width="180"
-                            CellTemplate="{StaticResource S8TempHNValue}"
+                            CellTemplate="{StaticResource S8P_TempHNValue}"
                             Header=" H,N.Zone "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
         </GridViewColumnCollection>
@@ -145,6 +106,49 @@
         <DataTemplate x:Key="S8TempColumns">
             <Grid>
                 <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8TempGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region PRODUCT-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8ProductGridViewColumns">
+            <GridViewColumn Width="180"
+                            CellTemplate="{StaticResource S8P_ProductionGoodValue}"
+                            Header=" Good "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="180"
+                            CellTemplate="{StaticResource S8P_ProductionTotalValue}"
+                            Header=" Total wt "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="180"
+                            CellTemplate="{StaticResource S8P_ProductionCutValue}"
+                            Header=" Cord Cut (sp/kg) "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8ProductColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Product (ผลิตภัณฑ์)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8ProductGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8ProductColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8ProductGridViewColumns}" />
             </Grid>
         </DataTemplate>
 
@@ -289,32 +293,9 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                
-                                <!--
-                                <GridViewColumn Header="Date" CellTemplate="{StaticResource SDate}" />
-                                <GridViewColumn Header="Time" CellTemplate="{StaticResource STime}" />
 
-                                <GridViewColumn Header="Lot No" CellTemplate="{StaticResource SLotNo}" />
-
-                                <GridViewColumn Header="Bobbin" CellTemplate="{StaticResource S7Bobbin}" />
-
-                                <GridViewColumn Width="Auto"
-                                                CellTemplate="{StaticResource S8CoolingWaterSystemColumns}"
-                                                HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                                HeaderTemplate="{StaticResource S8CoolingWaterSystemColumnsHeader}" />
-
-                                <GridViewColumn CellTemplate="{StaticResource S8ChemicalWork}">
-                                    <GridViewColumn.Header>
-                                        <TextBlock TextAlignment="Center">
-                                            <Run Text="การทำงานของ" />
-                                            <LineBreak />
-                                            <Run Text="ตัวปล่อยเคมี" />
-                                        </TextBlock>
-                                    </GridViewColumn.Header>
-                                </GridViewColumn>
-                                <GridViewColumn Header="ผ้ากรองเคมี" CellTemplate="{StaticResource S8ChemicalFilter}" />
-
-                                <GridViewColumn Header="ความเร็ว" CellTemplate="{StaticResource S8SpeedValue}" />
+                                <GridViewColumn Header="Date" CellTemplate="{StaticResource S8P_Date}" />
+                                <GridViewColumn Header="Doffing No" CellTemplate="{StaticResource S8P_DoffNo}" />
 
                                 <GridViewColumn Width="Auto"
                                                 CellTemplate="{StaticResource S8StretchColumns}"
@@ -326,9 +307,20 @@
                                                 HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
                                                 HeaderTemplate="{StaticResource S8TempColumnsHeader}" />
 
-                                <GridViewColumn Header="Remark" CellTemplate="{StaticResource Remark}" />
-                                <GridViewColumn Header="ตรวจเช็คโดย" CellTemplate="{StaticResource CheckBy}" />
-                                -->
+
+                                <GridViewColumn Header="ความเร็ว" CellTemplate="{StaticResource S8P_SpeedValue}" />
+                                <GridViewColumn Header="Treat (cord)" CellTemplate="{StaticResource S8P_TreatValue}" />
+                                <GridViewColumn Header="Doffing Length" CellTemplate="{StaticResource S8P_DoffingLengthValue}" />
+                                <GridViewColumn Header="Weight (kg)" CellTemplate="{StaticResource S8P_WeightValue}" />
+
+                                <GridViewColumn Width="Auto"
+                                                CellTemplate="{StaticResource S8ProductColumns}"
+                                                HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                                HeaderTemplate="{StaticResource S8ProductColumnsHeader}" />
+
+
+                                <GridViewColumn Header="Operator" CellTemplate="{StaticResource S8P_Operator}" />
+                                <GridViewColumn Header="Leader" CellTemplate="{StaticResource S8P_Leader}" />
                             </GridView>
                         </ListView.View>
                     </ListView>
