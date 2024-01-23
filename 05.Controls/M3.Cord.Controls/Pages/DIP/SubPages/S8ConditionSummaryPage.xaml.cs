@@ -89,7 +89,8 @@ namespace M3.Cord.Pages
                 }
             }
 
-            paCondition.DataContext = pcCard;
+            //paCondition1.DataContext = pcCard;
+            //paCondition2.DataContext = pcCard;
         }
 
         #endregion

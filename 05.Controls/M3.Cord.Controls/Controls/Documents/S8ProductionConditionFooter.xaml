@@ -1,0 +1,269 @@
+﻿<UserControl x:Class="M3.Cord.Controls.Documents.S8ProductionConditionFooter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="1500">
+    <UserControl.Resources>
+        <!--  LOCAL STYLES  -->
+        <Style TargetType="Border">
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderBrush" Value="DimGray" />
+            <Setter Property="BorderThickness" Value="0.5" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource CommonTextBox}">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource CommonCheckBox}">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--#region COLUMN-->
+        <Border Grid.Row="1" Grid.Column="0" />
+        <Border Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Before Use" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="2">
+            <TextBlock Text="After Use" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="3">
+            <TextBlock Text="Total" TextAlignment="Center" />
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Gas S-8" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="1">
+            <TextBox Width="100" Text="{Binding GasBefore}" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="2">
+            <TextBox Width="100" Text="{Binding GasAfter}" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="3">
+            <TextBox Width="100" Text="{Binding GasTotal}" />
+        </Border>
+
+        <Border Grid.Row="3" Grid.Column="0">
+            <TextBlock Text="Cooling Warter" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="1">
+            <TextBox Width="100" Text="{Binding CoolingWarterBefore}" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="2">
+            <TextBox Width="100" Text="{Binding CoolingWarterAfter}" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="3">
+            <TextBox Width="100" Text="{Binding CoolingWarterTotal}" />
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="0">
+            <TextBlock Text="Air Pressure" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="1">
+            <TextBox Width="100" Text="{Binding AirPressureBefore}" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="2">
+            <TextBox Width="100" Text="{Binding AirPressureAfter}" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="3">
+            <TextBox Width="100" Text="{Binding AirPressureTotal}" />
+        </Border>
+
+        <Border Grid.Row="1"
+                Grid.Column="4"
+                Grid.RowSpan="2">
+            <TextBlock Text="Bath No.1" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="5">
+            <TextBlock Text="Before Use" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="6">
+            <TextBox Width="100" Text="{Binding Bath1Before}" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="5">
+            <TextBlock Text="After Use" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="6">
+            <TextBox Width="100" Text="{Binding Bath1After}" />
+        </Border>
+        <Border Grid.Row="1"
+                Grid.Column="7"
+                Grid.RowSpan="2">
+            <TextBlock Text="WPU" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="1"
+                Grid.Column="8"
+                Grid.RowSpan="2">
+            <TextBox Width="100" Text="{Binding Bath1WPU}" />
+        </Border>
+
+        <Border Grid.Row="3"
+                Grid.Column="4"
+                Grid.RowSpan="2">
+            <TextBlock Text="Bath No.2" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="5">
+            <TextBlock Text="Before Use" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="6">
+            <TextBox Width="100" Text="{Binding Bath2Before}" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="5">
+            <TextBlock Text="After Use" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="6">
+            <TextBox Width="100" Text="{Binding Bath2After}" />
+        </Border>
+        <Border Grid.Row="3"
+                Grid.Column="7"
+                Grid.RowSpan="2">
+            <TextBlock Text="WPU" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="3"
+                Grid.Column="8"
+                Grid.RowSpan="2">
+            <TextBox Width="100" Text="{Binding Bath2WPU}" />
+        </Border>
+
+        <Border Grid.Row="0"
+                Grid.Column="9"
+                Grid.ColumnSpan="8">
+            <TextBlock Text="TEPM.RECORD" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="1"
+                Grid.Column="9"
+                Grid.ColumnSpan="4">
+            <TextBlock Text="D.ZONE" TextAlignment="Center" />
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="9">
+            <TextBlock Text="1" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="10">
+            <TextBox Width="100" Text="{Binding TempDZone1}" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="9">
+            <TextBlock Text="2" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="10">
+            <TextBox Width="100" Text="{Binding TempDZone2}" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="9">
+            <TextBlock Text="3" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="10">
+            <TextBox Width="100" Text="{Binding TempDZone3}" />
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="11">
+            <TextBlock Text="4" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="12">
+            <TextBox Width="100" Text="{Binding TempDZone4}" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="11">
+            <TextBlock Text="5" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="12">
+            <TextBox Width="100" Text="{Binding TempDZone5}" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="11">
+            <TextBlock Text="6" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="12">
+            <TextBox Width="100" Text="{Binding TempDZone6}" />
+        </Border>
+
+        <Border Grid.Row="1"
+                Grid.Column="13"
+                Grid.ColumnSpan="4">
+            <TextBlock Text="H.N.ZONE" TextAlignment="Center" />
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="13">
+            <TextBlock Text="1" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="14">
+            <TextBox Width="100" Text="{Binding TempHNZone1}" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="13">
+            <TextBlock Text="2" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="14">
+            <TextBox Width="100" Text="{Binding TempHNZone2}" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="13">
+            <TextBlock Text="3" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="14">
+            <TextBox Width="100" Text="{Binding TempHNZone3}" />
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="15">
+            <TextBlock Text="4" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="16">
+            <TextBox Width="100" Text="{Binding TempHNZone4}" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="15">
+            <TextBlock Text="5" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="16">
+            <TextBox Width="100" Text="{Binding TempHNZone5}" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="15">
+            <TextBlock Text="6" TextAlignment="Center" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="16">
+            <TextBox Width="100" Text="{Binding TempHNZone6}" />
+        </Border>
+
+        <!--#endregion-->
+
+    </Grid>
+</UserControl>
