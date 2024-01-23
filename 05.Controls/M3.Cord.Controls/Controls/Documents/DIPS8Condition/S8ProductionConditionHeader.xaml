@@ -93,7 +93,9 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                 <TextBlock Text="USER (ลูกค้า)" TextAlignment="Center" />
-                <TextBox Width="200" Text="{Binding CustomerName}" />
+                <TextBox Width="200"
+                         Text="{Binding CustomerName}"
+                         IsEnabled="False" />
             </StackPanel>
         </Border>
         <Border Grid.Row="1" Grid.Column="3">
@@ -122,7 +124,9 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                 <TextBlock Text="Cord Structure (โครงสร้างเชือก)" TextAlignment="Center" />
-                <TextBox Width="200" Text="{Binding CordStructure}" />
+                <TextBox Width="200"
+                         Text="{Binding CordStructure}"
+                         IsEnabled="False" />
             </StackPanel>
         </Border>
         <Border Grid.Row="1" Grid.Column="4">
@@ -169,7 +173,7 @@
                         VerticalAlignment="Center">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <TextBlock Text="Front" FontSize="18" />
-                    <TextBox Width="70" Text="{Binding Bath1NipFront}" />
+                    <TextBox Width="70" Text="{Binding Bath1NipFront, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </StackPanel>
         </Border>
@@ -223,7 +227,7 @@
                         VerticalAlignment="Center">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <TextBlock Text="Front" FontSize="18" />
-                    <TextBox Width="70" Text="{Binding Bath2NipFront}" />
+                    <TextBox Width="70" Text="{Binding Bath2NipFront, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>
             </StackPanel>
         </Border>

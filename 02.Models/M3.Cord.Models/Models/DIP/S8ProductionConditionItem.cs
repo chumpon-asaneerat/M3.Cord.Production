@@ -101,7 +101,7 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
-        public static NDbResult<List<S8ProductionConditionItem>> Gets(int? S8ConditionId, string productCode)
+        public static NDbResult<List<S8ProductionConditionItem>> Gets(int? S8ConditionId)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 

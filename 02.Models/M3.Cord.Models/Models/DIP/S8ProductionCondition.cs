@@ -68,6 +68,10 @@ namespace M3.Cord.Models
         public decimal? TempDZone1 { get; set; }
         public decimal? TempDZone2 { get; set; }
         public decimal? TempDZone3 { get; set; }
+        public decimal? TempDZone4 { get; set; }
+        public decimal? TempDZone5 { get; set; }
+        public decimal? TempDZone6 { get; set; }
+
         public decimal? TempHNZone1 { get; set; }
         public decimal? TempHNZone2 { get; set; }
         public decimal? TempHNZone3 { get; set; }
@@ -223,6 +227,9 @@ namespace M3.Cord.Models
             p.Add("@TempDZone1", value.TempDZone1);
             p.Add("@TempDZone2", value.TempDZone2);
             p.Add("@TempDZone3", value.TempDZone3);
+            p.Add("@TempDZone4", value.TempDZone4);
+            p.Add("@TempDZone5", value.TempDZone5);
+            p.Add("@TempDZone6", value.TempDZone6);
             p.Add("@TempHNZone1", value.TempHNZone1);
             p.Add("@TempHNZone2", value.TempHNZone2);
             p.Add("@TempHNZone3", value.TempHNZone3);

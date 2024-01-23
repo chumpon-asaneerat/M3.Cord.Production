@@ -45,6 +45,8 @@ namespace M3.Cord.Pages
 
         private DIPMC mc = null;
         private DIPPCCard pcCard = null;
+        private S8ProductionCondition sheet = null;
+        private List<S8ProductionConditionItem> items = null;
 
         #endregion
 
@@ -66,7 +68,42 @@ namespace M3.Cord.Pages
 
         private void Save()
         {
+            if (null != sheet)
+            {
+                var ret = S8ProductionCondition.Save(sheet);
 
+                if (sheet.S8ConditionId.HasValue)
+                {
+                    if (null != items)
+                    {
+                        foreach (var item in items)
+                        {
+                            item.S8ConditionId = sheet.S8ConditionId.Value;
+                            S8ProductionConditionItem.Save(item);
+                        }
+                    }
+                }
+
+                if (null != ret && ret.Ok)
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
+            }
+        }
+
+        private void RefreshGrid()
+        {
+            //grid.ItemsSource = null;
+
+            if (null != sheet && null != mc)
+            {
+                items = S8ProductionConditionItem.Gets(sheet.S8ConditionId).Value();
+                if (null == items)
+                {
+                    items = new List<S8ProductionConditionItem>();
+                }
+            }
+
+            //grid.ItemsSource = items;
         }
 
         #endregion
@@ -84,13 +121,29 @@ namespace M3.Cord.Pages
                     pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
                     if (null != pcCard)
                     {
-
+                        var sheets = S8ProductionCondition.Gets(pcCard.DIPPCId.Value).Value();
+                        sheet = (null != sheets) ? sheets.LastOrDefault() : null;
+                        if (null == sheet)
+                        {
+                            sheet = new S8ProductionCondition();
+                            sheet.DIPPCId = pcCard.DIPPCId.Value;
+                            sheet.ProductCode = pcCard.ProductCode;
+                            sheet.LotNo = pcCard.DIPLotNo;
+                            sheet.RecordDate = DateTime.Now;
+                            sheet.CustomerName = pcCard.CustomerName;
+                            sheet.CordStructure = pcCard.CordStructure;
+                        }
                     }
                 }
             }
 
-            //paCondition1.DataContext = pcCard;
-            //paCondition2.DataContext = pcCard;
+            paCondition1.DataContext = sheet;
+            paCondition2.DataContext = sheet;
+
+            this.InvokeAction(() =>
+            {
+                RefreshGrid();
+            });
         }
 
         #endregion
