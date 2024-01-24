@@ -916,7 +916,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="S8P_DoffNo">
-        <TextBlock Text="{Binding Path=DoffingNo, Mode=OneWay}"
+        <TextBlock Text="{Binding Path=DoffingNoS, Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>

@@ -58,6 +58,32 @@ namespace M3.Cord.Models
         }
 
         public int? DoffingNo { get; set; }
+        public string DoffingNoS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    return (DoffingNo.HasValue) ?
+                        DoffingNo.Value.ToString() : "";
+                }
+            }
+            set { }
+        }
 
         public bool? StretchDSC { get; set; }
         public decimal? StretchD { get; set; }
