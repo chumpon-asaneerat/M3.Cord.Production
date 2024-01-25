@@ -95,7 +95,7 @@ namespace M3.Cord.Pages
             {
                 var items = CordSamplingDetails.Gets(pcCard.MCCode, pcCard.ProductLotNo, pcCard.ProductCode).Value();
                 var item = (null != items) ? items.FirstOrDefault() : null;
-                s1.Setup(selectedMC, pcCard, item);
+                s1.Setup(selectedMC, pcCard, false, item);
             }
             this.DataContext = pcCard;
         }

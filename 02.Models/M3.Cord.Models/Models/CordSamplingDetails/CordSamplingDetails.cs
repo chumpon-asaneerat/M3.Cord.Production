@@ -124,11 +124,13 @@ namespace M3.Cord.Models
         public string Tester { get; set; }
         public DateTime? TesterTime { get; set; }
 
+        public bool IsQA { get; set; }
+
         public bool CanTest
         {
             get 
             { 
-                return SenderTime.HasValue && !TesterTime.HasValue; 
+                return IsQA && SenderTime.HasValue && !TesterTime.HasValue; 
             }
             set { }
         }

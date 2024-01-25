@@ -58,7 +58,8 @@ namespace M3.Cord.Controls.Documents
 
         #region Public Methods
 
-        public void Setup(FirstTwistMC mc, PCTwist1 PCCard, CordSamplingDetails item = null)
+        public void Setup(FirstTwistMC mc, PCTwist1 PCCard, bool isQA, 
+            CordSamplingDetails item = null)
         {
             selectedMC = mc;
             pcCard = PCCard;
@@ -89,6 +90,7 @@ namespace M3.Cord.Controls.Documents
                         M3CordApp.Current.User.FullName : null;
                     */
                 }
+                _item.IsQA = isQA;
             }
 
             this.DataContext = _item;
@@ -96,6 +98,8 @@ namespace M3.Cord.Controls.Documents
 
         public void Save()
         {
+            this.DataContext = null;
+
             if (null != _item)
             {
                 if (!_item.SenderTime.HasValue)
@@ -119,6 +123,8 @@ namespace M3.Cord.Controls.Documents
                     M3CordApp.Windows.SaveSuccess();
                 else M3CordApp.Windows.SaveFailed();
             }
+
+            this.DataContext = _item;
         }
 
         #endregion
