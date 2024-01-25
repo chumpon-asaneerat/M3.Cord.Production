@@ -98,7 +98,8 @@ namespace M3.Cord.Pages
             if (product != null)
             {
                 string productCode = product.ProductCode;
-                var std = S8ProductionConditionItemStd.Gets(productCode).Value().FirstOrDefault();
+                var items = S8ProductionConditionItemStd.Gets(productCode).Value();
+                var std = (null != items) ? items.FirstOrDefault() : null;
                 if (null == std)
                 {
                     std = new S8ProductionConditionItemStd();

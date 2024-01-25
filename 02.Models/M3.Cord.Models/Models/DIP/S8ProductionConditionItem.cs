@@ -797,7 +797,8 @@ namespace M3.Cord.Models
         public static S8ProductionConditionItem Create(string productCode)
         {
             var inst = new S8ProductionConditionItem();
-            var std = S8ProductionConditionItemStd.Gets(productCode).Value().FirstOrDefault();
+            var items = S8ProductionConditionItemStd.Gets(productCode).Value();
+            var std = (null != items) ? items.FirstOrDefault() : null;
             Assign(std, inst);
             return inst;
         }

@@ -82,6 +82,15 @@ namespace M3.Cord.Pages
 
         private void cmdS9CHLabel_Click(object sender, RoutedEventArgs e)
         {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Label CH S9
+
+            var items = Models.LabelCHS9.Gets();
+            var page = M3CordApp.Pages.LabelCHS9PrintPreview;
+            page.Setup(items, false);
+            PageContentManager.Instance.Current = page;
 
         }
 

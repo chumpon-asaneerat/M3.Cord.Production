@@ -117,6 +117,7 @@
     <Compile Include="Models\DIP\S9CleanCheckSheet.cs" />
     <Compile Include="Models\DIP\S9CleanCheckSheetItem.cs" />
     <Compile Include="Models\FirstTwist\Twist1CheckSheetItem.cs" />
+    <Compile Include="Models\LabelS9\LabelCHS9.cs" />
     <Compile Include="Models\Masters\CordItemCode.cs" />
     <Compile Include="Models\Documents\ConditionStd.cs" />
     <Compile Include="Models\Excels\ExcelModels.cs" />

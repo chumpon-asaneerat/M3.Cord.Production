@@ -261,6 +261,9 @@
     <Compile Include="Pages\FirstTwist\SubPages\FirstTwistSamplingPage.xaml.cs">
       <DependentUpon>FirstTwistSamplingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DIPReport\LabelCHS9PrintPreviewPage.xaml.cs">
+      <DependentUpon>LabelCHS9PrintPreviewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
       <DependentUpon>CreateRecipePage.xaml</DependentUpon>
     </Compile>
@@ -422,6 +425,7 @@
       <DependentUpon>Twist1RawMaterialCheckSheetDocument.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reports\DIPPalletSlipA6.rdlc" />
+    <EmbeddedResource Include="Reports\LabelCHS9.rdlc" />
     <EmbeddedResource Include="Reports\PalletSetting.rdlc" />
     <EmbeddedResource Include="Reports\DIPPalletSlipA5.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA4.rdlc" />
@@ -433,6 +437,7 @@
     <EmbeddedResource Include="Reports\S5Condition.rdlc" />
     <EmbeddedResource Include="Reports\SolutionSlipA6.rdlc" />
     <None Include="Properties\DataSources\M3.Cord.Models.DIPPalletSlip.datasource" />
+    <None Include="Properties\DataSources\M3.Cord.Models.LabelCHS9.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.PalletSetting.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.S1Condition.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.S4x1Condition.datasource" />
@@ -793,6 +798,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\FirstTwist\SubPages\FirstTwistSamplingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DIPReport\LabelCHS9PrintPreviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

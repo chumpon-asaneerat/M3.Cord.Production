@@ -490,6 +490,11 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.ProductionRecordPage>(); }
             }
             #endregion
+
+            public static Cord.Pages.LabelCHS9PrintPreviewPage LabelCHS9PrintPreview
+            {
+                get { return GetPage<Cord.Pages.LabelCHS9PrintPreviewPage>(); }
+            }
         }
 
         /// <summary>
