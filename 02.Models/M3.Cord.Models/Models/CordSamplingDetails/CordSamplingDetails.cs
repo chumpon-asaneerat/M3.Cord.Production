@@ -22,10 +22,13 @@ namespace M3.Cord.Models
     public class CordSamplingDetails
     {
         #region Public Proeprties
+
+        public int? SamplingId { get; set; }
+        public DateTime? SamplingDate { get; set; }
+
         public bool? TwistYarn { get; set; }
         public bool? CordDipping { get; set; }
         public bool? Rawmaterial { get; set; }
-        public DateTime? SamplingDate { get; set; }
         public string CustomerName { get; set; }
         public string ProductCode { get; set; }
         public string CordStructure { get; set; }
@@ -35,11 +38,9 @@ namespace M3.Cord.Models
         public bool? ProductionSituationDipCord { get; set; }
         public bool? ProductionSituationJointing { get; set; }
         public string StandardOfTwisting { get; set; }
-        public bool? S1 { get; set; }
-        public bool? S2 { get; set; }
-        public bool? S4 { get; set; }
-        public bool? S8 { get; set; }
-        public bool? S19 { get; set; }
+
+        public string MCCode { get; set; }
+
         public bool? Bobbin { get; set; }
         public bool? Cheese { get; set; }
         public bool? TaperBB { get; set; }
@@ -57,6 +58,16 @@ namespace M3.Cord.Models
         public string Shift { get; set; }
         public string ShiftName { get; set; }
         public string Remark { get; set; }
+
+        public string Sender { get; set; }
+        public DateTime? SenderTime { get; set; }
+
+        public bool CanSend
+        {
+            get { return !SenderTime.HasValue; }
+            set { }
+        }
+
         public bool? Direct { get; set; }
         public bool? Relax { get; set; }
         public string Relax_k { get; set; }
@@ -108,6 +119,39 @@ namespace M3.Cord.Models
         public string Remark5 { get; set; }
         public string RemarkSum { get; set; }
 
+        public string RemarkOther { get; set; }
+
+        public string Tester { get; set; }
+        public DateTime? TesterTime { get; set; }
+
+        public bool CanTest
+        {
+            get 
+            { 
+                return SenderTime.HasValue && !TesterTime.HasValue; 
+            }
+            set { }
+        }
+
+        public bool? TestResult { get; set; }
+
+        public bool TestResultOK 
+        {
+            get { return (TestResult.HasValue && TestResult.Value == true) ? true : false; }
+            set 
+            {
+                TestResult = true;
+            }
+        }
+        public bool TestResultNG 
+        {
+            get { return (TestResult.HasValue && TestResult.Value == false) ? true : false; }
+            set
+            {
+                TestResult = false;
+            }
+        }
+
         #endregion
 
         #region Static Methods
@@ -116,7 +160,8 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<CordSamplingDetails>> Gets()
+        public static NDbResult<List<CordSamplingDetails>> Gets(string MCCode, 
+            string LotNo, string ProductCode)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -135,6 +180,9 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+            p.Add("@MCCode", string.IsNullOrWhiteSpace(MCCode) ? null : MCCode);
+            p.Add("@LotNo", string.IsNullOrWhiteSpace(LotNo) ? null : LotNo);
+            p.Add("@ProductCode", string.IsNullOrWhiteSpace(ProductCode) ? null : ProductCode);
 
             try
             {
@@ -190,10 +238,11 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+
+            p.Add("@SamplingDate", value.SamplingDate);
             p.Add("@TwistYarn", value.TwistYarn);
             p.Add("@CordDipping", value.CordDipping);
             p.Add("@Rawmaterial", value.Rawmaterial);
-            p.Add("@SamplingDate", value.SamplingDate);
             p.Add("@CustomerName", value.CustomerName);
             p.Add("@ProductCode", value.ProductCode);
             p.Add("@CordStructure", value.CordStructure);
@@ -203,11 +252,9 @@ namespace M3.Cord.Models
             p.Add("@ProductionSituationDipCord", value.ProductionSituationDipCord);
             p.Add("@ProductionSituationJointing", value.ProductionSituationJointing);
             p.Add("@StandardOfTwisting", value.StandardOfTwisting);
-            p.Add("@S1", value.S1);
-            p.Add("@S2", value.S2);
-            p.Add("@S4", value.S4);
-            p.Add("@S8", value.S8);
-            p.Add("@S19", value.S19);
+
+            p.Add("@MCCode", value.MCCode);
+
             p.Add("@Bobbin", value.Bobbin);
             p.Add("@Cheese", value.Cheese);
             p.Add("@TaperBB", value.TaperBB);
@@ -225,6 +272,10 @@ namespace M3.Cord.Models
             p.Add("@Shift", value.Shift);
             p.Add("@ShiftName", value.ShiftName);
             p.Add("@Remark", value.Remark);
+
+            p.Add("@Sender", value.Sender);
+            p.Add("@SenderTime", value.SenderTime);
+
             p.Add("@Direct", value.Direct);
             p.Add("@Relax", value.Relax);
             p.Add("@Relax_k", value.Relax_k);
@@ -276,6 +327,14 @@ namespace M3.Cord.Models
             p.Add("@Remark5", value.Remark5);
             p.Add("@RemarkSum", value.RemarkSum);
 
+            p.Add("@RemarkOther", value.RemarkOther);
+
+            p.Add("@Tester", value.Tester);
+            p.Add("@TesterTime", value.TesterTime);
+            p.Add("@TestResult", value.TestResult);
+
+            p.Add("@SamplingId", value.SamplingId, DbType.Int32, direction: ParameterDirection.InputOutput);
+
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 
@@ -284,52 +343,9 @@ namespace M3.Cord.Models
                 cnn.Execute("SaveCordSamplingDetails", p, commandType: CommandType.StoredProcedure);
                 ret.Success(value);
 
-                // Set error number/message
-                ret.ErrNum = p.Get<int>("@errNum");
-                ret.ErrMsg = p.Get<string>("@errMsg");
-            }
-            catch (Exception ex)
-            {
-                med.Err(ex);
-                // Set error number/message
-                ret.ErrNum = 9999;
-                ret.ErrMsg = ex.Message;
-            }
+                // get pk
+                value.SamplingId = p.Get<dynamic>("@SamplingId");
 
-            return ret;
-        }
-
-        public static NDbResult Delete(CordSamplingDetails value)
-        {
-            MethodBase med = MethodBase.GetCurrentMethod();
-
-            NDbResult ret = new NDbResult();
-
-            if (null == value)
-            {
-                ret.ParameterIsNull();
-                return ret;
-            }
-
-            IDbConnection cnn = DbServer.Instance.Db;
-            if (null == cnn || !DbServer.Instance.Connected)
-            {
-                string msg = "Connection is null or cannot connect to database server.";
-                med.Err(msg);
-                // Set error number/message
-                ret.ErrNum = 8000;
-                ret.ErrMsg = msg;
-
-                return ret;
-            }
-
-            var p = new DynamicParameters();
-            p.Add("@ProductCode", value.ProductCode);
-
-            try
-            {
-                cnn.Execute("DELETE FROM CordSamplingDetails WHERE ProductCode = @ProductCode", p, commandType: CommandType.Text);
-                ret.Success();
                 // Set error number/message
                 ret.ErrNum = p.Get<int>("@errNum");
                 ret.ErrMsg = p.Get<string>("@errMsg");

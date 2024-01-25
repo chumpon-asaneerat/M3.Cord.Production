@@ -74,6 +74,7 @@ namespace M3.Cord.Pages
         {
             if (pcCard != null)
             {
+                s1.Save();
             }
         }
 
@@ -92,7 +93,9 @@ namespace M3.Cord.Pages
 
             if (pcCard != null)
             {
-                s1.Setup(selectedMC, pcCard);
+                var items = CordSamplingDetails.Gets(pcCard.MCCode, pcCard.ProductLotNo, pcCard.ProductCode).Value();
+                var item = (null != items) ? items.FirstOrDefault() : null;
+                s1.Setup(selectedMC, pcCard, item);
             }
             this.DataContext = pcCard;
         }

@@ -68,6 +68,12 @@ namespace M3.Cord.Controls.Documents
                 if (null == _item)
                 {
                     _item = new CordSamplingDetails();
+                    _item.SamplingDate = DateTime.Now;
+                    _item.LotNo = pcCard.ProductLotNo;
+                    _item.CustomerName = pcCard.CustomerName;
+                    _item.CordStructure = pcCard.CordStructure;
+                    _item.ProductCode = pcCard.ProductCode;
+                    _item.MCCode = pcCard.MCCode;
                     /*
                     condition = CordSamplingDetails.Create(pcCard.ProductCode);
                     condition.PCTwist1Id = pcCard.PCTwist1Id;
@@ -92,12 +98,26 @@ namespace M3.Cord.Controls.Documents
         {
             if (null != _item)
             {
-                /*
+                if (!_item.SenderTime.HasValue)
+                {
+                    _item.Sender = (null != M3CordApp.Current.User) ?
+                        M3CordApp.Current.User.FullName : null;
+                    _item.SenderTime = DateTime.Now;
+                }
+                else
+                {
+                    if (!_item.TesterTime.HasValue)
+                    {
+                        _item.Tester = (null != M3CordApp.Current.User) ?
+                            M3CordApp.Current.User.FullName : null;
+                        _item.TesterTime = DateTime.Now;
+                    }
+                }
+
                 var ret = CordSamplingDetails.Save(_item);
                 if (null != ret && ret.Ok)
                     M3CordApp.Windows.SaveSuccess();
                 else M3CordApp.Windows.SaveFailed();
-                */
             }
         }
 

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:M3.Cord.Controls.Documents"
              mc:Ignorable="d"
-             d:DesignHeight="1000"
+             d:DesignHeight="1300"
              d:DesignWidth="1000">
     <UserControl.Resources>
         <!--  LOCAL STYLES  -->
@@ -56,6 +56,8 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
             <!--#region NO 1-->
@@ -71,6 +73,7 @@
             <Border Grid.Row="0" Grid.Column="3">
                 <DatePicker HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
+                            IsEnabled="{Binding CanSend}"
                             SelectedDate="{Binding SamplingDate}" />
             </Border>
 
@@ -87,6 +90,7 @@
             <Border Grid.Row="1" Grid.Column="3">
                 <TextBox HorizontalAlignment="Stretch"
                          VerticalAlignment="Stretch"
+                         IsReadOnly="True"
                          Text="{Binding CustomerName}" />
             </Border>
 
@@ -107,6 +111,7 @@
             <Border Grid.Row="2" Grid.Column="3">
                 <TextBox HorizontalAlignment="Stretch"
                          VerticalAlignment="Stretch"
+                         IsReadOnly="True"
                          Text="{Binding ProductCode}" />
             </Border>
 
@@ -125,6 +130,7 @@
             <Border Grid.Row="3" Grid.Column="3">
                 <TextBox HorizontalAlignment="Stretch"
                          VerticalAlignment="Stretch"
+                         IsReadOnly="True"
                          Text="{Binding CordStructure}" />
             </Border>
 
@@ -143,6 +149,7 @@
             <Border Grid.Row="4" Grid.Column="3">
                 <TextBox HorizontalAlignment="Stretch"
                          VerticalAlignment="Stretch"
+                         IsReadOnly="True"
                          Text="{Binding LotNo}" />
             </Border>
 
@@ -159,19 +166,19 @@
             <Border Grid.Row="5" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" Width="110">
-                        <CheckBox IsChecked="{Binding ProductionSituationTwisting}" />
+                        <CheckBox IsChecked="{Binding ProductionSituationTwisting}" IsEnabled="{Binding CanSend}" />
                         <TextBlock Text="Twisting" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="110">
-                        <CheckBox IsChecked="{Binding ProductionSituationHeatSet}" />
+                        <CheckBox IsChecked="{Binding ProductionSituationHeatSet}" IsEnabled="{Binding CanSend}" />
                         <TextBlock Text="Heat set" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="110">
-                        <CheckBox IsChecked="{Binding ProductionSituationDipCord}" />
+                        <CheckBox IsChecked="{Binding ProductionSituationDipCord}" IsEnabled="{Binding CanSend}" />
                         <TextBlock Text="Dip cord" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="110">
-                        <CheckBox IsChecked="{Binding ProductionSituationJointing}" />
+                        <CheckBox IsChecked="{Binding ProductionSituationJointing}" IsEnabled="{Binding CanSend}" />
                         <TextBlock Text="Jointing" Foreground="Red" />
                     </StackPanel>
                 </StackPanel>
@@ -189,7 +196,9 @@
             </Border>
             <Border Grid.Row="6" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <TextBox Text="{Binding StandardOfTwisting}" Width="330" />
+                    <TextBox Text="{Binding StandardOfTwisting}"
+                             Width="330"
+                             IsEnabled="{Binding CanSend}" />
                     <Line Width="5" />
                     <TextBlock Text="(Times / Mt. )" />
                 </StackPanel>
@@ -211,26 +220,9 @@
             </Border>
             <Border Grid.Row="7" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal" Width="82">
-                        <CheckBox IsChecked="{Binding S1}" />
-                        <TextBlock Text="S-1" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="82">
-                        <CheckBox IsChecked="{Binding S2}" />
-                        <TextBlock Text="S-2" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="82">
-                        <CheckBox IsChecked="{Binding S4}" />
-                        <TextBlock Text="S-4" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="82">
-                        <CheckBox IsChecked="{Binding S8}" />
-                        <TextBlock Text="S-8" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="70">
-                        <CheckBox IsChecked="{Binding S19}" />
-                        <TextBlock Text="S-19" />
-                    </StackPanel>
+                    <TextBox Text="{Binding MCCode}"
+                             Width="150"
+                             IsReadOnly="True" />
                 </StackPanel>
             </Border>
 
@@ -249,19 +241,19 @@
             <Border Grid.Row="8" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" Width="110">
-                        <CheckBox IsChecked="{Binding Bobbin}" />
+                        <CheckBox IsChecked="{Binding Bobbin}" IsEnabled="{Binding CanSend}" />
                         <TextBlock Text="Bobbin" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="110">
-                        <CheckBox IsChecked="{Binding Cheese}" />
+                        <CheckBox IsChecked="{Binding Cheese}" IsEnabled="{Binding CanSend}" />
                         <TextBlock Text="Cheese" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="110">
-                        <CheckBox IsChecked="{Binding TaperBB}" />
+                        <CheckBox IsChecked="{Binding TaperBB}" IsEnabled="{Binding CanSend}" />
                         <TextBlock Text="Taper BB" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="110">
-                        <CheckBox IsChecked="{Binding ContainerOthers}" />
+                        <CheckBox IsChecked="{Binding ContainerOthers}" IsEnabled="{Binding CanSend}" />
                         <TextBlock Text="Others" />
                     </StackPanel>
                 </StackPanel>
@@ -282,6 +274,7 @@
             <Border Grid.Row="9" Grid.Column="3">
                 <TextBox HorizontalAlignment="Stretch"
                          VerticalAlignment="Stretch"
+                         IsEnabled="{Binding CanSend}"
                          Text="{Binding SpindleNo}" />
             </Border>
 
@@ -297,7 +290,9 @@
             </Border>
             <Border Grid.Row="10" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <TextBox Text="{Binding Quantity}" Width="330" />
+                    <TextBox Text="{Binding Quantity}"
+                             Width="330"
+                             IsEnabled="{Binding CanSend}" />
                     <Line Width="5" />
                     <TextBlock Text="Kgs." />
                 </StackPanel>
@@ -320,12 +315,14 @@
             <Border Grid.Row="11" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" Width="110">
-                        <CheckBox IsChecked="{Binding Polyester}" />
+                        <CheckBox IsChecked="{Binding Polyester}" IsEnabled="{Binding CanSend}" />
                         <TextBlock Text="Polyester" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="( Yarn type " />
-                        <TextBox Text="{Binding YarnType}" Width="250" />
+                        <TextBox Text="{Binding YarnType}"
+                                 Width="250"
+                                 IsEnabled="{Binding CanSend}" />
                         <TextBlock Text=" )" />
                     </StackPanel>
 
@@ -347,11 +344,11 @@
             <Border Grid.Row="12" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" Width="150">
-                        <CheckBox IsChecked="{Binding Nylon66}" />
+                        <CheckBox IsChecked="{Binding Nylon66}" IsEnabled="{Binding CanSend}" />
                         <TextBlock Text="Nylon 66" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="150">
-                        <CheckBox IsChecked="{Binding MaterialOthers}" />
+                        <CheckBox IsChecked="{Binding MaterialOthers}" IsEnabled="{Binding CanSend}" />
                         <TextBlock Text="Others" />
                     </StackPanel>
                 </StackPanel>
@@ -370,7 +367,7 @@
             <Border Grid.Row="13" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" Width="120">
-                        <CheckBox IsChecked="{Binding Process}" />
+                        <CheckBox IsChecked="{Binding Process}" IsEnabled="{Binding CanSend}" />
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="กระบวนการ" />
                             <Line Height="5" />
@@ -378,7 +375,7 @@
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="120">
-                        <CheckBox IsChecked="{Binding Product}" />
+                        <CheckBox IsChecked="{Binding Product}" IsEnabled="{Binding CanSend}" />
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="ผลิตภัณฑ์" />
                             <Line Height="5" />
@@ -386,7 +383,7 @@
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="120">
-                        <CheckBox IsChecked="{Binding Special}" />
+                        <CheckBox IsChecked="{Binding Special}" IsEnabled="{Binding CanSend}" />
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="พิเศษ" />
                             <Line Height="5" />
@@ -394,7 +391,7 @@
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="120">
-                        <CheckBox IsChecked="{Binding Trial}" />
+                        <CheckBox IsChecked="{Binding Trial}" IsEnabled="{Binding CanSend}" />
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="ทดลอง" />
                             <Line Height="5" />
@@ -418,12 +415,16 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="กะทำงาน/Shift ( " />
-                        <TextBox Text="{Binding Shift}" Width="50" />
+                        <TextBox Text="{Binding Shift}"
+                                 Width="50"
+                                 IsEnabled="{Binding CanSend}" />
                         <TextBlock Text=" ) " />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="หัวหน้ากะ ( Name ) : " />
-                        <TextBox Text="{Binding ShiftName}" Width="120" />
+                        <TextBox Text="{Binding ShiftName}"
+                                 Width="120"
+                                 IsEnabled="{Binding CanSend}" />
                     </StackPanel>
 
                 </StackPanel>
@@ -442,6 +443,7 @@
             <Border Grid.Row="15" Grid.Column="3">
                 <TextBox HorizontalAlignment="Stretch"
                          VerticalAlignment="Stretch"
+                         IsEnabled="{Binding CanSend}"
                          Text="{Binding Remark}" />
             </Border>
 
@@ -470,26 +472,30 @@
                     <StackPanel Orientation="Horizontal"
                                 Width="120"
                                 VerticalAlignment="Top">
-                        <CheckBox IsChecked="{Binding Direct}" />
+                        <CheckBox IsChecked="{Binding Direct}" IsEnabled="{Binding CanTest}" />
                         <TextBlock Text="Direct" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">
-                            <CheckBox IsChecked="{Binding Relax}" />
+                            <CheckBox IsChecked="{Binding Relax}" IsEnabled="{Binding CanTest}" />
                             <TextBlock Text="Relax (k = " />
-                            <TextBox Width="100" Text="{Binding Relax_k}" />
+                            <TextBox Width="100"
+                                     Text="{Binding Relax_k}"
+                                     IsEnabled="{Binding CanTest}" />
                             <TextBlock Text="  n = " />
-                            <TextBox Width="100" Text="{Binding Relax_n}" />
+                            <TextBox Width="100"
+                                     Text="{Binding Relax_n}"
+                                     IsEnabled="{Binding CanTest}" />
                             <TextBlock Text="  )" />
                         </StackPanel>
                         <Line Height="5" />
                         <StackPanel Orientation="Horizontal">
-                            <CheckBox IsChecked="{Binding Necessary}" />
+                            <CheckBox IsChecked="{Binding Necessary}" IsEnabled="{Binding CanTest}" />
                             <TextBlock Text="จำเป็น (Necessary)" />
                         </StackPanel>
                         <Line Height="5" />
                         <StackPanel Orientation="Horizontal">
-                            <CheckBox IsChecked="{Binding NotNecessary}" />
+                            <CheckBox IsChecked="{Binding NotNecessary}" IsEnabled="{Binding CanTest}" />
                             <TextBlock Text="ไม่จำเป็น (Not necessary)" />
                         </StackPanel>
                     </StackPanel>
@@ -512,12 +518,12 @@
             <Border Grid.Row="17" Grid.Column="3">
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top">
                     <StackPanel Orientation="Horizontal">
-                        <CheckBox IsChecked="{Binding SpecialMentionJointing}" />
+                        <CheckBox IsChecked="{Binding SpecialMentionJointing}" IsEnabled="{Binding CanTest}" />
                         <TextBlock Text="Jointing" Foreground="Red" />
                     </StackPanel>
                     <Line Height="5" />
                     <StackPanel Orientation="Horizontal">
-                        <CheckBox IsChecked="{Binding SpecialMentionNoJointing}" />
+                        <CheckBox IsChecked="{Binding SpecialMentionNoJointing}" IsEnabled="{Binding CanTest}" />
                         <TextBlock Text="No Jointing" Foreground="Red" />
                     </StackPanel>
                 </StackPanel>
@@ -525,6 +531,375 @@
 
             <!--#endregion-->
 
+            <!--#region NO 19-->
+
+            <Border Grid.Row="19"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.RowSpan="2" />
+                    <Border Grid.Row="0"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2">
+                        <TextBlock Text="แรงดึง Tensile (N)" />
+                    </Border>
+                    <Border Grid.Row="0"
+                            Grid.Column="3"
+                            Grid.ColumnSpan="2">
+                        <TextBlock Text="First twisting ( ครั้งที่ 1 )" />
+                    </Border>
+                    <Border Grid.Row="0"
+                            Grid.Column="5"
+                            Grid.ColumnSpan="2">
+                        <TextBlock Text="Second twisting ( ครั้งที่ 2 )" />
+                    </Border>
+                    <Border Grid.Row="0"
+                            Grid.Column="7"
+                            Grid.RowSpan="2">
+                        <TextBlock Text="Remark" />
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="R" />
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="2">
+                        <TextBlock Text="L" />
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="3">
+                        <TextBlock Text="R" />
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="4">
+                        <TextBlock Text="L" />
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="5">
+                        <TextBlock Text="R" />
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="6">
+                        <TextBlock Text="L" />
+                    </Border>
+
+                    <Border Grid.Row="2" Grid.Column="0">
+                        <TextBlock Text="1" />
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="0">
+                        <TextBlock Text="2" />
+                    </Border>
+                    <Border Grid.Row="4" Grid.Column="0">
+                        <TextBlock Text="3" />
+                    </Border>
+                    <Border Grid.Row="5" Grid.Column="0">
+                        <TextBlock Text="4" />
+                    </Border>
+                    <Border Grid.Row="6" Grid.Column="0">
+                        <TextBlock Text="5" />
+                    </Border>
+                    <Border Grid.Row="7" Grid.Column="0">
+                        <TextBlock Text="x̄" />
+                    </Border>
+
+                    <!--  Tensile  -->
+                    <Border Grid.Row="2" Grid.Column="1">
+                        <TextBox Text="{Binding TensileR1}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="2">
+                        <TextBox Text="{Binding TensileL1}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="3" Grid.Column="1">
+                        <TextBox Text="{Binding TensileR2}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="2">
+                        <TextBox Text="{Binding TensileL2}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="4" Grid.Column="1">
+                        <TextBox Text="{Binding TensileR3}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="4" Grid.Column="2">
+                        <TextBox Text="{Binding TensileL3}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="5" Grid.Column="1">
+                        <TextBox Text="{Binding TensileR4}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="5" Grid.Column="2">
+                        <TextBox Text="{Binding TensileL4}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="6" Grid.Column="1">
+                        <TextBox Text="{Binding TensileR5}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="6" Grid.Column="2">
+                        <TextBox Text="{Binding TensileL5}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="7" Grid.Column="1">
+                        <TextBox Text="{Binding TensileRSum}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="7" Grid.Column="2">
+                        <TextBox Text="{Binding TensileLSum}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <!--  FirstTwisting  -->
+                    <Border Grid.Row="2" Grid.Column="3">
+                        <TextBox Text="{Binding FirstTwistingR1}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="4">
+                        <TextBox Text="{Binding FirstTwistingL1}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="3" Grid.Column="3">
+                        <TextBox Text="{Binding FirstTwistingR2}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="4">
+                        <TextBox Text="{Binding FirstTwistingL2}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="4" Grid.Column="3">
+                        <TextBox Text="{Binding FirstTwistingR3}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="4" Grid.Column="4">
+                        <TextBox Text="{Binding FirstTwistingL3}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="5" Grid.Column="3">
+                        <TextBox Text="{Binding FirstTwistingR4}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="5" Grid.Column="4">
+                        <TextBox Text="{Binding FirstTwistingL4}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="6" Grid.Column="3">
+                        <TextBox Text="{Binding FirstTwistingR5}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="6" Grid.Column="4">
+                        <TextBox Text="{Binding FirstTwistingL5}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="7" Grid.Column="3">
+                        <TextBox Text="{Binding FirstTwistingRSum}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="7" Grid.Column="4">
+                        <TextBox Text="{Binding FirstTwistingLSum}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <!--  SecondTwisting  -->
+                    <Border Grid.Row="2" Grid.Column="5">
+                        <TextBox Text="{Binding SecondTwistingR1}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="6">
+                        <TextBox Text="{Binding SecondTwistingL1}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="3" Grid.Column="5">
+                        <TextBox Text="{Binding SecondTwistingR2}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="6">
+                        <TextBox Text="{Binding SecondTwistingL2}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="4" Grid.Column="5">
+                        <TextBox Text="{Binding SecondTwistingR3}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="4" Grid.Column="6">
+                        <TextBox Text="{Binding SecondTwistingL3}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="5" Grid.Column="5">
+                        <TextBox Text="{Binding SecondTwistingR4}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="5" Grid.Column="6">
+                        <TextBox Text="{Binding SecondTwistingL4}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="6" Grid.Column="5">
+                        <TextBox Text="{Binding SecondTwistingR5}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="6" Grid.Column="6">
+                        <TextBox Text="{Binding SecondTwistingL5}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <Border Grid.Row="7" Grid.Column="5">
+                        <TextBox Text="{Binding SecondTwistingRSum}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="7" Grid.Column="6">
+                        <TextBox Text="{Binding SecondTwistingLSum}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <!--  Remark  -->
+                    <Border Grid.Row="2" Grid.Column="7">
+                        <TextBox Text="{Binding Remark1}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="7">
+                        <TextBox Text="{Binding Remark2}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="4" Grid.Column="7">
+                        <TextBox Text="{Binding Remark3}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="5" Grid.Column="7">
+                        <TextBox Text="{Binding Remark4}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="6" Grid.Column="7">
+                        <TextBox Text="{Binding Remark5}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+                    <Border Grid.Row="7" Grid.Column="7">
+                        <TextBox Text="{Binding RemarkSum}"
+                                 Width="100"
+                                 IsEnabled="{Binding CanTest}" />
+                    </Border>
+
+                    <!--  Remark (Other)  -->
+                    <Border Grid.Row="8"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="8">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                            <TextBlock Text="Remark"
+                                       TextAlignment="Left"
+                                       HorizontalAlignment="Left" />
+                            <TextBox Text="{Binding RemarkOther}"
+                                     Width="750"
+                                     Height="100"
+                                     AcceptsReturn="True"
+                                     IsEnabled="{Binding CanTest}" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Row="10"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="8">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Text="Sample Sender: " />
+                            <TextBlock Text="{Binding Sender}" Width="150" />
+                            <TextBlock Width="10" />
+                            <TextBlock Text="Tester: " />
+                            <TextBlock Text="{Binding Tester}" Width="150" />
+                            <TextBlock Width="10" />
+                            <TextBlock Text="Test Result: " />
+                            <TextBlock Width="10" />
+                            <RadioButton Style="{StaticResource CheckedRadioButton}"
+                                         Content="OK"
+                                         IsChecked="{Binding TestResultOK}"
+                                         IsEnabled="{Binding CanTest}" />
+                            <TextBlock Width="10" />
+                            <RadioButton Style="{StaticResource CheckedRadioButton}"
+                                         Content="NG"
+                                         IsChecked="{Binding TestResultNG}"
+                                         IsEnabled="{Binding CanTest}" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!--#endregion-->
         </Grid>
     </ScrollViewer>
 </UserControl>
