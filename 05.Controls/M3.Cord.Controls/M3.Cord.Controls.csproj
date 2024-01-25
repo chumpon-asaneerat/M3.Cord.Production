@@ -264,6 +264,12 @@
     <Compile Include="Pages\DIPReport\LabelCHS9PrintPreviewPage.xaml.cs">
       <DependentUpon>LabelCHS9PrintPreviewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Lab\CordSamplingQAPage.xaml.cs">
+      <DependentUpon>CordSamplingQAPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Menu\QAMainMenuPage.xaml.cs">
+      <DependentUpon>QAMainMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
       <DependentUpon>CreateRecipePage.xaml</DependentUpon>
     </Compile>
@@ -802,6 +808,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\DIPReport\LabelCHS9PrintPreviewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Lab\CordSamplingQAPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Menu\QAMainMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

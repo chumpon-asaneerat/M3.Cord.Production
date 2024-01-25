@@ -169,6 +169,16 @@ namespace M3.Cord
 
             #endregion
 
+            #region QA Main Menu
+
+            /// <summary>Gets QA Menu Page.</summary>
+            public static Cord.Pages.QAMainMenuPage QAMenu
+            {
+                get { return GetPage<Cord.Pages.QAMainMenuPage>(); }
+            }
+
+            #endregion
+
             #region Master Data (comment out)
             /*
             /// <summary>Gets M3 Cord Product Item Code Manage Page.</summary>
@@ -491,10 +501,14 @@ namespace M3.Cord
             }
             #endregion
 
+            #region LabelCHS9
+
             public static Cord.Pages.LabelCHS9PrintPreviewPage LabelCHS9PrintPreview
             {
                 get { return GetPage<Cord.Pages.LabelCHS9PrintPreviewPage>(); }
             }
+
+            #endregion
         }
 
         /// <summary>

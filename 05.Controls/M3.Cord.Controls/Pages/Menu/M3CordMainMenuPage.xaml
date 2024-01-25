@@ -283,6 +283,14 @@
                             <Run Text="Slip / Reports" />
                         </TextBlock>
                     </Button>
+                    <!--  PRODUCTION REPORT MENU  -->
+                    <Button x:Name="cmdQA"
+                            Click="cmdQA_Click"
+                            Style="{StaticResource OtherButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="LAB" />
+                        </TextBlock>
+                    </Button>
                 </ctrl:NGroupMenuItem>
             </ctrl:NGroupMenu>
         </DockPanel>

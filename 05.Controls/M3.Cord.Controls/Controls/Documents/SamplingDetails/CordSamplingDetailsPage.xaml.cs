@@ -96,6 +96,19 @@ namespace M3.Cord.Controls.Documents
             this.DataContext = _item;
         }
 
+        public void SetupQA(CordSamplingDetails item = null)
+        {
+            this.DataContext = null;
+
+            _item = item; // actual code
+            if (null != _item)
+            {
+                _item.IsQA = true;
+            }
+
+            this.DataContext = _item;
+        }
+
         public void Save()
         {
             this.DataContext = null;
