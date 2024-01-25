@@ -41,6 +41,10 @@ namespace M3.Cord.Models
         public DateTime? weightdate { get; set; }
         public int? weightby { get; set; }
 
+        //New 25/1/24
+        public decimal? tweight { get; set; }
+        public decimal? gweight { get; set; }
+
         #endregion
 
         #region Static Methods
@@ -82,6 +86,10 @@ namespace M3.Cord.Models
             p.Add("@weightmc", value.weightmc);
             p.Add("@weightdate", value.weightdate);
             p.Add("@weightby", value.weightby);
+
+            //New 25/1/24
+            p.Add("@tweight", value.tweight);
+            p.Add("@gweight", value.gweight);
 
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);

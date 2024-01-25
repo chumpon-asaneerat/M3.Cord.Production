@@ -211,9 +211,16 @@ namespace M3.Cord.Pages
         private void chkManual_Checked(object sender, RoutedEventArgs e)
         {
             rbWeight1.IsEnabled = false;
-            rbWeight2.IsEnabled = true;
+            rbWeight2.IsEnabled = false;
+
             txtWeightActual.IsReadOnly = false;
             txtWeightActual.Text = string.Empty;
+
+            txtTWeight.IsReadOnly = false;
+            txtTWeight.Text = string.Empty;
+
+            txtGWeight.IsReadOnly = false;
+            txtGWeight.Text = string.Empty;
         }
 
         private void chkManual_Unchecked(object sender, RoutedEventArgs e)
@@ -222,6 +229,12 @@ namespace M3.Cord.Pages
             rbWeight2.IsEnabled = true;
             txtWeightActual.IsReadOnly = true;
             txtWeightActual.Text = string.Empty;
+
+            txtTWeight.IsReadOnly = true;
+            txtTWeight.Text = string.Empty;
+
+            txtGWeight.IsReadOnly = true;
+            txtGWeight.Text = string.Empty;
 
             this.InvokeAction(() =>
             {
@@ -254,6 +267,9 @@ namespace M3.Cord.Pages
             JIK6CABTerminal.Instance.Disconnect();
             txtWeightActual.Text = string.Empty;
 
+            txtTWeight.Text = string.Empty;
+            txtGWeight.Text = string.Empty;
+
             var dev = JIK6CABTerminal.Instance as ISerialDevice;
             if (rbWeight1.IsChecked == true) 
             {
@@ -283,6 +299,9 @@ namespace M3.Cord.Pages
         {
             JIK6CABTerminal.Instance.Disconnect();
             txtWeightActual.Text = string.Empty;
+
+            txtTWeight.Text = string.Empty;
+            txtGWeight.Text = string.Empty;
         }
 
         private void UpdateTextBox()
@@ -293,6 +312,9 @@ namespace M3.Cord.Pages
                 {
                     var val = JIK6CABTerminal.Instance.Value;
                     txtWeightActual.Text = val.NW.ToString("n2");
+
+                    txtTWeight.Text = val.TW.ToString("n2");
+                    txtGWeight.Text = val.GW.ToString("n2");
                 }
             });
         }
@@ -308,6 +330,11 @@ namespace M3.Cord.Pages
             txtWeightCal.Text = string.Empty;
 
             txtWeightActual.Text = string.Empty;
+            txtTWeight.Text = string.Empty;
+            txtGWeight.Text = string.Empty;
+
+            chkManual.IsChecked = false;
+            rbWeight1.IsChecked = true;
 
             chemicals = null;
             dipCondition = null;
@@ -381,9 +408,27 @@ namespace M3.Cord.Pages
                     d.weightactual = decimal.Parse(txtWeightActual.Text);
                 }
 
-                if (!string.IsNullOrEmpty(txtWeightActual.Text) && chkManual.IsChecked == false)
+                if (!string.IsNullOrEmpty(txtTWeight.Text))
                 {
-                    d.weightmc = txtWeightActual.Text;
+                    d.tweight = decimal.Parse(txtTWeight.Text);
+                }
+
+                if (!string.IsNullOrEmpty(txtGWeight.Text))
+                {
+                    d.gweight = decimal.Parse(txtGWeight.Text);
+                }
+
+                //if (!string.IsNullOrEmpty(txtWeightActual.Text) && chkManual.IsChecked == false)
+                //{
+                //    d.weightmc = txtWeightActual.Text;
+                //}
+
+                if (chkManual.IsChecked == false)
+                {
+                    if (rbWeight1.IsChecked == true)
+                        d.weightmc = "1";
+                    else if (rbWeight2.IsChecked == true)
+                        d.weightmc = "2";
                 }
 
                 d.weightdate = DateTime.Now;

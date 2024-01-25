@@ -56,6 +56,10 @@ namespace M3.Cord.Models
 
         public string RecipeView { get; set; }
 
+        //New 25/1/24
+        public decimal? TWeight { get; set; }
+        public decimal? GWeight { get; set; }
+
         #endregion
 
         #region Static Methods
@@ -143,6 +147,9 @@ namespace M3.Cord.Models
                         result.ChemicalType = item.ChemicalType;
                         result.ChemicalNo = item.ChemicalNo;
                         result.ChemicalName = item.ChemicalName;
+
+                        result.TWeight = item.TWeight;
+                        result.GWeight = item.GWeight;
 
                         result.WeightCal = item.WeightCal;
                         if (result.WeightCal != null && result.WeightCal != 0)
@@ -251,6 +258,9 @@ namespace M3.Cord.Models
                         result.WeightMc = item.WeightMc;
                         result.WeightDate = item.WeightDate;
                         result.WeightBy = item.WeightBy;
+
+                        result.TWeight = item.TWeight;
+                        result.GWeight = item.GWeight;
 
                         if (result.ChemicalType != null && result.ChemicalType.Contains("C"))
                             results.Add(result);
