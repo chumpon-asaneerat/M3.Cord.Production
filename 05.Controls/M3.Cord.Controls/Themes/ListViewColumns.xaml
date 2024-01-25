@@ -1052,4 +1052,48 @@
                    TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
+    <!-- QA Cord Sampling  -->
+    <DataTemplate x:Key="CordSamplingDate">
+        <TextBlock Text="{Binding Path=SamplingDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+                   TextAlignment="Left"
+                   Width="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="CordLotNo">
+        <TextBlock Text="{Binding Path=LotNo, Mode=OneWay}"
+                   TextAlignment="Left"
+                   Width="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="CordProductCode">
+        <TextBlock Text="{Binding Path=ProductCode, Mode=OneWay}"
+                   TextAlignment="Left"
+                   Width="150" />
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CordMCCode">
+        <TextBlock Text="{Binding Path=MCCode, Mode=OneWay}"
+                   TextAlignment="Left"
+                   Width="150" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="CordIsOK">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding TestResultOK}"
+                      IsEnabled="False"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CordIsNG">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <CheckBox Style="{StaticResource CommonCheckBox}"
+                      IsChecked="{Binding TestResultNG}"
+                      IsEnabled="False"
+                      HorizontalAlignment="Center"
+                      Width="50" />
+        </StackPanel>
+    </DataTemplate>
 </ResourceDictionary>

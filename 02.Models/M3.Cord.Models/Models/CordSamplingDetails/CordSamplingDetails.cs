@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 
 namespace M3.Cord.Models
 {
-    public class CordSamplingDetails
+    public class CordSamplingDetails : NInpc
     {
         #region Public Proeprties
 
@@ -129,8 +129,9 @@ namespace M3.Cord.Models
         public bool CanTest
         {
             get 
-            { 
-                return IsQA && SenderTime.HasValue && !TesterTime.HasValue; 
+            {
+                //return IsQA && SenderTime.HasValue && !TesterTime.HasValue; 
+                return IsQA;
             }
             set { }
         }
@@ -143,6 +144,9 @@ namespace M3.Cord.Models
             set 
             {
                 TestResult = true;
+                Raise(() => TestResultOK);
+                Raise(() => TestResultNG);
+                Raise(() => TestResult);
             }
         }
         public bool TestResultNG 
@@ -151,6 +155,9 @@ namespace M3.Cord.Models
             set
             {
                 TestResult = false;
+                Raise(() => TestResultOK);
+                Raise(() => TestResultNG);
+                Raise(() => TestResult);
             }
         }
 
@@ -189,6 +196,57 @@ namespace M3.Cord.Models
             try
             {
                 var items = cnn.Query<CordSamplingDetails>("GetCordSamplingDetails", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<CordSamplingDetails>();
+            }
+
+            return rets;
+        }
+
+        /// <summary>
+        /// GetQAs
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<List<CordSamplingDetails>> GetQAs(DateTime? date,
+            string LotNo)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<CordSamplingDetails>> rets = new NDbResult<List<CordSamplingDetails>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@Date", date);
+            p.Add("@LotNo", string.IsNullOrWhiteSpace(LotNo) ? null : LotNo);
+
+            try
+            {
+                var items = cnn.Query<CordSamplingDetails>("GetQACordSamplingDetails", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
                 rets.Success(data);

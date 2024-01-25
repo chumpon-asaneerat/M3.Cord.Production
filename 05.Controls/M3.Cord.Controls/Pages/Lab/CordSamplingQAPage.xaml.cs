@@ -54,8 +54,8 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            // QA Manu
-            var page = M3CordApp.Pages.QAMenu;
+            // QA Manage
+            var page = M3CordApp.Pages.CordSamplingQAManage;
             page.Setup();
             PageContentManager.Instance.Current = page;
         }

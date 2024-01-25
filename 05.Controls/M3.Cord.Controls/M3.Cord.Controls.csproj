@@ -240,6 +240,9 @@
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
+    <Compile Include="Pages\Lab\CordSamplingQAManagePage.xaml.cs">
+      <DependentUpon>CordSamplingQAManagePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Documents\Dipping\DIPTimeTableStdPage.xaml.cs">
       <DependentUpon>DIPTimeTableStdPage.xaml</DependentUpon>
     </Compile>
@@ -776,6 +779,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Ageing\AgeingOperationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Lab\CordSamplingQAManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

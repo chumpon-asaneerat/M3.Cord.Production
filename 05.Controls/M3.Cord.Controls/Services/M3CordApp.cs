@@ -509,6 +509,20 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region QA
+
+            public static Cord.Pages.CordSamplingQAManagePage CordSamplingQAManage
+            {
+                get { return GetPage<Cord.Pages.CordSamplingQAManagePage>(); }
+            }
+
+            public static Cord.Pages.CordSamplingQAPage CordSamplingQA
+            {
+                get { return GetPage<Cord.Pages.CordSamplingQAPage>(); }
+            }
+
+            #endregion
         }
 
         /// <summary>

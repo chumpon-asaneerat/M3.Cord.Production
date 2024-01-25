@@ -205,7 +205,13 @@ namespace M3.Cord.Pages
 
         private void cmdQA_Click(object sender, RoutedEventArgs e)
         {
-
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Check Stock Yarn
+            var page = M3CordApp.Pages.QAMenu;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion

@@ -60,7 +60,9 @@ namespace M3.Cord.Pages
 
         private void cmdCordSampling_Click(object sender, RoutedEventArgs e)
         {
-
+            var page = M3CordApp.Pages.CordSamplingQAManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion
