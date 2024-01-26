@@ -1052,7 +1052,7 @@
                    TextAlignment="Center"
                    Width="120" />
     </DataTemplate>
-    <!-- QA Cord Sampling  -->
+    <!--  QA Cord Sampling  -->
     <DataTemplate x:Key="CordSamplingDate">
         <TextBlock Text="{Binding Path=SamplingDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
                    TextAlignment="Left"
@@ -1070,7 +1070,7 @@
                    TextAlignment="Left"
                    Width="150" />
     </DataTemplate>
-    
+
     <DataTemplate x:Key="CordMCCode">
         <TextBlock Text="{Binding Path=MCCode, Mode=OneWay}"
                    TextAlignment="Left"

@@ -736,6 +736,16 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region LabelCHS9
+
+            /// <summary>Gets LabelCHS9 Search Window.</summary>
+            public static LabelCHS9SearchWindow LabelCHS9Search
+            {
+                get { return GetWindow<LabelCHS9SearchWindow>(); }
+            }
+
+            #endregion
         }
     }
 }

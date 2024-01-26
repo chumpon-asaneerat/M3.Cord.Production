@@ -87,11 +87,18 @@ namespace M3.Cord.Pages
             if (win.ShowDialog() == false) return;
             // Label CH S9
 
-            var items = Models.LabelCHS9.Gets();
-            var page = M3CordApp.Pages.LabelCHS9PrintPreview;
-            page.Setup(items, false);
-            PageContentManager.Instance.Current = page;
-
+            var win2 = M3CordApp.Windows.LabelCHS9Search;
+            win2.Setup();
+            if (win2.ShowDialog() == true)
+            {
+                string lotNo = win2.DIPLotNo;
+                int? spStart = win2.SPStart;
+                int? spEnd = win2.SPEnd;
+                var items = Models.LabelCHS9.Gets(lotNo, spStart, spEnd);
+                var page = M3CordApp.Pages.LabelCHS9PrintPreview;
+                page.Setup(items, false);
+                PageContentManager.Instance.Current = page;
+            }
         }
 
         private void cmdFirstTwistReports_Click(object sender, RoutedEventArgs e)

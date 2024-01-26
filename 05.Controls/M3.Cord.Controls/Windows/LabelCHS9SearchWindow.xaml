@@ -1,0 +1,95 @@
+﻿<Window x:Class="M3.Cord.Windows.LabelCHS9SearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        mc:Ignorable="d"
+        Title="Search LABEL CH S9"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="450"
+        Width="700">
+    <page:NPage HeaderText="Search LABEL CH S9">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdPring"
+                                        DockPanel.Dock="Right"
+                                        IconType="Print"
+                                        Text="Ok"
+                                        Click="cmdPring_Click" />
+                <Grid />
+            </DockPanel>
+            <!--  WORK AREA  -->
+            <DockPanel LastChildFill="True">
+                <DockPanel DockPanel.Dock="Top">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <CheckBox x:Name="chkManual" 
+                                  Content="Manual"
+                                  FontWeight="SemiBold"
+                                  FontSize="22"
+                                  IsChecked="False"
+                                  Style="{StaticResource CommonCheckBox}"
+                                  Checked="CheckBox_Checked"
+                                  Unchecked="CheckBox_Unchecked" />
+                    </StackPanel>
+                    <!--  LOT NO  -->
+                    <ctrl:NTextBox x:Name="txtDipLotNo"
+                                   CaptionText="DIP Lot No:"
+                                   DockPanel.Dock="Left"
+                                   Width="200"
+                                   PreviewKeyDown="txtDipLotNo_PreviewKeyDown" />
+                    <!--  Choose  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdSearch"
+                                            Margin="3,0"
+                                            IconType="Search"
+                                            Text="Search"
+                                            VerticalAlignment="Bottom"
+                                            Click="cmdSearch_Click" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <!--  ITEM CODE  -->
+                        <ctrl:NTextBox x:Name="txtItemCode"
+                                       CaptionText="Item Code:"
+                                       IsReadOnly="True"
+                                       Width="350" />
+                        <!--  GOOD CH  -->
+                        <ctrl:NTextBox x:Name="txtTotalGood"
+                                       CaptionText="Total Good CH:"
+                                       IsReadOnly="True"
+                                       Width="200" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+                        <StackPanel x:Name="paSP" Orientation="Horizontal">
+                            <!--  SP  -->
+                            <ctrl:NTextBox x:Name="txtSPStart"
+                                           CaptionText="SP:"
+                                           Width="100" />
+                            <TextBlock Text=" - " VerticalAlignment="Bottom" />
+                            <ctrl:NTextBox x:Name="txtSPEnd"
+                                           CaptionText=""
+                                           Width="100" />
+                        </StackPanel>
+                    </StackPanel>
+                    <Grid />
+                </DockPanel>
+                <Grid />
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>
+

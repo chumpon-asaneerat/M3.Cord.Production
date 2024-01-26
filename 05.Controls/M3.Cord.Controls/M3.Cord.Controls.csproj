@@ -264,7 +264,7 @@
     <Compile Include="Pages\FirstTwist\SubPages\FirstTwistSamplingPage.xaml.cs">
       <DependentUpon>FirstTwistSamplingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPReport\LabelCHS9PrintPreviewPage.xaml.cs">
+    <Compile Include="Pages\LabelCHS9\LabelCHS9PrintPreviewPage.xaml.cs">
       <DependentUpon>LabelCHS9PrintPreviewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Lab\CordSamplingQAPage.xaml.cs">
@@ -374,6 +374,9 @@
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
     <Compile Include="Windows\DIP\DIPTimeTableEditorWindow.xaml.cs">
       <DependentUpon>DIPTimeTableEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LabelCHS9SearchWindow.xaml.cs">
+      <DependentUpon>LabelCHS9SearchWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\PalletSettings\ChoosePCTwist1Window.xaml.cs">
       <DependentUpon>ChoosePCTwist1Window.xaml</DependentUpon>
@@ -814,7 +817,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIPReport\LabelCHS9PrintPreviewPage.xaml">
+    <Page Include="Pages\LabelCHS9\LabelCHS9PrintPreviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1010,6 +1013,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\LabelCHS9SearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\PalletSettings\ChoosePCTwist1Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1130,6 +1137,7 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Windows\LabelCHS9\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
   </ItemGroup>
