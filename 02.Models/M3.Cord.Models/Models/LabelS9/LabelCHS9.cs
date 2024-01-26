@@ -130,7 +130,7 @@ namespace M3.Cord.Models
                     if (i % 2 == 0)
                     {
                         item = new LabelCHS9();
-                        item.LotNo1 = items[i].LotNo;
+                        item.LotNo1 = items[i].DIPLotNo;
                         item.ProductCode1 = items[i].ProductCode;
                         item.SPNo1 = items[i].SPNo.Value;
                         rets.Add(item);
@@ -139,7 +139,7 @@ namespace M3.Cord.Models
                     {
                         if (null != item)
                         {
-                            item.LotNo2 = items[i].LotNo;
+                            item.LotNo2 = items[i].DIPLotNo;
                             item.ProductCode2 = items[i].ProductCode;
                             item.SPNo2 = items[i].SPNo.Value;
                         }

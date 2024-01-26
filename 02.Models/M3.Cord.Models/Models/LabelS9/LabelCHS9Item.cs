@@ -26,7 +26,7 @@ namespace M3.Cord.Models
     {
         #region Public Properties
 
-        public string LotNo { get; set; }
+        public string DIPLotNo { get; set; }
         public string ProductCode { get; set; }
         public int? SPNo { get; set; }
 
