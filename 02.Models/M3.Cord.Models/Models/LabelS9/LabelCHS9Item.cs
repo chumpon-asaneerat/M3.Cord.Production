@@ -66,15 +66,7 @@ namespace M3.Cord.Models
                 var items = cnn.Query<LabelCHS9Item>("GetLabelCHS9Items", p,
                     commandType: CommandType.StoredProcedure);
                 var data = (null != items) ? items.ToList() : null;
-                var results = new List<LabelCHS9Item>();
-
-                // load items
-                for (int i = 0; i < data.Count; i++)
-                {
-
-                }
-
-                rets.Success(results);
+                rets.Success(data);
             }
             catch (Exception ex)
             {

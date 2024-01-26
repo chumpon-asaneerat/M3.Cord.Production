@@ -22,8 +22,10 @@ M3 Cord Production System #884
 M3 Cord Production System #883
 - 
 
+[commited]
 M3 Cord Production System #882
-- 
+- M3.Cord.Production.App re-implements #98
+  - LabelCHS9 #2
 
 [commited]
 M3 Cord Production System #881
