@@ -219,6 +219,8 @@ namespace M3.Cord.Windows
                                     + "^BC,100,N,N,N"
                                     + "^FD" + result.BarcodeText2 + "^FS";
                             }
+
+                            if(!string.IsNullOrEmpty(barcode1) || !string.IsNullOrEmpty(barcode2))
                                 commandLine = "^XA" + barcode1+ barcode2+ "^XZ";
 
                             if (!string.IsNullOrEmpty(commandLine))
