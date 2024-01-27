@@ -138,6 +138,7 @@
     <Compile Include="Models\CordItemYarn\CordItemYarn.cs" />
     <Compile Include="Models\Masters\Customer.cs" />
     <Compile Include="Models\Masters\Product.cs" />
+    <Compile Include="Models\RawPrinterHelper\RawPrinterHelper.cs" />
     <Compile Include="Models\_V0\ProductionRecord\ProductionRecord.cs" />
     <Compile Include="Models\_V0\ProductionRecord\ProductionRecordDetail.cs" />
     <Compile Include="Models\_V0\ProductionRecord\ProductionRecordStd.cs" />

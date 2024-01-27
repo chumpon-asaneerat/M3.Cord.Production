@@ -18,6 +18,11 @@ using NLib.Models;
 using M3.Cord.Models;
 using NLib;
 using NLib.Wpf.Controls;
+using System.Reflection;
+
+using System.Drawing;
+using System.Drawing.Printing;
+using System.Printing;
 
 #endregion
 
@@ -45,6 +50,23 @@ namespace M3.Cord.Windows
         private void cmdSearch_Click(object sender, RoutedEventArgs e)
         {
             Search();
+        }
+
+        private void cmdPrint_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtDipLotNo.Text)
+                && !string.IsNullOrEmpty(txtSPStart.Text)
+                && !string.IsNullOrEmpty(txtSPEnd.Text))
+            {
+                if (PrintZebra() == true)
+                    DialogResult = false;
+            }
+            else
+            {
+                var msg1 = M3CordApp.Windows.MessageBox;
+                msg1.Setup("กรุณาระบุข้อมูล");
+                msg1.ShowDialog();
+            }
         }
 
         #endregion
@@ -132,6 +154,85 @@ namespace M3.Cord.Windows
             }
             catch (Exception) 
             {
+            }
+        }
+
+        private bool PrintZebra()
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+            try
+            {
+                string lotNo = string.Empty;
+                int? SPStart = null;
+                int? SPEnd = null;
+
+                lotNo = txtDipLotNo.Text;
+
+                if (!string.IsNullOrEmpty(txtSPStart.Text))
+                    SPStart = int.Parse(txtSPStart.Text);
+
+                if (!string.IsNullOrEmpty(txtSPEnd.Text))
+                    SPEnd = int.Parse(txtSPEnd.Text);
+
+                List<LabelCHS9> items = new List<LabelCHS9>();
+                var item = Models.LabelCHS9.Gets(lotNo, SPStart, SPEnd);
+                items = item;
+                if (null != items)
+                {
+                    PrintDialog pDialog = new PrintDialog();
+                    pDialog.PageRangeSelection = PageRangeSelection.AllPages;
+                    pDialog.UserPageRangeEnabled = true;
+
+                    Nullable<Boolean> print = pDialog.ShowDialog();
+                    if (print == true)
+                    {
+                        string barcode1 = string.Empty;
+                        string barcode2 = string.Empty;
+                        string commandLine = string.Empty;
+
+                        foreach (var result in items)
+                        {
+                            barcode1 = string.Empty;
+                            barcode2 = string.Empty;
+                            commandLine = string.Empty;
+
+                            if (!string.IsNullOrEmpty(result.BarcodeText1))
+                            {
+                                barcode1 = "^CFA,15"
+                                    + "^FO20,20^GB50,50,3^FS"
+                                    + "^CFA,30"
+                                    + "^FWR^FO30,100,70,60^FD" + result.BarcodeText1 + "^FS"
+                                    + "^CFA,30"
+                                    + "^FO80,20"
+                                    + "^BC,100,N,N,N"
+                                    + "^FD" + result.BarcodeText1 + "^FS";
+                            }
+
+                            if (!string.IsNullOrEmpty(result.BarcodeText2))
+                            {
+                                barcode2 = "^CFA,15"
+                                    + "^FO200,20^GB50,50,3^FS"
+                                    + "^CFA,30"
+                                    + "^FWR^FO210,100,70,60^FD"+ result.BarcodeText2 + "^FS"
+                                    + "^CFA,30"
+                                    + "^FO260,20"
+                                    + "^BC,100,N,N,N"
+                                    + "^FD" + result.BarcodeText2 + "^FS";
+                            }
+                                commandLine = "^XA" + barcode1+ barcode2+ "^XZ";
+
+                            if (!string.IsNullOrEmpty(commandLine))
+                                RawPrinterHelper.SendStringToPrinter(pDialog.PrintQueue.Name, commandLine);
+                        }
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                return false;
             }
         }
 

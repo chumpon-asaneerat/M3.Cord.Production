@@ -29,7 +29,7 @@ namespace M3.Cord.Models
         static LabelCHS9()
         {
             BarcodeGenerator = new Barcode();
-            BarcodeGenerator.EncodedType = BarcodeLib.TYPE.CODE39;
+            BarcodeGenerator.EncodedType = BarcodeLib.TYPE.CODE128;
             BarcodeGenerator.Alignment = BarcodeLib.AlignmentPositions.CENTER;
             BarcodeGenerator.IncludeLabel = false;
         }
@@ -53,7 +53,7 @@ namespace M3.Cord.Models
                 if (string.IsNullOrWhiteSpace(LotNo1) || string.IsNullOrWhiteSpace(ProductCode1) ||
                     SPNo1 <= 0)
                     return null;
-                return LotNo1 + " " + ProductCode1 + " " + SPNo1.ToString();
+                return ProductCode1 + " " + LotNo1 + " " + SPNo1.ToString();
             }
             set { }
         }
@@ -87,7 +87,7 @@ namespace M3.Cord.Models
                 if (string.IsNullOrWhiteSpace(LotNo2) || string.IsNullOrWhiteSpace(ProductCode2) ||
                     SPNo2 <= 0)
                     return null;
-                return LotNo2 + " " + ProductCode2 + " " + SPNo2.ToString();
+                return ProductCode2 + " " + LotNo2 + " " + SPNo2.ToString();
             }
             set { }
         }

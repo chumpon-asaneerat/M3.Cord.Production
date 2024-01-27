@@ -30,6 +30,12 @@
                                         IconType="Print"
                                         Text="Ok"
                                         Click="cmdPring_Click" />
+                <Label Width="10" DockPanel.Dock="Right"></Label>
+                <ctrl:FontAwesomeButton x:Name="cmdPrint"
+                                        DockPanel.Dock="Right"
+                                        IconType="Print"
+                                        Text="Print"
+                                        Click="cmdPrint_Click" />
                 <Grid />
             </DockPanel>
             <!--  WORK AREA  -->
