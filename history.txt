@@ -4,8 +4,10 @@ M3 Cord Production System #900
 M3 Cord Production System #899
 - 
 
+[commited]
 M3 Cord Production System #898
-- 
+- M3.Cord.Production.App re-implements #114
+  - Implements FirstTwistView pages #9
 
 [commited]
 M3 Cord Production System #897

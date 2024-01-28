@@ -94,5 +94,7 @@ namespace M3.Cord.Controls.Documents
         }
 
         #endregion
+
+        public S4x2Condition Condition { get { return condition; } }
     }
 }

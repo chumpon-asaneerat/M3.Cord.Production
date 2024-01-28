@@ -524,7 +524,7 @@ namespace M3.Cord
 
             #endregion
 
-            #region First Twist History
+            #region First Twist View
 
             public static Cord.Pages.FirstTwistHistorySearchPage FirstTwistHistorySearch
             {
@@ -534,6 +534,15 @@ namespace M3.Cord
             public static Cord.Pages.FirstTwistOperationViewPage FirstTwistOperationView
             {
                 get { return GetPage<Cord.Pages.FirstTwistOperationViewPage>(); }
+            }
+
+            #endregion
+
+            #region Condition Document Preview
+
+            public static Cord.Pages.S4x1ConditionPreviewPage S4x1ConditionPreview
+            {
+                get { return GetPage<Cord.Pages.S4x1ConditionPreviewPage>(); }
             }
 
             #endregion
@@ -761,7 +770,7 @@ namespace M3.Cord
 
             #endregion
 
-            #region FirstTwistView
+            #region First Twist View
 
             /// <summary>Gets Twist1 Load Record View Window.</summary>
             public static Twist1LoadRecordViewWindow Twist1LoadRecordView

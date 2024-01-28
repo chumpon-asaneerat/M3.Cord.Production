@@ -95,5 +95,7 @@ namespace M3.Cord.Controls.Documents
         }
 
         #endregion
+
+        public S1Condition Condition { get { return condition; } }
     }
 }

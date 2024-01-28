@@ -66,6 +66,11 @@ namespace M3.Cord.Pages
             //Save();
         }
 
+        private void cmdPrint_Click(object sender, RoutedEventArgs e)
+        {
+            Print();
+        }
+
         #endregion
 
         #region Private Methods
@@ -87,6 +92,32 @@ namespace M3.Cord.Pages
                 else if (pcCard.MCCode == "S-4-2")
                 {
                     s4x2.Save();
+                }
+            }
+        }
+
+        private void Print()
+        {
+            if (pcCard != null)
+            {
+                if (pcCard.MCCode == "S-1-1" ||
+                    pcCard.MCCode == "S-1-2" ||
+                    pcCard.MCCode == "S-1-3")
+                {
+                    //s1.Save();
+                }
+                else if (pcCard.MCCode == "S-4-1")
+                {
+                    if (null != s4x1.Condition)
+                    {
+                        var page = M3CordApp.Pages.S4x1ConditionPreview;
+                        page.Setup(pcCard, new List<S4x1Condition>() { s4x1.Condition });
+                        PageContentManager.Instance.Current = page;
+                    }
+                }
+                else if (pcCard.MCCode == "S-4-2")
+                {
+                    //s4x2.Save();
                 }
             }
         }
