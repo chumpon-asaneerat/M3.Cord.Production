@@ -10,8 +10,10 @@ M3 Cord Production System #888
 M3 Cord Production System #887
 - 
 
+[commited]
 M3 Cord Production System #886
-- 
+- M3.Cord.Production.App re-implements #102
+  - Restructure file/folder
 
 [commited]
 M3 Cord Production System #885

@@ -378,7 +378,7 @@
     <Compile Include="Windows\DIP\DIPTimeTableEditorWindow.xaml.cs">
       <DependentUpon>DIPTimeTableEditorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\LabelCHS9SearchWindow.xaml.cs">
+    <Compile Include="Windows\LabelCHS9\LabelCHS9SearchWindow.xaml.cs">
       <DependentUpon>LabelCHS9SearchWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\PalletSettings\ChoosePCTwist1Window.xaml.cs">
@@ -1016,7 +1016,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\LabelCHS9SearchWindow.xaml">
+    <Page Include="Windows\LabelCHS9\LabelCHS9SearchWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1140,7 +1140,6 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Windows\LabelCHS9\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />
   </ItemGroup>
