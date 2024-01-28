@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="M3.Cord.Pages.FirstTwistYarnRecordSheetViewPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:s1="clr-namespace:M3.Cord.Controls.Documents"
+             xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="800"
+             d:DesignWidth="1200">
+    <DockPanel LastChildFill="True">
+        <!--  BUTTONS  -->
+        <DockPanel LastChildFill="True"
+                   DockPanel.Dock="Bottom"
+                   Height="40">
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Right"
+                        VerticalAlignment="Center">
+                <!--  HOME  -->
+                <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                        Margin="5,0,0,0"
+                                        IconType="Back"
+                                        Text="Back"
+                                        Click="cmdBack_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Left"
+                        VerticalAlignment="Center">
+                <ctrl:FontAwesomeButton x:Name="cmdNewSheet"
+                                        Margin="5,0,0,0"
+                                        IconType="Add"
+                                        Text="New Sheet"
+                                        Visibility="Hidden"
+                                        Click="cmdNewSheet_Click" />
+            </StackPanel>
+            <Grid />
+        </DockPanel>
+        <DockPanel x:Name="paCheckSheet" LastChildFill="True">
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <elem:FlowBox />
+                    <elem:ItemYarnBox />
+                    <elem:ProductLotNo />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <ListView x:Name="lvCheckSheet"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <!--  BUTTONS  -->
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  Detail  -->
+                                        <Button x:Name="cmdDetail"
+                                                DockPanel.Dock="Left"
+                                                Style="{StaticResource InlineButton}"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdDetail_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="View"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Condition Date" CellTemplate="{StaticResource ConditionDate}" />
+                        <GridViewColumn Header="Doff" CellTemplate="{StaticResource DoffNo}" />
+                        <!--
+                        <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource ItemYarn}" />
+                        <GridViewColumn Header="Input (CH)" CellTemplate="{StaticResource InputCH}" />
+                        -->
+                        <GridViewColumn Header="Shift" CellTemplate="{StaticResource ShiftName}" />
+                        <GridViewColumn Header="Operator" CellTemplate="{StaticResource UserName}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </DockPanel>
+</UserControl>

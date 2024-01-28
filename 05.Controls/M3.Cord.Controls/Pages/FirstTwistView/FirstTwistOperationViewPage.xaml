@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="M3.Cord.Pages.FirstTwistOperationPage"
+﻿<UserControl x:Class="M3.Cord.Pages.FirstTwistOperationViewPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -16,21 +16,19 @@
                     FontSize="18"
                     SelectionChanged="tabs_SelectionChanged">
             <TabItem Header="PC Card">
-                <spage:FirstTwistPCCardPage x:Name="pagePCCard"
-                                            RequestLoadYarn="pagePCCard_RequestLoadYarn"
-                                            FinishPCCard="pagePCCard_FinishPCCard" />
+                <spage:FirstTwistPCCardViewPage x:Name="pagePCCard" />
             </TabItem>
             <TabItem Header="Raw Material">
-                <spage:FirstTwistRawMaterialPage x:Name="pageRawMat" />
+                <spage:FirstTwistRawMaterialViewPage x:Name="pageRawMat" />
             </TabItem>
             <TabItem Header="Actual Yarn Twist Record Sheet">
-                <spage:FirstTwistYarnRecordSheetPage x:Name="pageCheckSheet" />
+                <spage:FirstTwistYarnRecordSheetViewPage x:Name="pageCheckSheet" />
             </TabItem>
             <TabItem Header="Production condition">
-                <spage:FirstTwistConditionPage x:Name="pageMCCondition" />
+                <spage:FirstTwistConditionViewPage x:Name="pageMCCondition" />
             </TabItem>
             <TabItem Header="Cord Sampling Details">
-                <spage:FirstTwistSamplingPage x:Name="pageSampling" />
+                <spage:FirstTwistSamplingViewPage x:Name="pageSampling" />
             </TabItem>
         </TabControl>
     </page:NPage>

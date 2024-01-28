@@ -243,6 +243,24 @@
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
+    <Compile Include="Pages\FirstTwistView\FirstTwistOperationViewPage.xaml.cs">
+      <DependentUpon>FirstTwistOperationViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTwistView\SubPages\FirstTwistConditionViewPage.xaml.cs">
+      <DependentUpon>FirstTwistConditionViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTwistView\SubPages\FirstTwistPCCardViewPage.xaml.cs">
+      <DependentUpon>FirstTwistPCCardViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTwistView\SubPages\FirstTwistRawMaterialViewPage.xaml.cs">
+      <DependentUpon>FirstTwistRawMaterialViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTwistView\SubPages\FirstTwistSamplingViewPage.xaml.cs">
+      <DependentUpon>FirstTwistSamplingViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTwistView\SubPages\FirstTwistYarnRecordSheetViewPage.xaml.cs">
+      <DependentUpon>FirstTwistYarnRecordSheetViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Lab\CordSamplingQAManagePage.xaml.cs">
       <DependentUpon>CordSamplingQAManagePage.xaml</DependentUpon>
     </Compile>
@@ -310,8 +328,8 @@
     <Compile Include="Pages\FirstTwist\SubPages\FirstTwistPCCardPage.xaml.cs">
       <DependentUpon>FirstTwistPCCardPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwist\SubPages\FirstTwistRawMateriaPagel.xaml.cs">
-      <DependentUpon>FirstTwistRawMateriaPagel.xaml</DependentUpon>
+    <Compile Include="Pages\FirstTwist\SubPages\FirstTwistRawMaterialPage.xaml.cs">
+      <DependentUpon>FirstTwistRawMaterialPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\FirstTwist\SubPages\FirstTwistYarnRecordSheetPage.xaml.cs">
       <DependentUpon>FirstTwistYarnRecordSheetPage.xaml</DependentUpon>
@@ -788,6 +806,30 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\FirstTwistView\FirstTwistOperationViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\FirstTwistView\SubPages\FirstTwistConditionViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\FirstTwistView\SubPages\FirstTwistPCCardViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\FirstTwistView\SubPages\FirstTwistRawMaterialViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\FirstTwistView\SubPages\FirstTwistSamplingViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\FirstTwistView\SubPages\FirstTwistYarnRecordSheetViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Lab\CordSamplingQAManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -876,7 +918,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FirstTwist\SubPages\FirstTwistRawMateriaPagel.xaml">
+    <Page Include="Pages\FirstTwist\SubPages\FirstTwistRawMaterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
