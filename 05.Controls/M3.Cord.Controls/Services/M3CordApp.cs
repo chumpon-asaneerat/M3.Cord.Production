@@ -545,6 +545,11 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.S4x1ConditionPreviewPage>(); }
             }
 
+            public static Cord.Pages.S4x2ConditionPreviewPage S4x2ConditionPreview
+            {
+                get { return GetPage<Cord.Pages.S4x2ConditionPreviewPage>(); }
+            }
+
             #endregion
         }
 

@@ -104,7 +104,10 @@ namespace M3.Cord.Pages
                     pcCard.MCCode == "S-1-2" ||
                     pcCard.MCCode == "S-1-3")
                 {
-                    //s1.Save();
+                    if (null != s1.Condition)
+                    {
+
+                    }
                 }
                 else if (pcCard.MCCode == "S-4-1")
                 {
@@ -117,7 +120,12 @@ namespace M3.Cord.Pages
                 }
                 else if (pcCard.MCCode == "S-4-2")
                 {
-                    //s4x2.Save();
+                    if (null != s4x2.Condition)
+                    {
+                        var page = M3CordApp.Pages.S4x2ConditionPreview;
+                        page.Setup(pcCard, new List<S4x2Condition>() { s4x2.Condition });
+                        PageContentManager.Instance.Current = page;
+                    }
                 }
             }
         }
