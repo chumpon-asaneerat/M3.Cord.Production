@@ -1,17 +1,49 @@
+M3 Cord Production System #900
+- 
+
+M3 Cord Production System #899
+- 
+
+M3 Cord Production System #898
+- 
+
+M3 Cord Production System #897
+- 
+
+M3 Cord Production System #896
+- 
+
+M3 Cord Production System #895
+- 
+
+M3 Cord Production System #894
+- 
+
+M3 Cord Production System #893
+- 
+
+M3 Cord Production System #892
+- 
+
+M3 Cord Production System #891
+- 
+
 M3 Cord Production System #890
 - 
 
+[commited]
 M3 Cord Production System #889
-- 
+- M3.Cord.Production.App re-implements #105
+  - Update App build 1185
 
 [commited]
 M3 Cord Production System #888
-- M3.Cord.Production.App re-implements #103
+- M3.Cord.Production.App re-implements #104
   - LabelCHS9 add doff no.
 
 [commited]
 M3 Cord Production System #887
-- M3.Cord.Production.App re-implements #102
+- M3.Cord.Production.App re-implements #103
   - Update App build 1180
 
 [commited]
