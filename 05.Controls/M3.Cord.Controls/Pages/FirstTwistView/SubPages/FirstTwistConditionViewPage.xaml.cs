@@ -106,7 +106,9 @@ namespace M3.Cord.Pages
                 {
                     if (null != s1.Condition)
                     {
-
+                        var page = M3CordApp.Pages.S1ConditionPreview;
+                        page.Setup(pcCard, new List<S1Condition>() { s1.Condition });
+                        PageContentManager.Instance.Current = page;
                     }
                 }
                 else if (pcCard.MCCode == "S-4-1")

@@ -540,6 +540,11 @@ namespace M3.Cord
 
             #region Condition Document Preview
 
+            public static Cord.Pages.S1ConditionPreviewPage S1ConditionPreview
+            {
+                get { return GetPage<Cord.Pages.S1ConditionPreviewPage>(); }
+            }
+
             public static Cord.Pages.S4x1ConditionPreviewPage S4x1ConditionPreview
             {
                 get { return GetPage<Cord.Pages.S4x1ConditionPreviewPage>(); }
