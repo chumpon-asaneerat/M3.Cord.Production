@@ -243,6 +243,9 @@
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
+    <Compile Include="Pages\FirstTwistHistorySearchPage.xaml.cs">
+      <DependentUpon>FirstTwistHistorySearchPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FirstTwistView\FirstTwistOperationViewPage.xaml.cs">
       <DependentUpon>FirstTwistOperationViewPage.xaml</DependentUpon>
     </Compile>
@@ -803,6 +806,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Ageing\AgeingOperationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FirstTwistHistorySearchPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
