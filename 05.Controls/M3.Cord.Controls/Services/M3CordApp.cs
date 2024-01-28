@@ -523,6 +523,20 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region First Twist History
+
+            public static Cord.Pages.FirstTwistHistorySearchPage FirstTwistHistorySearch
+            {
+                get { return GetPage<Cord.Pages.FirstTwistHistorySearchPage>(); }
+            }
+
+            public static Cord.Pages.FirstTwistOperationViewPage FirstTwistOperationView
+            {
+                get { return GetPage<Cord.Pages.FirstTwistOperationViewPage>(); }
+            }
+
+            #endregion
         }
 
         /// <summary>

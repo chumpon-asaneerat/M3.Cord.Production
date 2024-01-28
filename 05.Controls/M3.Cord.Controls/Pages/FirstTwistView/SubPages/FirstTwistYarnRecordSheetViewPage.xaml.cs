@@ -53,7 +53,7 @@ namespace M3.Cord.Pages
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
             // First Twist
-            var page = M3CordApp.Pages.FirstTwistMC;
+            var page = M3CordApp.Pages.FirstTwistHistorySearch;
             page.Setup();
             PageContentManager.Instance.Current = page;
         }
