@@ -13,8 +13,12 @@ M3 Cord Production System #887
 M3 Cord Production System #886
 - 
 
+[commited]
 M3 Cord Production System #885
-- 
+- M3.Cord.Production.App re-implements #101
+  - Update Choose DIP PC Card
+    - Add check data
+    - Change to GetDIPCustomers SP
 
 [commited]
 M3 Cord Production System #884

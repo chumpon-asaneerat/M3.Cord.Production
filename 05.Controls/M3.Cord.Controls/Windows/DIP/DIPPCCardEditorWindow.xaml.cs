@@ -54,30 +54,48 @@ namespace M3.Cord.Windows
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
-            // Customer
-            if (null != cbCustomers.SelectedItem && cbCustomers.SelectedItem is Customer)
+            if (null != _item)
             {
-                var customer = cbCustomers.SelectedItem as Customer;
-                if (null != _item)
+                // Customer
+                if (null != cbCustomers.SelectedItem && cbCustomers.SelectedItem is Customer)
                 {
+                    var customer = cbCustomers.SelectedItem as Customer;
                     _item.CustomerId = customer.CustomerId;
                     _item.CustomerName = customer.CustomerName;
                 }
-            }
-            // Item Code
-            if (null != cbItemCodes.SelectedItem && cbItemCodes.SelectedItem is Product)
-            {
-                var itemCode = cbItemCodes.SelectedItem as Product;
-                if (null != _item)
+                else
                 {
+                    var msgbox = M3CordApp.Windows.MessageBox;
+                    msgbox.Setup("Please Choose Customer" + Environment.NewLine + "กรุณาเลือกชื่อลูกค้า");
+                    msgbox.ShowDialog();
+                    return;
+                }
+                // Item Code
+                if (null != cbItemCodes.SelectedItem && cbItemCodes.SelectedItem is Product)
+                {
+                    var itemCode = cbItemCodes.SelectedItem as Product;
                     _item.ProductCode = itemCode.ProductCode;
                     _item.ProductName = itemCode.ProductName;
                     _item.ItemYarn = itemCode.ItemYarn;
                     _item.CordStructure = itemCode.CordStructure;
                 }
+                else
+                {
+                    var msgbox = M3CordApp.Windows.MessageBox;
+                    msgbox.Setup("Please Choose Product" + Environment.NewLine + "กรุณาเลือกชื่อผลิตภัณฑ์");
+                    msgbox.ShowDialog();
+                    return;
+                }
+                // Lot No
+                if (string.IsNullOrWhiteSpace(_item.DIPLotNo))
+                {
+                    var msgbox = M3CordApp.Windows.MessageBox;
+                    msgbox.Setup("Please Enter Lot No" + Environment.NewLine + "กรุณาเใส่เลข Lot");
+                    msgbox.ShowDialog();
+                    return;
+                }
+                DialogResult = true;
             }
-
-            DialogResult = true;
         }
 
         #endregion
@@ -127,7 +145,7 @@ namespace M3.Cord.Windows
         {
             // Customer
             cbCustomers.ItemsSource = null;
-            var customers = Customer.Gets().Value();
+            var customers = Customer.GetDIPs().Value();
             cbCustomers.ItemsSource = customers;
 
             // Item Code
