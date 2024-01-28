@@ -68,6 +68,18 @@ namespace M3.Cord.Pages
             if (null == btn) return;
             var item = btn.DataContext as PCTwist1;
             if (null == item) return;
+
+            Edit(item);
+        }
+
+        private void cmdSearch_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        private void cmdClear_Click(object sender, RoutedEventArgs e)
+        {
+            ClearInputs();
         }
 
         #endregion
@@ -116,6 +128,23 @@ namespace M3.Cord.Pages
         #endregion
 
         #region Private Methods
+
+        private void Edit(PCTwist1 item)
+        {
+            var page = M3CordApp.Pages.FirstTwistOperationView;
+            page.Setup(item);
+            PageContentManager.Instance.Current = page;
+        }
+
+        private void ClearInputs()
+        {
+            dtPCDate.SelectedDate = new DateTime?();
+            cbMCCodes.SelectedIndex = -1;
+            cbItemYarns.SelectedIndex = -1;
+            txtLotNo.Text = string.Empty;
+            cbCustomers.SelectedIndex = -1;
+            cbProducts.SelectedIndex = -1;
+        }
 
         private void LoadComboBoxes()
         {
@@ -179,7 +208,7 @@ namespace M3.Cord.Pages
             string sProduct = (null != product) ? product.ProductCode : null;
 
 
-            var results = PCTwist1.Search(pcdate,sMCCode, sItemYarn, lotNo, sCustomer, sProduct).Value();
+            var results = PCTwist1.Search(pcdate, sMCCode, sItemYarn, lotNo, sCustomer, sProduct).Value();
 
             grid.ItemsSource = results;
         }
@@ -191,6 +220,7 @@ namespace M3.Cord.Pages
         public void Setup()
         {
             LoadComboBoxes();
+            ClearInputs();
             RefreshGrid();
         }
 

@@ -46,7 +46,6 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private FirstTwistMC selectedMC;
         private PCTwist1 pcCard;
 
         #endregion
@@ -88,14 +87,11 @@ namespace M3.Cord.Pages
 
             s1.DataContext = null;
 
-            // Get PC Card if assigned.
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
-
             if (pcCard != null)
             {
                 var items = CordSamplingDetails.Gets(pcCard.MCCode, pcCard.ProductLotNo, pcCard.ProductCode).Value();
                 var item = (null != items) ? items.FirstOrDefault() : null;
-                s1.Setup(selectedMC, pcCard, false, item);
+                s1.Setup(pcCard, false, item);
             }
             this.DataContext = pcCard;
         }
@@ -105,11 +101,11 @@ namespace M3.Cord.Pages
             UpdateUI();
         }
 
-        public void Setup(FirstTwistMC mc)
+        public void Setup(PCTwist1 selectedPC)
         {
             try
             {
-                selectedMC = mc;
+                pcCard = selectedPC;
                 UpdateUI();
             }
             catch (Exception ex)

@@ -119,7 +119,7 @@ namespace M3.Cord.Pages
                     {
                         cond = conds[conds.Count - 1]; // used last one
                     }
-                    s1.Setup(selectedMC, pcCard, cond);
+                    s1.Setup(pcCard, cond);
 
                     s1.Visibility = Visibility.Visible;
                     s4x1.Visibility = Visibility.Collapsed;
@@ -133,7 +133,7 @@ namespace M3.Cord.Pages
                     {
                         cond = conds[conds.Count - 1]; // used last one
                     }
-                    s4x1.Setup(selectedMC, pcCard, cond);
+                    s4x1.Setup(pcCard, cond);
 
                     s1.Visibility = Visibility.Collapsed;
                     s4x1.Visibility = Visibility.Visible;
@@ -147,7 +147,7 @@ namespace M3.Cord.Pages
                     {
                         cond = conds[conds.Count - 1]; // used last one
                     }
-                    s4x2.Setup(selectedMC, pcCard, cond);
+                    s4x2.Setup(pcCard, cond);
 
 
                     s1.Visibility = Visibility.Collapsed;

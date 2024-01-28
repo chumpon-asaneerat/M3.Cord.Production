@@ -43,7 +43,6 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private FirstTwistMC selectedMC;
         private PCTwist1 pcCard;
 
         #endregion
@@ -61,7 +60,7 @@ namespace M3.Cord.Pages
         private void cmdNewSheet_Click(object sender, RoutedEventArgs e)
         {
             // Show Check Sheet Dialig
-            ShowCheckSheetDialog(null);
+            //ShowCheckSheetDialog(null);
         }
 
         private void cmdDetail_Click(object sender, RoutedEventArgs e)
@@ -86,9 +85,6 @@ namespace M3.Cord.Pages
         private void UpdateMCStatus()
         {
             paCheckSheet.DataContext = null;
-
-            // Get PC Card if assigned.
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
             // Binding
             paCheckSheet.DataContext = pcCard;
         }
@@ -97,16 +93,17 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup(FirstTwistMC mc)
+        public void Setup(PCTwist1 selectedPC)
         {
-            selectedMC = mc;
+            pcCard = selectedPC;
             RefreshGrids();
         }
 
         private void ShowCheckSheetDialog(Twist1CheckSheet sheet)
         {
-            if (null == selectedMC || null == pcCard)
+            if (null == pcCard)
                 return;
+            /*
             var win = M3CordApp.Windows.Twist1CheckSheetEditor;
             // set display mode
             win.Mode = (null != sheet) ? DisplayMode.Edit : DisplayMode.New;
@@ -117,6 +114,7 @@ namespace M3.Cord.Pages
             pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
 
             RefreshGrids();
+            */
         }
 
         public void RefreshGrids()

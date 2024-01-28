@@ -45,7 +45,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private FirstTwistMC selectedMC;
+        private FirstTwistMC selectedMC = null;
         private PCTwist1 pcCard;
 
         #endregion
@@ -87,9 +87,6 @@ namespace M3.Cord.Pages
         private void UpdateMCStatus()
         {
             paRawMat.DataContext = null;
-
-            // Get PC Card if assigned.
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
             // Binding
             paRawMat.DataContext = pcCard;
             cmdLoadYarn.IsEnabled = (null != pcCard);
@@ -99,9 +96,10 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup(FirstTwistMC mc)
+        public void Setup(PCTwist1 selectedPC)
         {
-            selectedMC = mc;
+            pcCard = selectedPC;
+            selectedMC = (null != pcCard) ? FirstTwistMC.Get(pcCard.MCCode).Value() : null;
             RefreshGrids();
         }
 
@@ -119,7 +117,7 @@ namespace M3.Cord.Pages
 
         public void ShowLoadYarnDialog(Twist1LoadRecord record)
         {
-            if (null == selectedMC || null == pcCard)
+            if (null == pcCard)
                 return;
             var win = M3CordApp.Windows.Twist1LoadRecordEditor;
             // set display mode

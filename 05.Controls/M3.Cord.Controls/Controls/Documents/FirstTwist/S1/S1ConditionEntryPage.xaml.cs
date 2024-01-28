@@ -46,7 +46,6 @@ namespace M3.Cord.Controls.Documents
 
         #region Internal Variables
 
-        private FirstTwistMC selectedMC;
         private PCTwist1 pcCard;
         private S1Condition condition;
 
@@ -58,9 +57,8 @@ namespace M3.Cord.Controls.Documents
 
         #region Public Methods
 
-        public void Setup(FirstTwistMC mc, PCTwist1 PCCard, S1Condition item = null) 
+        public void Setup(PCTwist1 PCCard, S1Condition item = null) 
         {
-            selectedMC = mc;
             pcCard = PCCard;
             if (null != pcCard)
             {

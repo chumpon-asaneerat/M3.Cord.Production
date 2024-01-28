@@ -43,7 +43,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private FirstTwistMC selectedMC;
+        private PCTwist1 _pcCard;
 
         #endregion
 
@@ -82,23 +82,15 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup(FirstTwistMC mc)
+        public void Setup(PCTwist1 pccard)
         {
-            selectedMC = mc;
-            if (null !=  selectedMC) 
-            {
-                page.HeaderText = "1st Twisting - " + selectedMC.MCCode;
-            }
-            else
-            {
-                page.HeaderText = "1st Twisting ";
-            }
+            _pcCard = pccard;
 
-            pagePCCard.Setup(selectedMC);
-            pageRawMat.Setup(selectedMC);
-            pageCheckSheet.Setup(selectedMC);
-            pageMCCondition.Setup(selectedMC);
-            pageSampling.Setup(selectedMC);
+            pagePCCard.Setup(_pcCard);
+            pageRawMat.Setup(_pcCard);
+            pageCheckSheet.Setup(_pcCard);
+            pageMCCondition.Setup(_pcCard);
+            pageSampling.Setup(_pcCard);
 
             tabs.SelectedIndex = 0; // reset index
         }

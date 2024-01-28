@@ -43,9 +43,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private FirstTwistMC selectedMC;
         private PCTwist1 pcCard;
-        private PCTwist1Operation _operation = null;
 
         #endregion
 
@@ -75,35 +73,17 @@ namespace M3.Cord.Pages
         private void UpdateMCStatus()
         {
             paPCCard.DataContext = null;
-            // Get PC Card if assigned.
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
             // Binding
             paPCCard.DataContext = pcCard;
-
-            // Check current operations
-            bool bReachQuota = (null != pcCard && pcCard.TargetQty.HasValue && pcCard.ActualQty.HasValue &&
-                pcCard.TargetQty.Value < pcCard.ActualQty.Value);
-
-            var operations = lvPCCards.ItemsSource as List<PCTwist1Operation>;
-            if (null != operations && operations.Count > 0)
-            {
-                int idx = operations.Count - 1;
-                _operation = operations[idx];
-                if (_operation.EndTime.HasValue)
-                {
-                    // already end.
-                    _operation = null;
-                }
-            }
         }
 
         #endregion
 
         #region Public Methods
 
-        public void Setup(FirstTwistMC mc)
+        public void Setup(PCTwist1 selectedPC)
         {
-            selectedMC = mc;
+            pcCard = selectedPC;
             RefreshGrids();
         }
 

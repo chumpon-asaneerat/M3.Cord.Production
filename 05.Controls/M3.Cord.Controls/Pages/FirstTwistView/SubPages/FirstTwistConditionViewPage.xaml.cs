@@ -47,7 +47,6 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private FirstTwistMC selectedMC;
         private PCTwist1 pcCard;
 
         #endregion
@@ -64,7 +63,7 @@ namespace M3.Cord.Pages
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
-            Save();
+            //Save();
         }
 
         #endregion
@@ -104,9 +103,6 @@ namespace M3.Cord.Pages
             s4x1.DataContext = null;
             s4x2.DataContext = null;
 
-            // Get PC Card if assigned.
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
-
             if (pcCard != null)
             {
                 if (pcCard.MCCode == "S-1-1" ||
@@ -119,7 +115,7 @@ namespace M3.Cord.Pages
                     {
                         cond = conds[conds.Count - 1]; // used last one
                     }
-                    s1.Setup(selectedMC, pcCard, cond);
+                    s1.Setup(pcCard, cond);
 
                     s1.Visibility = Visibility.Visible;
                     s4x1.Visibility = Visibility.Collapsed;
@@ -133,7 +129,7 @@ namespace M3.Cord.Pages
                     {
                         cond = conds[conds.Count - 1]; // used last one
                     }
-                    s4x1.Setup(selectedMC, pcCard, cond);
+                    s4x1.Setup(pcCard, cond);
 
                     s1.Visibility = Visibility.Collapsed;
                     s4x1.Visibility = Visibility.Visible;
@@ -147,7 +143,7 @@ namespace M3.Cord.Pages
                     {
                         cond = conds[conds.Count - 1]; // used last one
                     }
-                    s4x2.Setup(selectedMC, pcCard, cond);
+                    s4x2.Setup(pcCard, cond);
 
 
                     s1.Visibility = Visibility.Collapsed;
@@ -176,11 +172,11 @@ namespace M3.Cord.Pages
             UpdateUI();
         }
 
-        public void Setup(FirstTwistMC mc)
+        public void Setup(PCTwist1 selectedPC)
         {
             try
             {
-                selectedMC = mc;
+                pcCard = selectedPC;
                 UpdateUI();
             }
             catch (Exception ex)

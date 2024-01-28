@@ -78,6 +78,50 @@ namespace M3.Cord.Models
             return rets;
         }
 
+        public static NDbResult<FirstTwistMC> Get(string mcCode)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<FirstTwistMC> rets = new NDbResult<FirstTwistMC>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@MCCode", (!string.IsNullOrEmpty(mcCode)) ? mcCode : null);
+
+            try
+            {
+                var ret = cnn.Query<FirstTwistMC>("GetFirstTwistMCs", p,
+                    commandType: CommandType.StoredProcedure).FirstOrDefault();
+                rets.Success(ret);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = null;
+            }
+
+            return rets;
+        }
+
         #endregion
     }
 }
