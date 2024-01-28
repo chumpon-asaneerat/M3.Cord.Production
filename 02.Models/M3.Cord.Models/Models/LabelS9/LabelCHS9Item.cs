@@ -27,6 +27,7 @@ namespace M3.Cord.Models
         #region Public Properties
 
         public string DIPLotNo { get; set; }
+        public int DoffNo { get; set; }
         public string ProductCode { get; set; }
         public int? SPNo { get; set; }
 
@@ -38,7 +39,7 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<LabelCHS9Item>> Gets(string LotNo, int? SPStart, int? SPEnd)
+        public static NDbResult<List<LabelCHS9Item>> Gets(string LotNo, int? doffNo, int? SPStart, int? SPEnd)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -58,6 +59,7 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@LotNo", LotNo);
+            p.Add("@DoffNo", doffNo);
             p.Add("@SPStart", SPStart);
             p.Add("@SPEnd", SPEnd);
 

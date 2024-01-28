@@ -4,8 +4,10 @@ M3 Cord Production System #890
 M3 Cord Production System #889
 - 
 
+[commited]
 M3 Cord Production System #888
-- 
+- M3.Cord.Production.App re-implements #103
+  - LabelCHS9 add doff no.
 
 [commited]
 M3 Cord Production System #887

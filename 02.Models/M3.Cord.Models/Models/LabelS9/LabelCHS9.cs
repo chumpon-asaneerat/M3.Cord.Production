@@ -53,7 +53,7 @@ namespace M3.Cord.Models
                 if (string.IsNullOrWhiteSpace(LotNo1) || string.IsNullOrWhiteSpace(ProductCode1) ||
                     SPNo1 <= 0)
                     return null;
-                return ProductCode1 + " " + LotNo1 + " " + SPNo1.ToString();
+                return ProductCode1 + " " + LotNo1 + DoffNo1.ToString() + " " + SPNo1.ToString();
             }
             set { }
         }
@@ -77,6 +77,7 @@ namespace M3.Cord.Models
 
         public string ProductCode1 { get; set; }
         public string LotNo1 { get; set; }
+        public int DoffNo1 { get; set; }
         public int SPNo1 { get; set; }
 
         #endregion
@@ -87,7 +88,7 @@ namespace M3.Cord.Models
                 if (string.IsNullOrWhiteSpace(LotNo2) || string.IsNullOrWhiteSpace(ProductCode2) ||
                     SPNo2 <= 0)
                     return null;
-                return ProductCode2 + " " + LotNo2 + " " + SPNo2.ToString();
+                return ProductCode2 + " " + LotNo2 + DoffNo2.ToString() + " " + SPNo2.ToString();
             }
             set { }
         }
@@ -111,17 +112,18 @@ namespace M3.Cord.Models
 
         public string ProductCode2 { get; set; }
         public string LotNo2 { get; set; }
+        public int DoffNo2 { get; set; }
         public int SPNo2 { get; set; }
 
         #endregion
 
         #region Static Methods
 
-        public static List<LabelCHS9> Gets(string lotNo, int? SPStart, int? SPEnd)
+        public static List<LabelCHS9> Gets(string lotNo, int? doffNo, int? SPStart, int? SPEnd)
         {
             List<LabelCHS9> rets = new List<LabelCHS9>();
 
-            var items = LabelCHS9Item.Gets(lotNo, SPStart, SPEnd).Value();
+            var items = LabelCHS9Item.Gets(lotNo, doffNo, SPStart, SPEnd).Value();
             if (null != items)
             {
                 LabelCHS9 item = null;
@@ -131,6 +133,7 @@ namespace M3.Cord.Models
                     {
                         item = new LabelCHS9();
                         item.LotNo1 = items[i].DIPLotNo;
+                        item.DoffNo1 = items[i].DoffNo;
                         item.ProductCode1 = items[i].ProductCode;
                         item.SPNo1 = items[i].SPNo.Value;
                         rets.Add(item);
@@ -140,6 +143,7 @@ namespace M3.Cord.Models
                         if (null != item)
                         {
                             item.LotNo2 = items[i].DIPLotNo;
+                            item.DoffNo2 = items[i].DoffNo;
                             item.ProductCode2 = items[i].ProductCode;
                             item.SPNo2 = items[i].SPNo.Value;
                         }

@@ -110,6 +110,19 @@ namespace M3.Cord.Windows
             }
         }
 
+        private void txtDoffNo_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Search();
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Escape)
+            {
+                e.Handled = true;
+            }
+        }
+
         #endregion
 
         #region Private Methods
@@ -134,8 +147,18 @@ namespace M3.Cord.Windows
                 });
                 return;
             }
+            string doffNo = txtDoffNo.Text;
+            int iDoffNo;
+            if (!int.TryParse(doffNo, out iDoffNo))
+            {
+                this.InvokeAction(() =>
+                {
+                    txtDoffNo.Focus();
+                });
+                return;
+            }
 
-            var ret = LabelCHS9Summary.Search(lotNo);
+            var ret = LabelCHS9Summary.Search(lotNo, iDoffNo);
             var Item = ret.Value();
             if (!ret.Ok || null == Item)
             {
@@ -163,6 +186,17 @@ namespace M3.Cord.Windows
             try
             {
                 string lotNo = string.Empty;
+                string doffNo = txtDoffNo.Text;
+                int iDoffNo;
+                if (!int.TryParse(doffNo, out iDoffNo))
+                {
+                    this.InvokeAction(() =>
+                    {
+                        txtDoffNo.Focus();
+                    });
+                    return false;
+                }
+
                 int? SPStart = null;
                 int? SPEnd = null;
 
@@ -175,7 +209,7 @@ namespace M3.Cord.Windows
                     SPEnd = int.Parse(txtSPEnd.Text);
 
                 List<LabelCHS9> items = new List<LabelCHS9>();
-                var item = Models.LabelCHS9.Gets(lotNo, SPStart, SPEnd);
+                var item = Models.LabelCHS9.Gets(lotNo, iDoffNo, SPStart, SPEnd);
                 items = item;
                 if (null != items)
                 {
@@ -183,7 +217,7 @@ namespace M3.Cord.Windows
                     pDialog.PageRangeSelection = PageRangeSelection.AllPages;
                     pDialog.UserPageRangeEnabled = true;
 
-                    Nullable<Boolean> print = pDialog.ShowDialog();
+                    bool? print = pDialog.ShowDialog();
                     if (print == true)
                     {
                         string barcode1 = string.Empty;
@@ -263,6 +297,19 @@ namespace M3.Cord.Windows
             get 
             {
                 return txtDipLotNo.Text;
+            }
+        }
+
+        public int? DoffNo
+        {
+            get
+            {
+                int ret;
+                if (!int.TryParse(txtDoffNo.Text, out ret))
+                {
+                    return new int?();
+                }
+                return ret;
             }
         }
 

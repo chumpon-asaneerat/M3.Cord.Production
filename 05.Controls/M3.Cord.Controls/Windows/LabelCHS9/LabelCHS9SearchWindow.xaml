@@ -57,6 +57,12 @@
                                    DockPanel.Dock="Left"
                                    Width="200"
                                    PreviewKeyDown="txtDipLotNo_PreviewKeyDown" />
+                    <!--  DOFF NO  -->
+                    <ctrl:NTextBox x:Name="txtDoffNo"
+                                   CaptionText="Doff No:"
+                                   DockPanel.Dock="Left"
+                                   Width="120"
+                                   PreviewKeyDown="txtDoffNo_PreviewKeyDown" />
                     <!--  Choose  -->
                     <ctrl:FontAwesomeButton x:Name="cmdSearch"
                                             Margin="3,0"

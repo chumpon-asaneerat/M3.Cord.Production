@@ -45,7 +45,7 @@ namespace M3.Cord.Models
         /// Search
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<LabelCHS9Summary> Search(string lotNo)
+        public static NDbResult<LabelCHS9Summary> Search(string lotNo, int doffNo)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -64,6 +64,7 @@ namespace M3.Cord.Models
             }
             var p = new DynamicParameters();
             p.Add("@LotNo", lotNo);
+            p.Add("@DoffNo", doffNo);
 
             try
             {

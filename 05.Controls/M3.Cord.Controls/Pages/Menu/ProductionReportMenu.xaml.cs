@@ -92,9 +92,10 @@ namespace M3.Cord.Pages
             if (win2.ShowDialog() == true)
             {
                 string lotNo = win2.DIPLotNo;
+                int? doffNo = win2.DoffNo;
                 int? spStart = win2.SPStart;
                 int? spEnd = win2.SPEnd;
-                var items = Models.LabelCHS9.Gets(lotNo, spStart, spEnd);
+                var items = Models.LabelCHS9.Gets(lotNo, doffNo, spStart, spEnd);
                 var page = M3CordApp.Pages.LabelCHS9PrintPreview;
                 page.Setup(items, false);
                 PageContentManager.Instance.Current = page;
