@@ -66,28 +66,13 @@ namespace M3.Cord.Pages
         {
             var btn = sender as Button;
             if (null == btn) return;
-            var item = btn.DataContext as PCCard;
+            var item = btn.DataContext as PCTwist1;
             if (null == item) return;
         }
 
         #endregion
 
         #region TextBox Handlers
-
-        private void txtCustomer_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter || e.Key == Key.Return)
-            {
-                RefreshGrid();
-                e.Handled = true;
-            }
-            else if (e.Key == Key.Escape)
-            {
-                // clear trace no.
-                txtCustomer.Text = string.Empty;
-                e.Handled = true;
-            }
-        }
 
         private void txtLotNo_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -113,26 +98,58 @@ namespace M3.Cord.Pages
             RefreshGrid();
         }
 
+        private void cbMCCodes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        private void cbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        private void cbCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
         #endregion
 
         #region Private Methods
 
-        private void ResetControls()
-        {
-
-        }
-
         private void LoadComboBoxes()
         {
-            /*
-            cbItemYanrs.ItemsSource = null;
+            // MC
+            cbMCCodes.ItemsSource = null;
+
+            var mcList = FirstTwistMC.Gets().Value();
+            cbMCCodes.ItemsSource = mcList;
+
+            // Item Yarn
+            cbItemYarns.ItemsSource = null;
 
             var itemYarns = CordItemYarn.Gets().Value();
             cbItemYarns.ItemsSource = itemYarns;
 
+            // Customer
+            cbCustomers.ItemsSource = null;
+
+            var customers = Customer.Gets().Value();
+            cbCustomers.ItemsSource = customers;
+
+            // Product
+            cbProducts.ItemsSource = null;
+
+            var products = Product.Gets().Value();
+            cbProducts.ItemsSource = products;
+
+            /*
             this.InvokeAction(() =>
             {
+                if (null != mcList && mcList.Count > 0) cbMCCodes.SelectedIndex = 0;
                 if (null != itemYarns && itemYarns.Count > 0) cbItemYarns.SelectedIndex = 0;
+                if (null != customers && customers.Count > 0) cbCustomers.SelectedIndex = 0;
+                if (null != products && products.Count > 0) cbProducts.SelectedIndex = 0;
             });
             */
         }
@@ -140,16 +157,31 @@ namespace M3.Cord.Pages
         private void RefreshGrid()
         {
             grid.ItemsSource = null;
-            /*
-            var itemYarn = (null != cbItemYarns.SelectedItem) ?
+
+            DateTime? pcdate = dtPCDate.SelectedDate;
+
+            var mc = (null != cbMCCodes.SelectedItem) ?
+                cbMCCodes.SelectedItem as FirstTwistMC : null;
+            string sMCCode = (null != mc) ? mc.MCCode : null;
+
+            string lotNo = (!string.IsNullOrEmpty(txtLotNo.Text)) ? txtLotNo.Text.Trim() : null;
+
+            var itemYarn = (null != cbItemYarns.SelectedItem) ? 
                 cbItemYarns.SelectedItem as CordItemYarn : null;
-            */
-            string lotNo = txtLotNo.Text.Trim();
-            string customer = txtCustomer.Text.Trim();
+            string sItemYarn = (null != itemYarn) ? itemYarn.ItemYarn : null;
 
-            PCCardService.Instance.Search(lotNo, customer);
+            var customer = (null != cbCustomers.SelectedItem) ?
+                cbCustomers.SelectedItem as Customer : null;
+            string sCustomer = (null != customer) ? customer.CustomerName : null;
 
-            grid.ItemsSource = PCCardService.Instance.PCCards;
+            var product = (null != cbProducts.SelectedItem) ?
+                cbProducts.SelectedItem as Product : null;
+            string sProduct = (null != product) ? product.ProductCode : null;
+
+
+            var results = PCTwist1.Search(pcdate,sMCCode, sItemYarn, lotNo, sCustomer, sProduct).Value();
+
+            grid.ItemsSource = results;
         }
 
         #endregion
@@ -158,7 +190,6 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
-            ResetControls();
             LoadComboBoxes();
             RefreshGrid();
         }

@@ -396,6 +396,66 @@ namespace M3.Cord.Models
             return ret;
         }
 
+        /// <summary>
+        /// Search
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<List<PCTwist1>> Search(
+            DateTime? PCDate = new DateTime?(),
+            string MCCode = null,
+            string ItemYarn = null,
+            string ProductLotNo = null,
+            string CustomerName = null,
+            string ProductCode = null)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<PCTwist1>> rets = new NDbResult<List<PCTwist1>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+
+            p.Add("@PCDate", PCDate);
+            p.Add("@MCCode", string.IsNullOrWhiteSpace(MCCode) ? null : MCCode);
+            p.Add("@ItemYarn", string.IsNullOrWhiteSpace(ItemYarn) ? null : ItemYarn);
+            p.Add("@ProductLotNo", string.IsNullOrWhiteSpace(ProductLotNo) ? null : ProductLotNo);
+            p.Add("@CustomerName", string.IsNullOrWhiteSpace(CustomerName) ? null : CustomerName);
+            p.Add("@ProductCode", string.IsNullOrWhiteSpace(ProductCode) ? null : ProductCode);
+
+            try
+            {
+                var items = cnn.Query<PCTwist1>("SearchPCTwist1", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                rets.data = new List<PCTwist1>();
+            }
+
+            return rets;
+        }
+
         #endregion
     }
 }

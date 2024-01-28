@@ -35,13 +35,25 @@
                            LastChildFill="True"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
-                    <!--  CUSTOMER  -->
-                    <ctrl:NTextBox x:Name="txtCustomer"
-                                   DockPanel.Dock="Left"
-                                   CaptionText="Customer:"
-                                   TextAlignment="Center"
-                                   Width="200"
-                                   PreviewKeyDown="txtCustomer_PreviewKeyDown" />
+                    <!--  PC Date  -->
+                    <ctrl:NDatePicker x:Name="dtPCDate"
+                                      DockPanel.Dock="Left"
+                                      CaptionText="PC Date:"
+                                      Width="200" />
+                    <!--  MC Code  -->
+                    <ctrl:NComboBox x:Name="cbMCCodes"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="M/C:"
+                                    DisplayMemberPath="MCCode"
+                                    Width="200"
+                                    SelectionChanged="cbMCCodes_SelectionChanged" />
+                    <!--  ITEM YARN  -->
+                    <ctrl:NComboBox x:Name="cbItemYarns"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Item Yarn:"
+                                    DisplayMemberPath="ItemYarn"
+                                    Width="250"
+                                    SelectionChanged="cbItemYarns_SelectionChanged" />
                     <!--  Lot No (Product).  -->
                     <ctrl:NTextBox x:Name="txtLotNo"
                                    DockPanel.Dock="Left"
@@ -49,15 +61,27 @@
                                    TextAlignment="Center"
                                    Width="250"
                                    PreviewKeyDown="txtLotNo_PreviewKeyDown" />
-                    <!--  ITEM YARN  -->
-                    <!--
-                    <ctrl:NComboBox x:Name="cbItemYarns"
+                    <Grid />
+                </DockPanel>
+                <DockPanel Margin="0,0,0,5"
+                           DockPanel.Dock="Top"
+                           LastChildFill="True"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left">
+                    <!--  CUSTOMER  -->
+                    <ctrl:NComboBox x:Name="cbCustomers"
                                     DockPanel.Dock="Left"
-                                    CaptionText="Item Yarn:"
-                                    DisplayMemberPath="ItemYarn"
+                                    CaptionText="Customer:"
+                                    DisplayMemberPath="CustomerName"
+                                    Width="200"
+                                    SelectionChanged="cbCustomers_SelectionChanged" />
+                    <!--  PRODUCT  -->
+                    <ctrl:NComboBox x:Name="cbProducts"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Product:"
+                                    DisplayMemberPath="ProductCode"
                                     Width="250"
-                                    SelectionChanged="cbItemYarns_SelectionChanged" />
-                    -->
+                                    SelectionChanged="cbProducts_SelectionChanged" />
                     <!--  SEARCH  -->
                     <ctrl:FontAwesomeButton x:Name="cmdSearch"
                                             Margin="5,0,0,0"
@@ -76,11 +100,13 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="CustomerName" CellTemplate="{StaticResource CustomerName}" />
-                        <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
+                        <GridViewColumn Header="PC Date" CellTemplate="{StaticResource PCDate}" />
                         <GridViewColumn Header="Lot No" CellTemplate="{StaticResource ProductLotNo}" />
+                        <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
+                        <GridViewColumn Header="M/C" CellTemplate="{StaticResource MCCode}" />
                         <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
                         <GridViewColumn Header="Cord Structure" CellTemplate="{StaticResource CordStructure}" />
+                        <GridViewColumn Header="CustomerName" CellTemplate="{StaticResource CustomerName}" />
                         <GridViewColumn Header="Qty (Target)" CellTemplate="{StaticResource TargetQty}" />
                         <!--  BUTTONS  -->
                         <GridViewColumn Header="">
