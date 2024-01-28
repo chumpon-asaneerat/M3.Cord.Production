@@ -7,7 +7,7 @@
         xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
         xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
         mc:Ignorable="d"
-        Title="Load Yarn"
+        Title="Actual Yarn Twist Record Check Sheet"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
         ResizeMode="NoResize"
@@ -309,7 +309,7 @@
 
         <!--#endregion-->
     </Window.Resources>
-    <page:NPage HeaderText="Load Yarn">
+    <page:NPage HeaderText="Actual Yarn Twist Record Check Sheet">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
             <DockPanel LastChildFill="True"

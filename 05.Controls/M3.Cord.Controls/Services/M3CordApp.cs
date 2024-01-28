@@ -760,6 +760,16 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region FirstTwistView
+
+            /// <summary>Gets Twist1 Load Record View Window.</summary>
+            public static Twist1LoadRecordViewWindow Twist1LoadRecordView
+            {
+                get { return GetWindow<Twist1LoadRecordViewWindow>(); }
+            }
+
+            #endregion
         }
     }
 }

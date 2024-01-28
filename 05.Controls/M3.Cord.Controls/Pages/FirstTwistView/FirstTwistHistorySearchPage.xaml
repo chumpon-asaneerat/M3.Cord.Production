@@ -87,15 +87,15 @@
                                             Margin="5,0,0,0"
                                             IconType="Search"
                                             VerticalAlignment="Bottom"
-                                            Text="Search" 
-                                            Click="cmdSearch_Click"/>
+                                            Text="Search"
+                                            Click="cmdSearch_Click" />
                     <!--  CLEAR  -->
                     <ctrl:FontAwesomeButton x:Name="cmdClear"
                                             Margin="5,0,0,0"
                                             IconType="Delete"
                                             VerticalAlignment="Bottom"
-                                            Text="Clear" 
-                                            Click="cmdClear_Click"/>
+                                            Text="Clear"
+                                            Click="cmdClear_Click" />
                     <Grid />
                 </DockPanel>
             </DockPanel>

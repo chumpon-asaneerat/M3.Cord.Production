@@ -119,14 +119,10 @@ namespace M3.Cord.Pages
         {
             if (null == pcCard)
                 return;
-            var win = M3CordApp.Windows.Twist1LoadRecordEditor;
+            var win = M3CordApp.Windows.Twist1LoadRecordView;
             // set display mode
-            win.Mode = (null != record) ? DisplayMode.Edit : DisplayMode.New;
-            win.Setup(selectedMC, pcCard, record);
+            win.Setup(pcCard, record);
             if (win.ShowDialog() == false) return;
-
-            // reload pc card to refresh last doff/test no. 
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
 
             RefreshGrids();
         }

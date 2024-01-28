@@ -399,6 +399,9 @@
     <Compile Include="Windows\DIP\DIPTimeTableEditorWindow.xaml.cs">
       <DependentUpon>DIPTimeTableEditorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\FirstTwistView\Twist1LoadRecordViewWindow.xaml.cs">
+      <DependentUpon>Twist1LoadRecordViewWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\LabelCHS9\LabelCHS9SearchWindow.xaml.cs">
       <DependentUpon>LabelCHS9SearchWindow.xaml</DependentUpon>
     </Compile>
@@ -1064,6 +1067,10 @@
     <Page Include="Windows\DIP\DIPTimeTableEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FirstTwistView\Twist1LoadRecordViewWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\LabelCHS9\LabelCHS9SearchWindow.xaml">
       <SubType>Designer</SubType>
