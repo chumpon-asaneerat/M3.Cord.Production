@@ -86,6 +86,15 @@ namespace M3.Cord.Pages
         {
             _pcCard = pccard;
 
+            if (null != _pcCard)
+            {
+                page.HeaderText = "1st Twisting - " + _pcCard.MCCode;
+            }
+            else
+            {
+                page.HeaderText = "1st Twisting ";
+            }
+
             pagePCCard.Setup(_pcCard);
             pageRawMat.Setup(_pcCard);
             pageCheckSheet.Setup(_pcCard);
