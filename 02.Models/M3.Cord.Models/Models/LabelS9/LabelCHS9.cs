@@ -29,7 +29,7 @@ namespace M3.Cord.Models
         static LabelCHS9()
         {
             BarcodeGenerator = new Barcode();
-            BarcodeGenerator.EncodedType = BarcodeLib.TYPE.CODE128;
+            BarcodeGenerator.EncodedType = BarcodeLib.TYPE.CODE93;
             BarcodeGenerator.Alignment = BarcodeLib.AlignmentPositions.CENTER;
             BarcodeGenerator.IncludeLabel = false;
         }

@@ -69,6 +69,23 @@ namespace M3.Cord.Windows
             }
         }
 
+        private void cmdQRCode_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtDipLotNo.Text)
+                && !string.IsNullOrEmpty(txtSPStart.Text)
+                && !string.IsNullOrEmpty(txtSPEnd.Text))
+            {
+                if (PrintZebraQRCode() == true)
+                    DialogResult = false;
+            }
+            else
+            {
+                var msg1 = M3CordApp.Windows.MessageBox;
+                msg1.Setup("กรุณาระบุข้อมูล");
+                msg1.ShowDialog();
+            }
+        }
+
         #endregion
 
         #region CheckBox Handlers
@@ -233,29 +250,121 @@ namespace M3.Cord.Windows
                             if (!string.IsNullOrEmpty(result.BarcodeText1))
                             {
                                 barcode1 = "^CFA,15"
-                                    + "^FO20,20^GB50,50,3^FS"
-                                    + "^CFA,30"
-                                    + "^FWR^FO30,100,70,60^FD" + result.BarcodeText1 + "^FS"
-                                    + "^CFA,30"
-                                    + "^FO80,20"
-                                    + "^BC,100,N,N,N"
+                                    + "^FO40,7^GB50,50,3^FS"
+                                    + "^CFA,20"
+                                    + "^FWR^FO50,87 ,70,60^FD" + result.BarcodeText1 + "^FS"
+                                    + "^CFA,15"
+                                    + "^FO100,7"
+                                    + "^BA,100,N,N,N"
                                     + "^FD" + result.BarcodeText1 + "^FS";
                             }
 
                             if (!string.IsNullOrEmpty(result.BarcodeText2))
                             {
                                 barcode2 = "^CFA,15"
-                                    + "^FO200,20^GB50,50,3^FS"
-                                    + "^CFA,30"
-                                    + "^FWR^FO210,100,70,60^FD"+ result.BarcodeText2 + "^FS"
-                                    + "^CFA,30"
-                                    + "^FO260,20"
-                                    + "^BC,100,N,N,N"
+                                    + "^FO290,7^GB50,50,3^FS"
+                                    + "^CFA,20"
+                                    + "^FWR^FO300,87,70,60^FD" + result.BarcodeText2 + "^FS"
+                                    + "^CFA,15"
+                                    + "^FO350,7"
+                                    + "^BA,100,N,N,N"
                                     + "^FD" + result.BarcodeText2 + "^FS";
                             }
 
-                            if(!string.IsNullOrEmpty(barcode1) || !string.IsNullOrEmpty(barcode2))
+                            if (!string.IsNullOrEmpty(barcode1) || !string.IsNullOrEmpty(barcode2))
                                 commandLine = "^XA" + barcode1+ barcode2+ "^XZ";
+
+                            if (!string.IsNullOrEmpty(commandLine))
+                                RawPrinterHelper.SendStringToPrinter(pDialog.PrintQueue.Name, commandLine);
+                        }
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                return false;
+            }
+        }
+
+        private bool PrintZebraQRCode()
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+            try
+            {
+                string lotNo = string.Empty;
+                string doffNo = txtDoffNo.Text;
+                int iDoffNo;
+                if (!int.TryParse(doffNo, out iDoffNo))
+                {
+                    this.InvokeAction(() =>
+                    {
+                        txtDoffNo.Focus();
+                    });
+                    return false;
+                }
+
+                int? SPStart = null;
+                int? SPEnd = null;
+
+                lotNo = txtDipLotNo.Text;
+
+                if (!string.IsNullOrEmpty(txtSPStart.Text))
+                    SPStart = int.Parse(txtSPStart.Text);
+
+                if (!string.IsNullOrEmpty(txtSPEnd.Text))
+                    SPEnd = int.Parse(txtSPEnd.Text);
+
+                List<LabelCHS9> items = new List<LabelCHS9>();
+                var item = Models.LabelCHS9.Gets(lotNo, iDoffNo, SPStart, SPEnd);
+                items = item;
+                if (null != items)
+                {
+                    PrintDialog pDialog = new PrintDialog();
+                    pDialog.PageRangeSelection = PageRangeSelection.AllPages;
+                    pDialog.UserPageRangeEnabled = true;
+
+                    bool? print = pDialog.ShowDialog();
+                    if (print == true)
+                    {
+                        string barcode1 = string.Empty;
+                        string barcode2 = string.Empty;
+                        string commandLine = string.Empty;
+
+                        foreach (var result in items)
+                        {
+                            barcode1 = string.Empty;
+                            barcode2 = string.Empty;
+                            commandLine = string.Empty;
+
+                            if (!string.IsNullOrEmpty(result.BarcodeText1))
+                            {
+                                barcode1 = "^CFA,15"
+                                    + "^FO15,25^GB50,50,3^FS"
+                                    + "^CFA,20"
+                                    + "^FWR^FO30,90 ,70,60^FD" + result.BarcodeText1 + "^FS"
+                                    + "^CFA,15"
+                                    + "^FO80,15"
+                                    + "^BQ,2,6"
+                                    + "^FDQA " + result.BarcodeText1 + "^FS";
+                            }
+
+                            if (!string.IsNullOrEmpty(result.BarcodeText2))
+                            {
+                                barcode2 = "^CFA,15"
+                                    + "^FO270,25^GB50,50,3^FS"
+                                    + "^CFA,20"
+                                    + "^FWR^FO285,90,70,60^FD" + result.BarcodeText2 + "^FS"
+                                    + "^CFA,15"
+                                    + "^FO335,15"
+                                    + "^BQ,2,6"
+                                    + "^FDQA " + result.BarcodeText2 + "^FS";
+                            }
+
+                            if (!string.IsNullOrEmpty(barcode1) || !string.IsNullOrEmpty(barcode2))
+                                commandLine = "^XA" + barcode1 + barcode2 + "^XZ";
 
                             if (!string.IsNullOrEmpty(commandLine))
                                 RawPrinterHelper.SendStringToPrinter(pDialog.PrintQueue.Name, commandLine);
