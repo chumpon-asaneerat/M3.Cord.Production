@@ -22,8 +22,11 @@ M3 Cord Production System #904
 M3 Cord Production System #903
 - 
 
+[commited]
 M3 Cord Production System #902
-- 
+- M3.Cord.Production.App re-implements #118
+  - HW temporary swap NW, GW
+  - Update App build 1201
 
 [commited]
 M3 Cord Production System #901
