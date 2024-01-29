@@ -311,14 +311,15 @@ namespace M3.Cord.Pages
                 if (chkManual.IsChecked == false)
                 {
                     var val = JIK6CABTerminal.Instance.Value;
-                    txtWeightActual.Text = val.NW.ToString("n2");
 
+                    //txtWeightActual.Text = val.NW.ToString("n2");
                     //txtTWeight.Text = val.TW.ToString("n2");
                     //txtGWeight.Text = val.GW.ToString("n2");
 
-                    //แก้ไขเบื่องต้นสลับ GW กับ TW
+                    //แก้ไขเบื่องต้นสลับ NW = TW , TW = GW , GW = NW
+                    txtWeightActual.Text = val.TW.ToString("n2");
                     txtTWeight.Text = val.GW.ToString("n2");
-                    txtGWeight.Text = val.TW.ToString("n2");
+                    txtGWeight.Text = val.NW.ToString("n2");
                 }
             });
         }
