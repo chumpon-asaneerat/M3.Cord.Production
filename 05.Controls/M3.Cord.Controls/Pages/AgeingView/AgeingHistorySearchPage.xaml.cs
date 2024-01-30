@@ -107,6 +107,37 @@ namespace M3.Cord.Pages
 
         private void cbSources_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var fromSource = (null != cbSources.SelectedItem) ?
+                cbSources.SelectedItem as S5Source : null;
+
+            cbCustomers.ItemsSource = null;
+
+            if (null != fromSource)
+            {
+                if (fromSource.Id.HasValue && fromSource.Id == 0)
+                {
+                    // RAW
+                    var customers = Customer.Gets().Value();
+                    cbCustomers.ItemsSource = customers;
+                }
+                else if (fromSource.Id.HasValue && fromSource.Id == 1)
+                {
+                    // TWIST
+                    var customers = Customer.Gets().Value();
+                    cbCustomers.ItemsSource = customers;
+                }
+                else if (fromSource.Id.HasValue && fromSource.Id == 4)
+                {
+                    // DIP
+                    var customers = Customer.GetDIPs().Value();
+                    cbCustomers.ItemsSource = customers;
+                }
+                else
+                {
+                    cbCustomers.ItemsSource = new List<Customer>();
+                }
+            }
+
             RefreshGrid();
         }
 
@@ -120,12 +151,50 @@ namespace M3.Cord.Pages
             RefreshGrid();
         }
 
-        private void cbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cbCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var fromSource = (null != cbSources.SelectedItem) ?
+                cbSources.SelectedItem as S5Source : null;
+
+            cbProducts.ItemsSource = null;
+
+            if (null != fromSource)
+            {
+                if (fromSource.Id.HasValue && fromSource.Id == 0)
+                {
+                    // RAW
+                    var products = new List<Product>()
+                    {
+                        // Fixed
+                        new Product() { ProductCode = "1800TW", ProductName = "BRAKE HOSE" }
+                    };
+                    cbProducts.ItemsSource = products;
+                }
+                else if (fromSource.Id.HasValue && fromSource.Id == 1)
+                {
+                    // TWIST
+                    var products = Product.Gets().Value();
+                    cbProducts.ItemsSource = products;
+                }
+                else if (fromSource.Id.HasValue && fromSource.Id == 4)
+                {
+                    var customer = (null != cbCustomers.SelectedItem) ?
+                        cbCustomers.SelectedItem as Customer : null;
+                    string sCustomer = (null != customer) ? customer.CustomerName : null;
+                    // DIP
+                    var products = Product.GetDipProducts(sCustomer).Value();
+                    cbProducts.ItemsSource = products;
+                }
+                else
+                {
+                    cbProducts.ItemsSource = new List<Product>();
+                }
+            }
+
             RefreshGrid();
         }
 
-        private void cbCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             RefreshGrid();
         }
@@ -165,7 +234,9 @@ namespace M3.Cord.Pages
             cbSources.SelectedIndex = -1;
             cbItemYarns.SelectedIndex = -1;
             txtPalletOrTrace.Text = string.Empty;
+            cbCustomers.ItemsSource = null;
             cbCustomers.SelectedIndex = -1;
+            cbProducts.ItemsSource = null;
             cbProducts.SelectedIndex = -1;
         }
 
@@ -185,25 +256,8 @@ namespace M3.Cord.Pages
 
             // Customer
             cbCustomers.ItemsSource = null;
-
-            var customers = Customer.Gets().Value();
-            cbCustomers.ItemsSource = customers;
-
             // Product
             cbProducts.ItemsSource = null;
-
-            var products = Product.Gets().Value();
-            cbProducts.ItemsSource = products;
-
-            /*
-            this.InvokeAction(() =>
-            {
-                if (null != fromSources && fromSources.Count > 0) cbSources.SelectedIndex = 0;
-                if (null != itemYarns && itemYarns.Count > 0) cbItemYarns.SelectedIndex = 0;
-                if (null != customers && customers.Count > 0) cbCustomers.SelectedIndex = 0;
-                if (null != products && products.Count > 0) cbProducts.SelectedIndex = 0;
-            });
-            */
         }
 
         private void RefreshGrid()
