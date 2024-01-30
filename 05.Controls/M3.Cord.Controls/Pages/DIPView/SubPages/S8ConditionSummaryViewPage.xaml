@@ -260,21 +260,6 @@
                                             Text="Back"
                                             Click="cmdBack_Click" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Left"
-                            VerticalAlignment="Center">
-                    <ctrl:FontAwesomeButton x:Name="cmdSave"
-                                            Margin="5,0,0,0"
-                                            IconType="Add"
-                                            Text="Save"
-                                            Click="cmdSave_Click" />
-                    <TextBlock Width="10" />
-                    <ctrl:FontAwesomeButton x:Name="cmdAdd"
-                                            Margin="5,0,0,0"
-                                            IconType="Add"
-                                            Text="เพิ่ม"
-                                            Click="cmdAdd_Click" />
-                </StackPanel>
                 <Grid />
             </DockPanel>
             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">

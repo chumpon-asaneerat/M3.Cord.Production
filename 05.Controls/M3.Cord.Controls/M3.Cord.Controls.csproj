@@ -447,6 +447,9 @@
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
+    <Compile Include="Windows\DIPView\S8BeforeEditorViewWindow.xaml.cs">
+      <DependentUpon>S8BeforeEditorViewWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\DIP\DIPTimeTableEditorWindow.xaml.cs">
       <DependentUpon>DIPTimeTableEditorWindow.xaml</DependentUpon>
     </Compile>
@@ -1182,6 +1185,10 @@
     <Page Include="Themes\ListViewColumns.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DIPView\S8BeforeEditorViewWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\DIP\DIPTimeTableEditorWindow.xaml">
       <SubType>Designer</SubType>

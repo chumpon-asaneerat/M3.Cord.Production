@@ -52,17 +52,14 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoDIPOperationMenu(mc);
+            var page = M3CordApp.Pages.DIPOperationView;
+            page.Setup(pcCard);
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdReset_Click(object sender, RoutedEventArgs e)
         {
             ResetStd();
-        }
-
-        private void cmdAdd_Click(object sender, RoutedEventArgs e)
-        {
-            Add();
         }
 
         private void cmdDetails_Click(object sender, RoutedEventArgs e)
@@ -120,28 +117,11 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void Add()
-        {
-            if (null == pcCard)
-                return;
-            var win = M3CordApp.Windows.S8BeforeEditor;
-            var item = S8BeforeCondition.Create(pcCard.ProductCode);
-            item.DIPPCId = pcCard.DIPPCId;
-            item.ProductCode = pcCard.ProductCode;
-            item.LotNo = pcCard.DIPLotNo;
-            item.RowType = 1;
-            win.Setup(item);
-            if (win.ShowDialog() == true)
-            {
-                RefreshGrid();
-            }
-        }
-
         private void Edit(S8BeforeCondition item)
         {
             if (null != item)
             {
-                var win = M3CordApp.Windows.S8BeforeEditor;
+                var win = M3CordApp.Windows.S8BeforeEditorView;
                 win.Setup(item);
                 if (win.ShowDialog() == true)
                 {
@@ -163,7 +143,7 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup(DIPMC selecteedMC)
+        public void Setup(DIPMC selecteedMC, DIPPCCard PCCard)
         {
             if (null != selecteedMC)
             {
@@ -176,7 +156,7 @@ namespace M3.Cord.Pages
 
                 if (null != mc)
                 {
-                    pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
+                    pcCard = PCCard;
                     if (null != pcCard)
                     {
                         CheckStd();

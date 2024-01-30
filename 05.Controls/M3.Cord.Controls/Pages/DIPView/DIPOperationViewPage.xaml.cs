@@ -74,11 +74,9 @@ namespace M3.Cord.Pages
 
         private void cmdS8BeforeStart_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var page = M3CordApp.Pages.S8BeforeStartSummaryView;
             page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdChemicalRequisitionRecordSheet_Click(object sender, RoutedEventArgs e)
@@ -108,11 +106,9 @@ namespace M3.Cord.Pages
 
         private void cmdS8ConditionSummary_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var page = M3CordApp.Pages.S8ConditionSummaryView;
             page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdDIPProductionTimeTable_Click(object sender, RoutedEventArgs e)

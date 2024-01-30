@@ -54,22 +54,14 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoDIPOperationMenu(mc);
-        }
-
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
-        {
-            Save();
+            var page = M3CordApp.Pages.DIPOperationView;
+            page.Setup(pcCard);
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdReset_Click(object sender, RoutedEventArgs e)
         {
             ResetStd();
-        }
-
-        private void cmdAdd_Click(object sender, RoutedEventArgs e)
-        {
-            Add();
         }
 
         private void cmdDetails_Click(object sender, RoutedEventArgs e)
@@ -134,29 +126,6 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void Add()
-        {
-            if (null == pcCard)
-                return;
-            var dt = pcCard.StartTime.Value;
-            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
-
-            var win = M3CordApp.Windows.S8ProductionConditionItemEditor;
-            var item = S8ProductionConditionItem.Create(pcCard.ProductCode);
-            item.DIPPCId = pcCard.DIPPCId;
-            item.ProductCode = pcCard.ProductCode;
-            item.RowType = 1;
-            item.LotNo = pcCard.DIPLotNo;
-            item.DoffingDate = DateTime.Today;
-            item.DoffingNo = pcCard.DoffNo;
-
-            win.Setup(startDate, item);
-            if (win.ShowDialog() == true)
-            {
-                RefreshGrid();
-            }
-        }
-
         private void Edit(S8ProductionConditionItem item)
         {
             if (null == item) return;
@@ -169,30 +138,6 @@ namespace M3.Cord.Pages
             if (win.ShowDialog() == true)
             {
                 RefreshGrid();
-            }
-        }
-
-        private void Save()
-        {
-            if (null != sheet)
-            {
-                var ret = S8ProductionCondition.Save(sheet);
-
-                if (sheet.DIPPCId.HasValue)
-                {
-                    if (null != items)
-                    {
-                        foreach (var item in items)
-                        {
-                            item.DIPPCId = sheet.DIPPCId.Value;
-                            S8ProductionConditionItem.Save(item);
-                        }
-                    }
-                }
-
-                if (null != ret && ret.Ok)
-                    M3CordApp.Windows.SaveSuccess();
-                else M3CordApp.Windows.SaveFailed();
             }
         }
 
@@ -220,7 +165,7 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup(DIPMC selecteedMC)
+        public void Setup(DIPMC selecteedMC, DIPPCCard PCCard)
         {
             if (null != selecteedMC)
             {
@@ -228,7 +173,7 @@ namespace M3.Cord.Pages
                 mc = DIPMC.Gets("S-8", "S-8-" + mcNo).Value().FirstOrDefault();
                 if (null != mc)
                 {
-                    pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
+                    pcCard = PCCard;
                     if (null != pcCard)
                     {
                         CheckStd();

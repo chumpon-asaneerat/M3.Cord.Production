@@ -870,6 +870,16 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region DIP View
+
+            /// <summary>Gets S8 Before Editor View Window.</summary>
+            public static S8BeforeEditorViewWindow S8BeforeEditorView
+            {
+                get { return GetWindow<S8BeforeEditorViewWindow>(); }
+            }
+
+            #endregion
         }
     }
 }
