@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="M3.Cord.Pages.DIPHistorySearchPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             Loaded="UserControl_Loaded"
+             Unloaded="UserControl_Unloaded">
+    <page:NPage HeaderText="DIP Search">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTONS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Right"
+                            VerticalAlignment="Center">
+                    <!--  HOME  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdHome"
+                                            Margin="5,0,0,0"
+                                            IconType="Home"
+                                            Text="Home"
+                                            Click="cmdHome_Click" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <!--  TOP ENTRY  -->
+            <DockPanel LastChildFill="True" DockPanel.Dock="Top">
+                <DockPanel Margin="0,0,0,5"
+                           DockPanel.Dock="Top"
+                           LastChildFill="True"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left">
+                    <!--  PC Date  -->
+                    <ctrl:NDatePicker x:Name="dtPCDate"
+                                      DockPanel.Dock="Left"
+                                      CaptionText="PC Date:"
+                                      Width="200" />
+                    <!--  MC Code  -->
+                    <ctrl:NComboBox x:Name="cbMCCodes"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="M/C:"
+                                    DisplayMemberPath="MCCode"
+                                    Width="200"
+                                    SelectionChanged="cbMCCodes_SelectionChanged" />
+                    <!--  ITEM YARN  -->
+                    <ctrl:NComboBox x:Name="cbItemYarns"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Item Yarn:"
+                                    DisplayMemberPath="ItemYarn"
+                                    Width="250"
+                                    SelectionChanged="cbItemYarns_SelectionChanged" />
+                    <!--  Lot No (Product).  -->
+                    <ctrl:NTextBox x:Name="txtLotNo"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Lot No (Product):"
+                                   TextAlignment="Center"
+                                   Width="250"
+                                   PreviewKeyDown="txtLotNo_PreviewKeyDown" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel Margin="0,0,0,5"
+                           DockPanel.Dock="Top"
+                           LastChildFill="True"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left">
+                    <!--  CUSTOMER  -->
+                    <ctrl:NComboBox x:Name="cbCustomers"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Customer:"
+                                    DisplayMemberPath="CustomerName"
+                                    Width="200"
+                                    SelectionChanged="cbCustomers_SelectionChanged" />
+                    <!--  PRODUCT  -->
+                    <ctrl:NComboBox x:Name="cbProducts"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Product:"
+                                    DisplayMemberPath="ProductCode"
+                                    Width="250"
+                                    SelectionChanged="cbProducts_SelectionChanged" />
+                    <!--  SEARCH  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdSearch"
+                                            Margin="5,0,0,0"
+                                            IconType="Search"
+                                            VerticalAlignment="Bottom"
+                                            Text="Search"
+                                            Click="cmdSearch_Click" />
+                    <!--  CLEAR  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdClear"
+                                            Margin="5,0,0,0"
+                                            IconType="Delete"
+                                            VerticalAlignment="Bottom"
+                                            Text="Clear"
+                                            Click="cmdClear_Click" />
+                    <Grid />
+                </DockPanel>
+            </DockPanel>
+            <!--  LISTVIEW  -->
+            <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="PC Date" CellTemplate="{StaticResource PCDate}" />
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource ProductLotNo}" />
+                        <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
+                        <GridViewColumn Header="M/C" CellTemplate="{StaticResource MCCode}" />
+                        <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
+                        <GridViewColumn Header="Cord Structure" CellTemplate="{StaticResource CordStructure}" />
+                        <GridViewColumn Header="CustomerName" CellTemplate="{StaticResource CustomerName}" />
+                        <GridViewColumn Header="Qty (Target)" CellTemplate="{StaticResource TargetQty}" />
+                        <!--  BUTTONS  -->
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  VIEW  -->
+                                        <Button x:Name="cmdView"
+                                                DockPanel.Dock="Left"
+                                                Style="{StaticResource InlineButton}"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdView_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="View"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </page:NPage>
+</UserControl>

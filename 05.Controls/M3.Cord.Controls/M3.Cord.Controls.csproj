@@ -258,6 +258,12 @@
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
+    <Compile Include="Pages\DIPView\DIPHistorySearchPage.xaml.cs">
+      <DependentUpon>DIPHistorySearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPView\DIPOperationViewPage.xaml.cs">
+      <DependentUpon>DIPOperationViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FirstTwistView\FirstTwistHistorySearchPage.xaml.cs">
       <DependentUpon>FirstTwistHistorySearchPage.xaml</DependentUpon>
     </Compile>
@@ -849,6 +855,14 @@
     <Page Include="Pages\Ageing\AgeingOperationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DIPView\DIPHistorySearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DIPView\DIPOperationViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\FirstTwistView\FirstTwistHistorySearchPage.xaml">
       <SubType>Designer</SubType>

@@ -559,6 +559,20 @@ namespace M3.Cord
 
             #endregion
 
+            #region DIP View
+
+            public static Cord.Pages.DIPHistorySearchPage DIPHistorySearch
+            {
+                get { return GetPage<Cord.Pages.DIPHistorySearchPage>(); }
+            }
+
+            public static Cord.Pages.DIPOperationViewPage DIPOperationView
+            {
+                get { return GetPage<Cord.Pages.DIPOperationViewPage>(); }
+            }
+
+            #endregion
+
             #region Condition Document Preview
 
             public static Cord.Pages.S1ConditionPreviewPage S1ConditionPreview

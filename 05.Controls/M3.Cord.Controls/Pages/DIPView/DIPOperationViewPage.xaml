@@ -1,0 +1,162 @@
+﻿<UserControl x:Class="M3.Cord.Pages.DIPOperationViewPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:s1="clr-namespace:M3.Cord.Controls.Documents"
+             xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:spage="clr-namespace:M3.Cord.Pages"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="800"
+             d:DesignWidth="1200">
+    <UserControl.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource MenuButtonStyle}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Width" Value="350" />
+            <Setter Property="Height" Value="150" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style x:Key="ButtonText" TargetType="TextBlock">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="FontSize" Value="28" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <page:NPage x:Name="page" HeaderText="DIP Process Menu">
+        <DockPanel LastChildFill="True">
+            <!--  BUTTONS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Right"
+                            VerticalAlignment="Center">
+                    <!--  HOME  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                            Margin="5,0,0,0"
+                                            IconType="Back"
+                                            Text="Back"
+                                            Click="cmdBack_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <!--  START  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdStart"
+                                            Margin="5,0,0,0"
+                                            IconType="None"
+                                            Text="Start DIP"
+                                            Click="cmdStart_Click" />
+                    <!--  END  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdEnd"
+                                            Margin="5,0,0,0"
+                                            IconType="None"
+                                            Text="End DIP"
+                                            Click="cmdEnd_Click" />
+                    <!--  FINISH  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdFinish"
+                                            Margin="5,0,0,0"
+                                            IconType="None"
+                                            Text="Finish DIP"
+                                            Click="cmdFinish_Click" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <DockPanel x:Name="paCondition"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                        <elem:ProductCodeBox />
+                        <elem:DIPLotNoBox />
+                        <elem:DoffNoBox Width="200" />
+                    </StackPanel>
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <WrapPanel>
+                <!--  Material Check Sheet  -->
+                <Button x:Name="cmdMaterialCheckSheet" Click="cmdMaterialCheckSheet_Click">
+                    <TextBlock Style="{StaticResource ButtonText}">
+                        <Run Text="ตรวจสอบเส้นด้าย" />
+                        <LineBreak />
+                        <Run Text="ก่อนนำเข้า S-7" />
+                    </TextBlock>
+                </Button>
+                <!--  S7 Creel Check Sheet  -->
+                <Button x:Name="cmdS7CreelCheckSheet" Click="cmdS7CreelCheckSheet_Click">
+                    <TextBlock Style="{StaticResource ButtonText}">
+                        <Run Text="Yarn Path Check Sheet" />
+                        <LineBreak />
+                        <Run Text="for Creel (S-7)" />
+                    </TextBlock>
+                </Button>
+                <!--  S8 Before Start  -->
+                <Button x:Name="cmdS8BeforeStart" Click="cmdS8BeforeStart_Click">
+                    <TextBlock Style="{StaticResource ButtonText}">
+                        <Run Text="ตรวจเช็คสภาวะการผลิต" />
+                        <LineBreak />
+                        <Run Text="ก่อนเปิดเครื่อง (S-8)" />
+                    </TextBlock>
+                </Button>
+                <!--  S9 Cleaning Check Sheet  -->
+                <Button x:Name="cmdS9CleaningCheckSheet" Click="cmdS9CleaningCheckSheet_Click">
+                    <TextBlock Style="{StaticResource ButtonText}">
+                        <Run Text="ใบบันทึก" />
+                        <LineBreak />
+                        <Run Text="การทำความสะอาด (S-9)" />
+                    </TextBlock>
+                </Button>
+                <!--  Chemical Requisition Record Sheet  -->
+                <Button x:Name="cmdChemicalRequisitionRecordSheet" Click="cmdChemicalRequisitionRecordSheet_Click">
+                    <TextBlock Style="{StaticResource ButtonText}">
+                        <Run Text="Chemical Requisition" />
+                        <LineBreak />
+                        <Run Text="Record Sheet" />
+                    </TextBlock>
+                </Button>
+                <!--  DIP Condition  -->
+                <Button x:Name="cmdDIPCondition" Click="cmdDIPCondition_Click">
+                    <TextBlock Style="{StaticResource ButtonText}">
+                        <Run Text="Confirm Condition" />
+                        <LineBreak />
+                        <Run Text="Check Sheet" />
+                    </TextBlock>
+                </Button>
+                <!--  S8 Condition Summary  -->
+                <Button x:Name="cmdS8ConditionSummary" Click="cmdS8ConditionSummary_Click">
+                    <TextBlock Style="{StaticResource ButtonText}">
+                        <Run Text="ใบบันทึกค่า" />
+                        <LineBreak />
+                        <Run Text="สภาวะการผลิต S-8" />
+                    </TextBlock>
+                </Button>
+                <!--  DIP Production Time Table  -->
+                <Button x:Name="cmdDIPProductionTimeTable" Click="cmdDIPProductionTimeTable_Click">
+                    <TextBlock Style="{StaticResource ButtonText}">
+                        <Run Text="ใบตรวจสอบผลิตภัณฑ์" />
+                        <LineBreak />
+                        <Run Text="ระหว่างการผลิต S7, S8, S9" />
+                    </TextBlock>
+                </Button>
+                <!--  S9 Appearance Check Sheet  -->
+                <Button x:Name="cmdS9AppearanceCheckSheet" Click="cmdS9AppearanceCheckSheet_Click">
+                    <TextBlock Style="{StaticResource ButtonText}">
+                        <Run Text="Cord production" />
+                        <LineBreak />
+                        <Run Text="Appearance" />
+                        <LineBreak />
+                        <Run Text="Check Sheet" />
+                    </TextBlock>
+                </Button>
+            </WrapPanel>
+        </DockPanel>
+    </page:NPage>
+</UserControl>
