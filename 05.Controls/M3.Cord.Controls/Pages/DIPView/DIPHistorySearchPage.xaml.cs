@@ -150,7 +150,7 @@ namespace M3.Cord.Pages
 
         private void ClearInputs()
         {
-            dtPCDate.SelectedDate = new DateTime?();
+            dtDate.SelectedDate = new DateTime?();
             cbMCCodes.SelectedIndex = -1;
             cbItemYarns.SelectedIndex = -1;
             txtLotNo.Text = string.Empty;
@@ -183,10 +183,10 @@ namespace M3.Cord.Pages
         {
             grid.ItemsSource = null;
 
-            DateTime? pcdate = dtPCDate.SelectedDate;
+            DateTime? createdate = dtDate.SelectedDate;
 
             var mc = (null != cbMCCodes.SelectedItem) ?
-                cbMCCodes.SelectedItem as FirstTwistMC : null;
+                cbMCCodes.SelectedItem as DIPMC : null;
             string sMCCode = (null != mc) ? mc.MCCode : null;
 
             string lotNo = (!string.IsNullOrEmpty(txtLotNo.Text)) ? txtLotNo.Text.Trim() : null;
@@ -204,7 +204,7 @@ namespace M3.Cord.Pages
             string sProduct = (null != product) ? product.ProductCode : null;
 
 
-            var results = PCTwist1.Search(pcdate, sMCCode, sItemYarn, lotNo, sCustomer, sProduct).Value();
+            var results = DIPPCCard.Search(createdate, sMCCode, sItemYarn, lotNo, sCustomer, sProduct).Value();
 
             grid.ItemsSource = results;
         }

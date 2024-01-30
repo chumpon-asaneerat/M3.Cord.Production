@@ -142,8 +142,6 @@ namespace M3.Cord.Pages
 
         private void Refresh()
         {
-            paCondition.DataContext = null;
-            paCondition.DataContext = pcCard;
         }
 
         #region Public Methods
@@ -151,12 +149,13 @@ namespace M3.Cord.Pages
         public void Setup(DIPPCCard pcCard)
         {
             mc = null;
+            paCondition.DataContext = null;
             if (null != pcCard)
             {
                 string mcNo = (pcCard.MCCode.EndsWith("1")) ? "1" : "2";
                 mc = DIPMC.Gets("S-7", "S-7-" + mcNo).Value().FirstOrDefault();
+                paCondition.DataContext = pcCard;
             }
-            Refresh();
         }
 
         #endregion

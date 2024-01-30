@@ -418,6 +418,66 @@ namespace M3.Cord.Models
             return rets;
         }
 
+        /// <summary>
+        /// Search
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<List<DIPPCCard>> Search(
+            DateTime? CreateDate = new DateTime?(),
+            string MCCode = null,
+            string ItemYarn = null,
+            string DIPLotNo = null,
+            string CustomerName = null,
+            string ProductCode = null)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<DIPPCCard>> rets = new NDbResult<List<DIPPCCard>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+
+            p.Add("@CreateDate", CreateDate);
+            p.Add("@MCCode", string.IsNullOrWhiteSpace(MCCode) ? null : MCCode);
+            p.Add("@ItemYarn", string.IsNullOrWhiteSpace(ItemYarn) ? null : ItemYarn);
+            p.Add("@DIPLotNo", string.IsNullOrWhiteSpace(DIPLotNo) ? null : DIPLotNo);
+            p.Add("@CustomerName", string.IsNullOrWhiteSpace(CustomerName) ? null : CustomerName);
+            p.Add("@ProductCode", string.IsNullOrWhiteSpace(ProductCode) ? null : ProductCode);
+
+            try
+            {
+                var items = cnn.Query<DIPPCCard>("SearchDIPPC", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                rets.data = new List<DIPPCCard>();
+            }
+
+            return rets;
+        }
+
         #endregion
     }
 }

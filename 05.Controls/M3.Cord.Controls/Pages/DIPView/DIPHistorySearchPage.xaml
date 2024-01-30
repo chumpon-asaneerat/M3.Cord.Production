@@ -35,10 +35,10 @@
                            LastChildFill="True"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
-                    <!--  PC Date  -->
-                    <ctrl:NDatePicker x:Name="dtPCDate"
+                    <!--  Create Date  -->
+                    <ctrl:NDatePicker x:Name="dtDate"
                                       DockPanel.Dock="Left"
-                                      CaptionText="PC Date:"
+                                      CaptionText="Date:"
                                       Width="200" />
                     <!--  MC Code  -->
                     <ctrl:NComboBox x:Name="cbMCCodes"
@@ -108,14 +108,14 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="PC Date" CellTemplate="{StaticResource PCDate}" />
-                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource ProductLotNo}" />
-                        <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
+                        <GridViewColumn Header="Date" CellTemplate="{StaticResource CreateDate}" />
                         <GridViewColumn Header="M/C" CellTemplate="{StaticResource MCCode}" />
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource DIPLotNo}" />
+                        <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNo}" />
+                        <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
                         <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
                         <GridViewColumn Header="Cord Structure" CellTemplate="{StaticResource CordStructure}" />
                         <GridViewColumn Header="CustomerName" CellTemplate="{StaticResource CustomerName}" />
-                        <GridViewColumn Header="Qty (Target)" CellTemplate="{StaticResource TargetQty}" />
                         <!--  BUTTONS  -->
                         <GridViewColumn Header="">
                             <GridViewColumn.CellTemplate>
