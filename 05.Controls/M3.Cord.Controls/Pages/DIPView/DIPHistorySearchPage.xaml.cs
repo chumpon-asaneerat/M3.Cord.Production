@@ -66,7 +66,7 @@ namespace M3.Cord.Pages
         {
             var btn = sender as Button;
             if (null == btn) return;
-            var item = btn.DataContext as PCTwist1;
+            var item = btn.DataContext as DIPPCCard;
             if (null == item) return;
 
             Edit(item);
@@ -122,6 +122,18 @@ namespace M3.Cord.Pages
 
         private void cbCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var customer = (null != cbCustomers.SelectedItem) ?
+                cbCustomers.SelectedItem as Customer : null;
+
+            // Product
+            cbProducts.ItemsSource = null;
+
+            if (null != customer)
+            {
+                var products = Product.GetDipProducts(customer.CustomerName).Value();
+                cbProducts.ItemsSource = products;
+            }
+
             RefreshGrid();
         }
 
@@ -129,9 +141,9 @@ namespace M3.Cord.Pages
 
         #region Private Methods
 
-        private void Edit(PCTwist1 item)
+        private void Edit(DIPPCCard item)
         {
-            var page = M3CordApp.Pages.FirstTwistOperationView;
+            var page = M3CordApp.Pages.DIPOperationView;
             page.Setup(item);
             PageContentManager.Instance.Current = page;
         }
@@ -151,7 +163,7 @@ namespace M3.Cord.Pages
             // MC
             cbMCCodes.ItemsSource = null;
 
-            var mcList = FirstTwistMC.Gets().Value();
+            var mcList = DIPMC.Gets("S-7").Value();
             cbMCCodes.ItemsSource = mcList;
 
             // Item Yarn
@@ -163,24 +175,8 @@ namespace M3.Cord.Pages
             // Customer
             cbCustomers.ItemsSource = null;
 
-            var customers = Customer.Gets().Value();
+            var customers = Customer.GetDIPs().Value();
             cbCustomers.ItemsSource = customers;
-
-            // Product
-            cbProducts.ItemsSource = null;
-
-            var products = Product.Gets().Value();
-            cbProducts.ItemsSource = products;
-
-            /*
-            this.InvokeAction(() =>
-            {
-                if (null != mcList && mcList.Count > 0) cbMCCodes.SelectedIndex = 0;
-                if (null != itemYarns && itemYarns.Count > 0) cbItemYarns.SelectedIndex = 0;
-                if (null != customers && customers.Count > 0) cbCustomers.SelectedIndex = 0;
-                if (null != products && products.Count > 0) cbProducts.SelectedIndex = 0;
-            });
-            */
         }
 
         private void RefreshGrid()

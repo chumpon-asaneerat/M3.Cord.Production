@@ -57,7 +57,7 @@
                     <!--  Lot No (Product).  -->
                     <ctrl:NTextBox x:Name="txtLotNo"
                                    DockPanel.Dock="Left"
-                                   CaptionText="Lot No (Product):"
+                                   CaptionText="Lot No (DIP):"
                                    TextAlignment="Center"
                                    Width="250"
                                    PreviewKeyDown="txtLotNo_PreviewKeyDown" />

@@ -126,7 +126,13 @@ namespace M3.Cord.Pages
 
         private void cmdDIPReports_Click(object sender, RoutedEventArgs e)
         {
-
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // DIP History
+            var page = M3CordApp.Pages.DIPHistorySearch;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion
