@@ -28,15 +28,6 @@
                                             Text="Back"
                                             Click="cmdBack_Click" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Left"
-                            VerticalAlignment="Center">
-                    <ctrl:FontAwesomeButton x:Name="cmdSave"
-                                            Margin="5,0,0,0"
-                                            IconType="Add"
-                                            Text="Save"
-                                            Click="cmdSave_Click" />
-                </StackPanel>
                 <Grid />
             </DockPanel>
             <DockPanel x:Name="paCondition"

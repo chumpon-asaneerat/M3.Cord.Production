@@ -56,31 +56,15 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoDIPOperationMenu(mc);
         }
 
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
-        {
-            Save();
-        }
-
         #endregion
 
         #region Private Methods
-
-        private void Save()
-        {
-            if (null != cond)
-            {
-                var ret = DIPCondition.Save(cond);
-                if (null != ret && ret.Ok)
-                    M3CordApp.Windows.SaveSuccess();
-                else M3CordApp.Windows.SaveFailed();
-            }
-        }
 
         #endregion
 
         #region Public Methods
 
-        public void Setup(DIPMC selecteedMC)
+        public void Setup(DIPMC selecteedMC, DIPPCCard PCCard)
         {
             paCondition.DataContext = null;
             dip.DataContext = null;
@@ -88,7 +72,7 @@ namespace M3.Cord.Pages
             if (null != selecteedMC)
             {
                 mc = selecteedMC;
-                pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
+                pcCard = PCCard;
                 if (null != pcCard)
                 {
                     var std = DIPConditionStd.Gets(pcCard.ProductCode).Value().FirstOrDefault();
