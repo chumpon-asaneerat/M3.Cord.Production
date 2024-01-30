@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using static M3.Cord.Pages.DIPUI;
 
 #endregion
 
@@ -59,18 +60,16 @@ namespace M3.Cord.Pages
 
         private void cmdMaterialCheckSheet_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            var page = M3CordApp.Pages.DIPMaterialCheckSheet;
-            page.Setup(mc);
+            var page = M3CordApp.Pages.DIPMaterialCheckSheetView;
+            page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdS7CreelCheckSheet_Click(object sender, RoutedEventArgs e)
         {
             /*
-            var page = M3CordApp.Pages.S7CreelCheckSheet;
-            page.Setup(mc);
+            var page = M3CordApp.Pages.S7CreelCheckSheetView;
+            page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
             */
         }
@@ -78,8 +77,8 @@ namespace M3.Cord.Pages
         private void cmdS8BeforeStart_Click(object sender, RoutedEventArgs e)
         {
             /*
-            var page = M3CordApp.Pages.S8BeforeStartSummary;
-            page.Setup(mc);
+            var page = M3CordApp.Pages.S8BeforeStartSummaryView;
+            page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
             */
         }
@@ -87,8 +86,8 @@ namespace M3.Cord.Pages
         private void cmdChemicalRequisitionRecordSheet_Click(object sender, RoutedEventArgs e)
         {
             /*
-            var page = M3CordApp.Pages.ChemicalRequisitionRecord;
-            page.Setup(mc);
+            var page = M3CordApp.Pages.ChemicalRequisitionRecordView;
+            page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
             */
         }
@@ -96,8 +95,8 @@ namespace M3.Cord.Pages
         private void cmdS9CleaningCheckSheet_Click(object sender, RoutedEventArgs e)
         {
             /*
-            var page = M3CordApp.Pages.S9CleanningCheckSheet;
-            page.Setup(mc);
+            var page = M3CordApp.Pages.S9CleanningCheckSheetView;
+            page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
             */
         }
@@ -105,8 +104,8 @@ namespace M3.Cord.Pages
         private void cmdDIPCondition_Click(object sender, RoutedEventArgs e)
         {
             /*
-            var page = M3CordApp.Pages.DIPCondition;
-            page.Setup(mc);
+            var page = M3CordApp.Pages.DIPConditionView;
+            page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
             */
         }
@@ -114,8 +113,8 @@ namespace M3.Cord.Pages
         private void cmdS8ConditionSummary_Click(object sender, RoutedEventArgs e)
         {
             /*
-            var page = M3CordApp.Pages.S8ConditionSummary;
-            page.Setup(mc);
+            var page = M3CordApp.Pages.S8ConditionSummaryView;
+            page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
             */
         }
@@ -123,8 +122,8 @@ namespace M3.Cord.Pages
         private void cmdDIPProductionTimeTable_Click(object sender, RoutedEventArgs e)
         {
             /*
-            var page = M3CordApp.Pages.DIPTimeTable;
-            page.Setup(mc);
+            var page = M3CordApp.Pages.DIPTimeTableView;
+            page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
             */
         }
@@ -132,30 +131,29 @@ namespace M3.Cord.Pages
         private void cmdS9AppearanceCheckSheet_Click(object sender, RoutedEventArgs e)
         {
             /*
-            var page = M3CordApp.Pages.S9AppearanceCheckSheet;
-            page.Setup(mc);
+            var page = M3CordApp.Pages.S9AppearanceCheckSheetView;
+            page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
             */
         }
 
         #endregion
 
-        private void Refresh()
-        {
-        }
-
         #region Public Methods
 
-        public void Setup(DIPPCCard pcCard)
+        public void Setup(DIPPCCard PCCard)
         {
             mc = null;
             paCondition.DataContext = null;
+
+            pcCard = PCCard;
             if (null != pcCard)
             {
                 string mcNo = (pcCard.MCCode.EndsWith("1")) ? "1" : "2";
                 mc = DIPMC.Gets("S-7", "S-7-" + mcNo).Value().FirstOrDefault();
-                paCondition.DataContext = pcCard;
             }
+
+            paCondition.DataContext = pcCard;
         }
 
         #endregion

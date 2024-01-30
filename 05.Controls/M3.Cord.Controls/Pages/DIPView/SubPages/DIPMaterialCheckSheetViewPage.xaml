@@ -28,15 +28,6 @@
                                             Text="Back"
                                             Click="cmdBack_Click" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Left"
-                            VerticalAlignment="Center">
-                    <ctrl:FontAwesomeButton x:Name="cmdSave"
-                                            Margin="5,0,0,0"
-                                            IconType="Add"
-                                            Text="Save"
-                                            Click="cmdSave_Click" />
-                </StackPanel>
                 <Grid />
             </DockPanel>
             <!--  PC Card  -->
@@ -60,6 +51,7 @@
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                     <ctrl:NDatePicker CaptionText="Date:"
                                       x:Name="dtCheckDate"
+                                      IsEnabled="False"
                                       SelectedDate="{Binding CheckDate}" />
                     <ctrl:NTextBox CaptionText="Doff No:"
                                    x:Name="txtDoffNo"
@@ -69,73 +61,6 @@
                                    x:Name="txtS7MC"
                                    Text="{Binding MCCode}"
                                    IsReadOnly="True" />
-                </StackPanel>
-                <Grid />
-            </DockPanel>
-            <!--  SCAN PANEL  -->
-            <DockPanel LastChildFill="True"
-                       DockPanel.Dock="Top"
-                       Margin="2">
-                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                    <ctrl:NTextBox CaptionText="SP No:"
-                                   x:Name="txtSPNo"
-                                   Width="120"
-                                   PreviewKeyDown="txtSPNo_PreviewKeyDown" />
-                    <ctrl:NTextBox CaptionText="Pallet No:"
-                                   x:Name="txtPallet"
-                                   PreviewKeyDown="txtPallet_PreviewKeyDown" />
-                    <ctrl:NTextBox CaptionText="Lot No:"
-                                   x:Name="txtLotNo"
-                                   PreviewKeyDown="txtLotNo_PreviewKeyDown" />
-                    <ctrl:NTextBox CaptionText="Doff No:"
-                                   x:Name="txtPalletDoffNo"
-                                   Width="120"
-                                   PreviewKeyDown="txtPalletDoffNo_PreviewKeyDown" />
-                    <ctrl:NTextBox CaptionText="CH No:"
-                                   x:Name="txtCHNo"
-                                   Width="120"
-                                   PreviewKeyDown="txtCHNo_PreviewKeyDown" />
-                    <TextBlock Width="10" />
-                    <Button x:Name="cmdAdd"
-                            VerticalAlignment="Bottom"
-                            Style="{StaticResource InlineButton}"
-                            Content="Update"
-                            Click="cmdAdd_Click" />
-                    <TextBlock Width="5" />
-                    <Button x:Name="cmdClear"
-                            VerticalAlignment="Bottom"
-                            Style="{StaticResource InlineButton}"
-                            Content="Clear"
-                            Click="cmdClear_Click" />
-                </StackPanel>
-                <TextBlock Height="3" />
-                <StackPanel Orientation="Horizontal"
-                            VerticalAlignment="Center"
-                            Margin="5">
-                    <CheckBox x:Name="chkCheckYarnNo"
-                              FontSize="20"
-                              Content="เบอร์ด้าย/สภาพด้าย"
-                              Style="{StaticResource CommonCheckBox}" />
-                    <CheckBox x:Name="chkCheckYanScrap"
-                              FontSize="20"
-                              Content="ไม่มีเศษด้าย"
-                              Style="{StaticResource CommonCheckBox}" />
-                    <CheckBox x:Name="chkCheckYarnBall"
-                              FontSize="20"
-                              Content="ลูกด้าย"
-                              Style="{StaticResource CommonCheckBox}" />
-                    <CheckBox x:Name="chkCheckCover"
-                              FontSize="20"
-                              Content="ผ้าคลุม"
-                              Style="{StaticResource CommonCheckBox}" />
-                    <CheckBox x:Name="chkCheckSensor"
-                              FontSize="20"
-                              Content="Sensor"
-                              Style="{StaticResource CommonCheckBox}" />
-                    <CheckBox x:Name="chkCheckDustFilter"
-                              FontSize="20"
-                              Content="ตัวดักฝุ่น"
-                              Style="{StaticResource CommonCheckBox}" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
