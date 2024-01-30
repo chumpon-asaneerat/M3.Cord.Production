@@ -67,11 +67,9 @@ namespace M3.Cord.Pages
 
         private void cmdS7CreelCheckSheet_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var page = M3CordApp.Pages.S7CreelCheckSheetView;
             page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdS8BeforeStart_Click(object sender, RoutedEventArgs e)
