@@ -16,8 +16,10 @@ M3 Cord Production System #906
 M3 Cord Production System #905
 - 
 
+[commited]
 M3 Cord Production System #904
-- 
+- M3.Cord.Production.App re-implements #120
+  - Update S1,S4 class -> add pc card properties
 
 [commited]
 M3 Cord Production System #903

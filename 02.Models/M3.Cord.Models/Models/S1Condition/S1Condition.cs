@@ -174,6 +174,18 @@ namespace M3.Cord.Models
         public string ShiftLeader { get; set; }
         public string ProductionManager { get; set; }
 
+        // below properties from pc card
+        public string MCCode { get; set; }
+        public string ProductLotNo { get; set; }
+        public string CustomerName { get; set; }
+        public string ProductName { get; set; }
+        public string ItemYarn { get; set; }
+        public string CordStructure { get; set; }
+        public string TreatRoute { get; set; }
+        public string TwistSpec { get; set; }
+        public DateTime? IssueDate { get; set; }
+        public string IssueBy { get; set; }
+
         #endregion
 
         #region Static Methods

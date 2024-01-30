@@ -66,6 +66,19 @@ namespace M3.Cord.Controls.Documents
                 {
                     condition = S4x1Condition.Create(pcCard.ProductCode);
                     condition.PCTwist1Id = pcCard.PCTwist1Id;
+
+                    // Copy from PC
+                    condition.MCCode = pcCard.MCCode;
+                    condition.ProductLotNo = pcCard.ProductLotNo;
+                    condition.CustomerName = pcCard.CustomerName;
+                    condition.ProductName = pcCard.ProductName;
+                    condition.ItemYarn = pcCard.ItemYarn;
+                    condition.CordStructure = pcCard.CordStructure;
+                    condition.TreatRoute = pcCard.TreatRoute;
+                    condition.TwistSpec = pcCard.TwistSpec;
+                    condition.IssueDate = pcCard.IssueDate;
+                    condition.IssueBy = pcCard.IssueBy;
+
                     condition.UpdateBy = (null != M3CordApp.Current.User) ?
                         M3CordApp.Current.User.FullName : null;
                 }
