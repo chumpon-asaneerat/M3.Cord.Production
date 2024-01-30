@@ -538,6 +538,36 @@ namespace M3.Cord
 
             #endregion
 
+            #region Ageing View
+
+            /// <summary>Gets Ageing Operation View Page.</summary>
+            public static Cord.Pages.AgeingOperationViewPage AgeingOperationView
+            {
+                get { return GetPage<Cord.Pages.AgeingOperationViewPage>(); }
+            }
+            /// <summary>Gets Ageing Condition From Raw Material View Page.</summary>
+            public static Cord.Pages.AgeingConditionFromRawMaterialViewPage AgeingConditionFromRawMaterialView
+            {
+                get { return GetPage<Cord.Pages.AgeingConditionFromRawMaterialViewPage>(); }
+            }
+            /// <summary>Gets Ageing Condition From Twisting View Page.</summary>
+            public static Cord.Pages.AgeingConditionFromTwistingViewPage AgeingConditionFromTwistingView
+            {
+                get { return GetPage<Cord.Pages.AgeingConditionFromTwistingViewPage>(); }
+            }
+            /// <summary>Gets Ageing Condition From DIP View Page.</summary>
+            public static Cord.Pages.AgeingConditionFromDIPViewPage AgeingConditionFromDIPView
+            {
+                get { return GetPage<Cord.Pages.AgeingConditionFromDIPViewPage>(); }
+            }
+            /// <summary>Gets S5 (Ageing) Report Preview View Page.</summary>
+            public static Cord.Pages.S5ReportPreviewViewPage S5ReportPreviewView
+            {
+                get { return GetPage<Cord.Pages.S5ReportPreviewViewPage>(); }
+            }
+
+            #endregion
+
             #region Condition Document Preview
 
             public static Cord.Pages.S1ConditionPreviewPage S1ConditionPreview

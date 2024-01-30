@@ -228,6 +228,21 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AgeingView\AgeingOperationViewPage.xaml.cs">
+      <DependentUpon>AgeingOperationViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AgeingView\SubPages\DIP\AgeingConditionFromDIPViewPage.xaml.cs">
+      <DependentUpon>AgeingConditionFromDIPViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AgeingView\SubPages\Preview\S5ReportPreviewViewPage.xaml.cs">
+      <DependentUpon>S5ReportPreviewViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AgeingView\SubPages\Raw\AgeingConditionFromRawMaterialViewPage.xaml.cs">
+      <DependentUpon>AgeingConditionFromRawMaterialViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AgeingView\SubPages\Twist\AgeingConditionFromTwistingViewPage.xaml.cs">
+      <DependentUpon>AgeingConditionFromTwistingViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Ageing\SubPages\DIP\AgeingConditionFromDIPPage.xaml.cs">
       <DependentUpon>AgeingConditionFromDIPPage.xaml</DependentUpon>
     </Compile>
@@ -804,6 +819,26 @@
     <Page Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AgeingView\AgeingOperationViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\AgeingView\SubPages\DIP\AgeingConditionFromDIPViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\AgeingView\SubPages\Preview\S5ReportPreviewViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\AgeingView\SubPages\Raw\AgeingConditionFromRawMaterialViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\AgeingView\SubPages\Twist\AgeingConditionFromTwistingViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Ageing\SubPages\DIP\AgeingConditionFromDIPPage.xaml">
       <SubType>Designer</SubType>
