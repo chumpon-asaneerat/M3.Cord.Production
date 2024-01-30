@@ -131,22 +131,11 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void cmdEnd_Click(object sender, RoutedEventArgs e)
-        {
-            if (null != pcCard && pcCard.DIPPCId.HasValue)
-            {
-                DIPPCCard.End(pcCard.DIPPCId.Value);
-                if (Refresh())
-                {
-
-                }
-            }
-        }
-
         private void cmdFinish_Click(object sender, RoutedEventArgs e)
         {
             if (null != pcCard && pcCard.DIPPCId.HasValue)
             {
+                DIPPCCard.End(pcCard.DIPPCId.Value);
                 DIPPCCard.Finish(pcCard.DIPPCId.Value);
                 if (Refresh())
                 {
@@ -169,12 +158,14 @@ namespace M3.Cord.Pages
                 if (ret)
                 {
                     paCondition.DataContext = pcCard;
-                    this.InvokeAction(() =>
-                    {
-                        CheckButtons();
-                    });
                 }
             }
+
+            this.InvokeAction(() =>
+            {
+                CheckButtons();
+            });
+
             return ret;
         }
 
@@ -185,7 +176,6 @@ namespace M3.Cord.Pages
                 if (!pcCard.StartTime.HasValue)
                 {
                     cmdStart.IsEnabled = true;
-                    cmdEnd.IsEnabled = false;
                     cmdFinish.IsEnabled = false;
                 }
                 else
@@ -193,15 +183,18 @@ namespace M3.Cord.Pages
                     cmdStart.IsEnabled = false;
                     if (!pcCard.EndTime.HasValue)
                     {
-                        cmdEnd.IsEnabled = true;
-                        cmdFinish.IsEnabled = false;
+                        cmdFinish.IsEnabled = true;
                     }
                     else
                     {
-                        cmdEnd.IsEnabled = false;
-                        cmdFinish.IsEnabled = true;
+                        cmdFinish.IsEnabled = false;
                     }
                 }
+            }
+            else
+            {
+                cmdStart.IsEnabled = false;
+                cmdFinish.IsEnabled = false;
             }
         }
 

@@ -58,7 +58,7 @@
                                    DockPanel.Dock="Left"
                                    Text="{Binding DoffNo}"
                                    Width="150"
-                                   IsReadOnly="True" />
+                                   IsReadOnly="False" />
                     <Grid />
                 </DockPanel>
                 <Grid />
