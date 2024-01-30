@@ -54,12 +54,9 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoDIPOperationMenu(mc);
-        }
-
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
-        {
-            Save();
+            var page = M3CordApp.Pages.DIPOperationView;
+            page.Setup(pcCard);
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion
@@ -117,38 +114,11 @@ namespace M3.Cord.Pages
             grid.ItemsSource = items;
         }
 
-        private void Save()
-        {
-            if (null != sheet)
-            {
-                if (null != mc)
-                {
-                    sheet.MCCode = mc.MCCode;
-                }
-
-                sheet.UserName = M3CordApp.Current.User.FullName; // set current user
-                var ret = S9AppearanceCheckSheet.Save(sheet);
-
-                if (sheet.AppearId.HasValue)
-                {
-                    foreach (var item in items)
-                    {
-                        item.AppearId = sheet.AppearId.Value;
-                        S9AppearanceCheckSheetItem.Save(item);
-                    }
-                }
-
-                if (null != ret && ret.Ok)
-                    M3CordApp.Windows.SaveSuccess();
-                else M3CordApp.Windows.SaveFailed();
-            }
-        }
-
         #endregion
 
         #region Public Methods
 
-        public void Setup(DIPMC selecteedMC)
+        public void Setup(DIPMC selecteedMC, DIPPCCard PCCard)
         {
             if (null != selecteedMC)
             {
@@ -156,7 +126,7 @@ namespace M3.Cord.Pages
                 mc = DIPMC.Gets("S-9", "S-9-" + mcNo).Value().FirstOrDefault();
                 if (null != mc)
                 {
-                    pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
+                    pcCard = PCCard;
                     if (null != pcCard)
                     {
                         var sheets = S9AppearanceCheckSheet.Gets(pcCard.DIPPCId.Value).Value();

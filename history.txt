@@ -13,8 +13,10 @@ M3 Cord Production System #917
 M3 Cord Production System #916
 - 
 
+[commited]
 M3 Cord Production System #915
-- 
+- M3.Cord.Production.App re-implements #131
+  - Implements DIPView pages #8
 
 [commited]
 M3 Cord Production System #914

@@ -94,11 +94,9 @@ namespace M3.Cord.Pages
 
         private void cmdS9CleaningCheckSheet_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var page = M3CordApp.Pages.S9CleanningCheckSheetView;
             page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdDIPCondition_Click(object sender, RoutedEventArgs e)
@@ -130,11 +128,9 @@ namespace M3.Cord.Pages
 
         private void cmdS9AppearanceCheckSheet_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var page = M3CordApp.Pages.S9AppearanceCheckSheetView;
             page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
-            */
         }
 
         #endregion

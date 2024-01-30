@@ -28,15 +28,6 @@
                                             Text="Back"
                                             Click="cmdBack_Click" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Left"
-                            VerticalAlignment="Center">
-                    <ctrl:FontAwesomeButton x:Name="cmdSave"
-                                            Margin="5,0,0,0"
-                                            IconType="Add"
-                                            Text="Save"
-                                            Click="cmdSave_Click" />
-                </StackPanel>
                 <Grid />
             </DockPanel>
             <!--  PC Card  -->
@@ -60,6 +51,7 @@
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                     <ctrl:NDatePicker CaptionText="Date:"
                                       x:Name="dtCheckDate"
+                                      IsEnabled="False"
                                       SelectedDate="{Binding CheckDate}" />
                     <ctrl:NTextBox CaptionText="S-9 MC:"
                                    x:Name="txtS9MC"
