@@ -67,7 +67,9 @@ namespace M3.Cord.Pages
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoAgeingOperationMenu();
+            var page = M3CordApp.Pages.AgeingHistorySearch;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdPrint_Click(object sender, RoutedEventArgs e)

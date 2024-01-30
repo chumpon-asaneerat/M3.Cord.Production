@@ -536,11 +536,6 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.AgeingHistorySearchPage>(); }
             }
-            /// <summary>Gets Ageing Operation View Page.</summary>
-            public static Cord.Pages.AgeingOperationViewPage AgeingOperationView
-            {
-                get { return GetPage<Cord.Pages.AgeingOperationViewPage>(); }
-            }
             /// <summary>Gets Ageing Condition From Raw Material View Page.</summary>
             public static Cord.Pages.AgeingConditionFromRawMaterialViewPage AgeingConditionFromRawMaterialView
             {

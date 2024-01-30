@@ -47,6 +47,15 @@ namespace M3.Cord.Models
 
     public class S5Condition : NInpc
     {
+        #region Const
+
+        public static readonly SolidColorBrush RedColor = new SolidColorBrush(Colors.Red);
+        public static readonly SolidColorBrush BlackColor = new SolidColorBrush(Colors.Black);
+
+        #endregion
+
+        public SolidColorBrush TextColor { get { return BlackColor; } set { } }
+
         #region Public Proeprties
 
         public int? S5ConditionId { get; set; }

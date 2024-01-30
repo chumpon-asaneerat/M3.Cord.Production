@@ -632,44 +632,35 @@
         </StackPanel>
     </DataTemplate>
 
-    <!-- AGEING -->
+    <!--  AGEING  -->
     <DataTemplate x:Key="SFromSource">
-        <TextBlock Text="{Binding Path=SFromSource, Mode=OneWay}"
-                   TextAlignment="Center" />
+        <TextBlock Text="{Binding Path=SFromSource, Mode=OneWay}" TextAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="PalletOrTrace1">
-        <TextBlock Text="{Binding Path=PalletOrTrace1, Mode=OneWay}"
-                   TextAlignment="Center" />
+        <TextBlock Text="{Binding Path=PalletOrTrace1, Mode=OneWay}" TextAlignment="Center" />
     </DataTemplate>
     <DataTemplate x:Key="DoffNo1MCNo">
-        <TextBlock Text="{Binding Path=DoffNo1MCNo, Mode=OneWay}"
-                   TextAlignment="Center" />
+        <TextBlock Text="{Binding Path=DoffNo1MCNo, Mode=OneWay}" TextAlignment="Center" />
     </DataTemplate>
     <DataTemplate x:Key="DoffNo1Doff">
-        <TextBlock Text="{Binding Path=DoffNo1Doff, Mode=OneWay}"
-                   TextAlignment="Center" />
+        <TextBlock Text="{Binding Path=DoffNo1Doff, Mode=OneWay}" TextAlignment="Center" />
     </DataTemplate>
     <DataTemplate x:Key="DoffNo1Qty">
-        <TextBlock Text="{Binding Path=DoffNo1Qty, Mode=OneWay}"
-                   TextAlignment="Center" />
+        <TextBlock Text="{Binding Path=DoffNo1Qty, Mode=OneWay}" TextAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="PalletOrTrace2">
-        <TextBlock Text="{Binding Path=PalletOrTrace2, Mode=OneWay}"
-                   TextAlignment="Center" />
+        <TextBlock Text="{Binding Path=PalletOrTrace2, Mode=OneWay}" TextAlignment="Center" />
     </DataTemplate>
     <DataTemplate x:Key="DoffNo2MCNo">
-        <TextBlock Text="{Binding Path=DoffNo2MCNo, Mode=OneWay}"
-                   TextAlignment="Center" />
+        <TextBlock Text="{Binding Path=DoffNo2MCNo, Mode=OneWay}" TextAlignment="Center" />
     </DataTemplate>
     <DataTemplate x:Key="DoffNo2Doff">
-        <TextBlock Text="{Binding Path=DoffNo2Doff, Mode=OneWay}"
-                   TextAlignment="Center" />
+        <TextBlock Text="{Binding Path=DoffNo2Doff, Mode=OneWay}" TextAlignment="Center" />
     </DataTemplate>
     <DataTemplate x:Key="DoffNo2Qty">
-        <TextBlock Text="{Binding Path=DoffNo2Qty, Mode=OneWay}"
-                   TextAlignment="Center" />
+        <TextBlock Text="{Binding Path=DoffNo2Qty, Mode=OneWay}" TextAlignment="Center" />
     </DataTemplate>
 
     <!--  SOLUTION RECIPE  -->

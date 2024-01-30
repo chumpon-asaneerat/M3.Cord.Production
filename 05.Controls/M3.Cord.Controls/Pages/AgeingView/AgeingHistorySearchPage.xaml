@@ -253,8 +253,7 @@
                         <GridViewColumn Header="Issue Date" CellTemplate="{StaticResource IssueDate}" />
                         <GridViewColumn Header="CustomerName" CellTemplate="{StaticResource CustomerName}" />
                         <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
-                        <GridViewColumn Header="Item Yarn" CellTemplate="{StaticResource ItemYarn}" />
-                        <GridViewColumn Header="Source" CellTemplate="{StaticResource SFromSource}" />
+                        <GridViewColumn Header="From" CellTemplate="{StaticResource SFromSource}" />
 
                         <GridViewColumn Width="Auto"
                                         CellTemplate="{StaticResource Pallet1DrumColumns}"

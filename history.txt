@@ -7,8 +7,10 @@ M3 Cord Production System #909
 M3 Cord Production System #908
 - 
 
+[commited]
 M3 Cord Production System #907
-- 
+- M3.Cord.Production.App re-implements #123
+  - Implements AgeingView pages #3
 
 [commited]
 M3 Cord Production System #906

@@ -65,7 +65,52 @@ namespace M3.Cord.Pages
 
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoAgeingOperationMenu();
+            var page = M3CordApp.Pages.AgeingHistorySearch;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
+
+        private void cmdPrint_Click(object sender, RoutedEventArgs e)
+        {
+            Print();
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void Print()
+        {
+            if (null == condition)
+                return;
+
+            var item = S5ConditionPrintModel.Gets(condition.S5ConditionId).Value().FirstOrDefault();
+            if (null != item)
+            {
+                var items = new List<S5ConditionPrintModel>();
+                if (!string.IsNullOrEmpty(item.ProductCode1) &&
+                    !string.IsNullOrEmpty(item.ProductCode2) &&
+                    item.ProductCode1 != item.ProductCode1)
+                {
+                    // Has both product code but not same
+                    // require duplicate and update ProductCode to make 2 records
+                    var item1 = item.ShallowCopy();
+                    item1.ProductCode = item1.ProductCode1;
+
+                    var item2 = item.ShallowCopy();
+                    item2.ProductCode = item1.ProductCode2;
+
+                    items.Add(item1);
+                    items.Add(item2);
+                }
+                else
+                {
+                    items.Add(item);
+                }
+                var page = M3CordApp.Pages.S5ReportPreviewView;
+                page.Setup(items);
+                PageContentManager.Instance.Current = page;
+            }
         }
 
         #endregion

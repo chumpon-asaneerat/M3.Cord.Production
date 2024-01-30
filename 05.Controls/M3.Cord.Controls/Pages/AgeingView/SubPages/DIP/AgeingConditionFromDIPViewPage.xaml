@@ -27,6 +27,15 @@
                                             Text="Home"
                                             Click="cmdHome_Click" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Left"
+                        VerticalAlignment="Center">
+                    <ctrl:FontAwesomeButton x:Name="cmdPrint"
+                                        Margin="5,0,0,0"
+                                        IconType="Preview"
+                                        Text="Print"
+                                        Click="cmdPrint_Click"/>
+                </StackPanel>
                 <Grid />
             </DockPanel>
             <!--  LISTVIEW  -->

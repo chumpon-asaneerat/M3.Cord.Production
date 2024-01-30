@@ -136,11 +136,27 @@ namespace M3.Cord.Pages
 
         private void Edit(S5Condition item)
         {
-            /*
-            var page = M3CordApp.Pages.FirstTwistOperationView;
-            page.Setup(item);
-            PageContentManager.Instance.Current = page;
-            */
+            if (null == item)
+                return;
+
+            if (item.FromSource == FromSources.RawMeterial)
+            {
+                var page = M3CordApp.Pages.AgeingConditionFromRawMaterialView;
+                page.Setup(item);
+                PageContentManager.Instance.Current = page;
+            }
+            else if (item.FromSource == FromSources.Twist)
+            {
+                var page = M3CordApp.Pages.AgeingConditionFromTwistingView;
+                page.Setup(item);
+                PageContentManager.Instance.Current = page;
+            }
+            else if (item.FromSource == FromSources.DIP)
+            {
+                var page = M3CordApp.Pages.AgeingConditionFromDIPView;
+                page.Setup(item);
+                PageContentManager.Instance.Current = page;
+            }
         }
 
         private void ClearInputs()
