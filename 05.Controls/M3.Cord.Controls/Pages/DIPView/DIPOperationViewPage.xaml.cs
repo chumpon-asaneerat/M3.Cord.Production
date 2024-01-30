@@ -81,11 +81,9 @@ namespace M3.Cord.Pages
 
         private void cmdChemicalRequisitionRecordSheet_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var page = M3CordApp.Pages.ChemicalRequisitionRecordView;
             page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdS9CleaningCheckSheet_Click(object sender, RoutedEventArgs e)

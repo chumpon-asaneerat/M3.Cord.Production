@@ -53,27 +53,9 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoDIPOperationMenu(mc);
-        }
-
-        private void cmdNew_Click(object sender, RoutedEventArgs e)
-        {
-            if (null != pcCard && pcCard.DIPPCId.HasValue)
-            {
-                var win = M3CordApp.Windows.ChemicalRequisitionEditor;
-                var item = new DIPChemicalReqisition();
-                item.ReqDate = DateTime.Now;
-                item.ProductCode = pcCard.ProductCode;
-                item.S8LotNo = pcCard.DIPLotNo;
-                item.DIPPCId = pcCard.DIPPCId.Value;
-                item.UserName = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
-                win.Setup(item);
-                if (win.ShowDialog() == true)
-                {
-                    DIPChemicalReqisition.Save(item);
-                    RefreshGrid();
-                }
-            }
+            var page = M3CordApp.Pages.DIPOperationView;
+            page.Setup(pcCard);
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion
@@ -95,12 +77,12 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup(DIPMC selecteedMC)
+        public void Setup(DIPMC selecteedMC, DIPPCCard PCCard)
         {
             if (null != selecteedMC)
             {
                 mc = selecteedMC;
-                pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
+                pcCard = PCCard;
                 if (null != pcCard)
                 {
 
