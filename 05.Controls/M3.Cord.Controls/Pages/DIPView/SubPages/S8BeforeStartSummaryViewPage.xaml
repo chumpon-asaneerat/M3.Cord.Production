@@ -1,0 +1,474 @@
+﻿<UserControl x:Class="M3.Cord.Pages.S8BeforeStartSummaryViewPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:doc="clr-namespace:M3.Cord.Controls.Documents"
+             xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:spage="clr-namespace:M3.Cord.Pages"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             x:Name="root"
+             mc:Ignorable="d"
+             d:DesignHeight="800"
+             d:DesignWidth="1200">
+    <UserControl.Resources>
+        <!--#region Common GridView Header-->
+
+        <Style x:Key="CommonHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="True" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style x:Key="RotateHeaderFreezeContainer" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="True" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+
+        <!--#endregion-->
+
+        <!--#region S8B_TempJacketDrum-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_TempJacketDrumGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempJacketDrumBath1}"
+                            Header=" อ่าง 1 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempJacketDrumBath2}"
+                            Header=" อ่าง 2 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempJacketDrumColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="อุณหภูมิ Jacket Drum" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_TempJacketDrumGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempJacketDrumColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_TempJacketDrumGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region S8B_TempChemical-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_TempChemicalGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempChemicalBath1}"
+                            Header=" อ่าง 1 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempChemicalBath2}"
+                            Header=" อ่าง 2 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempChemicalColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="อุณหภูมิ อ่างเคมี" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_TempChemicalGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempChemicalColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_TempChemicalGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region S8B_Stretch-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_StretchGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_StretchDValue}"
+                            Header=" D "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_StretchHValue}"
+                            Header=" H "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_StretchNValue}"
+                            Header=" N "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_StretchColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="แรงดึง (Stretch)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_StretchGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_StretchColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_StretchGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region S8B_Temp-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_TempGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempDValue}"
+                            Header=" D "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_TempHNValue}"
+                            Header=" H,N "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="อุณหภูมิ (Temp)" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_TempGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_TempColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_TempGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region S8B_ExhaustFan-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_ExhaustFanGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_ExhaustFanDryerValue}"
+                            Header=" Dryer "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_ExhaustFanHNValue}"
+                            Header=" H&amp;N "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_ExhaustFanColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="Exhaust Fan" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_ExhaustFanGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_ExhaustFanColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_ExhaustFanGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region S8B_Clean-->
+
+        <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
+        <GridViewColumnCollection x:Key="S8B_CleanGridViewColumns">
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_CleanBath1}"
+                            Header=" อ่าง 1 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_CleanBath2}"
+                            Header=" อ่าง 2 "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_CleanFront}"
+                            Header=" หน้าตู้อบ "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <GridViewColumn Width="100"
+                            CellTemplate="{StaticResource S8B_Cambox}"
+                            Header=" Cambox "
+                            HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+        </GridViewColumnCollection>
+        <!--  COLUMNS HEADER TEMPLATE  -->
+        <DataTemplate x:Key="S8B_CleanColumnsHeader">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center">
+                    <Run Text="ความสะอาดลูกกลิ้ง" />
+                </TextBlock>
+                <GridViewHeaderRowPresenter Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            Columns="{StaticResource S8B_CleanGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+        <!--  ROW COLUMNS CELL TEMPLATE  -->
+        <DataTemplate x:Key="S8B_CleanColumns">
+            <Grid>
+                <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource S8B_CleanGridViewColumns}" />
+            </Grid>
+        </DataTemplate>
+
+        <!--#endregion-->
+    </UserControl.Resources>
+    <page:NPage x:Name="page" HeaderText="ตรวจเช็คสภาวะการผลิตก่อนเปิดเครื่อง (S-8)">
+        <DockPanel LastChildFill="True">
+            <!--  BUTTONS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Right"
+                            VerticalAlignment="Center">
+                    <!--  HOME  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                            Margin="5,0,0,0"
+                                            IconType="Back"
+                                            Text="Back"
+                                            Click="cmdBack_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <ctrl:FontAwesomeButton x:Name="cmdAdd"
+                                            Margin="5,0,0,0"
+                                            IconType="Add"
+                                            Text="เพิ่ม"
+                                            Click="cmdAdd_Click" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <DockPanel x:Name="paCondition"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                        <elem:DIPLotNoBox />
+                    </StackPanel>
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <!--  BUTTONS  -->
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  Reset  -->
+                                        <Button x:Name="cmdResets"
+                                                Style="{StaticResource InlineButton}"
+                                                DockPanel.Dock="Left"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdReset_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Reset"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                        <!--  Confirm  -->
+                                        <Button x:Name="cmdConfirmCondition"
+                                                Style="{StaticResource InlineButton}"
+                                                DockPanel.Dock="Left"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdConfirmCondition_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Set"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                        <!--  Detail  -->
+                                        <Button x:Name="cmdDetails"
+                                                Style="{StaticResource InlineButton}"
+                                                DockPanel.Dock="Left"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdDetails_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Edit"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                    <DataTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding RowType}" Value="-2">
+                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RowType}" Value="-1">
+                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RowType}" Value="0">
+                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RowType}" Value="1">
+                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </DataTemplate.Triggers>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource S8B_LotNo}" />
+
+                        <GridViewColumn CellTemplate="{StaticResource S8B_SolutionNameBath1Value}">
+                            <GridViewColumn.Header>
+                                <TextBlock TextAlignment="Center">
+                                    <Run Text="ชื่อน้ำยาเคมี" FontSize="11" />
+                                    <LineBreak />
+                                    <Run Text="(Solution name)" FontSize="11" />
+                                    <LineBreak />
+                                    <Run Text="อ่าง 1" />
+                                </TextBlock>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn CellTemplate="{StaticResource S8B_SolutionNameBath2Value}">
+                            <GridViewColumn.Header>
+                                <TextBlock TextAlignment="Center">
+                                    <Run Text="ชื่อน้ำยาเคมี" FontSize="11" />
+                                    <LineBreak />
+                                    <Run Text="(Solution name)" FontSize="11" />
+                                    <LineBreak />
+                                    <Run Text="อ่าง 2" />
+                                </TextBlock>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_TempJacketDrumColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_TempJacketDrumColumnsHeader}" />
+
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_TempChemicalColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_TempChemicalColumnsHeader}" />
+
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_StretchColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_StretchColumnsHeader}" />
+
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_TempColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_TempColumnsHeader}" />
+
+                        <GridViewColumn Header="ความเร็ว" CellTemplate="{StaticResource S8B_SpeedValue}" />
+
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_ExhaustFanColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_ExhaustFanColumnsHeader}" />
+
+                        <GridViewColumn Width="Auto"
+                                        CellTemplate="{StaticResource S8B_CleanColumns}"
+                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                        HeaderTemplate="{StaticResource S8B_CleanColumnsHeader}" />
+
+                        <GridViewColumn Header="ตรวจเช็คโดย" CellTemplate="{StaticResource S8B_CheckBy}" />
+                        <GridViewColumn Header="ทวนสอบโดย" CellTemplate="{StaticResource S8B_VerifyBy}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </page:NPage>
+</UserControl>

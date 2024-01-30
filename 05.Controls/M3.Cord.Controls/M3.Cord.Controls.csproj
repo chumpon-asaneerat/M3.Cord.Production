@@ -264,6 +264,33 @@
     <Compile Include="Pages\DIPView\DIPOperationViewPage.xaml.cs">
       <DependentUpon>DIPOperationViewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DIPView\SubPages\ChemicalRequisitionRecordViewPage.xaml.cs">
+      <DependentUpon>ChemicalRequisitionRecordViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPView\SubPages\DIPConditionViewPage.xaml.cs">
+      <DependentUpon>DIPConditionViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPView\SubPages\DIPMaterialCheckSheetViewPage.xaml.cs">
+      <DependentUpon>DIPMaterialCheckSheetViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPView\SubPages\DIPTimeTableViewPage.xaml.cs">
+      <DependentUpon>DIPTimeTableViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPView\SubPages\S7CreelCheckSheetViewPage.xaml.cs">
+      <DependentUpon>S7CreelCheckSheetViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPView\SubPages\S8BeforeStartSummaryViewPage.xaml.cs">
+      <DependentUpon>S8BeforeStartSummaryViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPView\SubPages\S8ConditionSummaryViewPage.xaml.cs">
+      <DependentUpon>S8ConditionSummaryViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPView\SubPages\S9AppearanceCheckSheetViewPage.xaml.cs">
+      <DependentUpon>S9AppearanceCheckSheetViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIPView\SubPages\S9CleanningCheckSheetViewPage.xaml.cs">
+      <DependentUpon>S9CleanningCheckSheetViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FirstTwistView\FirstTwistHistorySearchPage.xaml.cs">
       <DependentUpon>FirstTwistHistorySearchPage.xaml</DependentUpon>
     </Compile>
@@ -864,6 +891,42 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\DIPView\SubPages\ChemicalRequisitionRecordViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DIPView\SubPages\DIPConditionViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DIPView\SubPages\DIPMaterialCheckSheetViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DIPView\SubPages\DIPTimeTableViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DIPView\SubPages\S7CreelCheckSheetViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DIPView\SubPages\S8BeforeStartSummaryViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DIPView\SubPages\S8ConditionSummaryViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DIPView\SubPages\S9AppearanceCheckSheetViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DIPView\SubPages\S9CleanningCheckSheetViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\FirstTwistView\FirstTwistHistorySearchPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1252,7 +1315,6 @@
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\DIPView\SubPages\" />
     <Folder Include="Pages\PrintPreview\S5\" />
     <Folder Include="_Templates\02.SecondTwist\" />
     <Folder Include="_Templates\04.DIP\" />

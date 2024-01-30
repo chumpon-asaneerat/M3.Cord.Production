@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="M3.Cord.Pages.S7CreelCheckSheetViewPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:doc="clr-namespace:M3.Cord.Controls.Documents"
+             xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:spage="clr-namespace:M3.Cord.Pages"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             x:Name="root"
+             mc:Ignorable="d"
+             d:DesignHeight="800"
+             d:DesignWidth="1200">
+    <page:NPage x:Name="page" HeaderText="Yarn Path Check Sheet for Creel (S-7)">
+        <DockPanel LastChildFill="True">
+            <!--  BUTTONS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Right"
+                            VerticalAlignment="Center">
+                    <!--  HOME  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                            Margin="5,0,0,0"
+                                            IconType="Back"
+                                            Text="Back"
+                                            Click="cmdBack_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <ctrl:FontAwesomeButton x:Name="cmdSave"
+                                            Margin="5,0,0,0"
+                                            IconType="Add"
+                                            Text="Save"
+                                            Click="cmdSave_Click" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <!--  PC Card  -->
+            <DockPanel x:Name="paCondition"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                        <elem:ProductCodeBox />
+                        <elem:DIPLotNoBox />
+                        <elem:DoffNoBox Width="200" />
+                    </StackPanel>
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <DockPanel x:Name="paSheetInfo"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                    <ctrl:NDatePicker CaptionText="Date:"
+                                      x:Name="dtCheckDate"
+                                      SelectedDate="{Binding CheckDate}" />
+                    <ctrl:NTextBox CaptionText="S-7 MC:"
+                                   x:Name="txtS7MC"
+                                   Text="{Binding MCCode}"
+                                   IsReadOnly="True" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <!--  SPs  -->
+            <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
+                        <GridViewColumn Header="แกนสั่น" CellTemplate="{StaticResource CheckUnstable}" />
+                        <GridViewColumn Header="ใส่หลอดไม่สุด" CellTemplate="{StaticResource CheckNotReachEnd}" />
+                        <GridViewColumn Header="แกนไม่ตรง" CellTemplate="{StaticResource CheckNotStraight}" />
+                        <GridViewColumn Header="แกนมีเสียงดัง" CellTemplate="{StaticResource CheckHasSound}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </page:NPage>
+</UserControl>

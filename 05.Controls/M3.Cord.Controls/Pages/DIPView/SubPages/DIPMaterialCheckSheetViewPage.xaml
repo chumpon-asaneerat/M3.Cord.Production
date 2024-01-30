@@ -1,0 +1,166 @@
+﻿<UserControl x:Class="M3.Cord.Pages.DIPMaterialCheckSheetViewPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:doc="clr-namespace:M3.Cord.Controls.Documents"
+             xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:spage="clr-namespace:M3.Cord.Pages"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             x:Name="root"
+             mc:Ignorable="d"
+             d:DesignHeight="800"
+             d:DesignWidth="1200">
+    <page:NPage x:Name="page" HeaderText="ตรวจสอบเส้นด้ายก่อนนำเข้า S-7">
+        <DockPanel LastChildFill="True">
+            <!--  BUTTONS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Right"
+                            VerticalAlignment="Center">
+                    <!--  HOME  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                            Margin="5,0,0,0"
+                                            IconType="Back"
+                                            Text="Back"
+                                            Click="cmdBack_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <ctrl:FontAwesomeButton x:Name="cmdSave"
+                                            Margin="5,0,0,0"
+                                            IconType="Add"
+                                            Text="Save"
+                                            Click="cmdSave_Click" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <!--  PC Card  -->
+            <DockPanel x:Name="paCondition"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                        <elem:ProductCodeBox />
+                        <elem:DIPLotNoBox />
+                        <elem:DoffNoBox Width="200" />
+                    </StackPanel>
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <DockPanel x:Name="paSheetInfo"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                    <ctrl:NDatePicker CaptionText="Date:"
+                                      x:Name="dtCheckDate"
+                                      SelectedDate="{Binding CheckDate}" />
+                    <ctrl:NTextBox CaptionText="Doff No:"
+                                   x:Name="txtDoffNo"
+                                   Text="{Binding DoffNo}"
+                                   IsReadOnly="True" />
+                    <ctrl:NTextBox CaptionText="S-7 MC:"
+                                   x:Name="txtS7MC"
+                                   Text="{Binding MCCode}"
+                                   IsReadOnly="True" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <!--  SCAN PANEL  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                    <ctrl:NTextBox CaptionText="SP No:"
+                                   x:Name="txtSPNo"
+                                   Width="120"
+                                   PreviewKeyDown="txtSPNo_PreviewKeyDown" />
+                    <ctrl:NTextBox CaptionText="Pallet No:"
+                                   x:Name="txtPallet"
+                                   PreviewKeyDown="txtPallet_PreviewKeyDown" />
+                    <ctrl:NTextBox CaptionText="Lot No:"
+                                   x:Name="txtLotNo" 
+                                   PreviewKeyDown="txtLotNo_PreviewKeyDown"/>
+                    <ctrl:NTextBox CaptionText="Doff No:"
+                                   x:Name="txtPalletDoffNo" 
+                                   Width="120"
+                                   PreviewKeyDown="txtPalletDoffNo_PreviewKeyDown"/>
+                    <ctrl:NTextBox CaptionText="CH No:"
+                                   x:Name="txtCHNo"
+                                   Width="120"
+                                   PreviewKeyDown="txtCHNo_PreviewKeyDown" />
+                    <TextBlock Width="10" />
+                    <Button x:Name="cmdAdd"
+                            VerticalAlignment="Bottom"
+                            Style="{StaticResource InlineButton}"
+                            Content="Update"
+                            Click="cmdAdd_Click" />
+                    <TextBlock Width="5" />
+                    <Button x:Name="cmdClear"
+                            VerticalAlignment="Bottom"
+                            Style="{StaticResource InlineButton}"
+                            Content="Clear"
+                            Click="cmdClear_Click" />
+                </StackPanel>
+                <TextBlock Height="3" />
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            Margin="5">
+                    <CheckBox x:Name="chkCheckYarnNo"
+                              FontSize="20"
+                              Content="เบอร์ด้าย/สภาพด้าย"
+                              Style="{StaticResource CommonCheckBox}" />
+                    <CheckBox x:Name="chkCheckYanScrap"
+                              FontSize="20"
+                              Content="ไม่มีเศษด้าย"
+                              Style="{StaticResource CommonCheckBox}" />
+                    <CheckBox x:Name="chkCheckYarnBall"
+                              FontSize="20"
+                              Content="ลูกด้าย"
+                              Style="{StaticResource CommonCheckBox}" />
+                    <CheckBox x:Name="chkCheckCover"
+                              FontSize="20"
+                              Content="ผ้าคลุม"
+                              Style="{StaticResource CommonCheckBox}" />
+                    <CheckBox x:Name="chkCheckSensor"
+                              FontSize="20"
+                              Content="Sensor"
+                              Style="{StaticResource CommonCheckBox}" />
+                    <CheckBox x:Name="chkCheckDustFilter"
+                              FontSize="20"
+                              Content="ตัวดักฝุ่น"
+                              Style="{StaticResource CommonCheckBox}" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <!--  SPs  -->
+            <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource LotNo}" />
+                        <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNo}" />
+                        <GridViewColumn Header="CH No" CellTemplate="{StaticResource CHNo}" />
+                        <GridViewColumn Header="เบอร์ด้าย/สภาพด้าย" CellTemplate="{StaticResource CheckYarnNo}" />
+                        <GridViewColumn Header="ไม่มีเศษด้าย" CellTemplate="{StaticResource CheckYanScrap}" />
+                        <GridViewColumn Header="ลูกด้าย" CellTemplate="{StaticResource CheckYarnBall}" />
+                        <GridViewColumn Header="ผ้าคลุม" CellTemplate="{StaticResource CheckCover}" />
+                        <GridViewColumn Header="Sensor" CellTemplate="{StaticResource CheckSensor}" />
+                        <GridViewColumn Header="ตัวดักฝุ่น" CellTemplate="{StaticResource CheckDustFilter}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </page:NPage>
+</UserControl>

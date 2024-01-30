@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="M3.Cord.Pages.ChemicalRequisitionRecordViewPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+             xmlns:doc="clr-namespace:M3.Cord.Controls.Documents"
+             xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
+             xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+             xmlns:spage="clr-namespace:M3.Cord.Pages"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             x:Name="root"
+             mc:Ignorable="d"
+             d:DesignHeight="800"
+             d:DesignWidth="1200">
+    <page:NPage x:Name="page" HeaderText="Chemical Requisition Record Sheet">
+        <DockPanel LastChildFill="True">
+            <!--  BUTTONS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Right"
+                            VerticalAlignment="Center">
+                    <!--  HOME  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                            Margin="5,0,0,0"
+                                            IconType="Back"
+                                            Text="Back"
+                                            Click="cmdBack_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <ctrl:FontAwesomeButton x:Name="cmdNew"
+                                            Margin="5,0,0,0"
+                                            IconType="Add"
+                                            Text="New"
+                                            Click="cmdNew_Click" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <DockPanel x:Name="paCondition"
+                       LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       Margin="2">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                        <elem:ProductCodeBox />
+                        <elem:DIPLotNoBox />
+                        <elem:DoffNoBox Width="200" />
+                    </StackPanel>
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <!--  SPs  -->
+            <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="วันที่" CellTemplate="{StaticResource ReqDate}" />
+                        <GridViewColumn Header="ผลิตภัณฑ์" CellTemplate="{StaticResource ProductCode}" />
+                        <GridViewColumn Header="ชื่อน้ำยา" CellTemplate="{StaticResource SolutionName}" />
+                        <GridViewColumn Header="Lot No" CellTemplate="{StaticResource DIPLotNo}" />
+                        <GridViewColumn Header="ถังเบอร์" CellTemplate="{StaticResource TankNo}" />
+                        <GridViewColumn Header="จำนวนเบิก" CellTemplate="{StaticResource Quantity}" />
+                        <GridViewColumn Header="S-8 ล๊อตเบอร์" CellTemplate="{StaticResource S8LotNo}" />
+                        <GridViewColumn Header="ผู้ปฏิบัตงาน" CellTemplate="{StaticResource UserName}" />
+                        <GridViewColumn Header="หัวหน้ากะ" CellTemplate="{StaticResource Chief}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </page:NPage>
+</UserControl>
