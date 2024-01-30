@@ -490,15 +490,6 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.RecordActualWeightPage>(); }
             }
 
-            public static Cord.Pages.ProductionRecordStdPage ProductionRecordStd
-            {
-                get { return GetPage<Cord.Pages.ProductionRecordStdPage>(); }
-            }
-
-            public static Cord.Pages.ProductionRecordPage ProductionRecord
-            {
-                get { return GetPage<Cord.Pages.ProductionRecordPage>(); }
-            }
             #endregion
 
             #region LabelCHS9
@@ -540,6 +531,11 @@ namespace M3.Cord
 
             #region Ageing View
 
+            /// <summary>Gets Ageing History Search Page.</summary>
+            public static Cord.Pages.AgeingHistorySearchPage AgeingHistorySearch
+            {
+                get { return GetPage<Cord.Pages.AgeingHistorySearchPage>(); }
+            }
             /// <summary>Gets Ageing Operation View Page.</summary>
             public static Cord.Pages.AgeingOperationViewPage AgeingOperationView
             {

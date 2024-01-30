@@ -231,6 +231,9 @@
     <Compile Include="Pages\AgeingView\AgeingOperationViewPage.xaml.cs">
       <DependentUpon>AgeingOperationViewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AgeingView\AgeingHistorySearchPage.xaml.cs">
+      <DependentUpon>AgeingHistorySearchPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AgeingView\SubPages\DIP\AgeingConditionFromDIPViewPage.xaml.cs">
       <DependentUpon>AgeingConditionFromDIPViewPage.xaml</DependentUpon>
     </Compile>
@@ -287,12 +290,6 @@
     </Compile>
     <Compile Include="Pages\Documents\Dipping\DippingStdManagePage.xaml.cs">
       <DependentUpon>DippingStdManagePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DIP\SubPages\_V0\ProductionRecordPage.xaml.cs">
-      <DependentUpon>ProductionRecordPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Documents\Dipping\_V0\ProductionRecordStdPage.xaml.cs">
-      <DependentUpon>ProductionRecordStdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Documents\Dipping\S8BeforeConditionStdPage.xaml.cs">
       <DependentUpon>S8BeforeConditionStdPage.xaml</DependentUpon>
@@ -824,6 +821,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\AgeingView\AgeingHistorySearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\AgeingView\SubPages\DIP\AgeingConditionFromDIPViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -899,14 +900,6 @@
     <Page Include="Pages\Documents\Dipping\S8BeforeConditionStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DIP\SubPages\_V0\ProductionRecordPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Documents\Dipping\_V0\ProductionRecordStdPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Documents\Dipping\S8ProductionConditionItemStdManagePage.xaml">
       <SubType>Designer</SubType>

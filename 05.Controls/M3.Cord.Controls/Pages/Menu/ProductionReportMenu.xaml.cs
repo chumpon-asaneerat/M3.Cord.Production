@@ -107,7 +107,7 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
-            // Pallet Setting
+            // First Twist History
             var page = M3CordApp.Pages.FirstTwistHistorySearch;
             page.Setup();
             PageContentManager.Instance.Current = page;
@@ -115,7 +115,13 @@ namespace M3.Cord.Pages
 
         private void cmdAgeingReports_Click(object sender, RoutedEventArgs e)
         {
-
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+            // Ageing History
+            var page = M3CordApp.Pages.AgeingHistorySearch;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdDIPReports_Click(object sender, RoutedEventArgs e)

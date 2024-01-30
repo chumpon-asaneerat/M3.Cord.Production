@@ -14,6 +14,7 @@ using NLib.Models;
 
 using Dapper;
 using Newtonsoft.Json;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 #endregion
 
@@ -25,6 +26,23 @@ namespace M3.Cord.Models
         Twist = 1,
         //Twist2 = 2,
         DIP = 4
+    }
+
+    public class S5Source
+    {
+        public int? Id { get; set; }
+        public string Source { get; set; }
+
+        public static List<S5Source> Gets()
+        {
+            return new List<S5Source>() 
+            {
+                new S5Source() { Id = new int?(), Source = "All" },
+                new S5Source() { Id = 0, Source = "Raw" },
+                new S5Source() { Id = 1, Source = "Twist" },
+                new S5Source() { Id = 4, Source = "DIP" }
+            };
+        }
     }
 
     public class S5Condition : NInpc
@@ -267,12 +285,32 @@ namespace M3.Cord.Models
         public string DoffNo1Doff { get; set; }
         public string DoffNo1Qty { get; set; }
 
+        public string PalletOrTrace1
+        {
+            get
+            {
+                if (FromSource == FromSources.RawMeterial)
+                    return DoffNo1TraceNo;
+                else return DoffNo1PalletCode;
+            }
+        }
+
         public bool? DoffNo2SC { get; set; }
         public string DoffNo2PalletCode { get; set; }
         public string DoffNo2TraceNo { get; set; }
         public string DoffNo2MCNo { get; set; }
         public string DoffNo2Doff { get; set; }
         public string DoffNo2Qty { get; set; }
+
+        public string PalletOrTrace2
+        {
+            get 
+            {
+                if (FromSource == FromSources.RawMeterial)
+                    return DoffNo2TraceNo;
+                else return DoffNo2PalletCode;
+            }
+        }
 
         public string UpdateBy { get; set; }
         public DateTime? UpdateDate { get; set; }
@@ -290,6 +328,21 @@ namespace M3.Cord.Models
         public string ProductCode2 { get; set; }
 
         public FromSources FromSource { get; set; }
+
+        public string SFromSource
+        {
+            get 
+            {
+                if (FromSource == FromSources.RawMeterial)
+                    return "Raw";
+                else if (FromSource == FromSources.Twist)
+                    return "Twist";
+                else if (FromSource == FromSources.DIP)
+                    return "DIP";
+                else return null;
+            }
+            set { }
+        }
 
         public string CustomerName { get; set; }
         public string ProductName1 { get; set; }
@@ -666,6 +719,64 @@ namespace M3.Cord.Models
             }
 
             return ret;
+        }
+        /// <summary>
+        /// Gets
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<List<S5Condition>> Search(
+            DateTime? IssueDate = new DateTime?(),
+            int? FromSource = new int?(),
+            string ProductCode = null,
+            string CustomerName = null,
+            string PalletOrTraceNo = null
+            )
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<S5Condition>> rets = new NDbResult<List<S5Condition>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@IssueDate", IssueDate);
+            p.Add("@FromSource", FromSource);
+            p.Add("@ProductCode", ProductCode);
+            p.Add("@CustomerName", CustomerName);
+            p.Add("@PalletOrTraceNo", PalletOrTraceNo);
+
+            try
+            {
+                var items = cnn.Query<S5Condition>("SearchAgeing", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<S5Condition>();
+            }
+
+            return rets;
         }
 
         #endregion
