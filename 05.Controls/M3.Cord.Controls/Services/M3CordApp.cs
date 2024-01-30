@@ -868,6 +868,11 @@ namespace M3.Cord
             {
                 get { return GetWindow<Twist1LoadRecordViewWindow>(); }
             }
+            /// <summary>Gets Twist 1 Check Sheet View Window.</summary>
+            public static Twist1CheckSheetEditorViewWindow Twist1CheckSheetEditorView
+            {
+                get { return GetWindow<Twist1CheckSheetEditorViewWindow>(); }
+            }
 
             #endregion
 

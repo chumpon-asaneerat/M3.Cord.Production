@@ -103,18 +103,12 @@ namespace M3.Cord.Pages
         {
             if (null == pcCard)
                 return;
-            /*
-            var win = M3CordApp.Windows.Twist1CheckSheetEditor;
+            var win = M3CordApp.Windows.Twist1CheckSheetEditorView;
             // set display mode
-            win.Mode = (null != sheet) ? DisplayMode.Edit : DisplayMode.New;
-            win.Setup(selectedMC, pcCard, sheet);
+            win.Setup(pcCard, sheet);
             if (win.ShowDialog() == false) return;
 
-            // reload pc card to refresh last doff/test no. 
-            pcCard = (null != selectedMC) ? PCTwist1.Get(selectedMC.MCCode).Value() : null;
-
             RefreshGrids();
-            */
         }
 
         public void RefreshGrids()
