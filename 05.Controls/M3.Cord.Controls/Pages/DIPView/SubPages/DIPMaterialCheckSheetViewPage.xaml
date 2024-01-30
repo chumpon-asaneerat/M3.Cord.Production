@@ -85,12 +85,12 @@
                                    x:Name="txtPallet"
                                    PreviewKeyDown="txtPallet_PreviewKeyDown" />
                     <ctrl:NTextBox CaptionText="Lot No:"
-                                   x:Name="txtLotNo" 
-                                   PreviewKeyDown="txtLotNo_PreviewKeyDown"/>
+                                   x:Name="txtLotNo"
+                                   PreviewKeyDown="txtLotNo_PreviewKeyDown" />
                     <ctrl:NTextBox CaptionText="Doff No:"
-                                   x:Name="txtPalletDoffNo" 
+                                   x:Name="txtPalletDoffNo"
                                    Width="120"
-                                   PreviewKeyDown="txtPalletDoffNo_PreviewKeyDown"/>
+                                   PreviewKeyDown="txtPalletDoffNo_PreviewKeyDown" />
                     <ctrl:NTextBox CaptionText="CH No:"
                                    x:Name="txtCHNo"
                                    Width="120"

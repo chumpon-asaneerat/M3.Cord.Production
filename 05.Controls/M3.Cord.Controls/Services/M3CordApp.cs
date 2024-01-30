@@ -571,6 +571,52 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.DIPOperationViewPage>(); }
             }
 
+            /// <summary>Gets DIP Material Check Sheet View Page.</summary>
+            public static Cord.Pages.DIPMaterialCheckSheetViewPage DIPMaterialCheckSheetView
+            {
+                get { return GetPage<Cord.Pages.DIPMaterialCheckSheetViewPage>(); }
+            }
+            /// <summary>Gets S7Creel Check Sheet View Page.</summary>
+            public static Cord.Pages.S7CreelCheckSheetViewPage S7CreelCheckSheetView
+            {
+                get { return GetPage<Cord.Pages.S7CreelCheckSheetViewPage>(); }
+            }
+            /// <summary>Gets S8 Before Start Summary View Page.</summary>
+            public static Cord.Pages.S8BeforeStartSummaryViewPage S8BeforeStartSummaryView
+            {
+                get { return GetPage<Cord.Pages.S8BeforeStartSummaryViewPage>(); }
+            }
+            /// <summary>Gets DIP Condition View Page.</summary>
+            public static Cord.Pages.DIPConditionViewPage DIPConditionView
+            {
+                get { return GetPage<Cord.Pages.DIPConditionViewPage>(); }
+            }
+            /// <summary>Gets S8 Condition Summary View Page.</summary>
+            public static Cord.Pages.S8ConditionSummaryViewPage S8ConditionSummaryView
+            {
+                get { return GetPage<Cord.Pages.S8ConditionSummaryViewPage>(); }
+            }
+            /// <summary>Gets Chemical Requisition Record View Page.</summary>
+            public static Cord.Pages.ChemicalRequisitionRecordViewPage ChemicalRequisitionRecordView
+            {
+                get { return GetPage<Cord.Pages.ChemicalRequisitionRecordViewPage>(); }
+            }
+            /// <summary>Gets S9 Cleanning Check Sheet View Page.</summary>
+            public static Cord.Pages.S9CleanningCheckSheetViewPage S9CleanningCheckSheetView
+            {
+                get { return GetPage<Cord.Pages.S9CleanningCheckSheetViewPage>(); }
+            }
+            /// <summary>Gets DIP Time Table View Page.</summary>
+            public static Cord.Pages.DIPTimeTableViewPage DIPTimeTableView
+            {
+                get { return GetPage<Cord.Pages.DIPTimeTableViewPage>(); }
+            }
+            /// <summary>Gets S9 Appearance Check Sheet View Page.</summary>
+            public static Cord.Pages.S9AppearanceCheckSheetViewPage S9AppearanceCheckSheetView
+            {
+                get { return GetPage<Cord.Pages.S9AppearanceCheckSheetViewPage>(); }
+            }
+
             #endregion
 
             #region Condition Document Preview
