@@ -53,7 +53,9 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoDIPOperationMenu(mc);
+            var page = M3CordApp.Pages.DIPOperationView;
+            page.Setup(pcCard);
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion
