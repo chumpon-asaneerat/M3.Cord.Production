@@ -95,11 +95,9 @@ namespace M3.Cord.Pages
 
         private void cmdDIPCondition_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var page = M3CordApp.Pages.DIPConditionView;
             page.Setup(mc, pcCard);
             PageContentManager.Instance.Current = page;
-            */
         }
 
         private void cmdS8ConditionSummary_Click(object sender, RoutedEventArgs e)
