@@ -53,17 +53,14 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoDIPOperationMenu(mc);
+            var page = M3CordApp.Pages.DIPOperationView;
+            page.Setup(pcCard);
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdReset_Click(object sender, RoutedEventArgs e)
         {
             ResetStd();
-        }
-
-        private void cmdAdd_Click(object sender, RoutedEventArgs e)
-        {
-            Add();
         }
 
         private void cmdDetails_Click(object sender, RoutedEventArgs e)
@@ -136,35 +133,6 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void Add()
-        {
-            if (null == pcCard)
-                return;
-            if (!pcCard.StartTime.HasValue)
-            {
-                var msgbox = M3CordApp.Windows.MessageBox;
-                msgbox.Setup("M/C is not start" + Environment.NewLine + "ยังไม่ทำการเดินเครื่อง");
-                msgbox.ShowDialog();
-                return;
-            }
-
-            var dt = pcCard.StartTime.Value;
-            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
-
-            var win = M3CordApp.Windows.DIPTimeTableEditor;
-            var item = DIPTimeTable.Create(pcCard.ProductCode);
-            item.DIPPCId = pcCard.DIPPCId;
-            item.ProductCode = pcCard.ProductCode;
-            item.RowType = 1;
-            item.LotNo = pcCard.DIPLotNo;
-
-            win.Setup(startDate, item);
-            if (win.ShowDialog() == true)
-            {
-                RefreshGrid();
-            }
-        }
-
         private void Edit(DIPTimeTable item)
         {
             if (null == item) return;
@@ -172,7 +140,7 @@ namespace M3.Cord.Pages
             var dt = pcCard.StartTime.Value;
             var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
 
-            var win = M3CordApp.Windows.DIPTimeTableEditor;
+            var win = M3CordApp.Windows.DIPTimeTableEditorView;
             win.Setup(startDate, item);
             if (win.ShowDialog() == true)
             {
@@ -220,7 +188,7 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup(DIPMC selecteedMC)
+        public void Setup(DIPMC selecteedMC, DIPPCCard PCCard)
         {
             var today = DateTime.Now;
             if (today.Hour <= 7) today = today.AddDays(-1);
@@ -232,7 +200,7 @@ namespace M3.Cord.Pages
                 mc = DIPMC.Gets("S-8", "S-8-" + mcNo).Value().FirstOrDefault();
 
                 mc = selecteedMC;
-                pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
+                pcCard = PCCard;
                 if (null != pcCard)
                 {
                     CheckStd();

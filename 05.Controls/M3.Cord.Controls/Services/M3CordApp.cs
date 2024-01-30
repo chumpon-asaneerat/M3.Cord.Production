@@ -879,6 +879,12 @@ namespace M3.Cord
                 get { return GetWindow<S8BeforeEditorViewWindow>(); }
             }
 
+            /// <summary>Gets DIP TimeTable Editor Editor View Window.</summary>
+            public static DIPTimeTableEditorViewWindow DIPTimeTableEditorView
+            {
+                get { return GetWindow<DIPTimeTableEditorViewWindow>(); }
+            }
+
             #endregion
         }
     }
