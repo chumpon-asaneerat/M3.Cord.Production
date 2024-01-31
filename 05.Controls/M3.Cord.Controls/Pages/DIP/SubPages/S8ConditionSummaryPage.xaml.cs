@@ -138,6 +138,16 @@ namespace M3.Cord.Pages
         {
             if (null == pcCard)
                 return;
+
+            if (!pcCard.StartTime.HasValue)
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("M/C is not start" + Environment.NewLine + "ยังไม่ทำการเดินเครื่อง");
+                msgbox.ShowDialog();
+
+                return;
+            }
+
             var dt = pcCard.StartTime.Value;
             var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
 
