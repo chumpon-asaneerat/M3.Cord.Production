@@ -532,6 +532,7 @@
     <Compile Include="_Templates\01.FirstTwist\Twist1RawMaterialCheckSheetDocument.xaml.cs">
       <DependentUpon>Twist1RawMaterialCheckSheetDocument.xaml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\CordSamplingDetails.rdlc" />
     <EmbeddedResource Include="Reports\DIPPalletSlipA6.rdlc" />
     <EmbeddedResource Include="Reports\DIPTimeTable.rdlc" />
     <EmbeddedResource Include="Reports\FirstTwistPCCard.rdlc" />
@@ -547,9 +548,13 @@
     <EmbeddedResource Include="Reports\S1Condition.rdlc" />
     <EmbeddedResource Include="Reports\S5Condition.rdlc" />
     <EmbeddedResource Include="Reports\SolutionSlipA6.rdlc" />
+    <None Include="Properties\DataSources\M3.Cord.Models.CordSamplingDetails.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.DIPPalletSlip.datasource" />
+    <None Include="Properties\DataSources\M3.Cord.Models.DIPTimeTable.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.LabelCHS9.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.PalletSetting.datasource" />
+    <None Include="Properties\DataSources\M3.Cord.Models.PCTwist1Operation.datasource" />
+    <None Include="Properties\DataSources\M3.Cord.Models.RawMaterialSummary.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.S1Condition.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.S4x1Condition.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.S4x2Condition.datasource" />
