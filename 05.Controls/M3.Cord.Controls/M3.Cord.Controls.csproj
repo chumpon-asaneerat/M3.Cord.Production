@@ -342,6 +342,9 @@
     <Compile Include="Pages\PrintPreview\DIP\DIPTimeTablePreviewPage.xaml.cs">
       <DependentUpon>DIPTimeTablePreviewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PrintPreview\FirstTwist\FirstTwistRawMaterialPreviewPage.xaml.cs">
+      <DependentUpon>FirstTwistRawMaterialPreviewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PrintPreview\FirstTwist\FirstTwistPCCardPreviewPage.xaml.cs">
       <DependentUpon>FirstTwistPCCardPreviewPage.xaml</DependentUpon>
     </Compile>
@@ -532,6 +535,7 @@
     <EmbeddedResource Include="Reports\DIPPalletSlipA6.rdlc" />
     <EmbeddedResource Include="Reports\DIPTimeTable.rdlc" />
     <EmbeddedResource Include="Reports\FirstTwistPCCard.rdlc" />
+    <EmbeddedResource Include="Reports\FirstTwistRawMaterial.rdlc" />
     <EmbeddedResource Include="Reports\LabelCHS9.rdlc" />
     <EmbeddedResource Include="Reports\PalletSetting.rdlc" />
     <EmbeddedResource Include="Reports\DIPPalletSlipA5.rdlc" />
@@ -1009,6 +1013,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PrintPreview\DIP\DIPTimeTablePreviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PrintPreview\FirstTwist\FirstTwistRawMaterialPreviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

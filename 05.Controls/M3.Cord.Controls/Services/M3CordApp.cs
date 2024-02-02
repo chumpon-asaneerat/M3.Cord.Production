@@ -645,6 +645,11 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.FirstTwistPCCardPreviewPage>(); }
             }
 
+            public static Cord.Pages.FirstTwistRawMaterialPreviewPage FirstTwistRawMaterialPreview
+            {
+                get { return GetPage<Cord.Pages.FirstTwistRawMaterialPreviewPage>(); }
+            }
+
             #endregion
 
             #region DIP Other Preview

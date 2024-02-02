@@ -112,8 +112,19 @@ namespace M3.Cord.Models
             set { }
         }
 
-
         public SolidColorBrush TextColor { get { return BlackColor; } set { } }
+
+        // below properties from pc card
+        public string MCCode { get; set; }
+        public string ProductLotNo { get; set; }
+        public string CustomerName { get; set; }
+        public string ProductName { get; set; }
+        //public string ItemYarn { get; set; }
+        public string CordStructure { get; set; }
+        public string TreatRoute { get; set; }
+        public string TwistSpec { get; set; }
+        public DateTime? IssueDate { get; set; }
+        public string IssueBy { get; set; }
 
         #endregion
 
