@@ -80,6 +80,11 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void cmdPrint_Click(object sender, RoutedEventArgs e)
+        {
+            Print();
+        }
+
         #endregion
 
         #region Private Methods
@@ -90,6 +95,17 @@ namespace M3.Cord.Pages
             // Binding
             paRawMat.DataContext = pcCard;
             cmdLoadYarn.IsEnabled = (null != pcCard);
+        }
+
+        private void Print()
+        {
+            if (null == pcCard)
+                return;
+            var items = RawMaterialSummary.Gets(pcCard.PCTwist1Id.Value).Value();
+            // Show Preview Page
+            var page = M3CordApp.Pages.FirstTwistRawMaterialPreview;
+            page.Setup(pcCard, items);
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion

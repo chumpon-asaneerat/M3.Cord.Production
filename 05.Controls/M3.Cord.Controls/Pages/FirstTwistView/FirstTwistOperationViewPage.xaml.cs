@@ -51,6 +51,15 @@ namespace M3.Cord.Pages
 
         private void tabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            RefreshGrids();
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public void RefreshGrids()
+        {
             switch (tabs.SelectedIndex)
             {
                 case 0:
@@ -77,10 +86,6 @@ namespace M3.Cord.Pages
                     break;
             }
         }
-
-        #endregion
-
-        #region Public Methods
 
         public void Setup(PCTwist1 pccard)
         {

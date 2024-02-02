@@ -106,6 +106,7 @@ namespace M3.Cord.Pages
             // Back to Operation View page
             var page = M3CordApp.Pages.FirstTwistOperationView;
             page.Setup(_pccard);
+            page.RefreshGrids();
             PageContentManager.Instance.Current = page;
         }
 
