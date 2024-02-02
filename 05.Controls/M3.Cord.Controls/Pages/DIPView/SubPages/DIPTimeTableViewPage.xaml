@@ -166,6 +166,16 @@
                                             Text="Back"
                                             Click="cmdBack_Click" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <!--  PRINT  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdPrint"
+                                            Margin="5,0,0,0"
+                                            IconType="Print"
+                                            Text="Print"
+                                            Click="cmdPrint_Click"/>
+                </StackPanel>
                 <Grid />
             </DockPanel>
             <DockPanel x:Name="paCondition"

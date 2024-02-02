@@ -637,6 +637,25 @@ namespace M3.Cord
             }
 
             #endregion
+
+            #region First Twist Other Preview
+
+            public static Cord.Pages.FirstTwistPCCardPreviewPage FirstTwistPCCardPreview
+            {
+                get { return GetPage<Cord.Pages.FirstTwistPCCardPreviewPage>(); }
+            }
+
+            #endregion
+
+            #region DIP Other Preview
+
+            public static Cord.Pages.DIPTimeTablePreviewPage DIPTimeTablePreview
+            {
+                get { return GetPage<Cord.Pages.DIPTimeTablePreviewPage>(); }
+            }
+
+
+            #endregion
         }
 
         /// <summary>

@@ -57,6 +57,11 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdPrint_Click(object sender, RoutedEventArgs e)
+        {
+            Print();
+        }
+
         #endregion
 
         #region ListView Handlers
@@ -75,6 +80,17 @@ namespace M3.Cord.Pages
             paPCCard.DataContext = null;
             // Binding
             paPCCard.DataContext = pcCard;
+        }
+
+        private void Print()
+        {
+            if (null == pcCard)
+                return;
+            var items = PCTwist1Operation.Gets(pcCard.PCTwist1Id.Value).Value();
+            // Show Preview Page
+            var page = M3CordApp.Pages.FirstTwistPCCardPreview;
+            page.Setup(pcCard, items);
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion

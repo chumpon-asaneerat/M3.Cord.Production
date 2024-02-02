@@ -25,6 +25,16 @@
                                         Text="Back"
                                         Click="cmdBack_Click" />
             </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Left"
+                        VerticalAlignment="Center">
+                <!--  HOME  -->
+                <ctrl:FontAwesomeButton x:Name="cmdPrint"
+                                        Margin="5,0,0,0"
+                                        IconType="Preview"
+                                        Text="Print"
+                                        Click="cmdPrint_Click" />
+            </StackPanel>
             <Grid />
         </DockPanel>
         <DockPanel x:Name="paPCCard" LastChildFill="True">

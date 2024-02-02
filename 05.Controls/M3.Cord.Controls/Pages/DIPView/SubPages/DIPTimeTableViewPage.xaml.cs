@@ -74,6 +74,12 @@ namespace M3.Cord.Pages
 
         private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void cmdPrint_Click(object sender, RoutedEventArgs e)
+        {
+            Print();
         }
 
         #endregion
@@ -146,6 +152,20 @@ namespace M3.Cord.Pages
             {
                 RefreshGrid();
             }
+        }
+
+        private void Print()
+        {
+            if (!dtDate.SelectedDate.HasValue)
+                return;
+            var items = DIPTimeTable.Gets(dtDate.SelectedDate.Value.Date).Value();
+            if (null == items)
+                return;
+
+            // Show Preview
+            var page = M3CordApp.Pages.DIPTimeTablePreview;
+            page.Setup(pcCard, items);
+            PageContentManager.Instance.Current = page;
         }
 
         private void RefreshGrid()
