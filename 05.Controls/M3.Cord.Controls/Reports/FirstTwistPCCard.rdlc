@@ -71,6 +71,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -104,6 +107,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -137,6 +143,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -293,7 +302,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Remark</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -309,6 +318,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -347,6 +359,12 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -380,6 +398,12 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -413,6 +437,12 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -446,6 +476,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -479,6 +512,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -512,6 +548,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -545,6 +584,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -578,6 +620,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -611,6 +656,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -644,6 +692,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -677,6 +728,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -694,7 +748,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Remark</Value>
+                              <Value>หมายเหตุ</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -710,6 +764,12 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -748,6 +808,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -781,6 +844,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -814,6 +880,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -847,6 +916,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -880,6 +952,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -913,6 +988,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -946,6 +1024,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -979,6 +1060,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1012,6 +1096,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1045,6 +1132,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1078,6 +1168,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1095,7 +1188,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>หมายเหตุ</Value>
+                              <Value />
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -1111,6 +1204,9 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1338,7 +1434,7 @@
                               <Value>=Fields!StartTime.Value</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
-                                <Format>dd/MM/yyyy</Format>
+                                <Format>HH:mm</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1372,7 +1468,7 @@
                               <Value>=Fields!EndTime.Value</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
-                                <Format>dd/MM/yyyy</Format>
+                                <Format>HH:mm</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2005,7 +2101,6 @@
               </Style>
             </Textbox>
             <Line Name="Line7">
-              <Top>0cm</Top>
               <Left>4.72927cm</Left>
               <Height>2.8248cm</Height>
               <Width>0cm</Width>
@@ -2982,7 +3077,6 @@
               </Style>
             </Textbox>
             <Line Name="Line5">
-              <Top>0cm</Top>
               <Left>2.3142cm</Left>
               <Height>1.26675cm</Height>
               <Width>0cm</Width>
