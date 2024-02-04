@@ -46,7 +46,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private DIPMC mc = null;
+        //private DIPMC mc = null;
         private PCTwist1 pcCard = null;
         private List<CordSamplingDetails> _items = null;
 
