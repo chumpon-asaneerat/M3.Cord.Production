@@ -46,7 +46,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        private DIPMC mc = null;
+        //private DIPMC mc = null;
         private DIPPCCard pcCard = null;
         private List<DIPTimeTable> _items = null;
 

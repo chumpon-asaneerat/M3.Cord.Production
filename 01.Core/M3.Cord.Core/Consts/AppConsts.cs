@@ -23,8 +23,8 @@ namespace M3.Cord
                     // common
                     public static string Version = AppConsts.Version;
                     public static string Minor = AppConsts.Minor;
-                    public static string Build = "1251";
-                    public static DateTime LastUpdate = new DateTime(2024, 01, 31, 14, 00, 00);
+                    public static string Build = "1265";
+                    public static DateTime LastUpdate = new DateTime(2024, 02, 05, 02, 30, 00);
                 }
 
                 public static class QA
