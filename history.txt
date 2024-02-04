@@ -1,8 +1,40 @@
+M3 Cord Production System #950
+- 
+
+M3 Cord Production System #949
+- 
+
+M3 Cord Production System #948
+- 
+
+M3 Cord Production System #947
+- 
+
+M3 Cord Production System #946
+- 
+
+M3 Cord Production System #945
+- 
+
+M3 Cord Production System #944
+- 
+
+M3 Cord Production System #943
+- 
+
+M3 Cord Production System #942
+- 
+
+M3 Cord Production System #941
+- 
+
 M3 Cord Production System #940
 - 
 
+[commited]
 M3 Cord Production System #939
-- 
+- M3.Cord.Production.App re-implements #155
+  - Implements Excel exports #7
 
 [commited]
 M3 Cord Production System #938

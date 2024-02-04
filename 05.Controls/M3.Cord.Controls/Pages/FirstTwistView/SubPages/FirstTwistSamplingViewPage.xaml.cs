@@ -65,6 +65,11 @@ namespace M3.Cord.Pages
             Save();
         }
 
+        private void cmdPrint_Click(object sender, RoutedEventArgs e)
+        {
+            Print();
+        }
+
         #endregion
 
         #region Private Methods
@@ -75,6 +80,17 @@ namespace M3.Cord.Pages
             {
                 s1.Save();
             }
+        }
+
+        private void Print()
+        {
+            if (null == pcCard)
+                return;
+            var items = CordSamplingDetails.Gets(pcCard.MCCode, pcCard.ProductLotNo, pcCard.ProductCode).Value();
+            // Show Preview Page
+            var page = M3CordApp.Pages.CordSamplingPreview;
+            page.Setup(pcCard, items);
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion

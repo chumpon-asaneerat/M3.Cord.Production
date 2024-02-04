@@ -650,6 +650,11 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.FirstTwistRawMaterialPreviewPage>(); }
             }
 
+            public static Cord.Pages.CordSamplingPreviewPage CordSamplingPreview
+            {
+                get { return GetPage<Cord.Pages.CordSamplingPreviewPage>(); }
+            }
+
             #endregion
 
             #region DIP Other Preview

@@ -139,7 +139,7 @@
             <StackPanel Orientation="Horizontal"
                         DockPanel.Dock="Left"
                         VerticalAlignment="Center">
-                <!--  HOME  -->
+                <!--  PRINT  -->
                 <ctrl:FontAwesomeButton x:Name="cmdPrint"
                                         Margin="5,0,0,0"
                                         IconType="Preview"

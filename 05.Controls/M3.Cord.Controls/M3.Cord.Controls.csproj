@@ -355,6 +355,9 @@
     <Compile Include="Pages\Menu\QAMainMenuPage.xaml.cs">
       <DependentUpon>QAMainMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PrintPreview\CordSamplings\CordSamplingPreviewPage.xaml.cs">
+      <DependentUpon>CordSamplingPreviewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PrintPreview\DIP\DIPTimeTablePreviewPage.xaml.cs">
       <DependentUpon>DIPTimeTablePreviewPage.xaml</DependentUpon>
     </Compile>
@@ -1041,6 +1044,10 @@
     <Page Include="Pages\Menu\QAMainMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PrintPreview\CordSamplings\CordSamplingPreviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\PrintPreview\DIP\DIPTimeTablePreviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
