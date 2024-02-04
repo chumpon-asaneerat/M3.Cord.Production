@@ -315,6 +315,11 @@
             <DockPanel LastChildFill="True"
                        DockPanel.Dock="Bottom"
                        Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdExport"
+                                        DockPanel.Dock="Left"
+                                        IconType="Export"
+                                        Text="Export"
+                                        Click="cmdExport_Click" />
                 <ctrl:FontAwesomeButton x:Name="cmdOk"
                                         DockPanel.Dock="Right"
                                         IconType="Ok"

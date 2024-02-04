@@ -18,6 +18,7 @@ using NLib.Models;
 using M3.Cord.Models;
 using NLib;
 using NLib.Data.Design;
+using M3.Cord.Services.Excels;
 
 #endregion
 
@@ -56,6 +57,11 @@ namespace M3.Cord.Windows
             DialogResult = true;
         }
 
+        private void cmdExport_Click(object sender, RoutedEventArgs e)
+        {
+            Export();
+        }
+
         #endregion
 
         #region Private Methods
@@ -68,6 +74,11 @@ namespace M3.Cord.Windows
                 _sheet.LoadItems();
             }
             this.DataContext = _sheet;
+        }
+
+        private void Export()
+        {
+            Twist1CheckSheetExport.Export(_pcCard, _sheet);
         }
 
         private void RefreshGrid()

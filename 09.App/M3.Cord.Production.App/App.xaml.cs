@@ -5,6 +5,7 @@ using System.Windows;
 
 using NLib;
 using NLib.Logs;
+using OfficeOpenXml;
 
 #endregion
 
@@ -22,6 +23,9 @@ namespace M3.Cord
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
+            // EPPlus License
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             #region Check Current Domain/Context
 

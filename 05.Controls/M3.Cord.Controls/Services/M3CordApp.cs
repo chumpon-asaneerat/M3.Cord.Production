@@ -754,6 +754,31 @@ namespace M3.Cord
 
             #endregion
 
+            #region Export Message
+
+            public static void ExportSuccess()
+            {
+                var msg = Windows.MessageBox;
+                msg.Setup("ส่งออกไฟล์สำเร็จ");
+                msg.ShowDialog();
+            }
+
+            public static void ExportFailed()
+            {
+                var msg = Windows.MessageBox;
+                msg.Setup("ส่งออกไฟล์ไม่สำเร็จ");
+                msg.ShowDialog();
+            }
+
+            public static void ExportFailed(string err)
+            {
+                var msg = Windows.MessageBox;
+                msg.Setup(err);
+                msg.ShowDialog();
+            }
+
+            #endregion
+
             #region G4
 
             /// <summary>Gets G4 Receive Yarn Window.</summary>

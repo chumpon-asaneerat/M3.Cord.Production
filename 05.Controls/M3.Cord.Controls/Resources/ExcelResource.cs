@@ -8,9 +8,9 @@ namespace M3.Cord
 {
     internal class ExcelResource
     {
-        public const string S1 = "M3.Cord.Resources.Excels.FM4006_Sx1.xls";
-        public const string S4x2 = "M3.Cord.Resources.Excels.FM4006_Sx4x1.xls";
-        public const string S4x1 = "M3.Cord.Resources.Excels.FM4006_Sx4x2.xls";
+        public const string S1 = "M3.Cord.Resources.Excels.FM4006_Sx1.xlsx";
+        public const string S4x1 = "M3.Cord.Resources.Excels.FM4006_Sx4x1.xlsx";
+        public const string S4x2 = "M3.Cord.Resources.Excels.FM4006_Sx4x2.xlsx";
     }
 
     public sealed class ExcelExportUtils
@@ -34,13 +34,13 @@ namespace M3.Cord
                     ResourceName = resourceName,
                     CallerType = typeof(ExcelResource),
                     TargetPath = Path.GetDirectoryName(FullFileName),
-                    TargetFileName = Path.GetFileName(FullFileName) + ".xls"
+                    TargetFileName = Path.GetFileName(FullFileName)
                 };
 
                 resAccess.CreateFile(option);
             }
 
-            return File.Exists(FullFileName + ".xls");
+            return File.Exists(FullFileName);
         }
 
         private static void MoveFile(string sourceFileName, string targetFileName)
@@ -108,7 +108,7 @@ namespace M3.Cord
         public static bool CreateS1File(string FullFileName, bool AutoOverwrite)
         {
             return CreateFileFromResource(ExcelResource.S1,
-                @"\FM4006_Sx1.xls", FullFileName, AutoOverwrite);
+                @"\FM4006_Sx1.xlsx", FullFileName, AutoOverwrite);
         }
         /// <summary>
         /// Create S4x1 File
@@ -119,7 +119,7 @@ namespace M3.Cord
         public static bool CreateS4x1File(string FullFileName, bool AutoOverwrite)
         {
             return CreateFileFromResource(ExcelResource.S4x1,
-                @"\FM4006_Sx1.xls", FullFileName, AutoOverwrite);
+                @"\FM4006_Sx1.xlsx", FullFileName, AutoOverwrite);
         }
         /// <summary>
         /// Create S4x2 File
@@ -130,7 +130,7 @@ namespace M3.Cord
         public static bool CreateS4x2File(string FullFileName, bool AutoOverwrite)
         {
             return CreateFileFromResource(ExcelResource.S4x2,
-                @"\FM4006_Sx2.xls", FullFileName, AutoOverwrite);
+                @"\FM4006_Sx2.xlsx", FullFileName, AutoOverwrite);
         }
     }
 }

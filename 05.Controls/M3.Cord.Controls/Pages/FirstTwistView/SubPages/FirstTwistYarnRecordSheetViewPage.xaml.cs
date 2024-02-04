@@ -64,25 +64,6 @@ namespace M3.Cord.Pages
             //ShowCheckSheetDialog(null);
         }
 
-        private void cmdExport_Click(object sender, RoutedEventArgs e)
-        {
-            string outputFile = ExcelModel.Dialogs.SaveDialog();
-            if (string.IsNullOrEmpty(outputFile))
-                return;
-            if (ExcelExportUtils.CreateS1File(outputFile, true))
-            {
-                var msg = M3CordApp.Windows.MessageBox;
-                msg.Setup("ส่งออกไฟล์สำเร็จ");
-                msg.ShowDialog();
-            }
-            else
-            {
-                var msg = M3CordApp.Windows.MessageBox;
-                msg.Setup("ส่งออกไฟล์ไม่สำเร็จ");
-                msg.ShowDialog();
-            }
-        }
-
         private void cmdDetail_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
