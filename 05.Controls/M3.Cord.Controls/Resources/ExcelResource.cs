@@ -27,12 +27,12 @@ namespace M3.Cord
                 File.Delete(FullFileName);
             }
 
-            using (WPFResourceAccess resAccess = new WPFResourceAccess())
+            using (WindowFormsResourceAccess resAccess = new WindowFormsResourceAccess())
             {
                 ResourceStreamOptions option = new ResourceStreamOptions()
                 {
                     ResourceName = resourceName,
-                    CallerType = typeof(MsDocumentUtils),
+                    CallerType = typeof(ExcelResource),
                     TargetPath = Path.GetDirectoryName(FullFileName),
                     TargetFileName = Path.GetFileName(FullFileName) + ".xls"
                 };

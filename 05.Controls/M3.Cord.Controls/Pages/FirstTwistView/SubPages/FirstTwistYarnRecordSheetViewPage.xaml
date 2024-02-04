@@ -32,8 +32,13 @@
                                         Margin="5,0,0,0"
                                         IconType="Add"
                                         Text="New Sheet"
-                                        Visibility="Hidden"
+                                        Visibility="Collapsed"
                                         Click="cmdNewSheet_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdExport"
+                                        Margin="5,0,0,0"
+                                        IconType="Export"
+                                        Text="Export"
+                                        Click="cmdExport_Click" />
             </StackPanel>
             <Grid />
         </DockPanel>
