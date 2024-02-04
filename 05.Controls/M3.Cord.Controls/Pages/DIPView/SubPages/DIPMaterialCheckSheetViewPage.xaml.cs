@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using M3.Cord.Services.Excels;
 
 #endregion
 
@@ -57,6 +58,11 @@ namespace M3.Cord.Pages
             var page = M3CordApp.Pages.DIPOperationView;
             page.Setup(pcCard);
             PageContentManager.Instance.Current = page;
+        }
+
+        private void cmdExport_Click(object sender, RoutedEventArgs e)
+        {
+            Export();
         }
 
         #endregion
@@ -112,6 +118,11 @@ namespace M3.Cord.Pages
             }
 
             grid.ItemsSource = items;
+        }
+
+        private void Export()
+        {
+            S7YarnSettingExport.Export(pcCard, sheet, items);
         }
 
         #endregion

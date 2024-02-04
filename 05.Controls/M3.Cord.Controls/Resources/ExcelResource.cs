@@ -11,6 +11,9 @@ namespace M3.Cord
         public const string S1 = "M3.Cord.Resources.Excels.FM4006_Sx1.xlsx";
         public const string S4x1 = "M3.Cord.Resources.Excels.FM4006_Sx4x1.xlsx";
         public const string S4x2 = "M3.Cord.Resources.Excels.FM4006_Sx4x2.xlsx";
+
+        public const string S7YarnSetting = "M3.Cord.Resources.Excels.FM4011Sx7_YarnSetting.xlsx";
+        public const string S9Appearance = "M3.Cord.Resources.Excels.FM4011Sx9_APP.xlsx";
     }
 
     public sealed class ExcelExportUtils
@@ -99,6 +102,8 @@ namespace M3.Cord
 
         #endregion
 
+        #region S1, S4x1, S4x2
+
         /// <summary>
         /// Create S1 File
         /// </summary>
@@ -132,5 +137,39 @@ namespace M3.Cord
             return CreateFileFromResource(ExcelResource.S4x2,
                 @"\FM4006_Sx2.xlsx", FullFileName, AutoOverwrite);
         }
+
+        #endregion
+
+        #region S7 Yarn Setting
+
+        /// <summary>
+        /// Create S7 Yarn Setting File
+        /// </summary>
+        /// <param name="FullFileName">FileName</param>
+        /// <param name="AutoOverwrite">Force Overwrite</param>
+        /// <returns>true if file is created</returns>
+        public static bool CreateS7YarnSettingFile(string FullFileName, bool AutoOverwrite)
+        {
+            return CreateFileFromResource(ExcelResource.S7YarnSetting,
+                @"\FM4011Sx7_YarnSetting.xlsx", FullFileName, AutoOverwrite);
+        }
+
+        #endregion
+
+        #region S9 Appearance
+
+        /// <summary>
+        /// Create S9 Apperance File
+        /// </summary>
+        /// <param name="FullFileName">FileName</param>
+        /// <param name="AutoOverwrite">Force Overwrite</param>
+        /// <returns>true if file is created</returns>
+        public static bool CreateS9AppearanceFile(string FullFileName, bool AutoOverwrite)
+        {
+            return CreateFileFromResource(ExcelResource.S9Appearance,
+                @"\FM4011Sx9_APP.xlsx", FullFileName, AutoOverwrite);
+        }
+
+        #endregion
     }
 }

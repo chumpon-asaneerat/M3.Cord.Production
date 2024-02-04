@@ -472,6 +472,8 @@
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resources\ExcelResource.cs" />
+    <Compile Include="Services\Excels\S7YarnSettingExport.cs" />
+    <Compile Include="Services\Excels\S9Export.cs" />
     <Compile Include="Services\Excels\Twist1CheckSheetExport.cs" />
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
     <Compile Include="Windows\DIPView\DIPTimeTableEditorViewWindow.xaml.cs">
@@ -670,6 +672,8 @@
     <EmbeddedResource Include="Resources\Excels\FM4006_Sx1.xlsx" />
     <EmbeddedResource Include="Resources\Excels\FM4006_Sx4x1.xlsx" />
     <EmbeddedResource Include="Resources\Excels\FM4006_Sx4x2.xlsx" />
+    <EmbeddedResource Include="Resources\Excels\FM4011Sx7_YarnSetting.xlsx" />
+    <EmbeddedResource Include="Resources\Excels\FM4011Sx9_APP.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\00.NLib\NLib.Reports\NLib.Reports.csproj">
