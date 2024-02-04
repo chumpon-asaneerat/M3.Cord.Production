@@ -45,9 +45,74 @@ namespace M3.Cord.Services.Excels
                     {
                         #region Header
 
+                        string hdr = "Cord  production  appearance  check  sheet ( ใบตรวจเช็คเส้นด้ายของ S-9 ) ";
+                        hdr += " Item Code : " + pcCard.ProductCode;
+                        hdr += " Lot :  " + pcCard.DIPLotNo;
+                        ws.Cells["A2"].Value = hdr;
+                        // Date
+                        string sDate = sheet.CheckDate.ToString("dd/MM/yyyy");
+                        ws.Cells["AS2"].Value = " Date : " + sDate;
+
                         #endregion
 
                         #region Items
+
+                        int iRow = -1;
+                        int iCol = -1;
+                        foreach (var item in items)
+                        {
+                            if (item.SPNo <= 38)
+                            {
+                                iRow = 6 + item.SPNo;
+                                iCol = 1;
+                            }
+                            else if (item.SPNo > 38 && item.SPNo <= 76)
+                            {
+                                iRow = 6 + item.SPNo - 38;
+                                iCol = 15;
+                            }
+                            else if (item.SPNo > 76 && item.SPNo <= 114)
+                            {
+                                iRow = 6 + item.SPNo - 76;
+                                iCol = 29;
+                            }
+                            else if (item.SPNo > 114 && item.SPNo <= 150)
+                            {
+                                iRow = 6 + item.SPNo - 114;
+                                iCol = 43;
+                            }
+                            else
+                            {
+                                iRow = -1;
+                                iCol = -1;
+                            }
+
+                            if (iRow != -1 && iCol != -1)
+                            {
+                                if (item.CheckGood)
+                                    ws.Cells[iRow, iCol + 1].Value = "P";
+                                else ws.Cells[iRow, iCol + 2].Value = "O";
+
+                                if (item.CheckBad)
+                                    ws.Cells[iRow, iCol + 3].Value = "P";
+                                else ws.Cells[iRow, iCol + 4].Value = "O";
+
+                                ws.Cells[iRow, iCol + 5].Value = (item.Check2Color) ? "P" : "";
+                                ws.Cells[iRow, iCol + 6].Value = (item.CheckKeiba) ? "P" : "";
+                                ws.Cells[iRow, iCol + 7].Value = (item.CheckWeight) ? "P" : "";
+
+                                if (item.CheckFrontTwist)
+                                    ws.Cells[iRow, iCol + 8].Value = "P";
+                                else ws.Cells[iRow, iCol + 9].Value = "O";
+
+                                if (item.CheckBackTwist)
+                                    ws.Cells[iRow, iCol + 10].Value = "P";
+                                else ws.Cells[iRow, iCol + 11].Value = "O";
+
+                                ws.Cells[iRow, iCol + 12].Value = (item.CheckSnarl) ? "P" : "";
+                                ws.Cells[iRow, iCol + 13].Value = (item.CheckTube) ? "P" : "";
+                            }
+                        }
 
                         #endregion
                     }
