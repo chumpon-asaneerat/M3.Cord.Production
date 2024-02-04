@@ -63,18 +63,18 @@ namespace M3.Cord.Services.Excels
                         #region Header
 
                         string hdr = "ใบบันทึกสภาวะการตีเกลียว (Actual Yarn Twist Record Sheet ) ";
-                        hdr += "Machine :  " + pcCard.MCCode;
-                        hdr += "Item : " + pcCard.ProductCode;
-                        hdr += "Lot :  " + pcCard.ProductLotNo;
+                        hdr += " Machine :  " + pcCard.MCCode;
+                        hdr += " Item : " + pcCard.ProductCode;
+                        hdr += " Lot :  " + pcCard.ProductLotNo;
                         ws.Cells["A1"].Value = hdr;
                         // Doff No
-                        ws.Cells["AV1"].Value = "Doff No : " + sheet.DoffNo.ToString();
+                        ws.Cells["AV1"].Value = " Doff No : " + sheet.DoffNo.ToString();
                         // Shift
-                        ws.Cells["BC1"].Value = "Shift : " + sheet.ShiftName;
+                        ws.Cells["BC1"].Value = " Shift : " + sheet.ShiftName;
                         // Date
                         string sDate = sheet.ConditionDate.HasValue ? 
                             sheet.ConditionDate.Value.ToString("dd/MM/yyyy") : "";
-                        ws.Cells["BG1"].Value = "Date : " + sDate;
+                        ws.Cells["BG1"].Value = " Date : " + sDate;
 
                         #endregion
 
@@ -171,18 +171,18 @@ namespace M3.Cord.Services.Excels
                         #region Header
 
                         string hdr = "ใบบันทึกสภาวะการตีเกลียว (Actual Yarn Twist Record Sheet ) ";
-                        hdr += "Machine :  " + pcCard.MCCode;
-                        hdr += "Item : " + pcCard.ProductCode;
-                        hdr += "Lot :  " + pcCard.ProductLotNo;
-                        ws.Cells["A1"].Value = hdr;
+                        hdr += " Machine :  " + pcCard.MCCode;
+                        hdr += " Item : " + pcCard.ProductCode;
+                        hdr += " Lot :  " + pcCard.ProductLotNo;
+                        ws.Cells["B1"].Value = hdr;
                         // Doff No
-                        ws.Cells["AV1"].Value = "Doff No : " + sheet.DoffNo.ToString();
+                        ws.Cells["AK1"].Value = " Doff No : " + sheet.DoffNo.ToString();
                         // Shift
-                        ws.Cells["BC1"].Value = "Shift : " + sheet.ShiftName;
+                        ws.Cells["AO1"].Value = " Shift : " + sheet.ShiftName;
                         // Date
                         string sDate = sheet.ConditionDate.HasValue ?
                             sheet.ConditionDate.Value.ToString("dd/MM/yyyy") : "";
-                        ws.Cells["BG1"].Value = "Date : " + sDate;
+                        ws.Cells["AR1"].Value = " Date : " + sDate;
 
                         #endregion
 
@@ -195,17 +195,17 @@ namespace M3.Cord.Services.Excels
                             if (item.SPNo <= 25)
                             {
                                 iRow = 5 + item.SPNo;
-                                iCol = 1;
+                                iCol = 2;
                             }
                             else if (item.SPNo > 25 && item.SPNo <= 50)
                             {
                                 iRow = 5 + item.SPNo - 25;
-                                iCol = 18;
+                                iCol = 19;
                             }
                             else if (item.SPNo > 50 && item.SPNo <= 72)
                             {
                                 iRow = 5 + item.SPNo - 50;
-                                iCol = 35;
+                                iCol = 36;
                             }
                             else
                             {
@@ -274,18 +274,18 @@ namespace M3.Cord.Services.Excels
                         #region Header
 
                         string hdr = "ใบบันทึกสภาวะการตีเกลียว (Actual Yarn Twist Record Sheet ) ";
-                        hdr += "Machine :  " + pcCard.MCCode;
-                        hdr += "Item : " + pcCard.ProductCode;
-                        hdr += "Lot :  " + pcCard.ProductLotNo;
+                        hdr += " Machine :  " + pcCard.MCCode;
+                        hdr += " Item : " + pcCard.ProductCode;
+                        hdr += " Lot :  " + pcCard.ProductLotNo;
                         ws.Cells["A1"].Value = hdr;
                         // Doff No
-                        ws.Cells["AV1"].Value = "Doff No : " + sheet.DoffNo.ToString();
+                        ws.Cells["X1"].Value = " Doff No : " + sheet.DoffNo.ToString();
                         // Shift
-                        ws.Cells["BC1"].Value = "Shift : " + sheet.ShiftName;
+                        ws.Cells["AB1"].Value = " Shift : " + sheet.ShiftName;
                         // Date
                         string sDate = sheet.ConditionDate.HasValue ?
                             sheet.ConditionDate.Value.ToString("dd/MM/yyyy") : "";
-                        ws.Cells["BG1"].Value = "Date : " + sDate;
+                        ws.Cells["AE1"].Value = " Date : " + sDate;
 
                         #endregion
 
@@ -295,25 +295,15 @@ namespace M3.Cord.Services.Excels
                         int iCol = -1;
                         foreach (var item in sheet.Items)
                         {
-                            if (item.SPNo <= 25)
+                            if (item.SPNo >= 73 && item.SPNo <= 92)
                             {
-                                iRow = 5 + item.SPNo;
+                                iRow = 5 + item.SPNo - 72;
                                 iCol = 1;
                             }
-                            else if (item.SPNo > 25 && item.SPNo <= 50)
+                            else if (item.SPNo > 92 && item.SPNo <= 112)
                             {
-                                iRow = 5 + item.SPNo - 25;
+                                iRow = 5 + item.SPNo - 72 - 25;
                                 iCol = 18;
-                            }
-                            else if (item.SPNo > 50 && item.SPNo <= 75)
-                            {
-                                iRow = 5 + item.SPNo - 50;
-                                iCol = 35;
-                            }
-                            else if (item.SPNo > 75 && item.SPNo <= 100)
-                            {
-                                iRow = 5 + item.SPNo - 75;
-                                iCol = 52;
                             }
                             else
                             {

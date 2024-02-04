@@ -10,8 +10,10 @@ M3 Cord Production System #938
 M3 Cord Production System #937
 - 
 
+[commited]
 M3 Cord Production System #936
-- 
+- M3.Cord.Production.App re-implements #152
+  - Implements Excel exports #4
 
 [commited]
 M3 Cord Production System #935
