@@ -455,6 +455,7 @@
     <Compile Include="Pages\Warehouse\WarehouseYarnStockPage.xaml.cs">
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\ExcelResource.cs" />
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
     <Compile Include="Windows\DIPView\DIPTimeTableEditorViewWindow.xaml.cs">
       <DependentUpon>DIPTimeTableEditorViewWindow.xaml</DependentUpon>
@@ -649,6 +650,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EmbeddedResource Include="Resources\Excels\FM4006_Sx1.xls" />
+    <EmbeddedResource Include="Resources\Excels\FM4006_Sx4x1.xls" />
+    <EmbeddedResource Include="Resources\Excels\FM4006_Sx4x2.xls" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\00.NLib\NLib.Reports\NLib.Reports.csproj">
