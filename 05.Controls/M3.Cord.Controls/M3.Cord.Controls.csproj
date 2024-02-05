@@ -274,6 +274,9 @@
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
+    <Compile Include="Pages\Masters\CustomerManagePage.xaml.cs">
+      <DependentUpon>CustomerManagePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DIPView\DIPHistorySearchPage.xaml.cs">
       <DependentUpon>DIPHistorySearchPage.xaml</DependentUpon>
     </Compile>
@@ -375,6 +378,9 @@
     </Compile>
     <Compile Include="Pages\PrintPreview\S4x2\S4x2ConditionPreviewPage.xaml.cs">
       <DependentUpon>S4x2ConditionPreviewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Masters\ProductItemCodeManagePage.xaml.cs">
+      <DependentUpon>ProductItemCodeManagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
       <DependentUpon>CreateRecipePage.xaml</DependentUpon>
@@ -937,6 +943,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Masters\CustomerManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DIPView\DIPHistorySearchPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1072,6 +1082,10 @@
     <Page Include="Pages\PrintPreview\S4x2\S4x2ConditionPreviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Masters\ProductItemCodeManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Solution\CreateRecipePage.xaml">
       <Generator>MSBuild:Compile</Generator>

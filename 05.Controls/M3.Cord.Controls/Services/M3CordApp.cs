@@ -179,8 +179,8 @@ namespace M3.Cord
 
             #endregion
 
-            #region Master Data (comment out)
-            /*
+            #region Master Data
+
             /// <summary>Gets M3 Cord Product Item Code Manage Page.</summary>
             public static Cord.Pages.ProductItemCodeManagePage ProductItemCodeManage
             {
@@ -191,7 +191,7 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.CustomerManagePage>(); }
             }
-            */
+
             #endregion
 
             #region Condition Standard

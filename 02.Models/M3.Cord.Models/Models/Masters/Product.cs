@@ -26,7 +26,7 @@ namespace M3.Cord.Models
         public int? ProductId { get; set; }
         public string ProductCode { get; set; }
         //public string TwistProductCode { get; set; }
-        public string ProductName{ get; set; }
+        public string ProductName { get; set; }
         public string ItemYarn { get; set; }
         public string CordStructure { get; set; }
 

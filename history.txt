@@ -22,8 +22,10 @@ M3 Cord Production System #944
 M3 Cord Production System #943
 - 
 
+[commited]
 M3 Cord Production System #942
-- 
+- M3.Cord.Production.App re-implements #158
+  - Restore Customer, Product Master page.
 
 [commited]
 M3 Cord Production System #941
