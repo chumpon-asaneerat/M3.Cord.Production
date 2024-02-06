@@ -13,8 +13,10 @@ M3 Cord Production System #947
 M3 Cord Production System #946
 - 
 
+[commited]
 M3 Cord Production System #945
-- 
+- M3.Cord.Production.App re-implements #161
+  - Solution - Weight update code #1.
 
 [commited]
 M3 Cord Production System #944
