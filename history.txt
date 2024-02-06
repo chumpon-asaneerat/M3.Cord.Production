@@ -16,8 +16,10 @@ M3 Cord Production System #946
 M3 Cord Production System #945
 - 
 
+[commited]
 M3 Cord Production System #944
-- 
+- M3.Cord.Production.App re-implements #160
+  - Update Serial devices #1.
 
 [commited]
 M3 Cord Production System #943
