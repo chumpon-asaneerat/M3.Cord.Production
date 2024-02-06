@@ -425,6 +425,10 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.S8ConditionSummaryPage>(); }
             }
+            public static Cord.Pages.S8x2ConditionSummaryPage S8x2ConditionSummary
+            {
+                get { return GetPage<Cord.Pages.S8x2ConditionSummaryPage>(); }
+            }
             /// <summary>Gets Chemical Requisition Record Page.</summary>
             public static Cord.Pages.ChemicalRequisitionRecordPage ChemicalRequisitionRecord
             {
@@ -883,7 +887,11 @@ namespace M3.Cord
                 get { return GetWindow<S8ProductionConditionItemEditorWindow>(); }
             }
 
-            
+            public static S8x2ProductionConditionItemEditorWindow S8x2ProductionConditionItemEditor
+            {
+                get { return GetWindow<S8x2ProductionConditionItemEditorWindow>(); }
+            }
+
             #endregion
 
             #region DIP Slip
