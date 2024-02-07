@@ -80,6 +80,8 @@ namespace M3.Cord.Models
         public int DoffNo1 { get; set; }
         public int SPNo1 { get; set; }
 
+        public string LotNoDoffNo1 { get; set; }
+        
         #endregion
         public string BarcodeText2
         {
@@ -115,6 +117,8 @@ namespace M3.Cord.Models
         public int DoffNo2 { get; set; }
         public int SPNo2 { get; set; }
 
+        public string LotNoDoffNo2 { get; set; }
+
         #endregion
 
         #region Static Methods
@@ -136,6 +140,9 @@ namespace M3.Cord.Models
                         item.DoffNo1 = items[i].DoffNo;
                         item.ProductCode1 = items[i].ProductCode;
                         item.SPNo1 = items[i].SPNo.Value;
+
+                        item.LotNoDoffNo1 = items[i].DIPLotNo+ items[i].DoffNo.ToString();
+
                         rets.Add(item);
                     }
                     else
@@ -146,6 +153,8 @@ namespace M3.Cord.Models
                             item.DoffNo2 = items[i].DoffNo;
                             item.ProductCode2 = items[i].ProductCode;
                             item.SPNo2 = items[i].SPNo.Value;
+
+                            item.LotNoDoffNo2 = items[i].DIPLotNo + items[i].DoffNo.ToString();
                         }
                     }
                 }

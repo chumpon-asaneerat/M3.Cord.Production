@@ -342,24 +342,32 @@ namespace M3.Cord.Windows
                             if (!string.IsNullOrEmpty(result.BarcodeText1))
                             {
                                 barcode1 = "^CFA,15"
-                                    + "^FO15,25^GB50,50,3^FS"
-                                    + "^CFA,20"
-                                    + "^FWR^FO30,90 ,70,60^FD" + result.BarcodeText1 + "^FS"
+                                    + "^FO20,330^GB50,50,3^FS"
+                                    + "^CFA,25"
+                                    + "^FWR^FO200,240 ,70,60^FD" + result.ProductCode1 + "^FS"
+                                    + "^CFA,25"
+                                    + "^FWR^FO150,240 ,70,60^FD" + result.LotNoDoffNo1 + "^FS"
+                                    + "^CFA,25"
+                                    + "^FWR^FO100,240 ,70,60^FD" + "SP " + result.SPNo1.ToString() + "^FS"
                                     + "^CFA,15"
-                                    + "^FO80,15"
-                                    + "^BQ,2,6"
+                                    + "^FO25,15"
+                                    + "^BQ,2,8"
                                     + "^FDQA " + result.BarcodeText1 + "^FS";
                             }
 
                             if (!string.IsNullOrEmpty(result.BarcodeText2))
                             {
                                 barcode2 = "^CFA,15"
-                                    + "^FO270,25^GB50,50,3^FS"
-                                    + "^CFA,20"
-                                    + "^FWR^FO285,90,70,60^FD" + result.BarcodeText2 + "^FS"
+                                    + "^FO280,330^GB50,50,3^FS"
+                                    + "^CFA,25"
+                                    + "^FWR^FO450,240 ,70,60^FD" + result.ProductCode2 + "^FS"
+                                    + "^CFA,25"
+                                    + "^FWR^FO400,240 ,70,60^FD" + result.LotNoDoffNo2 + "^FS"
+                                    + "^CFA,25"
+                                    + "^FWR^FO350,240 ,70,60^FD" + "SP " + result.SPNo2.ToString() + "^FS"
                                     + "^CFA,15"
-                                    + "^FO335,15"
-                                    + "^BQ,2,6"
+                                    + "^FO280,15"
+                                    + "^BQ,2,8"
                                     + "^FDQA " + result.BarcodeText2 + "^FS";
                             }
 
