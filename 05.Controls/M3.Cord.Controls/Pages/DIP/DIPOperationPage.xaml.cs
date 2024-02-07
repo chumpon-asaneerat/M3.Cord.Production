@@ -100,6 +100,7 @@ namespace M3.Cord.Pages
         private void cmdS8ConditionSummary_Click(object sender, RoutedEventArgs e)
         {
             //var page = M3CordApp.Pages.ProductionRecord;
+            //var page = M3CordApp.Pages.S8x2ConditionSummary;
             var page = M3CordApp.Pages.S8ConditionSummary;
             page.Setup(mc);
             PageContentManager.Instance.Current = page;

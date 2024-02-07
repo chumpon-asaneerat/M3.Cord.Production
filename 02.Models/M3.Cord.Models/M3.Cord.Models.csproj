@@ -109,6 +109,9 @@
     <Compile Include="Models\DIP\DIPPCCard.cs" />
     <Compile Include="Models\DIP\S7CreelCheckSheet.cs" />
     <Compile Include="Models\DIP\S7CreelCheckSheetItem.cs" />
+    <Compile Include="Models\DIP\S8x2ProductionConditionItemStd.cs" />
+    <Compile Include="Models\DIP\S8x2ProductionConditionItem.cs" />
+    <Compile Include="Models\DIP\S8x2ProductionCondition.cs" />
     <Compile Include="Models\DIP\S8ProductionCondition.cs" />
     <Compile Include="Models\DIP\S8ProductionConditionItem.cs" />
     <Compile Include="Models\DIP\S8ProductionConditionItemStd.cs" />

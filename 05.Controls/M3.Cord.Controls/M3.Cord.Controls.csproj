@@ -121,6 +121,18 @@
     <Compile Include="Controls\Documents\DIPS8Before\DIPS8BeforeStdPage.xaml.cs">
       <DependentUpon>DIPS8BeforeStdPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2ProductionConditionFooter.xaml.cs">
+      <DependentUpon>S8x2ProductionConditionFooter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2ProductionConditionHeader.xaml.cs">
+      <DependentUpon>S8x2ProductionConditionHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2ProductionConditionItemEntryPage.xaml.cs">
+      <DependentUpon>S8x2ProductionConditionItemEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2ProductionConditionItemStdPage.xaml.cs">
+      <DependentUpon>S8x2ProductionConditionItemStdPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\DIPTimeTable\DIPTimeTableEntryPage.xaml.cs">
       <DependentUpon>DIPTimeTableEntryPage.xaml</DependentUpon>
     </Compile>
@@ -274,6 +286,9 @@
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
+    <Compile Include="Pages\DIP\SubPages\S8x2ConditionSummaryPage.xaml.cs">
+      <DependentUpon>S8x2ConditionSummaryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Masters\CustomerManagePage.xaml.cs">
       <DependentUpon>CustomerManagePage.xaml</DependentUpon>
     </Compile>
@@ -493,6 +508,9 @@
     </Compile>
     <Compile Include="Windows\DIP\DIPTimeTableEditorWindow.xaml.cs">
       <DependentUpon>DIPTimeTableEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DIP\S8x2ProductionConditionItemEditorWindow.xaml.cs">
+      <DependentUpon>S8x2ProductionConditionItemEditorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\FirstTwistView\Twist1CheckSheetEditorViewWindow.xaml.cs">
       <DependentUpon>Twist1CheckSheetEditorViewWindow.xaml</DependentUpon>
@@ -743,6 +761,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Documents\DIPS8x2Condition\S8x2ProductionConditionFooter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Documents\DIPS8x2Condition\S8x2ProductionConditionHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Documents\DIPS8x2Condition\S8x2ProductionConditionItemEntryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Documents\DIPS8x2Condition\S8x2ProductionConditionItemStdPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\Documents\DIPTimeTable\DIPTimeTableEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -942,6 +976,10 @@
     <Page Include="Pages\Ageing\AgeingOperationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DIP\SubPages\S8x2ConditionSummaryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Masters\CustomerManagePage.xaml">
       <SubType>Designer</SubType>
@@ -1278,6 +1316,10 @@
     <Page Include="Windows\DIP\DIPTimeTableEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DIP\S8x2ProductionConditionItemEditorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\FirstTwistView\Twist1CheckSheetEditorViewWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
