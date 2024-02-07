@@ -358,7 +358,7 @@ namespace M3.Cord.Windows
                             if (!string.IsNullOrEmpty(result.BarcodeText2))
                             {
                                 barcode2 = "^CFA,15"
-                                    + "^FO265,330^GB50,50,3^FS"
+                                    + "^FO270,330^GB50,50,3^FS"
                                     + "^CF0,35"
                                     + "^FWR^FO435,245 ,70,60^FD" + result.ProductCode2 + "^FS"
                                     + "^CF0,35"
