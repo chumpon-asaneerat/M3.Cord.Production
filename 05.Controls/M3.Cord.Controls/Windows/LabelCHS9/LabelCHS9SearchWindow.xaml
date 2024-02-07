@@ -31,11 +31,11 @@
                                         Text="Ok"
                                         Click="cmdPring_Click" />
                 <Label Width="5" DockPanel.Dock="Right"></Label>
-                <ctrl:FontAwesomeButton x:Name="cmdPrint"
+                <!--<ctrl:FontAwesomeButton x:Name="cmdPrint"
                                         DockPanel.Dock="Right"
                                         IconType="Print"
                                         Text="Print"
-                                        Click="cmdPrint_Click" />
+                                        Click="cmdPrint_Click" />-->
                 <Label Width="5" DockPanel.Dock="Right"></Label>
                 <ctrl:FontAwesomeButton x:Name="cmdQRCode"
                                         DockPanel.Dock="Right"

@@ -53,7 +53,7 @@ namespace M3.Cord.Models
                 if (string.IsNullOrWhiteSpace(LotNo1) || string.IsNullOrWhiteSpace(ProductCode1) ||
                     SPNo1 <= 0)
                     return null;
-                return ProductCode1 + " " + LotNo1 + DoffNo1.ToString() + " " + SPNo1.ToString();
+                return ProductCode1 + " " + LotNo1 + DoffNo1.ToString() + " SP " + SPNo1.ToString();
             }
             set { }
         }
@@ -88,7 +88,7 @@ namespace M3.Cord.Models
                 if (string.IsNullOrWhiteSpace(LotNo2) || string.IsNullOrWhiteSpace(ProductCode2) ||
                     SPNo2 <= 0)
                     return null;
-                return ProductCode2 + " " + LotNo2 + DoffNo2.ToString() + " " + SPNo2.ToString();
+                return ProductCode2 + " " + LotNo2 + DoffNo2.ToString() + " SP " + SPNo2.ToString();
             }
             set { }
         }
