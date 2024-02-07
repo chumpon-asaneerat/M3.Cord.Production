@@ -7,8 +7,11 @@ M3 Cord Production System #949
 M3 Cord Production System #948
 - 
 
+[commited]
 M3 Cord Production System #947
-- 
+- M3.Cord.Production.App re-implements #163
+  - Update new QR code from kik
+  - Update App build 1280
 
 [commited]
 M3 Cord Production System #946
