@@ -139,6 +139,7 @@
                                           Width="8"
                                           Height="8"
                                           Margin="1"
+                                          Visibility="Hidden"
                                           HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
                                           Stretch="Fill"
@@ -157,7 +158,7 @@
                     </BulletDecorator>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="{x:Null}">
-                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Hidden" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="false">
                             <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />

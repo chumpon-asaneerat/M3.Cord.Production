@@ -668,6 +668,14 @@ namespace M3.Cord
                 get { return GetPage<Cord.Pages.DIPTimeTablePreviewPage>(); }
             }
 
+            #endregion
+
+            #region DEV
+
+            public static Cord.Pages.TestUIPage TestUI
+            {
+                get { return GetPage<Cord.Pages.TestUIPage>(); }
+            }
 
             #endregion
         }

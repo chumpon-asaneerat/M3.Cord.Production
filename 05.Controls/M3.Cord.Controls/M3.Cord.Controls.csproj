@@ -256,115 +256,115 @@
     <Compile Include="Controls\StatusBar\Elements\OperatorInfoElement.xaml.cs">
       <DependentUpon>OperatorInfoElement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AgeingView\AgeingHistorySearchPage.xaml.cs">
+    <Compile Include="Pages\Ageing\View\AgeingHistorySearchPage.xaml.cs">
       <DependentUpon>AgeingHistorySearchPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AgeingView\SubPages\DIP\AgeingConditionFromDIPViewPage.xaml.cs">
+    <Compile Include="Pages\Ageing\View\SubPages\DIP\AgeingConditionFromDIPViewPage.xaml.cs">
       <DependentUpon>AgeingConditionFromDIPViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AgeingView\SubPages\Preview\S5ReportPreviewViewPage.xaml.cs">
+    <Compile Include="Pages\Ageing\View\SubPages\Preview\S5ReportPreviewViewPage.xaml.cs">
       <DependentUpon>S5ReportPreviewViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AgeingView\SubPages\Raw\AgeingConditionFromRawMaterialViewPage.xaml.cs">
+    <Compile Include="Pages\Ageing\View\SubPages\Raw\AgeingConditionFromRawMaterialViewPage.xaml.cs">
       <DependentUpon>AgeingConditionFromRawMaterialViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AgeingView\SubPages\Twist\AgeingConditionFromTwistingViewPage.xaml.cs">
+    <Compile Include="Pages\Ageing\View\SubPages\Twist\AgeingConditionFromTwistingViewPage.xaml.cs">
       <DependentUpon>AgeingConditionFromTwistingViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Ageing\SubPages\DIP\AgeingConditionFromDIPPage.xaml.cs">
+    <Compile Include="Pages\Ageing\Current\SubPages\DIP\AgeingConditionFromDIPPage.xaml.cs">
       <DependentUpon>AgeingConditionFromDIPPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Ageing\SubPages\DIP\S5ConditionDIPManager.cs" />
-    <Compile Include="Pages\Ageing\SubPages\Raw\AgeingConditionFromRawMaterialPage.xaml.cs">
+    <Compile Include="Pages\Ageing\Current\SubPages\DIP\S5ConditionDIPManager.cs" />
+    <Compile Include="Pages\Ageing\Current\SubPages\Raw\AgeingConditionFromRawMaterialPage.xaml.cs">
       <DependentUpon>AgeingConditionFromRawMaterialPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Ageing\SubPages\Raw\S5ConditionRawMaterialManager.cs" />
-    <Compile Include="Pages\Ageing\SubPages\Twist\AgeingConditionFromTwistingPage.xaml.cs">
+    <Compile Include="Pages\Ageing\Current\SubPages\Raw\S5ConditionRawMaterialManager.cs" />
+    <Compile Include="Pages\Ageing\Current\SubPages\Twist\AgeingConditionFromTwistingPage.xaml.cs">
       <DependentUpon>AgeingConditionFromTwistingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Ageing\AgeingOperationPage.xaml.cs">
+    <Compile Include="Pages\Ageing\Current\AgeingOperationPage.xaml.cs">
       <DependentUpon>AgeingOperationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Ageing\SubPages\Twist\S5ConditionTwistManager.cs" />
-    <Compile Include="Pages\DIP\SubPages\S8x2ConditionSummaryPage.xaml.cs">
+    <Compile Include="Pages\Ageing\Current\SubPages\Twist\S5ConditionTwistManager.cs" />
+    <Compile Include="Pages\DIP\Current\SubPages\S8x2ConditionSummaryPage.xaml.cs">
       <DependentUpon>S8x2ConditionSummaryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Masters\CustomerManagePage.xaml.cs">
+    <Compile Include="Pages\Masters\Customers\CustomerManagePage.xaml.cs">
       <DependentUpon>CustomerManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPView\DIPHistorySearchPage.xaml.cs">
+    <Compile Include="Pages\DIP\View\DIPHistorySearchPage.xaml.cs">
       <DependentUpon>DIPHistorySearchPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPView\DIPOperationViewPage.xaml.cs">
+    <Compile Include="Pages\DIP\View\DIPOperationViewPage.xaml.cs">
       <DependentUpon>DIPOperationViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPView\SubPages\ChemicalRequisitionRecordViewPage.xaml.cs">
+    <Compile Include="Pages\DIP\View\SubPages\ChemicalRequisitionRecordViewPage.xaml.cs">
       <DependentUpon>ChemicalRequisitionRecordViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPView\SubPages\DIPConditionViewPage.xaml.cs">
+    <Compile Include="Pages\DIP\View\SubPages\DIPConditionViewPage.xaml.cs">
       <DependentUpon>DIPConditionViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPView\SubPages\DIPMaterialCheckSheetViewPage.xaml.cs">
+    <Compile Include="Pages\DIP\View\SubPages\DIPMaterialCheckSheetViewPage.xaml.cs">
       <DependentUpon>DIPMaterialCheckSheetViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPView\SubPages\DIPTimeTableViewPage.xaml.cs">
+    <Compile Include="Pages\DIP\View\SubPages\DIPTimeTableViewPage.xaml.cs">
       <DependentUpon>DIPTimeTableViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPView\SubPages\S7CreelCheckSheetViewPage.xaml.cs">
+    <Compile Include="Pages\DIP\View\SubPages\S7CreelCheckSheetViewPage.xaml.cs">
       <DependentUpon>S7CreelCheckSheetViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPView\SubPages\S8BeforeStartSummaryViewPage.xaml.cs">
+    <Compile Include="Pages\DIP\View\SubPages\S8BeforeStartSummaryViewPage.xaml.cs">
       <DependentUpon>S8BeforeStartSummaryViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPView\SubPages\S8ConditionSummaryViewPage.xaml.cs">
+    <Compile Include="Pages\DIP\View\SubPages\S8ConditionSummaryViewPage.xaml.cs">
       <DependentUpon>S8ConditionSummaryViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPView\SubPages\S9AppearanceCheckSheetViewPage.xaml.cs">
+    <Compile Include="Pages\DIP\View\SubPages\S9AppearanceCheckSheetViewPage.xaml.cs">
       <DependentUpon>S9AppearanceCheckSheetViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPView\SubPages\S9CleanningCheckSheetViewPage.xaml.cs">
+    <Compile Include="Pages\DIP\View\SubPages\S9CleanningCheckSheetViewPage.xaml.cs">
       <DependentUpon>S9CleanningCheckSheetViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwistView\FirstTwistHistorySearchPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\View\FirstTwistHistorySearchPage.xaml.cs">
       <DependentUpon>FirstTwistHistorySearchPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwistView\FirstTwistOperationViewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\View\FirstTwistOperationViewPage.xaml.cs">
       <DependentUpon>FirstTwistOperationViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwistView\SubPages\FirstTwistConditionViewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\View\SubPages\FirstTwistConditionViewPage.xaml.cs">
       <DependentUpon>FirstTwistConditionViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwistView\SubPages\FirstTwistPCCardViewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\View\SubPages\FirstTwistPCCardViewPage.xaml.cs">
       <DependentUpon>FirstTwistPCCardViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwistView\SubPages\FirstTwistRawMaterialViewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\View\SubPages\FirstTwistRawMaterialViewPage.xaml.cs">
       <DependentUpon>FirstTwistRawMaterialViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwistView\SubPages\FirstTwistSamplingViewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\View\SubPages\FirstTwistSamplingViewPage.xaml.cs">
       <DependentUpon>FirstTwistSamplingViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwistView\SubPages\FirstTwistYarnRecordSheetViewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\View\SubPages\FirstTwistYarnRecordSheetViewPage.xaml.cs">
       <DependentUpon>FirstTwistYarnRecordSheetViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Lab\CordSamplingQAManagePage.xaml.cs">
       <DependentUpon>CordSamplingQAManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Documents\Dipping\DIPTimeTableStdPage.xaml.cs">
+    <Compile Include="Pages\Masters\Dipping\DIPTimeTableStdPage.xaml.cs">
       <DependentUpon>DIPTimeTableStdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Documents\Dipping\DippingStdManagePage.xaml.cs">
+    <Compile Include="Pages\Masters\Dipping\DippingStdManagePage.xaml.cs">
       <DependentUpon>DippingStdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Documents\Dipping\S8BeforeConditionStdPage.xaml.cs">
+    <Compile Include="Pages\Masters\Dipping\S8BeforeConditionStdPage.xaml.cs">
       <DependentUpon>S8BeforeConditionStdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Documents\Dipping\S8ProductionConditionItemStdManagePage.xaml.cs">
+    <Compile Include="Pages\Masters\Dipping\S8ProductionConditionItemStdManagePage.xaml.cs">
       <DependentUpon>S8ProductionConditionItemStdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwist\SubPages\FirstTwistSamplingPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Current\SubPages\FirstTwistSamplingPage.xaml.cs">
       <DependentUpon>FirstTwistSamplingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\LabelCHS9\LabelCHS9PrintPreviewPage.xaml.cs">
+    <Compile Include="Pages\DIP\Preview\LabelCHS9PrintPreviewPage.xaml.cs">
       <DependentUpon>LabelCHS9PrintPreviewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Lab\CordSamplingQAPage.xaml.cs">
@@ -373,104 +373,104 @@
     <Compile Include="Pages\Menu\QAMainMenuPage.xaml.cs">
       <DependentUpon>QAMainMenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PrintPreview\CordSamplings\CordSamplingPreviewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Preview\CordSamplingPreviewPage.xaml.cs">
       <DependentUpon>CordSamplingPreviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PrintPreview\DIP\DIPTimeTablePreviewPage.xaml.cs">
+    <Compile Include="Pages\DIP\Preview\DIPTimeTablePreviewPage.xaml.cs">
       <DependentUpon>DIPTimeTablePreviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PrintPreview\FirstTwist\FirstTwistRawMaterialPreviewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Preview\FirstTwistRawMaterialPreviewPage.xaml.cs">
       <DependentUpon>FirstTwistRawMaterialPreviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PrintPreview\FirstTwist\FirstTwistPCCardPreviewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Preview\FirstTwistPCCardPreviewPage.xaml.cs">
       <DependentUpon>FirstTwistPCCardPreviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PrintPreview\S1\SConditionPreviewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Preview\SConditionPreviewPage.xaml.cs">
       <DependentUpon>SConditionPreviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PrintPreview\S4x1\S4x1ConditionPreviewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Preview\S4x1ConditionPreviewPage.xaml.cs">
       <DependentUpon>S4x1ConditionPreviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PrintPreview\S4x2\S4x2ConditionPreviewPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Preview\S4x2ConditionPreviewPage.xaml.cs">
       <DependentUpon>S4x2ConditionPreviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Masters\ProductItemCodeManagePage.xaml.cs">
+    <Compile Include="Pages\Masters\Products\ProductItemCodeManagePage.xaml.cs">
       <DependentUpon>ProductItemCodeManagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
       <DependentUpon>CreateRecipePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\DIPMCPage.xaml.cs">
+    <Compile Include="Pages\DIP\Current\DIPMCPage.xaml.cs">
       <DependentUpon>DIPMCPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPPalletSlip\DIPPalletSlipManagePage.xaml.cs">
+    <Compile Include="Pages\Slips\DIPPalletSlip\DIPPalletSlipManagePage.xaml.cs">
       <DependentUpon>DIPPalletSlipManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIPPalletSlip\DIPPalletSlipPreviewPage.xaml.cs">
+    <Compile Include="Pages\Slips\DIPPalletSlip\DIPPalletSlipPreviewPage.xaml.cs">
       <DependentUpon>DIPPalletSlipPreviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\DIPHelper.cs" />
-    <Compile Include="Pages\DIP\SubPages\ChemicalRequisitionRecordPage.xaml.cs">
+    <Compile Include="Pages\DIP\Current\DIPHelper.cs" />
+    <Compile Include="Pages\DIP\Current\SubPages\ChemicalRequisitionRecordPage.xaml.cs">
       <DependentUpon>ChemicalRequisitionRecordPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\SubPages\DIPConditionPage.xaml.cs">
+    <Compile Include="Pages\DIP\Current\SubPages\DIPConditionPage.xaml.cs">
       <DependentUpon>DIPConditionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\SubPages\DIPMaterialCheckSheetPage.xaml.cs">
+    <Compile Include="Pages\DIP\Current\SubPages\DIPMaterialCheckSheetPage.xaml.cs">
       <DependentUpon>DIPMaterialCheckSheetPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\SubPages\DIPTimeTablePage.xaml.cs">
+    <Compile Include="Pages\DIP\Current\SubPages\DIPTimeTablePage.xaml.cs">
       <DependentUpon>DIPTimeTablePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\DIPOperationPage.xaml.cs">
+    <Compile Include="Pages\DIP\Current\DIPOperationPage.xaml.cs">
       <DependentUpon>DIPOperationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwist\SubPages\FirstTwistConditionPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Current\SubPages\FirstTwistConditionPage.xaml.cs">
       <DependentUpon>FirstTwistConditionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwist\SubPages\FirstTwistPCCardPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Current\SubPages\FirstTwistPCCardPage.xaml.cs">
       <DependentUpon>FirstTwistPCCardPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwist\SubPages\FirstTwistRawMaterialPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Current\SubPages\FirstTwistRawMaterialPage.xaml.cs">
       <DependentUpon>FirstTwistRawMaterialPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwist\SubPages\FirstTwistYarnRecordSheetPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Current\SubPages\FirstTwistYarnRecordSheetPage.xaml.cs">
       <DependentUpon>FirstTwistYarnRecordSheetPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Documents\S1\S1StdManagePage.xaml.cs">
+    <Compile Include="Pages\Masters\S1\S1StdManagePage.xaml.cs">
       <DependentUpon>S1StdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Documents\S4x1\S4x1StdManagePage.xaml.cs">
+    <Compile Include="Pages\Masters\S4x1\S4x1StdManagePage.xaml.cs">
       <DependentUpon>S4x1StdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Documents\S4x2\S4x2StdManagePage.xaml.cs">
+    <Compile Include="Pages\Masters\S4x2\S4x2StdManagePage.xaml.cs">
       <DependentUpon>S4x2StdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Documents\S5\S5StdManagePage.xaml.cs">
+    <Compile Include="Pages\Masters\S5\S5StdManagePage.xaml.cs">
       <DependentUpon>S5StdManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PalletSettings\PalletSettingPreviewPage.xaml.cs">
+    <Compile Include="Pages\Slips\PalletSettings\PalletSettingPreviewPage.xaml.cs">
       <DependentUpon>PalletSettingPreviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PalletSettings\PalletSettingManagePage.xaml.cs">
+    <Compile Include="Pages\Slips\PalletSettings\PalletSettingManagePage.xaml.cs">
       <DependentUpon>PalletSettingManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Ageing\SubPages\Preview\S5ReportPreviewPage.xaml.cs">
+    <Compile Include="Pages\Ageing\Current\SubPages\Preview\S5ReportPreviewPage.xaml.cs">
       <DependentUpon>S5ReportPreviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\SubPages\S7CreelCheckSheetPage.xaml.cs">
+    <Compile Include="Pages\DIP\Current\SubPages\S7CreelCheckSheetPage.xaml.cs">
       <DependentUpon>S7CreelCheckSheetPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\SubPages\S8BeforeStartSummaryPage.xaml.cs">
+    <Compile Include="Pages\DIP\Current\SubPages\S8BeforeStartSummaryPage.xaml.cs">
       <DependentUpon>S8BeforeStartSummaryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\SubPages\S8ConditionSummaryPage.xaml.cs">
+    <Compile Include="Pages\DIP\Current\SubPages\S8ConditionSummaryPage.xaml.cs">
       <DependentUpon>S8ConditionSummaryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\SubPages\S9AppearanceCheckSheetPage.xaml.cs">
+    <Compile Include="Pages\DIP\Current\SubPages\S9AppearanceCheckSheetPage.xaml.cs">
       <DependentUpon>S9AppearanceCheckSheetPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DIP\SubPages\S9CleanningCheckSheetPage.xaml.cs">
+    <Compile Include="Pages\DIP\Current\SubPages\S9CleanningCheckSheetPage.xaml.cs">
       <DependentUpon>S9CleanningCheckSheetPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Menu\ProductionReportMenu.xaml.cs">
@@ -491,6 +491,9 @@
     </Compile>
     <Compile Include="Pages\Solution\SolutionSlipManagePage.xaml.cs">
       <DependentUpon>SolutionSlipManagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tests\TestUIPage.xaml.cs">
+      <DependentUpon>TestUIPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Warehouse\WarehouseYarnStockPage.xaml.cs">
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
@@ -585,10 +588,10 @@
     <None Include="Properties\DataSources\M3.Cord.Models.S4x1Condition.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.S4x2Condition.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.S5ConditionPrintModel.datasource" />
-    <Compile Include="Pages\FirstTwist\FirstTwistOperationPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Current\FirstTwistOperationPage.xaml.cs">
       <DependentUpon>FirstTwistOperationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTwist\FirstTwistMCPage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\Current\FirstTwistMCPage.xaml.cs">
       <DependentUpon>FirstTwistMCPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\G4\G4ReceiveReturnMeterialPage.xaml.cs">
@@ -612,7 +615,7 @@
     <Compile Include="Pages\Menu\MasterDataManuPage.xaml.cs">
       <DependentUpon>MasterDataManuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PCCard\PCCardManagePage.xaml.cs">
+    <Compile Include="Pages\FirstTwist\PCCard\PCCardManagePage.xaml.cs">
       <DependentUpon>PCCardManagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Warehouse\WarehouseReceiveYarnPage.xaml.cs">
@@ -920,119 +923,119 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\AgeingView\AgeingHistorySearchPage.xaml">
+    <Page Include="Pages\Ageing\View\AgeingHistorySearchPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\AgeingView\SubPages\DIP\AgeingConditionFromDIPViewPage.xaml">
+    <Page Include="Pages\Ageing\View\SubPages\DIP\AgeingConditionFromDIPViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\AgeingView\SubPages\Preview\S5ReportPreviewViewPage.xaml">
+    <Page Include="Pages\Ageing\View\SubPages\Preview\S5ReportPreviewViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\AgeingView\SubPages\Raw\AgeingConditionFromRawMaterialViewPage.xaml">
+    <Page Include="Pages\Ageing\View\SubPages\Raw\AgeingConditionFromRawMaterialViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\AgeingView\SubPages\Twist\AgeingConditionFromTwistingViewPage.xaml">
+    <Page Include="Pages\Ageing\View\SubPages\Twist\AgeingConditionFromTwistingViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Ageing\SubPages\DIP\AgeingConditionFromDIPPage.xaml">
+    <Page Include="Pages\Ageing\Current\SubPages\DIP\AgeingConditionFromDIPPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Ageing\SubPages\Raw\AgeingConditionFromRawMaterialPage.xaml">
+    <Page Include="Pages\Ageing\Current\SubPages\Raw\AgeingConditionFromRawMaterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Ageing\SubPages\Twist\AgeingConditionFromTwistingPage.xaml">
+    <Page Include="Pages\Ageing\Current\SubPages\Twist\AgeingConditionFromTwistingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Ageing\AgeingOperationPage.xaml">
+    <Page Include="Pages\Ageing\Current\AgeingOperationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\SubPages\S8x2ConditionSummaryPage.xaml">
+    <Page Include="Pages\DIP\Current\SubPages\S8x2ConditionSummaryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Masters\CustomerManagePage.xaml">
+    <Page Include="Pages\Masters\Customers\CustomerManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIPView\DIPHistorySearchPage.xaml">
+    <Page Include="Pages\DIP\View\DIPHistorySearchPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\DIPView\DIPOperationViewPage.xaml">
+    <Page Include="Pages\DIP\View\DIPOperationViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\DIPView\SubPages\ChemicalRequisitionRecordViewPage.xaml">
+    <Page Include="Pages\DIP\View\SubPages\ChemicalRequisitionRecordViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\DIPView\SubPages\DIPConditionViewPage.xaml">
+    <Page Include="Pages\DIP\View\SubPages\DIPConditionViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\DIPView\SubPages\DIPMaterialCheckSheetViewPage.xaml">
+    <Page Include="Pages\DIP\View\SubPages\DIPMaterialCheckSheetViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\DIPView\SubPages\DIPTimeTableViewPage.xaml">
+    <Page Include="Pages\DIP\View\SubPages\DIPTimeTableViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\DIPView\SubPages\S7CreelCheckSheetViewPage.xaml">
+    <Page Include="Pages\DIP\View\SubPages\S7CreelCheckSheetViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\DIPView\SubPages\S8BeforeStartSummaryViewPage.xaml">
+    <Page Include="Pages\DIP\View\SubPages\S8BeforeStartSummaryViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\DIPView\SubPages\S8ConditionSummaryViewPage.xaml">
+    <Page Include="Pages\DIP\View\SubPages\S8ConditionSummaryViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\DIPView\SubPages\S9AppearanceCheckSheetViewPage.xaml">
+    <Page Include="Pages\DIP\View\SubPages\S9AppearanceCheckSheetViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\DIPView\SubPages\S9CleanningCheckSheetViewPage.xaml">
+    <Page Include="Pages\DIP\View\SubPages\S9CleanningCheckSheetViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\FirstTwistView\FirstTwistHistorySearchPage.xaml">
+    <Page Include="Pages\FirstTwist\View\FirstTwistHistorySearchPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FirstTwistView\FirstTwistOperationViewPage.xaml">
+    <Page Include="Pages\FirstTwist\View\FirstTwistOperationViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\FirstTwistView\SubPages\FirstTwistConditionViewPage.xaml">
+    <Page Include="Pages\FirstTwist\View\SubPages\FirstTwistConditionViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\FirstTwistView\SubPages\FirstTwistPCCardViewPage.xaml">
+    <Page Include="Pages\FirstTwist\View\SubPages\FirstTwistPCCardViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\FirstTwistView\SubPages\FirstTwistRawMaterialViewPage.xaml">
+    <Page Include="Pages\FirstTwist\View\SubPages\FirstTwistRawMaterialViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\FirstTwistView\SubPages\FirstTwistSamplingViewPage.xaml">
+    <Page Include="Pages\FirstTwist\View\SubPages\FirstTwistSamplingViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\FirstTwistView\SubPages\FirstTwistYarnRecordSheetViewPage.xaml">
+    <Page Include="Pages\FirstTwist\View\SubPages\FirstTwistYarnRecordSheetViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1040,27 +1043,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Documents\Dipping\DIPTimeTableStdPage.xaml">
+    <Page Include="Pages\Masters\Dipping\DIPTimeTableStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Documents\Dipping\DippingStdManagePage.xaml">
+    <Page Include="Pages\Masters\Dipping\DippingStdManagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Documents\Dipping\S8BeforeConditionStdPage.xaml">
+    <Page Include="Pages\Masters\Dipping\S8BeforeConditionStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Documents\Dipping\S8ProductionConditionItemStdManagePage.xaml">
+    <Page Include="Pages\Masters\Dipping\S8ProductionConditionItemStdManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FirstTwist\SubPages\FirstTwistSamplingPage.xaml">
+    <Page Include="Pages\FirstTwist\Current\SubPages\FirstTwistSamplingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\LabelCHS9\LabelCHS9PrintPreviewPage.xaml">
+    <Page Include="Pages\DIP\Preview\LabelCHS9PrintPreviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1072,35 +1075,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PrintPreview\CordSamplings\CordSamplingPreviewPage.xaml">
+    <Page Include="Pages\FirstTwist\Preview\CordSamplingPreviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PrintPreview\DIP\DIPTimeTablePreviewPage.xaml">
+    <Page Include="Pages\DIP\Preview\DIPTimeTablePreviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PrintPreview\FirstTwist\FirstTwistRawMaterialPreviewPage.xaml">
+    <Page Include="Pages\FirstTwist\Preview\FirstTwistRawMaterialPreviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PrintPreview\FirstTwist\FirstTwistPCCardPreviewPage.xaml">
+    <Page Include="Pages\FirstTwist\Preview\FirstTwistPCCardPreviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PrintPreview\S1\SConditionPreviewPage.xaml">
+    <Page Include="Pages\FirstTwist\Preview\SConditionPreviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PrintPreview\S4x1\S4x1ConditionPreviewPage.xaml">
+    <Page Include="Pages\FirstTwist\Preview\S4x1ConditionPreviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PrintPreview\S4x2\S4x2ConditionPreviewPage.xaml">
+    <Page Include="Pages\FirstTwist\Preview\S4x2ConditionPreviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Masters\ProductItemCodeManagePage.xaml">
+    <Page Include="Pages\Masters\Products\ProductItemCodeManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1108,59 +1111,59 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\DIP\DIPMCPage.xaml">
+    <Page Include="Pages\DIP\Current\DIPMCPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIPPalletSlip\DIPPalletSlipManagePage.xaml">
+    <Page Include="Pages\Slips\DIPPalletSlip\DIPPalletSlipManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIPPalletSlip\DIPPalletSlipPreviewPage.xaml">
+    <Page Include="Pages\Slips\DIPPalletSlip\DIPPalletSlipPreviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\SubPages\ChemicalRequisitionRecordPage.xaml">
+    <Page Include="Pages\DIP\Current\SubPages\ChemicalRequisitionRecordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\SubPages\DIPConditionPage.xaml">
+    <Page Include="Pages\DIP\Current\SubPages\DIPConditionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\SubPages\DIPMaterialCheckSheetPage.xaml">
+    <Page Include="Pages\DIP\Current\SubPages\DIPMaterialCheckSheetPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\SubPages\DIPTimeTablePage.xaml">
+    <Page Include="Pages\DIP\Current\SubPages\DIPTimeTablePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\DIPOperationPage.xaml">
+    <Page Include="Pages\DIP\Current\DIPOperationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FirstTwist\SubPages\FirstTwistConditionPage.xaml">
+    <Page Include="Pages\FirstTwist\Current\SubPages\FirstTwistConditionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FirstTwist\SubPages\FirstTwistPCCardPage.xaml">
+    <Page Include="Pages\FirstTwist\Current\SubPages\FirstTwistPCCardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FirstTwist\SubPages\FirstTwistRawMaterialPage.xaml">
+    <Page Include="Pages\FirstTwist\Current\SubPages\FirstTwistRawMaterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FirstTwist\SubPages\FirstTwistYarnRecordSheetPage.xaml">
+    <Page Include="Pages\FirstTwist\Current\SubPages\FirstTwistYarnRecordSheetPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FirstTwist\FirstTwistOperationPage.xaml">
+    <Page Include="Pages\FirstTwist\Current\FirstTwistOperationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FirstTwist\FirstTwistMCPage.xaml">
+    <Page Include="Pages\FirstTwist\Current\FirstTwistMCPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1192,55 +1195,55 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PalletSettings\PalletSettingPreviewPage.xaml">
+    <Page Include="Pages\Slips\PalletSettings\PalletSettingPreviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PalletSettings\PalletSettingManagePage.xaml">
+    <Page Include="Pages\Slips\PalletSettings\PalletSettingManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PCCard\PCCardManagePage.xaml">
+    <Page Include="Pages\FirstTwist\PCCard\PCCardManagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Documents\S1\S1StdManagePage.xaml">
+    <Page Include="Pages\Masters\S1\S1StdManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Documents\S4x1\S4x1StdManagePage.xaml">
+    <Page Include="Pages\Masters\S4x1\S4x1StdManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Documents\S4x2\S4x2StdManagePage.xaml">
+    <Page Include="Pages\Masters\S4x2\S4x2StdManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Documents\S5\S5StdManagePage.xaml">
+    <Page Include="Pages\Masters\S5\S5StdManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Ageing\SubPages\Preview\S5ReportPreviewPage.xaml">
+    <Page Include="Pages\Ageing\Current\SubPages\Preview\S5ReportPreviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\SubPages\S7CreelCheckSheetPage.xaml">
+    <Page Include="Pages\DIP\Current\SubPages\S7CreelCheckSheetPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\SubPages\S8BeforeStartSummaryPage.xaml">
+    <Page Include="Pages\DIP\Current\SubPages\S8BeforeStartSummaryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\SubPages\S8ConditionSummaryPage.xaml">
+    <Page Include="Pages\DIP\Current\SubPages\S8ConditionSummaryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\SubPages\S9AppearanceCheckSheetPage.xaml">
+    <Page Include="Pages\DIP\Current\SubPages\S9AppearanceCheckSheetPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DIP\SubPages\S9CleanningCheckSheetPage.xaml">
+    <Page Include="Pages\DIP\Current\SubPages\S9CleanningCheckSheetPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1265,6 +1268,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Solution\SolutionSlipManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Tests\TestUIPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1403,9 +1410,7 @@
   <ItemGroup>
     <Resource Include="Images\FirstTwist\TwistingMC.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\PrintPreview\S5\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\Common\toray.png" />
   </ItemGroup>

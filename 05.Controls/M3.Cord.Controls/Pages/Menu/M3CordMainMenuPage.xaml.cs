@@ -187,22 +187,6 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
-        private void cmdCordDocumentMenu_Click(object sender, RoutedEventArgs e)
-        {
-            // M3 Cord Document Menu
-        }
-
-        private void cmdDIPSlip_Click(object sender, RoutedEventArgs e)
-        {
-            /*
-            var items = DIPPalletSlip.GetSamples();
-            // G4 - Issue Raw Material
-            var page = M3CordApp.Pages.DIPPalletSlipPreview;
-            page.Setup(items, false);
-            PageContentManager.Instance.Current = page;
-            */
-        }
-
         private void cmdQA_Click(object sender, RoutedEventArgs e)
         {
             // Sign In
@@ -210,6 +194,14 @@ namespace M3.Cord.Pages
             if (win.ShowDialog() == false) return;
             // Check Stock Yarn
             var page = M3CordApp.Pages.QAMenu;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
+        }
+
+        private void cmdTestUI_Click(object sender, RoutedEventArgs e)
+        {
+            // Test UI Page
+            var page = M3CordApp.Pages.TestUI;
             page.Setup();
             PageContentManager.Instance.Current = page;
         }
