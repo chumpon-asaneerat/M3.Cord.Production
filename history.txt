@@ -22,8 +22,9 @@ M3 Cord Production System #954
 M3 Cord Production System #953
 - 
 
+[commited]
 M3 Cord Production System #952
-- 
+- Implements 3 States CheckBox style #3
 
 [commited]
 M3 Cord Production System #951

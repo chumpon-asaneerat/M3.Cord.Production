@@ -84,6 +84,6 @@ namespace M3.Cord.Pages
 
     public class TestItem
     {
-        bool? State { get; set; } = new bool?();
+        public bool? State { get; set; } = new bool?();
     }
 }
