@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using M3.Cord.Services.Excels;
 
 #endregion
 
@@ -76,6 +77,11 @@ namespace M3.Cord.Pages
         private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void cmdExport_Click(object sender, RoutedEventArgs e)
+        {
+            Export();
         }
 
         #endregion
@@ -159,6 +165,11 @@ namespace M3.Cord.Pages
             }
 
             grid.ItemsSource = items;
+        }
+
+        private void Export()
+        {
+            S8Export.Export(pcCard, sheet, items);
         }
 
         #endregion

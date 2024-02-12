@@ -17,8 +17,7 @@ namespace M3.Cord.Services.Excels
 {
     public class DIPConfirmConditionExport
     {
-        public static void Export(DIPPCCard pcCard, DIPMaterialCheckSheet sheet,
-            List<DIPMaterialCheckSheetItem> items)
+        public static void Export(DIPPCCard pcCard, DIPCondition cond)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -27,7 +26,7 @@ namespace M3.Cord.Services.Excels
                 return;
             if (null == pcCard)
                 return;
-            if (null == sheet || null == items)
+            if (null == cond)
                 return;
 
             if (!ExcelExportUtils.CreateDIPConfirmConditionFile(outputFile, true))

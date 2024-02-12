@@ -17,8 +17,8 @@ namespace M3.Cord.Services.Excels
 {
     public class S8Export
     {
-        public static void Export(DIPPCCard pcCard, DIPMaterialCheckSheet sheet,
-            List<DIPMaterialCheckSheetItem> items)
+        public static void Export(DIPPCCard pcCard, S8ProductionCondition sheet,
+            List<S8ProductionConditionItem> items)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 

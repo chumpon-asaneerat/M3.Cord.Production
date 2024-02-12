@@ -28,6 +28,16 @@
                                             Text="Back"
                                             Click="cmdBack_Click" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <!--  EXPORT  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdExport"
+                                            Margin="5,0,0,0"
+                                            IconType="Export"
+                                            Text="Export"
+                                            Click="cmdExport_Click" />
+                </StackPanel>
                 <Grid />
             </DockPanel>
             <DockPanel x:Name="paCondition"

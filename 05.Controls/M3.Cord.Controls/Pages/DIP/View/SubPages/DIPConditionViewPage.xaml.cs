@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using M3.Cord.Services.Excels;
 
 #endregion
 
@@ -58,9 +59,19 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdExport_Click(object sender, RoutedEventArgs e)
+        {
+            Export();
+        }
+
         #endregion
 
         #region Private Methods
+
+        private void Export()
+        {
+            DIPConfirmConditionExport.Export(pcCard, cond);
+        }
 
         #endregion
 
