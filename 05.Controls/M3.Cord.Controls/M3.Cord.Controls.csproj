@@ -499,7 +499,10 @@
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resources\ExcelResource.cs" />
+    <Compile Include="Services\Excels\DIPConfirmConditionExport.cs" />
+    <Compile Include="Services\Excels\S7TimeTableExport.cs" />
     <Compile Include="Services\Excels\S7YarnSettingExport.cs" />
+    <Compile Include="Services\Excels\S8Export.cs" />
     <Compile Include="Services\Excels\S9Export.cs" />
     <Compile Include="Services\Excels\Twist1CheckSheetExport.cs" />
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
@@ -683,6 +686,9 @@
     <EmbeddedResource Include="Resources\Excels\FM4006_Sx4x2.xlsx" />
     <EmbeddedResource Include="Resources\Excels\FM4011Sx7_YarnSetting.xlsx" />
     <EmbeddedResource Include="Resources\Excels\FM4011Sx9_APP.xlsx" />
+    <EmbeddedResource Include="Resources\Excels\FMCS0602_S7TimeTable.xlsx" />
+    <EmbeddedResource Include="Resources\Excels\DIP_Confirmaion_condition.xlsx" />
+    <EmbeddedResource Include="Resources\Excels\FMCS11_S8.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\00.NLib\NLib.Reports\NLib.Reports.csproj">

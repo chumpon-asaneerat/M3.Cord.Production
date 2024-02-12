@@ -13,7 +13,14 @@ namespace M3.Cord
         public const string S4x2 = "M3.Cord.Resources.Excels.FM4006_Sx4x2.xlsx";
 
         public const string S7YarnSetting = "M3.Cord.Resources.Excels.FM4011Sx7_YarnSetting.xlsx";
+
+        public const string S7TimeTable = "M3.Cord.Resources.Excels.FMCS0602_S7TimeTable.xlsx";
+
+        public const string S8 = "M3.Cord.Resources.Excels.FMCS11_S8.xlsx";
+
         public const string S9Appearance = "M3.Cord.Resources.Excels.FM4011Sx9_APP.xlsx";
+
+        public const string DIPConfirmCondition = "M3.Cord.Resources.Excels.DIP_Confirmaion_condition.xlsx";
     }
 
     public sealed class ExcelExportUtils
@@ -156,6 +163,38 @@ namespace M3.Cord
 
         #endregion
 
+        #region S7 Time Table
+
+        /// <summary>
+        /// Create S7 Time Table File
+        /// </summary>
+        /// <param name="FullFileName">FileName</param>
+        /// <param name="AutoOverwrite">Force Overwrite</param>
+        /// <returns>true if file is created</returns>
+        public static bool CreateS7TimeTableFile(string FullFileName, bool AutoOverwrite)
+        {
+            return CreateFileFromResource(ExcelResource.S7TimeTable,
+                @"\FMCS0602_S7TimeTable.xlsx", FullFileName, AutoOverwrite);
+        }
+
+        #endregion
+
+        #region S8
+
+        /// <summary>
+        /// Create S8 File
+        /// </summary>
+        /// <param name="FullFileName">FileName</param>
+        /// <param name="AutoOverwrite">Force Overwrite</param>
+        /// <returns>true if file is created</returns>
+        public static bool CreateS8File(string FullFileName, bool AutoOverwrite)
+        {
+            return CreateFileFromResource(ExcelResource.S8,
+                @"\FMCS11_S8.xlsx", FullFileName, AutoOverwrite);
+        }
+
+        #endregion
+
         #region S9 Appearance
 
         /// <summary>
@@ -168,6 +207,22 @@ namespace M3.Cord
         {
             return CreateFileFromResource(ExcelResource.S9Appearance,
                 @"\FM4011Sx9_APP.xlsx", FullFileName, AutoOverwrite);
+        }
+
+        #endregion
+
+        #region DIP Confirm Condition
+
+        /// <summary>
+        /// Create DIP Confirm Condition File
+        /// </summary>
+        /// <param name="FullFileName">FileName</param>
+        /// <param name="AutoOverwrite">Force Overwrite</param>
+        /// <returns>true if file is created</returns>
+        public static bool CreateDIPConfirmConditionFile(string FullFileName, bool AutoOverwrite)
+        {
+            return CreateFileFromResource(ExcelResource.DIPConfirmCondition,
+                @"\DIP_Confirmaion_condition.xlsx", FullFileName, AutoOverwrite);
         }
 
         #endregion
