@@ -13,8 +13,9 @@ M3 Cord Production System #957
 M3 Cord Production System #956
 - 
 
+[commited]
 M3 Cord Production System #955
-- 
+- Implements Export S8 #3
 
 [commited]
 M3 Cord Production System #954
