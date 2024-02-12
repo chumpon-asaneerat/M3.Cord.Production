@@ -4,8 +4,9 @@ M3 Cord Production System #960
 M3 Cord Production System #959
 - 
 
+[commited]
 M3 Cord Production System #958
-- 
+- Implements NDbModel class #1
 
 [commited]
 M3 Cord Production System #957

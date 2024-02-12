@@ -95,6 +95,7 @@
     <Compile Include="AS400DbServer.cs" />
     <Compile Include="Models\Chemical\SolutionRecipe.cs" />
     <Compile Include="Models\Common\ModelCommon.cs" />
+    <Compile Include="Models\Common\NDbModel.cs" />
     <Compile Include="Models\CordSamplingDetails\CordSamplingDetails.cs" />
     <Compile Include="Models\DIPCondition\DIPConditionStd.cs" />
     <Compile Include="Models\DIPCondition\DIPCondition.cs" />
