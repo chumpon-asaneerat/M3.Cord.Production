@@ -178,6 +178,7 @@
                         <GridViewColumn Header="Mixing Date" CellTemplate="{StaticResource MixDate}" Width="200"/>
                         <GridViewColumn Header="Qualified Date" CellTemplate="{StaticResource QualifiedDate}" Width="200"/>
                         <GridViewColumn Header="Expire Date" CellTemplate="{StaticResource ExpireDate}" Width="200"/>
+                        <GridViewColumn Header="Life Day" CellTemplate="{StaticResource LifeDay}" />
                     </GridView>
                 </ListView.View>
             </ListView>

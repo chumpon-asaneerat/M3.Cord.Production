@@ -365,6 +365,12 @@
                    MinWidth="80" />
     </DataTemplate>
 
+    <DataTemplate x:Key="LifeDay">
+        <TextBlock Text="{Binding Path=LifeDay, Mode=OneWay, StringFormat='{}{0:n0}'}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
+    </DataTemplate>
+
     <!--  DIP CHEMICAL RECORD SHEET  -->
     <DataTemplate x:Key="ReqDate">
         <TextBlock Text="{Binding Path=ReqDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"

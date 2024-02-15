@@ -78,6 +78,7 @@ namespace M3.Cord.Pages
             {
                 return;
             }
+  
             RefreshGrid();
         }
 
@@ -285,6 +286,34 @@ namespace M3.Cord.Pages
         #endregion
 
         #region Private Methods
+        private void ClearData()
+        {
+            item = null;
+            grid.ItemsSource = null;
+            txtQty.Text = string.Empty;
+
+            DateTime dt = DateTime.Now;
+
+            dtMixDate.SelectedDate = new DateTime?();
+            cbMixH.SelectedIndex = -1;
+            cbMixM.SelectedIndex = -1;
+
+            dtQualifiedDate.SelectedDate = new DateTime?();
+            cbQuaH.SelectedIndex = -1;
+            cbQuaM.SelectedIndex = -1;
+
+            dtExpireDate.SelectedDate = new DateTime?();
+            cbExpH.SelectedIndex = -1;
+            cbExpM.SelectedIndex = -1;
+
+            cbProducts.SelectedIndex = -1;
+            cbChemicals.SelectedIndex = -1;
+
+            this.InvokeAction(() =>
+            {
+                DisableInputs();
+            });
+        }
 
         private void ClearInputs()
         {
@@ -450,6 +479,16 @@ namespace M3.Cord.Pages
                     cbExpH.SelectedValue = item.ExpireDate.Value.ToString("HH");
                     cbExpM.SelectedValue = item.ExpireDate.Value.ToString("mm");
                 }
+                else
+                {
+                    if (item.LifeDay != null && item.QualifiedDate != null)
+                    {
+                        dtExpireDate.SelectedDate = item.QualifiedDate.Value.AddDays(item.LifeDay.Value);
+
+                        cbExpH.SelectedValue = item.QualifiedDate.Value.ToString("HH");
+                        cbExpM.SelectedValue = item.QualifiedDate.Value.ToString("mm");
+                    }
+                }
 
                 this.InvokeAction(() =>
                 {
@@ -466,9 +505,16 @@ namespace M3.Cord.Pages
 
         private void RefreshGrid()
         {
-            grid.ItemsSource = null;
+            ClearData();
             string lotNo = txtSolutionLotNo.Text;
-            grid.ItemsSource = SolutionLotLabel.Gets(lotNo).Value();
+
+            List<SolutionLotLabel> solutionlot = new List<SolutionLotLabel>();
+            solutionlot = SolutionLotLabel.Gets(lotNo).Value();
+
+            if (solutionlot.Count != 0)
+            {
+                grid.ItemsSource = solutionlot;
+            }
         }
 
         #endregion
