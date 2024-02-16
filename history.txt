@@ -1,5 +1,36 @@
-M3 Cord Production System #960
+M3 Cord Production System #970
 - 
+
+M3 Cord Production System #969
+- 
+
+M3 Cord Production System #968
+- 
+
+M3 Cord Production System #967
+- 
+
+M3 Cord Production System #966
+- 
+
+M3 Cord Production System #965
+- 
+
+M3 Cord Production System #964
+- 
+
+M3 Cord Production System #963
+- 
+
+M3 Cord Production System #962
+- 
+
+M3 Cord Production System #961
+- 
+
+[commited]
+M3 Cord Production System #960
+- Implements Wet Pick up #2
 
 [commited]
 M3 Cord Production System #959

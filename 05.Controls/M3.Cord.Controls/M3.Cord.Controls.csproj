@@ -151,16 +151,16 @@
     <Compile Include="Controls\Documents\DIPS8Condition\S8ProductionConditionItemStdPage.xaml.cs">
       <DependentUpon>S8ProductionConditionItemStdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S8ElectricEntryPage.xaml.cs">
+    <Compile Include="Controls\Documents\DIPS8Condition\S8ElectricEntryPage.xaml.cs">
       <DependentUpon>S8ElectricEntryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S8WetPickupEntryPage.xaml.cs">
+    <Compile Include="Controls\Documents\DIPS8Condition\S8WetPickupEntryPage.xaml.cs">
       <DependentUpon>S8WetPickupEntryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S8x2ElectricEntryPage.xaml.cs">
+    <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2ElectricEntryPage.xaml.cs">
       <DependentUpon>S8x2ElectricEntryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S8x2WetPickupEntryPage.xaml.cs">
+    <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupEntryPage.xaml.cs">
       <DependentUpon>S8x2WetPickupEntryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml.cs">
@@ -801,19 +801,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S8ElectricEntryPage.xaml">
+    <Page Include="Controls\Documents\DIPS8Condition\S8ElectricEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S8WetPickupEntryPage.xaml">
+    <Page Include="Controls\Documents\DIPS8Condition\S8WetPickupEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S8x2ElectricEntryPage.xaml">
+    <Page Include="Controls\Documents\DIPS8x2Condition\S8x2ElectricEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S8x2WetPickupEntryPage.xaml">
+    <Page Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

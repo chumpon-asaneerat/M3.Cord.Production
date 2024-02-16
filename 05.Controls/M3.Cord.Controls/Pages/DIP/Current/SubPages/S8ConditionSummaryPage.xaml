@@ -431,12 +431,80 @@
             </TabItem>
             <TabItem Header="Wet Pick Up" FontSize="18">
                 <DockPanel LastChildFill="True">
-                    <Grid />
+                    <!--  BUTTONS  -->
+                    <DockPanel LastChildFill="True"
+                               DockPanel.Dock="Bottom"
+                               Height="40">
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Right"
+                                    VerticalAlignment="Center">
+                            <!--  HOME  -->
+                            <ctrl:FontAwesomeButton x:Name="cmdBack2"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Back"
+                                                    Text="Back"
+                                                    Click="cmdBack_Click" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Left"
+                                    VerticalAlignment="Center">
+                            <ctrl:FontAwesomeButton x:Name="cmdSave2"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Add"
+                                                    Text="Save"
+                                                    Click="cmdSave_Click" />
+                        </StackPanel>
+                        <Grid />
+                    </DockPanel>
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <DockPanel LastChildFill="True">
+                            <DockPanel x:Name="paWetPickup"
+                                       LastChildFill="True"
+                                       DockPanel.Dock="Top"
+                                       Margin="2">
+                                <doc:S8WetPickupEntryPage />
+                            </DockPanel>
+                        </DockPanel>
+                    </ScrollViewer>
                 </DockPanel>
             </TabItem>
             <TabItem Header="Electrical Checking" FontSize="18">
                 <DockPanel LastChildFill="True">
-                    <Grid />
+                    <!--  BUTTONS  -->
+                    <DockPanel LastChildFill="True"
+                               DockPanel.Dock="Bottom"
+                               Height="40">
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Right"
+                                    VerticalAlignment="Center">
+                            <!--  HOME  -->
+                            <ctrl:FontAwesomeButton x:Name="cmdBack3"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Back"
+                                                    Text="Back"
+                                                    Click="cmdBack_Click" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Left"
+                                    VerticalAlignment="Center">
+                            <ctrl:FontAwesomeButton x:Name="cmdSave3"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Add"
+                                                    Text="Save"
+                                                    Click="cmdSave_Click" />
+                        </StackPanel>
+                        <Grid />
+                    </DockPanel>
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <DockPanel LastChildFill="True">
+                            <DockPanel x:Name="paElectric"
+                                       LastChildFill="True"
+                                       DockPanel.Dock="Top"
+                                       Margin="2">
+                                <doc:S8ElectricEntryPage />
+                            </DockPanel>
+                        </DockPanel>
+                    </ScrollViewer>
                 </DockPanel>
             </TabItem>
         </TabControl>
