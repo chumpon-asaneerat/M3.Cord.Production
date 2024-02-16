@@ -45,6 +45,9 @@ namespace M3.Cord.Models
         public decimal? tweight { get; set; }
         public decimal? gweight { get; set; }
 
+        //New 16/2/24
+        public string chemicallot { get; set; }
+
         #endregion
 
         #region Static Methods
@@ -90,6 +93,9 @@ namespace M3.Cord.Models
             //New 25/1/24
             p.Add("@tweight", value.tweight);
             p.Add("@gweight", value.gweight);
+
+            //New 16/2/24
+            p.Add("@chemicallot", value.chemicallot);
 
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);

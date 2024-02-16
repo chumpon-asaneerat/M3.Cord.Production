@@ -43,6 +43,8 @@ namespace M3.Cord.Models
         public string ChemicalName { get; set; }
         public string ChemicalType { get; set; }
 
+        public string ChemicalLot { get; set; }
+
         // runtime properties
         public Visibility ShowWeightButton
         {
@@ -54,11 +56,22 @@ namespace M3.Cord.Models
             set { }
         }
 
+        public Visibility ShowChemicalLotText
+        {
+            get
+            {
+                return (chkVisibleChemicalLot) ? Visibility.Visible : Visibility.Hidden;
+            }
+            set { }
+        }
+
         public string RecipeView { get; set; }
 
         //New 25/1/24
         public decimal? TWeight { get; set; }
         public decimal? GWeight { get; set; }
+
+        public bool chkVisibleChemicalLot { get; set; }
 
         #endregion
 
@@ -118,6 +131,7 @@ namespace M3.Cord.Models
                                     result.ChemicalName = "Total";
                                     result.WeightCal = weightCal;
                                     result.WeightActual = weightActual;
+                                    result.chkVisibleChemicalLot = false;
 
                                     results.Add(result);
 
@@ -145,8 +159,19 @@ namespace M3.Cord.Models
 
                         result.MixOrder = item.MixOrder;
                         result.ChemicalType = item.ChemicalType;
+
+                        if (result.ChemicalType != "R")
+                        {
+                            result.chkVisibleChemicalLot = true;
+                        }
+                        else
+                        {
+                            result.chkVisibleChemicalLot = false;
+                        }
+
                         result.ChemicalNo = item.ChemicalNo;
                         result.ChemicalName = item.ChemicalName;
+                        result.ChemicalLot = item.ChemicalLot;
 
                         result.TWeight = item.TWeight;
                         result.GWeight = item.GWeight;
@@ -177,6 +202,7 @@ namespace M3.Cord.Models
                             result.ChemicalName = "Total";
                             result.WeightCal = weightCal;
                             result.WeightActual = weightActual;
+                            result.chkVisibleChemicalLot = false;
 
                             results.Add(result);
 
@@ -253,6 +279,7 @@ namespace M3.Cord.Models
                         result.ChemicalType = item.ChemicalType;
                         result.ChemicalNo = item.ChemicalNo;
                         result.ChemicalName = item.ChemicalName;
+                        result.ChemicalLot = item.ChemicalLot;
                         result.WeightCal = item.WeightCal;
                         result.WeightActual = item.WeightActual;
                         result.WeightMc = item.WeightMc;

@@ -7,7 +7,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="900"
+             d:DesignWidth="1100"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
     <page:NPage HeaderText="Solution Details">
@@ -53,6 +53,14 @@
                         <ctrl:NTextBox x:Name="txtProductCode"
                                        CaptionText="Dip Item Cord"
                                        Width="300" />
+                        <Button x:Name="cmdClear"
+                                Content="Clear"
+                                DockPanel.Dock="Left"
+                                Width="150"
+                                VerticalAlignment="Bottom"
+                                Margin="5,2"
+                                Style="{StaticResource InlineButton}"
+                                Click="cmdClear_Click" />
 
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
@@ -75,6 +83,14 @@
                                 Margin="5,2"
                                 Style="{StaticResource InlineButton}"
                                 Click="cmdSearch_Click" />
+                        <Button x:Name="cmdSaveChemicalLot"
+                                Content="Save Chemical Lot"
+                                DockPanel.Dock="Left"
+                                Width="180"
+                                VerticalAlignment="Bottom"
+                                Margin="5,2"
+                                Style="{StaticResource InlineButton}"
+                                Click="cmdSaveChemicalLot_Click" />
                     </StackPanel>
                     <Grid />
                 </DockPanel>
@@ -101,6 +117,17 @@
                         <GridViewColumn Header="Actual Wet (kg)"
                                         CellTemplate="{StaticResource WeightActual}"
                                         Width="180" />
+                        <GridViewColumn Header="Chemical Lot" Width="Auto" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Margin="2"
+                                             Visibility="{Binding ShowChemicalLotText}"
+                                             Text="{Binding ChemicalLot,Mode=TwoWay}"
+                                             Style="{StaticResource CommonTextBox}"
+                                             Width="180" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <!--  BUTTONS  -->
                         <!--
                         <GridViewColumn Header="">

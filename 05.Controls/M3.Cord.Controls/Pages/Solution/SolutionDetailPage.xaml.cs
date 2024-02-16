@@ -45,6 +45,7 @@ namespace M3.Cord.Pages
         #region Internal Variables
 
         private List<SolutionLotLabel> chemicals = null;
+        private List<SolutionLotDetail> lotDetail = new List<SolutionLotDetail>();
 
         #endregion
 
@@ -69,12 +70,23 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoSolutionMenu();
         }
 
+        private void cmdClear_Click(object sender, RoutedEventArgs e)
+        {
+            ClearInputs();
+        }
+
         private void cmdSearch_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(txtSolutionLotNo.Text))
             {
                 LoadSolutionLotLabel(txtSolutionLotNo.Text);
             }
+        }
+
+        private void cmdSaveChemicalLot_Click(object sender, RoutedEventArgs e)
+        {
+            if (lotDetail.Count > 0)
+                Save();
         }
 
         private void cmdWeight_Click(object sender, RoutedEventArgs e)
@@ -94,7 +106,9 @@ namespace M3.Cord.Pages
                     {
                         if (!string.IsNullOrEmpty(txtSolutionLotNo.Text))
                         {
-                            grid.ItemsSource = SolutionLotDetail.Gets(txtSolutionLotNo.Text).Value();
+                            lotDetail = new List<SolutionLotDetail>();
+                            lotDetail = SolutionLotDetail.Gets(txtSolutionLotNo.Text).Value();
+                            grid.ItemsSource = lotDetail;
                         }
                     }
                     
@@ -143,7 +157,9 @@ namespace M3.Cord.Pages
                     if (chemicals.DipSolutionQty != null)
                         txtQty.Text = chemicals.DipSolutionQty.Value.ToString("#,##0.##");
 
-                    grid.ItemsSource = SolutionLotDetail.Gets(solutionlot, solutionid, recipe).Value();
+                    lotDetail = new List<SolutionLotDetail>();
+                    lotDetail = SolutionLotDetail.Gets(solutionlot, solutionid, recipe).Value();
+                    grid.ItemsSource = lotDetail;
                 }
             }
             catch (Exception ex)
@@ -177,6 +193,12 @@ namespace M3.Cord.Pages
             txtProductCode.Text = string.Empty;
             cbChemicals.SelectedIndex = -1;
 
+            lotDetail = new List<SolutionLotDetail>();
+
+            Dispatcher.BeginInvoke(new Action(() => { txtSolutionLotNo.Focus(); }));
+            txtSolutionLotNo.SelectAll();
+            txtSolutionLotNo.Focus();
+
             this.InvokeAction(() =>
             {
                 DisableInputs();
@@ -192,7 +214,6 @@ namespace M3.Cord.Pages
             txtProductCode.IsEnabled = false;
             //cbChemicals.IsEnabled = true;
         }
-
 
         private void LoadSolutionLotLabel(string solutionlot)
         {
@@ -229,6 +250,84 @@ namespace M3.Cord.Pages
                     var win = M3CordApp.Windows.MessageBox;
                     win.Setup("ไม่พบ Lot No ที่ระบุ ในระบบ");
                     win.ShowDialog();
+
+                    ClearInputs();
+                }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
+        }
+
+        private void Save()
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            try
+            {
+
+                if (lotDetail.Count > 0)
+                {
+                    bool? chkErr = false;
+                    string strErr = string.Empty;
+
+                    SaveSolutionLotDetail d = new SaveSolutionLotDetail();
+
+                    foreach (var itemD in lotDetail)
+                    {
+                        if (!string.IsNullOrEmpty(itemD.ChemicalLot))
+                        {
+                            d = new SaveSolutionLotDetail();
+
+                            d.solutionlot = itemD.SolutionLot;
+                            d.solutionid = itemD.SolutionID;
+                            d.recipe = itemD.Recipe;
+                            d.chemicalno = itemD.ChemicalNo;
+                            d.chemicallot = itemD.ChemicalLot;
+
+                            //d.recipeorder = itemD.RecipeOrder;
+                            //d.mixorder = itemD.MixOrder;
+                            //d.weightcal = itemD.WeightCal;
+                            //d.weightactual = itemD.WeightActual;
+                            //d.weightmc = itemD.WeightMc;
+                            //d.weightdate = itemD.WeightDate;
+                            //d.weightby = itemD.WeightBy;
+                            //d.tweight = itemD.TWeight;
+                            //d.gweight = itemD.GWeight;
+
+
+                            var retD = SaveSolutionLotDetail.Save(d);
+
+                            if (retD.HasError)
+                            {
+                                strErr = retD.ErrMsg;
+                                chkErr = true;
+                                //break;
+                            }
+                        }
+                    }
+
+                    if (chkErr == false)
+                    {
+                        this.InvokeAction(() =>
+                        {
+                            var win = M3CordApp.Windows.MessageBox;
+                            win.Setup("Save Complete");
+                            win.ShowDialog();
+                            //ClearInputs();
+                        });
+                    }
+                    else
+                    {
+                        this.InvokeAction(() =>
+                        {
+                            var win = M3CordApp.Windows.MessageBox;
+                            win.Setup(strErr);
+                            win.ShowDialog();
+                            //ClearInputs();
+                        });
+                    }
                 }
             }
             catch (Exception ex)
