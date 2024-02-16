@@ -99,11 +99,21 @@ namespace M3.Cord.Pages
 
         private void cmdS8ConditionSummary_Click(object sender, RoutedEventArgs e)
         {
-            //var page = M3CordApp.Pages.ProductionRecord;
-            //var page = M3CordApp.Pages.S8x2ConditionSummary;
-            var page = M3CordApp.Pages.S8ConditionSummary;
-            page.Setup(mc);
-            PageContentManager.Instance.Current = page;
+            int mcNo = (mc.MCCode.EndsWith("1")) ? 1 : 2;
+            if (mcNo == 1)
+            {
+                // S-8-1
+                var page = M3CordApp.Pages.S8ConditionSummary;
+                page.Setup(mc);
+                PageContentManager.Instance.Current = page;
+            }
+            else
+            {
+                // S-8-2
+                var page = M3CordApp.Pages.S8x2ConditionSummary;
+                page.Setup(mc);
+                PageContentManager.Instance.Current = page;
+            }
         }
 
         private void cmdDIPProductionTimeTable_Click(object sender, RoutedEventArgs e)
