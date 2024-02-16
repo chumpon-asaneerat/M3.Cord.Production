@@ -1,4 +1,5 @@
-﻿using System;
+﻿using M3.Cord.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,22 @@ namespace M3.Cord.Controls.Documents
         public S8x2WetPickupEntryPage()
         {
             InitializeComponent();
+        }
+
+        private void cmdAdd1_Click(object sender, RoutedEventArgs e)
+        {
+            Add();
+        }
+
+        private void cmdAdd2_Click(object sender, RoutedEventArgs e)
+        {
+            Add();
+        }
+
+        private void Add()
+        {
+            S8WetPickUpItemEditWindow win = new S8WetPickUpItemEditWindow();
+            win.ShowDialog();
         }
     }
 }

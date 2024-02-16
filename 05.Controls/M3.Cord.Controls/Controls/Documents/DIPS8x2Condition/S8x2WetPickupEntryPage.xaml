@@ -78,7 +78,8 @@
                     <ctrl:FontAwesomeButton x:Name="cmdAdd1"
                                             Margin="5,0,0,0"
                                             IconType="Add"
-                                            Text="เพิ่ม" />
+                                            Text="เพิ่ม" 
+                                            Click="cmdAdd1_Click"/>
                 </StackPanel>
             </DockPanel>
             <DockPanel LastChildFill="True" DockPanel.Dock="Bottom">
@@ -136,7 +137,8 @@
                     <ctrl:FontAwesomeButton x:Name="cmdAdd2"
                                             Margin="5,0,0,0"
                                             IconType="Add"
-                                            Text="เพิ่ม" />
+                                            Text="เพิ่ม" 
+                                            Click="cmdAdd2_Click"/>
                 </StackPanel>
                 <Grid/>
             </DockPanel>

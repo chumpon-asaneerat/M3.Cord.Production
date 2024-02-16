@@ -501,71 +501,101 @@
                 <TextBlock Text="Condition for Bunner" TextAlignment="Center" />
             </Border>
             <!--  ROW 1  -->
-            <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
+            <Border Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="3">
                 <TextBlock Text="Bunner (เตาเผา)" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="4"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock Text="D Zone (ช่วงอบ)" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="6"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock Text="H.N Zone (ช่วงร้อนและช่วงปกติ)" TextAlignment="Center" />
             </Border>
             <!--  ROW 2  -->
-            <Border Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">
+            <Border Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3">
                 <TextBlock Text="Bunner Condition (สภาวะในเตาเผา)" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2">
+            <Border Grid.Column="4"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding BurnerD}"
                           IsThreeState="True"
                           HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="2">
+            <Border Grid.Column="6"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding BurnerHN}"
                           IsThreeState="True"
                           HorizontalAlignment="Center" />
             </Border>
             <!--  ROW 3  -->
-            <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3">
+            <Border Grid.Column="0"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="3">
                 <TextBlock Text="Gas leak (แก๊สรั่ว)" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2">
+            <Border Grid.Column="4"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding GasLeakD}"
                           IsThreeState="True"
                           HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="2">
+            <Border Grid.Column="6"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding GasLeakHN}"
                           IsThreeState="True"
                           HorizontalAlignment="Center" />
             </Border>
             <!--  ROW 4  -->
-            <Border Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3">
+            <Border Grid.Column="0"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="3">
                 <TextBlock Text="Gas pressure (ความดันแก๊ส) (mm.Ag)" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2">
+            <Border Grid.Column="4"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="2">
                 <TextBox Text="{Binding GasPresureD}"
                          TextAlignment="Center"
                          Width="100" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="2">
+            <Border Grid.Column="6"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="2">
                 <TextBox Text="{Binding GasPresureHN}"
                          TextAlignment="Center"
                          Width="100" />
             </Border>
             <!--  ROW 5  -->
-            <Border Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3">
+            <Border Grid.Column="0"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="3">
                 <TextBlock Text="Air Pressure (ความดันอากาศ) Kg/cm2" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2">
+            <Border Grid.Column="4"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="2">
                 <TextBox Text="{Binding AirPresureD}"
                          TextAlignment="Center"
                          Width="100" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="2">
+            <Border Grid.Column="6"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="2">
                 <TextBox Text="{Binding AirPresureHN}"
                          TextAlignment="Center"
                          Width="100" />
@@ -591,74 +621,104 @@
                 <TextBlock Text="AC Motor Exhaust Fan (มอเตอร์กระแสสลับสำหรับพัดลมดูดอากาศ)" TextAlignment="Center" />
             </Border>
             <!--  ROW 1  -->
-            <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Motor supply (มอเตอร์จ่าย)" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1">
+            <Border Grid.Column="1"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Exhaust fan (พัดลมดูดอากาศ)" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Supply (จ่าย)" TextAlignment="Center" />
             </Border>
             <!--  ROW 2  -->
-            <Border Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="D zone  (ช่วงอบให้แห้ง)" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="1"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding ACMotorExhaustFanD}"
                           IsThreeState="True"
                           HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding ACMotorSupplyD}"
                           IsThreeState="True"
                           HorizontalAlignment="Center" />
             </Border>
             <!--  ROW 3  -->
-            <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="H.N zone (ช่วงร้อนและปกติ)" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="1"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding ACMotorExhaustFanHN}"
                           IsThreeState="True"
                           HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding ACMotorSupplyHN}"
                           IsThreeState="True"
                           HorizontalAlignment="Center" />
             </Border>
             <!--  ROW 4  -->
-            <Border Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Exhaust fan No.1 (พัดลมอากาศเบอร์ 1.)" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="1"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding ExhaustFan1}"
                           IsThreeState="True"
                           HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding ExhaustFanSupply1}"
                           IsThreeState="True"
                           HorizontalAlignment="Center" />
             </Border>
             <!--  ROW 5  -->
-            <Border Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Exhaust fan No.2 (พัดลมอากาศเบอร์ 2.)" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="1"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding ExhaustFan2}"
                           IsThreeState="True"
                           HorizontalAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <CheckBox Style="{StaticResource CommonCheckBox3State}"
                           IsChecked="{Binding ExhaustFanSupply2}"
                           IsThreeState="True"
@@ -680,10 +740,12 @@
             </Border>
             <!--  ROW 1  -->
             <Border Grid.Row="1">
-                <TextBox Text="{Binding Remark}" 
+                <TextBox Text="{Binding Remark}"
                          Width="550"
                          MinHeight="75"
-                         TextAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" />
+                         TextAlignment="Left"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True" />
             </Border>
         </Grid>
         <Grid />

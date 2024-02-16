@@ -1,0 +1,94 @@
+﻿<Window x:Class="M3.Cord.Windows.S8WetPickUpItemEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:doc="clr-namespace:M3.Cord.Controls.Documents"
+        xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
+        xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        mc:Ignorable="d"
+        Title="ใบบันทึกค่าที่ใช้งานเกี่ยวกับการดูดซับน้ำยา"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="700"
+        Width="850">
+    <page:NPage x:Name="page" HeaderText="ใบบันทึกค่าที่ใช้งานเกี่ยวกับการดูดซับน้ำยา">
+        <DockPanel LastChildFill="True" Margin="5">
+            <!--  BUTTON BARS  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Bottom"
+                       Height="40">
+                <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                        DockPanel.Dock="Left"
+                                        IconType="Cancel"
+                                        Text="Cancel"
+                                        Click="cmdCancel_Click" />
+                <ctrl:FontAwesomeButton x:Name="cmdOk"
+                                        DockPanel.Dock="Right"
+                                        IconType="Ok"
+                                        Text="Ok"
+                                        Click="cmdOk_Click" />
+                <Grid />
+            </DockPanel>
+            <!--  WORK AREA  -->
+            <DockPanel LastChildFill="True">
+                <DockPanel DockPanel.Dock="Top">
+                    <!--  DATE  -->
+                    <ctrl:NDatePicker x:Name="dtDate"
+                                      DockPanel.Dock="Left"
+                                      CaptionText="DATE:"
+                                      Width="250" />
+                    <!--  TIME  -->
+                    <ctrl:NComboBox x:Name="cbTimes"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="TIME:"
+                                    DisplayMemberPath="SHour"
+                                    Width="200" />
+                    <!--  LOT  -->
+                    <ctrl:NTextBox x:Name="txtLotNo"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Lot No:"
+                                   IsReadOnly="True"
+                                   Width="200" />
+                    <!--  DOFF NO  -->
+                    <ctrl:NTextBox x:Name="txtDoffNo"
+                                   DockPanel.Dock="Left"
+                                   CaptionText="Doff No:"
+                                   IsReadOnly="True"
+                                   Width="150" />
+                    <DockPanel />
+                </DockPanel>
+                <DockPanel LastChildFill="True">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                        <TextBlock Width="200" Text="Nip pressure"  TextAlignment="Right" Margin="2"/>
+                        <TextBox Width="200" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                        <TextBlock Width="200" Text="WPU"  TextAlignment="Right" Margin="2"/>
+                        <TextBox Width="200" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                        <TextBlock Width="200" Text="First"  TextAlignment="Right" Margin="2"/>
+                        <TextBox Width="200" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                        <TextBlock Width="200" Text="Use Volume"  TextAlignment="Right" Margin="2"/>
+                        <TextBox Width="200" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                        <TextBlock Width="200" Text="Rest"  TextAlignment="Right" Margin="2"/>
+                        <TextBox Width="200" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                        <TextBlock Width="200" Text="Throw away"  TextAlignment="Right" Margin="2"/>
+                        <TextBox Width="200" />
+                    </StackPanel>
+                    <Grid />
+                </DockPanel>
+            </DockPanel>
+        </DockPanel>
+    </page:NPage>
+</Window>

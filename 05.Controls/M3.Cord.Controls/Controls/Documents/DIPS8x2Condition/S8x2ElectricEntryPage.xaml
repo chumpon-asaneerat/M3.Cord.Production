@@ -35,7 +35,7 @@
         </Style>
     </UserControl.Resources>
     <DockPanel LastChildFill="True">
-        <!-- Cord Setter Machine -->
+        <!--  Cord Setter Machine  -->
         <Grid DockPanel.Dock="Top" Margin="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -65,189 +65,355 @@
                 <TextBlock Text="Condition for Motor Stretch And Tension สภาวะของมอเตอร์แรงดึง" TextAlignment="Center" />
             </Border>
             <!--  ROW 1  -->
-            <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="1"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock Text="Pull Motor 01" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="3"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock Text="Pull Motor 02" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="5"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock Text="Pull Motor 03" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="7"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock Text="Pull Motor 04" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="9"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock Text="Pull Motor 05" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="11" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="11"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock Text="Pull Motor 06" TextAlignment="Center" />
             </Border>
             <!--  ROW 2  -->
-            <Border Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Act Speed" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActSpeed1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActSpeed2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed3}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActSpeed3}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed4}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="7"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActSpeed4}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="8" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="8"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed5}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="9"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActSpeed5}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="10" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="10"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="11" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed6}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="11"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActSpeed6}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="12" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="12"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
             <!--  ROW 3  -->
-            <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Speed Setpoint" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorSpeedSetPoint1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorSpeedSetPoint2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint3}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorSpeedSetPoint3}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint4}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="7"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorSpeedSetPoint4}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="8" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="8"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint5}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="9"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorSpeedSetPoint5}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="10" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="10"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="11" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint6}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="11"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorSpeedSetPoint6}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="12" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="12"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="RPM" TextAlignment="Center" />
             </Border>
             <!--  ROW 4  -->
-            <Border Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Act current" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActCurrent1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActCurrent2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent3}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActCurrent3}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent4}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="7"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActCurrent4}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="8" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="8"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent5}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="9"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActCurrent5}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="10" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="10"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="11" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent6}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="11"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorActCurrent6}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="12" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="12"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
             <!--  ROW 5  -->
-            <Border Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Pct current" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorPctCurrent1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorPctCurrent2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent3}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorPctCurrent3}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent4}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="7"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorPctCurrent4}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="8" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="8"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent5}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="9"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorPctCurrent5}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="10" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="10"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="11" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent6}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="11"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding PullMotorPctCurrent6}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="12" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="12"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
         </Grid>
-        <!-- Condition for Motor Fan -->
+        <!--  Condition for Motor Fan  -->
         <Grid DockPanel.Dock="Top" Margin="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -277,45 +443,59 @@
                 <TextBlock Text="Condition for Motor Fan สภาวะของมอเตอร์พัดลม" TextAlignment="Center" />
             </Border>
             <!--  ROW 1  -->
-            <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="1"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock TextAlignment="Center">
                     <Run Text="Oven 01" />
                     <LineBreak />
                     <Run Text="Circulating Fan" />
                 </TextBlock>
             </Border>
-            <Border Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="3"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock TextAlignment="Center">
                     <Run Text="Oven 02" />
                     <LineBreak />
                     <Run Text="Circulating Fan" />
                 </TextBlock>
             </Border>
-            <Border Grid.Column="5" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="5"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock TextAlignment="Center">
                     <Run Text="Oven " />
                     <LineBreak />
                     <Run Text="01" />
                 </TextBlock>
             </Border>
-            <Border Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="7"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock TextAlignment="Center">
                     <Run Text="Oven " />
                     <LineBreak />
                     <Run Text="02" />
                 </TextBlock>
             </Border>
-            <Border Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="9"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock TextAlignment="Center">
                     <Run Text="Oven Front" />
                     <LineBreak />
                     <Run Text="Exhaust Fan" />
                 </TextBlock>
             </Border>
-            <Border Grid.Column="11" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Grid.Column="11"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
                 <TextBlock TextAlignment="Center">
                     <Run Text="Oven Back" />
                     <LineBreak />
@@ -323,167 +503,319 @@
                 </TextBlock>
             </Border>
             <!--  ROW 2  -->
-            <Border Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Act Speed" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanActSpeed1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenCirculatingFanActSpeed1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanActSpeed2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenCirculatingFanActSpeed2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanActSpeed1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanActSpeed1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanActSpeed2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="7"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanActSpeed2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="8" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="8"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanFrontActSpeed}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="9"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanFrontActSpeed}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="10" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="10"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="11" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanBackActSpeed}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="11"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanBackActSpeed}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="12" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="12"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
             <!--  ROW 3  -->
-            <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Speed Setpoint" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanSpeedSetpoint1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenCirculatingFanSpeedSetpoint1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanSpeedSetpoint2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenCirculatingFanSpeedSetpoint2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanSpeedSetpoint1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanSpeedSetpoint1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanSpeedSetpoint2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="7"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanSpeedSetpoint2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="8" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="8"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanFrontSpeedSetpoint}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="9"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanFrontSpeedSetpoint}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="10" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="10"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="11" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanBackSpeedSetpoint}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="11"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanBackSpeedSetpoint}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="12" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="12"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="HZ" TextAlignment="Center" />
             </Border>
             <!--  ROW 4  -->
-            <Border Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Act current" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanActCurrent1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenCirculatingFanActCurrent1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanActCurrent2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenCirculatingFanActCurrent2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanActCurrent1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanActCurrent1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanActCurrent2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="7"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanActCurrent2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="8" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="8"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanFrontActCurrent}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="9"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanFrontActCurrent}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="10" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="10"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="11" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanBackActCurrent}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="11"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanBackActCurrent}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="12" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="12"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="A" TextAlignment="Center" />
             </Border>
             <!--  ROW 5  -->
-            <Border Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Pct current" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanPctCurrent1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenCirculatingFanPctCurrent1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanPctCurrent2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenCirculatingFanPctCurrent2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanPctCurrent1}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanPctCurrent1}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanPctCurrent2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="7"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanPctCurrent2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="8" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="8"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanFrontPctCurrent}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="9"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanFrontPctCurrent}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="10" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="10"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="11" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanBackPctCurrent}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="11"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding OvenExhaustFanBackPctCurrent}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="12" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="12"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
         </Grid>
-        <!-- Condition for Motor Stretch And Tension -->
+        <!--  Condition for Motor Stretch And Tension  -->
         <Grid DockPanel.Dock="Top" Margin="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -513,193 +845,293 @@
                 <TextBlock Text="Condition for Motor Stretch And Tension สภาวะของมอเตอร์แรงดึง" TextAlignment="Center" />
             </Border>
             <!--  ROW 1  -->
-            <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
-                <TextBlock Text="M01-M02" TextAlignment="Center">
-                </TextBlock>
+            <Border Grid.Column="1"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
+                <TextBlock Text="M01-M02" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2">
-                <TextBlock Text="M03-M04" TextAlignment="Center">
-                </TextBlock>
+            <Border Grid.Column="3"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
+                <TextBlock Text="M03-M04" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="1" Grid.ColumnSpan="2">
-                <TextBlock Text="M04-M05" TextAlignment="Center">
-                </TextBlock>
+            <Border Grid.Column="5"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
+                <TextBlock Text="M04-M05" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="2">
-                <TextBlock Text="M01-M06" TextAlignment="Center">
-                </TextBlock>
+            <Border Grid.Column="7"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
+                <TextBlock Text="M01-M06" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2">
-                <TextBlock Width="50" TextAlignment="Center">
-                </TextBlock>
+            <Border Grid.Column="9"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
+                <TextBlock Width="50" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="11" Grid.Row="1" Grid.ColumnSpan="2">
-                <TextBlock Width="50" TextAlignment="Center">
-                </TextBlock>
+            <Border Grid.Column="11"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
+                <TextBlock Width="50" TextAlignment="Center" />
             </Border>
             <!--  ROW 2  -->
-            <Border Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Act Speed" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActStretch1x2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorActStretch1x2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActStretch3x4}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorActStretch3x4}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActStretch4x5}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorActStretch4x5}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActStretch1x6}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="7"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorActStretch1x6}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="8" Grid.Row="2" Grid.ColumnSpan="1">
+            <Border Grid.Column="8"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="2" Grid.ColumnSpan="1">
-
-            </Border>
-            <Border Grid.Column="10" Grid.Row="2" Grid.ColumnSpan="1">
-
-            </Border>
-            <Border Grid.Column="11" Grid.Row="2" Grid.ColumnSpan="1">
-
-            </Border>
-            <Border Grid.Column="12" Grid.Row="2" Grid.ColumnSpan="1">
-
-            </Border>
+            <Border Grid.Column="9"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="10"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="11"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="12"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="1" />
             <!--  ROW 3  -->
-            <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Speed Setpoint" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSetPoint1x2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorSetPoint1x2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSetPoint3x4}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorSetPoint3x4}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSetPoint4x5}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorSetPoint4x5}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSetPoint1x6}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="7"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorSetPoint1x6}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="8" Grid.Row="3" Grid.ColumnSpan="1">
+            <Border Grid.Column="8"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="%" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="9" Grid.Row="3" Grid.ColumnSpan="1">
-
-            </Border>
-            <Border Grid.Column="10" Grid.Row="3" Grid.ColumnSpan="1">
-
-            </Border>
-            <Border Grid.Column="11" Grid.Row="3" Grid.ColumnSpan="1">
-
-            </Border>
-            <Border Grid.Column="12" Grid.Row="3" Grid.ColumnSpan="1">
-
-            </Border>
+            <Border Grid.Column="9"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="10"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="11"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="12"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="1" />
             <!--  ROW 4  -->
-            <Border Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Act total - Tension" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActTensionTotal1x2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorActTensionTotal1x2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Kg" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActTensionTotal3x4}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorActTensionTotal3x4}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Kg" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActTensionTotal4x5}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorActTensionTotal4x5}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Kg" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="1">
-                
-            </Border>
-            <Border Grid.Column="8" Grid.Row="4" Grid.ColumnSpan="1">
-                
-            </Border>
-            <Border Grid.Column="9" Grid.Row="4" Grid.ColumnSpan="1">
-                
-            </Border>
-            <Border Grid.Column="10" Grid.Row="4" Grid.ColumnSpan="1">
-                
-            </Border>
-            <Border Grid.Column="11" Grid.Row="4" Grid.ColumnSpan="1">
-
-            </Border>
-            <Border Grid.Column="12" Grid.Row="4" Grid.ColumnSpan="1">
-
-            </Border>
+            <Border Grid.Column="7"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="8"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="9"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="10"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="11"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="12"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="1" />
             <!--  ROW 5  -->
-            <Border Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="0"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Act Single cord Tension" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSingleTension1x2}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="1"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorSingleTension1x2}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="2"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Kg" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSingleTension3x4}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="3"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorSingleTension3x4}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="4"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Kg" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSingleTension4x5}" Width="75" TextAlignment="Center" />
+            <Border Grid.Column="5"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
+                <TextBox Text="{Binding MotorSingleTension4x5}"
+                         Width="75"
+                         TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="1">
+            <Border Grid.Column="6"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1">
                 <TextBlock Text="Kg" TextAlignment="Center" />
             </Border>
-            <Border Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="1">
-                
-            </Border>
-            <Border Grid.Column="8" Grid.Row="5" Grid.ColumnSpan="1">
-                
-            </Border>
-            <Border Grid.Column="9" Grid.Row="5" Grid.ColumnSpan="1">
-
-            </Border>
-            <Border Grid.Column="10" Grid.Row="5" Grid.ColumnSpan="1">
-
-            </Border>
-            <Border Grid.Column="11" Grid.Row="5" Grid.ColumnSpan="1">
-
-            </Border>
-            <Border Grid.Column="12" Grid.Row="5" Grid.ColumnSpan="1">
-
-            </Border>
+            <Border Grid.Column="7"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="8"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="9"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="10"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="11"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1" />
+            <Border Grid.Column="12"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="1" />
         </Grid>
         <!--  REMARK  -->
         <Grid DockPanel.Dock="Top" Margin="5">
@@ -716,10 +1148,12 @@
             </Border>
             <!--  ROW 1  -->
             <Border Grid.Row="1">
-                <TextBox Text="{Binding Remark}" 
+                <TextBox Text="{Binding Remark}"
                          Width="550"
                          MinHeight="75"
-                         TextAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" />
+                         TextAlignment="Left"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True" />
             </Border>
         </Grid>
         <Grid />
