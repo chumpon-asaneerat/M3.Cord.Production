@@ -10,8 +10,9 @@ M3 Cord Production System #968
 M3 Cord Production System #967
 - 
 
+[commited]
 M3 Cord Production System #966
-- 
+- Merge from kik.
 
 [commited]
 M3 Cord Production System #965
