@@ -34,8 +34,7 @@
                         DockPanel.Dock="Left">
                 <TextBlock Text="First dip (จุ่มครั้งที่ 1)" TextAlignment="Center" />
                 <TextBox Width="200"
-                         Text="{Binding FirstDip1}"
-                         IsEnabled="False" />
+                         Text="{Binding FirstDip1}" />
             </StackPanel>
             <StackPanel Orientation="Vertical"
                         HorizontalAlignment="Center"
@@ -43,21 +42,24 @@
                         DockPanel.Dock="Left">
                 <TextBlock Text="Solution Name (ชื่อน้ำยาเคมี)" TextAlignment="Center" />
                 <TextBox Width="200"
-                         Text="{Binding SolutionName}"
-                         IsEnabled="False" />
+                         Text="{Binding SolutionName}" />
             </StackPanel>
             <Grid />
         </DockPanel>
         <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-            <DockPanel LastChildFill="True" DockPanel.Dock="Bottom">
+            <DockPanel LastChildFill="True" DockPanel.Dock="Top">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <ctrl:FontAwesomeButton x:Name="cmdAdd1"
                                             Margin="5,0,0,0"
                                             IconType="Add"
                                             Text="เพิ่ม" />
-                    <TextBlock Width="10" />
+                </StackPanel>
+            </DockPanel>
+            <DockPanel LastChildFill="True" DockPanel.Dock="Bottom">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBlock Text="Total: "
-                               FontSize="24"
+                               Margin="5,0,0,0"
+                               FontSize="24"                               
                                FontWeight="SemiBold"
                                VerticalAlignment="Center" />
                 </StackPanel>
@@ -90,8 +92,7 @@
                         DockPanel.Dock="Left">
                 <TextBlock Text="First dip (จุ่มครั้งที่ 2)" TextAlignment="Center" />
                 <TextBox Width="200"
-                         Text="{Binding FirstDip2}"
-                         IsEnabled="False" />
+                         Text="{Binding FirstDip2}" />
             </StackPanel>
             <StackPanel Orientation="Vertical"
                         HorizontalAlignment="Center"
@@ -99,20 +100,24 @@
                         DockPanel.Dock="Left">
                 <TextBlock Text="Solution Lot no.(เบอร์ชุดน้ำยาเคมี)" TextAlignment="Center" />
                 <TextBox Width="200"
-                         Text="{Binding SolutionLotNo}"
-                         IsEnabled="False" />
+                         Text="{Binding SolutionLotNo}" />
             </StackPanel>
             <Grid />
         </DockPanel>
         <DockPanel LastChildFill="True">
-            <DockPanel LastChildFill="True" DockPanel.Dock="Bottom">
+            <DockPanel LastChildFill="True" DockPanel.Dock="Top">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <ctrl:FontAwesomeButton x:Name="cmdAdd2"
                                             Margin="5,0,0,0"
                                             IconType="Add"
                                             Text="เพิ่ม" />
-                    <TextBlock Width="10" />
+                </StackPanel>
+                <Grid/>
+            </DockPanel>
+            <DockPanel LastChildFill="True" DockPanel.Dock="Bottom">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBlock Text="Total: "
+                               Margin="5,0,0,0"
                                FontSize="24"
                                FontWeight="SemiBold"
                                VerticalAlignment="Center" />

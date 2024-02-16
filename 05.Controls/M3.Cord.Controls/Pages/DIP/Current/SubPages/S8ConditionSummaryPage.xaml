@@ -452,7 +452,7 @@
                                                     Margin="5,0,0,0"
                                                     IconType="Add"
                                                     Text="Save"
-                                                    Click="cmdSave_Click" />
+                                                    Click="cmdSave2_Click"/>
                         </StackPanel>
                         <Grid />
                     </DockPanel>
@@ -491,7 +491,7 @@
                                                     Margin="5,0,0,0"
                                                     IconType="Add"
                                                     Text="Save"
-                                                    Click="cmdSave_Click" />
+                                                    Click="cmdSave3_Click"/>
                         </StackPanel>
                         <Grid />
                     </DockPanel>

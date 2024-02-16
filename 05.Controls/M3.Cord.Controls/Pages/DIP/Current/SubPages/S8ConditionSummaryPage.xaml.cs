@@ -48,6 +48,8 @@ namespace M3.Cord.Pages
         private S8ProductionCondition sheet = null;
         private List<S8ProductionConditionItem> items = null;
 
+        private S8WetPickUp pickup = null;
+
         #endregion
 
         #region Button Handlers
@@ -84,6 +86,16 @@ namespace M3.Cord.Pages
         private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void cmdSave2_Click(object sender, RoutedEventArgs e)
+        {
+            Save2();
+        }
+
+        private void cmdSave3_Click(object sender, RoutedEventArgs e)
+        {
+            Save2();
         }
 
         #endregion
@@ -206,6 +218,18 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void Save2()
+        {
+            if (null != pickup)
+            {
+                var ret = S8WetPickUp.Save(pickup);
+
+                if (null != ret && ret.Ok)
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
+            }
+        }
+
         private void RefreshGrid()
         {
             grid.ItemsSource = null;
@@ -255,12 +279,25 @@ namespace M3.Cord.Pages
                             sheet.CustomerName = pcCard.CustomerName;
                             sheet.CordStructure = pcCard.CordStructure;
                         }
+
+                        var pickups = S8WetPickUp.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now).Value();
+                        pickup = (null != pickups) ? pickups.LastOrDefault() : null;
+                        if (null == pickup)
+                        {
+                            pickup = new S8WetPickUp();
+                            pickup.ProductCode = pcCard.ProductCode;
+                            pickup.LotNo = pcCard.DIPLotNo;
+                            pickup.CustomerName = pcCard.CustomerName;
+                            pickup.DoffingDate = DateTime.Now;
+                        }
                     }
                 }
             }
 
             paCondition1.DataContext = sheet;
             paCondition2.DataContext = sheet;
+            paWetPickup.DataContext = pickup;
+            paElectric.DataContext = pickup;
 
             this.InvokeAction(() =>
             {

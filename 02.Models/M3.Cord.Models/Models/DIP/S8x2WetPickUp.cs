@@ -256,7 +256,7 @@ namespace M3.Cord.Models
 
             try
             {
-                cnn.Execute("SaveS8WetPickup", p, commandType: CommandType.StoredProcedure);
+                cnn.Execute("SaveS8x2WetPickup", p, commandType: CommandType.StoredProcedure);
                 ret.Success(value);
 
                 // Set error number/message
