@@ -1,4 +1,8 @@
-﻿using M3.Cord.Windows;
+﻿#region Using
+
+using M3.Cord.Models;
+using M3.Cord.Windows;
+using NLib.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +18,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+#endregion
+
 namespace M3.Cord.Controls.Documents
 {
     /// <summary>
@@ -21,25 +27,95 @@ namespace M3.Cord.Controls.Documents
     /// </summary>
     public partial class S8x2WetPickupEntryPage : UserControl
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public S8x2WetPickupEntryPage()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region Internal Variables
+
+        private DIPPCCard pcCard;
+
+        #endregion
+
+        #region Button Handlers
+
         private void cmdAdd1_Click(object sender, RoutedEventArgs e)
         {
-            Add();
+            Add(1);
         }
 
         private void cmdAdd2_Click(object sender, RoutedEventArgs e)
         {
-            Add();
+            Add(2);
         }
 
-        private void Add()
+        #endregion
+
+        #region Private Methods
+
+        private void Add(int twistNo)
         {
-            S8WetPickUpItemEditWindow win = new S8WetPickUpItemEditWindow();
-            win.ShowDialog();
+            if (null == pcCard)
+                return;
+
+            var item = new S8x2WetPickUpItem();
+            item.ProductCode = pcCard.ProductCode;
+            item.LotNo = pcCard.DIPLotNo;
+            item.DoffingDate = DateTime.Now;
+            item.DoffingNo = pcCard.DoffNo;
+
+            var win = M3CordApp.Windows.S8x2WetPickUpItemEdit;
+            win.Setup(item);
+            if (win.ShowDialog() == true)
+            {
+                item.TwistNo = twistNo;
+                item.Operator = (null != M3CordApp.Current.User) ?
+                            M3CordApp.Current.User.FullName : null;
+                item.UpdateDate = DateTime.Now;
+
+                var ret = S8x2WetPickUpItem.Save(item);
+
+                if (null != ret && ret.Ok)
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
+
+                RefreshGrids();
+            }
         }
+
+        #endregion
+
+        #region Public Methods
+
+        public void Setup(DIPPCCard pc)
+        {
+            pcCard = pc;
+            RefreshGrids();
+        }
+
+        public void RefreshGrids()
+        {
+            grid.ItemsSource = null;
+            if (null != pcCard)
+            {
+                grid.ItemsSource = S8WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, 1).Value();
+            }
+
+            grid2.ItemsSource = null;
+            if (null != pcCard)
+            {
+                grid2.ItemsSource = S8WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, 2).Value();
+            }
+        }
+
+        #endregion
     }
 }

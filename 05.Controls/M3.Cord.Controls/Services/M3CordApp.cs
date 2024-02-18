@@ -900,6 +900,16 @@ namespace M3.Cord
                 get { return GetWindow<S8x2ProductionConditionItemEditorWindow>(); }
             }
 
+            public static S8WetPickUpItemEditWindow S8WetPickUpItemEdit
+            {
+                get { return GetWindow<S8WetPickUpItemEditWindow>(); }
+            }
+
+            public static S8x2WetPickUpItemEditWindow S8x2WetPickUpItemEdit
+            {
+                get { return GetWindow<S8x2WetPickUpItemEditWindow>(); }
+            }
+
             #endregion
 
             #region DIP Slip

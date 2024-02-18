@@ -453,7 +453,7 @@
                                                     Margin="5,0,0,0"
                                                     IconType="Add"
                                                     Text="Save"
-                                                    Click="cmdSave2_Click"/>
+                                                    Click="cmdSave2_Click" />
                         </StackPanel>
                         <Grid />
                     </DockPanel>
@@ -463,7 +463,7 @@
                                        LastChildFill="True"
                                        DockPanel.Dock="Top"
                                        Margin="2">
-                                <doc:S8x2WetPickupEntryPage />
+                                <doc:S8x2WetPickupEntryPage x:Name="pickupDoc" />
                             </DockPanel>
                         </DockPanel>
                     </ScrollViewer>
@@ -492,7 +492,7 @@
                                                     Margin="5,0,0,0"
                                                     IconType="Add"
                                                     Text="Save"
-                                                    Click="cmdSave3_Click"/>
+                                                    Click="cmdSave3_Click" />
                         </StackPanel>
                         <Grid />
                     </DockPanel>

@@ -1133,4 +1133,59 @@
                       Width="50" />
         </StackPanel>
     </DataTemplate>
+
+
+
+    <!-- S8 Wet Pickup -->
+    <DataTemplate x:Key="S8WetDate">
+        <TextBlock Text="{Binding Path=DoffingDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="S8WetTime">
+        <TextBlock Text="{Binding Path=DoffingDate, StringFormat='{}{0:HH:mm}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="S8Doff">
+        <TextBlock Text="{Binding Path=DoffNo, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="S8Nip">
+        <TextBlock Text="{Binding Path=NipPressure, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="S8WPU">
+        <TextBlock Text="{Binding Path=WPU, StringFormat='{}{0:n2}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="S8First">
+        <TextBlock Text="{Binding Path=FirstAmt, StringFormat='{}{0:n2}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="S8Use">
+        <TextBlock Text="{Binding Path=UseAmt, StringFormat='{}{0:n2}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="S8Rest">
+        <TextBlock Text="{Binding Path=RestAmt, StringFormat='{}{0:n2}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="S8Throw">
+        <TextBlock Text="{Binding Path=ThrowAmt, StringFormat='{}{0:n2}', Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="S8WetOperator">
+        <TextBlock Text="{Binding Path=Operator, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
 </ResourceDictionary>

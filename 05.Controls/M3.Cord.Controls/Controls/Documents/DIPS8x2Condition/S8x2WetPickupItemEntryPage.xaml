@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="M3.Cord.Controls.Documents.S8x2WetPickupItemEntryPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="800"
+             d:DesignWidth="1000">
+    <UserControl.Resources>
+        <!--  LOCAL STYLES  -->
+        <Style TargetType="Border">
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderBrush" Value="DimGray" />
+            <Setter Property="BorderThickness" Value="0.5" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource CommonTextBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource CommonCheckBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <DockPanel LastChildFill="True" Margin="10">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                <TextBlock Width="200" Text="Nip pressure"  TextAlignment="Right" Margin="2"/>
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding NipPressure}" Width="150" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                <TextBlock Width="200" Text="WPU"  TextAlignment="Right" Margin="2"/>
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding WPU, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                <TextBlock Width="200" Text="First"  TextAlignment="Right" Margin="2"/>
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding FirstAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                <TextBlock Width="200" Text="Use Volume"  TextAlignment="Right" Margin="2"/>
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding UseAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                <TextBlock Width="200" Text="Rest"  TextAlignment="Right" Margin="2"/>
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding RestAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
+                <TextBlock Width="200" Text="Throw Volume"  TextAlignment="Right" Margin="2"/>
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding ThrowAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBlock Width="10" />
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

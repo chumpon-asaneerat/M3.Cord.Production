@@ -90,7 +90,30 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <ListView x:Name="grid" MinHeight="200" />
+            <ListView x:Name="grid"
+                      MinHeight="200"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Date" CellTemplate="{StaticResource S8WetDate}" />
+                        <GridViewColumn Header="Time" CellTemplate="{StaticResource S8WetTime}" />
+                        <GridViewColumn Header="Doff No" CellTemplate="{StaticResource S8Doff}" />
+                        <GridViewColumn Header="NIP Presure" CellTemplate="{StaticResource S8Nip}" />
+                        <GridViewColumn Header="WPU" CellTemplate="{StaticResource S8WPU}" />
+                        <GridViewColumn Header="First" CellTemplate="{StaticResource S8First}" />
+                        <GridViewColumn Header="Use" CellTemplate="{StaticResource S8Use}" />
+                        <GridViewColumn Header="Last" CellTemplate="{StaticResource S8Rest}" />
+                        <GridViewColumn Header="Throw away" CellTemplate="{StaticResource S8Throw}" />
+                        <GridViewColumn Header="Operator" CellTemplate="{StaticResource S8WetOperator}" />
+
+                        <GridViewColumn Header="Remark" CellTemplate="{StaticResource Remark}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </DockPanel>
         <DockPanel LastChildFill="True" DockPanel.Dock="Top">
             <StackPanel Orientation="Vertical"
@@ -148,7 +171,30 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <ListView x:Name="grid2" MinHeight="200" />
+            <ListView x:Name="grid2"
+                      MinHeight="200"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Date" CellTemplate="{StaticResource S8WetDate}" />
+                        <GridViewColumn Header="Time" CellTemplate="{StaticResource S8WetTime}" />
+                        <GridViewColumn Header="Doff No" CellTemplate="{StaticResource S8Doff}" />
+                        <GridViewColumn Header="NIP Presure" CellTemplate="{StaticResource S8Nip}" />
+                        <GridViewColumn Header="WPU" CellTemplate="{StaticResource S8WPU}" />
+                        <GridViewColumn Header="First" CellTemplate="{StaticResource S8First}" />
+                        <GridViewColumn Header="Use" CellTemplate="{StaticResource S8Use}" />
+                        <GridViewColumn Header="Last" CellTemplate="{StaticResource S8Rest}" />
+                        <GridViewColumn Header="Throw away" CellTemplate="{StaticResource S8Throw}" />
+                        <GridViewColumn Header="Operator" CellTemplate="{StaticResource S8WetOperator}" />
+
+                        <GridViewColumn Header="Remark" CellTemplate="{StaticResource Remark}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </DockPanel>
     </DockPanel>
 </UserControl>

@@ -49,7 +49,8 @@ namespace M3.Cord.Models
 
         #region Static Methods
 
-        public static NDbResult<List<S8x2WetPickUpItem>> Gets(string ProductCode, string LotNo, DateTime? DoffingDate)
+        public static NDbResult<List<S8x2WetPickUpItem>> Gets(string ProductCode, string LotNo, 
+            DateTime? DoffingDate, int TwistNo)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -71,6 +72,7 @@ namespace M3.Cord.Models
             p.Add("@ProductCode", ProductCode);
             p.Add("@LotNo", LotNo);
             p.Add("@DoffingDate", DoffingDate);
+            p.Add("@TwistNo", TwistNo);
 
             try
             {

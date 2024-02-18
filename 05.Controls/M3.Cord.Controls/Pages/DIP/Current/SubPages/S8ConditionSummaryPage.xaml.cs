@@ -248,6 +248,24 @@ namespace M3.Cord.Pages
             }
 
             grid.ItemsSource = items;
+
+            RefreshPickup();
+        }
+
+        private void RefreshPickup()
+        {
+            var pickups = S8WetPickUp.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now).Value();
+            pickup = (null != pickups) ? pickups.LastOrDefault() : null;
+            if (null == pickup)
+            {
+                pickup = new S8WetPickUp();
+                pickup.ProductCode = pcCard.ProductCode;
+                pickup.LotNo = pcCard.DIPLotNo;
+                pickup.CustomerName = pcCard.CustomerName;
+                pickup.DoffingDate = DateTime.Now;
+            }
+
+            pickupDoc.Setup(pcCard);
         }
 
         #endregion
@@ -280,16 +298,7 @@ namespace M3.Cord.Pages
                             sheet.CordStructure = pcCard.CordStructure;
                         }
 
-                        var pickups = S8WetPickUp.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now).Value();
-                        pickup = (null != pickups) ? pickups.LastOrDefault() : null;
-                        if (null == pickup)
-                        {
-                            pickup = new S8WetPickUp();
-                            pickup.ProductCode = pcCard.ProductCode;
-                            pickup.LotNo = pcCard.DIPLotNo;
-                            pickup.CustomerName = pcCard.CustomerName;
-                            pickup.DoffingDate = DateTime.Now;
-                        }
+                        RefreshPickup();
                     }
                 }
             }

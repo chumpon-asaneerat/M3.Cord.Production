@@ -760,6 +760,9 @@ namespace M3.Cord.Models
             set { }
         }
 
+
+        public string CheckTimeRecordS { get; set; }
+
         public string Opertor { get; set; }
         public string Leader { get; set; }
 

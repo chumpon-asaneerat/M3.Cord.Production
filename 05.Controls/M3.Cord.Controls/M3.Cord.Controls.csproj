@@ -163,10 +163,10 @@
     <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupEntryPage.xaml.cs">
       <DependentUpon>S8x2WetPickupEntryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S8WetPickupItemEntryPage.xaml.cs">
+    <Compile Include="Controls\Documents\DIPS8Condition\S8WetPickupItemEntryPage.xaml.cs">
       <DependentUpon>S8WetPickupItemEntryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Documents\S8x2WetPickupItemEntryPage.xaml.cs">
+    <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupItemEntryPage.xaml.cs">
       <DependentUpon>S8x2WetPickupItemEntryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml.cs">
@@ -582,6 +582,9 @@
     <Compile Include="Windows\DIP\S8WetPickUpItemEditWindow.xaml.cs">
       <DependentUpon>S8WetPickUpItemEditWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\DIP\S8x2WetPickUpItemEditWindow.xaml.cs">
+      <DependentUpon>S8x2WetPickUpItemEditWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Solution\SolutionWeightWindow.xaml.cs">
       <DependentUpon>SolutionWeightWindow.xaml</DependentUpon>
     </Compile>
@@ -826,11 +829,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S8WetPickupItemEntryPage.xaml">
+    <Page Include="Controls\Documents\DIPS8Condition\S8WetPickupItemEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Documents\S8x2WetPickupItemEntryPage.xaml">
+    <Page Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupItemEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1439,6 +1442,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\DIP\S8WetPickUpItemEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DIP\S8x2WetPickUpItemEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

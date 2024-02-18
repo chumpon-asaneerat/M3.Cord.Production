@@ -462,7 +462,7 @@
                                        LastChildFill="True"
                                        DockPanel.Dock="Top"
                                        Margin="2">
-                                <doc:S8WetPickupEntryPage />
+                                <doc:S8WetPickupEntryPage x:Name="pickupDoc" />
                             </DockPanel>
                         </DockPanel>
                     </ScrollViewer>
