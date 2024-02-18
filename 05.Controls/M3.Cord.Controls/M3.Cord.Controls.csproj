@@ -163,6 +163,12 @@
     <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupEntryPage.xaml.cs">
       <DependentUpon>S8x2WetPickupEntryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Documents\S8WetPickupItemEntryPage.xaml.cs">
+      <DependentUpon>S8WetPickupItemEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\S8x2WetPickupItemEntryPage.xaml.cs">
+      <DependentUpon>S8x2WetPickupItemEntryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml.cs">
       <DependentUpon>CordSamplingDetailsPage.xaml</DependentUpon>
     </Compile>
@@ -817,6 +823,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\S8WetPickupItemEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\S8x2WetPickupItemEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
