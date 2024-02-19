@@ -1,5 +1,37 @@
-M3 Cord Production System #970
+M3 Cord Production System #980
 - 
+
+M3 Cord Production System #979
+- 
+
+M3 Cord Production System #978
+- 
+
+M3 Cord Production System #977
+- 
+
+M3 Cord Production System #976
+- 
+
+M3 Cord Production System #975
+- 
+
+M3 Cord Production System #974
+- 
+
+M3 Cord Production System #973
+- 
+
+M3 Cord Production System #972
+- 
+
+M3 Cord Production System #971
+- 
+
+[commited]
+M3 Cord Production System #970
+- Implements Wet Pick up #11
+  Update build 1320
 
 [commited]
 M3 Cord Production System #969

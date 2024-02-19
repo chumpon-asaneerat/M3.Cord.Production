@@ -38,9 +38,9 @@
                 <DockPanel DockPanel.Dock="Top">
                     <!--  DATE/TIME  -->
                     <ctrl:NTextBox x:Name="txtDateTime"
-                                      DockPanel.Dock="Left"
-                                      CaptionText="DATE/TIME:"
-                                      Width="250" />
+                                   DockPanel.Dock="Left"
+                                   CaptionText="DATE/TIME:"
+                                   Width="250" />
                     <!--  LOT  -->
                     <ctrl:NTextBox x:Name="txtLotNo"
                                    DockPanel.Dock="Left"

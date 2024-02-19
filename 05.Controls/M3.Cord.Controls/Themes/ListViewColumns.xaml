@@ -1136,7 +1136,7 @@
 
 
 
-    <!-- S8 Wet Pickup -->
+    <!--  S8 Wet Pickup  -->
     <DataTemplate x:Key="S8WetDate">
         <TextBlock Text="{Binding Path=DoffingDate, StringFormat='{}{0:dd/MM/yyyy}', Mode=OneWay}"
                    TextAlignment="Center"

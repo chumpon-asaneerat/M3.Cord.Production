@@ -244,182 +244,246 @@
 
         <!--#endregion-->
     </UserControl.Resources>
-    <page:NPage x:Name="page" HeaderText="ใบบันทึกค่าสภาวะการผลิต S-8">
-        <DockPanel LastChildFill="True">
-            <!--  BUTTONS  -->
-            <DockPanel LastChildFill="True"
-                       DockPanel.Dock="Bottom"
-                       Height="40">
-                <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Right"
-                            VerticalAlignment="Center">
-                    <!--  HOME  -->
-                    <ctrl:FontAwesomeButton x:Name="cmdBack"
-                                            Margin="5,0,0,0"
-                                            IconType="Back"
-                                            Text="Back"
-                                            Click="cmdBack_Click" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Left"
-                            VerticalAlignment="Center">
-                    <!--  EXPORT  -->
-                    <ctrl:FontAwesomeButton x:Name="cmdExport"
-                                            Margin="5,0,0,0"
-                                            IconType="Export"
-                                            Text="Export"
-                                            Click="cmdExport_Click" />
-                </StackPanel>
-                <Grid />
-            </DockPanel>
-            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+    <page:NPage x:Name="page" HeaderText="ใบบันทึกค่าสภาวะการผลิต S-8-1">
+        <TabControl>
+            <TabItem Header="ใบบันทึกค่าสภาวะการผลิต" FontSize="18">
                 <DockPanel LastChildFill="True">
-                    <DockPanel x:Name="paCondition1"
-                               LastChildFill="True"
-                               DockPanel.Dock="Top"
-                               Margin="2">
-                        <doc:S8ProductionConditionHeader />
-                    </DockPanel>
-                    <DockPanel x:Name="paCondition2"
-                               LastChildFill="True"
+                    <!--  BUTTONS  -->
+                    <DockPanel LastChildFill="True"
                                DockPanel.Dock="Bottom"
-                               Margin="2">
-                        <doc:S8ProductionConditionFooter />
+                               Height="40">
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Right"
+                                    VerticalAlignment="Center">
+                            <!--  HOME  -->
+                            <ctrl:FontAwesomeButton x:Name="cmdBack"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Back"
+                                                    Text="Back"
+                                                    Click="cmdBack_Click" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Left"
+                                    VerticalAlignment="Center">
+                            <!--  EXPORT  -->
+                            <ctrl:FontAwesomeButton x:Name="cmdExport"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Export"
+                                                    Text="Export"
+                                                    Click="cmdExport_Click" />
+                        </StackPanel>
+                        <Grid />
                     </DockPanel>
-                    <ListView x:Name="grid"
-                              Margin="0,0,0,5"
-                              FontSize="{StaticResource FontSize18}"
-                              ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
-                              ItemsSource="{Binding}"
-                              Style="{StaticResource SingleSelectListView}">
-                        <ListView.View>
-                            <GridView>
-                                <!--  BUTTONS  -->
-                                <GridViewColumn Header="">
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <StackPanel Orientation="Horizontal"
-                                                        HorizontalAlignment="Center"
-                                                        VerticalAlignment="Center">
-                                                <!--  Reset  -->
-                                                <Button x:Name="cmdResets"
-                                                        Style="{StaticResource InlineButton}"
-                                                        DockPanel.Dock="Left"
-                                                        Margin="5,0"
-                                                        Width="100"
-                                                        Height="30"
-                                                        Click="cmdReset_Click">
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
-                                                        <TextBlock Margin="3,0"
-                                                                   FontFamily="{StaticResource THSarabun}"
-                                                                   FontSize="{StaticResource IBFSize}"
-                                                                   Text="Reset"
-                                                                   VerticalAlignment="Center" />
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <DockPanel LastChildFill="True">
+                            <DockPanel x:Name="paCondition1"
+                                       LastChildFill="True"
+                                       DockPanel.Dock="Top"
+                                       Margin="2">
+                                <doc:S8ProductionConditionHeader />
+                            </DockPanel>
+                            <DockPanel x:Name="paCondition2"
+                                       LastChildFill="True"
+                                       DockPanel.Dock="Bottom"
+                                       Margin="2">
+                                <doc:S8ProductionConditionFooter />
+                            </DockPanel>
+                            <ListView x:Name="grid"
+                                      Margin="0,0,0,5"
+                                      FontSize="{StaticResource FontSize18}"
+                                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                                      ItemsSource="{Binding}"
+                                      Style="{StaticResource SingleSelectListView}">
+                                <ListView.View>
+                                    <GridView>
+                                        <!--  BUTTONS  -->
+                                        <GridViewColumn Header="">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal"
+                                                                HorizontalAlignment="Center"
+                                                                VerticalAlignment="Center">
+                                                        <!--  Reset  -->
+                                                        <Button x:Name="cmdResets"
+                                                                Style="{StaticResource InlineButton}"
+                                                                DockPanel.Dock="Left"
+                                                                Margin="5,0"
+                                                                Width="100"
+                                                                Height="30"
+                                                                Click="cmdReset_Click">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
+                                                                <TextBlock Margin="3,0"
+                                                                           FontFamily="{StaticResource THSarabun}"
+                                                                           FontSize="{StaticResource IBFSize}"
+                                                                           Text="Reset"
+                                                                           VerticalAlignment="Center" />
+                                                            </StackPanel>
+                                                        </Button>
+                                                        <!--  Confirm  -->
+                                                        <Button x:Name="cmdConfirmCondition"
+                                                                Style="{StaticResource InlineButton}"
+                                                                DockPanel.Dock="Left"
+                                                                Margin="5,0"
+                                                                Width="100"
+                                                                Height="30"
+                                                                Click="cmdConfirmCondition_Click">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                                <TextBlock Margin="3,0"
+                                                                           FontFamily="{StaticResource THSarabun}"
+                                                                           FontSize="{StaticResource IBFSize}"
+                                                                           Text="Set"
+                                                                           VerticalAlignment="Center" />
+                                                            </StackPanel>
+                                                        </Button>
+                                                        <!--  Detail  -->
+                                                        <Button x:Name="cmdDetails"
+                                                                Style="{StaticResource InlineButton}"
+                                                                DockPanel.Dock="Left"
+                                                                Margin="5,0"
+                                                                Width="100"
+                                                                Height="30"
+                                                                Click="cmdDetails_Click">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                                <TextBlock Margin="3,0"
+                                                                           FontFamily="{StaticResource THSarabun}"
+                                                                           FontSize="{StaticResource IBFSize}"
+                                                                           Text="Edit"
+                                                                           VerticalAlignment="Center" />
+                                                            </StackPanel>
+                                                        </Button>
                                                     </StackPanel>
-                                                </Button>
-                                                <!--  Confirm  -->
-                                                <Button x:Name="cmdConfirmCondition"
-                                                        Style="{StaticResource InlineButton}"
-                                                        DockPanel.Dock="Left"
-                                                        Margin="5,0"
-                                                        Width="100"
-                                                        Height="30"
-                                                        Click="cmdConfirmCondition_Click">
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
-                                                        <TextBlock Margin="3,0"
-                                                                   FontFamily="{StaticResource THSarabun}"
-                                                                   FontSize="{StaticResource IBFSize}"
-                                                                   Text="Set"
-                                                                   VerticalAlignment="Center" />
-                                                    </StackPanel>
-                                                </Button>
-                                                <!--  Detail  -->
-                                                <Button x:Name="cmdDetails"
-                                                        Style="{StaticResource InlineButton}"
-                                                        DockPanel.Dock="Left"
-                                                        Margin="5,0"
-                                                        Width="100"
-                                                        Height="30"
-                                                        Click="cmdDetails_Click">
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
-                                                        <TextBlock Margin="3,0"
-                                                                   FontFamily="{StaticResource THSarabun}"
-                                                                   FontSize="{StaticResource IBFSize}"
-                                                                   Text="Edit"
-                                                                   VerticalAlignment="Center" />
-                                                    </StackPanel>
-                                                </Button>
-                                            </StackPanel>
-                                            <DataTemplate.Triggers>
-                                                <DataTrigger Binding="{Binding RowType}" Value="-2">
-                                                    <Setter TargetName="cmdResets" Property="Visibility" Value="Visible" />
-                                                    <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
-                                                    <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding RowType}" Value="-1">
-                                                    <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
-                                                    <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
-                                                    <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding RowType}" Value="0">
-                                                    <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
-                                                    <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
-                                                    <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding RowType}" Value="1">
-                                                    <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
-                                                    <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
-                                                    <Setter TargetName="cmdDetails" Property="Visibility" Value="Visible" />
-                                                </DataTrigger>
-                                            </DataTemplate.Triggers>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
+                                                    <DataTemplate.Triggers>
+                                                        <DataTrigger Binding="{Binding RowType}" Value="-2">
+                                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Visible" />
+                                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
+                                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding RowType}" Value="-1">
+                                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
+                                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
+                                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding RowType}" Value="0">
+                                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
+                                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
+                                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding RowType}" Value="1">
+                                                            <Setter TargetName="cmdResets" Property="Visibility" Value="Collapsed" />
+                                                            <Setter TargetName="cmdConfirmCondition" Property="Visibility" Value="Collapsed" />
+                                                            <Setter TargetName="cmdDetails" Property="Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                    </DataTemplate.Triggers>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
 
-                                <GridViewColumn Header="Date" CellTemplate="{StaticResource S8P_Date}" />
-                                <GridViewColumn Header="Doffing No" CellTemplate="{StaticResource S8P_DoffNo}" />
+                                        <GridViewColumn Header="Date" CellTemplate="{StaticResource S8P_Date}" />
+                                        <GridViewColumn Header="Doffing No" CellTemplate="{StaticResource S8P_DoffNo}" />
 
-                                <GridViewColumn Width="Auto"
-                                                CellTemplate="{StaticResource S8StretchColumns}"
-                                                HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                                HeaderTemplate="{StaticResource S8StretchColumnsHeader}" />
+                                        <GridViewColumn Width="Auto"
+                                                        CellTemplate="{StaticResource S8StretchColumns}"
+                                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                                        HeaderTemplate="{StaticResource S8StretchColumnsHeader}" />
 
-                                <GridViewColumn Width="Auto"
-                                                CellTemplate="{StaticResource S8TempColumns}"
-                                                HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                                HeaderTemplate="{StaticResource S8TempColumnsHeader}" />
+                                        <GridViewColumn Width="Auto"
+                                                        CellTemplate="{StaticResource S8TempColumns}"
+                                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                                        HeaderTemplate="{StaticResource S8TempColumnsHeader}" />
 
 
-                                <GridViewColumn Header="ความเร็ว" CellTemplate="{StaticResource S8P_SpeedValue}" />
-                                <GridViewColumn Header="Treat (cord)" CellTemplate="{StaticResource S8P_TreatValue}" />
-                                <GridViewColumn Header="Doffing Length" CellTemplate="{StaticResource S8P_DoffingLengthValue}" />
-                                <GridViewColumn Header="Weight (kg)" CellTemplate="{StaticResource S8P_WeightValue}" />
+                                        <GridViewColumn Header="ความเร็ว" CellTemplate="{StaticResource S8P_SpeedValue}" />
+                                        <GridViewColumn Header="Treat (cord)" CellTemplate="{StaticResource S8P_TreatValue}" />
+                                        <GridViewColumn Header="Doffing Length" CellTemplate="{StaticResource S8P_DoffingLengthValue}" />
+                                        <GridViewColumn Header="Weight (kg)" CellTemplate="{StaticResource S8P_WeightValue}" />
 
-                                <GridViewColumn Width="Auto"
-                                                CellTemplate="{StaticResource S8ProductColumns}"
-                                                HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                                HeaderTemplate="{StaticResource S8ProductColumnsHeader}" />
+                                        <GridViewColumn Width="Auto"
+                                                        CellTemplate="{StaticResource S8ProductColumns}"
+                                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                                        HeaderTemplate="{StaticResource S8ProductColumnsHeader}" />
 
-                                <GridViewColumn Width="Auto"
-                                                CellTemplate="{StaticResource S8PositionColumns}"
-                                                HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                                HeaderTemplate="{StaticResource S8PositionColumnsHeader}" />
+                                        <GridViewColumn Width="Auto"
+                                                        CellTemplate="{StaticResource S8PositionColumns}"
+                                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                                        HeaderTemplate="{StaticResource S8PositionColumnsHeader}" />
 
-                                <GridViewColumn Width="Auto"
-                                                CellTemplate="{StaticResource S8CheckTimeColumns}"
-                                                HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                                HeaderTemplate="{StaticResource S8CheckTimeColumnsHeader}" />
+                                        <GridViewColumn Width="Auto"
+                                                        CellTemplate="{StaticResource S8CheckTimeColumns}"
+                                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                                        HeaderTemplate="{StaticResource S8CheckTimeColumnsHeader}" />
 
-                                <GridViewColumn Header="Operator" CellTemplate="{StaticResource S8P_Operator}" />
-                                <GridViewColumn Header="Leader" CellTemplate="{StaticResource S8P_Leader}" />
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                                        <GridViewColumn Header="Operator" CellTemplate="{StaticResource S8P_Operator}" />
+                                        <GridViewColumn Header="Leader" CellTemplate="{StaticResource S8P_Leader}" />
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </DockPanel>
+                    </ScrollViewer>
                 </DockPanel>
-            </ScrollViewer>
-        </DockPanel>
+            </TabItem>
+            <TabItem Header="Wet Pick Up" FontSize="18">
+                <DockPanel LastChildFill="True">
+                    <!--  BUTTONS  -->
+                    <DockPanel LastChildFill="True"
+                               DockPanel.Dock="Bottom"
+                               Height="40">
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Right"
+                                    VerticalAlignment="Center">
+                            <!--  HOME  -->
+                            <ctrl:FontAwesomeButton x:Name="cmdBack2"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Back"
+                                                    Text="Back"
+                                                    Click="cmdBack_Click" />
+                        </StackPanel>
+                        <Grid />
+                    </DockPanel>
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <DockPanel LastChildFill="True">
+                            <DockPanel x:Name="paWetPickup"
+                                       LastChildFill="True"
+                                       DockPanel.Dock="Top"
+                                       Margin="2">
+                                <doc:S8WetPickupEntryViewPage x:Name="pickupDoc" />
+                            </DockPanel>
+                        </DockPanel>
+                    </ScrollViewer>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Electrical Checking" FontSize="18">
+                <DockPanel LastChildFill="True">
+                    <!--  BUTTONS  -->
+                    <DockPanel LastChildFill="True"
+                               DockPanel.Dock="Bottom"
+                               Height="40">
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Right"
+                                    VerticalAlignment="Center">
+                            <!--  HOME  -->
+                            <ctrl:FontAwesomeButton x:Name="cmdBack3"
+                                                    Margin="5,0,0,0"
+                                                    IconType="Back"
+                                                    Text="Back"
+                                                    Click="cmdBack_Click" />
+                        </StackPanel>
+                        <Grid />
+                    </DockPanel>
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <DockPanel LastChildFill="True">
+                            <DockPanel x:Name="paElectric"
+                                       LastChildFill="True"
+                                       DockPanel.Dock="Top"
+                                       Margin="2">
+                                <doc:S8ElectricEntryPage />
+                            </DockPanel>
+                        </DockPanel>
+                    </ScrollViewer>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
     </page:NPage>
 </UserControl>

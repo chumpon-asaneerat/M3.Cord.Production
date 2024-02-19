@@ -121,6 +121,9 @@
     <Compile Include="Controls\Documents\DIPS8Before\DIPS8BeforeStdPage.xaml.cs">
       <DependentUpon>DIPS8BeforeStdPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupEntryViewPage.xaml.cs">
+      <DependentUpon>S8x2WetPickupEntryViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2ProductionConditionFooter.xaml.cs">
       <DependentUpon>S8x2ProductionConditionFooter.xaml</DependentUpon>
     </Compile>
@@ -168,6 +171,9 @@
     </Compile>
     <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupItemEntryPage.xaml.cs">
       <DependentUpon>S8x2WetPickupItemEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\DIPS8Condition\S8WetPickupEntryViewPage.xaml.cs">
+      <DependentUpon>S8WetPickupEntryViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml.cs">
       <DependentUpon>CordSamplingDetailsPage.xaml</DependentUpon>
@@ -306,6 +312,9 @@
     <Compile Include="Pages\Ageing\Current\SubPages\Twist\S5ConditionTwistManager.cs" />
     <Compile Include="Pages\DIP\Current\SubPages\S8x2ConditionSummaryPage.xaml.cs">
       <DependentUpon>S8x2ConditionSummaryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DIP\View\SubPages\S8x2ConditionSummaryViewPage.xaml.cs">
+      <DependentUpon>S8x2ConditionSummaryViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Masters\Customers\CustomerManagePage.xaml.cs">
       <DependentUpon>CustomerManagePage.xaml</DependentUpon>
@@ -773,6 +782,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupEntryViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\Documents\DIPS8x2Condition\S8x2ProductionConditionFooter.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -836,6 +849,10 @@
     <Page Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupItemEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\DIPS8Condition\S8WetPickupEntryViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\Documents\SamplingDetails\CordSamplingDetailsPage.xaml">
       <SubType>Designer</SubType>
@@ -1014,6 +1031,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\DIP\Current\SubPages\S8x2ConditionSummaryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DIP\View\SubPages\S8x2ConditionSummaryViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

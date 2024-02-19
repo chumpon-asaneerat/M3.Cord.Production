@@ -49,6 +49,8 @@ namespace M3.Cord.Pages
         private S8ProductionCondition sheet = null;
         private List<S8ProductionConditionItem> items = null;
 
+        private S8WetPickUp pickup = null;
+
         #endregion
 
         #region Button Handlers
@@ -165,6 +167,30 @@ namespace M3.Cord.Pages
             }
 
             grid.ItemsSource = items;
+
+            RefreshPickup();
+        }
+
+        private void RefreshPickup()
+        {
+            paWetPickup.DataContext = null;
+            paElectric.DataContext = null;
+
+            var pickups = S8WetPickUp.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now).Value();
+            pickup = (null != pickups) ? pickups.LastOrDefault() : null;
+            if (null == pickup)
+            {
+                pickup = new S8WetPickUp();
+                pickup.ProductCode = pcCard.ProductCode;
+                pickup.LotNo = pcCard.DIPLotNo;
+                pickup.CustomerName = pcCard.CustomerName;
+                pickup.DoffingDate = DateTime.Now;
+            }
+
+            pickupDoc.Setup(pcCard);
+
+            paWetPickup.DataContext = pickup;
+            paElectric.DataContext = pickup;
         }
 
         private void Export()

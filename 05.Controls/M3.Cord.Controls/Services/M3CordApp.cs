@@ -600,6 +600,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.S8ConditionSummaryViewPage>(); }
             }
+            /// <summary>Gets S8x2 Condition Summary View Page.</summary>
+            public static Cord.Pages.S8x2ConditionSummaryViewPage S8x2ConditionSummaryView
+            {
+                get { return GetPage<Cord.Pages.S8x2ConditionSummaryViewPage>(); }
+            }
             /// <summary>Gets Chemical Requisition Record View Page.</summary>
             public static Cord.Pages.ChemicalRequisitionRecordViewPage ChemicalRequisitionRecordView
             {

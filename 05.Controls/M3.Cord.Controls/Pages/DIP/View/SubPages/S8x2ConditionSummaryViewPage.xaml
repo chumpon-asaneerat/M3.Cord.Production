@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="M3.Cord.Pages.S8ConditionSummaryPage"
+﻿<UserControl x:Class="M3.Cord.Pages.S8x2ConditionSummaryViewPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -244,7 +244,7 @@
 
         <!--#endregion-->
     </UserControl.Resources>
-    <page:NPage x:Name="page" HeaderText="ใบบันทึกค่าสภาวะการผลิต S-8-1">
+    <page:NPage x:Name="page" HeaderText="ใบบันทึกค่าสภาวะการผลิต S-8-2">
         <TabControl>
             <TabItem Header="ใบบันทึกค่าสภาวะการผลิต" FontSize="18">
                 <DockPanel LastChildFill="True">
@@ -265,17 +265,12 @@
                         <StackPanel Orientation="Horizontal"
                                     DockPanel.Dock="Left"
                                     VerticalAlignment="Center">
-                            <ctrl:FontAwesomeButton x:Name="cmdSave"
+                            <!--  EXPORT  -->
+                            <ctrl:FontAwesomeButton x:Name="cmdExport"
                                                     Margin="5,0,0,0"
-                                                    IconType="Add"
-                                                    Text="Save"
-                                                    Click="cmdSave_Click" />
-                            <TextBlock Width="10" />
-                            <ctrl:FontAwesomeButton x:Name="cmdAdd"
-                                                    Margin="5,0,0,0"
-                                                    IconType="Add"
-                                                    Text="เพิ่ม"
-                                                    Click="cmdAdd_Click" />
+                                                    IconType="Export"
+                                                    Text="Export"
+                                                    Click="cmdExport_Click" />
                         </StackPanel>
                         <Grid />
                     </DockPanel>
@@ -285,13 +280,13 @@
                                        LastChildFill="True"
                                        DockPanel.Dock="Top"
                                        Margin="2">
-                                <doc:S8ProductionConditionHeader />
+                                <doc:S8x2ProductionConditionHeader />
                             </DockPanel>
                             <DockPanel x:Name="paCondition2"
                                        LastChildFill="True"
                                        DockPanel.Dock="Bottom"
                                        Margin="2">
-                                <doc:S8ProductionConditionFooter />
+                                <doc:S8x2ProductionConditionFooter />
                             </DockPanel>
                             <ListView x:Name="grid"
                                       Margin="0,0,0,5"
@@ -445,15 +440,6 @@
                                                     Text="Back"
                                                     Click="cmdBack_Click" />
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal"
-                                    DockPanel.Dock="Left"
-                                    VerticalAlignment="Center">
-                            <ctrl:FontAwesomeButton x:Name="cmdSave2"
-                                                    Margin="5,0,0,0"
-                                                    IconType="Add"
-                                                    Text="Save"
-                                                    Click="cmdSave2_Click" />
-                        </StackPanel>
                         <Grid />
                     </DockPanel>
                     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
@@ -462,7 +448,7 @@
                                        LastChildFill="True"
                                        DockPanel.Dock="Top"
                                        Margin="2">
-                                <doc:S8WetPickupEntryPage x:Name="pickupDoc" />
+                                <doc:S8x2WetPickupEntryViewPage x:Name="pickupDoc" />
                             </DockPanel>
                         </DockPanel>
                     </ScrollViewer>
@@ -484,15 +470,6 @@
                                                     Text="Back"
                                                     Click="cmdBack_Click" />
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal"
-                                    DockPanel.Dock="Left"
-                                    VerticalAlignment="Center">
-                            <ctrl:FontAwesomeButton x:Name="cmdSave3"
-                                                    Margin="5,0,0,0"
-                                                    IconType="Add"
-                                                    Text="Save"
-                                                    Click="cmdSave3_Click" />
-                        </StackPanel>
                         <Grid />
                     </DockPanel>
                     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
@@ -501,7 +478,7 @@
                                        LastChildFill="True"
                                        DockPanel.Dock="Top"
                                        Margin="2">
-                                <doc:S8ElectricEntryPage />
+                                <doc:S8x2ElectricEntryPage />
                             </DockPanel>
                         </DockPanel>
                     </ScrollViewer>

@@ -19,22 +19,23 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using M3.Cord.Services.Excels;
 
 #endregion
 
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for S8x2ConditionSummaryPage.xaml
+    /// Interaction logic for S8x2ConditionSummaryViewPage.xaml
     /// </summary>
-    public partial class S8x2ConditionSummaryPage : UserControl
+    public partial class S8x2ConditionSummaryViewPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public S8x2ConditionSummaryPage()
+        public S8x2ConditionSummaryViewPage()
         {
             InitializeComponent();
         }
@@ -56,12 +57,9 @@ namespace M3.Cord.Pages
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            M3CordApp.Pages.GotoDIPOperationMenu(mc);
-        }
-
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
-        {
-            Save();
+            var page = M3CordApp.Pages.DIPOperationView;
+            page.Setup(pcCard);
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdReset_Click(object sender, RoutedEventArgs e)
@@ -69,16 +67,11 @@ namespace M3.Cord.Pages
             ResetStd();
         }
 
-        private void cmdAdd_Click(object sender, RoutedEventArgs e)
-        {
-            Add();
-        }
-
         private void cmdDetails_Click(object sender, RoutedEventArgs e)
         {
             /*
             var ctx = (sender as Button).DataContext;
-            var item = (null != ctx && ctx is S8x2ProductionConditionItem) ? ctx as S8x2ProductionConditionItem : null;
+            var item = (null != ctx && ctx is S8ProductionConditionItem) ? ctx as S8ProductionConditionItem : null;
             Edit(item);
             */
         }
@@ -88,14 +81,9 @@ namespace M3.Cord.Pages
 
         }
 
-        private void cmdSave3_Click(object sender, RoutedEventArgs e)
+        private void cmdExport_Click(object sender, RoutedEventArgs e)
         {
-            Save2();
-        }
-
-        private void cmdSave2_Click(object sender, RoutedEventArgs e)
-        {
-            Save2();
+            Export();
         }
 
         #endregion
@@ -146,87 +134,18 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void Add()
-        {
-            if (null == pcCard)
-                return;
-
-            if (!pcCard.StartTime.HasValue)
-            {
-                var msgbox = M3CordApp.Windows.MessageBox;
-                msgbox.Setup("M/C is not start" + Environment.NewLine + "ยังไม่ทำการเดินเครื่อง");
-                msgbox.ShowDialog();
-
-                return;
-            }
-
-            var dt = pcCard.StartTime.Value;
-            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
-
-            var win = M3CordApp.Windows.S8x2ProductionConditionItemEditor;
-            var item = S8x2ProductionConditionItem.Create(pcCard.ProductCode);
-            item.DIPPCId = pcCard.DIPPCId;
-            item.ProductCode = pcCard.ProductCode;
-            item.RowType = 1;
-            item.LotNo = pcCard.DIPLotNo;
-            item.DoffingDate = DateTime.Today;
-            item.DoffingNo = pcCard.DoffNo;
-
-            win.Setup(startDate, item);
-            if (win.ShowDialog() == true)
-            {
-                RefreshGrid();
-            }
-        }
-
-        private void Edit(S8x2ProductionConditionItem item)
+        private void Edit(S8ProductionConditionItem item)
         {
             if (null == item) return;
 
             var dt = pcCard.StartTime.Value;
             var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
 
-            var win = M3CordApp.Windows.S8x2ProductionConditionItemEditor;
+            var win = M3CordApp.Windows.S8ProductionConditionItemEditor;
             win.Setup(startDate, item);
             if (win.ShowDialog() == true)
             {
                 RefreshGrid();
-            }
-        }
-
-        private void Save()
-        {
-            if (null != sheet)
-            {
-                var ret = S8x2ProductionCondition.Save(sheet);
-
-                if (sheet.DIPPCId.HasValue)
-                {
-                    if (null != items)
-                    {
-                        foreach (var item in items)
-                        {
-                            item.DIPPCId = sheet.DIPPCId.Value;
-                            S8x2ProductionConditionItem.Save(item);
-                        }
-                    }
-                }
-
-                if (null != ret && ret.Ok)
-                    M3CordApp.Windows.SaveSuccess();
-                else M3CordApp.Windows.SaveFailed();
-            }
-        }
-
-        private void Save2()
-        {
-            if (null != pickup)
-            {
-                var ret = S8x2WetPickUp.Save(pickup);
-
-                if (null != ret && ret.Ok)
-                    M3CordApp.Windows.SaveSuccess();
-                else M3CordApp.Windows.SaveFailed();
             }
         }
 
@@ -274,11 +193,16 @@ namespace M3.Cord.Pages
             paElectric.DataContext = pickup;
         }
 
+        private void Export()
+        {
+            //S8x2Export.Export(pcCard, sheet, items);
+        }
+
         #endregion
 
         #region Public Methods
 
-        public void Setup(DIPMC selecteedMC)
+        public void Setup(DIPMC selecteedMC, DIPPCCard PCCard)
         {
             if (null != selecteedMC)
             {
@@ -286,7 +210,7 @@ namespace M3.Cord.Pages
                 mc = DIPMC.Gets("S-8", "S-8-" + mcNo).Value().FirstOrDefault();
                 if (null != mc)
                 {
-                    pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
+                    pcCard = PCCard;
                     if (null != pcCard)
                     {
                         CheckStd();

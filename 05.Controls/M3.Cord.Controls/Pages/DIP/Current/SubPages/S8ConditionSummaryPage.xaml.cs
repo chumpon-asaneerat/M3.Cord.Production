@@ -254,6 +254,9 @@ namespace M3.Cord.Pages
 
         private void RefreshPickup()
         {
+            paWetPickup.DataContext = null;
+            paElectric.DataContext = null;
+
             var pickups = S8WetPickUp.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now).Value();
             pickup = (null != pickups) ? pickups.LastOrDefault() : null;
             if (null == pickup)
@@ -266,6 +269,9 @@ namespace M3.Cord.Pages
             }
 
             pickupDoc.Setup(pcCard);
+
+            paWetPickup.DataContext = pickup;
+            paElectric.DataContext = pickup;
         }
 
         #endregion
@@ -297,16 +303,12 @@ namespace M3.Cord.Pages
                             sheet.CustomerName = pcCard.CustomerName;
                             sheet.CordStructure = pcCard.CordStructure;
                         }
-
-                        RefreshPickup();
                     }
                 }
             }
 
             paCondition1.DataContext = sheet;
             paCondition2.DataContext = sheet;
-            paWetPickup.DataContext = pickup;
-            paElectric.DataContext = pickup;
 
             this.InvokeAction(() =>
             {
