@@ -77,6 +77,7 @@ namespace M3.Cord.Controls.Documents
             if (win.ShowDialog() == true)
             {
                 item.TwistNo = twistNo;
+                item.RowType = 1;
                 item.Operator = (null != M3CordApp.Current.User) ?
                             M3CordApp.Current.User.FullName : null;
                 item.UpdateDate = DateTime.Now;

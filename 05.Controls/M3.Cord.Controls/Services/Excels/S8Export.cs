@@ -289,16 +289,180 @@ namespace M3.Cord.Services.Excels
                             // Solution
                             ws2.Cells["G22"].Value = pickup.SolutionLotNo;
 
+                            ws2.Cells["N5"].Value = pickup.SpeedSet;
+                            ws2.Cells["Q5"].Value = pickup.SpeedActual;
+
+                            ws2.Cells["N6"].Value = pickup.StretchD;
+                            ws2.Cells["P6"].Value = pickup.StretchH;
+                            ws2.Cells["R6"].Value = pickup.StretchN;
+
+                            ws2.Cells["N7"].Value = pickup.TempD;
+                            ws2.Cells["Q7"].Value = pickup.TempHN;
+
+
+                            ws2.Cells["N9"].Value = (pickup.AMV1.HasValue) ? 
+                                string.Format("{0:n2} V (โวลด์)", pickup.AMV1.Value) : null;
+                            ws2.Cells["N10"].Value = (pickup.AMV2.HasValue) ?
+                                string.Format("{0:n2} V (โวลด์)", pickup.AMV2.Value) : null;
+                            ws2.Cells["N11"].Value = (pickup.AMV3.HasValue) ?
+                                string.Format("{0:n2} V (โวลด์)", pickup.AMV3.Value) : null;
+                            ws2.Cells["N12"].Value = (pickup.AMV4.HasValue) ?
+                                string.Format("{0:n2} V (โวลด์)", pickup.AMV4.Value) : null;
+
+                            ws2.Cells["P9"].Value = (pickup.AMAmp1.HasValue) ?
+                                string.Format("{0:n2} Amp (แอมแปร์)", pickup.AMAmp1.Value) : null;
+                            ws2.Cells["P10"].Value = (pickup.AMAmp2.HasValue) ?
+                                string.Format("{0:n2} Amp (แอมแปร์)", pickup.AMAmp2.Value) : null;
+                            ws2.Cells["P11"].Value = (pickup.AMAmp3.HasValue) ?
+                                string.Format("{0:n2} Amp (แอมแปร์)", pickup.AMAmp3.Value) : null;
+                            ws2.Cells["P12"].Value = (pickup.AMAmp4.HasValue) ?
+                                string.Format("{0:n2} Amp (แอมแปร์)", pickup.AMAmp4.Value) : null;
+
+                            if (pickup.AMBearing1.HasValue)
+                            {
+                                ws2.Cells["O15"].Value = (pickup.AMBearing1.Value) ? "P" : "O";
+                            }
+                            if (pickup.AMBearing2.HasValue)
+                            {
+                                ws2.Cells["P15"].Value = (pickup.AMBearing2.Value) ? "P" : "O";
+                            }
+                            if (pickup.AMBearing3.HasValue)
+                            {
+                                ws2.Cells["Q15"].Value = (pickup.AMBearing3.Value) ? "P" : "O";
+                            }
+                            if (pickup.AMBearing4.HasValue)
+                            {
+                                ws2.Cells["R15"].Value = (pickup.AMBearing4.Value) ? "P" : "O";
+                            }
+
+                            if (pickup.AMMotorNoise1.HasValue)
+                            {
+                                ws2.Cells["O16"].Value = (pickup.AMMotorNoise1.Value) ? "P" : "O";
+                            }
+                            if (pickup.AMMotorNoise2.HasValue)
+                            {
+                                ws2.Cells["P16"].Value = (pickup.AMMotorNoise2.Value) ? "P" : "O";
+                            }
+                            if (pickup.AMMotorNoise3.HasValue)
+                            {
+                                ws2.Cells["Q16"].Value = (pickup.AMMotorNoise3.Value) ? "P" : "O";
+                            }
+                            if (pickup.AMMotorNoise4.HasValue)
+                            {
+                                ws2.Cells["R16"].Value = (pickup.AMMotorNoise4.Value) ? "P" : "O";
+                            }
+
+                            if (pickup.AMNoVibration1.HasValue)
+                            {
+                                ws2.Cells["O17"].Value = (pickup.AMNoVibration1.Value) ? "P" : "O";
+                            }
+                            if (pickup.AMNoVibration2.HasValue)
+                            {
+                                ws2.Cells["P17"].Value = (pickup.AMNoVibration2.Value) ? "P" : "O";
+                            }
+                            if (pickup.AMNoVibration3.HasValue)
+                            {
+                                ws2.Cells["Q17"].Value = (pickup.AMNoVibration3.Value) ? "P" : "O";
+                            }
+                            if (pickup.AMNoVibration4.HasValue)
+                            {
+                                ws2.Cells["R17"].Value = (pickup.AMNoVibration4.Value) ? "P" : "O";
+                            }
+
+                            if (pickup.BurnerD.HasValue)
+                            {
+                                ws2.Cells["O20"].Value = (pickup.BurnerD.Value) ? "P" : "O";
+                            }
+                            if (pickup.BurnerHN.HasValue)
+                            {
+                                ws2.Cells["Q20"].Value = (pickup.BurnerHN.Value) ? "P" : "O";
+                            }
+
+                            if (pickup.GasLeakD.HasValue)
+                            {
+                                ws2.Cells["O21"].Value = (pickup.GasLeakD.Value) ? "P" : "O";
+                            }
+                            if (pickup.GasLeakHN.HasValue)
+                            {
+                                ws2.Cells["Q21"].Value = (pickup.GasLeakHN.Value) ? "P" : "O";
+                            }
+
+                            ws2.Cells["O22"].Value = pickup.GasPresureD;
+                            ws2.Cells["Q22"].Value = pickup.GasPresureHN;
+
+                            ws2.Cells["O23"].Value = pickup.AirPresureD;
+                            ws2.Cells["Q23"].Value = pickup.AirPresureHN;
+
+                            if (pickup.ACMotorExhaustFanD.HasValue)
+                            {
+                                ws2.Cells["N27"].Value = (pickup.ACMotorExhaustFanD.Value) ? "P" : "O";
+                            }
+                            if (pickup.ACMotorExhaustFanHN.HasValue)
+                            {
+                                ws2.Cells["N28"].Value = (pickup.ACMotorExhaustFanHN.Value) ? "P" : "O";
+                            }
+                            if (pickup.ExhaustFan1.HasValue)
+                            {
+                                ws2.Cells["N29"].Value = (pickup.ExhaustFan1.Value) ? "P" : "O";
+                            }
+                            if (pickup.ExhaustFan2.HasValue)
+                            {
+                                ws2.Cells["N30"].Value = (pickup.ExhaustFan2.Value) ? "P" : "O";
+                            }
+
+                            if (pickup.ACMotorSupplyD.HasValue)
+                            {
+                                ws2.Cells["Q27"].Value = (pickup.ACMotorSupplyD.Value) ? "P" : "O";
+                            }
+                            if (pickup.ACMotorSupplyHN.HasValue)
+                            {
+                                ws2.Cells["Q28"].Value = (pickup.ACMotorSupplyHN.Value) ? "P" : "O";
+                            }
+                            if (pickup.ExhaustFanSupply1.HasValue)
+                            {
+                                ws2.Cells["Q29"].Value = (pickup.ExhaustFanSupply1.Value) ? "P" : "O";
+                            }
+                            if (pickup.ExhaustFanSupply2.HasValue)
+                            {
+                                ws2.Cells["Q30"].Value = (pickup.ExhaustFanSupply2.Value) ? "P" : "O";
+                            }
+
                             // P1 Items
+                            int iRow = 0;
                             foreach (var p1 in p1items)
                             {
+                                if (iRow > 8) continue;
+                                ws2.Cells[11 + iRow, 1].Value = (p1.DoffingDate.HasValue) ?
+                                    p1.DoffingDate.Value.ToString("yyyy-MM-dd", System.Globalization.DateTimeFormatInfo.InvariantInfo) : null;
+                                ws2.Cells[11 + iRow, 2].Value = p1.DoffNo;
+                                ws2.Cells[11 + iRow, 3].Value = p1.NipPressure;
+                                ws2.Cells[11 + iRow, 4].Value = (p1.WPU.HasValue) ? p1.WPU.Value.ToString("n2") : null;
+                                ws2.Cells[11 + iRow, 5].Value = (p1.FirstAmt.HasValue) ? p1.FirstAmt.Value.ToString("n2") : null;
+                                ws2.Cells[11 + iRow, 6].Value = (p1.UseAmt.HasValue) ? p1.UseAmt.Value.ToString("n2") : null;
+                                ws2.Cells[11 + iRow, 7].Value = (p1.RestAmt.HasValue) ? p1.RestAmt.Value.ToString("n2") : null;
+                                ws2.Cells[11 + iRow, 8].Value = (p1.ThrowAmt.HasValue) ? p1.ThrowAmt.Value.ToString("n2") : null;
+                                ws2.Cells[11 + iRow, 9].Value = p1.Operator;
 
+                                iRow++;
                             }
 
                             // P2 Items
+                            iRow = 0;
                             foreach (var p2 in p2items)
                             {
+                                if (iRow > 8) continue;
+                                ws2.Cells[27 + iRow, 1].Value = (p2.DoffingDate.HasValue) ?
+                                    p2.DoffingDate.Value.ToString("yyyy-MM-dd", System.Globalization.DateTimeFormatInfo.InvariantInfo) : null;
+                                ws2.Cells[27 + iRow, 2].Value = p2.DoffNo;
+                                ws2.Cells[27 + iRow, 3].Value = p2.NipPressure;
+                                ws2.Cells[27 + iRow, 4].Value = (p2.WPU.HasValue) ? p2.WPU.Value.ToString("n2") : null;
+                                ws2.Cells[27 + iRow, 5].Value = (p2.FirstAmt.HasValue) ? p2.FirstAmt.Value.ToString("n2") : null;
+                                ws2.Cells[27 + iRow, 6].Value = (p2.UseAmt.HasValue) ? p2.UseAmt.Value.ToString("n2") : null;
+                                ws2.Cells[27 + iRow, 7].Value = (p2.RestAmt.HasValue) ? p2.RestAmt.Value.ToString("n2") : null;
+                                ws2.Cells[27 + iRow, 8].Value = (p2.ThrowAmt.HasValue) ? p2.ThrowAmt.Value.ToString("n2") : null;
+                                ws2.Cells[27 + iRow, 9].Value = p2.Operator;
 
+                                iRow++;
                             }
                         }
                     }
@@ -759,15 +923,41 @@ namespace M3.Cord.Services.Excels
                             ws2.Cells["K26"].Value = pickup.Remark;
 
                             // P1 Items
+                            int iRow = 0;
                             foreach (var p1 in p1items)
                             {
+                                if (iRow > 8) continue;
+                                ws2.Cells[11 + iRow, 1].Value = (p1.DoffingDate.HasValue) ?
+                                    p1.DoffingDate.Value.ToString("yyyy-MM-dd", System.Globalization.DateTimeFormatInfo.InvariantInfo) : null;
+                                ws2.Cells[11 + iRow, 2].Value = p1.DoffNo;
+                                ws2.Cells[11 + iRow, 3].Value = p1.NipPressure;
+                                ws2.Cells[11 + iRow, 4].Value = (p1.WPU.HasValue) ? p1.WPU.Value.ToString("n2") : null;
+                                ws2.Cells[11 + iRow, 5].Value = (p1.FirstAmt.HasValue) ? p1.FirstAmt.Value.ToString("n2") : null;
+                                ws2.Cells[11 + iRow, 6].Value = (p1.UseAmt.HasValue) ? p1.UseAmt.Value.ToString("n2") : null;
+                                ws2.Cells[11 + iRow, 7].Value = (p1.RestAmt.HasValue) ? p1.RestAmt.Value.ToString("n2") : null;
+                                ws2.Cells[11 + iRow, 8].Value = (p1.ThrowAmt.HasValue) ? p1.ThrowAmt.Value.ToString("n2") : null;
+                                ws2.Cells[11 + iRow, 9].Value = p1.Operator;
 
+                                iRow++;
                             }
 
                             // P2 Items
+                            iRow = 0;
                             foreach (var p2 in p2items)
                             {
+                                if (iRow > 8) continue;
+                                ws2.Cells[27 + iRow, 1].Value = (p2.DoffingDate.HasValue) ?
+                                    p2.DoffingDate.Value.ToString("yyyy-MM-dd", System.Globalization.DateTimeFormatInfo.InvariantInfo) : null;
+                                ws2.Cells[27 + iRow, 2].Value = p2.DoffNo;
+                                ws2.Cells[27 + iRow, 3].Value = p2.NipPressure;
+                                ws2.Cells[27 + iRow, 4].Value = (p2.WPU.HasValue) ? p2.WPU.Value.ToString("n2") : null;
+                                ws2.Cells[27 + iRow, 5].Value = (p2.FirstAmt.HasValue) ? p2.FirstAmt.Value.ToString("n2") : null;
+                                ws2.Cells[27 + iRow, 6].Value = (p2.UseAmt.HasValue) ? p2.UseAmt.Value.ToString("n2") : null;
+                                ws2.Cells[27 + iRow, 7].Value = (p2.RestAmt.HasValue) ? p2.RestAmt.Value.ToString("n2") : null;
+                                ws2.Cells[27 + iRow, 8].Value = (p2.ThrowAmt.HasValue) ? p2.ThrowAmt.Value.ToString("n2") : null;
+                                ws2.Cells[27 + iRow, 9].Value = p2.Operator;
 
+                                iRow++;
                             }
                         }
                     }
