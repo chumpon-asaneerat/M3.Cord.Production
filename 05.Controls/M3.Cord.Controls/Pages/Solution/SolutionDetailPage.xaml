@@ -108,6 +108,17 @@
                         <GridViewColumn Header="Solution"
                                         CellTemplate="{StaticResource RecipeView}"
                                         Width="100" />
+                        <GridViewColumn Header="Chemical Lot" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Margin="2"
+                                             Visibility="{Binding ShowChemicalLotText}"
+                                             Text="{Binding ChemicalLot, Mode=TwoWay}"
+                                             Style="{StaticResource CommonTextBox}"
+                                             Width="180" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <GridViewColumn Header="Chemical (SC)"
                                         CellTemplate="{StaticResource ChemicalName}"
                                         Width="280" />
@@ -117,17 +128,6 @@
                         <GridViewColumn Header="Actual Wet (kg)"
                                         CellTemplate="{StaticResource WeightActual}"
                                         Width="180" />
-                        <GridViewColumn Header="Chemical Lot" Width="Auto" >
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBox Margin="2"
-                                             Visibility="{Binding ShowChemicalLotText}"
-                                             Text="{Binding ChemicalLot,Mode=TwoWay}"
-                                             Style="{StaticResource CommonTextBox}"
-                                             Width="180" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
                         <!--  BUTTONS  -->
                         <!--
                         <GridViewColumn Header="">
