@@ -70,7 +70,7 @@ namespace M3.Cord.Controls.Documents
             item.ProductCode = pcCard.ProductCode;
             item.LotNo = pcCard.DIPLotNo;
             item.DoffingDate = DateTime.Now;
-            item.DoffingNo = pcCard.DoffNo;
+            item.DoffNo = pcCard.DoffNo;
 
             var win = M3CordApp.Windows.S8x2WetPickUpItemEdit;
             win.Setup(item);
@@ -106,13 +106,13 @@ namespace M3.Cord.Controls.Documents
             grid.ItemsSource = null;
             if (null != pcCard)
             {
-                grid.ItemsSource = S8WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, 1).Value();
+                grid.ItemsSource = S8x2WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, 1).Value();
             }
 
             grid2.ItemsSource = null;
             if (null != pcCard)
             {
-                grid2.ItemsSource = S8WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, 2).Value();
+                grid2.ItemsSource = S8x2WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, 2).Value();
             }
         }
 

@@ -70,7 +70,7 @@ namespace M3.Cord.Windows
                 txtDateTime.Text = (_item.DoffingDate.HasValue) ? 
                     _item.DoffingDate.Value.ToString("yyyy-MM-dd HH:mm:ss", System.Globalization.DateTimeFormatInfo.InvariantInfo) : "";
                 txtLotNo.Text = _item.LotNo;
-                txtDoffNo.Text = _item.DoffingNo.ToString();
+                txtDoffNo.Text = _item.DoffNo.ToString();
             }
             else
             {

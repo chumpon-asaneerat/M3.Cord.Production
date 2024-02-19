@@ -27,7 +27,7 @@ namespace M3.Cord.Models
         public string ProductCode { get; set; }
         public string LotNo { get; set; }
         public DateTime? DoffingDate { get; set; }
-        public int DoffingNo { get; set; }
+        public int DoffNo { get; set; }
         public int TwistNo { get; set; }
         public int RowType { get; set; }
 
@@ -126,7 +126,7 @@ namespace M3.Cord.Models
             p.Add("@LotNo", value.LotNo);
             p.Add("@DoffingDate", value.DoffingDate);
 
-            p.Add("@DoffingNo", value.DoffingNo);
+            p.Add("@DoffingNo", value.DoffNo);
             p.Add("@TwistNo", value.TwistNo);
             p.Add("@RowType", value.RowType);
             p.Add("@NipPressure", value.NipPressure);
