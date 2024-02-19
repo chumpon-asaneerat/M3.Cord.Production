@@ -19,7 +19,8 @@ namespace M3.Cord.Services.Excels
     public class S8Export
     {
         public static void Export(DIPPCCard pcCard, S8ProductionCondition sheet,
-            List<S8ProductionConditionItem> items)
+            List<S8ProductionConditionItem> items,
+            S8WetPickUp pickup, List<S8WetPickUpItem> p1items, List<S8WetPickUpItem> p2items)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -28,7 +29,7 @@ namespace M3.Cord.Services.Excels
                 return;
             if (null == pcCard)
                 return;
-            if (null == sheet || null == items)
+            if (null == sheet || null == items || null == pickup || null == p1items || null == p2items)
                 return;
 
             if (!ExcelExportUtils.CreateS8File(outputFile, true))
@@ -107,12 +108,12 @@ namespace M3.Cord.Services.Excels
                         ws.Cells["G32"].Value = sheet.GasTotal;
                         // Cooling Warter - Before/After/Total
                         ws.Cells["C34"].Value = sheet.CoolingWarterBefore;
-                        ws.Cells["C34"].Value = sheet.CoolingWarterAfter;
-                        ws.Cells["C34"].Value = sheet.CoolingWarterTotal;
+                        ws.Cells["E34"].Value = sheet.CoolingWarterAfter;
+                        ws.Cells["G34"].Value = sheet.CoolingWarterTotal;
                         // Air Pressure - Before/After/Total
-                        ws.Cells["C34"].Value = sheet.AirPressureBefore;
-                        ws.Cells["C34"].Value = sheet.AirPressureAfter;
-                        ws.Cells["C34"].Value = sheet.AirPressureTotal;
+                        ws.Cells["C35"].Value = sheet.AirPressureBefore;
+                        ws.Cells["E35"].Value = sheet.AirPressureAfter;
+                        ws.Cells["G35"].Value = sheet.AirPressureTotal;
 
                         // Bath 1 - Before/After/Total
                         ws.Cells["J31"].Value = sheet.Bath1Before;
@@ -229,36 +230,77 @@ namespace M3.Cord.Services.Excels
                             else
                             {
                                 if (iRow > 11) continue;
+
                                 ws.Cells[18 + iRow, 1].Value = item.DoffingDateS;
                                 ws.Cells[18 + iRow, 2].Value = item.DoffingNoS;
 
-                                ws.Cells[18 + iRow, 3].Value = item.StretchNValueS;
-                                ws.Cells[18 + iRow, 4].Value = item.TempDValueS;
-                                ws.Cells[18 + iRow, 5].Value = item.TempHNValueS;
-                                ws.Cells[18 + iRow, 6].Value = item.SpeedValueS;
-                                ws.Cells[18 + iRow, 7].Value = item.TreatValueS;
-                                         
-                                ws.Cells[18 + iRow, 8].Value = item.DoffingLengthValueS;
-                                ws.Cells[18 + iRow, 9].Value = item.WeightValueS;
-                                ws.Cells[18 + iRow, 10].Value = item.SpindleValueS;
-                                ws.Cells[18 + iRow, 11].Value = item.ProductionGoodValueS;
-                                ws.Cells[18 + iRow, 12].Value = item.ProductionTotalValueS;
-                                ws.Cells[18 + iRow, 13].Value = item.ProductionCutValueS;
-                                         
-                                ws.Cells[18 + iRow, 14].Value = item.PositionCordCutCreelValueS;
-                                ws.Cells[18 + iRow, 15].Value = item.PositionCordCutCS;
-                                ws.Cells[18 + iRow, 16].Value = item.PositionCordCutWinderValueS;
-                                ws.Cells[18 + iRow, 17].Value = item.PositionCordCutWasteYarnValueS;
-                                ws.Cells[18 + iRow, 18].Value = item.CheckTimeStartS;
-                                ws.Cells[18 + iRow, 19].Value = item.CheckTimeFinishS;
-                                ws.Cells[18 + iRow, 20].Value = item.CheckTimeRecordS;
-                                ws.Cells[18 + iRow, 21].Value = item.Opertor;
+                                ws.Cells[18 + iRow, 3].Value = item.StretchDValueS;
+                                ws.Cells[18 + iRow, 4].Value = item.StretchHValueS;
+                                ws.Cells[18 + iRow, 5].Value = item.StretchNValueS;
+
+                                ws.Cells[18 + iRow, 6].Value = item.TempDValueS;
+                                ws.Cells[18 + iRow, 7].Value = item.TempHNValueS;
+                                ws.Cells[18 + iRow, 8].Value = item.SpeedValueS;
+                                ws.Cells[18 + iRow, 9].Value = item.TreatValueS;
+
+                                ws.Cells[18 + iRow, 10].Value = item.DoffingLengthValueS;
+                                ws.Cells[18 + iRow, 11].Value = item.WeightValueS;
+                                ws.Cells[18 + iRow, 12].Value = item.SpindleValueS;
+                                ws.Cells[18 + iRow, 13].Value = item.ProductionGoodValueS;
+                                ws.Cells[18 + iRow, 14].Value = item.ProductionTotalValueS;
+                                ws.Cells[18 + iRow, 15].Value = item.ProductionCutValueS;
+
+                                ws.Cells[18 + iRow, 16].Value = item.PositionCordCutCreelValueS;
+                                ws.Cells[18 + iRow, 17].Value = item.PositionCordCutCS;
+                                ws.Cells[18 + iRow, 18].Value = item.PositionCordCutWinderValueS;
+                                ws.Cells[18 + iRow, 19].Value = item.PositionCordCutWasteYarnValueS;
+                                ws.Cells[18 + iRow, 20].Value = item.CheckTimeStartS;
+                                ws.Cells[18 + iRow, 21].Value = item.CheckTimeFinishS;
+                                ws.Cells[18 + iRow, 22].Value = item.CheckTimeRecordS;
+                                ws.Cells[18 + iRow, 23].Value = item.Opertor;
 
                                 iRow++;
                             }
                         }
 
                         #endregion
+                    }
+
+                    if (package.Workbook.Worksheets.Count >= 2)
+                    {
+                        var ws2 = package.Workbook.Worksheets[1]; // check exists
+                        if (null != ws2)
+                        {
+                            // Product
+                            ws2.Cells["A5"].Value = pcCard.ProductCode;
+                            // Customer
+                            ws2.Cells["C5"].Value = pcCard.CustomerName;
+                            // First DIP Twist 1
+                            ws2.Cells["E5"].Value = pickup.FirstDip1;
+                            // Solution
+                            ws2.Cells["G5"].Value = pickup.SolutionName;
+
+                            // Product
+                            ws2.Cells["A22"].Value = pcCard.ProductCode;
+                            // Customer
+                            ws2.Cells["C22"].Value = pcCard.CustomerName;
+                            // First DIP Twist 2
+                            ws2.Cells["E22"].Value = pickup.FirstDip2;
+                            // Solution
+                            ws2.Cells["G22"].Value = pickup.SolutionLotNo;
+
+                            // P1 Items
+                            foreach (var p1 in p1items)
+                            {
+
+                            }
+
+                            // P2 Items
+                            foreach (var p2 in p2items)
+                            {
+
+                            }
+                        }
                     }
 
                     package.Save();
@@ -276,7 +318,8 @@ namespace M3.Cord.Services.Excels
     public class S8x2Export
     {
         public static void Export(DIPPCCard pcCard, S8x2ProductionCondition sheet,
-            List<S8x2ProductionConditionItem> items)
+            List<S8x2ProductionConditionItem> items, 
+            S8x2WetPickUp pickup, List<S8x2WetPickUpItem> p1items, List<S8x2WetPickUpItem> p2items)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -285,10 +328,10 @@ namespace M3.Cord.Services.Excels
                 return;
             if (null == pcCard)
                 return;
-            if (null == sheet || null == items)
+            if (null == sheet || null == items || null == pickup || null == p1items || null == p2items)
                 return;
 
-            if (!ExcelExportUtils.CreateS8File(outputFile, true))
+            if (!ExcelExportUtils.CreateS8x2File(outputFile, true))
             {
                 M3CordApp.Windows.ExportFailed();
                 return;
@@ -363,41 +406,61 @@ namespace M3.Cord.Services.Excels
                         ws.Cells["E32"].Value = sheet.GasAfter;
                         ws.Cells["G32"].Value = sheet.GasTotal;
                         // Cooling Warter - Before/After/Total
-                        ws.Cells["C34"].Value = sheet.CoolingWarterBefore;
-                        ws.Cells["C34"].Value = sheet.CoolingWarterAfter;
-                        ws.Cells["C34"].Value = sheet.CoolingWarterTotal;
+                        ws.Cells["C33"].Value = sheet.CoolingWarterBefore;
+                        ws.Cells["E33"].Value = sheet.CoolingWarterAfter;
+                        ws.Cells["G33"].Value = sheet.CoolingWarterTotal;
                         // Air Pressure - Before/After/Total
                         ws.Cells["C34"].Value = sheet.AirPressureBefore;
-                        ws.Cells["C34"].Value = sheet.AirPressureAfter;
-                        ws.Cells["C34"].Value = sheet.AirPressureTotal;
+                        ws.Cells["E34"].Value = sheet.AirPressureAfter;
+                        ws.Cells["G34"].Value = sheet.AirPressureTotal;
 
                         // Bath 1 - Before/After/Total
                         ws.Cells["J31"].Value = sheet.Bath1Before;
                         ws.Cells["J32"].Value = sheet.Bath1After;
                         // Bach 1 - WPU
-                        ws.Cells["M31"].Value = sheet.Bath1WPU;
+                        ws.Cells["L31"].Value = sheet.Bath1WPU;
 
                         // Bath 2 - Before/After/Total
                         ws.Cells["J33"].Value = sheet.Bath1Before;
                         ws.Cells["J34"].Value = sheet.Bath1After;
                         // Bach 2 - WPU
-                        ws.Cells["M33"].Value = sheet.Bath2WPU;
+                        ws.Cells["L33"].Value = sheet.Bath2WPU;
 
                         // Temp D Zone
-                        ws.Cells["P33"].Value = sheet.TempDZone1;
-                        ws.Cells["P34"].Value = sheet.TempDZone2;
-                        ws.Cells["P35"].Value = sheet.TempDZone3;
-                        ws.Cells["R33"].Value = sheet.TempDZone4;
-                        ws.Cells["R34"].Value = sheet.TempDZone5;
-                        ws.Cells["R35"].Value = sheet.TempDZone6;
+                        ws.Cells["N27"].Value = sheet.TempDZone1;
+                        ws.Cells["N28"].Value = sheet.TempDZone2;
+                        ws.Cells["N29"].Value = sheet.TempDZone3;
+                        ws.Cells["N30"].Value = sheet.TempDZone4;
+                        ws.Cells["N31"].Value = sheet.TempDZone5;
+                        ws.Cells["N32"].Value = sheet.TempDZone6;
+                        ws.Cells["N33"].Value = sheet.TempDZone7;
+                        ws.Cells["N34"].Value = sheet.TempDZone8;
+
+                        ws.Cells["Q27"].Value = sheet.TempDZone9;
+                        ws.Cells["Q28"].Value = sheet.TempDZone10;
+                        ws.Cells["Q29"].Value = sheet.TempDZone11;
+                        ws.Cells["Q30"].Value = sheet.TempDZone12;
+                        ws.Cells["Q31"].Value = sheet.TempDZone13;
+                        ws.Cells["Q32"].Value = sheet.TempDZone14;
+                        ws.Cells["Q33"].Value = sheet.TempDZone15;
 
                         // Temp HN Zone
-                        ws.Cells["T33"].Value = sheet.TempHNZone1;
-                        ws.Cells["T34"].Value = sheet.TempHNZone2;
-                        ws.Cells["T35"].Value = sheet.TempHNZone3;
-                        ws.Cells["X33"].Value = sheet.TempHNZone4;
-                        ws.Cells["X34"].Value = sheet.TempHNZone5;
-                        ws.Cells["X35"].Value = sheet.TempHNZone6;
+                        ws.Cells["T27"].Value = sheet.TempHNZone1;
+                        ws.Cells["T28"].Value = sheet.TempHNZone2;
+                        ws.Cells["T29"].Value = sheet.TempHNZone3;
+                        ws.Cells["T30"].Value = sheet.TempHNZone4;
+                        ws.Cells["T31"].Value = sheet.TempHNZone5;
+                        ws.Cells["T32"].Value = sheet.TempHNZone6;
+                        ws.Cells["T33"].Value = sheet.TempHNZone7;
+                        ws.Cells["T34"].Value = sheet.TempHNZone8;
+
+                        ws.Cells["W27"].Value = sheet.TempHNZone9;
+                        ws.Cells["W28"].Value = sheet.TempHNZone10;
+                        ws.Cells["W29"].Value = sheet.TempHNZone11;
+                        ws.Cells["W30"].Value = sheet.TempHNZone12;
+                        ws.Cells["W31"].Value = sheet.TempHNZone13;
+                        ws.Cells["W32"].Value = sheet.TempHNZone14;
+                        ws.Cells["W33"].Value = sheet.TempHNZone15;
 
                         #endregion
 
@@ -489,33 +552,224 @@ namespace M3.Cord.Services.Excels
                                 ws.Cells[18 + iRow, 1].Value = item.DoffingDateS;
                                 ws.Cells[18 + iRow, 2].Value = item.DoffingNoS;
 
-                                ws.Cells[18 + iRow, 3].Value = item.StretchNValueS;
-                                ws.Cells[18 + iRow, 4].Value = item.TempDValueS;
-                                ws.Cells[18 + iRow, 5].Value = item.TempHNValueS;
-                                ws.Cells[18 + iRow, 6].Value = item.SpeedValueS;
-                                ws.Cells[18 + iRow, 7].Value = item.TreatValueS;
+                                ws.Cells[18 + iRow, 3].Value = item.StretchDValueS;
+                                ws.Cells[18 + iRow, 4].Value = item.StretchHValueS;
+                                ws.Cells[18 + iRow, 5].Value = item.StretchNValueS;
 
-                                ws.Cells[18 + iRow, 8].Value = item.DoffingLengthValueS;
-                                ws.Cells[18 + iRow, 9].Value = item.WeightValueS;
-                                ws.Cells[18 + iRow, 10].Value = item.SpindleValueS;
-                                ws.Cells[18 + iRow, 11].Value = item.ProductionGoodValueS;
-                                ws.Cells[18 + iRow, 12].Value = item.ProductionTotalValueS;
-                                ws.Cells[18 + iRow, 13].Value = item.ProductionCutValueS;
+                                ws.Cells[18 + iRow, 6].Value = item.TempDValueS;
+                                ws.Cells[18 + iRow, 7].Value = item.TempHNValueS;
+                                ws.Cells[18 + iRow, 8].Value = item.SpeedValueS;
+                                ws.Cells[18 + iRow, 9].Value = item.TreatValueS;
 
-                                ws.Cells[18 + iRow, 14].Value = item.PositionCordCutCreelValueS;
-                                ws.Cells[18 + iRow, 15].Value = item.PositionCordCutCS;
-                                ws.Cells[18 + iRow, 16].Value = item.PositionCordCutWinderValueS;
-                                ws.Cells[18 + iRow, 17].Value = item.PositionCordCutWasteYarnValueS;
-                                ws.Cells[18 + iRow, 18].Value = item.CheckTimeStartS;
-                                ws.Cells[18 + iRow, 19].Value = item.CheckTimeFinishS;
-                                ws.Cells[18 + iRow, 20].Value = item.CheckTimeRecordS;
-                                ws.Cells[18 + iRow, 21].Value = item.Opertor;
+                                ws.Cells[18 + iRow, 10].Value = item.DoffingLengthValueS;
+                                ws.Cells[18 + iRow, 11].Value = item.WeightValueS;
+                                ws.Cells[18 + iRow, 12].Value = item.SpindleValueS;
+                                ws.Cells[18 + iRow, 13].Value = item.ProductionGoodValueS;
+                                ws.Cells[18 + iRow, 14].Value = item.ProductionTotalValueS;
+                                ws.Cells[18 + iRow, 15].Value = item.ProductionCutValueS;
+
+                                ws.Cells[18 + iRow, 16].Value = item.PositionCordCutCreelValueS;
+                                ws.Cells[18 + iRow, 17].Value = item.PositionCordCutCS;
+                                ws.Cells[18 + iRow, 18].Value = item.PositionCordCutWinderValueS;
+                                ws.Cells[18 + iRow, 19].Value = item.PositionCordCutWasteYarnValueS;
+                                ws.Cells[18 + iRow, 20].Value = item.CheckTimeStartS;
+                                ws.Cells[18 + iRow, 21].Value = item.CheckTimeFinishS;
+                                ws.Cells[18 + iRow, 22].Value = item.CheckTimeRecordS;
+                                ws.Cells[18 + iRow, 23].Value = item.Opertor;
 
                                 iRow++;
                             }
                         }
 
                         #endregion
+                    }
+
+                    if (package.Workbook.Worksheets.Count >= 2)
+                    {
+                        var ws2 = package.Workbook.Worksheets[1]; // check exists
+                        if (null != ws2)
+                        {
+                            // Product
+                            ws2.Cells["A5"].Value = pcCard.ProductCode;
+                            // Customer
+                            ws2.Cells["C5"].Value = pcCard.CustomerName;
+                            // First DIP Twist 1
+                            ws2.Cells["E5"].Value = pickup.FirstDip1;
+                            // Solution
+                            ws2.Cells["G5"].Value = pickup.SolutionName;
+
+                            // Product
+                            ws2.Cells["A22"].Value = pcCard.ProductCode;
+                            // Customer
+                            ws2.Cells["C22"].Value = pcCard.CustomerName;
+                            // First DIP Twist 2
+                            ws2.Cells["E22"].Value = pickup.FirstDip2;
+                            // Solution
+                            ws2.Cells["G22"].Value = pickup.SolutionLotNo;
+
+                            // Pull Motor Act Speed
+                            ws2.Cells["L6"].Value = (pickup.PullMotorActSpeed1.HasValue) ?
+                                string.Format("{0:n2} RPM", pickup.PullMotorActSpeed1.Value) : null;
+                            ws2.Cells["M6"].Value = (pickup.PullMotorActSpeed2.HasValue) ?
+                                string.Format("{0:n2} RPM", pickup.PullMotorActSpeed2.Value) : null;
+                            ws2.Cells["N6"].Value = (pickup.PullMotorActSpeed3.HasValue) ?
+                                string.Format("{0:n2} RPM", pickup.PullMotorActSpeed3.Value) : null;
+                            ws2.Cells["O6"].Value = (pickup.PullMotorActSpeed4.HasValue) ?
+                                string.Format("{0:n2} RPM", pickup.PullMotorActSpeed4.Value) : null;
+                            ws2.Cells["P6"].Value = (pickup.PullMotorActSpeed5.HasValue) ?
+                                string.Format("{0:n2} RPM", pickup.PullMotorActSpeed5.Value) : null;
+                            ws2.Cells["Q6"].Value = (pickup.PullMotorActSpeed6.HasValue) ? 
+                                string.Format("{0:n2} RPM", pickup.PullMotorActSpeed6.Value) : null;
+
+                            // Pull Motor Speed SetPoint
+                            ws2.Cells["L7"].Value = (pickup.PullMotorSpeedSetPoint1.HasValue) ?
+                                string.Format("{0:n2} RPM", pickup.PullMotorSpeedSetPoint1.Value) : null;
+                            ws2.Cells["M7"].Value = (pickup.PullMotorSpeedSetPoint2.HasValue) ?
+                                string.Format("{0:n2} RPM", pickup.PullMotorSpeedSetPoint2.Value) : null;
+                            ws2.Cells["N7"].Value = (pickup.PullMotorSpeedSetPoint3.HasValue) ?
+                                string.Format("{0:n2} RPM", pickup.PullMotorSpeedSetPoint3.Value) : null;
+                            ws2.Cells["O7"].Value = (pickup.PullMotorSpeedSetPoint4.HasValue) ?
+                                string.Format("{0:n2} RPM", pickup.PullMotorSpeedSetPoint4.Value) : null;
+                            ws2.Cells["P7"].Value = (pickup.PullMotorSpeedSetPoint5.HasValue) ?
+                                string.Format("{0:n2} RPM", pickup.PullMotorSpeedSetPoint5.Value) : null;
+                            ws2.Cells["Q7"].Value = (pickup.PullMotorSpeedSetPoint6.HasValue) ?
+                                string.Format("{0:n2} RPM", pickup.PullMotorSpeedSetPoint6.Value) : null;
+
+                            // Pull Motor Act Current
+                            ws2.Cells["L8"].Value = (pickup.PullMotorActCurrent1.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorActCurrent1.Value) : null;
+                            ws2.Cells["M8"].Value = (pickup.PullMotorActCurrent2.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorActCurrent2.Value) : null;
+                            ws2.Cells["N8"].Value = (pickup.PullMotorActCurrent3.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorActCurrent3.Value) : null;
+                            ws2.Cells["O8"].Value = (pickup.PullMotorActCurrent4.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorActCurrent4.Value) : null;
+                            ws2.Cells["P8"].Value = (pickup.PullMotorActCurrent5.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorActCurrent5.Value) : null;
+                            ws2.Cells["Q8"].Value = (pickup.PullMotorActCurrent6.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorActCurrent6.Value) : null;
+
+                            // Pull Motor Pct Current
+                            ws2.Cells["L9"].Value = (pickup.PullMotorPctCurrent1.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorPctCurrent1.Value) : null;
+                            ws2.Cells["M9"].Value = (pickup.PullMotorPctCurrent2.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorPctCurrent2.Value) : null;
+                            ws2.Cells["N9"].Value = (pickup.PullMotorPctCurrent3.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorPctCurrent3.Value) : null;
+                            ws2.Cells["O9"].Value = (pickup.PullMotorPctCurrent4.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorPctCurrent4.Value) : null;
+                            ws2.Cells["P9"].Value = (pickup.PullMotorPctCurrent5.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorPctCurrent5.Value) : null;
+                            ws2.Cells["Q9"].Value = (pickup.PullMotorPctCurrent6.HasValue) ?
+                                string.Format("{0:n2} A", pickup.PullMotorPctCurrent6.Value) : null;
+
+                            // Oven Fan Act Speed
+                            ws2.Cells["L13"].Value = (pickup.OvenCirculatingFanActSpeed1.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenCirculatingFanActSpeed1.Value) : null;
+                            ws2.Cells["M13"].Value = (pickup.OvenCirculatingFanActSpeed2.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenCirculatingFanActSpeed2.Value) : null;
+                            ws2.Cells["N13"].Value = (pickup.OvenExhaustFanActSpeed1.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenExhaustFanActSpeed1.Value) : null;
+                            ws2.Cells["O13"].Value = (pickup.OvenExhaustFanActSpeed2.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenExhaustFanActSpeed2.Value) : null;
+                            ws2.Cells["P13"].Value = (pickup.OvenExhaustFanFrontActSpeed.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenExhaustFanFrontActSpeed.Value) : null;
+                            ws2.Cells["Q13"].Value = (pickup.OvenExhaustFanBackActSpeed.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenExhaustFanBackActSpeed.Value) : null;
+
+                            // Oven Fan Set Point
+                            ws2.Cells["L14"].Value = (pickup.OvenCirculatingFanSpeedSetpoint1.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenCirculatingFanSpeedSetpoint1.Value) : null;
+                            ws2.Cells["M14"].Value = (pickup.OvenCirculatingFanSpeedSetpoint2.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenCirculatingFanSpeedSetpoint2.Value) : null;
+                            ws2.Cells["N14"].Value = (pickup.OvenExhaustFanSpeedSetpoint1.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenExhaustFanSpeedSetpoint1.Value) : null;
+                            ws2.Cells["O14"].Value = (pickup.OvenExhaustFanSpeedSetpoint2.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenExhaustFanSpeedSetpoint2.Value) : null;
+                            ws2.Cells["P14"].Value = (pickup.OvenExhaustFanFrontSpeedSetpoint.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenExhaustFanFrontSpeedSetpoint.Value) : null;
+                            ws2.Cells["Q14"].Value = (pickup.OvenExhaustFanBackSpeedSetpoint.HasValue) ?
+                                string.Format("{0:n2} Hz", pickup.OvenExhaustFanBackSpeedSetpoint.Value) : null;
+
+                            // Oven Fan Act Current
+                            ws2.Cells["L15"].Value = (pickup.OvenCirculatingFanActCurrent1.HasValue) ?
+                                string.Format("{0:n2} A", pickup.OvenCirculatingFanActCurrent1.Value) : null;
+                            ws2.Cells["M15"].Value = (pickup.OvenCirculatingFanActCurrent2.HasValue) ?
+                                string.Format("{0:n2} A", pickup.OvenCirculatingFanActCurrent2.Value) : null;
+                            ws2.Cells["N15"].Value = (pickup.OvenExhaustFanActCurrent1.HasValue) ?
+                                string.Format("{0:n2} A", pickup.OvenExhaustFanActCurrent1.Value) : null;
+                            ws2.Cells["O15"].Value = (pickup.OvenExhaustFanActCurrent2.HasValue) ?
+                                string.Format("{0:n2} A", pickup.OvenExhaustFanActCurrent2.Value) : null;
+                            ws2.Cells["P15"].Value = (pickup.OvenExhaustFanFrontActCurrent.HasValue) ?
+                                string.Format("{0:n2} A", pickup.OvenExhaustFanFrontActCurrent.Value) : null;
+                            ws2.Cells["Q15"].Value = (pickup.OvenExhaustFanBackActCurrent.HasValue) ?
+                                string.Format("{0:n2} A", pickup.OvenExhaustFanBackActCurrent.Value) : null;
+
+                            // Oven Fan Pct Current
+                            ws2.Cells["L16"].Value = (pickup.OvenCirculatingFanPctCurrent1.HasValue) ?
+                                string.Format("{0:n2} %", pickup.OvenCirculatingFanPctCurrent1.Value) : null;
+                            ws2.Cells["M16"].Value = (pickup.OvenCirculatingFanPctCurrent2.HasValue) ?
+                                string.Format("{0:n2} %", pickup.OvenCirculatingFanPctCurrent2.Value) : null;
+                            ws2.Cells["N16"].Value = (pickup.OvenExhaustFanPctCurrent1.HasValue) ?
+                                string.Format("{0:n2} %", pickup.OvenExhaustFanPctCurrent1.Value) : null;
+                            ws2.Cells["O16"].Value = (pickup.OvenExhaustFanPctCurrent2.HasValue) ?
+                                string.Format("{0:n2} %", pickup.OvenExhaustFanPctCurrent2.Value) : null;
+                            ws2.Cells["P16"].Value = (pickup.OvenExhaustFanFrontPctCurrent.HasValue) ?
+                                string.Format("{0:n2} %", pickup.OvenExhaustFanFrontPctCurrent.Value) : null;
+                            ws2.Cells["Q16"].Value = (pickup.OvenExhaustFanBackPctCurrent.HasValue) ?
+                                string.Format("{0:n2} %", pickup.OvenExhaustFanBackPctCurrent.Value) : null;
+
+                            // Motor Strech and Tension - Act Stretch
+                            ws2.Cells["M20"].Value = (pickup.MotorActStretch1x2.HasValue) ?
+                                string.Format("{0:n2} %", pickup.MotorActStretch1x2.Value) : null;
+                            ws2.Cells["N20"].Value = (pickup.MotorActStretch3x4.HasValue) ?
+                                string.Format("{0:n2} %", pickup.MotorActStretch3x4.Value) : null;
+                            ws2.Cells["O20"].Value = (pickup.MotorActStretch4x5.HasValue) ?
+                                string.Format("{0:n2} %", pickup.MotorActStretch4x5.Value) : null;
+                            ws2.Cells["P20"].Value = (pickup.MotorActStretch1x6.HasValue) ?
+                                string.Format("{0:n2} %", pickup.MotorActStretch1x6.Value) : null;
+
+                            // Motor Strech and Tension - Set point
+                            ws2.Cells["M21"].Value = (pickup.MotorSetPoint1x2.HasValue) ?
+                                string.Format("{0:n2} %", pickup.MotorSetPoint1x2.Value) : null;
+                            ws2.Cells["N21"].Value = (pickup.MotorSetPoint3x4.HasValue) ?
+                                string.Format("{0:n2} %", pickup.MotorSetPoint3x4.Value) : null;
+                            ws2.Cells["O21"].Value = (pickup.MotorSetPoint4x5.HasValue) ?
+                                string.Format("{0:n2} %", pickup.MotorSetPoint4x5.Value) : null;
+                            ws2.Cells["P21"].Value = (pickup.MotorSetPoint1x6.HasValue) ?
+                                string.Format("{0:n2} %", pickup.MotorSetPoint1x6.Value) : null;
+
+                            // Motor Strech and Tension - Act total tension
+                            ws2.Cells["M22"].Value = (pickup.MotorActTensionTotal1x2.HasValue) ?
+                                string.Format("{0:n2} Kg", pickup.MotorActTensionTotal1x2.Value) : null;
+                            ws2.Cells["N22"].Value = (pickup.MotorActTensionTotal3x4.HasValue) ?
+                                string.Format("{0:n2} Kg", pickup.MotorActTensionTotal3x4.Value) : null;
+                            ws2.Cells["O22"].Value = (pickup.MotorActTensionTotal4x5.HasValue) ?
+                                string.Format("{0:n2} Kg", pickup.MotorActTensionTotal4x5.Value) : null;
+
+                            // Motor Strech and Tension - Act single cord tension
+                            ws2.Cells["M23"].Value = (pickup.MotorSingleTension1x2.HasValue) ?
+                                string.Format("{0:n2} Kg", pickup.MotorSingleTension1x2.Value) : null;
+                            ws2.Cells["N23"].Value = (pickup.MotorSingleTension3x4.HasValue) ?
+                                string.Format("{0:n2} Kg", pickup.MotorSingleTension3x4.Value) : null;
+                            ws2.Cells["O23"].Value = (pickup.MotorSingleTension4x5.HasValue) ?
+                                string.Format("{0:n2} Kg", pickup.MotorSingleTension4x5.Value) : null;
+                            
+                            // Remark
+                            ws2.Cells["K26"].Value = pickup.Remark;
+
+                            // P1 Items
+                            foreach (var p1 in p1items)
+                            {
+
+                            }
+
+                            // P2 Items
+                            foreach (var p2 in p2items)
+                            {
+
+                            }
+                        }
                     }
 
                     package.Save();

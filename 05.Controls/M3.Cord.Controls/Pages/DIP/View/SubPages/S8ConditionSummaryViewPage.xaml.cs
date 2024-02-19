@@ -195,7 +195,9 @@ namespace M3.Cord.Pages
 
         private void Export()
         {
-            S8Export.Export(pcCard, sheet, items);
+            var p1Items = S8WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, 1).Value();
+            var p2Items = S8WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, 2).Value();
+            S8Export.Export(pcCard, sheet, items, pickup, p1Items, p2Items);
         }
 
         #endregion

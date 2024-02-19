@@ -722,6 +722,7 @@
     <EmbeddedResource Include="Resources\Excels\FMCS0602_S7TimeTable.xlsx" />
     <EmbeddedResource Include="Resources\Excels\DIP_Confirmaion_condition.xlsx" />
     <EmbeddedResource Include="Resources\Excels\FMCS11_S8.xlsx" />
+    <EmbeddedResource Include="Resources\Excels\FMCS11_S8x2.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\00.NLib\NLib.Reports\NLib.Reports.csproj">

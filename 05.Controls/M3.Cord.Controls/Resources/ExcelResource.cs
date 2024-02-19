@@ -17,6 +17,7 @@ namespace M3.Cord
         public const string S7TimeTable = "M3.Cord.Resources.Excels.FMCS0602_S7TimeTable.xlsx";
 
         public const string S8 = "M3.Cord.Resources.Excels.FMCS11_S8.xlsx";
+        public const string S8x2 = "M3.Cord.Resources.Excels.FMCS11_S8x2.xlsx";
 
         public const string S9Appearance = "M3.Cord.Resources.Excels.FM4011Sx9_APP.xlsx";
 
@@ -191,6 +192,22 @@ namespace M3.Cord
         {
             return CreateFileFromResource(ExcelResource.S8,
                 @"\FMCS11_S8.xlsx", FullFileName, AutoOverwrite);
+        }
+
+        #endregion
+
+        #region S8x2
+
+        /// <summary>
+        /// Create S8x2 File
+        /// </summary>
+        /// <param name="FullFileName">FileName</param>
+        /// <param name="AutoOverwrite">Force Overwrite</param>
+        /// <returns>true if file is created</returns>
+        public static bool CreateS8x2File(string FullFileName, bool AutoOverwrite)
+        {
+            return CreateFileFromResource(ExcelResource.S8x2,
+                @"\FMCS11_S8x2.xlsx", FullFileName, AutoOverwrite);
         }
 
         #endregion
