@@ -98,7 +98,7 @@ namespace M3.Cord.Windows
 
         #region Public Methods
 
-        public void Setup(DateTime StartTime, DIPTimeTable item)
+        public void Setup(DateTime StartTime, DIPTimeTable item, bool editMode = false)
         {
             _StartTime = StartTime;
             var dt = DateTime.Now;
@@ -110,22 +110,50 @@ namespace M3.Cord.Windows
 
             _item = item;
             this.DataContext = _item;
-            if (null != _item)
-            {
-                int hour = DateTime.Now.Hour;
-                if (null != hours)
-                {
-                    int idx = hours.FindIndex(h => h.Hour == hour);
-                    if (idx != -1)
-                    {
-                        this.InvokeAction(() =>
-                        {
-                            cbTimes.SelectedIndex = idx;
-                        });
-                    }
-                }
 
-                txtLotNo.Text = _item.LotNo;
+            if (!editMode)
+            {
+                if (null != _item)
+                {
+                    int hour = DateTime.Now.Hour;
+                    if (null != hours)
+                    {
+                        int idx = hours.FindIndex(h => h.Hour == hour);
+                        if (idx != -1)
+                        {
+                            this.InvokeAction(() =>
+                            {
+                                cbTimes.SelectedIndex = idx;
+                            });
+                        }
+                    }
+
+                    txtLotNo.Text = _item.LotNo;
+                }
+            }
+            else
+            {
+                dtDate.IsEnabled = false;
+                cbTimes.IsEnabled = false;
+                txtLotNo.IsReadOnly = true;
+
+                if (null != _item)
+                {
+                    int hour = _item.PeriodTime.HasValue ? _item.PeriodTime.Value.Hour : -1;
+                    if (null != hours && hour > -1)
+                    {
+                        int idx = hours.FindIndex(h => h.Hour == hour);
+                        if (idx != -1)
+                        {
+                            this.InvokeAction(() =>
+                            {
+                                cbTimes.SelectedIndex = idx;
+                            });
+                        }
+                    }
+
+                    txtLotNo.Text = _item.LotNo;
+                }
             }
         }
 

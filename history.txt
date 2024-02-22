@@ -19,11 +19,13 @@ M3 Cord Production System #985
 M3 Cord Production System #984
 - 
 
+[commited]
 M3 Cord Production System #983
-- 
+- Implements S8 Time Table #2 - edit item
 
+[commited]
 M3 Cord Production System #982
-- 
+- Implements S8 Time Table - edit item
 
 [commited]
 M3 Cord Production System #981

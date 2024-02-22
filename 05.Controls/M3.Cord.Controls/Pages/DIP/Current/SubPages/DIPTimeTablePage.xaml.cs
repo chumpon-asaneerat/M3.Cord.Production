@@ -68,11 +68,9 @@ namespace M3.Cord.Pages
 
         private void cmdDetails_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var ctx = (sender as Button).DataContext;
             var item = (null != ctx && ctx is DIPTimeTable) ? ctx as DIPTimeTable : null;
             Edit(item);
-            */
         }
 
         private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
@@ -173,7 +171,7 @@ namespace M3.Cord.Pages
             var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
 
             var win = M3CordApp.Windows.DIPTimeTableEditor;
-            win.Setup(startDate, item);
+            win.Setup(startDate, item, true);
             if (win.ShowDialog() == true)
             {
                 RefreshGrid();

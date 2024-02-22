@@ -145,7 +145,7 @@ namespace M3.Cord.Pages
             var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
 
             var win = M3CordApp.Windows.DIPTimeTableEditorView;
-            win.Setup(startDate, item);
+            win.Setup(startDate, item, true);
             if (win.ShowDialog() == true)
             {
                 RefreshGrid();
