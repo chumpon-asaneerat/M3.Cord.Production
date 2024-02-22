@@ -69,11 +69,9 @@ namespace M3.Cord.Pages
 
         private void cmdDetails_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var ctx = (sender as Button).DataContext;
-            var item = (null != ctx && ctx is S8ProductionConditionItem) ? ctx as S8ProductionConditionItem : null;
+            var item = (null != ctx && ctx is S8x2ProductionConditionItem) ? ctx as S8x2ProductionConditionItem : null;
             Edit(item);
-            */
         }
 
         private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
@@ -134,15 +132,15 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void Edit(S8ProductionConditionItem item)
+        private void Edit(S8x2ProductionConditionItem item)
         {
             if (null == item) return;
 
             var dt = pcCard.StartTime.Value;
             var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
 
-            var win = M3CordApp.Windows.S8ProductionConditionItemEditor;
-            win.Setup(startDate, item);
+            var win = M3CordApp.Windows.S8x2ProductionConditionItemEditor;
+            win.Setup(startDate, item, true);
             if (win.ShowDialog() == true)
             {
                 RefreshGrid();

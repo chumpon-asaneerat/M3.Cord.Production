@@ -65,11 +65,9 @@ namespace M3.Cord.Pages
 
         private void cmdDetails_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var ctx = (sender as Button).DataContext;
             var item = (null != ctx && ctx is DIPTimeTable) ? ctx as DIPTimeTable : null;
             Edit(item);
-            */
         }
 
         private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
