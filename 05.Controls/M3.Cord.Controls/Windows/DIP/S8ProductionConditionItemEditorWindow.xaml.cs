@@ -73,7 +73,7 @@ namespace M3.Cord.Windows
 
         #region Public Methods
 
-        public void Setup(DateTime StartTime, S8ProductionConditionItem item)
+        public void Setup(DateTime StartTime, S8ProductionConditionItem item, bool editMode = false)
         {
             dtDate.SelectedDate = DateTime.Today;
 
@@ -82,6 +82,12 @@ namespace M3.Cord.Windows
             if (null != _item)
             {
 
+            }
+
+            if (editMode)
+            {
+                dtDate.IsEnabled = false;
+                txtDoffNo.IsReadOnly = true;
             }
         }
 

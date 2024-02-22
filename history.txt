@@ -1,5 +1,36 @@
-M3 Cord Production System #980
+M3 Cord Production System #990
 - 
+
+M3 Cord Production System #989
+- 
+
+M3 Cord Production System #988
+- 
+
+M3 Cord Production System #987
+- 
+
+M3 Cord Production System #986
+- 
+
+M3 Cord Production System #985
+- 
+
+M3 Cord Production System #984
+- 
+
+M3 Cord Production System #983
+- 
+
+M3 Cord Production System #982
+- 
+
+M3 Cord Production System #981
+- 
+
+[commited]
+M3 Cord Production System #980
+- Implements S8 Production Condition Summary - edit item
 
 [commited]
 M3 Cord Production System #979
