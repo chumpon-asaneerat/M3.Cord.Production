@@ -10,8 +10,10 @@ M3 Cord Production System #988
 M3 Cord Production System #987
 - 
 
+[commited]
 M3 Cord Production System #986
-- 
+- Update zebra code from kik
+- Update App build 1343
 
 [commited]
 M3 Cord Production System #985
