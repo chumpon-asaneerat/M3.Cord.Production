@@ -422,12 +422,14 @@ namespace M3.Cord.Pages
                 return;
             }
 
-            if (lotDetail.Count > 0)
+            var chemicals = cbChemicals.SelectedItem as SolutionLotLabel;
+
+            if (lotDetail.Count > 0 && null != chemicals)
             {
                 // auto save current data without notify success case
                 if (SaveBeforeExport()) 
                 {
-                    SolutionExports.Export(txtSolutionLotNo.Text);
+                    SolutionExports.Export(txtSolutionLotNo.Text, chemicals.SolutionId);
                 }
             }
         }

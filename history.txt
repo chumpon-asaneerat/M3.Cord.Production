@@ -13,8 +13,10 @@ M3 Cord Production System #987
 M3 Cord Production System #986
 - 
 
+[commited]
 M3 Cord Production System #985
-- 
+- Implements Solution Export #3
+- Update App build 1342
 
 [commited]
 M3 Cord Production System #984
