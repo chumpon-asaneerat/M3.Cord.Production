@@ -42,12 +42,12 @@
 
         <DataTemplate x:Key="RawB">
             <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox}"
+                      Style="{StaticResource CommonCheckBox3State}"
                       IsChecked="{Binding Path=RawB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="RawE">
             <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox}"
+                      Style="{StaticResource CommonCheckBox3State}"
                       IsChecked="{Binding Path=RawE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
@@ -93,12 +93,12 @@
 
         <DataTemplate x:Key="CrossB">
             <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox}"
+                      Style="{StaticResource CommonCheckBox3State}"
                       IsChecked="{Binding Path=CrossB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="CrossE">
             <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox}"
+                      Style="{StaticResource CommonCheckBox3State}"
                       IsChecked="{Binding Path=CrossE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
@@ -144,12 +144,12 @@
 
         <DataTemplate x:Key="FormB">
             <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox}"
+                      Style="{StaticResource CommonCheckBox3State}"
                       IsChecked="{Binding Path=FormB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="FormE">
             <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox}"
+                      Style="{StaticResource CommonCheckBox3State}"
                       IsChecked="{Binding Path=FormE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
@@ -195,12 +195,12 @@
 
         <DataTemplate x:Key="KeibaB">
             <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox}"
+                      Style="{StaticResource CommonCheckBox3State}"
                       IsChecked="{Binding Path=KebaB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="KeibaE">
             <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox}"
+                      Style="{StaticResource CommonCheckBox3State}"
                       IsChecked="{Binding Path=KebaE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
@@ -246,12 +246,12 @@
 
         <DataTemplate x:Key="StainB">
             <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox}"
+                      Style="{StaticResource CommonCheckBox3State}"
                       IsChecked="{Binding Path=StainB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="StainE">
             <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox}"
+                      Style="{StaticResource CommonCheckBox3State}"
                       IsChecked="{Binding Path=StainE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
@@ -290,22 +290,6 @@
                 <GridViewRowPresenter HorizontalAlignment="Stretch" Columns="{DynamicResource StainColumns}" />
             </Grid>
         </DataTemplate>
-
-        <!--#endregion-->
-
-        <!--#region XXX-->
-
-        <!--#endregion-->
-
-        <!--#region XXX-->
-
-        <!--#endregion-->
-
-        <!--#region XXX-->
-
-        <!--#endregion-->
-
-        <!--#region XXX-->
 
         <!--#endregion-->
     </Window.Resources>

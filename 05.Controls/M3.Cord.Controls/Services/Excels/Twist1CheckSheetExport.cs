@@ -112,29 +112,45 @@ namespace M3.Cord.Services.Excels
 
                             if (iRow != -1 && iCol != -1)
                             {
-                                ws.Cells[iRow, iCol + 1].Value = (item.RawB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 2].Value = (item.RawE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 1].Value = (item.RawB.HasValue) ?
+                                    ((item.RawB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 2].Value = (item.RawE.HasValue) ?
+                                    ((item.RawE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 3].Value = (item.CrossB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 4].Value = (item.CrossE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 3].Value = (item.CrossB.HasValue) ?
+                                    ((item.CrossB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 4].Value = (item.CrossE.HasValue) ?
+                                    ((item.CrossE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 5].Value = (item.FormB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 6].Value = (item.FormE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 5].Value = (item.FormB.HasValue) ?
+                                    ((item.FormB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 6].Value = (item.FormE.HasValue) ?
+                                    ((item.FormE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 7].Value = (item.KebaB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 8].Value = (item.KebaE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 7].Value = (item.KebaB.HasValue) ?
+                                    ((item.KebaB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 8].Value = (item.KebaE.HasValue) ?
+                                    ((item.KebaE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 9].Value = (item.StainB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 10].Value = (item.StainE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 9].Value = (item.StainB.HasValue) ?
+                                    ((item.StainB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 10].Value = (item.StainE.HasValue) ?
+                                    ((item.StainE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 11].Value = (item.PaperTubeB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 12].Value = (item.PaperTubeE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 11].Value = (item.PaperTubeB.HasValue) ?
+                                    ((item.PaperTubeB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 12].Value = (item.PaperTubeE.HasValue) ?
+                                    ((item.PaperTubeE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 13].Value = (item.YarnNoB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 14].Value = (item.YarnNoE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 13].Value = (item.YarnNoB.HasValue) ?
+                                    ((item.YarnNoB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 14].Value = (item.YarnNoE.HasValue) ?
+                                    ((item.YarnNoE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 15].Value = (item.BBMarkB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 16].Value = (item.BBMarkE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 15].Value = (item.BBMarkB.HasValue) ?
+                                    ((item.BBMarkB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 16].Value = (item.BBMarkE.HasValue) ? 
+                                    ((item.BBMarkE.Value) ? "P" : "O") : "";
                             }
                         }
 
@@ -215,29 +231,45 @@ namespace M3.Cord.Services.Excels
 
                             if (iRow != -1 && iCol != -1)
                             {
-                                ws.Cells[iRow, iCol + 1].Value = (item.RawB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 2].Value = (item.RawE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 1].Value = (item.RawB.HasValue) ?
+                                    ((item.RawB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 2].Value = (item.RawE.HasValue) ?
+                                    ((item.RawE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 3].Value = (item.CrossB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 4].Value = (item.CrossE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 3].Value = (item.CrossB.HasValue) ?
+                                    ((item.CrossB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 4].Value = (item.CrossE.HasValue) ?
+                                    ((item.CrossE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 5].Value = (item.FormB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 6].Value = (item.FormE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 5].Value = (item.FormB.HasValue) ?
+                                    ((item.FormB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 6].Value = (item.FormE.HasValue) ?
+                                    ((item.FormE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 7].Value = (item.KebaB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 8].Value = (item.KebaE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 7].Value = (item.KebaB.HasValue) ?
+                                    ((item.KebaB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 8].Value = (item.KebaE.HasValue) ?
+                                    ((item.KebaE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 9].Value = (item.StainB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 10].Value = (item.StainE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 9].Value = (item.StainB.HasValue) ?
+                                    ((item.StainB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 10].Value = (item.StainE.HasValue) ?
+                                    ((item.StainE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 11].Value = (item.PaperTubeB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 12].Value = (item.PaperTubeE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 11].Value = (item.PaperTubeB.HasValue) ?
+                                    ((item.PaperTubeB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 12].Value = (item.PaperTubeE.HasValue) ?
+                                    ((item.PaperTubeE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 13].Value = (item.YarnNoB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 14].Value = (item.YarnNoE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 13].Value = (item.YarnNoB.HasValue) ?
+                                    ((item.YarnNoB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 14].Value = (item.YarnNoE.HasValue) ?
+                                    ((item.YarnNoE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 15].Value = (item.BBMarkB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 16].Value = (item.BBMarkE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 15].Value = (item.BBMarkB.HasValue) ?
+                                    ((item.BBMarkB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 16].Value = (item.BBMarkE.HasValue) ?
+                                    ((item.BBMarkE.Value) ? "P" : "O") : "";
                             }
                         }
 
@@ -313,29 +345,45 @@ namespace M3.Cord.Services.Excels
 
                             if (iRow != -1 && iCol != -1)
                             {
-                                ws.Cells[iRow, iCol + 1].Value = (item.RawB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 2].Value = (item.RawE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 1].Value = (item.RawB.HasValue) ?
+                                    ((item.RawB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 2].Value = (item.RawE.HasValue) ?
+                                    ((item.RawE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 3].Value = (item.CrossB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 4].Value = (item.CrossE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 3].Value = (item.CrossB.HasValue) ?
+                                    ((item.CrossB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 4].Value = (item.CrossE.HasValue) ?
+                                    ((item.CrossE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 5].Value = (item.FormB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 6].Value = (item.FormE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 5].Value = (item.FormB.HasValue) ?
+                                    ((item.FormB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 6].Value = (item.FormE.HasValue) ?
+                                    ((item.FormE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 7].Value = (item.KebaB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 8].Value = (item.KebaE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 7].Value = (item.KebaB.HasValue) ?
+                                    ((item.KebaB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 8].Value = (item.KebaE.HasValue) ?
+                                    ((item.KebaE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 9].Value = (item.StainB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 10].Value = (item.StainE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 9].Value = (item.StainB.HasValue) ?
+                                    ((item.StainB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 10].Value = (item.StainE.HasValue) ?
+                                    ((item.StainE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 11].Value = (item.PaperTubeB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 12].Value = (item.PaperTubeE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 11].Value = (item.PaperTubeB.HasValue) ?
+                                    ((item.PaperTubeB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 12].Value = (item.PaperTubeE.HasValue) ?
+                                    ((item.PaperTubeE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 13].Value = (item.YarnNoB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 14].Value = (item.YarnNoE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 13].Value = (item.YarnNoB.HasValue) ?
+                                    ((item.YarnNoB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 14].Value = (item.YarnNoE.HasValue) ?
+                                    ((item.YarnNoE.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 15].Value = (item.BBMarkB) ? "P" : "";
-                                ws.Cells[iRow, iCol + 16].Value = (item.BBMarkE) ? "P" : "";
+                                ws.Cells[iRow, iCol + 15].Value = (item.BBMarkB.HasValue) ?
+                                    ((item.BBMarkB.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 16].Value = (item.BBMarkE.HasValue) ?
+                                    ((item.BBMarkE.Value) ? "P" : "O") : "";
                             }
                         }
 

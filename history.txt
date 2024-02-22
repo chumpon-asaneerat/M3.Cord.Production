@@ -4,8 +4,9 @@ M3 Cord Production System #980
 M3 Cord Production System #979
 - 
 
+[commited]
 M3 Cord Production System #978
-- 
+- Implements 3 State checkbox #1
 
 [commited]
 M3 Cord Production System #977

@@ -39,22 +39,22 @@ namespace M3.Cord.Models
         public int? Twist1CheckId { get; set; }
         public int SPNo { get; set; }
 
-        public bool RawB { get; set; }
-        public bool RawE { get; set; }
-        public bool CrossB { get; set; }
-        public bool CrossE { get; set; }
-        public bool FormB { get; set; }
-        public bool FormE { get; set; }
-        public bool KebaB { get; set; }
-        public bool KebaE { get; set; }
-        public bool StainB { get; set; }
-        public bool StainE { get; set; }
-        public bool PaperTubeB { get; set; }
-        public bool PaperTubeE { get; set; }
-        public bool YarnNoB { get; set; }
-        public bool YarnNoE { get; set; }
-        public bool BBMarkB { get; set; }
-        public bool BBMarkE { get; set; }
+        public bool? RawB { get; set; }
+        public bool? RawE { get; set; }
+        public bool? CrossB { get; set; }
+        public bool? CrossE { get; set; }
+        public bool? FormB { get; set; }
+        public bool? FormE { get; set; }
+        public bool? KebaB { get; set; }
+        public bool? KebaE { get; set; }
+        public bool? StainB { get; set; }
+        public bool? StainE { get; set; }
+        public bool? PaperTubeB { get; set; }
+        public bool? PaperTubeE { get; set; }
+        public bool? YarnNoB { get; set; }
+        public bool? YarnNoE { get; set; }
+        public bool? BBMarkB { get; set; }
+        public bool? BBMarkE { get; set; }
 
         #endregion
 
