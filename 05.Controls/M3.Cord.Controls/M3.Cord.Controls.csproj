@@ -531,6 +531,7 @@
     <Compile Include="Services\Excels\S7YarnSettingExport.cs" />
     <Compile Include="Services\Excels\S8Export.cs" />
     <Compile Include="Services\Excels\S9Export.cs" />
+    <Compile Include="Services\Excels\SolutionExports.cs" />
     <Compile Include="Services\Excels\Twist1CheckSheetExport.cs" />
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
     <Compile Include="Windows\DIPView\DIPTimeTableEditorViewWindow.xaml.cs">

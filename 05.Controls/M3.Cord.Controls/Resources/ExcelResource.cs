@@ -256,7 +256,7 @@ namespace M3.Cord
         /// <returns>true if file is created</returns>
         public static bool CreateSolutionAX09PV3File(string FullFileName, bool AutoOverwrite)
         {
-            return CreateFileFromResource(ExcelResource.DIPConfirmCondition,
+            return CreateFileFromResource(ExcelResource.SolutionAX09PV3,
                 @"\AX_09PV3_8335.xlsx", FullFileName, AutoOverwrite);
         }
 

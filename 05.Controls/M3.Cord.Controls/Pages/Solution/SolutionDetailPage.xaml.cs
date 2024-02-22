@@ -20,6 +20,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using M3.Cord.Services.Excels;
 
 #endregion
 
@@ -115,6 +116,11 @@ namespace M3.Cord.Pages
                     // do something....
                 }
             }
+        }
+
+        private void cmdExport_Click(object sender, RoutedEventArgs e)
+        {
+            Export();
         }
 
         #endregion
@@ -333,6 +339,96 @@ namespace M3.Cord.Pages
             catch (Exception ex)
             {
                 med.Err(ex);
+            }
+        }
+
+        private bool SaveBeforeExport()
+        {
+            bool ret = false;
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            try
+            {
+
+                if (lotDetail.Count > 0)
+                {
+                    bool? chkErr = false;
+                    string strErr = string.Empty;
+
+                    SaveSolutionLotDetail d = new SaveSolutionLotDetail();
+
+                    foreach (var itemD in lotDetail)
+                    {
+                        if (!string.IsNullOrEmpty(itemD.ChemicalLot))
+                        {
+                            d = new SaveSolutionLotDetail();
+
+                            d.solutionlot = itemD.SolutionLot;
+                            d.solutionid = itemD.SolutionID;
+                            d.recipe = itemD.Recipe;
+                            d.chemicalno = itemD.ChemicalNo;
+                            d.chemicallot = itemD.ChemicalLot;
+
+                            //d.recipeorder = itemD.RecipeOrder;
+                            //d.mixorder = itemD.MixOrder;
+                            //d.weightcal = itemD.WeightCal;
+                            //d.weightactual = itemD.WeightActual;
+                            //d.weightmc = itemD.WeightMc;
+                            //d.weightdate = itemD.WeightDate;
+                            //d.weightby = itemD.WeightBy;
+                            //d.tweight = itemD.TWeight;
+                            //d.gweight = itemD.GWeight;
+
+
+                            var retD = SaveSolutionLotDetail.Save(d);
+
+                            if (retD.HasError)
+                            {
+                                strErr = retD.ErrMsg;
+                                chkErr = true;
+                                //break;
+                            }
+                        }
+                    }
+
+                    if (chkErr == false)
+                    {
+                        ret = true;
+                    }
+                    else
+                    {
+                        this.InvokeAction(() =>
+                        {
+                            var win = M3CordApp.Windows.MessageBox;
+                            win.Setup(strErr);
+                            win.ShowDialog();
+                            //ClearInputs();
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
+
+            return ret;
+        }
+
+        private void Export()
+        {
+            if (string.IsNullOrEmpty(txtSolutionLotNo.Text))
+            {
+                return;
+            }
+
+            if (lotDetail.Count > 0)
+            {
+                // auto save current data without notify success case
+                if (SaveBeforeExport()) 
+                {
+                    SolutionExports.Export(txtSolutionLotNo.Text);
+                }
             }
         }
 

@@ -17,6 +17,17 @@
                        DockPanel.Dock="Bottom"
                        Height="40">
                 <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+
+                    <!--  Export  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdExport"
+                                            Margin="5,0,0,0"
+                                            IconType="Export"
+                                            Text="ใบผสมสูตรสี"
+                                            Click="cmdExport_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Right"
                             VerticalAlignment="Center">
 

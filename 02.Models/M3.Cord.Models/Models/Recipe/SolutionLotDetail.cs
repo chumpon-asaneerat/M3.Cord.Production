@@ -45,6 +45,10 @@ namespace M3.Cord.Models
 
         public string ChemicalLot { get; set; }
 
+        // For export
+        public decimal? ChemWet { get; set; }
+        public decimal? ChemDry { get; set; }
+
         // runtime properties
         public Visibility ShowWeightButton
         {
@@ -132,6 +136,9 @@ namespace M3.Cord.Models
                                     result.WeightCal = weightCal;
                                     result.WeightActual = weightActual;
                                     result.chkVisibleChemicalLot = false;
+                                    // For export
+                                    result.ChemWet = item.ChemWet;
+                                    result.ChemDry = item.ChemDry;
 
                                     results.Add(result);
 
@@ -147,6 +154,9 @@ namespace M3.Cord.Models
                         result.SolutionID = item.SolutionID;
                         result.RecipeOrder = item.RecipeOrder;
                         result.Recipe = item.Recipe;
+                        // For export
+                        result.ChemWet = item.ChemWet;
+                        result.ChemDry = item.ChemDry;
 
                         if (!string.IsNullOrEmpty(result.Recipe))
                         {
@@ -203,6 +213,9 @@ namespace M3.Cord.Models
                             result.WeightCal = weightCal;
                             result.WeightActual = weightActual;
                             result.chkVisibleChemicalLot = false;
+                            // For export
+                            result.ChemWet = item.ChemWet;
+                            result.ChemDry = item.ChemDry;
 
                             results.Add(result);
 
