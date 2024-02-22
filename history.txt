@@ -10,8 +10,9 @@ M3 Cord Production System #978
 M3 Cord Production System #977
 - 
 
+[commited]
 M3 Cord Production System #976
-- 
+- Implements Solution Export #1
 
 [commited]
 M3 Cord Production System #975

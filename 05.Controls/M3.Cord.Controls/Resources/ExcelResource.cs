@@ -22,6 +22,8 @@ namespace M3.Cord
         public const string S9Appearance = "M3.Cord.Resources.Excels.FM4011Sx9_APP.xlsx";
 
         public const string DIPConfirmCondition = "M3.Cord.Resources.Excels.DIP_Confirmaion_condition.xlsx";
+
+        public const string SolutionAX09PV3 = "M3.Cord.Resources.Excels.AX_09PV3_8335.xlsx";
     }
 
     public sealed class ExcelExportUtils
@@ -240,6 +242,22 @@ namespace M3.Cord
         {
             return CreateFileFromResource(ExcelResource.DIPConfirmCondition,
                 @"\DIP_Confirmaion_condition.xlsx", FullFileName, AutoOverwrite);
+        }
+
+        #endregion
+
+        #region Solution AX09PV3
+
+        /// <summary>
+        /// Create Solution AX09PV3 File
+        /// </summary>
+        /// <param name="FullFileName">FileName</param>
+        /// <param name="AutoOverwrite">Force Overwrite</param>
+        /// <returns>true if file is created</returns>
+        public static bool CreateSolutionAX09PV3File(string FullFileName, bool AutoOverwrite)
+        {
+            return CreateFileFromResource(ExcelResource.DIPConfirmCondition,
+                @"\AX_09PV3_8335.xlsx", FullFileName, AutoOverwrite);
         }
 
         #endregion
