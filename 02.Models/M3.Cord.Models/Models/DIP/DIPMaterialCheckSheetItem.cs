@@ -41,12 +41,12 @@ namespace M3.Cord.Models
         public int? DoffNo { get; set; }
         public int CHNo { get; set; }
 
-        public bool CheckYarnNo { get; set; } = false;
-        public bool CheckYanScrap { get; set; } = false;
-        public bool CheckYarnBall { get; set; } = false;
-        public bool CheckCover { get; set; } = false;
-        public bool CheckSensor { get; set; } = false;
-        public bool CheckDustFilter { get; set; } = false;
+        public bool? CheckYarnNo { get; set; }
+        public bool? CheckYanScrap { get; set; }
+        public bool? CheckYarnBall { get; set; }
+        public bool? CheckCover { get; set; }
+        public bool? CheckSensor { get; set; }
+        public bool? CheckDustFilter { get; set; }
 
         #endregion
 

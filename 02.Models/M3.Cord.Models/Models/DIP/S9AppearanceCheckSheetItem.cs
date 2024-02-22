@@ -36,15 +36,15 @@ namespace M3.Cord.Models
         public int AppearId { get; set; }
         public int SPNo { get; set; }
 
-        public bool CheckGood { get; set; } = false;
-        public bool CheckBad { get; set; } = false;
-        public bool Check2Color { get; set; } = false;
-        public bool CheckKeiba { get; set; } = false;
-        public bool CheckWeight { get; set; } = false;
-        public bool CheckFrontTwist { get; set; } = false;
-        public bool CheckBackTwist { get; set; } = false;
-        public bool CheckSnarl { get; set; } = false;
-        public bool CheckTube { get; set; } = false;
+        public bool? CheckGood { get; set; }
+        public bool? CheckBad { get; set; }
+        public bool? Check2Color { get; set; }
+        public bool? CheckKeiba { get; set; }
+        public bool? CheckWeight { get; set; }
+        public bool? CheckFrontTwist { get; set; }
+        public bool? CheckBackTwist { get; set; }
+        public bool? CheckSnarl { get; set; }
+        public bool? CheckTube { get; set; }
 
         #endregion
 

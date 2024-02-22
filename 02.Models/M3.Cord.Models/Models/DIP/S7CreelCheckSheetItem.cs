@@ -36,10 +36,10 @@ namespace M3.Cord.Models
         public int CreelId { get; set; }
         public int SPNo { get; set; }
 
-        public bool CheckUnstable { get; set; } = false;
-        public bool CheckNotReachEnd { get; set; } = false;
-        public bool CheckNotStraight { get; set; } = false;
-        public bool CheckHasSound { get; set; } = false;
+        public bool? CheckUnstable { get; set; }
+        public bool? CheckNotReachEnd { get; set; }
+        public bool? CheckNotStraight { get; set; }
+        public bool? CheckHasSound { get; set; }
 
         #endregion
 

@@ -99,12 +99,18 @@ namespace M3.Cord.Services.Excels
                                 ws.Cells[iRow, iCol + 1].Value = pcCard.ProductCode;
                                 ws.Cells[iRow, iCol + 2].Value = item.LotNo;
                                 ws.Cells[iRow, iCol + 3].Value = (item.CHNo == 0) ? "" : item.CHNo.ToString();
-                                ws.Cells[iRow, iCol + 4].Value = (item.CheckYarnNo) ? "P" : "";
-                                ws.Cells[iRow, iCol + 5].Value = (item.CheckYanScrap) ? "P" : "";
-                                ws.Cells[iRow, iCol + 6].Value = (item.CheckYarnBall) ? "P" : "";
-                                ws.Cells[iRow, iCol + 7].Value = (item.CheckCover) ? "P" : "";
-                                ws.Cells[iRow, iCol + 8].Value = (item.CheckSensor) ? "P" : "";
-                                ws.Cells[iRow, iCol + 9].Value = (item.CheckDustFilter) ? "P" : "";
+                                ws.Cells[iRow, iCol + 4].Value = (item.CheckYarnNo.HasValue) ?
+                                    ((item.CheckYarnNo.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 5].Value = (item.CheckYanScrap.HasValue) ?
+                                    ((item.CheckYanScrap.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 6].Value = (item.CheckYarnBall.HasValue) ?
+                                    ((item.CheckYarnBall.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 7].Value = (item.CheckCover.HasValue) ?
+                                    ((item.CheckCover.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 8].Value = (item.CheckSensor.HasValue) ?
+                                    ((item.CheckSensor.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 9].Value = (item.CheckDustFilter.HasValue) ?
+                                    ((item.CheckDustFilter.Value) ? "P" : "O") : "";
                             }
                         }
 

@@ -89,28 +89,29 @@ namespace M3.Cord.Services.Excels
 
                             if (iRow != -1 && iCol != -1)
                             {
-                                if (item.CheckGood)
-                                    ws.Cells[iRow, iCol + 1].Value = "P";
-                                else ws.Cells[iRow, iCol + 2].Value = "O";
+                                ws.Cells[iRow, iCol + 1].Value = (item.CheckGood.HasValue) ?
+                                    ((item.CheckGood.Value) ? "P" : "O") : "";
 
-                                if (item.CheckBad)
-                                    ws.Cells[iRow, iCol + 3].Value = "P";
-                                else ws.Cells[iRow, iCol + 4].Value = "O";
+                                ws.Cells[iRow, iCol + 3].Value = (item.CheckBad.HasValue) ?
+                                    ((item.CheckBad.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 5].Value = (item.Check2Color) ? "P" : "";
-                                ws.Cells[iRow, iCol + 6].Value = (item.CheckKeiba) ? "P" : "";
-                                ws.Cells[iRow, iCol + 7].Value = (item.CheckWeight) ? "P" : "";
+                                ws.Cells[iRow, iCol + 5].Value = (item.Check2Color.HasValue) ?
+                                    ((item.Check2Color.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 6].Value = (item.CheckKeiba.HasValue) ?
+                                    ((item.CheckKeiba.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 7].Value = (item.CheckWeight).HasValue ?
+                                    ((item.CheckWeight.Value) ? "P" : "O") : "";
 
-                                if (item.CheckFrontTwist)
-                                    ws.Cells[iRow, iCol + 8].Value = "P";
-                                else ws.Cells[iRow, iCol + 9].Value = "O";
+                                ws.Cells[iRow, iCol + 8].Value = (item.CheckFrontTwist.HasValue) ?
+                                    ((item.CheckFrontTwist.Value) ? "P" : "O") : "";
 
-                                if (item.CheckBackTwist)
-                                    ws.Cells[iRow, iCol + 10].Value = "P";
-                                else ws.Cells[iRow, iCol + 11].Value = "O";
+                                ws.Cells[iRow, iCol + 10].Value = (item.CheckBackTwist.HasValue) ?
+                                    ((item.CheckBackTwist.Value) ? "P" : "O") : "";
 
-                                ws.Cells[iRow, iCol + 12].Value = (item.CheckSnarl) ? "P" : "";
-                                ws.Cells[iRow, iCol + 13].Value = (item.CheckTube) ? "P" : "";
+                                ws.Cells[iRow, iCol + 12].Value = (item.CheckSnarl.HasValue) ?
+                                    ((item.CheckSnarl.Value) ? "P" : "O") : "";
+                                ws.Cells[iRow, iCol + 13].Value = (item.CheckTube.HasValue) ?
+                                    ((item.CheckTube.Value) ? "P" : "O") : "";
                             }
                         }
 
