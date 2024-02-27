@@ -725,6 +725,8 @@
     <EmbeddedResource Include="Resources\Excels\FMCS11_S8.xlsx" />
     <EmbeddedResource Include="Resources\Excels\FMCS11_S8x2.xlsx" />
     <EmbeddedResource Include="Resources\Excels\AX_09PV3_8335.xlsx" />
+    <EmbeddedResource Include="Resources\Excels\KT_02.xlsx" />
+    <EmbeddedResource Include="Resources\Excels\MX520D.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\00.NLib\NLib.Reports\NLib.Reports.csproj">

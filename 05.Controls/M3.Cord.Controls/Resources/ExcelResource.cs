@@ -24,6 +24,8 @@ namespace M3.Cord
         public const string DIPConfirmCondition = "M3.Cord.Resources.Excels.DIP_Confirmaion_condition.xlsx";
 
         public const string SolutionAX09PV3 = "M3.Cord.Resources.Excels.AX_09PV3_8335.xlsx";
+        public const string SolutionKT02 = "M3.Cord.Resources.Excels.KT_02.xlsx";
+        public const string SolutionMX520D = "M3.Cord.Resources.Excels.MX520D.xlsx";
     }
 
     public sealed class ExcelExportUtils
@@ -258,6 +260,38 @@ namespace M3.Cord
         {
             return CreateFileFromResource(ExcelResource.SolutionAX09PV3,
                 @"\AX_09PV3_8335.xlsx", FullFileName, AutoOverwrite);
+        }
+
+        #endregion
+
+        #region Solution AX09PV3
+
+        /// <summary>
+        /// Create Solution KT02 File
+        /// </summary>
+        /// <param name="FullFileName">FileName</param>
+        /// <param name="AutoOverwrite">Force Overwrite</param>
+        /// <returns>true if file is created</returns>
+        public static bool CreateSolutionKT02File(string FullFileName, bool AutoOverwrite)
+        {
+            return CreateFileFromResource(ExcelResource.SolutionKT02,
+                @"\KT_02.xlsx", FullFileName, AutoOverwrite);
+        }
+
+        #endregion
+
+        #region Solution MX520D
+
+        /// <summary>
+        /// Create Solution AX09PV3 File
+        /// </summary>
+        /// <param name="FullFileName">FileName</param>
+        /// <param name="AutoOverwrite">Force Overwrite</param>
+        /// <returns>true if file is created</returns>
+        public static bool CreateSolutionMX520DFile(string FullFileName, bool AutoOverwrite)
+        {
+            return CreateFileFromResource(ExcelResource.SolutionMX520D,
+                @"\MX520D.xlsx", FullFileName, AutoOverwrite);
         }
 
         #endregion
