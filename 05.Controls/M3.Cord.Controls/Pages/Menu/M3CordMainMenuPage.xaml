@@ -293,6 +293,7 @@
                     </Button>
                 </ctrl:NGroupMenuItem>
                 <!--  DEV MENU  -->
+                <!--
                 <ctrl:NGroupMenuItem HeaderText="DEV"
                                      HeaderBackground="{StaticResource OtherBG}"
                                      Style="{StaticResource CommonGroupItemStyle}">
@@ -304,6 +305,7 @@
                         </TextBlock>
                     </Button>
                 </ctrl:NGroupMenuItem>
+                -->
             </ctrl:NGroupMenu>
         </DockPanel>
     </page:NPage>
