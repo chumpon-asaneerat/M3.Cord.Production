@@ -33,28 +33,28 @@ namespace M3.Cord.Models
         public string ProductCode { get; set; }
         public string CordStructure { get; set; }
         public string LotNo { get; set; }
-        public bool? ProductionSituationTwisting { get; set; }
-        public bool? ProductionSituationHeatSet { get; set; }
-        public bool? ProductionSituationDipCord { get; set; }
-        public bool? ProductionSituationJointing { get; set; }
+        public bool? ProductionSituationTwisting { get; set; } = false;
+        public bool? ProductionSituationHeatSet { get; set; } = false;
+        public bool? ProductionSituationDipCord { get; set; } = false;
+        public bool? ProductionSituationJointing { get; set; } = false;
         public string StandardOfTwisting { get; set; }
 
         public string MCCode { get; set; }
 
-        public bool? Bobbin { get; set; }
-        public bool? Cheese { get; set; }
-        public bool? TaperBB { get; set; }
-        public bool? ContainerOthers { get; set; }
+        public bool? Bobbin { get; set; } = false;
+        public bool? Cheese { get; set; } = false;
+        public bool? TaperBB { get; set; } = false;
+        public bool? ContainerOthers { get; set; } = false;
         public string SpindleNo { get; set; }
         public string Quantity { get; set; }
-        public bool? Polyester { get; set; }
-        public bool? Nylon66 { get; set; }
-        public bool? MaterialOthers { get; set; }
+        public bool? Polyester { get; set; } = false;
+        public bool? Nylon66 { get; set; } = false;
+        public bool? MaterialOthers { get; set; } = false;
         public string YarnType { get; set; }
-        public bool? Process { get; set; }
-        public bool? Product { get; set; }
-        public bool? Special { get; set; }
-        public bool? Trial { get; set; }
+        public bool? Process { get; set; } = false;
+        public bool? Product { get; set; } = false;
+        public bool? Special { get; set; } = false;
+        public bool? Trial { get; set; } = false;
         public string Shift { get; set; }
         public string ShiftName { get; set; }
         public string Remark { get; set; }
@@ -68,14 +68,14 @@ namespace M3.Cord.Models
             set { }
         }
 
-        public bool? Direct { get; set; }
-        public bool? Relax { get; set; }
+        public bool? Direct { get; set; } = false;
+        public bool? Relax { get; set; } = false;
         public string Relax_k { get; set; }
         public string Relax_n { get; set; }
-        public bool? Necessary { get; set; }
-        public bool? NotNecessary { get; set; }
-        public bool? SpecialMentionJointing { get; set; }
-        public bool? SpecialMentionNoJointing { get; set; }
+        public bool? Necessary { get; set; } = false;
+        public bool? NotNecessary { get; set; } = false;
+        public bool? SpecialMentionJointing { get; set; } = false;
+        public bool? SpecialMentionNoJointing { get; set; } = false;
         public decimal? TensileR1 { get; set; }
         public decimal? TensileL1 { get; set; }
         public decimal? TensileR2 { get; set; }
