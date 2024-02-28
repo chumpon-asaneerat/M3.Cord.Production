@@ -102,20 +102,25 @@ namespace M3.Cord.Models
 		public decimal? S8StretchTotalSet2 { get; set; }
 		public decimal? S8StretchTotalSetErr2 { get; set; }
 		public decimal? S8StretchTotalActual2 { get; set; }
+
 		public bool? S8TempDryerSC { get; set; }
 		public decimal? S8TempDryerSet { get; set; }
 		public decimal? S8TempDryerSetErr { get; set; }
 		public decimal? S8TempDryerActual { get; set; }
+
 		public decimal? S8TempDryerSet2 { get; set; }
 		public decimal? S8TempDryerSetErr2 { get; set; }
 		public decimal? S8TempDryerActual2 { get; set; }
+		
 		public bool? S8TempHotSC { get; set; }
 		public decimal? S8TempHotSet { get; set; }
 		public decimal? S8TempHotSetErr { get; set; }
 		public decimal? S8TempHotActual { get; set; }
+
 		public decimal? S8TempHotSet2 { get; set; }
 		public decimal? S8TempHotSetErr2 { get; set; }
 		public decimal? S8TempHotActual2 { get; set; }
+
 		public bool? S8TempNormalSC { get; set; }
 		public decimal? S8TempNormalSet { get; set; }
 		public decimal? S8TempNormalSetErr { get; set; }
@@ -123,6 +128,7 @@ namespace M3.Cord.Models
 		public decimal? S8TempNormalSet2 { get; set; }
 		public decimal? S8TempNormalSetErr2 { get; set; }
 		public decimal? S8TempNormalActual2 { get; set; }
+
 		public bool? S8CounterSettingSC { get; set; }
 		public string S8CounterSettingSet { get; set; }
 		public decimal? S8CounterSettingActual { get; set; }
@@ -330,11 +336,21 @@ namespace M3.Cord.Models
                 dst.S8StretchTotalSetErr = src.S8StretchTotalSetErr;
                 dst.S8StretchTotalSet2 = src.S8StretchTotalSet2;
                 dst.S8StretchTotalSetErr2 = src.S8StretchTotalSetErr2;
+
                 dst.S8TempDryerSC = src.S8TempDryerSC;
                 dst.S8TempDryerSet = src.S8TempDryerSet;
                 dst.S8TempDryerSetErr = src.S8TempDryerSetErr;
+
                 dst.S8TempDryerSet2 = src.S8TempDryerSet2;
                 dst.S8TempDryerSetErr2 = src.S8TempDryerSetErr2;
+
+                dst.S8TempHotSC = src.S8TempHotSC;
+                dst.S8TempHotSet = src.S8TempHotSet;
+                dst.S8TempHotSetErr = src.S8TempHotSetErr;
+
+                dst.S8TempHotSet2 = src.S8TempHotSet2;
+                dst.S8TempHotSetErr2 = src.S8TempHotSetErr2;
+
                 dst.S8TempNormalSC = src.S8TempNormalSC;
                 dst.S8TempNormalSet = src.S8TempNormalSet;
                 dst.S8TempNormalSetErr = src.S8TempNormalSetErr;
