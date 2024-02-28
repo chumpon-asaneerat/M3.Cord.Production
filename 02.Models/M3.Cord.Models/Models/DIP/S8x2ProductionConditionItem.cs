@@ -619,11 +619,11 @@ namespace M3.Cord.Models
                 }
                 else if (RowType == 0)
                 {
-                    return (PositionCordCutCreel.HasValue) ? PositionCordCutCreel.Value.ToString("#,###.##") : "";
+                    return string.Format("{0:#,###} CH, {1:#,###.##} KG", PositionCordCutCreel, PositionCordCutCreelKG);
                 }
                 else
                 {
-                    return (PositionCordCutCreel.HasValue) ? PositionCordCutCreel.Value.ToString("#,###.##") : "";
+                    return string.Format("{0:#,###} CH, {1:#,###.##} KG", PositionCordCutCreel, PositionCordCutCreelKG);
                 }
             }
             set { }
@@ -650,11 +650,11 @@ namespace M3.Cord.Models
                 }
                 else if (RowType == 0)
                 {
-                    return (PositionCordCutCS.HasValue) ? PositionCordCutCS.Value.ToString("#,###.##") : "";
+                    return string.Format("{0:#,###} CH, {1:#,###.##} KG", PositionCordCutCS, PositionCordCutCSKG);
                 }
                 else
                 {
-                    return (PositionCordCutCS.HasValue) ? PositionCordCutCS.Value.ToString("#,###.##") : "";
+                    return string.Format("{0:#,###} CH, {1:#,###.##} KG", PositionCordCutCS, PositionCordCutCSKG);
                 }
             }
             set { }
@@ -681,11 +681,11 @@ namespace M3.Cord.Models
                 }
                 else if (RowType == 0)
                 {
-                    return (PositionCordCutWinder.HasValue) ? PositionCordCutWinder.Value.ToString("#,###.##") : "";
+                    return string.Format("{0:#,###} CH, {1:#,###.##} KG", PositionCordCutWinder, PositionCordCutWinderKG);
                 }
                 else
                 {
-                    return (PositionCordCutWinder.HasValue) ? PositionCordCutWinder.Value.ToString("#,###.##") : "";
+                    return string.Format("{0:#,###} CH, {1:#,###.##} KG", PositionCordCutWinder, PositionCordCutWinderKG);
                 }
             }
             set { }
@@ -712,11 +712,11 @@ namespace M3.Cord.Models
                 }
                 else if (RowType == 0)
                 {
-                    return (PositionCordCutWasteYarn.HasValue) ? PositionCordCutWasteYarn.Value.ToString("#,###.##") : "";
+                    return string.Format("{0:#,###} CH, {1:#,###.##} KG", PositionCordCutWasteYarn, PositionCordCutWasteYarnKG);
                 }
                 else
                 {
-                    return (PositionCordCutWasteYarn.HasValue) ? PositionCordCutWasteYarn.Value.ToString("#,###.##") : "";
+                    return string.Format("{0:#,###} CH, {1:#,###.##} KG", PositionCordCutWasteYarn, PositionCordCutWasteYarnKG);
                 }
             }
             set { }
