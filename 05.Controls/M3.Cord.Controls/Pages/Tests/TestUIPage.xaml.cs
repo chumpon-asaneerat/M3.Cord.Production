@@ -64,6 +64,24 @@ namespace M3.Cord.Pages
 
         #region Button Handlers
 
+        private void cmdGetValue_Click(object sender, RoutedEventArgs e)
+        {
+            if (null != item)
+            {
+                if (!item.State.HasValue)
+                    txtValue.Text = "Value is NULL";
+                else if (item.State.HasValue && item.State.Value == false)
+                    txtValue.Text = "Value is FALSE";
+                else if (item.State.HasValue && item.State.Value == true)
+                    txtValue.Text = "Value is TRUE";
+                else txtValue.Text = string.Empty;
+            }
+            else
+            {
+                txtValue.Text = "ITEM IS NULL";
+            }
+        }
+
         private void cmdHome_Click(object sender, RoutedEventArgs e)
         {
             M3CordApp.Pages.GotoCordMainMenu();

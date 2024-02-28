@@ -33,7 +33,20 @@
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Check Status: " FontSize="18" />
-                        <CheckBox Style="{StaticResource CommonCheckBox3State}" IsChecked="{Binding State, TargetNullValue={x:Null}}" />
+                        <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx3State}"
+                                         InvertCheckStateOrder="True"
+                                         IsChecked="{Binding State, TargetNullValue={x:Null}}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="cmdGetValue"
+                                Content="Get Value"
+                                Margin="2"
+                                FontSize="16"
+                                Click="cmdGetValue_Click" />
+                        <TextBlock x:Name="txtValue"
+                                   Text=""
+                                   Margin="2"
+                                   FontSize="16" />
                     </StackPanel>
                 </StackPanel>
                 <Grid />

@@ -25,8 +25,9 @@ M3 Cord Production System #993
 M3 Cord Production System #992
 - 
 
+[commited]
 M3 Cord Production System #991
-- 
+- Implements CheckBoxEx #3
 
 [commited]
 M3 Cord Production System #990
