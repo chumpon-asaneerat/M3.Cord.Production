@@ -82,9 +82,9 @@ namespace M3.Cord.Services.Excels
                         ws.Cells["P10"].Value = string.Format("{0} ± {1}", sheet.Bath2NipBack, sheet.Bath2NipBackErr);
 
                         // Sofner
-                        ws.Cells["R6"].Value = (sheet.Sofner.HasValue && sheet.Sofner.Value) ? "P" : string.Empty;
+                        ws.Cells["R6"].Value = sheet.SofnerValue;
                         // DarwNip
-                        ws.Cells["S6"].Value = (sheet.DarwNip.HasValue && sheet.DarwNip.Value) ? "P" : string.Empty;
+                        ws.Cells["S6"].Value = sheet.DarwNipValue;
                         // Paper Tube Color
                         ws.Cells["R10"].Value = sheet.PaperTubeColorUse;
 
@@ -251,7 +251,7 @@ namespace M3.Cord.Services.Excels
                                 ws.Cells[18 + iRow, 15].Value = item.ProductionCutValueS;
 
                                 ws.Cells[18 + iRow, 16].Value = item.PositionCordCutCreelValueS;
-                                ws.Cells[18 + iRow, 17].Value = item.PositionCordCutCS;
+                                ws.Cells[18 + iRow, 17].Value = item.PositionCordCutCSValueS;
                                 ws.Cells[18 + iRow, 18].Value = item.PositionCordCutWinderValueS;
                                 ws.Cells[18 + iRow, 19].Value = item.PositionCordCutWasteYarnValueS;
                                 ws.Cells[18 + iRow, 20].Value = item.CheckTimeStartS;
@@ -545,9 +545,9 @@ namespace M3.Cord.Services.Excels
                         ws.Cells["P10"].Value = string.Format("{0} ± {1}", sheet.Bath2NipBack, sheet.Bath2NipBackErr);
 
                         // Sofner
-                        ws.Cells["R6"].Value = (sheet.Sofner.HasValue && sheet.Sofner.Value) ? "P" : string.Empty;
+                        ws.Cells["R6"].Value = sheet.SofnerValue;
                         // DarwNip
-                        ws.Cells["S6"].Value = (sheet.DarwNip.HasValue && sheet.DarwNip.Value) ? "P" : string.Empty;
+                        ws.Cells["S6"].Value = sheet.DarwNipValue;
                         // Paper Tube Color
                         ws.Cells["R10"].Value = sheet.PaperTubeColorUse;
 
@@ -733,7 +733,7 @@ namespace M3.Cord.Services.Excels
                                 ws.Cells[18 + iRow, 15].Value = item.ProductionCutValueS;
 
                                 ws.Cells[18 + iRow, 16].Value = item.PositionCordCutCreelValueS;
-                                ws.Cells[18 + iRow, 17].Value = item.PositionCordCutCS;
+                                ws.Cells[18 + iRow, 17].Value = item.PositionCordCutCSValueS;
                                 ws.Cells[18 + iRow, 18].Value = item.PositionCordCutWinderValueS;
                                 ws.Cells[18 + iRow, 19].Value = item.PositionCordCutWasteYarnValueS;
                                 ws.Cells[18 + iRow, 20].Value = item.CheckTimeStartS;
