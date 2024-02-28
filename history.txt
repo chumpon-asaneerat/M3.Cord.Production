@@ -16,8 +16,10 @@ M3 Cord Production System #996
 M3 Cord Production System #995
 - 
 
+[commited]
 M3 Cord Production System #994
-- 
+- CheckBox rework #1
+  - FirstTwist - Actual Yarn Record Sheet - OK.
 
 [commited]
 M3 Cord Production System #993

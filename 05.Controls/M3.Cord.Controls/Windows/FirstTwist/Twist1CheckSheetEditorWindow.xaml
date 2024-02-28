@@ -41,14 +41,14 @@
         <!--#region RAW-->
 
         <DataTemplate x:Key="RawB">
-            <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox3State}"
-                      IsChecked="{Binding Path=RawB, Mode=TwoWay}" />
+            <ctrl:CheckBoxEx FontSize="18"
+                             Style="{StaticResource CommonCheckBoxEx3State}"
+                             IsChecked="{Binding Path=RawB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="RawE">
-            <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox3State}"
-                      IsChecked="{Binding Path=RawE, Mode=TwoWay}" />
+            <ctrl:CheckBoxEx FontSize="18"
+                             Style="{StaticResource CommonCheckBoxEx3State}"
+                             IsChecked="{Binding Path=RawE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="RawColumns">
@@ -92,14 +92,14 @@
         <!--#region Cross-->
 
         <DataTemplate x:Key="CrossB">
-            <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox3State}"
-                      IsChecked="{Binding Path=CrossB, Mode=TwoWay}" />
+            <ctrl:CheckBoxEx FontSize="18"
+                             Style="{StaticResource CommonCheckBoxEx3State}"
+                             IsChecked="{Binding Path=CrossB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="CrossE">
-            <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox3State}"
-                      IsChecked="{Binding Path=CrossE, Mode=TwoWay}" />
+            <ctrl:CheckBoxEx FontSize="18"
+                             Style="{StaticResource CommonCheckBoxEx3State}"
+                             IsChecked="{Binding Path=CrossE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="CrossColumns">
@@ -143,14 +143,14 @@
         <!--#region Form-->
 
         <DataTemplate x:Key="FormB">
-            <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox3State}"
-                      IsChecked="{Binding Path=FormB, Mode=TwoWay}" />
+            <ctrl:CheckBoxEx FontSize="18"
+                             Style="{StaticResource CommonCheckBoxEx3State}"
+                             IsChecked="{Binding Path=FormB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="FormE">
-            <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox3State}"
-                      IsChecked="{Binding Path=FormE, Mode=TwoWay}" />
+            <ctrl:CheckBoxEx FontSize="18"
+                             Style="{StaticResource CommonCheckBoxEx3State}"
+                             IsChecked="{Binding Path=FormE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="FormColumns">
@@ -194,14 +194,14 @@
         <!--#region Keiba-->
 
         <DataTemplate x:Key="KeibaB">
-            <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox3State}"
-                      IsChecked="{Binding Path=KebaB, Mode=TwoWay}" />
+            <ctrl:CheckBoxEx FontSize="18"
+                             Style="{StaticResource CommonCheckBoxEx3State}"
+                             IsChecked="{Binding Path=KebaB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="KeibaE">
-            <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox3State}"
-                      IsChecked="{Binding Path=KebaE, Mode=TwoWay}" />
+            <ctrl:CheckBoxEx FontSize="18"
+                             Style="{StaticResource CommonCheckBoxEx3State}"
+                             IsChecked="{Binding Path=KebaE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="KeibaColumns">
@@ -245,14 +245,14 @@
         <!--#region Stain-->
 
         <DataTemplate x:Key="StainB">
-            <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox3State}"
-                      IsChecked="{Binding Path=StainB, Mode=TwoWay}" />
+            <ctrl:CheckBoxEx FontSize="18"
+                             Style="{StaticResource CommonCheckBoxEx3State}"
+                             IsChecked="{Binding Path=StainB, Mode=TwoWay}" />
         </DataTemplate>
         <DataTemplate x:Key="StainE">
-            <CheckBox FontSize="18"
-                      Style="{StaticResource CommonCheckBox3State}"
-                      IsChecked="{Binding Path=StainE, Mode=TwoWay}" />
+            <ctrl:CheckBoxEx FontSize="18"
+                             Style="{StaticResource CommonCheckBoxEx3State}"
+                             IsChecked="{Binding Path=StainE, Mode=TwoWay}" />
         </DataTemplate>
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="StainColumns">
@@ -348,34 +348,34 @@
                 </DockPanel>
                 <!--  SPs  -->
                 <ListView x:Name="grid"
-                      Margin="0,0,0,5"
-                      FontSize="{StaticResource FontSize18}"
-                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
-                      ItemsSource="{Binding}"
-                      Style="{StaticResource SingleSelectListView}">
+                          Margin="0,0,0,5"
+                          FontSize="{StaticResource FontSize18}"
+                          ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                          ItemsSource="{Binding}"
+                          Style="{StaticResource SingleSelectListView}">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
                             <GridViewColumn Width="140"
-                                        CellTemplate="{StaticResource RawColumnsHeaderColumns}"
-                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                        HeaderTemplate="{StaticResource RawColumnsHeader}" />
+                                            CellTemplate="{StaticResource RawColumnsHeaderColumns}"
+                                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                            HeaderTemplate="{StaticResource RawColumnsHeader}" />
                             <GridViewColumn Width="140"
-                                        CellTemplate="{StaticResource CrossColumnsHeaderColumns}"
-                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                        HeaderTemplate="{StaticResource CrossColumnsHeader}" />
+                                            CellTemplate="{StaticResource CrossColumnsHeaderColumns}"
+                                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                            HeaderTemplate="{StaticResource CrossColumnsHeader}" />
                             <GridViewColumn Width="140"
-                                        CellTemplate="{StaticResource FormColumnsHeaderColumns}"
-                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                        HeaderTemplate="{StaticResource FormColumnsHeader}" />
+                                            CellTemplate="{StaticResource FormColumnsHeaderColumns}"
+                                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                            HeaderTemplate="{StaticResource FormColumnsHeader}" />
                             <GridViewColumn Width="140"
-                                        CellTemplate="{StaticResource KeibaColumnsHeaderColumns}"
-                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                        HeaderTemplate="{StaticResource KeibaColumnsHeader}" />
+                                            CellTemplate="{StaticResource KeibaColumnsHeaderColumns}"
+                                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                            HeaderTemplate="{StaticResource KeibaColumnsHeader}" />
                             <GridViewColumn Width="140"
-                                        CellTemplate="{StaticResource StainColumnsHeaderColumns}"
-                                        HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
-                                        HeaderTemplate="{StaticResource StainColumnsHeader}" />
+                                            CellTemplate="{StaticResource StainColumnsHeaderColumns}"
+                                            HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
+                                            HeaderTemplate="{StaticResource StainColumnsHeader}" />
                         </GridView>
                     </ListView.View>
                 </ListView>

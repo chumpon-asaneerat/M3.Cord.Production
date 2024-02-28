@@ -257,6 +257,7 @@
     <!--  CHECK BOX STYLE (CHECKBOX EX)  -->
     <Style x:Key="CommonCheckBoxEx3State" TargetType="{x:Type ctrl:CheckBoxEx}">
         <Setter Property="IsThreeState" Value="True" />
+        <Setter Property="InvertCheckStateOrder" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="False" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
