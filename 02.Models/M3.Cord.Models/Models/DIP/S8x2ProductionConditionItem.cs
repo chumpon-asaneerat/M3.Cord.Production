@@ -598,7 +598,11 @@ namespace M3.Cord.Models
             set { }
         }
 
+        // CH
         public decimal? PositionCordCutCreel { get; set; }
+        // KG
+        public decimal? PositionCordCutCreelKG { get; set; }
+
         public string PositionCordCutCreelValueS
         {
             get
@@ -625,7 +629,11 @@ namespace M3.Cord.Models
             set { }
         }
 
+        // CH
         public decimal? PositionCordCutCS { get; set; }
+        // KG
+        public decimal? PositionCordCutCSKG { get; set; }
+
         public string PositionCordCutCSValueS
         {
             get
@@ -652,7 +660,11 @@ namespace M3.Cord.Models
             set { }
         }
 
+        // CH
         public decimal? PositionCordCutWinder { get; set; }
+        // KG
+        public decimal? PositionCordCutWinderKG { get; set; }
+
         public string PositionCordCutWinderValueS
         {
             get
@@ -679,7 +691,11 @@ namespace M3.Cord.Models
             set { }
         }
 
+        // CH
         public decimal? PositionCordCutWasteYarn { get; set; }
+        // KG
+        public decimal? PositionCordCutWasteYarnKG { get; set; }
+
         public string PositionCordCutWasteYarnValueS
         {
             get
@@ -761,7 +777,32 @@ namespace M3.Cord.Models
         }
 
 
-        public string CheckTimeRecordS { get; set; }
+        public DateTime? CheckTimeRecord { get; set; }
+        public string CheckTimeRecordS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (CheckTimeRecord.HasValue) ? CheckTimeRecord.Value.ToString("HH:mm") : "";
+                }
+                else
+                {
+                    return (CheckTimeRecord.HasValue) ? CheckTimeRecord.Value.ToString("HH:mm") : "";
+                }
+            }
+            set { }
+        }
 
         public string Opertor { get; set; }
         public string Leader { get; set; }
@@ -964,12 +1005,19 @@ namespace M3.Cord.Models
             p.Add("@ProductionTotalValue", value.ProductionTotalValue);
 
             p.Add("@ProductionCut", value.ProductionCut);
+
             p.Add("@PositionCordCutCreel", value.PositionCordCutCreel);
+            p.Add("@PositionCordCutCreelKG", value.PositionCordCutCreelKG);
             p.Add("@PositionCordCutCS", value.PositionCordCutCS);
+            p.Add("@PositionCordCutCSKG", value.PositionCordCutCSKG);
             p.Add("@PositionCordCutWinder", value.PositionCordCutWinder);
+            p.Add("@PositionCordCutWinderKG", value.PositionCordCutWinderKG);
             p.Add("@PositionCordCutWasteYarn", value.PositionCordCutWasteYarn);
+            p.Add("@PositionCordCutWasteYarnKG", value.PositionCordCutWasteYarnKG);
+
             p.Add("@CheckTimeStart", value.CheckTimeStart);
             p.Add("@CheckTimeFinish", value.CheckTimeFinish);
+            p.Add("@CheckTimeRecord", value.CheckTimeRecord);
 
             p.Add("@Opertor", value.Opertor);
             p.Add("@Leader", value.Leader);

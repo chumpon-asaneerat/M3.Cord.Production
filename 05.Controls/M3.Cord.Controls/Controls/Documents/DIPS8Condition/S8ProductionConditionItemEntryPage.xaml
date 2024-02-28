@@ -250,8 +250,10 @@
                            Width="350"
                            TextAlignment="Right" />
                 <TextBlock Width="15" />
-                <TextBox Text="{Binding PositionCordCutCreel, StringFormat='{}{0:#,##0.##}'}" Width="150" />
-                <TextBlock Width="10" />
+                <TextBox Text="{Binding PositionCordCutCreel, StringFormat='{}{0:#,##0.##}'}" Width="80" />
+                <TextBlock Margin="10,0" Text="CH" />
+                <TextBox Text="{Binding PositionCordCutCreelKG, StringFormat='{}{0:#,##0.##}'}" Width="80" />
+                <TextBlock Margin="10,0" Text="KG" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
@@ -259,8 +261,10 @@
                            Width="350"
                            TextAlignment="Right" />
                 <TextBlock Width="15" />
-                <TextBox Text="{Binding PositionCordCutCS, StringFormat='{}{0:#,##0.##}'}" Width="150" />
-                <TextBlock Width="10" />
+                <TextBox Text="{Binding PositionCordCutCS, StringFormat='{}{0:#,##0.##}'}" Width="80" />
+                <TextBlock Margin="10,0" Text="CH" />
+                <TextBox Text="{Binding PositionCordCutCSKG, StringFormat='{}{0:#,##0.##}'}" Width="80" />
+                <TextBlock Margin="10,0" Text="KG" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
@@ -268,8 +272,10 @@
                            Width="350"
                            TextAlignment="Right" />
                 <TextBlock Width="15" />
-                <TextBox Text="{Binding PositionCordCutWinder, StringFormat='{}{0:#,##0.##}'}" Width="150" />
-                <TextBlock Width="10" />
+                <TextBox Text="{Binding PositionCordCutWinder, StringFormat='{}{0:#,##0.##}'}" Width="80" />
+                <TextBlock Margin="10,0" Text="CH" />
+                <TextBox Text="{Binding PositionCordCutWinderKG, StringFormat='{}{0:#,##0.##}'}" Width="80" />
+                <TextBlock Margin="10,0" Text="KG" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
@@ -277,8 +283,10 @@
                            Width="350"
                            TextAlignment="Right" />
                 <TextBlock Width="15" />
-                <TextBox Text="{Binding PositionCordCutWasteYarn, StringFormat='{}{0:#,##0.##}'}" Width="150" />
-                <TextBlock Width="10" />
+                <TextBox Text="{Binding PositionCordCutWasteYarn, StringFormat='{}{0:#,##0.##}'}" Width="80" />
+                <TextBlock Margin="10,0" Text="CH" />
+                <TextBox Text="{Binding PositionCordCutWasteYarnKG, StringFormat='{}{0:#,##0.##}'}" Width="80" />
+                <TextBlock Margin="10,0" Text="KG" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
