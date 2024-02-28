@@ -1224,10 +1224,10 @@
                 <CheckBox Content="" IsChecked="{Binding S9WinderAyameDaialSC}" />
             </Border>
             <Border Grid.Row="31" Grid.Column="4">
-                <TextBox Width="220" Text="{Binding S9WinderAyameDaialSet, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9WinderAyameDaialSet, StringFormat='{}{0:F6}'}" />
             </Border>
             <Border Grid.Row="31" Grid.Column="5">
-                <TextBox Width="220" Text="{Binding S9WinderAyameDaialSet2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S9WinderAyameDaialSet2, StringFormat='{}{0:F6}'}" />
             </Border>
             <!--#endregion-->
 

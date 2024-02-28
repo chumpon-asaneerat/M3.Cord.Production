@@ -19,8 +19,9 @@ M3 Cord Production System #1005
 M3 Cord Production System #1004
 - 
 
+[commited]
 M3 Cord Production System #1003
-- 
+- DIP Condition fixed miss mapping properties #2
 
 [commited]
 M3 Cord Production System #1002
