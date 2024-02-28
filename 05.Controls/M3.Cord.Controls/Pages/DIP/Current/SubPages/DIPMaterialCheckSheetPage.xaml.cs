@@ -70,6 +70,7 @@ namespace M3.Cord.Pages
         private void cmdClear_Click(object sender, RoutedEventArgs e)
         {
             ResetTextBoxInputs(true);
+            ResetCheckBoxInputs();
         }
 
         #endregion
@@ -166,12 +167,12 @@ namespace M3.Cord.Pages
 
         private void ResetCheckBoxInputs()
         {
-            chkCheckYarnNo.IsChecked = false;
-            chkCheckYanScrap.IsChecked = false;
-            chkCheckYarnBall.IsChecked = false;
-            chkCheckCover.IsChecked = false;
-            chkCheckSensor.IsChecked = false;
-            chkCheckDustFilter.IsChecked = false;
+            chkCheckYarnNo.IsChecked = new bool?();
+            chkCheckYanScrap.IsChecked = new bool?();
+            chkCheckYarnBall.IsChecked = new bool?();
+            chkCheckCover.IsChecked = new bool?();
+            chkCheckSensor.IsChecked = new bool?();
+            chkCheckDustFilter.IsChecked = new bool?();
         }
 
         private void AddItem()

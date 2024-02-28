@@ -13,8 +13,10 @@ M3 Cord Production System #997
 M3 Cord Production System #996
 - 
 
+[commited]
 M3 Cord Production System #995
-- 
+- CheckBox rework #2
+  - DIP - Material Check Sheets - OK.
 
 [commited]
 M3 Cord Production System #994
