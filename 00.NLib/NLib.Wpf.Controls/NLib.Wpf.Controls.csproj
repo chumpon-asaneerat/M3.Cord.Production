@@ -130,6 +130,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Controls\NInputs\CheckBoxEx.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Controls\NInputs\NComboBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\Converters\WatermarkAlignmentToDockConverter.cs" />
+    <Compile Include="Controls\NInputs\CheckBoxEx.cs" />
     <Compile Include="Controls\NPreForms\NPreForm.cs" />
     <Compile Include="Controls\NPreForms\NPreFormColumn.cs" />
     <Compile Include="Controls\NPreForms\NPreFormHeader.cs" />

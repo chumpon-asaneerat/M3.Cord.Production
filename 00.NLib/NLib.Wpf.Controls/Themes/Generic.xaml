@@ -35,6 +35,8 @@
         <!--  NGroupMenu, NGroupMenuItem  -->
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NGroupMenu/NGroupMenu.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NGroupMenu/NGroupMenuItem.xaml" />
+        <!--  NInputGroup, CheckBoxEx  -->
+        <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NInputs/CheckBoxEx.xaml" />
         <!--  NInputGroup, NTextBox, NPasswordBox, NComboBox, NDatePicker  -->
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NInputs/NInputGroup.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NInputs/NTextBox.xaml" />
@@ -48,4 +50,5 @@
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPreForms/NPreFormHeader.xaml" />
         <ResourceDictionary Source="pack://application:,,,/NLib.Wpf.Controls;component/Themes/Controls/NPreForms/NPreFormItem.xaml" />
     </ResourceDictionary.MergedDictionaries>
+
 </ResourceDictionary>
