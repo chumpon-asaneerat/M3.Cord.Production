@@ -270,17 +270,23 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
                         <TextBlock Text="Sofner"
-                                   Width="80"
+                                   Width="100"
                                    TextAlignment="Center" />
+                        <!--
                         <CheckBox Content="" IsChecked="{Binding Sofner}" />
+                        -->
+                        <TextBox Width="90" Text="{Binding SofnerValue}" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
                         <TextBlock Text="Darw Nip"
-                                   Width="80"
+                                   Width="100"
                                    TextAlignment="Center" />
+                        <!--
                         <CheckBox Content="" IsChecked="{Binding DarwNip}" />
+                        -->
+                        <TextBox Width="90" Text="{Binding DarwNipValue}" />
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
@@ -357,7 +363,7 @@
                             <TextBlock Text="Winder" FontSize="18" />
                         </Border>
                         <Border Grid.Row="4" Grid.Column="1">
-                            <TextBox Width="70" Text="{Binding TensionWinder, StringFormat='{}{0:#,##0.##}'}" />
+                            <TextBox Width="100" Text="{Binding TensionWinder}" />
                         </Border>
                     </Grid>
 

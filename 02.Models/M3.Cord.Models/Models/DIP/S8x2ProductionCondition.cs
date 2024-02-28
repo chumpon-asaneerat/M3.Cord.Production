@@ -43,13 +43,20 @@ namespace M3.Cord.Models
         public decimal? Bath2NipFront { get; set; }
         public decimal? Bath2NipBack { get; set; }
         public decimal? Bath2NipBackErr { get; set; }
+        
         public bool? Sofner { get; set; }
         public bool? DarwNip { get; set; }
+
+        public string SofnerValue { get; set; }
+        public string DarwNipValue { get; set; }
+
         public string PaperTubeColorUse { get; set; }
         public decimal? TensionD { get; set; }
         public decimal? TensionH { get; set; }
         public decimal? TensionN { get; set; }
+
         public string TensionWinder { get; set; }
+
         public decimal? GasBefore { get; set; }
         public decimal? GasAfter { get; set; }
         public decimal? GasTotal { get; set; }
@@ -225,13 +232,19 @@ namespace M3.Cord.Models
             p.Add("@Bath2NipFront", value.Bath2NipFront);
             p.Add("@Bath2NipBack", value.Bath2NipBack);
             p.Add("@Bath2NipBackErr", value.Bath2NipBackErr);
+
             p.Add("@Sofner", value.Sofner);
+            p.Add("@SofnerValue", value.SofnerValue);
             p.Add("@DarwNip", value.DarwNip);
+            p.Add("@DarwNipValue", value.DarwNipValue);
+
             p.Add("@PaperTubeColorUse", value.PaperTubeColorUse);
             p.Add("@TensionD", value.TensionD);
             p.Add("@TensionH", value.TensionH);
             p.Add("@TensionN", value.TensionN);
+
             p.Add("@TensionWinder", value.TensionWinder);
+
             p.Add("@GasBefore", value.GasBefore);
             p.Add("@GasAfter", value.GasAfter);
             p.Add("@GasTotal", value.GasTotal);
