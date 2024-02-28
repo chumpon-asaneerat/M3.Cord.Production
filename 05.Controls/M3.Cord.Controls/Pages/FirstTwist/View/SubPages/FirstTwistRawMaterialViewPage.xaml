@@ -217,6 +217,7 @@
                         <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource ItemYarn}" />
                         <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
                         <GridViewColumn Header="Input (CH)" CellTemplate="{StaticResource InputCH}" />
+                        <GridViewColumn Header="Input (KG)" CellTemplate="{StaticResource InputKG}" />
                         <GridViewColumn Header="Doff" CellTemplate="{StaticResource DoffNo}" />
                         <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNos}" />
                         <GridViewColumn Width="Auto"

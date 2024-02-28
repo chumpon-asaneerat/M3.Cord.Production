@@ -45,6 +45,8 @@ namespace M3.Cord.Models
 
         public int DoffNo { get; set; }
         public int InputCH { get; set; }
+        public decimal? KgPerCH { get; set; }
+        public decimal? InputKG { get; set; }
         public int SPNoMin { get; set; }
         public int SPNoMax { get; set; }
 

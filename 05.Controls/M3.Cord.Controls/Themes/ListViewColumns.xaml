@@ -483,6 +483,11 @@
                    TextAlignment="Center"
                    MinWidth="80" />
     </DataTemplate>
+    <DataTemplate x:Key="InputKG">
+        <TextBlock Text="{Binding Path=InputKG, Mode=OneWay, StringFormat='{}{0:n0}'}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
+    </DataTemplate>
     <DataTemplate x:Key="DoffNo">
         <TextBlock Text="{Binding Path=DoffNo, Mode=OneWay}"
                    TextAlignment="Center"

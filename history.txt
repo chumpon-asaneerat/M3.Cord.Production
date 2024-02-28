@@ -16,8 +16,9 @@ M3 Cord Production System #1006
 M3 Cord Production System #1005
 - 
 
+[commited]
 M3 Cord Production System #1004
-- 
+- First Twist Raw Material Summary show Input Kg
 
 [commited]
 M3 Cord Production System #1003
