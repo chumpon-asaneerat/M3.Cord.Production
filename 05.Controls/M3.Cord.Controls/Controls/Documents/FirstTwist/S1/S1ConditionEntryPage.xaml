@@ -760,7 +760,11 @@
                     <TextBox Width="100"
                              Text="{Binding CalculatedTwistingNumber, StringFormat='{}{0:#,##0.##}'}"
                              IsReadOnly="True" />
-                    <TextBlock Text=" (S) " />
+                    <TextBlock Text=" ( " />
+                    <TextBox Width="25"
+                             Text="{Binding CalculatedTwistingNumberType}"
+                             IsReadOnly="True" />
+                    <TextBlock Text=" ) " />
                     <TextBlock Text=" ± " />
                     <TextBox Width="70"
                              Text="{Binding CalculatedTwistingNumberErr, StringFormat='{}{0:#,##0.##}'}"

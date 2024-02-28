@@ -521,7 +521,9 @@
             <Border Grid.Row="11" Grid.Column="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="100" Text="{Binding CalculatedTwistingNumber, StringFormat='{}{0:#,##0.##}'}" />
-                    <TextBlock Text=" (S) " />
+                    <TextBlock Text=" ( " />
+                    <TextBox Width="25" Text="{Binding CalculatedTwistingNumberType}" />
+                    <TextBlock Text=" ) " />
                     <TextBlock Text=" ± " />
                     <TextBox Width="70" Text="{Binding CalculatedTwistingNumberErr, StringFormat='{}{0:#,##0.##}'}" />
                 </StackPanel>

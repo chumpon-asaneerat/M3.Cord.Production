@@ -54,6 +54,7 @@ namespace M3.Cord.Models
         public string SenserYarnBreak { get; set; }
         public bool? CalculatedTwistingNumberSC { get; set; }
         public decimal? CalculatedTwistingNumber { get; set; }
+        public string CalculatedTwistingNumberType { get; set; }
         public decimal? CalculatedTwistingNumberErr { get; set; }
         public bool? NumberOfSpindleRotationSC { get; set; }
         public decimal? NumberOfSpindleRotation { get; set; }
@@ -179,6 +180,7 @@ namespace M3.Cord.Models
             p.Add("@SenserYarnBreak", value.SenserYarnBreak);
             p.Add("@CalculatedTwistingNumberSC", value.CalculatedTwistingNumberSC);
             p.Add("@CalculatedTwistingNumber", value.CalculatedTwistingNumber);
+            p.Add("@CalculatedTwistingNumberType", value.CalculatedTwistingNumberType);
             p.Add("@CalculatedTwistingNumberErr", value.CalculatedTwistingNumberErr);
             p.Add("@NumberOfSpindleRotationSC", value.NumberOfSpindleRotationSC);
             p.Add("@NumberOfSpindleRotation", value.NumberOfSpindleRotation);

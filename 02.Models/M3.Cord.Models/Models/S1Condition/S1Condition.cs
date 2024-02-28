@@ -150,6 +150,7 @@ namespace M3.Cord.Models
 
         public bool? CalculatedTwistingNumberSC { get; set; }
         public decimal? CalculatedTwistingNumber { get; set; }
+        public string CalculatedTwistingNumberType { get; set; }
         public decimal? CalculatedTwistingNumberErr { get; set; }
         public decimal? CalculatedTwistingNumberActual { get; set; }
         public bool? NumberOfSpindleRotationSC { get; set; }
@@ -163,6 +164,84 @@ namespace M3.Cord.Models
         public bool? SpecialMentionSC { get; set; }
         public string SpecialMention { get; set; }
         public string SpecialMentionActual { get; set; }
+
+        #region HasJoins with Yes/No Runtime properties
+
+        public bool? HasJoins
+        {
+            get { return Get<bool?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => HasJoinsY);
+                    Raise(() => HasJoinsN);
+                });
+            }
+        }
+
+        public bool? HasJoinsY
+        {
+            get
+            {
+                if (HasJoins.HasValue)
+                    return (HasJoins.Value == true);
+                else return HasJoins;
+            }
+            set { HasJoins = true; }
+        }
+
+        public bool? HasJoinsN
+        {
+            get
+            {
+                if (HasJoins.HasValue)
+                    return (HasJoins.Value == false);
+                else return HasJoins;
+            }
+            set { HasJoins = false; }
+        }
+
+        #endregion
+
+        #region JoinOK with Yes/No Runtime properties
+
+        public bool? JoinOK
+        {
+            get { return Get<bool?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => JoinOKY);
+                    Raise(() => JoinOKN);
+                });
+            }
+        }
+
+        public bool? JoinOKY
+        {
+            get
+            {
+                if (JoinOK.HasValue)
+                    return (JoinOK.Value == true);
+                else return JoinOK;
+            }
+            set { JoinOK = true; }
+        }
+
+        public bool? JoinOKN
+        {
+            get
+            {
+                if (JoinOK.HasValue)
+                    return (JoinOK.Value == false);
+                else return JoinOK;
+            }
+            set { JoinOK = false; }
+        }
+
+        #endregion
 
         public string UpdateBy { get; set; }
         public DateTime? UpdateDate { get; set; }
@@ -234,6 +313,7 @@ namespace M3.Cord.Models
                 dst.SenserYarnBreak = src.SenserYarnBreak;
                 dst.CalculatedTwistingNumberSC = src.CalculatedTwistingNumberSC;
                 dst.CalculatedTwistingNumber = src.CalculatedTwistingNumber;
+                dst.CalculatedTwistingNumberType = src.CalculatedTwistingNumberType;
                 dst.CalculatedTwistingNumberErr = src.CalculatedTwistingNumberErr;
                 dst.NumberOfSpindleRotationSC = src.NumberOfSpindleRotationSC;
                 dst.NumberOfSpindleRotation = src.NumberOfSpindleRotation;
@@ -374,6 +454,7 @@ namespace M3.Cord.Models
             p.Add("@SenserYarnBreakActual", value.SenserYarnBreakActual);
             p.Add("@CalculatedTwistingNumberSC", value.CalculatedTwistingNumberSC);
             p.Add("@CalculatedTwistingNumber", value.CalculatedTwistingNumber);
+            p.Add("@CalculatedTwistingNumberType", value.CalculatedTwistingNumberType);
             p.Add("@CalculatedTwistingNumberErr", value.CalculatedTwistingNumberErr);
             p.Add("@CalculatedTwistingNumberActual", value.CalculatedTwistingNumberActual);
             p.Add("@NumberOfSpindleRotationSC", value.NumberOfSpindleRotationSC);
@@ -387,6 +468,9 @@ namespace M3.Cord.Models
             p.Add("@SpecialMentionSC", value.SpecialMentionSC);
             p.Add("@SpecialMention", value.SpecialMention);
             p.Add("@SpecialMentionActual", value.SpecialMentionActual);
+
+            p.Add("@HasJoins", value.HasJoins);
+            p.Add("@JoinOK", value.JoinOK);
 
             p.Add("@UpdateBy", value.UpdateBy);
 
