@@ -941,7 +941,36 @@
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="14" Grid.Column="4">
-                <TextBox Width="200" Text="{Binding SpecialMentionActual}" />
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding HasJoinsY}" />
+                        <TextBlock Text="มีรอยต่อ" />
+                        <TextBlock Width="5" />
+                        <CheckBox IsChecked="{Binding HasJoinsN}" />
+                        <TextBlock Text="ไม่มีรอยต่อ" />
+                    </StackPanel>
+                    <TextBlock Margin="5"
+                               Foreground="DarkRed"
+                               TextAlignment="Left"
+                               Width="210">
+                        <Run Text="รอยต่อไม่เกิน 2 จุด" />
+                        <LineBreak />
+                        <Run Text="ต่อ Bobbin" />
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding JoinOKY}" />
+                        <TextBlock Text="OK" />
+                        <TextBlock Width="15" />
+                        <CheckBox IsChecked="{Binding JoinOKN}" />
+                        <TextBlock Text="NO" />
+                    </StackPanel>
+                    <TextBlock Margin="5"
+                               Text="หมายเหตุ"
+                               Foreground="DarkRed"
+                               TextAlignment="Left"
+                               Width="210" />
+                    <TextBox Width="200" Text="{Binding SpecialMentionActual}" />
+                </StackPanel>
             </Border>
 
             <!--#endregion-->
