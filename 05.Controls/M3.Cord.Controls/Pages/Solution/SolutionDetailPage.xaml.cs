@@ -422,14 +422,18 @@ namespace M3.Cord.Pages
                 return;
             }
 
-            var chemicals = cbChemicals.SelectedItem as SolutionLotLabel;
+            var chemItem = cbChemicals.SelectedItem as SolutionLotLabel;
+            if (null == chemItem && null != chemicals && chemicals.Count > 0)
+            {
+                chemItem = chemicals[0];
+            }
 
-            if (lotDetail.Count > 0 && null != chemicals)
+            if (lotDetail.Count > 0 && null != chemItem)
             {
                 // auto save current data without notify success case
                 if (SaveBeforeExport()) 
                 {
-                    SolutionExports.Export(txtSolutionLotNo.Text, chemicals.SolutionId);
+                    SolutionExports.Export(txtSolutionLotNo.Text, chemItem.SolutionId);
                 }
             }
         }
