@@ -106,7 +106,6 @@
     <Compile Include="Models\DIP\DIPMC.cs" />
     <Compile Include="Models\DIPTimeTable\DIPTimeTable.cs" />
     <Compile Include="Models\DIPTimeTable\DIPTimeTableStd.cs" />
-    <Compile Include="Models\DIPProductionCondition\DIPProductionCondition.cs" />
     <Compile Include="Models\DIP\DIPPCCard.cs" />
     <Compile Include="Models\DIP\S7CreelCheckSheet.cs" />
     <Compile Include="Models\DIP\S7CreelCheckSheetItem.cs" />
@@ -129,7 +128,6 @@
     <Compile Include="Models\LabelS9\LabelCHS9Item.cs" />
     <Compile Include="Models\LabelS9\LabelCHS9Summary.cs" />
     <Compile Include="Models\Masters\CordItemCode.cs" />
-    <Compile Include="Models\Documents\ConditionStd.cs" />
     <Compile Include="Models\Excels\ExcelModels.cs" />
     <Compile Include="Models\FirstTwist\PCTwist1.cs" />
     <Compile Include="Models\FirstTwist\PCTwist1Operation.cs" />

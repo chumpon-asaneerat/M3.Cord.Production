@@ -24,52 +24,52 @@ namespace M3.Cord.Models
 		#region Public Proeprties
 
 		public string ProductCode { get; set; }
-        public bool? SolutionNameBath1SC { get; set; }
+        public bool? SolutionNameBath1SC { get; set; } = false;
         public string SolutionNameBath1 { get; set; }
-        public bool? SolutionNameBath2SC { get; set; }
+        public bool? SolutionNameBath2SC { get; set; } = false;
         public string SolutionNameBath2 { get; set; }
-		public bool? TempJacketDrumBath1SC { get; set; }
-		public decimal? TempJacketDrumBath1Min { get; set; }
+		public bool? TempJacketDrumBath1SC { get; set; } = false;
+        public decimal? TempJacketDrumBath1Min { get; set; }
 		public decimal? TempJacketDrumBath1Max { get; set; }
-		public bool? TempJacketDrumBath2SC { get; set; }
-		public decimal? TempJacketDrumBath2Min { get; set; }
+		public bool? TempJacketDrumBath2SC { get; set; } = false;
+        public decimal? TempJacketDrumBath2Min { get; set; }
 		public decimal? TempJacketDrumBath2Max { get; set; }
-		public bool? TempChemicalBath1SC { get; set; }
-		public decimal? TempChemicalBath1Min { get; set; }
+		public bool? TempChemicalBath1SC { get; set; } = false;
+        public decimal? TempChemicalBath1Min { get; set; }
 		public decimal? TempChemicalBath1Max { get; set; }
-		public bool? TempChemicalBath2SC { get; set; }
-		public decimal? TempChemicalBath2Min { get; set; }
+		public bool? TempChemicalBath2SC { get; set; } = false;
+        public decimal? TempChemicalBath2Min { get; set; }
 		public decimal? TempChemicalBath2Max { get; set; }
-		public bool? StretchDSC { get; set; }
-		public decimal? StretchD { get; set; }
+		public bool? StretchDSC { get; set; } = false;
+        public decimal? StretchD { get; set; }
 		public decimal? StretchDErr { get; set; }
-		public bool? StretchHSC { get; set; }
-		public decimal? StretchH { get; set; }
+		public bool? StretchHSC { get; set; } = false;
+        public decimal? StretchH { get; set; }
 		public decimal? StretchHErr { get; set; }
-		public bool? StretchNSC { get; set; }
-		public decimal? StretchN { get; set; }
+		public bool? StretchNSC { get; set; } = false;
+        public decimal? StretchN { get; set; }
 		public decimal? StretchNErr { get; set; }
-		public bool? TempDSC { get; set; }
-		public decimal? TempD { get; set; }
+		public bool? TempDSC { get; set; } = false;
+        public decimal? TempD { get; set; }
 		public decimal? TempDErr { get; set; }
-		public bool? TempHNSC { get; set; }
-		public decimal? TempHN { get; set; }
+		public bool? TempHNSC { get; set; } = false;
+        public decimal? TempHN { get; set; }
 		public decimal? TempHNErr { get; set; }
-		public bool? SpeedSC { get; set; }
-		public decimal? Speed { get; set; }
+		public bool? SpeedSC { get; set; } = false;
+        public decimal? Speed { get; set; }
 		public decimal? SpeedErr { get; set; }
-		public bool? ExhaustFanDryerSC { get; set; }
-		public decimal? ExhaustFanDryer { get; set; }
-		public bool? ExhaustFanHNSC { get; set; }
-		public decimal? ExhaustFanHN { get; set; }
-		public bool? CleanBath1SC { get; set; }
-		public bool? CleanBath2SC { get; set; }
-		public bool? CleanFrontSC { get; set; }
-		public bool? CamboxSC { get; set; }
+		public bool? ExhaustFanDryerSC { get; set; } = false;
+        public decimal? ExhaustFanDryer { get; set; }
+		public bool? ExhaustFanHNSC { get; set; } = false;
+        public decimal? ExhaustFanHN { get; set; }
+		public bool? CleanBath1SC { get; set; } = false;
+        public bool? CleanBath2SC { get; set; } = false;
+        public bool? CleanFrontSC { get; set; } = false;
+        public bool? CamboxSC { get; set; } = false;
 
-		#endregion
+        #endregion
 
-		#region Static Methods
+        #region Static Methods
 
         public static NDbResult<List<S8BeforeConditionStd>> Gets(string productCode)
         {

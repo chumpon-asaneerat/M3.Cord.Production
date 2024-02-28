@@ -19,8 +19,10 @@ M3 Cord Production System #995
 M3 Cord Production System #994
 - 
 
+[commited]
 M3 Cord Production System #993
-- 
+- Update Master Std Pages
+  - Set all SC default to false.
 
 [commited]
 M3 Cord Production System #992

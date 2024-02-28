@@ -201,18 +201,6 @@
                             <Run Text="(Product)" FontSize="18" />
                         </TextBlock>
                     </Button>
-                    <!--  Import Conditon Std  -->
-                    <!--
-                    <Button x:Name="cmdImportConditionStd"
-                            Click="cmdImportConditionStd_Click"
-                            Style="{StaticResource FirstTwistButtonStyle}">
-                        <TextBlock TextAlignment="Center">
-                            <Run Text="Standard Condition" />
-                            <LineBreak />
-                            <Run Text="(Import)" FontSize="18" />
-                        </TextBlock>
-                    </Button>
-                    -->
                 </ctrl:NGroupMenuItem>
                 <!--  1st Twist CONDITION  -->
                 <ctrl:NGroupMenuItem HeaderText="1st Twist"

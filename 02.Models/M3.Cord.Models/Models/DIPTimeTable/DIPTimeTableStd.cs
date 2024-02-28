@@ -24,40 +24,40 @@ namespace M3.Cord.Models
 		#region Public Proeprties
 
 		public string ProductCode { get; set; }
-		public bool? S7BobbinSC { get; set; }
-		public bool? S8CoolingWaterSystemBath1SC { get; set; }
+		public bool? S7BobbinSC { get; set; } = false;
+        public bool? S8CoolingWaterSystemBath1SC { get; set; }
 		public decimal? S8CoolingWaterSystemBath1Min { get; set; }
 		public decimal? S8CoolingWaterSystemBath1Max { get; set; }
-		public bool? S8CoolingWaterSystemBath2SC { get; set; }
-		public decimal? S8CoolingWaterSystemBath2Min { get; set; }
+		public bool? S8CoolingWaterSystemBath2SC { get; set; } = false;
+        public decimal? S8CoolingWaterSystemBath2Min { get; set; }
 		public decimal? S8CoolingWaterSystemBath2Max { get; set; }
-        public bool? S8ChemicalWorkSC { get; set; }
-        public bool? S8ChemicalFilterSC { get; set; }
-		public bool? S8SpeedSC { get; set; }
-		public decimal? S8Speed { get; set; }
+        public bool? S8ChemicalWorkSC { get; set; } = false;
+        public bool? S8ChemicalFilterSC { get; set; } = false;
+        public bool? S8SpeedSC { get; set; } = false;
+        public decimal? S8Speed { get; set; }
 		public decimal? S8SpeedErr { get; set; }
-		public bool? S8StretchDSC { get; set; }
-		public decimal? S8StretchD { get; set; }
+		public bool? S8StretchDSC { get; set; } = false;
+        public decimal? S8StretchD { get; set; }
 		public decimal? S8StretchDErr { get; set; }
-		public bool? S8StretchHSC { get; set; }
-		public decimal? S8StretchH { get; set; }
+		public bool? S8StretchHSC { get; set; } = false;
+        public decimal? S8StretchH { get; set; }
 		public decimal? S8StretchHErr { get; set; }
-		public bool? S8StretchNSC { get; set; }
-		public decimal? S8StretchN { get; set; }
+		public bool? S8StretchNSC { get; set; } = false;
+        public decimal? S8StretchN { get; set; }
 		public decimal? S8StretchNErr { get; set; }
-		public bool? S8TempDSC { get; set; }
-		public decimal? S8TempD { get; set; }
+		public bool? S8TempDSC { get; set; } = false;
+        public decimal? S8TempD { get; set; }
 		public decimal? S8TempDErr { get; set; }
-		public bool? S8TempHNSC { get; set; }
-		public decimal? S8TempHN { get; set; }
+		public bool? S8TempHNSC { get; set; } = false;
+        public decimal? S8TempHN { get; set; }
 		public decimal? S8TempHNErr { get; set; }
-		public bool? S9GlideStatusSC { get; set; }
+		public bool? S9GlideStatusSC { get; set; } = false;
 
-		#endregion
+        #endregion
 
-		#region Static Methods
+        #region Static Methods
 
-		public static NDbResult<List<DIPTimeTableStd>> Gets(string productCode)
+        public static NDbResult<List<DIPTimeTableStd>> Gets(string productCode)
 		{
 			MethodBase med = MethodBase.GetCurrentMethod();
 

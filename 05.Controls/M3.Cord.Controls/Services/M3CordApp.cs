@@ -746,16 +746,6 @@ namespace M3.Cord
 
             #endregion
 
-            #region Import
-
-            /// <summary>Gets Import Condition Std Window.</summary>
-            public static ImportConditionStdWindow ImportConditionStd
-            {
-                get { return GetWindow<ImportConditionStdWindow>(); }
-            }
-
-            #endregion
-
             #region Common Progress Dialog
 
             /// <summary>Gets Common Progress Dialog Window.</summary>

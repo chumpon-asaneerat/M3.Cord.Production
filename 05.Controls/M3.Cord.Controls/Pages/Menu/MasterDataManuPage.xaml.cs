@@ -74,17 +74,6 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
-        private void cmdImportConditionStd_Click(object sender, RoutedEventArgs e)
-        {
-            // Import Condition Standard
-            var win = M3CordApp.Windows.ImportConditionStd;
-            win.Setup();
-            if (win.ShowDialog() == true)
-            {
-
-            }
-        }
-
         private void cmdS1StdCondiction_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.S1StdManage;

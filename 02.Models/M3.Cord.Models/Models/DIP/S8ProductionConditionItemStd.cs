@@ -25,35 +25,35 @@ namespace M3.Cord.Models
 
         public string ProductCode { get; set; }
 
-        public bool? StretchDSC { get; set; }
+        public bool? StretchDSC { get; set; } = false;
         public decimal? StretchD { get; set; }
         public decimal? StretchDErr { get; set; }
-        public bool? StretchHSC { get; set; }
+        public bool? StretchHSC { get; set; } = false;
         public decimal? StretchH { get; set; }
         public decimal? StretchHErr { get; set; }
-        public bool? StretchNSC { get; set; }
+        public bool? StretchNSC { get; set; } = false;
         public decimal? StretchN { get; set; }
         public decimal? StretchNErr { get; set; }
-        public bool? TempDSC { get; set; }
+        public bool? TempDSC { get; set; } = false;
         public decimal? TempD { get; set; }
         public decimal? TempDErr { get; set; }
-        public bool? TempHNSC { get; set; }
+        public bool? TempHNSC { get; set; } = false;
         public decimal? TempHN { get; set; }
         public decimal? TempHNErr { get; set; }
-        public bool? SpeedSC { get; set; }
+        public bool? SpeedSC { get; set; } = false;
         public decimal? Speed { get; set; }
         public decimal? SpeedErr { get; set; }
-        public bool? TreatSC { get; set; }
+        public bool? TreatSC { get; set; } = false;
         public decimal? Treat { get; set; }
-        public bool? DoffingLengthSC { get; set; }
+        public bool? DoffingLengthSC { get; set; } = false;
         public decimal? DoffingLength { get; set; }
-        public bool? WeightSC { get; set; }
+        public bool? WeightSC { get; set; } = false;
         public decimal? Weight { get; set; }
-        public bool? SpindleSC { get; set; }
+        public bool? SpindleSC { get; set; } = false;
         public decimal? Spindle { get; set; }
-        public bool? ProductionGoodSC { get; set; }
+        public bool? ProductionGoodSC { get; set; } = false;
         public decimal? ProductionGood { get; set; }
-        public bool? ProductionTotalSC { get; set; }
+        public bool? ProductionTotalSC { get; set; } = false;
         public decimal? ProductionTotal { get; set; }
 
         #endregion

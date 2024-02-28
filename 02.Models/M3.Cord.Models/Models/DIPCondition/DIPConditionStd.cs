@@ -24,146 +24,146 @@ namespace M3.Cord.Models
 		#region Public Proeprties
 
 		public string ProductCode { get; set; }
-		public bool? S7YarnCordStructureSC { get; set; }
-		public string S7YarnCordStructureSet { get; set; }
+		public bool? S7YarnCordStructureSC { get; set; } = false;
+        public string S7YarnCordStructureSet { get; set; }
 		public string S7YarnCordStructureSet2 { get; set; }
-		public bool? S7YarnYarnTypeSC { get; set; }
-		public string S7YarnYarnTypeSet { get; set; }
+		public bool? S7YarnYarnTypeSC { get; set; } = false;
+        public string S7YarnYarnTypeSet { get; set; }
 		public string S7YarnYarnTypeSet2 { get; set; }
-		public bool? S7Yarn1stTwistSC { get; set; }
-		public string S7Yarn1stTwistSet { get; set; }
+		public bool? S7Yarn1stTwistSC { get; set; } = false;
+        public string S7Yarn1stTwistSet { get; set; }
 		public string S7Yarn1stTwistSet2 { get; set; }
-		public bool? S7Yarn2ndTwistSC { get; set; }
-		public string S7Yarn2ndTwistSet { get; set; }
+		public bool? S7Yarn2ndTwistSC { get; set; } = false;
+        public string S7Yarn2ndTwistSet { get; set; }
 		public string S7Yarn2ndTwistSet2 { get; set; }
-		public bool? S7YarnLabelOfYarnSC { get; set; }
-		public string S7YarnLabelOfYarnSet { get; set; }
+		public bool? S7YarnLabelOfYarnSC { get; set; } = false;
+        public string S7YarnLabelOfYarnSet { get; set; }
 		public string S7YarnLabelOfYarnSet2 { get; set; }
-		public bool? S7YarnWeightSC { get; set; }
-		public decimal? S7YarnWeightSet { get; set; }
+		public bool? S7YarnWeightSC { get; set; } = false;
+        public decimal? S7YarnWeightSet { get; set; }
 		public decimal? S7YarnWeightSetErr { get; set; }
 		public decimal? S7YarnWeightSet2 { get; set; }
 		public decimal? S7YarnWeightSetErr2 { get; set; }
-		public bool? S7CreelSettingUseTensorSC { get; set; }
-		public string S7CreelSettingUseTensorSet { get; set; }
+		public bool? S7CreelSettingUseTensorSC { get; set; } = false;
+        public string S7CreelSettingUseTensorSet { get; set; }
 		public string S7CreelSettingUseTensorSet2 { get; set; }
-		public bool? S7CreelSettingKnotConditionSC { get; set; }
-		public decimal? S7CreelSettingKnotConditionSet { get; set; }
+		public bool? S7CreelSettingKnotConditionSC { get; set; } = false;
+        public decimal? S7CreelSettingKnotConditionSet { get; set; }
 		public decimal? S7CreelSettingKnotConditionSet2 { get; set; }
-		public bool? S7CreelSettingSlubCatsweSC { get; set; }
-		public decimal? S7CreelSettingSlubCatsweSet { get; set; }
+		public bool? S7CreelSettingSlubCatsweSC { get; set; } = false;
+        public decimal? S7CreelSettingSlubCatsweSet { get; set; }
 		public decimal? S7CreelSettingSlubCatsweSet2 { get; set; }
-		public bool? S8StretchDryerSC { get; set; }
-		public decimal? S8StretchDryerSet { get; set; }
+		public bool? S8StretchDryerSC { get; set; } = false;
+        public decimal? S8StretchDryerSet { get; set; }
 		public decimal? S8StretchDryerSetErr { get; set; }
 		public decimal? S8StretchDryerSet2 { get; set; }
 		public decimal? S8StretchDryerSetErr2 { get; set; }
-		public bool? S8StretchStretchHotSC { get; set; }
-		public decimal? S8StretchStretchHotSet { get; set; }
+		public bool? S8StretchStretchHotSC { get; set; } = false;
+        public decimal? S8StretchStretchHotSet { get; set; }
 		public decimal? S8StretchStretchHotSetErr { get; set; }
 		public decimal? S8StretchHotSet2 { get; set; }
 		public decimal? S8StretchHotSetErr2 { get; set; }
-		public bool? S8StretchNormalSC { get; set; }
-		public decimal? S8StretchNormalSet { get; set; }
+		public bool? S8StretchNormalSC { get; set; } = false;
+        public decimal? S8StretchNormalSet { get; set; }
 		public decimal? S8StretchNormalSetErr { get; set; }
 		public decimal? S8StretchNormalSet2 { get; set; }
 		public decimal? S8StretchNormalSetErr2 { get; set; }
-		public bool? S8StretchTotalSC { get; set; }
-		public decimal? S8StretchTotalSet { get; set; }
+		public bool? S8StretchTotalSC { get; set; } = false;
+        public decimal? S8StretchTotalSet { get; set; }
 		public decimal? S8StretchTotalSetErr { get; set; }
 		public decimal? S8StretchTotalSet2 { get; set; }
 		public decimal? S8StretchTotalSetErr2 { get; set; }
-		public bool? S8TempDryerSC { get; set; }
-		public decimal? S8TempDryerSet { get; set; }
+		public bool? S8TempDryerSC { get; set; } = false;
+        public decimal? S8TempDryerSet { get; set; }
 		public decimal? S8TempDryerSetErr { get; set; }
 		public decimal? S8TempDryerSet2 { get; set; }
 		public decimal? S8TempDryerSetErr2 { get; set; }
-		public bool? S8TempHotSC { get; set; }
-		public decimal? S8TempHotSet { get; set; }
+		public bool? S8TempHotSC { get; set; } = false;
+        public decimal? S8TempHotSet { get; set; }
 		public decimal? S8TempHotSetErr { get; set; }
 		public decimal? S8TempHotSet2 { get; set; }
 		public decimal? S8TempHotSetErr2 { get; set; }
-		public bool? S8TempNormalSC { get; set; }
-		public decimal? S8TempNormalSet { get; set; }
+		public bool? S8TempNormalSC { get; set; } = false;
+        public decimal? S8TempNormalSet { get; set; }
 		public decimal? S8TempNormalSetErr { get; set; }
 		public decimal? S8TempNormalSet2 { get; set; }
 		public decimal? S8TempNormalSetErr2 { get; set; }
-		public bool? S8CounterSettingSC { get; set; }
-		public string S8CounterSettingSet { get; set; }
+		public bool? S8CounterSettingSC { get; set; } = false;
+        public string S8CounterSettingSet { get; set; }
 		public string S8CounterSettingSet2 { get; set; }
-		public bool? S8SpeedSC { get; set; }
-		public decimal? S8SpeedSet { get; set; }
+		public bool? S8SpeedSC { get; set; } = false;
+        public decimal? S8SpeedSet { get; set; }
 		public decimal? S8SpeedErr { get; set; }
 		public decimal? S8SpeedSet2 { get; set; }
 		public decimal? S8SpeedSetErr2 { get; set; }
-		public bool? S8NoOfCordsSC { get; set; }
-		public decimal? S8NoOfCordsSet { get; set; }
+		public bool? S8NoOfCordsSC { get; set; } = false;
+        public decimal? S8NoOfCordsSet { get; set; }
 		public decimal? S8NoOfCordsSet2 { get; set; }
-		public bool? S8SofnorSC { get; set; }
-		public string S8SofnorSet { get; set; }
+		public bool? S8SofnorSC { get; set; } = false;
+        public string S8SofnorSet { get; set; }
 		public string S8SofnorSet2 { get; set; }
-		public bool? S8DrawNipSC { get; set; }
-		public decimal? S8DrawNipSet { get; set; }
+		public bool? S8DrawNipSC { get; set; } = false;
+        public decimal? S8DrawNipSet { get; set; }
 		public decimal? S8DrawNipSet2 { get; set; }
-		public bool? S8DippingNo1ConcentrationSC { get; set; }
-		public string S8DippingNo1ConcentrationSet { get; set; }
+		public bool? S8DippingNo1ConcentrationSC { get; set; } = false;
+        public string S8DippingNo1ConcentrationSet { get; set; }
 		public string S8DippingNo1ConcentrationSet2 { get; set; }
-		public bool? S8DippingNo1NipFrontSC { get; set; }
-		public string S8DippingNo1NipFrontSet { get; set; }
+		public bool? S8DippingNo1NipFrontSC { get; set; } = false;
+        public string S8DippingNo1NipFrontSet { get; set; }
 		public string S8DippingNo1NipFrontSet2 { get; set; }
-		public bool? S8DippingNo1NipBackSC { get; set; }
-		public string S8DippingNo1NipBackSet { get; set; }
+		public bool? S8DippingNo1NipBackSC { get; set; } = false;
+        public string S8DippingNo1NipBackSet { get; set; }
 		public string S8DippingNo1NipBackSet2 { get; set; }
-		public bool? S8DippingNo1WPUstdSC { get; set; }
-		public string S8DippingNo1WPUstdSet { get; set; }
+		public bool? S8DippingNo1WPUstdSC { get; set; } = false;
+        public string S8DippingNo1WPUstdSet { get; set; }
 		public string S8DippingNo1WPUstdSet2 { get; set; }
-		public bool? S8DippingNo2ConcentrationSC { get; set; }
-		public string S8DippingNo2ConcentrationSet { get; set; }
+		public bool? S8DippingNo2ConcentrationSC { get; set; } = false;
+        public string S8DippingNo2ConcentrationSet { get; set; }
 		public string S8DippingNo2ConcentrationSet2 { get; set; }
-		public bool? S8DippingNo2NipFrontSC { get; set; }
-		public string S8DippingNo2NipFrontSet { get; set; }
+		public bool? S8DippingNo2NipFrontSC { get; set; } = false;
+        public string S8DippingNo2NipFrontSet { get; set; }
 		public string S8DippingNo2NipFrontSet2 { get; set; }
-		public bool? S8DippingNo2NipBackSC { get; set; }
-		public string S8DippingNo2NipBackSet { get; set; }
+		public bool? S8DippingNo2NipBackSC { get; set; } = false;
+        public string S8DippingNo2NipBackSet { get; set; }
 		public string S8DippingNo2NipBackSet2 { get; set; }
-		public bool? S8DippingNo2WPUstdSC { get; set; }
-		public string S8DippingNo2WPUstdSet { get; set; }
+		public bool? S8DippingNo2WPUstdSC { get; set; } = false;
+        public string S8DippingNo2WPUstdSet { get; set; }
 		public string S8DippingNo2WPUstdSet2 { get; set; }
-		public bool? S9WinderAyameDaialSC { get; set; }
-		public decimal? S9WinderAyameDaialSet { get; set; }
+		public bool? S9WinderAyameDaialSC { get; set; } = false;
+        public decimal? S9WinderAyameDaialSet { get; set; }
 		public decimal? S9WinderAyameDaialSet2 { get; set; }
-		public bool? S9WinderMpaSC { get; set; }
-		public decimal? S9WinderMpaSet { get; set; }
+		public bool? S9WinderMpaSC { get; set; } = false;
+        public decimal? S9WinderMpaSet { get; set; }
 		public decimal? S9WinderMpaSet2 { get; set; }
-		public bool? S9WinderSpringSC { get; set; }
-		public decimal? S9WinderSpringSet { get; set; }
+		public bool? S9WinderSpringSC { get; set; } = false;
+        public decimal? S9WinderSpringSet { get; set; }
 		public decimal? S9WinderSpringSet2 { get; set; }
-		public bool? S9WinderPeperTubeColorSC { get; set; }
-		public string S9WinderPeperTubeColorSet { get; set; }
+		public bool? S9WinderPeperTubeColorSC { get; set; } = false;
+        public string S9WinderPeperTubeColorSet { get; set; }
 		public string S9WinderPeperTubeColorSet2 { get; set; }
-		public bool? S9WinderCheeseWeightSC { get; set; }
-		public string S9WinderCheeseWeightSet { get; set; }
+		public bool? S9WinderCheeseWeightSC { get; set; } = false;
+        public string S9WinderCheeseWeightSet { get; set; }
 		public string S9WinderCheeseWeightSet2 { get; set; }
-		public bool? S9ExhaustFanOven1CirculatingFanSC { get; set; }
-		public decimal? S9ExhaustFanOven1CirculatingFanSet { get; set; }
+		public bool? S9ExhaustFanOven1CirculatingFanSC { get; set; } = false;
+        public decimal? S9ExhaustFanOven1CirculatingFanSet { get; set; }
 		public decimal? S9ExhaustFanOven1CirculatingFanSet2 { get; set; }
-		public bool? S9ExhaustFanOven2CirculatingFanSC { get; set; }
-		public decimal? S9ExhaustFanOven2CirculatingFanSet { get; set; }
+		public bool? S9ExhaustFanOven2CirculatingFanSC { get; set; } = false;
+        public decimal? S9ExhaustFanOven2CirculatingFanSet { get; set; }
 		public decimal? S9ExhaustFanOven2CirculatingFanSet2 { get; set; }
-		public bool? S9ExhaustFanOven1ExhaustFanSC { get; set; }
-		public decimal? S9ExhaustFanOven1ExhaustFanSet { get; set; }
+		public bool? S9ExhaustFanOven1ExhaustFanSC { get; set; } = false;
+        public decimal? S9ExhaustFanOven1ExhaustFanSet { get; set; }
 		public decimal? S9ExhaustFanOven1ExhaustFanSet2 { get; set; }
-		public bool? S9ExhaustFanOven2ExhaustFanSC { get; set; }
-		public decimal? S9ExhaustFanOven2ExhaustFanSet { get; set; }
+		public bool? S9ExhaustFanOven2ExhaustFanSC { get; set; } = false;
+        public decimal? S9ExhaustFanOven2ExhaustFanSet { get; set; }
 		public decimal? S9ExhaustFanOven2ExhaustFanSet2 { get; set; }
-		public bool? S9ExhaustFanOvenFrontExhaustFanSC { get; set; }
-		public decimal? S9ExhaustFanOvenFrontExhaustFanSet { get; set; }
+		public bool? S9ExhaustFanOvenFrontExhaustFanSC { get; set; } = false;
+        public decimal? S9ExhaustFanOvenFrontExhaustFanSet { get; set; }
 		public decimal? S9ExhaustFanOvenFrontExhaustFanSet2 { get; set; }
-		public bool? S9ExhaustFanOvenBackExhaustFanSC { get; set; }
-		public decimal? S9ExhaustFanOvenBackExhaustFanSet { get; set; }
+		public bool? S9ExhaustFanOvenBackExhaustFanSC { get; set; } = false;
+        public decimal? S9ExhaustFanOvenBackExhaustFanSet { get; set; }
 		public decimal? S9ExhaustFanOvenBackExhaustFanSet2 { get; set; }
-		public bool? S9SpongSC { get; set; }
-		public string S9SpongSet { get; set; }
+		public bool? S9SpongSC { get; set; } = false;
+        public string S9SpongSet { get; set; }
 		public string S9SpongSet2 { get; set; }
 
 

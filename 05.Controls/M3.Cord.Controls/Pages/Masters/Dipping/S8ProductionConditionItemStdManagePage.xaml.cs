@@ -82,14 +82,40 @@ namespace M3.Cord.Pages
 
         private void Save()
         {
-            if (null == cond.DataContext) return;
+            bool std1 = SaveStd1();
+            bool std2 = SaveStd2();
+
+            if (std1 && std2)
+                M3CordApp.Windows.SaveSuccess();
+            else M3CordApp.Windows.SaveFailed();
+        }
+
+        private bool SaveStd1()
+        {
+            if (null == cond.DataContext) 
+                return false;
             var std = cond.DataContext as S8ProductionConditionItemStd;
-            if (null == std) return;
+            if (null == std) 
+                return false;
 
             var ret = S8ProductionConditionItemStd.Save(std);
             if (null != ret && ret.Ok)
-                M3CordApp.Windows.SaveSuccess();
-            else M3CordApp.Windows.SaveFailed();
+                return true;
+            else return false;
+        }
+
+        private bool SaveStd2()
+        {
+            if (null == cond2.DataContext)
+                return false;
+            var std = cond2.DataContext as S8x2ProductionConditionItemStd;
+            if (null == std)
+                return false;
+
+            var ret = S8x2ProductionConditionItemStd.Save(std);
+            if (null != ret && ret.Ok)
+                return true;
+            else return false;
         }
 
         private void RefreshGrid()
@@ -98,20 +124,38 @@ namespace M3.Cord.Pages
             if (product != null)
             {
                 string productCode = product.ProductCode;
-                var items = S8ProductionConditionItemStd.Gets(productCode).Value();
-                var std = (null != items) ? items.FirstOrDefault() : null;
-                if (null == std)
+                // S-8-1
                 {
-                    std = new S8ProductionConditionItemStd();
-                    std.ProductCode = productCode;
+                    var items = S8ProductionConditionItemStd.Gets(productCode).Value();
+                    var std = (null != items) ? items.FirstOrDefault() : null;
+                    if (null == std)
+                    {
+                        std = new S8ProductionConditionItemStd();
+                        std.ProductCode = productCode;
+                    }
+                    cond.DataContext = std;
+                    cond.IsEnabled = true;
                 }
-                cond.DataContext = std;
-                cond.IsEnabled = true;
+                // S-8-2
+                {
+                    var items = S8x2ProductionConditionItemStd.Gets(productCode).Value();
+                    var std = (null != items) ? items.FirstOrDefault() : null;
+                    if (null == std)
+                    {
+                        std = new S8x2ProductionConditionItemStd();
+                        std.ProductCode = productCode;
+                    }
+                    cond2.DataContext = std;
+                    cond2.IsEnabled = true;
+                }
             }
             else
             {
                 cond.DataContext = null;
                 cond.IsEnabled = false;
+
+                cond2.DataContext = null;
+                cond2.IsEnabled = false;
             }
         }
 

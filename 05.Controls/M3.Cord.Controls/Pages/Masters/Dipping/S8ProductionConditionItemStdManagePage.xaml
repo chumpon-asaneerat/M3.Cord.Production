@@ -57,7 +57,14 @@
                 </DockPanel>
             </DockPanel>
             <!--  STD VIEW  -->
-            <doc:S8ProductionConditionItemStdPage x:Name="cond" />
+            <TabControl FontSize="18">
+                <TabItem Header="S-8-1">
+                    <doc:S8ProductionConditionItemStdPage x:Name="cond" />
+                </TabItem>
+                <TabItem Header="S-8-2">
+                    <doc:S8x2ProductionConditionItemStdPage x:Name="cond2" />
+                </TabItem>
+            </TabControl>
         </DockPanel>
     </page:NPage>
 </UserControl>

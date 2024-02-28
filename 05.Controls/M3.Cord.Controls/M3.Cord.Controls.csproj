@@ -673,9 +673,6 @@
     <Compile Include="Windows\G4\G4ReceiveYarnWindow.xaml.cs">
       <DependentUpon>G4ReceiveYarnWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Imports\ImportConditionStdWindow.xaml.cs">
-      <DependentUpon>ImportConditionStdWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\MessageBox\MessageBoxOKCancelWindow.xaml.cs">
       <DependentUpon>MessageBoxOKCancelWindow.xaml</DependentUpon>
     </Compile>
@@ -1436,10 +1433,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Imports\ImportReportWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Imports\ImportConditionStdWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
