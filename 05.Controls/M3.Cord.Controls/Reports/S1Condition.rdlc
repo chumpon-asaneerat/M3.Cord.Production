@@ -41,6 +41,10 @@
           <DataField>CalculatedTwistingNumberSC</DataField>
           <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
+        <Field Name="CalculatedTwistingNumberType">
+          <DataField>CalculatedTwistingNumberType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="CheckedBy">
           <DataField>CheckedBy</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -141,6 +145,18 @@
           <DataField>CustomerName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="HasJoins">
+          <DataField>HasJoins</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="HasJoinsN">
+          <DataField>HasJoinsN</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="HasJoinsY">
+          <DataField>HasJoinsY</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
         <Field Name="IsLocked">
           <DataField>IsLocked</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
@@ -156,6 +172,18 @@
         <Field Name="ItemYarn">
           <DataField>ItemYarn</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="JoinOK">
+          <DataField>JoinOK</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="JoinOKN">
+          <DataField>JoinOKN</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="JoinOKY">
+          <DataField>JoinOKY</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
         <Field Name="LifterChangeGearA">
           <DataField>LifterChangeGearA</DataField>
@@ -4126,7 +4154,7 @@
                             <Value>=IIF(First(Fields!CalculatedTwistingNumber.Value, "main") Is Nothing,""
 ,Format(CDec(First(Fields!CalculatedTwistingNumber.Value, "main")),"#,##0.##")
 + IIF(First(Fields!CalculatedTwistingNumberErr.Value, "main") Is Nothing,""
-," (S)± " +Format(CDec(First(Fields!CalculatedTwistingNumberErr.Value, "main")),"#,##0.##")))</Value>
+," ("+First(Fields!CalculatedTwistingNumberType.Value, "main")+") ± " +Format(CDec(First(Fields!CalculatedTwistingNumberErr.Value, "main")),"#,##0.##")))</Value>
                             <Style>
                               <FontSize>8pt</FontSize>
                             </Style>
@@ -4693,7 +4721,7 @@
                 <ReportItems>
                   <Line Name="Line58">
                     <Left>1.19491cm</Left>
-                    <Height>1.1cm</Height>
+                    <Height>3.266cm</Height>
                     <Width>0cm</Width>
                     <Style>
                       <Border>
@@ -4703,7 +4731,7 @@
                   </Line>
                   <Line Name="Line59">
                     <Left>6.80925cm</Left>
-                    <Height>1.1cm</Height>
+                    <Height>3.266cm</Height>
                     <Width>0cm</Width>
                     <ZIndex>1</ZIndex>
                     <Style>
@@ -4714,7 +4742,7 @@
                   </Line>
                   <Line Name="Line60">
                     <Left>8.065cm</Left>
-                    <Height>1.1cm</Height>
+                    <Height>3.266cm</Height>
                     <Width>0cm</Width>
                     <ZIndex>2</ZIndex>
                     <Style>
@@ -4725,7 +4753,7 @@
                   </Line>
                   <Line Name="Line61">
                     <Left>13.78712cm</Left>
-                    <Height>1.1cm</Height>
+                    <Height>3.266cm</Height>
                     <Width>0cm</Width>
                     <ZIndex>3</ZIndex>
                     <Style>
@@ -4902,11 +4930,355 @@
                       </Paragraph>
                     </Paragraphs>
                     <rd:DefaultName>Textbox4</rd:DefaultName>
-                    <Top>0.07575cm</Top>
+                    <Top>2.34772cm</Top>
                     <Left>13.89295cm</Left>
-                    <Height>0.9cm</Height>
+                    <Height>0.8cm</Height>
                     <Width>5.47518cm</Width>
                     <ZIndex>8</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox66">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=IIF(First(Fields!HasJoins.Value, "main") = True, Chr(80), "")</Value>
+                            <Style>
+                              <FontFamily>Wingdings 2</FontFamily>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox53</rd:DefaultName>
+                    <Top>0.09075cm</Top>
+                    <Left>13.95645cm</Left>
+                    <Height>0.5cm</Height>
+                    <Width>0.5cm</Width>
+                    <ZIndex>9</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                      <VerticalAlign>Middle</VerticalAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox67">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=IIF(First(Fields!HasJoins.Value, "main") = False, Chr(80), "")</Value>
+                            <Style>
+                              <FontFamily>Wingdings 2</FontFamily>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox53</rd:DefaultName>
+                    <Top>0.09075cm</Top>
+                    <Left>16.6019cm</Left>
+                    <Height>0.5cm</Height>
+                    <Width>0.5cm</Width>
+                    <ZIndex>10</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                      <VerticalAlign>Middle</VerticalAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox68">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>มีรอยต่อ</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox13</rd:DefaultName>
+                    <Top>0.03573in</Top>
+                    <Left>5.73596in</Left>
+                    <Height>0.18in</Height>
+                    <Width>0.65186in</Width>
+                    <ZIndex>11</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox69">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>ไม่มีรอยต่อ</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox13</rd:DefaultName>
+                    <Top>0.03573in</Top>
+                    <Left>6.77609in</Left>
+                    <Height>0.18in</Height>
+                    <Width>0.65186in</Width>
+                    <ZIndex>12</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox70">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>รอยต่อไม่เกิน 2 จุดต่อ Bobbin</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox13</rd:DefaultName>
+                    <Top>0.26017in</Top>
+                    <Left>5.46967in</Left>
+                    <Height>0.18in</Height>
+                    <Width>2.15558in</Width>
+                    <ZIndex>13</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox71">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=IIF(First(Fields!JoinOK.Value, "main") = True, Chr(80), "")</Value>
+                            <Style>
+                              <FontFamily>Wingdings 2</FontFamily>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox53</rd:DefaultName>
+                    <Top>1.24636cm</Top>
+                    <Left>13.95645cm</Left>
+                    <Height>0.5cm</Height>
+                    <Width>0.5cm</Width>
+                    <ZIndex>14</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                      <VerticalAlign>Middle</VerticalAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox72">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=IIF(First(Fields!JoinOK.Value, "main") = False, Chr(80), "")</Value>
+                            <Style>
+                              <FontFamily>Wingdings 2</FontFamily>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox53</rd:DefaultName>
+                    <Top>1.24636cm</Top>
+                    <Left>16.6019cm</Left>
+                    <Height>0.5cm</Height>
+                    <Width>0.5cm</Width>
+                    <ZIndex>15</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                      <VerticalAlign>Middle</VerticalAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox73">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>OK</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox13</rd:DefaultName>
+                    <Top>0.49069in</Top>
+                    <Left>5.73596in</Left>
+                    <Height>0.18in</Height>
+                    <Width>0.65186in</Width>
+                    <ZIndex>16</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox77">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>NO</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox13</rd:DefaultName>
+                    <Top>0.49069in</Top>
+                    <Left>6.77609in</Left>
+                    <Height>0.18in</Height>
+                    <Width>0.65186in</Width>
+                    <ZIndex>17</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox79">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>หมายเหตุ</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox13</rd:DefaultName>
+                    <Top>0.70263in</Top>
+                    <Left>5.46967in</Left>
+                    <Height>0.18in</Height>
+                    <Width>2.15558in</Width>
+                    <ZIndex>18</ZIndex>
                     <Style>
                       <Border>
                         <Style>None</Style>
@@ -4921,7 +5293,7 @@
                 <KeepTogether>true</KeepTogether>
                 <Top>19.82625cm</Top>
                 <Left>0.00001cm</Left>
-                <Height>1.1cm</Height>
+                <Height>3.266cm</Height>
                 <Width>19.5cm</Width>
                 <ZIndex>18</ZIndex>
                 <Style>
@@ -4949,7 +5321,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox13</rd:DefaultName>
-                <Top>8.28588in</Top>
+                <Top>9.16088in</Top>
                 <Left>0.02501in</Left>
                 <Height>0.2in</Height>
                 <Width>3.90663in</Width>
@@ -5061,7 +5433,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox13</rd:DefaultName>
-                <Top>8.53758in</Top>
+                <Top>9.41258in</Top>
                 <Left>0.02501in</Left>
                 <Height>1.15833in</Height>
                 <Width>3.90663in</Width>
@@ -5889,7 +6261,7 @@
                     <TablixMember />
                   </TablixMembers>
                 </TablixRowHierarchy>
-                <Top>21.04614cm</Top>
+                <Top>23.26864cm</Top>
                 <Left>10.56139cm</Left>
                 <Height>4.2cm</Height>
                 <Width>8.9152cm</Width>
