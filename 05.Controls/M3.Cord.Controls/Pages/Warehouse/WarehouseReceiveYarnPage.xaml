@@ -178,6 +178,8 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
+                        <GridViewColumn Header="Requst No" CellTemplate="{StaticResource RequestNo}" />
+                        <GridViewColumn Header="Receive Date" CellTemplate="{StaticResource WHReceiveDate}" />
                         <GridViewColumn Header="Pallet No" CellTemplate="{StaticResource PalletNo}" />
                         <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
                         <GridViewColumn Header="Lot No" CellTemplate="{StaticResource LotNo}" />

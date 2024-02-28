@@ -13,8 +13,9 @@ M3 Cord Production System #1007
 M3 Cord Production System #1006
 - 
 
+[commited]
 M3 Cord Production System #1005
-- 
+- Check Stock Add RequestNo and WHReceiveDate Column
 
 [commited]
 M3 Cord Production System #1004
