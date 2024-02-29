@@ -102,6 +102,7 @@ namespace M3.Cord.Pages
                                     item.AppearId = existItem.AppearId;
                                     item.SPNo = existItem.SPNo;
 
+                                    item.SPUnusable = existItem.SPUnusable;
                                     item.CheckGood = existItem.CheckGood;
                                     item.CheckBad = existItem.CheckBad;
                                     item.Check2Color = existItem.Check2Color;

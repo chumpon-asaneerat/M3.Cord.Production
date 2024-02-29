@@ -97,7 +97,7 @@ namespace M3.Cord.Services.Excels
                             if (iRow != -1 && iCol != -1)
                             {
                                 ws.Cells[iRow, iCol + 1].Value = pcCard.ProductCode;
-                                ws.Cells[iRow, iCol + 2].Value = item.LotNo;
+                                ws.Cells[iRow, iCol + 2].Value = item.LotNo + " - " + item.DoffNo.ToString();
                                 ws.Cells[iRow, iCol + 3].Value = (item.CHNo == 0) ? "" : item.CHNo.ToString();
                                 ws.Cells[iRow, iCol + 4].Value = (item.CheckYarnNo.HasValue) ?
                                     ((item.CheckYarnNo.Value) ? "P" : "O") : "";

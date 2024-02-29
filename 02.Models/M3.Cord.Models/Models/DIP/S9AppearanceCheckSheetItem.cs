@@ -50,27 +50,30 @@ namespace M3.Cord.Models
             get { return _SPUnusable; } 
             set
             {
-                _SPUnusable = value;
-                if (value)
+                if (_SPUnusable != value)
                 {
-                    MarkUnuseableSP();
+                    _SPUnusable = value;
+                    if (value)
+                    {
+                        MarkUnuseableSP();
+                    }
+                    Raise(() => this.SPUnusable);
+                    Raise(() => this.TextColor);
                 }
-                Raise(() => this.SPUnusable);
-                Raise(() => this.TextColor);
             }
         }
 
-        private bool? _CheckGood = new bool?();
-        public bool? CheckGood 
+        private bool _CheckGood = false;
+        public bool CheckGood 
         {
             get
             {
-                return _CheckGood.HasValue ? _CheckGood.Value : false;
+                return _CheckGood;
             }
             set
             {
                 if (_SPUnusable) return;
-                if (value.HasValue && value.Value == true)
+                if (value)
                 {
                     ClearDefects();
                 }
@@ -79,19 +82,19 @@ namespace M3.Cord.Models
                 Raise(() => this.CheckGood);
             }
         }
-        public bool? CheckBad { get; set; } // not used anymore
+        public bool CheckBad { get; set; } = false;  // not used anymore
 
-        private bool? _Check2Color = new bool?();
-        public bool? Check2Color 
+        private bool _Check2Color = false;
+        public bool Check2Color 
         {
             get
             {
-                return _Check2Color.HasValue ? _Check2Color.Value : false;
+                return _Check2Color;
             }
             set
             {
                 if (_SPUnusable) return;
-                if (value.HasValue && value.Value == true)
+                if (value)
                 {
                     SetBadForm();
                 }
@@ -101,17 +104,17 @@ namespace M3.Cord.Models
             }
         }
 
-        private bool? _CheckKeiba = new bool?();
-        public bool? CheckKeiba
+        private bool _CheckKeiba = false;
+        public bool CheckKeiba
         {
             get 
-            { 
-                return _CheckKeiba.HasValue ? _CheckKeiba.Value : false; 
+            {
+                return _CheckKeiba; 
             }
             set
             {
                 if (_SPUnusable) return;
-                if (value.HasValue && value.Value == true)
+                if (value)
                 {
                     SetBadForm();
                 }
@@ -121,17 +124,17 @@ namespace M3.Cord.Models
             }
         }
 
-        private bool? _CheckWeight = new bool?();
-        public bool? CheckWeight
+        private bool _CheckWeight = false;
+        public bool CheckWeight
         {
             get
             {
-                return _CheckWeight.HasValue ? _CheckWeight.Value : false;
+                return _CheckWeight;
             }
             set
             {
                 if (_SPUnusable) return;
-                if (value.HasValue && value.Value == true)
+                if (value)
                 {
                     SetBadForm();
                 }
@@ -141,17 +144,17 @@ namespace M3.Cord.Models
             }
         }
 
-        private bool? _CheckFrontTwist = new bool?();
-        public bool? CheckFrontTwist
+        private bool _CheckFrontTwist = false;
+        public bool CheckFrontTwist
         {
             get
             {
-                return _CheckFrontTwist.HasValue ? _CheckFrontTwist.Value : false;
+                return _CheckFrontTwist;
             }
             set
             {
                 if (_SPUnusable) return;
-                if (value.HasValue && value.Value == true)
+                if (value)
                 {
                     SetBadForm();
                 }
@@ -161,17 +164,17 @@ namespace M3.Cord.Models
             }
         }
 
-        private bool? _CheckBackTwist = new bool?();
-        public bool? CheckBackTwist
+        private bool _CheckBackTwist = false;
+        public bool CheckBackTwist
         {
             get
             {
-                return _CheckBackTwist.HasValue ? _CheckBackTwist.Value : false;
+                return _CheckBackTwist;
             }
             set
             {
                 if (_SPUnusable) return;
-                if (value.HasValue && value.Value == true)
+                if (value)
                 {
                     SetBadForm();
                 }
@@ -181,17 +184,17 @@ namespace M3.Cord.Models
             }
         }
 
-        private bool? _CheckSnarl = new bool?();
-        public bool? CheckSnarl
+        private bool _CheckSnarl = false;
+        public bool CheckSnarl
         {
             get
             {
-                return _CheckSnarl.HasValue ? _CheckSnarl.Value : false;
+                return _CheckSnarl;
             }
             set
             {
                 if (_SPUnusable) return;
-                if (value.HasValue && value.Value == true)
+                if (value)
                 {
                     SetBadForm();
                 }
@@ -201,17 +204,17 @@ namespace M3.Cord.Models
             }
         }
 
-        private bool? _CheckTube = new bool?();
-        public bool? CheckTube
+        private bool _CheckTube = false;
+        public bool CheckTube
         {
             get
             {
-                return _CheckTube.HasValue ? _CheckTube.Value : false;
+                return _CheckTube;
             }
             set
             {
                 if (_SPUnusable) return;
-                if (value.HasValue && value.Value == true)
+                if (value)
                 {
                     SetBadForm();
                 }

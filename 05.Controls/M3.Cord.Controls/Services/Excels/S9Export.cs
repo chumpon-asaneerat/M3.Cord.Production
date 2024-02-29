@@ -89,29 +89,31 @@ namespace M3.Cord.Services.Excels
 
                             if (iRow != -1 && iCol != -1)
                             {
-                                ws.Cells[iRow, iCol + 1].Value = (item.CheckGood.HasValue) ?
-                                    ((item.CheckGood.Value) ? "P" : "O") : "";
-
-                                ws.Cells[iRow, iCol + 3].Value = (item.CheckBad.HasValue) ?
-                                    ((item.CheckBad.Value) ? "P" : "O") : "";
-
-                                ws.Cells[iRow, iCol + 5].Value = (item.Check2Color.HasValue) ?
-                                    ((item.Check2Color.Value) ? "P" : "O") : "";
-                                ws.Cells[iRow, iCol + 6].Value = (item.CheckKeiba.HasValue) ?
-                                    ((item.CheckKeiba.Value) ? "P" : "O") : "";
-                                ws.Cells[iRow, iCol + 7].Value = (item.CheckWeight).HasValue ?
-                                    ((item.CheckWeight.Value) ? "P" : "O") : "";
-
-                                ws.Cells[iRow, iCol + 8].Value = (item.CheckFrontTwist.HasValue) ?
-                                    ((item.CheckFrontTwist.Value) ? "P" : "O") : "";
-
-                                ws.Cells[iRow, iCol + 10].Value = (item.CheckBackTwist.HasValue) ?
-                                    ((item.CheckBackTwist.Value) ? "P" : "O") : "";
-
-                                ws.Cells[iRow, iCol + 12].Value = (item.CheckSnarl.HasValue) ?
-                                    ((item.CheckSnarl.Value) ? "P" : "O") : "";
-                                ws.Cells[iRow, iCol + 13].Value = (item.CheckTube.HasValue) ?
-                                    ((item.CheckTube.Value) ? "P" : "O") : "";
+                                if (!item.SPUnusable)
+                                {
+                                    ws.Cells[iRow, iCol + 1].Value = (item.CheckGood) ? "P" : "";
+                                    ws.Cells[iRow, iCol + 3].Value = (!item.CheckGood) ? "P" : "";
+                                    ws.Cells[iRow, iCol + 5].Value = (item.Check2Color) ? "O" : "";
+                                    ws.Cells[iRow, iCol + 6].Value = (item.CheckKeiba) ? "O" : "";
+                                    ws.Cells[iRow, iCol + 7].Value = (item.CheckWeight) ? "O" : "";
+                                    ws.Cells[iRow, iCol + 8].Value = (item.CheckFrontTwist) ? "O" : "";
+                                    ws.Cells[iRow, iCol + 10].Value = (item.CheckBackTwist) ? "O" : "";
+                                    ws.Cells[iRow, iCol + 12].Value = (item.CheckSnarl) ? "O" : "";
+                                    ws.Cells[iRow, iCol + 13].Value = (item.CheckTube) ? "O" : "";
+                                }
+                                else
+                                {
+                                    ws.Cells[iRow, iCol].Style.Font.Strike = true;
+                                    ws.Cells[iRow, iCol + 1].Value = "";
+                                    ws.Cells[iRow, iCol + 3].Value = "";
+                                    ws.Cells[iRow, iCol + 5].Value = "";
+                                    ws.Cells[iRow, iCol + 6].Value = "";
+                                    ws.Cells[iRow, iCol + 7].Value = "";
+                                    ws.Cells[iRow, iCol + 8].Value = "";
+                                    ws.Cells[iRow, iCol + 10].Value = "";
+                                    ws.Cells[iRow, iCol + 12].Value = "";
+                                    ws.Cells[iRow, iCol + 13].Value = "";
+                                }
                             }
                         }
 
