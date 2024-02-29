@@ -940,6 +940,7 @@
                    MinWidth="100" />
     </DataTemplate>
 
+    <!-- may be not used anymore -->
     <DataTemplate x:Key="S8B_VerifyBy">
         <TextBlock Text="{Binding Path=VerifyBy, Mode=OneWay}"
                    TextAlignment="Center"

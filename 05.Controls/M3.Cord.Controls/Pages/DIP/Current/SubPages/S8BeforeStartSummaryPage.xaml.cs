@@ -79,6 +79,13 @@ namespace M3.Cord.Pages
             Edit(item);
         }
 
+        private void cmdVerify_Click(object sender, RoutedEventArgs e)
+        {
+            var ctx = (sender as Button).DataContext;
+            var item = (null != ctx && ctx is S8BeforeCondition) ? ctx as S8BeforeCondition : null;
+            Verify(item);
+        }
+
         #endregion
 
         #region Private Methods
@@ -145,6 +152,22 @@ namespace M3.Cord.Pages
                 win.Setup(item);
                 if (win.ShowDialog() == true)
                 {
+                    RefreshGrid();
+                }
+            }
+        }
+
+        private void Verify(S8BeforeCondition item)
+        {
+            if (null != item)
+            {
+                var win = M3CordApp.Windows.ConfirmUser;
+                if (win.ShowDialog() == true)
+                {
+                    item.VerifyBy = (null != win.User) ? win.User.FullName : null;
+                    item.VerifyDate = DateTime.Now;
+                    S8BeforeCondition.Save(item);
+
                     RefreshGrid();
                 }
             }

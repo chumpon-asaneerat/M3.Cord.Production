@@ -836,6 +836,21 @@ namespace M3.Cord.Models
         public string VerifyBy { get; set; }
         public DateTime? VerifyDate { get; set; }
 
+        public bool ShowVerify
+        {
+            get 
+            { 
+                return (RowType == 1 && S8BeforeId.HasValue && S8BeforeId.Value > 0); 
+            }
+            set { }
+        }
+
+        public bool IsVerify
+        {
+            get { return (RowType == 1 && !string.IsNullOrEmpty(VerifyBy)); }
+            set { }
+        }
+
         #endregion
 
         #region Static Methods

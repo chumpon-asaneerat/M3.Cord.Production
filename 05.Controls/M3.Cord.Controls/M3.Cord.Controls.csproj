@@ -534,6 +534,9 @@
     <Compile Include="Services\Excels\SolutionExports.cs" />
     <Compile Include="Services\Excels\Twist1CheckSheetExport.cs" />
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
+    <Compile Include="Windows\SignIn\ConfirmUserWindow.xaml.cs">
+      <DependentUpon>ConfirmUserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\DIPView\DIPTimeTableEditorViewWindow.xaml.cs">
       <DependentUpon>DIPTimeTableEditorViewWindow.xaml</DependentUpon>
     </Compile>
@@ -1365,6 +1368,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\ListViewColumns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SignIn\ConfirmUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

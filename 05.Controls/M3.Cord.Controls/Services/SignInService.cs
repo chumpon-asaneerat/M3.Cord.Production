@@ -129,4 +129,81 @@ namespace M3.Cord
     }
 
     #endregion
+
+    #region VerifyManager
+
+    /// <summary>
+    /// VerifyManager class.
+    /// </summary>
+    public class VerifyManager : NSingelton<VerifyManager>
+    {
+        #region Constructor and Destructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        protected VerifyManager() : base()
+        {
+
+        }
+        /// <summary>
+        /// Destructor.
+        /// </summary>
+        ~VerifyManager()
+        {
+            
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Vefify.
+        /// </summary>
+        /// <param name="userName">The user name.</param>
+        /// <param name="password">The password.</param>
+        /// <returns>Returns SignIn Status.</returns>
+        public SignInStatus Verify(string userName, string password)
+        {
+            User = null; // reset
+
+            UserInfo oUser = default;
+            var Users = UserInfo.Gets(userName: userName).Value();
+            if (null != Users && Users.Count > 0)
+            {
+                oUser = Users[0];
+            }
+
+            if (null == oUser)
+            {
+                // user not exists.
+                return SignInStatus.UserNotFound;
+            }
+
+            User = UserInfo.Get(userName, password).Value();
+
+            if (null != User)
+            {
+                return SignInStatus.Success;
+            }
+            else
+            {
+                return SignInStatus.InvalidPassword;
+            }
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets current user.
+        /// </summary>
+        public UserInfo User { get; private set; }
+
+        #endregion
+    }
+
+    #endregion
 }

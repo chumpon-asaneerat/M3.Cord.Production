@@ -746,6 +746,16 @@ namespace M3.Cord
 
             #endregion
 
+            #region Confirm User
+
+            /// <summary>Gets Confirm User Window.</summary>
+            public static ConfirmUserWindow ConfirmUser
+            {
+                get { return GetWindow<ConfirmUserWindow>(); }
+            }
+
+            #endregion
+
             #region Common Progress Dialog
 
             /// <summary>Gets Common Progress Dialog Window.</summary>
