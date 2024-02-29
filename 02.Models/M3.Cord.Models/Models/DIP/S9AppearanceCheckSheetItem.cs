@@ -36,6 +36,8 @@ namespace M3.Cord.Models
         public int AppearId { get; set; }
         public int SPNo { get; set; }
 
+        public bool? SPUnusable { get; set; }
+
         public bool? CheckGood { get; set; }
         public bool? CheckBad { get; set; }
         public bool? Check2Color { get; set; }
@@ -130,7 +132,6 @@ namespace M3.Cord.Models
 
             p.Add("@AppearId", value.AppearId);
             p.Add("@SPNo", value.SPNo);
-
             p.Add("@CheckGood", value.CheckGood);
             p.Add("@CheckBad", value.CheckBad);
             p.Add("@Check2Color", value.Check2Color);
@@ -140,6 +141,7 @@ namespace M3.Cord.Models
             p.Add("@CheckBackTwist", value.CheckBackTwist);
             p.Add("@CheckSnarl", value.CheckSnarl);
             p.Add("@CheckTube", value.CheckTube);
+            p.Add("@SPUnusable", value.SPUnusable);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
