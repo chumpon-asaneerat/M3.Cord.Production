@@ -258,9 +258,18 @@
         </StackPanel>
     </DataTemplate>
     <!--  CHECK BOX FOR S9 Appearance CHECK SHEET  -->
+    <DataTemplate x:Key="SPUnusable">
+        <StackPanel HorizontalAlignment="Stretch" Width="70">
+            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx2State}"
+                             Foreground="{Binding TextColor}"
+                             IsChecked="{Binding SPUnusable}"
+                             HorizontalAlignment="Center"
+                             Width="50" />
+        </StackPanel>
+    </DataTemplate>
     <DataTemplate x:Key="CheckGood">
         <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx3State}"
+            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx2State}"
                              Foreground="{Binding TextColor}"
                              IsChecked="{Binding CheckGood}"
                              HorizontalAlignment="Center"
@@ -269,7 +278,7 @@
     </DataTemplate>
     <DataTemplate x:Key="CheckBad">
         <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx3State}"
+            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx2State}"
                              Foreground="{Binding TextColor}"
                              IsChecked="{Binding CheckBad}"
                              HorizontalAlignment="Center"
@@ -278,7 +287,7 @@
     </DataTemplate>
     <DataTemplate x:Key="Check2Color">
         <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx3State}"
+            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx2State}"
                              Foreground="{Binding TextColor}"
                              IsChecked="{Binding Check2Color}"
                              HorizontalAlignment="Center"
@@ -287,7 +296,7 @@
     </DataTemplate>
     <DataTemplate x:Key="CheckKeiba">
         <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx3State}"
+            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx2State}"
                              Foreground="{Binding TextColor}"
                              IsChecked="{Binding CheckKeiba}"
                              HorizontalAlignment="Center"
@@ -296,7 +305,7 @@
     </DataTemplate>
     <DataTemplate x:Key="CheckWeight">
         <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx3State}"
+            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx2State}"
                              Foreground="{Binding TextColor}"
                              IsChecked="{Binding CheckWeight}"
                              HorizontalAlignment="Center"
@@ -305,7 +314,7 @@
     </DataTemplate>
     <DataTemplate x:Key="CheckFrontTwist">
         <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx3State}"
+            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx2State}"
                              Foreground="{Binding TextColor}"
                              IsChecked="{Binding CheckFrontTwist}"
                              HorizontalAlignment="Center"
@@ -314,7 +323,7 @@
     </DataTemplate>
     <DataTemplate x:Key="CheckBackTwist">
         <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx3State}"
+            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx2State}"
                              Foreground="{Binding TextColor}"
                              IsChecked="{Binding CheckBackTwist}"
                              HorizontalAlignment="Center"
@@ -323,7 +332,7 @@
     </DataTemplate>
     <DataTemplate x:Key="CheckSnarl">
         <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx3State}"
+            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx2State}"
                              Foreground="{Binding TextColor}"
                              IsChecked="{Binding CheckSnarl}"
                              HorizontalAlignment="Center"
@@ -332,7 +341,7 @@
     </DataTemplate>
     <DataTemplate x:Key="CheckTube">
         <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx3State}"
+            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx2State}"
                              Foreground="{Binding TextColor}"
                              IsChecked="{Binding CheckTube}"
                              HorizontalAlignment="Center"
@@ -940,7 +949,7 @@
                    MinWidth="100" />
     </DataTemplate>
 
-    <!-- may be not used anymore -->
+    <!--  may be not used anymore  -->
     <DataTemplate x:Key="S8B_VerifyBy">
         <TextBlock Text="{Binding Path=VerifyBy, Mode=OneWay}"
                    TextAlignment="Center"

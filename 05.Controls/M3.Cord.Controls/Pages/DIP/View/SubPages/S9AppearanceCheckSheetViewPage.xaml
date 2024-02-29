@@ -80,8 +80,11 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
+                        <GridViewColumn Header="ใช้ไม่ได้" CellTemplate="{StaticResource SPUnusable}" />
                         <GridViewColumn Header="ฟอร์มดี" CellTemplate="{StaticResource CheckGood}" />
+                        <!--
                         <GridViewColumn Header="ฟอร์มไม่ดี" CellTemplate="{StaticResource CheckBad}" />
+                        -->
                         <GridViewColumn Header="ด้าย 2 สี" CellTemplate="{StaticResource Check2Color}" />
                         <GridViewColumn Header="เคบะ" CellTemplate="{StaticResource CheckKeiba}" />
                         <GridViewColumn Header="น้ำหนักไม่พอ" CellTemplate="{StaticResource CheckWeight}" />

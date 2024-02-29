@@ -15,6 +15,7 @@ using NLib.Models;
 using Dapper;
 using Newtonsoft.Json;
 using System.Windows.Controls.Primitives;
+using System.Windows.Data;
 
 #endregion
 
@@ -27,26 +28,250 @@ namespace M3.Cord.Models
         public static readonly SolidColorBrush RedColor = new SolidColorBrush(Colors.Red);
         public static readonly SolidColorBrush BlackColor = new SolidColorBrush(Colors.Black);
 
+        public static readonly SolidColorBrush SilverColor = new SolidColorBrush(Colors.Silver);
+        public static readonly SolidColorBrush TransparentColor = new SolidColorBrush(Colors.Transparent);
+
         #endregion
 
-        public SolidColorBrush TextColor { get { return BlackColor; } set { } }
+        public SolidColorBrush TextColor 
+        { 
+            get { return (!_SPUnusable) ? BlackColor : RedColor; } 
+            set { } 
+        }
 
         #region Public Properties
 
         public int AppearId { get; set; }
         public int SPNo { get; set; }
 
-        public bool? SPUnusable { get; set; }
+        private bool _SPUnusable = false;
+        public bool SPUnusable
+        {
+            get { return _SPUnusable; } 
+            set
+            {
+                _SPUnusable = value;
+                if (value)
+                {
+                    MarkUnuseableSP();
+                }
+                Raise(() => this.SPUnusable);
+                Raise(() => this.TextColor);
+            }
+        }
 
-        public bool? CheckGood { get; set; }
-        public bool? CheckBad { get; set; }
-        public bool? Check2Color { get; set; }
-        public bool? CheckKeiba { get; set; }
-        public bool? CheckWeight { get; set; }
-        public bool? CheckFrontTwist { get; set; }
-        public bool? CheckBackTwist { get; set; }
-        public bool? CheckSnarl { get; set; }
-        public bool? CheckTube { get; set; }
+        private bool? _CheckGood = new bool?();
+        public bool? CheckGood 
+        {
+            get
+            {
+                return _CheckGood.HasValue ? _CheckGood.Value : false;
+            }
+            set
+            {
+                if (_SPUnusable) return;
+                if (value.HasValue && value.Value == true)
+                {
+                    ClearDefects();
+                }
+
+                _CheckGood = value;
+                Raise(() => this.CheckGood);
+            }
+        }
+        public bool? CheckBad { get; set; } // not used anymore
+
+        private bool? _Check2Color = new bool?();
+        public bool? Check2Color 
+        {
+            get
+            {
+                return _Check2Color.HasValue ? _Check2Color.Value : false;
+            }
+            set
+            {
+                if (_SPUnusable) return;
+                if (value.HasValue && value.Value == true)
+                {
+                    SetBadForm();
+                }
+
+                _Check2Color = value;
+                Raise(() => this.Check2Color);
+            }
+        }
+
+        private bool? _CheckKeiba = new bool?();
+        public bool? CheckKeiba
+        {
+            get 
+            { 
+                return _CheckKeiba.HasValue ? _CheckKeiba.Value : false; 
+            }
+            set
+            {
+                if (_SPUnusable) return;
+                if (value.HasValue && value.Value == true)
+                {
+                    SetBadForm();
+                }
+
+                _CheckKeiba = value;
+                Raise(() => this.CheckKeiba);
+            }
+        }
+
+        private bool? _CheckWeight = new bool?();
+        public bool? CheckWeight
+        {
+            get
+            {
+                return _CheckWeight.HasValue ? _CheckWeight.Value : false;
+            }
+            set
+            {
+                if (_SPUnusable) return;
+                if (value.HasValue && value.Value == true)
+                {
+                    SetBadForm();
+                }
+
+                _CheckWeight = value;
+                Raise(() => this.CheckWeight);
+            }
+        }
+
+        private bool? _CheckFrontTwist = new bool?();
+        public bool? CheckFrontTwist
+        {
+            get
+            {
+                return _CheckFrontTwist.HasValue ? _CheckFrontTwist.Value : false;
+            }
+            set
+            {
+                if (_SPUnusable) return;
+                if (value.HasValue && value.Value == true)
+                {
+                    SetBadForm();
+                }
+
+                _CheckFrontTwist = value;
+                Raise(() => this.CheckFrontTwist);
+            }
+        }
+
+        private bool? _CheckBackTwist = new bool?();
+        public bool? CheckBackTwist
+        {
+            get
+            {
+                return _CheckBackTwist.HasValue ? _CheckBackTwist.Value : false;
+            }
+            set
+            {
+                if (_SPUnusable) return;
+                if (value.HasValue && value.Value == true)
+                {
+                    SetBadForm();
+                }
+
+                _CheckBackTwist = value;
+                Raise(() => this.CheckBackTwist);
+            }
+        }
+
+        private bool? _CheckSnarl = new bool?();
+        public bool? CheckSnarl
+        {
+            get
+            {
+                return _CheckSnarl.HasValue ? _CheckSnarl.Value : false;
+            }
+            set
+            {
+                if (_SPUnusable) return;
+                if (value.HasValue && value.Value == true)
+                {
+                    SetBadForm();
+                }
+
+                _CheckSnarl = value;
+                Raise(() => this.CheckSnarl);
+            }
+        }
+
+        private bool? _CheckTube = new bool?();
+        public bool? CheckTube
+        {
+            get
+            {
+                return _CheckTube.HasValue ? _CheckTube.Value : false;
+            }
+            set
+            {
+                if (_SPUnusable) return;
+                if (value.HasValue && value.Value == true)
+                {
+                    SetBadForm();
+                }
+
+                _CheckTube = value;
+                Raise(() => this.CheckTube);
+            }
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void MarkUnuseableSP()
+        {
+            _CheckGood = false;
+            //_CheckBad = false;
+            _Check2Color = false;
+            _CheckKeiba = false;
+            _CheckWeight = false;
+            _CheckFrontTwist = false;
+            _CheckBackTwist = false;
+            _CheckSnarl = false;
+            _CheckTube = false;
+
+            Raise(() => this.CheckGood);
+            Raise(() => this.Check2Color);
+            Raise(() => this.CheckKeiba);
+            Raise(() => this.CheckWeight);
+            Raise(() => this.CheckFrontTwist);
+            Raise(() => this.CheckBackTwist);
+            Raise(() => this.CheckSnarl);
+            Raise(() => this.CheckTube);
+        }
+
+        private void ClearDefects()
+        {
+            //_CheckBad = false;
+            _Check2Color = false;
+            _CheckKeiba = false;
+            _CheckWeight = false;
+            _CheckFrontTwist = false;
+            _CheckBackTwist = false;
+            _CheckSnarl = false;
+            _CheckTube = false;
+
+            Raise(() => this.Check2Color);
+            Raise(() => this.CheckKeiba);
+            Raise(() => this.CheckWeight);
+            Raise(() => this.CheckFrontTwist);
+            Raise(() => this.CheckBackTwist);
+            Raise(() => this.CheckSnarl);
+            Raise(() => this.CheckTube);
+        }
+
+        private void SetBadForm()
+        {
+            _CheckGood = false;
+            Raise(() => this.CheckGood);
+        }
 
         #endregion
 

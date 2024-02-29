@@ -114,7 +114,10 @@ namespace M3.Cord.Pages
                 }
             }
 
-            grid.ItemsSource = items;
+            this.InvokeAction(() => 
+            {
+                grid.ItemsSource = items;
+            });
         }
 
         private void Save()
