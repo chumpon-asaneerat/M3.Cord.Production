@@ -261,7 +261,7 @@
         </Setter>
     </Style>
 
-    <!--  CHECK BOX STYLE (CHECKBOX EX) 2 State (Cross) -->
+    <!--  CHECK BOX STYLE (CHECKBOX EX) 2 State (Cross)  -->
     <Style x:Key="CommonCheckBoxEx2StateCross" TargetType="{x:Type ctrl:CheckBoxEx}">
         <Setter Property="IsThreeState" Value="False" />
         <Setter Property="InvertCheckStateOrder" Value="True" />

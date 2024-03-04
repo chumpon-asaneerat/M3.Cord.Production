@@ -105,6 +105,7 @@ namespace NLib.Services
 
         #region Internal Varaibles
 
+        private bool _zOrder = false;
         private Stack<ContentControl> _currents = new Stack<ContentControl>();
 
         private DateTime _lastStatusUpdate = DateTime.Now;
@@ -290,6 +291,20 @@ namespace NLib.Services
         #region For Page Z-Order managements
 
         /// <summary>
+        /// Gets or sets is support z-order.
+        /// </summary>
+        public bool SupportZOrder
+        {
+            get { return _zOrder; }
+            set
+            {
+                if (_zOrder != value)
+                {
+                    _zOrder = value;
+                }
+            }
+        }
+        /// <summary>
         /// Gets or sets current content control that need to display on main window's
         /// content area.
         /// </summary>
@@ -313,20 +328,7 @@ namespace NLib.Services
                 if (null == value)
                     return;
 
-                ContentControl last = null;
-                if (null != _currents && _currents.Count > 0)
-                {
-                    lock (this)
-                    {
-                        last = _currents.Peek();
-                    }
-                }
-
-                Type lastPageType = (null != last) ? last.GetType() : null;
-
-                Type newPageType = value.GetType();
-
-                if (lastPageType != newPageType)
+                if (!_zOrder)
                 {
                     lock (this)
                     {
@@ -334,11 +336,50 @@ namespace NLib.Services
                         {
                             _currents = new Stack<ContentControl>();
                         }
-                        // keep to stack
+                        else
+                        {
+                            _currents.Clear();
+                        }
                         _currents.Push(value);
                     }
                     // Raise event
-                    ContentChanged.Call(this, EventArgs.Empty);
+                    if (null != ContentChanged)
+                    {
+                        ContentChanged(this, EventArgs.Empty);
+                    }
+                }
+                else
+                {
+                    ContentControl last = null;
+                    if (null != _currents && _currents.Count > 0)
+                    {
+                        lock (this)
+                        {
+                            last = _currents.Peek();
+                        }
+                    }
+
+                    Type lastPageType = (null != last) ? last.GetType() : null;
+
+                    Type newPageType = value.GetType();
+
+                    if (lastPageType != newPageType)
+                    {
+                        lock (this)
+                        {
+                            if (null == _currents)
+                            {
+                                _currents = new Stack<ContentControl>();
+                            }
+                            // keep to stack
+                            _currents.Push(value);
+                        }
+                        // Raise event
+                        if (null != ContentChanged)
+                        {
+                            ContentChanged(this, EventArgs.Empty);
+                        }
+                    }
                 }
             }
         }
