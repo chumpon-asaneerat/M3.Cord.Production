@@ -7,8 +7,9 @@ M3 Cord Production System #1019
 M3 Cord Production System #1018
 - 
 
+[commited]
 M3 Cord Production System #1017
-- 
+- NLib fixed PageContentManager #2
 
 [commited]
 M3 Cord Production System #1016

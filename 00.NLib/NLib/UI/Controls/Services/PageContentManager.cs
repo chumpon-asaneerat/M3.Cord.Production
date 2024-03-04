@@ -301,6 +301,32 @@ namespace NLib.Services
                 if (_zOrder != value)
                 {
                     _zOrder = value;
+
+                    if (!_zOrder)
+                    {
+                        lock (this)
+                        {
+                            ContentControl last = null;
+                            if (null != _currents && _currents.Count > 0)
+                            {
+                                lock (this)
+                                {
+                                    last = _currents.Peek();
+                                }
+                            }
+
+                            if (null == _currents)
+                            {
+                                _currents = new Stack<ContentControl>();
+                            }
+                            else
+                            {
+                                _currents.Clear();
+                            }
+
+                            if (null != last) _currents.Push(last);
+                        }
+                    }
                 }
             }
         }
