@@ -63,6 +63,26 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
+
+            if (null == M3CordApp.Current.User)
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ไม่พบข้อมูลผู้ใช้ในระบบ");
+                msgbox.ShowDialog();
+                return;
+            }
+            /*
+            if (M3CordApp.Current.User.RoleId > 10)
+            {
+                // Role 1 : Admin
+                // Role 10 : Supervisor
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ผู้ใช้ปัจจุบันไม่มีสิทธิเข้าถึงหน้าจอนี้ได้");
+                msgbox.ShowDialog();
+                return;
+            }
+            */
+
             // Pallet Setting
             var page = M3CordApp.Pages.PalletSettingManage;
             page.Setup();
@@ -74,6 +94,26 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
+
+            if (null == M3CordApp.Current.User)
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ไม่พบข้อมูลผู้ใช้ในระบบ");
+                msgbox.ShowDialog();
+                return;
+            }
+            /*
+            if (M3CordApp.Current.User.RoleId > 10)
+            {
+                // Role 1 : Admin
+                // Role 10 : Supervisor
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ผู้ใช้ปัจจุบันไม่มีสิทธิเข้าถึงหน้าจอนี้ได้");
+                msgbox.ShowDialog();
+                return;
+            }
+            */
+
             // Pallet Setting
             var page = M3CordApp.Pages.DIPPalletSlipManage;
             page.Setup();
@@ -85,7 +125,25 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
-            // Label CH S9
+
+            if (null == M3CordApp.Current.User)
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ไม่พบข้อมูลผู้ใช้ในระบบ");
+                msgbox.ShowDialog();
+                return;
+            }
+            /*
+            if (M3CordApp.Current.User.RoleId > 10)
+            {
+                // Role 1 : Admin
+                // Role 10 : Supervisor
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ผู้ใช้ปัจจุบันไม่มีสิทธิเข้าถึงหน้าจอนี้ได้");
+                msgbox.ShowDialog();
+                return;
+            }
+            */
 
             var win2 = M3CordApp.Windows.LabelCHS9Search;
             win2.Setup();
@@ -107,6 +165,24 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
+
+            if (null == M3CordApp.Current.User)
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ไม่พบข้อมูลผู้ใช้ในระบบ");
+                msgbox.ShowDialog();
+                return;
+            }
+            if (M3CordApp.Current.User.RoleId > 10)
+            {
+                // Role 1 : Admin
+                // Role 10 : Supervisor
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ผู้ใช้ปัจจุบันไม่มีสิทธิเข้าถึงหน้าจอนี้ได้");
+                msgbox.ShowDialog();
+                return;
+            }
+
             // First Twist History
             var page = M3CordApp.Pages.FirstTwistHistorySearch;
             page.Setup();
@@ -118,6 +194,24 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
+
+            if (null == M3CordApp.Current.User)
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ไม่พบข้อมูลผู้ใช้ในระบบ");
+                msgbox.ShowDialog();
+                return;
+            }
+            if (M3CordApp.Current.User.RoleId > 10)
+            {
+                // Role 1 : Admin
+                // Role 10 : Supervisor
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ผู้ใช้ปัจจุบันไม่มีสิทธิเข้าถึงหน้าจอนี้ได้");
+                msgbox.ShowDialog();
+                return;
+            }
+
             // Ageing History
             var page = M3CordApp.Pages.AgeingHistorySearch;
             page.Setup();
@@ -129,6 +223,24 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
+
+            if (null == M3CordApp.Current.User)
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ไม่พบข้อมูลผู้ใช้ในระบบ");
+                msgbox.ShowDialog();
+                return;
+            }
+            if (M3CordApp.Current.User.RoleId > 10)
+            {
+                // Role 1 : Admin
+                // Role 10 : Supervisor
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ผู้ใช้ปัจจุบันไม่มีสิทธิเข้าถึงหน้าจอนี้ได้");
+                msgbox.ShowDialog();
+                return;
+            }
+
             // DIP History
             var page = M3CordApp.Pages.DIPHistorySearch;
             page.Setup();

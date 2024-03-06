@@ -19,8 +19,10 @@ M3 Cord Production System #1025
 M3 Cord Production System #1024
 - 
 
+[commited]
 M3 Cord Production System #1023
-- 
+- Update Menu
+  - All Production need Admin or Supervisor Role
 
 [commited]
 M3 Cord Production System #1022
