@@ -48,8 +48,10 @@ namespace M3.Cord.Models
         public string S7CreelSettingUseTensorSet { get; set; }
 		public string S7CreelSettingUseTensorSet2 { get; set; }
 		public bool? S7CreelSettingKnotConditionSC { get; set; } = false;
-        public decimal? S7CreelSettingKnotConditionSet { get; set; }
-		public decimal? S7CreelSettingKnotConditionSet2 { get; set; }
+        // 2024-03-07 - Change Type
+		public string S7CreelSettingKnotConditionSet { get; set; }
+		public string S7CreelSettingKnotConditionSet2 { get; set; }
+
 		public bool? S7CreelSettingSlubCatsweSC { get; set; } = false;
         public decimal? S7CreelSettingSlubCatsweSet { get; set; }
 		public decimal? S7CreelSettingSlubCatsweSet2 { get; set; }

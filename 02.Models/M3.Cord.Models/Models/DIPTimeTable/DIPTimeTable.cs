@@ -525,7 +525,7 @@ namespace M3.Cord.Models
                 }
                 else
                 {
-                    return (S8StretchNValue.HasValue) ? S8StretchNValue.Value.ToString("#,###.##") : "";
+                    return (S8TempDValue.HasValue) ? S8TempDValue.Value.ToString("#,###.##") : "";
                 }
             }
             set { }

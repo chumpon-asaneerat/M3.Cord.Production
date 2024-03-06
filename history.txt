@@ -28,8 +28,13 @@ M3 Cord Production System #1022
 M3 Cord Production System #1021
 - 
 
+[commited]
 M3 Cord Production System #1020
-- 
+- Update DIP
+  - Fixed DIP TimeTable map invalid column
+  - Fixed DIP Condition change Type
+  - Check Permission in Create Solution
+  - Check Permission in Master Menu
 
 [commited]
 M3 Cord Production System #1019

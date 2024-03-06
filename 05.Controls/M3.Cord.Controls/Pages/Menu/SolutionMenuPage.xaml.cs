@@ -63,6 +63,24 @@ namespace M3.Cord.Pages
             // Sign In
             var win = M3CordApp.Windows.SignIn;
             if (win.ShowDialog() == false) return;
+
+            if (null == M3CordApp.Current.User)
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ไม่พบข้อมูลผู้ใช้ในระบบ");
+                msgbox.ShowDialog();
+                return;
+            }
+            if (M3CordApp.Current.User.RoleId > 10)
+            {
+                // Role 1 : Admin
+                // Role 10 : Supervisor
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ผู้ใช้ปัจจุบันไม่มีสิทธิเข้าถึงหน้าจอนี้ได้");
+                msgbox.ShowDialog();
+                return; 
+            }
+
             // Pallet Setting
             var page = M3CordApp.Pages.CreateRecipe;
             page.Setup();

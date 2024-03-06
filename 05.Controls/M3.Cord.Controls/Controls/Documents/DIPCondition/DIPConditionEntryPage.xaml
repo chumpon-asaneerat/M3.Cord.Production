@@ -609,19 +609,19 @@
             </Border>
             <Border Grid.Row="9" Grid.Column="4">
                 <TextBox Width="220"
-                         Text="{Binding S7CreelSettingKnotConditionSet, StringFormat='{}{0:#,##0.##}'}"
+                         Text="{Binding S7CreelSettingKnotConditionSet}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="9" Grid.Column="5">
-                <TextBox Width="220" Text="{Binding S7CreelSettingKnotConditionActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S7CreelSettingKnotConditionActual}" />
             </Border>
             <Border Grid.Row="9" Grid.Column="6">
                 <TextBox Width="220"
-                         Text="{Binding S7CreelSettingKnotConditionSet2, StringFormat='{}{0:#,##0.##}'}"
+                         Text="{Binding S7CreelSettingKnotConditionSet2}"
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="9" Grid.Column="7">
-                <TextBox Width="220" Text="{Binding S7CreelSettingKnotConditionActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S7CreelSettingKnotConditionActual2}" />
             </Border>
             <!--#endregion-->
 

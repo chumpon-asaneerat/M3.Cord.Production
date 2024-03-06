@@ -166,6 +166,27 @@ namespace M3.Cord.Pages
 
         private void cmdMasterDataMenu_Click(object sender, RoutedEventArgs e)
         {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+
+            if (null == M3CordApp.Current.User)
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ไม่พบข้อมูลผู้ใช้ในระบบ");
+                msgbox.ShowDialog();
+                return;
+            }
+            if (M3CordApp.Current.User.RoleId > 10)
+            {
+                // Role 1 : Admin
+                // Role 10 : Supervisor
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ผู้ใช้ปัจจุบันไม่มีสิทธิเข้าถึงหน้าจอนี้ได้");
+                msgbox.ShowDialog();
+                return;
+            }
+
             // Master Data
             var page = M3CordApp.Pages.MasterDataMenu;
             PageContentManager.Instance.Current = page;
@@ -173,6 +194,27 @@ namespace M3.Cord.Pages
 
         private void cmdProductinReport_Click(object sender, RoutedEventArgs e)
         {
+            // Sign In
+            var win = M3CordApp.Windows.SignIn;
+            if (win.ShowDialog() == false) return;
+
+            if (null == M3CordApp.Current.User)
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ไม่พบข้อมูลผู้ใช้ในระบบ");
+                msgbox.ShowDialog();
+                return;
+            }
+            if (M3CordApp.Current.User.RoleId > 10)
+            {
+                // Role 1 : Admin
+                // Role 10 : Supervisor
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("ผู้ใช้ปัจจุบันไม่มีสิทธิเข้าถึงหน้าจอนี้ได้");
+                msgbox.ShowDialog();
+                return;
+            }
+
             // Production Report
             var page = M3CordApp.Pages.ProductionReport;
             //page.Setup();

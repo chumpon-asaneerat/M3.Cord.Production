@@ -415,10 +415,10 @@
                 <CheckBox Content="" IsChecked="{Binding S7CreelSettingKnotConditionSC}" />
             </Border>
             <Border Grid.Row="9" Grid.Column="4">
-                <TextBox Width="220" Text="{Binding S7CreelSettingKnotConditionSet, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S7CreelSettingKnotConditionSet}" />
             </Border>
             <Border Grid.Row="9" Grid.Column="5">
-                <TextBox Width="220" Text="{Binding S7CreelSettingKnotConditionSet2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S7CreelSettingKnotConditionSet2}" />
             </Border>
             <!--#endregion-->
 
