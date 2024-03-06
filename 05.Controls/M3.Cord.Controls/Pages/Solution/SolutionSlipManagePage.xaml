@@ -115,7 +115,7 @@
                         <!--  QUALIFIED DATE  -->
                         <ctrl:NDatePicker x:Name="dtQualifiedDate"
                                           CaptionText="Qualified Date:"
-                                          Width="200" />
+                                          Width="200" LostFocus="dtQualifiedDate_LostFocus"  />
                         <ctrl:NComboBox x:Name="cbQuaH"
                                         DockPanel.Dock="Left"
                                         CaptionText="Hour"

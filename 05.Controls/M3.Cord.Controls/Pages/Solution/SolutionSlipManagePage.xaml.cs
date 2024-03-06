@@ -20,6 +20,8 @@ using M3.Cord.Models;
 using NLib.Models;
 using NLib;
 
+using System.Reflection;
+
 #endregion
 
 namespace M3.Cord.Pages
@@ -39,6 +41,9 @@ namespace M3.Cord.Pages
             InitializeComponent();
 
             LoadHourMinute();
+
+            cbMixH.Visibility = Visibility.Collapsed;
+            cbMixM.Visibility = Visibility.Collapsed;
         }
 
         #endregion
@@ -48,6 +53,8 @@ namespace M3.Cord.Pages
         private List<Product> products = null;
         private List<SolutionRecipe> chemicals = null;
         private SolutionLotLabel item = null;
+
+        int? lifeDay = null;
 
         #endregion
 
@@ -267,9 +274,50 @@ namespace M3.Cord.Pages
 
         private void cbChemicals_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            MethodBase med = MethodBase.GetCurrentMethod();
 
+            try
+            {
+                var chemicals = cbChemicals.SelectedItem as SolutionRecipe;
+                if (chemicals != null)
+                {
+                    lifeDay = chemicals.LifeDay;
+                }
+                else
+                {
+                    lifeDay = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
         }
 
+        #endregion
+
+        #region Date Time
+        private void dtQualifiedDate_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (dtQualifiedDate.SelectedDate != null)
+            {
+                if (lifeDay != null)
+                {
+                    item.LifeDay = lifeDay;
+                }
+                else
+                {
+                    item.LifeDay = null;
+                }
+
+                item.QualifiedDate = dtQualifiedDate.SelectedDate;
+
+                if (item.LifeDay != null && item.QualifiedDate != null)
+                {
+                    dtExpireDate.SelectedDate = item.QualifiedDate.Value.AddDays(item.LifeDay.Value);
+                }
+            }
+        }
         #endregion
 
         #region ListView Handlers
@@ -308,6 +356,8 @@ namespace M3.Cord.Pages
 
             cbProducts.SelectedIndex = -1;
             cbChemicals.SelectedIndex = -1;
+
+            lifeDay = null;
 
             this.InvokeAction(() =>
             {
@@ -395,8 +445,10 @@ namespace M3.Cord.Pages
 
         private void LoadChemicals()
         {
+            lifeDay = null;
+
             var product = cbProducts.SelectedItem as Product;
-            var productCode =  (null != product) ? product.ProductCode : null;
+            var productCode = (null != product) ? product.ProductCode : null;
             chemicals = SolutionRecipe.Gets(productCode).Value();
             cbChemicals.ItemsSource = chemicals;
         }
@@ -427,6 +479,7 @@ namespace M3.Cord.Pages
                     return string.CompareOrdinal(prod.ProductCode, productCode) == 0;
                 });
                 cbProducts.SelectedIndex = idx;
+
             }
         }
 
@@ -481,6 +534,11 @@ namespace M3.Cord.Pages
                 }
                 else
                 {
+                    if (item.LifeDay == null && lifeDay != null)
+                    {
+                        item.LifeDay = lifeDay;
+                    }
+
                     if (item.LifeDay != null && item.QualifiedDate != null)
                     {
                         dtExpireDate.SelectedDate = item.QualifiedDate.Value.AddDays(item.LifeDay.Value);
@@ -540,5 +598,6 @@ namespace M3.Cord.Pages
         }
 
         #endregion
+
     }
 }

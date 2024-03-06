@@ -44,6 +44,9 @@ namespace M3.Cord.Models
 
         public string Compound { get; set; }
 
+        //New 15/02/24
+        public int? LifeDay { get; set; }
+
         #endregion
 
         #region Static Methods
