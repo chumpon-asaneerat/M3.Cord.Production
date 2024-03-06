@@ -54,17 +54,41 @@ namespace M3.Cord.Windows
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
-            // Customer
-            if (null != cbSolutions.SelectedItem && cbSolutions.SelectedItem is SolutionRecipe)
+            // Solution
+            if (null != cbSolutions.SelectedItem && cbSolutions.SelectedItem is SolutionLotLabel)
             {
-                var customer = cbSolutions.SelectedItem as SolutionRecipe;
-                if (null != _item)
+                var recipe = cbSolutions.SelectedItem as SolutionLotLabel;
+                if (null == recipe)
                 {
-                    _item.SolutionName = customer.SolutionName;
+                    var msgbox = M3CordApp.Windows.MessageBox;
+                    msgbox.Setup("กรุณาเลือก Solution");
+                    msgbox.ShowDialog();
+                    return;
+                }
+                if (null != _item && null != recipe)
+                {
+                    _item.SolutionName = recipe.SolutionName;
                 }
             }
-
             DialogResult = true;
+        }
+
+        #endregion
+
+        #region TextBox Handler
+
+        private void txtLotNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) 
+            {
+                e.Handled = true;
+                LoadComboBoxes();
+            }
+        }
+
+        private void txtLotNo_LostFocus(object sender, RoutedEventArgs e)
+        {
+            //LoadComboBoxes();
         }
 
         #endregion
@@ -75,30 +99,21 @@ namespace M3.Cord.Windows
         {
             // Solution
             cbSolutions.ItemsSource = null;
-            var solutions = SolutionRecipe.Gets().Value();
-            cbSolutions.ItemsSource = solutions;
-        }
-
-        #endregion
-
-        #region Public Methods
-
-        public void Setup(DIPChemicalReqisition item)
-        {
-            LoadComboBoxes();
-
-            var solutions = cbSolutions.ItemsSource as List<SolutionRecipe>;
-
-            _item = item;
-            this.DataContext = _item;
 
             if (null != _item)
             {
-                // Customer
+                var solutions = SolutionLotLabel.Gets(_item.DIPLotNo).Value();
+                cbSolutions.ItemsSource = solutions;
+
+                // Recipes
                 int idx2 = -1;
-                if (null != solutions)
+                if (null != solutions && solutions.Count > 0)
                 {
-                    idx2 = solutions.FindIndex(customer => { return customer.SolutionName == item.SolutionName; });
+                    idx2 = solutions.FindIndex(recipe => { return recipe.SolutionName == _item.SolutionName; });
+                    if (idx2 == -1)
+                    {
+                        idx2 = 0; // Not match so auto pick first one
+                    }
                 }
                 this.InvokeAction(() =>
                 {
@@ -107,8 +122,26 @@ namespace M3.Cord.Windows
                     {
                         var solution = solutions[idx2];
                     }
+
+                    cbSolutions.FocusControl();
                 });
             }
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public void Setup(DIPChemicalReqisition item)
+        {
+            cbSolutions.ItemsSource = null;
+            _item = item;
+            this.DataContext = _item;
+
+            this.InvokeAction(() =>
+            {
+                txtLotNo.FocusControl();
+            });
         }
 
         #endregion

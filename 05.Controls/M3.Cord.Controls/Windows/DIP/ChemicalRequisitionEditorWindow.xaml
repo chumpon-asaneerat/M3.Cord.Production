@@ -13,7 +13,7 @@
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
         Height="300"
-        Width="850">
+        Width="900">
     <page:NPage HeaderText="Chemical Requisition Record">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
@@ -45,6 +45,14 @@
                                    DockPanel.Dock="Left"
                                    Text="{Binding ProductCode}"
                                    Width="200" />
+                    <!--  LOT NO  -->
+                    <ctrl:NTextBox x:Name="txtLotNo"
+                                   CaptionText="Lot No:"
+                                   DockPanel.Dock="Left"
+                                   Text="{Binding DIPLotNo}"
+                                   Width="170"
+                                   KeyDown="txtLotNo_KeyDown" 
+                                   LostFocus="txtLotNo_LostFocus"/>
                     <!--  SOLUTION  -->
                     <ctrl:NComboBox x:Name="cbSolutions"
                                     DockPanel.Dock="Left"
@@ -54,11 +62,6 @@
                     <Grid />
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Top">
-                    <!--  LOT NO  -->
-                    <ctrl:NTextBox CaptionText="Lot No:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding DIPLotNo}"
-                                   Width="200" />
                     <!--  TANK NO  -->
                     <ctrl:NTextBox CaptionText="Tank No:"
                                    DockPanel.Dock="Left"

@@ -806,6 +806,21 @@ namespace M3.Cord.Models
         public string Opertor { get; set; }
         public string Leader { get; set; }
 
+        public bool ShowVerify
+        {
+            get
+            {
+                return (RowType == 1 && DIPPCId.HasValue && DIPPCId.Value > 0);
+            }
+            set { }
+        }
+
+        public bool IsVerify
+        {
+            get { return (RowType == 1 && !string.IsNullOrEmpty(Leader)); }
+            set { }
+        }
+
         #endregion
 
         #region Static Methods

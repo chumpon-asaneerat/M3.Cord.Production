@@ -422,7 +422,67 @@
                                                         HeaderTemplate="{StaticResource S8CheckTimeColumnsHeader}" />
 
                                         <GridViewColumn Header="Operator" CellTemplate="{StaticResource S8P_Operator}" />
-                                        <GridViewColumn Header="Leader" CellTemplate="{StaticResource S8P_Leader}" />
+                                        <GridViewColumn Header="Leader">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal"
+                                                                HorizontalAlignment="Center"
+                                                                VerticalAlignment="Center">
+                                                        <!--  Verify  -->
+                                                        <Button x:Name="cmdVerify"
+                                                                Style="{StaticResource InlineButton}"
+                                                                Margin="5,0"
+                                                                Width="120"
+                                                                Height="30"
+                                                                Click="cmdVerify_Click">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                                <TextBlock Margin="3,0"
+                                                                           FontFamily="{StaticResource THSarabun}"
+                                                                           FontSize="{StaticResource IBFSize}"
+                                                                           Text="ตรวจสอบ"
+                                                                           VerticalAlignment="Center" />
+                                                            </StackPanel>
+                                                        </Button>
+                                                        <TextBlock x:Name="txtVerifyBy"
+                                                                   Text="{Binding Path=Leader, Mode=OneWay}"
+                                                                   TextAlignment="Center"
+                                                                   MinWidth="150" />
+                                                    </StackPanel>
+                                                    <DataTemplate.Triggers>
+                                                        <MultiDataTrigger>
+                                                            <MultiDataTrigger.Conditions>
+                                                                <Condition Binding="{Binding ShowVerify}" Value="False" />
+                                                            </MultiDataTrigger.Conditions>
+                                                            <MultiDataTrigger.Setters>
+                                                                <Setter TargetName="cmdVerify" Property="Visibility" Value="Collapsed" />
+                                                                <Setter TargetName="txtVerifyBy" Property="Visibility" Value="Collapsed" />
+                                                            </MultiDataTrigger.Setters>
+                                                        </MultiDataTrigger>
+                                                        <MultiDataTrigger>
+                                                            <MultiDataTrigger.Conditions>
+                                                                <Condition Binding="{Binding ShowVerify}" Value="True" />
+                                                                <Condition Binding="{Binding IsVerify}" Value="False" />
+                                                            </MultiDataTrigger.Conditions>
+                                                            <MultiDataTrigger.Setters>
+                                                                <Setter TargetName="cmdVerify" Property="Visibility" Value="Visible" />
+                                                                <Setter TargetName="txtVerifyBy" Property="Visibility" Value="Collapsed" />
+                                                            </MultiDataTrigger.Setters>
+                                                        </MultiDataTrigger>
+                                                        <MultiDataTrigger>
+                                                            <MultiDataTrigger.Conditions>
+                                                                <Condition Binding="{Binding ShowVerify}" Value="True" />
+                                                                <Condition Binding="{Binding IsVerify}" Value="True" />
+                                                            </MultiDataTrigger.Conditions>
+                                                            <MultiDataTrigger.Setters>
+                                                                <Setter TargetName="cmdVerify" Property="Visibility" Value="Collapsed" />
+                                                                <Setter TargetName="txtVerifyBy" Property="Visibility" Value="Visible" />
+                                                            </MultiDataTrigger.Setters>
+                                                        </MultiDataTrigger>
+                                                    </DataTemplate.Triggers>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
                                     </GridView>
                                 </ListView.View>
                             </ListView>

@@ -25,8 +25,11 @@ M3 Cord Production System #1023
 M3 Cord Production System #1022
 - 
 
+[commited]
 M3 Cord Production System #1021
-- 
+- Update DIP
+  - Chemical Requisition Record load solution from lot no.
+  - Add Verify in S8ProductionConditionItem and S8x2ProductionConditionItem
 
 [commited]
 M3 Cord Production System #1020
