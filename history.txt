@@ -22,8 +22,10 @@ M3 Cord Production System #1024
 M3 Cord Production System #1023
 - 
 
+[commited]
 M3 Cord Production System #1022
-- 
+- Update DIP
+  - Add Verify in Chemical Requisition Record Sheet
 
 [commited]
 M3 Cord Production System #1021

@@ -49,6 +49,21 @@ namespace M3.Cord.Models
         public string UserName { get; set; }
         public string Chief { get; set; }
 
+        public bool ShowVerify
+        {
+            get
+            {
+                return (ReqId.HasValue && ReqId.Value > 0);
+            }
+            set { }
+        }
+
+        public bool IsVerify
+        {
+            get { return !string.IsNullOrEmpty(Chief); }
+            set { }
+        }
+
         #endregion
 
         #region Static Methods

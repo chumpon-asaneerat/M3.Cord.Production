@@ -76,9 +76,31 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void cmdVerify_Click(object sender, RoutedEventArgs e)
+        {
+            var ctx = (sender as Button).DataContext;
+            var item = (null != ctx && ctx is DIPChemicalReqisition) ? ctx as DIPChemicalReqisition : null;
+            Verify(item);
+        }
+
         #endregion
 
         #region Private Methods
+
+        private void Verify(DIPChemicalReqisition item)
+        {
+            if (null != item)
+            {
+                var win = M3CordApp.Windows.ConfirmUser;
+                if (win.ShowDialog() == true)
+                {
+                    item.Chief = (null != win.User) ? win.User.FullName : null;
+                    DIPChemicalReqisition.Save(item);
+
+                    RefreshGrid();
+                }
+            }
+        }
 
         private void RefreshGrid()
         {

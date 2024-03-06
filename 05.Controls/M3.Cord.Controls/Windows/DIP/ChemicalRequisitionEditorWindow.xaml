@@ -51,8 +51,8 @@
                                    DockPanel.Dock="Left"
                                    Text="{Binding DIPLotNo}"
                                    Width="170"
-                                   KeyDown="txtLotNo_KeyDown" 
-                                   LostFocus="txtLotNo_LostFocus"/>
+                                   KeyDown="txtLotNo_KeyDown"
+                                   LostFocus="txtLotNo_LostFocus" />
                     <!--  SOLUTION  -->
                     <ctrl:NComboBox x:Name="cbSolutions"
                                     DockPanel.Dock="Left"
