@@ -119,12 +119,12 @@
                         <ctrl:NComboBox x:Name="cbQuaH"
                                         DockPanel.Dock="Left"
                                         CaptionText="Hour"
-                                        Width="90" />
+                                        Width="90" LostFocus="cbQuaH_LostFocus" />
 
                         <ctrl:NComboBox x:Name="cbQuaM"
                                         DockPanel.Dock="Left"
                                         CaptionText="Minute"
-                                        Width="90" />
+                                        Width="90" LostFocus="cbQuaM_LostFocus" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <!--  EXPIRE DATE  -->

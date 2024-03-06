@@ -294,6 +294,22 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void cbQuaH_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (cbQuaH.SelectedIndex != -1)
+            {
+                cbExpH.SelectedIndex = cbQuaH.SelectedIndex;
+            }
+        }
+
+        private void cbQuaM_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (cbQuaM.SelectedIndex != -1)
+            {
+                cbExpM.SelectedIndex = cbQuaM.SelectedIndex;
+            }
+        }
+
         #endregion
 
         #region Date Time
@@ -318,6 +334,7 @@ namespace M3.Cord.Pages
                 }
             }
         }
+
         #endregion
 
         #region ListView Handlers
