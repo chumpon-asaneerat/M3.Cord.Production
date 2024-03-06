@@ -1,8 +1,42 @@
+M3 Cord Production System #1030
+- 
+
+M3 Cord Production System #1029
+- 
+
+M3 Cord Production System #1028
+- 
+
+M3 Cord Production System #1027
+- 
+
+M3 Cord Production System #1026
+- 
+
+M3 Cord Production System #1025
+- 
+
+M3 Cord Production System #1024
+- 
+
+M3 Cord Production System #1023
+- 
+
+M3 Cord Production System #1022
+- 
+
+M3 Cord Production System #1021
+- 
+
 M3 Cord Production System #1020
 - 
 
+[commited]
 M3 Cord Production System #1019
-- 
+- Update MC Screen
+  - First Twist
+  - DIP
+    - Replace S-7 with S-8
 
 [commited]
 M3 Cord Production System #1018

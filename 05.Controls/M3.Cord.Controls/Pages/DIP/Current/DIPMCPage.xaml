@@ -58,19 +58,14 @@
                                             DockPanel.Dock="Top"
                                             HorizontalAlignment="Stretch"
                                             CornerRadius="3">
-                                        <TextBlock Text="{Binding MCCode}"
+                                        <TextBlock Text="{Binding DisplayMC}"
                                                    Margin="2"
                                                    Style="{StaticResource LabelText}"
                                                    FontWeight="Bold"
+                                                   FontSize="30"
                                                    TextAlignment="Center"
                                                    VerticalAlignment="Center" />
                                     </Border>
-                                    <!--  MC IMAGE  -->
-                                    <Image RenderOptions.BitmapScalingMode="LowQuality"
-                                           RenderOptions.EdgeMode="Aliased"
-                                           Source="/M3.Cord.Controls;component/Images/FirstTwist/TwistingMC.jpg"
-                                           Width="Auto"
-                                           Height="Auto" />
                                 </DockPanel>
                             </Border>
                         </Button>

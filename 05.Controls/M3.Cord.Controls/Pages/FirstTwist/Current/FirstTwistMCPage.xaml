@@ -61,16 +61,11 @@
                                         <TextBlock Text="{Binding MCCode}"
                                                    Margin="2"
                                                    Style="{StaticResource LabelText}"
+                                                   FontSize="30"
                                                    FontWeight="Bold"
                                                    TextAlignment="Center"
                                                    VerticalAlignment="Center" />
                                     </Border>
-                                    <!--  MC IMAGE  -->
-                                    <Image RenderOptions.BitmapScalingMode="LowQuality"
-                                           RenderOptions.EdgeMode="Aliased"
-                                           Source="/M3.Cord.Controls;component/Images/FirstTwist/TwistingMC.jpg"
-                                           Width="Auto"
-                                           Height="Auto" />
                                 </DockPanel>
                             </Border>
                         </Button>

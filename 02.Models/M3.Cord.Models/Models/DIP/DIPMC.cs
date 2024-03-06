@@ -28,6 +28,15 @@ namespace M3.Cord.Models
         public int StartCore { get; set; }
         public int EndCore { get; set; }
 
+        public string DisplayMC
+        {
+            get 
+            { 
+                return MCCode.Replace("7", "8");
+            }
+            set { }
+        }
+
         #endregion
 
         #region Static Methods
