@@ -103,6 +103,11 @@ namespace M3.Cord.Windows
             if (null != _item)
             {
                 var solutions = SolutionLotLabel.Gets(_item.DIPLotNo).Value();
+                if (null == solutions || solutions.Count <= 0)
+                {
+                    // load all if not match Lot No.
+                    solutions = SolutionLotLabel.Gets().Value();
+                }
                 cbSolutions.ItemsSource = solutions;
 
                 // Recipes

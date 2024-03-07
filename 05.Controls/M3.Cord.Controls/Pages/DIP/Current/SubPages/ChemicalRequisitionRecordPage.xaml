@@ -69,7 +69,6 @@
                         <GridViewColumn Header="จำนวนเบิก" CellTemplate="{StaticResource Quantity}" />
                         <GridViewColumn Header="S-8 ล๊อตเบอร์" CellTemplate="{StaticResource S8LotNo}" />
                         <GridViewColumn Header="ผู้ปฏิบัตงาน" CellTemplate="{StaticResource UserName}" />
-                        <GridViewColumn Header="หัวหน้ากะ" CellTemplate="{StaticResource Chief}" />
                         <GridViewColumn Header="หัวหน้ากะ">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
