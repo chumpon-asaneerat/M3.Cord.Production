@@ -55,22 +55,36 @@ namespace M3.Cord.Windows
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
             // Solution
-            if (null != cbSolutions.SelectedItem && cbSolutions.SelectedItem is SolutionLotLabel)
+            if (null != cbSolutions.SelectedItem && cbSolutions.SelectedItem is Solution)
             {
-                var recipe = cbSolutions.SelectedItem as SolutionLotLabel;
-                if (null == recipe)
+                var recipe = cbSolutions.SelectedItem as Solution;
+                if (null == recipe || string.IsNullOrEmpty(recipe.SolutionName))
                 {
                     var msgbox = M3CordApp.Windows.MessageBox;
                     msgbox.Setup("กรุณาเลือก Solution");
                     msgbox.ShowDialog();
+                    this.InvokeAction(() =>
+                    {
+                        cbSolutions.FocusControl();
+                    });
                     return;
                 }
                 if (null != _item && null != recipe)
                 {
                     _item.SolutionName = recipe.SolutionName;
+                    DialogResult = true;
                 }
             }
-            DialogResult = true;
+            else
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("กรุณาเลือก Solution");
+                msgbox.ShowDialog();
+                this.InvokeAction(() =>
+                {
+                    cbSolutions.FocusControl();
+                });
+            }
         }
 
         #endregion
@@ -102,11 +116,12 @@ namespace M3.Cord.Windows
 
             if (null != _item)
             {
-                var solutions = SolutionLotLabel.Gets(_item.DIPLotNo).Value();
+                // search by lot no.
+                var solutions = Solution.SearchByLotNo(_item.DIPLotNo).Value();
                 if (null == solutions || solutions.Count <= 0)
                 {
-                    // load all if not match Lot No.
-                    solutions = SolutionLotLabel.Gets().Value();
+                    // load all if not match Lot No search by product code.
+                    solutions = Solution.SearchByProductCode(_item.ProductCode).Value();
                 }
                 cbSolutions.ItemsSource = solutions;
 

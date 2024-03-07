@@ -7,13 +7,16 @@ M3 Cord Production System #1029
 M3 Cord Production System #1028
 - 
 
+[commited]
 M3 Cord Production System #1027
-- 
+- Update DIP
+  - Chemical Requisition Record Window - change combobox ItemSource class to Solution
+- Update App build 1475
 
 [commited]
 M3 Cord Production System #1026
 - Update DIP
-  - Create Recipe Page - Remove duplicate Chief column
+  - Create Recipe Page - Change Litre to Kg.
 - Update App build 1472
 
 [commited]

@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AS400DbServer.cs" />
+    <Compile Include="Models\Chemical\Solution.cs" />
     <Compile Include="Models\Chemical\SolutionRecipe.cs" />
     <Compile Include="Models\Common\ModelCommon.cs" />
     <Compile Include="Models\Common\NDbModel.cs" />
