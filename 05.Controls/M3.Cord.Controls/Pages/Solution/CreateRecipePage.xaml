@@ -72,7 +72,7 @@
                                        Width="200" />
                         <!--  QUANTITY  -->
                         <ctrl:NTextBox x:Name="txtQty"
-                                       CaptionText="Dip Solution Qty (lites)"
+                                       CaptionText="Dip Solution Qty (Kg)"
                                        Width="260"
                                        PreviewKeyDown="txtQty_PreviewKeyDown" />
                         <!--

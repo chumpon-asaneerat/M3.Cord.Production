@@ -10,15 +10,17 @@ M3 Cord Production System #1028
 M3 Cord Production System #1027
 - 
 
+[commited]
 M3 Cord Production System #1026
-- 
+- Update DIP
+  - Create Recipe Page - Remove duplicate Chief column
+- Update App build 1472
 
 [commited]
 M3 Cord Production System #1025
 - Update DIP
   - Chemical Requisition Record Sheet Page - Remove duplicate Chief column
   - Chemical Requisition Record Window - if not found solutions match Lot No load all solutions
-- Update App build 1472
 
 [commited]
 M3 Cord Production System #1024
