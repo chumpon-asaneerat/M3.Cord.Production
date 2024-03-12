@@ -28,8 +28,9 @@ M3 Cord Production System #1032
 M3 Cord Production System #1031
 - 
 
+[commited]
 M3 Cord Production System #1030
-- 
+- Implements G4 Return Raw material #2.
 
 [commited]
 M3 Cord Production System #1029

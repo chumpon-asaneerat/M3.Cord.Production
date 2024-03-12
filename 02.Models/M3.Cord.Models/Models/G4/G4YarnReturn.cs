@@ -35,6 +35,13 @@ namespace M3.Cord.Models
         }
     }
 
+    public class G4YarnReturnSummary
+    {
+        public decimal TotalPallet { get; set; } = decimal.Zero;
+        public decimal TotalWeight { get; set; } = decimal.Zero;
+        public decimal TotalCH { get; set; } = decimal.Zero;
+    }
+
     public class G4YarnReturn : NInpc
     {
         #region Public Properties
@@ -181,6 +188,7 @@ namespace M3.Cord.Models
 
         public Action<bool> OnSelectedChanged { get; set; }
 
+        public int RowNo { get; set; }
         public string NewTraceNo { get; set; }
         public string Operator { get; set; }
         public string Grade { get; set; }

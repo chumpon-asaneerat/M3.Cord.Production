@@ -59,14 +59,14 @@
                                     DockPanel.Dock="Left"
                                     CaptionText="Item Yarn:"
                                     DisplayMemberPath="ItemYarn"
-                                    Width="300"/>
+                                    Width="300" />
                     <!--  GRADE  -->
                     <ctrl:NComboBox x:Name="cbGrades"
                                     DockPanel.Dock="Left"
                                     CaptionText="Grade:"
                                     DisplayMemberPath="Grade"
                                     SelectedValuePath="Grade"
-                                    Width="150"/>
+                                    Width="150" />
                     <Grid />
                 </DockPanel>
                 <DockPanel Margin="0,0,0,5"
@@ -79,22 +79,22 @@
                                    CaptionText="Lot No:"
                                    TextAlignment="Center"
                                    Text="{Binding LotNo}"
-                                   Width="200" 
-                                   PreviewKeyDown="txtLotNo_PreviewKeyDown"/>
+                                   Width="200"
+                                   PreviewKeyDown="txtLotNo_PreviewKeyDown" />
                     <!--  Weight  -->
                     <ctrl:NTextBox x:Name="txtWeight"
                                    CaptionText="Weight:"
                                    TextAlignment="Center"
-                                   Text="{Binding WeightQty}"
-                                   Width="200" 
-                                   PreviewKeyDown="txtWeight_PreviewKeyDown"/>
+                                   Text="{Binding WeightQty, StringFormat='{}{0:n0}', TargetNullValue=''}"
+                                   Width="200"
+                                   PreviewKeyDown="txtWeight_PreviewKeyDown" />
                     <!--  CH  -->
                     <ctrl:NTextBox x:Name="txtCH"
                                    CaptionText="CH:"
                                    TextAlignment="Center"
-                                   Text="{Binding ConeCH}"
-                                   Width="200" 
-                                   PreviewKeyDown="txtCH_PreviewKeyDown"/>
+                                   Text="{Binding ConeCH, StringFormat='{}{0:n0}', TargetNullValue=''}"
+                                   Width="200"
+                                   PreviewKeyDown="txtCH_PreviewKeyDown" />
                     <!--  Operator  -->
                     <ctrl:NTextBox x:Name="txtOperator"
                                    CaptionText="Operator:"
@@ -109,6 +109,17 @@
                            LastChildFill="True"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
+                    <ctrl:FontAwesomeButton x:Name="cmdReceive"
+                                            IconType="Add"
+                                            Text="Receive"
+                                            VerticalAlignment="Bottom"
+                                            Click="cmdReceive_Click" />
+                    <TextBlock Width="10" />
+                    <ctrl:FontAwesomeButton x:Name="cmdClear"
+                                            IconType="Refresh"
+                                            Text="Clear"
+                                            VerticalAlignment="Bottom"
+                                            Click="cmdClear_Click" />
                     <Grid />
                 </DockPanel>
             </DockPanel>
@@ -196,6 +207,15 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
+                        <GridViewColumn Header="No">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=RowNo, Mode=OneWay}"
+                                               TextAlignment="Center"
+                                               Width="50" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <GridViewColumn Header="Trace No">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -219,7 +239,7 @@
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=ItemYarn, Mode=OneWay}"
                                                TextAlignment="Left"
-                                               Width="150" />
+                                               Width="250" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -228,7 +248,7 @@
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=Item400, Mode=OneWay}"
                                                TextAlignment="Left"
-                                               Width="150" />
+                                               Width="200" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -236,8 +256,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=WeightQty, Mode=OneWay, StringFormat='{}{0:n0}'}"
-                                               TextAlignment="Left"
-                                               Width="150" />
+                                               TextAlignment="Center"
+                                               Width="100" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -245,6 +265,15 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=ConeCH, Mode=OneWay, StringFormat='{}{0:n0}'}"
+                                               TextAlignment="Center"
+                                               Width="80" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="New Trace No">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=NewTraceNo, Mode=OneWay}"
                                                TextAlignment="Left"
                                                Width="150" />
                                 </DataTemplate>
