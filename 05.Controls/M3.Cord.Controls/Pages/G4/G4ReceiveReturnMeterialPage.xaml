@@ -6,8 +6,8 @@
              xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             d:DesignHeight="450"
-             d:DesignWidth="800"
+             d:DesignHeight="800"
+             d:DesignWidth="1000"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
     <page:NPage HeaderText="G4 Receive Return Meterial">
@@ -28,7 +28,259 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <Grid />
+            <!--  TOP ENTRY  -->
+            <DockPanel LastChildFill="True"
+                       DockPanel.Dock="Top"
+                       x:Name="paCurrent">
+                <DockPanel Margin="0,0,0,5"
+                           DockPanel.Dock="Top"
+                           LastChildFill="True"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left">
+                    <!--  Trace No  -->
+                    <ctrl:NTextBox x:Name="txtTraceNo"
+                                   CaptionText="Trace No:"
+                                   TextAlignment="Center"
+                                   WatermarkImageWidth="30"
+                                   WatermarkImageHeight="25"
+                                   WatermarkImageSource="/M3.Cord.Controls;component/Images/Common/barcode-scanner.png"
+                                   WatermarkText="Scan Trace No"
+                                   Width="250"
+                                   PreviewKeyDown="txtTraceNo_PreviewKeyDown"
+                                   LostFocus="txtTraceNo_LostFocus" />
+                    <!--  Receive Date  -->
+                    <ctrl:NDatePicker x:Name="dtReceiveDate"
+                                      DockPanel.Dock="Left"
+                                      CaptionText="Receive Date:"
+                                      Width="250"
+                                      SelectedDate="{Binding ReceiveDate}" />
+                    <!--  ITEM YARN  -->
+                    <ctrl:NComboBox x:Name="cbItemYanrs"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Item Yarn:"
+                                    DisplayMemberPath="ItemYarn"
+                                    Width="300"/>
+                    <!--  GRADE  -->
+                    <ctrl:NComboBox x:Name="cbGrades"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Grade:"
+                                    DisplayMemberPath="Grade"
+                                    SelectedValuePath="Grade"
+                                    Width="150"/>
+                    <Grid />
+                </DockPanel>
+                <DockPanel Margin="0,0,0,5"
+                           DockPanel.Dock="Top"
+                           LastChildFill="True"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left">
+                    <!--  Lot No  -->
+                    <ctrl:NTextBox x:Name="txtLotNo"
+                                   CaptionText="Lot No:"
+                                   TextAlignment="Center"
+                                   Text="{Binding LotNo}"
+                                   Width="200" 
+                                   PreviewKeyDown="txtLotNo_PreviewKeyDown"/>
+                    <!--  Weight  -->
+                    <ctrl:NTextBox x:Name="txtWeight"
+                                   CaptionText="Weight:"
+                                   TextAlignment="Center"
+                                   Text="{Binding WeightQty}"
+                                   Width="200" 
+                                   PreviewKeyDown="txtWeight_PreviewKeyDown"/>
+                    <!--  CH  -->
+                    <ctrl:NTextBox x:Name="txtCH"
+                                   CaptionText="CH:"
+                                   TextAlignment="Center"
+                                   Text="{Binding ConeCH}"
+                                   Width="200" 
+                                   PreviewKeyDown="txtCH_PreviewKeyDown"/>
+                    <!--  Operator  -->
+                    <ctrl:NTextBox x:Name="txtOperator"
+                                   CaptionText="Operator:"
+                                   TextAlignment="Center"
+                                   Text="{Binding Operator}"
+                                   IsReadOnly="True"
+                                   Width="200" />
+                    <Grid />
+                </DockPanel>
+                <DockPanel Margin="0,0,0,5"
+                           DockPanel.Dock="Top"
+                           LastChildFill="True"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left">
+                    <Grid />
+                </DockPanel>
+            </DockPanel>
+            <!--  TOTAL PANELS  -->
+            <StackPanel x:Name="paTotals"
+                        Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="0,0,0,5">
+                <!--  TOTAL PALLET  -->
+                <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="CornflowerBlue"
+                        CornerRadius="5">
+                    <StackPanel Orientation="Vertical" Width="250">
+                        <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total Pallet" />
+                        <TextBlock Margin="0,2"
+                                   FontSize="48"
+                                   Foreground="White"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Center"
+                                   Text="{Binding TotalPallet}" />
+                    </StackPanel>
+                </Border>
+                <!--  TOTAL TOTAL WEIGHT  -->
+                <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="DarkOrange"
+                        CornerRadius="5">
+                    <StackPanel Orientation="Vertical" Width="250">
+                        <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total Weight" />
+                        <DockPanel LastChildFill="True">
+                            <TextBlock Margin="15,10"
+                                       DockPanel.Dock="Right"
+                                       FontSize="16"
+                                       Foreground="White"
+                                       FontWeight="DemiBold"
+                                       VerticalAlignment="Bottom"
+                                       Text="kg." />
+                            <TextBlock Margin="0,2"
+                                       FontSize="48"
+                                       Foreground="White"
+                                       FontWeight="DemiBold"
+                                       TextAlignment="Center"
+                                       Text="{Binding TotalWeight, StringFormat='{}{0:n1}'}" />
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <!--  TOTAL CH  -->
+                <Border Margin="0,0,5,0"
+                        BorderThickness="1"
+                        Background="ForestGreen"
+                        CornerRadius="5">
+                    <StackPanel Orientation="Vertical" Width="250">
+                        <TextBlock Margin="10,5"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Left"
+                                   Text="Total CH" />
+                        <TextBlock Margin="0,2"
+                                   FontSize="48"
+                                   Foreground="White"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Center"
+                                   Text="{Binding TotalCH, StringFormat='{}{0:n0}'}" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <!--  LISTVIEW  -->
+            <ListView x:Name="grid"
+                      Margin="0,0,0,5"
+                      FontSize="{StaticResource FontSize18}"
+                      ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                      ItemsSource="{Binding}"
+                      Style="{StaticResource SingleSelectListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Trace No">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=TraceNo, Mode=OneWay}"
+                                               TextAlignment="Left"
+                                               Width="150" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Lot No">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=LotNo, Mode=OneWay}"
+                                               TextAlignment="Left"
+                                               Width="150" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Item Yarn">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=ItemYarn, Mode=OneWay}"
+                                               TextAlignment="Left"
+                                               Width="150" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Item 400">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Item400, Mode=OneWay}"
+                                               TextAlignment="Left"
+                                               Width="150" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Weight">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=WeightQty, Mode=OneWay, StringFormat='{}{0:n0}'}"
+                                               TextAlignment="Left"
+                                               Width="150" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="CH">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=ConeCH, Mode=OneWay, StringFormat='{}{0:n0}'}"
+                                               TextAlignment="Left"
+                                               Width="150" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  EDIT  -->
+                                        <ctrl:FontAwesomeButton x:Name="cmdEdit"
+                                                                IconType="Edit"
+                                                                Text="Edit"
+                                                                Margin="5,0"
+                                                                Width="150"
+                                                                Height="30"
+                                                                Click="cmdEdit_Click" />
+                                        <!--  DELETE  -->
+                                        <ctrl:FontAwesomeButton x:Name="cmdDelete"
+                                                                IconType="Delete"
+                                                                Text="Delete"
+                                                                Margin="5,0"
+                                                                Width="150"
+                                                                Height="30"
+                                                                Click="cmdDelete_Click" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </DockPanel>
 
     </page:NPage>

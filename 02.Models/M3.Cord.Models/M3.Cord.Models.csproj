@@ -125,6 +125,7 @@
     <Compile Include="Models\DIP\S9CleanCheckSheet.cs" />
     <Compile Include="Models\DIP\S9CleanCheckSheetItem.cs" />
     <Compile Include="Models\FirstTwist\Twist1CheckSheetItem.cs" />
+    <Compile Include="Models\G4\G4YarnReturn.cs" />
     <Compile Include="Models\LabelS9\LabelCHS9.cs" />
     <Compile Include="Models\LabelS9\LabelCHS9Item.cs" />
     <Compile Include="Models\LabelS9\LabelCHS9Summary.cs" />

@@ -47,7 +47,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
-        List<CordItemYarn> itemYarns = null;
+        private List<CordItemYarn> itemYarns = null;
 
         #endregion
 
