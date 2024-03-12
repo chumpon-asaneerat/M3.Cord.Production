@@ -26,6 +26,8 @@ using NLib;
 using static M3.Cord.M3CordApp;
 using System.Runtime.Serialization;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
+using M3.Cord.Services.Excels;
 
 #endregion
 
@@ -94,20 +96,17 @@ namespace M3.Cord.Pages
             });
         }
 
-        private void cmdEdit_Click(object sender, RoutedEventArgs e)
-        {
-            var btn = sender as FontAwesomeButton;
-            var ctx = (null != btn) ? btn.DataContext : null;
-            var item = (null != ctx) ? ctx as G4YarnReturn : null;
-            Edit(item);
-        }
-
         private void cmdDelete_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as FontAwesomeButton;
             var ctx = (null != btn) ? btn.DataContext : null;
             var item = (null != ctx) ? ctx as G4YarnReturn : null;
             Remove(item);
+        }
+
+        private void cmdExport_Click(object sender, RoutedEventArgs e)
+        {
+            Export();
         }
 
         #endregion
@@ -118,10 +117,7 @@ namespace M3.Cord.Pages
         {
             if (e.Key == Key.Enter || e.Key == Key.Return)
             {
-                this.InvokeAction(() => 
-                {
-                    txtLotNo.FocusControl(); // focus
-                });
+                SearchTraceNo();
                 e.Handled = true;
             }
             else if (e.Key == Key.Escape)
@@ -143,6 +139,7 @@ namespace M3.Cord.Pages
             {
                 this.InvokeAction(() =>
                 {
+                    txtWeight.SelectAll();
                     txtWeight.FocusControl(); // focus
                 });
                 e.Handled = true;
@@ -161,6 +158,7 @@ namespace M3.Cord.Pages
             {
                 this.InvokeAction(() =>
                 {
+                    txtCH.SelectAll();
                     txtCH.FocusControl(); // focus
                 });
                 e.Handled = true;
@@ -181,6 +179,17 @@ namespace M3.Cord.Pages
                 txtCH.Text = string.Empty;
                 e.Handled = true;
             }
+        }
+
+        #endregion
+
+        #region ListView Handlers
+
+        private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = (null != grid.SelectedItem) ? grid.SelectedItem as G4YarnReturn : null;
+            if (null == item) return;
+            Edit(item);
         }
 
         #endregion
@@ -212,149 +221,196 @@ namespace M3.Cord.Pages
 
         private void DisableControls()
         {
+            dtReceiveDate.IsEnabled = false;
             cbItemYanrs.IsEnabled = false;
             cbGrades.IsEnabled = false;
-            txtLotNo.IsEnabled = false;
             txtWeight.IsEnabled = false;
             txtCH.IsEnabled = false;
         }
 
         private void EnableControls()
         {
+            dtReceiveDate.IsEnabled = true;
             cbItemYanrs.IsEnabled = true;
             cbGrades.IsEnabled = true;
-            txtLotNo.IsEnabled = true;
             txtWeight.IsEnabled = true;
             txtCH.IsEnabled = true;
         }
 
         private void UpdateCurrentInfo()
         {
-            paCurrent.DataContext = null;
+            MethodBase med = MethodBase.GetCurrentMethod();
 
-            if (null != current)
+            try
             {
-                paCurrent.DataContext = current;
+                paCurrent.DataContext = null;
 
-                // Item Yarn
-                int idx = -1;
-                idx = itemYarns.FindIndex(x => x.ItemYarn == current.ItemYarn);
-                if (idx > -1) 
-                    cbItemYanrs.SelectedIndex = idx;
-                else cbItemYanrs.SelectedIndex = -1;
+                if (null != current)
+                {
+                    paCurrent.DataContext = current;
 
-                // Grade
-                idx = yarnGrades.FindIndex(x => x.Grade == current.Grade);
-                if (idx > -1)
-                    cbGrades.SelectedIndex = idx;
-                else cbGrades.SelectedIndex = -1;
+                    // Item Yarn
+                    int idx = -1;
+                    idx = itemYarns.FindIndex(x => x.ItemYarn == current.ItemYarn);
+                    if (idx > -1)
+                        cbItemYanrs.SelectedIndex = idx;
+                    else cbItemYanrs.SelectedIndex = -1;
 
-                EnableControls();
+                    // Grade
+                    idx = yarnGrades.FindIndex(x => x.Grade == current.Grade);
+                    if (idx > -1)
+                        cbGrades.SelectedIndex = idx;
+                    else cbGrades.SelectedIndex = -1;
+
+                    EnableControls();
+                }
+                else
+                {
+                    cbItemYanrs.SelectedIndex = -1;
+                    cbGrades.SelectedIndex = -1;
+
+                    DisableControls();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                cbItemYanrs.SelectedIndex = -1;
-                cbGrades.SelectedIndex = -1;
-
-                DisableControls();
+                med.Err(ex);
             }
         }
 
         private void RefreshGrid()
         {
-            grid.ItemsSource = null;
+            MethodBase med = MethodBase.GetCurrentMethod();
 
-            if (null == returnItems) returnItems = new List<G4YarnReturn>();
-
-            int rowId = 1;
-            returnItems.ForEach(item =>
+            try
             {
-                FormatItem(rowId, item);
-                rowId++;
-            });
+                grid.ItemsSource = null;
 
-            grid.ItemsSource = returnItems;
+                if (null == returnItems) returnItems = new List<G4YarnReturn>();
+
+                int rowId = 1;
+                returnItems.ForEach(item =>
+                {
+                    FormatItem(rowId, item);
+                    rowId++;
+                });
+
+                grid.ItemsSource = returnItems;
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
         }
 
         private void CalcTotals()
         {
-            paTotals.DataContext = null;
+            MethodBase med = MethodBase.GetCurrentMethod();
 
-            if (null == returnItems) returnItems = new List<G4YarnReturn>();
-            if (null == sum) sum = new G4YarnReturnSummary();
-
-            sum.TotalCH = decimal.Zero;
-            sum.TotalWeight = decimal.Zero;
-            sum.TotalPallet = decimal.Zero;
-
-            returnItems.ForEach(item =>
+            try
             {
-                sum.TotalWeight+= (item.WeightQty.HasValue) ? item.WeightQty.Value : decimal.Zero;
-                sum.TotalCH += (item.ConeCH.HasValue) ? item.ConeCH.Value : decimal.Zero;
-                sum.TotalPallet += 1;
-            });
+                paTotals.DataContext = null;
 
-            paTotals.DataContext = sum;
+                if (null == returnItems) returnItems = new List<G4YarnReturn>();
+                if (null == sum) sum = new G4YarnReturnSummary();
+
+                sum.TotalCH = decimal.Zero;
+                sum.TotalWeight = decimal.Zero;
+                sum.TotalPallet = decimal.Zero;
+
+                returnItems.ForEach(item =>
+                {
+                    sum.TotalWeight += (item.WeightQty.HasValue) ? item.WeightQty.Value : decimal.Zero;
+                    sum.TotalCH += (item.ConeCH.HasValue) ? item.ConeCH.Value : decimal.Zero;
+                    sum.TotalPallet += 1;
+                });
+
+                paTotals.DataContext = sum;
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
         }
 
         private void SearchTraceNo()
         {
-            string traceNo = txtTraceNo.Text;
-            if (string.IsNullOrEmpty(traceNo)) 
-            {
-                return;
-            }
+            MethodBase med = MethodBase.GetCurrentMethod();
 
-            if (null != current && current.TraceNo == traceNo)
+            try
             {
-                return; // same trace so ignore.
-            }
-
-            var items = G4YarnReturn.SearchYarnStocks(traceNo).Value();
-            if (null == items || items.Count <= 0)
-            {
-                var msgbox = M3CordApp.Windows.MessageBox;
-                msgbox.Setup("Not found Trace No." + Environment.NewLine + "ไม่พบข้อมูล Trace No.");
-                msgbox.ShowDialog();
-
-                this.InvokeAction(() => 
+                string traceNo = txtTraceNo.Text;
+                if (string.IsNullOrEmpty(traceNo))
                 {
-                    txtTraceNo.SelectAll();
-                    txtTraceNo.FocusControl();
-                });
+                    return;
+                }
 
-                return;
+                if (null != current && current.TraceNo == traceNo)
+                {
+                    // same trace so ignore.
+                    this.InvokeAction(() =>
+                    {
+                        txtWeight.SelectAll();
+                        txtWeight.FocusControl(); // focus
+                    });
+
+                    return;
+                }
+
+                var items = G4YarnReturn.SearchYarnStocks(traceNo).Value();
+                if (null == items || items.Count <= 0)
+                {
+                    var msgbox = M3CordApp.Windows.MessageBox;
+                    msgbox.Setup("Not found Trace No." + Environment.NewLine + "ไม่พบข้อมูล Trace No.");
+                    msgbox.ShowDialog();
+
+                    this.InvokeAction(() =>
+                    {
+                        txtTraceNo.SelectAll();
+                        txtTraceNo.FocusControl();
+                    });
+
+                    return;
+                }
+
+                if (null != items && items.Count > 0)
+                {
+                    current = items[0];
+                    if (null != current)
+                    {
+                        int rowId = returnItems.Count + 1;
+                        FormatItem(rowId, current);
+
+                        this.InvokeAction(() =>
+                        {
+                            txtWeight.SelectAll();
+                            txtWeight.FocusControl(); // focus
+                        });
+                    }
+
+                    UpdateCurrentInfo();
+                }
             }
-
-            if (null != items && items.Count > 0)
+            catch (Exception ex)
             {
-                current = items[0];
-                int rowId = returnItems.Count + 1;
-                FormatItem(rowId, current);
-                UpdateCurrentInfo();
+                med.Err(ex);
             }
         }
 
         private void Receive()
         {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
             if (null == returnItems) returnItems = new List<G4YarnReturn>();
 
             if (null == current)
                 return;
 
-            if (string.IsNullOrEmpty(current.LotNo))
-            {
-                var msgbox = M3CordApp.Windows.MessageBox;
-                msgbox.Setup("Please Enter Lot No." + Environment.NewLine + "กรุณาบันทึก Lot No.");
-                msgbox.ShowDialog();
+            var itemYarn = cbItemYanrs.SelectedItem as CordItemYarn;
+            current.ItemYarn = (null != itemYarn) ? itemYarn.ItemYarn : null;
 
-                this.InvokeAction(() =>
-                {
-                    txtLotNo.SelectAll();
-                    txtLotNo.FocusControl();
-                });
-                return;
-            }
+            var grade = cbGrades.SelectedItem as YarnGrade;
+            current.Grade = (null != grade) ? grade.Grade : null;
 
             if (!current.WeightQty.HasValue)
             {
@@ -384,78 +440,123 @@ namespace M3.Cord.Pages
                 return;
             }
 
-            returnItems.Add(current);
+            if (string.IsNullOrEmpty(current.ItemYarn))
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("Please Enter Item Yarn." + Environment.NewLine + "กรุณาบันทึก Item Yarn.");
+                msgbox.ShowDialog();
 
-            // reset current
-            current = null;
-            txtTraceNo.Text = string.Empty;
+                this.InvokeAction(() =>
+                {
+                    cbItemYanrs.FocusControl();
+                });
+                return;
+            }
 
-            UpdateCurrentInfo();
-            RefreshGrid();
-            CalcTotals();
+            if (string.IsNullOrEmpty(current.Grade))
+            {
+                var msgbox = M3CordApp.Windows.MessageBox;
+                msgbox.Setup("Please Enter Grade." + Environment.NewLine + "กรุณาบันทึก Grade.");
+                msgbox.ShowDialog();
+
+                this.InvokeAction(() =>
+                {
+                    cbGrades.FocusControl();
+                });
+                return;
+            }
+
+            try
+            {
+                int idx = returnItems.FindIndex(x => x.TraceNo == current.TraceNo);
+                if (idx != -1)
+                {
+                    returnItems[idx] = current;
+                }
+                else
+                {
+                    returnItems.Add(current);
+                }
+
+                // reset current
+                current = null;
+                txtTraceNo.Text = string.Empty;
+
+                UpdateCurrentInfo();
+                RefreshGrid();
+                CalcTotals();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
         }
 
         private void FormatItem(int rowId, G4YarnReturn item)
         {
-            // set row no
-            item.RowNo = rowId;
+            MethodBase med = MethodBase.GetCurrentMethod();
 
-            // update operator
-            item.Operator = (null != Current.User) ? Current.User.FullName : null;
-
-            // set new trace no
-            string newTraceNo = string.Empty;
-
-            if (!string.IsNullOrEmpty(item.TraceNo))
+            try
             {
-                string sTraceNo = item.TraceNo.Trim();
-                if (sTraceNo.Length < 10)
-                {
-                    newTraceNo = "R" + sTraceNo;
-
-                    if (newTraceNo.Length != 10)
-                    {
-                        var dt = DateTime.Now;
-                        newTraceNo = "R" + dt.ToString("ddMMyymm", System.Globalization.DateTimeFormatInfo.InvariantInfo) + rowId.ToString();
-                    }
-                }
-                else
-                {
-                    newTraceNo = "R" + sTraceNo.Substring(1, sTraceNo.Length - 1);
-
-                    if (newTraceNo.Length != 10)
-                    {
-                        var dt = DateTime.Now;
-                        newTraceNo = "R" + dt.ToString("ddMMyymm", System.Globalization.DateTimeFormatInfo.InvariantInfo) + rowId.ToString();
-                    }
-                }
+                // set row no
+                item.RowNo = rowId;
+                // update operator
+                item.Operator = (null != Current.User) ? Current.User.FullName : null;
             }
-
-            item.NewTraceNo = newTraceNo;
-
-            // check lot not exit auto generate
-            if (string.IsNullOrEmpty(item.LotNo))
+            catch (Exception ex) 
             {
-                DateTime dt = DateTime.Now;
-                current.LotNo = "L" + dt.ToString("ddMMyyyyHHmm",
-                    System.Globalization.DateTimeFormatInfo.InvariantInfo);
+                med.Err(ex);
             }
         }
 
         private void Edit(G4YarnReturn item)
         {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
             if (null == item) 
                 return;
 
-            current = item;
-            txtTraceNo.Text = item.TraceNo;
-            UpdateCurrentInfo();
+            try
+            {
+                current = item;
+                txtTraceNo.Text = item.TraceNo;
+                UpdateCurrentInfo();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
         }
 
         private void Remove(G4YarnReturn item)
         {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
             if (null == item) 
                 return;
+
+            try
+            {
+                if (null == returnItems) returnItems = new List<G4YarnReturn>();
+                int idx = returnItems.FindIndex(x => x.TraceNo == item.TraceNo);
+                if (idx != -1)
+                {
+                    returnItems.RemoveAt(idx);
+
+                    UpdateCurrentInfo();
+                    RefreshGrid();
+                    CalcTotals();
+                }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
+        }
+
+        private void Export()
+        {
+            G4ReturnYarnExport.Export(returnItems);
         }
 
         #endregion
@@ -468,6 +569,10 @@ namespace M3.Cord.Pages
         public void Setup()
         {
             LoadComboBox();
+
+            UpdateCurrentInfo();
+            RefreshGrid();
+            CalcTotals();
         }
 
         #endregion

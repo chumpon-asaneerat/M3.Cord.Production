@@ -527,6 +527,7 @@
     </Compile>
     <Compile Include="Resources\ExcelResource.cs" />
     <Compile Include="Services\Excels\DIPConfirmConditionExport.cs" />
+    <Compile Include="Services\Excels\G4ReturnYarnExport.cs" />
     <Compile Include="Services\Excels\S7TimeTableExport.cs" />
     <Compile Include="Services\Excels\S7YarnSettingExport.cs" />
     <Compile Include="Services\Excels\S8Export.cs" />

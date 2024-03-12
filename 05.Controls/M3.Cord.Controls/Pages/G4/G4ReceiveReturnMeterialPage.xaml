@@ -26,6 +26,16 @@
                                             Text="Home"
                                             Click="cmdHome_Click" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <!--  EXPORT  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdExport"
+                                            Margin="5,0,0,0"
+                                            IconType="Export"
+                                            Text="Export"
+                                            Click="cmdExport_Click" />
+                </StackPanel>
                 <Grid />
             </DockPanel>
             <!--  TOP ENTRY  -->
@@ -65,7 +75,6 @@
                                     DockPanel.Dock="Left"
                                     CaptionText="Grade:"
                                     DisplayMemberPath="Grade"
-                                    SelectedValuePath="Grade"
                                     Width="150" />
                     <Grid />
                 </DockPanel>
@@ -78,9 +87,9 @@
                     <ctrl:NTextBox x:Name="txtLotNo"
                                    CaptionText="Lot No:"
                                    TextAlignment="Center"
-                                   Text="{Binding LotNo}"
-                                   Width="200"
-                                   PreviewKeyDown="txtLotNo_PreviewKeyDown" />
+                                   Text="{Binding NewLotNo}"
+                                   IsReadOnly="True"
+                                   Width="200" />
                     <!--  Weight  -->
                     <ctrl:NTextBox x:Name="txtWeight"
                                    CaptionText="Weight:"
@@ -204,7 +213,8 @@
                       FontSize="{StaticResource FontSize18}"
                       ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
                       ItemsSource="{Binding}"
-                      Style="{StaticResource SingleSelectListView}">
+                      Style="{StaticResource SingleSelectListView}"
+                      SelectionChanged="grid_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No">
@@ -221,14 +231,14 @@
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=TraceNo, Mode=OneWay}"
                                                TextAlignment="Left"
-                                               Width="150" />
+                                               Width="120" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Lot No">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Path=LotNo, Mode=OneWay}"
+                                    <TextBlock Text="{Binding Path=NewLotNo, Mode=OneWay}"
                                                TextAlignment="Left"
                                                Width="150" />
                                 </DataTemplate>
@@ -248,7 +258,7 @@
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=Item400, Mode=OneWay}"
                                                TextAlignment="Left"
-                                               Width="200" />
+                                               Width="120" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -270,6 +280,15 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
+                        <GridViewColumn Header="Grade">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Grade, Mode=OneWay}"
+                                               TextAlignment="Center"
+                                               Width="70" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <GridViewColumn Header="New Trace No">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -280,27 +299,18 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-
                         <GridViewColumn Header="">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
-                                        <!--  EDIT  -->
-                                        <ctrl:FontAwesomeButton x:Name="cmdEdit"
-                                                                IconType="Edit"
-                                                                Text="Edit"
-                                                                Margin="5,0"
-                                                                Width="150"
-                                                                Height="30"
-                                                                Click="cmdEdit_Click" />
                                         <!--  DELETE  -->
                                         <ctrl:FontAwesomeButton x:Name="cmdDelete"
                                                                 IconType="Delete"
                                                                 Text="Delete"
                                                                 Margin="5,0"
-                                                                Width="150"
+                                                                Width="120"
                                                                 Height="30"
                                                                 Click="cmdDelete_Click" />
                                     </StackPanel>
