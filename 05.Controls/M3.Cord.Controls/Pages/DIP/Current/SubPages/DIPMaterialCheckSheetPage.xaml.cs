@@ -262,12 +262,12 @@ namespace M3.Cord.Pages
                 item.DoffNo = iPalletDoff;
                 item.CHNo = iCH;
 
-                item.CheckYarnNo = chkCheckYarnNo.IsChecked.Value;
-                item.CheckYanScrap = chkCheckYanScrap.IsChecked.Value;
-                item.CheckYarnBall = chkCheckYarnBall.IsChecked.Value;
-                item.CheckCover = chkCheckCover.IsChecked.Value;
-                item.CheckSensor = chkCheckSensor.IsChecked.Value;
-                item.CheckDustFilter = chkCheckDustFilter.IsChecked.Value;
+                item.CheckYarnNo = (chkCheckYarnNo.IsChecked.HasValue) ? chkCheckYarnNo.IsChecked.Value : new bool?();
+                item.CheckYanScrap = (chkCheckYanScrap.IsChecked.HasValue) ? chkCheckYanScrap.IsChecked.Value : new bool?();
+                item.CheckYarnBall = (chkCheckYarnBall.IsChecked.HasValue) ? chkCheckYarnBall.IsChecked.Value : new bool?();
+                item.CheckCover = (chkCheckCover.IsChecked.HasValue) ? chkCheckCover.IsChecked.Value : new bool?();
+                item.CheckSensor = (chkCheckSensor.IsChecked.HasValue) ? chkCheckSensor.IsChecked.Value : new bool?();
+                item.CheckDustFilter = (chkCheckDustFilter.IsChecked.HasValue) ? chkCheckDustFilter.IsChecked.Value : new bool?();
             }
             else
             {
@@ -278,12 +278,12 @@ namespace M3.Cord.Pages
                 item.DoffNo = iPalletDoff;
                 item.CHNo = iCH;
 
-                item.CheckYarnNo = chkCheckYarnNo.IsChecked.Value;
-                item.CheckYanScrap = chkCheckYanScrap.IsChecked.Value;
-                item.CheckYarnBall = chkCheckYarnBall.IsChecked.Value;
-                item.CheckCover = chkCheckCover.IsChecked.Value;
-                item.CheckSensor = chkCheckSensor.IsChecked.Value;
-                item.CheckDustFilter = chkCheckDustFilter.IsChecked.Value;
+                item.CheckYarnNo = (chkCheckYarnNo.IsChecked.HasValue) ? chkCheckYarnNo.IsChecked.Value : new bool?();
+                item.CheckYanScrap = (chkCheckYanScrap.IsChecked.HasValue) ? chkCheckYanScrap.IsChecked.Value : new bool?();
+                item.CheckYarnBall = (chkCheckYarnBall.IsChecked.HasValue) ? chkCheckYarnBall.IsChecked.Value : new bool?();
+                item.CheckCover = (chkCheckCover.IsChecked.HasValue) ? chkCheckCover.IsChecked.Value : new bool?();
+                item.CheckSensor = (chkCheckSensor.IsChecked.HasValue) ? chkCheckSensor.IsChecked.Value : new bool?();
+                item.CheckDustFilter = (chkCheckDustFilter.IsChecked.HasValue) ? chkCheckDustFilter.IsChecked.Value : new bool?();
 
                 items.Add(item);
             }
