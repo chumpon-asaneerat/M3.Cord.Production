@@ -7,8 +7,9 @@ M3 Cord Production System #1039
 M3 Cord Production System #1038
 - 
 
+[commited]
 M3 Cord Production System #1037
-- 
+- Change Xaml string format from n2 to #.##
 
 [commited]
 M3 Cord Production System #1036

@@ -371,7 +371,7 @@
                    MinWidth="100" />
     </DataTemplate>
     <DataTemplate x:Key="DipSolutionQty">
-        <TextBlock Text="{Binding Path=DipSolutionQty, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=DipSolutionQty, Mode=OneWay, StringFormat='{}{0:#,##0.##}'}"
                    TextAlignment="Center"
                    MinWidth="80" />
     </DataTemplate>
@@ -556,7 +556,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="TotalWeight">
-        <TextBlock Text="{Binding Path=TotalWeight, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=TotalWeight, Mode=OneWay, StringFormat='{}{0:#,##0.##}'}"
                    Foreground="{Binding TextColor}"
                    TextAlignment="Right"
                    Width="150" />
@@ -697,31 +697,31 @@
                    MinWidth="250" />
     </DataTemplate>
     <DataTemplate x:Key="ChemWet">
-        <TextBlock Text="{Binding Path=ChemWet, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=ChemWet, Mode=OneWay, StringFormat='{}{0:#,##0.##}'}"
                    Foreground="{Binding TextColor}"
                    TextAlignment="Right"
                    Width="120" />
     </DataTemplate>
     <DataTemplate x:Key="ChemDry">
-        <TextBlock Text="{Binding Path=ChemDry, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=ChemDry, Mode=OneWay, StringFormat='{}{0:#,##0.##}'}"
                    Foreground="{Binding TextColor}"
                    TextAlignment="Right"
                    Width="120" />
     </DataTemplate>
     <DataTemplate x:Key="CalculationWet">
-        <TextBlock Text="{Binding Path=CalculationWet, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=CalculationWet, Mode=OneWay, StringFormat='{}{0:#,##0.##}'}"
                    Foreground="{Binding TextColor}"
                    TextAlignment="Right"
                    Width="120" />
     </DataTemplate>
     <DataTemplate x:Key="WeightCal">
-        <TextBlock Text="{Binding Path=WeightCal, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=WeightCal, Mode=OneWay, StringFormat='{}{0:#,##0.##}'}"
                    Foreground="{Binding TextColor}"
                    TextAlignment="Right"
                    Width="120" />
     </DataTemplate>
     <DataTemplate x:Key="WeightActual">
-        <TextBlock Text="{Binding Path=WeightActual, Mode=OneWay, StringFormat='{}{0:n2}'}"
+        <TextBlock Text="{Binding Path=WeightActual, Mode=OneWay, StringFormat='{}{0:#,##0.##}'}"
                    Foreground="{Binding TextColor}"
                    TextAlignment="Right"
                    Width="120" />
@@ -1175,27 +1175,27 @@
                    MinWidth="100" />
     </DataTemplate>
     <DataTemplate x:Key="S8WPU">
-        <TextBlock Text="{Binding Path=WPU, StringFormat='{}{0:n2}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=WPU, StringFormat='{}{0:#,##0.##}', Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
     <DataTemplate x:Key="S8First">
-        <TextBlock Text="{Binding Path=FirstAmt, StringFormat='{}{0:n2}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=FirstAmt, StringFormat='{}{0:#,##0.##}', Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
     <DataTemplate x:Key="S8Use">
-        <TextBlock Text="{Binding Path=UseAmt, StringFormat='{}{0:n2}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=UseAmt, StringFormat='{}{0:#,##0.##}', Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
     <DataTemplate x:Key="S8Rest">
-        <TextBlock Text="{Binding Path=RestAmt, StringFormat='{}{0:n2}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=RestAmt, StringFormat='{}{0:#,##0.##}', Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
     <DataTemplate x:Key="S8Throw">
-        <TextBlock Text="{Binding Path=ThrowAmt, StringFormat='{}{0:n2}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=ThrowAmt, StringFormat='{}{0:#,##0.##}', Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
