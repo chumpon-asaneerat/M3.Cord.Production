@@ -39,14 +39,17 @@ namespace M3.Cord.Models
         public decimal? StretchN { get; set; }
         public decimal? TempD { get; set; }
         public decimal? TempHN { get; set; }
-        public decimal? AMV1 { get; set; }
-        public decimal? AMV2 { get; set; }
-        public decimal? AMV3 { get; set; }
-        public decimal? AMV4 { get; set; }
-        public decimal? AMAmp1 { get; set; }
-        public decimal? AMAmp2 { get; set; }
-        public decimal? AMAmp3 { get; set; }
-        public decimal? AMAmp4 { get; set; }
+
+        // Change Type
+        public string AMV1 { get; set; }
+        public string AMV2 { get; set; }
+        public string AMV3 { get; set; }
+        public string AMV4 { get; set; }
+        public string AMAmp1 { get; set; }
+        public string AMAmp2 { get; set; }
+        public string AMAmp3 { get; set; }
+        public string AMAmp4 { get; set; }
+
         public bool? AMBearing1 { get; set; }
         public bool? AMBearing2 { get; set; }
         public bool? AMBearing3 { get; set; }

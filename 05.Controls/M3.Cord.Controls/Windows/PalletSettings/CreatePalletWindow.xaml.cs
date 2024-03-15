@@ -64,7 +64,7 @@ namespace M3.Cord.Windows
                 if (_pallet.TotalCH.Value > 125)
                 {
                     var win = M3CordApp.Windows.MessageBox;
-                    win.Setup("Not allow to has Total CH over than 125 per pallet.");
+                    win.Setup("Not allow to has Total CH over than 150 per pallet.");
                     win.ShowDialog();
                     return;
                 }

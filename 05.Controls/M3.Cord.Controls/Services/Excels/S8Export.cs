@@ -300,23 +300,23 @@ namespace M3.Cord.Services.Excels
                             ws2.Cells["Q7"].Value = pickup.TempHN;
 
 
-                            ws2.Cells["N9"].Value = (pickup.AMV1.HasValue) ? 
-                                string.Format("{0:n2} V (โวลด์)", pickup.AMV1.Value) : null;
-                            ws2.Cells["N10"].Value = (pickup.AMV2.HasValue) ?
-                                string.Format("{0:n2} V (โวลด์)", pickup.AMV2.Value) : null;
-                            ws2.Cells["N11"].Value = (pickup.AMV3.HasValue) ?
-                                string.Format("{0:n2} V (โวลด์)", pickup.AMV3.Value) : null;
-                            ws2.Cells["N12"].Value = (pickup.AMV4.HasValue) ?
-                                string.Format("{0:n2} V (โวลด์)", pickup.AMV4.Value) : null;
+                            ws2.Cells["N9"].Value = !string.IsNullOrEmpty(pickup.AMV1) ? 
+                                string.Format("{0} V (โวลด์)", pickup.AMV1) : null;
+                            ws2.Cells["N10"].Value = !string.IsNullOrEmpty(pickup.AMV2) ?
+                                string.Format("{0} V (โวลด์)", pickup.AMV2) : null;
+                            ws2.Cells["N11"].Value = !string.IsNullOrEmpty(pickup.AMV3) ?
+                                string.Format("{0} V (โวลด์)", pickup.AMV3) : null;
+                            ws2.Cells["N12"].Value = !string.IsNullOrEmpty(pickup.AMV4) ?
+                                string.Format("{0} V (โวลด์)", pickup.AMV4) : null;
 
-                            ws2.Cells["P9"].Value = (pickup.AMAmp1.HasValue) ?
-                                string.Format("{0:n2} Amp (แอมแปร์)", pickup.AMAmp1.Value) : null;
-                            ws2.Cells["P10"].Value = (pickup.AMAmp2.HasValue) ?
-                                string.Format("{0:n2} Amp (แอมแปร์)", pickup.AMAmp2.Value) : null;
-                            ws2.Cells["P11"].Value = (pickup.AMAmp3.HasValue) ?
-                                string.Format("{0:n2} Amp (แอมแปร์)", pickup.AMAmp3.Value) : null;
-                            ws2.Cells["P12"].Value = (pickup.AMAmp4.HasValue) ?
-                                string.Format("{0:n2} Amp (แอมแปร์)", pickup.AMAmp4.Value) : null;
+                            ws2.Cells["P9"].Value = !string.IsNullOrEmpty(pickup.AMAmp1) ?
+                                string.Format("{0} Amp (แอมแปร์)", pickup.AMAmp1) : null;
+                            ws2.Cells["P10"].Value = !string.IsNullOrEmpty(pickup.AMAmp2) ?
+                                string.Format("{0} Amp (แอมแปร์)", pickup.AMAmp2) : null;
+                            ws2.Cells["P11"].Value = !string.IsNullOrEmpty(pickup.AMAmp3) ?
+                                string.Format("{0} Amp (แอมแปร์)", pickup.AMAmp3) : null;
+                            ws2.Cells["P12"].Value = !string.IsNullOrEmpty(pickup.AMAmp4) ?
+                                string.Format("{0} Amp (แอมแปร์)", pickup.AMAmp4) : null;
 
                             if (pickup.AMBearing1.HasValue)
                             {

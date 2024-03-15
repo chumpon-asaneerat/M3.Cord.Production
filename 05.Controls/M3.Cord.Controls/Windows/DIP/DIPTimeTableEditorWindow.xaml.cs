@@ -104,12 +104,20 @@ namespace M3.Cord.Windows
             var dt = DateTime.Now;
             _EndTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
 
-            dtDate.SelectedDate = DateTime.Today;
             var hours = TimeHour.Gets();
             cbTimes.ItemsSource = hours;
 
             _item = item;
             this.DataContext = _item;
+
+            if (editMode)
+            {
+                dtDate.SelectedDate = (_item.PeriodTime.HasValue) ? _item.PeriodTime.Value.Date : DateTime.Today;
+            }
+            else
+            {
+                dtDate.SelectedDate = DateTime.Today;
+            }
 
             if (!editMode)
             {

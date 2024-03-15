@@ -16,8 +16,10 @@ M3 Cord Production System #1036
 M3 Cord Production System #1035
 - 
 
+[commited]
 M3 Cord Production System #1034
-- 
+- Fixed bug #1
+  - Wet Pickup Change Type AMV 1-4, AMAmp 1-4
 
 [commited]
 M3 Cord Production System #1033
