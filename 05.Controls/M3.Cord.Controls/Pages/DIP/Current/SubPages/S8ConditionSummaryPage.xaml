@@ -404,6 +404,7 @@
                                         <GridViewColumn Header="Treat (cord)" CellTemplate="{StaticResource S8P_TreatValue}" />
                                         <GridViewColumn Header="Doffing Length" CellTemplate="{StaticResource S8P_DoffingLengthValue}" />
                                         <GridViewColumn Header="Weight (kg)" CellTemplate="{StaticResource S8P_WeightValue}" />
+                                        <GridViewColumn Header="Spindle (use)" CellTemplate="{StaticResource S8P_SpindleValue}" />
 
                                         <GridViewColumn Width="Auto"
                                                         CellTemplate="{StaticResource S8ProductColumns}"
