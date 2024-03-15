@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              d:DesignHeight="1800"
-             d:DesignWidth="1240"
+             d:DesignWidth="1600"
              mc:Ignorable="d">
     <UserControl.Resources>
         <!--  LOCAL STYLES  -->
@@ -1767,7 +1767,7 @@
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="28" Grid.Column="5">
-                <TextBox Width="220" Text="{Binding S8DippingNo2NipFrontActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2NipFrontActual}" />
             </Border>
             <Border Grid.Row="28" Grid.Column="6">
                 <TextBox Width="220"
@@ -1775,7 +1775,7 @@
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="28" Grid.Column="7">
-                <TextBox Width="220" Text="{Binding S8DippingNo2NipFrontActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2NipFrontActual2}" />
             </Border>
             <!--#endregion-->
 
@@ -1820,7 +1820,7 @@
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="29" Grid.Column="5">
-                <TextBox Width="220" Text="{Binding S8DippingNo2NipBackActual, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2NipBackActual}" />
             </Border>
             <Border Grid.Row="29" Grid.Column="6">
                 <TextBox Width="220"
@@ -1828,7 +1828,7 @@
                          IsReadOnly="True" />
             </Border>
             <Border Grid.Row="29" Grid.Column="7">
-                <TextBox Width="220" Text="{Binding S8DippingNo2NipBackActual2, StringFormat='{}{0:#,##0.##}'}" />
+                <TextBox Width="220" Text="{Binding S8DippingNo2NipBackActual2}" />
             </Border>
             <!--#endregion-->
 

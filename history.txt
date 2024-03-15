@@ -10,8 +10,10 @@ M3 Cord Production System #1038
 M3 Cord Production System #1037
 - 
 
+[commited]
 M3 Cord Production System #1036
-- 
+- Fixed bug #3
+  - DIP Condition 10.2, 10.3 (S8 Dip No 2 Nip Front/Back) Change Type.
 
 [commited]
 M3 Cord Production System #1035

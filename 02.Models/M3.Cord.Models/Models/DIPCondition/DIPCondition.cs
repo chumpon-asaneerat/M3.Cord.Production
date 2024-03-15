@@ -159,11 +159,13 @@ namespace M3.Cord.Models
 		public decimal? S8DrawNipActual { get; set; }
 		public decimal? S8DrawNipSet2 { get; set; }
 		public decimal? S8DrawNipActual2 { get; set; }
+
 		public bool? S8DippingNo1ConcentrationSC { get; set; }
 		public string S8DippingNo1ConcentrationSet { get; set; }
 		public string S8DippingNo1ConcentrationActual { get; set; }
 		public string S8DippingNo1ConcentrationSet2 { get; set; }
 		public string S8DippingNo1ConcentrationActual2 { get; set; }
+		
 		public bool? S8DippingNo1NipFrontSC { get; set; }
 		public string S8DippingNo1NipFrontSet { get; set; }
 		public decimal? S8DippingNo1NipFrontActual { get; set; }
@@ -184,17 +186,19 @@ namespace M3.Cord.Models
 		public string S8DippingNo2ConcentrationActual { get; set; }
 		public string S8DippingNo2ConcentrationSet2 { get; set; }
 		public string S8DippingNo2ConcentrationActual2 { get; set; }
+
 		public bool? S8DippingNo2NipFrontSC { get; set; }
 		public string S8DippingNo2NipFrontSet { get; set; }
-		public decimal? S8DippingNo2NipFrontActual { get; set; }
-		public string S8DippingNo2NipFrontSet2 { get; set; }
-		public decimal? S8DippingNo2NipFrontActual2 { get; set; }
-		public bool? S8DippingNo2NipBackSC { get; set; }
+		public string S8DippingNo2NipFrontActual { get; set; } // Change Type 2024-03-15
+        public string S8DippingNo2NipFrontSet2 { get; set; }
+		public string S8DippingNo2NipFrontActual2 { get; set; } // Change Type 2024-03-15
+        public bool? S8DippingNo2NipBackSC { get; set; }
 		public string S8DippingNo2NipBackSet { get; set; }
-		public decimal? S8DippingNo2NipBackActual { get; set; }
-		public string S8DippingNo2NipBackSet2 { get; set; }
-		public decimal? S8DippingNo2NipBackActual2 { get; set; }
-		public bool? S8DippingNo2WPUstdSC { get; set; }
+		public string S8DippingNo2NipBackActual { get; set; } // Change Type 2024-03-15
+        public string S8DippingNo2NipBackSet2 { get; set; }
+		public string S8DippingNo2NipBackActual2 { get; set; } // Change Type 2024-03-15
+
+        public bool? S8DippingNo2WPUstdSC { get; set; }
 		public string S8DippingNo2WPUstdSet { get; set; }
 		public decimal? S8DippingNo2WPUstdActual { get; set; }
 		public string S8DippingNo2WPUstdSet2 { get; set; }
