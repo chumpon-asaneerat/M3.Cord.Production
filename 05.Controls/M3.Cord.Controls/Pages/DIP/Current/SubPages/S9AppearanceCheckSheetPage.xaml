@@ -80,9 +80,7 @@
                         <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNo}" />
                         <GridViewColumn Header="ใช้ไม่ได้" CellTemplate="{StaticResource SPUnusable}" />
                         <GridViewColumn Header="ฟอร์มดี" CellTemplate="{StaticResource CheckGood}" />
-                        <!--
                         <GridViewColumn Header="ฟอร์มไม่ดี" CellTemplate="{StaticResource CheckBad}" />
-                        -->
                         <GridViewColumn Header="ด้าย 2 สี" CellTemplate="{StaticResource Check2Color}" />
                         <GridViewColumn Header="เคบะ" CellTemplate="{StaticResource CheckKeiba}" />
                         <GridViewColumn Header="น้ำหนักไม่พอ" CellTemplate="{StaticResource CheckWeight}" />
@@ -90,6 +88,7 @@
                         <GridViewColumn Header="ไข้วหลัง" CellTemplate="{StaticResource CheckBackTwist}" />
                         <GridViewColumn Header="Snarl" CellTemplate="{StaticResource CheckSnarl}" />
                         <GridViewColumn Header="หลอด" CellTemplate="{StaticResource CheckTube}" />
+                        <GridViewColumn Header="หมายเหตุ" CellTemplate="{StaticResource S9AppearanceRemark}" />
                     </GridView>
                 </ListView.View>
             </ListView>

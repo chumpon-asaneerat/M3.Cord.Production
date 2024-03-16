@@ -112,6 +112,7 @@ namespace M3.Cord.Pages
                                     item.CheckBackTwist = existItem.CheckBackTwist;
                                     item.CheckSnarl = existItem.CheckSnarl;
                                     item.CheckTube = existItem.CheckTube;
+                                    item.Remark = existItem.Remark;
                                 }
                             }
                         }

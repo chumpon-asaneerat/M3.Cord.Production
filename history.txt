@@ -4,8 +4,12 @@ M3 Cord Production System #1040
 M3 Cord Production System #1039
 - 
 
+[commited]
 M3 Cord Production System #1038
-- 
+- Fixed S9 Appearance Check sheet items
+  - Chante CheckWeight to string
+  - Add Remark column
+  - Update Export function
 
 [commited]
 M3 Cord Production System #1037

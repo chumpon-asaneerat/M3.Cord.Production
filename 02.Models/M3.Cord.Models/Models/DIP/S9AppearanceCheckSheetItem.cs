@@ -82,7 +82,25 @@ namespace M3.Cord.Models
                 Raise(() => this.CheckGood);
             }
         }
-        public bool CheckBad { get; set; } = false;  // not used anymore
+        private bool _CheckBad = false;
+        public bool CheckBad
+        {
+            get
+            {
+                return _CheckBad;
+            }
+            set
+            {
+                if (_SPUnusable) return;
+                if (value)
+                {
+                    SetBadForm();
+                }
+
+                _CheckBad = value;
+                Raise(() => this.CheckBad);
+            }
+        }
 
         private bool _Check2Color = false;
         public bool Check2Color 
@@ -124,8 +142,8 @@ namespace M3.Cord.Models
             }
         }
 
-        private bool _CheckWeight = false;
-        public bool CheckWeight
+        private string _CheckWeight = null;
+        public string CheckWeight
         {
             get
             {
@@ -134,12 +152,12 @@ namespace M3.Cord.Models
             set
             {
                 if (_SPUnusable) return;
-                if (value)
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     SetBadForm();
                 }
 
-                _CheckWeight = value;
+                _CheckWeight = string.IsNullOrWhiteSpace(value) ? null : value;
                 Raise(() => this.CheckWeight);
             }
         }
@@ -224,6 +242,8 @@ namespace M3.Cord.Models
             }
         }
 
+        public string Remark { get; set; }
+
         #endregion
 
         #region Private Methods
@@ -231,15 +251,16 @@ namespace M3.Cord.Models
         private void MarkUnuseableSP()
         {
             _CheckGood = false;
-            //_CheckBad = false;
+            _CheckBad = false;
             _Check2Color = false;
             _CheckKeiba = false;
-            _CheckWeight = false;
+            _CheckWeight = null;
             _CheckFrontTwist = false;
             _CheckBackTwist = false;
             _CheckSnarl = false;
             _CheckTube = false;
 
+            Raise(() => this.CheckBad);
             Raise(() => this.CheckGood);
             Raise(() => this.Check2Color);
             Raise(() => this.CheckKeiba);
@@ -252,15 +273,16 @@ namespace M3.Cord.Models
 
         private void ClearDefects()
         {
-            //_CheckBad = false;
+            _CheckBad = false;
             _Check2Color = false;
             _CheckKeiba = false;
-            _CheckWeight = false;
+            _CheckWeight = null;
             _CheckFrontTwist = false;
             _CheckBackTwist = false;
             _CheckSnarl = false;
             _CheckTube = false;
 
+            Raise(() => this.CheckBad);
             Raise(() => this.Check2Color);
             Raise(() => this.CheckKeiba);
             Raise(() => this.CheckWeight);
@@ -370,6 +392,7 @@ namespace M3.Cord.Models
             p.Add("@CheckSnarl", value.CheckSnarl);
             p.Add("@CheckTube", value.CheckTube);
             p.Add("@SPUnusable", value.SPUnusable);
+            p.Add("@Remark", value.Remark);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);

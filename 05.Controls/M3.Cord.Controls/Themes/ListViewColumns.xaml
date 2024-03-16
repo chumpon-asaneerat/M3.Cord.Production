@@ -304,12 +304,12 @@
         </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="CheckWeight">
-        <StackPanel HorizontalAlignment="Stretch" Width="70">
-            <ctrl:CheckBoxEx Style="{StaticResource CommonCheckBoxEx2StateCross}"
-                             Foreground="{Binding TextColor}"
-                             IsChecked="{Binding CheckWeight}"
-                             HorizontalAlignment="Center"
-                             Width="50" />
+        <StackPanel HorizontalAlignment="Stretch" Width="100">
+            <TextBox Style="{StaticResource CommonTextBox}"
+                     Foreground="{Binding TextColor}"
+                     Text="{Binding CheckWeight}"
+                     HorizontalAlignment="Stretch"
+                     Width="Auto" />
         </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="CheckFrontTwist">
@@ -346,6 +346,15 @@
                              IsChecked="{Binding CheckTube}"
                              HorizontalAlignment="Center"
                              Width="50" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="S9AppearanceRemark">
+        <StackPanel HorizontalAlignment="Stretch" Width="100">
+            <TextBox Style="{StaticResource CommonTextBox}"
+                     Foreground="{Binding TextColor}"
+                     Text="{Binding Remark}"
+                     HorizontalAlignment="Stretch"
+                     Width="Auto" />
         </StackPanel>
     </DataTemplate>
 
