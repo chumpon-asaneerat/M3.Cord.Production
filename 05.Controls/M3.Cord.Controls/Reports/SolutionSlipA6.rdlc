@@ -58,7 +58,8 @@
                       <TextRun>
                         <Value>=First(Fields!SolutionName.Value, "main")</Value>
                         <Style>
-                          <FontSize>13pt</FontSize>
+                          <FontSize>16pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -68,9 +69,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>SolutionName</rd:DefaultName>
-                <Top>0.1cm</Top>
+                <Top>0.05cm</Top>
                 <Left>6.79226cm</Left>
-                <Height>0.7cm</Height>
+                <Height>0.78cm</Height>
                 <Width>6.31148cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
@@ -152,7 +153,8 @@
                       <TextRun>
                         <Value>=First(Fields!ProductCode.Value, "main")</Value>
                         <Style>
-                          <FontSize>13pt</FontSize>
+                          <FontSize>16pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -161,9 +163,9 @@
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <Top>0.1cm</Top>
+                <Top>0.05cm</Top>
                 <Left>6.79226cm</Left>
-                <Height>0.7cm</Height>
+                <Height>0.78cm</Height>
                 <Width>6.31148cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
@@ -246,7 +248,8 @@
                       <TextRun>
                         <Value>=First(Fields!SolutionLot.Value, "main")</Value>
                         <Style>
-                          <FontSize>13pt</FontSize>
+                          <FontSize>16pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -255,9 +258,9 @@
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <Top>0.1cm</Top>
+                <Top>0.05cm</Top>
                 <Left>6.79226cm</Left>
-                <Height>0.7cm</Height>
+                <Height>0.78cm</Height>
                 <Width>6.31148cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
@@ -341,7 +344,8 @@
                         <Value>=IIF(First(Fields!DipSolutionQty.Value, "main") Is Nothing,""
 ,Format(CDec(First(Fields!DipSolutionQty.Value, "main")),"#,##0.##")+" Kg")</Value>
                         <Style>
-                          <FontSize>13pt</FontSize>
+                          <FontSize>16pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -350,9 +354,9 @@
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <Top>0.1cm</Top>
+                <Top>0.05cm</Top>
                 <Left>6.79226cm</Left>
-                <Height>0.7cm</Height>
+                <Height>0.78cm</Height>
                 <Width>6.31148cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
@@ -435,7 +439,8 @@
                       <TextRun>
                         <Value>=First(Fields!MixDate.Value, "main")</Value>
                         <Style>
-                          <FontSize>13pt</FontSize>
+                          <FontSize>16pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                           <Format>dd/MM/yyyy</Format>
                         </Style>
                       </TextRun>
@@ -445,9 +450,9 @@
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <Top>0.1cm</Top>
+                <Top>0.05cm</Top>
                 <Left>6.79226cm</Left>
-                <Height>0.7cm</Height>
+                <Height>0.78cm</Height>
                 <Width>6.31148cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
@@ -530,7 +535,8 @@
                       <TextRun>
                         <Value>=First(Fields!QualifiedDate.Value, "main")</Value>
                         <Style>
-                          <FontSize>13pt</FontSize>
+                          <FontSize>16pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                           <Format>dd/MM/yyyy</Format>
                         </Style>
                       </TextRun>
@@ -540,9 +546,9 @@
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <Top>0.1cm</Top>
+                <Top>0.05cm</Top>
                 <Left>6.79226cm</Left>
-                <Height>0.7cm</Height>
+                <Height>0.78cm</Height>
                 <Width>3.08931cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
@@ -565,7 +571,8 @@
                       <TextRun>
                         <Value>=First(Fields!QualifiedDate.Value, "main")</Value>
                         <Style>
-                          <FontSize>13pt</FontSize>
+                          <FontSize>16pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                           <Format>HH:mm</Format>
                         </Style>
                       </TextRun>
@@ -575,9 +582,9 @@
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <Top>0.1cm</Top>
+                <Top>0.05cm</Top>
                 <Left>9.97682cm</Left>
-                <Height>0.7cm</Height>
+                <Height>0.78cm</Height>
                 <Width>3.08931cm</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
@@ -660,7 +667,8 @@
                       <TextRun>
                         <Value>=First(Fields!ExpireDate.Value, "main")</Value>
                         <Style>
-                          <FontSize>13pt</FontSize>
+                          <FontSize>16pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                           <Format>dd/MM/yyyy</Format>
                         </Style>
                       </TextRun>
@@ -670,9 +678,9 @@
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <Top>0.1cm</Top>
+                <Top>0.05cm</Top>
                 <Left>6.79226cm</Left>
-                <Height>0.7cm</Height>
+                <Height>0.78cm</Height>
                 <Width>3.08931cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
@@ -695,7 +703,8 @@
                       <TextRun>
                         <Value>=First(Fields!ExpireDate.Value, "main")</Value>
                         <Style>
-                          <FontSize>13pt</FontSize>
+                          <FontSize>16pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                           <Format>HH:mm</Format>
                         </Style>
                       </TextRun>
@@ -705,9 +714,9 @@
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <Top>0.1cm</Top>
+                <Top>0.05cm</Top>
                 <Left>9.97682cm</Left>
-                <Height>0.7cm</Height>
+                <Height>0.78cm</Height>
                 <Width>3.08931cm</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
