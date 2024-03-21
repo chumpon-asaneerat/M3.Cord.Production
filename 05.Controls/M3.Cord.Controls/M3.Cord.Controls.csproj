@@ -535,6 +535,9 @@
     <Compile Include="Services\Excels\SolutionExports.cs" />
     <Compile Include="Services\Excels\Twist1CheckSheetExport.cs" />
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
+    <Compile Include="Windows\ProductEditorWindow.xaml.cs">
+      <DependentUpon>ProductEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\SignIn\ConfirmUserWindow.xaml.cs">
       <DependentUpon>ConfirmUserWindow.xaml</DependentUpon>
     </Compile>
@@ -601,6 +604,9 @@
     </Compile>
     <Compile Include="Windows\Solution\SolutionWeightWindow.xaml.cs">
       <DependentUpon>SolutionWeightWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UserEditorWindow.xaml.cs">
+      <DependentUpon>UserEditorWindow.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reports\CordSamplingDetails.rdlc" />
     <EmbeddedResource Include="Reports\DIPPalletSlipA6.rdlc" />
@@ -1372,6 +1378,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\ProductEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\SignIn\ConfirmUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1489,6 +1499,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Solution\SolutionWeightWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
