@@ -33,6 +33,8 @@ namespace M3.Cord.Models
         public string TreatRoute { get; set; }
         public string TwistSpec { get; set; }
 
+        public string DIPProductCode { get; set; }
+
         #endregion
 
         #region Static Methods
@@ -60,6 +62,55 @@ namespace M3.Cord.Models
             }
 
             var p = new DynamicParameters();
+
+            try
+            {
+                var items = cnn.Query<Product>("GetProducts", p,
+                    commandType: CommandType.StoredProcedure);
+                var data = (null != items) ? items.ToList() : null;
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<Product>();
+            }
+
+            return rets;
+        }
+        /// <summary>
+        /// Gets
+        /// </summary>
+        /// <returns></returns>
+        public static NDbResult<List<Product>> Search(string productCode, string itemYarn)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<Product>> rets = new NDbResult<List<Product>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@ProductCode", string.IsNullOrWhiteSpace(productCode) ? null : productCode);
+            p.Add("@ItemYarn", string.IsNullOrWhiteSpace(itemYarn) ? null : itemYarn);
 
             try
             {
@@ -216,6 +267,7 @@ namespace M3.Cord.Models
             p.Add("@CordStructure", value.CordStructure);
             p.Add("@TreatRoute", value.TreatRoute);
             p.Add("@TwistSpec", value.TwistSpec);
+            p.Add("@DIPProductCode", value.DIPProductCode);
             p.Add("@ProductId", value.ProductId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
 
             p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);

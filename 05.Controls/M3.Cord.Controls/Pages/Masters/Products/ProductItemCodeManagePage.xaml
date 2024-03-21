@@ -29,12 +29,12 @@
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Left"
                             VerticalAlignment="Center">
-                    <!--  SAVE  -->
-                    <ctrl:FontAwesomeButton x:Name="cmdSave"
+                    <!--  Add  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdAdd"
                                             Margin="5,0,0,0"
-                                            IconType="Save"
-                                            Text="Save"
-                                            Click="cmdSave_Click" />
+                                            IconType="Add"
+                                            Text="Add"
+                                            Click="cmdAdd_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
@@ -45,18 +45,25 @@
                            LastChildFill="True"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
-                    <!--  Item Code  -->
-                    <ctrl:NTextBox x:Name="txtItemCode"
+                    <!--  Product Code  -->
+                    <ctrl:NTextBox x:Name="txtProductCode"
                                    DockPanel.Dock="Left"
-                                   CaptionText="Item Code:"
+                                   CaptionText="Product Code:"
                                    TextAlignment="Center"
                                    Width="200" />
-                    <ctrl:FontAwesomeButton x:Name="cmdAdd"
-                                            Click="cmdAdd_Click"
+                    <!--  ITEM YARN  -->
+                    <ctrl:NComboBox x:Name="cbItemYanrs"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Item Yarn:"
+                                    DisplayMemberPath="ItemYarn"
+                                    Width="250"
+                                    SelectionChanged="cbItemYanrs_SelectionChanged" />
+                    <ctrl:FontAwesomeButton x:Name="cmdSearch"
+                                            Click="cmdSearch_Click"
                                             Margin="5,0,0,0"
-                                            IconType="Add"
+                                            IconType="Search"
                                             VerticalAlignment="Bottom"
-                                            Text="Add" />
+                                            Text="Search" />
                     <Grid />
                 </DockPanel>
             </DockPanel>
@@ -69,41 +76,98 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Item Code" Width="Auto">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBox Margin="2"
-                                             Text="{Binding ProductCode}"
-                                             Style="{StaticResource CommonTextBox}"
-                                             Width="200" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Procuct Name" Width="Auto">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBox Margin="2"
-                                             Text="{Binding ProductName}"
-                                             Style="{StaticResource CommonTextBox}"
-                                             Width="200" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="">
+                        <!--  BUTTONS  -->
+                        <GridViewColumn Header="" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
+                                        <!--  Edit  -->
+                                        <ctrl:FontAwesomeButton x:Name="cmdEdit"
+                                                                IconType="Edit"
+                                                                Margin="5,0"
+                                                                Width="40"
+                                                                Height="30"
+                                                                Click="cmdEdit_Click" />
                                         <!--  DELETE  -->
                                         <ctrl:FontAwesomeButton x:Name="cmdDelete"
                                                                 IconType="Delete"
-                                                                Text="Delete"
                                                                 Margin="5,0"
-                                                                Width="150"
+                                                                Width="40"
                                                                 Height="30"
                                                                 Click="cmdDelete_Click" />
                                     </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--  PRODUCT CODE  -->
+                        <GridViewColumn Header="Product Code" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="2"
+                                               Text="{Binding ProductCode}"
+                                               Width="200" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--  PRODUCT CODE (DIP)  -->
+                        <GridViewColumn Header="Procuct Code (DIP)" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="2"
+                                               Text="{Binding DIPProductCode}"
+                                               Width="200" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--  PRODUCT NAME  -->
+                        <GridViewColumn Header="Procuct Name" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="2"
+                                               Text="{Binding ProductName}"
+                                               Width="200" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--  Item Yarn  -->
+                        <GridViewColumn Header="Item Yarn" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="2"
+                                               Text="{Binding ItemYarn}"
+                                               Width="250" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--  CORD STRUCTURE  -->
+                        <GridViewColumn Header="Cord Structure" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="2"
+                                               Text="{Binding CordStructure}"
+                                               Width="250" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--  TWIST SPEC  -->
+                        <GridViewColumn Header="Twist Spec" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="2"
+                                               Text="{Binding TwistSpec}"
+                                               Width="250" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--  TRACE ROUTES  -->
+                        <GridViewColumn Header="Route" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="2"
+                                               Text="{Binding TreatRoute}"
+                                               Width="250" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

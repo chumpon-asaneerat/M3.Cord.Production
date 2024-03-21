@@ -44,6 +44,7 @@ namespace M3.Cord.Pages
 
         #region Internal Variables
 
+        private List<CordItemYarn> itemYarns = null;
         private List<Product> _items = null;
 
         #endregion
@@ -69,19 +70,20 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMasterMenu();
         }
 
-        private void cmdAdd_Click(object sender, RoutedEventArgs e)
+        private void cmdSearch_Click(object sender, RoutedEventArgs e)
         {
-            string itemCode = txtItemCode.Text.Trim();
-            txtItemCode.Text = string.Empty;
-            if (string.IsNullOrEmpty(itemCode)) return;
-
-            var item = new Product() { ProductId = new int?(), ProductCode = itemCode };
-            Product.Save(item);
-
             this.InvokeAction(() =>
             {
                 RefreshGrid();
             });
+        }
+
+        private void cmdEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as FontAwesomeButton;
+            if (null == btn) return;
+            var item = btn.DataContext as Product;
+            if (null == item) return;
         }
 
         private void cmdDelete_Click(object sender, RoutedEventArgs e)
@@ -89,6 +91,8 @@ namespace M3.Cord.Pages
             var btn = sender as FontAwesomeButton;
             if (null == btn) return;
             var item = btn.DataContext as Product;
+            if (null == item) return;
+
             Product.Delete(item);
 
             this.InvokeAction(() =>
@@ -97,19 +101,25 @@ namespace M3.Cord.Pages
             });
         }
 
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (null != _items && _items.Count > 0)
+
+        }
+
+        #endregion
+
+        #region TextBox Handlers
+
+        #endregion
+
+        #region Combobox Handlers
+
+        private void cbItemYanrs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.InvokeAction(() =>
             {
-                foreach (var item in _items)
-                {
-                    Product.Save(item);
-                }
-                this.InvokeAction(() =>
-                {
-                    RefreshGrid();
-                });
-            }
+                RefreshGrid();
+            });
         }
 
         #endregion
@@ -118,9 +128,28 @@ namespace M3.Cord.Pages
 
         private void RefreshGrid()
         {
+            string productCode = txtProductCode.Text;
+            productCode = (string.IsNullOrEmpty(productCode)) ? productCode.Trim() : null;
+
+            var cordItemYarn = cbItemYanrs.SelectedItem as CordItemYarn;
+            string itemYarn = (null != cordItemYarn) ? cordItemYarn.ItemYarn : null;
+
             grid.ItemsSource = null;
-            _items = Product.Gets().Value();
+            _items = Product.Search(productCode, itemYarn).Value();
             grid.ItemsSource = _items;
+        }
+
+        private void LoadCombobox()
+        {
+            cbItemYanrs.ItemsSource = null;
+
+            itemYarns = CordItemYarn.Gets().Value();
+            cbItemYanrs.ItemsSource = itemYarns;
+
+            this.InvokeAction(() =>
+            {
+                if (null != itemYarns && itemYarns.Count > 0) cbItemYanrs.SelectedIndex = 0;
+            });
         }
 
         #endregion
@@ -129,6 +158,7 @@ namespace M3.Cord.Pages
 
         public void Setup()
         {
+            LoadCombobox();
             RefreshGrid();
         }
 
