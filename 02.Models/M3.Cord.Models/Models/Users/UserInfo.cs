@@ -178,6 +178,9 @@ namespace M3.Cord.Models
             }
         }
 
+        public bool CanEdit { get; set; } = false;
+        public bool CanDelete { get; set; } = false;
+
         #endregion
 
         #region Static Methods
@@ -375,31 +378,37 @@ namespace M3.Cord.Models
             else if (currRoleId.HasValue && currRoleId.Value == 1)
             {
                 // General Admin
-                query += "  AND (RoleId > 1" + Environment.NewLine;
+                query += "  AND (RoleId >= 1" + Environment.NewLine;
+                /*
                 if (currUserId.HasValue)
                 {
                     query += " OR UserId = " + currUserId.Value.ToString() + Environment.NewLine;
                 }
+                */
                 query += ") " + Environment.NewLine;
             }
             else if (currRoleId.HasValue && currRoleId.Value == 10)
             {
                 // Supervisor
-                query += "  AND (RoleId > 10" + Environment.NewLine;
+                query += "  AND (RoleId >= 10" + Environment.NewLine;
+                /*
                 if (currUserId.HasValue)
                 {
                     query += " OR UserId = " + currUserId.Value.ToString() + Environment.NewLine;
                 }
+                */
                 query += ") " + Environment.NewLine;
             }
             else
             {
                 // User
                 query += "  AND (RoleId >= 20" + Environment.NewLine;
+                /*
                 if (currUserId.HasValue)
                 {
                     query += " OR UserId = " + currUserId.Value.ToString() + Environment.NewLine;
                 }
+                */
                 query += ") " + Environment.NewLine;
             }
 
@@ -417,6 +426,111 @@ namespace M3.Cord.Models
             {
                 var data = cnn.Query<UserInfo>(query, p,
                     commandType: CommandType.Text).AsList();
+
+                if (null != data && data.Count > 0) 
+                {
+                    foreach (var item in data)
+                    {
+                        if (item == null) continue;
+
+                        // Common Logic Check Role if role is less than current user so cannot edit/delete
+                        item.CanEdit = false;
+                        item.CanDelete = false;
+
+                        // Recheck same role cannot edit/delete
+                        if (item.RoleId == 1 && item.UserId == 1 && currUserId.HasValue && currUserId.Value == 1)
+                        {
+                            if (currRoleId.HasValue && currRoleId.Value == item.RoleId)
+                            {
+                                // Special Admin
+                                item.CanEdit = true;
+                                item.CanDelete = false;
+                                if (currUserId.HasValue && currUserId.Value == 1)
+                                {
+                                    continue; // skip
+                                }
+                            }
+                        }
+                        else if (item.RoleId == 1)
+                        {
+                            // General Admin
+                            item.CanDelete = false;
+                            item.CanEdit = false;
+
+                            if (currRoleId.HasValue) // Has Role
+                            {
+                                if (currRoleId.Value == item.RoleId)
+                                {
+                                    // Same Role and Same User Id
+                                    if (currUserId.HasValue && 
+                                        (currUserId.Value == item.UserId || 
+                                         currUserId.Value == 1))
+                                    {
+                                        item.CanEdit = true; // current user is admin so can edit this item
+                                        item.CanDelete = currUserId.Value == 1; // special admin allow to delete
+                                    }
+                                }
+                                else if (currRoleId.Value < item.RoleId)
+                                {
+                                    // All User that has less Role right allow to edit/delete
+                                    item.CanEdit = true;
+                                    item.CanDelete = true;
+                                }
+                            }
+                        }
+                        else if (item.RoleId >= 10)
+                        {
+                            // Supervisor
+                            item.CanDelete = false;
+                            item.CanEdit = false;
+
+                            if (currRoleId.HasValue) // Has Role
+                            {
+                                if (currRoleId.Value == item.RoleId)
+                                {
+                                    // Same Role and Same User Id
+                                    if (currUserId.HasValue && currUserId.Value == item.UserId)
+                                    {
+                                        item.CanEdit = true;
+                                        item.CanDelete = false;
+                                    }
+                                }
+                                else if (currRoleId.Value < item.RoleId)
+                                {
+                                    // All User that has less Role right allow to edit/delete
+                                    item.CanEdit = true;
+                                    item.CanDelete = true;
+                                }
+                            }
+                        }
+                        else //if (item.RoleId == 20)
+                        {
+                            // User
+                            item.CanDelete = false;
+                            item.CanEdit = false;
+
+                            if (currRoleId.HasValue) // Has Role
+                            {
+                                if (currRoleId.Value == item.RoleId)
+                                {
+                                    // Same Role and Same User Id
+                                    if (currUserId.HasValue && currUserId.Value == item.UserId)
+                                    {
+                                        item.CanEdit = true;
+                                        item.CanDelete = false;
+                                    }
+                                }
+                                else if (currRoleId.Value < item.RoleId)
+                                {
+                                    // All User that has less Role right allow to edit/delete
+                                    item.CanEdit = true;
+                                    item.CanDelete = true;
+                                }
+                            }
+                        }
+                    }
+                }
+
                 rets.Success(data);
             }
             catch (Exception ex)

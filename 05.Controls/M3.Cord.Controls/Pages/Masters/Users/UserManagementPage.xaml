@@ -127,6 +127,7 @@
                                                                 Margin="5,0"
                                                                 Width="40"
                                                                 Height="30"
+                                                                IsEnabled="{Binding CanEdit}"
                                                                 Click="cmdEdit_Click" />
                                         <!--  DELETE  -->
                                         <ctrl:FontAwesomeButton x:Name="cmdDelete"
@@ -134,6 +135,7 @@
                                                                 Margin="5,0"
                                                                 Width="40"
                                                                 Height="30"
+                                                                IsEnabled="{Binding CanDelete}"
                                                                 Click="cmdDelete_Click" />
                                     </StackPanel>
                                 </DataTemplate>
