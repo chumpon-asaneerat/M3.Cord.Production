@@ -22,8 +22,11 @@ M3 Cord Production System #1044
 M3 Cord Production System #1043
 - 
 
+[commited]
 M3 Cord Production System #1042
-- 
+- Implements Product/User Editor #2
+- Fixed Master - DIP document mismatch header caption - S8BeforeCondtionStd
+
 
 [commited]
 M3 Cord Production System #1041

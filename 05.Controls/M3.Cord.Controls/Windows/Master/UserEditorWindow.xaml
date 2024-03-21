@@ -1,4 +1,4 @@
-﻿<Window x:Class="M3.Cord.Windows.ProductEditorWindow"
+﻿<Window x:Class="M3.Cord.Windows.UserEditorWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
         xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
         mc:Ignorable="d"
-        Title="Product Information"
+        Title="User Information"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
         ResizeMode="NoResize"
@@ -14,7 +14,7 @@
         WindowStartupLocation="CenterOwner"
         Height="300"
         Width="850">
-    <page:NPage HeaderText="Product Information">
+    <page:NPage HeaderText="User Information">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
             <DockPanel LastChildFill="True"
@@ -40,7 +40,6 @@
                                     DockPanel.Dock="Left"
                                     CaptionText="Customer:"
                                     DisplayMemberPath="CustomerName"
-                                    SelectionChanged="cbCustomers_SelectionChanged"
                                     Width="250" />
                     <Grid />
                 </DockPanel>

@@ -522,6 +522,9 @@
     <Compile Include="Pages\Tests\TestUIPage.xaml.cs">
       <DependentUpon>TestUIPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Masters\Users\UserManagementPage.xaml.cs">
+      <DependentUpon>UserManagementPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Warehouse\WarehouseYarnStockPage.xaml.cs">
       <DependentUpon>WarehouseYarnStockPage.xaml</DependentUpon>
     </Compile>
@@ -535,7 +538,7 @@
     <Compile Include="Services\Excels\SolutionExports.cs" />
     <Compile Include="Services\Excels\Twist1CheckSheetExport.cs" />
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
-    <Compile Include="Windows\ProductEditorWindow.xaml.cs">
+    <Compile Include="Windows\Master\ProductEditorWindow.xaml.cs">
       <DependentUpon>ProductEditorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SignIn\ConfirmUserWindow.xaml.cs">
@@ -605,7 +608,7 @@
     <Compile Include="Windows\Solution\SolutionWeightWindow.xaml.cs">
       <DependentUpon>SolutionWeightWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\UserEditorWindow.xaml.cs">
+    <Compile Include="Windows\Master\UserEditorWindow.xaml.cs">
       <DependentUpon>UserEditorWindow.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reports\CordSamplingDetails.rdlc" />
@@ -1362,6 +1365,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Masters\Users\UserManagementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Warehouse\WarehouseYarnStockPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1378,7 +1385,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\ProductEditorWindow.xaml">
+    <Page Include="Windows\Master\ProductEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1502,7 +1509,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\UserEditorWindow.xaml">
+    <Page Include="Windows\Master\UserEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

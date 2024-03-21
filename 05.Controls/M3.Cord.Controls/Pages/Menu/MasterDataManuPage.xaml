@@ -201,6 +201,16 @@
                             <Run Text="(Product)" FontSize="18" />
                         </TextBlock>
                     </Button>
+                    <!--  User)  -->
+                    <Button x:Name="cmdUser"
+                            Click="cmdUser_Click"                            
+                            Style="{StaticResource FirstTwistButtonStyle}">
+                        <TextBlock TextAlignment="Center">
+                            <Run Text="User" />
+                            <LineBreak />
+                            <Run Text="Management" FontSize="18" />
+                        </TextBlock>
+                    </Button>
                 </ctrl:NGroupMenuItem>
                 <!--  1st Twist CONDITION  -->
                 <ctrl:NGroupMenuItem HeaderText="1st Twist"

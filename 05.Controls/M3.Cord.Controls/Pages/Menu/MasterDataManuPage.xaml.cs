@@ -74,6 +74,11 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void cmdS1StdCondiction_Click(object sender, RoutedEventArgs e)
         {
             var page = M3CordApp.Pages.S1StdManage;
