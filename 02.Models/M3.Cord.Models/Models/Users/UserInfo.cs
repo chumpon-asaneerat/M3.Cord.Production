@@ -341,7 +341,8 @@ namespace M3.Cord.Models
         /// Search Users.
         /// </summary>
         /// <returns>Returns List of userinfo instance.</returns>
-        public static NDbResult<List<UserInfo>> Search(string search = null, ActiveStatus status = ActiveStatus.All)
+        public static NDbResult<List<UserInfo>> Search(string search = null, ActiveStatus status = ActiveStatus.All,
+            int? currUserId = new int?(), int? currRoleId = new int?())
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -364,12 +365,51 @@ namespace M3.Cord.Models
             string query = string.Empty;
             query += "SELECT * " + Environment.NewLine;
             query += "  FROM UserInfoView " + Environment.NewLine;
-            query += " WHERE UPPER(LTRIM(RTRIM(FullName))) LIKE '%" + sSearch.Trim().ToUpper() +  "%' " + Environment.NewLine;
-            query += "    OR UPPER(LTRIM(RTRIM(UserName))) LIKE '%" + sSearch.Trim().ToUpper() + "%' " + Environment.NewLine;
+            query += " WHERE (UPPER(LTRIM(RTRIM(FullName))) LIKE '%" + sSearch.Trim().ToUpper() +  "%' " + Environment.NewLine;
+            query += "    OR UPPER(LTRIM(RTRIM(UserName))) LIKE '%" + sSearch.Trim().ToUpper() + "%') " + Environment.NewLine;
+
+            if (currRoleId.HasValue && currRoleId.Value == 1 && currUserId.HasValue && currUserId.Value == 1)
+            {
+                // Special Admin
+            }
+            else if (currRoleId.HasValue && currRoleId.Value == 1)
+            {
+                // General Admin
+                query += "  AND (RoleId > 1" + Environment.NewLine;
+                if (currUserId.HasValue)
+                {
+                    query += " OR UserId = " + currUserId.Value.ToString() + Environment.NewLine;
+                }
+                query += ") " + Environment.NewLine;
+            }
+            else if (currRoleId.HasValue && currRoleId.Value == 10)
+            {
+                // Supervisor
+                query += "  AND (RoleId > 10" + Environment.NewLine;
+                if (currUserId.HasValue)
+                {
+                    query += " OR UserId = " + currUserId.Value.ToString() + Environment.NewLine;
+                }
+                query += ") " + Environment.NewLine;
+            }
+            else
+            {
+                // User
+                query += "  AND (RoleId >= 20" + Environment.NewLine;
+                if (currUserId.HasValue)
+                {
+                    query += " OR UserId = " + currUserId.Value.ToString() + Environment.NewLine;
+                }
+                query += ") " + Environment.NewLine;
+            }
+
+            // Active Status
             if (status == ActiveStatus.Active)
                 query += "  AND Active = 1" + Environment.NewLine;
             else if (status == ActiveStatus.Inactive)
                 query += "  AND Active = 0" + Environment.NewLine;
+
+            query += " ORDER BY RoleId, UserName " + Environment.NewLine;
 
             var p = new DynamicParameters();
 

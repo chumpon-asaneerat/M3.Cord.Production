@@ -157,6 +157,15 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
+                        <GridViewColumn Header="Role" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="2"
+                                               Text="{Binding RoleName}"
+                                               Width="150" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <GridViewColumn Header="Active" Width="Auto">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>

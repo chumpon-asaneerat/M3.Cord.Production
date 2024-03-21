@@ -193,8 +193,11 @@ namespace M3.Cord.Pages
                 status = ActiveStatus.Active;
             else status = ActiveStatus.Inactive;
 
+            int? userId = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.UserId : new int?();
+            int? roleId = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.RoleId : new int?();
+
             grid.ItemsSource = null;
-            _items = UserInfo.Search(search, status).Value();
+            _items = UserInfo.Search(search, status, userId, roleId).Value();
             grid.ItemsSource = _items;
         }
 
