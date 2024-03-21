@@ -41,6 +41,7 @@ namespace M3.Cord.Windows
 
         #region Internal Variables
 
+        private List<CordItemYarn> itemYarns = null;
         private Product _item = null;
 
         #endregion
@@ -54,7 +55,58 @@ namespace M3.Cord.Windows
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(_item.ProductCode))
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("กรุณาบันทึก Product Code");
+                win.ShowDialog();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(_item.DIPProductCode))
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("กรุณาบันทึก DIP Product Code");
+                win.ShowDialog();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(_item.ProductName))
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("กรุณาบันทึก Product Name");
+                win.ShowDialog();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(_item.ItemYarn))
+            {
+                var win = M3CordApp.Windows.MessageBox;
+                win.Setup("กรุณาเลือก Item Yarn");
+                win.ShowDialog();
+                return;
+            }
+
             DialogResult = true;
+        }
+
+        #endregion
+
+        private void cbItemYarns_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (null == _item) return;
+            var itemYarn = cbItemYarns.SelectedItem as CordItemYarn;
+            if (null == itemYarn) return;
+            _item.ItemYarn = itemYarn.ItemYarn;
+        }
+
+        #region Private Methods
+
+        private void LoadCombobox()
+        {
+            cbItemYarns.ItemsSource = null;
+            itemYarns = CordItemYarn.Gets().Value();
+            cbItemYarns.ItemsSource = itemYarns;
         }
 
         #endregion
@@ -63,7 +115,18 @@ namespace M3.Cord.Windows
 
         public void Setup(Product value)
         {
+            LoadCombobox();
             _item = value;
+            this.DataContext = _item;
+
+            if (null != _item && null != itemYarns) 
+            {
+                int idx = itemYarns.FindIndex((itemYarn) => itemYarn.ItemYarn == _item.ItemYarn);
+                if (idx != -1) 
+                {
+                    cbItemYarns.SelectedIndex = idx;
+                }
+            }
         }
 
         #endregion

@@ -77,6 +77,12 @@ namespace M3.Cord.Pages
                 RefreshGrid();
             });
         }
+        private void cmdAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var item = new Product();
+            Add(item);
+        }
+
 
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
         {
@@ -84,6 +90,8 @@ namespace M3.Cord.Pages
             if (null == btn) return;
             var item = btn.DataContext as Product;
             if (null == item) return;
+
+            Edit(item);
         }
 
         private void cmdDelete_Click(object sender, RoutedEventArgs e)
@@ -93,17 +101,7 @@ namespace M3.Cord.Pages
             var item = btn.DataContext as Product;
             if (null == item) return;
 
-            Product.Delete(item);
-
-            this.InvokeAction(() =>
-            {
-                RefreshGrid();
-            });
-        }
-
-        private void cmdAdd_Click(object sender, RoutedEventArgs e)
-        {
-
+            Delete(item);
         }
 
         #endregion
@@ -125,6 +123,81 @@ namespace M3.Cord.Pages
         #endregion
 
         #region Private Methods
+
+        private void Add(Product item)
+        {
+            if (null == item) return;
+            var win = M3CordApp.Windows.ProductEditor;
+            win.Setup(item);
+
+            if (win.ShowDialog() == true)
+            {
+                var win2 = M3CordApp.Windows.MessageBox;
+
+                var ret = Product.Save(item);
+                if (null != ret && ret.Ok)
+                    win2.Setup("บันทึกรายการสำเร็จ");
+                else
+                    win2.Setup("บันทึกรายการไม่สำเร็จ");
+
+                win2.ShowDialog();
+
+                this.InvokeAction(() =>
+                {
+                    RefreshGrid();
+                });
+            }
+        }
+
+        private void Edit(Product item)
+        {
+            if (null == item) return;
+            var win = M3CordApp.Windows.ProductEditor;
+            win.Setup(item);
+
+            if (win.ShowDialog() == true)
+            {
+                var win2 = M3CordApp.Windows.MessageBox;
+
+                var ret = Product.Save(item);
+                if (null != ret && ret.Ok)
+                    win2.Setup("บันทึกรายการสำเร็จ");
+                else
+                    win2.Setup("บันทึกรายการไม่สำเร็จ");
+
+                win2.ShowDialog();
+
+                this.InvokeAction(() =>
+                {
+                    RefreshGrid();
+                });
+            }
+        }
+
+        private void Delete(Product item)
+        {
+            if (null == item) return;
+
+            var win = M3CordApp.Windows.MessageBoxOKCancel;
+            win.Setup("ต้องการลบรายการใช่หรือไม่");
+            if (win.ShowDialog() == true)
+            {
+                var win2 = M3CordApp.Windows.MessageBox;
+
+                var ret = Product.Delete(item);
+                if (null != ret && ret.Ok)
+                    win2.Setup("ลบรายการสำเร็จ");
+                else
+                    win2.Setup("ลบรายการไม่สำเร็จ");
+
+                win2.ShowDialog();
+
+                this.InvokeAction(() =>
+                {
+                    RefreshGrid();
+                });
+            }
+        }
 
         private void RefreshGrid()
         {

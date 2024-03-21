@@ -325,9 +325,6 @@ namespace M3.Cord.Models
             {
                 cnn.Execute("DELETE FROM Product WHERE ProductId = @ProductId", p, commandType: CommandType.Text);
                 ret.Success();
-                // Set error number/message
-                ret.ErrNum = p.Get<int>("@errNum");
-                ret.ErrMsg = p.Get<string>("@errMsg");
             }
             catch (Exception ex)
             {

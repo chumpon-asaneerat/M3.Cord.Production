@@ -12,8 +12,36 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="300"
+        Height="500"
         Width="850">
+    <Window.Resources>
+        <!--  LOCAL STYLES  -->
+        <Style TargetType="Border">
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderBrush" Value="DimGray" />
+            <Setter Property="BorderThickness" Value="0.5" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource CommonTextBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource CommonComboBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource CommonCheckBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
     <page:NPage HeaderText="Product Information">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
@@ -34,23 +62,86 @@
             </DockPanel>
             <!--  WORK AREA  -->
             <DockPanel LastChildFill="True">
-                <DockPanel DockPanel.Dock="Top">
-                    <!--  CUSTOMER  -->
-                    <ctrl:NComboBox x:Name="cbCustomers"
-                                    DockPanel.Dock="Left"
-                                    CaptionText="Customer:"
-                                    DisplayMemberPath="CustomerName"
-                                    Width="250" />
-                    <Grid />
-                </DockPanel>
-                <DockPanel DockPanel.Dock="Top">
-                    <!--  LOT NO  -->
-                    <ctrl:NTextBox CaptionText="Lot No:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding ProductLotNo}"
+                <StackPanel Orientation="Vertical">
+                    <!--  PRODUCT NAME  -->
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBlock Margin="5,0"
+                                   Text="Product Name"
+                                   TextAlignment="Right"
                                    Width="200" />
-                    <Grid />
-                </DockPanel>
+                        <TextBox Margin="5,0"
+                                 Text="{Binding ProductName}"
+                                 TextAlignment="Left"
+                                 Width="250" />
+                    </StackPanel>
+                    <!--  PRODUCT CODE  -->
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBlock Margin="5,0"
+                                   Text="Product Code"
+                                   TextAlignment="Right"
+                                   Width="200" />
+                        <TextBox Margin="5,0"
+                                 Text="{Binding ProductCode}"
+                                 TextAlignment="Left"
+                                 Width="200" />
+                    </StackPanel>
+                    <!--  PRODUCT CODE (DIP)  -->
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBlock Margin="5,0"
+                                   Text="Product Code (DIP)"
+                                   TextAlignment="Right"
+                                   Width="200" />
+                        <TextBox Margin="5,0"
+                                 Text="{Binding DIPProductCode}"
+                                 TextAlignment="Left"
+                                 Width="200" />
+                    </StackPanel>
+                    <!--  Item Yarn  -->
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBlock Margin="5,0"
+                                   Text="Item Yarn"
+                                   TextAlignment="Right"
+                                   Width="200" />
+                        <ComboBox x:Name="cbItemYarns"
+                                  Margin="5,0"
+                                  DisplayMemberPath="ItemYarn"
+                                  Width="250" 
+                                  SelectionChanged="cbItemYarns_SelectionChanged"/>
+                    </StackPanel>
+                    <!--  Cord Structure  -->
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBlock Margin="5,0"
+                                   Text="Cord Structure"
+                                   TextAlignment="Right"
+                                   Width="200" />
+                        <TextBox Margin="5,0"
+                                 Text="{Binding CordStructure}"
+                                 TextAlignment="Left"
+                                 Width="250" />
+                    </StackPanel>
+                    <!--  Trace Route  -->
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBlock Margin="5,0"
+                                   Text="Route"
+                                   TextAlignment="Right"
+                                   Width="200" />
+                        <TextBox Margin="5,0"
+                                 Text="{Binding TreatRoute}"
+                                 TextAlignment="Left"
+                                 Width="350" />
+                    </StackPanel>
+                    <!--  Twist Spec  -->
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBlock Margin="5,0"
+                                   Text="Twist Spec"
+                                   TextAlignment="Right"
+                                   Width="200" />
+                        <TextBox Margin="5,0"
+                                 Text="{Binding TwistSpec}"
+                                 TextAlignment="Left"
+                                 Width="250" />
+                    </StackPanel>
+                </StackPanel>
                 <Grid />
             </DockPanel>
         </DockPanel>
