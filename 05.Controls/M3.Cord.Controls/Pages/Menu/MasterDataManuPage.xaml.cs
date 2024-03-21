@@ -76,7 +76,10 @@ namespace M3.Cord.Pages
 
         private void cmdUser_Click(object sender, RoutedEventArgs e)
         {
-
+            // User Manage
+            var page = M3CordApp.Pages.UserManage;
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdS1StdCondiction_Click(object sender, RoutedEventArgs e)

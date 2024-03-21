@@ -191,6 +191,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.CustomerManagePage>(); }
             }
+            /// <summary>Gets M3 Cord User Manage Page.</summary>
+            public static Cord.Pages.UserManagementPage UserManage
+            {
+                get { return GetPage<Cord.Pages.UserManagementPage>(); }
+            }
 
             #endregion
 
@@ -817,6 +822,26 @@ namespace M3.Cord
             public static PCCardEditorWindow PCCardEditor
             {
                 get { return GetWindow<PCCardEditorWindow>(); }
+            }
+
+            #endregion
+
+            #region Product
+
+            /// <summary>Gets Cord Product Window.</summary>
+            public static ProductEditorWindow ProductEditor
+            {
+                get { return GetWindow<ProductEditorWindow>(); }
+            }
+
+            #endregion
+
+            #region User
+
+            /// <summary>Gets Cord User Window.</summary>
+            public static UserEditorWindow UserEditor
+            {
+                get { return GetWindow<UserEditorWindow>(); }
             }
 
             #endregion
