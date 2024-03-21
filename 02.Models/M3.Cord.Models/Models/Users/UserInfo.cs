@@ -15,11 +15,19 @@ using Dapper;
 using Newtonsoft.Json;
 using M3.Cord;
 using NLib.Models;
+using System.Windows.Documents;
 
 #endregion
 
 namespace M3.Cord.Models
 {
+    public enum ActiveStatus
+    {
+        All = -1,
+        Active = 1,
+        Inactive = 0
+    }
+
     #region UserInfo
 
     /// <summary>
@@ -328,6 +336,166 @@ namespace M3.Cord.Models
             }
 
             return rets;
+        }
+        /// <summary>
+        /// Search Users.
+        /// </summary>
+        /// <returns>Returns List of userinfo instance.</returns>
+        public static NDbResult<List<UserInfo>> Search(string search = null, ActiveStatus status = ActiveStatus.All)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<List<UserInfo>> rets = new NDbResult<List<UserInfo>>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                rets.ErrNum = 8000;
+                rets.ErrMsg = msg;
+
+                return rets;
+            }
+
+            string sSearch = string.IsNullOrEmpty(search) ? "" : search.Trim();
+
+            string query = string.Empty;
+            query += "SELECT * " + Environment.NewLine;
+            query += "  FROM UserInfoView " + Environment.NewLine;
+            query += " WHERE UPPER(LTRIM(RTRIM(FullName))) LIKE '%" + sSearch.Trim().ToUpper() +  "%' " + Environment.NewLine;
+            query += "    OR UPPER(LTRIM(RTRIM(UserName))) LIKE '%" + sSearch.Trim().ToUpper() + "%' " + Environment.NewLine;
+            if (status == ActiveStatus.Active)
+                query += "  AND Active = 1" + Environment.NewLine;
+            else if (status == ActiveStatus.Inactive)
+                query += "  AND Active = 0" + Environment.NewLine;
+
+            var p = new DynamicParameters();
+
+            try
+            {
+                var data = cnn.Query<UserInfo>(query, p,
+                    commandType: CommandType.Text).AsList();
+                rets.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                rets.ErrNum = 9999;
+                rets.ErrMsg = ex.Message;
+            }
+
+            if (null == rets.data)
+            {
+                // create empty list.
+                rets.data = new List<UserInfo>();
+            }
+
+            return rets;
+        }
+        /// <summary>
+        /// Save
+        /// </summary>
+        /// <param name="value">The UserInfo item to save.</param>
+        /// <returns></returns>
+        public static NDbResult<UserInfo> Save(UserInfo value)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<UserInfo> ret = new NDbResult<UserInfo>();
+
+            if (null == value)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@RoleId", value.RoleId);
+            p.Add("@FullName", value.FullName);
+            p.Add("@UserName", value.UserName);
+            p.Add("@Password", value.Password);
+            p.Add("@UserId", value.UserId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
+
+            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
+
+            try
+            {
+                cnn.Execute("SaveUser", p, commandType: CommandType.StoredProcedure);
+                ret.Success(value);
+                // Set PK
+                value.UserId = p.Get<int>("@UserId");
+                // Set error number/message
+                ret.ErrNum = p.Get<int>("@errNum");
+                ret.ErrMsg = p.Get<string>("@errMsg");
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult Delete(UserInfo value)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            if (null == value)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@UserId", value.UserId);
+
+            try
+            {
+                cnn.Execute("UPDATE UserInfo SET Active = 0 WHERE UserId = @UserId", p, commandType: CommandType.Text);
+                ret.Success();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
         }
 
         #endregion

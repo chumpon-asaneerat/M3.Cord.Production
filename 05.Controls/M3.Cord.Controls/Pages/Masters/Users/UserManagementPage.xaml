@@ -10,6 +10,34 @@
              d:DesignWidth="800"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
+    <UserControl.Resources>
+        <!--  LOCAL STYLES  -->
+        <Style TargetType="Border">
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderBrush" Value="DimGray" />
+            <Setter Property="BorderThickness" Value="0.5" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource CommonTextBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="RadioButton" BasedOn="{StaticResource CommonRadioButton}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource CommonCheckBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
     <page:NPage HeaderText="User Management">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTONS  -->
@@ -29,12 +57,12 @@
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Left"
                             VerticalAlignment="Center">
-                    <!--  SAVE  -->
-                    <ctrl:FontAwesomeButton x:Name="cmdSave"
+                    <!--  Add  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdAdd"
                                             Margin="5,0,0,0"
-                                            IconType="Save"
-                                            Text="Save"
-                                            Click="cmdSave_Click" />
+                                            IconType="Add"
+                                            Text="Add"
+                                            Click="cmdAdd_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
@@ -45,18 +73,35 @@
                            LastChildFill="True"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left">
-                    <!--  Item Code  -->
-                    <ctrl:NTextBox x:Name="txtItemCode"
+                    <!--  Search  -->
+                    <ctrl:NTextBox x:Name="txtSearch"
                                    DockPanel.Dock="Left"
-                                   CaptionText="Item Code:"
+                                   CaptionText="Search:"
                                    TextAlignment="Center"
-                                   Width="200" />
-                    <ctrl:FontAwesomeButton x:Name="cmdAdd"
-                                            Click="cmdAdd_Click"
+                                   Width="250" />
+                    <StackPanel Orientation="Horizontal" Margin="5,0">
+                        <RadioButton x:Name="rbAll"
+                                     Content="All"
+                                     Margin="2,0"
+                                     IsChecked="True"
+                                     GroupName="ActiveStatus" />
+                        <RadioButton x:Name="rbActive"
+                                     Content="Active"
+                                     Margin="2,0"
+                                     IsChecked="False"
+                                     GroupName="ActiveStatus" />
+                        <RadioButton x:Name="rbInactive"
+                                     Content="Inactive"
+                                     Margin="2,0"
+                                     IsChecked="False"
+                                     GroupName="ActiveStatus" />
+                    </StackPanel>
+                    <ctrl:FontAwesomeButton x:Name="cmdSearch"
+                                            Click="cmdSearch_Click"
                                             Margin="5,0,0,0"
-                                            IconType="Add"
+                                            IconType="Search"
                                             VerticalAlignment="Bottom"
-                                            Text="Add" />
+                                            Text="Search" />
                     <Grid />
                 </DockPanel>
             </DockPanel>
@@ -69,41 +114,57 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Item Code" Width="Auto">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBox Margin="2"
-                                             Text="{Binding ProductCode}"
-                                             Style="{StaticResource CommonTextBox}"
-                                             Width="200" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Procuct Name" Width="Auto">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBox Margin="2"
-                                             Text="{Binding ProductName}"
-                                             Style="{StaticResource CommonTextBox}"
-                                             Width="200" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="">
+                        <!--  BUTTONS  -->
+                        <GridViewColumn Header="" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
+                                        <!--  Edit  -->
+                                        <ctrl:FontAwesomeButton x:Name="cmdEdit"
+                                                                IconType="Edit"
+                                                                Margin="5,0"
+                                                                Width="40"
+                                                                Height="30"
+                                                                Click="cmdEdit_Click" />
                                         <!--  DELETE  -->
                                         <ctrl:FontAwesomeButton x:Name="cmdDelete"
                                                                 IconType="Delete"
-                                                                Text="Delete"
                                                                 Margin="5,0"
-                                                                Width="150"
+                                                                Width="40"
                                                                 Height="30"
                                                                 Click="cmdDelete_Click" />
                                     </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Full Name" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="2"
+                                               Text="{Binding FullName}"
+                                               Width="250" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="User Name" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="2"
+                                               Text="{Binding UserName}"
+                                               Width="150" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Active" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox Margin="2"
+                                              IsEnabled="False"
+                                              IsChecked="{Binding Active}"
+                                              Style="{StaticResource CommonCheckBox}"
+                                              Width="100" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

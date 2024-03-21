@@ -77,12 +77,12 @@ namespace M3.Cord.Pages
                 RefreshGrid();
             });
         }
+
         private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
             var item = new Product();
             Add(item);
         }
-
 
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
         {

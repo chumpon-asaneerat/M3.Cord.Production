@@ -12,8 +12,41 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="300"
-        Width="850">
+        Height="350"
+        Width="650">
+    <Window.Resources>
+        <!--  LOCAL STYLES  -->
+        <Style TargetType="Border">
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderBrush" Value="DimGray" />
+            <Setter Property="BorderThickness" Value="0.5" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource CommonTextBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="PasswordBox" BasedOn="{StaticResource CommonPwdBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource CommonComboBox}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="RadioButton" BasedOn="{StaticResource CommonRadioButton}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
     <page:NPage HeaderText="User Information">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
@@ -34,23 +67,69 @@
             </DockPanel>
             <!--  WORK AREA  -->
             <DockPanel LastChildFill="True">
-                <DockPanel DockPanel.Dock="Top">
-                    <!--  CUSTOMER  -->
-                    <ctrl:NComboBox x:Name="cbCustomers"
-                                    DockPanel.Dock="Left"
-                                    CaptionText="Customer:"
-                                    DisplayMemberPath="CustomerName"
-                                    Width="250" />
-                    <Grid />
-                </DockPanel>
-                <DockPanel DockPanel.Dock="Top">
-                    <!--  LOT NO  -->
-                    <ctrl:NTextBox CaptionText="Lot No:"
-                                   DockPanel.Dock="Left"
-                                   Text="{Binding ProductLotNo}"
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="2">
+                        <TextBlock Text="User Role:"
+                                   Margin="2"
+                                   Width="200"
+                                   TextAlignment="Right" />
+                        <RadioButton x:Name="rbAdmin"
+                                     Margin="5,2"
+                                     Content="Administrator"
+                                     GroupName="Rights" />
+                        <RadioButton x:Name="rbSupervisor"
+                                     Margin="5,2"
+                                     Content="Supervisor"
+                                     GroupName="Rights" />
+                        <RadioButton x:Name="rbUser"
+                                     Margin="5,2"
+                                     Content="User"
+                                     GroupName="Rights" />
+                    </StackPanel>
+                    <!--  FULL NAME  -->
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBlock Margin="5,0"
+                                   Text="Full Name"
+                                   TextAlignment="Right"
                                    Width="200" />
-                    <Grid />
-                </DockPanel>
+                        <TextBox x:Name="txtFullName"
+                                 Margin="5,0"
+                                 TextAlignment="Left"
+                                 Width="250" />
+                    </StackPanel>
+                    <!--  User Name  -->
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBlock Margin="5,0"
+                                   Text="User Name"
+                                   TextAlignment="Right"
+                                   Width="200" />
+                        <TextBox x:Name="txtUserName"
+                                 Margin="5,0"
+                                 TextAlignment="Left"
+                                 Width="200" />
+                    </StackPanel>
+                    <!--  Password  -->
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBlock Margin="5,0"
+                                   Text="Password"
+                                   TextAlignment="Right"
+                                   Width="200" />
+                        <PasswordBox x:Name="txtPwd"
+                                     Margin="5,0"
+                                     Width="200" />
+                    </StackPanel>
+                    <!--  Password (Confirm)  -->
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBlock Margin="5,0"
+                                   Text="Password (Confirm)"
+                                   TextAlignment="Right"
+                                   Width="200" />
+                        <PasswordBox x:Name="txtPwdConfirm"
+                                     Margin="5,0"
+                                     Width="200" />
+                    </StackPanel>
+                </StackPanel>
+                <Grid />
                 <Grid />
             </DockPanel>
         </DockPanel>

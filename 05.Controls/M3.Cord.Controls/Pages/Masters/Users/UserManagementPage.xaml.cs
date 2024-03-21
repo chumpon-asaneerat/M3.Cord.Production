@@ -69,66 +69,133 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMasterMenu();
         }
 
-        private void cmdAdd_Click(object sender, RoutedEventArgs e)
+        private void cmdSearch_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            string itemCode = txtItemCode.Text.Trim();
-            txtItemCode.Text = string.Empty;
-            if (string.IsNullOrEmpty(itemCode)) return;
-
-            var item = new Product() { ProductId = new int?(), ProductCode = itemCode };
-            Product.Save(item);
-
+            string searchText = (string.IsNullOrWhiteSpace(txtSearch.Text)) ? string.Empty : txtSearch.Text.Trim();
             this.InvokeAction(() =>
             {
                 RefreshGrid();
             });
-            */
+        }
+
+        private void cmdAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var item = new UserInfo();
+            Add(item);
+        }
+
+        private void cmdEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as FontAwesomeButton;
+            if (null == btn) return;
+            var item = btn.DataContext as UserInfo;
+            if (null == item) return;
+
+            Edit(item);
         }
 
         private void cmdDelete_Click(object sender, RoutedEventArgs e)
         {
-            /*
             var btn = sender as FontAwesomeButton;
             if (null == btn) return;
-            var item = btn.DataContext as Product;
-            Product.Delete(item);
+            var item = btn.DataContext as UserInfo;
 
-            this.InvokeAction(() =>
-            {
-                RefreshGrid();
-            });
-            */
-        }
-
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
-        {
-            /*
-            if (null != _items && _items.Count > 0)
-            {
-                foreach (var item in _items)
-                {
-                    Product.Save(item);
-                }
-                this.InvokeAction(() =>
-                {
-                    RefreshGrid();
-                });
-            }
-            */
+            Delete(item);
         }
 
         #endregion
 
         #region Private Methods
 
+        private void Add(UserInfo item)
+        {
+            if (null == item) return;
+            var win = M3CordApp.Windows.UserEditor;
+            win.Setup(item);
+
+            if (win.ShowDialog() == true)
+            {
+                var win2 = M3CordApp.Windows.MessageBox;
+
+                var ret = UserInfo.Save(item);
+                if (null != ret && ret.Ok)
+                    win2.Setup("บันทึกรายการสำเร็จ");
+                else
+                    win2.Setup("บันทึกรายการไม่สำเร็จ");
+
+                win2.ShowDialog();
+
+                this.InvokeAction(() =>
+                {
+                    RefreshGrid();
+                });
+            }
+        }
+
+        private void Edit(UserInfo item)
+        {
+            if (null == item) return;
+            var win = M3CordApp.Windows.UserEditor;
+            win.Setup(item);
+
+            if (win.ShowDialog() == true)
+            {
+                var win2 = M3CordApp.Windows.MessageBox;
+
+                var ret = UserInfo.Save(item);
+                if (null != ret && ret.Ok)
+                    win2.Setup("บันทึกรายการสำเร็จ");
+                else
+                    win2.Setup("บันทึกรายการไม่สำเร็จ");
+
+                win2.ShowDialog();
+
+                this.InvokeAction(() =>
+                {
+                    RefreshGrid();
+                });
+            }
+        }
+
+        private void Delete(UserInfo item)
+        {
+            if (null == item) return;
+
+            var win = M3CordApp.Windows.MessageBoxOKCancel;
+            win.Setup("ต้องการลบรายการใช่หรือไม่");
+            if (win.ShowDialog() == true)
+            {
+                var win2 = M3CordApp.Windows.MessageBox;
+
+                var ret = UserInfo.Delete(item);
+                if (null != ret && ret.Ok)
+                    win2.Setup("ลบรายการสำเร็จ");
+                else
+                    win2.Setup("ลบรายการไม่สำเร็จ");
+
+                win2.ShowDialog();
+
+                this.InvokeAction(() =>
+                {
+                    RefreshGrid();
+                });
+            }
+        }
+
         private void RefreshGrid()
         {
-            /*
+            string search = txtSearch.Text;
+
+            ActiveStatus status;
+            if (rbAll.IsChecked.HasValue && rbAll.IsChecked == true)
+                status = ActiveStatus.All;
+            else if (rbActive.IsChecked.HasValue && rbActive.IsChecked == true)
+                status = ActiveStatus.Active;
+            else status = ActiveStatus.Inactive;
+
             grid.ItemsSource = null;
-            _items = Product.Gets().Value();
+            _items = UserInfo.Search(search, status).Value();
             grid.ItemsSource = _items;
-            */
         }
 
         #endregion

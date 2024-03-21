@@ -92,6 +92,8 @@ namespace M3.Cord.Windows
 
         #endregion
 
+        #region Combobox Handlers
+
         private void cbItemYarns_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (null == _item) return;
@@ -99,6 +101,8 @@ namespace M3.Cord.Windows
             if (null == itemYarn) return;
             _item.ItemYarn = itemYarn.ItemYarn;
         }
+
+        #endregion
 
         #region Private Methods
 
