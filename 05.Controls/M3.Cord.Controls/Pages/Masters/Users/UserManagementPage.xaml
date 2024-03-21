@@ -83,12 +83,12 @@
                         <RadioButton x:Name="rbAll"
                                      Content="All"
                                      Margin="2,0"
-                                     IsChecked="True"
+                                     IsChecked="False"
                                      GroupName="ActiveStatus" />
                         <RadioButton x:Name="rbActive"
                                      Content="Active"
                                      Margin="2,0"
-                                     IsChecked="False"
+                                     IsChecked="True"
                                      GroupName="ActiveStatus" />
                         <RadioButton x:Name="rbInactive"
                                      Content="Inactive"
@@ -115,7 +115,7 @@
                 <ListView.View>
                     <GridView>
                         <!--  BUTTONS  -->
-                        <GridViewColumn Header="" Width="100">
+                        <GridViewColumn Header="" Width="160">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal"
@@ -137,6 +137,14 @@
                                                                 Height="30"
                                                                 IsEnabled="{Binding CanDelete}"
                                                                 Click="cmdDelete_Click" />
+                                        <!--  RESET  -->
+                                        <ctrl:FontAwesomeButton x:Name="cmdReset"
+                                                                IconType="Refresh"
+                                                                Margin="5,0"
+                                                                Width="40"
+                                                                Height="30"
+                                                                IsEnabled="{Binding CanReset}"
+                                                                Click="cmdReset_Click" />
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>

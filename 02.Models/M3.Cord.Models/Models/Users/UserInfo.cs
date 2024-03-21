@@ -180,6 +180,7 @@ namespace M3.Cord.Models
 
         public bool CanEdit { get; set; } = false;
         public bool CanDelete { get; set; } = false;
+        public bool CanReset { get; set; } = false;
 
         #endregion
 
@@ -436,6 +437,7 @@ namespace M3.Cord.Models
                         // Common Logic Check Role if role is less than current user so cannot edit/delete
                         item.CanEdit = false;
                         item.CanDelete = false;
+                        item.CanReset = false;
 
                         // Recheck same role cannot edit/delete
                         if (item.RoleId == 1 && item.UserId == 1 && currUserId.HasValue && currUserId.Value == 1)
@@ -445,8 +447,11 @@ namespace M3.Cord.Models
                                 // Special Admin
                                 item.CanEdit = true;
                                 item.CanDelete = false;
+                                item.CanReset = false;
+
                                 if (currUserId.HasValue && currUserId.Value == 1)
                                 {
+                                    item.CanReset = true;
                                     continue; // skip
                                 }
                             }
@@ -456,6 +461,7 @@ namespace M3.Cord.Models
                             // General Admin
                             item.CanDelete = false;
                             item.CanEdit = false;
+                            item.CanReset = false;
 
                             if (currRoleId.HasValue) // Has Role
                             {
@@ -468,6 +474,7 @@ namespace M3.Cord.Models
                                     {
                                         item.CanEdit = true; // current user is admin so can edit this item
                                         item.CanDelete = currUserId.Value == 1; // special admin allow to delete
+                                        item.CanReset = currUserId.Value == 1; // special admin allow to reset
                                     }
                                 }
                                 else if (currRoleId.Value < item.RoleId)
@@ -475,6 +482,7 @@ namespace M3.Cord.Models
                                     // All User that has less Role right allow to edit/delete
                                     item.CanEdit = true;
                                     item.CanDelete = true;
+                                    item.CanReset = true;
                                 }
                             }
                         }
@@ -483,6 +491,7 @@ namespace M3.Cord.Models
                             // Supervisor
                             item.CanDelete = false;
                             item.CanEdit = false;
+                            item.CanReset = false;
 
                             if (currRoleId.HasValue) // Has Role
                             {
@@ -493,6 +502,7 @@ namespace M3.Cord.Models
                                     {
                                         item.CanEdit = true;
                                         item.CanDelete = false;
+                                        item.CanReset = true;
                                     }
                                 }
                                 else if (currRoleId.Value < item.RoleId)
@@ -500,6 +510,7 @@ namespace M3.Cord.Models
                                     // All User that has less Role right allow to edit/delete
                                     item.CanEdit = true;
                                     item.CanDelete = true;
+                                    item.CanReset = true;
                                 }
                             }
                         }
@@ -508,6 +519,7 @@ namespace M3.Cord.Models
                             // User
                             item.CanDelete = false;
                             item.CanEdit = false;
+                            item.CanReset = false;
 
                             if (currRoleId.HasValue) // Has Role
                             {
@@ -518,6 +530,7 @@ namespace M3.Cord.Models
                                     {
                                         item.CanEdit = true;
                                         item.CanDelete = false;
+                                        item.CanReset = true;
                                     }
                                 }
                                 else if (currRoleId.Value < item.RoleId)
@@ -525,6 +538,7 @@ namespace M3.Cord.Models
                                     // All User that has less Role right allow to edit/delete
                                     item.CanEdit = true;
                                     item.CanDelete = true;
+                                    item.CanReset = true;
                                 }
                             }
                         }
@@ -639,6 +653,49 @@ namespace M3.Cord.Models
             try
             {
                 cnn.Execute("UPDATE UserInfo SET Active = 0 WHERE UserId = @UserId", p, commandType: CommandType.Text);
+                ret.Success();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult Reset(UserInfo value)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            if (null == value)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@UserId", value.UserId);
+
+            try
+            {
+                cnn.Execute("UPDATE UserInfo SET Password = UserName WHERE UserId = @UserId", p, commandType: CommandType.Text);
                 ret.Success();
             }
             catch (Exception ex)

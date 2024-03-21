@@ -103,6 +103,15 @@ namespace M3.Cord.Pages
             Delete(item);
         }
 
+        private void cmdReset_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as FontAwesomeButton;
+            if (null == btn) return;
+            var item = btn.DataContext as UserInfo;
+
+            Reset(item);
+        }
+
         #endregion
 
         #region Private Methods
@@ -172,6 +181,31 @@ namespace M3.Cord.Pages
                     win2.Setup("ลบรายการสำเร็จ");
                 else
                     win2.Setup("ลบรายการไม่สำเร็จ");
+
+                win2.ShowDialog();
+
+                this.InvokeAction(() =>
+                {
+                    RefreshGrid();
+                });
+            }
+        }
+
+        private void Reset(UserInfo item)
+        {
+            if (null == item) return;
+
+            var win = M3CordApp.Windows.MessageBoxOKCancel;
+            win.Setup("ต้องการ Reset Password ใช่หรือไม่");
+            if (win.ShowDialog() == true)
+            {
+                var win2 = M3CordApp.Windows.MessageBox;
+
+                var ret = UserInfo.Reset(item);
+                if (null != ret && ret.Ok)
+                    win2.Setup("Reset Password สำเร็จ");
+                else
+                    win2.Setup("Reset Password ไม่สำเร็จ");
 
                 win2.ShowDialog();
 
