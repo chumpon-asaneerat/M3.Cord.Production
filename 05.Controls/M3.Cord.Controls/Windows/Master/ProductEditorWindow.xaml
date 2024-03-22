@@ -12,8 +12,8 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="420"
-        Width="750">
+        Height="600"
+        Width="700">
     <Window.Resources>
         <!--  LOCAL STYLES  -->
         <Style TargetType="Border">
@@ -141,6 +141,61 @@
                                  TextAlignment="Left"
                                  Width="250" />
                     </StackPanel>
+                    <TextBlock Margin="5,0"
+                               Text="Customer: "
+                               TextAlignment="Left"
+                               HorizontalAlignment="Stretch" />
+                    <!--  Customer Mapping  -->
+                    <ListView x:Name="grid"
+                              Margin="0,0,0,5"
+                              FontSize="{StaticResource FontSize18}"
+                              ItemContainerStyle="{StaticResource BASEListViewItemContainer}"
+                              ItemsSource="{Binding}"
+                              Style="{StaticResource SingleSelectListView}"
+                              Height="200">
+                        <ListView.View>
+                            <GridView>
+                                <!--  IsSelected  -->
+                                <GridViewColumn Header="" Width="40">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox IsChecked="{Binding IsSelected}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <!--  Customer Name  -->
+                                <GridViewColumn Header="Customer Name" Width="Auto">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding CustomerName}"
+                                                       TextAlignment="Left"
+                                                       Width="200" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <!--  Service Lifr Month  -->
+                                <GridViewColumn Header="Service Lifr Month" Width="Auto">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding ServiceLifeMonth, TargetNullValue=''}"
+                                                     TextAlignment="Center"
+                                                     Width="150" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <!--  Remark  -->
+                                <GridViewColumn Header="Remark" Width="Auto">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding Remark, TargetNullValue=''}"
+                                                     TextAlignment="Left"
+                                                     Width="200" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </StackPanel>
                 <Grid />
             </DockPanel>

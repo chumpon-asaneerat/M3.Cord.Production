@@ -135,7 +135,9 @@ namespace M3.Cord.Pages
                 var win2 = M3CordApp.Windows.MessageBox;
 
                 var ret = Product.Save(item);
-                if (null != ret && ret.Ok)
+                var ret2 = CustomerProduct.Save(item, win.CustomerProducts);
+
+                if (null != ret && ret.Ok && null != ret2 && ret2.Ok)
                     win2.Setup("บันทึกรายการสำเร็จ");
                 else
                     win2.Setup("บันทึกรายการไม่สำเร็จ");
@@ -160,7 +162,9 @@ namespace M3.Cord.Pages
                 var win2 = M3CordApp.Windows.MessageBox;
 
                 var ret = Product.Save(item);
-                if (null != ret && ret.Ok)
+                var ret2 = CustomerProduct.Save(item, win.CustomerProducts);
+
+                if (null != ret && ret.Ok && null != ret2 && ret2.Ok)
                     win2.Setup("บันทึกรายการสำเร็จ");
                 else
                     win2.Setup("บันทึกรายการไม่สำเร็จ");

@@ -43,6 +43,7 @@ namespace M3.Cord.Windows
 
         private List<CordItemYarn> itemYarns = null;
         private Product _item = null;
+        private List<CustomerProduct> customerProducts = null;
 
         #endregion
 
@@ -122,6 +123,17 @@ namespace M3.Cord.Windows
             LoadCombobox();
             _item = value;
             this.DataContext = _item;
+            // load customer product
+            grid.ItemsSource = null;
+            if (null != _item) 
+            {
+                customerProducts = CustomerProduct.Gets(_item.ProductCode).Value();
+            }
+            else
+            {
+                customerProducts = CustomerProduct.Gets().Value();
+            }
+            grid.ItemsSource = customerProducts;
 
             if (null != _item && null != itemYarns) 
             {
@@ -132,6 +144,12 @@ namespace M3.Cord.Windows
                 }
             }
         }
+
+        #endregion
+
+        #region Public Properties
+
+        public List<CustomerProduct> CustomerProducts { get { return customerProducts;  } }
 
         #endregion
     }
