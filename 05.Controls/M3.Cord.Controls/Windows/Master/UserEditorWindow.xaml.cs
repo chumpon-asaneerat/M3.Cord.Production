@@ -186,6 +186,16 @@ namespace M3.Cord.Windows
             txtUserName.Text = _item.UserName;
             txtPwd.Password = _item.Password;
             txtPwdConfirm.Password = (_item.UserId <= 0) ? string.Empty : _item.Password;
+
+            if (_item.RoleId == 1 && _item.UserId == 1)
+            {
+                // Special Admin User cannot change Role/FullName/UserName
+                txtFullName.IsReadOnly = true;
+                txtUserName.IsReadOnly = true;
+                rbAdmin.IsEnabled = false;
+                rbSupervisor.IsEnabled = false;
+                rbUser.IsEnabled = false;
+            }
         }
 
         #endregion
