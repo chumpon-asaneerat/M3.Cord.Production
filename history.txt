@@ -22,8 +22,9 @@ M3 Cord Production System #1054
 M3 Cord Production System #1053
 - 
 
+[commited]
 M3 Cord Production System #1052
-- 
+- Implements Product/User Editor #12
 
 [commited]
 M3 Cord Production System #1051
