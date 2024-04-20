@@ -1526,14 +1526,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox72">
+                    <Textbox Name="ShiftName">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!ShiftName.Value</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -1544,7 +1544,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox72</rd:DefaultName>
+                      <rd:DefaultName>ShiftName</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -3285,6 +3285,10 @@
           <DataField>Remark</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="ShiftName">
+          <DataField>ShiftName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="StartTime">
           <DataField>StartTime</DataField>
           <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
@@ -3308,6 +3312,10 @@
         <Field Name="UnitWeight">
           <DataField>UnitWeight</DataField>
           <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="UserName">
+          <DataField>UserName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="WasteWeight">
           <DataField>WasteWeight</DataField>
