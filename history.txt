@@ -16,8 +16,10 @@ M3 Cord Production System #1056
 M3 Cord Production System #1055
 - 
 
+[commited]
 M3 Cord Production System #1054
-- 
+- Update PCTwist1Operation class
+  - Add ShiftName, UserName (from Twist1LoadRecord)
 
 [commited]
 M3 Cord Production System #1053

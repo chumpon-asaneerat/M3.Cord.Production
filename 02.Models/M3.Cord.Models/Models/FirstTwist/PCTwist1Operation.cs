@@ -103,6 +103,10 @@ namespace M3.Cord.Models
         public DateTime? IssueDate { get; set; }
         public string IssueBy { get; set; }
 
+        // From Twist1LoadYarn
+        public string ShiftName { get; set; }
+        public string UserName { get; set; }
+
         #endregion
 
         #region Static Methods
