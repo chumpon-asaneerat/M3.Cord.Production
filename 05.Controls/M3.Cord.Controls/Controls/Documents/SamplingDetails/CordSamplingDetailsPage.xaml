@@ -626,202 +626,208 @@
 
                     <!--  Tensile  -->
                     <Border Grid.Row="2" Grid.Column="1">
-                        <TextBox Text="{Binding TensileR1}"
+                        <TextBox Text="{Binding TensileR1, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="2" Grid.Column="2">
-                        <TextBox Text="{Binding TensileL1}"
+                        <TextBox Text="{Binding TensileL1, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="3" Grid.Column="1">
-                        <TextBox Text="{Binding TensileR2}"
+                        <TextBox Text="{Binding TensileR2, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="3" Grid.Column="2">
-                        <TextBox Text="{Binding TensileL2}"
+                        <TextBox Text="{Binding TensileL2, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="4" Grid.Column="1">
-                        <TextBox Text="{Binding TensileR3}"
+                        <TextBox Text="{Binding TensileR3, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="4" Grid.Column="2">
-                        <TextBox Text="{Binding TensileL3}"
+                        <TextBox Text="{Binding TensileL3, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="5" Grid.Column="1">
-                        <TextBox Text="{Binding TensileR4}"
+                        <TextBox Text="{Binding TensileR4, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="5" Grid.Column="2">
-                        <TextBox Text="{Binding TensileL4}"
+                        <TextBox Text="{Binding TensileL4, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="6" Grid.Column="1">
-                        <TextBox Text="{Binding TensileR5}"
+                        <TextBox Text="{Binding TensileR5, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="6" Grid.Column="2">
-                        <TextBox Text="{Binding TensileL5}"
+                        <TextBox Text="{Binding TensileL5, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="7" Grid.Column="1">
-                        <TextBox Text="{Binding TensileRSum}"
+                        <TextBox Text="{Binding TensileRSum, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
+                                 IsReadOnly="True"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="7" Grid.Column="2">
-                        <TextBox Text="{Binding TensileLSum}"
+                        <TextBox Text="{Binding TensileLSum, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
+                                 IsReadOnly="True"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <!--  FirstTwisting  -->
                     <Border Grid.Row="2" Grid.Column="3">
-                        <TextBox Text="{Binding FirstTwistingR1}"
+                        <TextBox Text="{Binding FirstTwistingR1, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="2" Grid.Column="4">
-                        <TextBox Text="{Binding FirstTwistingL1}"
+                        <TextBox Text="{Binding FirstTwistingL1, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="3" Grid.Column="3">
-                        <TextBox Text="{Binding FirstTwistingR2}"
+                        <TextBox Text="{Binding FirstTwistingR2, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="3" Grid.Column="4">
-                        <TextBox Text="{Binding FirstTwistingL2}"
+                        <TextBox Text="{Binding FirstTwistingL2, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="4" Grid.Column="3">
-                        <TextBox Text="{Binding FirstTwistingR3}"
+                        <TextBox Text="{Binding FirstTwistingR3, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="4" Grid.Column="4">
-                        <TextBox Text="{Binding FirstTwistingL3}"
+                        <TextBox Text="{Binding FirstTwistingL3, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="5" Grid.Column="3">
-                        <TextBox Text="{Binding FirstTwistingR4}"
+                        <TextBox Text="{Binding FirstTwistingR4, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="5" Grid.Column="4">
-                        <TextBox Text="{Binding FirstTwistingL4}"
+                        <TextBox Text="{Binding FirstTwistingL4, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="6" Grid.Column="3">
-                        <TextBox Text="{Binding FirstTwistingR5}"
+                        <TextBox Text="{Binding FirstTwistingR5, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="6" Grid.Column="4">
-                        <TextBox Text="{Binding FirstTwistingL5}"
+                        <TextBox Text="{Binding FirstTwistingL5, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="7" Grid.Column="3">
-                        <TextBox Text="{Binding FirstTwistingRSum}"
+                        <TextBox Text="{Binding FirstTwistingRSum, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
+                                 IsReadOnly="True"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="7" Grid.Column="4">
-                        <TextBox Text="{Binding FirstTwistingLSum}"
+                        <TextBox Text="{Binding FirstTwistingLSum, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
+                                 IsReadOnly="True"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <!--  SecondTwisting  -->
                     <Border Grid.Row="2" Grid.Column="5">
-                        <TextBox Text="{Binding SecondTwistingR1}"
+                        <TextBox Text="{Binding SecondTwistingR1, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="2" Grid.Column="6">
-                        <TextBox Text="{Binding SecondTwistingL1}"
+                        <TextBox Text="{Binding SecondTwistingL1, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="3" Grid.Column="5">
-                        <TextBox Text="{Binding SecondTwistingR2}"
+                        <TextBox Text="{Binding SecondTwistingR2, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="3" Grid.Column="6">
-                        <TextBox Text="{Binding SecondTwistingL2}"
+                        <TextBox Text="{Binding SecondTwistingL2, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="4" Grid.Column="5">
-                        <TextBox Text="{Binding SecondTwistingR3}"
+                        <TextBox Text="{Binding SecondTwistingR3, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="4" Grid.Column="6">
-                        <TextBox Text="{Binding SecondTwistingL3}"
+                        <TextBox Text="{Binding SecondTwistingL3, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="5" Grid.Column="5">
-                        <TextBox Text="{Binding SecondTwistingR4}"
+                        <TextBox Text="{Binding SecondTwistingR4, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="5" Grid.Column="6">
-                        <TextBox Text="{Binding SecondTwistingL4}"
+                        <TextBox Text="{Binding SecondTwistingL4, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="6" Grid.Column="5">
-                        <TextBox Text="{Binding SecondTwistingR5}"
+                        <TextBox Text="{Binding SecondTwistingR5, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="6" Grid.Column="6">
-                        <TextBox Text="{Binding SecondTwistingL5}"
+                        <TextBox Text="{Binding SecondTwistingL5, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
                     <Border Grid.Row="7" Grid.Column="5">
-                        <TextBox Text="{Binding SecondTwistingRSum}"
+                        <TextBox Text="{Binding SecondTwistingRSum, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
+                                 IsReadOnly="True"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
                     <Border Grid.Row="7" Grid.Column="6">
-                        <TextBox Text="{Binding SecondTwistingLSum}"
+                        <TextBox Text="{Binding SecondTwistingLSum, StringFormat='{}{0:#,##0.##}', TargetNullValue=''}"
                                  Width="100"
+                                 IsReadOnly="True"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 
@@ -854,6 +860,7 @@
                     <Border Grid.Row="7" Grid.Column="7">
                         <TextBox Text="{Binding RemarkSum}"
                                  Width="100"
+                                 IsReadOnly="True"
                                  IsEnabled="{Binding CanTest}" />
                     </Border>
 

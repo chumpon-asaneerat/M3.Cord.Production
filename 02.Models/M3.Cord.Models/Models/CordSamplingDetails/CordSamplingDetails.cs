@@ -76,42 +76,601 @@ namespace M3.Cord.Models
         public bool? NotNecessary { get; set; } = false;
         public bool? SpecialMentionJointing { get; set; } = false;
         public bool? SpecialMentionNoJointing { get; set; } = false;
-        public decimal? TensileR1 { get; set; }
-        public decimal? TensileL1 { get; set; }
-        public decimal? TensileR2 { get; set; }
-        public decimal? TensileL2 { get; set; }
-        public decimal? TensileR3 { get; set; }
-        public decimal? TensileL3 { get; set; }
-        public decimal? TensileR4 { get; set; }
-        public decimal? TensileL4 { get; set; }
-        public decimal? TensileR5 { get; set; }
-        public decimal? TensileL5 { get; set; }
-        public decimal? TensileRSum { get; set; }
-        public decimal? TensileLSum { get; set; }
-        public decimal? FirstTwistingR1 { get; set; }
-        public decimal? FirstTwistingL1 { get; set; }
-        public decimal? FirstTwistingR2 { get; set; }
-        public decimal? FirstTwistingL2 { get; set; }
-        public decimal? FirstTwistingR3 { get; set; }
-        public decimal? FirstTwistingL3 { get; set; }
-        public decimal? FirstTwistingR4 { get; set; }
-        public decimal? FirstTwistingL4 { get; set; }
-        public decimal? FirstTwistingR5 { get; set; }
-        public decimal? FirstTwistingL5 { get; set; }
-        public decimal? FirstTwistingRSum { get; set; }
-        public decimal? FirstTwistingLSum { get; set; }
-        public decimal? SecondTwistingR1 { get; set; }
-        public decimal? SecondTwistingL1 { get; set; }
-        public decimal? SecondTwistingR2 { get; set; }
-        public decimal? SecondTwistingL2 { get; set; }
-        public decimal? SecondTwistingR3 { get; set; }
-        public decimal? SecondTwistingL3 { get; set; }
-        public decimal? SecondTwistingR4 { get; set; }
-        public decimal? SecondTwistingL4 { get; set; }
-        public decimal? SecondTwistingR5 { get; set; }
-        public decimal? SecondTwistingL5 { get; set; }
-        public decimal? SecondTwistingRSum { get; set; }
-        public decimal? SecondTwistingLSum { get; set; }
+
+        public decimal? TensileR1
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.TensileRSum);
+                });
+            }
+        }
+        public decimal? TensileR2
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.TensileRSum);
+                });
+            }
+        }
+        public decimal? TensileR3
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.TensileRSum);
+                });
+            }
+        }
+        public decimal? TensileR4
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.TensileRSum);
+                });
+            }
+        }
+        public decimal? TensileR5
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.TensileRSum);
+                });
+            }
+        }
+        public decimal? TensileRSum
+        {
+            get
+            {
+                int iCnt = 0;
+                decimal total = decimal.Zero;
+                decimal? result = new decimal?();
+
+                if (TensileR1.HasValue)
+                {
+                    total += TensileR1.Value;
+                    iCnt++;
+                }
+                if (TensileR2.HasValue)
+                {
+                    total += TensileR2.Value;
+                    iCnt++;
+                }
+                if (TensileR3.HasValue)
+                {
+                    total += TensileR3.Value;
+                    iCnt++;
+                }
+                if (TensileR4.HasValue)
+                {
+                    total += TensileR4.Value;
+                    iCnt++;
+                }
+                if (TensileR5.HasValue)
+                {
+                    total += TensileR5.Value;
+                    iCnt++;
+                }
+
+                if (iCnt > 0)
+                {
+                    result = total / iCnt;
+                }
+
+                return result;
+            }
+            set { }
+        }
+
+        public decimal? TensileL1
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () => 
+                {
+                    Raise(() => this.TensileLSum);
+                });
+            }
+        }
+        public decimal? TensileL2
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.TensileLSum);
+                });
+            }
+        }
+        public decimal? TensileL3
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.TensileLSum);
+                });
+            }
+        }
+        public decimal? TensileL4
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.TensileLSum);
+                });
+            }
+        }
+        public decimal? TensileL5
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.TensileLSum);
+                });
+            }
+        }
+        public decimal? TensileLSum 
+        {
+            get
+            {
+                int iCnt = 0;
+                decimal total = decimal.Zero;
+                decimal? result = new decimal?();
+
+                if (TensileL1.HasValue)
+                {
+                    total += TensileL1.Value;
+                    iCnt++;
+                }
+                if (TensileL2.HasValue)
+                {
+                    total += TensileL2.Value;
+                    iCnt++;
+                }
+                if (TensileL3.HasValue)
+                {
+                    total += TensileL3.Value;
+                    iCnt++;
+                }
+                if (TensileL4.HasValue)
+                {
+                    total += TensileL4.Value;
+                    iCnt++;
+                }
+                if (TensileL5.HasValue)
+                {
+                    total += TensileL5.Value;
+                    iCnt++;
+                }
+
+                if (iCnt > 0)
+                {
+                    result = total / iCnt;
+                }
+
+                return result;
+            }
+            set { }
+        }
+
+        public decimal? FirstTwistingR1
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.FirstTwistingRSum);
+                });
+            }
+        }
+        public decimal? FirstTwistingR2
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.FirstTwistingRSum);
+                });
+            }
+        }
+        public decimal? FirstTwistingR3
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.FirstTwistingRSum);
+                });
+            }
+        }
+        public decimal? FirstTwistingR4
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.FirstTwistingRSum);
+                });
+            }
+        }
+        public decimal? FirstTwistingR5
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.FirstTwistingRSum);
+                });
+            }
+        }
+        public decimal? FirstTwistingRSum 
+        {
+            get
+            {
+                int iCnt = 0;
+                decimal total = decimal.Zero;
+                decimal? result = new decimal?();
+
+                if (FirstTwistingR1.HasValue)
+                {
+                    total += FirstTwistingR1.Value;
+                    iCnt++;
+                }
+                if (FirstTwistingR2.HasValue)
+                {
+                    total += FirstTwistingR2.Value;
+                    iCnt++;
+                }
+                if (FirstTwistingR3.HasValue)
+                {
+                    total += FirstTwistingR3.Value;
+                    iCnt++;
+                }
+                if (FirstTwistingR4.HasValue)
+                {
+                    total += FirstTwistingR4.Value;
+                    iCnt++;
+                }
+                if (FirstTwistingR5.HasValue)
+                {
+                    total += FirstTwistingR5.Value;
+                    iCnt++;
+                }
+
+                if (iCnt > 0)
+                {
+                    result = total / iCnt;
+                }
+
+                return result;
+            }
+            set { }
+        }
+
+        public decimal? FirstTwistingL1
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.FirstTwistingLSum);
+                });
+            }
+        }
+        public decimal? FirstTwistingL2
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.FirstTwistingLSum);
+                });
+            }
+        }
+        public decimal? FirstTwistingL3
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.FirstTwistingLSum);
+                });
+            }
+        }
+        public decimal? FirstTwistingL4
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.FirstTwistingLSum);
+                });
+            }
+        }
+        public decimal? FirstTwistingL5
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.FirstTwistingLSum);
+                });
+            }
+        }
+        public decimal? FirstTwistingLSum
+        {
+            get
+            {
+                int iCnt = 0;
+                decimal total = decimal.Zero;
+                decimal? result = new decimal?();
+
+                if (FirstTwistingL1.HasValue)
+                {
+                    total += FirstTwistingL1.Value;
+                    iCnt++;
+                }
+                if (FirstTwistingL2.HasValue)
+                {
+                    total += FirstTwistingL2.Value;
+                    iCnt++;
+                }
+                if (FirstTwistingL3.HasValue)
+                {
+                    total += FirstTwistingL3.Value;
+                    iCnt++;
+                }
+                if (FirstTwistingL4.HasValue)
+                {
+                    total += FirstTwistingL4.Value;
+                    iCnt++;
+                }
+                if (FirstTwistingL5.HasValue)
+                {
+                    total += FirstTwistingL5.Value;
+                    iCnt++;
+                }
+
+                if (iCnt > 0)
+                {
+                    result = total / iCnt;
+                }
+
+                return result;
+            }
+            set { }
+        }
+    
+        public decimal? SecondTwistingR1
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.SecondTwistingRSum);
+                });
+            }
+        }
+        public decimal? SecondTwistingR2
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.SecondTwistingRSum);
+                });
+            }
+        }
+        public decimal? SecondTwistingR3
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.SecondTwistingRSum);
+                });
+            }
+        }
+        public decimal? SecondTwistingR4
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.SecondTwistingRSum);
+                });
+            }
+        }
+        public decimal? SecondTwistingR5
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.SecondTwistingRSum);
+                });
+            }
+        }
+        public decimal? SecondTwistingRSum
+        {
+            get
+            {
+                int iCnt = 0;
+                decimal total = decimal.Zero;
+                decimal? result = new decimal?();
+
+                if (SecondTwistingR1.HasValue)
+                {
+                    total += SecondTwistingR1.Value;
+                    iCnt++;
+                }
+                if (SecondTwistingR2.HasValue)
+                {
+                    total += SecondTwistingR2.Value;
+                    iCnt++;
+                }
+                if (SecondTwistingR3.HasValue)
+                {
+                    total += SecondTwistingR3.Value;
+                    iCnt++;
+                }
+                if (SecondTwistingR4.HasValue)
+                {
+                    total += SecondTwistingR4.Value;
+                    iCnt++;
+                }
+                if (SecondTwistingR5.HasValue)
+                {
+                    total += SecondTwistingR5.Value;
+                    iCnt++;
+                }
+
+                if (iCnt > 0)
+                {
+                    result = total / iCnt;
+                }
+
+                return result;
+            }
+            set { }
+        }
+
+        public decimal? SecondTwistingL1
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.SecondTwistingLSum);
+                });
+            }
+        }
+        public decimal? SecondTwistingL2
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.SecondTwistingLSum);
+                });
+            }
+        }
+        public decimal? SecondTwistingL3
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.SecondTwistingLSum);
+                });
+            }
+        }
+        public decimal? SecondTwistingL4
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.SecondTwistingLSum);
+                });
+            }
+        }
+        public decimal? SecondTwistingL5
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.SecondTwistingLSum);
+                });
+            }
+        }
+        public decimal? SecondTwistingLSum
+        {
+            get
+            {
+                int iCnt = 0;
+                decimal total = decimal.Zero;
+                decimal? result = new decimal?();
+
+                if (SecondTwistingL1.HasValue)
+                {
+                    total += SecondTwistingL1.Value;
+                    iCnt++;
+                }
+                if (SecondTwistingL2.HasValue)
+                {
+                    total += SecondTwistingL2.Value;
+                    iCnt++;
+                }
+                if (SecondTwistingL3.HasValue)
+                {
+                    total += SecondTwistingL3.Value;
+                    iCnt++;
+                }
+                if (SecondTwistingL4.HasValue)
+                {
+                    total += SecondTwistingL4.Value;
+                    iCnt++;
+                }
+                if (SecondTwistingL5.HasValue)
+                {
+                    total += SecondTwistingL5.Value;
+                    iCnt++;
+                }
+
+                if (iCnt > 0)
+                {
+                    result = total / iCnt;
+                }
+
+                return result;
+            }
+            set { }
+        }
+
         public string Remark1 { get; set; }
         public string Remark2 { get; set; }
         public string Remark3 { get; set; }

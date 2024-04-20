@@ -13,8 +13,10 @@ M3 Cord Production System #1057
 M3 Cord Production System #1056
 - 
 
+[commited]
 M3 Cord Production System #1055
-- 
+- Update CordSampling
+  - Calc sum (auto) and format decimal places.
 
 [commited]
 M3 Cord Production System #1054
