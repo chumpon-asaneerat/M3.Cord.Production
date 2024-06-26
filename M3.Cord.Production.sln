@@ -112,6 +112,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{748F0C41-F
 	ProjectSection(SolutionItems) = preProject
 		Documents\Data\data.txt = Documents\Data\data.txt
 		Documents\Data\First Twist.txt = Documents\Data\First Twist.txt
+		Documents\Data\Test 1 twist pc card bug.sql = Documents\Data\Test 1 twist pc card bug.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oracle", "Oracle", "{5C54D9E2-5613-452D-AB27-C131D613F94B}"
