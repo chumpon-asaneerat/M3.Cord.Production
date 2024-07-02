@@ -865,6 +865,11 @@ namespace M3.Cord
             {
                 get { return GetWindow<StartTwist1OpWindow>(); }
             }
+            /// <summary>Gets Edit Twist1 Op Window.</summary>
+            public static EditTwist1OpWindow EditTwist1Op
+            {
+                get { return GetWindow<EditTwist1OpWindow>(); }
+            }
             /// <summary>Gets End Twist1 Op Window.</summary>
             public static EndTwist1OpWindow EndTwist1Op
             {

@@ -89,6 +89,34 @@
                         <GridViewColumn Header="Product" CellTemplate="{StaticResource ProductWeight}" />
                         <GridViewColumn Header="Start time" CellTemplate="{StaticResource StartTime}" />
                         <GridViewColumn Header="End time" CellTemplate="{StaticResource EndTime}" />
+                        <!--  BUTTONS  -->
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  Edit  -->
+                                        <Button x:Name="cmdEdit"
+                                                Style="{StaticResource InlineButton}"
+                                                DockPanel.Dock="Left"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdEdit_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Edit"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <GridViewColumn Header="Waste weight" CellTemplate="{StaticResource WasteWeight}" />
                         <GridViewColumn Header="Remark" CellTemplate="{StaticResource Remark}" />
                     </GridView>

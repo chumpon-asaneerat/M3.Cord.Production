@@ -253,6 +253,37 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void cmdEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            var ctx = (null != btn) ? btn.DataContext : null;
+            var op = (null != ctx) ? ctx as PCTwist1Operation : null;
+            if (null != op)
+            {
+
+                if (null == selectedMC || null == pcCard)
+                    return;
+
+                if (!op.EndTime.HasValue)
+                {
+                    var msg = M3CordApp.Windows.MessageBox;
+                    string sMsg = "Cannot Edit Current Record." + Environment.NewLine + "due to doff is not end.";
+                    msg.Setup(sMsg);
+                    msg.ShowDialog();
+
+                    return;
+                }
+
+                var win = M3CordApp.Windows.EditTwist1Op;
+                op.PCTwist1Id = pcCard.PCTwist1Id;
+                op.MCCode = selectedMC.MCCode;
+                win.Setup(op); // Edit
+                if (win.ShowDialog() == false) return;
+
+                RefreshGrids();
+            }
+        }
+
         #endregion
 
         #region ListView Handlers

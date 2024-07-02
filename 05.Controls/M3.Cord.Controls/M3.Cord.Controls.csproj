@@ -538,7 +538,7 @@
     <Compile Include="Services\Excels\SolutionExports.cs" />
     <Compile Include="Services\Excels\Twist1CheckSheetExport.cs" />
     <Compile Include="Services\Warehouse\WarehouseStockYarnService.cs" />
-    <Compile Include="Windows\EditTwist1OpWindow.xaml.cs">
+    <Compile Include="Windows\FirstTwist\EditTwist1OpWindow.xaml.cs">
       <DependentUpon>EditTwist1OpWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Master\ProductEditorWindow.xaml.cs">
@@ -1388,7 +1388,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\EditTwist1OpWindow.xaml">
+    <Page Include="Windows\FirstTwist\EditTwist1OpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
