@@ -147,7 +147,7 @@ namespace M3.Cord.Pages
             }
 
             var dt = pcCard.StartTime.Value;
-            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
+            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0).AddHours(-1);
 
             var win = M3CordApp.Windows.DIPTimeTableEditor;
             var item = DIPTimeTable.Create(pcCard.ProductCode);
@@ -168,7 +168,7 @@ namespace M3.Cord.Pages
             if (null == item) return;
 
             var dt = pcCard.StartTime.Value;
-            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0);
+            var startDate = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0).AddHours(-1);
 
             var win = M3CordApp.Windows.DIPTimeTableEditor;
             win.Setup(startDate, item, true);
