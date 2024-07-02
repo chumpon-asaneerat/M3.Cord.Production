@@ -1,4 +1,4 @@
-﻿<Window x:Class="M3.Cord.Windows.StartTwist1OpWindow"
+﻿<Window x:Class="M3.Cord.Windows.EditTwist1OpWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,15 +7,15 @@
         xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
         xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
         mc:Ignorable="d"
-        Title="Start Doff"
+        Title="End Doff"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="400"
-        Width="600">
-    <page:NPage HeaderText="Start Doff">
+        Height="450"
+        Width="850">
+    <page:NPage HeaderText="Edit Doff">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
             <DockPanel LastChildFill="True"
@@ -41,11 +41,12 @@
                     <elem:FlowBox DockPanel.Dock="Left" />
                     <Grid />
                 </DockPanel>
-                <!--  INPUT INFO  -->
+                <!--  READ ONLY INFO  -->
                 <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                     <StackPanel Orientation="Horizontal">
                         <!--  TEST/NORMAL DOFF MODE  -->
                         <CheckBox x:Name="chkTest"
+                                  IsEnabled="True"
                                   Style="{StaticResource CommonCheckBox}"
                                   Margin="5"
                                   FontSize="24"
@@ -53,9 +54,36 @@
                                   VerticalAlignment="Bottom" />
                         <!--  DOFF NO  -->
                         <ctrl:NTextBox CaptionText="Doff No:"
+                                       IsEnabled="True"
                                        DockPanel.Dock="Left"
-                                       Text="{Binding DoffNo, TargetNullValue=''}"
+                                       Text="{Binding DoffNo}"
                                        Width="150" />
+                    </StackPanel>
+                </DockPanel>
+                <!--  INPUT INFO  -->
+                <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                    <StackPanel Orientation="Horizontal">
+                        <!--  Unit Weight  -->
+                        <ctrl:NTextBox CaptionText="Unit Weight:"
+                                       DockPanel.Dock="Left"
+                                       Text="{Binding UnitWeight, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
+                                       Width="200" />
+                        <!--  Output No  -->
+                        <ctrl:NTextBox CaptionText="Output Number:"
+                                       DockPanel.Dock="Left"
+                                       Text="{Binding OutputCH, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
+                                       Width="200" />
+                        <!--  Product  -->
+                        <ctrl:NTextBox CaptionText="Product:"
+                                       DockPanel.Dock="Left"
+                                       Text="{Binding CalcProductWeight, TargetNullValue=''}"
+                                       IsReadOnly="True"
+                                       Width="200" />
+                        <!--  Waste Weight  -->
+                        <ctrl:NTextBox CaptionText="Waste Weight:"
+                                       DockPanel.Dock="Left"
+                                       Text="{Binding WasteWeight, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
+                                       Width="200" />
                     </StackPanel>
                 </DockPanel>
                 <Grid />

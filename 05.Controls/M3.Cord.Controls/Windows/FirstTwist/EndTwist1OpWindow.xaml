@@ -56,7 +56,7 @@
                         <ctrl:NTextBox CaptionText="Doff No:"
                                        IsEnabled="False"
                                        DockPanel.Dock="Left"
-                                       Text="{Binding DoffNo}"
+                                       Text="{Binding DoffNo, TargetNullValue=''}"
                                        Width="150" />
                     </StackPanel>
                 </DockPanel>
@@ -66,23 +66,23 @@
                         <!--  Unit Weight  -->
                         <ctrl:NTextBox CaptionText="Unit Weight:"
                                        DockPanel.Dock="Left"
-                                       Text="{Binding UnitWeight, UpdateSourceTrigger=LostFocus}"
+                                       Text="{Binding UnitWeight, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
                                        Width="200" />
                         <!--  Output No  -->
                         <ctrl:NTextBox CaptionText="Output Number:"
                                        DockPanel.Dock="Left"
-                                       Text="{Binding OutputCH, UpdateSourceTrigger=LostFocus}"
+                                       Text="{Binding OutputCH, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
                                        Width="200" />
                         <!--  Product  -->
                         <ctrl:NTextBox CaptionText="Product:"
                                        DockPanel.Dock="Left"
-                                       Text="{Binding CalcProductWeight}"
+                                       Text="{Binding CalcProductWeight, TargetNullValue=''}"
                                        IsReadOnly="True"
                                        Width="200" />
                         <!--  Waste Weight  -->
                         <ctrl:NTextBox CaptionText="Waste Weight:"
                                        DockPanel.Dock="Left"
-                                       Text="{Binding WasteWeight, UpdateSourceTrigger=LostFocus}"
+                                       Text="{Binding WasteWeight, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
                                        Width="200" />
                     </StackPanel>
                 </DockPanel>

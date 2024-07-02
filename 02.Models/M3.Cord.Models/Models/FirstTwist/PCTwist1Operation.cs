@@ -337,6 +337,76 @@ namespace M3.Cord.Models
 
             return ret;
         }
+        /// <summary>
+        /// Edit
+        /// </summary>
+        /// <param name="value">The PCTwist1Operation item to save.</param>
+        /// <returns></returns>
+        public static NDbResult<PCTwist1Operation> EditOperation(PCTwist1Operation value)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<PCTwist1Operation> ret = new NDbResult<PCTwist1Operation>();
+
+            if (null == value)
+            {
+                ret.ParameterIsNull();
+                return ret;
+            }
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            value.ProductWeight = value.CalcProductWeight;
+
+            var p = new DynamicParameters();
+            p.Add("@PCTwist1Id", value.PCTwist1Id);
+            p.Add("@ProductionDate", value.ProductionDate);
+            p.Add("@TestFlag", value.TestFlag);
+            p.Add("@DoffNo", value.DoffNo);
+
+            p.Add("@UnitWeight", value.UnitWeight);
+            p.Add("@OutputCH", value.OutputCH);
+            p.Add("@ProductWeight", value.ProductWeight);
+            p.Add("@WasteWeight", value.WasteWeight);
+
+            p.Add("@EndTime", value.EndTime);
+
+            p.Add("@Remark", value.Remark);
+            p.Add("@PCTwist1OpId", value.PCTwist1OpId, DbType.Int32, direction: ParameterDirection.InputOutput);
+
+            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
+
+            try
+            {
+                cnn.Execute("EditTwist1Ops", p, commandType: CommandType.StoredProcedure);
+                ret.Success(value);
+                // Set PK
+                value.PCTwist1OpId = p.Get<int?>("@PCTwist1OpId");
+                // Set error number/message
+                ret.ErrNum = p.Get<int>("@errNum");
+                ret.ErrMsg = p.Get<string>("@errMsg");
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
 
         #endregion
     }
