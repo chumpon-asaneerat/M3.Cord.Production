@@ -342,21 +342,21 @@
                             <TextBlock Text="D" FontSize="18" />
                         </Border>
                         <Border Grid.Row="1" Grid.Column="1">
-                            <TextBox Width="70" Text="{Binding TensionD, StringFormat='{}{0:#,##0.##}'}" />
+                            <TextBox Width="70" Text="{Binding TensionD, StringFormat='{}{0:#,##0.###}'}" />
                         </Border>
 
                         <Border Grid.Row="2" Grid.Column="0">
                             <TextBlock Text="H" FontSize="18" />
                         </Border>
                         <Border Grid.Row="2" Grid.Column="1">
-                            <TextBox Width="70" Text="{Binding TensionH, StringFormat='{}{0:#,##0.##}'}" />
+                            <TextBox Width="70" Text="{Binding TensionH, StringFormat='{}{0:#,##0.###}'}" />
                         </Border>
 
                         <Border Grid.Row="3" Grid.Column="0">
                             <TextBlock Text="N" FontSize="18" />
                         </Border>
                         <Border Grid.Row="3" Grid.Column="1">
-                            <TextBox Width="70" Text="{Binding TensionN, StringFormat='{}{0:#,##0.##}'}" />
+                            <TextBox Width="70" Text="{Binding TensionN, StringFormat='{}{0:#,##0.###}'}" />
                         </Border>
 
                         <Border Grid.Row="4" Grid.Column="0">
