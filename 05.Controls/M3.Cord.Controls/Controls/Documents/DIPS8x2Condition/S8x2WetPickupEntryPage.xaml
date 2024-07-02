@@ -71,15 +71,6 @@
             <Grid />
         </DockPanel>
         <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-            <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <ctrl:FontAwesomeButton x:Name="cmdAdd1"
-                                            Margin="5,0,0,0"
-                                            IconType="Add"
-                                            Text="เพิ่ม"
-                                            Click="cmdAdd1_Click" />
-                </StackPanel>
-            </DockPanel>
             <DockPanel LastChildFill="True" DockPanel.Dock="Bottom">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBlock Text="Total: "
@@ -99,6 +90,34 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
+                        <!--  BUTTONS  -->
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  Detail  -->
+                                        <Button x:Name="cmdEdit1"
+                                                Style="{StaticResource InlineButton}"
+                                                DockPanel.Dock="Left"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdEdit1_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Edit"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <GridViewColumn Header="Date" CellTemplate="{StaticResource S8WetDate}" />
                         <GridViewColumn Header="Time" CellTemplate="{StaticResource S8WetTime}" />
                         <GridViewColumn Header="Doff No" CellTemplate="{StaticResource S8Doff}" />
@@ -151,16 +170,6 @@
             <Grid />
         </DockPanel>
         <DockPanel LastChildFill="True">
-            <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <ctrl:FontAwesomeButton x:Name="cmdAdd2"
-                                            Margin="5,0,0,0"
-                                            IconType="Add"
-                                            Text="เพิ่ม"
-                                            Click="cmdAdd2_Click" />
-                </StackPanel>
-                <Grid />
-            </DockPanel>
             <DockPanel LastChildFill="True" DockPanel.Dock="Bottom">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBlock Text="Total: "
@@ -180,6 +189,34 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
+                        <!--  BUTTONS  -->
+                        <GridViewColumn Header="">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <!--  Detail  -->
+                                        <Button x:Name="cmdEdit2"
+                                                Style="{StaticResource InlineButton}"
+                                                DockPanel.Dock="Left"
+                                                Margin="5,0"
+                                                Width="100"
+                                                Height="30"
+                                                Click="cmdEdit2_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
+                                                <TextBlock Margin="3,0"
+                                                           FontFamily="{StaticResource THSarabun}"
+                                                           FontSize="{StaticResource IBFSize}"
+                                                           Text="Edit"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <GridViewColumn Header="Date" CellTemplate="{StaticResource S8WetDate}" />
                         <GridViewColumn Header="Time" CellTemplate="{StaticResource S8WetTime}" />
                         <GridViewColumn Header="Doff No" CellTemplate="{StaticResource S8Doff}" />

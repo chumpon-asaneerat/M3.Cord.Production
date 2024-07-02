@@ -58,13 +58,13 @@ namespace M3.Cord.Controls.Documents
             grid.ItemsSource = null;
             if (null != pcCard)
             {
-                grid.ItemsSource = S8x2WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, 1).Value();
+                grid.ItemsSource = S8x2WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, pcCard.DoffNo, 1).Value();
             }
 
             grid2.ItemsSource = null;
             if (null != pcCard)
             {
-                grid2.ItemsSource = S8x2WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, 2).Value();
+                grid2.ItemsSource = S8x2WetPickUpItem.Gets(pcCard.ProductCode, pcCard.DIPLotNo, DateTime.Now, pcCard.DoffNo, 2).Value();
             }
         }
 

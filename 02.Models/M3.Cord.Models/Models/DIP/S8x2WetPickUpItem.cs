@@ -20,8 +20,18 @@ using System.Windows.Controls.Primitives;
 
 namespace M3.Cord.Models
 {
-    public class S8x2WetPickUpItem
+    public class S8x2WetPickUpItem : NInpc
     {
+        #region Private Methods
+
+        private void CalcRestAmt()
+        {
+            RestAmt = FirstAmt.HasValue ? UseAmt.HasValue ? (FirstAmt.Value - UseAmt.Value) : FirstAmt.Value : new decimal?();
+            Raise(() => this.RestAmt);
+        }
+
+        #endregion
+
         #region Public Properties
 
         public string ProductCode { get; set; }
@@ -36,9 +46,33 @@ namespace M3.Cord.Models
         public decimal? WPUErr { get; set; }
         public decimal? WPUValue { get; set; }
 
-        public decimal? FirstAmt { get; set; }
-        public decimal? UseAmt { get; set; }
-        public decimal? RestAmt { get; set; }
+        public decimal? FirstAmt 
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () => 
+                {
+                    CalcRestAmt();
+                });
+            }
+        }
+        public decimal? UseAmt 
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    CalcRestAmt();
+                });
+            }
+        }
+        public decimal? RestAmt 
+        {
+            get { return Get<decimal?>(); }
+            set { Set(value, () => { }); }
+        }
         public decimal? ThrowAmt { get; set; }
 
         public string Operator { get; set; }
@@ -50,7 +84,7 @@ namespace M3.Cord.Models
         #region Static Methods
 
         public static NDbResult<List<S8x2WetPickUpItem>> Gets(string ProductCode, string LotNo, 
-            DateTime? DoffingDate, int TwistNo)
+            DateTime? DoffingDate, int doffNo, int TwistNo)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -72,12 +106,55 @@ namespace M3.Cord.Models
             p.Add("@ProductCode", ProductCode);
             p.Add("@LotNo", LotNo);
             p.Add("@DoffingDate", DoffingDate);
+            p.Add("@DoffNo", doffNo);
             p.Add("@TwistNo", TwistNo);
 
             try
             {
                 var item = cnn.Query<S8x2WetPickUpItem>("GetS8x2WetPickUpItems", p,
                     commandType: CommandType.StoredProcedure).ToList();
+                var data = item;
+                ret.Success(data);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
+        public static NDbResult<S8x2WetPickUpItem> GetLast(string ProductCode, string LotNo,
+            int TwistNo)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult<S8x2WetPickUpItem> ret = new NDbResult<S8x2WetPickUpItem>();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@ProductCode", ProductCode);
+            p.Add("@LotNo", LotNo);
+            p.Add("@TwistNo", TwistNo);
+
+            try
+            {
+                var item = cnn.Query<S8x2WetPickUpItem>("GetS8x2WetPickUpLastItem", p,
+                    commandType: CommandType.StoredProcedure).FirstOrDefault();
                 var data = item;
                 ret.Success(data);
             }

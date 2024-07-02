@@ -40,7 +40,7 @@
                            TextAlignment="Right"
                            Margin="2" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding NipPressure}" Width="150" />
+                <TextBox Text="{Binding NipPressure, TargetNullValue=''}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -52,7 +52,7 @@
                            TextAlignment="Right"
                            Margin="2" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding WPU, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBox Text="{Binding WPU, TargetNullValue='', StringFormat='{}{0:#,##0.##}'}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -64,7 +64,7 @@
                            TextAlignment="Right"
                            Margin="2" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding FirstAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBox Text="{Binding FirstAmt, TargetNullValue='', StringFormat='{}{0:#,##0.##}'}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -76,7 +76,7 @@
                            TextAlignment="Right"
                            Margin="2" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding UseAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBox Text="{Binding UseAmt, TargetNullValue='', StringFormat='{}{0:#,##0.##}'}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -88,7 +88,9 @@
                            TextAlignment="Right"
                            Margin="2" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding RestAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBox Text="{Binding RestAmt, TargetNullValue='', StringFormat='{}{0:#,##0.##}'}"
+                         Width="150"
+                         IsReadOnly="True" />
                 <TextBlock Width="10" />
             </StackPanel>
 
@@ -100,7 +102,7 @@
                            TextAlignment="Right"
                            Margin="2" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding ThrowAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBox Text="{Binding ThrowAmt, TargetNullValue='', StringFormat='{}{0:#,##0.##}'}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
         </StackPanel>
