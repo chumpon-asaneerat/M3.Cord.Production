@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using System.Drawing.Drawing2D;
 
 #endregion
 
@@ -140,15 +141,20 @@ namespace M3.Cord.Pages
         private void ClearInputs()
         {
             txtProductLotNo.Text = string.Empty;
-            dtBegin.SelectedDate = new DateTime?();
-            dtEnd.SelectedDate = new DateTime?();
+            
+            //dtBegin.SelectedDate = new DateTime?();
+            //dtEnd.SelectedDate = new DateTime?();
+
+            // set default date.
+            dtBegin.SelectedDate = DateTime.Today;
+            dtEnd.SelectedDate = DateTime.Today;
+
             cbProducts.SelectedIndex = -1;
         }
 
         private void RefreshGrid()
         {
             grid.ItemsSource = null;
-
 
             string txtLotNo = txtProductLotNo.Text.Trim();
 
@@ -159,7 +165,23 @@ namespace M3.Cord.Pages
 
             string txtPCode = (null != product) ? product.ProductCode : null;
             string productCode = (!string.IsNullOrEmpty(txtPCode)) ? txtPCode : null;
-            
+
+            int pCnt = 0;
+            if (null != productLotNo) pCnt++;
+            if (null != productCode) pCnt++;
+            if (begin.HasValue) pCnt++;
+            if (end.HasValue) pCnt++;
+
+            if (pCnt <= 0)
+            {
+                var win = M3CordApp.Windows.MessageBox;
+
+                string msg = "Please enter at least one search condition";
+                win.Setup(msg);
+                win.ShowDialog();
+                return;
+            }
+
             grid.ItemsSource = PalletSetting.Search(
                 productLotNo, begin, end, productCode, PalletStatus.All).Value();
         }
@@ -168,11 +190,14 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup()
+        public void Setup(bool refresh = false)
         {
             cbProducts.ItemsSource = Product.Gets().Value();
             ClearInputs();
-            RefreshGrid();
+            if (refresh)
+            {
+                RefreshGrid();
+            }
         }
 
         #endregion

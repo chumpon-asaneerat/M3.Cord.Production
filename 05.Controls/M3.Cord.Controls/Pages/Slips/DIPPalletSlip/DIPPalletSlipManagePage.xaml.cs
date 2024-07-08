@@ -141,7 +141,6 @@ namespace M3.Cord.Pages
         {
             grid.ItemsSource = null;
 
-
             string txtLotNo = txtDIPLotNo.Text.Trim();
 
             string dipLotNo = (!string.IsNullOrEmpty(txtLotNo)) ? txtLotNo : null;
@@ -152,6 +151,22 @@ namespace M3.Cord.Pages
             string txtPCode = (null != product) ? product.ProductCode : null;
             string productCode = (!string.IsNullOrEmpty(txtPCode)) ? txtPCode : null;
 
+            int pCnt = 0;
+            if (null != dipLotNo) pCnt++;
+            if (null != productCode) pCnt++;
+            if (begin.HasValue) pCnt++;
+            if (end.HasValue) pCnt++;
+
+            if (pCnt <= 0)
+            {
+                var win = M3CordApp.Windows.MessageBox;
+
+                string msg = "Please enter at least one search condition";
+                win.Setup(msg);
+                win.ShowDialog();
+                return;
+            }
+
             grid.ItemsSource = DIPPalletSlip.Search(
                 dipLotNo, begin, end, productCode, DIPPalletStatus.All).Value();
         }
@@ -160,11 +175,14 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup()
+        public void Setup(bool refresh = false)
         {
             cbProducts.ItemsSource = Product.GetDipProducts(null).Value();
             ClearInputs();
-            RefreshGrid();
+            if (refresh)
+            {
+                RefreshGrid();
+            }
         }
 
         #endregion
