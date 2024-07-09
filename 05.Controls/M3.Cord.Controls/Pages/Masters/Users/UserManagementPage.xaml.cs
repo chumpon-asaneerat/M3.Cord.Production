@@ -239,9 +239,12 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup()
+        public void Setup(bool refresh = false)
         {
-            RefreshGrid();
+            if (refresh)
+            {
+                RefreshGrid();
+            }
         }
 
         #endregion
