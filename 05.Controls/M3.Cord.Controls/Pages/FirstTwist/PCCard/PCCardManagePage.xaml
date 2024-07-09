@@ -68,6 +68,13 @@
                                     Width="250"
                                     SelectionChanged="cbItemYanrs_SelectionChanged" />
                     -->
+                    <!--  SEARCH  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdSearch"
+                                            Margin="5,0,0,0"
+                                            IconType="Search"
+                                            VerticalAlignment="Bottom"
+                                            Text="Search"
+                                            Click="cmdSearch_Click"/>
                     <Grid />
                 </DockPanel>
             </DockPanel>

@@ -62,6 +62,11 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
+        private void cmdSearch_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
         private void cmdNew_Click(object sender, RoutedEventArgs e)
         {
             var item = new PCCard();
@@ -167,7 +172,7 @@ namespace M3.Cord.Pages
 
         private void cbItemYanrs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RefreshGrid();
+            //RefreshGrid();
         }
 
         #endregion
@@ -213,11 +218,14 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup()
+        public void Setup(bool refresh = false)
         {
             ResetControls();
             LoadComboBoxes();
-            RefreshGrid();
+            if (refresh)
+            {
+                RefreshGrid();
+            }
         }
 
         #endregion
