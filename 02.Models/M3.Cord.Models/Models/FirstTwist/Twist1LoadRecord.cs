@@ -71,11 +71,11 @@ namespace M3.Cord.Models
 
         #region Public Methods
 
-        public void LoadItems()
+        public void LoadItems(string palletNo, string traceNo)
         {
             if (Twist1LoadId.HasValue && Twist1LoadId.Value > 0)
             {
-                this.Items = Twist1LoadRecordItem.Gets(Twist1LoadId.Value).Value();
+                this.Items = Twist1LoadRecordItem.Gets(Twist1LoadId.Value, palletNo, traceNo).Value();
             }
         }
 

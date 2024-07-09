@@ -85,7 +85,7 @@ namespace M3.Cord.Pages
         private void pagePCCard_RequestLoadYarn(object sender, EventArgs e)
         {
             tabs.SelectedIndex = 1;
-            pageRawMat.ShowLoadYarnDialog(null);
+            pageRawMat.ShowLoadYarnDialog(null, null, null);
         }
 
         private void pagePCCard_FinishPCCard(object sender, EventArgs e)

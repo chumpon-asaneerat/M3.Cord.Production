@@ -47,6 +47,9 @@ namespace M3.Cord.Windows
         private Twist1LoadRecord _item = null;
         private G4IssueYarn _pallet = null; // current pallet
 
+        private string _palletNo = null;
+        private string _traceNo = null;
+
         #endregion
 
         #region TextBox Handlers
@@ -176,7 +179,7 @@ namespace M3.Cord.Windows
             this.DataContext = null;
             if (null != _item)
             {
-                _item.LoadItems();
+                _item.LoadItems(_palletNo, _traceNo);
             }
             this.DataContext = _item;
 
@@ -462,13 +465,16 @@ namespace M3.Cord.Windows
 
         #region Public Methods
 
-        public void Setup(FirstTwistMC mc, PCTwist1 pcCard, Twist1LoadRecord record = null)
+        public void Setup(FirstTwistMC mc, PCTwist1 pcCard, Twist1LoadRecord record, 
+            string palletNo, string traceNo)
         {
             RefreshCurrentPallet();
 
             _mc = mc;
             _pcCard = pcCard;
             _item = record;
+            _palletNo = palletNo;
+            _traceNo = traceNo;
 
             CheckEnableSave();
             EnableScanOption();

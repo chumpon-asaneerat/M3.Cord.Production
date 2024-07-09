@@ -62,7 +62,7 @@ namespace M3.Cord.Pages
 
         private void cmdLoadYarn_Click(object sender, RoutedEventArgs e)
         {
-            ShowLoadYarnDialog(null);
+            ShowLoadYarnDialog(null, null, null);
         }
 
         private void cmdDetail_Click(object sender, RoutedEventArgs e)
@@ -75,7 +75,7 @@ namespace M3.Cord.Pages
                 var inst = Twist1LoadRecord.Gets(item.PCTwist1Id, item.Twist1LoadId).Value().FirstOrDefault();
                 if (null != inst)
                 {
-                    ShowLoadYarnDialog(inst);
+                    ShowLoadYarnDialog(inst, item.PalletNo, item.TraceNo);
                 }
             }
         }
@@ -117,14 +117,14 @@ namespace M3.Cord.Pages
             UpdateMCStatus();
         }
 
-        public void ShowLoadYarnDialog(Twist1LoadRecord record)
+        public void ShowLoadYarnDialog(Twist1LoadRecord record, string palletNo, string traceNo)
         {
             if (null == selectedMC || null == pcCard)
                 return;
             var win = M3CordApp.Windows.Twist1LoadRecordEditor;
             // set display mode
             win.Mode = (null != record) ? DisplayMode.Edit : DisplayMode.New;
-            win.Setup(selectedMC, pcCard, record);
+            win.Setup(selectedMC, pcCard, record, palletNo, traceNo);
             if (win.ShowDialog() == false) return;
 
             // reload pc card to refresh last doff/test no. 

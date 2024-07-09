@@ -51,7 +51,7 @@ namespace M3.Cord.Models
         /// Gets
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<List<Twist1LoadRecordItem>> Gets(int Twist1LoadId)
+        public static NDbResult<List<Twist1LoadRecordItem>> Gets(int Twist1LoadId, string PalletNo, string TraceNo)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -71,6 +71,8 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@Twist1LoadId", Twist1LoadId);
+            p.Add("@PalletNo", PalletNo);
+            p.Add("@TraceNo", TraceNo);
             try
             {
                 var items = cnn.Query<Twist1LoadRecordItem>("GetTwist1LoadRecordItems", p,

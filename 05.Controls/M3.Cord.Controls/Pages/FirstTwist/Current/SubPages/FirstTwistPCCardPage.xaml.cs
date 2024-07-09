@@ -141,7 +141,8 @@ namespace M3.Cord.Pages
                         inst.ShiftName = record.ShiftName;
 
                         inst = Twist1LoadRecord.Save(inst).Value();
-                        var recordItems = Twist1LoadRecordItem.Gets(record.Twist1LoadId.Value).Value();
+                        var recordItems = Twist1LoadRecordItem.Gets(record.Twist1LoadId.Value,
+                            null, null).Value();
                         if (null != recordItems)
                         {
                             foreach (var recordItem in recordItems)

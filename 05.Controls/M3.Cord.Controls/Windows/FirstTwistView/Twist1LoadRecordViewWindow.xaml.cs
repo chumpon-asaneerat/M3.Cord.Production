@@ -18,6 +18,7 @@ using NLib.Models;
 using M3.Cord.Models;
 using NLib;
 using NLib.Data.Design;
+using System.Diagnostics;
 
 #endregion
 
@@ -71,7 +72,7 @@ namespace M3.Cord.Windows
 
         #region Public Methods
 
-        public void Setup(PCTwist1 pcCard, Twist1LoadRecord record = null)
+        public void Setup(PCTwist1 pcCard, Twist1LoadRecord record, string palletNo, string traceNo)
         {
             this.DataContext = null;
             _pcCard = pcCard;
@@ -79,7 +80,7 @@ namespace M3.Cord.Windows
             _item = record;
             if (null != _item)
             {
-                _item.LoadItems();
+                _item.LoadItems(palletNo, traceNo);
             }
 
             this.DataContext = _item;
