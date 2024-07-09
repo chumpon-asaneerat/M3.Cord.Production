@@ -138,17 +138,17 @@ namespace M3.Cord.Pages
                 }
             }
 
-            RefreshGrid();
+            //RefreshGrid();
         }
 
         private void cbItemYarns_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RefreshGrid();
+            //RefreshGrid();
         }
 
         private void cbMCCodes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RefreshGrid();
+           //RefreshGrid();
         }
 
         private void cbCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -191,12 +191,12 @@ namespace M3.Cord.Pages
                 }
             }
 
-            RefreshGrid();
+            //RefreshGrid();
         }
 
         private void cbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RefreshGrid();
+            //RefreshGrid();
         }
 
         #endregion
@@ -284,6 +284,24 @@ namespace M3.Cord.Pages
                 cbProducts.SelectedItem as Product : null;
             string sProduct = (null != product) ? product.ProductCode : null;
 
+            int pCnt = 0;
+
+            if (issuedate.HasValue) pCnt++;
+            if (iFromSource.HasValue) pCnt++;
+            if (null != palletOrTrace) pCnt++;
+            if (null != sItemYarn) pCnt++;
+            if (null != sCustomer) pCnt++;
+            if (null != sProduct) pCnt++;
+
+            if (pCnt <= 0)
+            {
+                var win = M3CordApp.Windows.MessageBox;
+
+                string msg = "Please enter at least one search condition";
+                win.Setup(msg);
+                win.ShowDialog();
+                return;
+            }
 
             var results = S5Condition.Search(issuedate, iFromSource, sProduct, sCustomer, palletOrTrace).Value();
 
@@ -294,11 +312,15 @@ namespace M3.Cord.Pages
 
         #region Public Methods
 
-        public void Setup()
+        public void Setup(bool refresh = false)
         {
             LoadComboBoxes();
             ClearInputs();
-            RefreshGrid();
+
+            if (refresh)
+            {
+                RefreshGrid();
+            }
         }
 
         #endregion
