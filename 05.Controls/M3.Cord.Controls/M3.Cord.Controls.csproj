@@ -121,6 +121,12 @@
     <Compile Include="Controls\Documents\DIPS8Before\DIPS8BeforeStdPage.xaml.cs">
       <DependentUpon>DIPS8BeforeStdPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Documents\DIPS8Before\DIPS8x2BeforeEntryPage.xaml.cs">
+      <DependentUpon>DIPS8x2BeforeEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Documents\DIPS8Before\DIPS8x2BeforeStdPage.xaml.cs">
+      <DependentUpon>DIPS8x2BeforeStdPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Documents\DIPS8x2Condition\S8x2WetPickupEntryViewPage.xaml.cs">
       <DependentUpon>S8x2WetPickupEntryViewPage.xaml</DependentUpon>
     </Compile>
@@ -797,6 +803,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Documents\DIPS8Before\DIPS8BeforeStdPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\DIPS8Before\DIPS8x2BeforeEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Documents\DIPS8Before\DIPS8x2BeforeStdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

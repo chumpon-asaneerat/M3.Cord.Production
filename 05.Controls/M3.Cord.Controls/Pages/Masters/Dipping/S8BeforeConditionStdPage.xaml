@@ -65,9 +65,7 @@
                 </TabItem>
                 <TabItem Header="S-8-2">
                     <ScrollViewer>
-                        <!--
                         <doc:DIPS8x2BeforeStdPage x:Name="cond2" />
-                        -->
                     </ScrollViewer>
                 </TabItem>
             </TabControl>
