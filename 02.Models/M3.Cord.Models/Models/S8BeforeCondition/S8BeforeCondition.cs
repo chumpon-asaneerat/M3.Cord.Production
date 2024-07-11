@@ -1537,7 +1537,7 @@ namespace M3.Cord.Models
 
             return ret;
         }
-
+        
         public static NDbResult DeleteStd(int? DIPPCId)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
@@ -1575,7 +1575,7 @@ namespace M3.Cord.Models
 
             return ret;
         }
-
+        
         public static NDbResult Delete(S8BeforeCondition value)
 		{
 			MethodBase med = MethodBase.GetCurrentMethod();

@@ -1011,7 +1011,7 @@ namespace M3.Cord.Models
         {
             get
             {
-                return (RowType == 1 && S8BeforeId.HasValue && S8BeforeId.Value > 0);
+                return (RowType == 1 && S8x2BeforeId.HasValue && S8x2BeforeId.Value > 0);
             }
             set { }
         }
@@ -1537,7 +1537,7 @@ namespace M3.Cord.Models
 
             return ret;
         }
-
+        
         public static NDbResult DeleteStd(int? DIPPCId)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
@@ -1575,7 +1575,7 @@ namespace M3.Cord.Models
 
             return ret;
         }
-
+        
         public static NDbResult Delete(S8BeforeCondition value)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
