@@ -216,6 +216,8 @@
                 <TextBlock Width="10" />
             </StackPanel>
 
+            <!--  FOR S-8-2  -->
+            <!--
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="Exhaust Circulation"
                            Width="300"
@@ -251,6 +253,7 @@
                 <TextBlock Text=" Hz " />
                 <TextBlock Width="10" />
             </StackPanel>
+            -->
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ความสะอาดลูกกลิ้ง (อ่าง 1)"
@@ -288,6 +291,7 @@
                 <TextBlock Width="10" />
             </StackPanel>
 
+            <!--  S-8-1  -->
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ความสะอาดฟองน้ำ (Sponge)"
                            Width="300"
