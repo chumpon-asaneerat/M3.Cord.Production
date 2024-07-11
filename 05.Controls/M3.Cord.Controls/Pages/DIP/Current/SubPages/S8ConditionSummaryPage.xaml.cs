@@ -180,8 +180,9 @@ namespace M3.Cord.Pages
             win.Setup(startDate, item);
             if (win.ShowDialog() == true)
             {
-                RefreshGrid();
+                
             }
+            RefreshGrid();
         }
 
         private void Edit(S8ProductionConditionItem item)
@@ -195,8 +196,9 @@ namespace M3.Cord.Pages
             win.Setup(startDate, item, true);
             if (win.ShowDialog() == true)
             {
-                RefreshGrid();
+                
             }
+            RefreshGrid();
         }
 
         private void Verify(S8ProductionConditionItem item)
@@ -208,9 +210,8 @@ namespace M3.Cord.Pages
                 {
                     item.Leader = (null != win.User) ? win.User.FullName : null;
                     S8ProductionConditionItem.Save(item);
-
-                    RefreshGrid();
                 }
+                RefreshGrid();
             }
         }
 

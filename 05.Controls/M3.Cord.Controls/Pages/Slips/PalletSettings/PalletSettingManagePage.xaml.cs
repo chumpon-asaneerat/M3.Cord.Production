@@ -118,7 +118,7 @@ namespace M3.Cord.Pages
 
         private void cbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RefreshGrid();
+            //RefreshGrid();
         }
 
         #endregion
