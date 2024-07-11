@@ -1443,7 +1443,7 @@ namespace M3.Cord.Models
 
             try
             {
-                var items = cnn.Query<DIPTimeTable>("SaveS8BeforeStdVRow", p,
+                var items = cnn.Query<S8BeforeCondition>("SaveS8BeforeStdVRow", p,
                     commandType: CommandType.StoredProcedure);
                 ret.Success();
             }
@@ -1483,7 +1483,7 @@ namespace M3.Cord.Models
 
             try
             {
-                var items = cnn.Query<DIPTimeTable>("SaveS8BeforeStdBRow", p,
+                var items = cnn.Query<S8BeforeCondition>("SaveS8BeforeStdBRow", p,
                     commandType: CommandType.StoredProcedure);
                 ret.Success();
             }
@@ -1523,7 +1523,7 @@ namespace M3.Cord.Models
 
             try
             {
-                var items = cnn.Query<DIPTimeTable>("SaveS8BeforeStdCFRow", p,
+                var items = cnn.Query<S8BeforeCondition>("SaveS8BeforeStdCFRow", p,
                     commandType: CommandType.StoredProcedure);
                 ret.Success();
             }
@@ -1561,7 +1561,7 @@ namespace M3.Cord.Models
 
             try
             {
-                var items = cnn.Query<DIPTimeTable>("DeleteS8BeforeStd", p,
+                var items = cnn.Query<S8BeforeCondition>("DeleteS8BeforeStd", p,
                     commandType: CommandType.StoredProcedure);
                 ret.Success();
             }
