@@ -196,12 +196,25 @@ namespace M3.Cord.Models
 			p.Add("@ExhaustFanDryer", value.ExhaustFanDryer);
 			p.Add("@ExhaustFanHNSC", value.ExhaustFanHNSC);
 			p.Add("@ExhaustFanHN", value.ExhaustFanHN);
-			p.Add("@CleanBath1SC", value.CleanBath1SC);
+
+            p.Add("@ExhaustCirculationSC", value.ExhaustCirculationSC);
+            p.Add("@ExhaustCirculation", value.ExhaustCirculation);
+
+            p.Add("@ExhaustExhaustSC", value.ExhaustExhaustSC);
+            p.Add("@ExhaustExhaust", value.ExhaustExhaust);
+
+            p.Add("@ExhaustFrontBackSC", value.ExhaustFrontBackSC);
+            p.Add("@ExhaustFrontBack", value.ExhaustFrontBack);
+
+            p.Add("@CleanBath1SC", value.CleanBath1SC);
 			p.Add("@CleanBath2SC", value.CleanBath2SC);
 			p.Add("@CleanFrontSC", value.CleanFrontSC);
+
 			p.Add("@CamboxSC", value.CamboxSC);
 
-			p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.Add("@SpongeSC", value.SpongeSC);
+
+            p.Add("@errNum", dbType: DbType.Int32, direction: ParameterDirection.Output);
 			p.Add("@errMsg", dbType: DbType.String, direction: ParameterDirection.Output, size: -1);
 
 			try

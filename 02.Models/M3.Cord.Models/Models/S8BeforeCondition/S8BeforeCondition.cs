@@ -1238,7 +1238,6 @@ namespace M3.Cord.Models
             p.Add("@ExhaustFanHNValue", value.ExhaustFanHNValue);
 
 
-
             p.Add("@ExhaustCirculationSC", value.ExhaustCirculationSC);
             p.Add("@ExhaustCirculation", value.ExhaustCirculation);
             p.Add("@ExhaustCirculationValue", value.ExhaustCirculationValue);
