@@ -433,6 +433,9 @@
     <Compile Include="Pages\DIP\Current\SubPages\S8x2BeforeStartSummaryPage.xaml.cs">
       <DependentUpon>S8x2BeforeStartSummaryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DIP\View\SubPages\S8x2BeforeStartSummaryViewPage.xaml.cs">
+      <DependentUpon>S8x2BeforeStartSummaryViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
       <DependentUpon>CreateRecipePage.xaml</DependentUpon>
     </Compile>
@@ -555,6 +558,9 @@
     </Compile>
     <Compile Include="Windows\DIP\S8x2BeforeEditorWindow.xaml.cs">
       <DependentUpon>S8x2BeforeEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DIPView\S8x2BeforeEditorViewWindow.xaml.cs">
+      <DependentUpon>S8x2BeforeEditorViewWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SignIn\ConfirmUserWindow.xaml.cs">
       <DependentUpon>ConfirmUserWindow.xaml</DependentUpon>
@@ -1224,6 +1230,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DIP\View\SubPages\S8x2BeforeStartSummaryViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Solution\CreateRecipePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1421,6 +1431,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\DIP\S8x2BeforeEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DIPView\S8x2BeforeEditorViewWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

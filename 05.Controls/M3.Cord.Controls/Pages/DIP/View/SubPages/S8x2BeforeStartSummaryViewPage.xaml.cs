@@ -25,16 +25,16 @@ using NLib;
 namespace M3.Cord.Pages
 {
     /// <summary>
-    /// Interaction logic for S8BeforeStartSummaryViewPage.xaml
+    /// Interaction logic for S8x2BeforeStartSummaryViewPage.xaml
     /// </summary>
-    public partial class S8BeforeStartSummaryViewPage : UserControl
+    public partial class S8x2BeforeStartSummaryViewPage : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public S8BeforeStartSummaryViewPage()
+        public S8x2BeforeStartSummaryViewPage()
         {
             InitializeComponent();
         }
@@ -65,14 +65,14 @@ namespace M3.Cord.Pages
         private void cmdDetails_Click(object sender, RoutedEventArgs e)
         {
             var ctx = (sender as Button).DataContext;
-            var item = (null != ctx && ctx is S8BeforeCondition) ? ctx as S8BeforeCondition : null;
+            var item = (null != ctx && ctx is S8x2BeforeCondition) ? ctx as S8x2BeforeCondition : null;
             Edit(item);
         }
 
         private void cmdConfirmCondition_Click(object sender, RoutedEventArgs e)
         {
             var ctx = (sender as Button).DataContext;
-            var item = (null != ctx && ctx is S8BeforeCondition) ? ctx as S8BeforeCondition : null;
+            var item = (null != ctx && ctx is S8x2BeforeCondition) ? ctx as S8x2BeforeCondition : null;
             Edit(item);
         }
 
@@ -84,7 +84,7 @@ namespace M3.Cord.Pages
         {
             if (null == pcCard)
                 return;
-            var ret = S8BeforeCondition.DeleteStd(pcCard.DIPPCId);
+            var ret = S8x2BeforeCondition.DeleteStd(pcCard.DIPPCId);
             if (null != ret && ret.Ok)
             {
                 if (null != pcCard)
@@ -100,28 +100,28 @@ namespace M3.Cord.Pages
             if (null == pcCard)
                 return;
 
-            var retV = S8BeforeCondition.GetStdV(pcCard.DIPPCId).Value();
+            var retV = S8x2BeforeCondition.GetStdV(pcCard.DIPPCId).Value();
             if (null == retV)
             {
-                S8BeforeCondition.SaveStdV(pcCard.DIPPCId, pcCard.ProductCode, pcCard.DIPLotNo);
+                S8x2BeforeCondition.SaveStdV(pcCard.DIPPCId, pcCard.ProductCode, pcCard.DIPLotNo);
             }
-            var retB = S8BeforeCondition.GetStdB(pcCard.DIPPCId).Value();
+            var retB = S8x2BeforeCondition.GetStdB(pcCard.DIPPCId).Value();
             if (null == retB)
             {
-                S8BeforeCondition.SaveStdB(pcCard.DIPPCId, pcCard.ProductCode, pcCard.DIPLotNo);
+                S8x2BeforeCondition.SaveStdB(pcCard.DIPPCId, pcCard.ProductCode, pcCard.DIPLotNo);
             }
-            var retCF = S8BeforeCondition.GetStdCF(pcCard.DIPPCId).Value();
+            var retCF = S8x2BeforeCondition.GetStdCF(pcCard.DIPPCId).Value();
             if (null == retB)
             {
-                S8BeforeCondition.SaveStdCF(pcCard.DIPPCId, pcCard.ProductCode, pcCard.DIPLotNo);
+                S8x2BeforeCondition.SaveStdCF(pcCard.DIPPCId, pcCard.ProductCode, pcCard.DIPLotNo);
             }
         }
 
-        private void Edit(S8BeforeCondition item)
+        private void Edit(S8x2BeforeCondition item)
         {
             if (null != item)
             {
-                var win = M3CordApp.Windows.S8BeforeEditorView;
+                var win = M3CordApp.Windows.S8x2BeforeEditorView;
                 win.Setup(item);
                 if (win.ShowDialog() == true)
                 {
@@ -135,7 +135,7 @@ namespace M3.Cord.Pages
             grid.ItemsSource = null;
             if (null != pcCard)
             {
-                grid.ItemsSource = S8BeforeCondition.Gets(pcCard.DIPPCId).Value();
+                grid.ItemsSource = S8x2BeforeCondition.Gets(pcCard.DIPPCId).Value();
             }
         }
 

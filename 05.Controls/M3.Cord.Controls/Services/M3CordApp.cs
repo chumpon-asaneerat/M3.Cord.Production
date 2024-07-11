@@ -1008,6 +1008,11 @@ namespace M3.Cord
             {
                 get { return GetWindow<S8BeforeEditorViewWindow>(); }
             }
+            /// <summary>Gets S8x2 Before Editor View Window.</summary>
+            public static S8x2BeforeEditorViewWindow S8x2BeforeEditorView
+            {
+                get { return GetWindow<S8x2BeforeEditorViewWindow>(); }
+            }
 
             /// <summary>Gets DIP TimeTable Editor Editor View Window.</summary>
             public static DIPTimeTableEditorViewWindow DIPTimeTableEditorView

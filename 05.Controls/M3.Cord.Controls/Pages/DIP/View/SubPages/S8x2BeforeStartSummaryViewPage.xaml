@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="M3.Cord.Pages.S8BeforeStartSummaryViewPage"
+﻿<UserControl x:Class="M3.Cord.Pages.S8x2BeforeStartSummaryViewPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -294,10 +294,12 @@
                             Header=" Cambox "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
             <!--  S-8-1  -->
+            <!--
             <GridViewColumn Width="100"
                             CellTemplate="{StaticResource S8B_Sponge}"
                             Header=" ฟองน้ำ "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            -->
         </GridViewColumnCollection>
         <!--  COLUMNS HEADER TEMPLATE  -->
         <DataTemplate x:Key="S8B_CleanColumnsHeader">
@@ -325,7 +327,7 @@
 
         <!--#endregion-->
     </UserControl.Resources>
-    <page:NPage x:Name="page" HeaderText="ตรวจเช็คสภาวะการผลิตก่อนเปิดเครื่อง (S-8-1)">
+    <page:NPage x:Name="page" HeaderText="ตรวจเช็คสภาวะการผลิตก่อนเปิดเครื่อง (S-8-2)">
         <DockPanel LastChildFill="True">
             <!--  BUTTONS  -->
             <DockPanel LastChildFill="True"
@@ -494,17 +496,17 @@
                         <GridViewColumn Header="ความเร็ว" CellTemplate="{StaticResource S8B_SpeedValue}" />
 
                         <!--  S-8-1  -->
+                        <!--
                         <GridViewColumn Width="Auto"
                                         CellTemplate="{StaticResource S8B_ExhaustFanColumns}"
                                         HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
                                         HeaderTemplate="{StaticResource S8B_ExhaustFanColumnsHeader}" />
+                        -->
                         <!--  S-8-2  -->
-                        <!--
                         <GridViewColumn Width="Auto"
                                         CellTemplate="{StaticResource S8B_ExhaustCirculationColumns}"
                                         HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
                                         HeaderTemplate="{StaticResource S8B_ExhaustCirculationColumnsHeader}" />
-                        -->
 
                         <GridViewColumn Width="Auto"
                                         CellTemplate="{StaticResource S8B_CleanColumns}"

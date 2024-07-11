@@ -1,4 +1,4 @@
-﻿<Window x:Class="M3.Cord.Windows.S8BeforeEditorViewWindow"
+﻿<Window x:Class="M3.Cord.Windows.S8x2BeforeEditorViewWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -15,7 +15,7 @@
         WindowStartupLocation="CenterOwner"
         Height="750"
         Width="800">
-    <page:NPage x:Name="page" HeaderText="การตรวจเช็คสภาวะการผลิดตก่อนเปิดเครื่อง S-8-1">
+    <page:NPage x:Name="page" HeaderText="การตรวจเช็คสภาวะการผลิดตก่อนเปิดเครื่อง S-8-2">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
             <DockPanel LastChildFill="True"
@@ -40,7 +40,7 @@
                     <DockPanel />
                 </DockPanel>
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                    <doc:DIPS8BeforeEntryPage x:Name="doc" />
+                    <doc:DIPS8x2BeforeEntryPage x:Name="doc" />
                 </ScrollViewer>
             </DockPanel>
         </DockPanel>
