@@ -600,6 +600,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.S8BeforeStartSummaryViewPage>(); }
             }
+            /// <summary>Gets S8x2 Before Start Summary View Page.</summary>
+            public static Cord.Pages.S8x2BeforeStartSummaryViewPage S8x2BeforeStartSummaryView
+            {
+                get { return GetPage<Cord.Pages.S8x2BeforeStartSummaryViewPage>(); }
+            }
             /// <summary>Gets DIP Condition View Page.</summary>
             public static Cord.Pages.DIPConditionViewPage DIPConditionView
             {

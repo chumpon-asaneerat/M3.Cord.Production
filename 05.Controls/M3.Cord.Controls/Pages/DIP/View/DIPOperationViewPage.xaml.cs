@@ -74,9 +74,22 @@ namespace M3.Cord.Pages
 
         private void cmdS8BeforeStart_Click(object sender, RoutedEventArgs e)
         {
-            var page = M3CordApp.Pages.S8BeforeStartSummaryView;
-            page.Setup(mc, pcCard);
-            PageContentManager.Instance.Current = page;
+            if (null == mc)
+            {
+                return;
+            }
+            if (mc.MCCode.EndsWith("1"))
+            {
+                var page = M3CordApp.Pages.S8BeforeStartSummaryView;
+                page.Setup(mc, pcCard);
+                PageContentManager.Instance.Current = page;
+            }
+            else if (mc.MCCode.EndsWith("2"))
+            {
+                var page = M3CordApp.Pages.S8x2BeforeStartSummaryView;
+                page.Setup(mc, pcCard);
+                PageContentManager.Instance.Current = page;
+            }
         }
 
         private void cmdChemicalRequisitionRecordSheet_Click(object sender, RoutedEventArgs e)
