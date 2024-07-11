@@ -294,12 +294,10 @@
                             Header=" Cambox "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
             <!--  S-8-1  -->
-            <!--
             <GridViewColumn Width="100"
                             CellTemplate="{StaticResource S8B_Sponge}"
                             Header=" ฟองน้ำ "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
-            -->
         </GridViewColumnCollection>
         <!--  COLUMNS HEADER TEMPLATE  -->
         <DataTemplate x:Key="S8B_CleanColumnsHeader">

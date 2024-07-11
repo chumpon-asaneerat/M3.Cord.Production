@@ -15,7 +15,7 @@
         WindowStartupLocation="CenterOwner"
         Height="750"
         Width="800">
-    <page:NPage x:Name="page" HeaderText="การตรวจเช็คสภาวะการผลิดตก่อนเปิดเครื่อง S-8">
+    <page:NPage x:Name="page" HeaderText="การตรวจเช็คสภาวะการผลิดตก่อนเปิดเครื่อง S-8-2">
         <DockPanel LastChildFill="True" Margin="5">
             <!--  BUTTON BARS  -->
             <DockPanel LastChildFill="True"

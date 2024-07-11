@@ -292,7 +292,6 @@
             </StackPanel>
 
             <!--  S-8-1  -->
-            <!--
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ความสะอาดฟองน้ำ (Sponge)"
                            Width="300"
@@ -301,7 +300,6 @@
                 <CheckBox IsChecked="{Binding SpongeSC}" />
                 <TextBlock Width="10" />
             </StackPanel>
-            -->
         </StackPanel>
         <Grid />
     </DockPanel>
