@@ -420,6 +420,11 @@ namespace M3.Cord
             {
                 get { return GetPage<Cord.Pages.S8BeforeStartSummaryPage>(); }
             }
+            /// <summary>Gets S8x2 Before Start Summary Page.</summary>
+            public static Cord.Pages.S8x2BeforeStartSummaryPage S8x2BeforeStartSummary
+            {
+                get { return GetPage<Cord.Pages.S8x2BeforeStartSummaryPage>(); }
+            }
             /// <summary>Gets DIP Condition Page.</summary>
             public static Cord.Pages.DIPConditionPage DIPCondition
             {
@@ -922,6 +927,11 @@ namespace M3.Cord
             public static S8BeforeEditorWindow S8BeforeEditor
             {
                 get { return GetWindow<S8BeforeEditorWindow>(); }
+            }
+            /// <summary>Gets S8x2 Before Editor Window.</summary>
+            public static S8x2BeforeEditorWindow S8x2BeforeEditor
+            {
+                get { return GetWindow<S8x2BeforeEditorWindow>(); }
             }
 
             /// <summary>Gets S8 Production Condition Item Editor Window.</summary>

@@ -4,18 +4,19 @@ M3 Cord Production System #1090
 M3 Cord Production System #1089
 - 
 
+[commited]
 M3 Cord Production System #1088
-- 
+- Fixed bug #24
 
 [commited]
 M3 Cord Production System #1087
 - Fixed bug #23
-  - S8Before (S-8-1, S-8-2) hide UI match m/c.
+  - S8Before STD (S-8-1, S-8-2) hide UI match m/c.
 
 [commited]
 M3 Cord Production System #1086
 - Fixed bug #22
-  - S8Before (S-8-1, S-8-2) gets/sets from db - OK.
+  - S8Before STD (S-8-1, S-8-2) gets/sets from db - OK.
 
 [commited]
 M3 Cord Production System #1085

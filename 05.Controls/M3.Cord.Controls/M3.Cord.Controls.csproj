@@ -430,6 +430,9 @@
     <Compile Include="Pages\Masters\Products\ProductItemCodeManagePage.xaml.cs">
       <DependentUpon>ProductItemCodeManagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DIP\Current\SubPages\S8x2BeforeStartSummaryPage.xaml.cs">
+      <DependentUpon>S8x2BeforeStartSummaryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Solution\CreateRecipePage.xaml.cs">
       <DependentUpon>CreateRecipePage.xaml</DependentUpon>
     </Compile>
@@ -549,6 +552,9 @@
     </Compile>
     <Compile Include="Windows\Master\ProductEditorWindow.xaml.cs">
       <DependentUpon>ProductEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DIP\S8x2BeforeEditorWindow.xaml.cs">
+      <DependentUpon>S8x2BeforeEditorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SignIn\ConfirmUserWindow.xaml.cs">
       <DependentUpon>ConfirmUserWindow.xaml</DependentUpon>
@@ -1214,6 +1220,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DIP\Current\SubPages\S8x2BeforeStartSummaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Solution\CreateRecipePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1407,6 +1417,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Master\ProductEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DIP\S8x2BeforeEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
