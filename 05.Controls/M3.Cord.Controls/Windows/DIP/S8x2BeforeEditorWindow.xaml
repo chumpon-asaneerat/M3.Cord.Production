@@ -39,7 +39,9 @@
                     <!--  LOT NO  -->
                     <DockPanel />
                 </DockPanel>
-                <doc:DIPS8BeforeEntryPage x:Name="doc" />
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <doc:DIPS8BeforeEntryPage x:Name="doc" />
+                </ScrollViewer>
             </DockPanel>
         </DockPanel>
     </page:NPage>

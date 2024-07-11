@@ -191,7 +191,7 @@
 
         <!--#endregion-->
 
-        <!--#region S8B_ExhaustFan-->
+        <!--#region S8B_ExhaustFan (S-8-1)-->
 
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="S8B_ExhaustFanGridViewColumns">
@@ -230,7 +230,7 @@
 
         <!--#endregion-->
 
-        <!--#region S8B_ExhaustCirculation-->
+        <!--#region S8B_ExhaustCirculation (S-8-2)-->
 
         <!--  COLUMNS COLLECTION NEED FOR HEADER SUB COLUMNS AND EACH ROW COLUMNS  -->
         <GridViewColumnCollection x:Key="S8B_ExhaustCirculationGridViewColumns">
@@ -293,9 +293,10 @@
                             CellTemplate="{StaticResource S8B_Cambox}"
                             Header=" Cambox "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
+            <!--  S-8-1  -->
             <GridViewColumn Width="100"
                             CellTemplate="{StaticResource S8B_Sponge}"
-                            Header=" Cambox "
+                            Header=" ฟองน้ำ "
                             HeaderContainerStyle="{StaticResource RotateHeaderFreezeContainer}" />
         </GridViewColumnCollection>
         <!--  COLUMNS HEADER TEMPLATE  -->
@@ -507,18 +508,19 @@
                                         HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
                                         HeaderTemplate="{StaticResource S8B_ExhaustFanColumnsHeader}" />
                         <!--  S-8-2  -->
+                        <!--
                         <GridViewColumn Width="Auto"
                                         CellTemplate="{StaticResource S8B_ExhaustCirculationColumns}"
                                         HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
                                         HeaderTemplate="{StaticResource S8B_ExhaustCirculationColumnsHeader}" />
-
+                        -->
                         <GridViewColumn Width="Auto"
                                         CellTemplate="{StaticResource S8B_CleanColumns}"
                                         HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
                                         HeaderTemplate="{StaticResource S8B_CleanColumnsHeader}" />
 
                         <GridViewColumn Header="ตรวจเช็คโดย" CellTemplate="{StaticResource S8B_CheckBy}" />
-                        <GridViewColumn Header="ทวนสอบโดย">
+                        <GridViewColumn Header="ทวนสอบโดย" Width="150">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal"
@@ -528,7 +530,7 @@
                                         <Button x:Name="cmdVerify"
                                                 Style="{StaticResource InlineButton}"
                                                 Margin="5,0"
-                                                Width="100"
+                                                Width="120"
                                                 Height="30"
                                                 Click="cmdVerify_Click">
                                             <StackPanel Orientation="Horizontal">

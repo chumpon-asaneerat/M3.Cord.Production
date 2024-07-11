@@ -82,11 +82,9 @@ namespace M3.Cord.Pages
             else
             {
                 // S-8-2
-                /*
                 var page = M3CordApp.Pages.S8x2BeforeStartSummary;
                 page.Setup(mc);
                 PageContentManager.Instance.Current = page;
-                */
             }
         }
 
