@@ -887,19 +887,19 @@
     <DataTemplate x:Key="S8B_StretchDValue">
         <TextBlock Text="{Binding Path=StretchDValueS, Mode=OneWay}"
                    TextAlignment="Center"
-                   MinWidth="100" />
+                   MinWidth="150" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8B_StretchHValue">
         <TextBlock Text="{Binding Path=StretchHValueS, Mode=OneWay}"
                    TextAlignment="Center"
-                   MinWidth="100" />
+                   MinWidth="150" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8B_StretchNValue">
         <TextBlock Text="{Binding Path=StretchNValueS, Mode=OneWay}"
                    TextAlignment="Center"
-                   MinWidth="100" />
+                   MinWidth="150" />
     </DataTemplate>
 
     <DataTemplate x:Key="S8B_TempDValue">
@@ -922,6 +922,24 @@
 
     <DataTemplate x:Key="S8B_ExhaustFanDryerValue">
         <TextBlock Text="{Binding Path=ExhaustFanDryerValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_ExhaustCirculationValue">
+        <TextBlock Text="{Binding Path=ExhaustCirculationValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_ExhaustExhaustValue">
+        <TextBlock Text="{Binding Path=ExhaustExhaustValueS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="S8B_ExhaustFrontBackValue">
+        <TextBlock Text="{Binding Path=ExhaustFrontBackValueS, Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>
@@ -949,6 +967,11 @@
     </DataTemplate>
     <DataTemplate x:Key="S8B_Cambox">
         <TextBlock Text="{Binding Path=CamboxS, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="100" />
+    </DataTemplate>
+    <DataTemplate x:Key="S8B_Sponge">
+        <TextBlock Text="{Binding Path=SpongeS, Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>

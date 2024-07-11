@@ -188,15 +188,14 @@ namespace M3.Cord.Pages
 
         public void Setup(DIPMC selecteedMC)
         {
-            if (null != selecteedMC)
+            mc = selecteedMC;
+
+            if (null != mc)
             {
-                if (null != mc)
+                pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
+                if (null != pcCard)
                 {
-                    pcCard = DIPUI.PCCard.Current(selecteedMC.MCCode);
-                    if (null != pcCard)
-                    {
-                        CheckStd();
-                    }
+                    CheckStd();
                 }
             }
 
