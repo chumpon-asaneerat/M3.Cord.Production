@@ -40,7 +40,7 @@
                     <DockPanel />
                 </DockPanel>
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                    <doc:DIPS8x2BeforeEntryPage x:Name="doc" />
+                    <doc:DIPS8BeforeEntryPage x:Name="doc" />
                 </ScrollViewer>
             </DockPanel>
         </DockPanel>
