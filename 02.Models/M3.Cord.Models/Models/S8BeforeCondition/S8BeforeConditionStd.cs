@@ -58,14 +58,29 @@ namespace M3.Cord.Models
 		public bool? SpeedSC { get; set; } = false;
         public decimal? Speed { get; set; }
 		public decimal? SpeedErr { get; set; }
+
+		// S-8-1
 		public bool? ExhaustFanDryerSC { get; set; } = false;
         public decimal? ExhaustFanDryer { get; set; }
-		public bool? ExhaustFanHNSC { get; set; } = false;
+        // S-8-1
+        public bool? ExhaustFanHNSC { get; set; } = false;
         public decimal? ExhaustFanHN { get; set; }
-		public bool? CleanBath1SC { get; set; } = false;
+
+        // S-8-2
+        public bool? ExhaustCirculationSC { get; set; } = false;
+        public decimal? ExhaustCirculation { get; set; }
+        // S-8-2
+        public bool? ExhaustExhaustSC { get; set; } = false;
+        public decimal? ExhaustExhaust { get; set; }
+        // S-8-2
+        public bool? ExhaustFrontBackSC { get; set; } = false;
+        public decimal? ExhaustFrontBack { get; set; }
+
+        public bool? CleanBath1SC { get; set; } = false;
         public bool? CleanBath2SC { get; set; } = false;
         public bool? CleanFrontSC { get; set; } = false;
         public bool? CamboxSC { get; set; } = false;
+        public bool? SpongeSC { get; set; } = false;
 
         #endregion
 

@@ -571,6 +571,7 @@ namespace M3.Cord.Models
             set { }
         }
 
+        // S-8-1
         public bool? ExhaustFanDryerSC { get; set; }
         public decimal? ExhaustFanDryer { get; set; }
         public decimal? ExhaustFanDryerValue { get; set; }
@@ -611,6 +612,7 @@ namespace M3.Cord.Models
             set { }
         }
 
+        // S-8-1
         public bool? ExhaustFanHNSC { get; set; }
         public decimal? ExhaustFanHN { get; set; }
         public decimal? ExhaustFanHNValue { get; set; }
@@ -650,6 +652,130 @@ namespace M3.Cord.Models
             }
             set { }
         }
+
+        // S-8-2
+        public bool? ExhaustCirculationSC { get; set; }
+        public decimal? ExhaustCirculation { get; set; }
+        public decimal? ExhaustCirculationValue { get; set; }
+
+        public string ExhaustCirculationValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    return (ExhaustCirculation.HasValue) ?
+                        ExhaustCirculation.Value.ToString("#.###.##") : "";
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!ExhaustCirculationSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (ExhaustCirculationSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (ExhaustCirculationValue.HasValue) ?
+                        ExhaustCirculationValue.Value.ToString("#.###.##") : "";
+                }
+                else
+                {
+                    return (ExhaustCirculationValue.HasValue) ?
+                        ExhaustCirculationValue.Value.ToString("#.###.##") : "";
+                }
+            }
+            set { }
+        }
+
+        // S-8-2
+        public bool? ExhaustExhaustSC { get; set; }
+        public decimal? ExhaustExhaust { get; set; }
+        public decimal? ExhaustExhaustValue { get; set; }
+
+        public string ExhaustExhaustValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    return (ExhaustExhaust.HasValue) ?
+                        ExhaustExhaust.Value.ToString("#.###.##") : "";
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!ExhaustExhaustSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (ExhaustExhaustSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (ExhaustExhaustValue.HasValue) ?
+                        ExhaustExhaustValue.Value.ToString("#.###.##") : "";
+                }
+                else
+                {
+                    return (ExhaustExhaustValue.HasValue) ?
+                        ExhaustExhaustValue.Value.ToString("#.###.##") : "";
+                }
+            }
+            set { }
+        }
+
+        // S-8-2
+        public bool? ExhaustFrontBackSC { get; set; }
+        public decimal? ExhaustFrontBack { get; set; }
+        public decimal? ExhaustFrontBackValue { get; set; }
+
+        public string ExhaustFrontBackValueS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    return (ExhaustFrontBack.HasValue) ?
+                        ExhaustFrontBack.Value.ToString("#.###.##") : "";
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!ExhaustFrontBackSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (ExhaustFrontBackSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    return (ExhaustFrontBackValue.HasValue) ?
+                        ExhaustFrontBackValue.Value.ToString("#.###.##") : "";
+                }
+                else
+                {
+                    return (ExhaustFrontBackValue.HasValue) ?
+                        ExhaustFrontBackValue.Value.ToString("#.###.##") : "";
+                }
+            }
+            set { }
+        }
+
 
         public bool? CleanBath1SC { get; set; }
         public bool? CleanBath1 { get; set; }
@@ -831,6 +957,51 @@ namespace M3.Cord.Models
             set { }
         }
 
+        public bool? SpongeSC { get; set; }
+        public bool? Sponge { get; set; }
+
+        public string SpongeS
+        {
+            get
+            {
+                if (RowType == -2)
+                {
+                    string fmt = string.Empty;
+                    return fmt;
+                }
+                else if (RowType == -1)
+                {
+                    string fmt = string.Empty;
+                    if (!SpongeSC.HasValue)
+                    {
+                        fmt = "";
+                    }
+                    else
+                    {
+                        fmt = (SpongeSC.Value) ? "SC" : "";
+                    }
+                    return fmt;
+                }
+                else if (RowType == 0)
+                {
+                    // Check Symbol ✔
+                    // Cross Symbol ✗
+                    if (!Sponge.HasValue)
+                        return "";
+                    else return (Sponge.Value) ? "✔" : "✗";
+                }
+                else
+                {
+                    // Check Symbol ✔
+                    // Cross Symbol ✗
+                    if (!Sponge.HasValue)
+                        return "";
+                    else return (Sponge.Value) ? "✔" : "✗";
+                }
+            }
+            set { }
+        }
+
         public string CheckBy { get; set; }
         public DateTime? CheckDate { get; set; }
         public string VerifyBy { get; set; }
@@ -906,10 +1077,20 @@ namespace M3.Cord.Models
                 dst.ExhaustFanDryer = src.ExhaustFanDryer;
                 dst.ExhaustFanHNSC = src.ExhaustFanHNSC;
                 dst.ExhaustFanHN = src.ExhaustFanHN;
+
+                dst.ExhaustCirculationSC = src.ExhaustCirculationSC;
+                dst.ExhaustCirculation = src.ExhaustCirculation;
+                dst.ExhaustExhaustSC = src.ExhaustExhaustSC;
+                dst.ExhaustExhaust = src.ExhaustExhaust;
+                dst.ExhaustFrontBackSC = src.ExhaustFrontBackSC;
+                dst.ExhaustFrontBack = src.ExhaustFrontBack;
+
                 dst.CleanBath1SC = src.CleanBath1SC;
                 dst.CleanBath2SC = src.CleanBath2SC;
                 dst.CleanFrontSC = src.CleanFrontSC;
                 dst.CamboxSC = src.CamboxSC;
+
+                dst.SpongeSC = src.SpongeSC;
             }
         }
 
@@ -1056,6 +1237,21 @@ namespace M3.Cord.Models
             p.Add("@ExhaustFanHN", value.ExhaustFanHN);
             p.Add("@ExhaustFanHNValue", value.ExhaustFanHNValue);
 
+
+
+            p.Add("@ExhaustCirculationSC", value.ExhaustCirculationSC);
+            p.Add("@ExhaustCirculation", value.ExhaustCirculation);
+            p.Add("@ExhaustCirculationValue", value.ExhaustCirculationValue);
+
+            p.Add("@ExhaustExhaustSC", value.ExhaustExhaustSC);
+            p.Add("@ExhaustExhaust", value.ExhaustExhaust);
+            p.Add("@ExhaustExhaustValue", value.ExhaustExhaustValue);
+
+            p.Add("@ExhaustFrontBackSC", value.ExhaustFrontBackSC);
+            p.Add("@ExhaustFrontBack", value.ExhaustFrontBack);
+            p.Add("@ExhaustFrontBackValue", value.ExhaustFrontBackValue);
+
+
             p.Add("@CleanBath1SC", value.CleanBath1SC);
             p.Add("@CleanBath1", value.CleanBath1);
 
@@ -1067,6 +1263,9 @@ namespace M3.Cord.Models
 
             p.Add("@CamboxSC", value.CamboxSC);
             p.Add("@Cambox", value.Cambox);
+
+            p.Add("@SpongeSC", value.SpongeSC);
+            p.Add("@Sponge", value.Sponge);
 
             p.Add("@CheckBy", value.CheckBy);
             p.Add("@CheckDate", value.CheckDate);
