@@ -164,6 +164,8 @@
     <Compile Include="Models\S8BeforeCondition\S8BeforeCondition.cs" />
     <Compile Include="Models\S8BeforeCondition\S8BeforeConditionStd.cs" />
     <Compile Include="Models\Chemical\SolutionLot.cs" />
+    <Compile Include="Models\S8BeforeCondition\S8x2BeforeCondition.cs" />
+    <Compile Include="Models\S8BeforeCondition\S8x2BeforeConditionStd.cs" />
     <Compile Include="Models\Time\conTime.cs" />
     <Compile Include="Models\Users\UserInfo.cs" />
     <Compile Include="Models\Users\UserRole.cs" />
