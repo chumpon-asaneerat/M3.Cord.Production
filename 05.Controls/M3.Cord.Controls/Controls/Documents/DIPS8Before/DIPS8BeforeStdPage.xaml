@@ -217,6 +217,42 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Exhaust Circulation"
+                           Width="300"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding ExhaustCirculationSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding ExhaustCirculation, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Text=" Hz " />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Exhaust Exhaust"
+                           Width="300"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding ExhaustExhaustSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding ExhaustExhaust, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Text=" Hz " />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="Exhaust Front/Back"
+                           Width="300"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding ExhaustFrontBackSC}" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding ExhaustFrontBack, StringFormat='{}{0:#,##0.##}'}" Width="100" />
+                <TextBlock Text=" Hz " />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
                 <TextBlock Text="ความสะอาดลูกกลิ้ง (อ่าง 1)"
                            Width="300"
                            TextAlignment="Right" />
@@ -249,6 +285,15 @@
                            TextAlignment="Right" />
                 <TextBlock Width="10" />
                 <CheckBox IsChecked="{Binding CamboxSC}" />
+                <TextBlock Width="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="ความสะอาดฟองน้ำ (Sponge)"
+                           Width="300"
+                           TextAlignment="Right" />
+                <TextBlock Width="10" />
+                <CheckBox IsChecked="{Binding SpongeSC}" />
                 <TextBlock Width="10" />
             </StackPanel>
         </StackPanel>

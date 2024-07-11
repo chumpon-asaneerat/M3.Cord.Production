@@ -57,7 +57,9 @@
                 </DockPanel>
             </DockPanel>
             <!--  STD VIEW  -->
-            <doc:DIPTimeTableStdPage x:Name="cond" />
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <doc:DIPTimeTableStdPage x:Name="cond" />
+            </ScrollViewer>
         </DockPanel>
     </page:NPage>
 </UserControl>

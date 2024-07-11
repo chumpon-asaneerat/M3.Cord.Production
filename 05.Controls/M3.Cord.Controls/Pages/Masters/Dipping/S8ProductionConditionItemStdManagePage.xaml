@@ -59,10 +59,14 @@
             <!--  STD VIEW  -->
             <TabControl FontSize="18">
                 <TabItem Header="S-8-1">
-                    <doc:S8ProductionConditionItemStdPage x:Name="cond" />
+                    <ScrollViewer>
+                        <doc:S8ProductionConditionItemStdPage x:Name="cond" />
+                    </ScrollViewer>
                 </TabItem>
                 <TabItem Header="S-8-2">
-                    <doc:S8x2ProductionConditionItemStdPage x:Name="cond2" />
+                    <ScrollViewer>
+                        <doc:S8x2ProductionConditionItemStdPage x:Name="cond2" />
+                    </ScrollViewer>
                 </TabItem>
             </TabControl>
         </DockPanel>

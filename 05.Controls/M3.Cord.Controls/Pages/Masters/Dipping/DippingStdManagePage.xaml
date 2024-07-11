@@ -59,6 +59,5 @@
             <!--  STD VIEW  -->
             <doc:DIPConditionStdPage x:Name="cond" />
         </DockPanel>
-
     </page:NPage>
 </UserControl>

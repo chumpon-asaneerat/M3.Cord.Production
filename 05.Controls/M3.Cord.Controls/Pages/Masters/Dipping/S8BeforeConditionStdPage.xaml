@@ -57,7 +57,20 @@
                 </DockPanel>
             </DockPanel>
             <!--  STD VIEW  -->
-            <doc:DIPS8BeforeStdPage x:Name="cond" />
+            <TabControl FontSize="18">
+                <TabItem Header="S-8-1">
+                    <ScrollViewer>
+                        <doc:DIPS8BeforeStdPage x:Name="cond" />
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="S-8-2">
+                    <ScrollViewer>
+                        <!--
+                        <doc:DIPS8x2BeforeStdPage x:Name="cond2" />
+                        -->
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
         </DockPanel>
     </page:NPage>
 </UserControl>
