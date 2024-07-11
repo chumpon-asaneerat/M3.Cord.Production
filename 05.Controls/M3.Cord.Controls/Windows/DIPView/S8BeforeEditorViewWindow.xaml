@@ -24,6 +24,7 @@
                 <ctrl:FontAwesomeButton x:Name="cmdCancel"
                                         DockPanel.Dock="Left"
                                         IconType="Cancel"
+                                        Visibility="Hidden"
                                         Text="Cancel"
                                         Click="cmdCancel_Click" />
                 <ctrl:FontAwesomeButton x:Name="cmdOk"

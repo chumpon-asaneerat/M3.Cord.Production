@@ -418,7 +418,7 @@
                                                 <TextBlock Margin="3,0"
                                                            FontFamily="{StaticResource THSarabun}"
                                                            FontSize="{StaticResource IBFSize}"
-                                                           Text="Edit"
+                                                           Text="Detail"
                                                            VerticalAlignment="Center" />
                                             </StackPanel>
                                         </Button>
