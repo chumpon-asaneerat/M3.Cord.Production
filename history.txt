@@ -16,8 +16,9 @@ M3 Cord Production System #1106
 M3 Cord Production System #1105
 - 
 
+[commited]
 M3 Cord Production System #1104
-- 
+- Fixed bug #35
 
 [commited]
 M3 Cord Production System #1103
