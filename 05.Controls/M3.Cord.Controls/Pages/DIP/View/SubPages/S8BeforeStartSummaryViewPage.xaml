@@ -494,17 +494,17 @@
                         <GridViewColumn Header="ความเร็ว" CellTemplate="{StaticResource S8B_SpeedValue}" />
 
                         <!--  S-8-1  -->
-                        <!--
                         <GridViewColumn Width="Auto"
                                         CellTemplate="{StaticResource S8B_ExhaustFanColumns}"
                                         HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
                                         HeaderTemplate="{StaticResource S8B_ExhaustFanColumnsHeader}" />
-                        -->
                         <!--  S-8-2  -->
+                        <!--
                         <GridViewColumn Width="Auto"
                                         CellTemplate="{StaticResource S8B_ExhaustCirculationColumns}"
                                         HeaderContainerStyle="{StaticResource CommonHeaderFreezeContainer}"
                                         HeaderTemplate="{StaticResource S8B_ExhaustCirculationColumnsHeader}" />
+                        -->
 
                         <GridViewColumn Width="Auto"
                                         CellTemplate="{StaticResource S8B_CleanColumns}"
