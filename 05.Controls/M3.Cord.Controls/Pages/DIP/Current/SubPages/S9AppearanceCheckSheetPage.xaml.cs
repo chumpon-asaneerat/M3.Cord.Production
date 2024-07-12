@@ -95,8 +95,6 @@ namespace M3.Cord.Pages
                                 var item = items[idx];
                                 if (null != item)
                                 {
-                                    item.BeginLoad();
-
                                     item.AppearId = existItem.AppearId;
                                     item.SPNo = existItem.SPNo;
 
@@ -111,8 +109,6 @@ namespace M3.Cord.Pages
                                     item.CheckSnarl = existItem.CheckSnarl;
                                     item.CheckTube = existItem.CheckTube;
                                     item.Remark = existItem.Remark;
-
-                                    item.EndLoad();
                                 }
                             }
                         }

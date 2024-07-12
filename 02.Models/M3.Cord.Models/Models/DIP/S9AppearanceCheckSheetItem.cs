@@ -39,18 +39,6 @@ namespace M3.Cord.Models
             set { } 
         }
 
-        private bool _loaded = false;
-
-        public void BeginLoad()
-        {
-            _loaded = true;
-        }
-
-        public void EndLoad()
-        {
-            _loaded = false;
-        }
-
         #region Public Properties
 
         public int AppearId { get; set; }
@@ -62,23 +50,16 @@ namespace M3.Cord.Models
             get { return _SPUnusable; }
             set
             {
-                if (!_loaded)
+                if (_SPUnusable != value)
                 {
-                    if (_SPUnusable != value)
-                    {
-                        _SPUnusable = value;
+                    _SPUnusable = value;
 
-                        if (value)
-                        {
-                            MarkUnuseableSP();
-                        }
-                        Raise(() => this.SPUnusable);
-                        Raise(() => this.TextColor);
+                    if (value)
+                    {
+                        MarkUnuseableSP();
                     }
-                }
-                else
-                {
-                    _SPUnusable = value; // load data.
+                    Raise(() => this.SPUnusable);
+                    Raise(() => this.TextColor);
                 }
             }
         }
@@ -92,22 +73,15 @@ namespace M3.Cord.Models
             }
             set
             {
-                if (!_loaded)
-                {
-                    if (_SPUnusable) return;
+                if (_SPUnusable) return;
 
-                    if (value)
-                    {
-                        ClearDefects();
-                    }
-
-                    _CheckGood = value;
-                    Raise(() => this.CheckGood);
-                }
-                else
+                if (value)
                 {
-                    _CheckGood = value; // load data.
+                    ClearDefects();
                 }
+
+                _CheckGood = value;
+                Raise(() => this.CheckGood);
             }
         }
         private bool _CheckBad = false;
@@ -119,21 +93,14 @@ namespace M3.Cord.Models
             }
             set
             {
-                if (!_loaded)
+                if (_SPUnusable) return;
+                if (value)
                 {
-                    if (_SPUnusable) return;
-                    if (value)
-                    {
-                        SetBadForm();
-                    }
+                    SetBadForm();
+                }
 
-                    _CheckBad = value;
-                    Raise(() => this.CheckBad);
-                }
-                else
-                {
-                    _CheckBad = value;
-                }
+                _CheckBad = value;
+                Raise(() => this.CheckBad);
             }
         }
 
@@ -146,21 +113,14 @@ namespace M3.Cord.Models
             }
             set
             {
-                if (!_loaded)
+                if (_SPUnusable) return;
+                if (value)
                 {
-                    if (_SPUnusable) return;
-                    if (value)
-                    {
-                        SetBadForm();
-                    }
+                    SetBadForm();
+                }
 
-                    _Check2Color = value;
-                    Raise(() => this.Check2Color);
-                }
-                else
-                {
-                    _Check2Color = value;
-                }
+                _Check2Color = value;
+                Raise(() => this.Check2Color);
             }
         }
 
@@ -173,21 +133,14 @@ namespace M3.Cord.Models
             }
             set
             {
-                if (!_loaded)
+                if (_SPUnusable) return;
+                if (value)
                 {
-                    if (_SPUnusable) return;
-                    if (value)
-                    {
-                        SetBadForm();
-                    }
+                    SetBadForm();
+                }
 
-                    _CheckKeiba = value;
-                    Raise(() => this.CheckKeiba);
-                }
-                else
-                {
-                    _CheckKeiba = value;
-                }
+                _CheckKeiba = value;
+                Raise(() => this.CheckKeiba);
             }
         }
 
@@ -200,21 +153,14 @@ namespace M3.Cord.Models
             }
             set
             {
-                if (!_loaded)
+                if (_SPUnusable) return;
+                if (!string.IsNullOrWhiteSpace(value))
                 {
-                    if (_SPUnusable) return;
-                    if (string.IsNullOrWhiteSpace(value))
-                    {
-                        SetBadForm();
-                    }
+                    SetBadForm();
+                }
 
-                    _CheckWeight = string.IsNullOrWhiteSpace(value) ? null : value;
-                    Raise(() => this.CheckWeight);
-                }
-                else
-                {
-                    _CheckWeight = string.IsNullOrWhiteSpace(value) ? null : value;
-                }
+                _CheckWeight = string.IsNullOrWhiteSpace(value) ? null : value;
+                Raise(() => this.CheckWeight);
             }
         }
 
@@ -227,21 +173,14 @@ namespace M3.Cord.Models
             }
             set
             {
-                if (!_loaded)
+                if (_SPUnusable) return;
+                if (value)
                 {
-                    if (_SPUnusable) return;
-                    if (value)
-                    {
-                        SetBadForm();
-                    }
+                    SetBadForm();
+                }
 
-                    _CheckFrontTwist = value;
-                    Raise(() => this.CheckFrontTwist);
-                }
-                else
-                {
-                    _CheckFrontTwist = value;
-                }
+                _CheckFrontTwist = value;
+                Raise(() => this.CheckFrontTwist);
             }
         }
 
@@ -254,21 +193,14 @@ namespace M3.Cord.Models
             }
             set
             {
-                if (!_loaded)
+                if (_SPUnusable) return;
+                if (value)
                 {
-                    if (_SPUnusable) return;
-                    if (value)
-                    {
-                        SetBadForm();
-                    }
+                    SetBadForm();
+                }
 
-                    _CheckBackTwist = value;
-                    Raise(() => this.CheckBackTwist);
-                }
-                else
-                {
-                    _CheckBackTwist = value;
-                }
+                _CheckBackTwist = value;
+                Raise(() => this.CheckBackTwist);
             }
         }
 
@@ -281,21 +213,14 @@ namespace M3.Cord.Models
             }
             set
             {
-                if (!_loaded)
+                if (_SPUnusable) return;
+                if (value)
                 {
-                    if (_SPUnusable) return;
-                    if (value)
-                    {
-                        SetBadForm();
-                    }
+                    SetBadForm();
+                }
 
-                    _CheckSnarl = value;
-                    Raise(() => this.CheckSnarl);
-                }
-                else
-                {
-                    _CheckSnarl = value;
-                }
+                _CheckSnarl = value;
+                Raise(() => this.CheckSnarl);
             }
         }
 
@@ -308,21 +233,14 @@ namespace M3.Cord.Models
             }
             set
             {
-                if (!_loaded)
+                if (_SPUnusable) return;
+                if (value)
                 {
-                    if (_SPUnusable) return;
-                    if (value)
-                    {
-                        SetBadForm();
-                    }
+                    SetBadForm();
+                }
 
-                    _CheckTube = value;
-                    Raise(() => this.CheckTube);
-                }
-                else
-                {
-                    _CheckTube = value;
-                }
+                _CheckTube = value;
+                Raise(() => this.CheckTube);
             }
         }
 

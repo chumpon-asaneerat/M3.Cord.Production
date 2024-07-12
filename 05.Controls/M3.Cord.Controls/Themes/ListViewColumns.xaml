@@ -308,7 +308,8 @@
         <StackPanel HorizontalAlignment="Stretch" Width="100">
             <TextBox Style="{StaticResource CommonTextBox}"
                      Foreground="{Binding TextColor}"
-                     Text="{Binding CheckWeight}"
+                     Text="{Binding CheckWeight, TargetNullValue='', UpdateSourceTrigger=PropertyChanged}"
+                     IsReadOnly="{Binding SPUnusable}"
                      HorizontalAlignment="Stretch"
                      Width="Auto" />
         </StackPanel>
