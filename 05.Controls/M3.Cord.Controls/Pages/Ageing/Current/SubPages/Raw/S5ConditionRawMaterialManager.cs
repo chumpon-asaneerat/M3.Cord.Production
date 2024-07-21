@@ -431,7 +431,8 @@ namespace M3.Cord.Pages
                 {
                     // Check valid
                     bool b1 = Std1.SettingTemperatureSet == Std2.SettingTemperatureSet;
-                    bool b2 = Std1.SettingTimeSet == Std2.SettingTimeSet;
+                    //bool b2 = Std1.SettingTimeSet == Std2.SettingTimeSet;
+                    bool b2 = true;
                     return b1 && b2;
                 }
                 else if (null != Std1 && null == Std2)
