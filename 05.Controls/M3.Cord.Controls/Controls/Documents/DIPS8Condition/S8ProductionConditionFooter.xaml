@@ -79,39 +79,39 @@
             <TextBlock Text="Gas S-8" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="2" Grid.Column="1">
-            <TextBox Width="100" Text="{Binding GasBefore, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding GasBefore, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="2" Grid.Column="2">
-            <TextBox Width="100" Text="{Binding GasAfter, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding GasAfter, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="2" Grid.Column="3">
-            <TextBox Width="100" Text="{Binding GasTotal, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding GasTotal, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
 
         <Border Grid.Row="3" Grid.Column="0">
             <TextBlock Text="Cooling Warter" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="3" Grid.Column="1">
-            <TextBox Width="100" Text="{Binding CoolingWarterBefore, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding CoolingWarterBefore, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="3" Grid.Column="2">
-            <TextBox Width="100" Text="{Binding CoolingWarterAfter, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding CoolingWarterAfter, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="3" Grid.Column="3">
-            <TextBox Width="100" Text="{Binding CoolingWarterTotal, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding CoolingWarterTotal, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
 
         <Border Grid.Row="4" Grid.Column="0">
             <TextBlock Text="Air Pressure" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="4" Grid.Column="1">
-            <TextBox Width="100" Text="{Binding AirPressureBefore, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding AirPressureBefore, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="4" Grid.Column="2">
-            <TextBox Width="100" Text="{Binding AirPressureAfter, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding AirPressureAfter, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="4" Grid.Column="3">
-            <TextBox Width="100" Text="{Binding AirPressureTotal, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding AirPressureTotal, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
 
         <Border Grid.Row="1"
@@ -123,13 +123,13 @@
             <TextBlock Text="Before Use" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="1" Grid.Column="6">
-            <TextBox Width="100" Text="{Binding Bath1Before, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding Bath1Before, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="2" Grid.Column="5">
             <TextBlock Text="After Use" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="2" Grid.Column="6">
-            <TextBox Width="100" Text="{Binding Bath1After, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding Bath1After, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="1"
                 Grid.Column="7"
@@ -139,7 +139,7 @@
         <Border Grid.Row="1"
                 Grid.Column="8"
                 Grid.RowSpan="2">
-            <TextBox Width="100" Text="{Binding Bath1WPU, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding Bath1WPU, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
 
         <Border Grid.Row="3"
@@ -151,13 +151,13 @@
             <TextBlock Text="Before Use" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="3" Grid.Column="6">
-            <TextBox Width="100" Text="{Binding Bath2Before, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding Bath2Before, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="4" Grid.Column="5">
             <TextBlock Text="After Use" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="4" Grid.Column="6">
-            <TextBox Width="100" Text="{Binding Bath2After, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding Bath2After, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="3"
                 Grid.Column="7"
@@ -167,7 +167,7 @@
         <Border Grid.Row="3"
                 Grid.Column="8"
                 Grid.RowSpan="2">
-            <TextBox Width="100" Text="{Binding Bath2WPU, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding Bath2WPU, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
 
         <Border Grid.Row="0"
@@ -185,38 +185,38 @@
             <TextBlock Text="1" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="2" Grid.Column="10">
-            <TextBox Width="100" Text="{Binding TempDZone1, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempDZone1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="3" Grid.Column="9">
             <TextBlock Text="2" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="3" Grid.Column="10">
-            <TextBox Width="100" Text="{Binding TempDZone2, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempDZone2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="4" Grid.Column="9">
             <TextBlock Text="3" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="4" Grid.Column="10">
-            <TextBox Width="100" Text="{Binding TempDZone3, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempDZone3, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
 
         <Border Grid.Row="2" Grid.Column="11">
             <TextBlock Text="4" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="2" Grid.Column="12">
-            <TextBox Width="100" Text="{Binding TempDZone4, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempDZone4, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="3" Grid.Column="11">
             <TextBlock Text="5" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="3" Grid.Column="12">
-            <TextBox Width="100" Text="{Binding TempDZone5, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempDZone5, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="4" Grid.Column="11">
             <TextBlock Text="6" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="4" Grid.Column="12">
-            <TextBox Width="100" Text="{Binding TempDZone6, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempDZone6, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
 
         <Border Grid.Row="1"
@@ -229,41 +229,40 @@
             <TextBlock Text="1" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="2" Grid.Column="14">
-            <TextBox Width="100" Text="{Binding TempHNZone1, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempHNZone1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="3" Grid.Column="13">
             <TextBlock Text="2" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="3" Grid.Column="14">
-            <TextBox Width="100" Text="{Binding TempHNZone2, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempHNZone2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="4" Grid.Column="13">
             <TextBlock Text="3" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="4" Grid.Column="14">
-            <TextBox Width="100" Text="{Binding TempHNZone3, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempHNZone3, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
 
         <Border Grid.Row="2" Grid.Column="15">
             <TextBlock Text="4" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="2" Grid.Column="16">
-            <TextBox Width="100" Text="{Binding TempHNZone4, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempHNZone4, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="3" Grid.Column="15">
             <TextBlock Text="5" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="3" Grid.Column="16">
-            <TextBox Width="100" Text="{Binding TempHNZone5, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempHNZone5, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
         <Border Grid.Row="4" Grid.Column="15">
             <TextBlock Text="6" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="4" Grid.Column="16">
-            <TextBox Width="100" Text="{Binding TempHNZone6, StringFormat='{}{0:#,##0.##}'}" />
+            <TextBox Width="100" Text="{Binding TempHNZone6, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
         </Border>
 
         <!--#endregion-->
-
     </Grid>
 </UserControl>
