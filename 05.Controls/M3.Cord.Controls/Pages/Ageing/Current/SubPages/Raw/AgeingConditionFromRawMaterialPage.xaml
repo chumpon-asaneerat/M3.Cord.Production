@@ -13,65 +13,65 @@
              Unloaded="UserControl_Unloaded">
     <page:NPage HeaderText="Ageing Condition (Raw Meterial)">
         <!--  TAB CONTROL  -->
-        <TabControl>
-            <TabItem Header="L ( ข้างซ้าย )">
+        <TabControl x:Name="tab">
+            <TabItem Header="L ( ด้านซ้าย )">
                 <DockPanel LastChildFill="True" Margin="5">
                     <!--  BUTTONS  -->
                     <DockPanel LastChildFill="True"
-                       DockPanel.Dock="Bottom"
-                       Height="40">
+                               DockPanel.Dock="Bottom"
+                               Height="40">
                         <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Right"
-                            VerticalAlignment="Center">
+                                    DockPanel.Dock="Right"
+                                    VerticalAlignment="Center">
                             <!--  HOME  -->
                             <ctrl:FontAwesomeButton x:Name="cmdHome"
-                                            Margin="5,0,0,0"
-                                            IconType="Home"
-                                            Text="Home"
-                                            Click="cmdHome_Click" />
+                                                    Margin="5,0,0,0"
+                                                    IconType="Home"
+                                                    Text="Home"
+                                                    Click="cmdHome_Click" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Left"
-                            VerticalAlignment="Center">
+                                    DockPanel.Dock="Left"
+                                    VerticalAlignment="Center">
                             <!--  SAVE  -->
                             <ctrl:FontAwesomeButton x:Name="cmdSave"
-                                            Margin="5,0,0,0"
-                                            IconType="None"
-                                            Text="Save"
-                                            Click="cmdSave_Click" />
+                                                    Margin="5,0,0,0"
+                                                    IconType="None"
+                                                    Text="Save"
+                                                    Click="cmdSave_Click" />
                             <!--  START  -->
                             <ctrl:FontAwesomeButton x:Name="cmdStart"
-                                            Margin="5,0,0,0"
-                                            IconType="None"
-                                            Text="Start"
-                                            Click="cmdStart_Click" />
+                                                    Margin="5,0,0,0"
+                                                    IconType="None"
+                                                    Text="Start"
+                                                    Click="cmdStart_Click" />
                             <!--  FINISH  -->
                             <ctrl:FontAwesomeButton x:Name="cmdFinish"
-                                            Margin="5,0,0,0"
-                                            IconType="None"
-                                            Text="Finish"
-                                            Click="cmdFinish_Click" />
+                                                    Margin="5,0,0,0"
+                                                    IconType="None"
+                                                    Text="Finish"
+                                                    Click="cmdFinish_Click" />
                         </StackPanel>
                         <Grid />
                     </DockPanel>
                     <!--  TOP ENTRY  -->
                     <DockPanel LastChildFill="True" DockPanel.Dock="Top">
                         <DockPanel Margin="0,0,0,5"
-                           DockPanel.Dock="Top"
-                           LastChildFill="True"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left">
+                                   DockPanel.Dock="Top"
+                                   LastChildFill="True"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                                 <!--  PALLET  -->
                                 <ctrl:NTextBox x:Name="txtTraceNo1"
-                                       CaptionText="Trace No (1)"
-                                       PreviewKeyDown="txtTraceNo1_PreviewKeyDown"
-                                       Width="200" />
+                                               CaptionText="Trace No (1)"
+                                               PreviewKeyDown="txtTraceNo1_PreviewKeyDown"
+                                               Width="200" />
                                 <!--  ITEM CODE  -->
                                 <ctrl:NTextBox x:Name="txtItemCode1"
-                                       CaptionText="Item Code (1)"
-                                       IsReadOnly="True"
-                                       Width="200" />
+                                               CaptionText="Item Code (1)"
+                                               IsReadOnly="True"
+                                               Width="200" />
                             </StackPanel>
                             <Grid />
                         </DockPanel>
@@ -80,64 +80,64 @@
                     <doc:S5ConditionRawMeterialEntryPage x:Name="s5L" />
                 </DockPanel>
             </TabItem>
-            <TabItem Header="R ( ข้างขวา )">
+            <TabItem Header="R ( ด้านขวา )">
                 <DockPanel LastChildFill="True" Margin="5">
                     <!--  BUTTONS  -->
                     <DockPanel LastChildFill="True"
-                       DockPanel.Dock="Bottom"
-                       Height="40">
+                               DockPanel.Dock="Bottom"
+                               Height="40">
                         <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Right"
-                            VerticalAlignment="Center">
+                                    DockPanel.Dock="Right"
+                                    VerticalAlignment="Center">
                             <!--  HOME  -->
                             <ctrl:FontAwesomeButton x:Name="cmdHome2"
-                                            Margin="5,0,0,0"
-                                            IconType="Home"
-                                            Text="Home"
-                                            Click="cmdHome_Click" />
+                                                    Margin="5,0,0,0"
+                                                    IconType="Home"
+                                                    Text="Home"
+                                                    Click="cmdHome_Click" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
-                            DockPanel.Dock="Left"
-                            VerticalAlignment="Center">
+                                    DockPanel.Dock="Left"
+                                    VerticalAlignment="Center">
                             <!--  SAVE  -->
                             <ctrl:FontAwesomeButton x:Name="cmdSave2"
-                                            Margin="5,0,0,0"
-                                            IconType="None"
-                                            Text="Save"
-                                            Click="cmdSave2_Click" />
+                                                    Margin="5,0,0,0"
+                                                    IconType="None"
+                                                    Text="Save"
+                                                    Click="cmdSave2_Click" />
                             <!--  START  -->
                             <ctrl:FontAwesomeButton x:Name="cmdStart2"
-                                            Margin="5,0,0,0"
-                                            IconType="None"
-                                            Text="Start"
-                                            Click="cmdStart2_Click" />
+                                                    Margin="5,0,0,0"
+                                                    IconType="None"
+                                                    Text="Start"
+                                                    Click="cmdStart2_Click" />
                             <!--  FINISH  -->
                             <ctrl:FontAwesomeButton x:Name="cmdFinish2"
-                                            Margin="5,0,0,0"
-                                            IconType="None"
-                                            Text="Finish"
-                                            Click="cmdFinish2_Click" />
+                                                    Margin="5,0,0,0"
+                                                    IconType="None"
+                                                    Text="Finish"
+                                                    Click="cmdFinish2_Click" />
                         </StackPanel>
                         <Grid />
                     </DockPanel>
                     <!--  TOP ENTRY  -->
                     <DockPanel LastChildFill="True" DockPanel.Dock="Top">
                         <DockPanel Margin="0,0,0,5"
-                           DockPanel.Dock="Top"
-                           LastChildFill="True"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left">
+                                   DockPanel.Dock="Top"
+                                   LastChildFill="True"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                                 <!--  PALLET  -->
                                 <ctrl:NTextBox x:Name="txtTraceNo2"
-                                       CaptionText="Trace No (2)"
-                                       PreviewKeyDown="txtTraceNo2_PreviewKeyDown"
-                                       Width="200" />
+                                               CaptionText="Trace No (2)"
+                                               PreviewKeyDown="txtTraceNo2_PreviewKeyDown"
+                                               Width="200" />
                                 <!--  ITEM CODE  -->
                                 <ctrl:NTextBox x:Name="txtItemCode2"
-                                       CaptionText="Item Code (2)"
-                                       IsReadOnly="True"
-                                       Width="200" />
+                                               CaptionText="Item Code (2)"
+                                               IsReadOnly="True"
+                                               Width="200" />
                             </StackPanel>
                             <Grid />
                         </DockPanel>

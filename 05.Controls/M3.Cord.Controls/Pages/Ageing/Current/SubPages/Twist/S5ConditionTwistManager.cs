@@ -188,6 +188,12 @@ namespace M3.Cord.Pages
                 }
             }
 
+            if (IsDuplicate())
+            {
+                errMsg = "หมายเลข Pallet ด้านซ้ายและด้านขวา ซ้ำกัน";
+                return;
+            }
+
             if (null != Std1 && null != Std2)
             {
                 if (!IsMatchStd)
@@ -218,6 +224,22 @@ namespace M3.Cord.Pages
         #endregion
 
         #region Public Methods
+
+        public bool IsDuplicate()
+        {
+            bool ret = false;
+            if (null != ConditionL && null != ConditionR)
+            {
+                if (!string.IsNullOrEmpty(ConditionL.DoffNo1PalletCode) &&
+                    !string.IsNullOrEmpty(ConditionR.DoffNo1PalletCode) &&
+                    ConditionL.DoffNo1PalletCode.Trim() == ConditionR.DoffNo1PalletCode.Trim())
+                {
+                    ret = true;
+                }
+            }
+
+            return ret;
+        }
 
         public bool SetPallet1(string palletCode, out string message)
         {

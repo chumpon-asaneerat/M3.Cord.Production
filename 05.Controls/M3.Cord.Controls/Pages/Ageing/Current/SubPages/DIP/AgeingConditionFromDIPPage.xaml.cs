@@ -235,6 +235,7 @@ namespace M3.Cord.Pages
                 var condition = manager.ConditionL;
                 bool hasPallet = !string.IsNullOrWhiteSpace(condition.DoffNo1PalletCode);
                 bool validStd = manager.HasStd && manager.IsMatchStd;
+                bool duplicate = manager.IsDuplicate();
 
                 if (isUser)
                 {
@@ -251,9 +252,11 @@ namespace M3.Cord.Pages
                     cmdFinish.Visibility = Visibility.Visible;
 
                     cmdStart.IsEnabled = hasPallet && validStd &&
+                        !duplicate &&
                         !condition.StartingTimeStartAgeingTime.HasValue;
 
                     cmdFinish.IsEnabled = hasPallet && validStd &&
+                        !duplicate &&
                         condition.StartingTimeStartAgeingTime.HasValue &&
                         condition.FinishTime.HasValue && !condition.OutTime.HasValue;
                 }
@@ -283,6 +286,7 @@ namespace M3.Cord.Pages
                 var condition = manager.ConditionR;
                 bool hasPallet = !string.IsNullOrWhiteSpace(condition.DoffNo1PalletCode);
                 bool validStd = manager.HasStd && manager.IsMatchStd;
+                bool duplicate = manager.IsDuplicate();
 
                 if (isUser)
                 {
@@ -299,10 +303,12 @@ namespace M3.Cord.Pages
                     cmdFinish2.Visibility = Visibility.Visible;
 
                     cmdStart2.IsEnabled = hasPallet && validStd &&
+                        !duplicate &&
                         !condition.StartingTimeStartAgeingTime.HasValue;
 
                     cmdFinish2.IsEnabled = hasPallet && validStd &&
                         condition.StartingTimeStartAgeingTime.HasValue &&
+                        !duplicate &&
                         condition.FinishTime.HasValue && !condition.OutTime.HasValue;
                 }
 
@@ -321,7 +327,11 @@ namespace M3.Cord.Pages
             if (null != manager)
             {
                 bool ret1 = manager.SaveL();
-                bool ret2 = manager.SaveR();
+                bool ret2 = true;
+                if (!manager.IsDuplicate())
+                {
+                    ret2 = manager.SaveR();
+                }
 
                 if (showMsg)
                 {
@@ -331,6 +341,7 @@ namespace M3.Cord.Pages
                 }
 
                 RefreshContextL();
+                RefreshContextR();
             }
 
             M3CordApp.Pages.GotoCordMainMenu();
@@ -353,7 +364,7 @@ namespace M3.Cord.Pages
 
         private void SaveR()
         {
-            if (null != manager)
+            if (null != manager && !manager.IsDuplicate())
             {
                 bool ret = manager.SaveR();
                 if (ret)
@@ -389,7 +400,7 @@ namespace M3.Cord.Pages
         {
             SaveAll(false);
 
-            if (null != manager)
+            if (null != manager && !manager.IsDuplicate())
             {
                 var ret = manager.StartR();
                 var win = M3CordApp.Windows.MessageBox;
@@ -464,7 +475,7 @@ namespace M3.Cord.Pages
 
         private void FinishR()
         {
-            if (null != manager && null != manager.ConditionR)
+            if (null != manager && null != manager.ConditionR && !manager.IsDuplicate())
             {
                 string errMSg;
                 if (!manager.FinishR(out errMSg))
@@ -532,6 +543,8 @@ namespace M3.Cord.Pages
             manager.Refresh();
             RefreshContextL();
             RefreshContextR();
+
+            tab.SelectedIndex = 0; // set active tab
         }
 
         #endregion

@@ -131,6 +131,12 @@ namespace M3.Cord.Pages
                 }
             }
 
+            if (IsDuplicate())
+            {
+                errMsg = "หมายเลข Trace No ด้านซ้ายและด้านขวา ซ้ำกัน";
+                return;
+            }
+
             if (null != Std1 && null != Std2)
             {
                 if (!IsMatchStd)
@@ -163,6 +169,22 @@ namespace M3.Cord.Pages
         #endregion
 
         #region Public Methods
+
+        public bool IsDuplicate()
+        {
+            bool ret = false;
+            if (null != ConditionL && null != ConditionR)
+            {
+                if (!string.IsNullOrEmpty(ConditionL.DoffNo1TraceNo) &&
+                    !string.IsNullOrEmpty(ConditionR.DoffNo1TraceNo) &&
+                    ConditionL.DoffNo1TraceNo.Trim() == ConditionR.DoffNo1TraceNo.Trim())
+                {
+                    ret = true;
+                }
+            }
+
+            return ret;
+        }
 
         public bool SetTrace1(string traceNo, out string message)
         {
@@ -219,7 +241,6 @@ namespace M3.Cord.Pages
             {
                 ConditionL = new S5Condition();
                 ConditionL.FromSource = FromSources.RawMeterial;
-                ConditionL.MCSide = "L";
             }
 
             if (null != ConditionL && string.IsNullOrEmpty(ConditionL.MCSide)) ConditionL.MCSide = "L";
@@ -232,7 +253,6 @@ namespace M3.Cord.Pages
             {
                 ConditionR = new S5Condition();
                 ConditionR.FromSource = FromSources.RawMeterial;
-                ConditionL.MCSide = "R";
             }
 
             if (null != ConditionR && string.IsNullOrEmpty(ConditionR.MCSide)) ConditionR.MCSide = "R";
