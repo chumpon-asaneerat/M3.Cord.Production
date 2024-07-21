@@ -109,7 +109,7 @@
             <Border Grid.Column="1"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed1}"
+                <TextBox Text="{Binding PullMotorActSpeed1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -121,7 +121,7 @@
             <Border Grid.Column="3"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed2}"
+                <TextBox Text="{Binding PullMotorActSpeed2, StringFormat='{}{0:#,##0.000}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -133,7 +133,7 @@
             <Border Grid.Column="5"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed3}"
+                <TextBox Text="{Binding PullMotorActSpeed3, StringFormat='{}{0:#,##0.000}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -145,7 +145,7 @@
             <Border Grid.Column="7"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed4}"
+                <TextBox Text="{Binding PullMotorActSpeed4, StringFormat='{}{0:#,##0.000}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -157,7 +157,7 @@
             <Border Grid.Column="9"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed5}"
+                <TextBox Text="{Binding PullMotorActSpeed5, StringFormat='{}{0:#,##0.000}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -169,7 +169,7 @@
             <Border Grid.Column="11"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActSpeed6}"
+                <TextBox Text="{Binding PullMotorActSpeed6, StringFormat='{}{0:#,##0.000}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -187,7 +187,7 @@
             <Border Grid.Column="1"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint1}"
+                <TextBox Text="{Binding PullMotorSpeedSetPoint1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -199,7 +199,7 @@
             <Border Grid.Column="3"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint2}"
+                <TextBox Text="{Binding PullMotorSpeedSetPoint2, StringFormat='{}{0:#,##0.000}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -211,7 +211,7 @@
             <Border Grid.Column="5"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint3}"
+                <TextBox Text="{Binding PullMotorSpeedSetPoint3, StringFormat='{}{0:#,##0.000}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -223,7 +223,7 @@
             <Border Grid.Column="7"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint4}"
+                <TextBox Text="{Binding PullMotorSpeedSetPoint4, StringFormat='{}{0:#,##0.000}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -235,7 +235,7 @@
             <Border Grid.Column="9"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint5}"
+                <TextBox Text="{Binding PullMotorSpeedSetPoint5, StringFormat='{}{0:#,##0.000}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -247,7 +247,7 @@
             <Border Grid.Column="11"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorSpeedSetPoint6}"
+                <TextBox Text="{Binding PullMotorSpeedSetPoint6, StringFormat='{}{0:#,##0.000}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -265,7 +265,7 @@
             <Border Grid.Column="1"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent1}"
+                <TextBox Text="{Binding PullMotorActCurrent1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -277,7 +277,7 @@
             <Border Grid.Column="3"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent2}"
+                <TextBox Text="{Binding PullMotorActCurrent2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -289,7 +289,7 @@
             <Border Grid.Column="5"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent3}"
+                <TextBox Text="{Binding PullMotorActCurrent3, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -301,7 +301,7 @@
             <Border Grid.Column="7"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent4}"
+                <TextBox Text="{Binding PullMotorActCurrent4, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -313,7 +313,7 @@
             <Border Grid.Column="9"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent5}"
+                <TextBox Text="{Binding PullMotorActCurrent5, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -325,7 +325,7 @@
             <Border Grid.Column="11"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorActCurrent6}"
+                <TextBox Text="{Binding PullMotorActCurrent6, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -343,7 +343,7 @@
             <Border Grid.Column="1"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent1}"
+                <TextBox Text="{Binding PullMotorPctCurrent1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -355,7 +355,7 @@
             <Border Grid.Column="3"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent2}"
+                <TextBox Text="{Binding PullMotorPctCurrent2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -367,7 +367,7 @@
             <Border Grid.Column="5"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent3}"
+                <TextBox Text="{Binding PullMotorPctCurrent3, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -379,7 +379,7 @@
             <Border Grid.Column="7"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent4}"
+                <TextBox Text="{Binding PullMotorPctCurrent4, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -391,7 +391,7 @@
             <Border Grid.Column="9"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent5}"
+                <TextBox Text="{Binding PullMotorPctCurrent5, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -403,7 +403,7 @@
             <Border Grid.Column="11"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding PullMotorPctCurrent6}"
+                <TextBox Text="{Binding PullMotorPctCurrent6, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -511,7 +511,7 @@
             <Border Grid.Column="1"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanActSpeed1}"
+                <TextBox Text="{Binding OvenCirculatingFanActSpeed1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -523,7 +523,7 @@
             <Border Grid.Column="3"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanActSpeed2}"
+                <TextBox Text="{Binding OvenCirculatingFanActSpeed2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -535,7 +535,7 @@
             <Border Grid.Column="5"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanActSpeed1}"
+                <TextBox Text="{Binding OvenExhaustFanActSpeed1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -547,7 +547,7 @@
             <Border Grid.Column="7"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanActSpeed2}"
+                <TextBox Text="{Binding OvenExhaustFanActSpeed2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -559,7 +559,7 @@
             <Border Grid.Column="9"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanFrontActSpeed}"
+                <TextBox Text="{Binding OvenExhaustFanFrontActSpeed, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -571,7 +571,7 @@
             <Border Grid.Column="11"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanBackActSpeed}"
+                <TextBox Text="{Binding OvenExhaustFanBackActSpeed, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -589,7 +589,7 @@
             <Border Grid.Column="1"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanSpeedSetpoint1}"
+                <TextBox Text="{Binding OvenCirculatingFanSpeedSetpoint1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -601,7 +601,7 @@
             <Border Grid.Column="3"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanSpeedSetpoint2}"
+                <TextBox Text="{Binding OvenCirculatingFanSpeedSetpoint2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -613,7 +613,7 @@
             <Border Grid.Column="5"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanSpeedSetpoint1}"
+                <TextBox Text="{Binding OvenExhaustFanSpeedSetpoint1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -625,7 +625,7 @@
             <Border Grid.Column="7"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanSpeedSetpoint2}"
+                <TextBox Text="{Binding OvenExhaustFanSpeedSetpoint2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -637,7 +637,7 @@
             <Border Grid.Column="9"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanFrontSpeedSetpoint}"
+                <TextBox Text="{Binding OvenExhaustFanFrontSpeedSetpoint, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -649,7 +649,7 @@
             <Border Grid.Column="11"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanBackSpeedSetpoint}"
+                <TextBox Text="{Binding OvenExhaustFanBackSpeedSetpoint, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -667,7 +667,7 @@
             <Border Grid.Column="1"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanActCurrent1}"
+                <TextBox Text="{Binding OvenCirculatingFanActCurrent1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -679,7 +679,7 @@
             <Border Grid.Column="3"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanActCurrent2}"
+                <TextBox Text="{Binding OvenCirculatingFanActCurrent2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -691,7 +691,7 @@
             <Border Grid.Column="5"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanActCurrent1}"
+                <TextBox Text="{Binding OvenExhaustFanActCurrent1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -703,7 +703,7 @@
             <Border Grid.Column="7"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanActCurrent2}"
+                <TextBox Text="{Binding OvenExhaustFanActCurrent2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -715,7 +715,7 @@
             <Border Grid.Column="9"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanFrontActCurrent}"
+                <TextBox Text="{Binding OvenExhaustFanFrontActCurrent, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -727,7 +727,7 @@
             <Border Grid.Column="11"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanBackActCurrent}"
+                <TextBox Text="{Binding OvenExhaustFanBackActCurrent, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -745,7 +745,7 @@
             <Border Grid.Column="1"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanPctCurrent1}"
+                <TextBox Text="{Binding OvenCirculatingFanPctCurrent1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -757,7 +757,7 @@
             <Border Grid.Column="3"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenCirculatingFanPctCurrent2}"
+                <TextBox Text="{Binding OvenCirculatingFanPctCurrent2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -769,7 +769,7 @@
             <Border Grid.Column="5"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanPctCurrent1}"
+                <TextBox Text="{Binding OvenExhaustFanPctCurrent1, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -781,7 +781,7 @@
             <Border Grid.Column="7"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanPctCurrent2}"
+                <TextBox Text="{Binding OvenExhaustFanPctCurrent2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -793,7 +793,7 @@
             <Border Grid.Column="9"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanFrontPctCurrent}"
+                <TextBox Text="{Binding OvenExhaustFanFrontPctCurrent, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -805,7 +805,7 @@
             <Border Grid.Column="11"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding OvenExhaustFanBackPctCurrent}"
+                <TextBox Text="{Binding OvenExhaustFanBackPctCurrent, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -889,7 +889,7 @@
             <Border Grid.Column="1"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActStretch1x2}"
+                <TextBox Text="{Binding MotorActStretch1x2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -901,7 +901,7 @@
             <Border Grid.Column="3"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActStretch3x4}"
+                <TextBox Text="{Binding MotorActStretch3x4, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -913,7 +913,7 @@
             <Border Grid.Column="5"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActStretch4x5}"
+                <TextBox Text="{Binding MotorActStretch4x5, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -925,7 +925,7 @@
             <Border Grid.Column="7"
                     Grid.Row="2"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActStretch1x6}"
+                <TextBox Text="{Binding MotorActStretch1x6, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -955,7 +955,7 @@
             <Border Grid.Column="1"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSetPoint1x2}"
+                <TextBox Text="{Binding MotorSetPoint1x2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -967,7 +967,7 @@
             <Border Grid.Column="3"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSetPoint3x4}"
+                <TextBox Text="{Binding MotorSetPoint3x4, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -979,7 +979,7 @@
             <Border Grid.Column="5"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSetPoint4x5}"
+                <TextBox Text="{Binding MotorSetPoint4x5, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -991,7 +991,7 @@
             <Border Grid.Column="7"
                     Grid.Row="3"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSetPoint1x6}"
+                <TextBox Text="{Binding MotorSetPoint1x6, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -1021,7 +1021,7 @@
             <Border Grid.Column="1"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActTensionTotal1x2}"
+                <TextBox Text="{Binding MotorActTensionTotal1x2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -1033,7 +1033,7 @@
             <Border Grid.Column="3"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActTensionTotal3x4}"
+                <TextBox Text="{Binding MotorActTensionTotal3x4, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -1045,7 +1045,7 @@
             <Border Grid.Column="5"
                     Grid.Row="4"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorActTensionTotal4x5}"
+                <TextBox Text="{Binding MotorActTensionTotal4x5, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -1081,7 +1081,7 @@
             <Border Grid.Column="1"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSingleTension1x2}"
+                <TextBox Text="{Binding MotorSingleTension1x2, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -1093,7 +1093,7 @@
             <Border Grid.Column="3"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSingleTension3x4}"
+                <TextBox Text="{Binding MotorSingleTension3x4, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
@@ -1105,7 +1105,7 @@
             <Border Grid.Column="5"
                     Grid.Row="5"
                     Grid.ColumnSpan="1">
-                <TextBox Text="{Binding MotorSingleTension4x5}"
+                <TextBox Text="{Binding MotorSingleTension4x5, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}"
                          Width="75"
                          TextAlignment="Center" />
             </Border>
