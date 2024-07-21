@@ -35,13 +35,17 @@ namespace M3.Cord.Models
         public string CordStructure { get; set; }
         public string ProductCode { get; set; }
         public string LotNo { get; set; }
+        
         public string Bath1SolutionName { get; set; }
-        public decimal? Bath1NipFront { get; set; }
-        public decimal? Bath1NipBack { get; set; }
+
+        public string Bath1NipFront { get; set; }
+        public string Bath1NipBack { get; set; }
         public decimal? Bath1NipBackErr { get; set; }
+
         public string Bath2SolutionName { get; set; }
-        public decimal? Bath2NipFront { get; set; }
-        public decimal? Bath2NipBack { get; set; }
+
+        public string Bath2NipFront { get; set; }
+        public string Bath2NipBack { get; set; }
         public decimal? Bath2NipBackErr { get; set; }
 
         public bool? Sofner { get; set; }

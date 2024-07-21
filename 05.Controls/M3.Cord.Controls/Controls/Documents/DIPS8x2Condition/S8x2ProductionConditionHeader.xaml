@@ -106,13 +106,13 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                 <StackPanel Orientation="Vertical">
-                    <TextBox Width="70" Text="{Binding Counter, StringFormat='{}{0:#,##0.##}'}" />
+                    <TextBox Width="70" Text="{Binding Counter, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text=" ± " FontSize="18" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
-                    <TextBox Width="70" Text="{Binding CounterErr, StringFormat='{}{0:#,##0.##}'}" />
+                    <TextBox Width="70" Text="{Binding CounterErr, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
                 </StackPanel>
             </StackPanel>
         </Border>
@@ -158,14 +158,14 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="200" Text="{Binding Bath1SolutionName}" />
+                    <TextBox Width="200" Text="{Binding Bath1SolutionName, TargetNullValue=''}" />
                 </StackPanel>
             </StackPanel>
         </Border>
         <Border Grid.Row="1"
                 Grid.Column="6"
                 Grid.ColumnSpan="2">
-            <TextBlock Text="Nip Prcssure (kg/cm2)" TextAlignment="Center" />
+            <TextBlock Text="Nip Presure (kg/cm2)" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="2" Grid.Column="6">
             <StackPanel Orientation="Vertical"
@@ -173,7 +173,7 @@
                         VerticalAlignment="Center">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <TextBlock Text="Front" FontSize="18" />
-                    <TextBox Width="70" Text="{Binding Bath1NipFront, StringFormat='{}{0:#,##0.##}'}" />
+                    <TextBox Width="70" Text="{Binding Bath1NipFront, TargetNullValue=''}" />
                 </StackPanel>
             </StackPanel>
         </Border>
@@ -187,13 +187,13 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="{Binding Bath1NipBack, StringFormat='{}{0:#,##0.##}'}" />
+                            <TextBox Width="70" Text="{Binding Bath1NipBack, TargetNullValue=''}" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text=" ± " FontSize="18" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="{Binding Bath1NipBackErr, StringFormat='{}{0:#,##0.##}'}" />
+                            <TextBox Width="70" Text="{Binding Bath1NipBackErr, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
@@ -212,14 +212,14 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBox Width="200" Text="{Binding Bath2SolutionName}" />
+                    <TextBox Width="200" Text="{Binding Bath2SolutionName, TargetNullValue=''}" />
                 </StackPanel>
             </StackPanel>
         </Border>
         <Border Grid.Row="1"
                 Grid.Column="8"
                 Grid.ColumnSpan="2">
-            <TextBlock Text="Nip Prcssure (kg/cm2)" TextAlignment="Center" />
+            <TextBlock Text="Nip Presure (kg/cm2)" TextAlignment="Center" />
         </Border>
         <Border Grid.Row="2" Grid.Column="8">
             <StackPanel Orientation="Vertical"
@@ -227,7 +227,7 @@
                         VerticalAlignment="Center">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <TextBlock Text="Front" FontSize="18" />
-                    <TextBox Width="70" Text="{Binding Bath2NipFront, StringFormat='{}{0:#,##0.##}'}" />
+                    <TextBox Width="70" Text="{Binding Bath2NipFront, TargetNullValue=''}" />
                 </StackPanel>
             </StackPanel>
         </Border>
@@ -241,13 +241,13 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="{Binding Bath2NipBack, StringFormat='{}{0:#,##0.##}'}" />
+                            <TextBox Width="70" Text="{Binding Bath2NipBack, TargetNullValue=''}" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text=" ± " FontSize="18" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <TextBox Width="70" Text="{Binding Bath2NipBackErr, StringFormat='{}{0:#,##0.##}'}" />
+                            <TextBox Width="70" Text="{Binding Bath2NipBackErr, StringFormat='{}{0:#,##0.0#}', TargetNullValue=''}" />
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
@@ -275,7 +275,11 @@
                         <!--
                         <CheckBox Content="" IsChecked="{Binding Sofner}" />
                         -->
-                        <TextBox Width="90" Text="{Binding SofnerValue}" />
+                        <TextBox Width="90" Text="{Binding SofnerValue, TargetNullValue=''}" />
+                        <TextBlock Text="DEC"
+                                   FontSize="10"
+                                   Width="100"
+                                   TextAlignment="Center" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical"
                                 HorizontalAlignment="Center"
@@ -286,7 +290,11 @@
                         <!--
                         <CheckBox Content="" IsChecked="{Binding DarwNip}" />
                         -->
-                        <TextBox Width="90" Text="{Binding DarwNipValue}" />
+                        <TextBox Width="90" Text="{Binding DarwNipValue, TargetNullValue=''}" />
+                        <TextBlock Text="kg/cm2"
+                                   FontSize="10"
+                                   Width="100"
+                                   TextAlignment="Center" />
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
@@ -304,7 +312,7 @@
         <Border Grid.Row="2"
                 Grid.Column="10"
                 Grid.ColumnSpan="2">
-            <TextBox Width="150" Text="{Binding PaperTubeColorUse}" />
+            <TextBox Width="150" Text="{Binding PaperTubeColorUse, TargetNullValue=''}" />
         </Border>
 
 
@@ -342,28 +350,28 @@
                             <TextBlock Text="D" FontSize="18" />
                         </Border>
                         <Border Grid.Row="1" Grid.Column="1">
-                            <TextBox Width="70" Text="{Binding TensionD, StringFormat='{}{0:#,##0.###}'}" />
+                            <TextBox Width="70" Text="{Binding TensionD, StringFormat='{}{0:#,##0.0##}', TargetNullValue=''}" />
                         </Border>
 
                         <Border Grid.Row="2" Grid.Column="0">
                             <TextBlock Text="H" FontSize="18" />
                         </Border>
                         <Border Grid.Row="2" Grid.Column="1">
-                            <TextBox Width="70" Text="{Binding TensionH, StringFormat='{}{0:#,##0.###}'}" />
+                            <TextBox Width="70" Text="{Binding TensionH, StringFormat='{}{0:#,##0.0##}', TargetNullValue=''}" />
                         </Border>
 
                         <Border Grid.Row="3" Grid.Column="0">
                             <TextBlock Text="N" FontSize="18" />
                         </Border>
                         <Border Grid.Row="3" Grid.Column="1">
-                            <TextBox Width="70" Text="{Binding TensionN, StringFormat='{}{0:#,##0.###}'}" />
+                            <TextBox Width="70" Text="{Binding TensionN, StringFormat='{}{0:#,##0.0##}', TargetNullValue=''}" />
                         </Border>
 
                         <Border Grid.Row="4" Grid.Column="0">
                             <TextBlock Text="Winder" FontSize="18" />
                         </Border>
                         <Border Grid.Row="4" Grid.Column="1">
-                            <TextBox Width="100" Text="{Binding TensionWinder}" />
+                            <TextBox Width="100" Text="{Binding TensionWinder, TargetNullValue=''}" />
                         </Border>
                     </Grid>
 
