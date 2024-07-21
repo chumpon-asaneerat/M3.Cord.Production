@@ -164,16 +164,16 @@ namespace M3.Cord.Pages
             bool ret = false;
             message = null;
 
-            if (null != Condition)
+            if (null != Condition1)
             {
                 string code = (!string.IsNullOrEmpty(traceNo)) ? traceNo.Trim() : null;
                 if (!string.IsNullOrWhiteSpace(code))
                 {
-                    Condition.DoffNo1TraceNo = code;
+                    Condition1.DoffNo1TraceNo = code;
                 }
                 else
                 {
-                    Condition.DoffNo1TraceNo = null;
+                    Condition1.DoffNo1TraceNo = null;
                 }
                 VerifyCondition(out message);
                 if (string.IsNullOrEmpty(message))
@@ -188,16 +188,16 @@ namespace M3.Cord.Pages
             bool ret = false;
             message = null;
 
-            if (null != Condition)
+            if (null != Condition2)
             {
                 string code = (!string.IsNullOrEmpty(traceNo)) ? traceNo.Trim() : null;
                 if (!string.IsNullOrWhiteSpace(code))
                 {
-                    Condition.DoffNo2TraceNo = code;
+                    Condition2.DoffNo1TraceNo = code;
                 }
                 else
                 {
-                    Condition.DoffNo2TraceNo = null;
+                    Condition2.DoffNo1TraceNo = null;
                 }
                 VerifyCondition(out message);
                 if (string.IsNullOrEmpty(message))
@@ -209,11 +209,11 @@ namespace M3.Cord.Pages
 
         public void Load()
         {
-            Condition = S5Condition.GetCurrent(FromSources.RawMeterial).Value();
-            if (null == Condition)
+            Condition1 = S5Condition.GetCurrent(FromSources.RawMeterial).Value();
+            if (null == Condition1)
             {
-                Condition = new S5Condition();
-                Condition.FromSource = FromSources.RawMeterial;
+                Condition1 = new S5Condition();
+                Condition1.FromSource = FromSources.RawMeterial;
             }
         }
 
@@ -311,18 +311,18 @@ namespace M3.Cord.Pages
         {
             get
             {
-                if (null != Condition && null != Std1 && null != Std2)
+                if (null != Std1 && null != Std2)
                 {
                     // Check valid
                     bool b1 = Std1.SettingTemperatureSet == Std2.SettingTemperatureSet;
                     bool b2 = Std1.SettingTimeSet == Std2.SettingTimeSet;
                     return b1 && b2;
                 }
-                else if (null != Condition && null != Std1 && null == Std2)
+                else if (null != Std1 && null == Std2)
                 {
                     return true;
                 }
-                else if (null != Condition && null == Std1 && null != Std2)
+                else if (null == Std1 && null != Std2)
                 {
                     return true;
                 }
@@ -333,7 +333,12 @@ namespace M3.Cord.Pages
             }
         }
 
-        public S5Condition Condition
+        public S5Condition Condition1
+        {
+            get; private set;
+        }
+
+        public S5Condition Condition2
         {
             get; private set;
         }

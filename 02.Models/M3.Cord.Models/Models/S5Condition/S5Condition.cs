@@ -359,15 +359,18 @@ namespace M3.Cord.Models
         public string IssueBy { get; set; }
         public DateTime? IssueDate { get; set; }
 
+        public string MCSide { get; set; }
+
         #endregion
 
         #region Static Methods
 
-        public static S5Condition Create(string productCode)
+        public static S5Condition Create(string productCode, string mcSide)
         {
             var inst = new S5Condition();
             var std = S5ConditionStd.Gets(productCode).Value().FirstOrDefault();
             Assign(std, inst);
+            inst.MCSide = mcSide;
             return inst;
         }
 
@@ -376,6 +379,7 @@ namespace M3.Cord.Models
             if (null != src && null != dst)
             {
                 dst.ProductCode = src.ProductCode;
+
                 dst.MainSupplySteamPressureSC = src.MainSupplySteamPressureSC;
                 dst.MainSupplySteamPressureSet = src.MainSupplySteamPressureSet;
                 dst.MainSupplySteamPressureSetErr = src.MainSupplySteamPressureSetErr;
@@ -485,10 +489,10 @@ namespace M3.Cord.Models
             return rets;
         }
         /// <summary>
-        /// Gets
+        /// Get Current
         /// </summary>
         /// <returns></returns>
-        public static NDbResult<S5Condition> GetCurrent(FromSources fromSource)
+        public static NDbResult<S5Condition> GetCurrent(FromSources fromSource, string mcSide)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -508,7 +512,7 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@FromSource", (int)fromSource);
-
+            p.Add("@MCSide", mcSide);
             try
             {
                 var item = cnn.Query<S5Condition>("GetCurrentS5Condition", p,

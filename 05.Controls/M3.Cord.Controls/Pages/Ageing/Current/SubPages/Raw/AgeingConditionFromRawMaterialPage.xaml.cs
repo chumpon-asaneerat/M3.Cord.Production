@@ -73,12 +73,27 @@ namespace M3.Cord.Pages
             Save();
         }
 
+        private void cmdSave2_Click(object sender, RoutedEventArgs e)
+        {
+            Save();
+        }
+
         private void cmdStart_Click(object sender, RoutedEventArgs e)
         {
             Start();
         }
 
+        private void cmdStart2_Click(object sender, RoutedEventArgs e)
+        {
+            Start();
+        }
+
         private void cmdFinish_Click(object sender, RoutedEventArgs e)
+        {
+            Finish();
+        }
+
+        private void cmdFinish2_Click(object sender, RoutedEventArgs e)
         {
             Finish();
         }
@@ -162,6 +177,7 @@ namespace M3.Cord.Pages
 
                 ChecnEnableButtons();
                 this.DataContext = cond;
+
                 // Bind Pallet && Product Code
                 //
                 // Pallet 1
@@ -273,6 +289,7 @@ namespace M3.Cord.Pages
 
         private void Finish()
         {
+            /*
             if (null != manager)
             {
                 string errMSg;
@@ -321,6 +338,7 @@ namespace M3.Cord.Pages
                     PageContentManager.Instance.Current = page;
                 }
             }
+            */
         }
 
         #endregion
