@@ -170,6 +170,7 @@ namespace M3.Cord.Pages
 
         private void RefreshContext()
         {
+            /*
             this.DataContext = null;
             if (null != manager && null != manager.Condition)
             {
@@ -203,10 +204,12 @@ namespace M3.Cord.Pages
                     txtItemCode2.Text = string.Empty;
                 }
             }
+            */
         }
 
         private void ChecnEnableButtons()
         {
+            /*
             var user = M3CordApp.Current.User;
 
             bool isUser = (null != user && user.RoleId == 20) ? true : false;
@@ -245,13 +248,14 @@ namespace M3.Cord.Pages
                 }
 
                 // lock textbox if already start.
-                /*
-                bool isStart = condition.StartingTimeStartAgeingTime.HasValue;
-                txtTraceNo1.IsEnabled = !isStart;
+
+                //bool isStart = condition.StartingTimeStartAgeingTime.HasValue;
+                //txtTraceNo1.IsEnabled = !isStart;
+
                 // allow to set pallet 2 after start
                 //txtTraceNo2.IsEnabled = string.IsNullOrEmpty(condition.DoffNo2TraceNo);
-                */
             }
+            */
         }
 
         private void Save()

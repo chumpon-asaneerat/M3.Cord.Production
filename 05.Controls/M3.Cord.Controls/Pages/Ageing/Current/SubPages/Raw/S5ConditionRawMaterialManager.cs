@@ -54,81 +54,84 @@ namespace M3.Cord.Pages
         private void VerifyCondition(out string errMsg)
         {
             errMsg = null;
-            if (null == Condition)
-            {
-                return;
-            }
-            // pallet 1
-            if (!string.IsNullOrEmpty(Condition.DoffNo1TraceNo))
-            {
-                // Special case for Raw Material
-                // Item Yarn must be 1620-288-707 and Product Code must be 1800TW
-                var code = "1800TW";
-                var name = "BRAKE HOSE";
 
-                // find pallet in G4
-                var g4 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo1TraceNo).Value();
-                if (null != g4)
+            if (null != ConditionL)
+            { 
+                // pallet 1
+                if (!string.IsNullOrEmpty(ConditionL.DoffNo1TraceNo))
                 {
-                    Condition.DoffNo1PalletCode = g4.PalletNo;
-                    Condition.ProductCode1 = code;
-                    Condition.ProductName1 = name;
+                    // Special case for Raw Material
+                    // Item Yarn must be 1620-288-707 and Product Code must be 1800TW
+                    var code = "1800TW";
+                    var name = "BRAKE HOSE";
 
-                    Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
+                    // find pallet in G4
+                    var g4 = G4IssueYarn.SearchG4AgeingPallet(ConditionL.DoffNo1TraceNo).Value();
+                    if (null != g4)
+                    {
+                        ConditionL.DoffNo1PalletCode = g4.PalletNo;
+                        ConditionL.ProductCode1 = code;
+                        ConditionL.ProductName1 = name;
+
+                        Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
+                    }
+                    else
+                    {
+                        errMsg = "Trace No Not found.";
+                        ConditionL.DoffNo1PalletCode = null;
+                        ConditionL.ProductCode1 = null;
+                        ConditionL.ProductName1 = null;
+                        Std1 = null;
+                    }
                 }
                 else
                 {
-                    errMsg = "Trace No Not found.";
-                    Condition.DoffNo1PalletCode = null;
-                    Condition.ProductCode1 = null;
-                    Condition.ProductName1 = null;
+                    ConditionL.DoffNo1PalletCode = null;
+                    ConditionL.ProductCode1 = null;
+                    ConditionL.ProductName1 = null;
                     Std1 = null;
                 }
             }
-            else
-            {
-                Condition.DoffNo1PalletCode = null;
-                Condition.ProductCode1 = null;
-                Condition.ProductName1 = null;
-                Std1 = null;
-            }
 
-            // pallet 2
-            if (!string.IsNullOrEmpty(Condition.DoffNo2TraceNo))
+            if (null != ConditionR)
             {
-                // Special case for Raw Material
-                // Item Yarn must be 1620-288-707 and Product Code must be 1800TW
-                var code = "1800TW";
-                var name = "BRAKE HOSE";
-
-                // find pallet in G4
-                var g4 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo2TraceNo).Value();
-                if (null != g4)
+                // pallet 2
+                if (!string.IsNullOrEmpty(ConditionR.DoffNo2TraceNo))
                 {
+                    // Special case for Raw Material
+                    // Item Yarn must be 1620-288-707 and Product Code must be 1800TW
+                    var code = "1800TW";
+                    var name = "BRAKE HOSE";
 
-                    Condition.DoffNo2PalletCode = g4.PalletNo;
-                    Condition.ProductCode2 = code;
-                    Condition.ProductName2 = name;
-                    Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
+                    // find pallet in G4
+                    var g4 = G4IssueYarn.SearchG4AgeingPallet(ConditionR.DoffNo1TraceNo).Value();
+                    if (null != g4)
+                    {
+
+                        ConditionR.DoffNo1PalletCode = g4.PalletNo;
+                        ConditionR.ProductCode1 = code;
+                        ConditionR.ProductName1 = name;
+                        Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
+                    }
+                    else
+                    {
+                        errMsg = "Trace No Not found.";
+                        ConditionR.DoffNo1PalletCode = null;
+                        ConditionR.ProductCode1 = null;
+                        ConditionR.ProductName1 = null;
+                        Std2 = null;
+                    }
                 }
                 else
                 {
-                    errMsg = "Trace No Not found.";
-                    Condition.DoffNo2PalletCode = null;
-                    Condition.ProductCode2 = null;
-                    Condition.ProductName2 = null;
+                    ConditionR.DoffNo1PalletCode = null;
+                    ConditionR.ProductCode1 = null;
+                    ConditionR.ProductName1 = null;
                     Std2 = null;
                 }
             }
-            else
-            {
-                Condition.DoffNo2PalletCode = null;
-                Condition.ProductCode2 = null;
-                Condition.ProductName2 = null;
-                Std2 = null;
-            }
 
-            if (null != Condition && null != Std1 && null != Std2)
+            if (null != Std1 && null != Std2)
             {
                 if (!IsMatchStd)
                 {
@@ -136,18 +139,20 @@ namespace M3.Cord.Pages
                     return;
                 }
 
-                S5Condition.Assign(Std1, Condition);
+                if (null != ConditionL) S5Condition.Assign(Std1, ConditionL);
+                if (null != ConditionR) S5Condition.Assign(Std2, ConditionR);
+
                 //Condition.LotOrTraceNo = LotOrTraceNo1;
             }
-            else if (null != Condition && null != Std1 && null == Std2)
+            else if (null != Std1 && null == Std2)
             {
-                S5Condition.Assign(Std1, Condition);
-                //Condition.LotOrTraceNo = LotOrTraceNo1;
+                if (null != ConditionL) S5Condition.Assign(Std1, ConditionL);
+                //if (null != ConditionR) S5Condition.Assign(Std1, ConditionR);
             }
-            else if (null != Condition && null == Std1 && null != Std2)
+            else if (null == Std1 && null != Std2)
             {
-                S5Condition.Assign(Std2, Condition);
-                //Condition.LotOrTraceNo = LotOrTraceNo2;
+                //if (null != ConditionL) S5Condition.Assign(Std2, ConditionL);
+                if (null != ConditionR) S5Condition.Assign(Std2, ConditionR);
             }
             else
             {
@@ -164,16 +169,16 @@ namespace M3.Cord.Pages
             bool ret = false;
             message = null;
 
-            if (null != Condition1)
+            if (null != ConditionL)
             {
                 string code = (!string.IsNullOrEmpty(traceNo)) ? traceNo.Trim() : null;
                 if (!string.IsNullOrWhiteSpace(code))
                 {
-                    Condition1.DoffNo1TraceNo = code;
+                    ConditionL.DoffNo1TraceNo = code;
                 }
                 else
                 {
-                    Condition1.DoffNo1TraceNo = null;
+                    ConditionL.DoffNo1TraceNo = null;
                 }
                 VerifyCondition(out message);
                 if (string.IsNullOrEmpty(message))
@@ -188,16 +193,16 @@ namespace M3.Cord.Pages
             bool ret = false;
             message = null;
 
-            if (null != Condition2)
+            if (null != ConditionR)
             {
                 string code = (!string.IsNullOrEmpty(traceNo)) ? traceNo.Trim() : null;
                 if (!string.IsNullOrWhiteSpace(code))
                 {
-                    Condition2.DoffNo1TraceNo = code;
+                    ConditionR.DoffNo1TraceNo = code;
                 }
                 else
                 {
-                    Condition2.DoffNo1TraceNo = null;
+                    ConditionR.DoffNo1TraceNo = null;
                 }
                 VerifyCondition(out message);
                 if (string.IsNullOrEmpty(message))
@@ -209,12 +214,25 @@ namespace M3.Cord.Pages
 
         public void Load()
         {
-            Condition1 = S5Condition.GetCurrent(FromSources.RawMeterial).Value();
-            if (null == Condition1)
+            ConditionL = S5Condition.GetCurrent(FromSources.RawMeterial, "L").Value();
+            if (null == ConditionL)
             {
-                Condition1 = new S5Condition();
-                Condition1.FromSource = FromSources.RawMeterial;
+                ConditionL = new S5Condition();
+                ConditionL.FromSource = FromSources.RawMeterial;
+                ConditionL.MCSide = "L";
             }
+
+            if (null != ConditionL && string.IsNullOrEmpty(ConditionL.MCSide)) ConditionL.MCSide = "L";
+
+            ConditionR = S5Condition.GetCurrent(FromSources.RawMeterial, "R").Value();
+            if (null == ConditionR)
+            {
+                ConditionR = new S5Condition();
+                ConditionR.FromSource = FromSources.RawMeterial;
+                ConditionL.MCSide = "R";
+            }
+
+            if (null != ConditionR && string.IsNullOrEmpty(ConditionR.MCSide)) ConditionR.MCSide = "R";
         }
 
         public void Refresh()
@@ -230,7 +248,7 @@ namespace M3.Cord.Pages
         public bool Start()
         {
             bool ret = false;
-
+            /*
             if (null != Condition)
             {
                 var dt = DateTime.Now;
@@ -246,7 +264,7 @@ namespace M3.Cord.Pages
                 S5Condition.Save(Condition);
                 ret = true;
             }
-
+            */
             return ret;
         }
 
@@ -254,6 +272,7 @@ namespace M3.Cord.Pages
         {
             bool ret = false;
             message = null;
+            /*
             if (null != Condition)
             {
                 var dt = DateTime.Now;
@@ -278,19 +297,20 @@ namespace M3.Cord.Pages
                 S5Condition.Save(Condition);
                 ret = true;
             }
+            */
             return ret;
         }
 
         public bool Save()
         {
             bool ret = false;
-
+            /*
             if (null != Condition)
             {
                 S5Condition.Save(Condition);
                 ret = true;
             }
-
+            */
             return ret;
         }
 
@@ -333,12 +353,12 @@ namespace M3.Cord.Pages
             }
         }
 
-        public S5Condition Condition1
+        public S5Condition ConditionL
         {
             get; private set;
         }
 
-        public S5Condition Condition2
+        public S5Condition ConditionR
         {
             get; private set;
         }
