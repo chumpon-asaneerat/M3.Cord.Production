@@ -660,6 +660,7 @@ namespace M3.Cord.Models
 
             p.Add("@IssueBy", value.IssueBy);
             p.Add("@IssueDate", value.IssueDate);
+            p.Add("@MCSide", string.IsNullOrWhiteSpace(value.MCSide) ? "L" : value.MCSide.Trim());
 
             p.Add("@S5ConditionId", value.S5ConditionId, DbType.Int32, direction: ParameterDirection.InputOutput);
 

@@ -70,7 +70,8 @@ namespace M3.Cord.Pages
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
-            SaveL();
+            //SaveL();
+            SaveAll();
         }
 
         private void cmdStart_Click(object sender, RoutedEventArgs e)
@@ -85,7 +86,8 @@ namespace M3.Cord.Pages
 
         private void cmdSave2_Click(object sender, RoutedEventArgs e)
         {
-            SaveR();
+            //SaveR();
+            SaveAll();
         }
 
         private void cmdStart2_Click(object sender, RoutedEventArgs e)
@@ -316,6 +318,26 @@ namespace M3.Cord.Pages
             }
         }
 
+        private void SaveAll(bool showMsg = true)
+        {
+            if (null != manager)
+            {
+                bool ret1 = manager.SaveL();
+                bool ret2 = manager.SaveR();
+
+                if (showMsg)
+                {
+                    if (ret1 && ret2)
+                        M3CordApp.Windows.SaveSuccess();
+                    else M3CordApp.Windows.SaveFailed();
+                }
+
+                RefreshContextL();
+            }
+
+            M3CordApp.Pages.GotoCordMainMenu();
+        }
+
         private void SaveL()
         {
             if (null != manager)
@@ -348,6 +370,8 @@ namespace M3.Cord.Pages
 
         private void StartL()
         {
+            SaveAll(false);
+
             if (null != manager)
             {
                 var ret = manager.StartL();
@@ -366,6 +390,8 @@ namespace M3.Cord.Pages
 
         private void StartR()
         {
+            SaveAll(false);
+
             if (null != manager)
             {
                 var ret = manager.StartR();
@@ -402,6 +428,7 @@ namespace M3.Cord.Pages
                 if (win.ShowDialog() == false)
                 {
                     M3CordApp.Pages.GotoCordMainMenu();
+                    return;
                 }
 
                 var page = M3CordApp.Pages.S5ReportPreview;
@@ -459,6 +486,7 @@ namespace M3.Cord.Pages
                 if (win.ShowDialog() == false)
                 {
                     M3CordApp.Pages.GotoCordMainMenu();
+                    return;
                 }
 
                 var page = M3CordApp.Pages.S5ReportPreview;

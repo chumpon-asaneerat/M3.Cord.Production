@@ -141,7 +141,7 @@ namespace M3.Cord.Pages
         {
             grid.ItemsSource = null;
 
-            string txtLotNo = txtDIPLotNo.Text.Trim();
+            string txtLotNo = txtDIPLotNo.Text;
 
             string dipLotNo = (!string.IsNullOrEmpty(txtLotNo)) ? txtLotNo : null;
             DateTime? begin = dtBegin.SelectedDate;
