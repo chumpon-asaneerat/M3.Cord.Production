@@ -66,127 +66,129 @@ namespace M3.Cord.Pages
         private void VerifyCondition(out string errMsg)
         {
             errMsg = null;
-            if (null == Condition)
-            {
-                return;
-            }
             // pallet 1
-            if (!string.IsNullOrEmpty(Condition.DoffNo1PalletCode))
+            if (null != ConditionL)
             {
-                // Find pallet setting for product code information
-                var pallet1 = GetPalletByCode(Condition.DoffNo1PalletCode);
-                var PC1 = GetPCTwist1(pallet1);
-                var customer = (null != PC1) ? PC1.CustomerName : null;
-                var code = (null != PC1) ? PC1.ProductCode : null;
-                var name = (null != PC1) ? PC1.ProductName : null;
-                if (string.IsNullOrEmpty(code))
+                if (!string.IsNullOrEmpty(ConditionL.DoffNo1PalletCode))
                 {
-                    errMsg = "Pallet Not found.";
-                }
-                else
-                {
-                    //LotOrTraceNo1 = (null != PC1) ? PC1.ProductLotNo : null;
-                }
-
-                Condition.CustomerName = customer;
-                Condition.ProductCode1 = code;
-                Condition.ProductName1 = name;
-                Condition.DoffNo1MCNo = (null != pallet1) ? pallet1.MCCode : null;
-
-                if (null != pallet1)
-                {
-                    pallet1.LoadItems();
-
-                    string doffNos = string.Empty;
-                    var doffs = pallet1.Items.Select(x => x.DoffNo).Distinct().ToList();
-                    if (null != doffs)
+                    // Find pallet setting for product code information
+                    var pallet1 = GetPalletByCode(ConditionL.DoffNo1PalletCode);
+                    var PC1 = GetPCTwist1(pallet1);
+                    var customer = (null != PC1) ? PC1.CustomerName : null;
+                    var code = (null != PC1) ? PC1.ProductCode : null;
+                    var name = (null != PC1) ? PC1.ProductName : null;
+                    if (string.IsNullOrEmpty(code))
                     {
-                        doffs.Sort();
-                        for (int i = 0; i < doffs.Count; ++i)
-                        {
-                            var doff = doffs[i];
-                            doffNos += doff.ToString();
-                            if (i < doffs.Count - 1) doffNos += ", ";
-                        }
+                        errMsg = "Pallet Not found.";
+                    }
+                    else
+                    {
+                        //LotOrTraceNo1 = (null != PC1) ? PC1.ProductLotNo : null;
                     }
 
-                    Condition.DoffNo1Doff = doffNos.Trim();
-                    Condition.DoffNo1Qty = (pallet1.TotalCH.HasValue) ? 
-                        pallet1.TotalCH.Value.ToString("n0") : null;
+                    ConditionL.CustomerName = customer;
+                    ConditionL.ProductCode1 = code;
+                    ConditionL.ProductName1 = name;
+                    ConditionL.DoffNo1MCNo = (null != pallet1) ? pallet1.MCCode : null;
+
+                    if (null != pallet1)
+                    {
+                        pallet1.LoadItems();
+
+                        string doffNos = string.Empty;
+                        var doffs = pallet1.Items.Select(x => x.DoffNo).Distinct().ToList();
+                        if (null != doffs)
+                        {
+                            doffs.Sort();
+                            for (int i = 0; i < doffs.Count; ++i)
+                            {
+                                var doff = doffs[i];
+                                doffNos += doff.ToString();
+                                if (i < doffs.Count - 1) doffNos += ", ";
+                            }
+                        }
+
+                        ConditionL.DoffNo1Doff = doffNos.Trim();
+                        ConditionL.DoffNo1Qty = (pallet1.TotalCH.HasValue) ?
+                            pallet1.TotalCH.Value.ToString("n0") : null;
+                    }
+                    else
+                    {
+                        ConditionL.DoffNo1Doff = null;
+                        ConditionL.DoffNo1Qty = null;
+                    }
+
+                    Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
                 }
                 else
                 {
-                    Condition.DoffNo1Doff = null;
-                    Condition.DoffNo1Qty = null;
+                    ConditionL.ProductCode1 = null;
+                    Std1 = null;
                 }
-                
-                Std1 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
-            }
-            else
-            {
-                Condition.ProductCode1 = null;
-                Std1 = null;
             }
 
             // pallet 2
-            if (!string.IsNullOrEmpty(Condition.DoffNo2PalletCode))
+            if (null != ConditionR)
             {
-                // Find pallet setting for product code information
-                var pallet2 = GetPalletByCode(Condition.DoffNo2PalletCode);
-                var PC2 = GetPCTwist1(pallet2);
-                var customer = (null != PC2) ? PC2.CustomerName : null;
-                var code = (null != PC2) ? PC2.ProductCode : null;
-                var name = (null != PC2) ? PC2.ProductName : null;
-                if (string.IsNullOrEmpty(code))
+                if (!string.IsNullOrEmpty(ConditionR.DoffNo1PalletCode))
                 {
-                    errMsg = "Pallet Not found.";
-                }
-                else
-                {
-                    //LotOrTraceNo2 = (null != PC2) ? PC2.ProductLotNo : null;
-                }
-
-                Condition.CustomerName = customer;
-                Condition.ProductCode2 = code;
-                Condition.ProductName2 = name;
-                Condition.DoffNo2MCNo = (null != pallet2) ? pallet2.MCCode : null;
-
-                if (null != pallet2)
-                {
-                    pallet2.LoadItems();
-
-                    string doffNos = string.Empty;
-                    var doffs = pallet2.Items.Select(x => x.DoffNo).Distinct().ToList();
-                    if (null != doffs)
+                    // Find pallet setting for product code information
+                    var pallet2 = GetPalletByCode(ConditionR.DoffNo1PalletCode);
+                    var PC2 = GetPCTwist1(pallet2);
+                    var customer = (null != PC2) ? PC2.CustomerName : null;
+                    var code = (null != PC2) ? PC2.ProductCode : null;
+                    var name = (null != PC2) ? PC2.ProductName : null;
+                    if (string.IsNullOrEmpty(code))
                     {
-                        doffs.Sort();
-                        for (int i = 0; i < doffs.Count; ++i)
-                        {
-                            var doff = doffs[i];
-                            doffNos += doff.ToString();
-                            if (i < doffs.Count - 1) doffNos += ", ";
-                        }
+                        errMsg = "Pallet Not found.";
+                    }
+                    else
+                    {
+                        //LotOrTraceNo2 = (null != PC2) ? PC2.ProductLotNo : null;
                     }
 
-                    Condition.DoffNo2Doff = doffNos.Trim();
-                    Condition.DoffNo2Qty = (pallet2.TotalCH.HasValue) ?
-                        pallet2.TotalCH.Value.ToString("n0") : null;
+                    ConditionR.CustomerName = customer;
+                    ConditionR.ProductCode2 = code;
+                    ConditionR.ProductName2 = name;
+                    ConditionR.DoffNo1MCNo = (null != pallet2) ? pallet2.MCCode : null;
+
+                    if (null != pallet2)
+                    {
+                        pallet2.LoadItems();
+
+                        string doffNos = string.Empty;
+                        var doffs = pallet2.Items.Select(x => x.DoffNo).Distinct().ToList();
+                        if (null != doffs)
+                        {
+                            doffs.Sort();
+                            for (int i = 0; i < doffs.Count; ++i)
+                            {
+                                var doff = doffs[i];
+                                doffNos += doff.ToString();
+                                if (i < doffs.Count - 1) doffNos += ", ";
+                            }
+                        }
+
+                        ConditionR.DoffNo1Doff = doffNos.Trim();
+                        ConditionR.DoffNo1Qty = (pallet2.TotalCH.HasValue) ?
+                            pallet2.TotalCH.Value.ToString("n0") : null;
+                    }
+                    else
+                    {
+                        ConditionR.DoffNo1Doff = null;
+                        ConditionR.DoffNo1Qty = null;
+                    }
+
+                    Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
                 }
                 else
                 {
-                    Condition.DoffNo2Doff = null;
-                    Condition.DoffNo2Qty = null;
+                    ConditionR.ProductCode2 = null;
+                    Std2 = null;
                 }
-
-                Std2 = (!string.IsNullOrWhiteSpace(code)) ? GetStd(code) : null;
-            }
-            else
-            {
-                Condition.ProductCode2 = null;
-                Std2 = null;
             }
 
-            if (null != Condition && null != Std1 && null != Std2)
+            if (null != Std1 && null != Std2)
             {
                 if (!IsMatchStd)
                 {
@@ -194,15 +196,18 @@ namespace M3.Cord.Pages
                     return;
                 }
 
-                S5Condition.Assign(Std1, Condition);
+                if (null != ConditionL) S5Condition.Assign(Std1, ConditionL);
+                if (null != ConditionR) S5Condition.Assign(Std2, ConditionR);
             }
-            else if (null != Condition && null != Std1 && null == Std2)
+            else if (null != Std1 && null == Std2)
             {
-                S5Condition.Assign(Std1, Condition);
+                if (null != ConditionL) S5Condition.Assign(Std1, ConditionL);
+                //if (null != ConditionR) S5Condition.Assign(Std1, ConditionR);
             }
-            else if (null != Condition && null == Std1 && null != Std2)
+            else if (null == Std1 && null != Std2)
             {
-                S5Condition.Assign(Std2, Condition);
+                //if (null != ConditionL) S5Condition.Assign(Std2, ConditionL);
+                if (null != ConditionR) S5Condition.Assign(Std2, ConditionR);
             }
             else
             {
@@ -219,16 +224,16 @@ namespace M3.Cord.Pages
             bool ret = false;
             message = null;
 
-            if (null != Condition)
+            if (null != ConditionL)
             {
                 string code = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
                 if (!string.IsNullOrWhiteSpace(code))
                 {
-                    Condition.DoffNo1PalletCode = code;
+                    ConditionL.DoffNo1PalletCode = code;
                 }
                 else
                 {
-                    Condition.DoffNo1PalletCode = null;
+                    ConditionL.DoffNo1PalletCode = null;
                 }
                 VerifyCondition(out message);
                 if (string.IsNullOrEmpty(message))
@@ -243,16 +248,16 @@ namespace M3.Cord.Pages
             bool ret = false;
             message = null;
 
-            if (null != Condition)
+            if (null != ConditionR)
             {
                 string code = (!string.IsNullOrEmpty(palletCode)) ? palletCode.Trim() : null;
                 if (!string.IsNullOrWhiteSpace(code))
                 {
-                    Condition.DoffNo2PalletCode = code;
+                    ConditionR.DoffNo1PalletCode = code;
                 }
                 else
                 {
-                    Condition.DoffNo2PalletCode = null;
+                    ConditionR.DoffNo1PalletCode = null;
                 }
                 VerifyCondition(out message);
                 if (string.IsNullOrEmpty(message))
@@ -262,14 +267,28 @@ namespace M3.Cord.Pages
             return ret;
         }
 
-        public void Load()
+        public void LoadL()
         {
-            Condition = S5Condition.GetCurrent(FromSources.Twist).Value();
-            if (null == Condition)
+            ConditionL = S5Condition.GetCurrent(FromSources.Twist, "L").Value();
+            if (null == ConditionL)
             {
-                Condition = new S5Condition();
-                Condition.FromSource = FromSources.Twist;
+                ConditionL = new S5Condition();
+                ConditionL.FromSource = FromSources.Twist;
             }
+
+            if (null != ConditionL && string.IsNullOrEmpty(ConditionL.MCSide)) ConditionL.MCSide = "L";
+        }
+
+        public void LoadR()
+        {
+            ConditionR = S5Condition.GetCurrent(FromSources.Twist, "R").Value();
+            if (null == ConditionR)
+            {
+                ConditionR = new S5Condition();
+                ConditionR.FromSource = FromSources.Twist;
+            }
+
+            if (null != ConditionR && string.IsNullOrEmpty(ConditionR.MCSide)) ConditionR.MCSide = "R";
         }
 
         public void Refresh()
@@ -282,53 +301,106 @@ namespace M3.Cord.Pages
             }
         }
 
-        public bool Start()
+        public bool StartL()
         {
             bool ret = false;
 
-            if (null != Condition)
+            if (null != ConditionL)
             {
                 var dt = DateTime.Now;
-                Condition.StartingTimeStartAgeingTime = dt;
+                ConditionL.StartingTimeStartAgeingTime = dt;
                 var std = (null != Std1) ? Std1 : Std2;
                 if (null != std)
                 {
                     // auto set finish time.
                     double hrs = (std.SettingTimeSet.HasValue) ? (double)std.SettingTimeSet.Value : (double)0;
-                    Condition.FinishTime = dt.AddHours(hrs);
+                    ConditionL.FinishTime = dt.AddHours(hrs);
                 }
 
-                S5Condition.Save(Condition);
+                S5Condition.Save(ConditionL);
                 ret = true;
             }
 
             return ret;
         }
 
-        public bool Finish(out string message)
+        public bool StartR()
+        {
+            bool ret = false;
+
+            if (null != ConditionR)
+            {
+                var dt = DateTime.Now;
+                ConditionR.StartingTimeStartAgeingTime = dt;
+                var std = (null != Std1) ? Std1 : Std2;
+                if (null != std)
+                {
+                    // auto set finish time.
+                    double hrs = (std.SettingTimeSet.HasValue) ? (double)std.SettingTimeSet.Value : (double)0;
+                    ConditionR.FinishTime = dt.AddHours(hrs);
+                }
+
+                S5Condition.Save(ConditionR);
+                ret = true;
+            }
+
+            return ret;
+        }
+
+        public bool FinishL(out string message)
         {
             bool ret = false;
             message = null;
-            if (null != Condition)
+            if (null != ConditionL)
             {
                 var dt = DateTime.Now;
-                Condition.OutTime = dt;
-                Condition.IssueBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
-                Condition.IssueDate = DateTime.Now;
+                ConditionL.OutTime = dt;
+                ConditionL.IssueBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
+                ConditionL.IssueDate = DateTime.Now;
 
-                S5Condition.Save(Condition);
+                S5Condition.Save(ConditionL);
                 ret = true;
             }
             return ret;
         }
 
-        public bool Save()
+        public bool FinishR(out string message)
+        {
+            bool ret = false;
+            message = null;
+            if (null != ConditionR)
+            {
+                var dt = DateTime.Now;
+                ConditionR.OutTime = dt;
+                ConditionR.IssueBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
+                ConditionR.IssueDate = DateTime.Now;
+
+                S5Condition.Save(ConditionR);
+                ret = true;
+            }
+            return ret;
+        }
+
+        public bool SaveL()
         {
             bool ret = false;
 
-            if (null != Condition)
+            if (null != ConditionL)
             {
-                S5Condition.Save(Condition);
+                S5Condition.Save(ConditionL);
+                ret = true;
+            }
+
+            return ret;
+        }
+
+        public bool SaveR()
+        {
+            bool ret = false;
+
+            if (null != ConditionR)
+            {
+                S5Condition.Save(ConditionR);
                 ret = true;
             }
 
@@ -352,18 +424,18 @@ namespace M3.Cord.Pages
         {
             get
             {
-                if (null != Condition && null != Std1 && null != Std2)
+                if (null != Std1 && null != Std2)
                 {
                     // Check valid
                     bool b1 = Std1.SettingTemperatureSet == Std2.SettingTemperatureSet;
                     bool b2 = Std1.SettingTimeSet == Std2.SettingTimeSet;
                     return b1 && b2;
                 }
-                else if (null != Condition && null != Std1 && null == Std2)
+                else if (null != Std1 && null == Std2)
                 {
                     return true;
                 }
-                else if (null != Condition && null == Std1 && null != Std2)
+                else if (null == Std1 && null != Std2)
                 {
                     return true;
                 }
@@ -374,7 +446,12 @@ namespace M3.Cord.Pages
             }
         }
 
-        public S5Condition Condition
+        public S5Condition ConditionL
+        {
+            get; private set;
+        }
+
+        public S5Condition ConditionR
         {
             get; private set;
         }

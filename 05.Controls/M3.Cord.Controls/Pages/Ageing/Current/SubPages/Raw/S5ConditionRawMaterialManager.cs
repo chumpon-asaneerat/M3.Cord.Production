@@ -212,7 +212,7 @@ namespace M3.Cord.Pages
             return ret;
         }
 
-        public void Load()
+        public void LoadL()
         {
             ConditionL = S5Condition.GetCurrent(FromSources.RawMeterial, "L").Value();
             if (null == ConditionL)
@@ -223,7 +223,10 @@ namespace M3.Cord.Pages
             }
 
             if (null != ConditionL && string.IsNullOrEmpty(ConditionL.MCSide)) ConditionL.MCSide = "L";
+        }
 
+        public void LoadR()
+        {
             ConditionR = S5Condition.GetCurrent(FromSources.RawMeterial, "R").Value();
             if (null == ConditionR)
             {
@@ -245,72 +248,145 @@ namespace M3.Cord.Pages
             }
         }
 
-        public bool Start()
+        public bool StartL()
         {
             bool ret = false;
-            /*
-            if (null != Condition)
+
+            if (null != ConditionL)
             {
                 var dt = DateTime.Now;
-                Condition.StartingTimeStartAgeingTime = dt;
+                ConditionL.StartingTimeStartAgeingTime = dt;
                 var std = (null != Std1) ? Std1 : Std2;
                 if (null != std)
                 {
                     // auto set finish time.
                     double hrs = (std.SettingTimeSet.HasValue) ? (double)std.SettingTimeSet.Value : (double)0;
-                    Condition.FinishTime = dt.AddHours(hrs);
+                    ConditionL.FinishTime = dt.AddHours(hrs);
                 }
 
-                S5Condition.Save(Condition);
+                S5Condition.Save(ConditionL);
                 ret = true;
             }
-            */
+
             return ret;
         }
 
-        public bool Finish(out string message)
+        public bool StartR()
+        {
+            bool ret = false;
+
+            if (null != ConditionR)
+            {
+                var dt = DateTime.Now;
+                ConditionR.StartingTimeStartAgeingTime = dt;
+                var std = (null != Std1) ? Std1 : Std2;
+                if (null != std)
+                {
+                    // auto set finish time.
+                    double hrs = (std.SettingTimeSet.HasValue) ? (double)std.SettingTimeSet.Value : (double)0;
+                    ConditionR.FinishTime = dt.AddHours(hrs);
+                }
+
+                S5Condition.Save(ConditionR);
+                ret = true;
+            }
+
+            return ret;
+        }
+
+        public bool FinishL(out string message)
         {
             bool ret = false;
             message = null;
-            /*
-            if (null != Condition)
+
+            if (null != ConditionL)
             {
                 var dt = DateTime.Now;
-                Condition.OutTime = dt;
-                Condition.IssueBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
-                Condition.IssueDate = DateTime.Now;
+                ConditionL.OutTime = dt;
+                ConditionL.IssueBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
+                ConditionL.IssueDate = DateTime.Now;
 
                 // Need update G4 pallet status
                 string userName = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
 
-                var g4_1 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo1TraceNo).Value();
+                var g4_1 = G4IssueYarn.SearchG4AgeingPallet(ConditionL.DoffNo1TraceNo).Value();
                 if (null != g4_1)
                 {
                     G4IssueYarn.MarkAgeing(g4_1.G4IssueYarnPkId, userName);
                 }
-                var g4_2 = G4IssueYarn.SearchG4AgeingPallet(Condition.DoffNo2TraceNo).Value();
+                /*
+                var g4_2 = G4IssueYarn.SearchG4AgeingPallet(ConditionL.DoffNo2TraceNo).Value();
                 if (null != g4_2)
                 {
                     G4IssueYarn.MarkAgeing(g4_2.G4IssueYarnPkId, userName);
                 }
+                */
 
-                S5Condition.Save(Condition);
+                S5Condition.Save(ConditionL);
                 ret = true;
             }
-            */
+
             return ret;
         }
 
-        public bool Save()
+        public bool FinishR(out string message)
         {
             bool ret = false;
-            /*
-            if (null != Condition)
+            message = null;
+
+            if (null != ConditionR)
             {
-                S5Condition.Save(Condition);
+                var dt = DateTime.Now;
+                ConditionR.OutTime = dt;
+                ConditionR.IssueBy = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
+                ConditionR.IssueDate = DateTime.Now;
+
+                // Need update G4 pallet status
+                string userName = (null != M3CordApp.Current.User) ? M3CordApp.Current.User.FullName : null;
+
+                var g4_1 = G4IssueYarn.SearchG4AgeingPallet(ConditionR.DoffNo1TraceNo).Value();
+                if (null != g4_1)
+                {
+                    G4IssueYarn.MarkAgeing(g4_1.G4IssueYarnPkId, userName);
+                }
+                /*
+                var g4_2 = G4IssueYarn.SearchG4AgeingPallet(ConditionR.DoffNo2TraceNo).Value();
+                if (null != g4_2)
+                {
+                    G4IssueYarn.MarkAgeing(g4_2.G4IssueYarnPkId, userName);
+                }
+                */
+
+                S5Condition.Save(ConditionR);
                 ret = true;
             }
-            */
+
+            return ret;
+        }
+
+        public bool SaveL()
+        {
+            bool ret = false;
+
+            if (null != ConditionL)
+            {
+                S5Condition.Save(ConditionL);
+                ret = true;
+            }
+
+            return ret;
+        }
+
+        public bool SaveR()
+        {
+            bool ret = false;
+
+            if (null != ConditionR)
+            {
+                S5Condition.Save(ConditionR);
+                ret = true;
+            }
+
             return ret;
         }
 
