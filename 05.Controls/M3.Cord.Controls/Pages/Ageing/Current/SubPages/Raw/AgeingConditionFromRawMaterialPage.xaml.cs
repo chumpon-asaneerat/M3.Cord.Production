@@ -235,7 +235,7 @@ namespace M3.Cord.Pages
             if (null != manager && null != manager.ConditionL)
             {
                 var condition = manager.ConditionL;
-                bool hasPallet = !string.IsNullOrWhiteSpace(condition.DoffNo1PalletCode);
+                bool hasPallet = !string.IsNullOrWhiteSpace(condition.DoffNo1TraceNo);
                 bool validStd = manager.HasStd && manager.IsMatchStd;
 
                 if (isUser)
@@ -283,7 +283,7 @@ namespace M3.Cord.Pages
             if (null != manager && null != manager.ConditionR)
             {
                 var condition = manager.ConditionR;
-                bool hasPallet = !string.IsNullOrWhiteSpace(condition.DoffNo1PalletCode);
+                bool hasPallet = !string.IsNullOrWhiteSpace(condition.DoffNo1TraceNo);
                 bool validStd = manager.HasStd && manager.IsMatchStd;
 
                 if (isUser)

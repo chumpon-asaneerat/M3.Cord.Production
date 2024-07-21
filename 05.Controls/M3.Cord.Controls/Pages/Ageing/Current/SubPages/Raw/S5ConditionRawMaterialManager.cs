@@ -96,7 +96,7 @@ namespace M3.Cord.Pages
             if (null != ConditionR)
             {
                 // pallet 2
-                if (!string.IsNullOrEmpty(ConditionR.DoffNo2TraceNo))
+                if (!string.IsNullOrEmpty(ConditionR.DoffNo1TraceNo))
                 {
                     // Special case for Raw Material
                     // Item Yarn must be 1620-288-707 and Product Code must be 1800TW
