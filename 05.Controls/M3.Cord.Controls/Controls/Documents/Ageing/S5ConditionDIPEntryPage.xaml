@@ -1168,7 +1168,7 @@
             <Border Grid.Row="15" Grid.Column="1">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock HorizontalAlignment="Left">
-                        <Run Text="Doff No. ( พาเลท1 )" />
+                        <Run Text="Doff No. ( พาเลท )" />
                     </TextBlock>
                     <TextBlock Width="5" />
                     <TextBox Text="{Binding DoffNo1PalletCode}"
@@ -1236,6 +1236,7 @@
             <!--#region NO 15-->
 
             <!--  BINDING BACKGROUND ROW WHEN SC IS CHECKED  -->
+            <!--
             <Border Grid.Row="16"
                     Grid.Column="0"
                     Grid.ColumnSpan="7">
@@ -1265,9 +1266,6 @@
                 </StackPanel>
             </Border>
             <Border Grid.Row="16" Grid.Column="2">
-                <!--
-                <CheckBox Content="SC" IsChecked="{Binding DoffNo2SC}" />
-                -->
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
@@ -1318,6 +1316,7 @@
                     <TextBox Text="{Binding DoffNo2Qty}" Width="100" />
                 </StackPanel>
             </Border>
+            -->
 
             <!--#endregion-->
 

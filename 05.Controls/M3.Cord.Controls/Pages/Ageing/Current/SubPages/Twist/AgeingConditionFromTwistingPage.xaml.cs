@@ -70,17 +70,32 @@ namespace M3.Cord.Pages
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
-            Save();
+            SaveL();
         }
 
         private void cmdStart_Click(object sender, RoutedEventArgs e)
         {
-            Start();
+            StartL();
         }
 
         private void cmdFinish_Click(object sender, RoutedEventArgs e)
         {
-            Finish();
+            FinishL();
+        }
+
+        private void cmdSave2_Click(object sender, RoutedEventArgs e)
+        {
+            SaveR();
+        }
+
+        private void cmdStart2_Click(object sender, RoutedEventArgs e)
+        {
+            StartR();
+        }
+
+        private void cmdFinish2_Click(object sender, RoutedEventArgs e)
+        {
+            FinishR();
         }
 
         #endregion
@@ -134,7 +149,7 @@ namespace M3.Cord.Pages
                     win.Setup(errMsg);
                     win.ShowDialog();
                 }
-                RefreshContext();
+                RefreshContextL();
             }
         }
 
@@ -149,19 +164,19 @@ namespace M3.Cord.Pages
                     win.Setup(errMsg);
                     win.ShowDialog();
                 }
-                RefreshContext();
+                RefreshContextR();
             }
         }
 
-        private void RefreshContext()
+        private void RefreshContextL()
         {
-            this.DataContext = null;
-            if (null != manager && null != manager.Condition)
+            s5L.DataContext = null;
+            if (null != manager && null != manager.ConditionL)
             {
-                var cond = manager.Condition;
+                var cond = manager.ConditionL;
 
-                ChecnEnableButtons();
-                this.DataContext = cond;
+                ChecnEnableButtonsL();
+                s5L.DataContext = cond;
                 // Bind Pallet && Product Code
                 //
                 // Pallet 1
@@ -175,11 +190,25 @@ namespace M3.Cord.Pages
                     txtPalletNo1.Text = string.Empty;
                     txtItemCode1.Text = string.Empty;
                 }
+            }
+        }
+
+        private void RefreshContextR()
+        {
+            s5R.DataContext = null;
+            if (null != manager && null != manager.ConditionR)
+            {
+                var cond = manager.ConditionR;
+
+                ChecnEnableButtonsR();
+                s5R.DataContext = cond;
+                // Bind Pallet && Product Code
+                //
                 // Pallet 2
-                if (!string.IsNullOrEmpty(cond.DoffNo2PalletCode))
+                if (!string.IsNullOrEmpty(cond.DoffNo1PalletCode))
                 {
-                    txtPalletNo2.Text = cond.DoffNo2PalletCode;
-                    txtItemCode2.Text = cond.ProductCode2;
+                    txtPalletNo2.Text = cond.DoffNo1PalletCode;
+                    txtItemCode2.Text = cond.ProductCode1;
                 }
                 else
                 {
@@ -189,7 +218,7 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void ChecnEnableButtons()
+        private void ChecnEnableButtonsL()
         {
             var user = M3CordApp.Current.User;
 
@@ -199,11 +228,10 @@ namespace M3.Cord.Pages
             cmdStart.IsEnabled = false;
             cmdFinish.IsEnabled = false;
 
-            if (null != manager && null != manager.Condition)
+            if (null != manager && null != manager.ConditionL)
             {
-                var condition = manager.Condition;
-                bool hasPallet = (!string.IsNullOrWhiteSpace(condition.DoffNo1PalletCode) ||
-                    !string.IsNullOrWhiteSpace(condition.DoffNo2PalletCode));
+                var condition = manager.ConditionL;
+                bool hasPallet = !string.IsNullOrWhiteSpace(condition.DoffNo1PalletCode);
                 bool validStd = manager.HasStd && manager.IsMatchStd;
 
                 if (isUser)
@@ -237,26 +265,88 @@ namespace M3.Cord.Pages
             }
         }
 
-        private void Save()
+        private void ChecnEnableButtonsR()
+        {
+            var user = M3CordApp.Current.User;
+
+            bool isUser = (null != user && user.RoleId == 20) ? true : false;
+
+            cmdSave2.IsEnabled = false;
+            cmdStart2.IsEnabled = false;
+            cmdFinish2.IsEnabled = false;
+
+            if (null != manager && null != manager.ConditionR)
+            {
+                var condition = manager.ConditionR;
+                bool hasPallet = !string.IsNullOrWhiteSpace(condition.DoffNo1PalletCode);
+                bool validStd = manager.HasStd && manager.IsMatchStd;
+
+                if (isUser)
+                {
+                    cmdSave2.IsEnabled = hasPallet && validStd;
+
+                    cmdSave2.Visibility = Visibility.Visible;
+                    cmdStart2.Visibility = Visibility.Collapsed;
+                    cmdFinish2.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    cmdSave2.Visibility = Visibility.Collapsed;
+                    cmdStart2.Visibility = Visibility.Visible;
+                    cmdFinish2.Visibility = Visibility.Visible;
+
+                    cmdStart2.IsEnabled = hasPallet && validStd &&
+                        !condition.StartingTimeStartAgeingTime.HasValue;
+
+                    cmdFinish2.IsEnabled = hasPallet && validStd &&
+                        condition.StartingTimeStartAgeingTime.HasValue &&
+                        condition.FinishTime.HasValue && !condition.OutTime.HasValue;
+                }
+
+                // lock textbox if already start.
+                /*
+                bool isStart = condition.StartingTimeStartAgeingTime.HasValue;
+                txtPalletNo1.IsEnabled = !isStart;
+                //txtPalletNo2.IsEnabled = string.IsNullOrEmpty(condition.DoffNo2PalletCode);
+                */
+            }
+        }
+
+        private void SaveL()
         {
             if (null != manager)
             {
-                var ret = manager.Save();
+                var ret = manager.SaveL();
                 if (ret)
                     M3CordApp.Windows.SaveSuccess();
                 else M3CordApp.Windows.SaveFailed();
 
-                RefreshContext();
+                RefreshContextL();
             }
 
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
-        private void Start()
+        private void SaveR()
         {
             if (null != manager)
             {
-                var ret = manager.Start();
+                var ret = manager.SaveR();
+                if (ret)
+                    M3CordApp.Windows.SaveSuccess();
+                else M3CordApp.Windows.SaveFailed();
+
+                RefreshContextR();
+            }
+
+            M3CordApp.Pages.GotoCordMainMenu();
+        }
+
+        private void StartL()
+        {
+            if (null != manager)
+            {
+                var ret = manager.StartL();
                 var win = M3CordApp.Windows.MessageBox;
                 string msg = (ret) ?
                     "Update Start Time success" + Environment.NewLine + "บันทึกข้อมูลเริ่มทำงานสำเร็จ" :
@@ -269,12 +359,29 @@ namespace M3.Cord.Pages
             M3CordApp.Pages.GotoCordMainMenu();
         }
 
-        private void Finish()
+        private void StartR()
         {
             if (null != manager)
             {
+                var ret = manager.StartR();
+                var win = M3CordApp.Windows.MessageBox;
+                string msg = (ret) ?
+                    "Update Start Time success" + Environment.NewLine + "บันทึกข้อมูลเริ่มทำงานสำเร็จ" :
+                    "Update Start Time failed" + Environment.NewLine + "บันทึกข้อมูลเริ่มทำงานไม่สำเร็จ";
+                win.Setup(msg);
+                win.ShowDialog();
+
+            }
+
+            M3CordApp.Pages.GotoCordMainMenu();
+        }
+
+        private void FinishL()
+        {
+            if (null != manager && null != manager.ConditionL)
+            {
                 string errMSg;
-                if (!manager.Finish(out errMSg))
+                if (!manager.FinishL(out errMSg))
                 {
                     var win1 = M3CordApp.Windows.MessageBoxOKCancel;
                     win1.Setup(errMSg);
@@ -282,7 +389,7 @@ namespace M3.Cord.Pages
                     return;
                 }
 
-                RefreshContext();
+                RefreshContextL();
 
                 var win = M3CordApp.Windows.MessageBoxOKCancel;
                 win.Setup("Print Ageing Condition (S-5) ?");
@@ -292,10 +399,13 @@ namespace M3.Cord.Pages
                 }
 
                 var page = M3CordApp.Pages.S5ReportPreview;
-                var item = S5ConditionPrintModel.Gets(manager.Condition.S5ConditionId).Value().FirstOrDefault();
+                var item = S5ConditionPrintModel.Gets(manager.ConditionL.S5ConditionId).Value().FirstOrDefault();
                 if (null != item)
                 {
                     var items = new List<S5ConditionPrintModel>();
+                    items.Add(item);
+
+                    /*
                     if (!string.IsNullOrEmpty(item.ProductCode1) &&
                         !string.IsNullOrEmpty(item.ProductCode2) &&
                         item.ProductCode1 != item.ProductCode1)
@@ -315,6 +425,65 @@ namespace M3.Cord.Pages
                     {
                         items.Add(item);
                     }
+                    */
+
+                    page.Setup(items);
+                    PageContentManager.Instance.Current = page;
+                }
+            }
+        }
+
+        private void FinishR()
+        {
+            if (null != manager && null != manager.ConditionR)
+            {
+                string errMSg;
+                if (!manager.FinishR(out errMSg))
+                {
+                    var win1 = M3CordApp.Windows.MessageBoxOKCancel;
+                    win1.Setup(errMSg);
+                    win1.ShowDialog();
+                    return;
+                }
+
+                RefreshContextR();
+
+                var win = M3CordApp.Windows.MessageBoxOKCancel;
+                win.Setup("Print Ageing Condition (S-5) ?");
+                if (win.ShowDialog() == false)
+                {
+                    M3CordApp.Pages.GotoCordMainMenu();
+                }
+
+                var page = M3CordApp.Pages.S5ReportPreview;
+                var item = S5ConditionPrintModel.Gets(manager.ConditionR.S5ConditionId).Value().FirstOrDefault();
+                if (null != item)
+                {
+                    var items = new List<S5ConditionPrintModel>();
+                    items.Add(item);
+
+                    /*
+                    if (!string.IsNullOrEmpty(item.ProductCode1) &&
+                        !string.IsNullOrEmpty(item.ProductCode2) &&
+                        item.ProductCode1 != item.ProductCode1)
+                    {
+                        // Has both product code but not same
+                        // require duplicate and update ProductCode to make 2 records
+                        var item1 = item.ShallowCopy();
+                        item1.ProductCode = item1.ProductCode1;
+
+                        var item2 = item.ShallowCopy();
+                        item2.ProductCode = item1.ProductCode2;
+
+                        items.Add(item1);
+                        items.Add(item2);
+                    }
+                    else
+                    {
+                        items.Add(item);
+                    }
+                    */
+
                     page.Setup(items);
                     PageContentManager.Instance.Current = page;
                 }
@@ -328,9 +497,11 @@ namespace M3.Cord.Pages
         public void Setup()
         {
             manager = new S5ConditionTwistManager();
-            manager.Load(); // load current
+            manager.LoadL(); // load current
+            manager.LoadR(); // load current
             manager.Refresh();
-            RefreshContext();
+            RefreshContextL();
+            RefreshContextR();
         }
 
         #endregion
