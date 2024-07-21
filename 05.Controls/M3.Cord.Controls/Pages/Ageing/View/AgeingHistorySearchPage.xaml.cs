@@ -141,6 +141,11 @@ namespace M3.Cord.Pages
             //RefreshGrid();
         }
 
+        private void cbMCSides_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //RefreshGrid();
+        }
+
         private void cbItemYarns_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //RefreshGrid();
@@ -232,6 +237,7 @@ namespace M3.Cord.Pages
         {
             dtIssueDate.SelectedDate = new DateTime?();
             cbSources.SelectedIndex = -1;
+            cbMCSides.SelectedIndex = -1;
             cbItemYarns.SelectedIndex = -1;
             txtPalletOrTrace.Text = string.Empty;
             cbCustomers.ItemsSource = null;
@@ -247,6 +253,9 @@ namespace M3.Cord.Pages
 
             var fromSources = S5Source.Gets();
             cbSources.ItemsSource = fromSources;
+
+            var mcSides = S5Side.Gets();
+            cbMCSides.ItemsSource = mcSides;
 
             // Item Yarn
             cbItemYarns.ItemsSource = null;
@@ -269,6 +278,10 @@ namespace M3.Cord.Pages
             var fromSource = (null != cbSources.SelectedItem) ?
                 cbSources.SelectedItem as S5Source : null;
             int? iFromSource = (null != fromSource) ? fromSource.Id : new int?();
+
+            var mcSide = (null != cbMCSides.SelectedItem) ?
+                cbMCSides.SelectedItem as S5Side : null;
+            string sSide = (null != mcSide) ? mcSide.Code : null;
 
             string palletOrTrace = (!string.IsNullOrEmpty(txtPalletOrTrace.Text)) ? txtPalletOrTrace.Text.Trim() : null;
 
@@ -303,7 +316,7 @@ namespace M3.Cord.Pages
                 return;
             }
 
-            var results = S5Condition.Search(issuedate, iFromSource, sProduct, sCustomer, palletOrTrace).Value();
+            var results = S5Condition.Search(issuedate, iFromSource, sSide, sProduct, sCustomer, palletOrTrace).Value();
 
             grid.ItemsSource = results;
         }

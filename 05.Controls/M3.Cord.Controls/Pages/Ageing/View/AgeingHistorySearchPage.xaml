@@ -160,6 +160,13 @@
                                     DisplayMemberPath="Source"
                                     Width="250"
                                     SelectionChanged="cbSources_SelectionChanged" />
+                    <!--  MC Side  -->
+                    <ctrl:NComboBox x:Name="cbMCSides"
+                                    DockPanel.Dock="Left"
+                                    CaptionText="Side:"
+                                    DisplayMemberPath="Side"
+                                    Width="100"
+                                    SelectionChanged="cbMCSides_SelectionChanged" />
                     <!--  ITEM YARN  -->
                     <ctrl:NComboBox x:Name="cbItemYarns"
                                     DockPanel.Dock="Left"
@@ -254,6 +261,8 @@
                         <GridViewColumn Header="CustomerName" CellTemplate="{StaticResource CustomerName}" />
                         <GridViewColumn Header="Item Code" CellTemplate="{StaticResource ProductCode}" />
                         <GridViewColumn Header="From" CellTemplate="{StaticResource SFromSource}" />
+
+                        <GridViewColumn Header="Side" CellTemplate="{StaticResource SMCSide}" />
 
                         <GridViewColumn Width="Auto"
                                         CellTemplate="{StaticResource Pallet1DrumColumns}"

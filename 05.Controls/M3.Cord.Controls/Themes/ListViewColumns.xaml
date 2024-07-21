@@ -669,6 +669,9 @@
     <DataTemplate x:Key="SFromSource">
         <TextBlock Text="{Binding Path=SFromSource, Mode=OneWay}" TextAlignment="Center" />
     </DataTemplate>
+    <DataTemplate x:Key="SMCSide">
+        <TextBlock Text="{Binding Path=MCSide, Mode=OneWay}" TextAlignment="Center" />
+    </DataTemplate>
 
     <DataTemplate x:Key="PalletOrTrace1">
         <TextBlock Text="{Binding Path=PalletOrTrace1, Mode=OneWay}" TextAlignment="Center" />

@@ -45,6 +45,22 @@ namespace M3.Cord.Models
         }
     }
 
+    public class S5Side
+    {
+        public string Code { get; set; }
+        public string Side { get; set; }
+
+        public static List<S5Side> Gets()
+        {
+            return new List<S5Side>()
+            {
+                new S5Side() { Code = null, Side = "All" },
+                new S5Side() { Code = "L", Side = "L" },
+                new S5Side() { Code = "R", Side = "R" }
+            };
+        }
+    }
+
     public class S5Condition : NInpc
     {
         #region Const
@@ -741,6 +757,7 @@ namespace M3.Cord.Models
         public static NDbResult<List<S5Condition>> Search(
             DateTime? IssueDate = new DateTime?(),
             int? FromSource = new int?(),
+            string MCSide = null,
             string ProductCode = null,
             string CustomerName = null,
             string PalletOrTraceNo = null
@@ -765,6 +782,7 @@ namespace M3.Cord.Models
             var p = new DynamicParameters();
             p.Add("@IssueDate", IssueDate);
             p.Add("@FromSource", FromSource);
+            p.Add("@MCSide", MCSide);
             p.Add("@ProductCode", ProductCode);
             p.Add("@CustomerName", CustomerName);
             p.Add("@PalletOrTraceNo", PalletOrTraceNo);
