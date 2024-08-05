@@ -378,32 +378,32 @@ namespace M3.Cord.Windows
                                 if (result.ProductCode1 == "P1100ZFT")
                                 {
                                     barcode1 = "^CFA,15"
-                                        + "^FO20,5^GB50,50,3^FS"
+                                        + "^FO20,1^GB50,50,3^FS"
                                         + "^CF0,24"
-                                        + "^FWR^FO195,5 ,70,60^FD" + result.ProductCode1 + "^FS"
+                                        + "^FWR^FO195,1 ,70,60^FD" + result.ProductCode1 + "^FS"
                                         + "^CF0,24"
-                                        + "^FWR^FO170,5 ,70,60^FDSAP Code:7 179 172 90^FS"    
+                                        + "^FWR^FO170,1 ,70,60^FDSAP Code:7 179 172 90^FS"    
                                         + "^CF0,24"
-                                        + "^FWR^FO145,5 ,70,60^FD" + result.LotNoDoffNo1 + "^FS"
+                                        + "^FWR^FO145,1 ,70,60^FD" + result.LotNoDoffNo1 + "^FS"
                                         + "^CF0,24"
-                                        + "^FWR^FO120,5 ,70,60^FD" + "SP " + result.SPNo1.ToString() + "^FS"
+                                        + "^FWR^FO120,1 ,70,60^FD" + "SP " + result.SPNo1.ToString() + "^FS"
                                         + "^CFA,15"
-                                        + "^FO20,90"
+                                        + "^FO20,87"
                                         + "^BQ,2,5"
                                         + "^FDQA " + result.BarcodeText1 + "^FS";
                                 }
                                 else
                                 {
                                     barcode1 = "^CFA,15"
-                                       + "^FO20,5^GB50,50,3^FS"
+                                       + "^FO20,1^GB50,50,3^FS"
                                        + "^CF0,24"
-                                       + "^FWR^FO170,5 ,70,60^FD" + result.ProductCode1 + "^FS"
+                                       + "^FWR^FO170,1 ,70,60^FD" + result.ProductCode1 + "^FS"
                                        + "^CF0,24"
-                                       + "^FWR^FO145,5 ,70,60^FD" + result.LotNoDoffNo1 + "^FS"
+                                       + "^FWR^FO145,1 ,70,60^FD" + result.LotNoDoffNo1 + "^FS"
                                        + "^CF0,24"
-                                       + "^FWR^FO120,5 ,70,60^FD" + "SP " + result.SPNo1.ToString() + "^FS"
+                                       + "^FWR^FO120,1 ,70,60^FD" + "SP " + result.SPNo1.ToString() + "^FS"
                                        + "^CFA,15"
-                                       + "^FO20,90"
+                                       + "^FO20,87"
                                        + "^BQ,2,5"
                                        + "^FDQA " + result.BarcodeText1 + "^FS";
                                 }
@@ -429,32 +429,32 @@ namespace M3.Cord.Windows
                                 if (result.ProductCode2 == "P1100ZFT")
                                 {
                                     barcode2 = "^CFA,15"
-                                    + "^FO290,5^GB50,50,3^FS"
+                                    + "^FO285,1^GB50,50,3^FS"
                                     + "^CF0,24"
-                                    + "^FWR^FO465,5 ,70,60^FD" + result.ProductCode2 + "^FS"
+                                    + "^FWR^FO460,1 ,70,60^FD" + result.ProductCode2 + "^FS"
                                     + "^CF0,24"
-                                    + "^FWR^FO440,5 ,70,60^FDSAP Code:7 179 172 90^FS"
+                                    + "^FWR^FO435,1 ,70,60^FDSAP Code:7 179 172 90^FS"
                                     + "^CF0,24"
-                                    + "^FWR^FO415,5 ,70,60^FD" + result.LotNoDoffNo2 + "^FS"
+                                    + "^FWR^FO410,1 ,70,60^FD" + result.LotNoDoffNo2 + "^FS"
                                     + "^CF0,24"
-                                    + "^FWR^FO390,5 ,70,60^FD" + "SP " + result.SPNo2.ToString() + "^FS"
+                                    + "^FWR^FO385,1 ,70,60^FD" + "SP " + result.SPNo2.ToString() + "^FS"
                                     + "^CFA,15"
-                                    + "^FO290,90"
+                                    + "^FO285,87"
                                     + "^BQ,2,5"
                                     + "^FDQA " + result.BarcodeText2 + "^FS";
                                 }
                                 else
                                 {
                                     barcode2 = "^CFA,15"
-                                    + "^FO290,5^GB50,50,3^FS"
+                                    + "^FO285,1^GB50,50,3^FS"
                                     + "^CF0,24"
-                                    + "^FWR^FO440,5 ,70,60^FD" + result.ProductCode2 + "^FS"
+                                    + "^FWR^FO435,1 ,70,60^FD" + result.ProductCode2 + "^FS"
                                     + "^CF0,24"
-                                    + "^FWR^FO415,5 ,70,60^FD" + result.LotNoDoffNo2 + "^FS"
+                                    + "^FWR^FO410,1 ,70,60^FD" + result.LotNoDoffNo2 + "^FS"
                                     + "^CF0,24"
-                                    + "^FWR^FO390,5 ,70,60^FD" + "SP " + result.SPNo2.ToString() + "^FS"
+                                    + "^FWR^FO385,1 ,70,60^FD" + "SP " + result.SPNo2.ToString() + "^FS"
                                     + "^CFA,15"
-                                    + "^FO290,90"
+                                    + "^FO285,87"
                                     + "^BQ,2,5"
                                     + "^FDQA " + result.BarcodeText2 + "^FS";
                                 }
