@@ -22,8 +22,11 @@ M3 Cord Production System #1124
 M3 Cord Production System #1123
 - 
 
+[commited]
 M3 Cord Production System #1122
-- 
+- Update NInpc class 
+  - fixed bug in IsLock preoprties.
+  - add supports Type Enable/Disable Notify
 
 [commited]
 M3 Cord Production System #1121
