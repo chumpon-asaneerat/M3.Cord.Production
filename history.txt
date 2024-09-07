@@ -19,8 +19,13 @@ M3 Cord Production System #1125
 M3 Cord Production System #1124
 - 
 
+[commited]
 M3 Cord Production System #1123
-- 
+- Note Todo.
+  - Need to recheck Twsit1 when Load Yarn need to update UsedCH in G4IssueYarn
+    - See SP SearchWarehousePallet
+  - When replace yarn barcode need to track old one to update UsedCH
+  - Need Clear all in Load Yarn Windows
 
 [commited]
 M3 Cord Production System #1122
