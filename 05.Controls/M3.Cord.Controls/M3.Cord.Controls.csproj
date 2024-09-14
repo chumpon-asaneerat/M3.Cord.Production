@@ -220,6 +220,9 @@
     <Compile Include="Controls\Elements\DIPLotNoBox.xaml.cs">
       <DependentUpon>DIPLotNoBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Elements\DIPMC.xaml.cs">
+      <DependentUpon>DIPMC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Elements\DoffNoBox.xaml.cs">
       <DependentUpon>DoffNoBox.xaml</DependentUpon>
     </Compile>
@@ -947,6 +950,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Elements\DIPLotNoBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\DIPMC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

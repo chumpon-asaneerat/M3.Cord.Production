@@ -57,6 +57,17 @@ namespace M3.Cord.Models
         public bool? DeleteFlag { get; set; }
 
         public string MCCode { get; set; }
+
+        public string DisplayMC
+        {
+            get
+            {
+                return MCCode.Replace("7", "8");
+            }
+            set { }
+        }
+
+
         public int DoffNo { get; set; }
         public DateTime? CreateDate { get; set; }
         public string CreateBy { get; set; }
