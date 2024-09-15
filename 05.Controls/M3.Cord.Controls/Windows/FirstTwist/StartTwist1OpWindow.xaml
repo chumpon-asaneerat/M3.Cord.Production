@@ -6,6 +6,7 @@
         xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
         xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
         xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Start Doff"
         HorizontalAlignment="Center"
@@ -56,6 +57,25 @@
                                        DockPanel.Dock="Left"
                                        Text="{Binding DoffNo, TargetNullValue=''}"
                                        Width="150" />
+                    </StackPanel>
+                </DockPanel>
+                <!--  START TIME/END TIME  -->
+                <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                        <!--  Start Time  -->
+                        <ctrl:NInputGroup CaptionText="Start Time:" Width="250">
+                            <xctk:DateTimePicker x:Name="dtStartTime"
+                                                 Margin="5,0"
+                                                 Format="Custom"
+                                                 FormatString="dd/MM/yyyy HH:mm"
+                                                 TimePickerVisibility="Visible"
+                                                 TimePickerAllowSpin="True"
+                                                 TimePickerShowButtonSpinner="True"
+                                                 ShowButtonSpinner="True"
+                                                 AutoCloseCalendar="True"
+                                                 AutoCloseCalendarOnTimeSelection="True"
+                                                 Value="{Binding StartTime, TargetNullValue='', UpdateSourceTrigger=LostFocus}" />
+                        </ctrl:NInputGroup>
                     </StackPanel>
                 </DockPanel>
                 <Grid />

@@ -14,7 +14,7 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="550"
+        Height="600"
         Width="850">
     <page:NPage HeaderText="End Doff">
         <DockPanel LastChildFill="True" Margin="5">
@@ -83,9 +83,23 @@
                                        Width="200" />
                     </StackPanel>
                 </DockPanel>
-                <!--  END TIME/REMARK  -->
+                <!--  START TIME/END TIME  -->
                 <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                        <!--  Start Time  -->
+                        <ctrl:NInputGroup CaptionText="Start Time:" Width="250">
+                            <xctk:DateTimePicker x:Name="dtStartTime"
+                                                 Margin="5,0"
+                                                 Format="Custom"
+                                                 FormatString="dd/MM/yyyy HH:mm"
+                                                 TimePickerVisibility="Visible"
+                                                 TimePickerAllowSpin="True"
+                                                 TimePickerShowButtonSpinner="True"
+                                                 ShowButtonSpinner="True"
+                                                 AutoCloseCalendar="True"
+                                                 AutoCloseCalendarOnTimeSelection="True"
+                                                 Value="{Binding StartTime, TargetNullValue='', UpdateSourceTrigger=LostFocus}" />
+                        </ctrl:NInputGroup>
                         <!--  End Time  -->
                         <ctrl:NInputGroup CaptionText="End Time:" Width="250">
                             <xctk:DateTimePicker x:Name="dtEndTime"
@@ -100,6 +114,11 @@
                                                  AutoCloseCalendarOnTimeSelection="True"
                                                  Value="{Binding EndTime, TargetNullValue='', UpdateSourceTrigger=LostFocus}" />
                         </ctrl:NInputGroup>
+                    </StackPanel>
+                </DockPanel>
+                <!--  REMARK  -->
+                <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
                         <!--  Remark  -->
                         <ctrl:NInputGroup CaptionText="Remark:" Width="550">
                             <TextBox TextWrapping="Wrap"

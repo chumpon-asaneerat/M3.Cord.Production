@@ -309,6 +309,7 @@ namespace M3.Cord.Models
             p.Add("@ProductWeight", value.ProductWeight);
             p.Add("@WasteWeight", value.WasteWeight);
 
+            p.Add("@StartTime", value.StartTime);
             p.Add("@EndTime", value.EndTime);
 
             p.Add("@Remark", value.Remark);
@@ -379,6 +380,7 @@ namespace M3.Cord.Models
             p.Add("@ProductWeight", value.ProductWeight);
             p.Add("@WasteWeight", value.WasteWeight);
 
+            p.Add("@StartTime", value.StartTime);
             p.Add("@EndTime", value.EndTime);
 
             p.Add("@Remark", value.Remark);

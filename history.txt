@@ -10,8 +10,10 @@ M3 Cord Production System #1138
 M3 Cord Production System #1137
 - 
 
+[commited]
 M3 Cord Production System #1136
-- 
+- First Twist Fixed
+  - Enable StartTime when Start/End/Edit operation
 
 [commited]
 M3 Cord Production System #1135
