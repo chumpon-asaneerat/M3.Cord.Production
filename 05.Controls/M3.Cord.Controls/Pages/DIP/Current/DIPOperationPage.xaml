@@ -47,6 +47,13 @@
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Left"
                             VerticalAlignment="Center">
+                    <!--  PC Card  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdChoosePCCard"
+                                            Margin="5,0,0,0"
+                                            IconType="None"
+                                            Text="PC Card"
+                                            Click="cmdChoosePCCard_Click" />
+                    <TextBlock Width="10" />
                     <!--  START  -->
                     <ctrl:FontAwesomeButton x:Name="cmdStart"
                                             Margin="5,0,0,0"
@@ -59,6 +66,13 @@
                                             IconType="None"
                                             Text="Finish DIP"
                                             Click="cmdFinish_Click" />
+                    <TextBox Width="10" />
+                    <!--  CANCEL  -->
+                    <ctrl:FontAwesomeButton x:Name="cmdCancel"
+                                            Margin="5,0,0,0"
+                                            IconType="None"
+                                            Text="Cancel DIP"
+                                            Click="cmdCancel_Click" />
                 </StackPanel>
                 <Grid />
             </DockPanel>

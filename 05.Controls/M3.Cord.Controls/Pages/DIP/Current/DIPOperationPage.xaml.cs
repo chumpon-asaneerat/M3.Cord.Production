@@ -142,15 +142,20 @@ namespace M3.Cord.Pages
             PageContentManager.Instance.Current = page;
         }
 
+        private void cmdChoosePCCard_Click(object sender, RoutedEventArgs e)
+        {
+            Refresh();
+        }
+
         private void cmdStart_Click(object sender, RoutedEventArgs e)
         {
             if (null != pcCard && pcCard.DIPPCId.HasValue)
             {
                 DIPPCCard.Start(pcCard.DIPPCId.Value);
-                if (Refresh())
-                {
+            }
+            if (Refresh())
+            {
 
-                }
             }
         }
 
@@ -160,10 +165,22 @@ namespace M3.Cord.Pages
             {
                 DIPPCCard.End(pcCard.DIPPCId.Value);
                 DIPPCCard.Finish(pcCard.DIPPCId.Value);
-                if (Refresh())
-                {
+            }
+            if (Refresh())
+            {
 
-                }
+            }
+        }
+
+        private void cmdCancel_Click(object sender, RoutedEventArgs e)
+        {
+            if (null != pcCard && pcCard.DIPPCId.HasValue)
+            {
+                //DIPPCCard.Cancel(pcCard.DIPPCId.Value);
+            }
+            if (Refresh())
+            {
+
             }
         }
 
@@ -174,15 +191,18 @@ namespace M3.Cord.Pages
             bool ret = false;
 
             paCondition.DataContext = null;
+
             if (null != mc)
             {
                 pcCard = DIPUI.PCCard.Current(mc.MCCode);
                 ret = (null != pcCard);
                 if (ret)
                 {
-                    paCondition.DataContext = pcCard;
+                    
                 }
             }
+
+            paCondition.DataContext = pcCard;
 
             this.InvokeAction(() =>
             {
@@ -196,28 +216,38 @@ namespace M3.Cord.Pages
         {
             if (null != pcCard)
             {
+                cmdChoosePCCard.IsEnabled = false;
+
                 if (!pcCard.StartTime.HasValue)
                 {
-                    cmdStart.IsEnabled = true;
-                    cmdFinish.IsEnabled = false;
+                    // not start
+                    cmdStart.IsEnabled = true; // enable start
+                    cmdFinish.IsEnabled = false; // disable finish
+                    cmdCancel.IsEnabled = true; // Not start so still cancel
                 }
                 else
                 {
-                    cmdStart.IsEnabled = false;
+                    // already start
+                    cmdStart.IsEnabled = false; // disable start
+                    cmdCancel.IsEnabled = true; // allow cancel anytime.
                     if (!pcCard.EndTime.HasValue)
                     {
-                        cmdFinish.IsEnabled = true;
+                        cmdFinish.IsEnabled = true; // no end time so enable finished
+                        
                     }
                     else
                     {
-                        cmdFinish.IsEnabled = false;
+                        cmdFinish.IsEnabled = false; // has end time so disable finished
                     }
                 }
             }
             else
             {
+                // No pc card
+                cmdChoosePCCard.IsEnabled = true;
                 cmdStart.IsEnabled = false;
                 cmdFinish.IsEnabled = false;
+                cmdCancel.IsEnabled = false;
             }
         }
 
