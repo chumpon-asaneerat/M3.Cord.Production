@@ -342,6 +342,9 @@ namespace M3.Cord.Pages
                 pcCard.TargetQty.Value < pcCard.ActualQty.Value);
 
             var operations = lvPCCards.ItemsSource as List<PCTwist1Operation>;
+
+            _operation = null; // reset operation.
+
             if (null != operations && operations.Count > 0)
             {
                 int idx = operations.Count - 1;
@@ -351,6 +354,10 @@ namespace M3.Cord.Pages
                     // already end.
                     _operation = null;
                 }
+            }
+            else
+            {
+                //Console.WriteLine("No operations.");
             }
 
             // Check enable start/end doff
