@@ -68,7 +68,7 @@
                     <GridView>
                         <GridViewColumn Header="Production Date" CellTemplate="{StaticResource ProductionDate}" />
                         <GridViewColumn Header="Process" CellTemplate="{StaticResource MCCode}" />
-                        <GridViewColumn Header="Doff No" CellTemplate="{StaticResource DoffNo}" />
+                        <GridViewColumn Header="Doff No" CellTemplate="{StaticResource SDoffNo}" />
                         <GridViewColumn Header="Unit weight" CellTemplate="{StaticResource UnitWeight}" />
                         <GridViewColumn Header="Number" CellTemplate="{StaticResource OutputCH}" />
                         <GridViewColumn Header="Product" CellTemplate="{StaticResource ProductWeight}" />

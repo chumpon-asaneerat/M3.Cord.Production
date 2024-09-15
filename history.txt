@@ -4,8 +4,11 @@ M3 Cord Production System #1140
 M3 Cord Production System #1139
 - 
 
+[commited]
 M3 Cord Production System #1138
-- 
+- First Twist Fixed
+  - Start/End/Edit Doff dialog when Checked Test Flag hide DoffNo
+  - PC Card DoffNo display "TEST" if Test Flag is true
 
 [commited]
 M3 Cord Production System #1137

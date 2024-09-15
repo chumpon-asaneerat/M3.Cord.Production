@@ -51,11 +51,15 @@
                                   Margin="5"
                                   FontSize="24"
                                   Content="Test (DOFF)"
+                                  IsThreeState="False"
+                                  IsChecked="{Binding TestFlag}"
                                   VerticalAlignment="Bottom" />
                         <!--  DOFF NO  -->
-                        <ctrl:NTextBox CaptionText="Doff No:"
+                        <ctrl:NTextBox x:Name="txtDoffNo"
+                                       CaptionText="Doff No:"
                                        DockPanel.Dock="Left"
                                        Text="{Binding DoffNo, TargetNullValue=''}"
+                                       Visibility="{Binding DoffNoVisible}"
                                        Width="150" />
                     </StackPanel>
                 </DockPanel>

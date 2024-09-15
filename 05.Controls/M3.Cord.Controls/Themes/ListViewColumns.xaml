@@ -513,6 +513,11 @@
                    TextAlignment="Center"
                    MinWidth="80" />
     </DataTemplate>
+    <DataTemplate x:Key="SDoffNo">
+        <TextBlock Text="{Binding Path=SDoffNo, Mode=OneWay}"
+                   TextAlignment="Center"
+                   MinWidth="80" />
+    </DataTemplate>
     <DataTemplate x:Key="SPNos">
         <TextBlock Text="{Binding Path=SPNos, Mode=OneWay}"
                    TextAlignment="Center"

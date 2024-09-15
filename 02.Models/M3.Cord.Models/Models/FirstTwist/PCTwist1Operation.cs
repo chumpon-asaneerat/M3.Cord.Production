@@ -18,6 +18,7 @@ using System.Net.NetworkInformation;
 using System.Xml.Linq;
 using System.Windows.Controls;
 using Newtonsoft.Json.Linq;
+using System.Windows;
 
 #endregion
 
@@ -42,12 +43,46 @@ namespace M3.Cord.Models
         
         public string MCCode { get; set; }
 
-        public bool TestFlag { get; set; }
+        public bool TestFlag 
+        {
+            get { return Get<bool>(); }
+            set 
+            { 
+                Set(value, () => 
+                {
+                    Raise(() => this.DoffNoVisible);
+                    Raise(() => this.SDoffNo);
+                }); 
+            }
+        }
+
+        public Visibility DoffNoVisible 
+        {
+            get { return TestFlag ? Visibility.Collapsed : Visibility.Visible; }
+            set { }
+        }
 
         public int DoffNo
         {
             get { return Get<int>(); }
-            set { Set(value); }
+            set 
+            { 
+                Set(value, () => 
+                {
+                    Raise(() => this.SDoffNo);
+                }); 
+            }
+        }
+
+        public string SDoffNo
+        {
+            get 
+            {
+                if (TestFlag)
+                    return "TEST";
+                else return DoffNo.ToString();
+            }
+            set { }
         }
 
         public decimal? UnitWeight
