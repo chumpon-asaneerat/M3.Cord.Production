@@ -4,8 +4,12 @@ M3 Cord Production System #1130
 M3 Cord Production System #1129
 - 
 
+[commited]
 M3 Cord Production System #1128
-- 
+- DIP Fixed #4
+  - DIP ChemicalRequisitionRecord, DIPCondition (S8)
+    - Current - Show M/C
+    - View - Show M/C
 
 [commited]
 M3 Cord Production System #1127
