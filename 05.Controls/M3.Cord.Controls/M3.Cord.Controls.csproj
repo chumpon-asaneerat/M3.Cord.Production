@@ -220,8 +220,14 @@
     <Compile Include="Controls\Elements\DIPLotNoBox.xaml.cs">
       <DependentUpon>DIPLotNoBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Elements\DIPMC.xaml.cs">
-      <DependentUpon>DIPMC.xaml</DependentUpon>
+    <Compile Include="Controls\Elements\DIPMCS7.xaml.cs">
+      <DependentUpon>DIPMCS7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\DIPMCS8.xaml.cs">
+      <DependentUpon>DIPMCS8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\DIPMCS9.xaml.cs">
+      <DependentUpon>DIPMCS9.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Elements\DoffNoBox.xaml.cs">
       <DependentUpon>DoffNoBox.xaml</DependentUpon>
@@ -953,7 +959,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Elements\DIPMC.xaml">
+    <Page Include="Controls\Elements\DIPMCS7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\DIPMCS8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Elements\DIPMCS9.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

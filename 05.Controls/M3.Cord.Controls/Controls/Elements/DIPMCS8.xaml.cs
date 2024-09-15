@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +15,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+#endregion
+
 namespace M3.Cord.Controls.Elements
 {
     /// <summary>
-    /// Interaction logic for DIPMC.xaml
+    /// Interaction logic for DIPMCS8.xaml
     /// </summary>
-    public partial class DIPMC : UserControl
+    public partial class DIPMCS8 : UserControl
     {
-        public DIPMC()
+        #region Constructor
+
+        public DIPMCS8()
         {
             InitializeComponent();
         }
+
+        #endregion
     }
 }

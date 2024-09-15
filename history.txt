@@ -13,8 +13,12 @@ M3 Cord Production System #1127
 M3 Cord Production System #1126
 - 
 
+[commited]
 M3 Cord Production System #1125
-- 
+- DIP Fixed #2
+  - DIP S7CreelCheckSheet
+    - Current - Show M/C
+    - View - Show M/C
 
 [commited]
 M3 Cord Production System #1124

@@ -58,11 +58,29 @@ namespace M3.Cord.Models
 
         public string MCCode { get; set; }
 
-        public string DisplayMC
+        public string DisplayS7MC
+        {
+            get
+            {
+                return MCCode;
+            }
+            set { }
+        }
+
+        public string DisplayS8MC
         {
             get
             {
                 return MCCode.Replace("7", "8");
+            }
+            set { }
+        }
+
+        public string DisplayS9MC
+        {
+            get
+            {
+                return MCCode.Replace("7", "9");
             }
             set { }
         }

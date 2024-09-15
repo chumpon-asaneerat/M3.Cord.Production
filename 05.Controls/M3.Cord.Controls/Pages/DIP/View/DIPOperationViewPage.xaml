@@ -55,7 +55,7 @@
                         <elem:ProductCodeBox />
                         <elem:DIPLotNoBox />
                         <elem:DoffNoBox Width="200" />
-                        <elem:DIPMC Width="200" />
+                        <elem:DIPMCS8 Width="200" />
                     </StackPanel>
                 </StackPanel>
                 <Grid />
