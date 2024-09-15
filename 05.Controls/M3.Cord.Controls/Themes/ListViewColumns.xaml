@@ -475,19 +475,19 @@
     </DataTemplate>
 
     <DataTemplate x:Key="UnitWeight">
-        <TextBlock Text="{Binding Path=UnitWeight, Mode=OneWay, StringFormat='{}{0:n1}'}"
+        <TextBlock Text="{Binding Path=UnitWeight, Mode=OneWay, StringFormat='{}{0:#,##0.##}'}"
                    TextAlignment="Center"
                    MinWidth="80" />
     </DataTemplate>
 
     <DataTemplate x:Key="ProductWeight">
-        <TextBlock Text="{Binding Path=ProductWeight, Mode=OneWay, StringFormat='{}{0:n1}'}"
+        <TextBlock Text="{Binding Path=ProductWeight, Mode=OneWay, StringFormat='{}{0:#,##0.##}'}"
                    TextAlignment="Center"
                    MinWidth="80" />
     </DataTemplate>
 
     <DataTemplate x:Key="WasteWeight">
-        <TextBlock Text="{Binding Path=WasteWeight, Mode=OneWay, StringFormat='{}{0:n1}'}"
+        <TextBlock Text="{Binding Path=WasteWeight, Mode=OneWay, StringFormat='{}{0:#,##0.##}'}"
                    TextAlignment="Center"
                    MinWidth="80" />
     </DataTemplate>

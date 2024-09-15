@@ -6,6 +6,7 @@
         xmlns:ctrl="clr-namespace:NLib.Wpf.Controls;assembly=NLib.Wpf.Controls"
         xmlns:elem="clr-namespace:M3.Cord.Controls.Elements"
         xmlns:page="clr-namespace:NLib.Wpf.Pages;assembly=NLib.Wpf.Controls"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="End Doff"
         HorizontalAlignment="Center"
@@ -13,7 +14,7 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Height="450"
+        Height="550"
         Width="850">
     <page:NPage HeaderText="End Doff">
         <DockPanel LastChildFill="True" Margin="5">
@@ -65,25 +66,47 @@
                     <StackPanel Orientation="Horizontal">
                         <!--  Unit Weight  -->
                         <ctrl:NTextBox CaptionText="Unit Weight:"
-                                       DockPanel.Dock="Left"
                                        Text="{Binding UnitWeight, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
                                        Width="200" />
                         <!--  Output No  -->
                         <ctrl:NTextBox CaptionText="Output Number:"
-                                       DockPanel.Dock="Left"
                                        Text="{Binding OutputCH, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
                                        Width="200" />
                         <!--  Product  -->
                         <ctrl:NTextBox CaptionText="Product:"
-                                       DockPanel.Dock="Left"
                                        Text="{Binding CalcProductWeight, TargetNullValue=''}"
                                        IsReadOnly="True"
                                        Width="200" />
                         <!--  Waste Weight  -->
                         <ctrl:NTextBox CaptionText="Waste Weight:"
-                                       DockPanel.Dock="Left"
                                        Text="{Binding WasteWeight, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
                                        Width="200" />
+                    </StackPanel>
+                </DockPanel>
+                <!--  END TIME/REMARK  -->
+                <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                        <!--  End Time  -->
+                        <ctrl:NInputGroup CaptionText="End Time:" Width="250">
+                            <xctk:DateTimePicker x:Name="dtEndTime"
+                                                 Margin="5,0"
+                                                 Format="Custom"
+                                                 FormatString="dd/MM/yyyy HH:mm"
+                                                 TimePickerVisibility="Visible"
+                                                 TimePickerAllowSpin="True"
+                                                 TimePickerShowButtonSpinner="True"
+                                                 ShowButtonSpinner="True"
+                                                 AutoCloseCalendar="True"
+                                                 AutoCloseCalendarOnTimeSelection="True"
+                                                 Value="{Binding EndTime, TargetNullValue='', UpdateSourceTrigger=LostFocus}" />
+                        </ctrl:NInputGroup>
+                        <!--  Remark  -->
+                        <ctrl:NInputGroup CaptionText="Remark:" Width="550">
+                            <TextBox TextWrapping="Wrap"
+                                     AcceptsReturn="True"
+                                     Text="{Binding Remark, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
+                                     Height="100" />
+                        </ctrl:NInputGroup>
                     </StackPanel>
                 </DockPanel>
                 <Grid />

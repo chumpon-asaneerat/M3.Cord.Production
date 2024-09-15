@@ -13,8 +13,11 @@ M3 Cord Production System #1137
 M3 Cord Production System #1136
 - 
 
+[commited]
 M3 Cord Production System #1135
-- 
+- First Twist Fixed
+  - Recalc weight when edit.
+  - Enable EndTime/Remark when End/Edit operation
 
 [commited]
 M3 Cord Production System #1134

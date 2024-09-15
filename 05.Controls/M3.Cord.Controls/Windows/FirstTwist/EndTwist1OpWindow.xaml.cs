@@ -63,7 +63,6 @@ namespace M3.Cord.Windows
         {
             if (null != _item)
             {
-                _item.EndTime = DateTime.Now;
                 PCTwist1Operation.EndOperation(_item);
             }
         }
@@ -75,6 +74,10 @@ namespace M3.Cord.Windows
         public void Setup(PCTwist1Operation item)
         {
             _item = item;
+            if (null != _item)
+            {
+                _item.EndTime = DateTime.Now;
+            }
             this.DataContext = _item;
         }
 

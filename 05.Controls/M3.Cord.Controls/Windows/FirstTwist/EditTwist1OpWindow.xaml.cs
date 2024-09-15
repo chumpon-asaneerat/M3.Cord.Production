@@ -63,7 +63,6 @@ namespace M3.Cord.Windows
         {
             if (null != _item)
             {
-                _item.EndTime = DateTime.Now;
                 PCTwist1Operation.EditOperation(_item);
             }
         }

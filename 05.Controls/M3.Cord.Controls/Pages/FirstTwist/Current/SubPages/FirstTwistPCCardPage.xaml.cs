@@ -281,6 +281,23 @@ namespace M3.Cord.Pages
                 win.Setup(op); // Edit
                 if (win.ShowDialog() == false) return;
 
+                // calc actual qty
+                var operations = lvPCCards.ItemsSource as List<PCTwist1Operation>;
+                if (null != operations && operations.Count > 0)
+                {
+                    decimal val = decimal.Zero;
+                    foreach (var opitem in operations)
+                    {
+                        if (opitem.CalcProductWeight.HasValue)
+                            val += opitem.CalcProductWeight.Value;
+                        if (opitem.WasteWeight.HasValue)
+                            val -= opitem.WasteWeight.Value;
+                    }
+                    // update to db
+                    pcCard.ActualQty = val;
+                    PCTwist1.Save(pcCard);
+                }
+
                 RefreshGrids();
             }
         }
