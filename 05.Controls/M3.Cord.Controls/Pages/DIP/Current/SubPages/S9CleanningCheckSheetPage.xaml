@@ -49,6 +49,7 @@
                         <elem:ProductCodeBox />
                         <elem:DIPLotNoBox />
                         <elem:DoffNoBox Width="200" />
+                        <elem:DIPMCS9 Width="200" />
                     </StackPanel>
                 </StackPanel>
                 <Grid />
