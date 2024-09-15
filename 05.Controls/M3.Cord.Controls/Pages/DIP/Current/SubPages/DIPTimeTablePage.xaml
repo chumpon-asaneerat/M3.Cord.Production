@@ -194,6 +194,11 @@
                             <TextBlock Text="Lot:" />
                             <TextBlock x:Name="txtLotNos" MinWidth="250" />
                         </StackPanel>
+                        <TextBlock Width="20" />
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="M/C:" />
+                            <TextBlock x:Name="txtMC" MinWidth="250" Text="{Binding DisplayS8MC}" />
+                        </StackPanel>
                     </StackPanel>
                 </StackPanel>
                 <Grid />
