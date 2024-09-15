@@ -359,6 +359,7 @@
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
                         <elem:DIPLotNoBox />
+                        <elem:DIPMCS8 Width="200" />
                     </StackPanel>
                 </StackPanel>
                 <Grid />
