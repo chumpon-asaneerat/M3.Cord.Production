@@ -366,6 +366,43 @@ namespace M3.Cord.Models
             return ret;
         }
 
+        public static NDbResult Cancel(int dipPCId)
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            NDbResult ret = new NDbResult();
+
+            IDbConnection cnn = DbServer.Instance.Db;
+            if (null == cnn || !DbServer.Instance.Connected)
+            {
+                string msg = "Connection is null or cannot connect to database server.";
+                med.Err(msg);
+                // Set error number/message
+                ret.ErrNum = 8000;
+                ret.ErrMsg = msg;
+
+                return ret;
+            }
+
+            var p = new DynamicParameters();
+            p.Add("@DIPPCId", dipPCId);
+
+            try
+            {
+                cnn.Execute("CancelDIP", p, commandType: CommandType.StoredProcedure);
+                ret.Success();
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+                // Set error number/message
+                ret.ErrNum = 9999;
+                ret.ErrMsg = ex.Message;
+            }
+
+            return ret;
+        }
+
         public static int GetLastDoffNo(string mcCode, DateTime createDate)
         {
             MethodBase med = MethodBase.GetCurrentMethod();

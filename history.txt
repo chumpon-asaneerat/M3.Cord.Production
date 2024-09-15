@@ -19,8 +19,10 @@ M3 Cord Production System #1135
 M3 Cord Production System #1134
 - 
 
+[commited]
 M3 Cord Production System #1133
-- 
+- DIP Fixed #8
+  - DIP Operation (current) - Implements Cancel DIP
 
 [commited]
 M3 Cord Production System #1132

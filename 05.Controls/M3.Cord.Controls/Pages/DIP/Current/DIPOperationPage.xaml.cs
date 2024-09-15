@@ -176,7 +176,7 @@ namespace M3.Cord.Pages
         {
             if (null != pcCard && pcCard.DIPPCId.HasValue)
             {
-                //DIPPCCard.Cancel(pcCard.DIPPCId.Value);
+                DIPPCCard.Cancel(pcCard.DIPPCId.Value);
             }
             if (Refresh())
             {
