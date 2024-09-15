@@ -1,8 +1,12 @@
 M3 Cord Production System #1140
 - 
 
+[commited]
 M3 Cord Production System #1139
-- 
+- First Twist Fixed
+  - Load Yarn dialog when Checked Test Flag hide DoffNo
+  - Yarn Check Sheet dialog when Checked Test Flag hide DoffNo
+  - Raw Material, Yarn Load display "TEST" if Test Flag is true
 
 [commited]
 M3 Cord Production System #1138

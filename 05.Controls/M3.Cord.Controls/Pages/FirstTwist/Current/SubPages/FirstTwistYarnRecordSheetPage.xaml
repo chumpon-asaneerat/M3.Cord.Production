@@ -84,7 +84,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Condition Date" CellTemplate="{StaticResource ConditionDate}" />
-                        <GridViewColumn Header="Doff" CellTemplate="{StaticResource DoffNo}" />
+                        <GridViewColumn Header="Doff" CellTemplate="{StaticResource SDoffNo}" />
                         <!--
                         <GridViewColumn Header="Yarn Type" CellTemplate="{StaticResource ItemYarn}" />
                         <GridViewColumn Header="Input (CH)" CellTemplate="{StaticResource InputCH}" />

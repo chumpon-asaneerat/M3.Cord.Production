@@ -53,6 +53,8 @@
                                   Margin="5"
                                   FontSize="24"
                                   Content="Test (DOFF)"
+                                  IsThreeState="False"
+                                  IsChecked="{Binding TestFlag}"
                                   VerticalAlignment="Bottom"
                                   Checked="chkTest_Checked"
                                   Unchecked="chkTest_Unchecked" />
@@ -60,6 +62,7 @@
                         <ctrl:NTextBox CaptionText="Doff No:"
                                        DockPanel.Dock="Left"
                                        Text="{Binding DoffNo}"
+                                       Visibility="{Binding DoffNoVisible}"
                                        Width="150" />
                         <!--  SHIFT NO  -->
                         <ctrl:NTextBox CaptionText="Shift:"

@@ -18,6 +18,7 @@ using System.Net.NetworkInformation;
 using System.Xml.Linq;
 using System.Windows.Controls;
 using Newtonsoft.Json.Linq;
+using System.Windows;
 
 #endregion
 
@@ -44,13 +45,49 @@ namespace M3.Cord.Models
         public int? Twist1LoadId { get; set; }
         public int? PCTwist1Id { get; set; }
         public DateTime ProductionDate { get; set; }
-        public bool TestFlag { get; set; }
 
-        public int DoffNo 
+        public bool TestFlag
+        {
+            get { return Get<bool>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.DoffNoVisible);
+                    Raise(() => this.SDoffNo);
+                });
+            }
+        }
+
+        public Visibility DoffNoVisible
+        {
+            get { return TestFlag ? Visibility.Collapsed : Visibility.Visible; }
+            set { }
+        }
+
+        public int DoffNo
         {
             get { return Get<int>(); }
-            set { Set(value); }
+            set
+            {
+                Set(value, () =>
+                {
+                    Raise(() => this.SDoffNo);
+                });
+            }
         }
+
+        public string SDoffNo
+        {
+            get
+            {
+                if (TestFlag)
+                    return "TEST";
+                else return DoffNo.ToString();
+            }
+            set { }
+        }
+
         public string ItemYarn { get; set; }
         public string ShiftName { get; set; }
         public string UserName { get; set; }

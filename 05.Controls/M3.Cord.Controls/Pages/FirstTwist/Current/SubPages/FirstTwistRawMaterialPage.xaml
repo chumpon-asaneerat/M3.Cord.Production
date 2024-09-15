@@ -207,7 +207,7 @@
                         <GridViewColumn Header="Trace No" CellTemplate="{StaticResource TraceNo}" />
                         <GridViewColumn Header="Input (CH)" CellTemplate="{StaticResource InputCH}" />
                         <GridViewColumn Header="Input (KG)" CellTemplate="{StaticResource InputKG}" />
-                        <GridViewColumn Header="Doff" CellTemplate="{StaticResource DoffNo}" />
+                        <GridViewColumn Header="Doff" CellTemplate="{StaticResource SDoffNo}" />
                         <GridViewColumn Header="SP No" CellTemplate="{StaticResource SPNos}" />
                         <GridViewColumn Width="Auto"
                                         CellTemplate="{StaticResource DefectColumns}"
