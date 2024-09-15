@@ -665,7 +665,7 @@ namespace M3.Cord.Models
         }
 
         public static NDbResult<List<DIPTimeTable>> Gets(DateTime date,
-            int? DIPPCId = new int?(), int? RowType = new int?())
+            int? DIPPCId, int? RowType = new int?())
         {
 			MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -707,7 +707,7 @@ namespace M3.Cord.Models
 			return ret;
 		}
 
-        public static NDbResult<List<string>> GetLots(DateTime date)
+        public static NDbResult<List<string>> GetLots(DateTime date, string mcCode)
         {
             MethodBase med = MethodBase.GetCurrentMethod();
 
@@ -727,7 +727,7 @@ namespace M3.Cord.Models
 
             var p = new DynamicParameters();
             p.Add("@Date", date);
-            //p.Add("@DIPPCid", DIPPCId);
+            p.Add("@MCCode", string.IsNullOrWhiteSpace(mcCode) ? null : mcCode);
             //p.Add("@RowType", RowType);
 
             try

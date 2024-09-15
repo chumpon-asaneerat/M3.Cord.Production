@@ -197,7 +197,9 @@
                         <TextBlock Width="20" />
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="M/C:" />
-                            <TextBlock x:Name="txtMC" MinWidth="250" Text="{Binding DisplayS8MC}" />
+                            <TextBlock x:Name="txtMC"
+                                       MinWidth="250"
+                                       Text="{Binding DisplayS8MC}" />
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>

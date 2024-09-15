@@ -25,8 +25,12 @@ M3 Cord Production System #1133
 M3 Cord Production System #1132
 - 
 
+[commited]
 M3 Cord Production System #1131
-- 
+- DIP Fixed #7
+  - DIP DIPTimeTable(S9) 
+    - Current - filter by mc
+    - View - filter by mc
 
 [commited]
 M3 Cord Production System #1130

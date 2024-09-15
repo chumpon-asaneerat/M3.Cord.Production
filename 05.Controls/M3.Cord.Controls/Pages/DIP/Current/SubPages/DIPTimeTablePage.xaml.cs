@@ -191,10 +191,10 @@ namespace M3.Cord.Pages
                     });
                     return;
                 }
-                grid.ItemsSource = DIPTimeTable.Gets(dtDate.SelectedDate.Value.Date).Value();
+                grid.ItemsSource = DIPTimeTable.Gets(dtDate.SelectedDate.Value.Date, pcCard.DIPPCId).Value();
 
                 // get lot list
-                List<string> lots = DIPTimeTable.GetLots(dtDate.SelectedDate.Value.Date).Value();
+                List<string> lots = DIPTimeTable.GetLots(dtDate.SelectedDate.Value.Date, pcCard.MCCode).Value();
                 string sLot = string.Empty;
                 if (null != lots && lots.Count > 0)
                 {
