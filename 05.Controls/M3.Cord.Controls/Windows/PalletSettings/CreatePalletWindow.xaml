@@ -47,13 +47,13 @@
                                    DockPanel.Dock="Left"
                                    IsReadOnly="True"
                                    Width="200" />
-                    <!-- Choose -->
+                    <!--  Choose  -->
                     <ctrl:FontAwesomeButton x:Name="cmdChoosePCTwist1"
                                             Margin="3,0"
                                             IconType="Search"
                                             Text="Choose"
                                             VerticalAlignment="Bottom"
-                                            Click="cmdChoosePCTwist1_Click"/>
+                                            Click="cmdChoosePCTwist1_Click" />
                     <Grid />
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Top">

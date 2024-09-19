@@ -19,6 +19,7 @@ using System.ComponentModel;
 #endregion
 
 using BarcodeLib;
+using System.Runtime.InteropServices;
 
 namespace M3.Cord.Models
 {
@@ -853,6 +854,188 @@ namespace M3.Cord.Models
             }
 
             return ret;
+        }
+
+        #endregion
+    }
+
+    public class PalletSettingSP : NInpc
+    {
+        private static Barcode BarcodeGenerator = null;
+
+        static PalletSettingSP()
+        {
+            BarcodeGenerator = new Barcode();
+            BarcodeGenerator.EncodedType = BarcodeLib.TYPE.CODE39;
+            BarcodeGenerator.Alignment = BarcodeLib.AlignmentPositions.CENTER;
+            BarcodeGenerator.IncludeLabel = false;
+        }
+
+        #region Constructor
+
+        public PalletSettingSP() : base()
+        {
+            
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        public int? PalletId { get; set; }
+        public int? PCTwist1Id { get; set; }
+
+        public string PalletCode { get; set; }
+        // Pallet barcode
+        public byte[] PalletCodeImage
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(PalletCode))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        PalletCode, 400, 100);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
+
+        public int DoffNo { get; set; }
+        // DoffNo barcode
+        public byte[] DoffNoImage
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(DoffNo.ToString()))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        PalletCode, 400, 100);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
+
+        public string SPNo1 { get; set; }
+        // SPNo1 barcode
+        public byte[] SPNo1Image
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(SPNo1))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        PalletCode, 400, 100);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
+        
+        public string SPNo2 { get; set; }
+        // SPNo1 barcode
+        public byte[] SPNo2Image
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(SPNo2))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        PalletCode, 400, 100);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
+
+        public string SPNo3 { get; set; }
+        // SPNo1 barcode
+        public byte[] SPNo3Image
+        {
+            get
+            {
+                byte[] results = null;
+                if (!string.IsNullOrWhiteSpace(SPNo3))
+                {
+                    System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
+                        PalletCode, 400, 100);
+
+                    results = NLib.Utils.ImageUtils.GetImage(img);
+                }
+                return results;
+            }
+            set { }
+        }
+
+        #endregion
+
+        #region Static Methods
+
+        public static List<PalletSettingSP> Create(PalletSetting pallet)
+        {
+            List<PalletSettingSP> results = new List<PalletSettingSP>();
+
+            if (null == pallet || null == pallet.Items) return results;
+
+            int iCol = 0;
+            PalletSettingSP inst = null;
+            foreach (var item in pallet.Items)
+            {
+                int iStart = item.SPNoStart.HasValue ? item.SPNoStart.Value : 0;
+                int iEnd = item.SPNoEnd.HasValue ? item.SPNoEnd.Value : 0;
+                int iSP = 0;
+
+                while (iStart + iSP <= iEnd)
+                {
+                    int iSPNo = iStart + iSP;
+
+                    if (iCol == 0 && iStart > 0)
+                    {
+                        inst = new PalletSettingSP();
+                        inst.PalletId = pallet.PalletId;
+                        inst.PalletCode = pallet.PalletCode;
+                        inst.PCTwist1Id = pallet.PCTwist1Id;
+                        inst.DoffNo = item.DoffNo;
+                        // SP
+                        inst.SPNo1 = iSPNo.ToString();
+
+                        results.Add(inst); // add to list
+
+                        iCol++; // increase colunm count
+                    }
+                    else if (iCol == 1 && iStart > 0 && null != inst)
+                    {
+                        // SP
+                        inst.SPNo2 = iSPNo.ToString();
+
+                        iCol++; // increase colunm count
+                    }
+                    else if (iCol == 2 && iStart > 0 && null != inst)
+                    {
+                        // SP
+                        inst.SPNo3 = iSPNo.ToString();
+
+                        iCol = 0; // Reset column to 0
+                    }
+
+                    iSP++;
+                }
+            }
+
+            return results;
         }
 
         #endregion

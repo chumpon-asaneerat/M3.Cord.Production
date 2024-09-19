@@ -39,12 +39,24 @@
                 </StackPanel>
                 <Grid />
             </DockPanel>
-            <ScrollViewer HorizontalContentAlignment="Center"
-                          VerticalContentAlignment="Center"
-                          HorizontalScrollBarVisibility="Auto"
-                          VerticalScrollBarVisibility="Auto">
-                <nlib:WpfReportViewer x:Name="rptViewer" Margin="2" />
-            </ScrollViewer>
+            <TabControl FontSize="16">
+                <TabItem Header="Pallet Slip">
+                    <ScrollViewer HorizontalContentAlignment="Center"
+                                  VerticalContentAlignment="Center"
+                                  HorizontalScrollBarVisibility="Auto"
+                                  VerticalScrollBarVisibility="Auto">
+                        <nlib:WpfReportViewer x:Name="rptViewer" Margin="2" />
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Pallet SP List">
+                    <ScrollViewer HorizontalContentAlignment="Center"
+                                  VerticalContentAlignment="Center"
+                                  HorizontalScrollBarVisibility="Auto"
+                                  VerticalScrollBarVisibility="Auto">
+                        <nlib:WpfReportViewer x:Name="rptViewer2" Margin="2" />
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
         </DockPanel>
     </page:NPage>
 </UserControl>

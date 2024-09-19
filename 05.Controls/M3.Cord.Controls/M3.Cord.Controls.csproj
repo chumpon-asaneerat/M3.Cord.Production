@@ -652,6 +652,7 @@
     <EmbeddedResource Include="Reports\PalletSettingA4.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA6.rdlc" />
     <EmbeddedResource Include="Reports\PalletSettingA5.rdlc" />
+    <EmbeddedResource Include="Reports\PalletSettingSPList.rdlc" />
     <EmbeddedResource Include="Reports\S4x2Condition.rdlc" />
     <EmbeddedResource Include="Reports\S4x1Condition.rdlc" />
     <EmbeddedResource Include="Reports\S1Condition.rdlc" />

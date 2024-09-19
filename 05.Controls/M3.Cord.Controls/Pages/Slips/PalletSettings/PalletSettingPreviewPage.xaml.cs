@@ -78,16 +78,14 @@ namespace M3.Cord.Pages
 
         #endregion
 
-        private void Print()
+        private void PrintPalletSetting()
         {
-            cmdPrint.Visibility = Visibility.Collapsed;
-
             MethodBase med = MethodBase.GetCurrentMethod();
             try
             {
                 if (null != _items)
                 {
-                    foreach (var item in _items) 
+                    foreach (var item in _items)
                     {
                         if (!_reprint)
                         {
@@ -117,6 +115,35 @@ namespace M3.Cord.Pages
             {
                 med.Err(ex);
             }
+        }
+
+        private void PrintPalletSettingSPList()
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+            try
+            {
+                if (null != _items)
+                {
+                    /*
+                    foreach (var item in _items)
+                    {
+                    }
+                    */
+                    this.rptViewer2.Print(ReportDisplayName2);
+                }
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
+        }
+
+        private void Print()
+        {
+            cmdPrint.Visibility = Visibility.Collapsed;
+
+            PrintPalletSetting();
+            PrintPalletSettingSPList();
 
             cmdPrint.Visibility = Visibility.Visible;
 
@@ -136,6 +163,10 @@ namespace M3.Cord.Pages
         private string ReportDisplayName
         {
             get { return "PalletSetting." + DateTime.Now.ToThaiDateTimeString("ddMMyyyyHHmmssfff"); }
+        }
+        private string ReportDisplayName2
+        {
+            get { return "PalletSettingSPList." + DateTime.Now.ToThaiDateTimeString("ddMMyyyyHHmmssfff"); }
         }
 
         private RdlcReportModel GetReportModel()
@@ -176,6 +207,44 @@ namespace M3.Cord.Pages
             return inst;
         }
 
+        private RdlcReportModel GetReportModel2()
+        {
+            Assembly assembly = this.GetType().Assembly;
+            RdlcReportModel inst = new RdlcReportModel();
+
+            // Set Display Name (default file name).
+            inst.DisplayName = ReportDisplayName2;
+
+            inst.Definition.EmbededReportName = "M3.Cord.Reports.PalletSettingSPList.rdlc";
+            inst.Definition.RdlcInstance = RdlcReportUtils.GetEmbededReport(assembly,
+                inst.Definition.EmbededReportName);
+            // clear reprot datasource.
+            inst.DataSources.Clear();
+
+            List<PalletSettingSP> splist = new List<PalletSettingSP>();
+            if (null != _items)
+            {
+                foreach (var item in _items)
+                {
+                    splist.AddRange(PalletSettingSP.Create(item)); // Add new because is blank.
+                }
+            }
+
+            // assign new data source
+            RdlcReportDataSource mainDS = new RdlcReportDataSource();
+            mainDS.Name = "main"; // the datasource name in the rdlc report.
+            mainDS.Items = splist; // setup data source
+            // Add to datasources
+            inst.DataSources.Add(mainDS);
+
+            // Add parameters (if required).
+            DateTime today = DateTime.Now;
+            string printDate = today.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+            inst.Parameters.Add(RdlcReportParameter.Create("PrintDate", printDate));
+
+            return inst;
+        }
+
         #endregion
 
         #region Public Methods
@@ -185,7 +254,10 @@ namespace M3.Cord.Pages
             _reprint = reprint;
             _items = items;
 
+            #region Pallet Setting
+
             var model = GetReportModel();
+
             if (null == model ||
                 null == model.DataSources || model.DataSources.Count <= 0 ||
                 null == model.DataSources[0] || null == model.DataSources[0].Items)
@@ -208,6 +280,37 @@ namespace M3.Cord.Pages
                     this.rptViewer.RefreshReport();
                 }
             }
+
+            #endregion
+
+            #region Pallet SP List
+
+            var spmodel = GetReportModel2();
+
+            if (null == spmodel ||
+                null == spmodel.DataSources || spmodel.DataSources.Count <= 0 ||
+                null == spmodel.DataSources[0] || null == spmodel.DataSources[0].Items)
+            {
+                this.rptViewer2.ClearReport();
+            }
+            else
+            {
+                MethodBase med = MethodBase.GetCurrentMethod();
+                try
+                {
+                    this.rptViewer2.LoadReport(spmodel);
+                }
+                catch (Exception ex)
+                {
+                    med.Err(ex);
+                }
+                finally
+                {
+                    this.rptViewer2.RefreshReport();
+                }
+            }
+
+            #endregion
         }
 
         #endregion
