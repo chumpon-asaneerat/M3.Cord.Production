@@ -663,6 +663,7 @@
     <None Include="Properties\DataSources\M3.Cord.Models.DIPTimeTable.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.LabelCHS9.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.PalletSetting.datasource" />
+    <None Include="Properties\DataSources\M3.Cord.Models.PalletSettingSP.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.PCTwist1Operation.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.RawMaterialSummary.datasource" />
     <None Include="Properties\DataSources\M3.Cord.Models.S1Condition.datasource" />

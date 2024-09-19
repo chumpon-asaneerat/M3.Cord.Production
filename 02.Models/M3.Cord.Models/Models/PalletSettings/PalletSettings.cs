@@ -914,7 +914,7 @@ namespace M3.Cord.Models
                 if (!string.IsNullOrWhiteSpace(DoffNo.ToString()))
                 {
                     System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
-                        PalletCode, 400, 100);
+                        DoffNo.ToString(), 400, 100);
 
                     results = NLib.Utils.ImageUtils.GetImage(img);
                 }
@@ -933,7 +933,7 @@ namespace M3.Cord.Models
                 if (!string.IsNullOrWhiteSpace(SPNo1))
                 {
                     System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
-                        PalletCode, 400, 100);
+                        SPNo1, 400, 100);
 
                     results = NLib.Utils.ImageUtils.GetImage(img);
                 }
@@ -952,7 +952,7 @@ namespace M3.Cord.Models
                 if (!string.IsNullOrWhiteSpace(SPNo2))
                 {
                     System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
-                        PalletCode, 400, 100);
+                        SPNo2, 400, 100);
 
                     results = NLib.Utils.ImageUtils.GetImage(img);
                 }
@@ -971,7 +971,7 @@ namespace M3.Cord.Models
                 if (!string.IsNullOrWhiteSpace(SPNo3))
                 {
                     System.Drawing.Image img = BarcodeGenerator.Encode(BarcodeGenerator.EncodedType,
-                        PalletCode, 400, 100);
+                        SPNo3, 400, 100);
 
                     results = NLib.Utils.ImageUtils.GetImage(img);
                 }
