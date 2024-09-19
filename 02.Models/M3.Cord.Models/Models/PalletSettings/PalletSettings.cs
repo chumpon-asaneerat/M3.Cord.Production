@@ -991,6 +991,7 @@ namespace M3.Cord.Models
             if (null == pallet || null == pallet.Items) return results;
 
             int iCol = 0;
+            int iLastDoff = 0;
             PalletSettingSP inst = null;
             foreach (var item in pallet.Items)
             {
@@ -1000,6 +1001,14 @@ namespace M3.Cord.Models
 
                 while (iStart + iSP <= iEnd)
                 {
+                    if (iLastDoff == 0 || iLastDoff != item.DoffNo)
+                    {
+                        // When doff no change
+                        iSP = 0;
+                        iCol = 0;
+                        iLastDoff = item.DoffNo; // keep last doff no.
+                    }
+
                     int iSPNo = iStart + iSP;
 
                     if (iCol == 0 && iStart > 0)
