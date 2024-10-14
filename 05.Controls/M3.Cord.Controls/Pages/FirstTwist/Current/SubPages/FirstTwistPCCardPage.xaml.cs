@@ -19,6 +19,7 @@ using NLib.Services;
 using M3.Cord.Models;
 using NLib.Models;
 using NLib;
+using static M3.Cord.Pages.DIPUI;
 
 #endregion
 
@@ -125,7 +126,12 @@ namespace M3.Cord.Pages
                         _operation.PCTwist1Id = pcCard.PCTwist1Id;
                         _operation.ProductionDate = DateTime.Now;
                         _operation.MCCode = selectedMC.MCCode;
-                        _operation.DoffNo = record.DoffNo + 1; // doff
+
+                        var last = TwistUtils.GetTwist1OptsLastDoff.Get(
+                            pcCard.PCTwist1Id.Value, pcCard.MCCode, false).Value();
+                        int lastDoff = (null == last) ? 0 : last.DoffNo;
+                        _operation.DoffNo = lastDoff + 1; // doff
+
                         win.Setup(_operation); // New Doff
                         if (win.ShowDialog() == false) return;
                         RefreshGrids();
@@ -136,8 +142,10 @@ namespace M3.Cord.Pages
                         inst.ItemYarn = record.ItemYarn;
 
                         inst.ProductLotNo = record.ProductLotNo;
-                        inst.TestFlag = record.TestFlag;
-                        inst.DoffNo = record.DoffNo + 1;
+
+                        inst.TestFlag = _operation.TestFlag;                        
+                        inst.DoffNo = _operation.DoffNo;
+                        
                         inst.ShiftName = record.ShiftName;
 
                         inst = Twist1LoadRecord.Save(inst).Value();
@@ -315,7 +323,7 @@ namespace M3.Cord.Pages
 
         #region Private Methods
 
-        private void AddNew(PCCard pccard)
+        private void AddNew(Models.PCCard pccard)
         {
             if (null != selectedMC && null != pccard)
             {

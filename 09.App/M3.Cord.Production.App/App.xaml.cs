@@ -66,7 +66,7 @@ namespace M3.Cord
                 Behaviors = new NAppBehaviors()
                 {
                     /* Set to true for allow only one instance of application can execute an runtime */
-                    IsSingleAppInstance = true,
+                    IsSingleAppInstance = false,
                     /* Set to true for enable Debuggers this value should always be true */
                     EnableDebuggers = true
                 }

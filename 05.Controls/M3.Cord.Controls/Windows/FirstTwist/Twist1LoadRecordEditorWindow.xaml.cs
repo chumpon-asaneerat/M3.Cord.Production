@@ -162,8 +162,14 @@ namespace M3.Cord.Windows
                 _item.ItemYarn = _pcCard.ItemYarn;
 
                 _item.ProductLotNo = _pcCard.ProductLotNo;
+
                 _item.TestFlag = false;
-                _item.DoffNo = _pcCard.LastDoffNo + 1;
+                var last = TwistUtils.GetTwist1OptsLastDoff.Get(
+                    _pcCard.PCTwist1Id.Value, _pcCard.MCCode, _item.TestFlag).Value();
+                int lastDoff = (null == last) ? 0 : last.DoffNo;
+
+                _item.DoffNo = lastDoff + 1;
+
                 _item.ShiftName = string.Empty;
                 _item.UserName = (!string.IsNullOrEmpty(M3CordApp.Current.User.FullName)) ? 
                     M3CordApp.Current.User.FullName : M3CordApp.Current.User.UserName;
@@ -195,13 +201,15 @@ namespace M3.Cord.Windows
                 if (chkTest.IsChecked == true)
                 {
                     _item.TestFlag = true;
-                    _item.DoffNo = _pcCard.LastTestNo + 1;
                 }
                 else
                 {
                     _item.TestFlag = false;
-                    _item.DoffNo = _pcCard.LastDoffNo + 1;
                 }
+                var last = TwistUtils.GetTwist1OptsLastDoff.Get(
+                    _pcCard.PCTwist1Id.Value, _pcCard.MCCode, _item.TestFlag).Value();
+                int lastDoff = (null == last) ? 0 : last.DoffNo;
+                _item.DoffNo = lastDoff + 1;
             }
             else
             {
@@ -209,13 +217,15 @@ namespace M3.Cord.Windows
                 if (chkTest.IsChecked == true)
                 {
                     _item.TestFlag = true;
-                    _item.DoffNo = _pcCard.LastTestNo;
                 }
                 else
                 {
                     _item.TestFlag = false;
-                    _item.DoffNo = _pcCard.LastDoffNo;
                 }
+                var last = TwistUtils.GetTwist1OptsLastDoff.Get(
+                    _pcCard.PCTwist1Id.Value, _pcCard.MCCode, _item.TestFlag).Value();
+                int lastDoff = (null == last) ? 0 : last.DoffNo;
+                _item.DoffNo = lastDoff;
             }
         }
 

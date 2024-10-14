@@ -86,13 +86,17 @@ namespace M3.Cord.Windows
             if (chkTest.IsChecked == true)
             {
                 _sheet.TestFlag = true;
-                _sheet.DoffNo = _pcCard.LastTestNo;
             }
             else
             {
                 _sheet.TestFlag = false;
-                _sheet.DoffNo = _pcCard.LastDoffNo;
             }
+
+            var last = TwistUtils.GetTwist1OptsLastDoff.Get(
+                _pcCard.PCTwist1Id.Value, _pcCard.MCCode, _sheet.TestFlag).Value();
+            int lastDoff = (null == last) ? 0 : last.DoffNo;
+
+            _sheet.DoffNo = lastDoff;
         }
 
         private void Save()
@@ -130,8 +134,14 @@ namespace M3.Cord.Windows
                 _sheet.PCTwist1Id = (_pcCard.PCTwist1Id.HasValue) ? _pcCard.PCTwist1Id.Value : 0;
                 _sheet.ItemYarn = _pcCard.ItemYarn;
                 _sheet.ProductLotNo = _pcCard.ProductLotNo;
+
                 _sheet.TestFlag = false;
-                _sheet.DoffNo = _pcCard.LastDoffNo;
+                var last = TwistUtils.GetTwist1OptsLastDoff.Get(
+                    _pcCard.PCTwist1Id.Value, _pcCard.MCCode, _sheet.TestFlag).Value();
+                int lastDoff = (null == last) ? 0 : last.DoffNo;
+
+                _sheet.DoffNo = lastDoff;
+
                 _sheet.ShiftName = string.Empty;
                 _sheet.UserName = (!string.IsNullOrEmpty(M3CordApp.Current.User.FullName)) ? 
                     M3CordApp.Current.User.FullName : M3CordApp.Current.User.UserName;

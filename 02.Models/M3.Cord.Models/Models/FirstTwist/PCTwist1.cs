@@ -53,8 +53,8 @@ namespace M3.Cord.Models
         public string ProductLotNo { get; set; }
         public decimal? TargetQty { get; set; }
 
-        public int LastTestNo { get; set; }
-        public int LastDoffNo { get; set; }
+        //public int LastTestNo { get; set; }
+        //public int LastDoffNo { get; set; }
 
         public bool? FinishFlag { get; set; }
         public bool? DeleteFlag { get; set; }
@@ -267,8 +267,10 @@ namespace M3.Cord.Models
             p.Add("@PaperTubeColor", value.PaperTubeColor);
             p.Add("@Remark", value.Remark);
 
-            p.Add("@LastTestNo", value.LastTestNo);
-            p.Add("@LastDoffNo", value.LastDoffNo);
+            //p.Add("@LastTestNo", value.LastTestNo);
+            //p.Add("@LastDoffNo", value.LastDoffNo);
+            p.Add("@LastTestNo", 0);
+            p.Add("@LastDoffNo", 0);
 
             p.Add("@FinishFlag", value.FinishFlag);
             p.Add("@DeleteFlag", value.DeleteFlag);
