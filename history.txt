@@ -7,8 +7,9 @@ M3 Cord Production System #1149
 M3 Cord Production System #1148
 - 
 
+[commited]
 M3 Cord Production System #1147
-- 
+- Update S8 Wet Pickup item #1
 
 [commited]
 M3 Cord Production System #1146

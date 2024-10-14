@@ -27,6 +27,10 @@ namespace M3.Cord.Models
         private void CalcRestAmt()
         {
             RestAmt = FirstAmt.HasValue ? UseAmt.HasValue ? (FirstAmt.Value - UseAmt.Value) : FirstAmt.Value : new decimal?();
+            if (AddAmt.HasValue)
+            {
+                RestAmt += AddAmt.Value;
+            }
             Raise(() => this.RestAmt);
         }
 
@@ -52,6 +56,17 @@ namespace M3.Cord.Models
             set
             {
                 Set(value, () => 
+                {
+                    CalcRestAmt();
+                });
+            }
+        }
+        public decimal? AddAmt
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
                 {
                     CalcRestAmt();
                 });

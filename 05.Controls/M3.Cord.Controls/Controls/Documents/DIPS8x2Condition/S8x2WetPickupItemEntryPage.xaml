@@ -32,43 +32,82 @@
     </UserControl.Resources>
     <DockPanel LastChildFill="True" Margin="10">
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
-                <TextBlock Width="200" Text="Nip pressure"  TextAlignment="Right" Margin="2"/>
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="2">
+                <TextBlock Width="200"
+                           Text="Nip pressure"
+                           TextAlignment="Right"
+                           Margin="2" />
                 <TextBlock Width="10" />
                 <TextBox Text="{Binding NipPressure}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
-                <TextBlock Width="200" Text="WPU"  TextAlignment="Right" Margin="2"/>
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="2">
+                <TextBlock Width="200"
+                           Text="WPU"
+                           TextAlignment="Right"
+                           Margin="2" />
                 <TextBlock Width="10" />
                 <TextBox Text="{Binding WPU, StringFormat='{}{0:#,##0.##}'}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
-                <TextBlock Width="200" Text="First"  TextAlignment="Right" Margin="2"/>
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="2">
+                <TextBlock Width="200"
+                           Text="First"
+                           TextAlignment="Right"
+                           Margin="2" />
                 <TextBlock Width="10" />
                 <TextBox Text="{Binding FirstAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
                 <TextBlock Width="10" />
+                <TextBlock Width="50"
+                           Text="Add"
+                           TextAlignment="Right"
+                           Margin="2" />
+                <TextBlock Width="10" />
+                <TextBox Text="{Binding AddAmt, TargetNullValue='', StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBlock Width="10" />
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
-                <TextBlock Width="200" Text="Use Volume"  TextAlignment="Right" Margin="2"/>
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="2">
+                <TextBlock Width="200"
+                           Text="Use Volume"
+                           TextAlignment="Right"
+                           Margin="2" />
                 <TextBlock Width="10" />
                 <TextBox Text="{Binding UseAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
                 <TextBlock Width="10" />
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
-                <TextBlock Width="200" Text="Rest"  TextAlignment="Right" Margin="2"/>
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="2">
+                <TextBlock Width="200"
+                           Text="Rest"
+                           TextAlignment="Right"
+                           Margin="2" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding RestAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBox Text="{Binding RestAmt, StringFormat='{}{0:#,##0.##}'}"
+                         Width="150"
+                         IsReadOnly="True" />
                 <TextBlock Width="10" />
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="2">
-                <TextBlock Width="200" Text="Throw Volume"  TextAlignment="Right" Margin="2"/>
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top"
+                        Margin="2">
+                <TextBlock Width="200"
+                           Text="Throw Volume"
+                           TextAlignment="Right"
+                           Margin="2" />
                 <TextBlock Width="10" />
                 <TextBox Text="{Binding ThrowAmt, StringFormat='{}{0:#,##0.##}'}" Width="150" />
                 <TextBlock Width="10" />
