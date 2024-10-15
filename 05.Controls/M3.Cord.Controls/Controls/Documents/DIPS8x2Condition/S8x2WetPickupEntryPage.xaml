@@ -104,6 +104,7 @@
                                                 Margin="5,0"
                                                 Width="100"
                                                 Height="30"
+                                                Visibility="{Binding EditVisible}"
                                                 Click="cmdEdit1_Click">
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />
@@ -203,6 +204,7 @@
                                                 Margin="5,0"
                                                 Width="100"
                                                 Height="30"
+                                                Visibility="{Binding EditVisible}"
                                                 Click="cmdEdit2_Click">
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Style="{StaticResource fa-edit}" FontSize="{StaticResource IBFSize}" />

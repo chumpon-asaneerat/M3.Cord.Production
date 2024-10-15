@@ -64,6 +64,13 @@ namespace M3.Cord.Models
         public decimal? WPUErr { get; set; }
         public decimal? WPUValue { get; set; }
 
+        public bool CanEdit { get; set; }
+        public Visibility EditVisible
+        {
+            get { return CanEdit ? Visibility.Visible : Visibility.Hidden; }
+            set { }
+        }
+
         public Visibility FirstAmtVisible
         {
             get { return PrevAmt.HasValue ? Visibility.Collapsed : Visibility.Visible; }
@@ -206,8 +213,14 @@ namespace M3.Cord.Models
                     {
                         if (i > 0) prev = item[i - 1];
                         curr = item[i];
+                        curr.CanEdit = false;
                         accum += (null != prev) ? prev.RestAmt.Value : decimal.Zero;
                         curr.PrevAmt = (accum > decimal.Zero) ? accum : new decimal?();
+                    }
+                    // allow edit on last item
+                    if (item.Count >= 1)
+                    {
+                        item[item.Count - 1].CanEdit = true;
                     }
                 }
 
