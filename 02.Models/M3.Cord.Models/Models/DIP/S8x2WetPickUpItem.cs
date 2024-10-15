@@ -15,6 +15,7 @@ using NLib.Models;
 using Dapper;
 using Newtonsoft.Json;
 using System.Windows.Controls.Primitives;
+using System.Windows;
 
 #endregion
 
@@ -27,11 +28,24 @@ namespace M3.Cord.Models
         private void CalcRestAmt()
         {
             RestAmt = FirstAmt.HasValue ? UseAmt.HasValue ? (FirstAmt.Value - UseAmt.Value) : FirstAmt.Value : new decimal?();
-            if (AddAmt.HasValue)
-            {
-                RestAmt += AddAmt.Value;
-            }
             Raise(() => this.RestAmt);
+        }
+
+        private void CalcRestAccumAmt()
+        {
+            if (RestAmt.HasValue)
+            {
+                RestAccumAmt = RestAmt;
+                if (PrevAmt.HasValue)
+                {
+                    RestAccumAmt += PrevAmt.Value;
+                }
+                if (AddAmt.HasValue)
+                {
+                    RestAccumAmt += AddAmt.Value;
+                }
+                Raise(() => this.RestAccumAmt);
+            }
         }
 
         #endregion
@@ -50,6 +64,51 @@ namespace M3.Cord.Models
         public decimal? WPUErr { get; set; }
         public decimal? WPUValue { get; set; }
 
+        public Visibility FirstAmtVisible
+        {
+            get { return PrevAmt.HasValue ? Visibility.Collapsed : Visibility.Visible; }
+            set { }
+        }
+        public Visibility FirstAccumAmtVisible
+        {
+            get { return PrevAmt.HasValue ? Visibility.Visible : Visibility.Collapsed; }
+            set { }
+        }
+
+        public decimal? PrevAmt
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+                    CalcRestAmt();
+                    CalcRestAccumAmt();
+                });
+            }
+        }
+
+        public decimal? FirstAccumAmt
+        {
+            get
+            {
+                return FirstAmt.HasValue ? PrevAmt.HasValue ? FirstAmt.Value + PrevAmt.Value : FirstAmt.Value : new decimal?();
+            }
+            set { }
+        }
+
+        public decimal? RestAccumAmt
+        {
+            get { return Get<decimal?>(); }
+            set
+            {
+                Set(value, () =>
+                {
+
+                });
+            }
+        }
+
         public decimal? FirstAmt 
         {
             get { return Get<decimal?>(); }
@@ -58,6 +117,7 @@ namespace M3.Cord.Models
                 Set(value, () => 
                 {
                     CalcRestAmt();
+                    CalcRestAccumAmt();
                 });
             }
         }
@@ -69,6 +129,7 @@ namespace M3.Cord.Models
                 Set(value, () =>
                 {
                     CalcRestAmt();
+                    CalcRestAccumAmt();
                 });
             }
         }
@@ -80,13 +141,20 @@ namespace M3.Cord.Models
                 Set(value, () =>
                 {
                     CalcRestAmt();
+                    CalcRestAccumAmt();
                 });
             }
         }
         public decimal? RestAmt 
         {
             get { return Get<decimal?>(); }
-            set { Set(value, () => { }); }
+            set 
+            { 
+                Set(value, () => 
+                {
+                    CalcRestAccumAmt();
+                }); 
+            }
         }
         public decimal? ThrowAmt { get; set; }
 
@@ -128,6 +196,21 @@ namespace M3.Cord.Models
             {
                 var item = cnn.Query<S8x2WetPickUpItem>("GetS8x2WetPickUpItems", p,
                     commandType: CommandType.StoredProcedure).ToList();
+                
+                if (null != item && item.Count > 0)
+                {
+                    decimal accum = decimal.Zero;
+                    S8x2WetPickUpItem prev = null;
+                    S8x2WetPickUpItem curr = null;
+                    for (int i = 0; i < item.Count; i++)
+                    {
+                        if (i > 0) prev = item[i - 1];
+                        curr = item[i];
+                        accum += (null != prev) ? prev.RestAmt.Value : decimal.Zero;
+                        curr.PrevAmt = (accum > decimal.Zero) ? accum : new decimal?();
+                    }
+                }
+
                 var data = item;
                 ret.Success(data);
             }

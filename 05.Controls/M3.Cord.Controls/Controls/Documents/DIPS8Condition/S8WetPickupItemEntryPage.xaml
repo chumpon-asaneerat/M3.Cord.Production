@@ -64,7 +64,13 @@
                            TextAlignment="Right"
                            Margin="2" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding FirstAmt, TargetNullValue='', StringFormat='{}{0:#,##0.##}'}" Width="150" />
+                <TextBox Text="{Binding FirstAmt, StringFormat='{}{0:#,##0.##}'}"
+                         Width="150"
+                         Visibility="{Binding FirstAmtVisible}" />
+                <TextBox Text="{Binding FirstAccumAmt, StringFormat='{}{0:#,##0.##}'}"
+                         Width="150"
+                         Visibility="{Binding FirstAccumAmtVisible}"
+                         IsReadOnly="True" />
                 <TextBlock Width="10" />
                 <TextBlock Width="50"
                            Text="Add"
@@ -95,7 +101,7 @@
                            TextAlignment="Right"
                            Margin="2" />
                 <TextBlock Width="10" />
-                <TextBox Text="{Binding RestAmt, TargetNullValue='', StringFormat='{}{0:#,##0.##}'}"
+                <TextBox Text="{Binding RestAccumAmt, TargetNullValue='', StringFormat='{}{0:#,##0.##}'}"
                          Width="150"
                          IsReadOnly="True" />
                 <TextBlock Width="10" />

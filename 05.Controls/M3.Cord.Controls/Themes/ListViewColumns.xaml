@@ -1232,7 +1232,7 @@
                    MinWidth="100" />
     </DataTemplate>
     <DataTemplate x:Key="S8Rest">
-        <TextBlock Text="{Binding Path=RestAmt, StringFormat='{}{0:#,##0.##}', Mode=OneWay}"
+        <TextBlock Text="{Binding Path=RestAccumAmt, StringFormat='{}{0:#,##0.##}', Mode=OneWay}"
                    TextAlignment="Center"
                    MinWidth="100" />
     </DataTemplate>

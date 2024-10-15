@@ -53,16 +53,26 @@ namespace M3.Cord.Controls.Documents
         {
             var btn = (sender as Button);
             var ctx = (null != btn) ? btn.DataContext : null;
-            var item = (null != ctx) ? ctx as S8x2WetPickUpItem : null;
-            Edit(item);
+
+            List<S8x2WetPickUpItem> items = grid.ItemsSource as List<S8x2WetPickUpItem>;
+            if (null != items && items.Count > 0)
+            {
+                var item = items[items.Count - 1]; // last item
+                Edit(item);
+            }
         }
 
         private void cmdEdit2_Click(object sender, RoutedEventArgs e)
         {
             var btn = (sender as Button);
             var ctx = (null != btn) ? btn.DataContext : null;
-            var item = (null != ctx) ? ctx as S8x2WetPickUpItem : null;
-            Edit(item);
+
+            List<S8x2WetPickUpItem> items = grid2.ItemsSource as List<S8x2WetPickUpItem>;
+            if (null != items && items.Count > 0)
+            {
+                var item = items[items.Count - 1]; // last item
+                Edit(item);
+            }
         }
 
         #endregion
@@ -82,9 +92,46 @@ namespace M3.Cord.Controls.Documents
                             M3CordApp.Current.User.FullName : null;
                 item.UpdateDate = DateTime.Now;
 
-                var ret = S8x2WetPickUpItem.Save(item);
+                bool success = false;
 
-                if (null != ret && ret.Ok)
+                if (!item.PrevAmt.HasValue)
+                {
+                    var ret = S8x2WetPickUpItem.Save(item);
+                    success = null != ret && ret.Ok;
+                }
+                else
+                {
+                    success = true;
+                }
+
+                // Check has add value
+                if (success && item.AddAmt.HasValue)
+                {
+                    var inst = new S8x2WetPickUpItem();
+                    inst.DoffingDate = DateTime.Now.AddMilliseconds(1);
+                    inst.ProductCode = item.ProductCode;
+                    inst.LotNo = item.LotNo;
+                    inst.DoffNo = item.DoffNo;
+                    inst.TwistNo = item.TwistNo;
+                    inst.RowType = item.RowType;
+                    inst.Operator = item.Operator;
+                    inst.UpdateDate = item.UpdateDate;
+                    inst.FirstAmt = item.AddAmt.Value;
+
+                    decimal ant = decimal.Zero;
+                    if (item.PrevAmt.HasValue)
+                    {
+                        ant += item.PrevAmt.HasValue ? item.PrevAmt.Value : decimal.Zero;
+                    }
+                    ant += item.RestAmt.HasValue ? item.RestAmt.Value : decimal.Zero;
+                    ant += item.AddAmt.HasValue ? item.AddAmt.Value : decimal.Zero;
+                    inst.RestAmt = (ant > decimal.Zero) ? ant : new decimal?();
+
+                    var ret2 = S8x2WetPickUpItem.Save(inst);
+                    success = null != ret2 && ret2.Ok;
+                }
+
+                if (success)
                     M3CordApp.Windows.SaveSuccess();
                 else M3CordApp.Windows.SaveFailed();
 
