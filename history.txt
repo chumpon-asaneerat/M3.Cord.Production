@@ -25,8 +25,9 @@ M3 Cord Production System #1153
 M3 Cord Production System #1152
 - 
 
+[commited]
 M3 Cord Production System #1151
-- 
+- Add supports device Mettler MS204TS00
 
 [commited]
 M3 Cord Production System #1150
